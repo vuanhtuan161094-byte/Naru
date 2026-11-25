@@ -12,3 +12,5 @@ P5 exact previous evidence P4B 24/120 wins, 101/150 resources, 32/63 recipes, 11
 P5B confirms interface ownership from Chat01 V10 handoff; no combat data or engine changes, no new persistent CP fields. Current combined engine balance must be retested.
 
 P5R: exact function inventory WORLD_INTEGRATION_MANIFEST.json; Chat01 61152d8f, single shared function passive_screen. Keep latest combat and pilot, merge UI hunks manually only when authorized. P5A organic 54/120 and 14 recipes, realm2 not sufficient for beast. P5R corrections to observation strategy and seed/mission capacity; no merge.
+
+P6: ONE GAME status files and V11 contract read. Pure stat snapshot exact copied dependency, no engine modifications. Apply external main functions + service hunks only; keep integrated pilot/animation. Pinned 07ca3712 ephemeral service/test overlay CI added, no merge; separate branch Web DEV is not integrated build. No NPC/XP curve changes until V11 earned evidence. See manifest exact delta.

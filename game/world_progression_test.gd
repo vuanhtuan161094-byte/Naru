@@ -68,6 +68,7 @@ func _initialize() -> void:
 	full_recipe_fixture(reg)
 	beast_capture_fixture(reg)
 	review_checks(reg)
+	p6_checks(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -339,3 +340,26 @@ func review_checks(reg) -> void:
 	content.step(store.state,1)
 	check(int(store.state.inventory["RES-001"])>cap-1000 and int(store.state.inventory["RES-001"])<=cap,"review mission resumes")
 	print("NARU_WORLD_REVIEW_PASS")
+
+func p6_checks(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_p6_ci.json"
+	store.new_game(reg)
+	var guide=preload("res://game/resource_guide.gd")
+	var plan=guide.plan(reg,{"RES-110":1,"RES-111":1},{})
+	check(int(plan.orders.get("RCP-051",0))==2,"P6 shared intermediate exact requirement")
+	check(plan.raw.has("RES-011"),"P6 underlying raw dependency")
+	var preview=store.player_preview(reg,"NIN-001")
+	check(preview.has("hp") and preview.has("natk"),"P6 shared snapshot")
+	store.state.owned["NIN-001"].stars=5
+	var expected=preload("res://game/combat_stat_snapshot.gd").snapshot(reg,reg.ninjas["NIN-001"],1,int(store.state.owned["NIN-001"].quality),{},store.state.owned["NIN-001"],{},true).stats
+	check(is_equal_approx(float(store.player_preview(reg,"NIN-001").hp),float(expected.hp)),"P6 exact star snapshot")
+	check(store.xp_to_cap("NIN-001")>0,"P6 XP quote")
+	check(store.beast_capture_reason(reg,"NIN-001","BIJ-1")!="","P6 beast gate reason")
+	store.state.building_states["BLD-026"].level=1
+	store.state.inventory["RES-148"]=10
+	check(store.make_contract(reg,"SUM-001"),"P6 contract create")
+	check(store.assign_contract("SUM-001","NIN-001"),"P6 contract assign")
+	check(store.unassign_contract("SUM-001") and store.assign_contract("SUM-001","NIN-003"),"P6 reassign contract")
+	check(Guard.valid(reg,store.state),"P6 save valid")
+	print("NARU_WORLD_P6_TRANSACTIONS_PASS")

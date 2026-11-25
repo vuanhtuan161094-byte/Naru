@@ -744,10 +744,17 @@ func native_bloodline(reg,id: String,bloodline: String) -> bool:
 	return commit_change(prior,rng.state)
 
 
-func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
-	if not state.owned.has(id) or not reg.beasts.has(beast_id) or state.beasts.has(beast_id):return false
+func beast_capture_reason(reg,id: String,beast_id: String) -> String:
+	if not state.owned.has(id) or not reg.beasts.has(beast_id):return "Chưa sở hữu ninja"
+	if state.beasts.has(beast_id):return "Đã thu phục"
 	var req=reg.beasts[beast_id].capture_requires
-	return int(state.owned[id].realm)>=int(req.realm) and Village.level(state,"BLD-027")>0 and has_cost({str(req.seal_resource):int(req.seal_qty)})
+	if Village.level(state,"BLD-027")==0:return "Cần Điện Vĩ Thú"
+	if int(state.owned[id].realm)<int(req.realm):return "Thiếu cảnh giới %d/%d" % [int(state.owned[id].realm),int(req.realm)]
+	if not has_cost({str(req.seal_resource):int(req.seal_qty)}):return "Thiếu ấn phong ấn"
+	return ""
+
+func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
+	return beast_capture_reason(reg,id,beast_id)==""
 
 func beast_bind_ready(reg,id: String,beast_id: String) -> bool:
 	if not state.owned.has(id) or not state.beasts.has(beast_id) or not reg.beasts.has(beast_id):return false
@@ -815,6 +822,16 @@ func make_contract(reg,id: String) -> bool:
 	var prior=state.duplicate(true)
 	debit(cost)
 	state.summon_contracts[id]={"owner":"","level":1}
+	return commit_change(prior,rng.state)
+
+func unassign_contract(id: String) -> bool:
+	if not state.summon_contracts.has(id):return false
+	var c=state.summon_contracts[id]
+	var ninja=str(c.owner)
+	if ninja=="" or not state.owned.has(ninja) or state.owned[ninja].summon_contract!=id:return false
+	var prior=state.duplicate(true)
+	c.owner=""
+	state.owned[ninja].summon_contract=""
 	return commit_change(prior,rng.state)
 
 func assign_contract(id: String,ninja: String) -> bool:
@@ -927,6 +944,24 @@ func squad_capture(reg,key: String) -> bool:
 	if not World.capture_squad(reg,state,key):return false
 	Content.bump(state,"territory_battle")
 	return commit_change(prior,rng.state)
+
+# Exact V11 snapshot API (identical upstream module, no engine modifications).
+func player_preview(reg,id: String) -> Dictionary:
+	if not state.owned.has(id):return {}
+	var p=state.owned[id].duplicate(true)
+	p.beast_level=int(state.get("beasts",{}).get(p.get("beast_id",""),{}).get("level",0))
+	var natural=bool(state.get("settings",{}).get("depth_v5_dev",true))
+	var snapshot=preload("res://game/combat_stat_snapshot.gd").snapshot(reg,reg.ninjas[id],int(p.level),int(p.quality),p.permanent,p,state.gear_instances,natural)
+	if not natural:
+		for key in ["hp","patk","natk"]:snapshot.stats[key]*=1+0.04*(int(p.stars)-1)
+	return snapshot.stats
+
+func xp_to_cap(id: String) -> int:
+	if not state.owned.has(id):return 0
+	var p=state.owned[id]
+	var total=0
+	for lv in range(int(p.level),(int(p.realm)+1)*20):total+=Quotes.xp_need(lv,int(p.realm))
+	return maxi(0,total-int(p.xp))
 
 func train_batch(reg,id: String,resource: String,quantity: int) -> bool:
 	if not state.owned.has(id) or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>100:return false

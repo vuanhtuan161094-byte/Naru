@@ -55,5 +55,72 @@
     "P5A": "organic 54/120, 104/150, 14 settled/63, 16 queued, 104 ninja, 11 contracts, 42 gear, 0 beast attempts; final Chromium/artifact pending at audit",
     "P5B": "transaction fixtures step PASS; 45-day integrity PASS, detailed log pending",
     "P5R": "CI pending"
+  },
+  "p6": {
+    "base": "cb8d2da1da0736ac8bf30ecf6a123742d238e5e7",
+    "one_game": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+    "source_heads": {
+      "gameplay": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
+      "design": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+      "art": "f529dccf856d034694ac1d1718b19770d84fa2bb"
+    },
+    "changed_files": [
+      "game/village_service.gd",
+      "game/resource_guide.gd",
+      "game/main.gd",
+      "game/world_organic_test.gd",
+      "game/save_store.gd",
+      "game/world_progression_test.gd",
+      ".github/workflows/world-progression-smoke.yml",
+      "WORLD_STATUS.md",
+      "WORLD_BACKLOG.md",
+      "WORLD_INTEGRATION_READINESS.md",
+      "HANDOFF_00_01_02.md",
+      "game/combat_stat_snapshot.gd"
+    ],
+    "functions": {
+      "game/village_service.gd": [
+        "effective_recipe_cost",
+        "recipe_quote",
+        "reserve",
+        "queue_recipe"
+      ],
+      "game/resource_guide.gd": [
+        "recipes_for",
+        "expand",
+        "plan",
+        "chain"
+      ],
+      "game/main.gd": [
+        "growth_detail",
+        "campaign",
+        "building_screen",
+        "beast_detail",
+        "craft_screen",
+        "gear_material_screen"
+      ],
+      "game/world_organic_test.gd": [
+        "__preamble",
+        "_initialize"
+      ],
+      "game/save_store.gd": [
+        "beast_capture_reason",
+        "beast_capture_ready",
+        "unassign_contract",
+        "squad_capture",
+        "player_preview",
+        "xp_to_cap"
+      ],
+      "game/world_progression_test.gd": [
+        "_initialize",
+        "p6_checks"
+      ],
+      "game/combat_stat_snapshot.gd": [
+        "__preamble",
+        "snapshot"
+      ]
+    },
+    "snapshot": "identical upstream V11; already in integration, do not overwrite newer",
+    "acceptance": "pending exact CI; no balance curve changes"
   }
 }

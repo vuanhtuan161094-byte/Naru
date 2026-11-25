@@ -290,11 +290,10 @@ func growth_detail(id: String,message: String="") -> void:
 		b.disabled=int(p.points)<1
 		var bulk=button(grid,"%s +10" % stats[key],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key,10) else "Thiếu điểm"))
 		bulk.disabled=int(p.points)<10
-	var preview=Combat.new()
-	preview.registry=reg
-	preview.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,store.state.gear_instances)
-	var all_stats=preview.actors[0].stats
-	label(rows,"48 CHỈ SỐ • trước biến thân / hiệu ứng trận",20)
+	var all_stats=store.player_preview(reg,id)
+	label(rows,"48 CHỈ SỐ • snapshot V11 trước biến thân / hiệu ứng trận",20)
+	label(rows,"XP còn thiếu tới trần cảnh: "+str(store.xp_to_cap(id)),16)
+	button(rows,"Nguồn ấn đột phá",func():resource_detail("RES-128"))
 	var stat_grid=GridContainer.new()
 	stat_grid.columns=4
 	rows.add_child(stat_grid)
@@ -327,7 +326,9 @@ func campaign() -> void:
 			var locked=s.requires!=null and not store.state.cleared.has(str(s.requires))
 			var line=HBoxContainer.new()
 			rows.add_child(line)
-			var l=label(line,("%s  %s • %d địch • %d thể lực" % [id,s.name_vi,s.enemy_ids.size(),int(s.stamina_cost)])+(" • Đã vượt" if store.state.cleared.has(id) else ""),18)
+			var enemy_lv=0
+			for npc_id in s.enemy_ids:enemy_lv=maxi(enemy_lv,int(reg.npcs[npc_id].level))
+			var l=label(line,("%s  %s • địch cấp %d • %d thể lực" % [id,s.name_vi,enemy_lv,int(s.stamina_cost)])+(" • Đã vượt" if store.state.cleared.has(id) else ""),18)
 			l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 			var b=button(line,"Chưa mở" if locked else "Vào "+id,func():start_battle(s))
 			b.disabled=locked or int(store.state.stamina)<int(s.stamina_cost) or store.state.team.is_empty()
@@ -771,10 +772,16 @@ func building_screen(id: String,message: String="") -> void:
 			rows.add_child(row)
 			var output=str(reg.resources[recipe.output.resource_id].name_vi)
 			label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
-			label(row,cost_text(recipe.inputs),15)
-			button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
+			var q=Village.recipe_quote(store.state,recipe)
+			var quote_text=[]
+			for key in q.cost:quote_text.append("%s %d/%d" % [reg.resources[key].name_vi,int(store.state.inventory.get(key,0)),int(q.cost[key])])
+			label(row,", ".join(PackedStringArray(quote_text)),15)
+			var single=button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
+			single.disabled=not q.ready
+			button(row,"Nguồn",func():resource_detail(str(recipe.output.resource_id)))
 			var batch=button(row,"5 mẻ",func():building_screen(id,"Đã đặt 5 mẻ" if store.production(reg,id,recipe_id,false,5) else "Chưa đủ điều kiện"))
-			batch.tooltip_text="Mỗi mẻ trừ nguyên liệu riêng; nếu thiếu sẽ chờ. Dừng để đổi công thức."
+			batch.disabled=not q.ready
+			batch.tooltip_text="Đủ nguyên liệu ngay: "+str(q.affordable)+" mẻ. Mỗi mẻ trừ riêng; thiếu sẽ chờ."
 			button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
 
 func frontier_screen() -> void:
@@ -988,6 +995,7 @@ func beast_detail(id: String,message: String="") -> void:
 		else:
 			var capture=button(rows,"Thử thu phục với "+str(reg.ninjas[ninja].name_vi)+" • cảnh "+str(store.state.owned[ninja].realm),func():beast_detail(id,"Đã thu phục" if store.capture_beast(reg,ninja,id) else "Không thắng / thiếu điều kiện"))
 			capture.disabled=not store.beast_capture_ready(reg,ninja,id)
+			capture.tooltip_text=store.beast_capture_reason(reg,ninja,id)
 
 func contract_screen(message: String="") -> void:
 	var rows=activity_rows("THÔNG LINH THÚ • 11",message,activities_screen)
@@ -1268,7 +1276,9 @@ func craft_screen(message: String="") -> void:
 		l.tooltip_text=l.text
 		button(line,"Mở xưởng",func():building_screen(recipe.building_id))
 		var b=button(line,"Đặt",func():craft_screen("Đã đặt" if store.production(reg,recipe.building_id,id,false) else "Thiếu nguyên liệu / công nhân / cấp xưởng"))
-		b.disabled=Village.level(store.state,recipe.building_id)<int(recipe.min_building_level)
+		var quote=Village.recipe_quote(store.state,recipe)
+		b.disabled=not quote.ready
+		b.tooltip_text="Mẻ đủ nguyên liệu: "+str(quote.affordable)+" • Xưởng "+str(quote.level)+"/"+str(quote.required_level)+(" • Chưa có nhân lực" if not quote.staffed else "")
 		button(line,"Nguồn",func():resource_detail(str(recipe.output.resource_id)))
 
 func resource_detail(id: String) -> void:
@@ -1569,9 +1579,13 @@ func gear_material_screen(id: String) -> void:
 	var def=reg.gear_templates[id]
 	var rows=activity_rows("NGUYÊN LIỆU • "+str(def.name_vi),"Chuỗi tham khảo theo công thức; không tự tiêu tài nguyên.",gear_craft_screen)
 	button(rows,"Mở "+str(reg.buildings[def.craft.building_id].name_vi),func():building_screen(def.craft.building_id))
+	var needs={}
 	for item in def.craft.inputs:
 		var resource=str(item.resource_id)
+		needs[resource]=int(needs.get(resource,0))+int(item.qty)
 		label(rows,"%s • %d/%d" % [reg.resources[resource].name_vi,int(store.state.inventory.get(resource,0)),int(item.qty)],17)
-		for entry in ResourceGuide.chain(reg,resource,int(item.qty),store.state.inventory):
-			var key=str(entry.resource)
-			button(rows,"  ".repeat(int(entry.depth))+str(reg.resources[key].name_vi)+" • thiếu "+str(entry.qty),func():resource_detail(key))
+	var plan=ResourceGuide.plan(reg,needs,store.state.inventory)
+	for recipe_id in plan.orders:
+		var recipe=reg.recipes[recipe_id]
+		button(rows,"Sản xuất "+str(reg.resources[recipe.output.resource_id].name_vi)+" • "+str(plan.orders[recipe_id])+" mẻ • xưởng cấp "+str(recipe.min_building_level),func():building_screen(str(recipe.building_id)))
+	for key in plan.raw:button(rows,"Nguồn còn thiếu: "+str(reg.resources[key].name_vi)+" ×"+str(plan.raw[key]),func():resource_detail(key))
