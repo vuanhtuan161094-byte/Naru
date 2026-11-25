@@ -62,6 +62,7 @@ func _initialize() -> void:
 	check(Guard.valid(reg,loaded.state),"reload valid")
 	progression_checks(reg)
 	coverage_checks(reg)
+	batch_checks(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -117,3 +118,50 @@ func coverage_checks(reg) -> void:
 	for gear in reg.gear_templates.values():
 		for item in gear.craft.inputs:check(sources.has(item.resource_id),"gear source "+str(gear.id))
 	print("NARU_WORLD_P2_STRUCTURAL_RESOURCES ",sources.size()," GEAR ",reg.gear_templates.size())
+
+func batch_checks(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_progression_p3_ci.json"
+	store.new_game(reg)
+	store.setup_starter_jobs(reg)
+	check(store.construct(reg,"BLD-012"),"P3 farm upgrade")
+	check(store.advance_clock(reg,int(store.state.high_water_timestamp)+3600),"P3 natural farm stock")
+	check(Village.level(store.state,"BLD-012")==2,"P3 farm level")
+	var before=int(store.state.inventory.get("RES-033",0))
+	check(store.production(reg,"BLD-012","RCP-001",false,5),"P3 earned finite production")
+	check(store.advance_clock(reg,int(store.state.high_water_timestamp)+1800),"P3 production clock")
+	check(store.state.building_states["BLD-012"].production.is_empty(),"P3 finite queue completes")
+	check(int(store.state.inventory.get("RES-033",0))>=before+5,"P3 five actual outputs")
+	var event=store.begin_stage(reg.stages["STG-001"])
+	check(event!="","P3 start battle")
+	check(store.begin_stage(reg.stages["STG-001"])=="","P3 no concurrent battle")
+	var snapshot=store.export_save()
+	check(store.import_save(reg,snapshot),"P3 interrupted import")
+	check(store.state.ledger[event].status=="interrupted","P3 interrupted ledger settled")
+	var stamina=int(store.state.stamina)
+	check(not store.recover_interrupted(reg) and int(store.state.stamina)==stamina,"P3 refund not repeated")
+	check(Guard.valid(reg,store.state),"P3 natural save")
+	# Deliberate fixture for all template instantiation and special transaction coverage.
+	for id in reg.ninjas:
+		if not store.state.owned.has(id):store.grant(reg,id)
+	check(store.state.owned.size()==144,"P3 144 owned fixture")
+	for resource in reg.resources:store.state.inventory[resource]=100000
+	for id in ["BLD-017","BLD-019","BLD-026"]:store.state.building_states[id].level=10
+	var crafted=0
+	for id in reg.gear_templates:
+		var item=store.craft_gear(reg,id)
+		if item!="":crafted+=1
+	check(crafted==128,"P3 128 gear craft transactions fixture")
+	var n=store.state.owned["NIN-001"]
+	n.shards=10000
+	for i in range(14):check(store.raise_star(reg,"NIN-001"),"P3 star step "+str(i))
+	check(int(n.stars)==15 and not store.raise_star(reg,"NIN-001"),"P3 star cap")
+	for id in reg.contracts:
+		check(store.make_contract(reg,id),"P3 contract "+str(id))
+		check(store.train_contract(id,5),"P3 contract batch "+str(id))
+		check(int(store.state.summon_contracts[id].level)==6,"P3 contract level "+str(id))
+	for id in reg.beasts:
+		store.state.beasts[id]={"host":"","level":1,"xp":0}
+		check(store.train_beast(reg,id,10),"P3 beast batch "+str(id))
+		check(int(store.state.beasts[id].level)>1,"P3 beast level "+str(id))
+	print("NARU_WORLD_P3_FIXTURE ninja=",store.state.owned.size()," gear=",crafted," contracts=",store.state.summon_contracts.size()," beasts=",store.state.beasts.size())

@@ -198,6 +198,8 @@ static func world_links_valid(reg,s: Dictionary) -> bool:
 		var job=s.building_states[id].get("production",{})
 		if job.is_empty():continue
 		if reg.recipes[job.recipe].building_id!=id:return false
+		if job.has("batches_left") and not integer(job.batches_left,1,20):return false
+		if job.has("repeat") and not job.repeat is bool:return false
 		for resource in job.reserved:
 			if not reg.resources.has(resource) or not integer(job.reserved[resource],1):return false
 	for id in s.get("summon_contracts",{}):

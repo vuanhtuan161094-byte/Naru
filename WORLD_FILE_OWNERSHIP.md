@@ -4,3 +4,4 @@ World domain: game/village_service.gd, game/content_service.gd (P1 edits); game/
 Shared coordination: game/main.gd, game/save_store.gd, game/save_guard.gd; only targeted noncombat hunks in P1. Combat engine, passive_service, stats_service, skill_p2_adapter, art and registry not modified.
 
 P2 exclusive: game/progression_quotes.gd. World service market guard added; shared main/save_store changes limited to noncombat UI/progression.
+P3 exclusive: game/resource_guide.gd, game/world_organic_test.gd. Shared SaveStore, SaveGuard and main targeted world hunks; Village finite queue changes.

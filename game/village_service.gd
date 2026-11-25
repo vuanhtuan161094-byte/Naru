@@ -115,12 +115,12 @@ static func reserve(s: Dictionary,job: Dictionary,recipe: Dictionary) -> bool:
 	job.remaining=maxi(1,ceili(float(recipe.duration_s)/(1+trait_bonus(s,id,"speed"))))
 	return true
 
-static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: bool) -> bool:
-	if not reg.recipes.has(recipe_id) or not reg.buildings.has(id):return false
+static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: bool,batches: int=1) -> bool:
+	if not reg.recipes.has(recipe_id) or not reg.buildings.has(id) or batches<1 or batches>20:return false
 	var recipe=reg.recipes[recipe_id]
 	var b=s.building_states[id]
 	if recipe.building_id!=id or int(b.level)<int(recipe.min_building_level) or not b.production.is_empty() or worker_level(s,id)==0:return false
-	var job={"recipe":recipe_id,"repeat":repeat,"reserved":{},"remaining":0}
+	var job={"recipe":recipe_id,"repeat":repeat,"reserved":{},"remaining":0,"batches_left":batches}
 	if not reserve(s,job,recipe) and not repeat:return false
 	b.production=job
 	return true
@@ -152,7 +152,10 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		s.craft_count=int(s.craft_count)+1
 		Content.bump(s,"craft_item")
 		job.reserved={}
-		if not job.repeat:b.production={}
+		if not job.repeat:
+			job.batches_left=int(job.get("batches_left",1))-1
+			if int(job.batches_left)<=0:b.production={}
+			else:reserve(s,job,recipe)
 		else:reserve(s,job,recipe)
 	# Compute territorial resource access once per tick, rather than once per source.
 	var owned_resources={}

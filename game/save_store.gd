@@ -44,13 +44,7 @@ func load_or_new(reg) -> void:
 				rng.state=int(str(d.rng_state))
 				# Interrupted battles are refunded once, in the same persisted transaction.
 				var prior=state.duplicate(true)
-				var recovered=false
-				for event in state.ledger.values():
-					if event is Dictionary and event.get("status")=="started" and reg.stages.has(event.get("stage_id","")):
-						state.stamina=mini(120,int(state.stamina)+int(reg.stages[event.stage_id].stamina_cost))
-						event.status="interrupted"
-						recovered=true
-				if recovered:commit_change(prior,rng.state)
+				if recover_interrupted(reg):commit_change(prior,rng.state)
 				return
 	for p in [save_path,save_path+".bak",save_path+".tmp"]:
 		if FileAccess.file_exists(p):
@@ -120,6 +114,8 @@ func draw(reg) -> String:
 	return id
 
 func begin_stage(stage: Dictionary) -> String:
+	for event in state.ledger.values():
+		if event is Dictionary and event.get("status")=="started":return ""
 	if stage.requires!=null and not state.cleared.has(str(stage.requires)): return ""
 	if int(state.stamina)<int(stage.stamina_cost) or state.team.is_empty(): return ""
 	var prior=state.duplicate(true)
@@ -616,9 +612,9 @@ func assign_job(reg,ninja: String,id: String,profession: String) -> bool:
 	if not Village.assign(reg,state,ninja,id,profession):return false
 	return commit_change(prior,rng.state)
 
-func production(reg,id: String,recipe: String,repeat: bool) -> bool:
+func production(reg,id: String,recipe: String,repeat: bool,batches: int=1) -> bool:
 	var prior=state.duplicate(true)
-	if not Village.queue_recipe(reg,state,id,recipe,repeat):return false
+	if not Village.queue_recipe(reg,state,id,recipe,repeat,batches):return false
 	return commit_change(prior,rng.state)
 
 func cancel_production(id: String) -> bool:
@@ -682,10 +678,7 @@ func resource_trial(reg,id: String,resource: String) -> bool:
 	var old_rng=rng.state
 	var won=duel(reg,id,maxi(1,int(p.realm)*20+1),rng.randi())
 	state.source_cooldowns[key]=now+int(source.period_seconds)
-	if won and not Village.put(state,resource,int(source.base_yield)):
-		state=prior
-		rng.state=old_rng
-		return false
+	if won:Rewards.deliver(state,resource,int(source.base_yield))
 	if not commit_change(prior,old_rng):return false
 	return won
 
@@ -752,14 +745,14 @@ func bind_beast(reg,id: String,beast_id: String) -> bool:
 	p.beast_id=beast_id
 	return commit_change(prior,rng.state)
 
-func train_beast(reg,beast_id: String) -> bool:
-	if not state.beasts.has(beast_id):return false
+func train_beast(reg,beast_id: String,quantity: int=1) -> bool:
+	if not state.beasts.has(beast_id) or quantity<1 or quantity>100:return false
 	var b=state.beasts[beast_id]
 	var resource=str(reg.beasts[beast_id].training_resource)
-	if int(state.inventory.get(resource,0))<1:return false
+	if int(state.inventory.get(resource,0))<quantity:return false
 	var prior=state.duplicate(true)
-	debit({resource:1})
-	b.xp=int(b.xp)+100
+	debit({resource:quantity})
+	b.xp=int(b.xp)+100*quantity
 	while int(b.xp)>=ceili(100*pow(float(b.level),1.6)):
 		b.xp=int(b.xp)-ceili(100*pow(float(b.level),1.6))
 		b.level=int(b.level)+1
@@ -785,14 +778,21 @@ func assign_contract(id: String,ninja: String) -> bool:
 	p.summon_contract=id
 	return commit_change(prior,rng.state)
 
-func train_contract(id: String) -> bool:
-	if not state.summon_contracts.has(id):return false
+func contract_training_cost(id: String,quantity: int=1) -> int:
+	if not state.summon_contracts.has(id) or quantity<1 or quantity>20:return 0
+	var total=0
+	var level=int(state.summon_contracts[id].level)
+	for n in range(level,level+quantity):total+=ceili(30*pow(float(n),1.5))
+	return total
+
+func train_contract(id: String,quantity: int=1) -> bool:
+	if not state.summon_contracts.has(id) or quantity<1 or quantity>20:return false
 	var c=state.summon_contracts[id]
-	var cost={"RES-001":ceili(30*pow(float(c.level),1.5))}
+	var cost={"RES-001":contract_training_cost(id,quantity)}
 	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
 	debit(cost)
-	c.level=int(c.level)+1
+	c.level=int(c.level)+quantity
 	return commit_change(prior,rng.state)
 
 func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
@@ -817,6 +817,15 @@ func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
 func export_save() -> String:
 	return JSON.stringify(state,"\t")
 
+func recover_interrupted(reg) -> bool:
+	var changed=false
+	for event in state.ledger.values():
+		if event is Dictionary and event.get("status")=="started" and reg.stages.has(event.get("stage_id","")):
+			state.stamina=mini(120,int(state.stamina)+int(reg.stages[event.stage_id].stamina_cost))
+			event.status="interrupted"
+			changed=true
+	return changed
+
 func import_save(reg,raw: String) -> bool:
 	if raw.length()>8000000:return false
 	var data=JSON.parse_string(raw)
@@ -832,6 +841,7 @@ func import_save(reg,raw: String) -> bool:
 		Passive.migrate(id,state.owned[id])
 	rng.seed=int(str(state.rng_seed))
 	rng.state=int(str(state.rng_state))
+	recover_interrupted(reg)
 	return commit_change(prior,old_rng)
 
 func stop_mission(id: String) -> bool:
