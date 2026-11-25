@@ -1,0 +1,30 @@
+[
+  {
+    "form_id": "NIN-021-F1",
+    "legacy_ids": [
+      "NIN-021-S7"
+    ],
+    "resolution": "retain ID and save; manual activation after unlock; no double chakra charge"
+  },
+  {
+    "form_id": "NIN-047-F1",
+    "legacy_ids": [
+      "NIN-047-S7"
+    ],
+    "resolution": "retain ID and save; manual activation after unlock; no double chakra charge"
+  },
+  {
+    "form_id": "NIN-070-F1",
+    "legacy_ids": [
+      "NIN-070-S6"
+    ],
+    "resolution": "retain ID and save; manual activation after unlock; no double chakra charge"
+  },
+  {
+    "form_id": "NIN-105-F1",
+    "legacy_ids": [
+      "NIN-105-S6"
+    ],
+    "resolution": "retain ID and save; manual activation after unlock; no double chakra charge"
+  }
+]

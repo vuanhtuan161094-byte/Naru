@@ -17,7 +17,11 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-001-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "hp_auto_once_per_battle": true,
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -81,7 +85,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-002-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -147,7 +154,10 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-002-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -211,7 +221,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-004-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -275,7 +288,10 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-004-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -342,7 +358,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-008-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -408,7 +427,15 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-008-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-008-S7",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -471,7 +498,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-014-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -537,7 +567,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-016-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -603,7 +636,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-020-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-020-S7",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -672,7 +713,19 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-021-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-021-S5",
+          "policy": "same_activation"
+        },
+        {
+          "skill_id": "NIN-021-S7",
+          "policy": "new skill effect independent; retain separate manual or HP activation during migration"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -740,7 +793,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-022-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-022-S7",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -798,7 +859,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-024-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-024-S7",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -860,7 +929,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-036-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -921,7 +993,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-041-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -986,7 +1061,11 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-041-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "hp_auto_once_per_battle": true,
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1051,7 +1130,10 @@
       "cooldown_s": 60,
       "duration_s": 20,
       "one_active_group": "NIN-041-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1116,7 +1198,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-042-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1180,7 +1265,10 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-042-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1244,7 +1332,10 @@
       "cooldown_s": 60,
       "duration_s": 20,
       "one_active_group": "NIN-042-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1314,7 +1405,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-043-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-043-S5",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1383,7 +1482,19 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-047-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-047-S5",
+          "policy": "same_activation"
+        },
+        {
+          "skill_id": "NIN-047-S7",
+          "policy": "new skill effect independent; retain separate manual or HP activation during migration"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1446,7 +1557,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-053-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1510,7 +1624,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-060-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1578,7 +1695,15 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-060-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-060-S5",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1644,7 +1769,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-061-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1708,7 +1836,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-065-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1771,7 +1902,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-069-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1835,7 +1969,11 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-069-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "hp_auto_once_per_battle": true,
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1906,7 +2044,19 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-070-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-070-S5",
+          "policy": "same_activation"
+        },
+        {
+          "skill_id": "NIN-070-S6",
+          "policy": "new skill effect independent; retain separate manual or HP activation during migration"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -1972,7 +2122,10 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-070-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2036,7 +2189,11 @@
       "cooldown_s": 60,
       "duration_s": 20,
       "one_active_group": "NIN-070-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "hp_auto_once_per_battle": true,
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2104,7 +2261,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-075-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2168,7 +2328,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-076-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2238,7 +2401,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-077-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-077-S7",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2304,7 +2475,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-095-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-095-S6",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2370,7 +2549,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-100-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2435,7 +2617,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-101-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2500,7 +2685,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-102-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2565,7 +2753,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-103-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2630,7 +2821,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-104-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2698,7 +2892,19 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-105-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-105-S5",
+          "policy": "same_activation"
+        },
+        {
+          "skill_id": "NIN-105-S6",
+          "policy": "new skill effect independent; retain separate manual or HP activation during migration"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2756,7 +2962,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-111-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-111-S7",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2820,7 +3034,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-112-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2887,7 +3104,19 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-113-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-113-S5",
+          "policy": "same_activation"
+        },
+        {
+          "skill_id": "NIN-113-S6",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -2955,7 +3184,19 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-114-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-114-S5",
+          "policy": "same_activation"
+        },
+        {
+          "skill_id": "NIN-114-S6",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3022,7 +3263,19 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-118-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-118-S5",
+          "policy": "same_activation"
+        },
+        {
+          "skill_id": "NIN-118-S6",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3087,7 +3340,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-126-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-126-S4",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3156,7 +3417,15 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-126-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-126-S6",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3185,7 +3454,8 @@
       "no_permanent_growth_from_toggle": true,
       "disallow_incompatible_forms": true,
       "resize_requires_safe_landing": true,
-      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable",
+      "required_snapshot": "pre_Kurama_loss"
     },
     "vfx": {
       "key": "NIN-126-F2",
@@ -3221,7 +3491,10 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-127-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3249,7 +3522,8 @@
       "no_permanent_growth_from_toggle": true,
       "disallow_incompatible_forms": true,
       "resize_requires_safe_landing": true,
-      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable",
+      "required_snapshot": "pre_Rinnegan_loss"
     },
     "vfx": {
       "key": "NIN-127-F1",
@@ -3289,7 +3563,15 @@
       "cooldown_s": 60,
       "duration_s": 16,
       "one_active_group": "NIN-127-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-127-S5",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3359,7 +3641,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-128-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-128-S5",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3426,7 +3716,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-130-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-130-S6",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {
@@ -3494,7 +3792,15 @@
       "cooldown_s": 60,
       "duration_s": 12,
       "one_active_group": "NIN-136-FORM",
-      "no_double_chakra_charge": true
+      "no_double_chakra_charge": true,
+      "legacy_routes": [
+        {
+          "skill_id": "NIN-136-S6",
+          "policy": "same_activation"
+        }
+      ],
+      "exit_if_chakra_exhausted": true,
+      "no_unlocked_automatic_form": true
     },
     "effect": {
       "stat": {

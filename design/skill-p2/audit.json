@@ -42,5 +42,39 @@
     "vfx_mapping": true,
     "runtime_test": "NOT_RUN_DESIGN_ONLY"
   },
-  "status": "DESIGN_DRAFT_COMPLETE_COVERAGE_REVIEW_REQUIRED"
+  "status": "DESIGN_DRAFT_COMPLETE_COVERAGE_REVIEW_REQUIRED",
+  "second_pass": {
+    "counts": {
+      "skills": 1152,
+      "ninjas": 144,
+      "forms": 54,
+      "combos": 12,
+      "vfx_families": 146,
+      "production_groups": 18,
+      "source_pages": 38,
+      "opened_source_pages": 8,
+      "missing_source_pointer": 808,
+      "technique_context_matches": 10,
+      "context_only": 334,
+      "era_flagged": 176,
+      "hold": 1,
+      "legacy_form_routes_changed": 4,
+      "status_extensions": 3
+    },
+    "checks": {
+      "unique_ids": true,
+      "each_ninja_eight": true,
+      "unique_names_within_kit": true,
+      "all_extra_unlocks": true,
+      "all_form_refs": true,
+      "all_status_refs": true,
+      "budget_sum": true,
+      "combo_members": true,
+      "valid_geometry": true,
+      "vfx_unique_ids": true,
+      "vfx_group_mapped": true,
+      "all_manual_slot5": true
+    },
+    "runtime": "NOT_RUN_DESIGN_ONLY"
+  }
 }

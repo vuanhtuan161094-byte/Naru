@@ -29,9 +29,22 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-001"
+    "vfx_key": "VFX-COMBO-001",
+    "signature_events": [
+      {
+        "skill_id": "NIN-001-S5",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-002-S5",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-002",
@@ -63,9 +76,22 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-002"
+    "vfx_key": "VFX-COMBO-002",
+    "signature_events": [
+      {
+        "skill_id": "NIN-041-S5",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-042-S5",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-003",
@@ -97,9 +123,22 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-003"
+    "vfx_key": "VFX-COMBO-003",
+    "signature_events": [
+      {
+        "skill_id": "NIN-004-S2",
+        "event": "summon_spawned"
+      },
+      {
+        "skill_id": "NIN-041-S2",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-004",
@@ -133,9 +172,26 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-004"
+    "vfx_key": "VFX-COMBO-004",
+    "signature_events": [
+      {
+        "skill_id": "NIN-046-S1",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-047-S2",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-048-S5",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-005",
@@ -167,9 +223,22 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-005"
+    "vfx_key": "VFX-COMBO-005",
+    "signature_events": [
+      {
+        "skill_id": "NIN-049-S5",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-052-S5",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-006",
@@ -201,9 +270,22 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-006"
+    "vfx_key": "VFX-COMBO-006",
+    "signature_events": [
+      {
+        "skill_id": "NIN-053-S2",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-016-S1",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-007",
@@ -235,9 +317,22 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-007"
+    "vfx_key": "VFX-COMBO-007",
+    "signature_events": [
+      {
+        "skill_id": "NIN-060-S2",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-061-S2",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-008",
@@ -271,9 +366,26 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-008"
+    "vfx_key": "VFX-COMBO-008",
+    "signature_events": [
+      {
+        "skill_id": "NIN-055-S1",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-056-S5",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-057-S5",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-009",
@@ -307,9 +419,26 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-009"
+    "vfx_key": "VFX-COMBO-009",
+    "signature_events": [
+      {
+        "skill_id": "NIN-020-S2",
+        "event": "summon_spawned"
+      },
+      {
+        "skill_id": "NIN-021-S1",
+        "event": "heal_confirmed"
+      },
+      {
+        "skill_id": "NIN-022-S5",
+        "event": "summon_spawned"
+      }
+    ]
   },
   {
     "id": "COMBO-010",
@@ -343,9 +472,26 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-010"
+    "vfx_key": "VFX-COMBO-010",
+    "signature_events": [
+      {
+        "skill_id": "NIN-111-S5",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-112-S5",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-113-S2",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-011",
@@ -377,9 +523,22 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-011"
+    "vfx_key": "VFX-COMBO-011",
+    "signature_events": [
+      {
+        "skill_id": "NIN-093-S3",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-094-S1",
+        "event": "contact_or_effect_confirmed"
+      }
+    ]
   },
   {
     "id": "COMBO-012",
@@ -411,8 +570,21 @@
       "no_recursive": true,
       "do_not_spend_chakra_twice": true,
       "formation_link_independent": true,
-      "requires_same_side": true
+      "requires_same_side": true,
+      "requires_alive_primary_not_summon": true,
+      "linked_effect_uses_own_budget": true,
+      "all_signature_events_required": true
     },
-    "vfx_key": "VFX-COMBO-012"
+    "vfx_key": "VFX-COMBO-012",
+    "signature_events": [
+      {
+        "skill_id": "NIN-126-S5",
+        "event": "contact_or_effect_confirmed"
+      },
+      {
+        "skill_id": "NIN-127-S5",
+        "event": "form_activated"
+      }
+    ]
   }
 ]

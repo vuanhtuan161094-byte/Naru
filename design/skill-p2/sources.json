@@ -4,8 +4,9 @@
     "url": "https://naruto-official.com/en/news/01_1610",
     "scope": "Naruto learns Rasengan and summons; character/era context",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: Rasengan learned after Jiraiya training, Vol 19 ch167."
   },
   {
     "id": "NARUTO_LATE",
@@ -20,8 +21,9 @@
     "url": "https://naruto-official.com/en/news/01_1856",
     "scope": "Sasuke learns Fireball; early character context",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: Fireball learned through practice, Vol 25 ch223."
   },
   {
     "id": "SASUKE_LATE",
@@ -172,16 +174,18 @@
     "url": "https://naruto-official.com/en/news/01_1627",
     "scope": "Wood style, Sage Jutsu and thousand-arm statue",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: Sage Mode and Wood Style thousand-arm statue, Vol 65 ch621."
   },
   {
     "id": "TOBIRAMA",
     "url": "https://naruto-official.com/en/news/01_1694",
     "scope": "Tobirama Flying Raijin and clone counter context",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: Flying Raijin counters, Vol 67 ch639/641."
   },
   {
     "id": "SHISUI",
@@ -196,8 +200,9 @@
     "url": "https://naruto-official.com/en/news/01_1287",
     "scope": "Itachi Tsukuyomi story context",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: Tsukuyomi incapacitates Kakashi; game uses short bounded control."
   },
   {
     "id": "ITACHI_WAR",
@@ -244,24 +249,27 @@
     "url": "https://naruto-official.com/en/news/01_1712",
     "scope": "Isshiki technique inherited by Kawaki",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: alternate dimension without time, stores/retrieves people or objects; game restricts combat storage."
   },
   {
     "id": "SUKUNA",
     "url": "https://naruto-official.com/en/news/01_1713",
     "scope": "Isshiki/Kawaki ocular technique",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: shrink self and objects, not other living beings."
   },
   {
     "id": "EIDA",
     "url": "https://naruto-official.com/en/news/01_1692",
     "scope": "Eida beguile ability context",
     "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
-    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
-    "numeric_values": "NONE"
+    "verified_scope": "OFFICIAL_PAGE_OPENED",
+    "numeric_values": "NONE",
+    "finding": "Opened: charm prevents harming Eida, no direct control over others."
   },
   {
     "id": "CYBORGS",
