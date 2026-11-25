@@ -1,0 +1,198 @@
+{
+  "batch": "ART-COMBAT-R3",
+  "base_gameplay_sha": "a7ecee6ad6a7f58f7bf928a297e8e5373737c950",
+  "latest_gameplay_sha_at_start": "5919893de0404ed9a48b7b6babdfbb30e17b9184",
+  "previous_art_sha": "f36081df4f93c30078c2c3a4019dd5dd9f3d983d",
+  "design_sha": "c53b56639497c7fa3818098878dfe51922ee271c",
+  "archive": {
+    "name": "Naru_Combat_Sprint_R3_private.zip",
+    "sha256": "7950e331ea629a715e3a2396b1cca748540917fed7a558645daff91f43d28110",
+    "bytes": 2180598,
+    "location": "private ChatGPT Library",
+    "upload_confirmed": true,
+    "manifest_sha256": "444de762cf382fc76d84bd74f35b87b064e5499bbf5739ceb1a6103c99e65ad3",
+    "base_asset_archive": "Naru_F1D_review_pack_v2.zip",
+    "base_asset_sha256": "5c21d3bcfd94197b952f162c19a9371e62299d72bf644920abaf8b4a1ba02895"
+  },
+  "tested_source_sha256": {
+    "tested_main.gd": "00160d18b8eef1326fee4ea9d3b0607b53f8533a56b4e061471e6077dd6f96ff",
+    "tested_quality_renderer.gd": "2d2d43f17f890fe4a64c43c39b36ccadd087eaee910d1b4a3bde0e9a563067ec",
+    "tested_combat.gd": "53eb11403508e0ef06865d9ed0706f560a4d828c1d9fc8a210d4d2646d192136"
+  },
+  "assets": [
+    {
+      "path": "animation/NIN-041/walk_screen_right.png",
+      "sha256": "c480ffecab9dbcf341d4e42c8ba13f7d5db5a1df953ccd9a238742b55eb713bc",
+      "size": [
+        384,
+        112
+      ],
+      "frames": 4,
+      "unique_frames": 4,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "environment/arena_open_r3.png",
+      "sha256": "95bf7ee4b7208a59940e08b27dd7f2959e6916b563d1a091878fa2eeec13beb2",
+      "size": [
+        960,
+        540
+      ],
+      "frames": 0,
+      "unique_frames": 0,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "vfx/families/slash.png",
+      "sha256": "61178c3cdeb20d5a4f7822e832b2fc61d4e2ed79bc3a12e4ab13a6e24eee521f",
+      "size": [
+        1024,
+        128
+      ],
+      "frames": 8,
+      "unique_frames": 8,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "vfx/families/hit.png",
+      "sha256": "c1f79ff7079a459ae9445fa0706ef4d4fc0efd0b52549763665ffb7a39536c84",
+      "size": [
+        1024,
+        128
+      ],
+      "frames": 8,
+      "unique_frames": 8,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "vfx/families/heal.png",
+      "sha256": "5f5d37e8dc207f27f5bfb6f0747a33155c91aa1d278b48fe4ef42f0df4760bdd",
+      "size": [
+        1024,
+        128
+      ],
+      "frames": 8,
+      "unique_frames": 8,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "vfx/families/smoke.png",
+      "sha256": "f574caea391ffda37a91fd6d7a1e57fce3acb520d19a832b707f2bb464f7a447",
+      "size": [
+        1024,
+        128
+      ],
+      "frames": 8,
+      "unique_frames": 8,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "portraits/NIN-041.png",
+      "sha256": "30fe63baa367db64c0368ec85ff62ac2014b95580cfce2a0237aa27df2380b67",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 0,
+      "unique_frames": 0,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "portraits/NIN-093.png",
+      "sha256": "9a2b9f7137bcfb98dc01ab68109b83c1b553d866d7dc324a922fce769e90716d",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 0,
+      "unique_frames": 0,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "portraits/NIN-043.png",
+      "sha256": "3e776e7e48bb478631bf6b88f194aecfce40abe8b6ec2d982e9d7d8a506c4dfe",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 0,
+      "unique_frames": 0,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "portraits/NIN-060.png",
+      "sha256": "12b95a12fcdbe797d033b7ce85266a98d852590e0544dd17b26337ab9427b978",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 0,
+      "unique_frames": 0,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "portraits/NIN-042.png",
+      "sha256": "923efb2d54d31a9718f5214e1df62ccd4fe5c3c12e01509107750dbedc7197ef",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 0,
+      "unique_frames": 0,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "path": "portraits/NIN-004.png",
+      "sha256": "0a8fafd6e3e31360d89844f2f842e990dc316e7ec80b64b3653f68e1f72b97f3",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 0,
+      "unique_frames": 0,
+      "status": "REVIEW_ONLY"
+    }
+  ],
+  "qa": {
+    "engine": "Godot 4.4.1 stable",
+    "local": "SCOPED_PASS",
+    "initial": 12,
+    "ticks": 280,
+    "moved": true,
+    "sprite_draws": 4494,
+    "tiles": 40416,
+    "vfx_draws": 4665,
+    "release_buffer": 128,
+    "hp_feedback_draws": 2751,
+    "clone_draws": 194,
+    "family_draws": 4197,
+    "walk_draws": 74,
+    "slash_draws": 1370,
+    "smoke_draws": 76,
+    "video_frames": 421,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "video_sha256": "9dc8a999172197bf1c7090b60cf3a7d98c2fc3fa14d6ef4d70e16172cee40835",
+    "runtime_log_sha256": "4b41f4b2ab42c9b042c6ad162716a897c9447cd3ca131964273c43f97214b2f3",
+    "previous_R2_ci": {
+      "id": 45559348599,
+      "sha": "f36081df4f93c30078c2c3a4019dd5dd9f3d983d",
+      "result": "PASS"
+    },
+    "R3_ci": "NOT_RUN"
+  },
+  "limits": [
+    "Actual local fixture, not campaign and not latest gameplay SHA",
+    "Four distinct manually repainted Naruto leg poses, same head/upper body, one screen-right movement clip only; provisional, not production.",
+    "Four generic families, no new individual skill IDs, sampled HP deltas not confirmed per-hit event. Clone smoke and owner-art fallback for known clone skills; other summons DEV.",
+    "Open arena decorative, no collisions. Portraits display only in fixture. No rig, no public fan art, no merge. Tested source in private archive; public installer not executed in this session."
+  ],
+  "references": [
+    "Owner uploaded 794x449 screenshot: spacious battle floor, edge HUD, HP/chakra and visible character proportions; no source pixels copied.",
+    "Naruto Mobile: https://naruto.fandom.com/wiki/Naruto_Mobile — 2D animation reference",
+    "Ninja Pixel Strike: https://2game.vn/ninja-pixel-strike-game-mobile-duoc-chuyen-the-tu-anime-naruto-noi-tieng-post426152.html — pixel identity direction",
+    "The Ninja Saviors: https://store.steampowered.com/app/2288070/The_Ninja_Saviors_Return_of_the_Warriors/ — hand animated pixel-art motion reference",
+    "TMNT Shredder's Revenge: https://store.steampowered.com/app/1361510/ — pixel crowd-fight readability direction"
+  ]
+}

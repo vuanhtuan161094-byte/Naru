@@ -9104,7 +9104,10 @@
     "integrated": 0,
     "review_vfx_candidates": 6,
     "private_library_character_candidates": 6,
-    "environment_review": 16
+    "environment_review": 16,
+    "review_animation_pilot": 1,
+    "review_generic_vfx_families": 4,
+    "review_portraits": 6
   },
   "evidence_note": "This commit records F1D review pack; binaries stored in private Library, no runtime verification.",
   "environment_review": [
@@ -9247,15 +9250,120 @@
     "asset_approval": false
   },
   "runtime_review": {
-    "status": "PRIVATE_LOCAL_SCOPED_PASS",
+    "status": "PRIVATE_LOCAL_R3_SCOPED_PASS",
     "gameplay_base": "a7ecee6ad6a7f58f7bf928a297e8e5373737c950",
     "source": "art/runtime/apply_review.py",
     "private_pack_sha256": "5c21d3bcfd94197b952f162c19a9371e62299d72bf644920abaf8b4a1ba02895",
     "scope": "existing Godot project opt-in visual overlay; CI generic DEV textures only, no private art integrated",
     "style_approved": true,
     "integrated": false,
-    "evidence": "art/runtime/ART_P8_R2_EVIDENCE.json",
-    "private_archive": "Naru_ART_P8_private_runtime_R2.zip",
-    "private_archive_sha256": "29c072451dc2bcaf562d335cdcd63057b0ab1de0f7ccd50fe881f37fc59d795d"
+    "evidence": "art/runtime/ART_COMBAT_R3_EVIDENCE.json",
+    "private_archive": "Naru_Combat_Sprint_R3_private.zip",
+    "private_archive_sha256": "7950e331ea629a715e3a2396b1cca748540917fed7a558645daff91f43d28110",
+    "latest_remote_gameplay": "5919893de0404ed9a48b7b6babdfbb30e17b9184"
+  },
+  "r3_review": {
+    "animation_pilots": [
+      {
+        "id": "NIN-041",
+        "direction": "screen_right_candidate",
+        "action": "walk",
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "frames": 4,
+        "asset_path": "animation/NIN-041/walk_screen_right.png",
+        "sha256": "c480ffecab9dbcf341d4e42c8ba13f7d5db5a1df953ccd9a238742b55eb713bc",
+        "status": "REVIEW_ONLY",
+        "owner_approved": false
+      }
+    ],
+    "generic_vfx_families": [
+      {
+        "path": "vfx/families/slash.png",
+        "sha256": "61178c3cdeb20d5a4f7822e832b2fc61d4e2ed79bc3a12e4ab13a6e24eee521f",
+        "size": [
+          1024,
+          128
+        ],
+        "frames": 8,
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "vfx/families/hit.png",
+        "sha256": "c1f79ff7079a459ae9445fa0706ef4d4fc0efd0b52549763665ffb7a39536c84",
+        "size": [
+          1024,
+          128
+        ],
+        "frames": 8,
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "vfx/families/heal.png",
+        "sha256": "5f5d37e8dc207f27f5bfb6f0747a33155c91aa1d278b48fe4ef42f0df4760bdd",
+        "size": [
+          1024,
+          128
+        ],
+        "frames": 8,
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "vfx/families/smoke.png",
+        "sha256": "f574caea391ffda37a91fd6d7a1e57fce3acb520d19a832b707f2bb464f7a447",
+        "size": [
+          1024,
+          128
+        ],
+        "frames": 8,
+        "status": "REVIEW_ONLY"
+      }
+    ],
+    "environment": [
+      {
+        "path": "environment/arena_open_r3.png",
+        "sha256": "95bf7ee4b7208a59940e08b27dd7f2959e6916b563d1a091878fa2eeec13beb2",
+        "status": "REVIEW_ONLY",
+        "collision": false
+      }
+    ],
+    "portraits": [
+      {
+        "path": "portraits/NIN-041.png",
+        "sha256": "30fe63baa367db64c0368ec85ff62ac2014b95580cfce2a0237aa27df2380b67",
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "portraits/NIN-093.png",
+        "sha256": "9a2b9f7137bcfb98dc01ab68109b83c1b553d866d7dc324a922fce769e90716d",
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "portraits/NIN-043.png",
+        "sha256": "3e776e7e48bb478631bf6b88f194aecfce40abe8b6ec2d982e9d7d8a506c4dfe",
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "portraits/NIN-060.png",
+        "sha256": "12b95a12fcdbe797d033b7ce85266a98d852590e0544dd17b26337ab9427b978",
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "portraits/NIN-042.png",
+        "sha256": "923efb2d54d31a9718f5214e1df62ccd4fe5c3c12e01509107750dbedc7197ef",
+        "status": "REVIEW_ONLY"
+      },
+      {
+        "path": "portraits/NIN-004.png",
+        "sha256": "0a8fafd6e3e31360d89844f2f842e990dc316e7ec80b64b3653f68e1f72b97f3",
+        "status": "REVIEW_ONLY"
+      }
+    ]
   }
 }

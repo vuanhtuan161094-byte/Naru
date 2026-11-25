@@ -15,3 +15,5 @@
 ART-P8: source overlay and CI pending. Private fan art runtime BLOCKED pending private Godot environment; DEV smoke uses generic textures. ART-P2/P3R3/P6 remain ready/in progress.
 
 ART-P8 R2 local scoped PASS; remote gameplay integration pending Chat 00, no release. Next READY: ART-P2 true walk/attack poses, ART-P3R3 VFX coverage/quality and clone fallback, ART-P6 modular obstacles/geometry. Local review video saved in private Library.
+
+Combat R3: ART-P2 pilot (one screen-right Naruto walk, 4 poses, not completed four-direction); P3R3 partial 4 generic families and real HP feedback/clone smoke; P6 partial open arena decorative; P7 partial 6 portraits; P8 local scoped PASS on pinned older base. READY: full-body pose authoring, latest-SHA private integration, distinct opponents, collision scenery, true hit event VFX and functioning touch HUD. R3 installer not tested; source pack private.
