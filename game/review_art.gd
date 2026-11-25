@@ -127,7 +127,7 @@ func tile(field: Control,p: Vector2,q: float,x: int,y: int,plate: bool) -> bool:
 	field.draw_texture_rect(t,Rect2(p+Vector2(-38,0)*q,Vector2(76,40)*q),false,Color(1,1,1,0.36) if plate else Color.WHITE)
 	return true
 
-func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int) -> float:
+func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale: float=1.0,state: Dictionary={}) -> float:
 	var id=str(a.id)
 	var t=texture("characters/"+id+".png")
 	var prior: Vector2=last_pos.get(a.uid,p)
@@ -135,13 +135,20 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int) -> float:
 		motion[a.uid]={"right":p.x>prior.x,"until":ticks+4}
 	last_pos[a.uid]=p
 	if t==null:return 0.0
-	var height=92.0
+	var height=92.0*display_scale
 	var scale_value=height/112.0
 	var dest=Rect2(p-Vector2(48,104)*scale_value,Vector2(96,112)*scale_value)
 	# One provisional authored rightward walk pilot, never mirror or fabricate missing clips.
 	var moving=motion.get(a.uid,{})
 	var walk=texture("animation/"+id+"/walk_screen_right.png")
-	if walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
+	var action=str(state.get("action","Idle")).to_lower()
+	var direction=str(state.get("direction","SE")).to_lower()
+	var authored=texture("animation/"+id+"/"+action+"_"+direction+".png")
+	if authored!=null and authored.get_height()==112 and authored.get_width()%96==0:
+		var frame_count=maxi(1,authored.get_width()/96)
+		var frame=posmod(floori(float(ticks)/2.0),frame_count)
+		field.draw_texture_rect_region(authored,dest,Rect2(frame*96,0,96,112))
+	elif walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
 		var frame=posmod(floori(float(ticks)/2.0),4)
 		field.draw_texture_rect_region(walk,dest,Rect2(frame*96,0,96,112))
 	else:field.draw_texture_rect(t,dest,false)
@@ -170,7 +177,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 		if elapsed<0 or elapsed>=0.8:continue
 		var at: Vector2=project.call(event.pos)+Vector2(0,-28)
 		var progress=elapsed/0.8
-		if event.kind=="release":
+		if event.kind=="contact":
 			var phase="impact" if elapsed<0.4 else "residual"
 			sheet(field,"vfx/VFX-"+str(event.skill)+"/"+phase+".png",at,fmod(elapsed,0.4)/0.4,110)
 		elif event.kind in ["damage","heal","summon"]:

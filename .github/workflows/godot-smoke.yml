@@ -50,6 +50,13 @@ jobs:
           timeout 180 "$G" --headless --path . --script res://game/core_v9_test.gd 2>&1 | tee /tmp/core-v9.log
           grep NARU_CORE_V9_PASS /tmp/core-v9.log
           ! grep -E 'Parse Error|SCRIPT ERROR|CORE_V9_FAIL' /tmp/core-v9.log
+      - name: Tactical V10 runtime and comparison
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 180 "$G" --headless --path . --script res://game/tactical_v10_test.gd 2>&1 | tee /tmp/tactical-v10.log
+          grep NARU_TACTICAL_V10_PASS /tmp/tactical-v10.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|TACTICAL_V10_FAIL' /tmp/tactical-v10.log
       - name: GP-P2 gameplay integration
         run: |
           set -o pipefail
@@ -82,7 +89,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - Web DEV V9, placeholder art. Extract the entire folder.
+          NARU RPG - Web DEV V10, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -102,15 +109,43 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V9
+          name: NARU-Web-DEV-V10
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V9-menu
+          name: NARU-Web-DEV-V10-menu
           path: |
             web-menu.png
             ui-shots/
+          retention-days: 30
+      - name: Record actual native Godot combat
+        run: |
+          set -euo pipefail
+          mkdir -p combat-video
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb ffmpeg
+          Xvfb :98 -screen 0 1280x720x24 -nolisten tcp >/tmp/naru-xvfb.log 2>&1 &
+          XV=$!
+          export DISPLAY=:98
+          trap 'kill "$XV" 2>/dev/null || true' EXIT
+          sleep 1
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          "$G" --path . --fullscreen --resolution 1280x720 -- --combat-video >/tmp/naru-video.log 2>&1 &
+          GAME=$!
+          sleep 4
+          ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i :98.0 -t 15 -c:v libx264 -preset veryfast -pix_fmt yuv420p combat-video/Naru-V10-6v6.mp4
+          kill "$GAME" 2>/dev/null || true
+          test -s combat-video/Naru-V10-6v6.mp4
+          grep NARU_VIDEO_BATTLE /tmp/naru-video.log
+          ! grep -E 'SCRIPT ERROR|Parse Error' /tmp/naru-video.log
+          cp /tmp/tactical-v10.log combat-video/TACTICAL_RUNTIME.log
+          printf '%s\n' "$GITHUB_SHA" > combat-video/BUILD_SHA.txt
+      - name: Upload Godot combat review
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-Combat-V10-Video
+          path: combat-video/
           retention-days: 30

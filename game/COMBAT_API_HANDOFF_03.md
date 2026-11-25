@@ -10,3 +10,6 @@ Result existing begin_stage/finish_stage(reg,stage,event_id,won,counts,mastery_c
 
 ### V9 batch 2 combat-only update
 `cp_units`, `cp_max_units`, `cp_remainder` are ephemeral battle fields, mirrored by `chakra`/`max_chakra` for HUD; not part of persistent save. `cp_telemetry` signed totals by reason. `ritual_zones`/`retrieved_objects` battle-only; visual event `object_retrieved` from valid release. No external service writes.
+
+### V10 seams
+No SaveStore/SaveGuard/StatsService/WorldService/VillageService change. Existing combat result parameters unchanged; new read-only `contribution`, `animation_events`, `animation_state(actor)`, `formation_pairs(side)`, `tactical_metrics`, `typed_passive_effects`, `combo_receipts`, `form_receipts`. `settings.tactical_v4_dev`, `contract_v10_dev` default true; DEV toggle at data level. Outside-battle preview should derive from natural base/growth ×(1+.04*(stars-1)), then allocations/training/gear; no double factor. V9 organic 4/10 is balance regression, Chat03 may use evidence to tune campaign independently only after owner/00 agreement.

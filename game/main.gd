@@ -29,6 +29,8 @@ var resource_bar: Label
 var paused=false
 var battle_speed=1.0
 var ult_actions: Array[Dictionary]=[]
+var battle_cards: Array[Dictionary]=[]
+var observation_mode=false
 var qa_clock=0.0
 var roster_query=""
 var roster_quality=0
@@ -73,7 +75,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"DEV V9",16)
+	label(header,"DEV V10",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -101,6 +103,10 @@ func _ready() -> void:
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	apply_settings()
 	menu(store.load_notice)
+	if "--combat-video" in OS.get_cmdline_user_args():
+		start_art_review()
+		print("NARU_VIDEO_BATTLE ",sim.actors.size()," actors")
+		return
 	if web_qa:
 		JavaScriptBridge.eval("window.naruReady=true")
 		call_deferred("web_probe")
@@ -341,6 +347,7 @@ func battle_view() -> void:
 	art.reset_battle()
 	accumulator=0
 	paused=false
+	observation_mode=false
 	battle_speed=1.0
 	open_screen("battle")
 	var toolbar=HBoxContainer.new()
@@ -352,6 +359,7 @@ func battle_view() -> void:
 	toolbar.add_child(pause_button)
 	pause_button.pressed.connect(func():paused=not paused;pause_button.text="Tiếp tục" if paused else "Tạm dừng")
 	for speed in [1.0,2.0,4.0]:button(toolbar,str(int(speed))+"x",func():battle_speed=speed)
+	button(toolbar,"Quan sát",func():observation_mode=not observation_mode;scroll_battle_visibility())
 	button(toolbar,"Rút lui",func():finish(false))
 	field=Control.new()
 	field.custom_minimum_size=Vector2(0,290)
@@ -361,7 +369,8 @@ func battle_view() -> void:
 	field.draw.connect(draw_field)
 	root.add_child(field)
 	var scroll=ScrollContainer.new()
-	scroll.custom_minimum_size.y=115
+	scroll.name="BattleActions"
+	scroll.custom_minimum_size.y=138
 	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	root.add_child(scroll)
@@ -369,6 +378,7 @@ func battle_view() -> void:
 	scroll.add_child(row)
 	ult_buttons.clear()
 	ult_actions.clear()
+	battle_cards.clear()
 	for i in range(sim.primary_alive(0).size()):
 		var a=sim.actors[i]
 		var group=VBoxContainer.new()
@@ -386,6 +396,8 @@ func battle_view() -> void:
 			name_row.add_child(image)
 			art.portrait_draws+=1
 		label(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],16)
+		var state_label=label(group,"",13)
+		battle_cards.append({"uid":a.uid,"label":state_label})
 		for skill_id in a.skills:
 			if not reg.depth_ultimates.has(skill_id) and reg.skills[skill_id].kind!="ultimate":continue
 			var b=button(group,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(i,skill_id))
@@ -427,19 +439,22 @@ func draw_field() -> void:
 		var points=PackedVector2Array([iso(rect.position),iso(Vector2(rect.end.x,rect.position.y)),iso(rect.end),iso(Vector2(rect.position.x,rect.end.y))])
 		field.draw_colored_polygon(points,Color("#35414a") if item.kind=="obstacle" else Color(0.65,0.52,0.27,0.45))
 		field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
+	for pair in sim.formation_pairs(0):
+		field.draw_line(iso(pair[0]),iso(pair[1]),Color(0.4,0.85,1.0,0.35),1.5,true)
 	for a in sim.primary_alive(0):
-		if sim.link_count(a)>0:field.draw_arc(iso(a.pos),23,0,TAU,24,Color(0.4,0.85,1.0,0.7),2)
+		if sim.link_count(a)>0:field.draw_arc(iso(a.pos),17*q,0,TAU,24,Color(0.4,0.85,1.0,0.7),2)
 	var render_order=sim.actors.duplicate()
 	render_order.sort_custom(func(a,b):return a.pos.x+a.pos.y<b.pos.x+b.pos.y)
 	for a in render_order:
-		if a.hp<=0:continue
+		if a.hp<=0 and sim.ticks-int(a.get("hit_until",0))>8:continue
 		var p=iso(a.pos)
 		var c=Color("#e3a33e") if a.side==0 else Color("#b65364")
 		field.draw_set_transform(p,0,Vector2(1,0.48))
 		field.draw_circle(Vector2.ZERO,17,Color(0.02,0.04,0.05,0.65))
 		field.draw_arc(Vector2.ZERO,20,0,TAU,32,c,2)
 		field.draw_set_transform(Vector2.ZERO)
-		var sprite_top=art.draw_actor(field,a,p,sim.ticks)
+		var visual_scale=clampf(q*1.25,0.42,1.0)
+		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,sim.animation_state(a))
 		if sprite_top<=0:
 			# Original generic geometric DEV actor, not an approved ninja sprite.
 			field.draw_colored_polygon(PackedVector2Array([p+Vector2(-12,-3),p+Vector2(-11,-28),p+Vector2(11,-28),p+Vector2(12,-3)]),c.darkened(0.3))
@@ -449,12 +464,19 @@ func draw_field() -> void:
 			field.draw_rect(Rect2(p-Vector2(12,46),Vector2(24,8)),Color("#26333c"))
 			field.draw_rect(Rect2(p-Vector2(5,42),Vector2(10,4)),c)
 			sprite_top=48
-		var bar=p-Vector2(23,sprite_top+8)
-		field.draw_rect(Rect2(bar,Vector2(46,5)),Color("#182028"))
-		field.draw_rect(Rect2(bar,Vector2(46*float(a.hp)/float(a.max_hp),5)),Color("#80c484") if a.side==0 else Color("#e57470"))
-		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(46,3)),Color("#182028"))
-		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(46*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
+		var bar_width=clampf(46*visual_scale,26,46)
+		var bar=p-Vector2(bar_width*0.5,sprite_top+8)
+		field.draw_rect(Rect2(bar,Vector2(bar_width,5)),Color("#182028"))
+		field.draw_rect(Rect2(bar,Vector2(bar_width*float(a.hp)/float(a.max_hp),5)),Color("#80c484") if a.side==0 else Color("#e57470"))
+		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width,3)),Color("#182028"))
+		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
 		var badge_index=0
+		for st in a.statuses.values():
+			if badge_index>=4:break
+			var negative=st.id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam","sleep","attack_down","beguile_tactical"]
+			field.draw_circle(bar+Vector2(4+8*badge_index,-5),3.5,Color("#ed827b") if negative else Color("#82d5a4"))
+			badge_index+=1
+		if not a.active_form.is_empty():field.draw_arc(p,22,0,TAU,24,Color("#e1ce72"),2)
 		for mod in a.get("passive_mods",{}):
 			var v=float(a.passive_mods[mod])
 			if absf(v)<0.00001 or badge_index>=6:continue
@@ -487,6 +509,8 @@ func _process(delta: float) -> void:
 			qa_clock=0
 			publish_ui_probe()
 	if sim==null:return
+	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks%20==0:
+		for i in range(6):sim.ultimate(i)
 	if not paused:
 		accumulator+=minf(delta,0.25)*battle_speed
 		while accumulator>=0.05:
@@ -497,13 +521,25 @@ func _process(delta: float) -> void:
 				return
 	status.text="Đội %d • Địch %d • %.1fs • %sx%s" % [sim.primary_alive(0).size(),sim.primary_alive(1).size(),sim.ticks*0.05,int(battle_speed)," • Tạm dừng" if paused else ""]
 	if sim.deadlock:status.text+=" • Bế tắc"
+	status.text+=" • "+str(sim.side_formations.get(0,"FRM-01"))
+	for card in battle_cards:
+		var unit=sim.actor_by_uid(int(card.uid))
+		if unit.is_empty():continue
+		var marks=[]
+		for st in unit.statuses.values():
+			if not st.id in marks:marks.append(st.id)
+		if not unit.active_form.is_empty():marks.append(unit.active_form.id)
+		if unit.shield>0:marks.append("Khiên")
+		card.label.text="HP %d%% • CP %.1f • %s" % [roundi(100.0*float(unit.hp)/maxf(1.0,float(unit.max_hp))),float(unit.chakra),",".join(marks)]
+		card.label.tooltip_text=card.label.text
 	for action in ult_actions:
 		var a=sim.actors[action.index]
 		var s=sim.effective_skill(a,action.skill)
 		action.button.disabled=paused or a.hp<=0 or (not sim.use_depth and not sim.ready(a,s))
 		var requested=sim.ultimate_requests.get(a.uid,"")==action.skill
-		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+" "+str(int(a.chakra))+"/"+str(ceili(s.chakra))+" CP"
-		action.button.tooltip_text=sim.ultimate_reason(a,action.skill)
+		var reason=sim.ultimate_reason(a,action.skill)
+		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+"\n"+("%.2f CP" % float(s.chakra))+" • "+reason
+		action.button.tooltip_text=reason
 	log_label.text="  |  ".join(sim.log)
 	field.queue_redraw()
 
@@ -516,11 +552,16 @@ func finish(won: bool) -> void:
 		return
 	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts,sim.action_stats,sim.passive_mastery)
 	var elapsed=sim.ticks*0.05
+	var contribution_rows=sim.contribution.duplicate(true)
 	sim=null
 	open_screen("results")
 	label(root,"CHIẾN THẮNG" if won else "THẤT BẠI / RÚT LUI",34)
 	label(root,"%s • %.1f giây • %s" % [battle_stage.name_vi,elapsed,"Đã lưu kết quả" if ok else "Lỗi lưu kết quả"],18)
 	var rows=scroll_rows(root)
+	label(rows,"Đóng góp chiến đấu • HP thực tế / thời lượng khống chế áp dụng",20)
+	for entry in contribution_rows.values():
+		if int(entry.side)!=0:continue
+		label(rows,"%s | ST %.0f • Hồi %.0f • Nhận %.0f • Chặn %.0f • CC %.1fs" % [reg.ninjas.get(entry.id,{}).get("name_vi",entry.id),entry.damage,entry.heal,entry.taken,entry.absorbed,entry.control_applied_s],16)
 	if won and ok:
 		label(rows,"Phần thưởng đã nhận",22)
 		for reward in last_reward:label(rows,"%s +%d" % [reg.resources[reward.resource_id].name_vi,int(reward.qty)],18)
@@ -1321,8 +1362,15 @@ func start_art_review() -> void:
 	battle_stage={"name_vi":"Review 6v6 • không thưởng"}
 	sim=Combat.new()
 	sim.registry=reg
+	sim.use_depth=true
+	sim.use_tactical=true
+	sim.use_passives=true
+	sim.use_contract_v10=true
+	sim.load_combat_contracts()
 	sim.rng.seed=42
 	sim.environment="forest"
+	sim.side_formations={0:"FRM-01",1:"FRM-02"}
+	sim.side_levels={0:1,1:1}
 	sim.configure_terrain()
 	var left=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
 	var right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
@@ -1416,3 +1464,7 @@ func passive_screen(id: String,message: String="") -> void:
 				var branch_id=str(br.id)
 				button(nav,str(br.name),func():passive_screen(id,"Đã chọn nhánh" if store.branch_passive(reg,id,key,branch_id) else "Không thể chọn"))
 		if not str(sk.branch).is_empty():label(box,"Nhánh: "+str(sk.branch),14)
+
+func scroll_battle_visibility() -> void:
+	var panel=root.get_node_or_null("BattleActions")
+	if panel!=null:panel.visible=not observation_mode

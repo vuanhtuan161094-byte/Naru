@@ -68,3 +68,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - Chat01 READY: residual 9 special P2 + 2 era HOLD, 34 branch contracts, full fixed-point CP, V5 combo and form route tests, per-ID passive actual effect audit, art event contract and tactical quality. CI not yet verified.
 
 - REVIEW V9 batch 2: 5 more P2 special candidates, CP fixed-point combat ledger, 34 typed branch adapter records and fixtures. READY: 4 reflection mechanics clarification, 2 era holds, exact full V5 combo/form semantics, per-ID passive audit and balance, visual event integration.
+
+- REVIEW Combat V10 tactical/animation/HUD/typed passive/12 combo/54 route integration and exact CI. READY: per-ID typed actual effects, detailed special combo negatives, role balance and visual overlap, source/fallback decisions. Organic campaign regression shared with Chat03, do not inflate stats.

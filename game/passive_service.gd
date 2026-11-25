@@ -34,7 +34,7 @@ static func rows(sim,a: Dictionary) -> Array:
 	return sim.registry.passive_pilot_rows.get(a.id,[]) if sim.use_passive_pilot else sim.registry.passives_by_ninja.get(a.id,[])
 
 static func eligible(sim,a: Dictionary,row: Dictionary) -> bool:
-	return sim.use_passives and a.has("passive_base") and a.hp>0 and not a.get("beast",false) and int(a.realm)>=int(row.unlock.realm) and sim.registry.passive_ledger.get(row.id,"")=="DEV_CANDIDATE" and not str(sim.registry.p2_fallback.get(row.source.signature_id,"")).begins_with("HOLD") and not (sim.registry.synergy_gaps.get(row.id,"")=="FORM_ZERO_PAYLOAD_REVIEW")
+	return sim.use_passives and a.has("passive_base") and a.hp>0 and not a.get("beast",false) and not a.summon and int(a.realm)>=int(row.unlock.realm) and sim.registry.passive_ledger.get(row.id,"")=="DEV_CANDIDATE" and not str(sim.registry.p2_fallback.get(row.source.signature_id,"")).begins_with("HOLD") and not (sim.registry.synergy_gaps.get(row.id,"")=="FORM_ZERO_PAYLOAD_REVIEW")
 
 static func attach(a: Dictionary,p: Dictionary) -> void:
 	a.stars=int(p.get("stars",1))
@@ -104,7 +104,7 @@ static func refresh(sim) -> void:
 		a.passive_mods=mods
 		var original=a.passive_base
 		for key in original.stats:
-			a.stats[key]=float(original.stats[key])*(1.0+float(mods.get(key,0)))
+			a.stats[key]=float(original.stats[key])*(1.0+float(mods.get(key,0)) if key not in ["damage_reduction","healing_received"] else 1.0)
 		for key in ["patk","natk","armor","nres"]:
 			a[key]=float(original[key])*(1.0+float(mods.get(key,0)))
 		a.regen=float(original.regen)*(1.0+float(mods.get("chakra_regen",0)))
@@ -129,7 +129,9 @@ static func queue(sim,a: Dictionary,b: Dictionary,s: Dictionary,event: String,be
 		break
 	if not eligible_event:return
 	if event in ["hp_threshold_crossed","chakra_threshold_crossed"]:
-		var row=sim.registry.passives.get(a.id+"-P3",{})
+		var row={}
+		for candidate in rows(sim,a):
+			if int(candidate.slot)==3:row=candidate;break
 		if row.is_empty() or row.trigger.event!=event or before<float(row.trigger.threshold) or after>=float(row.trigger.threshold):return
 		if not a.passive_rearm.get(row.id,true):return
 		a.passive_rearm[row.id]=false
@@ -184,13 +186,20 @@ static func flush(sim) -> void:
 		sim.art_event("passive_proc",a.pos,0,str(row.id))
 	for a in sim.actors:
 		if not a.has("passive_rearm"):continue
-		var row=sim.registry.passives.get(a.id+"-P3",{})
+		var row={}
+		for candidate in rows(sim,a):
+			if int(candidate.slot)==3:row=candidate;break
 		if row.is_empty():continue
 		var ratio=float(a.hp)/maxf(1,float(a.max_hp)) if row.trigger.event=="hp_threshold_crossed" else float(a.chakra)/maxf(1,float(a.max_chakra))
 		if ratio>float(row.trigger.get("rearm_above",0.4)):a.passive_rearm[row.id]=true
 	for key in sim.passive_seen.keys():
 		if sim.ticks-int(sim.passive_seen[key])>1200:sim.passive_seen.erase(key)
 	refresh(sim)
+
+static func typed(s: Dictionary,row: Dictionary,category: String,before: float,after: float) -> void:
+	if is_equal_approx(before,after):return
+	if not s.has("passive_typed"):s.passive_typed=[]
+	s.passive_typed.append({"id":row.id,"category":category,"before":before,"after":after})
 
 static func modify_skill(sim,a: Dictionary,s: Dictionary) -> void:
 	if not sim.use_passives or not s.has("p2"):return
@@ -203,20 +212,27 @@ static func modify_skill(sim,a: Dictionary,s: Dictionary) -> void:
 		var val=potency(row,a,int(a.stars))
 		match str(row.effect.type):
 			"skill_cp_discount":
-				if s.chakra>0:s.chakra=maxf(1.0,float(s.chakra)*(1.0-minf(val,0.08)))
+				var previous=float(s.chakra)
+				if previous>0:s.chakra=maxf(1.0,previous*(1.0-minf(val,0.08)))
+				typed(s,row,"cp",previous,float(s.chakra))
 			"skill_effect_bonus","form_skill_coefficient_bonus":
 				for e in s.effects:
 					if e.has("coefficient") and e.type in ["damage","heal","shield"] and float(e.coefficient)>0 and (row.effect.type=="form_skill_coefficient_bonus" or e.type==row.effect.key):
-						e.coefficient=float(e.coefficient)*(1.0+minf(val,0.10))
-						if e.has("tick_coefficient"):e.tick_coefficient=float(e.tick_coefficient)*(1.0+minf(val,0.10))
+						var previous=float(e.coefficient)
+						e.coefficient=previous*(1.0+minf(val,0.10))
+						typed(s,row,"coefficient",previous,float(e.coefficient))
 			"skill_status_duration_bonus":
 				for e in s.effects:
-					if e.type=="apply_status" and sim.registry.status_catalog.get(e.status_id,{}).get("hard_control",false):
+					if e.type=="apply_status" and (sim.registry.status_catalog.get(e.status_id,{}).get("hard_control",false) or str(e.status_id) in ["slow","silence","fear","beguile_tactical","bind","sleep","freeze","stun"]):
 						var previous=float(e.get("duration_s",0))
 						if previous>0:e.duration_s=previous*(1.0+minf(val,0.10))
+						typed(s,row,"duration",previous,float(e.get("duration_s",0)))
 			"summon_hp_fraction_bonus":
 				for e in s.effects:
-					if e.type=="summon":e.hp_owner_fraction=float(e.hp_owner_fraction)*(1.0+minf(val,0.10))
+					if e.type=="summon":
+						var previous=float(e.hp_owner_fraction)
+						e.hp_owner_fraction=previous*(1.0+minf(val,0.10))
+						typed(s,row,"summon",previous,float(e.hp_owner_fraction))
 
 static func combo_bonus(sim,combo: Dictionary,entries: Array) -> float:
 	if not sim.use_passives:return 0.0
