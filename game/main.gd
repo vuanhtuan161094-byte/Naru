@@ -16,35 +16,80 @@ var ult_buttons: Array[Button]=[]
 var selected_stage="STG-001"
 var clock_accumulator=0.0
 var web_qa=false
+var screen_id="home"
+var shell: VBoxContainer
+var header: HBoxContainer
+var navigation: HBoxContainer
+var resource_bar: Label
+var paused=false
+var battle_speed=1.0
+var ult_actions: Array[Dictionary]=[]
+var qa_clock=0.0
+var roster_query=""
+var roster_quality=0
+var roster_element=""
+var roster_era=""
+var roster_job=""
+var inventory_query=""
+var selected_territory="TER-058"
+var selected_slot=0
+var last_reward: Array=[]
+var last_growth: Dictionary={}
+const Village=preload("res://game/village_service.gd")
+const World=preload("res://game/world_service.gd")
+const Stats=preload("res://game/stats_service.gd")
+const Content=preload("res://game/content_service.gd")
 
 func _ready() -> void:
+	theme=make_theme()
 	var bg=ColorRect.new()
-	bg.color=Color("#1a2029")
+	bg.color=Color("#101b23")
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
+	shell=VBoxContainer.new()
+	shell.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	shell.offset_left=18
+	shell.offset_right=-18
+	shell.offset_top=10
+	shell.offset_bottom=-10
+	shell.add_theme_constant_override("separation",8)
+	add_child(shell)
+	header=HBoxContainer.new()
+	shell.add_child(header)
+	var brand=label(header,"NARU",30)
+	brand.modulate=Color("#f1bb69")
+	resource_bar=label(header,"",17)
+	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	label(header,"DEV V3",16)
+	navigation=HBoxContainer.new()
+	shell.add_child(navigation)
+	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
+		var nav_button=button(navigation,item[0],item[1])
+		nav_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	root=VBoxContainer.new()
-	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	root.offset_left=24
-	root.offset_right=-24
-	root.offset_top=18
-	root.offset_bottom=-18
-	root.add_theme_constant_override("separation",10)
-	add_child(root)
+	root.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_theme_constant_override("separation",8)
+	shell.add_child(root)
 	if not reg.load_all():
 		label(root,"Lỗi dữ liệu: "+str(reg.errors))
 		return
-	store.load_or_new(reg)
+	if OS.has_feature("web"):
+		web_qa=bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('qa')"))
+		if web_qa:
+			store.save_path="user://naru_ui_qa.json"
+			store.new_game(reg)
+		else:store.load_or_new(reg)
+	else:store.load_or_new(reg)
 	if "--smoke" in OS.get_cmdline_user_args():
 		print("NARU_REGISTRY_OK ",reg.ninjas.size()," ",reg.skills.size()," ",reg.stages.size())
 		get_tree().quit()
 		return
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
+	apply_settings()
 	menu()
-	if OS.has_feature("web"):
-		web_qa=bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('qa')"))
-		if web_qa:
-			JavaScriptBridge.eval("window.naruReady=true")
-			call_deferred("web_probe")
+	if web_qa:
+		JavaScriptBridge.eval("window.naruReady=true")
+		call_deferred("web_probe")
 
 func clear() -> void:
 	for c in root.get_children():
@@ -61,165 +106,270 @@ func label(parent: Node,value: String,size: int=22) -> Label:
 func button(parent: Node,title: String,fn: Callable) -> Button:
 	var b=Button.new()
 	b.text=title
-	b.custom_minimum_size=Vector2(0,42)
+	b.custom_minimum_size=Vector2(0,38)
+	b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+	b.tooltip_text=title
 	b.pressed.connect(fn)
 	parent.add_child(b)
 	return b
 
 func menu(message: String="") -> void:
 	sim=null
-	clear()
-	label(root,"NARU  /  TỔ CHỨC NINJA",34)
-	label(root,"DEV V2 • Gameplay A+B+C — mỹ thuật tạm",16)
-	label(root,"Ryo: %s     Ngọc: %s     Thể lực: %s     Ninja: %s / 144" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.stamina,store.state.owned.size()])
-	var row=HBoxContainer.new()
-	root.add_child(row)
-	button(row,"Chiêu mộ (100 ngọc)",recruit_one)
-	button(row,"Đội hình",roster)
-	button(row,"Tu luyện",growth_screen)
-	button(row,"Trang bị",gear_screen)
-	button(row,"Làng",village_screen)
-	button(row,"Nhẫn giới",world_screen)
-	button(row,"Hoạt động",activities_screen)
-	var row2=HBoxContainer.new()
-	root.add_child(row2)
-	button(row2,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
-	button(row2,"Xuất / nhập save",save_screen)
-	button(row2,"Cốt truyện",campaign)
-	button(row2,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
-	label(root,"Đội hình hiện tại")
-	for id in store.state.team:
-		var p=store.state.owned[id]
-		label(root,"%s   •   Cấp %d   •   %d sao" % [reg.ninjas[id].name_vi,int(p.level),int(p.stars)],19)
-	label(root,message,19)
+	home_screen(message)
 
 func recruit_one() -> void:
 	var id=store.draw(reg)
-	menu("Chiêu mộ: "+str(reg.ninjas[id].name_vi) if not id.is_empty() else "Không thể chiêu mộ")
+	recruit_screen("Chiêu mộ: "+str(reg.ninjas[id].name_vi) if not id.is_empty() else "Không đủ ngọc")
 
 func roster() -> void:
-	clear()
-	label(root,"BỐ TRẬN • tối đa 6 ninja",30)
-	button(root,"Trở về",func():menu())
-	var scroll=ScrollContainer.new()
-	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	root.add_child(scroll)
-	var rows=VBoxContainer.new()
-	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	scroll.add_child(rows)
+	open_screen("formation")
+	label(root,"BỐ TRẬN • đội cốt truyện",26)
+	var tools=HBoxContainer.new()
+	root.add_child(tools)
+	button(tools,"Đội viễn chinh / phòng thủ",squad_menu)
+	button(tools,"Vào cốt truyện",campaign)
+	label(tools,"Chọn ô → chọn ninja. Ô đầu là hàng trước.",16)
+	var slots=GridContainer.new()
+	slots.columns=3
+	root.add_child(slots)
+	for i in range(6):
+		var id=str(store.state.team[i]) if i<store.state.team.size() else ""
+		var b=button(slots,("▶ " if selected_slot==i else "")+str(i+1)+" • "+(reg.ninjas[id].name_vi if id!="" else "Ô trống"),func():selected_slot=i;roster())
+		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		b.custom_minimum_size.y=48
+	var controls=HBoxContainer.new()
+	root.add_child(controls)
+	button(controls,"Bỏ ninja khỏi ô",func():
+		var team=store.state.team.duplicate()
+		if selected_slot<team.size():
+			team.remove_at(selected_slot)
+			store.set_team(team)
+		roster())
+	button(controls,"Đổi lên trước",func():
+		var team=store.state.team.duplicate()
+		if selected_slot>0 and selected_slot<team.size():
+			var tmp=team[selected_slot-1]
+			team[selected_slot-1]=team[selected_slot]
+			team[selected_slot]=tmp
+			if store.set_team(team):selected_slot-=1
+		roster())
+	var rows=scroll_rows(root)
 	for id in store.state.owned:
 		var p=store.state.owned[id]
-		var title=("%s  |  Cấp %d  |  Mảnh %d" % [reg.ninjas[id].name_vi,int(p.level),int(p.shards)])
-		button(rows,("✓ " if id in store.state.team else "+ ")+title,func():
+		var b=button(rows,"%s | Cấp %d | Phẩm %d%s" % [reg.ninjas[id].name_vi,int(p.level),int(p.quality)," | Đang trong đội" if id in store.state.team else ""],func():
 			var team=store.state.team.duplicate()
-			if id in team: team.erase(id)
-			elif team.size()<6: team.append(id)
-			store.set_team(team)
+			if id in team:
+				var old=team.find(id)
+				if selected_slot<team.size():
+					var other=team[selected_slot]
+					team[selected_slot]=id
+					team[old]=other
+			elif selected_slot<team.size():team[selected_slot]=id
+			elif team.size()<6:team.append(id)
+			var ok=store.set_team(team)
 			roster()
-		)
+			if not ok:label(root,"Ninja đang được triển khai hoặc đã thuộc đội khác.",16))
+		b.disabled=not store.state.travel.is_empty()
 
 func growth_screen() -> void:
-	clear()
-	label(root,"TU LUYỆN NINJA",30)
-	label(root,"Cuộn EXP nhỏ: %s | Đá đột phá: %s" % [store.state.inventory.get("RES-116",0),store.state.inventory.get("RES-128",0)],18)
-	button(root,"Trở về",func():menu())
-	var scroll=ScrollContainer.new()
-	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	root.add_child(scroll)
-	var rows=VBoxContainer.new()
-	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	scroll.add_child(rows)
+	open_screen("ninja_roster")
+	label(root,"DANH SÁCH NINJA • "+str(store.state.owned.size())+"/144",26)
+	var filters=HBoxContainer.new()
+	root.add_child(filters)
+	var search=LineEdit.new()
+	search.placeholder_text="Tìm ninja"
+	search.text=roster_query
+	search.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	filters.add_child(search)
+	var qualities=OptionButton.new()
+	qualities.add_item("Mọi phẩm chất",0)
+	for i in range(1,9):qualities.add_item("Phẩm "+str(i),i)
+	qualities.select(roster_quality)
+	filters.add_child(qualities)
+	var elements=OptionButton.new()
+	elements.add_item("Mọi hệ")
+	for e in ["neutral","fire","water","earth","wind","lightning","wood","ice","poison"]:elements.add_item(e)
+	filters.add_child(elements)
+	var eras=OptionButton.new()
+	eras.add_item("Mọi thời kỳ")
+	var era_values=[]
+	for n in reg.ninjas.values():
+		if not n.era in era_values:era_values.append(n.era);eras.add_item(n.era)
+	filters.add_child(eras)
+	var jobs=OptionButton.new()
+	jobs.add_item("Mọi nghề")
+	for p in reg.professions.values():jobs.add_item(p.name_vi)
+	filters.add_child(jobs)
+	for pair in [[elements,roster_element],[eras,roster_era],[jobs,roster_job]]:
+		for i in range(pair[0].item_count):
+			if pair[0].get_item_text(i)==pair[1]:pair[0].select(i)
+	button(filters,"Lọc",func():
+		roster_query=search.text
+		roster_quality=qualities.selected
+		roster_element="" if elements.selected==0 else elements.get_item_text(elements.selected)
+		roster_era="" if eras.selected==0 else eras.get_item_text(eras.selected)
+		roster_job="" if jobs.selected==0 else jobs.get_item_text(jobs.selected)
+		growth_screen())
+	var rows=scroll_rows(root)
+	var grid=GridContainer.new()
+	grid.columns=3
+	rows.add_child(grid)
 	for id in store.state.owned:
+		var n=reg.ninjas[id]
 		var p=store.state.owned[id]
-		button(rows,"%s | Cấp %d | Cảnh %d | %d sao" % [reg.ninjas[id].name_vi,int(p.level),int(p.realm),int(p.stars)],func():growth_detail(id))
+		if not roster_query.is_empty() and not n.name_vi.to_lower().contains(roster_query.to_lower()):continue
+		if roster_quality>0 and int(p.quality)!=roster_quality:continue
+		if roster_element!="" and not roster_element in n.chakra_elements:continue
+		if roster_era!="" and n.era!=roster_era:continue
+		if roster_job!="" and n.profession_hint!=roster_job:continue
+		var b=button(grid,"%s\nCấp %d • Phẩm %d • %d sao" % [n.name_vi,int(p.level),int(p.quality),int(p.stars)],func():growth_detail(id))
+		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		b.custom_minimum_size.y=76
+		b.modulate=quality_color(int(p.quality))
+	if grid.get_child_count()==0:label(rows,"Không có ninja phù hợp.",18)
 
 func growth_detail(id: String,message: String="") -> void:
-	clear()
+	open_screen("ninja_detail")
 	var p=store.state.owned[id]
 	store.ensure_growth(p)
-	label(root,str(reg.ninjas[id].name_vi),30)
-	label(root,"Cấp %d / %d | Cảnh %d | XP %d | Điểm %d | Sao %d | Mảnh %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.xp),int(p.points),int(p.stars),int(p.shards)],18)
-	label(root,"Cuộn EXP: %s | Đá đột phá: %s | Bảo hiểm: %d/5" % [store.state.inventory.get("RES-116",0),store.state.inventory.get("RES-128",0),int(p.realm_failures)],18)
-	var row=HBoxContainer.new()
-	root.add_child(row)
-	button(row,"Dùng 1 cuộn (+200 XP)",func():growth_detail(id,"Đã tu luyện" if store.train(id) else "Thiếu cuộn hoặc đã đạt giới hạn cảnh"))
-	button(row,"Đột phá",func():
-		var result=store.breakthrough(id)
-		var messages={"success":"Đột phá thành công","failure":"Thất bại, đã tăng bảo hiểm","locked":"Chưa đủ điều kiện","error":"Lỗi lưu"}
-		growth_detail(id,messages[result]))
-	button(row,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu mảnh/vật liệu hoặc đã đủ 15 sao"))
-	var stats={"strength":"Sức mạnh","vitality":"Thể chất","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng"}
-	for key in stats:
-		button(root,"%s +1 | Đã phân bổ %s" % [stats[key],p.allocated.get(key,0)],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key) else "Không còn điểm"))
-	label(root,message,18)
+	label(root,str(reg.ninjas[id].name_vi),27)
+	label(root,"Cấp %d/%d • Cảnh %d • Phẩm %d • Sao %d/15 • Mảnh %d • Điểm %d • XP %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.quality),int(p.stars),int(p.shards),int(p.points),int(p.xp)],17)
+	label(root,message,16)
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
+	button(nav,"Dùng 1 cuộn EXP",func():growth_detail(id,"Đã tu luyện" if store.train(id) else "Thiếu cuộn hoặc đạt giới hạn cảnh"))
+	button(nav,"Đột phá",func():growth_detail(id,store.breakthrough(id)))
+	button(nav,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu điều kiện"))
 	button(nav,"Nhẫn thuật",func():skill_screen(id))
 	button(nav,"Thức tỉnh",func():awakening_screen(id))
+	button(nav,"Trang bị ninja",func():ninja_gear_screen(id))
 	button(nav,"Trở về",growth_screen)
+	var rows=scroll_rows(root)
+	label(rows,"Thiên phú: "+str(p.get("talent",""))+" • "+str(reg.ninjas[id].fixed_talent),17)
+	var grid=GridContainer.new()
+	grid.columns=3
+	rows.add_child(grid)
+	var stats={"strength":"Sức mạnh","vitality":"Thể chất","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng"}
+	for key in stats:
+		var b=button(grid,"%s +1 | Đã cộng %s" % [stats[key],p.allocated.get(key,0)],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key) else "Không còn điểm"))
+		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	var preview=Combat.new()
+	preview.registry=reg
+	preview.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,store.state.gear_instances)
+	var all_stats=preview.actors[0].stats
+	label(rows,"48 CHỈ SỐ • trước biến thân / hiệu ứng trận",20)
+	var stat_grid=GridContainer.new()
+	stat_grid.columns=4
+	rows.add_child(stat_grid)
+	for key in all_stats:
+		var name_value=stat_title(key)
+		var val=float(all_stats[key])
+		var l=label(stat_grid,"%s: %.1f" % [name_value,val],16)
+		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 
 func campaign() -> void:
-	clear()
-	label(root,"CỐT TRUYỆN • 120 ải",30)
-	button(root,"Trở về",func():menu())
-	var scroll=ScrollContainer.new()
-	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	root.add_child(scroll)
+	open_screen("campaign")
+	label(root,"CỐT TRUYỆN • "+str(store.state.cleared.size())+"/120 ải",26)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	var chapter_select=OptionButton.new()
+	for id in reg.chapters:chapter_select.add_item(id+" • "+reg.chapters[id].name_vi)
+	row.add_child(chapter_select)
+	var chapter_index=maxi(0,int(selected_stage.right(3).to_int()-1)/5)
+	chapter_select.select(mini(23,chapter_index))
 	var rows=VBoxContainer.new()
-	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	scroll.add_child(rows)
-	var ids=reg.chapters.keys()
-	ids.sort()
-	for chapter_id in ids:
-		var chapter=reg.chapters[chapter_id]
-		label(rows,"%s • %s" % [chapter_id,chapter.name_vi],20)
-		for id in chapter.stage_ids:
+	root.add_child(rows)
+	rows.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	var populate=func(index: int):
+		for child in rows.get_children():
+			rows.remove_child(child)
+			child.queue_free()
+		var key="CH-%03d" % (index+1)
+		for id in reg.chapters[key].stage_ids:
 			var s=reg.stages[id]
 			var locked=s.requires!=null and not store.state.cleared.has(str(s.requires))
-			var prefix="✓ " if store.state.cleared.has(id) else ("🔒 " if locked else "")
-			var b=button(rows,prefix+"%s  %s  • %s thể lực" % [id,s.name_vi,s.stamina_cost],func():start_battle(s))
-			b.disabled=locked
+			var line=HBoxContainer.new()
+			rows.add_child(line)
+			var l=label(line,("%s  %s • %d địch • %d thể lực" % [id,s.name_vi,s.enemy_ids.size(),int(s.stamina_cost)])+(" • Đã vượt" if store.state.cleared.has(id) else ""),18)
+			l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			var b=button(line,"Chưa mở" if locked else "Vào "+id,func():start_battle(s))
+			b.disabled=locked or int(store.state.stamina)<int(s.stamina_cost) or store.state.team.is_empty()
+			if s.boss_id!=null:label(line,"BOSS",16)
+		label(rows,"Thắng ải để mở ải kế tiếp. Tuyệt kỹ do người chơi điều khiển.",17)
+	chapter_select.item_selected.connect(populate)
+	populate.call(chapter_select.selected)
 
 func start_battle(stage: Dictionary) -> void:
 	var id=store.begin_stage(stage)
 	if id.is_empty():
 		menu("Thiếu thể lực, đội hình hoặc điều kiện mở ải")
 		return
+	selected_stage=stage.id
 	battle_stage=stage
 	event_id=id
+	last_reward=(stage.repeat_rewards if store.state.cleared.has(stage.id) else stage.first_clear_rewards).duplicate(true)
+	last_growth={}
+	for ninja in store.state.team:last_growth[ninja]=store.state.owned[ninja].permanent.duplicate(true)
 	sim=Combat.new()
 	sim.setup(reg,store.state,stage,int(store.state.battle_seq))
 	accumulator=0
-	clear()
-	label(root,"CHIẾN ĐẤU • "+str(stage.name_vi)+"  (DEV)",28)
-	status=label(root,"",18)
+	paused=false
+	battle_speed=1.0
+	open_screen("battle")
+	var toolbar=HBoxContainer.new()
+	root.add_child(toolbar)
+	status=label(toolbar,"CHIẾN ĐẤU • "+str(stage.name_vi),19)
+	status.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	var pause_button=Button.new()
+	pause_button.text="Tạm dừng"
+	toolbar.add_child(pause_button)
+	pause_button.pressed.connect(func():paused=not paused;pause_button.text="Tiếp tục" if paused else "Tạm dừng")
+	for speed in [1.0,2.0,4.0]:button(toolbar,str(int(speed))+"x",func():battle_speed=speed)
+	button(toolbar,"Rút lui",func():finish(false))
 	field=Control.new()
-	field.custom_minimum_size=Vector2(0,360)
+	field.custom_minimum_size=Vector2(0,290)
 	field.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	field.clip_contents=true
 	field.draw.connect(draw_field)
 	root.add_child(field)
+	var scroll=ScrollContainer.new()
+	scroll.custom_minimum_size.y=90
+	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
+	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	root.add_child(scroll)
 	var row=HBoxContainer.new()
-	root.add_child(row)
+	scroll.add_child(row)
 	ult_buttons.clear()
+	ult_actions.clear()
 	for i in range(store.state.team.size()):
 		var a=sim.actors[i]
-		var b=button(row,str(reg.ninjas[a.id].name_vi).split(" (")[0],func(): sim.ultimate(i))
-		ult_buttons.append(b)
-		if a.contract!="":button(row,"Thông linh",func():sim.summon_contract(a))
+		var group=VBoxContainer.new()
+		group.custom_minimum_size.x=175
+		row.add_child(group)
+		label(group,str(reg.ninjas[a.id].name_vi).split(" (")[0],16)
+		for skill_id in a.skills:
+			if reg.skills[skill_id].kind!="ultimate":continue
+			var b=button(group,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(i,skill_id))
+			ult_actions.append({"button":b,"index":i,"skill":skill_id})
+		if a.contract!="":button(group,"Thông linh",func():sim.summon_contract(a))
 		for form_id in a.forms:
-			if reg.form_rules[form_id].activation!="skill_trigger":button(row,"Biến thân",func():sim.activate_form(a,form_id,true))
-	log_label=label(root,"",16)
-	button(root,"Rút lui",func():finish(false))
+			if reg.form_rules[form_id].activation!="skill_trigger":button(group,"Biến thân",func():sim.activate_form(a,form_id,true))
+	# Scroll vertically too: all unlocked forms/ultimate actions remain reachable.
+	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
+	log_label=label(root,"",14)
+	log_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 
 func iso(p: Vector2) -> Vector2:
-	return Vector2(field.size.x*0.45+(p.x-p.y)*38,45+(p.x+p.y)*20)
+	var scale_value=minf(field.size.x/950.0,field.size.y/470.0)
+	return Vector2(field.size.x*0.44+(p.x-p.y)*38*scale_value,42+(p.x+p.y)*20*scale_value)
 
 func draw_field() -> void:
 	if sim==null:return
 	for x in range(12):
 		for y in range(8):
 			var p=iso(Vector2(x,y))
-			var points=PackedVector2Array([p,p+Vector2(38,20),p+Vector2(0,40),p+Vector2(-38,20)])
+			var q=minf(field.size.x/950.0,field.size.y/470.0)
+			var points=PackedVector2Array([p,p+Vector2(38,20)*q,p+Vector2(0,40)*q,p+Vector2(-38,20)*q])
 			field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
 	var render_order=sim.actors.duplicate()
 	render_order.sort_custom(func(a,b):return a.pos.x+a.pos.y<b.pos.x+b.pos.y)
@@ -232,38 +382,74 @@ func draw_field() -> void:
 		field.draw_circle(p-Vector2(0,34),9,Color("#e4bc91"))
 		field.draw_rect(Rect2(p-Vector2(20,52),Vector2(40,4)),Color("#222733"))
 		field.draw_rect(Rect2(p-Vector2(20,52),Vector2(40*float(a.hp)/float(a.max_hp),4)),Color("#80c484"))
-		field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,12),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,14)
+		field.draw_rect(Rect2(p-Vector2(20,46),Vector2(40,3)),Color("#222733"))
+		field.draw_rect(Rect2(p-Vector2(20,46),Vector2(40*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
+		field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,12),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,13)
+	for projectile in sim.projectiles:
+		var source=sim.actor_by_uid(int(projectile.source))
+		var target=sim.actor_by_uid(int(projectile.target))
+		if not source.is_empty() and not target.is_empty():
+			var total=maxf(0.01,source.pos.distance_to(target.pos)/maxf(0.01,float(projectile.skill.projectile_speed_m_s)))
+			var at=source.pos.lerp(target.pos,clampf(1-float(projectile.remaining)/total,0,1))
+			field.draw_circle(iso(at)-Vector2(0,24),5,Color("#ffcf84"))
 
 func _process(delta: float) -> void:
-	clock_accumulator+=delta
-	if clock_accumulator>=15.0:
-		clock_accumulator=0.0
-		store.advance_clock(reg,int(Time.get_unix_time_from_system()))
+	if not reg.ninjas.is_empty() and not store.state.is_empty():
+		clock_accumulator+=delta
+		if clock_accumulator>=5.0:
+			clock_accumulator=0.0
+			store.advance_clock(reg,int(Time.get_unix_time_from_system()))
+		update_resources()
+	if web_qa:
+		qa_clock+=delta
+		if qa_clock>=0.25:
+			qa_clock=0
+			publish_ui_probe()
 	if sim==null:return
-	accumulator+=minf(delta,0.25)
-	while accumulator>=0.05:
-		sim.tick(0.05)
-		accumulator-=0.05
-		if not sim.outcome.is_empty():
-			finish(sim.outcome=="win")
-			return
-	status.text="Đồng đội %d • Đối thủ %d • %.1fs" % [sim.primary_alive(0).size(),sim.primary_alive(1).size(),sim.ticks*0.05]
-	if sim.deadlock: status.text+=" • Bế tắc: có thể rút lui"
-	for i in range(ult_buttons.size()):
-		var a=sim.actors[i]
-		var s=reg.skills[a.skills[5]]
-		ult_buttons[i].disabled=a.hp<=0 or not sim.ready(a,s)
-		ult_buttons[i].text=str(reg.ninjas[a.id].name_vi).split(" (")[0]+"\n"+str(int(a.chakra))+"/"+str(int(s.chakra))+" CP"
+	if not paused:
+		accumulator+=minf(delta,0.25)*battle_speed
+		while accumulator>=0.05:
+			sim.tick(0.05)
+			accumulator-=0.05
+			if not sim.outcome.is_empty():
+				finish(sim.outcome=="win")
+				return
+	status.text="Đội %d • Địch %d • %.1fs • %sx%s" % [sim.primary_alive(0).size(),sim.primary_alive(1).size(),sim.ticks*0.05,int(battle_speed)," • Tạm dừng" if paused else ""]
+	if sim.deadlock:status.text+=" • Bế tắc"
+	for action in ult_actions:
+		var a=sim.actors[action.index]
+		var s=sim.effective_skill(a,action.skill)
+		action.button.disabled=paused or a.hp<=0 or not sim.ready(a,s)
+		action.button.text=str(reg.names[action.skill].name_vi)+" "+str(int(a.chakra))+"/"+str(ceili(s.chakra))+" CP"
 	log_label.text="  |  ".join(sim.log)
 	field.queue_redraw()
 
 func finish(won: bool) -> void:
 	if sim==null:return
 	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts)
-	menu(("Chiến thắng" if won else "Thất bại / rút lui")+" • "+("Đã lưu kết quả" if ok else "Lỗi lưu kết quả"))
+	var elapsed=sim.ticks*0.05
+	sim=null
+	open_screen("results")
+	label(root,"CHIẾN THẮNG" if won else "THẤT BẠI / RÚT LUI",34)
+	label(root,"%s • %.1f giây • %s" % [battle_stage.name_vi,elapsed,"Đã lưu kết quả" if ok else "Lỗi lưu kết quả"],18)
+	var rows=scroll_rows(root)
+	if won and ok:
+		label(rows,"Phần thưởng đã nhận",22)
+		for reward in last_reward:label(rows,"%s +%d" % [reg.resources[reward.resource_id].name_vi,int(reward.qty)],18)
+		label(rows,"Tăng trưởng ninja",22)
+		for id in last_growth:
+			var delta=float(store.state.owned[id].permanent.get("strength",0))-float(last_growth[id].get("strength",0))
+			label(rows,"%s • Sức mạnh vĩnh viễn +%.3f" % [reg.ninjas[id].name_vi,delta],17)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	button(row,"Về làng",menu)
+	button(row,"Cốt truyện",campaign)
+	button(row,"Đánh lại",func():start_battle(battle_stage))
+	var next_id="STG-%03d" % (int(battle_stage.id.right(3))+1)
+	if won and ok and reg.stages.has(next_id):button(row,"Ải tiếp theo",func():start_battle(reg.stages[next_id]))
 
 func skill_screen(id: String,message: String="") -> void:
-	clear()
+	open_screen("skill_tree")
 	label(root,"NHẪN THUẬT • "+str(reg.ninjas[id].name_vi),26)
 	button(root,"Trở về",func():growth_detail(id))
 	label(root,message,16)
@@ -277,7 +463,7 @@ func skill_screen(id: String,message: String="") -> void:
 		var sk=store.skill_progress(store.state.owned[id],skill_id)
 		var row=HBoxContainer.new()
 		rows.add_child(row)
-		var name_label=label(row,"%s | Giai %d cấp %d" % [reg.names[skill_id].name_vi,int(sk.grade),int(sk.level)],18)
+		var name_label=label(row,"%s | Giai %d cấp %d | Thành thạo %d" % [reg.names[skill_id].name_vi,int(sk.grade),int(sk.level),int(store.state.owned[id].skill_mastery.get(skill_id,0))],18)
 		name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		if not store.skill_allowed(reg,id,skill_id):
 			var trial_id=str(reg.names[skill_id].unlock_require.challenge_id)
@@ -291,7 +477,7 @@ func skill_screen(id: String,message: String="") -> void:
 					button(row,str(branch.name_vi),func():skill_screen(id,"Đã chọn nhánh" if store.choose_skill_branch(reg,id,skill_id,branch.id) else "Không thể chọn"))
 
 func gear_screen(message: String="") -> void:
-	clear()
+	open_screen("inventory")
 	label(root,"TRANG BỊ • kho cá nhân",30)
 	label(root,message,18)
 	var nav=HBoxContainer.new()
@@ -310,7 +496,7 @@ func gear_screen(message: String="") -> void:
 		button(rows,"%s +%d | Tinh luyện %d | %s" % [reg.gear_templates[g.template_id].name_vi,int(g.enhance),int(g.refine),reg.ninjas[g.owner].name_vi if not str(g.owner).is_empty() else "Chưa mặc"],func():gear_detail(id))
 
 func gear_craft_screen() -> void:
-	clear()
+	open_screen("craft")
 	label(root,"CÔNG THỨC TRANG BỊ",30)
 	label(root,"Cần xưởng đúng loại và đủ nguyên liệu. Hệ thống xây xưởng thuộc lô làng.",16)
 	button(root,"Trở về",func():gear_screen())
@@ -322,11 +508,11 @@ func gear_craft_screen() -> void:
 	scroll.add_child(rows)
 	for id in reg.gear_templates:
 		var def=reg.gear_templates[id]
-		var b=button(rows,"%s | %s" % [def.name_vi,str(def.craft.inputs)],func():gear_screen("Đã chế tạo" if not store.craft_gear(reg,id).is_empty() else "Chưa đủ nguyên liệu"))
+		var b=button(rows,"%s | %s" % [def.name_vi,cost_text(def.craft.inputs)],func():gear_screen("Đã chế tạo" if not store.craft_gear(reg,id).is_empty() else "Chưa đủ nguyên liệu"))
 		b.disabled=int(store.state.building_states.get(def.craft.building_id,{}).get("level",0))<=0
 
 func gear_detail(id: String,message: String="") -> void:
-	clear()
+	open_screen("inventory")
 	var g=store.state.gear_instances[id]
 	var def=reg.gear_templates[g.template_id]
 	label(root,"%s +%d" % [def.name_vi,int(g.enhance)],30)
@@ -357,7 +543,7 @@ func gear_detail(id: String,message: String="") -> void:
 		if resource in g.gems:button(gems,"Tháo "+resource,func():gear_detail(id,"Đã tháo" if store.socket_gear(reg,id,resource,true) else "Lỗi"))
 
 func awakening_screen(id: String,message: String="") -> void:
-	clear()
+	open_screen("ninja_detail")
 	var p=store.state.owned[id]
 	label(root,"THỨC TỈNH • "+str(reg.ninjas[id].name_vi),30)
 	label(root,"Phẩm %s | Thành thạo %d | Thiên phú %s" % [p.quality,store.total_mastery(p),p.get("talent","")],18)
@@ -370,42 +556,34 @@ func awakening_screen(id: String,message: String="") -> void:
 	button(root,"Trở về",func():growth_detail(id))
 
 func village_screen(message: String="") -> void:
-	clear()
-	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
-	label(root,"LÀNG NINJA • 30 lô cố định",30)
-	label(root,("Ryo %d | Gỗ %d | Đá %d | " % [int(store.state.inventory.get("RES-001",0)),int(store.state.inventory.get("RES-006",0)),int(store.state.inventory.get("RES-009",0))])+message,18)
-	var row=HBoxContainer.new()
-	root.add_child(row)
-	button(row,"Trở về",func():menu())
-	button(row,"Làm mới",func():village_screen())
-	button(row,"Kho tài nguyên",inventory_screen)
-	var scroll=ScrollContainer.new()
-	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	root.add_child(scroll)
-	var rows=VBoxContainer.new()
-	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	scroll.add_child(rows)
-	for id in reg.buildings:
-		var b=store.state.building_states[id]
-		var def=reg.buildings[id]
-		var detail="Chưa xây" if int(b.level)==0 else "Cấp %d" % int(b.level)
-		if not b.upgrade.is_empty():detail+=" | Đang xây %ds" % int(b.upgrade.remaining)
-		button(rows,"%s • %s • %s" % [def.fixed_slot,def.name_vi,detail],func():building_screen(id))
+	home_screen(message)
 
 func inventory_screen() -> void:
-	clear()
-	label(root,"KHO TÀI NGUYÊN",30)
-	button(root,"Trở về",func():village_screen())
-	var scroll=ScrollContainer.new()
-	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	root.add_child(scroll)
-	var rows=VBoxContainer.new()
-	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	scroll.add_child(rows)
-	for id in reg.resources:label(rows,"%s  •  %s" % [reg.resources[id].name_vi,store.state.inventory.get(id,0)],18)
+	open_screen("inventory")
+	label(root,"KHO TÀI NGUYÊN & TRANG BỊ",26)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	var search=LineEdit.new()
+	search.placeholder_text="Tìm tên tài nguyên hoặc mã"
+	search.text=inventory_query
+	search.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	row.add_child(search)
+	button(row,"Lọc",func():inventory_query=search.text;inventory_screen())
+	button(row,"Trang bị sở hữu",gear_screen)
+	button(row,"Chế tạo",craft_screen)
+	var rows=scroll_rows(root)
+	for id in reg.resources:
+		var r=reg.resources[id]
+		if inventory_query!="" and not (str(r.name_vi)+" "+id).to_lower().contains(inventory_query.to_lower()):continue
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var l=label(line,"%s • %s" % [id,r.name_vi],17)
+		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		label(line,str(store.state.inventory.get(id,0))+" / "+str(Village.capacity(store.state,id)),16)
+		button(line,"Nguồn / công dụng",func():resource_detail(id))
 
 func building_screen(id: String,message: String="") -> void:
-	clear()
+	open_screen("building")
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	var b=store.state.building_states[id]
 	var def=reg.buildings[id]
@@ -456,47 +634,74 @@ func building_screen(id: String,message: String="") -> void:
 			button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
 
 func world_screen(message: String="") -> void:
-	clear()
-	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
-	label(root,"NHẪN GIỚI • 60 lãnh địa",28)
-	label(root,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" | "+message,18)
-	var nav=HBoxContainer.new()
-	root.add_child(nav)
-	button(nav,"Trở về",func():menu())
-	button(nav,"Làm mới",func():world_screen())
-	button(nav,"Ngoại giao",diplomacy_screen)
-	button(nav,"Đội viễn chinh / phòng thủ",squad_menu)
-	if not store.state.travel.is_empty():label(root,"Đang di chuyển • còn %ds" % int(store.state.travel.remaining),18)
-	var scroll=ScrollContainer.new()
-	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	root.add_child(scroll)
-	var rows=VBoxContainer.new()
-	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	scroll.add_child(rows)
+	open_screen("world")
+	label(root,"NHẪN GIỚI • 60 lãnh địa / 71 đường",26)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	button(row,"Ngoại giao",diplomacy_screen)
+	button(row,"Đội viễn chinh / phòng thủ",squad_menu)
+	button(row,"Làm mới",func():world_screen())
+	label(row,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" • "+message,16)
+	var content=HBoxContainer.new()
+	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(content)
+	var map=Control.new()
+	map.custom_minimum_size.x=730
+	map.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	map.clip_contents=true
+	content.add_child(map)
+	var side=VBoxContainer.new()
+	side.custom_minimum_size.x=400
+	content.add_child(side)
+	var draw_map=func():
+		map.draw_rect(Rect2(Vector2.ZERO,map.size),Color("#20353d"))
+		for route in reg.routes:
+			var a=world_point(map,route.from)
+			var b=world_point(map,route.to)
+			map.draw_line(a,b,Color("#687981"),1.5,true)
+		for id in reg.territories:
+			var point=world_point(map,id)
+			var t=store.state.territory_states[id]
+			var color=Color("#62717a") if not t.discovered else Color("#e6b36b") if t.owner=="FAC-009" else Color("#7ba8a3")
+			map.draw_circle(point,8 if id==selected_territory else 5,color)
+			if id==store.state.world_location:map.draw_arc(point,12,0,TAU,32,Color.WHITE,2)
+			if id==selected_territory:map.draw_arc(point,15,0,TAU,32,Color("#f6ca77"),2)
+			map.draw_string(ThemeDB.fallback_font,point+Vector2(8,-6),str(id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,11)
+	map.draw.connect(draw_map)
+	map.gui_input.connect(func(event):
+		if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
+			var best=""
+			var distance=22.0
+			for id in reg.territories:
+				var dist=event.position.distance_to(world_point(map,id))
+				if dist<distance:distance=dist;best=id
+			if best!="":selected_territory=best;world_screen())
+	var t=store.state.territory_states[selected_territory]
+	var d=reg.territories[selected_territory]
+	var route=World.path(reg,store.state,store.state.world_location,selected_territory)
+	label(side,str(d.name_vi) if t.discovered or not route.is_empty() else "Lãnh địa chưa khám phá",23)
+	label(side,"Sở hữu: "+str(t.owner)+" • Phòng thủ "+str(d.defense_rating) if t.discovered else "Chưa khám phá",17)
+	if not store.state.travel.is_empty():label(side,"Đang đi • "+str(store.state.travel.remaining)+" giây",16)
+	elif selected_territory!=store.state.world_location and not route.is_empty():button(side,"Đi "+str(route.seconds)+" giây",func():world_screen("Đã xuất phát" if store.travel_to(reg,selected_territory) else "Không thể đi"))
+	if selected_territory==store.state.world_location and t.owner!="FAC-009":button(side,"Chiếm lĩnh",func():world_screen("Đã xử lý" if store.capture_territory(reg,selected_territory) else "Chưa đủ điều kiện"))
+	if t.discovered:
+		for resource in d.resources:label(side,str(reg.resources[resource.resource_id].name_vi)+" • "+str(resource.yield_per_tick)+"/tick",16)
+	var list_rows=scroll_rows(side)
 	for id in reg.territories:
-		var t=store.state.territory_states[id]
-		var route=preload("res://game/world_service.gd").path(reg,store.state,store.state.world_location,id)
-		var row=HBoxContainer.new()
-		rows.add_child(row)
-		label(row,"%s • %s • %s" % [id,reg.territories[id].name_vi if t.discovered or not route.is_empty() else "Chưa khám phá",str(t.owner) if t.discovered else "?"],16)
-		if id!=store.state.world_location and not route.is_empty() and store.state.travel.is_empty():
-			button(row,"Đi (%ds)" % int(route.seconds),func():world_screen("Đã xuất phát" if store.travel_to(reg,id) else "Không thể đi"))
-		if id==store.state.world_location and t.owner!="FAC-009":
-			button(row,"Chiếm lĩnh",func():world_screen("Đã xử lý giao tranh" if store.capture_territory(reg,id) else "Chưa đủ điều kiện hoặc không thể chiếm"))
-	if not store.state.world_log.is_empty():label(root,str(store.state.world_log.back()),16)
+		var path=World.path(reg,store.state,store.state.world_location,id)
+		if store.state.territory_states[id].discovered or not path.is_empty():
+			button(list_rows,str(reg.territories[id].name_vi)+" • "+id,func():selected_territory=id;world_screen())
 
 func diplomacy_screen(message: String="") -> void:
-	clear()
-	label(root,"NGOẠI GIAO",28)
-	label(root,message,18)
-	button(root,"Trở về",func():world_screen())
+	var rows=activity_rows("NGOẠI GIAO • 9 thế lực",message,func():world_screen())
+	screen_id="diplomacy"
 	for id in reg.factions:
 		if id=="FAC-009":continue
-		var r=preload("res://game/world_service.gd").relation(store.state,"FAC-009",id)
-		button(root,"%s | %s | %d" % [reg.factions[id].name_vi,r.state,int(r.score)],func():faction_screen(id))
+		var r=World.relation(store.state,"FAC-009",id)
+		button(rows,"%s | %s | %d" % [reg.factions[id].name_vi,r.state,int(r.score)],func():faction_screen(id))
 
 func faction_screen(id: String,message: String="") -> void:
-	clear()
+	open_screen("diplomacy")
 	var r=preload("res://game/world_service.gd").relation(store.state,"FAC-009",id)
 	label(root,"%s | Quan hệ %d | %s" % [reg.factions[id].name_vi,int(r.score),r.state],28)
 	label(root,message,18)
@@ -548,6 +753,8 @@ func activities_screen() -> void:
 
 func quest_screen(message: String="") -> void:
 	var rows=activity_rows("NHIỆM VỤ • 81",message,activities_screen)
+	screen_id="quest"
+	button(rows,"Phái ninja / tài nguyên",mission_screen)
 	preload("res://game/content_service.gd").sync_day(store.state)
 	for id in reg.quests:
 		var q=reg.quests[id]
@@ -578,6 +785,9 @@ func mission_detail(ninja: String,message: String="") -> void:
 
 func beast_screen(message: String="") -> void:
 	var rows=activity_rows("VĨ THÚ • 9",message,activities_screen)
+	screen_id="beasts"
+	button(rows,"Thông linh thú",contract_screen)
+	button(rows,"Huyết kế",bloodline_screen)
 	for id in reg.beasts:
 		var b=store.state.beasts.get(id,{})
 		button(rows,"%s | %s" % [reg.beasts[id].name,"Chưa thu phục" if b.is_empty() else "Cấp "+str(b.level)+" | "+str(b.host)],func():beast_detail(id))
@@ -614,7 +824,7 @@ func bloodline_screen(message: String="") -> void:
 			button(rows,"%s | %s | Bậc %s" % [reg.ninjas[ninja].name_vi,def.name_vi,store.state.owned[ninja].bloodline_levels.get(id,0)],func():bloodline_screen("Đã thức tỉnh / nâng cấp" if store.native_bloodline(reg,ninja,id) else "Thiếu điều kiện"))
 
 func save_screen(message: String="") -> void:
-	clear()
+	open_screen("settings")
 	label(root,"LƯU / KHÔI PHỤC GAME",28)
 	label(root,message,18)
 	var edit=TextEdit.new()
@@ -719,3 +929,205 @@ func squad_detail(key: String,message: String="") -> void:
 		if id==squad.location:continue
 		var route=preload("res://game/world_service.gd").path(reg,store.state,squad.location,id)
 		if not route.is_empty():button(rows,"Đi "+str(reg.territories[id].name_vi)+" • "+str(route.seconds)+"s",func():squad_detail(key,"Đã phái đi" if store.squad_travel(reg,key,id) else "Chưa đủ điều kiện"))
+
+func make_theme() -> Theme:
+	var t=Theme.new()
+	t.default_font_size=17
+	t.set_color("font_color","Label",Color("#e3e9ea"))
+	for state_key in ["normal","hover","pressed","disabled","focus"]:
+		var style=StyleBoxFlat.new()
+		style.bg_color=Color("#263d49") if state_key=="normal" else Color("#395b68") if state_key=="hover" else Color("#745a35") if state_key=="pressed" else Color("#202d35") if state_key=="disabled" else Color("#395b68")
+		style.border_color=Color("#55717c") if state_key!="focus" else Color("#f1bb69")
+		style.set_border_width_all(1)
+		style.set_corner_radius_all(5)
+		style.content_margin_left=10
+		style.content_margin_right=10
+		style.content_margin_top=6
+		style.content_margin_bottom=6
+		t.set_stylebox(state_key,"Button",style)
+	t.set_color("font_color","Button",Color("#ecf1f1"))
+	t.set_color("font_disabled_color","Button",Color("#7b8991"))
+	return t
+
+func open_screen(id: String) -> void:
+	screen_id=id
+	navigation.visible=id!="battle"
+	clear()
+	update_resources()
+
+func update_resources() -> void:
+	if resource_bar==null or store.state.is_empty():return
+	resource_bar.text="   Ryo %s   •   Ngọc %s   •   Gỗ %s   •   Đá %s   •   Thể lực %d/120" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.inventory.get("RES-006",0),store.state.inventory.get("RES-009",0),int(store.state.stamina)]
+
+func scroll_rows(parent: Node) -> VBoxContainer:
+	var sc=ScrollContainer.new()
+	sc.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	sc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	sc.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	parent.add_child(sc)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	rows.add_theme_constant_override("separation",5)
+	sc.add_child(rows)
+	return rows
+
+func home_screen(message: String="") -> void:
+	open_screen("home")
+	label(root,"LÀNG NINJA • Tổng bộ cấp "+str(Village.level(store.state,"BLD-001")),28)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	label(row,"Ninja %d/144 • Ải %d/120 • %s" % [store.state.owned.size(),store.state.cleared.size(),message],17)
+	button(row,"Chế tạo",craft_screen)
+	button(row,"Hoạt động",activities_screen)
+	button(row,"Làm mới",func():home_screen())
+	var grid=GridContainer.new()
+	grid.columns=6
+	grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(grid)
+	for id in reg.buildings:
+		var b=store.state.building_states[id]
+		var detail="Cấp "+str(int(b.level)) if int(b.level)>0 else "Chưa xây • HQ "+str(int(reg.buildings[id].unlock_hq))
+		if not b.upgrade.is_empty():detail="Xây: "+str(int(b.upgrade.remaining))+"s"
+		var tile=button(grid,str(reg.buildings[id].name_vi)+"\n"+detail,func():building_screen(id))
+		tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		tile.size_flags_vertical=Control.SIZE_EXPAND_FILL
+		tile.custom_minimum_size.y=56
+		if int(b.level)==0:tile.modulate=Color("#a4b2ba")
+	label(root,"Khởi đầu: phân công khai thác gỗ / mỏ, phái nhiệm vụ Ryo, rồi nâng Tổng bộ.",16)
+
+func quality_color(q: int) -> Color:
+	return [Color("#c9d1d2"),Color("#99d7ae"),Color("#9fc9ef"),Color("#d0afea"),Color("#efc479"),Color("#eaa495"),Color("#f2dc8e"),Color("#ffdbb5")][clampi(q,1,8)-1]
+
+func stat_title(key: String) -> String:
+	var titles={"vitality":"Thể chất","strength":"Sức mạnh","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng","hp":"Sinh lực","armor":"Giáp","nres":"Kháng nhẫn","hp_regen":"Hồi máu","damage_reduction":"Giảm sát thương","crit_resist":"Kháng chí mạng","patk":"Công thể","armor_pen":"Xuyên giáp","attack_speed":"Tốc đánh","accuracy":"Chính xác","evasion":"Né tránh","counter":"Phản kích","natk":"Công nhẫn","magic_pen":"Xuyên kháng","ncrit":"Chí mạng nhẫn","element_power":"Công nguyên tố","area":"Phạm vi","cast_speed":"Tốc niệm","genjutsu_power":"Công ảo","control_chance":"Khống chế","control_duration":"Thời gian CC","control_resist":"Kháng CC","genjutsu_resist":"Kháng ảo","cleanse":"Giải hiệu ứng","chakra_max":"Chakra tối đa","chakra_regen":"Hồi chakra","chakra_efficiency":"Tiết kiệm chakra","chakra_drain":"Hút chakra","chakra_drain_resist":"Kháng hút","chakra_conversion":"Chuyển chakra","move_speed":"Tốc chạy","pcrit":"Chí mạng thể","crit_damage":"Sát thương chí mạng","lifesteal":"Hút máu","healing":"Trị liệu","cdr":"Giảm hồi chiêu","insight":"Lĩnh ngộ","training_speed":"Tốc tu luyện","comprehension":"Thông hiểu","xp_efficiency":"Hiệu suất EXP","mastery_speed":"Thành thạo","absorption":"Hấp thu"}
+	return str(titles.get(key,key))
+
+func ninja_gear_screen(id: String) -> void:
+	var rows=activity_rows("TRANG BỊ • "+str(reg.ninjas[id].name_vi),"",func():growth_detail(id))
+	screen_id="ninja_detail"
+	for i in range(1,17):
+		var slot="EQ-%03d" % i
+		var equipped=store.state.owned[id].gear.get(slot,"")
+		if equipped!="":button(rows,"%s • %s" % [slot,reg.gear_templates[store.state.gear_instances[equipped].template_id].name_vi],func():gear_detail(equipped))
+		else:
+			label(rows,slot+" • "+str(reg.gear_templates.get(slot+"-Q1",{}).get("name_vi","Trang bị"))+" • Trống",17)
+			for gear_id in store.state.gear_instances:
+				var g=store.state.gear_instances[gear_id]
+				if g.owner=="" and reg.gear_templates[g.template_id].slot_id==slot:
+					button(rows,"Mặc "+str(reg.gear_templates[g.template_id].name_vi),func():store.equip_gear(reg,id,gear_id);ninja_gear_screen(id))
+	button(rows,"Chế tạo trang bị",gear_craft_screen)
+
+func recruit_screen(message: String="") -> void:
+	open_screen("recruit")
+	label(root,"CHIÊU MỘ NINJA",28)
+	label(root,"Ngọc: %s • Lượt: %d • SSR %d/20 • UR %d/80" % [store.state.inventory.get("RES-002",0),int(store.state.draws),int(store.state.pity4),int(store.state.pity5)],18)
+	label(root,message,18)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	var draw_button=button(row,"Chiêu mộ 1 • 100 ngọc",recruit_one)
+	draw_button.disabled=int(store.state.inventory.get("RES-002",0))<100
+	button(row,"Chiêu mộ 10 • 1000 ngọc",func():
+		if int(store.state.inventory.get("RES-002",0))<1000:recruit_screen("Không đủ ngọc");return
+		var results=[]
+		for i in range(10):
+			var id=store.draw(reg)
+			if id=="":break
+			results.append(reg.ninjas[id].name_vi)
+		recruit_screen("Nhận: "+", ".join(results)))
+	var rows=scroll_rows(root)
+	for tier in reg.recruit.pool:
+		label(rows,"%s • Phẩm %d • Tỷ lệ %s%% • %d ninja" % [tier.label,int(tier.quality),tier.weight,tier.ninja_ids.size()],18).modulate=quality_color(int(tier.quality))
+	label(rows,"Trùng mẫu ninja nhận mảnh; không có thanh toán tiền thật.",16)
+	for id in store.state.owned:
+		label(rows,"%s • %d mảnh" % [reg.ninjas[id].name_vi,int(store.state.owned[id].shards)],16)
+
+func cost_text(inputs: Array) -> String:
+	var parts=[]
+	for r in inputs:
+		parts.append("%s %s/%s" % [reg.resources[r.resource_id].name_vi,store.state.inventory.get(r.resource_id,0),r.qty])
+	return " · ".join(parts)
+
+func craft_screen(message: String="") -> void:
+	var rows=activity_rows("CHẾ TẠO • 63 công thức",message,func():home_screen())
+	screen_id="craft"
+	button(rows,"128 mẫu trang bị",gear_craft_screen)
+	for id in reg.recipes:
+		var recipe=reg.recipes[id]
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var l=label(line,"%s ×%d • %s • %s" % [reg.resources[recipe.output.resource_id].name_vi,int(recipe.output.qty),reg.buildings[recipe.building_id].name_vi,cost_text(recipe.inputs)],15)
+		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		l.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+		l.tooltip_text=l.text
+		button(line,"Mở xưởng",func():building_screen(recipe.building_id))
+		var b=button(line,"Đặt",func():craft_screen("Đã đặt" if store.production(reg,recipe.building_id,id,false) else "Thiếu nguyên liệu / công nhân / cấp xưởng"))
+		b.disabled=Village.level(store.state,recipe.building_id)<int(recipe.min_building_level)
+
+func resource_detail(id: String) -> void:
+	var rows=activity_rows(str(reg.resources[id].name_vi),"Trong kho: "+str(store.state.inventory.get(id,0)),inventory_screen)
+	screen_id="inventory"
+	for source in reg.supply:
+		if source.resource_id==id:
+			label(rows,"Nguồn: "+str(source.source_type)+" • HQ "+str(source.source_min_hq)+" • "+str(source.base_yield)+" / "+str(source.period_seconds)+"s",17)
+			button(rows,"Mở "+str(reg.buildings[source.building_id].name_vi),func():building_screen(source.building_id))
+	for recipe in reg.recipes.values():
+		if recipe.output.resource_id==id:
+			label(rows,"Công thức: "+cost_text(recipe.inputs),17)
+			button(rows,"Mở xưởng",func():building_screen(recipe.building_id))
+		for item in recipe.inputs:
+			if item.resource_id==id:label(rows,"Dùng để chế: "+str(reg.resources[recipe.output.resource_id].name_vi),16)
+
+func world_point(map: Control,id: String) -> Vector2:
+	var c=reg.territories[id].coords
+	var max_x=1.0
+	var max_y=1.0
+	for d in reg.territories.values():
+		max_x=maxf(max_x,float(d.coords[0]))
+		max_y=maxf(max_y,float(d.coords[1]))
+	return Vector2(25+float(c[0])/max_x*(map.size.x-55),25+float(c[1])/max_y*(map.size.y-55))
+
+func settings_screen(message: String="") -> void:
+	open_screen("settings")
+	label(root,"CÀI ĐẶT",28)
+	label(root,message,18)
+	var sound=CheckButton.new()
+	sound.text="Âm thanh"
+	sound.button_pressed=bool(store.state.get("settings",{}).get("sound",true))
+	root.add_child(sound)
+	sound.toggled.connect(func(on):change_setting("sound",on))
+	var cutin=CheckButton.new()
+	cutin.text="Hiệu ứng chiêu / cut-in (chuẩn bị tích hợp mỹ thuật)"
+	cutin.button_pressed=bool(store.state.get("settings",{}).get("cutin",true))
+	root.add_child(cutin)
+	cutin.toggled.connect(func(on):change_setting("cutin",on))
+	button(root,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
+	button(root,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen("Đã tải"))
+	button(root,"Xuất / nhập save",save_screen)
+	label(root,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
+
+func change_setting(key: String,value: bool) -> void:
+	if not store.state.has("settings"):store.state.settings={}
+	store.state.settings[key]=value
+	apply_settings()
+	store.save_now()
+
+func apply_settings() -> void:
+	AudioServer.set_bus_mute(0,not bool(store.state.get("settings",{}).get("sound",true)))
+
+func probe_buttons(node: Node,out: Array) -> void:
+	if node is Button and node.is_visible_in_tree():
+		var r=node.get_global_rect()
+		var clip_rect=get_viewport_rect()
+		var parent=node.get_parent()
+		while parent!=null:
+			if parent is ScrollContainer:clip_rect=clip_rect.intersection(parent.get_global_rect())
+			parent=parent.get_parent()
+		var clipped=r.intersection(clip_rect)
+		if clipped.size.x>=12 and clipped.size.y>=12:
+			out.append({"text":node.text,"x":clipped.get_center().x,"y":clipped.get_center().y,"w":clipped.size.x,"h":clipped.size.y,"disabled":node.disabled})
+	for child in node.get_children():probe_buttons(child,out)
+
+func publish_ui_probe() -> void:
+	var controls=[]
+	probe_buttons(shell,controls)
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed}))

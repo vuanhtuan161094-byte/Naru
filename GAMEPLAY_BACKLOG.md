@@ -12,7 +12,7 @@
 | GP-P6 | READY | Save import/export, nested validation, cap/replay; remaining complete migration, corruption recovery and edge cases. |
 | GP-P7 | READY | Two independent squads, defense roster, NPC development and strategic wars PASS scoped; player capture/raid acceptance and strategic balance remain. |
 | GP-P8 | READY | 120 stage wins/rewards high-power fixture, 24 boss phases, 81 objective/288 trial links PASS; real progression balancing and remaining individual content tests. |
-| GP-P9 | READY | Functional UI/UX, 17 screen contracts, input/overflow/manual click smoke, asset adapter. |
+| GP-P9 | IN_PROGRESS | Functional UI/UX, 17 screen contracts, input/overflow/manual click smoke, asset adapter. |
 | GP-P10A | DONE | Web DEV V1 CI 45553036319. |
 | GP-P10B | DONE | Web DEV V2 exact-SHA CI 45559078672; 150 checks, 90d sim, Chromium probe, artifact 14996917338. |
 | GP-P10 | BACKLOG | Final Web/Android/PC same project and acceptance gates. |

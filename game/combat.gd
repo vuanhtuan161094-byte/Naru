@@ -386,7 +386,14 @@ func ultimate(index: int) -> bool:
 	if index<0 or index>=actors.size():return false
 	var a=actors[index]
 	if a.side!=0 or a.hp<=0 or a.summon or a.skills.size()<6:return false
-	var s=effective_skill(a,a.skills[5])
+	return ultimate_skill(index,a.skills[5])
+
+func ultimate_skill(index: int,id: String) -> bool:
+	if index<0 or index>=actors.size():return false
+	var a=actors[index]
+	if a.side!=0 or a.hp<=0 or a.summon or not id in a.skills:return false
+	var s=effective_skill(a,id)
+	if s.kind!="ultimate":return false
 	return cast(a,s,target_for(a,s))
 
 func update_status(a: Dictionary,dt: float) -> void:

@@ -33,3 +33,5 @@ Offensive C: multi-squad world, defense roster, strategic NPC development/war, n
 ABC fix: boss phase snapshot/overkill guard, full campaign fixture, 90-day seeded economy, expanded browser probe. Pending exact-SHA CI.
 
 ABC cumulative exact-SHA a77ad31bbc8bb6d8a78a2a3592a4354fbef2c338: CI 45559078672 PASS (150 headless assertions, seed-only economy 90 days, browser extended gameplay probe, Web export). Artifact 14996917338, menu 14997276892. Previous red runs superseded by fix; remaining scope in GAMEPLAY_STATUS.md. No all-gate acceptance or public release.
+
+D1-A: 17 screen functional navigation/UI, actual Godot UI, no art. Pending exact-SHA CI and click audit.
