@@ -667,6 +667,13 @@ func web_probe() -> void:
 	reloaded.save_path=test.save_path
 	reloaded.load_or_new(reg)
 	ok=ok and reloaded.state.cleared.has("STG-001") and not reloaded.finish_stage(reg,stage,event,true,{})
+	ok=ok and reloaded.assign_job(reg,"NIN-001","BLD-015","JOB-10") and reloaded.choose_job_talent("NIN-001","JOB-10","yield")
+	ok=ok and reloaded.start_mission(reg,"NIN-001","RES-001",true)
+	var before_wood=int(reloaded.state.inventory["RES-006"])
+	ok=ok and reloaded.advance_clock(reg,int(reloaded.state.high_water_timestamp)+600) and int(reloaded.state.inventory["RES-006"])>before_wood
+	ok=ok and reloaded.stop_mission("NIN-001")
+	ok=ok and reloaded.set_team(["NIN-001","NIN-003"]) and reloaded.set_world_squad("SQUAD-2",["NIN-005"]) and reloaded.squad_travel(reg,"SQUAD-2","TER-059")
+	ok=ok and reloaded.advance_clock(reg,int(reloaded.state.high_water_timestamp)+200) and reloaded.state.world_squads["SQUAD-2"].location=="TER-059"
 	JavaScriptBridge.eval("window.naruProbe="+("true" if ok else "false"))
 	print("NARU_WEB_PROBE_"+("PASS" if ok else "FAIL"))
 

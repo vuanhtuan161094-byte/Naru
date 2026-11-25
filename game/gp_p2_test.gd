@@ -361,6 +361,11 @@ func _initialize() -> void:
 			if encounter.boss_phases.fired.size()==encounter.boss_phases.rule.phases.size():boss_count+=1
 	check(stage_count==120,"all 120 stage encounters instantiate and tick")
 	check(boss_count==24,"all 24 boss phase payloads dispatch")
+	var burst=Combat.new()
+	burst.setup(reg,veteran.state,reg.stages["STG-005"],42)
+	var phase_boss=burst.actor_by_uid(burst.boss_actor_uid)
+	burst.hit(burst.actors[0],phase_boss,float(phase_boss.max_hp)*100,false)
+	check(phase_boss.hp>0 and burst.boss_phases.fired.has(0),"burst cannot skip first boss phase")
 	for q in reg.quests.values():content.objective(reg,world.state,q)
 	check(reg.quests.size()==81,"all 81 quest objectives evaluated")
 	var trial_count=0
@@ -370,4 +375,31 @@ func _initialize() -> void:
 	var invalid_nested=world.state.duplicate(true)
 	invalid_nested.world_squads["SQUAD-3"].team=["NIN-002"]
 	check(not guard.valid(reg,invalid_nested),"reject overlapping imported squads")
+	var campaign_store=Store.new()
+	campaign_store.save_path="user://gp_campaign_completion_ci.json"
+	campaign_store.new_game(reg)
+	# High-power fixture tests actual win, sequential unlock, first reward, and ledger once.
+	var cp=campaign_store.state.owned["NIN-001"]
+	cp.realm=20
+	cp.level=400
+	cp.permanent={"strength":1000000,"vitality":1000000,"intellect":1000000,"spirit":1000000,"agility":1000000}
+	check(campaign_store.set_team(["NIN-001"]),"campaign fixture roster")
+	var won_count=0
+	for stage_key in ids:
+		var encounter_def=reg.stages[stage_key]
+		campaign_store.state.stamina=120
+		var entry=campaign_store.begin_stage(encounter_def)
+		if entry.is_empty():break
+		var match_sim=Combat.new()
+		match_sim.auto_player_ultimate=true
+		match_sim.setup(reg,campaign_store.state,encounter_def,42)
+		for tick_index in range(6000):
+			match_sim.tick(0.05)
+			if match_sim.outcome!="":break
+		if match_sim.outcome!="win":
+			print("CAMPAIGN_FIXTURE_STOP ",stage_key," ",match_sim.outcome)
+			break
+		if not campaign_store.finish_stage(reg,encounter_def,entry,true,match_sim.counts,match_sim.mastery_counts):break
+		won_count+=1
+	check(won_count==120 and campaign_store.state.cleared.size()==120,"campaign 120 sequential wins and reward commits (high-power fixture)")
 	quit(0 if failures==0 else 1)

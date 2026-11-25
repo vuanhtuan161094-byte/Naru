@@ -256,6 +256,15 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 	b.shield=float(b.shield)-blocked
 	var old=float(b.hp)
 	b.hp=maxf(0.0,float(b.hp)-dmg+blocked)
+	# Preserve authored phase opportunities even on burst damage; each phase fires once.
+	if int(b.uid)==boss_actor_uid and not boss_phases.is_empty():
+		for i in range(boss_phases.rule.phases.size()):
+			if boss_phases.fired.has(i):continue
+			var threshold=float(boss_phases.rule.phases[i].hp_at_or_below)*float(b.max_hp)
+			if old>threshold and b.hp<=threshold:
+				b.hp=threshold
+				update_boss(b)
+				break
 	if old-b.hp>0.01:
 		last_progress_tick=ticks
 		if a.uid!=b.uid:a.hp=minf(float(a.max_hp),float(a.hp)+(old-b.hp)*rating(a,"lifesteal"))
@@ -545,9 +554,10 @@ func try_combo(a: Dictionary) -> void:
 func update_boss(a: Dictionary) -> void:
 	if boss_phases.is_empty():return
 	var rule=boss_phases.rule
+	var crossed_ratio=float(a.hp)/float(a.max_hp)
 	for i in range(rule.phases.size()):
 		var phase=rule.phases[i]
-		if boss_phases.fired.has(i) or a.hp/a.max_hp>float(phase.hp_at_or_below):continue
+		if boss_phases.fired.has(i) or crossed_ratio>float(phase.hp_at_or_below)+0.000001:continue
 		boss_phases.fired[i]=true
 		var modifier=phase.modifier
 		a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(modifier.get("chakra_restore",0)))

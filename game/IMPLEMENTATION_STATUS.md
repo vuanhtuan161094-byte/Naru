@@ -29,3 +29,5 @@ Offensive A: combat AI, stats, status guards, 9 dedicated DEV beast kits, trial/
 Offensive B: profession specialization and talents, repeat missions, offline day boundaries, real starter income test; CI pending.
 
 Offensive C: multi-squad world, defense roster, strategic NPC development/war, nested validation, campaign groups and full content smoke, Web DEV V2. CI pending.
+
+ABC fix: boss phase snapshot/overkill guard, full campaign fixture, 90-day seeded economy, expanded browser probe. Pending exact-SHA CI.

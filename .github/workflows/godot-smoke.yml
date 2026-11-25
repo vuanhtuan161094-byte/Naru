@@ -26,9 +26,16 @@ jobs:
         run: |
           set -o pipefail
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 90 "$G" --headless --path . --script res://game/gp_p2_test.gd 2>&1 | tee /tmp/gp-p2.log
+          timeout 180 "$G" --headless --path . --script res://game/gp_p2_test.gd 2>&1 | tee /tmp/gp-p2.log
           grep 'GP_P2_OK 6v6 ticks' /tmp/gp-p2.log
           ! grep -E 'Parse Error|SCRIPT ERROR|GP_P2_FAIL' /tmp/gp-p2.log
+      - name: Economy 90-day starter simulation
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 240 "$G" --headless --path . --script res://game/economy_long_test.gd 2>&1 | tee /tmp/economy-long.log
+          grep NARU_ECONOMY_90D_PASS /tmp/economy-long.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/economy-long.log
       - name: Install matching Web templates
         run: |
           curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
