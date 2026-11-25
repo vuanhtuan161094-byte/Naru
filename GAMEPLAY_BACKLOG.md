@@ -76,3 +76,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - V11 REVIEW: actual per-ID 432 branch typed effects; 12 real rotation windows and all 54 correct-realm forms; measure spacing, focus/avoidance, tick duration, starter regression. No claim of organic all 12 combos or 54 forms until evidence. Trial runtime and all passive conditions/mastery still require full per-ID acceptance. Reflection + rights gates remain.
 
 - V11 follow-up: review combo B2 secondary duration contract with Chat00; interval effects with identical 50ms tick quantization require design tuning, no artificial timing claims.
+
+- V12 FINAL: reconcile actual per-ID ledger (stat marginal, typed, event-only separately); remaining organic combo/form failures are not hidden by fixture. Review STG060+ with earned ONE GAME roster. Source/era/reflection and combo B2 duration HOLD; art production approval remains 0. Private pack loader metadata fixed; full directional/action coverage pending Chat02. Coordinator applies exact final delta, not full branch overwrite.
