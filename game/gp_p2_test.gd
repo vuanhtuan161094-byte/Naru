@@ -58,4 +58,22 @@ func _initialize() -> void:
 	check(full.alive(0).size()==6 and full.alive(1).size()==6,"6v6 setup")
 	for i in range(200): full.tick(0.05)
 	check(full.ticks>0,"6v6 ticks")
+	var source=full.actors[0]
+	var target=full.actors[6]
+	full.apply_status(source,target,{"status_id":"burn","chance":1.0,"duration_s":3.0,"tick_coefficient":0.1})
+	check(full.has_status(target,"burn"),"burn applied")
+	var before=float(target.hp)
+	full.update_status(target,1.0)
+	check(float(target.hp)<before or target.shield>0,"dot tick")
+	full.apply_status(source,target,{"status_id":"stun","chance":1.0,"duration_s":0.1})
+	full.update_status(target,0.2)
+	check(target.immune>0,"control immunity")
+	var summon_skill=reg.skills["NIN-001-S1"]
+	full.summon_actor(source,summon_skill,summon_skill.effects[0])
+	check(full.summon_count(source,summon_skill.skill_id)==1,"summon spawned")
+	check(full.primary_alive(0).size()<=6,"summon excluded from team limit")
+	target.element_tick=full.ticks
+	target.last_element="water"
+	target.reaction_tick=-1000
+	check(is_equal_approx(full.reaction(source,target,"lightning"),1.2),"water lightning reaction")
 	quit(0 if failures==0 else 1)

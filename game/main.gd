@@ -217,7 +217,8 @@ func _process(delta: float) -> void:
 		if not sim.outcome.is_empty():
 			finish(sim.outcome=="win")
 			return
-	status.text="Đồng đội %d • Đối thủ %d • %.1fs" % [sim.alive(0).size(),sim.alive(1).size(),sim.ticks*0.05]
+	status.text="Đồng đội %d • Đối thủ %d • %.1fs" % [sim.primary_alive(0).size(),sim.primary_alive(1).size(),sim.ticks*0.05]
+	if sim.deadlock: status.text+=" • Bế tắc: có thể rút lui"
 	for i in range(ult_buttons.size()):
 		var a=sim.actors[i]
 		var s=reg.skills[a.skills[5]]

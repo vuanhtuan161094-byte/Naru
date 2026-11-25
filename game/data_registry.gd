@@ -7,6 +7,9 @@ var npcs: Dictionary = {}
 var recruit: Dictionary = {}
 var initial: Dictionary = {}
 var growth: Dictionary = {}
+var status_catalog: Dictionary = {}
+var reactions: Array = []
+var affinity: Dictionary = {}
 var errors: Array[String] = []
 
 func read_json(path: String) -> Variant:
@@ -49,6 +52,13 @@ func load_all() -> bool:
 	var g = read_json("res://data/d4/ninja_growth.json")
 	if g is Dictionary: growth = g
 	if growth.get("stars",[]).size()!=14: errors.append("Missing star rules")
+	status_catalog=indexed("res://data/d4/status_catalog.json")
+	var reaction_data=read_json("res://data/d4/reactions.json")
+	if reaction_data is Array: reactions=reaction_data
+	var affinity_data=read_json("res://data/d4/element_affinity.json")
+	if affinity_data is Array:
+		for item in affinity_data: affinity[str(item.attack)+":"+str(item.defense)]=float(item.multiplier)
+	if status_catalog.size()!=25 or reactions.size()!=7: errors.append("Missing combat rules")
 	if ninjas.size()!=144 or skills.size()!=1152 or stages.size()!=120:
 		errors.append("Expected 144/1152/120")
 	for row in ninjas.values():
