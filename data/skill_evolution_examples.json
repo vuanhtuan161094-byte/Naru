@@ -1,0 +1,84 @@
+[
+  {
+    "id": "EV-NAR-001",
+    "ninja_id": "NIN-041",
+    "from": "NIN-041-S2",
+    "unlock": "Đại Ngọc Rasengan",
+    "path": "linear",
+    "require": {
+      "realm": 4,
+      "grade": 3,
+      "mastery": 1000
+    },
+    "mode": "replace",
+    "source": "https://naruto-official.com/en/news/01_1521",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EV-NAR-002",
+    "ninja_id": "NIN-041",
+    "from": "NIN-041-S2",
+    "unlock": "Tiên Pháp Rasengan",
+    "path": "branch",
+    "require": {
+      "realm": 6,
+      "grade": 4,
+      "form": "Tiên nhân"
+    },
+    "mode": "additional_auto",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EV-ITA-001",
+    "ninja_id": "NIN-060",
+    "from": "NIN-060-S5",
+    "unlock": "Susanoo: khiên và kiếm",
+    "path": "linear",
+    "require": {
+      "realm": 6,
+      "grade": 3,
+      "mastery": 2000
+    },
+    "mode": "replace",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EV-ITA-002",
+    "ninja_id": "NIN-060",
+    "from": "NIN-060-S2",
+    "unlock": "Amaterasu",
+    "path": "additional",
+    "require": {
+      "realm": 5,
+      "form": "Mangekyo"
+    },
+    "mode": "additional_auto",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EV-SAS-001",
+    "ninja_id": "NIN-042",
+    "from": "NIN-042-S1",
+    "unlock": "Chidori dạng thương",
+    "path": "branch",
+    "require": {
+      "realm": 4,
+      "grade": 3
+    },
+    "mode": "additional_auto",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EV-KAK-001",
+    "ninja_id": "NIN-004",
+    "from": "NIN-004-S5",
+    "unlock": "Kamui",
+    "path": "additional",
+    "require": {
+      "realm": 5,
+      "form": "Mangekyo"
+    },
+    "mode": "additional_ultimate",
+    "status": "PROPOSED"
+  }
+]

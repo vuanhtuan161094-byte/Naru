@@ -1,0 +1,3074 @@
+[
+  {
+    "id": "EQ-001-Q1",
+    "name_vi": "Băng trán giai 1",
+    "slot_id": "EQ-001",
+    "quality": 1,
+    "base_stat": "hp",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-001-Q2",
+    "name_vi": "Băng trán giai 2",
+    "slot_id": "EQ-001",
+    "quality": 2,
+    "base_stat": "hp",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-001-Q3",
+    "name_vi": "Băng trán giai 3",
+    "slot_id": "EQ-001",
+    "quality": 3,
+    "base_stat": "hp",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-001-Q4",
+    "name_vi": "Băng trán giai 4",
+    "slot_id": "EQ-001",
+    "quality": 4,
+    "base_stat": "hp",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-001-Q5",
+    "name_vi": "Băng trán giai 5",
+    "slot_id": "EQ-001",
+    "quality": 5,
+    "base_stat": "hp",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-001-Q6",
+    "name_vi": "Băng trán giai 6",
+    "slot_id": "EQ-001",
+    "quality": 6,
+    "base_stat": "hp",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-001-Q7",
+    "name_vi": "Băng trán giai 7",
+    "slot_id": "EQ-001",
+    "quality": 7,
+    "base_stat": "hp",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-001-Q8",
+    "name_vi": "Băng trán giai 8",
+    "slot_id": "EQ-001",
+    "quality": 8,
+    "base_stat": "hp",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q1",
+    "name_vi": "Áo giáp giai 1",
+    "slot_id": "EQ-002",
+    "quality": 1,
+    "base_stat": "armor",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q2",
+    "name_vi": "Áo giáp giai 2",
+    "slot_id": "EQ-002",
+    "quality": 2,
+    "base_stat": "armor",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q3",
+    "name_vi": "Áo giáp giai 3",
+    "slot_id": "EQ-002",
+    "quality": 3,
+    "base_stat": "armor",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q4",
+    "name_vi": "Áo giáp giai 4",
+    "slot_id": "EQ-002",
+    "quality": 4,
+    "base_stat": "armor",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q5",
+    "name_vi": "Áo giáp giai 5",
+    "slot_id": "EQ-002",
+    "quality": 5,
+    "base_stat": "armor",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q6",
+    "name_vi": "Áo giáp giai 6",
+    "slot_id": "EQ-002",
+    "quality": 6,
+    "base_stat": "armor",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q7",
+    "name_vi": "Áo giáp giai 7",
+    "slot_id": "EQ-002",
+    "quality": 7,
+    "base_stat": "armor",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-002-Q8",
+    "name_vi": "Áo giáp giai 8",
+    "slot_id": "EQ-002",
+    "quality": 8,
+    "base_stat": "armor",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q1",
+    "name_vi": "Găng tay giai 1",
+    "slot_id": "EQ-003",
+    "quality": 1,
+    "base_stat": "nres",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q2",
+    "name_vi": "Găng tay giai 2",
+    "slot_id": "EQ-003",
+    "quality": 2,
+    "base_stat": "nres",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q3",
+    "name_vi": "Găng tay giai 3",
+    "slot_id": "EQ-003",
+    "quality": 3,
+    "base_stat": "nres",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q4",
+    "name_vi": "Găng tay giai 4",
+    "slot_id": "EQ-003",
+    "quality": 4,
+    "base_stat": "nres",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q5",
+    "name_vi": "Găng tay giai 5",
+    "slot_id": "EQ-003",
+    "quality": 5,
+    "base_stat": "nres",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q6",
+    "name_vi": "Găng tay giai 6",
+    "slot_id": "EQ-003",
+    "quality": 6,
+    "base_stat": "nres",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q7",
+    "name_vi": "Găng tay giai 7",
+    "slot_id": "EQ-003",
+    "quality": 7,
+    "base_stat": "nres",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-003-Q8",
+    "name_vi": "Găng tay giai 8",
+    "slot_id": "EQ-003",
+    "quality": 8,
+    "base_stat": "nres",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q1",
+    "name_vi": "Quần giai 1",
+    "slot_id": "EQ-004",
+    "quality": 1,
+    "base_stat": "hp_regen",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q2",
+    "name_vi": "Quần giai 2",
+    "slot_id": "EQ-004",
+    "quality": 2,
+    "base_stat": "hp_regen",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q3",
+    "name_vi": "Quần giai 3",
+    "slot_id": "EQ-004",
+    "quality": 3,
+    "base_stat": "hp_regen",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q4",
+    "name_vi": "Quần giai 4",
+    "slot_id": "EQ-004",
+    "quality": 4,
+    "base_stat": "hp_regen",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q5",
+    "name_vi": "Quần giai 5",
+    "slot_id": "EQ-004",
+    "quality": 5,
+    "base_stat": "hp_regen",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q6",
+    "name_vi": "Quần giai 6",
+    "slot_id": "EQ-004",
+    "quality": 6,
+    "base_stat": "hp_regen",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q7",
+    "name_vi": "Quần giai 7",
+    "slot_id": "EQ-004",
+    "quality": 7,
+    "base_stat": "hp_regen",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-004-Q8",
+    "name_vi": "Quần giai 8",
+    "slot_id": "EQ-004",
+    "quality": 8,
+    "base_stat": "hp_regen",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q1",
+    "name_vi": "Giày giai 1",
+    "slot_id": "EQ-005",
+    "quality": 1,
+    "base_stat": "damage_reduction",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q2",
+    "name_vi": "Giày giai 2",
+    "slot_id": "EQ-005",
+    "quality": 2,
+    "base_stat": "damage_reduction",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q3",
+    "name_vi": "Giày giai 3",
+    "slot_id": "EQ-005",
+    "quality": 3,
+    "base_stat": "damage_reduction",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q4",
+    "name_vi": "Giày giai 4",
+    "slot_id": "EQ-005",
+    "quality": 4,
+    "base_stat": "damage_reduction",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q5",
+    "name_vi": "Giày giai 5",
+    "slot_id": "EQ-005",
+    "quality": 5,
+    "base_stat": "damage_reduction",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q6",
+    "name_vi": "Giày giai 6",
+    "slot_id": "EQ-005",
+    "quality": 6,
+    "base_stat": "damage_reduction",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q7",
+    "name_vi": "Giày giai 7",
+    "slot_id": "EQ-005",
+    "quality": 7,
+    "base_stat": "damage_reduction",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-005-Q8",
+    "name_vi": "Giày giai 8",
+    "slot_id": "EQ-005",
+    "quality": 8,
+    "base_stat": "damage_reduction",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q1",
+    "name_vi": "Vũ khí giai 1",
+    "slot_id": "EQ-006",
+    "quality": 1,
+    "base_stat": "crit_resist",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q2",
+    "name_vi": "Vũ khí giai 2",
+    "slot_id": "EQ-006",
+    "quality": 2,
+    "base_stat": "crit_resist",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q3",
+    "name_vi": "Vũ khí giai 3",
+    "slot_id": "EQ-006",
+    "quality": 3,
+    "base_stat": "crit_resist",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q4",
+    "name_vi": "Vũ khí giai 4",
+    "slot_id": "EQ-006",
+    "quality": 4,
+    "base_stat": "crit_resist",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q5",
+    "name_vi": "Vũ khí giai 5",
+    "slot_id": "EQ-006",
+    "quality": 5,
+    "base_stat": "crit_resist",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q6",
+    "name_vi": "Vũ khí giai 6",
+    "slot_id": "EQ-006",
+    "quality": 6,
+    "base_stat": "crit_resist",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q7",
+    "name_vi": "Vũ khí giai 7",
+    "slot_id": "EQ-006",
+    "quality": 7,
+    "base_stat": "crit_resist",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-006-Q8",
+    "name_vi": "Vũ khí giai 8",
+    "slot_id": "EQ-006",
+    "quality": 8,
+    "base_stat": "crit_resist",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q1",
+    "name_vi": "Vũ khí phụ giai 1",
+    "slot_id": "EQ-007",
+    "quality": 1,
+    "base_stat": "patk",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q2",
+    "name_vi": "Vũ khí phụ giai 2",
+    "slot_id": "EQ-007",
+    "quality": 2,
+    "base_stat": "patk",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q3",
+    "name_vi": "Vũ khí phụ giai 3",
+    "slot_id": "EQ-007",
+    "quality": 3,
+    "base_stat": "patk",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q4",
+    "name_vi": "Vũ khí phụ giai 4",
+    "slot_id": "EQ-007",
+    "quality": 4,
+    "base_stat": "patk",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q5",
+    "name_vi": "Vũ khí phụ giai 5",
+    "slot_id": "EQ-007",
+    "quality": 5,
+    "base_stat": "patk",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q6",
+    "name_vi": "Vũ khí phụ giai 6",
+    "slot_id": "EQ-007",
+    "quality": 6,
+    "base_stat": "patk",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q7",
+    "name_vi": "Vũ khí phụ giai 7",
+    "slot_id": "EQ-007",
+    "quality": 7,
+    "base_stat": "patk",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-007-Q8",
+    "name_vi": "Vũ khí phụ giai 8",
+    "slot_id": "EQ-007",
+    "quality": 8,
+    "base_stat": "patk",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q1",
+    "name_vi": "Áo choàng giai 1",
+    "slot_id": "EQ-008",
+    "quality": 1,
+    "base_stat": "armor_pen",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q2",
+    "name_vi": "Áo choàng giai 2",
+    "slot_id": "EQ-008",
+    "quality": 2,
+    "base_stat": "armor_pen",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q3",
+    "name_vi": "Áo choàng giai 3",
+    "slot_id": "EQ-008",
+    "quality": 3,
+    "base_stat": "armor_pen",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q4",
+    "name_vi": "Áo choàng giai 4",
+    "slot_id": "EQ-008",
+    "quality": 4,
+    "base_stat": "armor_pen",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q5",
+    "name_vi": "Áo choàng giai 5",
+    "slot_id": "EQ-008",
+    "quality": 5,
+    "base_stat": "armor_pen",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q6",
+    "name_vi": "Áo choàng giai 6",
+    "slot_id": "EQ-008",
+    "quality": 6,
+    "base_stat": "armor_pen",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q7",
+    "name_vi": "Áo choàng giai 7",
+    "slot_id": "EQ-008",
+    "quality": 7,
+    "base_stat": "armor_pen",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-008-Q8",
+    "name_vi": "Áo choàng giai 8",
+    "slot_id": "EQ-008",
+    "quality": 8,
+    "base_stat": "armor_pen",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q1",
+    "name_vi": "Dây chuyền giai 1",
+    "slot_id": "EQ-009",
+    "quality": 1,
+    "base_stat": "attack_speed",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q2",
+    "name_vi": "Dây chuyền giai 2",
+    "slot_id": "EQ-009",
+    "quality": 2,
+    "base_stat": "attack_speed",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q3",
+    "name_vi": "Dây chuyền giai 3",
+    "slot_id": "EQ-009",
+    "quality": 3,
+    "base_stat": "attack_speed",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q4",
+    "name_vi": "Dây chuyền giai 4",
+    "slot_id": "EQ-009",
+    "quality": 4,
+    "base_stat": "attack_speed",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q5",
+    "name_vi": "Dây chuyền giai 5",
+    "slot_id": "EQ-009",
+    "quality": 5,
+    "base_stat": "attack_speed",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q6",
+    "name_vi": "Dây chuyền giai 6",
+    "slot_id": "EQ-009",
+    "quality": 6,
+    "base_stat": "attack_speed",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q7",
+    "name_vi": "Dây chuyền giai 7",
+    "slot_id": "EQ-009",
+    "quality": 7,
+    "base_stat": "attack_speed",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-009-Q8",
+    "name_vi": "Dây chuyền giai 8",
+    "slot_id": "EQ-009",
+    "quality": 8,
+    "base_stat": "attack_speed",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q1",
+    "name_vi": "Nhẫn trái giai 1",
+    "slot_id": "EQ-010",
+    "quality": 1,
+    "base_stat": "accuracy",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q2",
+    "name_vi": "Nhẫn trái giai 2",
+    "slot_id": "EQ-010",
+    "quality": 2,
+    "base_stat": "accuracy",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q3",
+    "name_vi": "Nhẫn trái giai 3",
+    "slot_id": "EQ-010",
+    "quality": 3,
+    "base_stat": "accuracy",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q4",
+    "name_vi": "Nhẫn trái giai 4",
+    "slot_id": "EQ-010",
+    "quality": 4,
+    "base_stat": "accuracy",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q5",
+    "name_vi": "Nhẫn trái giai 5",
+    "slot_id": "EQ-010",
+    "quality": 5,
+    "base_stat": "accuracy",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q6",
+    "name_vi": "Nhẫn trái giai 6",
+    "slot_id": "EQ-010",
+    "quality": 6,
+    "base_stat": "accuracy",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q7",
+    "name_vi": "Nhẫn trái giai 7",
+    "slot_id": "EQ-010",
+    "quality": 7,
+    "base_stat": "accuracy",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-010-Q8",
+    "name_vi": "Nhẫn trái giai 8",
+    "slot_id": "EQ-010",
+    "quality": 8,
+    "base_stat": "accuracy",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q1",
+    "name_vi": "Nhẫn phải giai 1",
+    "slot_id": "EQ-011",
+    "quality": 1,
+    "base_stat": "evasion",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q2",
+    "name_vi": "Nhẫn phải giai 2",
+    "slot_id": "EQ-011",
+    "quality": 2,
+    "base_stat": "evasion",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q3",
+    "name_vi": "Nhẫn phải giai 3",
+    "slot_id": "EQ-011",
+    "quality": 3,
+    "base_stat": "evasion",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q4",
+    "name_vi": "Nhẫn phải giai 4",
+    "slot_id": "EQ-011",
+    "quality": 4,
+    "base_stat": "evasion",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q5",
+    "name_vi": "Nhẫn phải giai 5",
+    "slot_id": "EQ-011",
+    "quality": 5,
+    "base_stat": "evasion",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q6",
+    "name_vi": "Nhẫn phải giai 6",
+    "slot_id": "EQ-011",
+    "quality": 6,
+    "base_stat": "evasion",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q7",
+    "name_vi": "Nhẫn phải giai 7",
+    "slot_id": "EQ-011",
+    "quality": 7,
+    "base_stat": "evasion",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-011-Q8",
+    "name_vi": "Nhẫn phải giai 8",
+    "slot_id": "EQ-011",
+    "quality": 8,
+    "base_stat": "evasion",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-017",
+      "inputs": [
+        {
+          "resource_id": "RES-059",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-110",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q1",
+    "name_vi": "Bùa hộ mệnh giai 1",
+    "slot_id": "EQ-012",
+    "quality": 1,
+    "base_stat": "counter",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q2",
+    "name_vi": "Bùa hộ mệnh giai 2",
+    "slot_id": "EQ-012",
+    "quality": 2,
+    "base_stat": "counter",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q3",
+    "name_vi": "Bùa hộ mệnh giai 3",
+    "slot_id": "EQ-012",
+    "quality": 3,
+    "base_stat": "counter",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q4",
+    "name_vi": "Bùa hộ mệnh giai 4",
+    "slot_id": "EQ-012",
+    "quality": 4,
+    "base_stat": "counter",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q5",
+    "name_vi": "Bùa hộ mệnh giai 5",
+    "slot_id": "EQ-012",
+    "quality": 5,
+    "base_stat": "counter",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q6",
+    "name_vi": "Bùa hộ mệnh giai 6",
+    "slot_id": "EQ-012",
+    "quality": 6,
+    "base_stat": "counter",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q7",
+    "name_vi": "Bùa hộ mệnh giai 7",
+    "slot_id": "EQ-012",
+    "quality": 7,
+    "base_stat": "counter",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-012-Q8",
+    "name_vi": "Bùa hộ mệnh giai 8",
+    "slot_id": "EQ-012",
+    "quality": 8,
+    "base_stat": "counter",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q1",
+    "name_vi": "Bí quyển giai 1",
+    "slot_id": "EQ-013",
+    "quality": 1,
+    "base_stat": "hp",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q2",
+    "name_vi": "Bí quyển giai 2",
+    "slot_id": "EQ-013",
+    "quality": 2,
+    "base_stat": "hp",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q3",
+    "name_vi": "Bí quyển giai 3",
+    "slot_id": "EQ-013",
+    "quality": 3,
+    "base_stat": "hp",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q4",
+    "name_vi": "Bí quyển giai 4",
+    "slot_id": "EQ-013",
+    "quality": 4,
+    "base_stat": "hp",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q5",
+    "name_vi": "Bí quyển giai 5",
+    "slot_id": "EQ-013",
+    "quality": 5,
+    "base_stat": "hp",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q6",
+    "name_vi": "Bí quyển giai 6",
+    "slot_id": "EQ-013",
+    "quality": 6,
+    "base_stat": "hp",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q7",
+    "name_vi": "Bí quyển giai 7",
+    "slot_id": "EQ-013",
+    "quality": 7,
+    "base_stat": "hp",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-013-Q8",
+    "name_vi": "Bí quyển giai 8",
+    "slot_id": "EQ-013",
+    "quality": 8,
+    "base_stat": "hp",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q1",
+    "name_vi": "Lõi chakra giai 1",
+    "slot_id": "EQ-014",
+    "quality": 1,
+    "base_stat": "armor",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q2",
+    "name_vi": "Lõi chakra giai 2",
+    "slot_id": "EQ-014",
+    "quality": 2,
+    "base_stat": "armor",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q3",
+    "name_vi": "Lõi chakra giai 3",
+    "slot_id": "EQ-014",
+    "quality": 3,
+    "base_stat": "armor",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q4",
+    "name_vi": "Lõi chakra giai 4",
+    "slot_id": "EQ-014",
+    "quality": 4,
+    "base_stat": "armor",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q5",
+    "name_vi": "Lõi chakra giai 5",
+    "slot_id": "EQ-014",
+    "quality": 5,
+    "base_stat": "armor",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q6",
+    "name_vi": "Lõi chakra giai 6",
+    "slot_id": "EQ-014",
+    "quality": 6,
+    "base_stat": "armor",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q7",
+    "name_vi": "Lõi chakra giai 7",
+    "slot_id": "EQ-014",
+    "quality": 7,
+    "base_stat": "armor",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-014-Q8",
+    "name_vi": "Lõi chakra giai 8",
+    "slot_id": "EQ-014",
+    "quality": 8,
+    "base_stat": "armor",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q1",
+    "name_vi": "Phù phong ấn giai 1",
+    "slot_id": "EQ-015",
+    "quality": 1,
+    "base_stat": "nres",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q2",
+    "name_vi": "Phù phong ấn giai 2",
+    "slot_id": "EQ-015",
+    "quality": 2,
+    "base_stat": "nres",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q3",
+    "name_vi": "Phù phong ấn giai 3",
+    "slot_id": "EQ-015",
+    "quality": 3,
+    "base_stat": "nres",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q4",
+    "name_vi": "Phù phong ấn giai 4",
+    "slot_id": "EQ-015",
+    "quality": 4,
+    "base_stat": "nres",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q5",
+    "name_vi": "Phù phong ấn giai 5",
+    "slot_id": "EQ-015",
+    "quality": 5,
+    "base_stat": "nres",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q6",
+    "name_vi": "Phù phong ấn giai 6",
+    "slot_id": "EQ-015",
+    "quality": 6,
+    "base_stat": "nres",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q7",
+    "name_vi": "Phù phong ấn giai 7",
+    "slot_id": "EQ-015",
+    "quality": 7,
+    "base_stat": "nres",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-015-Q8",
+    "name_vi": "Phù phong ấn giai 8",
+    "slot_id": "EQ-015",
+    "quality": 8,
+    "base_stat": "nres",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q1",
+    "name_vi": "Bảo vật giai 1",
+    "slot_id": "EQ-016",
+    "quality": 1,
+    "base_stat": "hp_regen",
+    "base_value": 10,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 1
+        }
+      ]
+    },
+    "affix_slots": 1,
+    "socket_count": 0,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q2",
+    "name_vi": "Bảo vật giai 2",
+    "slot_id": "EQ-016",
+    "quality": 2,
+    "base_stat": "hp_regen",
+    "base_value": 40,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 2
+        }
+      ]
+    },
+    "affix_slots": 2,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q3",
+    "name_vi": "Bảo vật giai 3",
+    "slot_id": "EQ-016",
+    "quality": 3,
+    "base_stat": "hp_regen",
+    "base_value": 90,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 3
+        }
+      ]
+    },
+    "affix_slots": 3,
+    "socket_count": 1,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q4",
+    "name_vi": "Bảo vật giai 4",
+    "slot_id": "EQ-016",
+    "quality": 4,
+    "base_stat": "hp_regen",
+    "base_value": 160,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 4
+        }
+      ]
+    },
+    "affix_slots": 4,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q5",
+    "name_vi": "Bảo vật giai 5",
+    "slot_id": "EQ-016",
+    "quality": 5,
+    "base_stat": "hp_regen",
+    "base_value": 250,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 5
+        }
+      ]
+    },
+    "affix_slots": 5,
+    "socket_count": 2,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q6",
+    "name_vi": "Bảo vật giai 6",
+    "slot_id": "EQ-016",
+    "quality": 6,
+    "base_stat": "hp_regen",
+    "base_value": 360,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 6
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q7",
+    "name_vi": "Bảo vật giai 7",
+    "slot_id": "EQ-016",
+    "quality": 7,
+    "base_stat": "hp_regen",
+    "base_value": 490,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 7
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 3,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "EQ-016-Q8",
+    "name_vi": "Bảo vật giai 8",
+    "slot_id": "EQ-016",
+    "quality": 8,
+    "base_stat": "hp_regen",
+    "base_value": 640,
+    "craft": {
+      "building_id": "BLD-019",
+      "inputs": [
+        {
+          "resource_id": "RES-093",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-086",
+          "qty": 8
+        }
+      ]
+    },
+    "affix_slots": 6,
+    "socket_count": 4,
+    "status": "PROPOSED"
+  }
+]

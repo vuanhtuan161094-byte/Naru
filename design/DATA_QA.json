@@ -1,0 +1,21 @@
+{
+  "profiles": 144,
+  "skills": 864,
+  "evolution_edges": 720,
+  "resources": 150,
+  "buildings": 30,
+  "recipes": 63,
+  "stats": 48,
+  "equipment": 128,
+  "slots": 16,
+  "checks": {
+    "unique_ninja": true,
+    "unique_skill": true,
+    "all_initial_six": true,
+    "skill_refs": true,
+    "resource_refs": true,
+    "building_refs": true,
+    "building_cap": true,
+    "no_runtime_test": true
+  }
+}

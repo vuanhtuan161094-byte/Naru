@@ -1,0 +1,434 @@
+[
+  {
+    "id": "vitality",
+    "name_vi": "thể chất",
+    "group": "base",
+    "unit": "points",
+    "unbounded_storage": true,
+    "allocation": "direct",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "strength",
+    "name_vi": "sức mạnh",
+    "group": "base",
+    "unit": "points",
+    "unbounded_storage": true,
+    "allocation": "direct",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "spirit",
+    "name_vi": "tinh thần",
+    "group": "base",
+    "unit": "points",
+    "unbounded_storage": true,
+    "allocation": "direct",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "agility",
+    "name_vi": "nhanh nhẹn",
+    "group": "base",
+    "unit": "points",
+    "unbounded_storage": true,
+    "allocation": "direct",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "intellect",
+    "name_vi": "trí tuệ",
+    "group": "base",
+    "unit": "points",
+    "unbounded_storage": true,
+    "allocation": "direct",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "potential",
+    "name_vi": "tiềm năng",
+    "group": "base",
+    "unit": "points",
+    "unbounded_storage": true,
+    "allocation": "direct",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "hp",
+    "name_vi": "HP",
+    "group": "survival",
+    "unit": "flat",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "armor",
+    "name_vi": "giáp vật lý",
+    "group": "survival",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "nres",
+    "name_vi": "kháng nhẫn thuật",
+    "group": "survival",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "hp_regen",
+    "name_vi": "hồi HP",
+    "group": "survival",
+    "unit": "per_second",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "damage_reduction",
+    "name_vi": "giảm sát thương",
+    "group": "survival",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "crit_resist",
+    "name_vi": "kháng bạo kích",
+    "group": "survival",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "patk",
+    "name_vi": "công vật lý",
+    "group": "taijutsu",
+    "unit": "flat",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "armor_pen",
+    "name_vi": "xuyên giáp",
+    "group": "taijutsu",
+    "unit": "flat",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "attack_speed",
+    "name_vi": "tốc đánh",
+    "group": "taijutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "accuracy",
+    "name_vi": "chính xác",
+    "group": "taijutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "evasion",
+    "name_vi": "né tránh",
+    "group": "taijutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "counter",
+    "name_vi": "phản kích",
+    "group": "taijutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "natk",
+    "name_vi": "công nhẫn thuật",
+    "group": "ninjutsu",
+    "unit": "flat",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "magic_pen",
+    "name_vi": "xuyên kháng",
+    "group": "ninjutsu",
+    "unit": "flat",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "ncrit",
+    "name_vi": "bạo kích nhẫn thuật",
+    "group": "ninjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "element_power",
+    "name_vi": "uy lực nguyên tố",
+    "group": "ninjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "area",
+    "name_vi": "phạm vi",
+    "group": "ninjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "cast_speed",
+    "name_vi": "tốc thi triển",
+    "group": "ninjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "genjutsu_power",
+    "name_vi": "uy lực ảo thuật",
+    "group": "genjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "control_chance",
+    "name_vi": "xác suất khống chế",
+    "group": "genjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "control_duration",
+    "name_vi": "thời gian khống chế",
+    "group": "genjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "control_resist",
+    "name_vi": "kháng khống chế",
+    "group": "genjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "genjutsu_resist",
+    "name_vi": "kháng ảo thuật",
+    "group": "genjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "cleanse",
+    "name_vi": "giải hiệu ứng",
+    "group": "genjutsu",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "chakra_max",
+    "name_vi": "chakra tối đa",
+    "group": "chakra",
+    "unit": "flat",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "chakra_regen",
+    "name_vi": "hồi chakra",
+    "group": "chakra",
+    "unit": "per_second",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "chakra_efficiency",
+    "name_vi": "tiết kiệm chakra",
+    "group": "chakra",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "chakra_drain",
+    "name_vi": "hấp thụ chakra",
+    "group": "chakra",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "chakra_drain_resist",
+    "name_vi": "kháng mất chakra",
+    "group": "chakra",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "chakra_conversion",
+    "name_vi": "hiệu suất chuyển hóa",
+    "group": "chakra",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "move_speed",
+    "name_vi": "tốc di chuyển",
+    "group": "combat",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "pcrit",
+    "name_vi": "bạo kích vật lý",
+    "group": "combat",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "crit_damage",
+    "name_vi": "sát thương bạo kích",
+    "group": "combat",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "lifesteal",
+    "name_vi": "hút máu",
+    "group": "combat",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "healing",
+    "name_vi": "hiệu quả trị liệu",
+    "group": "combat",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "cdr",
+    "name_vi": "giảm hồi chiêu",
+    "group": "combat",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "insight",
+    "name_vi": "ngộ tính",
+    "group": "growth",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "training_speed",
+    "name_vi": "tốc tu luyện",
+    "group": "growth",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "comprehension",
+    "name_vi": "lĩnh ngộ",
+    "group": "growth",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "xp_efficiency",
+    "name_vi": "hiệu suất kinh nghiệm",
+    "group": "growth",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "mastery_speed",
+    "name_vi": "tốc thành thạo",
+    "group": "growth",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "absorption",
+    "name_vi": "hấp thụ tài nguyên",
+    "group": "growth",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "PROPOSED"
+  }
+]

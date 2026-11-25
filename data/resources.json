@@ -1,0 +1,1855 @@
+[
+  {
+    "id": "RES-001",
+    "category": "currency",
+    "name_vi": "Ryo",
+    "base_price_ryo": 9,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "mission/recruit reward/trade",
+    "sink": "upgrade/recruit/trade",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-002",
+    "category": "currency",
+    "name_vi": "Ngọc chakra",
+    "base_price_ryo": 10,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "mission/recruit reward/trade",
+    "sink": "upgrade/recruit/trade",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-003",
+    "category": "currency",
+    "name_vi": "Điểm công trạng",
+    "base_price_ryo": 12,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "mission/recruit reward/trade",
+    "sink": "upgrade/recruit/trade",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-004",
+    "category": "currency",
+    "name_vi": "Điểm danh vọng",
+    "base_price_ryo": 14,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "mission/recruit reward/trade",
+    "sink": "upgrade/recruit/trade",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-005",
+    "category": "currency",
+    "name_vi": "Điểm đấu trường",
+    "base_price_ryo": 15,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "mission/recruit reward/trade",
+    "sink": "upgrade/recruit/trade",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-006",
+    "category": "raw",
+    "name_vi": "Gỗ mềm",
+    "base_price_ryo": 17,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-005",
+      "RCP-017"
+    ]
+  },
+  {
+    "id": "RES-007",
+    "category": "raw",
+    "name_vi": "Gỗ cứng",
+    "base_price_ryo": 19,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-008",
+    "category": "raw",
+    "name_vi": "Tre",
+    "base_price_ryo": 21,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-014",
+      "RCP-017",
+      "RCP-021"
+    ]
+  },
+  {
+    "id": "RES-009",
+    "category": "raw",
+    "name_vi": "Đá",
+    "base_price_ryo": 24,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-007"
+    ]
+  },
+  {
+    "id": "RES-010",
+    "category": "raw",
+    "name_vi": "Đá granite",
+    "base_price_ryo": 26,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-053"
+    ]
+  },
+  {
+    "id": "RES-011",
+    "category": "raw",
+    "name_vi": "Quặng sắt",
+    "base_price_ryo": 28,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-008"
+    ]
+  },
+  {
+    "id": "RES-012",
+    "category": "raw",
+    "name_vi": "Quặng đồng",
+    "base_price_ryo": 30,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-009"
+    ]
+  },
+  {
+    "id": "RES-013",
+    "category": "raw",
+    "name_vi": "Quặng bạc",
+    "base_price_ryo": 33,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-010"
+    ]
+  },
+  {
+    "id": "RES-014",
+    "category": "raw",
+    "name_vi": "Quặng vàng",
+    "base_price_ryo": 35,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-011"
+    ]
+  },
+  {
+    "id": "RES-015",
+    "category": "raw",
+    "name_vi": "Than",
+    "base_price_ryo": 38,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-006",
+      "RCP-008",
+      "RCP-009",
+      "RCP-010",
+      "RCP-011",
+      "RCP-013",
+      "RCP-019",
+      "RCP-020",
+      "RCP-023"
+    ]
+  },
+  {
+    "id": "RES-016",
+    "category": "raw",
+    "name_vi": "Cát",
+    "base_price_ryo": 40,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-007",
+      "RCP-019",
+      "RCP-053"
+    ]
+  },
+  {
+    "id": "RES-017",
+    "category": "raw",
+    "name_vi": "Đất sét",
+    "base_price_ryo": 43,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-006",
+      "RCP-020"
+    ]
+  },
+  {
+    "id": "RES-018",
+    "category": "raw",
+    "name_vi": "Muối khoáng",
+    "base_price_ryo": 45,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-016"
+    ]
+  },
+  {
+    "id": "RES-019",
+    "category": "raw",
+    "name_vi": "Nước suối",
+    "base_price_ryo": 48,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": [
+      "RCP-002",
+      "RCP-003",
+      "RCP-007",
+      "RCP-017",
+      "RCP-018"
+    ]
+  },
+  {
+    "id": "RES-020",
+    "category": "raw",
+    "name_vi": "Lưu huỳnh",
+    "base_price_ryo": 50,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "territory extraction",
+    "sink": "construction/recipe",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-021",
+    "category": "food",
+    "name_vi": "Gạo",
+    "base_price_ryo": 53,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": [
+      "RCP-002"
+    ]
+  },
+  {
+    "id": "RES-022",
+    "category": "food",
+    "name_vi": "Lúa mì",
+    "base_price_ryo": 56,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": [
+      "RCP-001"
+    ]
+  },
+  {
+    "id": "RES-023",
+    "category": "food",
+    "name_vi": "Đậu nành",
+    "base_price_ryo": 58,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": [
+      "RCP-022"
+    ]
+  },
+  {
+    "id": "RES-024",
+    "category": "food",
+    "name_vi": "Rau",
+    "base_price_ryo": 61,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-025",
+    "category": "food",
+    "name_vi": "Khoai",
+    "base_price_ryo": 64,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-026",
+    "category": "food",
+    "name_vi": "Cải",
+    "base_price_ryo": 67,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-027",
+    "category": "food",
+    "name_vi": "Nấm ăn",
+    "base_price_ryo": 70,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-028",
+    "category": "food",
+    "name_vi": "Thịt",
+    "base_price_ryo": 72,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": [
+      "RCP-003",
+      "RCP-016"
+    ]
+  },
+  {
+    "id": "RES-029",
+    "category": "food",
+    "name_vi": "Cá",
+    "base_price_ryo": 75,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-030",
+    "category": "food",
+    "name_vi": "Trứng",
+    "base_price_ryo": 78,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-031",
+    "category": "food",
+    "name_vi": "Sữa",
+    "base_price_ryo": 81,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-032",
+    "category": "food",
+    "name_vi": "Mật ong",
+    "base_price_ryo": 84,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "farm",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-033",
+    "category": "food",
+    "name_vi": "Bột mì",
+    "base_price_ryo": 87,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": [
+      "RCP-003"
+    ]
+  },
+  {
+    "id": "RES-034",
+    "category": "food",
+    "name_vi": "Cơm nắm",
+    "base_price_ryo": 90,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-035",
+    "category": "food",
+    "name_vi": "Ramen",
+    "base_price_ryo": 93,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "stamina items/recipe (optional)",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-036",
+    "category": "herb",
+    "name_vi": "Cỏ trị thương",
+    "base_price_ryo": 96,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": [
+      "RCP-004"
+    ]
+  },
+  {
+    "id": "RES-037",
+    "category": "herb",
+    "name_vi": "Lá thanh nhiệt",
+    "base_price_ryo": 99,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-038",
+    "category": "herb",
+    "name_vi": "Rễ hồi lực",
+    "base_price_ryo": 102,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-039",
+    "category": "herb",
+    "name_vi": "Hoa an thần",
+    "base_price_ryo": 105,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-040",
+    "category": "herb",
+    "name_vi": "Nấm độc",
+    "base_price_ryo": 109,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-041",
+    "category": "herb",
+    "name_vi": "Cỏ giải độc",
+    "base_price_ryo": 112,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-042",
+    "category": "herb",
+    "name_vi": "Lá bổ chakra",
+    "base_price_ryo": 115,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": [
+      "RCP-004"
+    ]
+  },
+  {
+    "id": "RES-043",
+    "category": "herb",
+    "name_vi": "Hạt tỉnh thần",
+    "base_price_ryo": 118,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-044",
+    "category": "herb",
+    "name_vi": "Rễ cường thể",
+    "base_price_ryo": 121,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-045",
+    "category": "herb",
+    "name_vi": "Hoa tuyết",
+    "base_price_ryo": 125,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-046",
+    "category": "herb",
+    "name_vi": "Dược thảo sa mạc",
+    "base_price_ryo": 128,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-047",
+    "category": "herb",
+    "name_vi": "Nấm linh lực",
+    "base_price_ryo": 131,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-048",
+    "category": "herb",
+    "name_vi": "Vỏ cây thuốc",
+    "base_price_ryo": 134,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-049",
+    "category": "herb",
+    "name_vi": "Nhựa cây thuốc",
+    "base_price_ryo": 138,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-050",
+    "category": "herb",
+    "name_vi": "Cỏ kháng độc",
+    "base_price_ryo": 141,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-051",
+    "category": "herb",
+    "name_vi": "Hạt phục hồi",
+    "base_price_ryo": 144,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-052",
+    "category": "herb",
+    "name_vi": "Quả dược",
+    "base_price_ryo": 148,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-053",
+    "category": "herb",
+    "name_vi": "Hoa sen",
+    "base_price_ryo": 151,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-054",
+    "category": "herb",
+    "name_vi": "Rêu đá",
+    "base_price_ryo": 154,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "herb garden",
+    "sink": "medicines/training",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-055",
+    "category": "herb",
+    "name_vi": "Tinh chất thảo dược",
+    "base_price_ryo": 158,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "medicines/training",
+    "recipe_consumers": [
+      "RCP-055"
+    ]
+  },
+  {
+    "id": "RES-056",
+    "category": "processed",
+    "name_vi": "Ván gỗ",
+    "base_price_ryo": 161,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-024"
+    ]
+  },
+  {
+    "id": "RES-057",
+    "category": "processed",
+    "name_vi": "Gạch",
+    "base_price_ryo": 165,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-058",
+    "category": "processed",
+    "name_vi": "Xi măng",
+    "base_price_ryo": 168,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-059",
+    "category": "processed",
+    "name_vi": "Thép",
+    "base_price_ryo": 172,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-012",
+      "RCP-013",
+      "RCP-042",
+      "RCP-043",
+      "RCP-044",
+      "RCP-048"
+    ]
+  },
+  {
+    "id": "RES-060",
+    "category": "processed",
+    "name_vi": "Đồng tinh luyện",
+    "base_price_ryo": 175,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-012",
+      "RCP-046",
+      "RCP-050"
+    ]
+  },
+  {
+    "id": "RES-061",
+    "category": "processed",
+    "name_vi": "Bạc tinh luyện",
+    "base_price_ryo": 178,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-062",
+    "category": "processed",
+    "name_vi": "Vàng tinh luyện",
+    "base_price_ryo": 182,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-052"
+    ]
+  },
+  {
+    "id": "RES-063",
+    "category": "processed",
+    "name_vi": "Hợp kim nhẹ",
+    "base_price_ryo": 185,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-051"
+    ]
+  },
+  {
+    "id": "RES-064",
+    "category": "processed",
+    "name_vi": "Hợp kim cứng",
+    "base_price_ryo": 189,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-044",
+      "RCP-048"
+    ]
+  },
+  {
+    "id": "RES-065",
+    "category": "processed",
+    "name_vi": "Vải thô",
+    "base_price_ryo": 193,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-015",
+      "RCP-021",
+      "RCP-047"
+    ]
+  },
+  {
+    "id": "RES-066",
+    "category": "processed",
+    "name_vi": "Vải bền",
+    "base_price_ryo": 196,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-049"
+    ]
+  },
+  {
+    "id": "RES-067",
+    "category": "processed",
+    "name_vi": "Da thuộc",
+    "base_price_ryo": 200,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-068",
+    "category": "processed",
+    "name_vi": "Giấy",
+    "base_price_ryo": 203,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-032",
+      "RCP-057"
+    ]
+  },
+  {
+    "id": "RES-069",
+    "category": "processed",
+    "name_vi": "Mực",
+    "base_price_ryo": 207,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-033"
+    ]
+  },
+  {
+    "id": "RES-070",
+    "category": "processed",
+    "name_vi": "Thủy tinh",
+    "base_price_ryo": 210,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-071",
+    "category": "processed",
+    "name_vi": "Gốm",
+    "base_price_ryo": 214,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-072",
+    "category": "processed",
+    "name_vi": "Dây thừng",
+    "base_price_ryo": 218,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-024",
+      "RCP-035",
+      "RCP-045"
+    ]
+  },
+  {
+    "id": "RES-073",
+    "category": "processed",
+    "name_vi": "Dầu",
+    "base_price_ryo": 221,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-015",
+      "RCP-055"
+    ]
+  },
+  {
+    "id": "RES-074",
+    "category": "processed",
+    "name_vi": "Bột than",
+    "base_price_ryo": 225,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-018"
+    ]
+  },
+  {
+    "id": "RES-075",
+    "category": "processed",
+    "name_vi": "Cán nhẫn cụ",
+    "base_price_ryo": 229,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "building/equipment",
+    "recipe_consumers": [
+      "RCP-042",
+      "RCP-045"
+    ]
+  },
+  {
+    "id": "RES-076",
+    "category": "chakra",
+    "name_vi": "Tinh thể chakra thô",
+    "base_price_ryo": 232,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-013",
+      "RCP-025",
+      "RCP-027",
+      "RCP-030",
+      "RCP-054"
+    ]
+  },
+  {
+    "id": "RES-077",
+    "category": "chakra",
+    "name_vi": "Tinh thể Hỏa",
+    "base_price_ryo": 236,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-028"
+    ]
+  },
+  {
+    "id": "RES-078",
+    "category": "chakra",
+    "name_vi": "Tinh thể Thủy",
+    "base_price_ryo": 240,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-028"
+    ]
+  },
+  {
+    "id": "RES-079",
+    "category": "chakra",
+    "name_vi": "Tinh thể Phong",
+    "base_price_ryo": 244,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-028"
+    ]
+  },
+  {
+    "id": "RES-080",
+    "category": "chakra",
+    "name_vi": "Tinh thể Lôi",
+    "base_price_ryo": 247,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-028"
+    ]
+  },
+  {
+    "id": "RES-081",
+    "category": "chakra",
+    "name_vi": "Tinh thể Thổ",
+    "base_price_ryo": 251,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-028"
+    ]
+  },
+  {
+    "id": "RES-082",
+    "category": "chakra",
+    "name_vi": "Tinh thể Âm",
+    "base_price_ryo": 255,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-039"
+    ]
+  },
+  {
+    "id": "RES-083",
+    "category": "chakra",
+    "name_vi": "Tinh thể Dương",
+    "base_price_ryo": 259,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "chakra spring/craft",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-040"
+    ]
+  },
+  {
+    "id": "RES-084",
+    "category": "chakra",
+    "name_vi": "Lõi chakra nhỏ",
+    "base_price_ryo": 262,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-026",
+      "RCP-051"
+    ]
+  },
+  {
+    "id": "RES-085",
+    "category": "chakra",
+    "name_vi": "Lõi chakra lớn",
+    "base_price_ryo": 266,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-029",
+      "RCP-036",
+      "RCP-052"
+    ]
+  },
+  {
+    "id": "RES-086",
+    "category": "chakra",
+    "name_vi": "Chakra tinh khiết",
+    "base_price_ryo": 270,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-029",
+      "RCP-032",
+      "RCP-035",
+      "RCP-059",
+      "RCP-062"
+    ]
+  },
+  {
+    "id": "RES-087",
+    "category": "chakra",
+    "name_vi": "Chakra hỗn hợp",
+    "base_price_ryo": 274,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "skill/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-088",
+    "category": "chakra",
+    "name_vi": "Chakra đậm đặc",
+    "base_price_ryo": 278,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "skill/equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-089",
+    "category": "chakra",
+    "name_vi": "Mảnh tinh thể",
+    "base_price_ryo": 281,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-027",
+      "RCP-031"
+    ]
+  },
+  {
+    "id": "RES-090",
+    "category": "chakra",
+    "name_vi": "Bụi chakra",
+    "base_price_ryo": 285,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "skill/equipment",
+    "recipe_consumers": [
+      "RCP-033",
+      "RCP-038",
+      "RCP-047"
+    ]
+  },
+  {
+    "id": "RES-091",
+    "category": "seal",
+    "name_vi": "Giấy phong ấn",
+    "base_price_ryo": 289,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": [
+      "RCP-034",
+      "RCP-037",
+      "RCP-041"
+    ]
+  },
+  {
+    "id": "RES-092",
+    "category": "seal",
+    "name_vi": "Mực phong ấn",
+    "base_price_ryo": 293,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": [
+      "RCP-034",
+      "RCP-038",
+      "RCP-041"
+    ]
+  },
+  {
+    "id": "RES-093",
+    "category": "seal",
+    "name_vi": "Bùa trống",
+    "base_price_ryo": 297,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": [
+      "RCP-036",
+      "RCP-038",
+      "RCP-039",
+      "RCP-040",
+      "RCP-060",
+      "RCP-063"
+    ]
+  },
+  {
+    "id": "RES-094",
+    "category": "seal",
+    "name_vi": "Dây phong ấn",
+    "base_price_ryo": 301,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": [
+      "RCP-036",
+      "RCP-039",
+      "RCP-040"
+    ]
+  },
+  {
+    "id": "RES-095",
+    "category": "seal",
+    "name_vi": "Lõi kết giới",
+    "base_price_ryo": 305,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": [
+      "RCP-041"
+    ]
+  },
+  {
+    "id": "RES-096",
+    "category": "seal",
+    "name_vi": "Mảnh phù",
+    "base_price_ryo": 308,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-097",
+    "category": "seal",
+    "name_vi": "Phù bảo hộ",
+    "base_price_ryo": 312,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": [
+      "RCP-056"
+    ]
+  },
+  {
+    "id": "RES-098",
+    "category": "seal",
+    "name_vi": "Phù khóa chakra",
+    "base_price_ryo": 316,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-099",
+    "category": "seal",
+    "name_vi": "Phù triệu hồi",
+    "base_price_ryo": 320,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-100",
+    "category": "seal",
+    "name_vi": "Trục phong ấn",
+    "base_price_ryo": 324,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "protection/bloodline",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-101",
+    "category": "craft",
+    "name_vi": "Phôi kunai",
+    "base_price_ryo": 328,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-102",
+    "category": "craft",
+    "name_vi": "Phôi shuriken",
+    "base_price_ryo": 332,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-103",
+    "category": "craft",
+    "name_vi": "Lưỡi kiếm",
+    "base_price_ryo": 336,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-104",
+    "category": "craft",
+    "name_vi": "Tay cầm kiếm",
+    "base_price_ryo": 340,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-105",
+    "category": "craft",
+    "name_vi": "Chốt kim loại",
+    "base_price_ryo": 344,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": [
+      "RCP-050",
+      "RCP-051"
+    ]
+  },
+  {
+    "id": "RES-106",
+    "category": "craft",
+    "name_vi": "Sợi chakra",
+    "base_price_ryo": 348,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": [
+      "RCP-049"
+    ]
+  },
+  {
+    "id": "RES-107",
+    "category": "craft",
+    "name_vi": "Tấm giáp",
+    "base_price_ryo": 352,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-108",
+    "category": "craft",
+    "name_vi": "Vải giáp",
+    "base_price_ryo": 356,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-109",
+    "category": "craft",
+    "name_vi": "Khóa giáp",
+    "base_price_ryo": 360,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-110",
+    "category": "craft",
+    "name_vi": "Linh kiện nhẫn cụ",
+    "base_price_ryo": 364,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": [
+      "RCP-052"
+    ]
+  },
+  {
+    "id": "RES-111",
+    "category": "craft",
+    "name_vi": "Mảnh bảo vật",
+    "base_price_ryo": 368,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-112",
+    "category": "craft",
+    "name_vi": "Bột mài",
+    "base_price_ryo": 372,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": [
+      "RCP-054"
+    ]
+  },
+  {
+    "id": "RES-113",
+    "category": "craft",
+    "name_vi": "Đá cường hóa",
+    "base_price_ryo": 376,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": [
+      "RCP-056"
+    ]
+  },
+  {
+    "id": "RES-114",
+    "category": "craft",
+    "name_vi": "Dầu tinh luyện",
+    "base_price_ryo": 381,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-115",
+    "category": "craft",
+    "name_vi": "Đá bảo hộ",
+    "base_price_ryo": 385,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "equipment",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-116",
+    "category": "training",
+    "name_vi": "Cuộn kinh nghiệm nhỏ",
+    "base_price_ryo": 389,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": [
+      "RCP-057"
+    ]
+  },
+  {
+    "id": "RES-117",
+    "category": "training",
+    "name_vi": "Cuộn kinh nghiệm lớn",
+    "base_price_ryo": 393,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "growth",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-118",
+    "category": "training",
+    "name_vi": "Bí quyển thể thuật",
+    "base_price_ryo": 397,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": [
+      "RCP-058"
+    ]
+  },
+  {
+    "id": "RES-119",
+    "category": "training",
+    "name_vi": "Bí quyển nhẫn thuật",
+    "base_price_ryo": 401,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": [
+      "RCP-058"
+    ]
+  },
+  {
+    "id": "RES-120",
+    "category": "training",
+    "name_vi": "Bí quyển ảo thuật",
+    "base_price_ryo": 405,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": [
+      "RCP-058"
+    ]
+  },
+  {
+    "id": "RES-121",
+    "category": "training",
+    "name_vi": "Sách kiểm soát chakra",
+    "base_price_ryo": 409,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": [
+      "RCP-058"
+    ]
+  },
+  {
+    "id": "RES-122",
+    "category": "training",
+    "name_vi": "Tinh hoa thể chất",
+    "base_price_ryo": 413,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-123",
+    "category": "training",
+    "name_vi": "Tinh hoa trí tuệ",
+    "base_price_ryo": 418,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-124",
+    "category": "training",
+    "name_vi": "Tinh hoa tinh thần",
+    "base_price_ryo": 422,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "mission/training/library",
+    "sink": "growth",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-125",
+    "category": "training",
+    "name_vi": "Ấn thành thạo",
+    "base_price_ryo": 426,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "growth",
+    "recipe_consumers": [
+      "RCP-062"
+    ]
+  },
+  {
+    "id": "RES-126",
+    "category": "evolution",
+    "name_vi": "Mảnh thức tỉnh",
+    "base_price_ryo": 430,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "challenge/awakening",
+    "sink": "breakthrough",
+    "recipe_consumers": [
+      "RCP-059",
+      "RCP-062"
+    ]
+  },
+  {
+    "id": "RES-127",
+    "category": "evolution",
+    "name_vi": "Tinh hoa thức tỉnh",
+    "base_price_ryo": 434,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "breakthrough",
+    "recipe_consumers": [
+      "RCP-061"
+    ]
+  },
+  {
+    "id": "RES-128",
+    "category": "evolution",
+    "name_vi": "Đá đột phá",
+    "base_price_ryo": 439,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "challenge/awakening",
+    "sink": "breakthrough",
+    "recipe_consumers": [
+      "RCP-060"
+    ]
+  },
+  {
+    "id": "RES-129",
+    "category": "evolution",
+    "name_vi": "Ấn đột phá",
+    "base_price_ryo": 443,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "breakthrough",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-130",
+    "category": "evolution",
+    "name_vi": "Tinh hoa tiến giai",
+    "base_price_ryo": 447,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "challenge/awakening",
+    "sink": "breakthrough",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-131",
+    "category": "evolution",
+    "name_vi": "Cuộn thử thách",
+    "base_price_ryo": 451,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "challenge/awakening",
+    "sink": "breakthrough",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-132",
+    "category": "evolution",
+    "name_vi": "Đá phẩm chất",
+    "base_price_ryo": 455,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "challenge/awakening",
+    "sink": "breakthrough",
+    "recipe_consumers": [
+      "RCP-061"
+    ]
+  },
+  {
+    "id": "RES-133",
+    "category": "evolution",
+    "name_vi": "Ấn phẩm chất",
+    "base_price_ryo": 460,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "breakthrough",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-134",
+    "category": "evolution",
+    "name_vi": "Mảnh sao",
+    "base_price_ryo": 464,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "challenge/awakening",
+    "sink": "breakthrough",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-135",
+    "category": "evolution",
+    "name_vi": "Tinh hoa tiềm năng",
+    "base_price_ryo": 468,
+    "tradable": true,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "breakthrough",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-136",
+    "category": "bloodline",
+    "name_vi": "Mảnh đồng lực",
+    "base_price_ryo": 472,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": [
+      "RCP-063"
+    ]
+  },
+  {
+    "id": "RES-137",
+    "category": "bloodline",
+    "name_vi": "Tinh hoa Sharingan",
+    "base_price_ryo": 477,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-138",
+    "category": "bloodline",
+    "name_vi": "Tinh hoa Byakugan",
+    "base_price_ryo": 481,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-139",
+    "category": "bloodline",
+    "name_vi": "Tinh hoa Rinnegan",
+    "base_price_ryo": 485,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-140",
+    "category": "bloodline",
+    "name_vi": "Tinh hoa Mộc Độn",
+    "base_price_ryo": 490,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-141",
+    "category": "bloodline",
+    "name_vi": "Tinh hoa Băng Độn",
+    "base_price_ryo": 494,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-142",
+    "category": "bloodline",
+    "name_vi": "Tinh hoa Dung Độn",
+    "base_price_ryo": 498,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-143",
+    "category": "bloodline",
+    "name_vi": "Tinh hoa Trần Độn",
+    "base_price_ryo": 503,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-144",
+    "category": "bloodline",
+    "name_vi": "Vật liệu tương thích",
+    "base_price_ryo": 507,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "bloodline challenge",
+    "sink": "awakening",
+    "recipe_consumers": [
+      "RCP-063"
+    ]
+  },
+  {
+    "id": "RES-145",
+    "category": "bloodline",
+    "name_vi": "Ấn huyết kế",
+    "base_price_ryo": 511,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "recipe",
+    "sink": "awakening",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-146",
+    "category": "special",
+    "name_vi": "Chakra Vĩ Thú",
+    "base_price_ryo": 516,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "special boss/mission",
+    "sink": "binding/research",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-147",
+    "category": "special",
+    "name_vi": "Tiên lực",
+    "base_price_ryo": 520,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "special boss/mission",
+    "sink": "binding/research",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-148",
+    "category": "special",
+    "name_vi": "Khế ước thông linh",
+    "base_price_ryo": 524,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "special boss/mission",
+    "sink": "binding/research",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-149",
+    "category": "special",
+    "name_vi": "Tinh hoa Karma",
+    "base_price_ryo": 529,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "special boss/mission",
+    "sink": "binding/research",
+    "recipe_consumers": []
+  },
+  {
+    "id": "RES-150",
+    "category": "special",
+    "name_vi": "Linh kiện khoa học ninja",
+    "base_price_ryo": 533,
+    "tradable": false,
+    "status": "PROPOSED",
+    "source": "special boss/mission",
+    "sink": "binding/research",
+    "recipe_consumers": []
+  }
+]
