@@ -57,7 +57,7 @@ func save_now() -> bool:
 	state.rng_state=str(rng.state)
 	var f = FileAccess.open(save_path+".tmp",FileAccess.WRITE)
 	if f==null: return false
-	f.store_string(JSON.stringify(state))
+	f.store_string(JSON.stringify(state,"",true,true))
 	f.flush()
 	f.close()
 	if FileAccess.file_exists(save_path):
@@ -795,9 +795,19 @@ func beast_capture_reason(reg,id: String,beast_id: String) -> String:
 func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
 	return beast_capture_reason(reg,id,beast_id)==""
 
+func beast_bind_reason(reg,id: String,beast_id: String) -> String:
+	if not reg.beasts.has(beast_id):return "Vĩ thú không hợp lệ"
+	if not id in reg.beasts[beast_id].compatibility.preferred_host_ids:return "Không tương thích"
+	if not state.owned.has(id):return "Chưa chiêu mộ chủ thể"
+	if not state.beasts.has(beast_id):return "Chưa thu phục"
+	if str(state.owned[id].get("beast_id",""))!="" or str(state.beasts[beast_id].host)!="":return "Đã liên kết"
+	var req=reg.beasts[beast_id].capture_requires
+	if not has_cost({str(req.seal_resource):int(req.seal_qty)}):return "Thiếu ấn phong ấn"
+	return ""
+
 func beast_bind_ready(reg,id: String,beast_id: String) -> bool:
-	if not state.owned.has(id) or not state.beasts.has(beast_id) or not reg.beasts.has(beast_id):return false
-	return id in reg.beasts[beast_id].compatibility.preferred_host_ids and str(state.owned[id].beast_id)=="" and str(state.beasts[beast_id].host)=="" and has_cost({"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)})
+	return beast_bind_reason(reg,id,beast_id)==""
+
 
 func capture_beast(reg,id: String,beast_id: String) -> bool:
 	if not beast_capture_ready(reg,id,beast_id):return false
@@ -832,7 +842,8 @@ func bind_beast(reg,id: String,beast_id: String) -> bool:
 	var p=state.owned[id]
 	var beast=state.beasts[beast_id]
 	var prior=state.duplicate(true)
-	var cost={"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)}
+	var req=reg.beasts[beast_id].capture_requires
+	var cost={str(req.seal_resource):int(req.seal_qty)}
 	if not has_cost(cost):return false
 	debit(cost)
 	beast.host=id
@@ -919,7 +930,7 @@ func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
 	return clampf(enemy/maxf(1.0,player),0.0,1.5)
 
 func export_save() -> String:
-	return JSON.stringify(state,"\t")
+	return JSON.stringify(state,"\t",true,true)
 
 func recover_interrupted(reg) -> bool:
 	var changed=false
