@@ -6,3 +6,7 @@
 - BACKLOG: 1088 non-anchor skills individual canon verification and redesign, 54 forms full behavior, 12 existing combo definitions review, all 1152 VFX mappings; use audit priority, never auto rename to hide duplicates. Source gaps explicitly marked. 
 - Review source-dependent claims separately from proposed game values; D4 runtime not changed. No Codex Cloud/no merge.
 
+
+## Owner decision
+B approved. COMBAT-P1/P2 READY for implementation now. COMBAT-P3 and P4 remain dependent on actual supported mechanics. No mass VFX generation before exact event/geometry verified.
+

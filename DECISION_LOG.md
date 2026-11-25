@@ -15,3 +15,6 @@ Authority: design/d1/Master_GDD_V1.0.md, design/MASTER_GDD_D2.md, design/d4/DECI
 - DEC-009 PROPOSED: hybrid 12x8 continuous arena, collision/target geometry and event contract. Owner questioned current combat and requested full skill audit; approval of new geometry pending.
 - DEC-010 PROPOSED: 64 anchor skill revisions; preserve IDs, no runtime overwrite until geometry and content approved. Remaining 1088 require individual review.
 
+
+- DEC-011 LOCKED: Owner chose combat B on 25/11/2026: 12x8 grid, initial formation, continuous free movement, 6v6, AI regular skills/manual ultimate. Geometry implementation and SKILL-P1 authorized; tuning values remain DEV, no merge or Codex Cloud.
+

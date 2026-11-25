@@ -1,6 +1,6 @@
 {
   "version": "SKILL-P1-ARENA-V2-PROPOSED",
-  "status": "PENDING_OWNER_REVIEW",
+  "status": "OWNER_APPROVED_HYBRID_12X8_NUMERIC_DEFAULTS_DEV",
   "locked_baseline": "6v6 isometric free movement after formation, AI normal skills and manual ultimate, no time limit",
   "ground": {
     "width_m": 12,
@@ -182,5 +182,6 @@
     "multi_hit": "total coefficient apportioned over declared hits; dedupe by cast_id/target_uid/hit_index",
     "zones": "fixed world shape, ticks interval, no unlimited recursion",
     "vfx": "same origin, shape, facing, release and impact as simulation; never determines hit"
-  }
+  },
+  "approval": "2026-11-25: owner chose B, formation then continuous movement 12x8"
 }

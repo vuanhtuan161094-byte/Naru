@@ -10,3 +10,7 @@ Minimum QA: 6v6 spawn positions nonoverlap; melee vs ranged maintain range; obst
 ## Canon and adaptation
 Official site evidence links in audit_summary.json support named techniques or context for anchor heroes only; damage/cooldowns/geometry are Naru game design. Hokage Kurama form must be explicit pre-loss snapshot; Baryon Mode special later review (official source BARYON), not freely repeatable post-loss. Never claim 1152 canon verified. Historical D4 remains current runtime baseline until owner approves and gameplay consumes overlay. 
 
+
+## Owner decision 25/11/2026
+B approved: 12x8 formation + continuous free movement. Implement COMBAT-P1/P2 in large batches; numerical radii, roles, range and hit tuning remain DEV defaults. Preserve IDs and saves. Do not assume all 64 detailed proposals have individually validated canon or production VFX. Remaining 1088 must be reviewed individually, not merely renamed.
+
