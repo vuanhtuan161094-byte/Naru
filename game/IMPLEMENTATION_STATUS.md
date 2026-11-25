@@ -14,3 +14,6 @@ GP-P4 / GP-P5A-B / GP-P6 partial: building/recipe/jobs/clock runtime, inventory 
 GP-P5 world partial: route/travel, diplomacy, finite stock trade, NPC tick, capture sequential defense, raid/repair. World offline now active. No multi-team deployment, full NPC-vs-NPC war, or complete balancing. CI pending.
 
 GP-P6 content partial: boss phase dispatch, signature combos, quests, mission timers, resource duels, native bloodline, beasts, summon contracts. DEV proxy beast combat, no unauthorized compatibility. CI pending.
+
+## Evidence update 25/11/2026
+GP-P3B e42644ed CI 45550857956 PASS; GP-P4 3b69d0a CI 45550976926 PASS; GP-P5 64ce2478 CI 45551141063 PASS; GP-P6 a61b6e59a87c2f3c93cf37bb252ccb733e0d2714 CI 45551319990 PASS (97 scoped assertions). Prior pending statements superseded. Detailed remaining limitations in GAMEPLAY_STATUS.md. No GUI/exports or release acceptance.
