@@ -773,7 +773,8 @@ func building_screen(id: String,message: String="") -> void:
 			label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
 			label(row,cost_text(recipe.inputs),15)
 			button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
-			button(row,"5 mẻ",func():building_screen(id,"Đã đặt 5 mẻ" if store.production(reg,id,recipe_id,false,5) else "Chưa đủ điều kiện"))
+			var batch=button(row,"5 mẻ",func():building_screen(id,"Đã đặt 5 mẻ" if store.production(reg,id,recipe_id,false,5) else "Chưa đủ điều kiện"))
+			batch.tooltip_text="Mỗi mẻ trừ nguyên liệu riêng; nếu thiếu sẽ chờ. Dừng để đổi công thức."
 			button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
 
 func frontier_screen() -> void:

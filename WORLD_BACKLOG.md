@@ -17,3 +17,5 @@ P4 REVIEW: optional early Q1, targeted shard economy, contract unlock correction
 P4B REVIEW: actual P3 metrics 14/120, 65/150, 11/63; resource navigation, targeted equipment in organic path, boss replay and eligible beast attempt, actual outcome logging, cooldown guard. Do not report full acceptance until organic evidence.
 P5 REVIEW: merchant/late training/diagnostics and earn-only 45-day extension. P4B achieved all 11 contracts; 49 resource IDs absent, STG-025 blocked and beast 0 attempts. Full organic campaign/recipe/bloodline/beast and defended conquest remain REVIEW.
 P5B REVIEW: 63 recipe / 9 beast fixture, frontier navigation and organic secondary squad, native bloodline UI. Natural endgame still requires evidence.
+
+P5R: P5A 54 clears, 104 resources, 14 settled, 0 beasts. Corrected observation strategy and persistence/capacity bugs. Outstanding endgame balancing and integrated V11 results; cannot mark product complete. P5B/P5R logs and Web require exact CI verification.

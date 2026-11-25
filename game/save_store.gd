@@ -53,6 +53,7 @@ func load_or_new(reg) -> void:
 	new_game(reg)
 
 func save_now() -> bool:
+	state.rng_seed=str(rng.seed)
 	state.rng_state=str(rng.state)
 	var f = FileAccess.open(save_path+".tmp",FileAccess.WRITE)
 	if f==null: return false
@@ -882,6 +883,7 @@ func import_save(reg,raw: String) -> bool:
 	if int(data.get("high_water_timestamp",0))<int(state.get("high_water_timestamp",0)):return false
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
+	var old_seed=rng.seed
 	state=data
 	ensure_account(reg)
 	for id in state.owned:
@@ -890,7 +892,10 @@ func import_save(reg,raw: String) -> bool:
 	rng.seed=int(str(state.rng_seed))
 	rng.state=int(str(state.rng_state))
 	recover_interrupted(reg)
-	return commit_change(prior,old_rng)
+	if commit_change(prior,old_rng):return true
+	rng.seed=old_seed
+	rng.state=old_rng
+	return false
 
 func stop_mission(id: String) -> bool:
 	if not state.missions.has(id):return false

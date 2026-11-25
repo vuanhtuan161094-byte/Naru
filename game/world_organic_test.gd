@@ -11,12 +11,23 @@ var gear_count=0
 var boss_replays=0
 var beast_attempts=0
 var frontier_captures=0
+var settled_recipes={}
+var stalls_cleared=0
+var stage_losses={}
+var watchdogs=0
 func observe(s: Dictionary) -> void:
 	for id in s.inventory:
 		if int(s.inventory[id])>0:seen[id]=true
 
 func advance(reg,store,seconds: int) -> void:
+	var pending={}
+	for building in store.state.building_states:
+		var job=store.state.building_states[building].production
+		if not job.is_empty():pending[building]=str(job.recipe)
 	store.advance_clock(reg,int(store.state.high_water_timestamp)+seconds)
+	for building in pending:
+		var job=store.state.building_states[building].production
+		if job.is_empty():settled_recipes[pending[building]]=true
 	observe(store.state)
 
 func battle(reg,store,stage: Dictionary,seed_value: int) -> String:
@@ -30,7 +41,8 @@ func battle(reg,store,stage: Dictionary,seed_value: int) -> String:
 		sim.tick(0.05)
 		if sim.outcome!="":break
 	var won=sim.outcome=="win"
-	if not store.finish_stage(reg,stage,event,won,sim.counts,sim.mastery_counts,sim.action_stats):return "error"
+	if sim.outcome=="":watchdogs+=1
+	if not store.finish_stage(reg,stage,event,won,sim.counts,sim.mastery_counts,sim.action_stats,sim.passive_mastery):return "error"
 	return "win" if won else "loss"
 
 func _initialize() -> void:
@@ -39,7 +51,7 @@ func _initialize() -> void:
 		quit(1)
 		return
 	var store=Store.new()
-	store.save_path="user://world_organic_p5.json"
+	store.save_path="user://world_organic_p5_review.json"
 	store.new_game(reg)
 	store.rng.seed=42
 	store.setup_starter_jobs(reg)
@@ -88,7 +100,10 @@ func _initialize() -> void:
 		for ninja in owned:
 			if mission_resources.is_empty():break
 			if not store.state.missions.has(ninja):
-				if store.start_mission(reg,ninja,mission_resources[0],true):mission_resources.pop_front()
+				for resource in mission_resources.duplicate():
+					if store.start_mission(reg,ninja,resource,true):
+						mission_resources.erase(resource)
+						break
 		for building in jobs:
 			if Village.level(store.state,building)<=0 or not Village.workers(store.state,building).is_empty():continue
 			for ninja in owned:
@@ -116,8 +131,15 @@ func _initialize() -> void:
 			if int(str(raw).right(3))<6 or int(str(raw).right(3))>20 or int(store.state.inventory.get(raw,0))>=10:continue
 			for seller in Guide.sellers(reg,store.state,raw):
 				if seller.accessible and int(seller.stock)>=10 and store.trade_resource(reg,str(seller.faction),raw,10,true):break
-		for recipe in reg.recipes.values():
-			if (crafted.has(recipe.id) and int(store.state.inventory.get(recipe.output.resource_id,0))>=5) or Village.level(store.state,recipe.building_id)<int(recipe.min_building_level) or Village.worker_level(store.state,recipe.building_id)==0:continue
+		# Never block an entire workshop with a starved repeat batch; cancel only unreserved work.
+		for building in jobs:
+			var job=store.state.building_states[building].production
+			if not job.is_empty() and job.reserved.is_empty() and int(job.remaining)==0:
+				if store.cancel_production(building):stalls_cleared+=1
+		var recipes=reg.recipes.values()
+		recipes.sort_custom(func(a,b):return int(settled_recipes.has(a.id))<int(settled_recipes.has(b.id)))
+		for recipe in recipes:
+			if (settled_recipes.has(recipe.id) and int(store.state.inventory.get(recipe.output.resource_id,0))>=5) or Village.level(store.state,recipe.building_id)<int(recipe.min_building_level) or Village.worker_level(store.state,recipe.building_id)==0:continue
 			if not store.state.building_states[recipe.building_id].production.is_empty():continue
 			for item in recipe.inputs:
 				var id=str(item.resource_id)
@@ -126,7 +148,7 @@ func _initialize() -> void:
 				for seller in Guide.sellers(reg,store.state,id):
 					if seller.accessible and int(seller.stock)>=shortage:
 						if store.trade_resource(reg,str(seller.faction),id,shortage,true):break
-			if store.production(reg,str(recipe.building_id),str(recipe.id),false,5 if crafted.has(recipe.id) else 1):
+			if store.production(reg,str(recipe.building_id),str(recipe.id),false,1):
 				crafted[recipe.id]=str(recipe.output.resource_id)
 		advance(reg,store,3600)
 		# Manual-ultimate API, no enemy/stat fixtures. A loss retries on a later day.
@@ -159,8 +181,10 @@ func _initialize() -> void:
 			if int(n.level)<(int(n.realm)+1)*20 and int(store.state.inventory.get("RES-001",0))>=6000:
 				var purchase=mini(30,maxi(0,int((int(store.state.inventory["RES-001"])-4000)/600.0)))
 				if purchase>0:store.buy_training_scrolls("RES-117",purchase)
-			var qty=mini(30,int(store.state.inventory.get("RES-117",0)))
+			var qty=mini(50 if id==team[0] else 10,int(store.state.inventory.get("RES-117",0)))
 			if qty>0:store.train_batch(reg,id,"RES-117",qty)
+			var small_qty=mini(50 if id==team[0] else 10,int(store.state.inventory.get("RES-116",0)))
+			if small_qty>0:store.train_batch(reg,id,"RES-116",small_qty)
 		# Rotate real trials on strongest current ninja; no fabricated material grant.
 		var strongest=str(team[0])
 		for resource in ["RES-128","RES-130","RES-134", "RES-%03d" % (136+posmod(day,9))]:
@@ -181,7 +205,11 @@ func _initialize() -> void:
 				wins+=1
 				next_stage+=1
 			else:
-				if next_stage>5:battle(reg,store,reg.stages["STG-%03d" % (next_stage-1)],8000+day)
+				stage_losses[stage.id]=int(stage_losses.get(stage.id,0))+1
+				if next_stage>5 and battle(reg,store,reg.stages["STG-%03d" % (next_stage-1)],8000+day)=="error":
+					push_error("WORLD_ORGANIC_FAIL fallback settle")
+					quit(1)
+					return
 				break
 		for quest in reg.quests:store.claim_quest(reg,quest)
 		if captured:
@@ -209,11 +237,7 @@ func _initialize() -> void:
 						break
 		observe(store.state)
 		print("NARU_WORLD_ORGANIC_DAY ",day," HQ=",Village.level(store.state,"BLD-001")," WINS=",wins," STOCK_IDS=",seen.size()," QUEUED_RECIPES=",crafted.size()," RYO=",store.state.inventory.get("RES-001",0))
-	var completed=0
-	for recipe_id in crafted:
-		var recipe=reg.recipes[recipe_id]
-		var job=store.state.building_states[recipe.building_id].production
-		if job.is_empty() or job.get("recipe","")!=recipe_id:completed+=1
+	var completed=settled_recipes.size()
 	var missing=[]
 	for id in reg.resources:
 		if not seen.has(id):missing.append(id)
@@ -227,5 +251,9 @@ func _initialize() -> void:
 		quit(1)
 		return
 	print("NARU_WORLD_P5_FRONTIER_CAPTURES ",frontier_captures)
+	print("NARU_WORLD_REVIEW_STALLS ",stalls_cleared," WATCHDOGS ",watchdogs," STAGE_LOSSES ",stage_losses)
+	for building in store.state.building_states:
+		var job=store.state.building_states[building].production
+		if not job.is_empty():print("NARU_WORLD_REVIEW_PENDING ",building," ",job)
 	print("NARU_WORLD_ORGANIC_INTEGRITY_PASS")
 	quit()

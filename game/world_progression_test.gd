@@ -67,6 +67,7 @@ func _initialize() -> void:
 	p5_checks(reg)
 	full_recipe_fixture(reg)
 	beast_capture_fixture(reg)
+	review_checks(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -312,3 +313,29 @@ func beast_capture_fixture(reg) -> void:
 	check(captured==9 and bound==9,"P5 capture and bind all fixture")
 	check(Guard.valid(reg,store.state),"P5 beast fixture save")
 	print("NARU_WORLD_P5_BEAST_FIXTURE captured=",captured," bound=",bound)
+
+func review_checks(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_review_p5_ci.json"
+	store.new_game(reg)
+	store.rng.seed=12345
+	check(store.save_now(),"review seed save")
+	check(str(store.state.rng_seed)==str(store.rng.seed),"review seed persisted")
+	var raw=store.export_save()
+	var loaded=Store.new()
+	loaded.save_path=store.save_path
+	loaded.load_or_new(reg)
+	check(loaded.rng.seed==store.rng.seed and loaded.rng.state==store.rng.state,"review RNG reload")
+	var next=store.rng.randi()
+	check(loaded.rng.randi()==next,"review RNG reproducible")
+	check(loaded.import_save(reg,raw),"review RNG import")
+	var content=preload("res://game/content_service.gd")
+	var cap=Rewards.capacity(store.state,"RES-001")
+	store.state.inventory["RES-001"]=cap
+	check(store.start_mission(reg,"NIN-001","RES-001",true),"review full wallet mission")
+	content.step(store.state,1000)
+	check(int(store.state.inventory["RES-001"])==cap and int(store.state.missions["NIN-001"].remaining)==0,"review currency cap waits")
+	store.state.inventory["RES-001"]=cap-1000
+	content.step(store.state,1)
+	check(int(store.state.inventory["RES-001"])>cap-1000 and int(store.state.inventory["RES-001"])<=cap,"review mission resumes")
+	print("NARU_WORLD_REVIEW_PASS")

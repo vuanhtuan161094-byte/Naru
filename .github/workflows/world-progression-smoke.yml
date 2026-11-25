@@ -64,6 +64,15 @@ jobs:
           timeout 900 "$G" --headless --path . --script res://game/world_organic_test.gd 2>&1 | tee /tmp/world-organic.log
           grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/world-organic.log
           ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/world-organic.log
+      - name: Upload early world QA logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-World-DEV-P5R-early-QA
+          path: |
+            /tmp/world-progression.log
+            /tmp/world-organic.log
+          retention-days: 30
       - name: Economy 90-day starter simulation
         run: |
           set -o pipefail
@@ -89,7 +98,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - World DEV P5, placeholder art. Extract the entire folder.
+          NARU RPG - World DEV P5R, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -109,7 +118,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P5-QA
+          name: NARU-World-DEV-P5R-QA
           path: |
             /tmp/world-progression.log
             /tmp/world-organic.log
@@ -120,14 +129,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P5
+          name: NARU-World-DEV-P5R
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P5-menu
+          name: NARU-World-DEV-P5R-menu
           path: |
             web-menu.png
             ui-shots/

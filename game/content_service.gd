@@ -65,7 +65,7 @@ static func step(s: Dictionary,dt: int) -> void:
 		mission.remaining=maxi(0,int(mission.remaining)-dt)
 		if int(mission.remaining)>0:continue
 		var resource=str(mission.resource)
-		if not resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"] and int(s.inventory.get(resource,0))+int(mission.qty)>10000+5000*int(s.building_states["BLD-020"].level):continue
+		if int(s.inventory.get(resource,0))+int(mission.qty)>Rewards.capacity(s,resource):continue
 		s.inventory[resource]=int(s.inventory.get(resource,0))+int(mission.qty)
 		if mission.get("repeat",false):mission.remaining=maxi(1,int(mission.period))
 		else:s.missions.erase(ninja)
