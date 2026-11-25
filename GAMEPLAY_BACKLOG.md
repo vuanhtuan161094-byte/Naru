@@ -1,19 +1,19 @@
-# GAMEPLAY_BACKLOG
+# GAMEPLAY_BACKLOG — 25/11/2026
 | ID | State | Scope |
 |---|---|---|
-| GP-P1 | DONE | Registry/import foundation. |
-| GP-P2 | DONE | Scoped first-stage headless loop and save/reload. |
-| GP-P2B | DONE | Scoped combat expansion, CI 45549608200, not full combat. |
-| GP-P3A | DONE | Scoped skill level/grade and gear transaction foundations, CI 45549766017; crafting tested via workshop fixture; real construction path now tested GP-P5A. |
-| GP-P2C | IN_PROGRESS | Remaining effect semantics, all unlocked skill scheduling and form guards, precise resistance, spatial reactions/environment, deterministic effect tests. |
-| GP-P3B | IN_PROGRESS | 48 stat formulas, quality/talents, permanent anti-farm, skill mastery/trial unlock, branch tests, gear affixes/sets/profession quality, bloodlines/forms. |
-| GP-P5A | DONE | HQ 1→9 and workshop construction verified CI 45550976926. |
-| GP-P5B | IN_PROGRESS | 150 resources, 63 recipes, 30 fixed buildings cap 100, 15 professions, production/job+combat, stamina regen, no upkeep. |
-| GP-P6 | IN_PROGRESS | Offline cap 24h ledger, clock rollback/replay/crash recovery, full save migration/import/export. |
-| GP-P7 | IN_PROGRESS | 60 territories, 71 routes, 9 factions, diplomacy/trade/war/raids/sequential teams. |
-| GP-P8 | IN_PROGRESS | 120 stages, 24 bosses, 81 quests, 288 trials, 9 bijuu, 11 summons, 12 combos, actual mechanics. |
-| GP-P9 | BACKLOG | 17 functional Vietnamese screens, touch/desktop, asset adapter. |
-| GP-P10B | IN_PROGRESS | Web DEV V2 cumulative CI and export. |
-| GP-P10A | DONE | DEV Web export and Chromium probe PASS CI 45553036319; artifact 14993879097. |
+| GP-P1 | DONE | Scoped registry/import foundation. |
+| GP-P2 | DONE | Scoped first-stage loop and save/reload. |
+| GP-P2B | DONE | Scoped combat expansion. |
+| GP-P3A | DONE | Scoped skill/gear transaction foundation. |
+| GP-P2C | READY | ABC implemented effects/guards; 1152 dispatch checks PASS. Remaining per-skill timed behavior, deterministic replay, pathing/spatial precision. |
+| GP-P3B | READY | Positive trial/evolution/capture fixture; 9 separate beast kits; remaining growth tuning, compatibility authorization, full branch and training paths. |
+| GP-P5A | DONE | HQ and workshop construction proof. |
+| GP-P5B | READY | 15 profession talents/specialties and 90d real seeded sim PASS; full resource chain playthrough, growth balance and sinks remain. |
+| GP-P6 | READY | Save import/export, nested validation, cap/replay; remaining complete migration, corruption recovery and edge cases. |
+| GP-P7 | READY | Two independent squads, defense roster, NPC development and strategic wars PASS scoped; player capture/raid acceptance and strategic balance remain. |
+| GP-P8 | READY | 120 stage wins/rewards high-power fixture, 24 boss phases, 81 objective/288 trial links PASS; real progression balancing and remaining individual content tests. |
+| GP-P9 | READY | Functional UI/UX, 17 screen contracts, input/overflow/manual click smoke, asset adapter. |
+| GP-P10A | DONE | Web DEV V1 CI 45553036319. |
+| GP-P10B | DONE | Web DEV V2 exact-SHA CI 45559078672; 150 checks, 90d sim, Chromium probe, artifact 14996917338. |
 | GP-P10 | BACKLOG | Final Web/Android/PC same project and acceptance gates. |
-Independent tasks may proceed where dependencies permit; update status and backlog each batch. No art wait. No merge or Codex Cloud.
+Work independently on READY tasks; no merge, Codex Cloud, public release, or art wait. See GAMEPLAY_STATUS for evidence and proposed values.
