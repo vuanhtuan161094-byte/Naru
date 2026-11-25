@@ -31,7 +31,7 @@ static func operation(row: Dictionary,p: Dictionary) -> Dictionary:
 	return {}
 
 static func eligible(sim,a: Dictionary,row: Dictionary) -> bool:
-	return sim.use_passives and a.has("passive_base") and a.hp>0 and not a.get("beast",false) and int(a.realm)>=int(row.unlock.realm) and sim.registry.passive_ledger.get(row.id,"")=="DEV_CANDIDATE" and not str(sim.registry.p2_fallback.get(row.source.signature_id,"")).begins_with("HOLD")
+	return sim.use_passives and a.has("passive_base") and a.hp>0 and not a.get("beast",false) and int(a.realm)>=int(row.unlock.realm) and sim.registry.passive_ledger.get(row.id,"")=="DEV_CANDIDATE" and not str(sim.registry.p2_fallback.get(row.source.signature_id,"")).begins_with("HOLD") and not (sim.registry.synergy_gaps.get(row.id,"")=="FORM_ZERO_PAYLOAD_REVIEW")
 
 static func attach(a: Dictionary,p: Dictionary) -> void:
 	a.stars=int(p.get("stars",1))
@@ -117,6 +117,16 @@ static func queue(sim,a: Dictionary,b: Dictionary,s: Dictionary,event: String,be
 	var parent=int(s.passive_cast_id)
 	var key=str(parent)+":"+str(a.uid)+":"+event
 	if sim.passive_seen.has(key):return
+	# Do not consume a dedup key for an ineligible target on a mixed-target parent.
+	var eligible_event=false
+	for row in sim.registry.passives_by_ninja.get(a.id,[]):
+		if not eligible(sim,a,row) or row.trigger.event!=event:continue
+		var ids=row.trigger.get("skill_ids",[])
+		if not ids.is_empty() and not s.skill_id in ids:continue
+		if row.target.scope in ["hit_primary_enemy","enemy_team"] and (b.is_empty() or b.side==a.side or b.summon or b.get("beast",false) or b.hp<=0):continue
+		eligible_event=true
+		break
+	if not eligible_event:return
 	if event in ["hp_threshold_crossed","chakra_threshold_crossed"]:
 		var row=sim.registry.passives.get(a.id+"-P3",{})
 		if row.is_empty() or row.trigger.event!=event or before<float(row.trigger.threshold) or after>=float(row.trigger.threshold):return
@@ -142,6 +152,8 @@ static func flush(sim) -> void:
 			if not eligible(sim,a,row) or row.trigger.event!=receipt.event:continue
 			var skills=row.trigger.get("skill_ids",[])
 			if not skills.is_empty() and not receipt.skill in skills:continue
+			var target=sim.actor_by_uid(int(receipt.target))
+			if row.target.scope in ["hit_primary_enemy","enemy_team"] and (target.is_empty() or target.side==a.side or target.summon or target.get("beast",false)):continue
 			if int(a.passive_icd.get(row.id,0))>sim.ticks:continue
 			ready.append({"row":row,"owner":a,"target":sim.actor_by_uid(int(receipt.target))})
 	ready.sort_custom(func(x,y):return int(x.owner.uid)<int(y.owner.uid) if x.row.id==y.row.id else str(x.row.id)<str(y.row.id))
@@ -210,6 +222,16 @@ static func combo_bonus(sim,combo: Dictionary,entries: Array) -> float:
 			if eligible(sim,a,row) and row.effect.type=="combo_payload_bonus" and combo.id in row.effect.combo_ids:
 				value=maxf(value,potency(row,a,int(a.stars)))
 	return minf(value,0.08)
+
+static func has_debuff(a: Dictionary) -> bool:
+	for effect in a.get("passive_timed",{}).values():
+		if effect.group=="negative":return true
+	return false
+
+static func aura_source(sim,a: Dictionary) -> bool:
+	for row in sim.registry.passives_by_ninja.get(a.id,[]):
+		if eligible(sim,a,row) and row.trigger.event=="continuous_aura" and recipients(sim,a,row).size()>1:return true
+	return false
 
 static func cleanse(a: Dictionary,limit: int) -> int:
 	var removed=0

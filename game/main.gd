@@ -1377,9 +1377,20 @@ func passive_screen(id: String,message: String="") -> void:
 		var value=svc.potency(data,p,int(p.stars))
 		var heading=label(box,"P%d • %s | G%d L%d • %.2f%%" % [int(data.slot),str(data.name_vi),int(sk.grade),int(sk.level),value*100],18)
 		heading.tooltip_text=str(data.trigger.condition)+" | "+str(data.counterplay)+" | "+str(reg.passive_ledger[key])
+		var link=reg.synergy_links.get(key,{})
+		if not link.is_empty():
+			var explicit_ids=PackedStringArray(link.explicit_skill_ids)
+			var predicted_ids=PackedStringArray(link.event_candidates)
+			if not explicit_ids.is_empty():heading.tooltip_text+=" | Liên kết thiết kế: "+", ".join(explicit_ids)
+			if not predicted_ids.is_empty():heading.tooltip_text+=" | Ứng viên sự kiện: "+", ".join(predicted_ids)
+		if reg.passive_pilot.has(key):heading.tooltip_text+=" | P2 pilot đề xuất (chưa áp dụng)"
+		if reg.synergy_gaps.has(key):heading.tooltip_text+=" | REVIEW: "+str(reg.synergy_gaps[key])
 		label(box,"%s • %s • %s • Cảnh %d • Thành thạo %d • %s" % [str(data.trigger.event),str(data.target.scope),str(data.effect.key),int(data.unlock.realm),int(sk.mastery),str(reg.passive_ledger[key])],14)
 		if not store.passive_allowed(reg,id,key):
 			label(box,"Chưa mở khóa",15)
+			continue
+		if reg.passive_ledger[key]!="DEV_CANDIDATE" or reg.synergy_gaps.get(key,"")=="FORM_ZERO_PAYLOAD_REVIEW":
+			label(box,"HOLD • chưa cho tiêu sách/tiến giai",15)
 			continue
 		var nav=HBoxContainer.new()
 		box.add_child(nav)

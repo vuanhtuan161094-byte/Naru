@@ -12,6 +12,8 @@ func _initialize() -> void:
 	var reg=Registry.new()
 	if not reg.load_all():quit(1);return
 	check(reg.passives.size()==864 and reg.passives_by_ninja.size()==144 and reg.skills.size()==1152,"864 distinct passive records and 1152 active retained")
+	check(reg.synergy_active.size()==1152 and reg.synergy_passive.size()==864 and reg.synergy_links.size()==864,"2016 structural references, not runtime claims")
+	check(reg.passive_pilot.size()==72 and is_equal_approx(float(reg.passives["NIN-001-P4"].effect.base),0.06),"P2 proposal not applied automatically")
 	var branches=0
 	for row in reg.passives.values():branches+=row.progression.branches.size()
 	check(branches==1152,"branch catalog count")
@@ -88,5 +90,28 @@ func _initialize() -> void:
 		replay.append(str(fight.outcome)+":"+str(fight.ticks)+":"+JSON.stringify(fight.passive_receipts))
 		print("NARU_PASSIVE_6V6 seed=",seed_value," outcome=",fight.outcome," ticks=",fight.ticks," receipts=",fight.passive_receipts.size()," IDs=",fight.passive_receipts.keys())
 	check(replay[0]==replay[1],"same-seed replay")
+	var roster_seen={}
+	var event_seen={}
+	var stat_seen={}
+	for match_index in range(12):
+		var battle=Combat.new()
+		battle.registry=reg
+		battle.use_passives=true
+		battle.rng.seed=100+match_index
+		for i in range(12):
+			var id="NIN-%03d" % (match_index*12+i+1)
+			battle.add_actor(id,0 if i<6 else 1,140,4,{},i%6,1.0,{"realm":6,"stars":[1,5,10,15][match_index%4]})
+			roster_seen[id]=true
+		Passive.refresh(battle)
+		for a2 in battle.actors:
+			for row in reg.passives_by_ninja[a2.id]:
+				if row.trigger.event=="derived_stats" and Passive.eligible(battle,a2,row) and float(a2.passive_mods.get(row.effect.key,0))>0:stat_seen[row.id]=true
+		for step in range(400):
+			battle.tick(0.05)
+			if battle.outcome!="":break
+		for id in battle.passive_receipts:event_seen[id]=true
+		print("NARU_PASSIVE_ROSTER_MATCH ",match_index+1," outcome=",battle.outcome," ticks=",battle.ticks," proc_ids=",battle.passive_receipts.size())
+	check(roster_seen.size()==144,"all roster identities exercised in 12 6v6 windows")
+	print("NARU_PASSIVE_OBSERVED continuous_stat_presence=",stat_seen.size()," actual_event_receipts=",event_seen.size()," event_ids=",event_seen.keys()," windows=12")
 	print("NARU_PASSIVE_PASS" if fails==0 else "NARU_PASSIVE_FAIL")
 	quit(0 if fails==0 else 1)

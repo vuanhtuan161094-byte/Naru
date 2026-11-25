@@ -45,6 +45,11 @@ var passives: Dictionary={}
 var passives_by_ninja: Dictionary={}
 var passive_ledger: Dictionary={}
 var passive_rules: Dictionary={}
+var synergy_active: Dictionary={}
+var synergy_passive: Dictionary={}
+var synergy_links: Dictionary={}
+var synergy_gaps: Dictionary={}
+var passive_pilot: Dictionary={}
 const Passive=preload("res://game/passive_service.gd")
 var p2_fallback: Dictionary={}
 var p2_design: Dictionary={}
@@ -165,6 +170,7 @@ func load_all() -> bool:
 			errors.append("Missing template "+str(npc.template_ninja_id))
 	load_p2()
 	load_passives()
+	load_synergy_reference()
 	return errors.is_empty()
 
 func load_p2() -> void:
@@ -209,3 +215,26 @@ func load_passives() -> void:
 	for id in passives_by_ninja:
 		if passives_by_ninja[id].size()!=6:errors.append("Invalid passive kit "+id)
 	print("NARU_PASSIVE_REGISTRY ",passives.size()," ",counts)
+
+func load_synergy_reference() -> void:
+	# Structural candidate index only, never dispatch an event from its predictions.
+	for i in range(1,4):
+		var active=read_json("res://data/combat-synergy-p1/active-index-%02d.json" % i)
+		var passive=read_json("res://data/combat-synergy-p1/passive-index-%02d.json" % i)
+		for row in active.records:
+			if not skills.has(row.id) or synergy_active.has(row.id):errors.append("Invalid synergy active "+str(row.id));continue
+			synergy_active[row.id]=row
+		for row in passive.records:
+			if not passives.has(row.id) or synergy_passive.has(row.id):errors.append("Invalid synergy passive "+str(row.id));continue
+			synergy_passive[row.id]=row
+	var audit=read_json("res://data/combat-synergy-p1/interaction-audit.json")
+	for kit in audit.kits:
+		for row in kit.passives:
+			synergy_links[row.id]=row
+			for id in row.explicit_skill_ids+row.event_candidates:
+				if not skills.has(id):errors.append("Invalid synergy reference "+str(id))
+	for row in audit.gaps:synergy_gaps[row.id]=row.type
+	var pilot=read_json("res://data/passive-p2/pilot-overlay.json")
+	for row in pilot.patches:passive_pilot[row.id]=row
+	if synergy_active.size()!=1152 or synergy_passive.size()!=864 or synergy_links.size()!=864 or passive_pilot.size()!=72:errors.append("Incomplete synergy reference")
+	print("NARU_SYNERGY_REFERENCE ",synergy_active.size()+synergy_passive.size()," pilot=",passive_pilot.size()," gaps=",synergy_gaps.size()," STRUCTURAL_ONLY")

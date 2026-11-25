@@ -142,6 +142,7 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 		var score=0.0
 		if allied:
 			score=(1.0-clampf((float(b.hp)+float(b.shield))/maxf(1.0,float(b.max_hp)),0,1))*100.0-distance*2.0
+			if use_passives and Passive.aura_source(self,b):score+=6.0 # DEV preserve support source
 			if skill.ai.condition=="ally_dispellable_status":
 				if not has_debuff(b):continue
 				score+=60
@@ -150,8 +151,12 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 			if has_status(b,"mark") or p2_has_mark(a,b):score+=10
 			if skill.has("p2") and skill.p2.conditions.ai=="owned_valid_mark_or_explicit_swap" and skill.p2.effect.type!="position_swap" and not p2_has_mark(a,b):continue
 			if b.summon:score-=5
+			if use_passives and Passive.aura_source(self,b):score+=6.0 # DEV counter enemy support source
+			if use_passives and skill.element!="neutral":score+=clampf((float(registry.affinity.get(str(skill.element)+":"+str(b.element),1.0))-1.0)*10.0,-4.0,4.0)
 			if distance<=float(skill.range_m)+body_radius(b) and clear_segment(a.pos,b.pos,0.03):score+=30
-			if skill.shape in ["line","circle","cone","circle_ground","circle_target","zone_target","projectile_burst"]:score+=6*targets_for(a,skill,b).size()
+			if skill.shape in ["line","circle","cone","circle_ground","circle_target","zone_target","projectile_burst"]:
+				var target_count=p2_targets(a,skill,b.pos,b.pos-a.pos,b).size() if use_passives and skill.has("p2") else targets_for(a,skill,b).size()
+				score+=6*target_count
 		if score>best_score or (is_equal_approx(score,best_score) and int(b.uid)<int(best.get("uid",999999))):
 			best=b
 			best_score=score
@@ -523,7 +528,9 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 						Passive.queue(self,a,target,s,"heal_confirmed")
 						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"shield":
+					var prior_shield=float(target.shield)
 					add_shield(a,target,float(a.natk)*float(e.coefficient),float(e.duration_s))
+					if float(target.shield)>prior_shield:Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"apply_status":
 					var before_status=target.statuses.duplicate(true)
 					apply_status(a,target,e)
@@ -552,7 +559,9 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 				"summon":
 					var prior_count=actors.size()
 					summon_actor(a,s,e)
-					if actors.size()>prior_count:Passive.queue(self,a,target,s,"summon_spawned")
+					if actors.size()>prior_count:
+						Passive.queue(self,a,target,s,"summon_spawned")
+						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"temporary_stance":
 					a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
 					Passive.queue(self,a,target,s,"stance_effect_confirmed")
@@ -1021,6 +1030,7 @@ func safe_spawn(a: Dictionary) -> Vector2:
 	return Vector2(a.pos)
 
 func has_debuff(a: Dictionary) -> bool:
+	if use_passives and Passive.has_debuff(a):return true
 	for status in a.statuses.values():
 		if registry.status_catalog[status.id].dispellable and status.id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam","sleep","attack_down","beguile_tactical"]:return true
 	return false

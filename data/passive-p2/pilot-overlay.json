@@ -1,0 +1,5705 @@
+{
+  "status": "DEV_PROPOSAL_NOT_AUTO_APPLY",
+  "precedence": "apply after P1 review overlay, recalculate progression.preview and branch from effective fields; no source gate clearance",
+  "audit": {
+    "records": 72,
+    "changed_effects": 21,
+    "form_payload_guards": 1,
+    "invalid_refs": 0,
+    "source": "4 official context excerpts; no independent canon review for all kits",
+    "runtime": "NOT_RUN",
+    "remaining_ninja": 132,
+    "remaining_passives": 792
+  },
+  "patches": [
+    {
+      "id": "NIN-001-P1",
+      "patch": {
+        "name_vi": "Sức sống phân thân"
+      },
+      "reason": "Phân thân tạo cửa sổ cận chiến; không kích nội tại từ phân thân.",
+      "counterplay": "Chặn đường lao, loại phân thân.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-001-P2",
+      "patch": {
+        "name_vi": "Thế công phân thân",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "patk",
+          "base": 0.06,
+          "unit": "fraction",
+          "group": "PASSIVE:patk"
+        }
+      },
+      "reason": "Phân thân tạo cửa sổ cận chiến; không kích nội tại từ phân thân.",
+      "counterplay": "Chặn đường lao, loại phân thân.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-001-P3",
+      "patch": {
+        "name_vi": "Bất khuất Cửu Vĩ"
+      },
+      "reason": "Phân thân tạo cửa sổ cận chiến; không kích nội tại từ phân thân.",
+      "counterplay": "Chặn đường lao, loại phân thân.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-001-P4",
+      "patch": {
+        "name_vi": "Ý chí xung phong",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "patk",
+          "base": 0.045,
+          "unit": "fraction",
+          "group": "PASSIVE:patk"
+        }
+      },
+      "reason": "Phân thân tạo cửa sổ cận chiến; không kích nội tại từ phân thân.",
+      "counterplay": "Chặn đường lao, loại phân thân.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-001-P5",
+      "patch": {
+        "name_vi": "Rasengan phối hợp"
+      },
+      "reason": "Phân thân tạo cửa sổ cận chiến; không kích nội tại từ phân thân.",
+      "counterplay": "Chặn đường lao, loại phân thân.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-001-P6",
+      "patch": {
+        "name_vi": "Nhịp phối hợp Đội 7"
+      },
+      "reason": "Phân thân tạo cửa sổ cận chiến; không kích nội tại từ phân thân.",
+      "counterplay": "Chặn đường lao, loại phân thân.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-002-P1",
+      "patch": {
+        "name_vi": "Nhãn lực Uchiha"
+      },
+      "reason": "Hỏa cầu mở nhịp chính xác cho Chidori, không đảm bảo né tuyệt đối.",
+      "counterplay": "Giãn đội hình, cắt đường lao, đợi ấn chú hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-002-P2",
+      "patch": {
+        "name_vi": "Hỏa cầu mở thế",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "accuracy",
+          "base": 0.07,
+          "unit": "fraction",
+          "group": "PASSIVE:accuracy"
+        }
+      },
+      "reason": "Hỏa cầu mở nhịp chính xác cho Chidori, không đảm bảo né tuyệt đối.",
+      "counterplay": "Giãn đội hình, cắt đường lao, đợi ấn chú hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-002-P3",
+      "patch": {
+        "name_vi": "Bộ pháp thoát hiểm"
+      },
+      "reason": "Hỏa cầu mở nhịp chính xác cho Chidori, không đảm bảo né tuyệt đối.",
+      "counterplay": "Giãn đội hình, cắt đường lao, đợi ấn chú hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-002-P4",
+      "patch": {
+        "name_vi": "Quan sát đồng tộc",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "accuracy",
+          "base": 0.055,
+          "unit": "fraction",
+          "group": "PASSIVE:accuracy"
+        }
+      },
+      "reason": "Hỏa cầu mở nhịp chính xác cho Chidori, không đảm bảo né tuyệt đối.",
+      "counterplay": "Giãn đội hình, cắt đường lao, đợi ấn chú hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-002-P5",
+      "patch": {
+        "name_vi": "Lôi kích ấn chú"
+      },
+      "reason": "Hỏa cầu mở nhịp chính xác cho Chidori, không đảm bảo né tuyệt đối.",
+      "counterplay": "Giãn đội hình, cắt đường lao, đợi ấn chú hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-002-P6",
+      "patch": {
+        "name_vi": "Đối ứng Đội 7"
+      },
+      "reason": "Hỏa cầu mở nhịp chính xác cho Chidori, không đảm bảo né tuyệt đối.",
+      "counterplay": "Giãn đội hình, cắt đường lao, đợi ấn chú hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-003-P1",
+      "patch": {
+        "name_vi": "Điều hòa chakra sơ cấp"
+      },
+      "reason": "Thiếu niên thiên giải ảo và bảo hộ, không vay sức mạnh Bách Hào.",
+      "counterplay": "Ép dùng giải ảo trước, gây áp lực nhiều mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-003-P2",
+      "patch": {
+        "name_vi": "Giải ảo chuẩn xác",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "chakra_regen",
+          "base": 0.065,
+          "unit": "fraction",
+          "group": "PASSIVE:chakra_regen"
+        }
+      },
+      "reason": "Thiếu niên thiên giải ảo và bảo hộ, không vay sức mạnh Bách Hào.",
+      "counterplay": "Ép dùng giải ảo trước, gây áp lực nhiều mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-003-P3",
+      "patch": {
+        "name_vi": "Duy trì chakra"
+      },
+      "reason": "Thiếu niên thiên giải ảo và bảo hộ, không vay sức mạnh Bách Hào.",
+      "counterplay": "Ép dùng giải ảo trước, gây áp lực nhiều mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-003-P4",
+      "patch": {
+        "name_vi": "Tuyến sơ cứu Đội 7",
+        "effect": {
+          "type": "received_heal_bonus",
+          "key": "healing_received",
+          "base": 0.055,
+          "unit": "fraction",
+          "group": "PASSIVE:healing_received"
+        }
+      },
+      "reason": "Thiếu niên thiên giải ảo và bảo hộ, không vay sức mạnh Bách Hào.",
+      "counterplay": "Ép dùng giải ảo trước, gây áp lực nhiều mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-003-P5",
+      "patch": {
+        "name_vi": "Tiết chế viện trợ"
+      },
+      "reason": "Thiếu niên thiên giải ảo và bảo hộ, không vay sức mạnh Bách Hào.",
+      "counterplay": "Ép dùng giải ảo trước, gây áp lực nhiều mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-003-P6",
+      "patch": {
+        "name_vi": "Sơ cứu tiếp sức"
+      },
+      "reason": "Thiếu niên thiên giải ảo và bảo hộ, không vay sức mạnh Bách Hào.",
+      "counterplay": "Ép dùng giải ảo trước, gây áp lực nhiều mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-004-P1",
+      "patch": {
+        "name_vi": "Quan sát sao chép"
+      },
+      "reason": "Phòng tuyến tạo cơ hội Lôi kích; chỉ tính khi tường thật sự chặn.",
+      "counterplay": "Đánh vòng tường, ép chakra, né đường Lôi.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-004-P2",
+      "patch": {
+        "name_vi": "Phản ứng sau Thổ Lưu Bích",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "accuracy",
+          "base": 0.07,
+          "unit": "fraction",
+          "group": "PASSIVE:accuracy"
+        }
+      },
+      "reason": "Phòng tuyến tạo cơ hội Lôi kích; chỉ tính khi tường thật sự chặn.",
+      "counterplay": "Đánh vòng tường, ép chakra, né đường Lôi.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-004-P3",
+      "patch": {
+        "name_vi": "Thoát góc nguy hiểm"
+      },
+      "reason": "Phòng tuyến tạo cơ hội Lôi kích; chỉ tính khi tường thật sự chặn.",
+      "counterplay": "Đánh vòng tường, ép chakra, né đường Lôi.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-004-P4",
+      "patch": {
+        "name_vi": "Quan sát chiến thuật",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "accuracy",
+          "base": 0.055,
+          "unit": "fraction",
+          "group": "PASSIVE:accuracy"
+        }
+      },
+      "reason": "Phòng tuyến tạo cơ hội Lôi kích; chỉ tính khi tường thật sự chặn.",
+      "counterplay": "Đánh vòng tường, ép chakra, né đường Lôi.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-004-P5",
+      "patch": {
+        "name_vi": "Raikiri cường hóa"
+      },
+      "reason": "Phòng tuyến tạo cơ hội Lôi kích; chỉ tính khi tường thật sự chặn.",
+      "counterplay": "Đánh vòng tường, ép chakra, né đường Lôi.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-004-P6",
+      "patch": {
+        "name_vi": "Phối hợp chiến thuật"
+      },
+      "reason": "Phòng tuyến tạo cơ hội Lôi kích; chỉ tính khi tường thật sự chặn.",
+      "counterplay": "Đánh vòng tường, ép chakra, né đường Lôi.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-005-P1",
+      "patch": {
+        "name_vi": "Kỷ luật học viện"
+      },
+      "reason": "Bẫy và lá chắn hỗ trợ, không biến Iruka thành sát thủ.",
+      "counterplay": "Đánh ngoài bẫy, ép thay đổi vị trí và phá lá chắn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-005-P2",
+      "patch": {
+        "name_vi": "Bẫy mở nhịp phòng hộ",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "armor",
+          "base": 0.065,
+          "unit": "fraction",
+          "group": "PASSIVE:armor"
+        }
+      },
+      "reason": "Bẫy và lá chắn hỗ trợ, không biến Iruka thành sát thủ.",
+      "counterplay": "Đánh ngoài bẫy, ép thay đổi vị trí và phá lá chắn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-005-P3",
+      "patch": {
+        "name_vi": "Tiết kiệm chakra"
+      },
+      "reason": "Bẫy và lá chắn hỗ trợ, không biến Iruka thành sát thủ.",
+      "counterplay": "Đánh ngoài bẫy, ép thay đổi vị trí và phá lá chắn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-005-P4",
+      "patch": {
+        "name_vi": "Bảo hộ học viên",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "chakra_regen",
+          "base": 0.05,
+          "unit": "fraction",
+          "group": "PASSIVE:chakra_regen"
+        }
+      },
+      "reason": "Bẫy và lá chắn hỗ trợ, không biến Iruka thành sát thủ.",
+      "counterplay": "Đánh ngoài bẫy, ép thay đổi vị trí và phá lá chắn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-005-P5",
+      "patch": {
+        "name_vi": "Tiết chế hiệu lệnh"
+      },
+      "reason": "Bẫy và lá chắn hỗ trợ, không biến Iruka thành sát thủ.",
+      "counterplay": "Đánh ngoài bẫy, ép thay đổi vị trí và phá lá chắn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-005-P6",
+      "patch": {
+        "name_vi": "Hiệu lệnh tiếp viện"
+      },
+      "reason": "Bẫy và lá chắn hỗ trợ, không biến Iruka thành sát thủ.",
+      "counterplay": "Đánh ngoài bẫy, ép thay đổi vị trí và phá lá chắn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-006-P1",
+      "patch": {
+        "name_vi": "Thể lực tập sự"
+      },
+      "reason": "Phân thân hỗ trợ tiếp cận; giữ cổng thời kỳ Rasengan tập sự.",
+      "counterplay": "Xử lý phân thân, né liên kích; giữ source HOLD.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-006-P2",
+      "patch": {
+        "name_vi": "Phân thân mở đường",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "move_speed",
+          "base": 0.06,
+          "unit": "fraction",
+          "group": "PASSIVE:move_speed"
+        }
+      },
+      "reason": "Phân thân hỗ trợ tiếp cận; giữ cổng thời kỳ Rasengan tập sự.",
+      "counterplay": "Xử lý phân thân, né liên kích; giữ source HOLD.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-006-P3",
+      "patch": {
+        "name_vi": "Kiên trì học việc"
+      },
+      "reason": "Phân thân hỗ trợ tiếp cận; giữ cổng thời kỳ Rasengan tập sự.",
+      "counterplay": "Xử lý phân thân, né liên kích; giữ source HOLD.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-006-P4",
+      "patch": {
+        "name_vi": "Nhịp xung phong tập sự",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "patk",
+          "base": 0.035,
+          "unit": "fraction",
+          "group": "PASSIVE:patk"
+        }
+      },
+      "reason": "Phân thân hỗ trợ tiếp cận; giữ cổng thời kỳ Rasengan tập sự.",
+      "counterplay": "Xử lý phân thân, né liên kích; giữ source HOLD.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-006-P5",
+      "patch": {
+        "name_vi": "Liên kích phân thân"
+      },
+      "reason": "Phân thân hỗ trợ tiếp cận; giữ cổng thời kỳ Rasengan tập sự.",
+      "counterplay": "Xử lý phân thân, né liên kích; giữ source HOLD.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-006-P6",
+      "patch": {
+        "name_vi": "Khích lệ chiến thắng"
+      },
+      "reason": "Phân thân hỗ trợ tiếp cận; giữ cổng thời kỳ Rasengan tập sự.",
+      "counterplay": "Xử lý phân thân, né liên kích; giữ source HOLD.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-007-P1",
+      "patch": {
+        "name_vi": "Tư duy thế trận"
+      },
+      "reason": "Khống chế có vị trí và kháng, không khóa dây chuyền vô hạn.",
+      "counterplay": "Giãn vị trí, thanh tẩy, kháng khống chế.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-007-P2",
+      "patch": {
+        "name_vi": "Bắt bóng đúng lúc",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "control_duration",
+          "base": 0.07,
+          "unit": "fraction",
+          "group": "PASSIVE:control_duration"
+        }
+      },
+      "reason": "Khống chế có vị trí và kháng, không khóa dây chuyền vô hạn.",
+      "counterplay": "Giãn vị trí, thanh tẩy, kháng khống chế.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-007-P3",
+      "patch": {
+        "name_vi": "Giữ bình tĩnh"
+      },
+      "reason": "Khống chế có vị trí và kháng, không khóa dây chuyền vô hạn.",
+      "counterplay": "Giãn vị trí, thanh tẩy, kháng khống chế.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-007-P4",
+      "patch": {
+        "name_vi": "Phạm vi chỉ huy",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "control_resist",
+          "base": 0.06,
+          "unit": "fraction",
+          "group": "PASSIVE:control_resist"
+        }
+      },
+      "reason": "Khống chế có vị trí và kháng, không khóa dây chuyền vô hạn.",
+      "counterplay": "Giãn vị trí, thanh tẩy, kháng khống chế.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-007-P5",
+      "patch": {
+        "name_vi": "Duy trì Ảnh trói"
+      },
+      "reason": "Khống chế có vị trí và kháng, không khóa dây chuyền vô hạn.",
+      "counterplay": "Giãn vị trí, thanh tẩy, kháng khống chế.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-007-P6",
+      "patch": {
+        "name_vi": "Phá nhịp đối phương"
+      },
+      "reason": "Khống chế có vị trí và kháng, không khóa dây chuyền vô hạn.",
+      "counterplay": "Giãn vị trí, thanh tẩy, kháng khống chế.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-008-P1",
+      "patch": {
+        "name_vi": "Thể chất Akimichi"
+      },
+      "reason": "Chuyển hình thái rồi lao; nội tại không tự kích hình thái.",
+      "counterplay": "Né đường lao, kéo giãn khỏi đồng đội, đợi hình thái hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-008-P2",
+      "patch": {
+        "name_vi": "Bội hóa vững thân",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "armor",
+          "base": 0.075,
+          "unit": "fraction",
+          "group": "PASSIVE:armor"
+        }
+      },
+      "reason": "Chuyển hình thái rồi lao; nội tại không tự kích hình thái.",
+      "counterplay": "Né đường lao, kéo giãn khỏi đồng đội, đợi hình thái hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-008-P3",
+      "patch": {
+        "name_vi": "Chống chịu tuyến đầu"
+      },
+      "reason": "Chuyển hình thái rồi lao; nội tại không tự kích hình thái.",
+      "counterplay": "Né đường lao, kéo giãn khỏi đồng đội, đợi hình thái hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-008-P4",
+      "patch": {
+        "name_vi": "Che chắn cự ly gần",
+        "effect": {
+          "type": "incoming_damage_reduction",
+          "key": "damage_reduction",
+          "base": 0.035,
+          "unit": "fraction",
+          "group": "PASSIVE:damage_reduction"
+        }
+      },
+      "reason": "Chuyển hình thái rồi lao; nội tại không tự kích hình thái.",
+      "counterplay": "Né đường lao, kéo giãn khỏi đồng đội, đợi hình thái hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-008-P5",
+      "patch": {
+        "name_vi": "Nhục đạn cường hóa",
+        "trigger": {
+          "event": "while_form_active",
+          "condition": "exact legal form active; authored empowered skill for that exact form; no form unlock/activation",
+          "form_ids": [
+            "NIN-008-F1",
+            "NIN-008-F2"
+          ],
+          "skill_ids": [
+            "NIN-008-S6"
+          ]
+        },
+        "effect": {
+          "type": "form_skill_coefficient_bonus",
+          "key": "form_empowered",
+          "base": 0.05,
+          "unit": "fraction",
+          "group": "PASSIVE:skill_effect",
+          "form_ids": [
+            "NIN-008-F1",
+            "NIN-008-F2"
+          ],
+          "skill_ids": [
+            "NIN-008-S6"
+          ],
+          "eligibility": "intersection of exact active form's authored empowered skill list AND listed skill IDs; do not apply union across forms; use only damage/heal/shield coefficient actually typed; zero/untyped no-op HOLD"
+        }
+      },
+      "reason": "Chuyển hình thái rồi lao; nội tại không tự kích hình thái.",
+      "counterplay": "Né đường lao, kéo giãn khỏi đồng đội, đợi hình thái hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-008-P6",
+      "patch": {
+        "name_vi": "Chia sẻ sức ép"
+      },
+      "reason": "Chuyển hình thái rồi lao; nội tại không tự kích hình thái.",
+      "counterplay": "Né đường lao, kéo giãn khỏi đồng đội, đợi hình thái hết.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-009-P1",
+      "patch": {
+        "name_vi": "Tâm trí vững vàng"
+      },
+      "reason": "Khống chế tinh thần, cảm ứng và tiếp chakra; không chiếm quyền vĩnh viễn.",
+      "counterplay": "Kháng ảo, thanh tẩy, gây gián đoạn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-009-P2",
+      "patch": {
+        "name_vi": "Tâm chuyển thân hiệu quả",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "control_duration",
+          "base": 0.06,
+          "unit": "fraction",
+          "group": "PASSIVE:control_duration"
+        }
+      },
+      "reason": "Khống chế tinh thần, cảm ứng và tiếp chakra; không chiếm quyền vĩnh viễn.",
+      "counterplay": "Kháng ảo, thanh tẩy, gây gián đoạn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-009-P3",
+      "patch": {
+        "name_vi": "Tập trung dưới áp lực"
+      },
+      "reason": "Khống chế tinh thần, cảm ứng và tiếp chakra; không chiếm quyền vĩnh viễn.",
+      "counterplay": "Kháng ảo, thanh tẩy, gây gián đoạn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-009-P4",
+      "patch": {
+        "name_vi": "Liên lạc tinh thần",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "genjutsu_resist",
+          "base": 0.06,
+          "unit": "fraction",
+          "group": "PASSIVE:genjutsu_resist"
+        }
+      },
+      "reason": "Khống chế tinh thần, cảm ứng và tiếp chakra; không chiếm quyền vĩnh viễn.",
+      "counterplay": "Kháng ảo, thanh tẩy, gây gián đoạn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-009-P5",
+      "patch": {
+        "name_vi": "Duy trì nhiễu tâm"
+      },
+      "reason": "Khống chế tinh thần, cảm ứng và tiếp chakra; không chiếm quyền vĩnh viễn.",
+      "counterplay": "Kháng ảo, thanh tẩy, gây gián đoạn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-009-P6",
+      "patch": {
+        "name_vi": "Rối loạn đội hình địch"
+      },
+      "reason": "Khống chế tinh thần, cảm ứng và tiếp chakra; không chiếm quyền vĩnh viễn.",
+      "counterplay": "Kháng ảo, thanh tẩy, gây gián đoạn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-010-P1",
+      "patch": {
+        "name_vi": "Quan sát Bạch nhãn"
+      },
+      "reason": "Áp lực chakra từ Nhu quyền; giữ cự ly gần, không sát thương miễn phí.",
+      "counterplay": "Giữ khoảng cách, kháng hút chakra, chặn tiếp cận.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-010-P2",
+      "patch": {
+        "name_vi": "Nhu quyền chuẩn xác",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "accuracy",
+          "base": 0.065,
+          "unit": "fraction",
+          "group": "PASSIVE:accuracy"
+        }
+      },
+      "reason": "Áp lực chakra từ Nhu quyền; giữ cự ly gần, không sát thương miễn phí.",
+      "counterplay": "Giữ khoảng cách, kháng hút chakra, chặn tiếp cận.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-010-P3",
+      "patch": {
+        "name_vi": "Phòng thủ mềm"
+      },
+      "reason": "Áp lực chakra từ Nhu quyền; giữ cự ly gần, không sát thương miễn phí.",
+      "counterplay": "Giữ khoảng cách, kháng hút chakra, chặn tiếp cận.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-010-P4",
+      "patch": {
+        "name_vi": "Hỗ trợ điểm huyệt",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "accuracy",
+          "base": 0.045,
+          "unit": "fraction",
+          "group": "PASSIVE:accuracy"
+        }
+      },
+      "reason": "Áp lực chakra từ Nhu quyền; giữ cự ly gần, không sát thương miễn phí.",
+      "counterplay": "Giữ khoảng cách, kháng hút chakra, chặn tiếp cận.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-010-P5",
+      "patch": {
+        "name_vi": "Liên chưởng chính xác"
+      },
+      "reason": "Áp lực chakra từ Nhu quyền; giữ cự ly gần, không sát thương miễn phí.",
+      "counterplay": "Giữ khoảng cách, kháng hút chakra, chặn tiếp cận.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-010-P6",
+      "patch": {
+        "name_vi": "Tiếp sức tuyến gần"
+      },
+      "reason": "Áp lực chakra từ Nhu quyền; giữ cự ly gần, không sát thương miễn phí.",
+      "counterplay": "Giữ khoảng cách, kháng hút chakra, chặn tiếp cận.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-011-P1",
+      "patch": {
+        "name_vi": "Khứu giác truy kích"
+      },
+      "reason": "Định vị và lao nhanh; Akamaru không phải chủ thể kích nội tại mới.",
+      "counterplay": "Đổi hướng, chặn đường lao, bảo vệ mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-011-P2",
+      "patch": {
+        "name_vi": "Tứ cước tăng tốc",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "move_speed",
+          "base": 0.075,
+          "unit": "fraction",
+          "group": "PASSIVE:move_speed"
+        }
+      },
+      "reason": "Định vị và lao nhanh; Akamaru không phải chủ thể kích nội tại mới.",
+      "counterplay": "Đổi hướng, chặn đường lao, bảo vệ mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-011-P3",
+      "patch": {
+        "name_vi": "Thoát hiểm thú hóa"
+      },
+      "reason": "Định vị và lao nhanh; Akamaru không phải chủ thể kích nội tại mới.",
+      "counterplay": "Đổi hướng, chặn đường lao, bảo vệ mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-011-P4",
+      "patch": {
+        "name_vi": "Chỉ điểm mục tiêu",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "accuracy",
+          "base": 0.05,
+          "unit": "fraction",
+          "group": "PASSIVE:accuracy"
+        }
+      },
+      "reason": "Định vị và lao nhanh; Akamaru không phải chủ thể kích nội tại mới.",
+      "counterplay": "Đổi hướng, chặn đường lao, bảo vệ mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-011-P5",
+      "patch": {
+        "name_vi": "Nha thông nha"
+      },
+      "reason": "Định vị và lao nhanh; Akamaru không phải chủ thể kích nội tại mới.",
+      "counterplay": "Đổi hướng, chặn đường lao, bảo vệ mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-011-P6",
+      "patch": {
+        "name_vi": "Vết thương truy đuổi"
+      },
+      "reason": "Định vị và lao nhanh; Akamaru không phải chủ thể kích nội tại mới.",
+      "counterplay": "Đổi hướng, chặn đường lao, bảo vệ mục tiêu.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-012-P1",
+      "patch": {
+        "name_vi": "Cộng sinh ký hoại trùng"
+      },
+      "reason": "Hút chakra và vùng trùng; không tính mỗi tick là proc.",
+      "counterplay": "Rời vùng, chống hút chakra, cắt nguồn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-012-P2",
+      "patch": {
+        "name_vi": "Trùng hút chakra",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "chakra_regen",
+          "base": 0.07,
+          "unit": "fraction",
+          "group": "PASSIVE:chakra_regen"
+        }
+      },
+      "reason": "Hút chakra và vùng trùng; không tính mỗi tick là proc.",
+      "counterplay": "Rời vùng, chống hút chakra, cắt nguồn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-012-P3",
+      "patch": {
+        "name_vi": "Duy trì hệ trùng"
+      },
+      "reason": "Hút chakra và vùng trùng; không tính mỗi tick là proc.",
+      "counterplay": "Rời vùng, chống hút chakra, cắt nguồn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-012-P4",
+      "patch": {
+        "name_vi": "Phòng hộ đồng tộc",
+        "effect": {
+          "type": "stat_relative_bonus",
+          "key": "chakra_drain_resist",
+          "base": 0.06,
+          "unit": "fraction",
+          "group": "PASSIVE:chakra_drain_resist"
+        }
+      },
+      "reason": "Hút chakra và vùng trùng; không tính mỗi tick là proc.",
+      "counterplay": "Rời vùng, chống hút chakra, cắt nguồn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-012-P5",
+      "patch": {
+        "name_vi": "Tiết chế trùng thực chakra"
+      },
+      "reason": "Hút chakra và vùng trùng; không tính mỗi tick là proc.",
+      "counterplay": "Rời vùng, chống hút chakra, cắt nguồn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    },
+    {
+      "id": "NIN-012-P6",
+      "patch": {
+        "name_vi": "Nhiễu phòng tuyến"
+      },
+      "reason": "Hút chakra và vùng trùng; không tính mỗi tick là proc.",
+      "counterplay": "Rời vùng, chống hút chakra, cắt nguồn.",
+      "status": "DEV_PROPOSAL",
+      "source_gate_unchanged": true
+    }
+  ],
+  "kits": [
+    {
+      "id": "NIN-001",
+      "name": "Naruto Uzumaki (thiếu niên)",
+      "battle_plan": "Phân thân tạo cửa sổ cận chiến; không kích nội tại từ phân thân.",
+      "counterplay": "Chặn đường lao, loại phân thân.",
+      "skills": [
+        {
+          "id": "NIN-001-S0",
+          "name": "Cận chiến phân thân",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-001-S1",
+          "name": "Ảnh Phân Thân",
+          "mechanic": "summon",
+          "element": "neutral",
+          "geometry": "summon",
+          "passive_links": [
+            "NIN-001-P2"
+          ]
+        },
+        {
+          "id": "NIN-001-S2",
+          "name": "Uzumaki liên đạn",
+          "mechanic": "multi_hit",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-001-S3",
+          "name": "Phân thân đánh lạc hướng",
+          "mechanic": "decoy",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-001-S4",
+          "name": "Chakra Cửu Vĩ",
+          "mechanic": "chakra_regen",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-001-S5",
+          "name": "Rasengan",
+          "mechanic": "dash_damage",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-001-S6",
+          "name": "Rasengan phối hợp",
+          "mechanic": "dash_multi_hit",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": [
+            "NIN-001-P5"
+          ]
+        },
+        {
+          "id": "NIN-001-S7",
+          "name": "Phản công phân thân",
+          "mechanic": "counter",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": [
+            "NIN-001-P5"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-001-P1",
+          "name": "Sức sống phân thân",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "hp",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:hp"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-001-P2",
+          "name": "Thế công phân thân",
+          "event": "summon_spawned",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "patk",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:patk"
+          },
+          "skill_ids": [
+            "NIN-001-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-001-P3",
+          "name": "Bất khuất Cửu Vĩ",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "incoming_damage_reduction",
+            "key": "damage_reduction",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:damage_reduction"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-001-P4",
+          "name": "Ý chí xung phong",
+          "event": "continuous_aura",
+          "scope": "team",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "patk",
+            "base": 0.045,
+            "unit": "fraction",
+            "group": "PASSIVE:patk"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.049957,
+                0.050857,
+                0.051757,
+                0.052657
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.055437,
+                0.056337,
+                0.057237,
+                0.058137
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.059939,
+                0.060839,
+                0.061739,
+                0.062639
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-001-P5",
+          "name": "Rasengan phối hợp",
+          "event": "while_form_active",
+          "scope": "self",
+          "effect": {
+            "type": "form_skill_coefficient_bonus",
+            "key": "form_empowered",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "form_ids": [
+              "NIN-001-F1"
+            ],
+            "skill_ids": [
+              "NIN-001-S6",
+              "NIN-001-S7"
+            ],
+            "eligibility": "intersection of exact active form's authored empowered skill list AND listed skill IDs; do not apply union across forms; use only damage/heal/shield coefficient actually typed; zero/untyped no-op HOLD"
+          },
+          "skill_ids": [
+            "NIN-001-S6",
+            "NIN-001-S7"
+          ],
+          "form_ids": [
+            "NIN-001-F1"
+          ],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-001-P6",
+          "name": "Nhịp phối hợp Đội 7",
+          "event": "before_combo_payload",
+          "scope": "combo",
+          "effect": {
+            "type": "combo_payload_bonus",
+            "key": "combo",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:combo",
+            "combo_ids": [
+              "COMBO-001"
+            ]
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [
+            "COMBO-001"
+          ],
+          "unlock": 6,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-002",
+      "name": "Sasuke Uchiha (thiếu niên)",
+      "battle_plan": "Hỏa cầu mở nhịp chính xác cho Chidori, không đảm bảo né tuyệt đối.",
+      "counterplay": "Giãn đội hình, cắt đường lao, đợi ấn chú hết.",
+      "skills": [
+        {
+          "id": "NIN-002-S0",
+          "name": "Đòn nhanh",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-002-S1",
+          "name": "Hào hỏa cầu",
+          "mechanic": "projectile_damage",
+          "element": "fire",
+          "geometry": "projectile_burst",
+          "passive_links": [
+            "NIN-002-P2"
+          ]
+        },
+        {
+          "id": "NIN-002-S2",
+          "name": "Sư tử liên đạn",
+          "mechanic": "multi_hit",
+          "element": "fire",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-002-S3",
+          "name": "Shuriken dây thép",
+          "mechanic": "status",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-002-S4",
+          "name": "Sharingan quan sát",
+          "mechanic": "stance",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-002-S5",
+          "name": "Chidori",
+          "mechanic": "dash_damage",
+          "element": "lightning",
+          "geometry": "dash_contact",
+          "passive_links": [
+            "NIN-002-P5"
+          ]
+        },
+        {
+          "id": "NIN-002-S6",
+          "name": "Chidori đột kích",
+          "mechanic": "dash_multi_hit",
+          "element": "lightning",
+          "geometry": "dash_contact",
+          "passive_links": [
+            "NIN-002-P5"
+          ]
+        },
+        {
+          "id": "NIN-002-S7",
+          "name": "Ấn chú: bộc phát",
+          "mechanic": "activate_form",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-002-P1",
+          "name": "Nhãn lực Uchiha",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-002-P2",
+          "name": "Hỏa cầu mở thế",
+          "event": "critical_hit_confirmed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [
+            "NIN-002-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 10,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-002-P3",
+          "name": "Bộ pháp thoát hiểm",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "move_speed",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:move_speed"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-002-P4",
+          "name": "Quan sát đồng tộc",
+          "event": "continuous_aura",
+          "scope": "family",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.055,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.061058,
+                0.062158,
+                0.063258,
+                0.064358
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.067756,
+                0.068856,
+                0.069956,
+                0.071056
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.073259,
+                0.074359,
+                0.075459,
+                0.076559
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-002-P5",
+          "name": "Lôi kích ấn chú",
+          "event": "while_form_active",
+          "scope": "self",
+          "effect": {
+            "type": "form_skill_coefficient_bonus",
+            "key": "form_empowered",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "form_ids": [
+              "NIN-002-F1",
+              "NIN-002-F2"
+            ],
+            "skill_ids": [
+              "NIN-002-S5",
+              "NIN-002-S6"
+            ],
+            "eligibility": "intersection of exact active form's authored empowered skill list AND listed skill IDs; do not apply union across forms; use only damage/heal/shield coefficient actually typed; zero/untyped no-op HOLD"
+          },
+          "skill_ids": [
+            "NIN-002-S5",
+            "NIN-002-S6"
+          ],
+          "form_ids": [
+            "NIN-002-F1",
+            "NIN-002-F2"
+          ],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-002-P6",
+          "name": "Đối ứng Đội 7",
+          "event": "before_combo_payload",
+          "scope": "combo",
+          "effect": {
+            "type": "combo_payload_bonus",
+            "key": "combo",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:combo",
+            "combo_ids": [
+              "COMBO-001"
+            ]
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [
+            "COMBO-001"
+          ],
+          "unlock": 6,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-003",
+      "name": "Sakura Haruno (thiếu niên)",
+      "battle_plan": "Thiếu niên thiên giải ảo và bảo hộ, không vay sức mạnh Bách Hào.",
+      "counterplay": "Ép dùng giải ảo trước, gây áp lực nhiều mục tiêu.",
+      "skills": [
+        {
+          "id": "NIN-003-S0",
+          "name": "Đòn phòng vệ",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-003-S1",
+          "name": "Giải ảo thuật",
+          "mechanic": "cleanse",
+          "element": "yin",
+          "geometry": "single_ally",
+          "passive_links": [
+            "NIN-003-P2"
+          ]
+        },
+        {
+          "id": "NIN-003-S2",
+          "name": "Sơ cứu hỗ trợ (mô phỏng)",
+          "mechanic": "heal",
+          "element": "yang",
+          "geometry": "single_ally",
+          "passive_links": [
+            "NIN-003-P6"
+          ]
+        },
+        {
+          "id": "NIN-003-S3",
+          "name": "Điều hòa chakra",
+          "mechanic": "chakra_regen",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-003-S4",
+          "name": "Bảo vệ đồng đội",
+          "mechanic": "shield",
+          "element": "neutral",
+          "geometry": "single_ally",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-003-S5",
+          "name": "Ý chí Đội 7",
+          "mechanic": "team_buff",
+          "element": "neutral",
+          "geometry": "circle_self",
+          "passive_links": [
+            "NIN-003-P5"
+          ]
+        },
+        {
+          "id": "NIN-003-S6",
+          "name": "Giải ảo đồng đội",
+          "mechanic": "cleanse",
+          "element": "neutral",
+          "geometry": "single_ally",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-003-S7",
+          "name": "Kunai hỗ trợ",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "projectile_first",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-003-P1",
+          "name": "Điều hòa chakra sơ cấp",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "healing",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:healing"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-003-P2",
+          "name": "Giải ảo chuẩn xác",
+          "event": "cleanse_effective",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_regen",
+            "base": 0.065,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_regen"
+          },
+          "skill_ids": [
+            "NIN-003-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.072159,
+                0.073459,
+                0.074759,
+                0.076059
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.080076,
+                0.081376,
+                0.082676,
+                0.083976
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.086578,
+                0.087878,
+                0.089178,
+                0.090478
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-003-P3",
+          "name": "Duy trì chakra",
+          "event": "chakra_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_regen",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_regen"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-003-P4",
+          "name": "Tuyến sơ cứu Đội 7",
+          "event": "continuous_aura",
+          "scope": "team",
+          "effect": {
+            "type": "received_heal_bonus",
+            "key": "healing_received",
+            "base": 0.055,
+            "unit": "fraction",
+            "group": "PASSIVE:healing_received"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.061058,
+                0.062158,
+                0.063258,
+                0.064358
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.067756,
+                0.068856,
+                0.069956,
+                0.071056
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.073259,
+                0.074359,
+                0.075459,
+                0.076559
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-003-P5",
+          "name": "Tiết chế viện trợ",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_cp_discount",
+            "key": "chakra_cost",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_cp_discount",
+            "skill_ids": [
+              "NIN-003-S5"
+            ],
+            "cap": "paid skill only; >=1 CP; no upkeep/child cost"
+          },
+          "skill_ids": [
+            "NIN-003-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-003-P6",
+          "name": "Sơ cứu tiếp sức",
+          "event": "heal_confirmed",
+          "scope": "team",
+          "effect": {
+            "type": "received_heal_bonus",
+            "key": "healing_received",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:healing_received"
+          },
+          "skill_ids": [
+            "NIN-003-S2"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 18,
+          "duration_s": 5,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-004",
+      "name": "Kakashi Hatake",
+      "battle_plan": "Phòng tuyến tạo cơ hội Lôi kích; chỉ tính khi tường thật sự chặn.",
+      "counterplay": "Đánh vòng tường, ép chakra, né đường Lôi.",
+      "skills": [
+        {
+          "id": "NIN-004-S0",
+          "name": "Kunai liên kích",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-004-S1",
+          "name": "Thổ Lưu Bích",
+          "mechanic": "wall",
+          "element": "earth",
+          "geometry": "wall",
+          "passive_links": [
+            "NIN-004-P2"
+          ]
+        },
+        {
+          "id": "NIN-004-S2",
+          "name": "Thông linh nhẫn khuyển",
+          "mechanic": "summon",
+          "element": "neutral",
+          "geometry": "summon",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-004-S3",
+          "name": "Thủy Long Đạn",
+          "mechanic": "projectile_damage",
+          "element": "water",
+          "geometry": "projectile_burst",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-004-S4",
+          "name": "Sharingan quan sát",
+          "mechanic": "stance",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-004-S5",
+          "name": "Raikiri",
+          "mechanic": "dash_damage",
+          "element": "lightning",
+          "geometry": "dash_contact",
+          "passive_links": [
+            "NIN-004-P5"
+          ]
+        },
+        {
+          "id": "NIN-004-S6",
+          "name": "Lôi truyền dẫn",
+          "mechanic": "line_damage",
+          "element": "lightning",
+          "geometry": "line",
+          "passive_links": [
+            "NIN-004-P5"
+          ]
+        },
+        {
+          "id": "NIN-004-S7",
+          "name": "Kamui",
+          "mechanic": "zone_damage",
+          "element": "space",
+          "geometry": "zone_target",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-004-P1",
+          "name": "Quan sát sao chép",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-004-P2",
+          "name": "Phản ứng sau Thổ Lưu Bích",
+          "event": "wall_blocked",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [
+            "NIN-004-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-004-P3",
+          "name": "Thoát góc nguy hiểm",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "move_speed",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:move_speed"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-004-P4",
+          "name": "Quan sát chiến thuật",
+          "event": "continuous_aura",
+          "scope": "radius",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.055,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.061058,
+                0.062158,
+                0.063258,
+                0.064358
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.067756,
+                0.068856,
+                0.069956,
+                0.071056
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.073259,
+                0.074359,
+                0.075459,
+                0.076559
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-004-P5",
+          "name": "Raikiri cường hóa",
+          "event": "while_form_active",
+          "scope": "self",
+          "effect": {
+            "type": "form_skill_coefficient_bonus",
+            "key": "form_empowered",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "form_ids": [
+              "NIN-004-F1",
+              "NIN-004-F2"
+            ],
+            "skill_ids": [
+              "NIN-004-S5",
+              "NIN-004-S6"
+            ],
+            "eligibility": "intersection of exact active form's authored empowered skill list AND listed skill IDs; do not apply union across forms; use only damage/heal/shield coefficient actually typed; zero/untyped no-op HOLD"
+          },
+          "skill_ids": [
+            "NIN-004-S5",
+            "NIN-004-S6"
+          ],
+          "form_ids": [
+            "NIN-004-F1",
+            "NIN-004-F2"
+          ],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-004-P6",
+          "name": "Phối hợp chiến thuật",
+          "event": "before_combo_payload",
+          "scope": "combo",
+          "effect": {
+            "type": "combo_payload_bonus",
+            "key": "combo",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:combo",
+            "combo_ids": [
+              "COMBO-003"
+            ]
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [
+            "COMBO-003"
+          ],
+          "unlock": 6,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-005",
+      "name": "Iruka Umino",
+      "battle_plan": "Bẫy và lá chắn hỗ trợ, không biến Iruka thành sát thủ.",
+      "counterplay": "Đánh ngoài bẫy, ép thay đổi vị trí và phá lá chắn.",
+      "skills": [
+        {
+          "id": "NIN-005-S0",
+          "name": "Phi tiêu",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "projectile_first",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-005-S1",
+          "name": "Bẫy dây",
+          "mechanic": "status",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": [
+            "NIN-005-P2"
+          ]
+        },
+        {
+          "id": "NIN-005-S2",
+          "name": "Bảo vệ học viên",
+          "mechanic": "shield",
+          "element": "neutral",
+          "geometry": "single_ally",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-005-S3",
+          "name": "Bẫy dây học viện",
+          "mechanic": "trap",
+          "element": "neutral",
+          "geometry": "circle_ground",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-005-S4",
+          "name": "Lá chắn học viên",
+          "mechanic": "shield",
+          "element": "neutral",
+          "geometry": "circle_self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-005-S5",
+          "name": "Ý chí người thầy",
+          "mechanic": "team_buff",
+          "element": "neutral",
+          "geometry": "circle_self",
+          "passive_links": [
+            "NIN-005-P5",
+            "NIN-005-P6"
+          ]
+        },
+        {
+          "id": "NIN-005-S6",
+          "name": "Kunai cứu viện",
+          "mechanic": "projectile_damage",
+          "element": "neutral",
+          "geometry": "projectile_burst",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-005-S7",
+          "name": "Bảo hộ đồng đội",
+          "mechanic": "shield",
+          "element": "neutral",
+          "geometry": "circle_self",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-005-P1",
+          "name": "Kỷ luật học viện",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_max",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_max"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-005-P2",
+          "name": "Bẫy mở nhịp phòng hộ",
+          "event": "status_applied",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "armor",
+            "base": 0.065,
+            "unit": "fraction",
+            "group": "PASSIVE:armor"
+          },
+          "skill_ids": [
+            "NIN-005-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.072159,
+                0.073459,
+                0.074759,
+                0.076059
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.080076,
+                0.081376,
+                0.082676,
+                0.083976
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.086578,
+                0.087878,
+                0.089178,
+                0.090478
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-005-P3",
+          "name": "Tiết kiệm chakra",
+          "event": "chakra_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_regen",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_regen"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-005-P4",
+          "name": "Bảo hộ học viên",
+          "event": "continuous_aura",
+          "scope": "team",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_regen",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_regen"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-005-P5",
+          "name": "Tiết chế hiệu lệnh",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_cp_discount",
+            "key": "chakra_cost",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_cp_discount",
+            "skill_ids": [
+              "NIN-005-S5"
+            ],
+            "cap": "paid skill only; >=1 CP; no upkeep/child cost"
+          },
+          "skill_ids": [
+            "NIN-005-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-005-P6",
+          "name": "Hiệu lệnh tiếp viện",
+          "event": "stance_effect_confirmed",
+          "scope": "team",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_regen",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_regen"
+          },
+          "skill_ids": [
+            "NIN-005-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 18,
+          "duration_s": 5,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-006",
+      "name": "Konohamaru (thiếu niên)",
+      "battle_plan": "Phân thân hỗ trợ tiếp cận; giữ cổng thời kỳ Rasengan tập sự.",
+      "counterplay": "Xử lý phân thân, né liên kích; giữ source HOLD.",
+      "skills": [
+        {
+          "id": "NIN-006-S0",
+          "name": "Đòn cận chiến",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-006-S1",
+          "name": "Ảnh phân thân",
+          "mechanic": "summon",
+          "element": "neutral",
+          "geometry": "summon",
+          "passive_links": [
+            "NIN-006-P2"
+          ]
+        },
+        {
+          "id": "NIN-006-S2",
+          "name": "Đòn đánh bất ngờ",
+          "mechanic": "dash_damage",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-006-S3",
+          "name": "Biến hóa đánh lạc hướng",
+          "mechanic": "decoy",
+          "element": "earth",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-006-S4",
+          "name": "Phân thân tập sự",
+          "mechanic": "summon",
+          "element": "neutral",
+          "geometry": "summon",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-006-S5",
+          "name": "Phân thân liên kích tập sự",
+          "mechanic": "multi_hit",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": [
+            "NIN-006-P5"
+          ]
+        },
+        {
+          "id": "NIN-006-S6",
+          "name": "Shuriken liên kích",
+          "mechanic": "line_damage",
+          "element": "neutral",
+          "geometry": "line",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-006-S7",
+          "name": "Rasengan tập sự (kiểm tra thời kỳ)",
+          "mechanic": "dash_damage",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-006-P1",
+          "name": "Thể lực tập sự",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "hp",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:hp"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-006-P2",
+          "name": "Phân thân mở đường",
+          "event": "summon_spawned",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "move_speed",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:move_speed"
+          },
+          "skill_ids": [
+            "NIN-006-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-006-P3",
+          "name": "Kiên trì học việc",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "incoming_damage_reduction",
+            "key": "damage_reduction",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:damage_reduction"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-006-P4",
+          "name": "Nhịp xung phong tập sự",
+          "event": "continuous_aura",
+          "scope": "team",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "patk",
+            "base": 0.035,
+            "unit": "fraction",
+            "group": "PASSIVE:patk"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.038855,
+                0.039555,
+                0.040255,
+                0.040955
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.043118,
+                0.043818,
+                0.044518,
+                0.045218
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.046619,
+                0.047319,
+                0.048019,
+                0.048719
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-006-P5",
+          "name": "Liên kích phân thân",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_effect_bonus",
+            "key": "damage",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "skill_ids": [
+              "NIN-006-S5"
+            ]
+          },
+          "skill_ids": [
+            "NIN-006-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-006-P6",
+          "name": "Khích lệ chiến thắng",
+          "event": "kill_confirmed",
+          "scope": "team",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "patk",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:patk"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 18,
+          "duration_s": 5,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-007",
+      "name": "Shikamaru Nara (thiếu niên)",
+      "battle_plan": "Khống chế có vị trí và kháng, không khóa dây chuyền vô hạn.",
+      "counterplay": "Giãn vị trí, thanh tẩy, kháng khống chế.",
+      "skills": [
+        {
+          "id": "NIN-007-S0",
+          "name": "Phi tiêu",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "projectile_first",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-007-S1",
+          "name": "Ảnh mô phỏng",
+          "mechanic": "status",
+          "element": "yin",
+          "geometry": "single",
+          "passive_links": [
+            "NIN-007-P2",
+            "NIN-007-P6"
+          ]
+        },
+        {
+          "id": "NIN-007-S2",
+          "name": "Bẫy bóng",
+          "mechanic": "trap",
+          "element": "yin",
+          "geometry": "circle_ground",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-007-S3",
+          "name": "Bẫy bóng lan rộng",
+          "mechanic": "zone_damage",
+          "element": "yin",
+          "geometry": "zone_target",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-007-S4",
+          "name": "Bóng che đồng đội",
+          "mechanic": "shield",
+          "element": "yin",
+          "geometry": "single_ally",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-007-S5",
+          "name": "Ảnh trói",
+          "mechanic": "status",
+          "element": "yin",
+          "geometry": "line",
+          "passive_links": [
+            "NIN-007-P5"
+          ]
+        },
+        {
+          "id": "NIN-007-S6",
+          "name": "Bóng khóa chân",
+          "mechanic": "chakra_drain",
+          "element": "yin",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-007-S7",
+          "name": "Kế phản công",
+          "mechanic": "counter",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-007-P1",
+          "name": "Tư duy thế trận",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "control_resist",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:control_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-007-P2",
+          "name": "Bắt bóng đúng lúc",
+          "event": "status_applied",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "control_duration",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:control_duration"
+          },
+          "skill_ids": [
+            "NIN-007-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-007-P3",
+          "name": "Giữ bình tĩnh",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "control_resist",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:control_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-007-P4",
+          "name": "Phạm vi chỉ huy",
+          "event": "continuous_aura",
+          "scope": "radius",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "control_resist",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:control_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-007-P5",
+          "name": "Duy trì Ảnh trói",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_status_duration_bonus",
+            "key": "control_duration",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "skill_ids": [
+              "NIN-007-S5"
+            ],
+            "cap": "authored status/boss cap"
+          },
+          "skill_ids": [
+            "NIN-007-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-007-P6",
+          "name": "Phá nhịp đối phương",
+          "event": "status_applied",
+          "scope": "enemy_team",
+          "effect": {
+            "type": "stat_relative_penalty",
+            "key": "control_resist",
+            "base": 0.025,
+            "unit": "fraction",
+            "group": "PASSIVE:debuff:control_resist"
+          },
+          "skill_ids": [
+            "NIN-007-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 18,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.027754,
+                0.028254,
+                0.028754,
+                0.029254
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.030798,
+                0.031298,
+                0.031798,
+                0.032298
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.033299,
+                0.033799,
+                0.034299,
+                0.034799
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-008",
+      "name": "Choji Akimichi (thiếu niên)",
+      "battle_plan": "Chuyển hình thái rồi lao; nội tại không tự kích hình thái.",
+      "counterplay": "Né đường lao, kéo giãn khỏi đồng đội, đợi hình thái hết.",
+      "skills": [
+        {
+          "id": "NIN-008-S0",
+          "name": "Đòn phòng thủ",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-008-S1",
+          "name": "Bội hóa",
+          "mechanic": "activate_form",
+          "element": "yang",
+          "geometry": "self",
+          "passive_links": [
+            "NIN-008-P2"
+          ]
+        },
+        {
+          "id": "NIN-008-S2",
+          "name": "Nhục đạn chiến xa",
+          "mechanic": "dash_damage",
+          "element": "yang",
+          "geometry": "dash_contact",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-008-S3",
+          "name": "Bội hóa cánh tay",
+          "mechanic": "cone_damage",
+          "element": "neutral",
+          "geometry": "cone",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-008-S4",
+          "name": "Phòng thủ bội hóa",
+          "mechanic": "stance",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-008-S5",
+          "name": "Siêu bội hóa",
+          "mechanic": "activate_form",
+          "element": "yang",
+          "geometry": "self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-008-S6",
+          "name": "Nhục đạn gai",
+          "mechanic": "dash_multi_hit",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": [
+            "NIN-008-P5"
+          ]
+        },
+        {
+          "id": "NIN-008-S7",
+          "name": "Điệp hóa",
+          "mechanic": "activate_form",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-008-P1",
+          "name": "Thể chất Akimichi",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "hp",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:hp"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-008-P2",
+          "name": "Bội hóa vững thân",
+          "event": "form_activated",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "armor",
+            "base": 0.075,
+            "unit": "fraction",
+            "group": "PASSIVE:armor"
+          },
+          "skill_ids": [
+            "NIN-008-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.083261,
+                0.084761,
+                0.086261,
+                0.087761
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.092395,
+                0.093895,
+                0.095395,
+                0.096895
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.099898,
+                0.101398,
+                0.102898,
+                0.104398
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-008-P3",
+          "name": "Chống chịu tuyến đầu",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "incoming_damage_reduction",
+            "key": "damage_reduction",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:damage_reduction"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-008-P4",
+          "name": "Che chắn cự ly gần",
+          "event": "continuous_aura",
+          "scope": "radius",
+          "effect": {
+            "type": "incoming_damage_reduction",
+            "key": "damage_reduction",
+            "base": 0.035,
+            "unit": "fraction",
+            "group": "PASSIVE:damage_reduction"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.038855,
+                0.039555,
+                0.040255,
+                0.040955
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.043118,
+                0.043818,
+                0.044518,
+                0.045218
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.046619,
+                0.047319,
+                0.048019,
+                0.048719
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-008-P5",
+          "name": "Nhục đạn cường hóa",
+          "event": "while_form_active",
+          "scope": "self",
+          "effect": {
+            "type": "form_skill_coefficient_bonus",
+            "key": "form_empowered",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "form_ids": [
+              "NIN-008-F1",
+              "NIN-008-F2"
+            ],
+            "skill_ids": [
+              "NIN-008-S6"
+            ],
+            "eligibility": "intersection of exact active form's authored empowered skill list AND listed skill IDs; do not apply union across forms; use only damage/heal/shield coefficient actually typed; zero/untyped no-op HOLD"
+          },
+          "skill_ids": [
+            "NIN-008-S6"
+          ],
+          "form_ids": [
+            "NIN-008-F1",
+            "NIN-008-F2"
+          ],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-008-P6",
+          "name": "Chia sẻ sức ép",
+          "event": "damage_taken_confirmed",
+          "scope": "team",
+          "effect": {
+            "type": "incoming_damage_reduction",
+            "key": "damage_reduction",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:damage_reduction"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 18,
+          "duration_s": 5,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-009",
+      "name": "Ino Yamanaka (thiếu niên)",
+      "battle_plan": "Khống chế tinh thần, cảm ứng và tiếp chakra; không chiếm quyền vĩnh viễn.",
+      "counterplay": "Kháng ảo, thanh tẩy, gây gián đoạn.",
+      "skills": [
+        {
+          "id": "NIN-009-S0",
+          "name": "Phi tiêu",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "projectile_first",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-009-S1",
+          "name": "Tâm chuyển thân",
+          "mechanic": "status",
+          "element": "yin",
+          "geometry": "single",
+          "passive_links": [
+            "NIN-009-P2",
+            "NIN-009-P6"
+          ]
+        },
+        {
+          "id": "NIN-009-S2",
+          "name": "Cảm ứng đối thủ",
+          "mechanic": "mark",
+          "element": "yin",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-009-S3",
+          "name": "Tâm chuyển thân đánh lạc hướng",
+          "mechanic": "status",
+          "element": "yin",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-009-S4",
+          "name": "Cảm ứng chakra",
+          "mechanic": "team_buff",
+          "element": "neutral",
+          "geometry": "circle_self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-009-S5",
+          "name": "Khống chế tâm trí",
+          "mechanic": "status",
+          "element": "yin",
+          "geometry": "single",
+          "passive_links": [
+            "NIN-009-P5"
+          ]
+        },
+        {
+          "id": "NIN-009-S6",
+          "name": "Tâm liên kết",
+          "mechanic": "chakra_restore",
+          "element": "yin",
+          "geometry": "circle_self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-009-S7",
+          "name": "Nhiễu tinh thần",
+          "mechanic": "status",
+          "element": "yin",
+          "geometry": "circle_target",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-009-P1",
+          "name": "Tâm trí vững vàng",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "genjutsu_resist",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:genjutsu_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-009-P2",
+          "name": "Tâm chuyển thân hiệu quả",
+          "event": "status_applied",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "control_duration",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:control_duration"
+          },
+          "skill_ids": [
+            "NIN-009-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-009-P3",
+          "name": "Tập trung dưới áp lực",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "control_resist",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:control_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-009-P4",
+          "name": "Liên lạc tinh thần",
+          "event": "continuous_aura",
+          "scope": "radius",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "genjutsu_resist",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:genjutsu_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-009-P5",
+          "name": "Duy trì nhiễu tâm",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_status_duration_bonus",
+            "key": "control_duration",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "skill_ids": [
+              "NIN-009-S5"
+            ],
+            "cap": "authored status/boss cap"
+          },
+          "skill_ids": [
+            "NIN-009-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-009-P6",
+          "name": "Rối loạn đội hình địch",
+          "event": "status_applied",
+          "scope": "enemy_team",
+          "effect": {
+            "type": "stat_relative_penalty",
+            "key": "control_resist",
+            "base": 0.025,
+            "unit": "fraction",
+            "group": "PASSIVE:debuff:control_resist"
+          },
+          "skill_ids": [
+            "NIN-009-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 18,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.027754,
+                0.028254,
+                0.028754,
+                0.029254
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.030798,
+                0.031298,
+                0.031798,
+                0.032298
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.033299,
+                0.033799,
+                0.034299,
+                0.034799
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-010",
+      "name": "Hinata Hyuga (thiếu niên)",
+      "battle_plan": "Áp lực chakra từ Nhu quyền; giữ cự ly gần, không sát thương miễn phí.",
+      "counterplay": "Giữ khoảng cách, kháng hút chakra, chặn tiếp cận.",
+      "skills": [
+        {
+          "id": "NIN-010-S0",
+          "name": "Đòn cận chiến",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-010-S1",
+          "name": "Bạch nhãn",
+          "mechanic": "stance",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": [
+            "NIN-010-P2"
+          ]
+        },
+        {
+          "id": "NIN-010-S2",
+          "name": "Nhu quyền",
+          "mechanic": "chakra_drain",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-010-S3",
+          "name": "Nhu quyền điểm huyệt",
+          "mechanic": "multi_hit",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-010-S4",
+          "name": "Bạch nhãn quan sát",
+          "mechanic": "team_buff",
+          "element": "neutral",
+          "geometry": "circle_self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-010-S5",
+          "name": "Liên kích nhu quyền",
+          "mechanic": "multi_hit",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": [
+            "NIN-010-P5"
+          ]
+        },
+        {
+          "id": "NIN-010-S6",
+          "name": "Bát quái liên chưởng",
+          "mechanic": "cone_damage",
+          "element": "neutral",
+          "geometry": "cone",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-010-S7",
+          "name": "Nhu quyền phòng vệ",
+          "mechanic": "counter",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-010-P1",
+          "name": "Quan sát Bạch nhãn",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-010-P2",
+          "name": "Nhu quyền chuẩn xác",
+          "event": "stance_effect_confirmed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.065,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [
+            "NIN-010-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.072159,
+                0.073459,
+                0.074759,
+                0.076059
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.080076,
+                0.081376,
+                0.082676,
+                0.083976
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.086578,
+                0.087878,
+                0.089178,
+                0.090478
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-010-P3",
+          "name": "Phòng thủ mềm",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "incoming_damage_reduction",
+            "key": "damage_reduction",
+            "base": 0.08,
+            "unit": "fraction",
+            "group": "PASSIVE:damage_reduction"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.088812,
+                0.090412,
+                0.092012,
+                0.093612
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.098555,
+                0.100155,
+                0.101755,
+                0.103355
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.106558,
+                0.108158,
+                0.109758,
+                0.111358
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-010-P4",
+          "name": "Hỗ trợ điểm huyệt",
+          "event": "continuous_aura",
+          "scope": "team",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.045,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.049957,
+                0.050857,
+                0.051757,
+                0.052657
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.055437,
+                0.056337,
+                0.057237,
+                0.058137
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.059939,
+                0.060839,
+                0.061739,
+                0.062639
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-010-P5",
+          "name": "Liên chưởng chính xác",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_effect_bonus",
+            "key": "damage",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "skill_ids": [
+              "NIN-010-S5"
+            ]
+          },
+          "skill_ids": [
+            "NIN-010-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-010-P6",
+          "name": "Tiếp sức tuyến gần",
+          "event": "kill_confirmed",
+          "scope": "team",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "patk",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:patk"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 18,
+          "duration_s": 5,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-011",
+      "name": "Kiba Inuzuka (thiếu niên)",
+      "battle_plan": "Định vị và lao nhanh; Akamaru không phải chủ thể kích nội tại mới.",
+      "counterplay": "Đổi hướng, chặn đường lao, bảo vệ mục tiêu.",
+      "skills": [
+        {
+          "id": "NIN-011-S0",
+          "name": "Đòn nhanh",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-011-S1",
+          "name": "Tứ cước thuật",
+          "mechanic": "stance",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": [
+            "NIN-011-P2"
+          ]
+        },
+        {
+          "id": "NIN-011-S2",
+          "name": "Nhân thú phân thân",
+          "mechanic": "summon",
+          "element": "neutral",
+          "geometry": "summon",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-011-S3",
+          "name": "Akamaru phối hợp",
+          "mechanic": "dash_damage",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-011-S4",
+          "name": "Thú hóa",
+          "mechanic": "stance",
+          "element": "neutral",
+          "geometry": "self",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-011-S5",
+          "name": "Nha thông nha",
+          "mechanic": "dash_damage",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": [
+            "NIN-011-P5"
+          ]
+        },
+        {
+          "id": "NIN-011-S6",
+          "name": "Nha thông nha đột kích",
+          "mechanic": "dash_multi_hit",
+          "element": "neutral",
+          "geometry": "dash_contact",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-011-S7",
+          "name": "Dấu mùi truy kích",
+          "mechanic": "mark",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-011-P1",
+          "name": "Khứu giác truy kích",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "move_speed",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:move_speed"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-011-P2",
+          "name": "Tứ cước tăng tốc",
+          "event": "stance_effect_confirmed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "move_speed",
+            "base": 0.075,
+            "unit": "fraction",
+            "group": "PASSIVE:move_speed"
+          },
+          "skill_ids": [
+            "NIN-011-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.083261,
+                0.084761,
+                0.086261,
+                0.087761
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.092395,
+                0.093895,
+                0.095395,
+                0.096895
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.099898,
+                0.101398,
+                0.102898,
+                0.104398
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-011-P3",
+          "name": "Thoát hiểm thú hóa",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "move_speed",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:move_speed"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-011-P4",
+          "name": "Chỉ điểm mục tiêu",
+          "event": "continuous_aura",
+          "scope": "radius",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "accuracy",
+            "base": 0.05,
+            "unit": "fraction",
+            "group": "PASSIVE:accuracy"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.055507,
+                0.056507,
+                0.057507,
+                0.058507
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.061597,
+                0.062597,
+                0.063597,
+                0.064597
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.066599,
+                0.067599,
+                0.068599,
+                0.069599
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-011-P5",
+          "name": "Nha thông nha",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_effect_bonus",
+            "key": "damage",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_effect",
+            "skill_ids": [
+              "NIN-011-S5"
+            ]
+          },
+          "skill_ids": [
+            "NIN-011-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-011-P6",
+          "name": "Vết thương truy đuổi",
+          "event": "hostile_damage_confirmed",
+          "scope": "hit_primary_enemy",
+          "effect": {
+            "type": "stat_relative_penalty",
+            "key": "armor",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:debuff:armor"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 12,
+          "duration_s": 5,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NIN-012",
+      "name": "Shino Aburame (thiếu niên)",
+      "battle_plan": "Hút chakra và vùng trùng; không tính mỗi tick là proc.",
+      "counterplay": "Rời vùng, chống hút chakra, cắt nguồn.",
+      "skills": [
+        {
+          "id": "NIN-012-S0",
+          "name": "Phi tiêu",
+          "mechanic": "damage",
+          "element": "neutral",
+          "geometry": "projectile_first",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-012-S1",
+          "name": "Ký hoại trùng",
+          "mechanic": "chakra_drain",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": [
+            "NIN-012-P2"
+          ]
+        },
+        {
+          "id": "NIN-012-S2",
+          "name": "Trùng phân thân",
+          "mechanic": "summon",
+          "element": "neutral",
+          "geometry": "summon",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-012-S3",
+          "name": "Trùng dò đường",
+          "mechanic": "mark",
+          "element": "neutral",
+          "geometry": "single",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-012-S4",
+          "name": "Trùng bám chakra",
+          "mechanic": "zone_damage",
+          "element": "neutral",
+          "geometry": "zone_target",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-012-S5",
+          "name": "Trùng thực chakra",
+          "mechanic": "chakra_drain",
+          "element": "neutral",
+          "geometry": "line",
+          "passive_links": [
+            "NIN-012-P5"
+          ]
+        },
+        {
+          "id": "NIN-012-S6",
+          "name": "Trùng hộ vệ",
+          "mechanic": "shield",
+          "element": "neutral",
+          "geometry": "single_ally",
+          "passive_links": []
+        },
+        {
+          "id": "NIN-012-S7",
+          "name": "Trùng bao vây",
+          "mechanic": "zone_damage",
+          "element": "neutral",
+          "geometry": "zone_target",
+          "passive_links": []
+        }
+      ],
+      "passives": [
+        {
+          "id": "NIN-012-P1",
+          "name": "Cộng sinh ký hoại trùng",
+          "event": "derived_stats",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_drain_resist",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_drain_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 0,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-012-P2",
+          "name": "Trùng hút chakra",
+          "event": "resource_effect_confirmed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_regen",
+            "base": 0.07,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_regen"
+          },
+          "skill_ids": [
+            "NIN-012-S1"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 1,
+          "icd_s": 8,
+          "duration_s": 4,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.07771,
+                0.07911,
+                0.08051,
+                0.08191
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.086235,
+                0.087635,
+                0.089035,
+                0.090435
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.093238,
+                0.094638,
+                0.096038,
+                0.097438
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-012-P3",
+          "name": "Duy trì hệ trùng",
+          "event": "hp_threshold_crossed",
+          "scope": "self",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "control_resist",
+            "base": 0.1,
+            "unit": "fraction",
+            "group": "PASSIVE:control_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 2,
+          "icd_s": 24,
+          "duration_s": 6,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.111014,
+                0.113014,
+                0.115014,
+                0.117014
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.123193,
+                0.125193,
+                0.127193,
+                0.129193
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.133197,
+                0.135197,
+                0.137197,
+                0.139197
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-012-P4",
+          "name": "Phòng hộ đồng tộc",
+          "event": "continuous_aura",
+          "scope": "family",
+          "effect": {
+            "type": "stat_relative_bonus",
+            "key": "chakra_drain_resist",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:chakra_drain_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 3,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-012-P5",
+          "name": "Tiết chế trùng thực chakra",
+          "event": "before_skill_effect",
+          "scope": "self",
+          "effect": {
+            "type": "skill_cp_discount",
+            "key": "chakra_cost",
+            "base": 0.04,
+            "unit": "fraction",
+            "group": "PASSIVE:skill_cp_discount",
+            "skill_ids": [
+              "NIN-012-S5"
+            ],
+            "cap": "paid skill only; >=1 CP; no upkeep/child cost"
+          },
+          "skill_ids": [
+            "NIN-012-S5"
+          ],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 4,
+          "icd_s": null,
+          "duration_s": null,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.044406,
+                0.045206,
+                0.046006,
+                0.046806
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.049277,
+                0.050077,
+                0.050877,
+                0.051677
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.053279,
+                0.054079,
+                0.054879,
+                0.055679
+              ]
+            }
+          ]
+        },
+        {
+          "id": "NIN-012-P6",
+          "name": "Nhiễu phòng tuyến",
+          "event": "hostile_damage_confirmed",
+          "scope": "hit_primary_enemy",
+          "effect": {
+            "type": "stat_relative_penalty",
+            "key": "control_resist",
+            "base": 0.06,
+            "unit": "fraction",
+            "group": "PASSIVE:debuff:control_resist"
+          },
+          "skill_ids": [],
+          "form_ids": [],
+          "combo_ids": [],
+          "unlock": 6,
+          "icd_s": 12,
+          "duration_s": 5,
+          "preview": [
+            {
+              "G": 1,
+              "L": 20,
+              "stars": [
+                0.066609,
+                0.067809,
+                0.069009,
+                0.070209
+              ]
+            },
+            {
+              "G": 3,
+              "L": 20,
+              "stars": [
+                0.073916,
+                0.075116,
+                0.076316,
+                0.077516
+              ]
+            },
+            {
+              "G": 10,
+              "L": 20,
+              "stars": [
+                0.079918,
+                0.081118,
+                0.082318,
+                0.083518
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_context": [
+    "https://naruto-official.com/en/news/01_1296",
+    "https://naruto-official.com/en/news/01_1610",
+    "https://naruto-official.com/en/news/01_1903",
+    "https://naruto-official.com/en/news/01_1668"
+  ]
+}

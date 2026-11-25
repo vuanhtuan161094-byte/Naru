@@ -59,3 +59,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 ## PASSIVE-P1 / synergy batch 1
 - REVIEW: 864 registry, runtime DEV ledger, opt-in engine and progression, UI, scoped actual event/6v6 smoke, V8 export. CI pending.
 - READY: per-ID actual contribution audit; source/adapter gate resolution; typed control duration/conditional secondary/remaining authoritative events; continuous mastery; full synergy-P1 after published database; fixed-point CP and V5 manual ultimate; prior V7 remaining special fallbacks/organic progression/Android-PC.
+
+- REVIEW batch 2: 2016 synergy structural registry, 72 read-only pilot, source/target gate and AI/cleanse improvements, 12 roster windows. Full actual interaction audit, P2 remaining 792 records, 4 form-zero and 2 event mapping gaps, all special mechanics still READY.
