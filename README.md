@@ -1,11 +1,10 @@
-# Naru — Naruto RPG
-
-**Design-only D2-D**, no official Godot implementation. Personal fan RPG, Vietnamese, offline-first, Web/Android/PC.
-
-- [D1 master GDD](design/d1/Master_GDD_V1.0.md), [benchmark](design/d1/Benchmark.md), [art bible](design/d1/Art_Bible.md).
-- [D2 baseline and data design](design/MASTER_GDD_D2.md), [combat details](design/COMBAT_DETAIL_D2.md), [source evidence](design/SOURCES_D2.md).
-- [Data](data/): 144 ninja candidates, 864 initial skills + 288 additional proposals (1,152 total), 720 first-grade edges + 1,008 progression policies, 150 resources, 63 recipes, 30 buildings, 48 stats, 16 slots/128 item templates; all game-design seed, NOT client-extracted or production-balanced.
-- [Art review](art/review/): 4 manually created pixel characters, transparent walk key-pose sheet, isometric mockup. Review-only, not approved and not full animation.
-- [Progression D2.2](design/PROGRESSION_D2_2.md), [48 stat formulas](data/stat_formulas.json), [recipe/source data](data/resource_acquisition.json), [Structural QA D2.2](design/DATA_QA_D2_2.json): 17 structural checks, no Godot/runtime test. D2.2 supersedes D2 where numeric seeds conflict.
-
-Precedence: user decisions in D1 and D2 locked baseline > proposed rules and tables. D2 replaces older seed values where explicitly stated. No original advertisement image or commercial client assets in public repository. No publishing license for Naruto IP is implied. Next: review, canon verification, skill-specific tree, design balance, art iteration; Godot only after approval.
+# Naru — Design D4
+Personal Vietnamese Naruto-inspired RPG fan project. **Design only, no playable Godot project yet.**
+- [Master handoff](design/d4/MASTER_HANDOFF.md) / [Codex prompt](design/d4/CODEX_MASTER_PROMPT.md) / [Decisions](design/d4/DECISION_REGISTER.md)
+- [D1 master GDD](design/d1/Master_GDD_V1.0.md) / [D2 baseline](design/MASTER_GDD_D2.md)
+- [D4 combat](design/D4_COMBAT_SPEC.md) / [D4 economy](design/D4_ECONOMY_SPEC.md) / [D4 data](data/d4/)
+- [Ninja](data/ninjas.json) · [World](data/territories.json) · [Campaign](data/campaign_stages.json)
+- [UI contracts](design/d4/ui_screen_contracts.json) / [Acceptance tests — NOT RUN](design/d4/acceptance_tests.json)
+- [ART-01 R3 brief](art/review/ART01_R3_BRIEF.md) — art not approved; existing D2 PNG samples are placeholders.
+- QA: [Combat](design/D4_COMBAT_QA.json) · [Economy](design/D4_ECONOMY_QA.json) · [World](design/D4_WORLD_QA.json). Structural/sanity checks only.
+Data: 144 ninja templates, 1152 skills, 54 forms, 150 resources, 63 recipes, 30 buildings, 16 slots, 128 equip templates, 60 territories, 120 stages, 24 bosses. No client-extracted numerical data. No merge or code implementation until explicitly authorized. No licensed public distribution claim.
