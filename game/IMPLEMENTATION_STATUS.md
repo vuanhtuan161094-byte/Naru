@@ -37,3 +37,5 @@ ABC cumulative exact-SHA a77ad31bbc8bb6d8a78a2a3592a4354fbef2c338: CI 4555907867
 D1-A: 17 screen functional navigation/UI, actual Godot UI, no art. Pending exact-SHA CI and click audit.
 
 D1-B: training sinks, starter help, dynamic team count, backup safety, actual canvas click audit, Web V3. CI pending.
+
+D1-C: formation geometry, UI control sizing, meaningful-action growth, adjacent conquest guard, seeded replay and browser touch audit. CI pending.

@@ -126,7 +126,7 @@ func begin_stage(stage: Dictionary) -> String:
 		return ""
 	return id
 
-func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary,mastery_counts: Dictionary={}) -> bool:
+func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary,mastery_counts: Dictionary={},action_stats: Dictionary={}) -> bool:
 	var entry=state.ledger.get(event_id)
 	if not entry is Dictionary or entry.get("status")!="started" or entry.get("stage_id")!=stage.id: return false
 	var prior=state.duplicate(true)
@@ -150,8 +150,11 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 			var difficulty=stage_difficulty(reg,stage,entry.team)
 			if actions>0 and difficulty>=0.1:
 				p.battle_actions=int(p.get("battle_actions",0))+actions
-				var prior_gain=float(p.permanent.get("strength",0))
-				p.permanent.strength=prior_gain+0.02*sqrt(float(actions))*difficulty*rng.randf_range(0.9,1.1)/pow(1+prior_gain/100.0,0.7)
+				var breakdown=action_stats.get(id,{"strength":actions})
+				for stat in breakdown:
+					if not stat in ["strength","vitality","intellect","spirit","agility","potential"]:continue
+					var prior_gain=float(p.permanent.get(stat,0))
+					p.permanent[stat]=prior_gain+0.02*sqrt(float(breakdown[stat]))*difficulty*rng.randf_range(0.9,1.1)/pow(1+prior_gain/100.0,0.7)
 			for skill_id in mastery_counts:
 				if skill_allowed(reg,id,skill_id):
 					var talent=reg.ninjas[id].unique_talent_design

@@ -419,4 +419,21 @@ func _initialize() -> void:
 	var dynamic_id=product.create_world_squad()
 	check(dynamic_id=="SQUAD-4" and product.set_world_squad(dynamic_id,["NIN-002"]),"additional squad beyond V2 limit")
 	check(guard.valid(reg,product.state),"dynamic squad save accepted")
+	var action_sim=Combat.new()
+	action_sim.setup(reg,product.state,stage,42)
+	var actor_action=action_sim.actors[0]
+	var actor_target=action_sim.primary_alive(1)[0]
+	action_sim.hit(actor_target,actor_action,10,false)
+	check(int(action_sim.action_stats.get(actor_action.id,{}).get("vitality",0))==1,"damage taken contributes vitality")
+	var count_before=int(action_sim.counts.get(actor_action.id,0))
+	action_sim.hit(actor_action,actor_action,10,false)
+	check(int(action_sim.counts.get(actor_action.id,0))==count_before,"self damage no permanent growth")
+	var replay_a=Combat.new()
+	var replay_b=Combat.new()
+	replay_a.setup(reg,product.state,stage,42)
+	replay_b.setup(reg,product.state,stage,42)
+	for tick_id in range(300):
+		replay_a.tick(0.05)
+		replay_b.tick(0.05)
+	check(replay_a.actors==replay_b.actors and replay_a.action_stats==replay_b.action_stats,"seeded battle deterministic replay")
 	quit(0 if failures==0 else 1)

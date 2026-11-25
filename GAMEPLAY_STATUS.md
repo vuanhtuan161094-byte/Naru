@@ -27,3 +27,6 @@ GP-P2C residuals (spatial/pathing and exact skill behavior, deterministic replay
 
 ## D1-B — progression and real input audit
 Optional Ryo scroll purchase at HQ2 (120/600 Ryo small/large; proposed), batch EXP using XP-efficiency, uncapped specialized training using building/material/Ryo and training speed/absorption, starter assignment convenience without replacing existing jobs, dynamic extra squads bounded only by available owned ninja and empty slots, save corruption preservation/recovery notice. UI settings projectile toggle; 44 logical-pixel button targets, trimmed long labels. Web probe now clicks actual exported canvas controls, checks 17 screens, recruits, starts construction, trains, changes battle pause/speed, plays results, and resizes 960x540. Screenshots generated only if verified. CI pending; no public release.
+
+## D1-C — playability adjustments
+Minimum readable control widths (44px logical height); real two-row 3+3 initial formation; meaningful-action permanent stat distribution (damage dealt physical/intellect, damage received vitality, actual healing spirit; no self-damage credit), deterministic replay fixture, territorial expansion requires adjacent player-owned node, actual browser touch tap at 960x540 and starter victory assertion. Proposed growth formula retains D1/V2 scaling. CI pending; not a finished balance/canon pass.

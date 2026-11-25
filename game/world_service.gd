@@ -170,6 +170,10 @@ static func capture_with(reg,s: Dictionary,id: String,roster: Array,location: St
 	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed or location!=id or not travel.is_empty() or roster.is_empty():return false
 	var state=s.territory_states[id]
 	if not state.discovered or state.owner==PLAYER:return false
+	var border=false
+	for edge in edges(reg,id):
+		if s.territory_states[edge.to].owner==PLAYER:border=true
+	if not border:return false
 	var owner=state.owner
 	if owner!=null:
 		if relation(s,PLAYER,owner).state!="war":return false

@@ -103,13 +103,18 @@ func label(parent: Node,value: String,size: int=22) -> Label:
 	l.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	l.tooltip_text=value
 	l.add_theme_font_size_override("font_size",size)
+	if parent is HBoxContainer or parent is GridContainer:
+		l.custom_minimum_size.x=clampf(ThemeDB.fallback_font.get_string_size(value,HORIZONTAL_ALIGNMENT_LEFT,-1,size).x,45,320)
 	parent.add_child(l)
 	return l
 
 func button(parent: Node,title: String,fn: Callable) -> Button:
 	var b=Button.new()
 	b.text=title
-	b.custom_minimum_size=Vector2(0,44)
+	var max_width=190.0 if parent is GridContainer else 260.0
+	var measured=0.0
+	for line in title.split("\n"):measured=maxf(measured,ThemeDB.fallback_font.get_string_size(line,HORIZONTAL_ALIGNMENT_LEFT,-1,17).x+24)
+	b.custom_minimum_size=Vector2(clampf(measured,76,max_width),44)
 	b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	b.tooltip_text=title
 	b.pressed.connect(fn)
@@ -131,7 +136,7 @@ func roster() -> void:
 	root.add_child(tools)
 	button(tools,"Đội viễn chinh / phòng thủ",squad_menu)
 	button(tools,"Vào cốt truyện",campaign)
-	label(tools,"Chọn ô → chọn ninja. Ô đầu là hàng trước.",16)
+	label(tools,"Ô 1–3: hàng trước • 4–6: hàng sau",16)
 	var slots=GridContainer.new()
 	slots.columns=3
 	root.add_child(slots)
@@ -336,7 +341,7 @@ func start_battle(stage: Dictionary) -> void:
 	field.draw.connect(draw_field)
 	root.add_child(field)
 	var scroll=ScrollContainer.new()
-	scroll.custom_minimum_size.y=90
+	scroll.custom_minimum_size.y=115
 	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	root.add_child(scroll)
@@ -429,7 +434,7 @@ func _process(delta: float) -> void:
 
 func finish(won: bool) -> void:
 	if sim==null:return
-	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts)
+	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts,sim.action_stats)
 	var elapsed=sim.ticks*0.05
 	sim=null
 	open_screen("results")
@@ -441,8 +446,11 @@ func finish(won: bool) -> void:
 		for reward in last_reward:label(rows,"%s +%d" % [reg.resources[reward.resource_id].name_vi,int(reward.qty)],18)
 		label(rows,"Tăng trưởng ninja",22)
 		for id in last_growth:
-			var delta=float(store.state.owned[id].permanent.get("strength",0))-float(last_growth[id].get("strength",0))
-			label(rows,"%s • Sức mạnh vĩnh viễn +%.3f" % [reg.ninjas[id].name_vi,delta],17)
+			var gains=[]
+			for stat in store.state.owned[id].permanent:
+				var delta=float(store.state.owned[id].permanent[stat])-float(last_growth[id].get(stat,0))
+				if delta>0.00001:gains.append("%s +%.3f" % [stat_title(stat),delta])
+			label(rows,str(reg.ninjas[id].name_vi)+" • "+(" · ".join(gains) if not gains.is_empty() else "Không tăng chỉ số vĩnh viễn"),17)
 	var row=HBoxContainer.new()
 	root.add_child(row)
 	button(row,"Về làng",menu)
@@ -874,7 +882,7 @@ func web_probe() -> void:
 	for i in range(24000):
 		battle.tick(0.05)
 		if not battle.outcome.is_empty():break
-	ok=ok and battle.outcome=="win" and test.finish_stage(reg,stage,event,true,battle.counts,battle.mastery_counts)
+	ok=ok and battle.outcome=="win" and test.finish_stage(reg,stage,event,true,battle.counts,battle.mastery_counts,battle.action_stats)
 	ok=ok and test.train("NIN-001")
 	var reloaded=SaveStore.new()
 	reloaded.save_path=test.save_path
