@@ -71,6 +71,7 @@ func _initialize() -> void:
 	p6_checks(reg)
 	defended_capture_fixture(reg)
 	p7_checks(reg)
+	p7r_checks(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -420,3 +421,23 @@ func p7_checks(reg) -> void:
 	check(int(store.resource_trial_batch(reg,"RES-128",roster).attempts)==0,"P7 per-ninja cooldown")
 	check(Guard.valid(reg,store.state),"P7 save guard")
 	print("NARU_WORLD_P7_TRANSACTIONS_PASS")
+
+func p7r_checks(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_p7r_roundtrip.json"
+	store.new_game(reg)
+	store.state.inventory["RES-001"]=123456789012
+	store.state.owned["NIN-001"].permanent={"strength":0.12345678901234567,"intellect":1.00000000000001}
+	check(store.save_now(),"P7R full precision write")
+	var parsed=JSON.parse_string(FileAccess.get_file_as_string(store.save_path))
+	check(Guard.valid(reg,parsed),"P7R primary file guard")
+	var loaded=Store.new()
+	loaded.save_path=store.save_path
+	loaded.load_or_new(reg)
+	check(loaded.load_notice=="" and Guard.valid(reg,loaded.state),"P7R no fallback")
+	check(int(loaded.state.inventory["RES-001"])==123456789012,"P7R exact integer")
+	check(absf(float(loaded.state.owned["NIN-001"].permanent.strength)-0.12345678901234567)<1e-15,"P7R fractional precision")
+	check(loaded.rng.state==store.rng.state and loaded.rng.seed==store.rng.seed,"P7R exact RNG")
+	check(store.beast_bind_reason(reg,"NIN-001","BIJ-1")=="Không tương thích","P7R incompatible host")
+	check(store.beast_bind_reason(reg,"NIN-024","BIJ-1")=="Chưa chiêu mộ chủ thể","P7R missing compatible host")
+	print("NARU_WORLD_P7R_TRANSACTIONS_PASS")
