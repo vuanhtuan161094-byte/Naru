@@ -1,0 +1,76 @@
+{
+  "batch": "ART-P2-R6-QUALITY-PARTIAL",
+  "art_parent": "f529dccf856d034694ac1d1718b19770d84fa2bb",
+  "design_sha": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+  "gameplay_tested": "61152d8f2f31762274f6735da8ebe0d54f8f2bbe",
+  "latest_gameplay_observed": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
+  "archive": {
+    "name": "Naru_ART_P2_R6_private.zip",
+    "sha256": "512e0e7d5220b9eb20c9f27754cfe468020caa7b29c4d3478e2bf6eaaf0ca352",
+    "bytes": 10653558,
+    "manifest_sha256": "8f86efe50a0e00b17619b44422e138e29250eb001617ece11a4e63c15fb74d41",
+    "library_file_id": "libfile_ec855e4f4a948191a587546c83c29f78",
+    "library_upload": true,
+    "zip_integrity": "PASS"
+  },
+  "qa": {
+    "ci": 45640946082,
+    "conclusion": "success",
+    "artifact_id": 15035059435,
+    "export_checksums": "7/7 PASS",
+    "latest_ci": 45641507900,
+    "latest_ci_status": "in_progress_at_check",
+    "engine": "Godot 4.4.1 stable",
+    "native_contract": "FAIL 0/6: JSON float anchors vs integer array comparison",
+    "local_fixture": "SCOPED_PASS: same native metadata preloaded after numeric validation; renderer unchanged",
+    "contract_ids": 6,
+    "tampered_hash_rejected": true,
+    "previous_pack_retained": true,
+    "textures": 157,
+    "initial_primary": 12,
+    "map": [
+      14,
+      10
+    ],
+    "moved": true,
+    "hp_changes": 1346,
+    "r3_draws": 472,
+    "r3_ids": 6,
+    "r3_frame_indices_each": 8,
+    "r4_candidate_keys": 29,
+    "fallback_keys": 167,
+    "fallback_draws": 3173,
+    "sampled_primary_pairs": 11501,
+    "close_pairs_lt_1m": 528,
+    "statuses": [
+      "burn",
+      "shock",
+      "fear",
+      "bind",
+      "taunt"
+    ],
+    "video_frames": 361,
+    "fps": 30,
+    "resolution": [
+      1280,
+      720
+    ],
+    "video_sha256": "4f7938f3d8c1b11666edaa087ac1ec0d74db2a90afbea17d48e5f4dae1cdb4ec",
+    "log_sha256": "272c820a9d85d27a4333a178ce0cec3f18702747d89743437ef9e157b51261b8",
+    "trace_sha256": "240e923e97136d35bf7abba426145fa250fda3026256cff72eefa8683f81deca",
+    "pack_sha256": "55f296459a97ae7611f14eed0af876f482599d9215449a05a1ed371d3862c6eb",
+    "art_ci": "NOT_RUN"
+  },
+  "production": {
+    "new_required_clips": 0,
+    "new_opponents": 0,
+    "complete_ninja": 0,
+    "official_integration": 0,
+    "held_wrong_action_sequences": 3,
+    "held_frame_cells": 16,
+    "skill_vfx": "HOLD"
+  },
+  "limits": [
+    "Actual V11 previous exact export, latest HEAD not tested. Native metadata exists; local fixture preloads validated entries, no gameplay source patch or production PASS. 45 prior R4 clips unchanged; six R3 paths restored, no provisional move_se alias. Three new source GIFs were redundant rightward runs instead of requested new action or opponent, archived HOLD, not loaded. No new skill VFX, rig, tween, Cloud, merge, public binary distribution."
+  ]
+}

@@ -48,6 +48,11 @@ var combo_index: Dictionary={}
 var combo_skill_index: Dictionary={}
 var passive_secondary_holds: Dictionary={}
 var combo_consumed: Dictionary={}
+var combo_event_history: Dictionary={}
+var combo_evidence: Dictionary={}
+var form_effect_evidence: Dictionary={}
+var passive_applied_ledger: Dictionary={}
+var signature_ready_cache: Dictionary={}
 var decision_effective: Dictionary={}
 var decision_uid=0
 var runtime_metrics={"max_actors":0,"max_jobs":0,"max_projectiles":0,"tick_usec_total":0,"tick_usec_max":0,"pressure_entries":0,"cast_choices":0}
@@ -171,6 +176,7 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 			if use_passives and Passive.aura_source(self,b):score+=6.0 # DEV counter enemy support source
 			if use_passives and skill.element!="neutral":score+=clampf((float(registry.affinity.get(str(skill.element)+":"+str(b.element),1.0))-1.0)*10.0,-4.0,4.0)
 			if distance<=float(skill.range_m)+body_radius(b) and clear_segment(a.pos,b.pos,0.03):score+=30
+			if use_tactical and skill.kind!="basic" and cast_geometry(a,skill,b) and ai_condition(a,skill,b):score+=50.0
 			if skill.shape in ["line","circle","cone","circle_ground","circle_target","zone_target","projectile_burst"]:
 				var target_count=p2_targets(a,skill,b.pos,b.pos-a.pos,b).size() if use_passives and skill.has("p2") else targets_for(a,skill,b).size()
 				score+=6*target_count
@@ -242,9 +248,12 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 		if s.shape in ["line","circle"] and not s.has("p2"):s.max_targets=ceili(float(s.max_targets)*1.15)
 		if s.has("p2") and s.shape in ["circle_ground","circle_self","circle_target","zone_target","projectile_burst"]:s.radius_m*=1.05
 	if not a.active_form.is_empty():
+		s.form_at_cast=a.active_form.id
 		var empowered_rows=registry.p2_forms[a.active_form.id].effect.empowered_skills if use_p2 and registry.p2_forms.has(a.active_form.id) else registry.form_rules[a.active_form.id].empowered_skills
 		for empowered in empowered_rows:
-			if empowered.skill_id==id:factor*=float(empowered.coefficient_multiplier)
+			if empowered.skill_id==id:
+				factor*=float(empowered.coefficient_multiplier)
+				s.form_empowered_factor=float(empowered.coefficient_multiplier)
 	for e in s.effects:
 		if e.has("coefficient"):e.coefficient=float(e.coefficient)*factor
 		if e.has("tick_coefficient"):e.tick_coefficient=float(e.tick_coefficient)*factor
@@ -382,7 +391,7 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 	if rule.hard_control and a.side!=b.side:credit(a,"control_applied_s",duration)
 	art_event("status_applied",b.pos,0,id)
 
-func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> void:
+func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true,source_skill: Dictionary={}) -> void:
 	if a.side!=b.side and int(b.get("teleport_safe_until",0))>ticks:return
 	if b.has("p2_arc") and int(b.p2_arc.expires)>ticks and b.p2_arc.hp>0 and a.uid!=b.uid:
 		var facing=Vector2(b.p2_arc.facing)
@@ -430,10 +439,10 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 		credit(b,"taken",old-b.hp)
 		b.hit_until=ticks+4
 		b.hit_started=ticks
-		animation_event(b,"hit",{},a)
+		animation_event(b,"hit",source_skill,a)
 		if b.hp<=0:
 			b.fall_started=ticks
-			animation_event(b,"fall",{},a)
+			animation_event(b,"fall",source_skill,a)
 		art_event("damage",b.pos,old-b.hp)
 		last_progress_tick=ticks
 		if a.side!=b.side:award_action(b,"vitality")
@@ -562,10 +571,11 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 							else:cp_adjust(a,taken*rating(a,"chakra_conversion"),"conversion")
 						var before_hp=float(target.hp)
 						var crit=1.5+rating(a,"crit_damage") if e.damage_type!="genjutsu" and rng.randf()<maxf(0.0,rating(a,"pcrit" if physical else "ncrit")-rating(target,"crit_resist")) else 1.0
-						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))))
+						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))),true,s)
 						if before_hp-float(target.hp)>0.01 and target.side!=a.side:
+							confirm_form_effect(a,s,"damage")
 							combo_record(a,s,"contact_or_effect_confirmed",target,target.pos)
-							record_typed_passives(a,s,"coefficient")
+							record_typed_passives(a,s,"coefficient","damage")
 							award_action(a,"strength" if physical else "intellect")
 							if not a.summon and not target.summon and a.hp>0:
 								if target.hp>0:
@@ -579,9 +589,10 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					var before_hp=float(target.hp)
 					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0+float(target.get("passive_mods",{}).get("healing_received",0)))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
 					if target.hp-before_hp>0.01:
+						confirm_form_effect(a,s,"heal")
 						combo_record(a,s,"heal_confirmed",target,target.pos)
 						award_action(a,"spirit")
-						record_typed_passives(a,s,"coefficient")
+						record_typed_passives(a,s,"coefficient","heal")
 						credit(a,"heal",float(target.hp)-before_hp)
 						art_event("heal",target.pos,float(target.hp)-before_hp)
 						Passive.queue(self,a,target,s,"heal_confirmed")
@@ -590,14 +601,16 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					var prior_shield=float(target.shield)
 					add_shield(a,target,float(a.natk)*float(e.coefficient),float(e.duration_s))
 					if float(target.shield)>prior_shield:
-						record_typed_passives(a,s,"coefficient")
+						confirm_form_effect(a,s,"shield")
+						record_typed_passives(a,s,"coefficient","shield")
 						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"apply_status":
 					var before_status=target.statuses.duplicate(true)
 					apply_status(a,target,e)
 					if before_status!=target.statuses:
+						confirm_form_effect(a,s,"status")
 						if target.side!=a.side:combo_record(a,s,"contact_or_effect_confirmed",target,target.pos)
-						record_typed_passives(a,s,"duration")
+						record_typed_passives(a,s,"duration",str(e.status_id))
 						Passive.queue(self,a,target,s,"status_applied")
 						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 						if a.uid==target.uid and str(e.status_id) in ["attack_up","defense_up","evasion","haste","accuracy_up","chakra_up"]:
@@ -759,6 +772,7 @@ func tick(dt: float) -> void:
 	if not outcome.is_empty():return
 	var started=Time.get_ticks_usec()
 	ticks+=1
+	signature_ready_cache.clear()
 	Passive.refresh(self)
 	while not art_events.is_empty() and int(art_events[0].tick)<ticks-20:art_events.pop_front()
 	for zone in elemental_fields.duplicate():
@@ -1450,6 +1464,9 @@ func p2_has_mark(a: Dictionary,b: Dictionary) -> bool:
 
 func p2_set_mark(a: Dictionary,b: Dictionary,p: Dictionary) -> void:
 	var prefix=str(a.uid)+":"
+	if p2_marks.has(prefix+str(b.uid)):
+		p2_marks[prefix+str(b.uid)]=ticks+roundi(float(p.get("mark_ttl_s",p.get("duration_s",8)))*20)
+		return
 	var keys=p2_marks.keys().filter(func(k):return str(k).begins_with(prefix))
 	if keys.size()>=int(p.get("max_marks",3)):
 		keys.sort_custom(func(x,y):return int(p2_marks[x])<int(p2_marks[y]))
@@ -1710,7 +1727,7 @@ func p2_confirm(a: Dictionary,s: Dictionary,point: Vector2,event: String,target_
 		var parent=str(a.uid)+":"+str(s.get("passive_cast_id",0))+":"+str(s.skill_id)
 		if not mastery_casts.has(parent) or int(s.get("passive_cast_id",0))==0:
 			mastery_casts[parent]=true
-			mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+1
+			mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+maxi(1,roundi(1.0+rating(a,"mastery_speed")))
 	animation_event(a,"contact",s,actor_by_uid(target_uid),point)
 	art_event("contact",point,0,str(s.skill_id))
 	if not a.summon and not a.get("beast",false):
@@ -1926,9 +1943,15 @@ func combo_record(a: Dictionary,s: Dictionary,event: String,b: Dictionary,point:
 	var consumed_key=str(a.uid)+":"+str(s.passive_cast_id)+":"+id+":"+event
 	if combo_consumed.has(consumed_key):return
 	var key=str(a.side)+":"+id+":"+event
-	var old=p2_events.get(key,{})
-	if int(old.get("parent",0))==int(s.passive_cast_id):return
-	p2_events[key]={"tick":ticks,"uid":a.uid,"event":event,"target_uid":int(b.get("uid",0)),"point":point,"parent":int(s.passive_cast_id),"side":a.side}
+	var history=combo_event_history.get(key,[])
+	var target_uid=int(b.get("uid",0))
+	if history.any(func(r):return int(r.parent)==int(s.passive_cast_id) and int(r.target_uid)==target_uid):return
+	var row={"tick":ticks,"uid":a.uid,"event":event,"target_uid":target_uid,"point":point,"parent":int(s.passive_cast_id),"side":a.side,"actor_form":str(a.active_form.get("id","")),"hp_at_event":float(a.hp)}
+	history.append(row)
+	history=history.filter(func(r):return ticks-int(r.tick)<=120)
+	if history.size()>32:history=history.slice(history.size()-32)
+	combo_event_history[key]=history
+	p2_events[key]=row
 	combo_resolve(a)
 
 func combo_resolve(a: Dictionary) -> void:
@@ -1942,10 +1965,12 @@ func combo_resolve(a: Dictionary) -> void:
 		var owner_ids=[]
 		var hostile=[]
 		var linked_ally=0
+		var common_anchor=combo_common_anchor(int(a.side),contract)
+		if str(contract.anchor_rule).begins_with("same_hostile") and common_anchor==0:continue
 		var good=true
 		for sig in contract.signature_events:
 			var event_key=str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event)
-			var row=p2_events.get(event_key,{})
+			var row=combo_pick_event(event_key,contract,common_anchor if sig.hostile_anchor else 0)
 			if row.is_empty() or ticks-int(row.tick)>float(contract.window_s)*20 or row.parent in parent_ids or row.uid in owner_ids:good=false;break
 			var owner=actor_by_uid(int(row.uid))
 			if owner.is_empty() or owner.hp<=0 or owner.summon or owner.side!=a.side or owner.id!=sig.actor_id:good=false;break
@@ -1972,7 +1997,7 @@ func combo_resolve(a: Dictionary) -> void:
 			if not linked:continue
 		if contract.id=="COMBO-012":
 			var form_owner=actor_by_uid(int(entries.back().uid))
-			if form_owner.is_empty() or form_owner.active_form.is_empty():continue
+			if form_owner.is_empty() or entries.back().get("actor_form","")=="" or form_owner.active_form.get("id","")!=entries.back().actor_form or entries.any(func(row):return float(row.get("hp_at_event",0))<=0):continue
 		var effect=registry.p2_combos[contract.id].effect
 		var payload=contract.payload
 		var center=Vector2(a.pos) if effect.shape=="circle_self" else Vector2(entries.back().point)
@@ -1987,11 +2012,15 @@ func combo_resolve(a: Dictionary) -> void:
 		targets.sort_custom(func(x,y):return x.pos.distance_to(center)<y.pos.distance_to(center))
 		if targets.is_empty():continue
 		combo_clock[key]=ticks
-		for event_key in keys:
-			var used=p2_events[event_key]
+		for i in range(keys.size()):
+			var event_key=keys[i]
+			var used=entries[i]
 			var parts=event_key.split(":")
 			combo_consumed[str(used.uid)+":"+str(used.parent)+":"+parts[1]+":"+parts[2]]=ticks
-			p2_events.erase(event_key)
+			var history=combo_event_history.get(event_key,[]).filter(func(r):return int(r.parent)!=int(used.parent))
+			combo_event_history[event_key]=history
+			if history.is_empty():p2_events.erase(event_key)
+			else:p2_events[event_key]=history.back()
 		var bonus=1.0+Passive.combo_bonus(self,contract,entries)
 		for target in targets.slice(0,int(effect.max_targets)):
 			if float(payload.get("damage_coefficient",0))>0:hit(a,target,float(a.natk)*float(payload.damage_coefficient)*bonus*100.0/(100.0+float(target.nres)),false)
@@ -2005,12 +2034,13 @@ func combo_resolve(a: Dictionary) -> void:
 				target.combo_regen_until=ticks+roundi(float(payload.duration_s)*20)
 				target.combo_regen_owner=a.uid
 		combo_receipts[contract.id]=int(combo_receipts.get(contract.id,0))+1
+		combo_evidence[contract.id]={"tick":ticks,"parents":parent_ids,"owners":owner_ids,"hostile":hostile,"cleanse_uid":linked_ally,"target_count":mini(targets.size(),int(effect.max_targets))}
 		art_event("combo",center,0,str(contract.id))
 		log.append(str(registry.p2_combos[contract.id].name_vi))
 
-func record_typed_passives(a: Dictionary,s: Dictionary,category: String) -> void:
+func record_typed_passives(a: Dictionary,s: Dictionary,category: String,detail: String="") -> void:
 	for row in s.get("passive_typed",[]):
-		if row.category!=category:continue
+		if row.category!=category or (detail!="" and row.get("detail","")!="" and row.detail!=detail):continue
 		var key=str(s.get("passive_cast_id",0))+":"+str(a.uid)+":"+str(row.id)
 		if int(s.get("passive_cast_id",0))<=0 or typed_passive_effects.has(key):continue
 		typed_passive_effects[key]={"id":row.id,"category":category,"before":row.before,"after":row.after}
@@ -2060,18 +2090,20 @@ func prospective_links(a: Dictionary,p: Vector2) -> int:
 
 func update_pressure() -> void:
 	# No artificial damage or timeout; change legal tactical priorities.
-	var sample=0.0
+	var sample=[0.0,0.0]
 	for a in actors:
-		if not a.summon:sample+=float(a.hp)/maxf(1.0,float(a.max_hp))
+		if not a.summon:sample[int(a.side)]+=float(a.hp)/maxf(1.0,float(a.max_hp))
 	pressure_sample.append(sample)
 	if pressure_sample.size()>7:pressure_sample.pop_front()
-	var flat=pressure_sample.size()==7 and absf(float(pressure_sample.front())-sample)<0.15
+	var flat=pressure_sample.size()==7 and absf(float(pressure_sample.front()[0])-float(sample[0]))<0.10 and absf(float(pressure_sample.front()[1])-float(sample[1]))<0.10
 	if flat and not pressure_mode:
 		pressure_since=ticks
 		runtime_metrics.pressure_entries+=1
 	pressure_mode=flat
 	for key in combo_consumed.keys():
 		if ticks-int(combo_consumed[key])>1200:combo_consumed.erase(key)
+	for key in combo_event_history.keys():
+		combo_event_history[key]=combo_event_history[key].filter(func(r):return ticks-int(r.tick)<=120)
 
 func combo_target_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 	if not use_contract_v10 or a.summon:return 0.0
@@ -2083,8 +2115,8 @@ func combo_target_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 		if not str(contract.anchor_rule).begins_with("same_hostile"):continue
 		for sig in contract.signature_events:
 			if sig.actor_id==a.id or not sig.hostile_anchor:continue
-			var event=p2_events.get(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),{})
-			if not event.is_empty() and ticks-int(event.tick)<=float(contract.window_s)*20 and int(event.target_uid)==b.uid:bonus+=28.0
+			var event=combo_pick_event(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),contract,int(b.uid))
+			if not event.is_empty():bonus+=48.0
 	return bonus
 
 func combo_skill_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
@@ -2101,9 +2133,13 @@ func combo_skill_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 			for ally in primary_alive(int(a.side)):
 				if ally.id!=sig.actor_id or not sig.skill_id in ally.skills:continue
 				partners+=1
-				var event=p2_events.get(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),{})
-				if not event.is_empty() and ticks-int(event.tick)<=float(contract.window_s)*20:confirmed+=1
-		if partners==contract.signature_events.size()-1:bonus=maxf(bonus,8.0+float(confirmed)*28.0)
+				var event=combo_pick_event(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),contract,int(b.uid) if sig.hostile_anchor and str(contract.anchor_rule).begins_with("same_hostile") else 0)
+				if not event.is_empty():confirmed+=1
+		if partners==contract.signature_events.size()-1:
+			var sync=0.0
+			for sig in contract.signature_events:
+				if sig.actor_id!=a.id and signature_near_ready(int(a.side),sig,float(contract.window_s)):sync+=8.0
+			bonus=maxf(bonus,4.0+sync+float(confirmed)*38.0)
 	return bonus
 
 func confirm_tracking(a: Dictionary,target: Dictionary) -> void:
@@ -2122,3 +2158,54 @@ func conditional_passive_active(a: Dictionary,row: Dictionary) -> bool:
 	for job in p2_jobs:
 		if job.source==a.uid and job.skill.get("passive_typed",[]).any(func(e):return e.id==row.id):return true
 	return false
+
+func combo_pick_event(key: String,contract: Dictionary,anchor: int=0) -> Dictionary:
+	var history=combo_event_history.get(key,[])
+	for i in range(history.size()-1,-1,-1):
+		var row=history[i]
+		if ticks-int(row.tick)>float(contract.window_s)*20:continue
+		if anchor>0 and int(row.target_uid)!=anchor:continue
+		return row
+	return {}
+
+func combo_common_anchor(side: int,contract: Dictionary) -> int:
+	if not str(contract.anchor_rule).begins_with("same_hostile"):return 0
+	var candidates=[]
+	for sig in contract.signature_events:
+		if not sig.hostile_anchor:continue
+		var key=str(side)+":"+str(sig.skill_id)+":"+str(sig.event)
+		var found=[]
+		for r in combo_event_history.get(key,[]):
+			if ticks-int(r.tick)<=float(contract.window_s)*20 and int(r.target_uid)>0 and not int(r.target_uid) in found:found.append(int(r.target_uid))
+		if found.is_empty():return 0
+		if candidates.is_empty():candidates=found
+		else:
+			candidates=candidates.filter(func(uid):return uid in found)
+			if candidates.is_empty():return 0
+	for uid in candidates:
+		var target=actor_by_uid(uid)
+		if not target.is_empty() and target.hp>0 and target.side!=side:return uid
+	return 0
+
+func signature_near_ready(side: int,sig: Dictionary,window: float) -> bool:
+	var key=str(side)+":"+str(sig.skill_id)
+	if signature_ready_cache.has(key):return signature_ready_cache[key]
+	var ok=false
+	for ally in primary_alive(side):
+		if ally.id!=sig.actor_id or not sig.skill_id in ally.skills:continue
+		if not ally.pending.is_empty() and ally.pending.skill.skill_id==sig.skill_id:ok=true;break
+		var s=effective_skill(ally,sig.skill_id)
+		if s.kind=="ultimate" and side==0 and not auto_player_ultimate and ultimate_requests.get(ally.uid,"")!=sig.skill_id:continue
+		if s.has("p2") and not p2_ready(ally,s):continue
+		if float(ally.cooldowns.get(sig.skill_id,0))+float(ally.busy)>window:continue
+		if float(ally.chakra)+float(ally.regen)*window<float(s.chakra):continue
+		ok=true
+		break
+	signature_ready_cache[key]=ok
+	return ok
+
+func confirm_form_effect(a: Dictionary,s: Dictionary,kind: String) -> void:
+	var id=str(s.get("form_at_cast",""))
+	if id=="" or a.active_form.get("id","")!=id or int(s.get("passive_cast_id",0))<=0:return
+	if float(s.get("form_empowered_factor",1.0))<=1.0:return
+	form_effect_evidence[id]={"skill":s.skill_id,"parent":s.passive_cast_id,"kind":kind,"factor":s.form_empowered_factor,"tick":ticks}

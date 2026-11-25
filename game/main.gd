@@ -80,7 +80,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"DEV V11",16)
+	label(header,"DEV V12",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -380,9 +380,10 @@ func battle_view() -> void:
 	root.add_child(field)
 	battle_inspector=label(root,"Chạm ninja trên sân để xem kỹ năng và trạng thái",14)
 	battle_inspector.custom_minimum_size.y=24
+	battle_inspector.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	var scroll=ScrollContainer.new()
 	scroll.name="BattleActions"
-	scroll.custom_minimum_size.y=138
+	scroll.custom_minimum_size.y=124
 	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	root.add_child(scroll)
@@ -394,7 +395,7 @@ func battle_view() -> void:
 	for i in range(sim.primary_alive(0).size()):
 		var a=sim.actors[i]
 		var group=VBoxContainer.new()
-		group.custom_minimum_size.x=175
+		group.custom_minimum_size.x=164
 		row.add_child(group)
 		var name_row=HBoxContainer.new()
 		group.add_child(name_row)
@@ -414,6 +415,7 @@ func battle_view() -> void:
 		for skill_id in a.skills:
 			if not reg.depth_ultimates.has(skill_id) and reg.skills[skill_id].kind!="ultimate":continue
 			var b=button(group,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(i,skill_id))
+			b.custom_minimum_size.y=42
 			ult_actions.append({"button":b,"index":i,"skill":skill_id})
 		if a.contract!="":button(group,"Thông linh",func():sim.summon_contract(a))
 		for form_id in a.forms:
@@ -461,12 +463,13 @@ func draw_field() -> void:
 	var render_order=sim.actors.duplicate()
 	render_order.sort_custom(func(a,b):return a.pos.x+a.pos.y<b.pos.x+b.pos.y)
 	for a in render_order:
-		if a.hp<=0 and sim.ticks-int(a.get("hit_until",0))>8:continue
+		if a.hp<=0 and sim.ticks-int(a.get("fall_started",a.get("hit_until",0)))>24:continue
 		var p=iso(a.pos)
 		var c=Color("#e3a33e") if a.side==0 else Color("#b65364")
 		field.draw_set_transform(p,0,Vector2(1,0.48))
 		field.draw_circle(Vector2.ZERO,17,Color(0.02,0.04,0.05,0.65))
 		field.draw_arc(Vector2.ZERO,20,0,TAU,32,c,2)
+		if a.uid==inspected_uid:field.draw_arc(Vector2.ZERO,24,0,TAU,32,Color("#e9f5ff"),2)
 		field.draw_set_transform(Vector2.ZERO)
 		var visual_scale=clampf(q*1.25,0.42,1.0)
 		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,sim.animation_state(a))
@@ -1535,6 +1538,10 @@ func update_battle_inspector() -> void:
 		labels.append(sim.skill_name(id)+" "+("%.1fs" % cd if cd>0 else "%.1f CP" % float(s.chakra)))
 	var states=[]
 	for st in a.statuses.values():states.append(str(st.id)+" %.1fs" % float(st.remaining))
+	for key in a.get("passive_mods",{}):
+		var value=float(a.passive_mods[key])
+		if absf(value)>0.00001:states.append(str(key)+" %+.1f%%" % (value*100.0))
+	if not a.active_form.is_empty():states.append(str(a.active_form.id)+" %.1fs" % float(a.active_form.remaining))
 	var head=str(reg.ninjas.get(a.id,{}).get("name_vi",a.id))+" • "+str(reg.ninjas.get(a.id,{}).get("role_hint","Triệu hồi"))
 	battle_inspector.text=head+" • HP %d/%d • CP %.2f/%.2f | " % [int(a.hp),int(a.max_hp),a.chakra,a.max_chakra]+", ".join(states)+" | "+" · ".join(labels)
 	battle_inspector.tooltip_text=battle_inspector.text
