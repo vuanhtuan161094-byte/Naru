@@ -457,13 +457,15 @@ func draw_field() -> void:
 		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,sim.animation_state(a))
 		if sprite_top<=0:
 			# Original generic geometric DEV actor, not an approved ninja sprite.
-			field.draw_colored_polygon(PackedVector2Array([p+Vector2(-12,-3),p+Vector2(-11,-28),p+Vector2(11,-28),p+Vector2(12,-3)]),c.darkened(0.3))
-			field.draw_rect(Rect2(p-Vector2(7,10),Vector2(5,10)),Color("#15242e"))
-			field.draw_rect(Rect2(p-Vector2(-2,10),Vector2(5,10)),Color("#15242e"))
-			field.draw_circle(p-Vector2(0,34),11,Color("#ddbc9a"))
-			field.draw_rect(Rect2(p-Vector2(12,46),Vector2(24,8)),Color("#26333c"))
-			field.draw_rect(Rect2(p-Vector2(5,42),Vector2(10,4)),c)
-			sprite_top=48
+			field.draw_set_transform(p,0,Vector2.ONE*visual_scale)
+			field.draw_colored_polygon(PackedVector2Array([Vector2(-12,-3),Vector2(-11,-28),Vector2(11,-28),Vector2(12,-3)]),c.darkened(0.3))
+			field.draw_rect(Rect2(-Vector2(7,10),Vector2(5,10)),Color("#15242e"))
+			field.draw_rect(Rect2(-Vector2(-2,10),Vector2(5,10)),Color("#15242e"))
+			field.draw_circle(-Vector2(0,34),11,Color("#ddbc9a"))
+			field.draw_rect(Rect2(-Vector2(12,46),Vector2(24,8)),Color("#26333c"))
+			field.draw_rect(Rect2(-Vector2(5,42),Vector2(10,4)),c)
+			field.draw_set_transform(Vector2.ZERO)
+			sprite_top=48*visual_scale
 		var bar_width=clampf(46*visual_scale,26,46)
 		var bar=p-Vector2(bar_width*0.5,sprite_top+8)
 		field.draw_rect(Rect2(bar,Vector2(bar_width,5)),Color("#182028"))
@@ -482,7 +484,7 @@ func draw_field() -> void:
 			if absf(v)<0.00001 or badge_index>=6:continue
 			field.draw_circle(bar+Vector2(4+8*badge_index,-5),3,Color("#82d5a4") if v>0 else Color("#ed827b"))
 			badge_index+=1
-		if sprite_top<=48:field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,13),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
+		if art.texture("characters/"+str(a.id)+".png")==null:field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,13),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
 	for projectile in sim.projectiles if bool(store.state.get("settings",{}).get("projectiles",true)) else []:
 		var source=sim.actor_by_uid(int(projectile.source))
 		var target=sim.actor_by_uid(int(projectile.target))

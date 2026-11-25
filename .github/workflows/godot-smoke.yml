@@ -57,6 +57,13 @@ jobs:
           timeout 180 "$G" --headless --path . --script res://game/tactical_v10_test.gd 2>&1 | tee /tmp/tactical-v10.log
           grep NARU_TACTICAL_V10_PASS /tmp/tactical-v10.log
           ! grep -E 'Parse Error|SCRIPT ERROR|TACTICAL_V10_FAIL' /tmp/tactical-v10.log
+      - name: V10 targeted passive and branch effects
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 120 "$G" --headless --path . --script res://game/adapter_v10_test.gd 2>&1 | tee /tmp/adapter-v10.log
+          grep NARU_ADAPTER_V10_PASS /tmp/adapter-v10.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|ADAPTER_V10_FAIL' /tmp/adapter-v10.log
       - name: GP-P2 gameplay integration
         run: |
           set -o pipefail
@@ -142,6 +149,7 @@ jobs:
           grep NARU_VIDEO_BATTLE /tmp/naru-video.log
           ! grep -E 'SCRIPT ERROR|Parse Error' /tmp/naru-video.log
           cp /tmp/tactical-v10.log combat-video/TACTICAL_RUNTIME.log
+          cp /tmp/adapter-v10.log combat-video/ADAPTER_RUNTIME.log
           printf '%s\n' "$GITHUB_SHA" > combat-video/BUILD_SHA.txt
       - name: Upload Godot combat review
         uses: actions/upload-artifact@v4

@@ -34,6 +34,8 @@ static func rows(sim,a: Dictionary) -> Array:
 	return sim.registry.passive_pilot_rows.get(a.id,[]) if sim.use_passive_pilot else sim.registry.passives_by_ninja.get(a.id,[])
 
 static func eligible(sim,a: Dictionary,row: Dictionary) -> bool:
+	# The Daemon reflection-dependent passive is not proved by legacy generic counter fallback.
+	if row.id=="NIN-139-P2" and sim.registry.p2_fallback.has("NIN-139-S1"):return false
 	return sim.use_passives and a.has("passive_base") and a.hp>0 and not a.get("beast",false) and not a.summon and int(a.realm)>=int(row.unlock.realm) and sim.registry.passive_ledger.get(row.id,"")=="DEV_CANDIDATE" and not str(sim.registry.p2_fallback.get(row.source.signature_id,"")).begins_with("HOLD") and not (sim.registry.synergy_gaps.get(row.id,"")=="FORM_ZERO_PAYLOAD_REVIEW")
 
 static func attach(a: Dictionary,p: Dictionary) -> void:

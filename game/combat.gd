@@ -289,7 +289,7 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 		Depth.apply(registry,s,p,int(a.get("stars",1)))
 		if id=="NIN-112-S4":s.cooldown_s=minf(float(s.cooldown_s),11.0*(1.0-rating(a,"cdr")))
 	Passive.modify_skill(self,a,s)
-	if use_depth and float(s.chakra)>0:s.chakra=maxf(1.0,ceilf(float(s.chakra)*100.0)/100.0)
+	if use_depth and float(s.chakra)>0:s.chakra=maxf(1.0,ceilf(float(s.chakra)*100.0-0.0000001)/100.0)
 	if use_depth and registry.depth_ultimates.has(id):s.kind="ultimate"
 	return s
 
@@ -313,7 +313,7 @@ func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 			"dash":score+=5.0
 			"activate_form":score+=45.0
 	score+=float(s.ai.base_priority)*2.0-float(s.chakra)*0.3
-	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5 and bool(s.ai.get("reserve_ultimate_chakra",true)):
+	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5 and not use_tactical and bool(s.ai.get("reserve_ultimate_chakra",true)):
 		var ultimate_skill=effective_skill(a,a.skills[5])
 		if a.chakra>=ultimate_skill.chakra and a.chakra-s.chakra<ultimate_skill.chakra: score-=35.0
 	return score+(Tactical.skill_bonus(self,a,b,s) if use_tactical and not a.summon else 0.0)
@@ -338,6 +338,7 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	record_typed_passives(a,s,"cp")
 	a.pending={"skill":s,"target_uid":b.uid,"origin":a.pos,"aim":b.pos,"cast_id":cast_seq}
 	a.cast_left=float(s.cast_s)
+	a.cast_started=ticks
 	a.facing=(Vector2(b.pos)-Vector2(a.pos)).normalized() if b.uid!=a.uid else a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT)
 	animation_event(a,"attack" if s.kind=="basic" else "cast",s,b)
 	art_event("cast_start",a.pos,0,str(s.skill_id))
@@ -382,9 +383,9 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 			if item.id==id:count+=1
 		if count>=int(rule.max_stacks):return
 	var duration=float(e.get("duration_s",rule.duration_s))
+	if rule.hard_control:duration*=clampf((1.0+rating(a,"control_duration"))*(1.0-rating(b,"control_resist")),0.3,1.8)
 	if id=="sleep" and b.uid==boss_actor_uid:duration=minf(duration,0.5)
 	if id=="beguile_tactical" and b.uid==boss_actor_uid:duration=minf(duration,0.7)
-	if rule.hard_control:duration*=clampf((1.0+rating(a,"control_duration"))*(1.0-rating(b,"control_resist")),0.3,1.8)
 	var mag=float(e.get("magnitude",0.2))
 	if id=="attack_down":mag=clampf(mag,0.0,0.4)
 	if rule.stack=="max" and b.statuses.has(key):
@@ -407,6 +408,7 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 		if facing.dot(incoming)>=cos(deg_to_rad(float(b.p2_arc.angle)*0.5)):
 			var absorbed=minf(dmg,float(b.p2_arc.hp))
 			b.p2_arc.hp=float(b.p2_arc.hp)-absorbed
+			credit(b,"absorbed",absorbed)
 			dmg-=absorbed
 	if dmg<=0:return
 	if use_passives:dmg*=1.0-clampf(float(b.get("passive_mods",{}).get("damage_reduction",0)),0,0.10)
@@ -445,8 +447,11 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 		credit(a,"damage",old-b.hp)
 		credit(b,"taken",old-b.hp)
 		b.hit_until=ticks+4
+		b.hit_started=ticks
 		animation_event(b,"hit",{},a)
-		if b.hp<=0:animation_event(b,"fall",{},a)
+		if b.hp<=0:
+			b.fall_started=ticks
+			animation_event(b,"fall",{},a)
 		art_event("damage",b.pos,old-b.hp)
 		last_progress_tick=ticks
 		if a.side!=b.side:award_action(b,"vitality")
@@ -571,7 +576,8 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 						if s.kind!="basic" and a.side!=target.side:
 							var drain=minf(float(target.chakra),float(s.chakra)*rating(a,"chakra_drain")*(1.0-rating(target,"chakra_drain_resist")))
 							var taken=-cp_adjust(target,-drain,"hostile_drain")
-							cp_adjust(a,taken*rating(a,"chakra_conversion"),"conversion")
+							if use_depth:refund_parent_cp(a,s,taken*rating(a,"chakra_conversion"),"conversion")
+							else:cp_adjust(a,taken*rating(a,"chakra_conversion"),"conversion")
 						var before_hp=float(target.hp)
 						var crit=1.5+rating(a,"crit_damage") if e.damage_type!="genjutsu" and rng.randf()<maxf(0.0,rating(a,"pcrit" if physical else "ncrit")-rating(target,"crit_resist")) else 1.0
 						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))))
@@ -1070,6 +1076,7 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 		remaining-=amount
 	if a.pos.distance_to(initial)>0.001:
 		a.facing=(Vector2(a.pos)-initial).normalized()
+		if int(a.get("move_until",0))<ticks:a.move_started=ticks
 		a.move_until=ticks+3
 		if use_tactical:tactical_metrics.movement_steps+=1
 
@@ -1377,7 +1384,10 @@ func p2_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 func p2_utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	var kind=str(s.p2.effect.type)
 	var count=maxi(1,p2_targets(a,s,b.pos,b.pos-a.pos,b).size())
-	var score=float(s.p2.effect.total_coefficient)*18*count
+	var effective_coefficient=0.0
+	for e in s.effects:
+		if e.type in ["damage","heal","shield"]:effective_coefficient+=float(e.get("coefficient",0))
+	var score=(effective_coefficient if use_tactical else float(s.p2.effect.total_coefficient))*18*count
 	if kind in ["heal","heal_pulse"]:score=45.0 if not use_depth else 20.0+65.0*(1.0-float(b.hp)/maxf(1.0,float(b.max_hp)))
 	if kind in ["shield","directional_shield"]:score=24.0 if b.shield<=0 else -25.0
 	if use_depth and kind in ["shield","directional_shield"] and b.hp<b.max_hp*0.35:score+=25.0
@@ -1386,7 +1396,7 @@ func p2_utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	if kind in ["cleanse","absorb","counter","activate_form"]:score=35.0
 	if kind in ["wall","teleport","position_swap","mark","chakra_restore"]:score=17.0
 	if kind in ["zone_damage","zone_drain","trap","beguile_tactical"]:score+=12
-	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5:
+	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5 and not use_tactical:
 		var ult=effective_skill(a,a.skills[5])
 		if a.chakra>=ult.chakra and a.chakra-s.chakra<ult.chakra:score-=30
 	return score+float(s.ai.base_priority)*2-float(s.chakra)*0.28
@@ -1658,12 +1668,7 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 		if b.side!=a.side:
 			amount=-cp_adjust(b,-minf(float(b.chakra),float(p.get("chakra_amount",p.get("chakra_per_tick",3)))),"hostile_drain")
 			var give=amount*float(p.get("transfer_fraction",0.3))
-			if s.get("depth_drain_contract",false):
-				var parent=str(s.get("passive_cast_id",0))
-				var used=int(cp_refund_units.get(parent,0))
-				give=minf(give,float(maxi(0,roundi(float(s.chakra)*100.0)-used))/100.0)
-				var actual=cp_adjust(a,give,"bounded_drain_refund")
-				cp_refund_units[parent]=used+roundi(actual*100.0)
+			if use_depth or s.get("depth_drain_contract",false):refund_parent_cp(a,s,give,"bounded_drain_refund")
 			else:cp_adjust(a,give,"drain_refund")
 		if amount>0:
 			Passive.queue(self,a,b,s,"resource_effect_confirmed")
@@ -1798,6 +1803,7 @@ func cp_adjust(a: Dictionary,delta: float,reason: String) -> float:
 		var capacity=maxi(0,roundi(float(a.max_chakra)*100.0))
 		var old=clampi(roundi(before*100.0),0,capacity)
 		var next=clampi(old+roundi(delta*100.0),0,capacity)
+		if next!=old:a.erase("cp_resize_exact_ratio")
 		a.cp_units=next
 		a.cp_max_units=capacity
 		a.chakra=float(next)/100.0
@@ -1820,6 +1826,7 @@ func cp_continuous(a: Dictionary,delta: float,reason: String) -> float:
 func cp_resize(a: Dictionary,new_max: float) -> void:
 	var old_max=maxf(0.01,float(a.max_chakra))
 	var ratio=clampf(float(a.chakra)/old_max,0.0,1.0)
+	if use_depth and a.has("cp_resize_exact_ratio") and roundi(float(a.chakra)*100.0)==int(a.get("cp_units",-1)):ratio=float(a.cp_resize_exact_ratio)
 	var capacity=float(maxi(1,roundi(new_max*100.0)))/100.0 if use_depth else new_max
 	if is_equal_approx(old_max,capacity) and (not use_depth or a.has("cp_units")):return
 	a.max_chakra=capacity
@@ -1828,6 +1835,7 @@ func cp_resize(a: Dictionary,new_max: float) -> void:
 		a.chakra=float(roundi(float(a.chakra)*100.0))/100.0
 		a.cp_units=roundi(float(a.chakra)*100.0)
 		a.cp_max_units=roundi(capacity*100.0)
+		a.cp_resize_exact_ratio=ratio
 
 func credit(a: Dictionary,key: String,amount: float) -> void:
 	if amount<=0 or a.is_empty():return
@@ -1841,7 +1849,7 @@ func animation_event(a: Dictionary,phase: String,s: Dictionary,b: Dictionary={},
 	if a.is_empty():return
 	animation_seq+=1
 	var facing=Vector2(a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT))
-	var target_point=Vector2(a.pos) if point==Vector2.INF else point
+	var target_point=Vector2(b.get("pos",a.pos)) if point==Vector2.INF else point
 	animation_events.append({"event_id":animation_seq,"tick":ticks,"phase":phase,"actor_uid":a.uid,"target_uid":int(b.get("uid",0)),"parent_cast_id":int(s.get("passive_cast_id",0)),"skill_id":str(s.get("skill_id","")),"foot":Vector2(a.pos),"point":target_point,"facing":facing,"direction":animation_direction(facing)})
 	if animation_events.size()>512:animation_events.pop_front()
 
@@ -1856,7 +1864,13 @@ func animation_state(a: Dictionary) -> Dictionary:
 	elif int(a.get("hit_until",0))>ticks:phase="Hit"
 	elif not a.pending.is_empty():phase="Attack" if a.pending.skill.kind=="basic" else "Cast"
 	elif int(a.get("move_until",0))>ticks:phase="Move"
-	return {"action":phase,"direction":animation_direction(Vector2(a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT))),"foot":Vector2(a.pos),"tick":ticks}
+	var start=0
+	match phase:
+		"Fall":start=int(a.get("fall_started",ticks))
+		"Hit":start=int(a.get("hit_started",ticks))
+		"Attack","Cast":start=int(a.get("cast_started",ticks))
+		"Move":start=int(a.get("move_started",ticks))
+	return {"action":phase,"direction":animation_direction(Vector2(a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT))),"foot":Vector2(a.pos),"tick":ticks,"started_tick":start}
 
 func sample_spacing() -> void:
 	for side in [0,1]:
@@ -1970,3 +1984,14 @@ func formation_pairs(side: int) -> Array:
 			var b=units[j]
 			if a.pos.distance_to(b.pos)<=float(registry.combat_v3.links.range) and Formation.linked(int(a.deployment_slot),int(b.deployment_slot),str(rule.link)):result.append([a.pos,b.pos])
 	return result
+
+func refund_parent_cp(a: Dictionary,s: Dictionary,requested: float,reason: String) -> float:
+	var parent=int(s.get("passive_cast_id",0))
+	if parent<=0 or a.summon:return 0.0
+	var key=str(parent)+":"+str(a.uid)
+	var paid=maxi(0,roundi(float(s.chakra)*100.0))
+	var used=int(cp_refund_units.get(key,0))
+	var amount=minf(requested,float(maxi(0,paid-used))/100.0)
+	var actual=cp_adjust(a,maxf(0.0,amount),reason)
+	cp_refund_units[key]=used+roundi(actual*100.0)
+	return actual

@@ -146,7 +146,8 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	var authored=texture("animation/"+id+"/"+action+"_"+direction+".png")
 	if authored!=null and authored.get_height()==112 and authored.get_width()%96==0:
 		var frame_count=maxi(1,authored.get_width()/96)
-		var frame=posmod(floori(float(ticks)/2.0),frame_count)
+		var age=maxi(0,ticks-int(state.get("started_tick",0)))
+		var frame=posmod(floori(float(age)/2.0),frame_count) if action in ["idle","move"] else mini(frame_count-1,floori(float(age)/2.0))
 		field.draw_texture_rect_region(authored,dest,Rect2(frame*96,0,96,112))
 	elif walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
 		var frame=posmod(floori(float(ticks)/2.0),4)
