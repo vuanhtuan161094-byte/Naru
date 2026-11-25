@@ -1,0 +1,7540 @@
+{
+  "schema_version": 1,
+  "evidence_sha": "59b2cced2f84c418ad651a51b95d3d711cae3045",
+  "updated": "2026-11-25",
+  "characters": [
+    {
+      "id": "NIN-001",
+      "name_vi": "Naruto Uzumaki (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-002",
+      "name_vi": "Sasuke Uchiha (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-003",
+      "name_vi": "Sakura Haruno (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-004",
+      "name_vi": "Kakashi Hatake",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": [],
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "sha256": "3ccd67ae6110bc694469ea8acd84e0524343ea3b87506f92369fb65f019c34b1",
+      "local_path": "sprites/NIN-004.png",
+      "manifest": "art/e3/ART_P1_R5_REVIEW_MANIFEST.json"
+    },
+    {
+      "id": "NIN-005",
+      "name_vi": "Iruka Umino",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-006",
+      "name_vi": "Konohamaru (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-007",
+      "name_vi": "Shikamaru Nara (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-008",
+      "name_vi": "Choji Akimichi (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-009",
+      "name_vi": "Ino Yamanaka (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-010",
+      "name_vi": "Hinata Hyuga (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-011",
+      "name_vi": "Kiba Inuzuka (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-012",
+      "name_vi": "Shino Aburame (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-013",
+      "name_vi": "Neji Hyuga (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-014",
+      "name_vi": "Rock Lee (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-015",
+      "name_vi": "Tenten (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-016",
+      "name_vi": "Might Guy",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-017",
+      "name_vi": "Asuma Sarutobi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-018",
+      "name_vi": "Kurenai Yuhi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-019",
+      "name_vi": "Hiruzen Sarutobi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-020",
+      "name_vi": "Jiraiya",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-021",
+      "name_vi": "Tsunade",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-022",
+      "name_vi": "Orochimaru",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-023",
+      "name_vi": "Kabuto Yakushi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-024",
+      "name_vi": "Gaara (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-025",
+      "name_vi": "Temari (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-026",
+      "name_vi": "Kankuro (thiếu niên)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-027",
+      "name_vi": "Zabuza Momochi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-028",
+      "name_vi": "Haku",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-029",
+      "name_vi": "Anko Mitarashi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-030",
+      "name_vi": "Hayate Gekko",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-031",
+      "name_vi": "Ibiki Morino",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-032",
+      "name_vi": "Genma Shiranui",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-033",
+      "name_vi": "Dosu Kinuta",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-034",
+      "name_vi": "Zaku Abumi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-035",
+      "name_vi": "Kin Tsuchi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-036",
+      "name_vi": "Kimimaro",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-037",
+      "name_vi": "Jirobo",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-038",
+      "name_vi": "Kidomaru",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-039",
+      "name_vi": "Tayuya",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-040",
+      "name_vi": "Sakon và Ukon",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-041",
+      "name_vi": "Naruto Uzumaki (Shippuden)",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": [],
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "sha256": "6d7c04bd062a3c5cf2fa88fded45c99460df71f978e6cd376e4648bb40d9379d",
+      "local_path": "sprites/NIN-041.png",
+      "manifest": "art/e3/ART_P1_R5_REVIEW_MANIFEST.json"
+    },
+    {
+      "id": "NIN-042",
+      "name_vi": "Sasuke Uchiha (Shippuden)",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": [],
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "sha256": "59e24d55924441bba62d82985291414c03dd063f8d92bfceea5f2f9d6dbee913",
+      "local_path": "sprites/NIN-042.png",
+      "manifest": "art/e3/ART_P1_R5_REVIEW_MANIFEST.json"
+    },
+    {
+      "id": "NIN-043",
+      "name_vi": "Sakura Haruno (Shippuden)",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": [],
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "sha256": "de64198e4caabe69aa050a787eafeffbdbf7f766cdd8a3c48e6c49201e3ddbe6",
+      "local_path": "sprites/NIN-043.png",
+      "manifest": "art/e3/ART_P1_R5_REVIEW_MANIFEST.json"
+    },
+    {
+      "id": "NIN-044",
+      "name_vi": "Sai",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-045",
+      "name_vi": "Yamato",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-046",
+      "name_vi": "Shikamaru Nara (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-047",
+      "name_vi": "Choji Akimichi (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-048",
+      "name_vi": "Ino Yamanaka (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-049",
+      "name_vi": "Hinata Hyuga (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-050",
+      "name_vi": "Kiba Inuzuka (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-051",
+      "name_vi": "Shino Aburame (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-052",
+      "name_vi": "Neji Hyuga (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-053",
+      "name_vi": "Rock Lee (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-054",
+      "name_vi": "Tenten (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-055",
+      "name_vi": "Gaara (Kazekage)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-056",
+      "name_vi": "Temari (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-057",
+      "name_vi": "Kankuro (Shippuden)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-058",
+      "name_vi": "Chiyo",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-059",
+      "name_vi": "Baki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-060",
+      "name_vi": "Itachi Uchiha",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": [],
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "sha256": "52f01f329b5204f6f12c799b26ef53cfc2c4dedfad81e4130414656ef977e5e9",
+      "local_path": "sprites/NIN-060.png",
+      "manifest": "art/e3/ART_P1_R5_REVIEW_MANIFEST.json"
+    },
+    {
+      "id": "NIN-061",
+      "name_vi": "Kisame Hoshigaki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-062",
+      "name_vi": "Deidara",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-063",
+      "name_vi": "Sasori",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-064",
+      "name_vi": "Hidan",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-065",
+      "name_vi": "Kakuzu",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-066",
+      "name_vi": "Konan",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-067",
+      "name_vi": "Pain (Thiên Đạo)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-068",
+      "name_vi": "Nagato",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-069",
+      "name_vi": "Obito Uchiha",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-070",
+      "name_vi": "Madara Uchiha",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-071",
+      "name_vi": "Zetsu Trắng",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-072",
+      "name_vi": "Zetsu Đen",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-073",
+      "name_vi": "Suigetsu Hozuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-074",
+      "name_vi": "Karin",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-075",
+      "name_vi": "Jugo",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-076",
+      "name_vi": "Killer B",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-077",
+      "name_vi": "A (Raikage IV)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-078",
+      "name_vi": "Darui",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-079",
+      "name_vi": "C",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-080",
+      "name_vi": "Samui",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-081",
+      "name_vi": "Omoi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-082",
+      "name_vi": "Karui",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-083",
+      "name_vi": "Mei Terumi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-084",
+      "name_vi": "Chojuro",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-085",
+      "name_vi": "Ao",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-086",
+      "name_vi": "Onoki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-087",
+      "name_vi": "Kurotsuchi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-088",
+      "name_vi": "Akatsuchi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-089",
+      "name_vi": "Mifune",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-090",
+      "name_vi": "Hanzo",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-091",
+      "name_vi": "Danzo Shimura",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-092",
+      "name_vi": "Shisui Uchiha",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-093",
+      "name_vi": "Minato Namikaze",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": [],
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "sha256": "234322c284137d51075c497008d256062be0db1cbbc92d2b50e9e8f2d4aea5f6",
+      "local_path": "sprites/NIN-093.png",
+      "manifest": "art/e3/ART_P1_R5_REVIEW_MANIFEST.json"
+    },
+    {
+      "id": "NIN-094",
+      "name_vi": "Kushina Uzumaki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-095",
+      "name_vi": "Hashirama Senju",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-096",
+      "name_vi": "Tobirama Senju",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-097",
+      "name_vi": "Hagoromo Otsutsuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-098",
+      "name_vi": "Hamura Otsutsuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-099",
+      "name_vi": "Kaguya Otsutsuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-100",
+      "name_vi": "Yugito Nii",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-101",
+      "name_vi": "Yagura Karatachi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-102",
+      "name_vi": "Roshi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-103",
+      "name_vi": "Han",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-104",
+      "name_vi": "Utakata",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-105",
+      "name_vi": "Fu",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-106",
+      "name_vi": "Fugaku Uchiha",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-107",
+      "name_vi": "Shikaku Nara",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-108",
+      "name_vi": "Inoichi Yamanaka",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-109",
+      "name_vi": "Choza Akimichi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-110",
+      "name_vi": "Shizune",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-111",
+      "name_vi": "Boruto Uzumaki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-112",
+      "name_vi": "Sarada Uchiha",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-113",
+      "name_vi": "Mitsuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-114",
+      "name_vi": "Kawaki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-115",
+      "name_vi": "Himawari Uzumaki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-116",
+      "name_vi": "Shikadai Nara",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-117",
+      "name_vi": "Inojin Yamanaka",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-118",
+      "name_vi": "Chocho Akimichi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-119",
+      "name_vi": "Metal Lee",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-120",
+      "name_vi": "Denki Kaminarimon",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-121",
+      "name_vi": "Iwabe Yuino",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-122",
+      "name_vi": "Sumire Kakei",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-123",
+      "name_vi": "Konohamaru (trưởng thành)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-124",
+      "name_vi": "Moegi Kazamatsuri",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-125",
+      "name_vi": "Udon Ise",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-126",
+      "name_vi": "Naruto Uzumaki (Hokage)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-127",
+      "name_vi": "Sasuke Uchiha (trưởng thành)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-128",
+      "name_vi": "Sakura Haruno (trưởng thành)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-129",
+      "name_vi": "Shikamaru Nara (trưởng thành)",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-130",
+      "name_vi": "Momoshiki Otsutsuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-131",
+      "name_vi": "Kinshiki Otsutsuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-132",
+      "name_vi": "Isshiki Otsutsuki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-133",
+      "name_vi": "Delta",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-134",
+      "name_vi": "Code",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-135",
+      "name_vi": "Boro",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-136",
+      "name_vi": "Koji Kashin",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-137",
+      "name_vi": "Amado",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-138",
+      "name_vi": "Eida",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-139",
+      "name_vi": "Daemon",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-140",
+      "name_vi": "Shin Uchiha",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-141",
+      "name_vi": "Kagura Karatachi",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-142",
+      "name_vi": "Shinki",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-143",
+      "name_vi": "Yodo",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    },
+    {
+      "id": "NIN-144",
+      "name_vi": "Araya",
+      "status": "MISSING",
+      "binary_availability": "MISSING",
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false,
+      "clips": []
+    }
+  ],
+  "style_tests": [
+    {
+      "id": "ART-R3-001",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "sha256": "33160cbe6db35e6f8d2f4a52e5939c0b4ef2921dfcf3175cad090b2bc61a870f",
+      "owner_approved": false
+    },
+    {
+      "id": "ART-R3-002",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "sha256": "4b736d6fc150036f45a1ff4ea5a34c15ea7dcbef7b789044295ab6839524ba83",
+      "owner_approved": false
+    },
+    {
+      "id": "ART-R3-003",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "sha256": "e3ea44fb8d721ba0b2616959abaf42823f9cfc9b138bf0c4545dbb0a2e96ee54",
+      "owner_approved": false
+    },
+    {
+      "id": "ART-R3-004",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_CHAT_MANIFEST_ONLY",
+      "sha256": "ddc89d18d15fb8136bb25473b401487d9472bc53d687e61a4ad67585b002a10f",
+      "owner_approved": false
+    }
+  ],
+  "forms": [
+    {
+      "id": "NIN-001-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-002-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-002-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-004-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-004-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-008-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-008-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-014-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-016-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-020-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-021-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-022-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-024-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-036-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-041-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-041-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-041-F3",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-042-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-042-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-042-F3",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-043-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-047-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-053-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-060-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-060-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-061-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-065-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-069-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-069-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-070-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-070-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-070-F3",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-075-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-076-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-077-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-095-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-100-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-101-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-102-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-103-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-104-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-105-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-111-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-112-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-113-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-114-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-118-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-126-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-126-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-127-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-127-F2",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-128-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-130-F1",
+      "status": "MISSING"
+    },
+    {
+      "id": "NIN-136-F1",
+      "status": "MISSING"
+    }
+  ],
+  "vfx": [
+    {
+      "id": "VFX-NIN-001-S0",
+      "skill_id": "NIN-001-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-001-S1",
+      "skill_id": "NIN-001-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-001-S2",
+      "skill_id": "NIN-001-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-001-S3",
+      "skill_id": "NIN-001-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-001-S4",
+      "skill_id": "NIN-001-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-001-S5",
+      "skill_id": "NIN-001-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S0",
+      "skill_id": "NIN-002-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S1",
+      "skill_id": "NIN-002-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S2",
+      "skill_id": "NIN-002-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S3",
+      "skill_id": "NIN-002-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S4",
+      "skill_id": "NIN-002-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S5",
+      "skill_id": "NIN-002-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S0",
+      "skill_id": "NIN-003-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S1",
+      "skill_id": "NIN-003-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S2",
+      "skill_id": "NIN-003-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S3",
+      "skill_id": "NIN-003-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S4",
+      "skill_id": "NIN-003-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S5",
+      "skill_id": "NIN-003-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S0",
+      "skill_id": "NIN-004-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S1",
+      "skill_id": "NIN-004-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S2",
+      "skill_id": "NIN-004-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S3",
+      "skill_id": "NIN-004-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S4",
+      "skill_id": "NIN-004-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S5",
+      "skill_id": "NIN-004-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S0",
+      "skill_id": "NIN-005-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S1",
+      "skill_id": "NIN-005-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S2",
+      "skill_id": "NIN-005-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S3",
+      "skill_id": "NIN-005-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S4",
+      "skill_id": "NIN-005-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S5",
+      "skill_id": "NIN-005-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S0",
+      "skill_id": "NIN-006-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S1",
+      "skill_id": "NIN-006-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S2",
+      "skill_id": "NIN-006-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S3",
+      "skill_id": "NIN-006-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S4",
+      "skill_id": "NIN-006-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S5",
+      "skill_id": "NIN-006-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S0",
+      "skill_id": "NIN-007-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S1",
+      "skill_id": "NIN-007-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S2",
+      "skill_id": "NIN-007-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S3",
+      "skill_id": "NIN-007-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S4",
+      "skill_id": "NIN-007-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S5",
+      "skill_id": "NIN-007-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S0",
+      "skill_id": "NIN-008-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S1",
+      "skill_id": "NIN-008-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S2",
+      "skill_id": "NIN-008-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S3",
+      "skill_id": "NIN-008-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S4",
+      "skill_id": "NIN-008-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S5",
+      "skill_id": "NIN-008-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S0",
+      "skill_id": "NIN-009-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S1",
+      "skill_id": "NIN-009-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S2",
+      "skill_id": "NIN-009-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S3",
+      "skill_id": "NIN-009-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S4",
+      "skill_id": "NIN-009-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S5",
+      "skill_id": "NIN-009-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S0",
+      "skill_id": "NIN-010-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S1",
+      "skill_id": "NIN-010-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S2",
+      "skill_id": "NIN-010-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S3",
+      "skill_id": "NIN-010-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S4",
+      "skill_id": "NIN-010-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S5",
+      "skill_id": "NIN-010-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S0",
+      "skill_id": "NIN-011-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S1",
+      "skill_id": "NIN-011-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S2",
+      "skill_id": "NIN-011-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S3",
+      "skill_id": "NIN-011-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S4",
+      "skill_id": "NIN-011-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S5",
+      "skill_id": "NIN-011-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S0",
+      "skill_id": "NIN-012-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S1",
+      "skill_id": "NIN-012-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S2",
+      "skill_id": "NIN-012-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S3",
+      "skill_id": "NIN-012-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S4",
+      "skill_id": "NIN-012-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S5",
+      "skill_id": "NIN-012-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S0",
+      "skill_id": "NIN-013-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S1",
+      "skill_id": "NIN-013-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S2",
+      "skill_id": "NIN-013-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S3",
+      "skill_id": "NIN-013-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S4",
+      "skill_id": "NIN-013-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S5",
+      "skill_id": "NIN-013-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S0",
+      "skill_id": "NIN-014-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S1",
+      "skill_id": "NIN-014-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S2",
+      "skill_id": "NIN-014-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S3",
+      "skill_id": "NIN-014-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S4",
+      "skill_id": "NIN-014-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S5",
+      "skill_id": "NIN-014-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S0",
+      "skill_id": "NIN-015-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S1",
+      "skill_id": "NIN-015-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S2",
+      "skill_id": "NIN-015-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S3",
+      "skill_id": "NIN-015-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S4",
+      "skill_id": "NIN-015-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S5",
+      "skill_id": "NIN-015-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S0",
+      "skill_id": "NIN-016-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S1",
+      "skill_id": "NIN-016-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S2",
+      "skill_id": "NIN-016-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S3",
+      "skill_id": "NIN-016-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S4",
+      "skill_id": "NIN-016-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S5",
+      "skill_id": "NIN-016-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S0",
+      "skill_id": "NIN-017-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S1",
+      "skill_id": "NIN-017-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S2",
+      "skill_id": "NIN-017-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S3",
+      "skill_id": "NIN-017-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S4",
+      "skill_id": "NIN-017-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S5",
+      "skill_id": "NIN-017-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S0",
+      "skill_id": "NIN-018-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S1",
+      "skill_id": "NIN-018-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S2",
+      "skill_id": "NIN-018-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S3",
+      "skill_id": "NIN-018-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S4",
+      "skill_id": "NIN-018-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S5",
+      "skill_id": "NIN-018-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S0",
+      "skill_id": "NIN-019-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S1",
+      "skill_id": "NIN-019-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S2",
+      "skill_id": "NIN-019-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S3",
+      "skill_id": "NIN-019-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S4",
+      "skill_id": "NIN-019-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S5",
+      "skill_id": "NIN-019-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S0",
+      "skill_id": "NIN-020-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S1",
+      "skill_id": "NIN-020-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S2",
+      "skill_id": "NIN-020-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S3",
+      "skill_id": "NIN-020-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S4",
+      "skill_id": "NIN-020-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S5",
+      "skill_id": "NIN-020-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S0",
+      "skill_id": "NIN-021-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S1",
+      "skill_id": "NIN-021-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S2",
+      "skill_id": "NIN-021-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S3",
+      "skill_id": "NIN-021-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S4",
+      "skill_id": "NIN-021-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S5",
+      "skill_id": "NIN-021-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S0",
+      "skill_id": "NIN-022-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S1",
+      "skill_id": "NIN-022-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S2",
+      "skill_id": "NIN-022-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S3",
+      "skill_id": "NIN-022-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S4",
+      "skill_id": "NIN-022-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S5",
+      "skill_id": "NIN-022-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S0",
+      "skill_id": "NIN-023-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S1",
+      "skill_id": "NIN-023-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S2",
+      "skill_id": "NIN-023-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S3",
+      "skill_id": "NIN-023-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S4",
+      "skill_id": "NIN-023-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S5",
+      "skill_id": "NIN-023-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S0",
+      "skill_id": "NIN-024-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S1",
+      "skill_id": "NIN-024-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S2",
+      "skill_id": "NIN-024-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S3",
+      "skill_id": "NIN-024-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S4",
+      "skill_id": "NIN-024-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S5",
+      "skill_id": "NIN-024-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S0",
+      "skill_id": "NIN-025-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S1",
+      "skill_id": "NIN-025-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S2",
+      "skill_id": "NIN-025-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S3",
+      "skill_id": "NIN-025-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S4",
+      "skill_id": "NIN-025-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S5",
+      "skill_id": "NIN-025-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S0",
+      "skill_id": "NIN-026-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S1",
+      "skill_id": "NIN-026-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S2",
+      "skill_id": "NIN-026-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S3",
+      "skill_id": "NIN-026-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S4",
+      "skill_id": "NIN-026-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S5",
+      "skill_id": "NIN-026-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S0",
+      "skill_id": "NIN-027-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S1",
+      "skill_id": "NIN-027-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S2",
+      "skill_id": "NIN-027-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S3",
+      "skill_id": "NIN-027-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S4",
+      "skill_id": "NIN-027-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S5",
+      "skill_id": "NIN-027-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S0",
+      "skill_id": "NIN-028-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S1",
+      "skill_id": "NIN-028-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S2",
+      "skill_id": "NIN-028-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S3",
+      "skill_id": "NIN-028-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S4",
+      "skill_id": "NIN-028-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S5",
+      "skill_id": "NIN-028-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S0",
+      "skill_id": "NIN-029-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S1",
+      "skill_id": "NIN-029-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S2",
+      "skill_id": "NIN-029-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S3",
+      "skill_id": "NIN-029-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S4",
+      "skill_id": "NIN-029-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S5",
+      "skill_id": "NIN-029-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S0",
+      "skill_id": "NIN-030-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S1",
+      "skill_id": "NIN-030-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S2",
+      "skill_id": "NIN-030-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S3",
+      "skill_id": "NIN-030-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S4",
+      "skill_id": "NIN-030-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S5",
+      "skill_id": "NIN-030-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S0",
+      "skill_id": "NIN-031-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S1",
+      "skill_id": "NIN-031-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S2",
+      "skill_id": "NIN-031-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S3",
+      "skill_id": "NIN-031-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S4",
+      "skill_id": "NIN-031-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S5",
+      "skill_id": "NIN-031-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S0",
+      "skill_id": "NIN-032-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S1",
+      "skill_id": "NIN-032-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S2",
+      "skill_id": "NIN-032-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S3",
+      "skill_id": "NIN-032-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S4",
+      "skill_id": "NIN-032-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S5",
+      "skill_id": "NIN-032-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S0",
+      "skill_id": "NIN-033-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S1",
+      "skill_id": "NIN-033-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S2",
+      "skill_id": "NIN-033-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S3",
+      "skill_id": "NIN-033-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S4",
+      "skill_id": "NIN-033-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S5",
+      "skill_id": "NIN-033-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S0",
+      "skill_id": "NIN-034-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S1",
+      "skill_id": "NIN-034-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S2",
+      "skill_id": "NIN-034-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S3",
+      "skill_id": "NIN-034-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S4",
+      "skill_id": "NIN-034-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S5",
+      "skill_id": "NIN-034-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S0",
+      "skill_id": "NIN-035-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S1",
+      "skill_id": "NIN-035-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S2",
+      "skill_id": "NIN-035-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S3",
+      "skill_id": "NIN-035-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S4",
+      "skill_id": "NIN-035-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S5",
+      "skill_id": "NIN-035-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S0",
+      "skill_id": "NIN-036-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S1",
+      "skill_id": "NIN-036-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S2",
+      "skill_id": "NIN-036-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S3",
+      "skill_id": "NIN-036-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S4",
+      "skill_id": "NIN-036-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S5",
+      "skill_id": "NIN-036-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S0",
+      "skill_id": "NIN-037-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S1",
+      "skill_id": "NIN-037-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S2",
+      "skill_id": "NIN-037-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S3",
+      "skill_id": "NIN-037-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S4",
+      "skill_id": "NIN-037-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S5",
+      "skill_id": "NIN-037-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S0",
+      "skill_id": "NIN-038-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S1",
+      "skill_id": "NIN-038-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S2",
+      "skill_id": "NIN-038-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S3",
+      "skill_id": "NIN-038-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S4",
+      "skill_id": "NIN-038-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S5",
+      "skill_id": "NIN-038-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S0",
+      "skill_id": "NIN-039-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S1",
+      "skill_id": "NIN-039-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S2",
+      "skill_id": "NIN-039-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S3",
+      "skill_id": "NIN-039-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S4",
+      "skill_id": "NIN-039-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S5",
+      "skill_id": "NIN-039-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S0",
+      "skill_id": "NIN-040-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S1",
+      "skill_id": "NIN-040-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S2",
+      "skill_id": "NIN-040-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S3",
+      "skill_id": "NIN-040-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S4",
+      "skill_id": "NIN-040-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S5",
+      "skill_id": "NIN-040-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S0",
+      "skill_id": "NIN-041-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S1",
+      "skill_id": "NIN-041-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S2",
+      "skill_id": "NIN-041-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S3",
+      "skill_id": "NIN-041-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S4",
+      "skill_id": "NIN-041-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S5",
+      "skill_id": "NIN-041-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S0",
+      "skill_id": "NIN-042-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S1",
+      "skill_id": "NIN-042-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S2",
+      "skill_id": "NIN-042-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S3",
+      "skill_id": "NIN-042-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S4",
+      "skill_id": "NIN-042-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S5",
+      "skill_id": "NIN-042-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S0",
+      "skill_id": "NIN-043-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S1",
+      "skill_id": "NIN-043-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S2",
+      "skill_id": "NIN-043-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S3",
+      "skill_id": "NIN-043-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S4",
+      "skill_id": "NIN-043-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S5",
+      "skill_id": "NIN-043-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S0",
+      "skill_id": "NIN-044-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S1",
+      "skill_id": "NIN-044-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S2",
+      "skill_id": "NIN-044-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S3",
+      "skill_id": "NIN-044-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S4",
+      "skill_id": "NIN-044-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S5",
+      "skill_id": "NIN-044-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S0",
+      "skill_id": "NIN-045-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S1",
+      "skill_id": "NIN-045-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S2",
+      "skill_id": "NIN-045-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S3",
+      "skill_id": "NIN-045-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S4",
+      "skill_id": "NIN-045-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S5",
+      "skill_id": "NIN-045-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S0",
+      "skill_id": "NIN-046-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S1",
+      "skill_id": "NIN-046-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S2",
+      "skill_id": "NIN-046-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S3",
+      "skill_id": "NIN-046-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S4",
+      "skill_id": "NIN-046-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S5",
+      "skill_id": "NIN-046-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S0",
+      "skill_id": "NIN-047-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S1",
+      "skill_id": "NIN-047-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S2",
+      "skill_id": "NIN-047-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S3",
+      "skill_id": "NIN-047-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S4",
+      "skill_id": "NIN-047-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S5",
+      "skill_id": "NIN-047-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S0",
+      "skill_id": "NIN-048-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S1",
+      "skill_id": "NIN-048-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S2",
+      "skill_id": "NIN-048-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S3",
+      "skill_id": "NIN-048-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S4",
+      "skill_id": "NIN-048-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S5",
+      "skill_id": "NIN-048-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S0",
+      "skill_id": "NIN-049-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S1",
+      "skill_id": "NIN-049-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S2",
+      "skill_id": "NIN-049-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S3",
+      "skill_id": "NIN-049-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S4",
+      "skill_id": "NIN-049-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S5",
+      "skill_id": "NIN-049-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S0",
+      "skill_id": "NIN-050-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S1",
+      "skill_id": "NIN-050-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S2",
+      "skill_id": "NIN-050-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S3",
+      "skill_id": "NIN-050-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S4",
+      "skill_id": "NIN-050-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S5",
+      "skill_id": "NIN-050-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S0",
+      "skill_id": "NIN-051-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S1",
+      "skill_id": "NIN-051-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S2",
+      "skill_id": "NIN-051-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S3",
+      "skill_id": "NIN-051-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S4",
+      "skill_id": "NIN-051-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S5",
+      "skill_id": "NIN-051-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S0",
+      "skill_id": "NIN-052-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S1",
+      "skill_id": "NIN-052-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S2",
+      "skill_id": "NIN-052-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S3",
+      "skill_id": "NIN-052-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S4",
+      "skill_id": "NIN-052-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S5",
+      "skill_id": "NIN-052-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S0",
+      "skill_id": "NIN-053-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S1",
+      "skill_id": "NIN-053-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S2",
+      "skill_id": "NIN-053-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S3",
+      "skill_id": "NIN-053-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S4",
+      "skill_id": "NIN-053-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S5",
+      "skill_id": "NIN-053-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S0",
+      "skill_id": "NIN-054-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S1",
+      "skill_id": "NIN-054-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S2",
+      "skill_id": "NIN-054-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S3",
+      "skill_id": "NIN-054-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S4",
+      "skill_id": "NIN-054-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S5",
+      "skill_id": "NIN-054-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S0",
+      "skill_id": "NIN-055-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S1",
+      "skill_id": "NIN-055-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S2",
+      "skill_id": "NIN-055-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S3",
+      "skill_id": "NIN-055-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S4",
+      "skill_id": "NIN-055-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S5",
+      "skill_id": "NIN-055-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S0",
+      "skill_id": "NIN-056-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S1",
+      "skill_id": "NIN-056-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S2",
+      "skill_id": "NIN-056-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S3",
+      "skill_id": "NIN-056-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S4",
+      "skill_id": "NIN-056-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S5",
+      "skill_id": "NIN-056-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S0",
+      "skill_id": "NIN-057-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S1",
+      "skill_id": "NIN-057-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S2",
+      "skill_id": "NIN-057-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S3",
+      "skill_id": "NIN-057-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S4",
+      "skill_id": "NIN-057-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S5",
+      "skill_id": "NIN-057-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S0",
+      "skill_id": "NIN-058-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S1",
+      "skill_id": "NIN-058-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S2",
+      "skill_id": "NIN-058-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S3",
+      "skill_id": "NIN-058-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S4",
+      "skill_id": "NIN-058-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S5",
+      "skill_id": "NIN-058-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S0",
+      "skill_id": "NIN-059-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S1",
+      "skill_id": "NIN-059-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S2",
+      "skill_id": "NIN-059-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S3",
+      "skill_id": "NIN-059-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S4",
+      "skill_id": "NIN-059-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S5",
+      "skill_id": "NIN-059-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S0",
+      "skill_id": "NIN-060-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S1",
+      "skill_id": "NIN-060-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S2",
+      "skill_id": "NIN-060-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S3",
+      "skill_id": "NIN-060-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S4",
+      "skill_id": "NIN-060-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S5",
+      "skill_id": "NIN-060-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S0",
+      "skill_id": "NIN-061-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S1",
+      "skill_id": "NIN-061-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S2",
+      "skill_id": "NIN-061-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S3",
+      "skill_id": "NIN-061-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S4",
+      "skill_id": "NIN-061-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S5",
+      "skill_id": "NIN-061-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S0",
+      "skill_id": "NIN-062-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S1",
+      "skill_id": "NIN-062-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S2",
+      "skill_id": "NIN-062-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S3",
+      "skill_id": "NIN-062-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S4",
+      "skill_id": "NIN-062-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S5",
+      "skill_id": "NIN-062-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S0",
+      "skill_id": "NIN-063-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S1",
+      "skill_id": "NIN-063-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S2",
+      "skill_id": "NIN-063-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S3",
+      "skill_id": "NIN-063-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S4",
+      "skill_id": "NIN-063-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S5",
+      "skill_id": "NIN-063-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S0",
+      "skill_id": "NIN-064-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S1",
+      "skill_id": "NIN-064-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S2",
+      "skill_id": "NIN-064-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S3",
+      "skill_id": "NIN-064-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S4",
+      "skill_id": "NIN-064-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S5",
+      "skill_id": "NIN-064-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S0",
+      "skill_id": "NIN-065-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S1",
+      "skill_id": "NIN-065-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S2",
+      "skill_id": "NIN-065-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S3",
+      "skill_id": "NIN-065-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S4",
+      "skill_id": "NIN-065-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S5",
+      "skill_id": "NIN-065-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S0",
+      "skill_id": "NIN-066-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S1",
+      "skill_id": "NIN-066-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S2",
+      "skill_id": "NIN-066-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S3",
+      "skill_id": "NIN-066-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S4",
+      "skill_id": "NIN-066-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S5",
+      "skill_id": "NIN-066-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S0",
+      "skill_id": "NIN-067-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S1",
+      "skill_id": "NIN-067-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S2",
+      "skill_id": "NIN-067-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S3",
+      "skill_id": "NIN-067-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S4",
+      "skill_id": "NIN-067-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S5",
+      "skill_id": "NIN-067-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S0",
+      "skill_id": "NIN-068-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S1",
+      "skill_id": "NIN-068-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S2",
+      "skill_id": "NIN-068-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S3",
+      "skill_id": "NIN-068-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S4",
+      "skill_id": "NIN-068-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S5",
+      "skill_id": "NIN-068-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S0",
+      "skill_id": "NIN-069-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S1",
+      "skill_id": "NIN-069-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S2",
+      "skill_id": "NIN-069-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S3",
+      "skill_id": "NIN-069-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S4",
+      "skill_id": "NIN-069-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S5",
+      "skill_id": "NIN-069-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S0",
+      "skill_id": "NIN-070-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S1",
+      "skill_id": "NIN-070-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S2",
+      "skill_id": "NIN-070-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S3",
+      "skill_id": "NIN-070-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S4",
+      "skill_id": "NIN-070-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S5",
+      "skill_id": "NIN-070-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S0",
+      "skill_id": "NIN-071-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S1",
+      "skill_id": "NIN-071-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S2",
+      "skill_id": "NIN-071-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S3",
+      "skill_id": "NIN-071-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S4",
+      "skill_id": "NIN-071-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S5",
+      "skill_id": "NIN-071-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S0",
+      "skill_id": "NIN-072-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S1",
+      "skill_id": "NIN-072-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S2",
+      "skill_id": "NIN-072-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S3",
+      "skill_id": "NIN-072-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S4",
+      "skill_id": "NIN-072-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S5",
+      "skill_id": "NIN-072-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S0",
+      "skill_id": "NIN-073-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S1",
+      "skill_id": "NIN-073-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S2",
+      "skill_id": "NIN-073-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S3",
+      "skill_id": "NIN-073-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S4",
+      "skill_id": "NIN-073-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S5",
+      "skill_id": "NIN-073-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S0",
+      "skill_id": "NIN-074-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S1",
+      "skill_id": "NIN-074-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S2",
+      "skill_id": "NIN-074-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S3",
+      "skill_id": "NIN-074-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S4",
+      "skill_id": "NIN-074-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S5",
+      "skill_id": "NIN-074-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S0",
+      "skill_id": "NIN-075-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S1",
+      "skill_id": "NIN-075-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S2",
+      "skill_id": "NIN-075-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S3",
+      "skill_id": "NIN-075-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S4",
+      "skill_id": "NIN-075-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S5",
+      "skill_id": "NIN-075-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S0",
+      "skill_id": "NIN-076-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S1",
+      "skill_id": "NIN-076-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S2",
+      "skill_id": "NIN-076-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S3",
+      "skill_id": "NIN-076-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S4",
+      "skill_id": "NIN-076-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S5",
+      "skill_id": "NIN-076-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S0",
+      "skill_id": "NIN-077-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S1",
+      "skill_id": "NIN-077-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S2",
+      "skill_id": "NIN-077-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S3",
+      "skill_id": "NIN-077-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S4",
+      "skill_id": "NIN-077-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S5",
+      "skill_id": "NIN-077-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S0",
+      "skill_id": "NIN-078-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S1",
+      "skill_id": "NIN-078-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S2",
+      "skill_id": "NIN-078-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S3",
+      "skill_id": "NIN-078-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S4",
+      "skill_id": "NIN-078-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S5",
+      "skill_id": "NIN-078-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S0",
+      "skill_id": "NIN-079-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S1",
+      "skill_id": "NIN-079-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S2",
+      "skill_id": "NIN-079-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S3",
+      "skill_id": "NIN-079-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S4",
+      "skill_id": "NIN-079-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S5",
+      "skill_id": "NIN-079-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S0",
+      "skill_id": "NIN-080-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S1",
+      "skill_id": "NIN-080-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S2",
+      "skill_id": "NIN-080-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S3",
+      "skill_id": "NIN-080-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S4",
+      "skill_id": "NIN-080-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S5",
+      "skill_id": "NIN-080-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S0",
+      "skill_id": "NIN-081-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S1",
+      "skill_id": "NIN-081-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S2",
+      "skill_id": "NIN-081-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S3",
+      "skill_id": "NIN-081-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S4",
+      "skill_id": "NIN-081-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S5",
+      "skill_id": "NIN-081-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S0",
+      "skill_id": "NIN-082-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S1",
+      "skill_id": "NIN-082-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S2",
+      "skill_id": "NIN-082-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S3",
+      "skill_id": "NIN-082-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S4",
+      "skill_id": "NIN-082-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S5",
+      "skill_id": "NIN-082-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S0",
+      "skill_id": "NIN-083-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S1",
+      "skill_id": "NIN-083-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S2",
+      "skill_id": "NIN-083-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S3",
+      "skill_id": "NIN-083-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S4",
+      "skill_id": "NIN-083-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S5",
+      "skill_id": "NIN-083-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S0",
+      "skill_id": "NIN-084-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S1",
+      "skill_id": "NIN-084-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S2",
+      "skill_id": "NIN-084-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S3",
+      "skill_id": "NIN-084-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S4",
+      "skill_id": "NIN-084-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S5",
+      "skill_id": "NIN-084-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S0",
+      "skill_id": "NIN-085-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S1",
+      "skill_id": "NIN-085-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S2",
+      "skill_id": "NIN-085-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S3",
+      "skill_id": "NIN-085-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S4",
+      "skill_id": "NIN-085-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S5",
+      "skill_id": "NIN-085-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S0",
+      "skill_id": "NIN-086-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S1",
+      "skill_id": "NIN-086-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S2",
+      "skill_id": "NIN-086-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S3",
+      "skill_id": "NIN-086-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S4",
+      "skill_id": "NIN-086-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S5",
+      "skill_id": "NIN-086-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S0",
+      "skill_id": "NIN-087-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S1",
+      "skill_id": "NIN-087-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S2",
+      "skill_id": "NIN-087-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S3",
+      "skill_id": "NIN-087-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S4",
+      "skill_id": "NIN-087-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S5",
+      "skill_id": "NIN-087-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S0",
+      "skill_id": "NIN-088-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S1",
+      "skill_id": "NIN-088-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S2",
+      "skill_id": "NIN-088-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S3",
+      "skill_id": "NIN-088-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S4",
+      "skill_id": "NIN-088-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S5",
+      "skill_id": "NIN-088-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S0",
+      "skill_id": "NIN-089-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S1",
+      "skill_id": "NIN-089-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S2",
+      "skill_id": "NIN-089-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S3",
+      "skill_id": "NIN-089-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S4",
+      "skill_id": "NIN-089-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S5",
+      "skill_id": "NIN-089-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S0",
+      "skill_id": "NIN-090-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S1",
+      "skill_id": "NIN-090-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S2",
+      "skill_id": "NIN-090-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S3",
+      "skill_id": "NIN-090-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S4",
+      "skill_id": "NIN-090-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S5",
+      "skill_id": "NIN-090-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S0",
+      "skill_id": "NIN-091-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S1",
+      "skill_id": "NIN-091-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S2",
+      "skill_id": "NIN-091-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S3",
+      "skill_id": "NIN-091-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S4",
+      "skill_id": "NIN-091-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S5",
+      "skill_id": "NIN-091-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S0",
+      "skill_id": "NIN-092-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S1",
+      "skill_id": "NIN-092-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S2",
+      "skill_id": "NIN-092-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S3",
+      "skill_id": "NIN-092-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S4",
+      "skill_id": "NIN-092-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S5",
+      "skill_id": "NIN-092-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S0",
+      "skill_id": "NIN-093-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S1",
+      "skill_id": "NIN-093-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S2",
+      "skill_id": "NIN-093-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S3",
+      "skill_id": "NIN-093-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S4",
+      "skill_id": "NIN-093-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S5",
+      "skill_id": "NIN-093-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S0",
+      "skill_id": "NIN-094-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S1",
+      "skill_id": "NIN-094-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S2",
+      "skill_id": "NIN-094-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S3",
+      "skill_id": "NIN-094-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S4",
+      "skill_id": "NIN-094-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S5",
+      "skill_id": "NIN-094-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S0",
+      "skill_id": "NIN-095-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S1",
+      "skill_id": "NIN-095-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S2",
+      "skill_id": "NIN-095-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S3",
+      "skill_id": "NIN-095-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S4",
+      "skill_id": "NIN-095-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S5",
+      "skill_id": "NIN-095-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S0",
+      "skill_id": "NIN-096-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S1",
+      "skill_id": "NIN-096-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S2",
+      "skill_id": "NIN-096-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S3",
+      "skill_id": "NIN-096-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S4",
+      "skill_id": "NIN-096-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S5",
+      "skill_id": "NIN-096-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S0",
+      "skill_id": "NIN-097-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S1",
+      "skill_id": "NIN-097-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S2",
+      "skill_id": "NIN-097-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S3",
+      "skill_id": "NIN-097-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S4",
+      "skill_id": "NIN-097-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S5",
+      "skill_id": "NIN-097-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S0",
+      "skill_id": "NIN-098-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S1",
+      "skill_id": "NIN-098-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S2",
+      "skill_id": "NIN-098-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S3",
+      "skill_id": "NIN-098-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S4",
+      "skill_id": "NIN-098-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S5",
+      "skill_id": "NIN-098-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S0",
+      "skill_id": "NIN-099-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S1",
+      "skill_id": "NIN-099-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S2",
+      "skill_id": "NIN-099-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S3",
+      "skill_id": "NIN-099-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S4",
+      "skill_id": "NIN-099-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S5",
+      "skill_id": "NIN-099-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S0",
+      "skill_id": "NIN-100-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S1",
+      "skill_id": "NIN-100-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S2",
+      "skill_id": "NIN-100-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S3",
+      "skill_id": "NIN-100-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S4",
+      "skill_id": "NIN-100-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S5",
+      "skill_id": "NIN-100-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S0",
+      "skill_id": "NIN-101-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S1",
+      "skill_id": "NIN-101-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S2",
+      "skill_id": "NIN-101-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S3",
+      "skill_id": "NIN-101-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S4",
+      "skill_id": "NIN-101-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S5",
+      "skill_id": "NIN-101-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S0",
+      "skill_id": "NIN-102-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S1",
+      "skill_id": "NIN-102-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S2",
+      "skill_id": "NIN-102-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S3",
+      "skill_id": "NIN-102-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S4",
+      "skill_id": "NIN-102-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S5",
+      "skill_id": "NIN-102-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S0",
+      "skill_id": "NIN-103-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S1",
+      "skill_id": "NIN-103-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S2",
+      "skill_id": "NIN-103-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S3",
+      "skill_id": "NIN-103-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S4",
+      "skill_id": "NIN-103-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S5",
+      "skill_id": "NIN-103-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S0",
+      "skill_id": "NIN-104-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S1",
+      "skill_id": "NIN-104-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S2",
+      "skill_id": "NIN-104-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S3",
+      "skill_id": "NIN-104-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S4",
+      "skill_id": "NIN-104-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S5",
+      "skill_id": "NIN-104-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S0",
+      "skill_id": "NIN-105-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S1",
+      "skill_id": "NIN-105-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S2",
+      "skill_id": "NIN-105-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S3",
+      "skill_id": "NIN-105-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S4",
+      "skill_id": "NIN-105-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S5",
+      "skill_id": "NIN-105-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S0",
+      "skill_id": "NIN-106-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S1",
+      "skill_id": "NIN-106-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S2",
+      "skill_id": "NIN-106-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S3",
+      "skill_id": "NIN-106-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S4",
+      "skill_id": "NIN-106-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S5",
+      "skill_id": "NIN-106-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S0",
+      "skill_id": "NIN-107-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S1",
+      "skill_id": "NIN-107-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S2",
+      "skill_id": "NIN-107-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S3",
+      "skill_id": "NIN-107-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S4",
+      "skill_id": "NIN-107-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S5",
+      "skill_id": "NIN-107-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S0",
+      "skill_id": "NIN-108-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S1",
+      "skill_id": "NIN-108-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S2",
+      "skill_id": "NIN-108-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S3",
+      "skill_id": "NIN-108-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S4",
+      "skill_id": "NIN-108-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S5",
+      "skill_id": "NIN-108-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S0",
+      "skill_id": "NIN-109-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S1",
+      "skill_id": "NIN-109-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S2",
+      "skill_id": "NIN-109-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S3",
+      "skill_id": "NIN-109-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S4",
+      "skill_id": "NIN-109-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S5",
+      "skill_id": "NIN-109-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S0",
+      "skill_id": "NIN-110-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S1",
+      "skill_id": "NIN-110-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S2",
+      "skill_id": "NIN-110-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S3",
+      "skill_id": "NIN-110-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S4",
+      "skill_id": "NIN-110-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S5",
+      "skill_id": "NIN-110-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S0",
+      "skill_id": "NIN-111-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S1",
+      "skill_id": "NIN-111-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S2",
+      "skill_id": "NIN-111-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S3",
+      "skill_id": "NIN-111-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S4",
+      "skill_id": "NIN-111-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S5",
+      "skill_id": "NIN-111-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S0",
+      "skill_id": "NIN-112-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S1",
+      "skill_id": "NIN-112-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S2",
+      "skill_id": "NIN-112-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S3",
+      "skill_id": "NIN-112-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S4",
+      "skill_id": "NIN-112-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S5",
+      "skill_id": "NIN-112-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S0",
+      "skill_id": "NIN-113-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S1",
+      "skill_id": "NIN-113-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S2",
+      "skill_id": "NIN-113-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S3",
+      "skill_id": "NIN-113-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S4",
+      "skill_id": "NIN-113-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S5",
+      "skill_id": "NIN-113-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S0",
+      "skill_id": "NIN-114-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S1",
+      "skill_id": "NIN-114-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S2",
+      "skill_id": "NIN-114-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S3",
+      "skill_id": "NIN-114-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S4",
+      "skill_id": "NIN-114-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S5",
+      "skill_id": "NIN-114-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S0",
+      "skill_id": "NIN-115-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S1",
+      "skill_id": "NIN-115-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S2",
+      "skill_id": "NIN-115-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S3",
+      "skill_id": "NIN-115-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S4",
+      "skill_id": "NIN-115-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S5",
+      "skill_id": "NIN-115-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S0",
+      "skill_id": "NIN-116-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S1",
+      "skill_id": "NIN-116-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S2",
+      "skill_id": "NIN-116-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S3",
+      "skill_id": "NIN-116-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S4",
+      "skill_id": "NIN-116-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S5",
+      "skill_id": "NIN-116-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S0",
+      "skill_id": "NIN-117-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S1",
+      "skill_id": "NIN-117-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S2",
+      "skill_id": "NIN-117-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S3",
+      "skill_id": "NIN-117-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S4",
+      "skill_id": "NIN-117-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S5",
+      "skill_id": "NIN-117-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S0",
+      "skill_id": "NIN-118-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S1",
+      "skill_id": "NIN-118-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S2",
+      "skill_id": "NIN-118-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S3",
+      "skill_id": "NIN-118-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S4",
+      "skill_id": "NIN-118-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S5",
+      "skill_id": "NIN-118-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S0",
+      "skill_id": "NIN-119-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S1",
+      "skill_id": "NIN-119-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S2",
+      "skill_id": "NIN-119-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S3",
+      "skill_id": "NIN-119-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S4",
+      "skill_id": "NIN-119-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S5",
+      "skill_id": "NIN-119-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S0",
+      "skill_id": "NIN-120-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S1",
+      "skill_id": "NIN-120-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S2",
+      "skill_id": "NIN-120-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S3",
+      "skill_id": "NIN-120-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S4",
+      "skill_id": "NIN-120-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S5",
+      "skill_id": "NIN-120-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S0",
+      "skill_id": "NIN-121-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S1",
+      "skill_id": "NIN-121-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S2",
+      "skill_id": "NIN-121-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S3",
+      "skill_id": "NIN-121-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S4",
+      "skill_id": "NIN-121-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S5",
+      "skill_id": "NIN-121-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S0",
+      "skill_id": "NIN-122-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S1",
+      "skill_id": "NIN-122-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S2",
+      "skill_id": "NIN-122-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S3",
+      "skill_id": "NIN-122-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S4",
+      "skill_id": "NIN-122-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S5",
+      "skill_id": "NIN-122-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S0",
+      "skill_id": "NIN-123-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S1",
+      "skill_id": "NIN-123-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S2",
+      "skill_id": "NIN-123-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S3",
+      "skill_id": "NIN-123-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S4",
+      "skill_id": "NIN-123-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S5",
+      "skill_id": "NIN-123-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S0",
+      "skill_id": "NIN-124-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S1",
+      "skill_id": "NIN-124-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S2",
+      "skill_id": "NIN-124-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S3",
+      "skill_id": "NIN-124-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S4",
+      "skill_id": "NIN-124-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S5",
+      "skill_id": "NIN-124-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S0",
+      "skill_id": "NIN-125-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S1",
+      "skill_id": "NIN-125-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S2",
+      "skill_id": "NIN-125-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S3",
+      "skill_id": "NIN-125-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S4",
+      "skill_id": "NIN-125-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S5",
+      "skill_id": "NIN-125-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S0",
+      "skill_id": "NIN-126-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S1",
+      "skill_id": "NIN-126-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S2",
+      "skill_id": "NIN-126-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S3",
+      "skill_id": "NIN-126-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S4",
+      "skill_id": "NIN-126-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S5",
+      "skill_id": "NIN-126-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S0",
+      "skill_id": "NIN-127-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S1",
+      "skill_id": "NIN-127-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S2",
+      "skill_id": "NIN-127-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S3",
+      "skill_id": "NIN-127-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S4",
+      "skill_id": "NIN-127-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S5",
+      "skill_id": "NIN-127-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S0",
+      "skill_id": "NIN-128-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S1",
+      "skill_id": "NIN-128-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S2",
+      "skill_id": "NIN-128-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S3",
+      "skill_id": "NIN-128-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S4",
+      "skill_id": "NIN-128-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S5",
+      "skill_id": "NIN-128-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S0",
+      "skill_id": "NIN-129-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S1",
+      "skill_id": "NIN-129-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S2",
+      "skill_id": "NIN-129-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S3",
+      "skill_id": "NIN-129-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S4",
+      "skill_id": "NIN-129-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S5",
+      "skill_id": "NIN-129-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S0",
+      "skill_id": "NIN-130-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S1",
+      "skill_id": "NIN-130-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S2",
+      "skill_id": "NIN-130-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S3",
+      "skill_id": "NIN-130-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S4",
+      "skill_id": "NIN-130-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S5",
+      "skill_id": "NIN-130-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S0",
+      "skill_id": "NIN-131-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S1",
+      "skill_id": "NIN-131-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S2",
+      "skill_id": "NIN-131-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S3",
+      "skill_id": "NIN-131-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S4",
+      "skill_id": "NIN-131-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S5",
+      "skill_id": "NIN-131-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S0",
+      "skill_id": "NIN-132-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S1",
+      "skill_id": "NIN-132-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S2",
+      "skill_id": "NIN-132-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S3",
+      "skill_id": "NIN-132-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S4",
+      "skill_id": "NIN-132-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S5",
+      "skill_id": "NIN-132-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S0",
+      "skill_id": "NIN-133-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S1",
+      "skill_id": "NIN-133-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S2",
+      "skill_id": "NIN-133-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S3",
+      "skill_id": "NIN-133-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S4",
+      "skill_id": "NIN-133-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S5",
+      "skill_id": "NIN-133-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S0",
+      "skill_id": "NIN-134-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S1",
+      "skill_id": "NIN-134-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S2",
+      "skill_id": "NIN-134-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S3",
+      "skill_id": "NIN-134-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S4",
+      "skill_id": "NIN-134-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S5",
+      "skill_id": "NIN-134-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S0",
+      "skill_id": "NIN-135-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S1",
+      "skill_id": "NIN-135-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S2",
+      "skill_id": "NIN-135-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S3",
+      "skill_id": "NIN-135-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S4",
+      "skill_id": "NIN-135-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S5",
+      "skill_id": "NIN-135-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S0",
+      "skill_id": "NIN-136-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S1",
+      "skill_id": "NIN-136-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S2",
+      "skill_id": "NIN-136-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S3",
+      "skill_id": "NIN-136-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S4",
+      "skill_id": "NIN-136-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S5",
+      "skill_id": "NIN-136-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S0",
+      "skill_id": "NIN-137-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S1",
+      "skill_id": "NIN-137-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S2",
+      "skill_id": "NIN-137-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S3",
+      "skill_id": "NIN-137-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S4",
+      "skill_id": "NIN-137-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S5",
+      "skill_id": "NIN-137-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S0",
+      "skill_id": "NIN-138-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S1",
+      "skill_id": "NIN-138-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S2",
+      "skill_id": "NIN-138-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S3",
+      "skill_id": "NIN-138-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S4",
+      "skill_id": "NIN-138-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S5",
+      "skill_id": "NIN-138-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S0",
+      "skill_id": "NIN-139-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S1",
+      "skill_id": "NIN-139-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S2",
+      "skill_id": "NIN-139-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S3",
+      "skill_id": "NIN-139-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S4",
+      "skill_id": "NIN-139-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S5",
+      "skill_id": "NIN-139-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S0",
+      "skill_id": "NIN-140-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S1",
+      "skill_id": "NIN-140-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S2",
+      "skill_id": "NIN-140-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S3",
+      "skill_id": "NIN-140-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S4",
+      "skill_id": "NIN-140-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S5",
+      "skill_id": "NIN-140-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S0",
+      "skill_id": "NIN-141-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S1",
+      "skill_id": "NIN-141-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S2",
+      "skill_id": "NIN-141-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S3",
+      "skill_id": "NIN-141-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S4",
+      "skill_id": "NIN-141-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S5",
+      "skill_id": "NIN-141-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S0",
+      "skill_id": "NIN-142-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S1",
+      "skill_id": "NIN-142-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S2",
+      "skill_id": "NIN-142-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S3",
+      "skill_id": "NIN-142-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S4",
+      "skill_id": "NIN-142-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S5",
+      "skill_id": "NIN-142-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S0",
+      "skill_id": "NIN-143-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S1",
+      "skill_id": "NIN-143-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S2",
+      "skill_id": "NIN-143-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S3",
+      "skill_id": "NIN-143-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S4",
+      "skill_id": "NIN-143-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S5",
+      "skill_id": "NIN-143-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S0",
+      "skill_id": "NIN-144-S0",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S1",
+      "skill_id": "NIN-144-S1",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S2",
+      "skill_id": "NIN-144-S2",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S3",
+      "skill_id": "NIN-144-S3",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S4",
+      "skill_id": "NIN-144-S4",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S5",
+      "skill_id": "NIN-144-S5",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-001-S6",
+      "skill_id": "NIN-001-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-001-S7",
+      "skill_id": "NIN-001-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S6",
+      "skill_id": "NIN-002-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-002-S7",
+      "skill_id": "NIN-002-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S6",
+      "skill_id": "NIN-003-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-003-S7",
+      "skill_id": "NIN-003-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S6",
+      "skill_id": "NIN-004-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-004-S7",
+      "skill_id": "NIN-004-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S6",
+      "skill_id": "NIN-005-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-005-S7",
+      "skill_id": "NIN-005-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S6",
+      "skill_id": "NIN-006-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-006-S7",
+      "skill_id": "NIN-006-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S6",
+      "skill_id": "NIN-007-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-007-S7",
+      "skill_id": "NIN-007-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S6",
+      "skill_id": "NIN-008-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-008-S7",
+      "skill_id": "NIN-008-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S6",
+      "skill_id": "NIN-009-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-009-S7",
+      "skill_id": "NIN-009-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S6",
+      "skill_id": "NIN-010-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-010-S7",
+      "skill_id": "NIN-010-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S6",
+      "skill_id": "NIN-011-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-011-S7",
+      "skill_id": "NIN-011-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S6",
+      "skill_id": "NIN-012-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-012-S7",
+      "skill_id": "NIN-012-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S6",
+      "skill_id": "NIN-013-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-013-S7",
+      "skill_id": "NIN-013-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S6",
+      "skill_id": "NIN-014-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-014-S7",
+      "skill_id": "NIN-014-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S6",
+      "skill_id": "NIN-015-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-015-S7",
+      "skill_id": "NIN-015-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S6",
+      "skill_id": "NIN-016-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-016-S7",
+      "skill_id": "NIN-016-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S6",
+      "skill_id": "NIN-017-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-017-S7",
+      "skill_id": "NIN-017-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S6",
+      "skill_id": "NIN-018-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-018-S7",
+      "skill_id": "NIN-018-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S6",
+      "skill_id": "NIN-019-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-019-S7",
+      "skill_id": "NIN-019-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S6",
+      "skill_id": "NIN-020-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-020-S7",
+      "skill_id": "NIN-020-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S6",
+      "skill_id": "NIN-021-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-021-S7",
+      "skill_id": "NIN-021-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S6",
+      "skill_id": "NIN-022-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-022-S7",
+      "skill_id": "NIN-022-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S6",
+      "skill_id": "NIN-023-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-023-S7",
+      "skill_id": "NIN-023-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S6",
+      "skill_id": "NIN-024-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-024-S7",
+      "skill_id": "NIN-024-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S6",
+      "skill_id": "NIN-025-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-025-S7",
+      "skill_id": "NIN-025-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S6",
+      "skill_id": "NIN-026-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-026-S7",
+      "skill_id": "NIN-026-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S6",
+      "skill_id": "NIN-027-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-027-S7",
+      "skill_id": "NIN-027-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S6",
+      "skill_id": "NIN-028-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-028-S7",
+      "skill_id": "NIN-028-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S6",
+      "skill_id": "NIN-029-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-029-S7",
+      "skill_id": "NIN-029-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S6",
+      "skill_id": "NIN-030-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-030-S7",
+      "skill_id": "NIN-030-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S6",
+      "skill_id": "NIN-031-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-031-S7",
+      "skill_id": "NIN-031-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S6",
+      "skill_id": "NIN-032-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-032-S7",
+      "skill_id": "NIN-032-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S6",
+      "skill_id": "NIN-033-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-033-S7",
+      "skill_id": "NIN-033-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S6",
+      "skill_id": "NIN-034-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-034-S7",
+      "skill_id": "NIN-034-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S6",
+      "skill_id": "NIN-035-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-035-S7",
+      "skill_id": "NIN-035-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S6",
+      "skill_id": "NIN-036-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-036-S7",
+      "skill_id": "NIN-036-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S6",
+      "skill_id": "NIN-037-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-037-S7",
+      "skill_id": "NIN-037-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S6",
+      "skill_id": "NIN-038-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-038-S7",
+      "skill_id": "NIN-038-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S6",
+      "skill_id": "NIN-039-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-039-S7",
+      "skill_id": "NIN-039-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S6",
+      "skill_id": "NIN-040-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-040-S7",
+      "skill_id": "NIN-040-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S6",
+      "skill_id": "NIN-041-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-041-S7",
+      "skill_id": "NIN-041-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S6",
+      "skill_id": "NIN-042-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-042-S7",
+      "skill_id": "NIN-042-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S6",
+      "skill_id": "NIN-043-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-043-S7",
+      "skill_id": "NIN-043-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S6",
+      "skill_id": "NIN-044-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-044-S7",
+      "skill_id": "NIN-044-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S6",
+      "skill_id": "NIN-045-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-045-S7",
+      "skill_id": "NIN-045-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S6",
+      "skill_id": "NIN-046-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-046-S7",
+      "skill_id": "NIN-046-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S6",
+      "skill_id": "NIN-047-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-047-S7",
+      "skill_id": "NIN-047-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S6",
+      "skill_id": "NIN-048-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-048-S7",
+      "skill_id": "NIN-048-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S6",
+      "skill_id": "NIN-049-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-049-S7",
+      "skill_id": "NIN-049-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S6",
+      "skill_id": "NIN-050-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-050-S7",
+      "skill_id": "NIN-050-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S6",
+      "skill_id": "NIN-051-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-051-S7",
+      "skill_id": "NIN-051-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S6",
+      "skill_id": "NIN-052-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-052-S7",
+      "skill_id": "NIN-052-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S6",
+      "skill_id": "NIN-053-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-053-S7",
+      "skill_id": "NIN-053-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S6",
+      "skill_id": "NIN-054-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-054-S7",
+      "skill_id": "NIN-054-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S6",
+      "skill_id": "NIN-055-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-055-S7",
+      "skill_id": "NIN-055-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S6",
+      "skill_id": "NIN-056-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-056-S7",
+      "skill_id": "NIN-056-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S6",
+      "skill_id": "NIN-057-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-057-S7",
+      "skill_id": "NIN-057-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S6",
+      "skill_id": "NIN-058-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-058-S7",
+      "skill_id": "NIN-058-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S6",
+      "skill_id": "NIN-059-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-059-S7",
+      "skill_id": "NIN-059-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S6",
+      "skill_id": "NIN-060-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-060-S7",
+      "skill_id": "NIN-060-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S6",
+      "skill_id": "NIN-061-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-061-S7",
+      "skill_id": "NIN-061-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S6",
+      "skill_id": "NIN-062-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-062-S7",
+      "skill_id": "NIN-062-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S6",
+      "skill_id": "NIN-063-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-063-S7",
+      "skill_id": "NIN-063-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S6",
+      "skill_id": "NIN-064-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-064-S7",
+      "skill_id": "NIN-064-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S6",
+      "skill_id": "NIN-065-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-065-S7",
+      "skill_id": "NIN-065-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S6",
+      "skill_id": "NIN-066-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-066-S7",
+      "skill_id": "NIN-066-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S6",
+      "skill_id": "NIN-067-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-067-S7",
+      "skill_id": "NIN-067-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S6",
+      "skill_id": "NIN-068-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-068-S7",
+      "skill_id": "NIN-068-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S6",
+      "skill_id": "NIN-069-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-069-S7",
+      "skill_id": "NIN-069-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S6",
+      "skill_id": "NIN-070-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-070-S7",
+      "skill_id": "NIN-070-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S6",
+      "skill_id": "NIN-071-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-071-S7",
+      "skill_id": "NIN-071-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S6",
+      "skill_id": "NIN-072-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-072-S7",
+      "skill_id": "NIN-072-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S6",
+      "skill_id": "NIN-073-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-073-S7",
+      "skill_id": "NIN-073-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S6",
+      "skill_id": "NIN-074-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-074-S7",
+      "skill_id": "NIN-074-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S6",
+      "skill_id": "NIN-075-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-075-S7",
+      "skill_id": "NIN-075-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S6",
+      "skill_id": "NIN-076-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-076-S7",
+      "skill_id": "NIN-076-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S6",
+      "skill_id": "NIN-077-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-077-S7",
+      "skill_id": "NIN-077-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S6",
+      "skill_id": "NIN-078-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-078-S7",
+      "skill_id": "NIN-078-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S6",
+      "skill_id": "NIN-079-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-079-S7",
+      "skill_id": "NIN-079-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S6",
+      "skill_id": "NIN-080-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-080-S7",
+      "skill_id": "NIN-080-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S6",
+      "skill_id": "NIN-081-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-081-S7",
+      "skill_id": "NIN-081-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S6",
+      "skill_id": "NIN-082-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-082-S7",
+      "skill_id": "NIN-082-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S6",
+      "skill_id": "NIN-083-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-083-S7",
+      "skill_id": "NIN-083-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S6",
+      "skill_id": "NIN-084-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-084-S7",
+      "skill_id": "NIN-084-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S6",
+      "skill_id": "NIN-085-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-085-S7",
+      "skill_id": "NIN-085-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S6",
+      "skill_id": "NIN-086-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-086-S7",
+      "skill_id": "NIN-086-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S6",
+      "skill_id": "NIN-087-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-087-S7",
+      "skill_id": "NIN-087-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S6",
+      "skill_id": "NIN-088-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-088-S7",
+      "skill_id": "NIN-088-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S6",
+      "skill_id": "NIN-089-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-089-S7",
+      "skill_id": "NIN-089-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S6",
+      "skill_id": "NIN-090-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-090-S7",
+      "skill_id": "NIN-090-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S6",
+      "skill_id": "NIN-091-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-091-S7",
+      "skill_id": "NIN-091-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S6",
+      "skill_id": "NIN-092-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-092-S7",
+      "skill_id": "NIN-092-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S6",
+      "skill_id": "NIN-093-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-093-S7",
+      "skill_id": "NIN-093-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S6",
+      "skill_id": "NIN-094-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-094-S7",
+      "skill_id": "NIN-094-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S6",
+      "skill_id": "NIN-095-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-095-S7",
+      "skill_id": "NIN-095-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S6",
+      "skill_id": "NIN-096-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-096-S7",
+      "skill_id": "NIN-096-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S6",
+      "skill_id": "NIN-097-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-097-S7",
+      "skill_id": "NIN-097-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S6",
+      "skill_id": "NIN-098-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-098-S7",
+      "skill_id": "NIN-098-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S6",
+      "skill_id": "NIN-099-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-099-S7",
+      "skill_id": "NIN-099-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S6",
+      "skill_id": "NIN-100-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-100-S7",
+      "skill_id": "NIN-100-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S6",
+      "skill_id": "NIN-101-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-101-S7",
+      "skill_id": "NIN-101-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S6",
+      "skill_id": "NIN-102-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-102-S7",
+      "skill_id": "NIN-102-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S6",
+      "skill_id": "NIN-103-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-103-S7",
+      "skill_id": "NIN-103-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S6",
+      "skill_id": "NIN-104-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-104-S7",
+      "skill_id": "NIN-104-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S6",
+      "skill_id": "NIN-105-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-105-S7",
+      "skill_id": "NIN-105-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S6",
+      "skill_id": "NIN-106-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-106-S7",
+      "skill_id": "NIN-106-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S6",
+      "skill_id": "NIN-107-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-107-S7",
+      "skill_id": "NIN-107-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S6",
+      "skill_id": "NIN-108-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-108-S7",
+      "skill_id": "NIN-108-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S6",
+      "skill_id": "NIN-109-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-109-S7",
+      "skill_id": "NIN-109-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S6",
+      "skill_id": "NIN-110-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-110-S7",
+      "skill_id": "NIN-110-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S6",
+      "skill_id": "NIN-111-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-111-S7",
+      "skill_id": "NIN-111-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S6",
+      "skill_id": "NIN-112-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-112-S7",
+      "skill_id": "NIN-112-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S6",
+      "skill_id": "NIN-113-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-113-S7",
+      "skill_id": "NIN-113-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S6",
+      "skill_id": "NIN-114-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-114-S7",
+      "skill_id": "NIN-114-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S6",
+      "skill_id": "NIN-115-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-115-S7",
+      "skill_id": "NIN-115-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S6",
+      "skill_id": "NIN-116-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-116-S7",
+      "skill_id": "NIN-116-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S6",
+      "skill_id": "NIN-117-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-117-S7",
+      "skill_id": "NIN-117-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S6",
+      "skill_id": "NIN-118-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-118-S7",
+      "skill_id": "NIN-118-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S6",
+      "skill_id": "NIN-119-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-119-S7",
+      "skill_id": "NIN-119-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S6",
+      "skill_id": "NIN-120-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-120-S7",
+      "skill_id": "NIN-120-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S6",
+      "skill_id": "NIN-121-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-121-S7",
+      "skill_id": "NIN-121-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S6",
+      "skill_id": "NIN-122-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-122-S7",
+      "skill_id": "NIN-122-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S6",
+      "skill_id": "NIN-123-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-123-S7",
+      "skill_id": "NIN-123-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S6",
+      "skill_id": "NIN-124-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-124-S7",
+      "skill_id": "NIN-124-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S6",
+      "skill_id": "NIN-125-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-125-S7",
+      "skill_id": "NIN-125-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S6",
+      "skill_id": "NIN-126-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-126-S7",
+      "skill_id": "NIN-126-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S6",
+      "skill_id": "NIN-127-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-127-S7",
+      "skill_id": "NIN-127-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S6",
+      "skill_id": "NIN-128-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-128-S7",
+      "skill_id": "NIN-128-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S6",
+      "skill_id": "NIN-129-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-129-S7",
+      "skill_id": "NIN-129-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S6",
+      "skill_id": "NIN-130-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-130-S7",
+      "skill_id": "NIN-130-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S6",
+      "skill_id": "NIN-131-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-131-S7",
+      "skill_id": "NIN-131-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S6",
+      "skill_id": "NIN-132-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-132-S7",
+      "skill_id": "NIN-132-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S6",
+      "skill_id": "NIN-133-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-133-S7",
+      "skill_id": "NIN-133-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S6",
+      "skill_id": "NIN-134-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-134-S7",
+      "skill_id": "NIN-134-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S6",
+      "skill_id": "NIN-135-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-135-S7",
+      "skill_id": "NIN-135-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S6",
+      "skill_id": "NIN-136-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-136-S7",
+      "skill_id": "NIN-136-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S6",
+      "skill_id": "NIN-137-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-137-S7",
+      "skill_id": "NIN-137-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S6",
+      "skill_id": "NIN-138-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-138-S7",
+      "skill_id": "NIN-138-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S6",
+      "skill_id": "NIN-139-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-139-S7",
+      "skill_id": "NIN-139-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S6",
+      "skill_id": "NIN-140-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-140-S7",
+      "skill_id": "NIN-140-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S6",
+      "skill_id": "NIN-141-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-141-S7",
+      "skill_id": "NIN-141-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S6",
+      "skill_id": "NIN-142-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-142-S7",
+      "skill_id": "NIN-142-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S6",
+      "skill_id": "NIN-143-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-143-S7",
+      "skill_id": "NIN-143-S7",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S6",
+      "skill_id": "NIN-144-S6",
+      "status": "MISSING"
+    },
+    {
+      "id": "VFX-NIN-144-S7",
+      "skill_id": "NIN-144-S7",
+      "status": "MISSING"
+    }
+  ],
+  "legacy_assets": {
+    "paths": [
+      "art/review/ART01_preview.png",
+      "art/review/ART01_walk_keys_rgba.png",
+      "art/review/ART01_isometric_mockup.png"
+    ],
+    "status": "DEV_REJECTED_FOR_PRODUCTION"
+  },
+  "counts": {
+    "characters": 144,
+    "review_character_candidates": 6,
+    "style_tests": 4,
+    "forms": 54,
+    "vfx_keys": 1152,
+    "approved": 0,
+    "integrated": 0
+  }
+}
