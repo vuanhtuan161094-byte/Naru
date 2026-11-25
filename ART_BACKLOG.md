@@ -65,3 +65,8 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P4 IN_PROGRESS: six opponent originals still missing quality replacement, generation rejected; old prototypes static only.
 - ART-P8 REVIEW: exact V10 native 6v6 scoped pass; fallback and clustering remain, no official integration. Chat01/00 handoff art/e3/ART_P2_R5_HANDOFF.md.
 - ART-P3 HOLD unchanged.
+
+## ART-P2 R6 next
+- ART-P2 IN_PROGRESS: R3 six approved Move source cycles preserved; 113 prior R4 candidates still unapproved. Three new runs HOLD_WRONG_ACTION; zero new required clips. Produce actual Idle/Attack/Cast/Hit/Fall and independent directions in short sequences, no repeats to meet counts. Six opponents still pending quality replacement.
+- ART-P8 BLOCKED on native V11 anchor validation: proposed numeric fix and regression in art/e3/ART_P2_R6_HANDOFF.md; local scoped playback verified, latest SHA and production patch not verified. Coordinate with Chat01, do not alter gameplay branch from art.
+- ART-P3 HOLD unchanged.
