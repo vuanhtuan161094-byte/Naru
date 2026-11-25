@@ -208,6 +208,8 @@ static func advance(reg,s: Dictionary,now: int) -> bool:
 		for mission in s.missions.values():
 			if int(mission.remaining)>0:dt=mini(dt,int(mission.remaining))
 		if not s.travel.is_empty():dt=mini(dt,maxi(1,int(s.travel.remaining)))
+		for squad in s.world_squads.values():
+			if not squad.travel.is_empty():dt=mini(dt,maxi(1,int(squad.travel.remaining)))
 		dt=mini(dt,600-int(s.world_seconds))
 		var bias=int(Time.get_time_zone_from_system().bias)*60
 		dt=mini(dt,86400-posmod(cursor+bias,86400))

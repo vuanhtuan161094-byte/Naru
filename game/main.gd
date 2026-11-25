@@ -70,7 +70,7 @@ func menu(message: String="") -> void:
 	sim=null
 	clear()
 	label(root,"NARU  /  TỔ CHỨC NINJA",34)
-	label(root,"DEV • Gameplay Completion — mỹ thuật tạm",16)
+	label(root,"DEV V2 • Gameplay A+B+C — mỹ thuật tạm",16)
 	label(root,"Ryo: %s     Ngọc: %s     Thể lực: %s     Ninja: %s / 144" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.stamina,store.state.owned.size()])
 	var row=HBoxContainer.new()
 	root.add_child(row)
@@ -168,13 +168,17 @@ func campaign() -> void:
 	var rows=VBoxContainer.new()
 	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	scroll.add_child(rows)
-	var ids=reg.stages.keys()
+	var ids=reg.chapters.keys()
 	ids.sort()
-	for id in ids:
-		var s=reg.stages[id]
-		var locked=s.requires!=null and not store.state.cleared.has(str(s.requires))
-		var b=button(rows,"%s  %s  • %s thể lực" % [id,s.name_vi,s.stamina_cost],func():start_battle(s))
-		b.disabled=locked
+	for chapter_id in ids:
+		var chapter=reg.chapters[chapter_id]
+		label(rows,"%s • %s" % [chapter_id,chapter.name_vi],20)
+		for id in chapter.stage_ids:
+			var s=reg.stages[id]
+			var locked=s.requires!=null and not store.state.cleared.has(str(s.requires))
+			var prefix="✓ " if store.state.cleared.has(id) else ("🔒 " if locked else "")
+			var b=button(rows,prefix+"%s  %s  • %s thể lực" % [id,s.name_vi,s.stamina_cost],func():start_battle(s))
+			b.disabled=locked
 
 func start_battle(stage: Dictionary) -> void:
 	var id=store.begin_stage(stage)
@@ -461,6 +465,7 @@ func world_screen(message: String="") -> void:
 	button(nav,"Trở về",func():menu())
 	button(nav,"Làm mới",func():world_screen())
 	button(nav,"Ngoại giao",diplomacy_screen)
+	button(nav,"Đội viễn chinh / phòng thủ",squad_menu)
 	if not store.state.travel.is_empty():label(root,"Đang di chuyển • còn %ds" % int(store.state.travel.remaining),18)
 	var scroll=ScrollContainer.new()
 	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -559,13 +564,16 @@ func mission_screen(message: String="") -> void:
 func mission_detail(ninja: String,message: String="") -> void:
 	var rows=activity_rows("PHÁI ĐI • "+str(reg.ninjas[ninja].name_vi),message,func():mission_screen())
 	var job=store.state.missions.get(ninja,{})
-	if not job.is_empty():label(rows,"Đang làm nhiệm vụ "+str(job.resource)+" • còn "+str(job.remaining)+"s",18)
+	if not job.is_empty():
+		label(rows,"Đang làm nhiệm vụ "+str(job.resource)+" • còn "+str(job.remaining)+"s",18)
+		button(rows,"Dừng nhiệm vụ",func():mission_detail(ninja,"Đã dừng" if store.stop_mission(ninja) else "Lỗi"))
 	for source in reg.supply:
 		if not source.source_type in ["mission","mission_or_library","trial","bloodline_trial"]:continue
 		var resource=str(source.resource_id)
 		var text_value="%s ×%d | Tổng bộ %d" % [reg.resources[resource].name_vi,int(source.base_yield),int(source.source_min_hq)]
 		if source.source_type in ["mission","mission_or_library"]:
 			button(rows,text_value,func():mission_detail(ninja,"Đã phái đi" if store.start_mission(reg,ninja,resource) else "Chưa đủ điều kiện"))
+			button(rows,"Tự lặp: "+str(reg.resources[resource].name_vi),func():mission_detail(ninja,"Đã bật" if store.start_mission(reg,ninja,resource,true) else "Chưa đủ điều kiện"))
 		else:button(rows,text_value+" • đấu thử thách",func():mission_detail(ninja,"Đã thắng" if store.resource_trial(reg,ninja,resource) else "Chưa thắng / chưa đủ điều kiện"))
 
 func beast_screen(message: String="") -> void:
@@ -671,3 +679,36 @@ func profession_screen(ninja: String,building_id: String,message: String="") -> 
 		var titles={"yield":"Năng suất","economy":"Tiết kiệm nguyên liệu","quality":"Chất lượng","speed":"Tốc độ"}
 		for talent in titles:
 			button(rows,"%s (+%d điểm)" % [titles[talent],int(career.get("talents",{}).get(talent,0))],func():profession_screen(ninja,building_id,"Đã nâng" if store.choose_job_talent(ninja,profession,talent) else "Chưa có điểm"))
+
+func squad_menu(message: String="") -> void:
+	var rows=activity_rows("ĐỘI VIỄN CHINH / PHÒNG THỦ",message,func():world_screen())
+	label(rows,"Mỗi đội tối đa 6 ninja, không dùng chung thành viên.",17)
+	button(rows,"Đội phòng thủ • "+str(store.state.home_defense.size())+"/6",func():squad_detail("defense"))
+	for key in store.state.world_squads:
+		var squad=store.state.world_squads[key]
+		button(rows,"%s • %s • %d/6" % [key,reg.territories[squad.location].name_vi,squad.team.size()],func():squad_detail(key))
+	for id in store.state.faction_states:
+		if id=="FAC-009":continue
+		var npc=store.state.faction_states[id]
+		label(rows,"%s • Sản xuất %d | Phòng thủ %d | Huấn luyện %d" % [reg.factions[id].name_vi,int(npc.infrastructure.production),int(npc.infrastructure.defense),int(npc.infrastructure.training)],17)
+
+func squad_detail(key: String,message: String="") -> void:
+	var rows=activity_rows("ĐỘI "+key,message,func():squad_menu())
+	var roster=store.state.home_defense if key=="defense" else store.state.world_squads[key].team
+	for id in store.state.owned:
+		button(rows,("✓ " if id in roster else "+ ")+str(reg.ninjas[id].name_vi),func():
+			var next=roster.duplicate()
+			if id in next:next.erase(id)
+			elif next.size()<6:next.append(id)
+			squad_detail(key,"Đã lưu đội" if store.set_world_squad(key,next) else "Ninja đã ở đội khác hoặc đội đang triển khai"))
+	if key=="defense":return
+	var squad=store.state.world_squads[key]
+	if not squad.travel.is_empty():
+		label(rows,"Đang đi • "+str(squad.travel.remaining)+"s",18)
+		button(rows,"Làm mới",func():squad_detail(key))
+		return
+	if store.state.territory_states[squad.location].owner!="FAC-009":button(rows,"Chiếm lĩnh",func():squad_detail(key,"Đã giải quyết" if store.squad_capture(reg,key) else "Chưa đủ điều kiện"))
+	for id in reg.territories:
+		if id==squad.location:continue
+		var route=preload("res://game/world_service.gd").path(reg,store.state,squad.location,id)
+		if not route.is_empty():button(rows,"Đi "+str(reg.territories[id].name_vi)+" • "+str(route.seconds)+"s",func():squad_detail(key,"Đã phái đi" if store.squad_travel(reg,key,id) else "Chưa đủ điều kiện"))

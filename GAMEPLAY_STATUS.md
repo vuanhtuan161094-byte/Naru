@@ -31,3 +31,6 @@ Enemy AI ultimate and auto-resolver player ultimate (manual retained in campaign
 
 ## Offensive B
 15 profession identities retained; specialty affinity (5% proposed), 4 talent tracks, rank points at levels 1/10/25/50/100, output/speed/material economy/quality hooks; compatible building specialty map but non-specialist assignments remain allowed. Repeat missions, cancellation, daily boundary, production repeat reservation, territorial ownership index. Real starter-income integration test without inventory grant. Remaining economic simulation 30/90d and detailed training progression; CI pending.
+
+## Offensive C / DEV V2
+Independent world squads 2/3 and separate defense roster (unique members, travel lock, home-only reorganization), NPC treasury-backed infrastructure and border tension/war with deterministic strategic power resolution (not rendered battles), finite-stock development and defense, nested save guard, 24-chapter UI and repeat-mission controls. Coverage tests for all 120 encounter setup/tick, 24 boss phase payloads, 81 objectives, 288 trial links, actual second squad travel and NPC defended border war. Fixed A test duplicate variable from failed CI 45558656158; pending cumulative CI. Strategic model proposed; no canon implant approval, no all-stage wins or live balance certification.

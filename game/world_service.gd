@@ -25,6 +25,15 @@ static func ensure(reg,s: Dictionary) -> void:
 	if not s.has("world_log"):s.world_log=[]
 	if not s.has("trade_count"):s.trade_count=0
 	if not s.has("territory_battles"):s.territory_battles=0
+	if not s.has("world_squads"):s.world_squads={}
+	for key in ["SQUAD-2","SQUAD-3"]:
+		if not s.world_squads.has(key):s.world_squads[key]={"team":[],"location":HOME,"travel":{}}
+	if not s.has("home_defense"):s.home_defense=[]
+	if not s.has("npc_war_count"):s.npc_war_count=0
+	for id in s.faction_states:
+		var npc=s.faction_states[id]
+		if not npc.has("infrastructure"):npc.infrastructure={"production":1,"defense":1,"training":1}
+		if not npc.has("last_war_tick"):npc.last_war_tick=-1000
 
 static func note(s: Dictionary,message: String) -> void:
 	s.world_log.append(message)
@@ -137,6 +146,7 @@ static func resolve_team(reg,s: Dictionary,player_team: Array,enemy_team: Array,
 	if player_team.is_empty():return false
 	var sim=Combat.new()
 	sim.registry=reg
+	sim.auto_player_ultimate=true
 	sim.rng.seed=seed_value
 	for id in player_team:
 		if not s.owned.has(id):return false
@@ -154,7 +164,10 @@ static func resolve_team(reg,s: Dictionary,player_team: Array,enemy_team: Array,
 	return false
 
 static func capture(reg,s: Dictionary,id: String) -> bool:
-	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed or s.world_location!=id or not s.travel.is_empty() or s.team.is_empty():return false
+	return capture_with(reg,s,id,s.team,s.world_location,s.travel)
+
+static func capture_with(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> bool:
+	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed or location!=id or not travel.is_empty() or roster.is_empty():return false
 	var state=s.territory_states[id]
 	if not state.discovered or state.owner==PLAYER:return false
 	var owner=state.owner
@@ -162,8 +175,8 @@ static func capture(reg,s: Dictionary,id: String) -> bool:
 		if relation(s,PLAYER,owner).state!="war":return false
 		# Sequential defense teams; each battle uses new actors/full recovery.
 		for team in reg.factions[owner].teams:
-			var level=maxi(1,floori(float(reg.territories[id].defense_rating)/80.0))
-			if not resolve_team(reg,s,s.team,team.ninja_template_ids,level,int(s.world_tick)+int(str(id).right(3))*101):
+			var level=maxi(1,floori(float(reg.territories[id].defense_rating)/80.0)+int(s.faction_states[owner].infrastructure.training)-1)
+			if not resolve_team(reg,s,roster,team.ninja_template_ids,level,int(s.world_tick)+int(str(id).right(3))*101):
 				s.territory_battles=int(s.territory_battles)+1
 				note(s,"Thất bại tại "+id)
 				return true
@@ -183,7 +196,9 @@ static func raid(reg,s: Dictionary,id: String) -> bool:
 	if int(s.raid_protection)>0 or not adjacent(reg,s,id,PLAYER):return false
 	var teams=reg.factions[id].teams
 	if teams.is_empty():return false
-	var lost=not resolve_team(reg,s,s.team,teams[0].ninja_template_ids,maxi(1,5+floori(float(s.world_tick)/144.0)),int(s.world_tick)+int(id.right(3))*300)
+	var defenders=s.home_defense.duplicate()
+	if defenders.is_empty() and s.travel.is_empty() and s.world_location==HOME:defenders=s.team.duplicate()
+	var lost=not resolve_team(reg,s,defenders,teams[0].ninja_template_ids,maxi(1,4+int(s.faction_states[id].infrastructure.training)+floori(float(s.world_tick)/144.0)),int(s.world_tick)+int(id.right(3))*300)
 	s.raid_protection=43200
 	if lost:
 		for resource in s.inventory:
@@ -207,10 +222,11 @@ static func npc_tick(reg,s: Dictionary) -> void:
 			if s.territory_states[territory.id].owner!=id:continue
 			for resource in territory.resources:
 				var key=str(resource.resource_id)
-				npc.stock[key]=mini(50000,int(npc.stock.get(key,0))+int(resource.yield_per_tick)*10)
-		var acted=false
+				npc.stock[key]=mini(50000,int(npc.stock.get(key,0))+roundi(float(resource.yield_per_tick)*10*(1+0.06*(int(npc.infrastructure.production)-1))))
+		var acted=develop_npc(reg,s,id)
 		# NPC buys a scarce stock from another NPC with finite money and inventory.
 		for resource in ["RES-006","RES-009","RES-021","RES-011"]:
+			if acted:break
 			if int(npc.stock.get(resource,0))>=50:continue
 			for other in reg.factions:
 				if other==id or other==PLAYER or relation(s,id,other).state=="war":continue
@@ -243,6 +259,7 @@ static func npc_tick(reg,s: Dictionary) -> void:
 					s.territory_states[territory].owner=id
 					acted=true
 					break
+		if not acted:acted=npc_border_action(reg,s,id)
 		if acted:npc.actions=int(npc.actions)+1
 
 static func step(reg,s: Dictionary,dt: int) -> void:
@@ -255,8 +272,116 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 			s.territory_states[dest].visits=int(s.territory_states[dest].visits)+1
 			s.travel={}
 			note(s,"Đến "+dest)
+	for squad in s.world_squads.values():
+		if squad.travel.is_empty():continue
+		squad.travel.remaining=int(squad.travel.remaining)-dt
+		if int(squad.travel.remaining)<=0:
+			var dest=str(squad.travel.destination)
+			squad.location=dest
+			squad.travel={}
+			s.territory_states[dest].discovered=true
+			s.territory_states[dest].visits=int(s.territory_states[dest].visits)+1
+			note(s,"Đội phụ đến "+dest)
 	s.raid_protection=maxi(0,int(s.raid_protection)-dt)
 	s.world_seconds=int(s.world_seconds)+dt
 	while int(s.world_seconds)>=600:
 		s.world_seconds=int(s.world_seconds)-600
 		npc_tick(reg,s)
+
+static func roster_available(s: Dictionary,roster: Array,except: String) -> bool:
+	if roster.size()>6:return false
+	var seen={}
+	for id in roster:
+		if not s.owned.has(id) or seen.has(id):return false
+		seen[id]=true
+		if except!="main" and id in s.team:return false
+		if except!="defense" and id in s.home_defense:return false
+		for key in s.world_squads:
+			if key!=except and id in s.world_squads[key].team:return false
+	return true
+
+static func set_squad(s: Dictionary,key: String,roster: Array) -> bool:
+	if not roster_available(s,roster,key):return false
+	if key=="defense":
+		s.home_defense=roster.duplicate()
+		return true
+	if not s.world_squads.has(key):return false
+	var squad=s.world_squads[key]
+	if not squad.travel.is_empty() or squad.location!=HOME:return false
+	squad.team=roster.duplicate()
+	return true
+
+static func depart_squad(reg,s: Dictionary,key: String,destination: String) -> bool:
+	if not s.world_squads.has(key):return false
+	var squad=s.world_squads[key]
+	if not squad.travel.is_empty() or squad.team.is_empty() or squad.location==destination:return false
+	var route=path(reg,s,squad.location,destination)
+	if route.is_empty():return false
+	squad.travel={"destination":destination,"remaining":route.seconds,"path":route.path,"team":squad.team.duplicate()}
+	return true
+
+static func capture_squad(reg,s: Dictionary,key: String) -> bool:
+	if not s.world_squads.has(key):return false
+	var squad=s.world_squads[key]
+	return capture_with(reg,s,str(squad.location),squad.team,str(squad.location),squad.travel)
+
+static func develop_npc(reg,s: Dictionary,id: String) -> bool:
+	var npc=s.faction_states[id]
+	if int(s.world_tick)%12!=int(id.right(3))%12:return false
+	var chosen="production"
+	var lowest=INF
+	for kind in npc.infrastructure:
+		var weight=float(reg.factions[id].strategy_weights.get(kind,0.3))
+		if kind=="training":weight=float(reg.factions[id].strategy_weights.get("expansion",0.25))
+		var score=float(npc.infrastructure[kind])/maxf(0.1,weight)
+		if score<lowest:
+			lowest=score
+			chosen=kind
+	var level=int(npc.infrastructure[chosen])
+	if level>=100:return false
+	var cost={"RES-001":ceili(200*pow(1.12,level-1)),"RES-006":ceili(15*pow(1.10,level-1)),"RES-009":ceili(10*pow(1.10,level-1))}
+	for resource in cost:
+		if int(npc.stock.get(resource,0))<int(cost[resource]):return false
+	for resource in cost:npc.stock[resource]=int(npc.stock[resource])-int(cost[resource])
+	npc.infrastructure[chosen]=level+1
+	return true
+
+static func strategic_power(reg,s: Dictionary,id: String) -> float:
+	var infra=s.faction_states[id].infrastructure
+	var strength=0.0
+	for team in reg.factions[id].teams:
+		for ninja in team.ninja_template_ids:
+			var n=reg.ninjas[ninja]
+			strength+=float(n.base_stats.strength+n.base_stats.vitality+n.base_stats.spirit)*float(n.initial_quality)
+	return strength*(1+0.08*(int(infra.training)-1))
+
+static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
+	var npc=s.faction_states[id]
+	if int(s.world_tick)-int(npc.last_war_tick)<36:return false
+	for route in reg.routes:
+		var target=""
+		if s.territory_states[route.from].owner==id:target=route.to
+		elif s.territory_states[route.to].owner==id:target=route.from
+		if target=="" or not reg.territories[target].capture_allowed:continue
+		var owner=s.territory_states[target].owner
+		if owner==null or owner==id or owner==PLAYER:continue
+		var r=relation(s,id,owner)
+		if r.state=="allied" or r.state=="trade":continue
+		if r.state!="war":
+			if int(s.world_tick)%36==int(id.right(3))%36:
+				r.score=maxi(-100,int(r.score)-2)
+				if int(r.score)<=-60:r.state="war"
+			continue
+		if int(npc.stock.get("RES-001",0))<300:continue
+		npc.last_war_tick=int(s.world_tick)
+		npc.stock["RES-001"]=int(npc.stock["RES-001"])-300
+		var attack=strategic_power(reg,s,id)
+		var defense=strategic_power(reg,s,owner)*(1+0.05*(int(s.faction_states[owner].infrastructure.defense)-1))+float(reg.territories[target].defense_rating)*0.5
+		var roll=0.85+float(posmod(int(s.world_tick)*31+int(target.right(3))*17,31))/100.0
+		s.npc_war_count=int(s.npc_war_count)+1
+		if attack*roll>defense:
+			s.territory_states[target].owner=id
+			note(s,"Chiến tranh NPC: "+id+" chiếm "+target+" từ "+str(owner))
+		else:note(s,"Chiến tranh NPC: "+str(owner)+" giữ "+target)
+		return true
+	return false

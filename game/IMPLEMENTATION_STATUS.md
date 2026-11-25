@@ -27,3 +27,5 @@ Completion A CI 45552956564 PASS (109). Completion B CI 45553036319 PASS (110 + 
 Offensive A: combat AI, stats, status guards, 9 dedicated DEV beast kits, trial/evolution/capture positive-path and full authored effect dispatch tests. CI pending.
 
 Offensive B: profession specialization and talents, repeat missions, offline day boundaries, real starter income test; CI pending.
+
+Offensive C: multi-squad world, defense roster, strategic NPC development/war, nested validation, campaign groups and full content smoke, Web DEV V2. CI pending.

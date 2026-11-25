@@ -10,9 +10,10 @@
 | GP-P5A | DONE | HQ 1→9 and workshop construction verified CI 45550976926. |
 | GP-P5B | IN_PROGRESS | 150 resources, 63 recipes, 30 fixed buildings cap 100, 15 professions, production/job+combat, stamina regen, no upkeep. |
 | GP-P6 | IN_PROGRESS | Offline cap 24h ledger, clock rollback/replay/crash recovery, full save migration/import/export. |
-| GP-P7 | READY | 60 territories, 71 routes, 9 factions, diplomacy/trade/war/raids/sequential teams. |
+| GP-P7 | IN_PROGRESS | 60 territories, 71 routes, 9 factions, diplomacy/trade/war/raids/sequential teams. |
 | GP-P8 | IN_PROGRESS | 120 stages, 24 bosses, 81 quests, 288 trials, 9 bijuu, 11 summons, 12 combos, actual mechanics. |
 | GP-P9 | BACKLOG | 17 functional Vietnamese screens, touch/desktop, asset adapter. |
+| GP-P10B | IN_PROGRESS | Web DEV V2 cumulative CI and export. |
 | GP-P10A | DONE | DEV Web export and Chromium probe PASS CI 45553036319; artifact 14993879097. |
 | GP-P10 | BACKLOG | Final Web/Android/PC same project and acceptance gates. |
 Independent tasks may proceed where dependencies permit; update status and backlog each batch. No art wait. No merge or Codex Cloud.

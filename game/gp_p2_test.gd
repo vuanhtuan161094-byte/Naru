@@ -253,7 +253,7 @@ func _initialize() -> void:
 	var dispatch_count=0
 	var tested=0
 	for id in reg.ninjas:
-		for skill_id in reg.ninjas[id].skills+reg.ninjas[id].additional_skill_ids:
+		for dispatch_id in reg.ninjas[id].skills+reg.ninjas[id].additional_skill_ids:
 			var run=Combat.new()
 			run.registry=reg
 			run.rng.seed=42
@@ -263,7 +263,7 @@ func _initialize() -> void:
 			var defender=run.actors[1]
 			defender.pos=attacker.pos+Vector2(1,0)
 			attacker.chakra=attacker.max_chakra
-			var skill=run.effective_skill(attacker,skill_id)
+			var skill=run.effective_skill(attacker,dispatch_id)
 			var selected=run.target_for(attacker,skill)
 			run.release(attacker,skill,selected)
 			dispatch_count+=run.effect_dispatch_count
@@ -319,4 +319,55 @@ func _initialize() -> void:
 	check(int(economy.state.inventory["RES-006"])>start_wood and int(economy.state.inventory["RES-001"])>start_ryo,"real starter income")
 	check(economy.state.missions.has("NIN-001"),"repeat mission continues")
 	check(economy.stop_mission("NIN-001"),"repeat mission cancellation")
+	var world=Store.new()
+	world.save_path="user://gp_squads_ci.json"
+	world.new_game(reg)
+	world.grant(reg,"NIN-002")
+	world.grant(reg,"NIN-004")
+	check(world.set_world_squad("SQUAD-2",["NIN-002"]),"independent squad")
+	check(world.set_world_squad("defense",["NIN-004"]),"home defense team")
+	check(not world.set_world_squad("SQUAD-3",["NIN-002"]) and not world.set_team(["NIN-004"]),"no duplicate deployed ninja")
+	check(world.squad_travel(reg,"SQUAD-2","TER-059"),"second squad travel")
+	check(not world.set_world_squad("SQUAD-2",[]),"second squad deployment lock")
+	world.advance_clock(reg,int(world.state.high_water_timestamp)+200)
+	check(world.state.world_squads["SQUAD-2"].location=="TER-059" and world.state.world_location=="TER-058","independent travel arrival")
+	var ws=preload("res://game/world_service.gd")
+	var found=false
+	for route in reg.routes:
+		var owner1=world.state.territory_states[route.from].owner
+		var owner2=world.state.territory_states[route.to].owner
+		if owner1==null or owner2==null or owner1==owner2 or owner1=="FAC-009" or owner2=="FAC-009" or not reg.territories[route.to].capture_allowed:continue
+		var rel=ws.relation(world.state,owner1,owner2)
+		rel.state="war"
+		rel.score=-70
+		world.state.faction_states[owner1].stock["RES-001"]=10000
+		found=ws.npc_border_action(reg,world.state,owner1)
+		if found:break
+	check(found and int(world.state.npc_war_count)>0,"NPC defended border war")
+	var content=preload("res://game/content_service.gd")
+	var stage_count=0
+	var boss_count=0
+	var ids=reg.stages.keys()
+	ids.sort()
+	for stage_key in ids:
+		var encounter=Combat.new()
+		encounter.setup(reg,veteran.state,reg.stages[stage_key],42)
+		for i in range(20):encounter.tick(0.05)
+		if not encounter.primary_alive(0).is_empty():stage_count+=1
+		if encounter.boss_actor_uid>0:
+			var boss=encounter.actor_by_uid(encounter.boss_actor_uid)
+			boss.hp=boss.max_hp*0.2
+			encounter.update_boss(boss)
+			if encounter.boss_phases.fired.size()==encounter.boss_phases.rule.phases.size():boss_count+=1
+	check(stage_count==120,"all 120 stage encounters instantiate and tick")
+	check(boss_count==24,"all 24 boss phase payloads dispatch")
+	for q in reg.quests.values():content.objective(reg,world.state,q)
+	check(reg.quests.size()==81,"all 81 quest objectives evaluated")
+	var trial_count=0
+	for trial_def in reg.trials.values():
+		if reg.names.has(trial_def.skill_id) and reg.ninjas.has(trial_def.ninja_id):trial_count+=1
+	check(trial_count==288,"all 288 personal trial links")
+	var invalid_nested=world.state.duplicate(true)
+	invalid_nested.world_squads["SQUAD-3"].team=["NIN-002"]
+	check(not guard.valid(reg,invalid_nested),"reject overlapping imported squads")
 	quit(0 if failures==0 else 1)

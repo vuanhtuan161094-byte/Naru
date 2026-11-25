@@ -48,6 +48,68 @@ static func valid(reg,s: Variant) -> bool:
 	for id in s.owned:
 		for gear_id in s.owned[id].get("gear",{}).values():
 			if not s.get("gear_instances",{}).has(gear_id) or s.gear_instances[gear_id].owner!=id:return false
+	if not nested_valid(reg,s):return false
 	for key in ["high_water_timestamp","last_committed_timestamp","simulation_seconds"]:
 		if s.has(key) and not integer(s[key]):return false
+	return true
+
+static func nested_valid(reg,s: Dictionary) -> bool:
+	for key in ["building_states","jobs","missions","territory_states","faction_states","relations","world_squads","beasts","summon_contracts","source_cooldowns","travel","daily_counts","quest_claimed"]:
+		if s.has(key) and not s[key] is Dictionary:return false
+	for id in s.get("building_states",{}):
+		var b=s.building_states[id]
+		if not reg.buildings.has(id) or not b is Dictionary or not integer(b.get("level"),0,100):return false
+		var condition=b.get("condition",1.0)
+		if not (condition is int or condition is float) or condition<0 or condition>1:return false
+		for key in ["upgrade","production"]:
+			if not b.get(key,{}) is Dictionary:return false
+			var job=b.get(key,{})
+			if not job.is_empty():
+				if not integer(job.get("remaining"),0):return false
+				if key=="upgrade" and not integer(job.get("target"),1,100):return false
+				if key=="production" and (not reg.recipes.has(job.get("recipe","")) or not job.get("reserved",{}) is Dictionary):return false
+	for id in s.get("jobs",{}):
+		var j=s.jobs[id]
+		if not s.owned.has(id) or not j is Dictionary or not j.get("careers") is Dictionary:return false
+		if j.get("building","")!="" and not reg.buildings.has(j.building):return false
+		if not j.careers.has(j.get("profession","")):return false
+		for profession in j.careers:
+			var c=j.careers[profession]
+			if not reg.professions.has(profession) or not c is Dictionary or not integer(c.get("level"),1) or not integer(c.get("xp")):return false
+			if not c.get("talents",{}) is Dictionary:return false
+			for talent in c.get("talents",{}):
+				if not talent in ["yield","economy","quality","speed"] or not integer(c.talents[talent],0,5):return false
+	for id in s.get("missions",{}):
+		var m=s.missions[id]
+		if not s.owned.has(id) or not m is Dictionary or not reg.resources.has(m.get("resource","")) or not integer(m.get("remaining")) or not integer(m.get("qty"),1):return false
+	for id in s.get("territory_states",{}):
+		var t=s.territory_states[id]
+		if not reg.territories.has(id) or not t is Dictionary:return false
+		if t.get("owner")!=null and not reg.factions.has(t.owner):return false
+		if not integer(t.get("visits",0)):return false
+	for id in s.get("faction_states",{}):
+		var faction=s.faction_states[id]
+		if not reg.factions.has(id) or not faction is Dictionary or not faction.get("stock") is Dictionary:return false
+		for resource in faction.stock:
+			if not reg.resources.has(resource) or not integer(faction.stock[resource]):return false
+		for level in faction.get("infrastructure",{}).values():
+			if not integer(level,1,100):return false
+	var seen={}
+	for id in s.team:seen[id]=true
+	var defense=s.get("home_defense",[])
+	if not defense is Array or defense.size()>6:return false
+	for id in defense:
+		if not s.owned.has(id) or seen.has(id):return false
+		seen[id]=true
+	for key in s.get("world_squads",{}):
+		var q=s.world_squads[key]
+		if not key in ["SQUAD-2","SQUAD-3"] or not q is Dictionary or not q.get("team") is Array or q.team.size()>6 or not reg.territories.has(q.get("location","")) or not q.get("travel") is Dictionary:return false
+		for id in q.team:
+			if not s.owned.has(id) or seen.has(id):return false
+			seen[id]=true
+		if not q.travel.is_empty() and (not reg.territories.has(q.travel.get("destination","")) or not integer(q.travel.get("remaining"))):return false
+	for id in s.get("beasts",{}):
+		var b=s.beasts[id]
+		if not reg.beasts.has(id) or not b is Dictionary or not integer(b.get("level"),1) or not integer(b.get("xp")):return false
+		if b.get("host","")!="" and (not s.owned.has(b.host) or s.owned[b.host].get("beast_id","")!=id):return false
 	return true

@@ -175,7 +175,7 @@ func commit_change(prior: Dictionary, old_rng: int) -> bool:
 	return false
 
 func set_team(ids: Array) -> bool:
-	if ids.size()>6 or not state.get("travel",{}).is_empty(): return false
+	if ids.size()>6 or not state.get("travel",{}).is_empty() or not World.roster_available(state,ids,"main"): return false
 	var seen={}
 	for id in ids:
 		if seen.has(id) or not state.owned.has(id): return false
@@ -760,4 +760,20 @@ func stop_mission(id: String) -> bool:
 func choose_job_talent(id: String,profession: String,talent: String) -> bool:
 	var prior=state.duplicate(true)
 	if not Village.choose_talent(state,id,profession,talent):return false
+	return commit_change(prior,rng.state)
+
+func set_world_squad(key: String,roster: Array) -> bool:
+	var prior=state.duplicate(true)
+	if not World.set_squad(state,key,roster):return false
+	return commit_change(prior,rng.state)
+
+func squad_travel(reg,key: String,dest: String) -> bool:
+	var prior=state.duplicate(true)
+	if not World.depart_squad(reg,state,key,dest):return false
+	return commit_change(prior,rng.state)
+
+func squad_capture(reg,key: String) -> bool:
+	var prior=state.duplicate(true)
+	if not World.capture_squad(reg,state,key):return false
+	Content.bump(state,"territory_battle")
 	return commit_change(prior,rng.state)
