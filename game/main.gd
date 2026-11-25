@@ -64,7 +64,7 @@ func menu(message: String="") -> void:
 	sim=null
 	clear()
 	label(root,"NARU  /  TỔ CHỨC NINJA",34)
-	label(root,"DEV • GP-P2 — mỹ thuật tạm",16)
+	label(root,"DEV • Gameplay Completion — mỹ thuật tạm",16)
 	label(root,"Ryo: %s     Ngọc: %s     Thể lực: %s     Ninja: %s / 144" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.stamina,store.state.owned.size()])
 	var row=HBoxContainer.new()
 	root.add_child(row)
@@ -75,9 +75,12 @@ func menu(message: String="") -> void:
 	button(row,"Làng",village_screen)
 	button(row,"Nhẫn giới",world_screen)
 	button(row,"Hoạt động",activities_screen)
-	button(row,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
-	button(row,"Cốt truyện",campaign)
-	button(row,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
+	var row2=HBoxContainer.new()
+	root.add_child(row2)
+	button(row2,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
+	button(row2,"Xuất / nhập save",save_screen)
+	button(row2,"Cốt truyện",campaign)
+	button(row2,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
 	label(root,"Đội hình hiện tại")
 	for id in store.state.team:
 		var p=store.state.owned[id]
@@ -318,6 +321,7 @@ func gear_detail(id: String,message: String="") -> void:
 	var def=reg.gear_templates[g.template_id]
 	label(root,"%s +%d" % [def.name_vi,int(g.enhance)],30)
 	label(root,"Phẩm %d | Tinh luyện %d | Tiến hóa %d | Bảo hiểm %d/20" % [int(g.quality),int(g.refine),int(g.evolution),int(g.fails)],18)
+	button(root,"Thuộc tính / bộ trang bị",func():affix_screen(id))
 	label(root,message,18)
 	var row=HBoxContainer.new()
 	root.add_child(row)
@@ -592,3 +596,35 @@ func bloodline_screen(message: String="") -> void:
 			var def=reg.bloodlines[id]
 			if def.required_family_for_native==null or def.required_family_for_native!=reg.ninjas[ninja].family_hint or id=="BL-139":continue
 			button(rows,"%s | %s | Bậc %s" % [reg.ninjas[ninja].name_vi,def.name_vi,store.state.owned[ninja].bloodline_levels.get(id,0)],func():bloodline_screen("Đã thức tỉnh / nâng cấp" if store.native_bloodline(reg,ninja,id) else "Thiếu điều kiện"))
+
+func save_screen(message: String="") -> void:
+	clear()
+	label(root,"LƯU / KHÔI PHỤC GAME",28)
+	label(root,message,18)
+	var edit=TextEdit.new()
+	edit.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	edit.text=store.export_save()
+	root.add_child(edit)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	button(row,"Sao chép",func():DisplayServer.clipboard_set(edit.text))
+	if OS.has_feature("web"):button(row,"Tải JSON",func():JavaScriptBridge.download_buffer(edit.text.to_utf8_buffer(),"naru-save.json","application/json"))
+	button(row,"Nhập JSON trong ô",func():save_screen("Đã nhập" if store.import_save(reg,edit.text) else "Save không hợp lệ hoặc cũ hơn mốc thời gian hiện tại"))
+	button(row,"Trở về",func():menu())
+
+func affix_screen(id: String,message: String="") -> void:
+	var rows=activity_rows("THUỘC TÍNH TRANG BỊ",message,func():gear_detail(id))
+	var item=store.state.gear_instances[id]
+	var pending=item.get("pending_affix",{})
+	if not pending.is_empty():
+		label(rows,"Đề xuất mới: %s +%s" % [pending.stat,pending.value],18)
+		button(rows,"Chấp nhận",func():affix_screen(id,"Đã nhận" if store.settle_affix(id,true) else "Lỗi"))
+		button(rows,"Giữ cũ",func():affix_screen(id,"Đã giữ" if store.settle_affix(id,false) else "Lỗi"))
+	var affixes=item.get("affixes",[])
+	for i in range(affixes.size()):
+		var a=affixes[i]
+		button(rows,"%s +%s • Tẩy luyện (5 vật liệu)" % [a.stat,a.value],func():affix_screen(id,"Đã tạo đề xuất" if store.reroll_affix(reg,id,i) else "Thiếu nguyên liệu / cần xử lý đề xuất"))
+	label(rows,"Bộ: "+str(item.get("set_id","")),18)
+	if str(item.get("set_id",""))=="":
+		for rule in reg.gear_rules.sets:
+			if reg.gear_templates[item.template_id].slot_id in rule.eligible_slots:button(rows,"Gắn bộ "+str(rule.name_vi)+" (5 vật liệu)",func():affix_screen(id,"Đã gắn bộ" if store.set_gear_set(reg,id,rule.id) else "Thiếu điều kiện"))

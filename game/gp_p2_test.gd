@@ -209,4 +209,39 @@ func _initialize() -> void:
 	check(contract_sim.summon_contract(summoner),"contract battle summon")
 	check(not contract_sim.summon_contract(summoner),"contract cooldown")
 	check(not quest.native_bloodline(reg,"NIN-001","BL-137"),"bloodline native gate")
+	check(reg.affix_pools.size()==3,"affix registry")
+	check(store.state.gear_instances[gear_id].get("affixes",[]).size()>0,"crafted affix")
+	store.state.inventory["RES-112"]=20
+	check(store.reroll_affix(reg,gear_id,0),"affix reroll")
+	check(store.settle_affix(gear_id,false),"affix keep old")
+	check(store.set_gear_set(reg,gear_id,"SET-2"),"gear set assignment")
+	var before_save=store.export_save()
+	check(store.import_save(reg,before_save),"valid import")
+	check(not store.import_save(reg,"{\"schema_version\":1}"),"reject invalid import")
+	var guard=preload("res://game/save_guard.gd")
+	var invalid=store.state.duplicate(true)
+	invalid.inventory["RES-001"]=-1
+	check(not guard.valid(reg,invalid),"negative resource rejected")
+	var shield_sim=Combat.new()
+	shield_sim.setup(reg,store.state,stage,42)
+	var a1=shield_sim.actors[0]
+	var a2=shield_sim.actors[1]
+	shield_sim.add_shield(a1,a1,30,2)
+	shield_sim.add_shield(a2,a1,20,4)
+	shield_sim.add_shield(a1,a1,10,1)
+	check(is_equal_approx(float(a1.shield),50),"shield per source max")
+	shield_sim.update_status(a1,2.1)
+	check(is_equal_approx(float(a1.shield),20),"shield independent expiry")
+	var reach={}
+	for source_def in reg.supply:reach[source_def.resource_id]=true
+	for i in range(150):
+		for recipe in reg.recipes.values():
+			var ok=true
+			for material in recipe.inputs:
+				if not reach.has(material.resource_id):ok=false
+			if ok:reach[recipe.output.resource_id]=true
+	check(reach.size()==150,"resource graph 150 reachable")
+	for skill in reg.skills.values():
+		if not shield_sim.supported(skill):check(false,"unsupported "+str(skill.skill_id))
+	check(true,"all skill effect types recognized")
 	quit(0 if failures==0 else 1)

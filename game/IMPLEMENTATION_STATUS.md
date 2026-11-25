@@ -17,3 +17,5 @@ GP-P6 content partial: boss phase dispatch, signature combos, quests, mission ti
 
 ## Evidence update 25/11/2026
 GP-P3B e42644ed CI 45550857956 PASS; GP-P4 3b69d0a CI 45550976926 PASS; GP-P5 64ce2478 CI 45551141063 PASS; GP-P6 a61b6e59a87c2f3c93cf37bb252ccb733e0d2714 CI 45551319990 PASS (97 scoped assertions). Prior pending statements superseded. Detailed remaining limitations in GAMEPLAY_STATUS.md. No GUI/exports or release acceptance.
+
+Gameplay Completion A: combat stat and shield improvements, gear affixes/sets, permanent growth, save guard and import/export; CI pending. DEV no art.

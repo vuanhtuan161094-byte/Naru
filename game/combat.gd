@@ -5,6 +5,8 @@ var combo_clock: Dictionary={}
 var signature_ticks: Dictionary={}
 var boss_phases: Dictionary={}
 var boss_actor_uid=0
+var environment="clear"
+var elemental_fields: Array[Dictionary]=[]
 var actors: Array[Dictionary] = []
 var registry
 var outcome = ""
@@ -20,6 +22,8 @@ var deadlock=false
 func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
 	rng.seed=seed_value
+	var kind=str(reg.territories.get(stage.get("territory_id",""),{}).get("kind",""))
+	if kind in ["forest","desert","cave"]:environment=kind
 	for id in save.team:
 		var p=save.owned[id]
 		var progress=p.duplicate(true)
@@ -46,10 +50,14 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 	var star_multiplier=1.0+0.04*(int(progress.get("stars",1))-1)
 	mult*=star_multiplier
 	var gear_stats={}
+	var set_counts={}
 	for gear_id in progress.get("gear",{}).values():
 		if not gear_instances.has(gear_id):continue
 		var item=gear_instances[gear_id]
 		var def=registry.gear_templates[item.template_id]
+		for affix in item.get("affixes",[]):gear_stats[affix.stat]=float(gear_stats.get(affix.stat,0))+float(affix.value)
+		var set_id=str(item.get("set_id",""))
+		if not set_id.is_empty():set_counts[set_id]=int(set_counts.get(set_id,0))+1
 		var value=float(def.base_value)*(1+0.06*pow(float(item.enhance),0.85))*(1+0.025*pow(float(item.refine),0.8))*(1+0.1*pow(float(item.evolution),0.85))
 		gear_stats[def.base_stat]=float(gear_stats.get(def.base_stat,0))+value
 		for resource in item.gems:
@@ -60,12 +68,17 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 	stat_progress.quality=quality
 	stat_progress.permanent=permanent
 	var all_stats=Stats.derive(registry,n,stat_progress,gear_stats)
+	for rule in registry.gear_rules.sets:
+		var best={}
+		for threshold in rule.thresholds:
+			if int(set_counts.get(rule.id,0))>=int(threshold.pieces):best=threshold
+		if not best.is_empty():all_stats[best.stat]*=float(best.multiplier)
 	var beast_level=int(progress.get("beast_level",0))
 	if beast_level>0:
 		for key in ["hp","patk","natk","chakra_max"]:all_stats[key]*=1.0+0.03*sqrt(float(beast_level))
 	var hp=float(all_stats.hp)*mult
 	next_uid+=1
-	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"pos":Vector2(1.0 if side==0 else 10.0,1.0+slot*1.2),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
+	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"pos":Vector2(1.0 if side==0 else 10.0,1.0+slot*1.2),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"shield_sources":{},"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
 
 func alive(side: int) -> Array:
 	return actors.filter(func(a): return int(a.side)==side and float(a.hp)>0.0)
@@ -74,10 +87,16 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 	var kind=str(skill.target)
 	if kind=="self": return a
 	var candidates=alive(int(a.side) if kind.begins_with("ally") else 1-int(a.side))
+	if not kind.begins_with("ally"):
+		for st in a.statuses.values():
+			if st.id=="taunt":
+				var forced=actor_by_uid(int(st.get("source",0)))
+				if not forced.is_empty() and forced.hp>0 and forced.side!=a.side:return forced
 	var best: Dictionary={}
 	var score=INF
 	for b in candidates:
 		var v=float(b.hp)/float(b.max_hp) if kind.begins_with("ally") else a.pos.distance_to(b.pos)
+		if not kind.begins_with("ally") and has_status(b,"mark"):v*=0.7
 		if v<score:
 			best=b
 			score=v
@@ -132,6 +151,11 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 	if a.summon:return base
 	var p=a.skill_levels.get(id,{"level":1,"grade":1,"branch":""})
 	var s=base.duplicate(true)
+	s.chakra=maxf(0.0,float(s.chakra)*(1.0-rating(a,"chakra_efficiency")))
+	s.cooldown_s=float(s.cooldown_s)*(1.0-rating(a,"cdr"))
+	s.cast_s=float(s.cast_s)/(1.0+rating(a,"cast_speed"))
+	s.radius_m=float(s.radius_m)*(1.0+rating(a,"area"))
+	s.line_width_m=float(s.line_width_m)*(1.0+rating(a,"area"))
 	var factor=(1+0.02*(int(p.level)-1))*(1+0.12*(int(p.grade)-1))
 	if str(p.branch).ends_with("-B1"):factor*=1.12
 	if str(p.branch).ends_with("-B2"):
@@ -207,14 +231,29 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 		for item in b.statuses.values():
 			if item.id==id:count+=1
 		if count>=int(rule.max_stacks):return
-	b.statuses[key]={"id":id,"remaining":float(e.get("duration_s",rule.duration_s)),"magnitude":float(e.get("magnitude",0.2)),"dot":float(e.get("tick_coefficient",0.0))*float(a.natk),"next_tick":1.0}
+	var duration=float(e.get("duration_s",rule.duration_s))
+	var mag=float(e.get("magnitude",0.2))
+	if rule.stack=="max" and b.statuses.has(key):
+		duration=maxf(duration,float(b.statuses[key].remaining))
+		mag=maxf(mag,float(b.statuses[key].magnitude))
+	b.statuses[key]={"id":id,"source":a.uid,"remaining":duration,"magnitude":mag,"dot":float(e.get("tick_coefficient",0.0))*float(a.natk),"next_tick":1.0}
 
 func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> void:
 	var blocked=minf(float(b.shield),dmg)
+	var remaining=blocked
+	for key in b.shield_sources.keys():
+		var layer=b.shield_sources[key]
+		var used=minf(remaining,float(layer.hp))
+		layer.hp=float(layer.hp)-used
+		remaining-=used
+		if layer.hp<=0:b.shield_sources.erase(key)
+		if remaining<=0:break
 	b.shield=float(b.shield)-blocked
 	var old=float(b.hp)
 	b.hp=maxf(0.0,float(b.hp)-dmg+blocked)
-	if old-b.hp>0.01:last_progress_tick=ticks
+	if old-b.hp>0.01:
+		last_progress_tick=ticks
+		if a.uid!=b.uid:a.hp=minf(float(a.max_hp),float(a.hp)+(old-b.hp)*rating(a,"lifesteal"))
 	if allow_counter and b.hp>0 and b.side!=a.side and not b.counter.is_empty():
 		var counter=b.counter
 		b.counter={}
@@ -264,6 +303,7 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.counter={}
 	b.stance={}
 	b.shield=0.0
+	b.shield_sources={}
 	b.chakra=0.0
 	actors.append(b)
 
@@ -281,15 +321,15 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 					var defense=maxf(0.0,float(target.armor if physical else target.nres)*(1.0+magnitude(target,"defense_up"))-float(a.stats.get("armor_pen" if physical else "magic_pen",0)))
 					if e.damage_type=="genjutsu":defense=float(target.stats.genjutsu_resist)
 					var realm_factor=clampf(1.0+0.04*(int(a.realm)-int(target.realm)),0.75,1.25)
-					var element_factor=float(registry.affinity.get(str(s.element)+":"+str(target.element),1.0))*reaction(a,target,str(s.element))
+					var element_factor=float(registry.affinity.get(str(s.element)+":"+str(target.element),1.0))*reaction(a,target,str(s.element))*float(registry.environments.get(environment,{}).get("modifiers",{}).get(s.element,1.0))
+					if s.element!="neutral":element_factor*=1.0+rating(a,"element_power")
 					var hit_rate=clampf(0.85+(rating(a,"accuracy")-rating(target,"evasion"))/(200.0+absf(rating(a,"accuracy")-rating(target,"evasion")))+magnitude(a,"accuracy_up")-magnitude(a,"blind")-magnitude(a,"steam")-magnitude(target,"evasion"),0.15,0.99)
 					if rng.randf()<hit_rate:
 						var crit=1.5+rating(a,"crit_damage") if e.damage_type!="genjutsu" and rng.randf()<maxf(0.0,rating(a,"pcrit" if physical else "ncrit")-rating(target,"crit_resist")) else 1.0
 						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))))
-				"heal":target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
+				"heal":target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
 				"shield":
-					target.shield=maxf(float(target.shield),float(a.natk)*float(e.coefficient))
-					target.shield_time=maxf(float(target.shield_time),float(e.duration_s))
+					add_shield(a,target,float(a.natk)*float(e.coefficient),float(e.duration_s))
 				"apply_status":apply_status(a,target,e)
 				"cleanse":
 					var keys=target.statuses.keys()
@@ -332,7 +372,15 @@ func update_status(a: Dictionary,dt: float) -> void:
 	for id in a.forms:
 		var rule=registry.form_rules[id]
 		if rule.activation=="hp_threshold_or_manual" and a.hp/a.max_hp<=float(rule.hp_threshold):activate_form(a,id,true)
-	a.hp=minf(float(a.max_hp),float(a.hp)+float(a.gear_stats.get("hp_regen",0))*dt)
+	a.hp=minf(float(a.max_hp),float(a.hp)+float(a.stats.get("hp_regen",0))*dt)
+	var expired=0.0
+	for key in a.shield_sources.keys():
+		var layer=a.shield_sources[key]
+		layer.remaining=float(layer.remaining)-dt
+		if layer.remaining<=0:
+			expired+=float(layer.hp)
+			a.shield_sources.erase(key)
+	a.shield=maxf(0.0,float(a.shield)-expired)
 	for key in a.statuses.keys():
 		var st=a.statuses[key]
 		st.remaining=float(st.remaining)-dt
@@ -374,7 +422,7 @@ func tick(dt: float) -> void:
 		if a.uid==boss_actor_uid:update_boss(a)
 		a.busy=maxf(0.0,float(a.busy)-dt)
 		a.shield_time=maxf(0.0,float(a.shield_time)-dt)
-		if a.shield_time<=0:a.shield=0.0
+		if a.shield_time<=0 and a.shield_sources.is_empty():a.shield=0.0
 		a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(a.regen)*dt*(1.0+magnitude(a,"chakra_up"))*(1.0-clampf(magnitude(a,"chakra_lock"),0.0,0.9)))
 		for id in a.cooldowns:a.cooldowns[id]=maxf(0.0,float(a.cooldowns[id])-dt)
 		if not a.pending.is_empty():
@@ -510,3 +558,11 @@ func summon_contract(a: Dictionary) -> bool:
 	var factor=float(def.owner_stat_fraction)*(1+0.03*sqrt(float(a.contract_level)))
 	summon_actor(a,key,{"template_id":a.contract,"cap":1,"lifetime_s":def.battle_lifetime_seconds,"hp_owner_fraction":factor,"attack_owner_fraction":factor})
 	return true
+
+func add_shield(a: Dictionary,b: Dictionary,amount: float,duration: float) -> void:
+	var key=str(a.uid)
+	var old=b.shield_sources.get(key,{"hp":0.0,"remaining":0.0})
+	var value=maxf(amount,float(old.hp))
+	b.shield=float(b.shield)+value-float(old.hp)
+	b.shield_sources[key]={"hp":value,"remaining":maxf(duration,float(old.remaining))}
+	b.shield_time=maxf(float(b.shield_time),duration)

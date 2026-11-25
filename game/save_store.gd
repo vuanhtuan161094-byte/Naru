@@ -1,4 +1,6 @@
 extends RefCounted
+const Stats=preload("res://game/stats_service.gd")
+const SaveGuard=preload("res://game/save_guard.gd")
 const Content=preload("res://game/content_service.gd")
 const World=preload("res://game/world_service.gd")
 const Village=preload("res://game/village_service.gd")
@@ -21,7 +23,7 @@ func load_or_new(reg) -> void:
 	for p in [save_path,save_path+".bak"]:
 		if FileAccess.file_exists(p):
 			var d = JSON.parse_string(FileAccess.get_file_as_string(p))
-			if d is Dictionary and int(d.get("schema_version",0))==1 and d.has("owned") and d.has("inventory") and d.has("rng_state"):
+			if SaveGuard.valid(reg,d):
 				state=d
 				ensure_account(reg)
 				for id in state.owned:
@@ -29,6 +31,15 @@ func load_or_new(reg) -> void:
 					if not state.owned[id].has("talent"):state.owned[id].talent=reg.growth.talents[int(str(id).right(3))%reg.growth.talents.size()].id
 				rng.seed=int(str(d.rng_seed))
 				rng.state=int(str(d.rng_state))
+				# Interrupted battles are refunded once, in the same persisted transaction.
+				var prior=state.duplicate(true)
+				var recovered=false
+				for event in state.ledger.values():
+					if event is Dictionary and event.get("status")=="started" and reg.stages.has(event.get("stage_id","")):
+						state.stamina=mini(120,int(state.stamina)+int(reg.stages[event.stage_id].stamina_cost))
+						event.status="interrupted"
+						recovered=true
+				if recovered:commit_change(prior,rng.state)
 				return
 	new_game(reg)
 
@@ -109,6 +120,7 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 	var entry=state.ledger.get(event_id)
 	if not entry is Dictionary or entry.get("status")!="started" or entry.get("stage_id")!=stage.id: return false
 	var prior=state.duplicate(true)
+	var old_rng=rng.state
 	state.ledger[event_id].status="win" if won else "loss"
 	if won:
 		var rewards=stage.repeat_rewards if state.cleared.has(stage.id) else stage.first_clear_rewards
@@ -125,12 +137,16 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 			p.xp=int(p.xp)+100
 			apply_levels(p)
 			var actions=int(action_counts.get(id,0))
-			# Permanent action growth requires difficulty and anti-farm gates; deferred.
-			if actions>0: p.battle_actions=int(p.get("battle_actions",0))+actions
+			var difficulty=stage_difficulty(reg,stage,entry.team)
+			if actions>0 and difficulty>=0.1:
+				p.battle_actions=int(p.get("battle_actions",0))+actions
+				var prior_gain=float(p.permanent.get("strength",0))
+				p.permanent.strength=prior_gain+0.02*sqrt(float(actions))*difficulty*rng.randf_range(0.9,1.1)/pow(1+prior_gain/100.0,0.7)
 			for skill_id in mastery_counts:
 				if skill_allowed(reg,id,skill_id):p.skill_mastery[skill_id]=int(p.skill_mastery.get(skill_id,0))+int(mastery_counts[skill_id])
 	if not save_now():
 		state=prior
+		rng.state=old_rng
 		return false
 	return true
 
@@ -308,12 +324,21 @@ func craft_gear(reg,template_id: String) -> String:
 	for r in def.craft.inputs:cost[r.resource_id]=int(cost.get(r.resource_id,0))+int(r.qty)
 	if not has_cost(cost):return ""
 	var prior=state.duplicate(true)
+	var old_rng=rng.state
 	debit(cost)
 	state.gear_seq=int(state.gear_seq)+1
 	var id="GEAR-"+str(state.gear_seq)
 	Content.bump(state,"craft_item")
-	state.gear_instances[id]={"template_id":template_id,"owner":"","enhance":0,"refine":0,"evolution":0,"fails":0,"quality":int(def.quality),"gems":[]}
-	if not commit_change(prior,rng.state):return ""
+	var profession_level=Village.worker_level(state,str(def.craft.building_id))
+	var quality=clampi(floori(1+0.04*profession_level+0.5*float(def.quality)+rng.randf_range(0,1.5)),1,8)
+	var affixes=[]
+	var pool=reg.affix_pools[def.affix_pool].duplicate()
+	for i in range(mini(int(def.affix_slots),pool.size())):
+		var index=rng.randi_range(0,pool.size()-1)
+		affixes.append({"stat":pool[index],"value":maxi(1,floori((1+quality)*(1+0.05*profession_level)*rng.randf_range(0.8,1.2)))})
+		pool.remove_at(index)
+	state.gear_instances[id]={"template_id":template_id,"owner":"","enhance":0,"refine":0,"evolution":0,"fails":0,"quality":quality,"gems":[],"affixes":affixes,"set_id":"","pending_affix":{}}
+	if not commit_change(prior,old_rng):return ""
 	return id
 
 func equip_gear(reg,id: String,gear_id: String) -> bool:
@@ -364,6 +389,41 @@ func refine_gear(gear_id: String,evolve: bool=false) -> bool:
 	debit(cost)
 	gear[field]=int(gear[field])+1
 	if evolve:gear.quality=mini(8,int(gear.quality)+1)
+	return commit_change(prior,rng.state)
+
+func set_gear_set(reg,gear_id: String,set_id: String) -> bool:
+	if not state.gear_instances.has(gear_id):return false
+	var item=state.gear_instances[gear_id]
+	if str(item.get("set_id",""))!="":return false
+	var allowed=false
+	for rule in reg.gear_rules.sets:
+		if rule.id==set_id and reg.gear_templates[item.template_id].slot_id in rule.eligible_slots:allowed=true
+	if not allowed or not has_cost({"RES-112":5}):return false
+	var prior=state.duplicate(true)
+	debit({"RES-112":5})
+	item.set_id=set_id
+	return commit_change(prior,rng.state)
+
+func reroll_affix(reg,id: String,index: int) -> bool:
+	if not state.gear_instances.has(id):return false
+	var item=state.gear_instances[id]
+	var affixes=item.get("affixes",[])
+	if index<0 or index>=affixes.size() or not item.get("pending_affix",{}).is_empty() or not has_cost({"RES-112":5}):return false
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	var pool=reg.affix_pools[reg.gear_templates[item.template_id].affix_pool]
+	debit({"RES-112":5})
+	item.pending_affix={"index":index,"stat":pool[rng.randi_range(0,pool.size()-1)],"value":maxi(1,floori((1+int(item.quality))*rng.randf_range(0.8,1.2)))}
+	return commit_change(prior,old_rng)
+
+func settle_affix(id: String,accept: bool) -> bool:
+	if not state.gear_instances.has(id):return false
+	var item=state.gear_instances[id]
+	var pending=item.get("pending_affix",{})
+	if pending.is_empty():return false
+	var prior=state.duplicate(true)
+	if accept:item.affixes[int(pending.index)]={"stat":pending.stat,"value":pending.value}
+	item.pending_affix={}
 	return commit_change(prior,rng.state)
 
 func socket_gear(reg,gear_id: String,resource: String,remove: bool=false) -> bool:
@@ -649,3 +709,32 @@ func train_contract(id: String) -> bool:
 	debit(cost)
 	c.level=int(c.level)+1
 	return commit_change(prior,rng.state)
+
+func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
+	var player=0.0
+	for id in team:
+		var p=state.owned[id]
+		player+=float(p.level)*float(p.quality)*(1+0.04*(int(p.stars)-1))
+	var enemy=0.0
+	for id in stage.enemy_ids:
+		var npc=reg.npcs[id]
+		enemy+=float(npc.level)*clampi(int(reg.ninjas[npc.template_ninja_id].initial_quality)+int(npc.quality_bonus),1,8)*float(npc.stat_multiplier)
+	return clampf(enemy/maxf(1.0,player),0.0,1.5)
+
+func export_save() -> String:
+	return JSON.stringify(state,"\t")
+
+func import_save(reg,raw: String) -> bool:
+	if raw.length()>8000000:return false
+	var data=JSON.parse_string(raw)
+	if not SaveGuard.valid(reg,data):return false
+	# Import cannot move the high-water clock backwards.
+	if int(data.get("high_water_timestamp",0))<int(state.get("high_water_timestamp",0)):return false
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	state=data
+	ensure_account(reg)
+	for id in state.owned:ensure_growth(state.owned[id])
+	rng.seed=int(str(state.rng_seed))
+	rng.state=int(str(state.rng_state))
+	return commit_change(prior,old_rng)

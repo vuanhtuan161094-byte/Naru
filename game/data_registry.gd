@@ -33,6 +33,8 @@ var reactions: Array = []
 var affinity: Dictionary = {}
 var gear_templates: Dictionary = {}
 var gear_rules: Dictionary = {}
+var affix_pools: Dictionary = {}
+var environments: Dictionary = {}
 var skill_policies: Dictionary = {}
 var errors: Array[String] = []
 
@@ -117,6 +119,9 @@ func load_all() -> bool:
 	skill_policies=indexed("res://data/skill_progression_policies.json","skill_id")
 	var gear_data=read_json("res://data/d4/equipment_rules.json")
 	if gear_data is Dictionary: gear_rules=gear_data
+	var pool_data=read_json("res://data/equipment_affix_pools.json")
+	if pool_data is Dictionary:affix_pools=pool_data
+	environments=indexed("res://data/d4/environment.json")
 	if gear_templates.size()!=128 or skill_policies.size()!=1008: errors.append("Missing progression data")
 	if ninjas.size()!=144 or skills.size()!=1152 or stages.size()!=120:
 		errors.append("Expected 144/1152/120")
