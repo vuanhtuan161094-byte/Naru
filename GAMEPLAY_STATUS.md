@@ -1,5 +1,5 @@
 # GAMEPLAY_STATUS — 25/11/2026
-Latest tested implementation: `a61b6e59a87c2f3c93cf37bb252ccb733e0d2714`. Godot 4.4.1 headless; 97 scoped assertions PASS at [CI 45551319990](https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45551319990). Documentation-only HEAD may differ. No GUI smoke, export artifacts, or all-skill/21-gate acceptance claimed.
+Latest tested implementation: `24910e1383c1031c1b9064d1965931e2ffe320ea`. Godot 4.4.1 headless 110 scoped assertions PASS; non-threaded Web export PASS; actual Chromium WASM gameplay probe PASS at [CI 45553036319](https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45553036319). Documentation-only HEAD may differ. No manual GUI walkthrough or all-skill/21-gate acceptance claimed.
 ## Batch evidence
 | Batch | Code SHA | CI | Scope |
 |---|---|---|---|
@@ -22,3 +22,6 @@ Code: per-source shields, taunt/mark targeting, D4 environmental modifiers for f
 
 ## Completion B / Web DEV
 Spatial cast field overlap (circle approximation for lines; 2s), offline timer boundary splitting, export preset for non-threaded Godot Web, private CI artifact only, Chromium probe via actual exported WASM executing recruit/team/stage/reward/train/reload. Excludes review art. No public Pages/release. CI pending. Probe is automated runtime not manual mouse walkthrough. Full spatial terrain/precise day rollover and multi-team still open.
+
+### Verified Completion evidence (supersedes pending notes)
+Completion A 6a16124d CI 45552956564 PASS, 109 assertions. Completion B 24910e1383c1031c1b9064d1965931e2ffe320ea CI 45553036319 PASS, 110 assertions plus browser integration probe. Actual exported Godot Web build executed recruit/team/battle/reward/train/reload in isolated QA save; screenshot generated, no manual click walkthrough. [Web DEV ZIP](https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45553036319/artifacts/14993879097), 9,897,373 bytes, SHA256 0ce4f24b90a67ca1d6e9b72193719b01b8fb781bcb10f0f4725bf60a51d22054; [menu screenshot ZIP](https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45553036319/artifacts/14993799208). Artifact retention through 25 Dec 2026; no public deployment. Extract whole folder and serve over HTTP. 150 resource graph and all 128 gear template input graphs reachable at data level; not real economy balance proof. All 1152 skill effect types recognized, not individual runtime validation. Remaining: nested save validation, successful trial/beast/quality end-to-end tests, full spatial/terrain semantics, complete economy reachability through actual play, NPC multi-team and war, profession talents, UI interaction smoke. Web DEV scoped export done, final release builds remain. No art changes, no merge.

@@ -21,3 +21,5 @@ GP-P3B e42644ed CI 45550857956 PASS; GP-P4 3b69d0a CI 45550976926 PASS; GP-P5 64
 Gameplay Completion A: combat stat and shield improvements, gear affixes/sets, permanent growth, save guard and import/export; CI pending. DEV no art.
 
 Completion B: spatial cast overlap, timer splitting, Web DEV preset and browser probe/artifact workflow, CI pending.
+
+Completion A CI 45552956564 PASS (109). Completion B CI 45553036319 PASS (110 + Chromium actual WASM gameplay probe). Web DEV artifact 14993879097, screenshot 14993799208. Scope and limitations in GAMEPLAY_STATUS.md.
