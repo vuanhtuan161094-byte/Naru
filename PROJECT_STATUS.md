@@ -18,3 +18,6 @@ https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45559516356/artifacts/
 ## Next recommended
 00: private integration reconciliation on newest gameplay HEAD; review actual campaign path and 6v6 with adapter, keep fallback and private files excluded. Owner approval required before remote production integration. 01: finish gameplay residuals, real progression, player capture/raid, economy sinks, save edge cases, user-facing functional UI and browser manual play. 02: prioritize true walk/attack/cast frames for six anchors, VFX event timing, summon fallback, environment collision/geometry; extend only after runtime visual acceptance. No production merge. Avoid repeating completed broad fixture tests without a specific defect.
 Live docs: gameplay GAMEPLAY_STATUS.md / GAMEPLAY_BACKLOG.md; art ART_STATUS.md / ART_BACKLOG.md / ASSET_REGISTRY.json. 
+
+## Concurrent gameplay update during review
+Gameplay HEAD advanced to c27f68f66f97ffe2e27721a970d257509fc7f68f: D1-A functional 17-screen UI layer, navigation, fixed village grid, coordinate world map, formation, resource inspection, battle controls/results. CI 45563077560: in_progress/not concluded at review; do not treat as accepted manual UI/UX. Latest confirmed Web DEV artifact above remains from 5919893 unless a newer successful export is confirmed.
