@@ -26,3 +26,10 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P3R3 IN_PROGRESS: 7 family prototypes, 8 candidate mappings; distinguish charge/travel/impact/residual; kunai static travel, shared heal; confirm mechanics with Chat 01, no bulk duplication.
 - ART-P6/P7 IN_PROGRESS: reused V5 environment/HUD, six additional portraits; no new terrain assets, custom size/formation visual gate open.
 - ART-P8 REVIEW: native exact-SHA V5 6v6 video obtained, no production approval; inspect clustering, style consistency and individual playback; Chat 00 reviews evidence.
+
+## R6 next
+- ART-P2 IN_PROGRESS: zero complete clips, disable six poor walk pilots in active pack; full-body frame production still required. Generated poster rejected.
+- ART-P4 IN_PROGRESS: 12 static candidates, six opponents need R7 quality redraw.
+- ART-P3R3 IN_PROGRESS: five revised/new skill mappings, 16 sheets/128 cells, shared residual; contact event alignment and skill playback pending.
+- ART-P6/P7 IN_PROGRESS: two color grades, HUD and custom map still open.
+- ART-P8 REVIEW: exact V6 Godot review video obtained, benchmark FAIL visual quality (clumping and style mismatch). Chat 01/00 handoff ready, no gameplay fix claim.

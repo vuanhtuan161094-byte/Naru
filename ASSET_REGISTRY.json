@@ -2025,7 +2025,266 @@
     {
       "id": "VFX-NIN-004-S5",
       "skill_id": "NIN-004-S5",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R6_private.zip",
+      "manifest": "art/runtime/ART_R6_V6_EVIDENCE.json",
+      "family": "lightning_dash",
+      "clips": [
+        {
+          "phase": "charge",
+          "path": "vfx/VFX-NIN-004-S5/charge.png",
+          "sha256": "844dd3b6f25645eaf2838ead65c7de0f05c44f4725b6afa3194518acd3069256",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        },
+        {
+          "phase": "impact",
+          "path": "vfx/VFX-NIN-004-S5/impact.png",
+          "sha256": "f82736a8732f14ee0f49adc7fccd8d890c5b873d3f161943e048e83c7d5343f5",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        },
+        {
+          "phase": "residual",
+          "path": "vfx/VFX-NIN-004-S5/residual.png",
+          "sha256": "c538398418e1a4b708c25482998e8230d16071f83308a8aa266baadca770db0c",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        }
+      ],
+      "phase_paths": [
+        "vfx/VFX-NIN-004-S5/charge.png",
+        "vfx/VFX-NIN-004-S5/impact.png",
+        "vfx/VFX-NIN-004-S5/residual.png"
+      ],
+      "cell": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        64
+      ],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-005-S0",
@@ -3122,8 +3381,8 @@
       "skill_id": "NIN-041-S2",
       "status": "REVIEW_ONLY",
       "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
-      "manifest": "art/e3/ART_F1D_REVIEW_MANIFEST.json",
-      "archive": "Naru_F1D_review_pack_v2.zip",
+      "manifest": "art/runtime/ART_R6_V6_EVIDENCE.json",
+      "archive": "Naru_R6_private.zip",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
@@ -3139,7 +3398,7 @@
         {
           "phase": "charge",
           "path": "vfx/VFX-NIN-041-S2/charge.png",
-          "sha256": "54254d27f30f7a7ab1d6e2e163b248a4e1aa6b84e1425d79b2c8f27131e36ac2",
+          "sha256": "0135694483daced4fb149745221622e8ad61e3905c2fa235495dc372dc1bd39c",
           "frames": [
             {
               "rect": [
@@ -3148,7 +3407,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3157,68 +3416,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                256,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                384,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                512,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                640,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            }
-          ]
-        },
-        {
-          "phase": "travel",
-          "path": "vfx/VFX-NIN-041-S2/travel.png",
-          "sha256": "89151b7ef5d0eb95a2833a69eba1a507882c7e555b6ce9b9e7044ab777a85a9e",
-          "frames": [
-            {
-              "rect": [
-                0,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                128,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3227,7 +3425,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3236,7 +3434,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3245,7 +3443,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3254,14 +3452,32 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
             }
           ]
         },
         {
           "phase": "impact",
           "path": "vfx/VFX-NIN-041-S2/impact.png",
-          "sha256": "1c0f78926582d8554e3fa1d8ce365afff00e6615f11e6c199b17e4b3c89696c2",
+          "sha256": "48fba603aa490f6c0c94d4396eb1811468d7c3868ce24553bb0ae568a43fa2ab",
           "frames": [
             {
               "rect": [
@@ -3270,7 +3486,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3279,7 +3495,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3288,7 +3504,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3297,7 +3513,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3306,7 +3522,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3315,14 +3531,32 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
             }
           ]
         },
         {
           "phase": "residual",
           "path": "vfx/VFX-NIN-041-S2/residual.png",
-          "sha256": "5f600af588664ac52becf1b64bef795b9217ef1ae1df597df4d37e9870c05167",
+          "sha256": "917bb430ade0bb48fe513b6dfdf3aeef439ccef1a2f89e6ef0e92ef544761cf0",
           "frames": [
             {
               "rect": [
@@ -3331,7 +3565,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3340,7 +3574,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3349,7 +3583,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3358,7 +3592,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3367,7 +3601,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3376,16 +3610,299 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
             }
           ]
         }
+      ],
+      "family": "rasengan",
+      "phase_paths": [
+        "vfx/VFX-NIN-041-S2/charge.png",
+        "vfx/VFX-NIN-041-S2/impact.png",
+        "vfx/VFX-NIN-041-S2/residual.png"
       ]
     },
     {
       "id": "VFX-NIN-041-S3",
       "skill_id": "NIN-041-S3",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R6_private.zip",
+      "manifest": "art/runtime/ART_R6_V6_EVIDENCE.json",
+      "family": "rasengan_big",
+      "clips": [
+        {
+          "phase": "charge",
+          "path": "vfx/VFX-NIN-041-S3/charge.png",
+          "sha256": "d19bfb9ae5a327dbd45dc142b9d3a22bfb35bd59bab317d8f2edc0713add41e4",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        },
+        {
+          "phase": "impact",
+          "path": "vfx/VFX-NIN-041-S3/impact.png",
+          "sha256": "2198722ac7d3c968adc7821a3c9efdb81a5e09976cf9a9a0fc85fb2799b76bc4",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        },
+        {
+          "phase": "residual",
+          "path": "vfx/VFX-NIN-041-S3/residual.png",
+          "sha256": "917bb430ade0bb48fe513b6dfdf3aeef439ccef1a2f89e6ef0e92ef544761cf0",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        }
+      ],
+      "phase_paths": [
+        "vfx/VFX-NIN-041-S3/charge.png",
+        "vfx/VFX-NIN-041-S3/impact.png",
+        "vfx/VFX-NIN-041-S3/residual.png"
+      ],
+      "cell": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        64
+      ],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-041-S4",
@@ -3397,8 +3914,8 @@
       "skill_id": "NIN-041-S5",
       "status": "REVIEW_ONLY",
       "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
-      "archive": "Naru_R5_review_private.zip",
-      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "archive": "Naru_R6_private.zip",
+      "manifest": "art/runtime/ART_R6_V6_EVIDENCE.json",
       "family": "rasenshuriken",
       "phase_paths": [
         "vfx/VFX-NIN-041-S5/charge.png",
@@ -3406,10 +3923,335 @@
         "vfx/VFX-NIN-041-S5/impact.png",
         "vfx/VFX-NIN-041-S5/residual.png"
       ],
-      "clips": [],
+      "clips": [
+        {
+          "phase": "charge",
+          "path": "vfx/VFX-NIN-041-S5/charge.png",
+          "sha256": "fce6cbb233e9c6f691bf981d33e26cb5ce093916feb96127ba7814f5904f79f3",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        },
+        {
+          "phase": "travel",
+          "path": "vfx/VFX-NIN-041-S5/travel.png",
+          "sha256": "9405fa7f63137722b59fed47cb8093809e8c2febcd8b33d8c3f53befef4492cd",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        },
+        {
+          "phase": "impact",
+          "path": "vfx/VFX-NIN-041-S5/impact.png",
+          "sha256": "8b83b5d723eae84494c36cac4eaa09af675390355169aa175834a158bdb0bc68",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        },
+        {
+          "phase": "residual",
+          "path": "vfx/VFX-NIN-041-S5/residual.png",
+          "sha256": "917bb430ade0bb48fe513b6dfdf3aeef439ccef1a2f89e6ef0e92ef544761cf0",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                640,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            }
+          ]
+        }
+      ],
       "owner_approved": false,
       "rights_cleared": false,
-      "runtime_integrated": false
+      "runtime_integrated": false,
+      "cell": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        64
+      ]
     },
     {
       "id": "VFX-NIN-042-S0",
@@ -3421,8 +4263,8 @@
       "skill_id": "NIN-042-S1",
       "status": "REVIEW_ONLY",
       "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
-      "manifest": "art/e3/ART_F1D_REVIEW_MANIFEST.json",
-      "archive": "Naru_F1D_review_pack_v2.zip",
+      "manifest": "art/runtime/ART_R6_V6_EVIDENCE.json",
+      "archive": "Naru_R6_private.zip",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
@@ -3438,7 +4280,7 @@
         {
           "phase": "charge",
           "path": "vfx/VFX-NIN-042-S1/charge.png",
-          "sha256": "22d3d564c0548092a95afa2f096bee108fc17a7d19560baa370242a80c333d19",
+          "sha256": "e655f0d06d692ba1ad0904c97c2aad313c6201201069b02a742ac67312930b7a",
           "frames": [
             {
               "rect": [
@@ -3447,7 +4289,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3456,68 +4298,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                256,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                384,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                512,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                640,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            }
-          ]
-        },
-        {
-          "phase": "travel",
-          "path": "vfx/VFX-NIN-042-S1/travel.png",
-          "sha256": "f2ac2216ad82da4642a965282b68a9e22f6bdddcefefd3b9006fca7de653e115",
-          "frames": [
-            {
-              "rect": [
-                0,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
-            },
-            {
-              "rect": [
-                128,
-                0,
-                128,
-                128
-              ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3526,7 +4307,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3535,7 +4316,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3544,7 +4325,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3553,14 +4334,32 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
             }
           ]
         },
         {
           "phase": "impact",
           "path": "vfx/VFX-NIN-042-S1/impact.png",
-          "sha256": "cbd962dc9004c922414415dd572fc16626acd5c376d1f35b125a4aa301397a56",
+          "sha256": "8ff9c11e091c4bd6cd4700c6f386e13f59d029f70dfbcb02701dd5bccd8253f2",
           "frames": [
             {
               "rect": [
@@ -3569,7 +4368,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3578,7 +4377,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3587,7 +4386,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3596,7 +4395,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3605,7 +4404,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3614,14 +4413,32 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
             }
           ]
         },
         {
           "phase": "residual",
           "path": "vfx/VFX-NIN-042-S1/residual.png",
-          "sha256": "6362e7f579387d0ed27f3cc3c3d61d826b2b82e6cb3284c7ccc4d9e6ca494d2b",
+          "sha256": "68246fc8d0264374295fb414bb728a1aa89470b7951d6c65c642a5e176503b00",
           "frames": [
             {
               "rect": [
@@ -3630,7 +4447,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3639,7 +4456,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3648,7 +4465,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3657,7 +4474,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3666,7 +4483,7 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
             },
             {
               "rect": [
@@ -3675,10 +4492,34 @@
                 128,
                 128
               ],
-              "duration_ms": 80
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                768,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
+            },
+            {
+              "rect": [
+                896,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 70
             }
           ]
         }
+      ],
+      "family": "lightning_aura",
+      "phase_paths": [
+        "vfx/VFX-NIN-042-S1/charge.png",
+        "vfx/VFX-NIN-042-S1/impact.png",
+        "vfx/VFX-NIN-042-S1/residual.png"
       ]
     },
     {
@@ -9286,7 +10127,7 @@
     "vfx_keys": 1152,
     "approved": 0,
     "integrated": 0,
-    "review_vfx_candidates": 14,
+    "review_vfx_candidates": 16,
     "private_library_character_candidates": 12,
     "environment_review": 16,
     "review_animation_pilot": 6,
@@ -9434,11 +10275,12 @@
     "asset_approval": false
   },
   "runtime_review": {
-    "status": "V5_PRIVATE_LOCAL_SCOPED_PASS",
-    "gameplay_base": "1b5c8da242fe9d00a257cf9a4f625574d7872e47",
-    "evidence": "art/runtime/ART_R5_V5_EVIDENCE.json",
-    "private_archive": "Naru_R5_review_private.zip",
-    "private_archive_sha256": "915cc8ec6a7a54586f6b761664bfa9a3e4c36531324d40cdd792f958f30298a4",
+    "status": "V6_PRIVATE_LOCAL_SCOPED_PASS_R6",
+    "gameplay_base": "197bd5d15146ff664ac55ef4cb506f3b820855ce",
+    "latest_remote_at_commit": "197bd5d15146ff664ac55ef4cb506f3b820855ce",
+    "evidence": "art/runtime/ART_R6_V6_EVIDENCE.json",
+    "private_archive": "Naru_R6_private.zip",
+    "private_archive_sha256": "f4009da214e713118aaf390452a16689ca9aba71c6663f55730fb791ac211ca0",
     "integrated": false
   },
   "r3_review": {
@@ -10054,5 +10896,23 @@
       }
     ],
     "complete_four_direction_clips": 0
+  },
+  "r6_review": {
+    "archive": "Naru_R6_private.zip",
+    "archive_sha256": "f4009da214e713118aaf390452a16689ca9aba71c6663f55730fb791ac211ca0",
+    "manifest": "art/runtime/ART_R6_V6_EVIDENCE.json",
+    "disabled_walk_pilots": 6,
+    "active_walk_clips": 0,
+    "new_completed_animation": 0,
+    "vfx_mappings": [
+      "VFX-NIN-041-S2",
+      "VFX-NIN-041-S3",
+      "VFX-NIN-041-S5",
+      "VFX-NIN-042-S1",
+      "VFX-NIN-004-S5"
+    ],
+    "new_or_replaced_phase_sheets": 16,
+    "environment_grade": 2,
+    "status": "REVIEW_ONLY"
   }
 }
