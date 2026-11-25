@@ -42,7 +42,8 @@
       "Chakra Cửu Vĩ"
     ],
     "sources": [
-      "https://naruto-official.com/en/news/01_1802"
+      "https://naruto-official.com/en/news/01_1802",
+      "https://naruto-official.com/en/news/01_1610"
     ],
     "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
@@ -61,6 +62,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uzumaki",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-001-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Phân thân đánh lạc hướng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-001-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -126,6 +140,20 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-002-F1",
+      "NIN-002-F2"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Shuriken dây thép tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-002-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -185,6 +213,17 @@
     "fixed_talent_effect": {
       "stat": "healing",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "haruno",
+    "timeline_note": "Y thuật và Bách Hào không được gán ở mốc học viên; skill hỗ trợ là gameplay.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Điều hòa chakra tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-003-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -232,7 +271,8 @@
     ],
     "sources": [
       "https://naruto-official.com/en/news/01_1903",
-      "https://naruto.fandom.com/wiki/Kakashi_Hatake"
+      "https://naruto.fandom.com/wiki/Kakashi_Hatake",
+      "https://naruto-official.com/en/news/01_1904"
     ],
     "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
@@ -251,6 +291,20 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "hatake",
+    "timeline_note": "Kakashi là hồ sơ nhiều mốc; Kamui chỉ mở ở mốc Shippuden.",
+    "form_ids": [
+      "NIN-004-F1",
+      "NIN-004-F2"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Thủy long đạn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-004-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -310,6 +364,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bẫy dây học viện tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-005-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -369,6 +434,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Rasengan không có ở mốc thiếu niên đầu truyện; đề xuất đổi tuyệt kỹ thành phối hợp phân thân, giữ Rasengan cho bản trưởng thành hoặc mở qua timeline.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Biến hóa đánh lạc hướng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-006-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -410,8 +486,10 @@
       "NIN-007-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1910"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-007-S6",
@@ -428,6 +506,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "nara",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bẫy bóng lan rộng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-007-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -487,6 +576,20 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "akimichi",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-008-F1",
+      "NIN-008-F2"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Bội hóa cánh tay tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-008-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -546,6 +649,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "yamanaka",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Tâm chuyển thân đánh lạc hướng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-009-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -587,8 +701,10 @@
       "NIN-010-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1668"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-010-S6",
@@ -605,6 +721,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "hyuga",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Nhu quyền điểm huyệt tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-010-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -664,6 +791,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "inuzuka",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Akamaru phối hợp tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-011-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -723,6 +861,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "aburame",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Trùng dò đường tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-012-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -764,8 +913,10 @@
       "NIN-013-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1817"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-013-S6",
@@ -782,6 +933,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "hyuga",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Hồi thiên phòng thủ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-013-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -841,6 +1003,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "lee",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-014-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Mộc diệp cước tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-014-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -900,6 +1075,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cuộn phi tiêu tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-015-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -959,6 +1145,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-016-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Mộc diệp đại toàn phong tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-016-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1019,6 +1218,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Phong độn chakra đao tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-017-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1078,6 +1288,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Ảo thuật hoa ảnh tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-018-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1138,6 +1359,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thổ độn tường đất tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-019-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1198,6 +1430,19 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-020-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Dầu cóc trói tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-020-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1257,6 +1502,19 @@
     "fixed_talent_effect": {
       "stat": "healing",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-021-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Quái lực địa chấn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-021-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1316,6 +1574,19 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-022-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Xà phân thân tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-022-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1375,6 +1646,17 @@
     "fixed_talent_effect": {
       "stat": "healing",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Chakra no Mesu liên kích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-023-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1416,8 +1698,10 @@
       "NIN-024-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1688"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-024-S6",
@@ -1434,6 +1718,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "sand",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-024-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Sa phân thân tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-024-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1493,6 +1790,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Phong độn quạt gió tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-025-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1552,6 +1860,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Rối Karasu tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-026-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1611,6 +1930,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Ẩn trong sương tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-027-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1672,6 +2002,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Băng độn thiên bản tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-028-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1731,6 +2072,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Xà thủ liên kích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-029-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1790,6 +2142,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thuấn thân kiếm kích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-030-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1849,6 +2212,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Áp lực thẩm vấn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-031-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1908,6 +2282,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thiên bản đánh lạc hướng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-032-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -1967,6 +2352,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Sóng âm phá nhịp tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-033-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2026,6 +2422,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Khí áp đẩy lùi tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-034-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2085,6 +2492,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Chuông nhiễu giác tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-035-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2144,6 +2562,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-036-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Cốt giáp tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-036-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2203,6 +2634,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thổ độn tường đất tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-037-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2262,6 +2704,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Tơ nhện bẫy tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-038-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2321,6 +2774,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Sáo nhiễu giác tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-039-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2380,6 +2844,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Song thân hộ vệ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-040-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2445,6 +2920,21 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uzumaki",
+    "timeline_note": "Tiên nhân và Kurama mở theo mốc riêng; không mặc định có từ đầu.",
+    "form_ids": [
+      "NIN-041-F1",
+      "NIN-041-F2",
+      "NIN-041-F3"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Đại Ngọc Rasengan tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-041-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2491,8 +2981,10 @@
       "Vĩnh Hằng Mangekyo",
       "Susanoo"
     ],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1858"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-042-S6",
@@ -2509,6 +3001,21 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-042-F1",
+      "NIN-042-F2",
+      "NIN-042-F3"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Chidori senbon tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-042-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2570,6 +3077,19 @@
     "fixed_talent_effect": {
       "stat": "healing",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "haruno",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-043-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Địa chấn quyền tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-043-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2629,6 +3149,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Chim mực trinh sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-044-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2688,6 +3219,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Mộc độn tường gỗ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-045-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2729,8 +3271,10 @@
       "NIN-046-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1910"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-046-S6",
@@ -2747,6 +3291,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "nara",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Ảnh khâu xuyên tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-046-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2806,6 +3361,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "akimichi",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-047-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Bội hóa cánh tay tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-047-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2865,6 +3433,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "yamanaka",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cảm tri liên kết tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-048-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2906,8 +3485,10 @@
       "NIN-049-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1668"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-049-S6",
@@ -2924,6 +3505,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "hyuga",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bát quái không chưởng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-049-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -2983,6 +3575,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "inuzuka",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Akamaru hợp thể tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-050-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3042,6 +3645,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "aburame",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Trùng cảm ứng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-051-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3083,8 +3697,10 @@
       "NIN-052-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1817"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-052-S6",
@@ -3101,6 +3717,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "hyuga",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bát quái không chưởng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-052-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3160,6 +3787,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "lee",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-053-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Mộc diệp toàn phong tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-053-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3219,6 +3859,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cuộn nhẫn cụ kép tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-054-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3260,8 +3911,10 @@
       "NIN-055-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1688"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-055-S6",
@@ -3278,6 +3931,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "sand",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cát hộ vệ đồng đội tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-055-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3337,6 +4001,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Phong nhận liên hoàn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-056-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3396,6 +4071,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Rối Sanshouo hộ vệ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-057-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3455,6 +4141,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Khiên chakra tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-058-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3514,6 +4211,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Kiếm gió xuyên tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-059-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3561,7 +4269,8 @@
     ],
     "sources": [
       "https://naruto-official.com/en/news/01_1287",
-      "https://naruto.fandom.com/wiki/Itachi_Uchiha"
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://naruto-official.com/en/news/01_1814"
     ],
     "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
@@ -3580,6 +4289,20 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-060-F1",
+      "NIN-060-F2"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Ảnh phân thân tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-060-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3639,6 +4362,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-061-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Thủy phân thân tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-061-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3698,6 +4434,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "C1 phi điểu tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-062-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3757,6 +4504,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Rối tam đại Kazekage tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-063-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3816,6 +4574,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Liêm đao tầm xa tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-064-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3877,6 +4646,19 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-065-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Thổ độn cứng hóa tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-065-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3936,6 +4718,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Giấy cánh tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-066-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -3995,6 +4788,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thần la đẩy lùi tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-067-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4054,6 +4858,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Súc sinh đạo triệu hồi tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-068-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4098,8 +4913,10 @@
     "special_unlock_candidates": [
       "Kamui"
     ],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1706"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-069-S6",
@@ -4116,6 +4933,20 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-069-F1",
+      "NIN-069-F2"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Kamui né tránh tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-069-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4178,6 +5009,21 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-070-F1",
+      "NIN-070-F2",
+      "NIN-070-F3"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Hỏa độn hỏa long tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-070-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4237,6 +5083,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bào tử bám tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-071-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4296,6 +5153,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Ẩn thân ngầm tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-072-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4355,6 +5223,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thủy hóa né tránh tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-073-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4414,6 +5293,17 @@
     "fixed_talent_effect": {
       "stat": "healing",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cảm tri tầm rộng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-074-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4473,6 +5363,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-075-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Chú ấn cường hóa tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-075-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4534,6 +5437,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-076-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Thất kiếm liên hoàn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-076-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4593,6 +5509,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-077-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Lôi giáp tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-077-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4653,6 +5582,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Hắc lôi liên kích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-078-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4712,6 +5652,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cảm tri diện rộng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-079-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4771,6 +5722,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Kiếm đón đòn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-080-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4830,6 +5792,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Kiếm phản đòn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-081-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4889,6 +5862,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Kiếm thuật tấn công tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-082-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -4949,6 +5933,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Dung độn dòng chảy tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-083-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5008,6 +6003,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Hiramekarei song đao tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-084-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5067,6 +6073,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bạch nhãn trinh sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-085-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5127,6 +6144,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Khinh trọng nham tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-086-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5187,6 +6215,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Dung độn vôi hóa tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-087-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5246,6 +6285,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thổ nhân hộ vệ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-088-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5305,6 +6355,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Iaido liên trảm tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-089-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5364,6 +6425,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Độc vụ lan rộng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-090-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5424,6 +6496,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Phong độn chân không tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-091-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5484,6 +6567,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thuấn thân ảnh tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-092-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5545,6 +6639,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "namikaze",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Phi lôi thần đánh dấu tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-093-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5604,6 +6709,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uzumaki",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Xích chakra bảo hộ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-094-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5666,6 +6782,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "senju",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-095-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Mộc nhân tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-095-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5726,6 +6855,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "senju",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thủy trận bích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-096-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5786,6 +6926,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cầu đạo ngọc tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-097-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5845,6 +6996,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Đồng thuật quan sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-098-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5905,6 +7067,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Hoán đổi không gian tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-099-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -5964,6 +7137,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-100-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Hỏa miêu áp sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-100-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6023,6 +7209,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-101-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Thủy kính phản kích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-101-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6082,6 +7281,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-102-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Dung nham giáp tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-102-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6141,6 +7353,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-103-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Hơi nước cường lực tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-103-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6200,6 +7425,19 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-104-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Bọt nước bẫy tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-104-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6259,6 +7497,19 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-105-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Phấn côn trùng nhiễu tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-105-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6319,6 +7570,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Sharingan quan sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-106-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6378,6 +7640,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "nara",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Ảnh khâu chiến thuật tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-107-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6437,6 +7710,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "yamanaka",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cảm tri diện rộng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-108-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6496,6 +7780,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "akimichi",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bội hóa cánh tay tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-109-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6555,6 +7850,17 @@
     "fixed_talent_effect": {
       "stat": "healing",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Độc vụ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-110-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6620,6 +7926,19 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uzumaki",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-111-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Phong độn phong áp tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-111-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6682,6 +8001,19 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-112-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Sharingan quan sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-112-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6746,6 +8078,19 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-113-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Xà phân thân tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-113-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6807,6 +8152,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-114-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Cánh tay hóa khiên tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-114-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6866,6 +8224,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uzumaki",
+    "timeline_note": "Giới hạn mốc Boruto anime; không mặc định sức mạnh manga hậu timeskip.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Bạch nhãn quan sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-115-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6926,6 +8295,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "nara",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Phong độn phong áp tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-116-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -6985,6 +8365,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "yamanaka",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Chim mực trinh sát tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-117-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7044,6 +8435,19 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "akimichi",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-118-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Bội hóa cánh tay tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-118-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7103,6 +8507,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "lee",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thể thuật liên cước tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-119-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7162,6 +8577,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thiết bị do thám tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-120-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7221,6 +8647,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thổ độn trụ đá tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-121-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7280,6 +8717,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thủy độn hộ vệ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-122-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7342,6 +8790,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Phong độn áp lực tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-123-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7401,6 +8860,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thổ độn phòng vệ tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-124-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7460,6 +8930,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thủy độn trói tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-125-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7521,6 +9002,20 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uzumaki",
+    "timeline_note": "Bản Hokage trước mất Kurama; không trộn với mốc hậu Baryon.",
+    "form_ids": [
+      "NIN-126-F1",
+      "NIN-126-F2"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Đại Ngọc Rasengan tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-126-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7583,6 +9078,20 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "uchiha",
+    "timeline_note": "Bản trưởng thành trước mất Rinnegan; không trộn mốc sau.",
+    "form_ids": [
+      "NIN-127-F1",
+      "NIN-127-F2"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Chidori liên kích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-127-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7642,6 +9151,19 @@
     "fixed_talent_effect": {
       "stat": "healing",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "haruno",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-128-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Chưởng tiên thuật nhóm tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-128-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7683,8 +9205,10 @@
       "NIN-129-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1910"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-129-S6",
@@ -7701,6 +9225,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": "nara",
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Ảnh khâu tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-129-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7742,8 +9277,10 @@
       "NIN-130-S5"
     ],
     "special_unlock_candidates": [],
-    "sources": [],
-    "canon_status": "UNVERIFIED",
+    "sources": [
+      "https://naruto-official.com/en/news/01_1767"
+    ],
+    "canon_status": "PARTIAL_SOURCE_POINTER",
     "status": "PROPOSED",
     "additional_skill_ids": [
       "NIN-130-S6",
@@ -7760,6 +9297,19 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-130-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Hấp thu nhẫn thuật tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-130-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7819,6 +9369,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Đao chakra tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-131-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7878,6 +9439,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Sukunahikona né tránh tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-132-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7937,6 +9509,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Tia mắt tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-133-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -7996,6 +9579,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Dấu vuốt đánh dấu tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-134-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8055,6 +9649,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Sương độc tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-135-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8115,6 +9720,19 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [
+      "NIN-136-F1"
+    ],
+    "unique_talent_design": {
+      "name_vi": "Hỏa độn liên kích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-136-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8174,6 +9792,17 @@
     "fixed_talent_effect": {
       "stat": "chakra_regen",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thiết bị phân tích tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-137-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8233,6 +9862,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Senrigan cảm ứng tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-138-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8292,6 +9932,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thể thuật phản đòn tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-139-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8351,6 +10002,17 @@
     "fixed_talent_effect": {
       "stat": "agility",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Vũ khí điều khiển tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-140-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8410,6 +10072,17 @@
     "fixed_talent_effect": {
       "stat": "patk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Hiramekarei chakra tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-141-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8469,6 +10142,17 @@
     "fixed_talent_effect": {
       "stat": "vitality",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Thiết sa khiên tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-142-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8528,6 +10212,17 @@
     "fixed_talent_effect": {
       "stat": "control_chance",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Cảm âm tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-143-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   },
   {
@@ -8587,6 +10282,17 @@
     "fixed_talent_effect": {
       "stat": "natk",
       "additive_multiplier": 0.05
+    },
+    "family_hint": null,
+    "timeline_note": "Mốc thời kỳ theo hồ sơ; đối chiếu từng chiêu trước runtime.",
+    "form_ids": [],
+    "unique_talent_design": {
+      "name_vi": "Rối ngụy trang tinh thông",
+      "trigger": "use_signature_skill",
+      "skill_id": "NIN-144-S1",
+      "bonus": "mastery_gain_multiplier",
+      "value": 1.08,
+      "status": "PROPOSED"
     }
   }
 ]

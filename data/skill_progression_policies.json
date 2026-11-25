@@ -59,14 +59,14 @@
     "branches": [
       {
         "id": "NIN-001-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-001-S5-G3"
       },
       {
         "id": "NIN-001-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-001-S5-G3"
@@ -86,14 +86,14 @@
     "branches": [
       {
         "id": "NIN-002-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-002-S1-G3"
       },
       {
         "id": "NIN-002-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-002-S1-G3"
@@ -149,14 +149,14 @@
     "branches": [
       {
         "id": "NIN-002-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-002-S5-G3"
       },
       {
         "id": "NIN-002-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-002-S5-G3"
@@ -236,14 +236,14 @@
     "branches": [
       {
         "id": "NIN-004-S1-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-004-S1-G3"
       },
       {
         "id": "NIN-004-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-004-S1-G3"
@@ -275,14 +275,14 @@
     "branches": [
       {
         "id": "NIN-004-S3-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-004-S3-G3"
       },
       {
         "id": "NIN-004-S3-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-004-S3-G3"
@@ -424,29 +424,14 @@
   },
   {
     "skill_id": "NIN-006-S5",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-006-S5-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-006-S5-G3"
-      },
-      {
-        "id": "NIN-006-S5-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-006-S5-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -833,14 +818,14 @@
     "branches": [
       {
         "id": "NIN-013-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-013-S2-G3"
       },
       {
         "id": "NIN-013-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-013-S2-G3"
@@ -884,14 +869,14 @@
     "branches": [
       {
         "id": "NIN-013-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-013-S5-G3"
       },
       {
         "id": "NIN-013-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-013-S5-G3"
@@ -911,14 +896,14 @@
     "branches": [
       {
         "id": "NIN-014-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-014-S1-G3"
       },
       {
         "id": "NIN-014-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-014-S1-G3"
@@ -1012,14 +997,29 @@
   },
   {
     "skill_id": "NIN-015-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-015-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-015-S4-G3"
+      },
+      {
+        "id": "NIN-015-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-015-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1034,14 +1034,14 @@
     "branches": [
       {
         "id": "NIN-015-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-015-S5-G3"
       },
       {
         "id": "NIN-015-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-015-S5-G3"
@@ -1061,14 +1061,14 @@
     "branches": [
       {
         "id": "NIN-016-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-016-S1-G3"
       },
       {
         "id": "NIN-016-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-016-S1-G3"
@@ -1090,14 +1090,29 @@
   },
   {
     "skill_id": "NIN-016-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-016-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-016-S3-G3"
+      },
+      {
+        "id": "NIN-016-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-016-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1150,26 +1165,56 @@
   },
   {
     "skill_id": "NIN-017-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-017-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-017-S3-G3"
+      },
+      {
+        "id": "NIN-017-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-017-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-017-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-017-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-017-S4-G3"
+      },
+      {
+        "id": "NIN-017-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-017-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1256,14 +1301,14 @@
     "branches": [
       {
         "id": "NIN-019-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-019-S1-G3"
       },
       {
         "id": "NIN-019-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-019-S1-G3"
@@ -1285,26 +1330,56 @@
   },
   {
     "skill_id": "NIN-019-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-019-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-019-S3-G3"
+      },
+      {
+        "id": "NIN-019-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-019-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-019-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-019-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-019-S4-G3"
+      },
+      {
+        "id": "NIN-019-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-019-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1379,14 +1454,14 @@
     "branches": [
       {
         "id": "NIN-020-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-020-S5-G3"
       },
       {
         "id": "NIN-020-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-020-S5-G3"
@@ -1406,14 +1481,14 @@
     "branches": [
       {
         "id": "NIN-021-S1-B1",
-        "name_vi": "trị liệu",
+        "name_vi": "Trị liệu",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-021-S1-G3"
       },
       {
         "id": "NIN-021-S1-B2",
-        "name_vi": "nhiều mục tiêu",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-021-S1-G3"
@@ -1601,14 +1676,14 @@
     "branches": [
       {
         "id": "NIN-024-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-024-S1-G3"
       },
       {
         "id": "NIN-024-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-024-S1-G3"
@@ -1628,14 +1703,14 @@
     "branches": [
       {
         "id": "NIN-024-S2-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-024-S2-G3"
       },
       {
         "id": "NIN-024-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-024-S2-G3"
@@ -1657,14 +1732,29 @@
   },
   {
     "skill_id": "NIN-024-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-024-S4-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-024-S4-G3"
+      },
+      {
+        "id": "NIN-024-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-024-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1679,14 +1769,14 @@
     "branches": [
       {
         "id": "NIN-024-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-024-S5-G3"
       },
       {
         "id": "NIN-024-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-024-S5-G3"
@@ -1718,14 +1808,14 @@
     "branches": [
       {
         "id": "NIN-025-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-025-S2-G3"
       },
       {
         "id": "NIN-025-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-025-S2-G3"
@@ -1735,14 +1825,29 @@
   },
   {
     "skill_id": "NIN-025-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-025-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-025-S3-G3"
+      },
+      {
+        "id": "NIN-025-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-025-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1793,14 +1898,14 @@
     "branches": [
       {
         "id": "NIN-026-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-026-S2-G3"
       },
       {
         "id": "NIN-026-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-026-S2-G3"
@@ -1822,14 +1927,29 @@
   },
   {
     "skill_id": "NIN-026-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-026-S4-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-026-S4-G3"
+      },
+      {
+        "id": "NIN-026-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-026-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1904,14 +2024,14 @@
     "branches": [
       {
         "id": "NIN-027-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-027-S5-G3"
       },
       {
         "id": "NIN-027-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-027-S5-G3"
@@ -1943,14 +2063,14 @@
     "branches": [
       {
         "id": "NIN-028-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-028-S2-G3"
       },
       {
         "id": "NIN-028-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-028-S2-G3"
@@ -1960,14 +2080,29 @@
   },
   {
     "skill_id": "NIN-028-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-028-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-028-S3-G3"
+      },
+      {
+        "id": "NIN-028-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-028-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -1994,14 +2129,14 @@
     "branches": [
       {
         "id": "NIN-028-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-028-S5-G3"
       },
       {
         "id": "NIN-028-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-028-S5-G3"
@@ -2501,14 +2636,14 @@
     "branches": [
       {
         "id": "NIN-037-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-037-S1-G3"
       },
       {
         "id": "NIN-037-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-037-S1-G3"
@@ -2530,14 +2665,29 @@
   },
   {
     "skill_id": "NIN-037-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-037-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-037-S3-G3"
+      },
+      {
+        "id": "NIN-037-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-037-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -2564,14 +2714,14 @@
     "branches": [
       {
         "id": "NIN-037-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-037-S5-G3"
       },
       {
         "id": "NIN-037-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-037-S5-G3"
@@ -2783,14 +2933,14 @@
     "branches": [
       {
         "id": "NIN-041-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-041-S2-G3"
       },
       {
         "id": "NIN-041-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-041-S2-G3"
@@ -2810,14 +2960,14 @@
     "branches": [
       {
         "id": "NIN-041-S3-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-041-S3-G3"
       },
       {
         "id": "NIN-041-S3-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-041-S3-G3"
@@ -2849,14 +2999,14 @@
     "branches": [
       {
         "id": "NIN-041-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-041-S5-G3"
       },
       {
         "id": "NIN-041-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-041-S5-G3"
@@ -2876,14 +3026,14 @@
     "branches": [
       {
         "id": "NIN-042-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-042-S1-G3"
       },
       {
         "id": "NIN-042-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-042-S1-G3"
@@ -2903,14 +3053,14 @@
     "branches": [
       {
         "id": "NIN-042-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-042-S2-G3"
       },
       {
         "id": "NIN-042-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-042-S2-G3"
@@ -2930,14 +3080,14 @@
     "branches": [
       {
         "id": "NIN-042-S3-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-042-S3-G3"
       },
       {
         "id": "NIN-042-S3-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-042-S3-G3"
@@ -2981,14 +3131,14 @@
     "branches": [
       {
         "id": "NIN-043-S1-B1",
-        "name_vi": "trị liệu",
+        "name_vi": "Trị liệu",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-043-S1-G3"
       },
       {
         "id": "NIN-043-S1-B2",
-        "name_vi": "nhiều mục tiêu",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-043-S1-G3"
@@ -3370,14 +3520,29 @@
   },
   {
     "skill_id": "NIN-049-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-049-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-049-S3-G3"
+      },
+      {
+        "id": "NIN-049-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-049-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -3548,14 +3713,14 @@
     "branches": [
       {
         "id": "NIN-052-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-052-S2-G3"
       },
       {
         "id": "NIN-052-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-052-S2-G3"
@@ -3565,14 +3730,29 @@
   },
   {
     "skill_id": "NIN-052-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-052-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-052-S3-G3"
+      },
+      {
+        "id": "NIN-052-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-052-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -3599,14 +3779,14 @@
     "branches": [
       {
         "id": "NIN-052-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-052-S5-G3"
       },
       {
         "id": "NIN-052-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-052-S5-G3"
@@ -3626,14 +3806,14 @@
     "branches": [
       {
         "id": "NIN-053-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-053-S1-G3"
       },
       {
         "id": "NIN-053-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-053-S1-G3"
@@ -3655,14 +3835,29 @@
   },
   {
     "skill_id": "NIN-053-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-053-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-053-S3-G3"
+      },
+      {
+        "id": "NIN-053-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-053-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -3713,14 +3908,14 @@
     "branches": [
       {
         "id": "NIN-054-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-054-S2-G3"
       },
       {
         "id": "NIN-054-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-054-S2-G3"
@@ -3776,14 +3971,14 @@
     "branches": [
       {
         "id": "NIN-055-S1-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-055-S1-G3"
       },
       {
         "id": "NIN-055-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-055-S1-G3"
@@ -3803,14 +3998,14 @@
     "branches": [
       {
         "id": "NIN-055-S2-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-055-S2-G3"
       },
       {
         "id": "NIN-055-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-055-S2-G3"
@@ -3820,26 +4015,56 @@
   },
   {
     "skill_id": "NIN-055-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-055-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-055-S3-G3"
+      },
+      {
+        "id": "NIN-055-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-055-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-055-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-055-S4-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-055-S4-G3"
+      },
+      {
+        "id": "NIN-055-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-055-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -3854,14 +4079,14 @@
     "branches": [
       {
         "id": "NIN-055-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-055-S5-G3"
       },
       {
         "id": "NIN-055-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-055-S5-G3"
@@ -3895,14 +4120,29 @@
   },
   {
     "skill_id": "NIN-056-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-056-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-056-S3-G3"
+      },
+      {
+        "id": "NIN-056-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-056-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -3929,14 +4169,14 @@
     "branches": [
       {
         "id": "NIN-056-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-056-S5-G3"
       },
       {
         "id": "NIN-056-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-056-S5-G3"
@@ -4076,14 +4316,14 @@
     "branches": [
       {
         "id": "NIN-059-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-059-S1-G3"
       },
       {
         "id": "NIN-059-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-059-S1-G3"
@@ -4117,14 +4357,29 @@
   },
   {
     "skill_id": "NIN-059-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-059-S4-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-059-S4-G3"
+      },
+      {
+        "id": "NIN-059-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-059-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -4139,14 +4394,14 @@
     "branches": [
       {
         "id": "NIN-059-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-059-S5-G3"
       },
       {
         "id": "NIN-059-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-059-S5-G3"
@@ -4166,14 +4421,14 @@
     "branches": [
       {
         "id": "NIN-060-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-060-S1-G3"
       },
       {
         "id": "NIN-060-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-060-S1-G3"
@@ -4241,14 +4496,14 @@
     "branches": [
       {
         "id": "NIN-061-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-061-S1-G3"
       },
       {
         "id": "NIN-061-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-061-S1-G3"
@@ -4304,14 +4559,14 @@
     "branches": [
       {
         "id": "NIN-061-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-061-S5-G3"
       },
       {
         "id": "NIN-061-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-061-S5-G3"
@@ -4391,14 +4646,14 @@
     "branches": [
       {
         "id": "NIN-063-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-063-S1-G3"
       },
       {
         "id": "NIN-063-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-063-S1-G3"
@@ -4432,14 +4687,29 @@
   },
   {
     "skill_id": "NIN-063-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-063-S4-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-063-S4-G3"
+      },
+      {
+        "id": "NIN-063-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-063-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -4538,14 +4808,14 @@
     "branches": [
       {
         "id": "NIN-065-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-065-S2-G3"
       },
       {
         "id": "NIN-065-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-065-S2-G3"
@@ -4555,14 +4825,29 @@
   },
   {
     "skill_id": "NIN-065-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-065-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-065-S3-G3"
+      },
+      {
+        "id": "NIN-065-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-065-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -4781,14 +5066,14 @@
     "branches": [
       {
         "id": "NIN-069-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-069-S1-G3"
       },
       {
         "id": "NIN-069-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-069-S1-G3"
@@ -4822,14 +5107,29 @@
   },
   {
     "skill_id": "NIN-069-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-069-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-069-S4-G3"
+      },
+      {
+        "id": "NIN-069-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-069-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -4856,14 +5156,14 @@
     "branches": [
       {
         "id": "NIN-070-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-070-S1-G3"
       },
       {
         "id": "NIN-070-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-070-S1-G3"
@@ -4885,26 +5185,56 @@
   },
   {
     "skill_id": "NIN-070-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-070-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-070-S3-G3"
+      },
+      {
+        "id": "NIN-070-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-070-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-070-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-070-S4-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-070-S4-G3"
+      },
+      {
+        "id": "NIN-070-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-070-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -5051,14 +5381,14 @@
     "branches": [
       {
         "id": "NIN-073-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-073-S1-G3"
       },
       {
         "id": "NIN-073-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-073-S1-G3"
@@ -5092,14 +5422,29 @@
   },
   {
     "skill_id": "NIN-073-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-073-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-073-S4-G3"
+      },
+      {
+        "id": "NIN-073-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-073-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -5114,14 +5459,14 @@
     "branches": [
       {
         "id": "NIN-073-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-073-S5-G3"
       },
       {
         "id": "NIN-073-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-073-S5-G3"
@@ -5189,14 +5534,14 @@
     "branches": [
       {
         "id": "NIN-074-S5-B1",
-        "name_vi": "trị liệu",
+        "name_vi": "Trị liệu",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-074-S5-G3"
       },
       {
         "id": "NIN-074-S5-B2",
-        "name_vi": "nhiều mục tiêu",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-074-S5-G3"
@@ -5276,14 +5621,14 @@
     "branches": [
       {
         "id": "NIN-076-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-076-S1-G3"
       },
       {
         "id": "NIN-076-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-076-S1-G3"
@@ -5363,14 +5708,14 @@
     "branches": [
       {
         "id": "NIN-077-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-077-S2-G3"
       },
       {
         "id": "NIN-077-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-077-S2-G3"
@@ -5380,14 +5725,29 @@
   },
   {
     "skill_id": "NIN-077-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-077-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-077-S3-G3"
+      },
+      {
+        "id": "NIN-077-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-077-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -5414,14 +5774,14 @@
     "branches": [
       {
         "id": "NIN-077-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-077-S5-G3"
       },
       {
         "id": "NIN-077-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-077-S5-G3"
@@ -5453,14 +5813,14 @@
     "branches": [
       {
         "id": "NIN-078-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-078-S2-G3"
       },
       {
         "id": "NIN-078-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-078-S2-G3"
@@ -5470,26 +5830,56 @@
   },
   {
     "skill_id": "NIN-078-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-078-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-078-S3-G3"
+      },
+      {
+        "id": "NIN-078-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-078-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-078-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-078-S4-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-078-S4-G3"
+      },
+      {
+        "id": "NIN-078-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-078-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -5996,14 +6386,14 @@
     "branches": [
       {
         "id": "NIN-087-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-087-S1-G3"
       },
       {
         "id": "NIN-087-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-087-S1-G3"
@@ -6037,14 +6427,29 @@
   },
   {
     "skill_id": "NIN-087-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-087-S4-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-087-S4-G3"
+      },
+      {
+        "id": "NIN-087-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-087-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -6071,14 +6476,14 @@
     "branches": [
       {
         "id": "NIN-088-S1-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-088-S1-G3"
       },
       {
         "id": "NIN-088-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-088-S1-G3"
@@ -6098,14 +6503,14 @@
     "branches": [
       {
         "id": "NIN-088-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-088-S2-G3"
       },
       {
         "id": "NIN-088-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-088-S2-G3"
@@ -6127,14 +6532,29 @@
   },
   {
     "skill_id": "NIN-088-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-088-S4-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-088-S4-G3"
+      },
+      {
+        "id": "NIN-088-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-088-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -6221,14 +6641,14 @@
     "branches": [
       {
         "id": "NIN-090-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-090-S1-G3"
       },
       {
         "id": "NIN-090-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-090-S1-G3"
@@ -6250,14 +6670,29 @@
   },
   {
     "skill_id": "NIN-090-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-090-S3-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-090-S3-G3"
+      },
+      {
+        "id": "NIN-090-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-090-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -6284,14 +6719,14 @@
     "branches": [
       {
         "id": "NIN-090-S5-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-090-S5-G3"
       },
       {
         "id": "NIN-090-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-090-S5-G3"
@@ -6311,14 +6746,14 @@
     "branches": [
       {
         "id": "NIN-091-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-091-S1-G3"
       },
       {
         "id": "NIN-091-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-091-S1-G3"
@@ -6340,14 +6775,29 @@
   },
   {
     "skill_id": "NIN-091-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-091-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-091-S3-G3"
+      },
+      {
+        "id": "NIN-091-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-091-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -6398,14 +6848,14 @@
     "branches": [
       {
         "id": "NIN-092-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-092-S2-G3"
       },
       {
         "id": "NIN-092-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-092-S2-G3"
@@ -6427,14 +6877,29 @@
   },
   {
     "skill_id": "NIN-092-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-092-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-092-S4-G3"
+      },
+      {
+        "id": "NIN-092-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-092-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -6473,14 +6938,14 @@
     "branches": [
       {
         "id": "NIN-093-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-093-S2-G3"
       },
       {
         "id": "NIN-093-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-093-S2-G3"
@@ -6502,14 +6967,29 @@
   },
   {
     "skill_id": "NIN-093-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-093-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-093-S4-G3"
+      },
+      {
+        "id": "NIN-093-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-093-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -6524,14 +7004,14 @@
     "branches": [
       {
         "id": "NIN-093-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-093-S5-G3"
       },
       {
         "id": "NIN-093-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-093-S5-G3"
@@ -6551,14 +7031,14 @@
     "branches": [
       {
         "id": "NIN-094-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-094-S1-G3"
       },
       {
         "id": "NIN-094-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-094-S1-G3"
@@ -6578,14 +7058,14 @@
     "branches": [
       {
         "id": "NIN-094-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-094-S2-G3"
       },
       {
         "id": "NIN-094-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-094-S2-G3"
@@ -6701,14 +7181,14 @@
     "branches": [
       {
         "id": "NIN-096-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-096-S1-G3"
       },
       {
         "id": "NIN-096-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-096-S1-G3"
@@ -6730,26 +7210,56 @@
   },
   {
     "skill_id": "NIN-096-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-096-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-096-S3-G3"
+      },
+      {
+        "id": "NIN-096-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-096-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-096-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-096-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-096-S4-G3"
+      },
+      {
+        "id": "NIN-096-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-096-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -6764,14 +7274,14 @@
     "branches": [
       {
         "id": "NIN-096-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-096-S5-G3"
       },
       {
         "id": "NIN-096-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-096-S5-G3"
@@ -6971,14 +7481,14 @@
     "branches": [
       {
         "id": "NIN-100-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-100-S1-G3"
       },
       {
         "id": "NIN-100-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-100-S1-G3"
@@ -7000,14 +7510,29 @@
   },
   {
     "skill_id": "NIN-100-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-100-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-100-S3-G3"
+      },
+      {
+        "id": "NIN-100-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-100-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -7046,14 +7571,14 @@
     "branches": [
       {
         "id": "NIN-101-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-101-S1-G3"
       },
       {
         "id": "NIN-101-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-101-S1-G3"
@@ -7073,14 +7598,14 @@
     "branches": [
       {
         "id": "NIN-101-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-101-S2-G3"
       },
       {
         "id": "NIN-101-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-101-S2-G3"
@@ -7090,26 +7615,56 @@
   },
   {
     "skill_id": "NIN-101-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-101-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-101-S3-G3"
+      },
+      {
+        "id": "NIN-101-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-101-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-101-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-101-S4-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-101-S4-G3"
+      },
+      {
+        "id": "NIN-101-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-101-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -7268,14 +7823,14 @@
     "branches": [
       {
         "id": "NIN-104-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-104-S2-G3"
       },
       {
         "id": "NIN-104-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-104-S2-G3"
@@ -7391,14 +7946,14 @@
     "branches": [
       {
         "id": "NIN-106-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-106-S1-G3"
       },
       {
         "id": "NIN-106-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-106-S1-G3"
@@ -7432,14 +7987,29 @@
   },
   {
     "skill_id": "NIN-106-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-106-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-106-S4-G3"
+      },
+      {
+        "id": "NIN-106-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-106-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -7454,14 +8024,14 @@
     "branches": [
       {
         "id": "NIN-106-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-106-S5-G3"
       },
       {
         "id": "NIN-106-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-106-S5-G3"
@@ -7661,14 +8231,14 @@
     "branches": [
       {
         "id": "NIN-110-S1-B1",
-        "name_vi": "trị liệu",
+        "name_vi": "Trị liệu",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-110-S1-G3"
       },
       {
         "id": "NIN-110-S1-B2",
-        "name_vi": "nhiều mục tiêu",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-110-S1-G3"
@@ -7688,14 +8258,14 @@
     "branches": [
       {
         "id": "NIN-110-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-110-S2-G3"
       },
       {
         "id": "NIN-110-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-110-S2-G3"
@@ -7705,26 +8275,56 @@
   },
   {
     "skill_id": "NIN-110-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-110-S3-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-110-S3-G3"
+      },
+      {
+        "id": "NIN-110-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-110-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-110-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-110-S4-B1",
+        "name_vi": "Trị liệu",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-110-S4-G3"
+      },
+      {
+        "id": "NIN-110-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-110-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -7763,14 +8363,14 @@
     "branches": [
       {
         "id": "NIN-111-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-111-S2-G3"
       },
       {
         "id": "NIN-111-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-111-S2-G3"
@@ -7780,14 +8380,29 @@
   },
   {
     "skill_id": "NIN-111-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-111-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-111-S3-G3"
+      },
+      {
+        "id": "NIN-111-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-111-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -7814,14 +8429,14 @@
     "branches": [
       {
         "id": "NIN-111-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-111-S5-G3"
       },
       {
         "id": "NIN-111-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-111-S5-G3"
@@ -7841,14 +8456,14 @@
     "branches": [
       {
         "id": "NIN-112-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-112-S1-G3"
       },
       {
         "id": "NIN-112-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-112-S1-G3"
@@ -7904,14 +8519,14 @@
     "branches": [
       {
         "id": "NIN-112-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-112-S5-G3"
       },
       {
         "id": "NIN-112-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-112-S5-G3"
@@ -7943,14 +8558,14 @@
     "branches": [
       {
         "id": "NIN-113-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-113-S2-G3"
       },
       {
         "id": "NIN-113-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-113-S2-G3"
@@ -7972,14 +8587,29 @@
   },
   {
     "skill_id": "NIN-113-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-113-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-113-S4-G3"
+      },
+      {
+        "id": "NIN-113-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-113-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8138,14 +8768,14 @@
     "branches": [
       {
         "id": "NIN-116-S2-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-116-S2-G3"
       },
       {
         "id": "NIN-116-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-116-S2-G3"
@@ -8155,14 +8785,29 @@
   },
   {
     "skill_id": "NIN-116-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-116-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-116-S3-G3"
+      },
+      {
+        "id": "NIN-116-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-116-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8441,14 +9086,14 @@
     "branches": [
       {
         "id": "NIN-121-S1-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-121-S1-G3"
       },
       {
         "id": "NIN-121-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-121-S1-G3"
@@ -8468,14 +9113,14 @@
     "branches": [
       {
         "id": "NIN-121-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-121-S2-G3"
       },
       {
         "id": "NIN-121-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-121-S2-G3"
@@ -8485,26 +9130,56 @@
   },
   {
     "skill_id": "NIN-121-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-121-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-121-S3-G3"
+      },
+      {
+        "id": "NIN-121-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-121-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-121-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-121-S4-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-121-S4-G3"
+      },
+      {
+        "id": "NIN-121-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-121-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8519,14 +9194,14 @@
     "branches": [
       {
         "id": "NIN-121-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-121-S5-G3"
       },
       {
         "id": "NIN-121-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-121-S5-G3"
@@ -8560,14 +9235,29 @@
   },
   {
     "skill_id": "NIN-122-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-122-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-122-S3-G3"
+      },
+      {
+        "id": "NIN-122-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-122-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8618,14 +9308,14 @@
     "branches": [
       {
         "id": "NIN-123-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-123-S2-G3"
       },
       {
         "id": "NIN-123-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-123-S2-G3"
@@ -8635,26 +9325,56 @@
   },
   {
     "skill_id": "NIN-123-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-123-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-123-S3-G3"
+      },
+      {
+        "id": "NIN-123-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-123-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-123-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-123-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-123-S4-G3"
+      },
+      {
+        "id": "NIN-123-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-123-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8669,14 +9389,14 @@
     "branches": [
       {
         "id": "NIN-123-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-123-S5-G3"
       },
       {
         "id": "NIN-123-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-123-S5-G3"
@@ -8710,14 +9430,29 @@
   },
   {
     "skill_id": "NIN-124-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-124-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-124-S3-G3"
+      },
+      {
+        "id": "NIN-124-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-124-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8770,14 +9505,29 @@
   },
   {
     "skill_id": "NIN-125-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-125-S3-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-125-S3-G3"
+      },
+      {
+        "id": "NIN-125-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-125-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8830,14 +9580,29 @@
   },
   {
     "skill_id": "NIN-126-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-126-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-126-S3-G3"
+      },
+      {
+        "id": "NIN-126-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-126-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8876,14 +9641,14 @@
     "branches": [
       {
         "id": "NIN-127-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-127-S1-G3"
       },
       {
         "id": "NIN-127-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-127-S1-G3"
@@ -8905,14 +9670,29 @@
   },
   {
     "skill_id": "NIN-127-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-127-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-127-S3-G3"
+      },
+      {
+        "id": "NIN-127-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-127-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -8951,14 +9731,14 @@
     "branches": [
       {
         "id": "NIN-128-S1-B1",
-        "name_vi": "trị liệu",
+        "name_vi": "Trị liệu",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-128-S1-G3"
       },
       {
         "id": "NIN-128-S1-B2",
-        "name_vi": "nhiều mục tiêu",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-128-S1-G3"
@@ -8980,14 +9760,29 @@
   },
   {
     "skill_id": "NIN-128-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-128-S3-B1",
+        "name_vi": "Trị liệu",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-128-S3-G3"
+      },
+      {
+        "id": "NIN-128-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-128-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -9386,14 +10181,14 @@
     "branches": [
       {
         "id": "NIN-135-S1-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-135-S1-G3"
       },
       {
         "id": "NIN-135-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-135-S1-G3"
@@ -9415,14 +10210,29 @@
   },
   {
     "skill_id": "NIN-135-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-135-S3-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-135-S3-G3"
+      },
+      {
+        "id": "NIN-135-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-135-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -9461,14 +10271,14 @@
     "branches": [
       {
         "id": "NIN-136-S1-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-136-S1-G3"
       },
       {
         "id": "NIN-136-S1-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-136-S1-G3"
@@ -9490,14 +10300,29 @@
   },
   {
     "skill_id": "NIN-136-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-136-S3-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-136-S3-G3"
+      },
+      {
+        "id": "NIN-136-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-136-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -9788,14 +10613,14 @@
     "branches": [
       {
         "id": "NIN-141-S2-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-141-S2-G3"
       },
       {
         "id": "NIN-141-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-141-S2-G3"
@@ -9817,14 +10642,29 @@
   },
   {
     "skill_id": "NIN-141-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-141-S4-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-141-S4-G3"
+      },
+      {
+        "id": "NIN-141-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-141-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -9863,14 +10703,14 @@
     "branches": [
       {
         "id": "NIN-142-S2-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-142-S2-G3"
       },
       {
         "id": "NIN-142-S2-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-142-S2-G3"
@@ -9880,26 +10720,56 @@
   },
   {
     "skill_id": "NIN-142-S3",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-142-S3-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-142-S3-G3"
+      },
+      {
+        "id": "NIN-142-S3-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-142-S3-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-142-S4",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-142-S4-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-142-S4-G3"
+      },
+      {
+        "id": "NIN-142-S4-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-142-S4-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -9914,14 +10784,14 @@
     "branches": [
       {
         "id": "NIN-142-S5-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-142-S5-G3"
       },
       {
         "id": "NIN-142-S5-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-142-S5-G3"
@@ -10051,18 +10921,6 @@
   },
   {
     "skill_id": "NIN-001-S6",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-001-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -10072,20 +10930,32 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-001-S7-B1",
-        "name_vi": "uy lực",
+        "id": "NIN-001-S6-B1",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-001-S7-G3"
+        "exclusive_group": "NIN-001-S6-G3"
       },
       {
-        "id": "NIN-001-S7-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-001-S6-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-001-S7-G3"
+        "exclusive_group": "NIN-001-S6-G3"
       }
     ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-001-S7",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10100,14 +10970,14 @@
     "branches": [
       {
         "id": "NIN-002-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-002-S6-G3"
       },
       {
         "id": "NIN-002-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-002-S6-G3"
@@ -10117,29 +10987,14 @@
   },
   {
     "skill_id": "NIN-002-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-002-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-002-S7-G3"
-      },
-      {
-        "id": "NIN-002-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-002-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10178,14 +11033,14 @@
     "branches": [
       {
         "id": "NIN-004-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-004-S6-G3"
       },
       {
         "id": "NIN-004-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-004-S6-G3"
@@ -10253,14 +11108,14 @@
     "branches": [
       {
         "id": "NIN-006-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-006-S7-G3"
       },
       {
         "id": "NIN-006-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-006-S7-G3"
@@ -10342,14 +11197,29 @@
   },
   {
     "skill_id": "NIN-010-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-010-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-010-S6-G3"
+      },
+      {
+        "id": "NIN-010-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-010-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -10414,6 +11284,33 @@
   },
   {
     "skill_id": "NIN-013-S6",
+    "path_type": "branch",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [
+      {
+        "id": "NIN-013-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-013-S6-G3"
+      },
+      {
+        "id": "NIN-013-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-013-S6-G3"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-013-S7",
     "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -10425,57 +11322,15 @@
     "status": "PROPOSED"
   },
   {
-    "skill_id": "NIN-013-S7",
-    "path_type": "branch",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-013-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-013-S7-G3"
-      },
-      {
-        "id": "NIN-013-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-013-S7-G3"
-      }
-    ],
-    "status": "PROPOSED"
-  },
-  {
     "skill_id": "NIN-014-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-014-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-014-S6-G3"
-      },
-      {
-        "id": "NIN-014-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-014-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10504,56 +11359,26 @@
   },
   {
     "skill_id": "NIN-015-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-015-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-015-S7-G3"
-      },
-      {
-        "id": "NIN-015-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-015-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-016-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-016-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-016-S6-G3"
-      },
-      {
-        "id": "NIN-016-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-016-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10582,14 +11407,29 @@
   },
   {
     "skill_id": "NIN-017-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-017-S7-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-017-S7-G3"
+      },
+      {
+        "id": "NIN-017-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-017-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -10618,29 +11458,14 @@
   },
   {
     "skill_id": "NIN-019-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-019-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-019-S6-G3"
-      },
-      {
-        "id": "NIN-019-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-019-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10657,6 +11482,33 @@
   },
   {
     "skill_id": "NIN-020-S6",
+    "path_type": "branch",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [
+      {
+        "id": "NIN-020-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-020-S6-G3"
+      },
+      {
+        "id": "NIN-020-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-020-S6-G3"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-020-S7",
     "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -10668,57 +11520,15 @@
     "status": "PROPOSED"
   },
   {
-    "skill_id": "NIN-020-S7",
-    "path_type": "branch",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-020-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-020-S7-G3"
-      },
-      {
-        "id": "NIN-020-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-020-S7-G3"
-      }
-    ],
-    "status": "PROPOSED"
-  },
-  {
     "skill_id": "NIN-021-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-021-S6-B1",
-        "name_vi": "trị liệu",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-021-S6-G3"
-      },
-      {
-        "id": "NIN-021-S6-B2",
-        "name_vi": "nhiều mục tiêu",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-021-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10793,14 +11603,14 @@
     "branches": [
       {
         "id": "NIN-024-S6-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-024-S6-G3"
       },
       {
         "id": "NIN-024-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-024-S6-G3"
@@ -10810,29 +11620,14 @@
   },
   {
     "skill_id": "NIN-024-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-024-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-024-S7-G3"
-      },
-      {
-        "id": "NIN-024-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-024-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10849,14 +11644,29 @@
   },
   {
     "skill_id": "NIN-025-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-025-S7-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-025-S7-G3"
+      },
+      {
+        "id": "NIN-025-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-025-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -10897,6 +11707,18 @@
   },
   {
     "skill_id": "NIN-027-S7",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-028-S6",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -10906,32 +11728,20 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-027-S7-B1",
-        "name_vi": "uy lực",
+        "id": "NIN-028-S6-B1",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-027-S7-G3"
+        "exclusive_group": "NIN-028-S6-G3"
       },
       {
-        "id": "NIN-027-S7-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-028-S6-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-027-S7-G3"
+        "exclusive_group": "NIN-028-S6-G3"
       }
     ],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-028-S6",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -10946,14 +11756,14 @@
     "branches": [
       {
         "id": "NIN-028-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-028-S7-G3"
       },
       {
         "id": "NIN-028-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-028-S7-G3"
@@ -11011,14 +11821,29 @@
   },
   {
     "skill_id": "NIN-031-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-031-S6-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-031-S6-G3"
+      },
+      {
+        "id": "NIN-031-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-031-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -11165,14 +11990,14 @@
     "branches": [
       {
         "id": "NIN-037-S6-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-037-S6-G3"
       },
       {
         "id": "NIN-037-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-037-S6-G3"
@@ -11192,14 +12017,14 @@
     "branches": [
       {
         "id": "NIN-037-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-037-S7-G3"
       },
       {
         "id": "NIN-037-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-037-S7-G3"
@@ -11291,14 +12116,14 @@
     "branches": [
       {
         "id": "NIN-041-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-041-S6-G3"
       },
       {
         "id": "NIN-041-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-041-S6-G3"
@@ -11330,14 +12155,14 @@
     "branches": [
       {
         "id": "NIN-042-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-042-S6-G3"
       },
       {
         "id": "NIN-042-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-042-S6-G3"
@@ -11587,56 +12412,26 @@
   },
   {
     "skill_id": "NIN-052-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-052-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-052-S7-G3"
-      },
-      {
-        "id": "NIN-052-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-052-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-053-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-053-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-053-S6-G3"
-      },
-      {
-        "id": "NIN-053-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-053-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -11653,14 +12448,29 @@
   },
   {
     "skill_id": "NIN-054-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-054-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-054-S6-G3"
+      },
+      {
+        "id": "NIN-054-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-054-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -11687,14 +12497,14 @@
     "branches": [
       {
         "id": "NIN-055-S6-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-055-S6-G3"
       },
       {
         "id": "NIN-055-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-055-S6-G3"
@@ -11714,14 +12524,14 @@
     "branches": [
       {
         "id": "NIN-055-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-055-S7-G3"
       },
       {
         "id": "NIN-055-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-055-S7-G3"
@@ -11743,29 +12553,14 @@
   },
   {
     "skill_id": "NIN-056-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-056-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-056-S7-G3"
-      },
-      {
-        "id": "NIN-056-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-056-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -11828,14 +12623,14 @@
     "branches": [
       {
         "id": "NIN-059-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-059-S6-G3"
       },
       {
         "id": "NIN-059-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-059-S6-G3"
@@ -11855,14 +12650,14 @@
     "branches": [
       {
         "id": "NIN-059-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-059-S7-G3"
       },
       {
         "id": "NIN-059-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-059-S7-G3"
@@ -11882,14 +12677,14 @@
     "branches": [
       {
         "id": "NIN-060-S6-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-060-S6-G3"
       },
       {
         "id": "NIN-060-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-060-S6-G3"
@@ -11909,14 +12704,14 @@
     "branches": [
       {
         "id": "NIN-060-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-060-S7-G3"
       },
       {
         "id": "NIN-060-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-060-S7-G3"
@@ -11926,56 +12721,26 @@
   },
   {
     "skill_id": "NIN-061-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-061-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-061-S6-G3"
-      },
-      {
-        "id": "NIN-061-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-061-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
     "skill_id": "NIN-061-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-061-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-061-S7-G3"
-      },
-      {
-        "id": "NIN-061-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-061-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12014,14 +12779,14 @@
     "branches": [
       {
         "id": "NIN-063-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-063-S6-G3"
       },
       {
         "id": "NIN-063-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-063-S6-G3"
@@ -12067,14 +12832,29 @@
   },
   {
     "skill_id": "NIN-065-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-065-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-065-S6-G3"
+      },
+      {
+        "id": "NIN-065-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-065-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -12127,14 +12907,29 @@
   },
   {
     "skill_id": "NIN-067-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-067-S7-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-067-S7-G3"
+      },
+      {
+        "id": "NIN-067-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-067-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -12163,29 +12958,14 @@
   },
   {
     "skill_id": "NIN-069-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-069-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-069-S6-G3"
-      },
-      {
-        "id": "NIN-069-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-069-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12202,29 +12982,14 @@
   },
   {
     "skill_id": "NIN-070-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-070-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-070-S6-G3"
-      },
-      {
-        "id": "NIN-070-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-070-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12289,29 +13054,14 @@
   },
   {
     "skill_id": "NIN-073-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-073-S6-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-073-S6-G3"
-      },
-      {
-        "id": "NIN-073-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-073-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12326,14 +13076,14 @@
     "branches": [
       {
         "id": "NIN-073-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-073-S7-G3"
       },
       {
         "id": "NIN-073-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-073-S7-G3"
@@ -12343,18 +13093,6 @@
   },
   {
     "skill_id": "NIN-074-S6",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-074-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -12364,20 +13102,32 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-074-S7-B1",
-        "name_vi": "trị liệu",
+        "id": "NIN-074-S6-B1",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-074-S7-G3"
+        "exclusive_group": "NIN-074-S6-G3"
       },
       {
-        "id": "NIN-074-S7-B2",
-        "name_vi": "nhiều mục tiêu",
+        "id": "NIN-074-S6-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-074-S7-G3"
+        "exclusive_group": "NIN-074-S6-G3"
       }
     ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-074-S7",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12416,14 +13166,14 @@
     "branches": [
       {
         "id": "NIN-076-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-076-S6-G3"
       },
       {
         "id": "NIN-076-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-076-S6-G3"
@@ -12445,18 +13195,6 @@
   },
   {
     "skill_id": "NIN-077-S6",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-077-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -12466,20 +13204,32 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-077-S7-B1",
-        "name_vi": "uy lực",
+        "id": "NIN-077-S6-B1",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-077-S7-G3"
+        "exclusive_group": "NIN-077-S6-G3"
       },
       {
-        "id": "NIN-077-S7-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-077-S6-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-077-S7-G3"
+        "exclusive_group": "NIN-077-S6-G3"
       }
     ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-077-S7",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12652,14 +13402,29 @@
   },
   {
     "skill_id": "NIN-085-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-085-S6-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-085-S6-G3"
+      },
+      {
+        "id": "NIN-085-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-085-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -12688,14 +13453,29 @@
   },
   {
     "skill_id": "NIN-086-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-086-S7-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-086-S7-G3"
+      },
+      {
+        "id": "NIN-086-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-086-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -12710,14 +13490,14 @@
     "branches": [
       {
         "id": "NIN-087-S6-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-087-S6-G3"
       },
       {
         "id": "NIN-087-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-087-S6-G3"
@@ -12727,14 +13507,29 @@
   },
   {
     "skill_id": "NIN-087-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-087-S7-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-087-S7-G3"
+      },
+      {
+        "id": "NIN-087-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-087-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -12749,14 +13544,14 @@
     "branches": [
       {
         "id": "NIN-088-S6-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-088-S6-G3"
       },
       {
         "id": "NIN-088-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-088-S6-G3"
@@ -12812,14 +13607,14 @@
     "branches": [
       {
         "id": "NIN-090-S6-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-090-S6-G3"
       },
       {
         "id": "NIN-090-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-090-S6-G3"
@@ -12839,14 +13634,14 @@
     "branches": [
       {
         "id": "NIN-090-S7-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-090-S7-G3"
       },
       {
         "id": "NIN-090-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-090-S7-G3"
@@ -12856,6 +13651,18 @@
   },
   {
     "skill_id": "NIN-091-S6",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-091-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -12865,32 +13672,20 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-091-S6-B1",
-        "name_vi": "thời gian",
+        "id": "NIN-091-S7-B1",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-091-S6-G3"
+        "exclusive_group": "NIN-091-S7-G3"
       },
       {
-        "id": "NIN-091-S6-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-091-S7-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-091-S6-G3"
+        "exclusive_group": "NIN-091-S7-G3"
       }
     ],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-091-S7",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12919,18 +13714,6 @@
   },
   {
     "skill_id": "NIN-093-S6",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-093-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -12940,20 +13723,32 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-093-S7-B1",
-        "name_vi": "uy lực",
+        "id": "NIN-093-S6-B1",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-093-S7-G3"
+        "exclusive_group": "NIN-093-S6-G3"
       },
       {
-        "id": "NIN-093-S7-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-093-S6-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-093-S7-G3"
+        "exclusive_group": "NIN-093-S6-G3"
       }
     ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-093-S7",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -12968,14 +13763,14 @@
     "branches": [
       {
         "id": "NIN-094-S6-B1",
-        "name_vi": "thời gian",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-094-S6-G3"
       },
       {
         "id": "NIN-094-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-094-S6-G3"
@@ -12985,14 +13780,29 @@
   },
   {
     "skill_id": "NIN-094-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-094-S7-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-094-S7-G3"
+      },
+      {
+        "id": "NIN-094-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-094-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13031,14 +13841,14 @@
     "branches": [
       {
         "id": "NIN-096-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-096-S6-G3"
       },
       {
         "id": "NIN-096-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-096-S6-G3"
@@ -13058,14 +13868,14 @@
     "branches": [
       {
         "id": "NIN-096-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-096-S7-G3"
       },
       {
         "id": "NIN-096-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-096-S7-G3"
@@ -13075,14 +13885,29 @@
   },
   {
     "skill_id": "NIN-097-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-097-S6-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-097-S6-G3"
+      },
+      {
+        "id": "NIN-097-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-097-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13099,14 +13924,29 @@
   },
   {
     "skill_id": "NIN-098-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-098-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-098-S6-G3"
+      },
+      {
+        "id": "NIN-098-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-098-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13123,14 +13963,29 @@
   },
   {
     "skill_id": "NIN-099-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-099-S6-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-099-S6-G3"
+      },
+      {
+        "id": "NIN-099-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-099-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13157,14 +14012,14 @@
     "branches": [
       {
         "id": "NIN-100-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-100-S6-G3"
       },
       {
         "id": "NIN-100-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-100-S6-G3"
@@ -13186,29 +14041,14 @@
   },
   {
     "skill_id": "NIN-101-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-101-S6-B1",
-        "name_vi": "thời gian",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-101-S6-G3"
-      },
-      {
-        "id": "NIN-101-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-101-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -13331,14 +14171,14 @@
     "branches": [
       {
         "id": "NIN-106-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-106-S6-G3"
       },
       {
         "id": "NIN-106-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-106-S6-G3"
@@ -13348,29 +14188,14 @@
   },
   {
     "skill_id": "NIN-106-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-106-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-106-S7-G3"
-      },
-      {
-        "id": "NIN-106-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-106-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -13457,14 +14282,14 @@
     "branches": [
       {
         "id": "NIN-110-S6-B1",
-        "name_vi": "trị liệu",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-110-S6-G3"
       },
       {
         "id": "NIN-110-S6-B2",
-        "name_vi": "nhiều mục tiêu",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-110-S6-G3"
@@ -13486,18 +14311,6 @@
   },
   {
     "skill_id": "NIN-111-S6",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-111-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -13507,20 +14320,32 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-111-S7-B1",
-        "name_vi": "uy lực",
+        "id": "NIN-111-S6-B1",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-111-S7-G3"
+        "exclusive_group": "NIN-111-S6-G3"
       },
       {
-        "id": "NIN-111-S7-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-111-S6-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-111-S7-G3"
+        "exclusive_group": "NIN-111-S6-G3"
       }
     ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-111-S7",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -13535,14 +14360,14 @@
     "branches": [
       {
         "id": "NIN-112-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-112-S6-G3"
       },
       {
         "id": "NIN-112-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-112-S6-G3"
@@ -13562,14 +14387,14 @@
     "branches": [
       {
         "id": "NIN-112-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-112-S7-G3"
       },
       {
         "id": "NIN-112-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-112-S7-G3"
@@ -13663,14 +14488,29 @@
   },
   {
     "skill_id": "NIN-116-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-116-S7-B1",
+        "name_vi": "Khống chế",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-116-S7-G3"
+      },
+      {
+        "id": "NIN-116-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-116-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13723,14 +14563,29 @@
   },
   {
     "skill_id": "NIN-119-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-119-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-119-S6-G3"
+      },
+      {
+        "id": "NIN-119-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-119-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13781,14 +14636,14 @@
     "branches": [
       {
         "id": "NIN-121-S6-B1",
-        "name_vi": "độ bền",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-121-S6-G3"
       },
       {
         "id": "NIN-121-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-121-S6-G3"
@@ -13798,29 +14653,14 @@
   },
   {
     "skill_id": "NIN-121-S7",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-121-S7-B1",
-        "name_vi": "uy lực",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-121-S7-G3"
-      },
-      {
-        "id": "NIN-121-S7-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-121-S7-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -13849,18 +14689,6 @@
   },
   {
     "skill_id": "NIN-123-S6",
-    "path_type": "linear",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-123-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -13870,20 +14698,32 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-123-S7-B1",
-        "name_vi": "uy lực",
+        "id": "NIN-123-S6-B1",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-123-S7-G3"
+        "exclusive_group": "NIN-123-S6-G3"
       },
       {
-        "id": "NIN-123-S7-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-123-S6-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-123-S7-G3"
+        "exclusive_group": "NIN-123-S6-G3"
       }
     ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-123-S7",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -13900,14 +14740,29 @@
   },
   {
     "skill_id": "NIN-124-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-124-S7-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-124-S7-G3"
+      },
+      {
+        "id": "NIN-124-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-124-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13924,14 +14779,29 @@
   },
   {
     "skill_id": "NIN-125-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-125-S7-B1",
+        "name_vi": "Độ bền",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-125-S7-G3"
+      },
+      {
+        "id": "NIN-125-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-125-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -13970,14 +14840,14 @@
     "branches": [
       {
         "id": "NIN-127-S6-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Độ bền",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-127-S6-G3"
       },
       {
         "id": "NIN-127-S6-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-127-S6-G3"
@@ -13999,29 +14869,14 @@
   },
   {
     "skill_id": "NIN-128-S6",
-    "path_type": "branch",
+    "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-128-S6-B1",
-        "name_vi": "trị liệu",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-128-S6-G3"
-      },
-      {
-        "id": "NIN-128-S6-B2",
-        "name_vi": "nhiều mục tiêu",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-128-S6-G3"
-      }
-    ],
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -14182,33 +15037,6 @@
   },
   {
     "skill_id": "NIN-135-S6",
-    "path_type": "branch",
-    "grade_cap": null,
-    "grade_level_cap": 20,
-    "grade_cost_formula": "ceil(5*grade^1.45)",
-    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
-    "pity_guarantee_after_failures": 4,
-    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [
-      {
-        "id": "NIN-135-S6-B1",
-        "name_vi": "thời gian",
-        "unlock_grade": 3,
-        "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-135-S6-G3"
-      },
-      {
-        "id": "NIN-135-S6-B2",
-        "name_vi": "phạm vi",
-        "unlock_grade": 3,
-        "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-135-S6-G3"
-      }
-    ],
-    "status": "PROPOSED"
-  },
-  {
-    "skill_id": "NIN-135-S7",
     "path_type": "linear",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -14220,7 +15048,7 @@
     "status": "PROPOSED"
   },
   {
-    "skill_id": "NIN-136-S6",
+    "skill_id": "NIN-135-S7",
     "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
@@ -14230,20 +15058,32 @@
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
     "branches": [
       {
-        "id": "NIN-136-S6-B1",
-        "name_vi": "uy lực",
+        "id": "NIN-135-S7-B1",
+        "name_vi": "Khống chế",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
-        "exclusive_group": "NIN-136-S6-G3"
+        "exclusive_group": "NIN-135-S7-G3"
       },
       {
-        "id": "NIN-136-S6-B2",
-        "name_vi": "phạm vi",
+        "id": "NIN-135-S7-B2",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
-        "exclusive_group": "NIN-136-S6-G3"
+        "exclusive_group": "NIN-135-S7-G3"
       }
     ],
+    "status": "PROPOSED"
+  },
+  {
+    "skill_id": "NIN-136-S6",
+    "path_type": "linear",
+    "grade_cap": null,
+    "grade_level_cap": 20,
+    "grade_cost_formula": "ceil(5*grade^1.45)",
+    "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
+    "pity_guarantee_after_failures": 4,
+    "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
+    "branches": [],
     "status": "PROPOSED"
   },
   {
@@ -14344,14 +15184,29 @@
   },
   {
     "skill_id": "NIN-140-S7",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-140-S7-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-140-S7-G3"
+      },
+      {
+        "id": "NIN-140-S7-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-140-S7-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -14380,14 +15235,29 @@
   },
   {
     "skill_id": "NIN-142-S6",
-    "path_type": "linear",
+    "path_type": "branch",
     "grade_cap": null,
     "grade_level_cap": 20,
     "grade_cost_formula": "ceil(5*grade^1.45)",
     "success_formula": "max(0.1,0.75/(1+0.15*(grade-1)))",
     "pity_guarantee_after_failures": 4,
     "grade_effect_formula": "coefficient_base*(1+0.12*(grade-1))",
-    "branches": [],
+    "branches": [
+      {
+        "id": "NIN-142-S6-B1",
+        "name_vi": "Uy lực",
+        "unlock_grade": 3,
+        "effect": "primary_effect_1.12",
+        "exclusive_group": "NIN-142-S6-G3"
+      },
+      {
+        "id": "NIN-142-S6-B2",
+        "name_vi": "Phạm vi",
+        "unlock_grade": 3,
+        "effect": "area_or_targets_1.15",
+        "exclusive_group": "NIN-142-S6-G3"
+      }
+    ],
     "status": "PROPOSED"
   },
   {
@@ -14402,14 +15272,14 @@
     "branches": [
       {
         "id": "NIN-142-S7-B1",
-        "name_vi": "uy lực",
+        "name_vi": "Uy lực",
         "unlock_grade": 3,
         "effect": "primary_effect_1.12",
         "exclusive_group": "NIN-142-S7-G3"
       },
       {
         "id": "NIN-142-S7-B2",
-        "name_vi": "phạm vi",
+        "name_vi": "Phạm vi",
         "unlock_grade": 3,
         "effect": "area_or_targets_1.15",
         "exclusive_group": "NIN-142-S7-G3"

@@ -1,0 +1,3746 @@
+[
+  {
+    "id": "CHALLENGE-NIN-001-1",
+    "ninja_id": "NIN-001",
+    "skill_id": "NIN-001-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-001-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-001-2",
+    "ninja_id": "NIN-001",
+    "skill_id": "NIN-001-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-001-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-002-1",
+    "ninja_id": "NIN-002",
+    "skill_id": "NIN-002-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-002-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-002-2",
+    "ninja_id": "NIN-002",
+    "skill_id": "NIN-002-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-002-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-003-1",
+    "ninja_id": "NIN-003",
+    "skill_id": "NIN-003-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-003-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-003-2",
+    "ninja_id": "NIN-003",
+    "skill_id": "NIN-003-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-003-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-004-1",
+    "ninja_id": "NIN-004",
+    "skill_id": "NIN-004-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-004-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-004-2",
+    "ninja_id": "NIN-004",
+    "skill_id": "NIN-004-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-004-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-005-1",
+    "ninja_id": "NIN-005",
+    "skill_id": "NIN-005-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-005-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-005-2",
+    "ninja_id": "NIN-005",
+    "skill_id": "NIN-005-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-005-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-006-1",
+    "ninja_id": "NIN-006",
+    "skill_id": "NIN-006-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-006-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-006-2",
+    "ninja_id": "NIN-006",
+    "skill_id": "NIN-006-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-006-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-007-1",
+    "ninja_id": "NIN-007",
+    "skill_id": "NIN-007-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-007-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-007-2",
+    "ninja_id": "NIN-007",
+    "skill_id": "NIN-007-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-007-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-008-1",
+    "ninja_id": "NIN-008",
+    "skill_id": "NIN-008-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-008-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-008-2",
+    "ninja_id": "NIN-008",
+    "skill_id": "NIN-008-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-008-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-009-1",
+    "ninja_id": "NIN-009",
+    "skill_id": "NIN-009-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-009-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-009-2",
+    "ninja_id": "NIN-009",
+    "skill_id": "NIN-009-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-009-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-010-1",
+    "ninja_id": "NIN-010",
+    "skill_id": "NIN-010-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-010-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-010-2",
+    "ninja_id": "NIN-010",
+    "skill_id": "NIN-010-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-010-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-011-1",
+    "ninja_id": "NIN-011",
+    "skill_id": "NIN-011-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-011-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-011-2",
+    "ninja_id": "NIN-011",
+    "skill_id": "NIN-011-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-011-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-012-1",
+    "ninja_id": "NIN-012",
+    "skill_id": "NIN-012-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-012-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-012-2",
+    "ninja_id": "NIN-012",
+    "skill_id": "NIN-012-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-012-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-013-1",
+    "ninja_id": "NIN-013",
+    "skill_id": "NIN-013-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-013-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-013-2",
+    "ninja_id": "NIN-013",
+    "skill_id": "NIN-013-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-013-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-014-1",
+    "ninja_id": "NIN-014",
+    "skill_id": "NIN-014-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-014-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-014-2",
+    "ninja_id": "NIN-014",
+    "skill_id": "NIN-014-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-014-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-015-1",
+    "ninja_id": "NIN-015",
+    "skill_id": "NIN-015-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-015-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-015-2",
+    "ninja_id": "NIN-015",
+    "skill_id": "NIN-015-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-015-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-016-1",
+    "ninja_id": "NIN-016",
+    "skill_id": "NIN-016-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-016-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-016-2",
+    "ninja_id": "NIN-016",
+    "skill_id": "NIN-016-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-016-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-017-1",
+    "ninja_id": "NIN-017",
+    "skill_id": "NIN-017-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-017-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-017-2",
+    "ninja_id": "NIN-017",
+    "skill_id": "NIN-017-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-017-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-018-1",
+    "ninja_id": "NIN-018",
+    "skill_id": "NIN-018-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-018-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-018-2",
+    "ninja_id": "NIN-018",
+    "skill_id": "NIN-018-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-018-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-019-1",
+    "ninja_id": "NIN-019",
+    "skill_id": "NIN-019-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-019-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-019-2",
+    "ninja_id": "NIN-019",
+    "skill_id": "NIN-019-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-019-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-020-1",
+    "ninja_id": "NIN-020",
+    "skill_id": "NIN-020-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-020-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-020-2",
+    "ninja_id": "NIN-020",
+    "skill_id": "NIN-020-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-020-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-021-1",
+    "ninja_id": "NIN-021",
+    "skill_id": "NIN-021-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-021-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-021-2",
+    "ninja_id": "NIN-021",
+    "skill_id": "NIN-021-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-021-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-022-1",
+    "ninja_id": "NIN-022",
+    "skill_id": "NIN-022-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-022-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-022-2",
+    "ninja_id": "NIN-022",
+    "skill_id": "NIN-022-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-022-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-023-1",
+    "ninja_id": "NIN-023",
+    "skill_id": "NIN-023-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-023-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-023-2",
+    "ninja_id": "NIN-023",
+    "skill_id": "NIN-023-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-023-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-024-1",
+    "ninja_id": "NIN-024",
+    "skill_id": "NIN-024-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-024-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-024-2",
+    "ninja_id": "NIN-024",
+    "skill_id": "NIN-024-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-024-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-025-1",
+    "ninja_id": "NIN-025",
+    "skill_id": "NIN-025-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-025-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-025-2",
+    "ninja_id": "NIN-025",
+    "skill_id": "NIN-025-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-025-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-026-1",
+    "ninja_id": "NIN-026",
+    "skill_id": "NIN-026-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-026-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-026-2",
+    "ninja_id": "NIN-026",
+    "skill_id": "NIN-026-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-026-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-027-1",
+    "ninja_id": "NIN-027",
+    "skill_id": "NIN-027-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-027-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-027-2",
+    "ninja_id": "NIN-027",
+    "skill_id": "NIN-027-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-027-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-028-1",
+    "ninja_id": "NIN-028",
+    "skill_id": "NIN-028-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-028-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-028-2",
+    "ninja_id": "NIN-028",
+    "skill_id": "NIN-028-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-028-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-029-1",
+    "ninja_id": "NIN-029",
+    "skill_id": "NIN-029-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-029-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-029-2",
+    "ninja_id": "NIN-029",
+    "skill_id": "NIN-029-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-029-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-030-1",
+    "ninja_id": "NIN-030",
+    "skill_id": "NIN-030-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-030-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-030-2",
+    "ninja_id": "NIN-030",
+    "skill_id": "NIN-030-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-030-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-031-1",
+    "ninja_id": "NIN-031",
+    "skill_id": "NIN-031-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-031-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-031-2",
+    "ninja_id": "NIN-031",
+    "skill_id": "NIN-031-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-031-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-032-1",
+    "ninja_id": "NIN-032",
+    "skill_id": "NIN-032-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-032-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-032-2",
+    "ninja_id": "NIN-032",
+    "skill_id": "NIN-032-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-032-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-033-1",
+    "ninja_id": "NIN-033",
+    "skill_id": "NIN-033-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-033-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-033-2",
+    "ninja_id": "NIN-033",
+    "skill_id": "NIN-033-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-033-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-034-1",
+    "ninja_id": "NIN-034",
+    "skill_id": "NIN-034-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-034-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-034-2",
+    "ninja_id": "NIN-034",
+    "skill_id": "NIN-034-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-034-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-035-1",
+    "ninja_id": "NIN-035",
+    "skill_id": "NIN-035-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-035-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-035-2",
+    "ninja_id": "NIN-035",
+    "skill_id": "NIN-035-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-035-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-036-1",
+    "ninja_id": "NIN-036",
+    "skill_id": "NIN-036-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-036-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-036-2",
+    "ninja_id": "NIN-036",
+    "skill_id": "NIN-036-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-036-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-037-1",
+    "ninja_id": "NIN-037",
+    "skill_id": "NIN-037-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-037-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-037-2",
+    "ninja_id": "NIN-037",
+    "skill_id": "NIN-037-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-037-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-038-1",
+    "ninja_id": "NIN-038",
+    "skill_id": "NIN-038-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-038-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-038-2",
+    "ninja_id": "NIN-038",
+    "skill_id": "NIN-038-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-038-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-039-1",
+    "ninja_id": "NIN-039",
+    "skill_id": "NIN-039-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-039-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-039-2",
+    "ninja_id": "NIN-039",
+    "skill_id": "NIN-039-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-039-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-040-1",
+    "ninja_id": "NIN-040",
+    "skill_id": "NIN-040-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-040-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-040-2",
+    "ninja_id": "NIN-040",
+    "skill_id": "NIN-040-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-040-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-041-1",
+    "ninja_id": "NIN-041",
+    "skill_id": "NIN-041-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-041-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-041-2",
+    "ninja_id": "NIN-041",
+    "skill_id": "NIN-041-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-041-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-042-1",
+    "ninja_id": "NIN-042",
+    "skill_id": "NIN-042-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-042-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-042-2",
+    "ninja_id": "NIN-042",
+    "skill_id": "NIN-042-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-042-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-043-1",
+    "ninja_id": "NIN-043",
+    "skill_id": "NIN-043-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-043-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-043-2",
+    "ninja_id": "NIN-043",
+    "skill_id": "NIN-043-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-043-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-044-1",
+    "ninja_id": "NIN-044",
+    "skill_id": "NIN-044-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-044-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-044-2",
+    "ninja_id": "NIN-044",
+    "skill_id": "NIN-044-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-044-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-045-1",
+    "ninja_id": "NIN-045",
+    "skill_id": "NIN-045-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-045-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-045-2",
+    "ninja_id": "NIN-045",
+    "skill_id": "NIN-045-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-045-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-046-1",
+    "ninja_id": "NIN-046",
+    "skill_id": "NIN-046-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-046-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-046-2",
+    "ninja_id": "NIN-046",
+    "skill_id": "NIN-046-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-046-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-047-1",
+    "ninja_id": "NIN-047",
+    "skill_id": "NIN-047-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-047-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-047-2",
+    "ninja_id": "NIN-047",
+    "skill_id": "NIN-047-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-047-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-048-1",
+    "ninja_id": "NIN-048",
+    "skill_id": "NIN-048-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-048-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-048-2",
+    "ninja_id": "NIN-048",
+    "skill_id": "NIN-048-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-048-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-049-1",
+    "ninja_id": "NIN-049",
+    "skill_id": "NIN-049-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-049-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-049-2",
+    "ninja_id": "NIN-049",
+    "skill_id": "NIN-049-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-049-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-050-1",
+    "ninja_id": "NIN-050",
+    "skill_id": "NIN-050-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-050-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-050-2",
+    "ninja_id": "NIN-050",
+    "skill_id": "NIN-050-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-050-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-051-1",
+    "ninja_id": "NIN-051",
+    "skill_id": "NIN-051-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-051-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-051-2",
+    "ninja_id": "NIN-051",
+    "skill_id": "NIN-051-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-051-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-052-1",
+    "ninja_id": "NIN-052",
+    "skill_id": "NIN-052-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-052-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-052-2",
+    "ninja_id": "NIN-052",
+    "skill_id": "NIN-052-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-052-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-053-1",
+    "ninja_id": "NIN-053",
+    "skill_id": "NIN-053-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-053-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-053-2",
+    "ninja_id": "NIN-053",
+    "skill_id": "NIN-053-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-053-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-054-1",
+    "ninja_id": "NIN-054",
+    "skill_id": "NIN-054-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-054-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-054-2",
+    "ninja_id": "NIN-054",
+    "skill_id": "NIN-054-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-054-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-055-1",
+    "ninja_id": "NIN-055",
+    "skill_id": "NIN-055-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-055-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-055-2",
+    "ninja_id": "NIN-055",
+    "skill_id": "NIN-055-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-055-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-056-1",
+    "ninja_id": "NIN-056",
+    "skill_id": "NIN-056-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-056-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-056-2",
+    "ninja_id": "NIN-056",
+    "skill_id": "NIN-056-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-056-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-057-1",
+    "ninja_id": "NIN-057",
+    "skill_id": "NIN-057-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-057-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-057-2",
+    "ninja_id": "NIN-057",
+    "skill_id": "NIN-057-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-057-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-058-1",
+    "ninja_id": "NIN-058",
+    "skill_id": "NIN-058-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-058-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-058-2",
+    "ninja_id": "NIN-058",
+    "skill_id": "NIN-058-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-058-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-059-1",
+    "ninja_id": "NIN-059",
+    "skill_id": "NIN-059-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-059-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-059-2",
+    "ninja_id": "NIN-059",
+    "skill_id": "NIN-059-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-059-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-060-1",
+    "ninja_id": "NIN-060",
+    "skill_id": "NIN-060-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-060-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-060-2",
+    "ninja_id": "NIN-060",
+    "skill_id": "NIN-060-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-060-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-061-1",
+    "ninja_id": "NIN-061",
+    "skill_id": "NIN-061-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-061-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-061-2",
+    "ninja_id": "NIN-061",
+    "skill_id": "NIN-061-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-061-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-062-1",
+    "ninja_id": "NIN-062",
+    "skill_id": "NIN-062-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-062-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-062-2",
+    "ninja_id": "NIN-062",
+    "skill_id": "NIN-062-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-062-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-063-1",
+    "ninja_id": "NIN-063",
+    "skill_id": "NIN-063-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-063-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-063-2",
+    "ninja_id": "NIN-063",
+    "skill_id": "NIN-063-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-063-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-064-1",
+    "ninja_id": "NIN-064",
+    "skill_id": "NIN-064-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-064-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-064-2",
+    "ninja_id": "NIN-064",
+    "skill_id": "NIN-064-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-064-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-065-1",
+    "ninja_id": "NIN-065",
+    "skill_id": "NIN-065-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-065-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-065-2",
+    "ninja_id": "NIN-065",
+    "skill_id": "NIN-065-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-065-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-066-1",
+    "ninja_id": "NIN-066",
+    "skill_id": "NIN-066-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-066-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-066-2",
+    "ninja_id": "NIN-066",
+    "skill_id": "NIN-066-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-066-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-067-1",
+    "ninja_id": "NIN-067",
+    "skill_id": "NIN-067-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-067-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-067-2",
+    "ninja_id": "NIN-067",
+    "skill_id": "NIN-067-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-067-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-068-1",
+    "ninja_id": "NIN-068",
+    "skill_id": "NIN-068-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-068-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-068-2",
+    "ninja_id": "NIN-068",
+    "skill_id": "NIN-068-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-068-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-069-1",
+    "ninja_id": "NIN-069",
+    "skill_id": "NIN-069-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-069-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-069-2",
+    "ninja_id": "NIN-069",
+    "skill_id": "NIN-069-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-069-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-070-1",
+    "ninja_id": "NIN-070",
+    "skill_id": "NIN-070-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-070-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-070-2",
+    "ninja_id": "NIN-070",
+    "skill_id": "NIN-070-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-070-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-071-1",
+    "ninja_id": "NIN-071",
+    "skill_id": "NIN-071-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-071-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-071-2",
+    "ninja_id": "NIN-071",
+    "skill_id": "NIN-071-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-071-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-072-1",
+    "ninja_id": "NIN-072",
+    "skill_id": "NIN-072-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-072-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-072-2",
+    "ninja_id": "NIN-072",
+    "skill_id": "NIN-072-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-072-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-073-1",
+    "ninja_id": "NIN-073",
+    "skill_id": "NIN-073-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-073-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-073-2",
+    "ninja_id": "NIN-073",
+    "skill_id": "NIN-073-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-073-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-074-1",
+    "ninja_id": "NIN-074",
+    "skill_id": "NIN-074-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-074-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-074-2",
+    "ninja_id": "NIN-074",
+    "skill_id": "NIN-074-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-074-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-075-1",
+    "ninja_id": "NIN-075",
+    "skill_id": "NIN-075-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-075-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-075-2",
+    "ninja_id": "NIN-075",
+    "skill_id": "NIN-075-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-075-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-076-1",
+    "ninja_id": "NIN-076",
+    "skill_id": "NIN-076-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-076-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-076-2",
+    "ninja_id": "NIN-076",
+    "skill_id": "NIN-076-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-076-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-077-1",
+    "ninja_id": "NIN-077",
+    "skill_id": "NIN-077-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-077-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-077-2",
+    "ninja_id": "NIN-077",
+    "skill_id": "NIN-077-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-077-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-078-1",
+    "ninja_id": "NIN-078",
+    "skill_id": "NIN-078-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-078-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-078-2",
+    "ninja_id": "NIN-078",
+    "skill_id": "NIN-078-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-078-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-079-1",
+    "ninja_id": "NIN-079",
+    "skill_id": "NIN-079-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-079-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-079-2",
+    "ninja_id": "NIN-079",
+    "skill_id": "NIN-079-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-079-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-080-1",
+    "ninja_id": "NIN-080",
+    "skill_id": "NIN-080-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-080-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-080-2",
+    "ninja_id": "NIN-080",
+    "skill_id": "NIN-080-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-080-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-081-1",
+    "ninja_id": "NIN-081",
+    "skill_id": "NIN-081-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-081-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-081-2",
+    "ninja_id": "NIN-081",
+    "skill_id": "NIN-081-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-081-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-082-1",
+    "ninja_id": "NIN-082",
+    "skill_id": "NIN-082-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-082-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-082-2",
+    "ninja_id": "NIN-082",
+    "skill_id": "NIN-082-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-082-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-083-1",
+    "ninja_id": "NIN-083",
+    "skill_id": "NIN-083-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-083-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-083-2",
+    "ninja_id": "NIN-083",
+    "skill_id": "NIN-083-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-083-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-084-1",
+    "ninja_id": "NIN-084",
+    "skill_id": "NIN-084-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-084-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-084-2",
+    "ninja_id": "NIN-084",
+    "skill_id": "NIN-084-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-084-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-085-1",
+    "ninja_id": "NIN-085",
+    "skill_id": "NIN-085-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-085-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-085-2",
+    "ninja_id": "NIN-085",
+    "skill_id": "NIN-085-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-085-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-086-1",
+    "ninja_id": "NIN-086",
+    "skill_id": "NIN-086-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-086-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-086-2",
+    "ninja_id": "NIN-086",
+    "skill_id": "NIN-086-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-086-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-087-1",
+    "ninja_id": "NIN-087",
+    "skill_id": "NIN-087-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-087-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-087-2",
+    "ninja_id": "NIN-087",
+    "skill_id": "NIN-087-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-087-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-088-1",
+    "ninja_id": "NIN-088",
+    "skill_id": "NIN-088-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-088-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-088-2",
+    "ninja_id": "NIN-088",
+    "skill_id": "NIN-088-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-088-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-089-1",
+    "ninja_id": "NIN-089",
+    "skill_id": "NIN-089-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-089-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-089-2",
+    "ninja_id": "NIN-089",
+    "skill_id": "NIN-089-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-089-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-090-1",
+    "ninja_id": "NIN-090",
+    "skill_id": "NIN-090-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-090-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-090-2",
+    "ninja_id": "NIN-090",
+    "skill_id": "NIN-090-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-090-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-091-1",
+    "ninja_id": "NIN-091",
+    "skill_id": "NIN-091-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-091-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-091-2",
+    "ninja_id": "NIN-091",
+    "skill_id": "NIN-091-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-091-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-092-1",
+    "ninja_id": "NIN-092",
+    "skill_id": "NIN-092-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-092-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-092-2",
+    "ninja_id": "NIN-092",
+    "skill_id": "NIN-092-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-092-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-093-1",
+    "ninja_id": "NIN-093",
+    "skill_id": "NIN-093-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-093-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-093-2",
+    "ninja_id": "NIN-093",
+    "skill_id": "NIN-093-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-093-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-094-1",
+    "ninja_id": "NIN-094",
+    "skill_id": "NIN-094-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-094-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-094-2",
+    "ninja_id": "NIN-094",
+    "skill_id": "NIN-094-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-094-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-095-1",
+    "ninja_id": "NIN-095",
+    "skill_id": "NIN-095-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-095-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-095-2",
+    "ninja_id": "NIN-095",
+    "skill_id": "NIN-095-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-095-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-096-1",
+    "ninja_id": "NIN-096",
+    "skill_id": "NIN-096-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-096-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-096-2",
+    "ninja_id": "NIN-096",
+    "skill_id": "NIN-096-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-096-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-097-1",
+    "ninja_id": "NIN-097",
+    "skill_id": "NIN-097-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-097-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-097-2",
+    "ninja_id": "NIN-097",
+    "skill_id": "NIN-097-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-097-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-098-1",
+    "ninja_id": "NIN-098",
+    "skill_id": "NIN-098-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-098-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-098-2",
+    "ninja_id": "NIN-098",
+    "skill_id": "NIN-098-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-098-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-099-1",
+    "ninja_id": "NIN-099",
+    "skill_id": "NIN-099-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-099-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-099-2",
+    "ninja_id": "NIN-099",
+    "skill_id": "NIN-099-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-099-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-100-1",
+    "ninja_id": "NIN-100",
+    "skill_id": "NIN-100-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-100-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-100-2",
+    "ninja_id": "NIN-100",
+    "skill_id": "NIN-100-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-100-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-101-1",
+    "ninja_id": "NIN-101",
+    "skill_id": "NIN-101-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-101-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-101-2",
+    "ninja_id": "NIN-101",
+    "skill_id": "NIN-101-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-101-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-102-1",
+    "ninja_id": "NIN-102",
+    "skill_id": "NIN-102-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-102-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-102-2",
+    "ninja_id": "NIN-102",
+    "skill_id": "NIN-102-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-102-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-103-1",
+    "ninja_id": "NIN-103",
+    "skill_id": "NIN-103-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-103-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-103-2",
+    "ninja_id": "NIN-103",
+    "skill_id": "NIN-103-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-103-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-104-1",
+    "ninja_id": "NIN-104",
+    "skill_id": "NIN-104-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-104-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-104-2",
+    "ninja_id": "NIN-104",
+    "skill_id": "NIN-104-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-104-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-105-1",
+    "ninja_id": "NIN-105",
+    "skill_id": "NIN-105-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-105-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-105-2",
+    "ninja_id": "NIN-105",
+    "skill_id": "NIN-105-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-105-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-106-1",
+    "ninja_id": "NIN-106",
+    "skill_id": "NIN-106-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-106-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-106-2",
+    "ninja_id": "NIN-106",
+    "skill_id": "NIN-106-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-106-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-107-1",
+    "ninja_id": "NIN-107",
+    "skill_id": "NIN-107-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-107-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-107-2",
+    "ninja_id": "NIN-107",
+    "skill_id": "NIN-107-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-107-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-108-1",
+    "ninja_id": "NIN-108",
+    "skill_id": "NIN-108-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-108-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-108-2",
+    "ninja_id": "NIN-108",
+    "skill_id": "NIN-108-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-108-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-109-1",
+    "ninja_id": "NIN-109",
+    "skill_id": "NIN-109-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-109-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-109-2",
+    "ninja_id": "NIN-109",
+    "skill_id": "NIN-109-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-109-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-110-1",
+    "ninja_id": "NIN-110",
+    "skill_id": "NIN-110-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-110-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-110-2",
+    "ninja_id": "NIN-110",
+    "skill_id": "NIN-110-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-110-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-111-1",
+    "ninja_id": "NIN-111",
+    "skill_id": "NIN-111-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-111-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-111-2",
+    "ninja_id": "NIN-111",
+    "skill_id": "NIN-111-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-111-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-112-1",
+    "ninja_id": "NIN-112",
+    "skill_id": "NIN-112-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-112-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-112-2",
+    "ninja_id": "NIN-112",
+    "skill_id": "NIN-112-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-112-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-113-1",
+    "ninja_id": "NIN-113",
+    "skill_id": "NIN-113-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-113-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-113-2",
+    "ninja_id": "NIN-113",
+    "skill_id": "NIN-113-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-113-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-114-1",
+    "ninja_id": "NIN-114",
+    "skill_id": "NIN-114-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-114-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-114-2",
+    "ninja_id": "NIN-114",
+    "skill_id": "NIN-114-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-114-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-115-1",
+    "ninja_id": "NIN-115",
+    "skill_id": "NIN-115-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-115-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-115-2",
+    "ninja_id": "NIN-115",
+    "skill_id": "NIN-115-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-115-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-116-1",
+    "ninja_id": "NIN-116",
+    "skill_id": "NIN-116-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-116-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-116-2",
+    "ninja_id": "NIN-116",
+    "skill_id": "NIN-116-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-116-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-117-1",
+    "ninja_id": "NIN-117",
+    "skill_id": "NIN-117-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-117-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-117-2",
+    "ninja_id": "NIN-117",
+    "skill_id": "NIN-117-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-117-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-118-1",
+    "ninja_id": "NIN-118",
+    "skill_id": "NIN-118-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-118-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-118-2",
+    "ninja_id": "NIN-118",
+    "skill_id": "NIN-118-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-118-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-119-1",
+    "ninja_id": "NIN-119",
+    "skill_id": "NIN-119-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-119-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-119-2",
+    "ninja_id": "NIN-119",
+    "skill_id": "NIN-119-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-119-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-120-1",
+    "ninja_id": "NIN-120",
+    "skill_id": "NIN-120-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-120-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-120-2",
+    "ninja_id": "NIN-120",
+    "skill_id": "NIN-120-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-120-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-121-1",
+    "ninja_id": "NIN-121",
+    "skill_id": "NIN-121-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-121-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-121-2",
+    "ninja_id": "NIN-121",
+    "skill_id": "NIN-121-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-121-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-122-1",
+    "ninja_id": "NIN-122",
+    "skill_id": "NIN-122-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-122-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-122-2",
+    "ninja_id": "NIN-122",
+    "skill_id": "NIN-122-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-122-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-123-1",
+    "ninja_id": "NIN-123",
+    "skill_id": "NIN-123-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-123-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-123-2",
+    "ninja_id": "NIN-123",
+    "skill_id": "NIN-123-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-123-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-124-1",
+    "ninja_id": "NIN-124",
+    "skill_id": "NIN-124-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-124-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-124-2",
+    "ninja_id": "NIN-124",
+    "skill_id": "NIN-124-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-124-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-125-1",
+    "ninja_id": "NIN-125",
+    "skill_id": "NIN-125-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-125-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-125-2",
+    "ninja_id": "NIN-125",
+    "skill_id": "NIN-125-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-125-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-126-1",
+    "ninja_id": "NIN-126",
+    "skill_id": "NIN-126-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-126-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-126-2",
+    "ninja_id": "NIN-126",
+    "skill_id": "NIN-126-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-126-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-127-1",
+    "ninja_id": "NIN-127",
+    "skill_id": "NIN-127-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-127-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-127-2",
+    "ninja_id": "NIN-127",
+    "skill_id": "NIN-127-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-127-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-128-1",
+    "ninja_id": "NIN-128",
+    "skill_id": "NIN-128-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-128-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-128-2",
+    "ninja_id": "NIN-128",
+    "skill_id": "NIN-128-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-128-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-129-1",
+    "ninja_id": "NIN-129",
+    "skill_id": "NIN-129-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-129-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-129-2",
+    "ninja_id": "NIN-129",
+    "skill_id": "NIN-129-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-129-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-130-1",
+    "ninja_id": "NIN-130",
+    "skill_id": "NIN-130-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-130-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-130-2",
+    "ninja_id": "NIN-130",
+    "skill_id": "NIN-130-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-130-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-131-1",
+    "ninja_id": "NIN-131",
+    "skill_id": "NIN-131-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-131-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-131-2",
+    "ninja_id": "NIN-131",
+    "skill_id": "NIN-131-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-131-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-132-1",
+    "ninja_id": "NIN-132",
+    "skill_id": "NIN-132-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-132-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-132-2",
+    "ninja_id": "NIN-132",
+    "skill_id": "NIN-132-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-132-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-133-1",
+    "ninja_id": "NIN-133",
+    "skill_id": "NIN-133-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-133-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-133-2",
+    "ninja_id": "NIN-133",
+    "skill_id": "NIN-133-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-133-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-134-1",
+    "ninja_id": "NIN-134",
+    "skill_id": "NIN-134-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-134-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-134-2",
+    "ninja_id": "NIN-134",
+    "skill_id": "NIN-134-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-134-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-135-1",
+    "ninja_id": "NIN-135",
+    "skill_id": "NIN-135-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-135-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-135-2",
+    "ninja_id": "NIN-135",
+    "skill_id": "NIN-135-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-135-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-136-1",
+    "ninja_id": "NIN-136",
+    "skill_id": "NIN-136-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-136-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-136-2",
+    "ninja_id": "NIN-136",
+    "skill_id": "NIN-136-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-136-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-137-1",
+    "ninja_id": "NIN-137",
+    "skill_id": "NIN-137-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-137-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-137-2",
+    "ninja_id": "NIN-137",
+    "skill_id": "NIN-137-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-137-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-138-1",
+    "ninja_id": "NIN-138",
+    "skill_id": "NIN-138-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-138-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-138-2",
+    "ninja_id": "NIN-138",
+    "skill_id": "NIN-138-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-138-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-139-1",
+    "ninja_id": "NIN-139",
+    "skill_id": "NIN-139-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-139-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-139-2",
+    "ninja_id": "NIN-139",
+    "skill_id": "NIN-139-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-139-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-140-1",
+    "ninja_id": "NIN-140",
+    "skill_id": "NIN-140-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-140-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-140-2",
+    "ninja_id": "NIN-140",
+    "skill_id": "NIN-140-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-140-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-141-1",
+    "ninja_id": "NIN-141",
+    "skill_id": "NIN-141-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-141-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-141-2",
+    "ninja_id": "NIN-141",
+    "skill_id": "NIN-141-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-141-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-142-1",
+    "ninja_id": "NIN-142",
+    "skill_id": "NIN-142-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-142-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-142-2",
+    "ninja_id": "NIN-142",
+    "skill_id": "NIN-142-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-142-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-143-1",
+    "ninja_id": "NIN-143",
+    "skill_id": "NIN-143-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-143-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-143-2",
+    "ninja_id": "NIN-143",
+    "skill_id": "NIN-143-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-143-S7"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-144-1",
+    "ninja_id": "NIN-144",
+    "skill_id": "NIN-144-S6",
+    "requires_realm": 3,
+    "requires_mastery": 500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-144-S6"
+    },
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CHALLENGE-NIN-144-2",
+    "ninja_id": "NIN-144",
+    "skill_id": "NIN-144-S7",
+    "requires_realm": 6,
+    "requires_mastery": 1500,
+    "stage_template": "personal_trial",
+    "enemy_level_formula": "max(1,realm*20+10)",
+    "reward": {
+      "unlock_skill_id": "NIN-144-S7"
+    },
+    "status": "PROPOSED"
+  }
+]

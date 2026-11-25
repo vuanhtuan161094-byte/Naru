@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "all_144": true,
+    "initial_864": true,
+    "extra_288": true,
+    "all_unique": true,
+    "all_four_curated": true,
+    "all_challenges": true,
+    "form_refs": true,
+    "progression_refs": true,
+    "all_damage_types": true
+  },
+  "individualized_slots": 576,
+  "source_profiles_this_batch": 15,
+  "forms": 54,
+  "personal_trials": 288,
+  "source_verified_skill_count": null,
+  "canon_complete": false,
+  "status": "D3_PROPOSED"
+}
