@@ -16,3 +16,8 @@ B approved. COMBAT-P1/P2 READY for implementation now. COMBAT-P3 and P4 remain d
 - Existing SKILL-P1 audit continues; no automatic claim of full 1,152-skill geometry completion.
 
 - REVIEW: gameplay batch `df69717d`; Combat V3 dedicated Godot test and GP-P2 success. Full workflow tracked at run 45568457947. Art/secondary-squad UI/full skill audit are separate.
+
+## SKILL-P2 coordinator review
+- READY (00): review 64 anchor proposals then 1088 individual contracts in eight 136-skill lots; 54 forms/12 combos. Queue exact coverage validated; no runtime promotion yet.
+- IN_PROGRESS (01): V3-C exact CI, shared geometry/events, consume reviewed overlays, organic gameplay and Web DEV V5.
+- IN_PROGRESS (02): R4 actual animation/VFX/terrain and current-SHA 6v6 private Godot video; no mass blind duplication.
