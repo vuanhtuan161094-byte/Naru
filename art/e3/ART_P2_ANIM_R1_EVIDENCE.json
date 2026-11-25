@@ -1,0 +1,2037 @@
+{
+  "batch": "ART-P2-ANIM-R1",
+  "design_sha": "6768459fbf64d4db018d538f2298ebc35e6c7beb",
+  "gameplay_sha": "63ac6b2051bbb2aab1d2d166df3ee6bec6bcd8db",
+  "latest_gameplay_at_commit": "63ac6b2051bbb2aab1d2d166df3ee6bec6bcd8db",
+  "art_parent": "8566221b8da74ee828084405e3de1389ce19469a",
+  "archive": {
+    "name": "Naru_ART_P2_AnimR1_private.zip",
+    "sha256": "782fdccc6f28c685187ad272af9fc9e55f6124815703d3e33cb7050252bf23ae",
+    "bytes": 2272626,
+    "manifest_sha256": "691eefad9d29ead9f66035a5d26d154064d138deb780c3b55da6ac9ccffe0d43",
+    "library_file_id": "libfile_0084d8df08288191a214fa411a806028",
+    "library_upload": true
+  },
+  "clips": [
+    {
+      "id": "NIN-041",
+      "action": "idle",
+      "direction": "SE",
+      "path": "animation/NIN-041/idle_SE.png",
+      "sha256": "d02c2fb105f0ed0361f675430ba83dd61d1c7b4f728eb164f58e66ed9a11c5ba",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "walk",
+      "direction": "SE",
+      "path": "animation/NIN-041/walk_SE.png",
+      "sha256": "562a923b7187c4d6ec6de4278bcedb5f254fae0036418f19e9f7fca09b98c899",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "attack",
+      "direction": "SE",
+      "path": "animation/NIN-041/attack_SE.png",
+      "sha256": "d0156c0fa1c212a1bebd53ae4eafea12ec33e929fb6b0ef1e9ea471cb0ce0e84",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 95
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "cast",
+      "direction": "SE",
+      "path": "animation/NIN-041/cast_SE.png",
+      "sha256": "9ac831f71c3e76fb60510a7b5a9d82284df7a81f48494d7c5c2f90275cda03b2",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            768,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            864,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "unique_frames": 7,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "hit",
+      "direction": "SE",
+      "path": "animation/NIN-041/hit_SE.png",
+      "sha256": "29c55e58e13fe6a47b115d83f0392416e5d7d5710560b241a05805e62c692a05",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 135
+        }
+      ],
+      "unique_frames": 4,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "fall",
+      "direction": "SE",
+      "path": "animation/NIN-041/fall_SE.png",
+      "sha256": "066e828bd1b790906f51ee17585ad0cd0c3e0c91a32c804a280578710e8de3de",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 180
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "idle",
+      "direction": "SW",
+      "path": "animation/NIN-041/idle_SW.png",
+      "sha256": "854613ba1dc905ed8a2d6ec4048c41304bfa2e2f0b13a54eb4e70c3efad24a27",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "walk",
+      "direction": "SW",
+      "path": "animation/NIN-041/walk_SW.png",
+      "sha256": "87dd9972d6a7f16b5d8f2f5b64006eb58af4eccfc8e67c013474e1361191bc6f",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "attack",
+      "direction": "SW",
+      "path": "animation/NIN-041/attack_SW.png",
+      "sha256": "42607c803effdeccf22ff67faa71fe70020010cdbfd0c1182da2c2b9fc931abf",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 95
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "cast",
+      "direction": "SW",
+      "path": "animation/NIN-041/cast_SW.png",
+      "sha256": "9ceee25c94881686173f66fdabbdf7aee873aac818c52cd39e1d3a0fd8b0ce17",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            768,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            864,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "unique_frames": 7,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "hit",
+      "direction": "SW",
+      "path": "animation/NIN-041/hit_SW.png",
+      "sha256": "a9b1c44583cab6e31691ded4b22dd660de7e019da540252deb7b3b73374e8128",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 135
+        }
+      ],
+      "unique_frames": 4,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "fall",
+      "direction": "SW",
+      "path": "animation/NIN-041/fall_SW.png",
+      "sha256": "e0ed13f2a184997570e3e83372da5c8906038581c10cba4aa27b79104faff72e",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 180
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "idle",
+      "direction": "NE",
+      "path": "animation/NIN-041/idle_NE.png",
+      "sha256": "35c2b2f8fc72b2900368fe3266abd5c2ca8e34bb4f331fa82bfc5858c8aac259",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "walk",
+      "direction": "NE",
+      "path": "animation/NIN-041/walk_NE.png",
+      "sha256": "9cd5c42d23130acdd71dde89eb6cf0d85e2056fda6b3110dd96a13833300e941",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "attack",
+      "direction": "NE",
+      "path": "animation/NIN-041/attack_NE.png",
+      "sha256": "8e27b0fe32d5f345d50f5e96d45815bb49d874e0d37713f1123650e655002091",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 95
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "cast",
+      "direction": "NE",
+      "path": "animation/NIN-041/cast_NE.png",
+      "sha256": "5c67fc92df8bc353450f68206492590486bf603a1fc9dfd679ce2c11f8b4c5ea",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            768,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            864,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "unique_frames": 7,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "hit",
+      "direction": "NE",
+      "path": "animation/NIN-041/hit_NE.png",
+      "sha256": "415fd753c872730b20e9062e15516fd4d21b81b7dc02ff711f41d2dd2b87668f",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 135
+        }
+      ],
+      "unique_frames": 4,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "fall",
+      "direction": "NE",
+      "path": "animation/NIN-041/fall_NE.png",
+      "sha256": "70d419c8f288398f619ee337fd76a9b3b9c26041313552af18b7e07d6eb6fe63",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 180
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": false,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "idle",
+      "direction": "NW",
+      "path": "animation/NIN-041/idle_NW.png",
+      "sha256": "e266bb620178b6cdf3c53d342aec81b1041b917e86e344db02e3df1eefacb3fa",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "walk",
+      "direction": "NW",
+      "path": "animation/NIN-041/walk_NW.png",
+      "sha256": "5d616f585a983078875e95f5bcb91bc5306a684dc8c587b9f8376429c26daf61",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "attack",
+      "direction": "NW",
+      "path": "animation/NIN-041/attack_NW.png",
+      "sha256": "d9ad06efdc9a2427c599e0c4e53d5dca645a9d609e7f1ee8136e203685b9a9d0",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 95
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        }
+      ],
+      "unique_frames": 8,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "cast",
+      "direction": "NW",
+      "path": "animation/NIN-041/cast_NW.png",
+      "sha256": "93532adfc1d1c1a22ce55fb0a2bc69d8e1da281037f3d66df147637ff3e5aaba",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            768,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            864,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "unique_frames": 7,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "hit",
+      "direction": "NW",
+      "path": "animation/NIN-041/hit_NW.png",
+      "sha256": "b4ced896f71b34e517155039fe5356c5cb5c9083154525d2e3cdfdb8d2fb2df1",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 135
+        }
+      ],
+      "unique_frames": 4,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "fall",
+      "direction": "NW",
+      "path": "animation/NIN-041/fall_NW.png",
+      "sha256": "ad2a8b12847a4863ce0b87d3025f215f6c5b4a7c8413d9f694f0036fbbf6854c",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 180
+        }
+      ],
+      "unique_frames": 6,
+      "mirrored_derivative": true,
+      "status": "REVIEW_ONLY"
+    }
+  ],
+  "qa": {
+    "gameplay_ci": 45590271237,
+    "result": "success",
+    "artifact_id": 15010279542,
+    "export_checksums": "7/7 PASS",
+    "engine": "4.4.1 stable",
+    "importer": "actual exported V7 review_art.gd from index.pck, loaded in temporary local asset test fixture",
+    "import": "PASS 30 textures including six prior cleaned character sprites and 24 sheets",
+    "playback": "PASS 24 clips, 168 frame indices observed",
+    "distinct_cells_within_clips": 156,
+    "cast_repeat_cells": 12,
+    "video_frames": 361,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "video_sha256": "5f3793e1255d35cf8110a64b113cde49dc4e396c442771837e5357e746f50fc7",
+    "screenshot_sha256": "0e4cfbd8296cb762f5139113bc160c315e0abe1524bebf122bc8d8624dca4253",
+    "pack_sha256": "1c032f34cc03ea7434480003828a0640c01e6401015f4b1b4f4a8e4fd759db69",
+    "playback_log_sha256": "a940738a686ad69ca1edf1e5dcbf8a7ade1f3845130453f56eeb4c5b855fa613",
+    "art_ci": "NOT_RUN",
+    "combat_dispatch": "NOT_RUN"
+  },
+  "limits": [
+    "24 candidate sheets for Naruto only. Two painted views and two mirrored derivatives; rear head separately drawn, body contours shared; reused head feature and some local idle/hand edits, not four independently authored views.",
+    "Cast 10 frame slots / 7 distinct per direction, hold and return poses repeated; other clips distinct within sheet, not 168 unique across all directions.",
+    "Style flatter than source R7, no production approval. Five other ninjas kept static pending quality. No actual 6v6 integration or new gameplay renderer changes.",
+    "Generated poster outputs rejected; no rig, full-sprite translation, public fan-art upload, merge, Cloud or skill VFX changes."
+  ]
+}

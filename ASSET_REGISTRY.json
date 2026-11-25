@@ -11302,5 +11302,18 @@
       "SE",
       "SW"
     ]
+  },
+  "base_animation_r1": {
+    "status": "REVIEW_ONLY",
+    "archive": "Naru_ART_P2_AnimR1_private.zip",
+    "archive_sha256": "782fdccc6f28c685187ad272af9fc9e55f6124815703d3e33cb7050252bf23ae",
+    "manifest": "art/e3/ART_P2_ANIM_R1_EVIDENCE.json",
+    "character": "NIN-041",
+    "candidate_clips": 24,
+    "frame_slots": 168,
+    "distinct_within_clip": 156,
+    "production_complete_clips": 0,
+    "qa": "GODOT_V7_IMPORT_AND_PLAYBACK_PASS",
+    "active_combat": false
   }
 }
