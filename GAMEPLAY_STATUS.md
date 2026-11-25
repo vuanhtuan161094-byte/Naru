@@ -24,3 +24,6 @@ GP-P2C residuals (spatial/pathing and exact skill behavior, deterministic replay
 
 ## D1-A — Product UI functional layer
 17 screen IDs mapped to actual existing Godot controls. Shared navigation/resources, 30 fixed lot grid, searchable/filterable roster, six position formation reorder, 48-stat detail and 16 slot equipment, chapter selector, interactive coordinate world map, resource source inspection, 63 recipe queue panel, recruitment odds/pity, settings save, battle pause/speed/manual ultimate overflow and results/reward. DEV geometry, no production art. CI pending; browser click audit planned.
+
+## D1-B — progression and real input audit
+Optional Ryo scroll purchase at HQ2 (120/600 Ryo small/large; proposed), batch EXP using XP-efficiency, uncapped specialized training using building/material/Ryo and training speed/absorption, starter assignment convenience without replacing existing jobs, dynamic extra squads bounded only by available owned ninja and empty slots, save corruption preservation/recovery notice. UI settings projectile toggle; 44 logical-pixel button targets, trimmed long labels. Web probe now clicks actual exported canvas controls, checks 17 screens, recruits, starts construction, trains, changes battle pause/speed, plays results, and resizes 960x540. Screenshots generated only if verified. CI pending; no public release.

@@ -9,6 +9,7 @@ const PATH = "user://naru_save_v1.json"
 var state: Dictionary = {}
 var rng = RandomNumberGenerator.new()
 var save_path = PATH
+var load_notice=""
 
 
 func new_game(reg) -> void:
@@ -20,10 +21,15 @@ func new_game(reg) -> void:
 	save_now()
 
 func load_or_new(reg) -> void:
-	for p in [save_path,save_path+".bak"]:
+	load_notice=""
+	for p in [save_path,save_path+".bak",save_path+".tmp"]:
 		if FileAccess.file_exists(p):
 			var d = JSON.parse_string(FileAccess.get_file_as_string(p))
 			if SaveGuard.valid(reg,d):
+				if p!=save_path:
+					load_notice="Đã phục hồi từ bản dự phòng."
+					if FileAccess.file_exists(save_path):
+						DirAccess.rename_absolute(save_path,save_path+".corrupt-"+str(Time.get_ticks_usec()))
 				state=d
 				ensure_account(reg)
 				for id in state.owned:
@@ -41,6 +47,10 @@ func load_or_new(reg) -> void:
 						recovered=true
 				if recovered:commit_change(prior,rng.state)
 				return
+	for p in [save_path,save_path+".bak",save_path+".tmp"]:
+		if FileAccess.file_exists(p):
+			DirAccess.rename_absolute(p,p+".corrupt-"+str(Time.get_ticks_usec()))
+			load_notice="Save cũ không hợp lệ; đã giữ bản lỗi riêng và tạo hồ sơ mới."
 	new_game(reg)
 
 func save_now() -> bool:
@@ -777,3 +787,72 @@ func squad_capture(reg,key: String) -> bool:
 	if not World.capture_squad(reg,state,key):return false
 	Content.bump(state,"territory_battle")
 	return commit_change(prior,rng.state)
+
+func train_batch(reg,id: String,resource: String,quantity: int) -> bool:
+	if not state.owned.has(id) or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>100:return false
+	if int(state.inventory.get(resource,0))<quantity:return false
+	var p=state.owned[id]
+	if int(p.level)>=(int(p.realm)+1)*20:return false
+	var prior=state.duplicate(true)
+	var stats=Stats.derive(reg,reg.ninjas[id],p)
+	var base=200 if resource=="RES-116" else 1000
+	debit({resource:quantity})
+	p.xp=int(p.xp)+roundi(base*quantity*(1+Stats.effect(reg,stats,"xp_efficiency")))
+	Content.bump(state,"train_ninja",quantity)
+	apply_levels(p)
+	return commit_change(prior,rng.state)
+
+func training_quote(id: String,stat: String) -> Dictionary:
+	var p=state.owned[id]
+	var mapping={"strength":["BLD-003","RES-118"],"vitality":["BLD-003","RES-122"],"spirit":["BLD-005","RES-124"],"agility":["BLD-003","RES-118"],"intellect":["BLD-004","RES-123"],"potential":["BLD-006","RES-135"]}
+	if not mapping.has(stat):return {}
+	var row=mapping[stat]
+	var current=float(p.get("training",{}).get(stat,0))
+	return {"building":row[0],"resource":row[1],"ryo":ceili(80*pow(1+current,1.35)),"qty":ceili(1+current/10.0)}
+
+func train_stat(reg,id: String,stat: String) -> bool:
+	if not state.owned.has(id):return false
+	var quote=training_quote(id,stat)
+	if quote.is_empty() or Village.level(state,quote.building)<=0:return false
+	var cost={"RES-001":quote.ryo,str(quote.resource):quote.qty}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	var p=state.owned[id]
+	var stats=Stats.derive(reg,reg.ninjas[id],p)
+	debit(cost)
+	if not p.has("training"):p.training={}
+	p.training[stat]=float(p.training.get(stat,0))+1+Stats.effect(reg,stats,"training_speed")*0.5+Stats.effect(reg,stats,"absorption")*0.5
+	Content.bump(state,"train_ninja")
+	return commit_change(prior,rng.state)
+
+func buy_training_scrolls(resource: String,quantity: int) -> bool:
+	if Village.level(state,"BLD-001")<2 or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>10:return false
+	var cost={"RES-001":quantity*(120 if resource=="RES-116" else 600)}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	if not Village.put(state,resource,quantity):return false
+	debit(cost)
+	return commit_change(prior,rng.state)
+
+func setup_starter_jobs(reg) -> bool:
+	var prior=state.duplicate(true)
+	var targets=[["NIN-001","BLD-015","JOB-10"],["NIN-003","BLD-014","JOB-10"],["NIN-005","BLD-012","JOB-09"]]
+	for row in targets:
+		if state.owned.has(row[0]) and not state.jobs.has(row[0]):Village.assign(reg,state,row[0],row[1],row[2])
+	if state.owned.has("NIN-001") and not state.missions.has("NIN-001"):Content.start_mission(reg,state,"NIN-001","RES-001",true)
+	return commit_change(prior,rng.state)
+
+func create_world_squad() -> String:
+	var capacity=state.owned.size()-state.team.size()-state.home_defense.size()
+	for q in state.world_squads.values():capacity-=q.team.size()
+	if capacity<=0:return ""
+	var empty_count=0
+	for q in state.world_squads.values():
+		if q.team.is_empty():empty_count+=1
+	if empty_count>=capacity:return ""
+	var prior=state.duplicate(true)
+	var i=2
+	while state.world_squads.has("SQUAD-"+str(i)):i+=1
+	var id="SQUAD-"+str(i)
+	state.world_squads[id]={"team":[],"location":World.HOME,"travel":{}}
+	return id if commit_change(prior,rng.state) else ""

@@ -402,4 +402,21 @@ func _initialize() -> void:
 		if not campaign_store.finish_stage(reg,encounter_def,entry,true,match_sim.counts,match_sim.mastery_counts):break
 		won_count+=1
 	check(won_count==120 and campaign_store.state.cleared.size()==120,"campaign 120 sequential wins and reward commits (high-power fixture)")
+	var product=Store.new()
+	product.save_path="user://gp_product_ci.json"
+	product.new_game(reg)
+	check(product.setup_starter_jobs(reg) and product.state.jobs.size()==3 and product.state.missions.has("NIN-001"),"starter job setup")
+	check(not product.buy_training_scrolls("RES-116",1),"academy shop HQ gate")
+	product.state.building_states["BLD-001"].level=2
+	var wallet=int(product.state.inventory["RES-001"])
+	check(product.buy_training_scrolls("RES-116",5) and int(product.state.inventory["RES-001"])==wallet-600,"optional Ryo training sink")
+	check(product.train_batch(reg,"NIN-001","RES-116",5),"batch XP")
+	check(not product.train_stat(reg,"NIN-001","strength"),"training building gate")
+	product.state.building_states["BLD-003"].level=1
+	product.state.inventory["RES-118"]=10
+	check(product.train_stat(reg,"NIN-001","strength") and float(product.state.owned["NIN-001"].training.strength)>0,"specialized stat training")
+	for template_id in ["NIN-002","NIN-004","NIN-006","NIN-007","NIN-008","NIN-009"]:product.grant(reg,template_id)
+	var dynamic_id=product.create_world_squad()
+	check(dynamic_id=="SQUAD-4" and product.set_world_squad(dynamic_id,["NIN-002"]),"additional squad beyond V2 limit")
+	check(guard.valid(reg,product.state),"dynamic squad save accepted")
 	quit(0 if failures==0 else 1)

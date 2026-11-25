@@ -101,9 +101,10 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 	for id in defense:
 		if not s.owned.has(id) or seen.has(id):return false
 		seen[id]=true
+	if s.get("world_squads",{}).size()>maxi(2,s.owned.size()):return false
 	for key in s.get("world_squads",{}):
 		var q=s.world_squads[key]
-		if not key in ["SQUAD-2","SQUAD-3"] or not q is Dictionary or not q.get("team") is Array or q.team.size()>6 or not reg.territories.has(q.get("location","")) or not q.get("travel") is Dictionary:return false
+		if not str(key).begins_with("SQUAD-") or not str(key).trim_prefix("SQUAD-").is_valid_int() or int(str(key).trim_prefix("SQUAD-"))<2 or not q is Dictionary or not q.get("team") is Array or q.team.size()>6 or not reg.territories.has(q.get("location","")) or not q.get("travel") is Dictionary:return false
 		for id in q.team:
 			if not s.owned.has(id) or seen.has(id):return false
 			seen[id]=true

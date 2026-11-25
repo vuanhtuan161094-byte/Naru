@@ -35,3 +35,5 @@ ABC fix: boss phase snapshot/overkill guard, full campaign fixture, 90-day seede
 ABC cumulative exact-SHA a77ad31bbc8bb6d8a78a2a3592a4354fbef2c338: CI 45559078672 PASS (150 headless assertions, seed-only economy 90 days, browser extended gameplay probe, Web export). Artifact 14996917338, menu 14997276892. Previous red runs superseded by fix; remaining scope in GAMEPLAY_STATUS.md. No all-gate acceptance or public release.
 
 D1-A: 17 screen functional navigation/UI, actual Godot UI, no art. Pending exact-SHA CI and click audit.
+
+D1-B: training sinks, starter help, dynamic team count, backup safety, actual canvas click audit, Web V3. CI pending.
