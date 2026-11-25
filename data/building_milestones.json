@@ -1,181 +1,1622 @@
 [
-  {"building_id":"BLD-001","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-001","level":10,"ryo":266,"wood":27,"stone":14,"duration_s":129,"worker_capacity":1},
-  {"building_id":"BLD-001","level":25,"ryo":1663,"wood":167,"stone":84,"duration_s":538,"worker_capacity":3},
-  {"building_id":"BLD-001","level":50,"ryo":35300,"wood":3530,"stone":1765,"duration_s":5822,"worker_capacity":5},
-  {"building_id":"BLD-001","level":75,"ryo":749422,"wood":74943,"stone":37472,"duration_s":63070,"worker_capacity":8},
-  {"building_id":"BLD-001","level":100,"ryo":15910634,"wood":1591064,"stone":795532,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-002","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-002","level":10,"ryo":346,"wood":32,"stone":16,"duration_s":161,"worker_capacity":1},
-  {"building_id":"BLD-002","level":25,"ryo":2162,"wood":200,"stone":100,"duration_s":672,"worker_capacity":3},
-  {"building_id":"BLD-002","level":50,"ryo":45890,"wood":4236,"stone":2118,"duration_s":7277,"worker_capacity":5},
-  {"building_id":"BLD-002","level":75,"ryo":974249,"wood":89931,"stone":44966,"duration_s":78837,"worker_capacity":8},
-  {"building_id":"BLD-002","level":100,"ryo":20683824,"wood":1909276,"stone":954638,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-003","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-003","level":10,"ryo":426,"wood":38,"stone":19,"duration_s":193,"worker_capacity":1},
-  {"building_id":"BLD-003","level":25,"ryo":2661,"wood":233,"stone":117,"duration_s":806,"worker_capacity":3},
-  {"building_id":"BLD-003","level":50,"ryo":56479,"wood":4942,"stone":2471,"duration_s":8732,"worker_capacity":5},
-  {"building_id":"BLD-003","level":75,"ryo":1199076,"wood":104920,"stone":52460,"duration_s":94604,"worker_capacity":8},
-  {"building_id":"BLD-003","level":100,"ryo":25457013,"wood":2227489,"stone":1113745,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-004","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-004","level":10,"ryo":506,"wood":43,"stone":22,"duration_s":226,"worker_capacity":1},
-  {"building_id":"BLD-004","level":25,"ryo":3160,"wood":267,"stone":134,"duration_s":941,"worker_capacity":3},
-  {"building_id":"BLD-004","level":50,"ryo":67069,"wood":5648,"stone":2824,"duration_s":10187,"worker_capacity":5},
-  {"building_id":"BLD-004","level":75,"ryo":1423902,"wood":119908,"stone":59954,"duration_s":110372,"worker_capacity":8},
-  {"building_id":"BLD-004","level":100,"ryo":30230203,"wood":2545702,"stone":1272851,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-005","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-005","level":10,"ryo":585,"wood":48,"stone":24,"duration_s":258,"worker_capacity":1},
-  {"building_id":"BLD-005","level":25,"ryo":3658,"wood":300,"stone":150,"duration_s":1075,"worker_capacity":3},
-  {"building_id":"BLD-005","level":50,"ryo":77659,"wood":6354,"stone":3177,"duration_s":11643,"worker_capacity":5},
-  {"building_id":"BLD-005","level":75,"ryo":1648729,"wood":134896,"stone":67448,"duration_s":126139,"worker_capacity":8},
-  {"building_id":"BLD-005","level":100,"ryo":35003393,"wood":2863914,"stone":1431957,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-006","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-006","level":10,"ryo":665,"wood":54,"stone":27,"duration_s":290,"worker_capacity":1},
-  {"building_id":"BLD-006","level":25,"ryo":4157,"wood":333,"stone":167,"duration_s":1209,"worker_capacity":3},
-  {"building_id":"BLD-006","level":50,"ryo":88249,"wood":7060,"stone":3530,"duration_s":13098,"worker_capacity":5},
-  {"building_id":"BLD-006","level":75,"ryo":1873555,"wood":149885,"stone":74943,"duration_s":141906,"worker_capacity":8},
-  {"building_id":"BLD-006","level":100,"ryo":39776583,"wood":3182127,"stone":1591064,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-007","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-007","level":10,"ryo":745,"wood":59,"stone":30,"duration_s":322,"worker_capacity":1},
-  {"building_id":"BLD-007","level":25,"ryo":4656,"wood":366,"stone":183,"duration_s":1344,"worker_capacity":3},
-  {"building_id":"BLD-007","level":50,"ryo":98838,"wood":7766,"stone":3883,"duration_s":14553,"worker_capacity":5},
-  {"building_id":"BLD-007","level":75,"ryo":2098382,"wood":164873,"stone":82437,"duration_s":157673,"worker_capacity":8},
-  {"building_id":"BLD-007","level":100,"ryo":44549773,"wood":3500340,"stone":1750170,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-008","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-008","level":10,"ryo":825,"wood":64,"stone":32,"duration_s":354,"worker_capacity":1},
-  {"building_id":"BLD-008","level":25,"ryo":5155,"wood":400,"stone":200,"duration_s":1478,"worker_capacity":3},
-  {"building_id":"BLD-008","level":50,"ryo":109428,"wood":8472,"stone":4236,"duration_s":16008,"worker_capacity":5},
-  {"building_id":"BLD-008","level":75,"ryo":2323208,"wood":179862,"stone":89931,"duration_s":173441,"worker_capacity":8},
-  {"building_id":"BLD-008","level":100,"ryo":49322963,"wood":3818552,"stone":1909276,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-009","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-009","level":10,"ryo":904,"wood":70,"stone":35,"duration_s":386,"worker_capacity":1},
-  {"building_id":"BLD-009","level":25,"ryo":5654,"wood":433,"stone":217,"duration_s":1612,"worker_capacity":3},
-  {"building_id":"BLD-009","level":50,"ryo":120018,"wood":9178,"stone":4589,"duration_s":17464,"worker_capacity":5},
-  {"building_id":"BLD-009","level":75,"ryo":2548035,"wood":194850,"stone":97425,"duration_s":189208,"worker_capacity":8},
-  {"building_id":"BLD-009","level":100,"ryo":54096153,"wood":4136765,"stone":2068383,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-010","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-010","level":10,"ryo":984,"wood":75,"stone":38,"duration_s":418,"worker_capacity":1},
-  {"building_id":"BLD-010","level":25,"ryo":6152,"wood":466,"stone":233,"duration_s":1747,"worker_capacity":3},
-  {"building_id":"BLD-010","level":50,"ryo":130608,"wood":9884,"stone":4942,"duration_s":18919,"worker_capacity":5},
-  {"building_id":"BLD-010","level":75,"ryo":2772861,"wood":209839,"stone":104920,"duration_s":204975,"worker_capacity":8},
-  {"building_id":"BLD-010","level":100,"ryo":58869343,"wood":4454978,"stone":2227489,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-011","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-011","level":10,"ryo":1064,"wood":80,"stone":40,"duration_s":451,"worker_capacity":1},
-  {"building_id":"BLD-011","level":25,"ryo":6651,"wood":499,"stone":250,"duration_s":1881,"worker_capacity":3},
-  {"building_id":"BLD-011","level":50,"ryo":141197,"wood":10590,"stone":5295,"duration_s":20374,"worker_capacity":5},
-  {"building_id":"BLD-011","level":75,"ryo":2997688,"wood":224827,"stone":112414,"duration_s":220743,"worker_capacity":8},
-  {"building_id":"BLD-011","level":100,"ryo":63642533,"wood":4773190,"stone":2386595,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-012","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-012","level":10,"ryo":1144,"wood":86,"stone":43,"duration_s":483,"worker_capacity":1},
-  {"building_id":"BLD-012","level":25,"ryo":7150,"wood":533,"stone":267,"duration_s":2015,"worker_capacity":3},
-  {"building_id":"BLD-012","level":50,"ryo":151787,"wood":11296,"stone":5648,"duration_s":21829,"worker_capacity":5},
-  {"building_id":"BLD-012","level":75,"ryo":3222515,"wood":239816,"stone":119908,"duration_s":236510,"worker_capacity":8},
-  {"building_id":"BLD-012","level":100,"ryo":68415723,"wood":5091403,"stone":2545702,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-013","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-013","level":10,"ryo":1223,"wood":91,"stone":46,"duration_s":515,"worker_capacity":1},
-  {"building_id":"BLD-013","level":25,"ryo":7649,"wood":566,"stone":283,"duration_s":2150,"worker_capacity":3},
-  {"building_id":"BLD-013","level":50,"ryo":162377,"wood":12002,"stone":6001,"duration_s":23285,"worker_capacity":5},
-  {"building_id":"BLD-013","level":75,"ryo":3447341,"wood":254804,"stone":127402,"duration_s":252277,"worker_capacity":8},
-  {"building_id":"BLD-013","level":100,"ryo":73188913,"wood":5409616,"stone":2704808,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-014","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-014","level":10,"ryo":1303,"wood":96,"stone":48,"duration_s":547,"worker_capacity":1},
-  {"building_id":"BLD-014","level":25,"ryo":8148,"wood":599,"stone":300,"duration_s":2284,"worker_capacity":3},
-  {"building_id":"BLD-014","level":50,"ryo":172967,"wood":12708,"stone":6354,"duration_s":24740,"worker_capacity":5},
-  {"building_id":"BLD-014","level":75,"ryo":3672168,"wood":269792,"stone":134896,"duration_s":268045,"worker_capacity":8},
-  {"building_id":"BLD-014","level":100,"ryo":77962103,"wood":5727828,"stone":2863914,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-015","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-015","level":10,"ryo":1383,"wood":102,"stone":51,"duration_s":579,"worker_capacity":1},
-  {"building_id":"BLD-015","level":25,"ryo":8646,"wood":632,"stone":316,"duration_s":2418,"worker_capacity":3},
-  {"building_id":"BLD-015","level":50,"ryo":183557,"wood":13414,"stone":6707,"duration_s":26195,"worker_capacity":5},
-  {"building_id":"BLD-015","level":75,"ryo":3896994,"wood":284781,"stone":142391,"duration_s":283812,"worker_capacity":8},
-  {"building_id":"BLD-015","level":100,"ryo":82735293,"wood":6046041,"stone":3023021,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-016","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-016","level":10,"ryo":1463,"wood":107,"stone":54,"duration_s":611,"worker_capacity":1},
-  {"building_id":"BLD-016","level":25,"ryo":9145,"wood":666,"stone":333,"duration_s":2552,"worker_capacity":3},
-  {"building_id":"BLD-016","level":50,"ryo":194146,"wood":14120,"stone":7060,"duration_s":27650,"worker_capacity":5},
-  {"building_id":"BLD-016","level":75,"ryo":4121821,"wood":299769,"stone":149885,"duration_s":299579,"worker_capacity":8},
-  {"building_id":"BLD-016","level":100,"ryo":87508483,"wood":6364254,"stone":3182127,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-017","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-017","level":10,"ryo":1542,"wood":112,"stone":56,"duration_s":644,"worker_capacity":1},
-  {"building_id":"BLD-017","level":25,"ryo":9644,"wood":699,"stone":350,"duration_s":2687,"worker_capacity":3},
-  {"building_id":"BLD-017","level":50,"ryo":204736,"wood":14826,"stone":7413,"duration_s":29106,"worker_capacity":5},
-  {"building_id":"BLD-017","level":75,"ryo":4346647,"wood":314758,"stone":157379,"duration_s":315346,"worker_capacity":8},
-  {"building_id":"BLD-017","level":100,"ryo":92281673,"wood":6682466,"stone":3341233,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-018","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-018","level":10,"ryo":1622,"wood":117,"stone":59,"duration_s":676,"worker_capacity":1},
-  {"building_id":"BLD-018","level":25,"ryo":10143,"wood":732,"stone":366,"duration_s":2821,"worker_capacity":3},
-  {"building_id":"BLD-018","level":50,"ryo":215326,"wood":15532,"stone":7766,"duration_s":30561,"worker_capacity":5},
-  {"building_id":"BLD-018","level":75,"ryo":4571474,"wood":329746,"stone":164873,"duration_s":331114,"worker_capacity":8},
-  {"building_id":"BLD-018","level":100,"ryo":97054862,"wood":7000679,"stone":3500340,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-019","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-019","level":10,"ryo":1702,"wood":123,"stone":62,"duration_s":708,"worker_capacity":1},
-  {"building_id":"BLD-019","level":25,"ryo":10642,"wood":765,"stone":383,"duration_s":2955,"worker_capacity":3},
-  {"building_id":"BLD-019","level":50,"ryo":225916,"wood":16238,"stone":8119,"duration_s":32016,"worker_capacity":5},
-  {"building_id":"BLD-019","level":75,"ryo":4796301,"wood":344735,"stone":172368,"duration_s":346881,"worker_capacity":8},
-  {"building_id":"BLD-019","level":100,"ryo":101828052,"wood":7318892,"stone":3659446,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-020","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-020","level":10,"ryo":1782,"wood":128,"stone":64,"duration_s":740,"worker_capacity":1},
-  {"building_id":"BLD-020","level":25,"ryo":11140,"wood":799,"stone":400,"duration_s":3090,"worker_capacity":3},
-  {"building_id":"BLD-020","level":50,"ryo":236505,"wood":16944,"stone":8472,"duration_s":33471,"worker_capacity":5},
-  {"building_id":"BLD-020","level":75,"ryo":5021127,"wood":359723,"stone":179862,"duration_s":362648,"worker_capacity":8},
-  {"building_id":"BLD-020","level":100,"ryo":106601242,"wood":7637104,"stone":3818552,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-021","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-021","level":10,"ryo":1861,"wood":133,"stone":67,"duration_s":772,"worker_capacity":1},
-  {"building_id":"BLD-021","level":25,"ryo":11639,"wood":832,"stone":416,"duration_s":3224,"worker_capacity":3},
-  {"building_id":"BLD-021","level":50,"ryo":247095,"wood":17650,"stone":8825,"duration_s":34927,"worker_capacity":5},
-  {"building_id":"BLD-021","level":75,"ryo":5245954,"wood":374711,"stone":187356,"duration_s":378416,"worker_capacity":8},
-  {"building_id":"BLD-021","level":100,"ryo":111374432,"wood":7955317,"stone":3977659,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-022","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-022","level":10,"ryo":1941,"wood":139,"stone":70,"duration_s":804,"worker_capacity":1},
-  {"building_id":"BLD-022","level":25,"ryo":12138,"wood":865,"stone":433,"duration_s":3358,"worker_capacity":3},
-  {"building_id":"BLD-022","level":50,"ryo":257685,"wood":18356,"stone":9178,"duration_s":36382,"worker_capacity":5},
-  {"building_id":"BLD-022","level":75,"ryo":5470780,"wood":389700,"stone":194850,"duration_s":394183,"worker_capacity":8},
-  {"building_id":"BLD-022","level":100,"ryo":116147622,"wood":8273530,"stone":4136765,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-023","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-023","level":10,"ryo":2021,"wood":144,"stone":72,"duration_s":836,"worker_capacity":1},
-  {"building_id":"BLD-023","level":25,"ryo":12637,"wood":898,"stone":449,"duration_s":3493,"worker_capacity":3},
-  {"building_id":"BLD-023","level":50,"ryo":268275,"wood":19062,"stone":9531,"duration_s":37837,"worker_capacity":5},
-  {"building_id":"BLD-023","level":75,"ryo":5695607,"wood":404688,"stone":202344,"duration_s":409950,"worker_capacity":8},
-  {"building_id":"BLD-023","level":100,"ryo":120920812,"wood":8591742,"stone":4295871,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-024","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-024","level":10,"ryo":2101,"wood":149,"stone":75,"duration_s":869,"worker_capacity":1},
-  {"building_id":"BLD-024","level":25,"ryo":13136,"wood":932,"stone":466,"duration_s":3627,"worker_capacity":3},
-  {"building_id":"BLD-024","level":50,"ryo":278864,"wood":19768,"stone":9884,"duration_s":39292,"worker_capacity":5},
-  {"building_id":"BLD-024","level":75,"ryo":5920433,"wood":419677,"stone":209839,"duration_s":425718,"worker_capacity":8},
-  {"building_id":"BLD-024","level":100,"ryo":125694002,"wood":8909955,"stone":4454978,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-025","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-025","level":10,"ryo":2180,"wood":155,"stone":78,"duration_s":901,"worker_capacity":1},
-  {"building_id":"BLD-025","level":25,"ryo":13634,"wood":965,"stone":483,"duration_s":3761,"worker_capacity":3},
-  {"building_id":"BLD-025","level":50,"ryo":289454,"wood":20474,"stone":10237,"duration_s":40748,"worker_capacity":5},
-  {"building_id":"BLD-025","level":75,"ryo":6145260,"wood":434665,"stone":217333,"duration_s":441485,"worker_capacity":8},
-  {"building_id":"BLD-025","level":100,"ryo":130467192,"wood":9228168,"stone":4614084,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-026","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-026","level":10,"ryo":2260,"wood":160,"stone":80,"duration_s":933,"worker_capacity":1},
-  {"building_id":"BLD-026","level":25,"ryo":14133,"wood":998,"stone":499,"duration_s":3896,"worker_capacity":3},
-  {"building_id":"BLD-026","level":50,"ryo":300044,"wood":21180,"stone":10590,"duration_s":42203,"worker_capacity":5},
-  {"building_id":"BLD-026","level":75,"ryo":6370087,"wood":449654,"stone":224827,"duration_s":457252,"worker_capacity":8},
-  {"building_id":"BLD-026","level":100,"ryo":135240382,"wood":9546380,"stone":4773190,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-027","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-027","level":10,"ryo":2340,"wood":165,"stone":83,"duration_s":965,"worker_capacity":1},
-  {"building_id":"BLD-027","level":25,"ryo":14632,"wood":1031,"stone":516,"duration_s":4030,"worker_capacity":3},
-  {"building_id":"BLD-027","level":50,"ryo":310634,"wood":21886,"stone":10943,"duration_s":43658,"worker_capacity":5},
-  {"building_id":"BLD-027","level":75,"ryo":6594913,"wood":464642,"stone":232321,"duration_s":473019,"worker_capacity":8},
-  {"building_id":"BLD-027","level":100,"ryo":140013572,"wood":9864593,"stone":4932297,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-028","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-028","level":10,"ryo":2420,"wood":171,"stone":86,"duration_s":997,"worker_capacity":1},
-  {"building_id":"BLD-028","level":25,"ryo":15131,"wood":1065,"stone":533,"duration_s":4164,"worker_capacity":3},
-  {"building_id":"BLD-028","level":50,"ryo":321224,"wood":22592,"stone":11296,"duration_s":45114,"worker_capacity":5},
-  {"building_id":"BLD-028","level":75,"ryo":6819740,"wood":479631,"stone":239816,"duration_s":488787,"worker_capacity":8},
-  {"building_id":"BLD-028","level":100,"ryo":144786762,"wood":10182806,"stone":5091403,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-029","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-029","level":10,"ryo":2499,"wood":176,"stone":88,"duration_s":1029,"worker_capacity":1},
-  {"building_id":"BLD-029","level":25,"ryo":15630,"wood":1098,"stone":549,"duration_s":4299,"worker_capacity":3},
-  {"building_id":"BLD-029","level":50,"ryo":331813,"wood":23298,"stone":11649,"duration_s":46569,"worker_capacity":5},
-  {"building_id":"BLD-029","level":75,"ryo":7044566,"wood":494619,"stone":247310,"duration_s":504554,"worker_capacity":8},
-  {"building_id":"BLD-029","level":100,"ryo":149559952,"wood":10501018,"stone":5250509,"duration_s":604800,"worker_capacity":10},
-  {"building_id":"BLD-030","level":1,"ryo":0,"wood":0,"stone":0,"duration_s":0,"worker_capacity":1},
-  {"building_id":"BLD-030","level":10,"ryo":2579,"wood":181,"stone":91,"duration_s":1062,"worker_capacity":1},
-  {"building_id":"BLD-030","level":25,"ryo":16128,"wood":1131,"stone":566,"duration_s":4433,"worker_capacity":3},
-  {"building_id":"BLD-030","level":50,"ryo":342403,"wood":24004,"stone":12002,"duration_s":48024,"worker_capacity":5},
-  {"building_id":"BLD-030","level":75,"ryo":7269393,"wood":509607,"stone":254804,"duration_s":520321,"worker_capacity":8},
-  {"building_id":"BLD-030","level":100,"ryo":154333142,"wood":10819231,"stone":5409616,"duration_s":604800,"worker_capacity":10}
+  {
+    "building_id": "BLD-001",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-001",
+    "level": 10,
+    "ryo": 266,
+    "wood": 27,
+    "stone": 14,
+    "duration_s": 129,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-001",
+    "level": 25,
+    "ryo": 1663,
+    "wood": 167,
+    "stone": 84,
+    "duration_s": 538,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-001",
+    "level": 50,
+    "ryo": 35300,
+    "wood": 3530,
+    "stone": 1765,
+    "duration_s": 5822,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-001",
+    "level": 75,
+    "ryo": 749422,
+    "wood": 74943,
+    "stone": 37472,
+    "duration_s": 63070,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-001",
+    "level": 100,
+    "ryo": 15910634,
+    "wood": 1591064,
+    "stone": 795532,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-002",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-002",
+    "level": 10,
+    "ryo": 346,
+    "wood": 32,
+    "stone": 16,
+    "duration_s": 161,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-002",
+    "level": 25,
+    "ryo": 2162,
+    "wood": 200,
+    "stone": 100,
+    "duration_s": 672,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-002",
+    "level": 50,
+    "ryo": 45890,
+    "wood": 4236,
+    "stone": 2118,
+    "duration_s": 7277,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-002",
+    "level": 75,
+    "ryo": 974249,
+    "wood": 89931,
+    "stone": 44966,
+    "duration_s": 78837,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-002",
+    "level": 100,
+    "ryo": 20683824,
+    "wood": 1909276,
+    "stone": 954638,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-003",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-003",
+    "level": 10,
+    "ryo": 426,
+    "wood": 38,
+    "stone": 19,
+    "duration_s": 193,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-003",
+    "level": 25,
+    "ryo": 2661,
+    "wood": 233,
+    "stone": 117,
+    "duration_s": 806,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-003",
+    "level": 50,
+    "ryo": 56479,
+    "wood": 4942,
+    "stone": 2471,
+    "duration_s": 8732,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-003",
+    "level": 75,
+    "ryo": 1199076,
+    "wood": 104920,
+    "stone": 52460,
+    "duration_s": 94604,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-003",
+    "level": 100,
+    "ryo": 25457013,
+    "wood": 2227489,
+    "stone": 1113745,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-004",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-004",
+    "level": 10,
+    "ryo": 506,
+    "wood": 43,
+    "stone": 22,
+    "duration_s": 226,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-004",
+    "level": 25,
+    "ryo": 3160,
+    "wood": 267,
+    "stone": 134,
+    "duration_s": 941,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-004",
+    "level": 50,
+    "ryo": 67069,
+    "wood": 5648,
+    "stone": 2824,
+    "duration_s": 10187,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-004",
+    "level": 75,
+    "ryo": 1423902,
+    "wood": 119908,
+    "stone": 59954,
+    "duration_s": 110372,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-004",
+    "level": 100,
+    "ryo": 30230203,
+    "wood": 2545702,
+    "stone": 1272851,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-005",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-005",
+    "level": 10,
+    "ryo": 585,
+    "wood": 48,
+    "stone": 24,
+    "duration_s": 258,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-005",
+    "level": 25,
+    "ryo": 3658,
+    "wood": 300,
+    "stone": 150,
+    "duration_s": 1075,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-005",
+    "level": 50,
+    "ryo": 77659,
+    "wood": 6354,
+    "stone": 3177,
+    "duration_s": 11643,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-005",
+    "level": 75,
+    "ryo": 1648729,
+    "wood": 134896,
+    "stone": 67448,
+    "duration_s": 126139,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-005",
+    "level": 100,
+    "ryo": 35003393,
+    "wood": 2863914,
+    "stone": 1431957,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-006",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-006",
+    "level": 10,
+    "ryo": 665,
+    "wood": 54,
+    "stone": 27,
+    "duration_s": 290,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-006",
+    "level": 25,
+    "ryo": 4157,
+    "wood": 333,
+    "stone": 167,
+    "duration_s": 1209,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-006",
+    "level": 50,
+    "ryo": 88249,
+    "wood": 7060,
+    "stone": 3530,
+    "duration_s": 13098,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-006",
+    "level": 75,
+    "ryo": 1873555,
+    "wood": 149885,
+    "stone": 74943,
+    "duration_s": 141906,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-006",
+    "level": 100,
+    "ryo": 39776583,
+    "wood": 3182127,
+    "stone": 1591064,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-007",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-007",
+    "level": 10,
+    "ryo": 745,
+    "wood": 59,
+    "stone": 30,
+    "duration_s": 322,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-007",
+    "level": 25,
+    "ryo": 4656,
+    "wood": 366,
+    "stone": 183,
+    "duration_s": 1344,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-007",
+    "level": 50,
+    "ryo": 98838,
+    "wood": 7766,
+    "stone": 3883,
+    "duration_s": 14553,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-007",
+    "level": 75,
+    "ryo": 2098382,
+    "wood": 164873,
+    "stone": 82437,
+    "duration_s": 157673,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-007",
+    "level": 100,
+    "ryo": 44549773,
+    "wood": 3500340,
+    "stone": 1750170,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-008",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-008",
+    "level": 10,
+    "ryo": 825,
+    "wood": 64,
+    "stone": 32,
+    "duration_s": 354,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-008",
+    "level": 25,
+    "ryo": 5155,
+    "wood": 400,
+    "stone": 200,
+    "duration_s": 1478,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-008",
+    "level": 50,
+    "ryo": 109428,
+    "wood": 8472,
+    "stone": 4236,
+    "duration_s": 16008,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-008",
+    "level": 75,
+    "ryo": 2323208,
+    "wood": 179862,
+    "stone": 89931,
+    "duration_s": 173441,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-008",
+    "level": 100,
+    "ryo": 49322963,
+    "wood": 3818552,
+    "stone": 1909276,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-009",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-009",
+    "level": 10,
+    "ryo": 904,
+    "wood": 70,
+    "stone": 35,
+    "duration_s": 386,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-009",
+    "level": 25,
+    "ryo": 5654,
+    "wood": 433,
+    "stone": 217,
+    "duration_s": 1612,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-009",
+    "level": 50,
+    "ryo": 120018,
+    "wood": 9178,
+    "stone": 4589,
+    "duration_s": 17464,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-009",
+    "level": 75,
+    "ryo": 2548035,
+    "wood": 194850,
+    "stone": 97425,
+    "duration_s": 189208,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-009",
+    "level": 100,
+    "ryo": 54096153,
+    "wood": 4136765,
+    "stone": 2068383,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-010",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-010",
+    "level": 10,
+    "ryo": 984,
+    "wood": 75,
+    "stone": 38,
+    "duration_s": 418,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-010",
+    "level": 25,
+    "ryo": 6152,
+    "wood": 466,
+    "stone": 233,
+    "duration_s": 1747,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-010",
+    "level": 50,
+    "ryo": 130608,
+    "wood": 9884,
+    "stone": 4942,
+    "duration_s": 18919,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-010",
+    "level": 75,
+    "ryo": 2772861,
+    "wood": 209839,
+    "stone": 104920,
+    "duration_s": 204975,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-010",
+    "level": 100,
+    "ryo": 58869343,
+    "wood": 4454978,
+    "stone": 2227489,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-011",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-011",
+    "level": 10,
+    "ryo": 1064,
+    "wood": 80,
+    "stone": 40,
+    "duration_s": 451,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-011",
+    "level": 25,
+    "ryo": 6651,
+    "wood": 499,
+    "stone": 250,
+    "duration_s": 1881,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-011",
+    "level": 50,
+    "ryo": 141197,
+    "wood": 10590,
+    "stone": 5295,
+    "duration_s": 20374,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-011",
+    "level": 75,
+    "ryo": 2997688,
+    "wood": 224827,
+    "stone": 112414,
+    "duration_s": 220743,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-011",
+    "level": 100,
+    "ryo": 63642533,
+    "wood": 4773190,
+    "stone": 2386595,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-012",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-012",
+    "level": 10,
+    "ryo": 1144,
+    "wood": 86,
+    "stone": 43,
+    "duration_s": 483,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-012",
+    "level": 25,
+    "ryo": 7150,
+    "wood": 533,
+    "stone": 267,
+    "duration_s": 2015,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-012",
+    "level": 50,
+    "ryo": 151787,
+    "wood": 11296,
+    "stone": 5648,
+    "duration_s": 21829,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-012",
+    "level": 75,
+    "ryo": 3222515,
+    "wood": 239816,
+    "stone": 119908,
+    "duration_s": 236510,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-012",
+    "level": 100,
+    "ryo": 68415723,
+    "wood": 5091403,
+    "stone": 2545702,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-013",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-013",
+    "level": 10,
+    "ryo": 1223,
+    "wood": 91,
+    "stone": 46,
+    "duration_s": 515,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-013",
+    "level": 25,
+    "ryo": 7649,
+    "wood": 566,
+    "stone": 283,
+    "duration_s": 2150,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-013",
+    "level": 50,
+    "ryo": 162377,
+    "wood": 12002,
+    "stone": 6001,
+    "duration_s": 23285,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-013",
+    "level": 75,
+    "ryo": 3447341,
+    "wood": 254804,
+    "stone": 127402,
+    "duration_s": 252277,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-013",
+    "level": 100,
+    "ryo": 73188913,
+    "wood": 5409616,
+    "stone": 2704808,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-014",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-014",
+    "level": 10,
+    "ryo": 1303,
+    "wood": 96,
+    "stone": 48,
+    "duration_s": 547,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-014",
+    "level": 25,
+    "ryo": 8148,
+    "wood": 599,
+    "stone": 300,
+    "duration_s": 2284,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-014",
+    "level": 50,
+    "ryo": 172967,
+    "wood": 12708,
+    "stone": 6354,
+    "duration_s": 24740,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-014",
+    "level": 75,
+    "ryo": 3672168,
+    "wood": 269792,
+    "stone": 134896,
+    "duration_s": 268045,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-014",
+    "level": 100,
+    "ryo": 77962103,
+    "wood": 5727828,
+    "stone": 2863914,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-015",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-015",
+    "level": 10,
+    "ryo": 1383,
+    "wood": 102,
+    "stone": 51,
+    "duration_s": 579,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-015",
+    "level": 25,
+    "ryo": 8646,
+    "wood": 632,
+    "stone": 316,
+    "duration_s": 2418,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-015",
+    "level": 50,
+    "ryo": 183557,
+    "wood": 13414,
+    "stone": 6707,
+    "duration_s": 26195,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-015",
+    "level": 75,
+    "ryo": 3896994,
+    "wood": 284781,
+    "stone": 142391,
+    "duration_s": 283812,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-015",
+    "level": 100,
+    "ryo": 82735293,
+    "wood": 6046041,
+    "stone": 3023021,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-016",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-016",
+    "level": 10,
+    "ryo": 1463,
+    "wood": 107,
+    "stone": 54,
+    "duration_s": 611,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-016",
+    "level": 25,
+    "ryo": 9145,
+    "wood": 666,
+    "stone": 333,
+    "duration_s": 2552,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-016",
+    "level": 50,
+    "ryo": 194146,
+    "wood": 14120,
+    "stone": 7060,
+    "duration_s": 27650,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-016",
+    "level": 75,
+    "ryo": 4121821,
+    "wood": 299769,
+    "stone": 149885,
+    "duration_s": 299579,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-016",
+    "level": 100,
+    "ryo": 87508483,
+    "wood": 6364254,
+    "stone": 3182127,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-017",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-017",
+    "level": 10,
+    "ryo": 1542,
+    "wood": 112,
+    "stone": 56,
+    "duration_s": 644,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-017",
+    "level": 25,
+    "ryo": 9644,
+    "wood": 699,
+    "stone": 350,
+    "duration_s": 2687,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-017",
+    "level": 50,
+    "ryo": 204736,
+    "wood": 14826,
+    "stone": 7413,
+    "duration_s": 29106,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-017",
+    "level": 75,
+    "ryo": 4346647,
+    "wood": 314758,
+    "stone": 157379,
+    "duration_s": 315346,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-017",
+    "level": 100,
+    "ryo": 92281673,
+    "wood": 6682466,
+    "stone": 3341233,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-018",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-018",
+    "level": 10,
+    "ryo": 1622,
+    "wood": 117,
+    "stone": 59,
+    "duration_s": 676,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-018",
+    "level": 25,
+    "ryo": 10143,
+    "wood": 732,
+    "stone": 366,
+    "duration_s": 2821,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-018",
+    "level": 50,
+    "ryo": 215326,
+    "wood": 15532,
+    "stone": 7766,
+    "duration_s": 30561,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-018",
+    "level": 75,
+    "ryo": 4571474,
+    "wood": 329746,
+    "stone": 164873,
+    "duration_s": 331114,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-018",
+    "level": 100,
+    "ryo": 97054862,
+    "wood": 7000679,
+    "stone": 3500340,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-019",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-019",
+    "level": 10,
+    "ryo": 1702,
+    "wood": 123,
+    "stone": 62,
+    "duration_s": 708,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-019",
+    "level": 25,
+    "ryo": 10642,
+    "wood": 765,
+    "stone": 383,
+    "duration_s": 2955,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-019",
+    "level": 50,
+    "ryo": 225916,
+    "wood": 16238,
+    "stone": 8119,
+    "duration_s": 32016,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-019",
+    "level": 75,
+    "ryo": 4796301,
+    "wood": 344735,
+    "stone": 172368,
+    "duration_s": 346881,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-019",
+    "level": 100,
+    "ryo": 101828052,
+    "wood": 7318892,
+    "stone": 3659446,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-020",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-020",
+    "level": 10,
+    "ryo": 1782,
+    "wood": 128,
+    "stone": 64,
+    "duration_s": 740,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-020",
+    "level": 25,
+    "ryo": 11140,
+    "wood": 799,
+    "stone": 400,
+    "duration_s": 3090,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-020",
+    "level": 50,
+    "ryo": 236505,
+    "wood": 16944,
+    "stone": 8472,
+    "duration_s": 33471,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-020",
+    "level": 75,
+    "ryo": 5021127,
+    "wood": 359723,
+    "stone": 179862,
+    "duration_s": 362648,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-020",
+    "level": 100,
+    "ryo": 106601242,
+    "wood": 7637104,
+    "stone": 3818552,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-021",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-021",
+    "level": 10,
+    "ryo": 1861,
+    "wood": 133,
+    "stone": 67,
+    "duration_s": 772,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-021",
+    "level": 25,
+    "ryo": 11639,
+    "wood": 832,
+    "stone": 416,
+    "duration_s": 3224,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-021",
+    "level": 50,
+    "ryo": 247095,
+    "wood": 17650,
+    "stone": 8825,
+    "duration_s": 34927,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-021",
+    "level": 75,
+    "ryo": 5245954,
+    "wood": 374711,
+    "stone": 187356,
+    "duration_s": 378416,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-021",
+    "level": 100,
+    "ryo": 111374432,
+    "wood": 7955317,
+    "stone": 3977659,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-022",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-022",
+    "level": 10,
+    "ryo": 1941,
+    "wood": 139,
+    "stone": 70,
+    "duration_s": 804,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-022",
+    "level": 25,
+    "ryo": 12138,
+    "wood": 865,
+    "stone": 433,
+    "duration_s": 3358,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-022",
+    "level": 50,
+    "ryo": 257685,
+    "wood": 18356,
+    "stone": 9178,
+    "duration_s": 36382,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-022",
+    "level": 75,
+    "ryo": 5470780,
+    "wood": 389700,
+    "stone": 194850,
+    "duration_s": 394183,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-022",
+    "level": 100,
+    "ryo": 116147622,
+    "wood": 8273530,
+    "stone": 4136765,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-023",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-023",
+    "level": 10,
+    "ryo": 2021,
+    "wood": 144,
+    "stone": 72,
+    "duration_s": 836,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-023",
+    "level": 25,
+    "ryo": 12637,
+    "wood": 898,
+    "stone": 449,
+    "duration_s": 3493,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-023",
+    "level": 50,
+    "ryo": 268275,
+    "wood": 19062,
+    "stone": 9531,
+    "duration_s": 37837,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-023",
+    "level": 75,
+    "ryo": 5695607,
+    "wood": 404688,
+    "stone": 202344,
+    "duration_s": 409950,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-023",
+    "level": 100,
+    "ryo": 120920812,
+    "wood": 8591742,
+    "stone": 4295871,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-024",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-024",
+    "level": 10,
+    "ryo": 2101,
+    "wood": 149,
+    "stone": 75,
+    "duration_s": 869,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-024",
+    "level": 25,
+    "ryo": 13136,
+    "wood": 932,
+    "stone": 466,
+    "duration_s": 3627,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-024",
+    "level": 50,
+    "ryo": 278864,
+    "wood": 19768,
+    "stone": 9884,
+    "duration_s": 39292,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-024",
+    "level": 75,
+    "ryo": 5920433,
+    "wood": 419677,
+    "stone": 209839,
+    "duration_s": 425718,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-024",
+    "level": 100,
+    "ryo": 125694002,
+    "wood": 8909955,
+    "stone": 4454978,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-025",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-025",
+    "level": 10,
+    "ryo": 2180,
+    "wood": 155,
+    "stone": 78,
+    "duration_s": 901,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-025",
+    "level": 25,
+    "ryo": 13634,
+    "wood": 965,
+    "stone": 483,
+    "duration_s": 3761,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-025",
+    "level": 50,
+    "ryo": 289454,
+    "wood": 20474,
+    "stone": 10237,
+    "duration_s": 40748,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-025",
+    "level": 75,
+    "ryo": 6145260,
+    "wood": 434665,
+    "stone": 217333,
+    "duration_s": 441485,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-025",
+    "level": 100,
+    "ryo": 130467192,
+    "wood": 9228168,
+    "stone": 4614084,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-026",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-026",
+    "level": 10,
+    "ryo": 2260,
+    "wood": 160,
+    "stone": 80,
+    "duration_s": 933,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-026",
+    "level": 25,
+    "ryo": 14133,
+    "wood": 998,
+    "stone": 499,
+    "duration_s": 3896,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-026",
+    "level": 50,
+    "ryo": 300044,
+    "wood": 21180,
+    "stone": 10590,
+    "duration_s": 42203,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-026",
+    "level": 75,
+    "ryo": 6370087,
+    "wood": 449654,
+    "stone": 224827,
+    "duration_s": 457252,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-026",
+    "level": 100,
+    "ryo": 135240382,
+    "wood": 9546380,
+    "stone": 4773190,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-027",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-027",
+    "level": 10,
+    "ryo": 2340,
+    "wood": 165,
+    "stone": 83,
+    "duration_s": 965,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-027",
+    "level": 25,
+    "ryo": 14632,
+    "wood": 1031,
+    "stone": 516,
+    "duration_s": 4030,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-027",
+    "level": 50,
+    "ryo": 310634,
+    "wood": 21886,
+    "stone": 10943,
+    "duration_s": 43658,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-027",
+    "level": 75,
+    "ryo": 6594913,
+    "wood": 464642,
+    "stone": 232321,
+    "duration_s": 473019,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-027",
+    "level": 100,
+    "ryo": 140013572,
+    "wood": 9864593,
+    "stone": 4932297,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-028",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-028",
+    "level": 10,
+    "ryo": 2420,
+    "wood": 171,
+    "stone": 86,
+    "duration_s": 997,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-028",
+    "level": 25,
+    "ryo": 15131,
+    "wood": 1065,
+    "stone": 533,
+    "duration_s": 4164,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-028",
+    "level": 50,
+    "ryo": 321224,
+    "wood": 22592,
+    "stone": 11296,
+    "duration_s": 45114,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-028",
+    "level": 75,
+    "ryo": 6819740,
+    "wood": 479631,
+    "stone": 239816,
+    "duration_s": 488787,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-028",
+    "level": 100,
+    "ryo": 144786762,
+    "wood": 10182806,
+    "stone": 5091403,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-029",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-029",
+    "level": 10,
+    "ryo": 2499,
+    "wood": 176,
+    "stone": 88,
+    "duration_s": 1029,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-029",
+    "level": 25,
+    "ryo": 15630,
+    "wood": 1098,
+    "stone": 549,
+    "duration_s": 4299,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-029",
+    "level": 50,
+    "ryo": 331813,
+    "wood": 23298,
+    "stone": 11649,
+    "duration_s": 46569,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-029",
+    "level": 75,
+    "ryo": 7044566,
+    "wood": 494619,
+    "stone": 247310,
+    "duration_s": 504554,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-029",
+    "level": 100,
+    "ryo": 149559952,
+    "wood": 10501018,
+    "stone": 5250509,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  },
+  {
+    "building_id": "BLD-030",
+    "level": 1,
+    "ryo": 0,
+    "wood": 0,
+    "stone": 0,
+    "duration_s": 0,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-030",
+    "level": 10,
+    "ryo": 2579,
+    "wood": 181,
+    "stone": 91,
+    "duration_s": 1062,
+    "worker_capacity": 1
+  },
+  {
+    "building_id": "BLD-030",
+    "level": 25,
+    "ryo": 16128,
+    "wood": 1131,
+    "stone": 566,
+    "duration_s": 4433,
+    "worker_capacity": 3
+  },
+  {
+    "building_id": "BLD-030",
+    "level": 50,
+    "ryo": 342403,
+    "wood": 24004,
+    "stone": 12002,
+    "duration_s": 48024,
+    "worker_capacity": 5
+  },
+  {
+    "building_id": "BLD-030",
+    "level": 75,
+    "ryo": 7269393,
+    "wood": 509607,
+    "stone": 254804,
+    "duration_s": 520321,
+    "worker_capacity": 8
+  },
+  {
+    "building_id": "BLD-030",
+    "level": 100,
+    "ryo": 154333142,
+    "wood": 10819231,
+    "stone": 5409616,
+    "duration_s": 604800,
+    "worker_capacity": 10
+  }
+]
