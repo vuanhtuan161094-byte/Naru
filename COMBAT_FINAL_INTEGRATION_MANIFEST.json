@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "V13_VERIFIED_BASELINE_FIX_CI_REQUIRED",
+  "status": "V13_FINAL_HANDOFF_CANDIDATE_CI_REQUIRED",
   "base_sha": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
   "head_sha": "13782ca61c5d7290715d96c4991592630013fdf7",
   "head_note": "Runtime code commit; this manifest and docs are published by a subsequent metadata-only commit. Exact build SHA is artifact BUILD_SHA.txt.",
@@ -317,5 +317,24 @@
       ]
     },
     "note": "Exact automatic form prerequisite for queued ultimate, real CP reserve and legal checks; CI required"
+  },
+  "final_playtest_fix": {
+    "runtime_sha": "2d4846fafb83046927ff3cacf54395716afe5d43",
+    "test_sha": "a7e00b272b9d405c0d7627f2305650a5c88647b2",
+    "functions": {
+      "game/combat.gd": [
+        "tick"
+      ],
+      "game/combat_final_v12_test.gd": [
+        "v13_queued_approach_check",
+        "_initialize"
+      ]
+    },
+    "note": "Ready, legal, queued non-self ultimate out of range advances by existing collision-aware movement. Preserves dodge, bind, emergency allied support and legal cost/range checks. Exact test CI required."
+  },
+  "integration_policy": {
+    "verified_fallback": "46d6d1442c21f7f0acafcbb6e782f89e0219e615",
+    "candidate_code_sha": "a7e00b272b9d405c0d7627f2305650a5c88647b2",
+    "freeze": "No new systems. Apply cumulative manifest from V11 to exact tested SHA; main.gd and workflow only named function/hunk deltas. Preserve all holds and shared services."
   }
 }
