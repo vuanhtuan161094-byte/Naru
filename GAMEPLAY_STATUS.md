@@ -19,3 +19,6 @@ GP-P2C and GP-P3B residuals, GP-P5B resource reachability and GP-P6 save hardeni
 
 ## Gameplay Completion A — 25/11
 Code: per-source shields, taunt/mark targeting, D4 environmental modifiers for forest/desert/cave, cast/cooldown/chakra/area/healing/lifesteal stat use, eligible-action permanent growth with provisional level-quality enemy/player power proxy, gear affix crafting/reroll and set assignment + thresholds, save validation/JSON import/export and interrupted battle refund. 150-resource dependency graph checked; not a live-play economy proof. Proposed set assignment costs 5 RES-112; crafting quality uses template quality as material proxy. Remaining: spatial fields, all effect semantics, complete save validation of nested jobs/world, precise offline timing, multi-team/NPC wars, full campaign verification. CI pending. No merge or art edits.
+
+## Completion B / Web DEV
+Spatial cast field overlap (circle approximation for lines; 2s), offline timer boundary splitting, export preset for non-threaded Godot Web, private CI artifact only, Chromium probe via actual exported WASM executing recruit/team/stage/reward/train/reload. Excludes review art. No public Pages/release. CI pending. Probe is automated runtime not manual mouse walkthrough. Full spatial terrain/precise day rollover and multi-team still open.

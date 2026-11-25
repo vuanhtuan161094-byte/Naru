@@ -244,4 +244,10 @@ func _initialize() -> void:
 	for skill in reg.skills.values():
 		if not shield_sim.supported(skill):check(false,"unsupported "+str(skill.skill_id))
 	check(true,"all skill effect types recognized")
+	var water=reg.skills["NIN-001-S0"].duplicate(true)
+	water.element="water"
+	var lightning=water.duplicate(true)
+	lightning.element="lightning"
+	shield_sim.spatial_reaction(a1,water,a2)
+	check(is_equal_approx(shield_sim.spatial_reaction(a1,lightning,a2),1.2),"spatial element overlap")
 	quit(0 if failures==0 else 1)

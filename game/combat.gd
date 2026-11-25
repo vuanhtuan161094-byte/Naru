@@ -309,6 +309,7 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 
 func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 	if b.is_empty() or b.hp<=0:return
+	var field_factor=spatial_reaction(a,s,b)
 	for target in targets_for(a,s,b):
 		for e in s.effects:
 			match str(e.type):
@@ -321,7 +322,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 					var defense=maxf(0.0,float(target.armor if physical else target.nres)*(1.0+magnitude(target,"defense_up"))-float(a.stats.get("armor_pen" if physical else "magic_pen",0)))
 					if e.damage_type=="genjutsu":defense=float(target.stats.genjutsu_resist)
 					var realm_factor=clampf(1.0+0.04*(int(a.realm)-int(target.realm)),0.75,1.25)
-					var element_factor=float(registry.affinity.get(str(s.element)+":"+str(target.element),1.0))*reaction(a,target,str(s.element))*float(registry.environments.get(environment,{}).get("modifiers",{}).get(s.element,1.0))
+					var element_factor=float(registry.affinity.get(str(s.element)+":"+str(target.element),1.0))*maxf(field_factor,reaction(a,target,str(s.element)))*float(registry.environments.get(environment,{}).get("modifiers",{}).get(s.element,1.0))
 					if s.element!="neutral":element_factor*=1.0+rating(a,"element_power")
 					var hit_rate=clampf(0.85+(rating(a,"accuracy")-rating(target,"evasion"))/(200.0+absf(rating(a,"accuracy")-rating(target,"evasion")))+magnitude(a,"accuracy_up")-magnitude(a,"blind")-magnitude(a,"steam")-magnitude(target,"evasion"),0.15,0.99)
 					if rng.randf()<hit_rate:
@@ -403,6 +404,8 @@ func primary_alive(side: int) -> Array:
 func tick(dt: float) -> void:
 	if not outcome.is_empty():return
 	ticks+=1
+	for zone in elemental_fields.duplicate():
+		if int(zone.expires)<=ticks:elemental_fields.erase(zone)
 	for p in projectiles.duplicate():
 		p.remaining=float(p.remaining)-dt
 		if p.remaining<=0:
@@ -566,3 +569,26 @@ func add_shield(a: Dictionary,b: Dictionary,amount: float,duration: float) -> vo
 	b.shield=float(b.shield)+value-float(old.hp)
 	b.shield_sources[key]={"hp":value,"remaining":maxf(duration,float(old.remaining))}
 	b.shield_time=maxf(float(b.shield_time),duration)
+
+func spatial_reaction(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
+	var element=str(s.element)
+	if element=="neutral":return 1.0
+	var radius=maxf(0.4,float(s.radius_m))
+	if s.shape=="line":radius=maxf(radius,float(s.line_width_m)*0.5)
+	var factor=1.0
+	var reacted=false
+	for zone in elemental_fields:
+		if zone.side!=a.side or zone.used or int(zone.expires)<=ticks or zone.element==element:continue
+		if b.pos.distance_to(zone.pos)>radius+float(zone.radius):continue
+		for rule in registry.reactions:
+			if element in rule.elements and zone.element in rule.elements:
+				factor=maxf(factor,float(rule.multiplier))
+				zone.used=true
+				reacted=true
+				if rule.status_id!=null:
+					for target in alive(1-int(a.side)):
+						if target.pos.distance_to(b.pos)<=radius:apply_status(a,target,{"status_id":rule.status_id,"chance":1.0})
+				break
+		if reacted:break
+	elemental_fields.append({"element":element,"side":a.side,"pos":b.pos,"radius":radius,"expires":ticks+40,"used":reacted})
+	return factor

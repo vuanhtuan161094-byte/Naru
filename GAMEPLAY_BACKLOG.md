@@ -13,5 +13,5 @@
 | GP-P7 | READY | 60 territories, 71 routes, 9 factions, diplomacy/trade/war/raids/sequential teams. |
 | GP-P8 | READY | 120 stages, 24 bosses, 81 quests, 288 trials, 9 bijuu, 11 summons, 12 combos, actual mechanics. |
 | GP-P9 | BACKLOG | 17 functional Vietnamese screens, touch/desktop, asset adapter. |
-| GP-P10 | BACKLOG | Early DEV Web when feasible; final Web/Android/PC same project and acceptance gates. |
+| GP-P10 | IN_PROGRESS | Early DEV Web when feasible; final Web/Android/PC same project and acceptance gates. |
 Independent tasks may proceed where dependencies permit; update status and backlog each batch. No art wait. No merge or Codex Cloud.

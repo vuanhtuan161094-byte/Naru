@@ -195,6 +195,13 @@ static func advance(reg,s: Dictionary,now: int) -> bool:
 	var remaining=elapsed
 	while remaining>0:
 		var dt=mini(60,remaining)
+		for b in s.building_states.values():
+			if not b.upgrade.is_empty():dt=mini(dt,maxi(1,int(b.upgrade.remaining)))
+			if not b.production.is_empty() and int(b.production.remaining)>0:dt=mini(dt,int(b.production.remaining))
+		for mission in s.missions.values():
+			if int(mission.remaining)>0:dt=mini(dt,int(mission.remaining))
+		if not s.travel.is_empty():dt=mini(dt,maxi(1,int(s.travel.remaining)))
+		dt=mini(dt,600-int(s.world_seconds))
 		step(reg,s,dt)
 		remaining-=dt
 	s.last_committed_timestamp=now

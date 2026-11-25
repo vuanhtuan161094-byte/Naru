@@ -15,6 +15,7 @@ var log_label: Label
 var ult_buttons: Array[Button]=[]
 var selected_stage="STG-001"
 var clock_accumulator=0.0
+var web_qa=false
 
 func _ready() -> void:
 	var bg=ColorRect.new()
@@ -39,6 +40,11 @@ func _ready() -> void:
 		return
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	menu()
+	if OS.has_feature("web"):
+		web_qa=bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('qa')"))
+		if web_qa:
+			JavaScriptBridge.eval("window.naruReady=true")
+			call_deferred("web_probe")
 
 func clear() -> void:
 	for c in root.get_children():
@@ -628,3 +634,28 @@ func affix_screen(id: String,message: String="") -> void:
 	if str(item.get("set_id",""))=="":
 		for rule in reg.gear_rules.sets:
 			if reg.gear_templates[item.template_id].slot_id in rule.eligible_slots:button(rows,"Gắn bộ "+str(rule.name_vi)+" (5 vật liệu)",func():affix_screen(id,"Đã gắn bộ" if store.set_gear_set(reg,id,rule.id) else "Thiếu điều kiện"))
+
+func web_probe() -> void:
+	# Browser integration uses a separate temporary save, never the normal player save.
+	var test=SaveStore.new()
+	test.save_path="user://naru_browser_qa.json"
+	test.new_game(reg)
+	test.rng.seed=42
+	var recruited=test.draw(reg)
+	var team=test.state.owned.keys()
+	var ok=not recruited.is_empty() and test.set_team(team)
+	var stage=reg.stages["STG-001"]
+	var event=test.begin_stage(stage)
+	var battle=Combat.new()
+	battle.setup(reg,test.state,stage,42)
+	for i in range(24000):
+		battle.tick(0.05)
+		if not battle.outcome.is_empty():break
+	ok=ok and battle.outcome=="win" and test.finish_stage(reg,stage,event,true,battle.counts,battle.mastery_counts)
+	ok=ok and test.train("NIN-001")
+	var reloaded=SaveStore.new()
+	reloaded.save_path=test.save_path
+	reloaded.load_or_new(reg)
+	ok=ok and reloaded.state.cleared.has("STG-001") and not reloaded.finish_stage(reg,stage,event,true,{})
+	JavaScriptBridge.eval("window.naruProbe="+("true" if ok else "false"))
+	print("NARU_WEB_PROBE_"+("PASS" if ok else "FAIL"))

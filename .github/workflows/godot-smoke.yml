@@ -29,3 +29,50 @@ jobs:
           timeout 90 "$G" --headless --path . --script res://game/gp_p2_test.gd 2>&1 | tee /tmp/gp-p2.log
           grep 'GP_P2_OK 6v6 ticks' /tmp/gp-p2.log
           ! grep -E 'Parse Error|SCRIPT ERROR|GP_P2_FAIL' /tmp/gp-p2.log
+      - name: Install matching Web templates
+        run: |
+          curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+          unzip -q /tmp/templates.tpz -d /tmp/naru-templates
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.4.1.stable"
+          cp /tmp/naru-templates/templates/web_nothreads_release.zip "$HOME/.local/share/godot/export_templates/4.4.1.stable/"
+      - name: Export Web DEV
+        run: |
+          set -o pipefail
+          mkdir -p dist
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          "$G" --headless --path . --export-release "Web DEV" dist/index.html 2>&1 | tee /tmp/web-export.log
+          test -s dist/index.html
+          test -s dist/index.wasm
+          test -s dist/index.pck
+          ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
+          printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
+          cat > dist/README.txt <<'EOF'
+          NARU RPG - Web DEV, placeholder art. Extract the entire folder.
+          In this folder run: python -m http.server 8000
+          Open http://localhost:8000/index.html in Chromium/Chrome.
+          Do not open index.html directly with file://.
+          Save data is browser-local; use the in-game JSON export to back up.
+          EOF
+          (cd dist && sha256sum index.* > SHA256SUMS.txt)
+      - name: Install Chromium browser QA
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Browser runtime smoke
+        run: |
+          python3 -m http.server 8765 --directory dist >/tmp/naru-http.log 2>&1 &
+          node tests/web-smoke.cjs
+      - name: Upload Web DEV archive
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-Web-DEV
+          path: dist/
+          retention-days: 30
+      - name: Upload browser screenshot
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-Web-DEV-menu
+          path: web-menu.png
+          retention-days: 30
