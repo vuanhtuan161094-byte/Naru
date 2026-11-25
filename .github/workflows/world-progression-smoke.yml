@@ -88,6 +88,28 @@ jobs:
           for path in game/content_service.gd game/progression_quotes.gd game/resource_guide.gd game/save_guard.gd game/save_store.gd game/village_service.gd game/world_organic_test.gd game/world_progression_test.gd game/world_rewards.gd game/world_service.gd game/world_combat_context.gd; do
             cp "$path" "/tmp/naru-one-game/$path"
           done
+          # Splice only external UI functions from P6/P7, preserving V11 battle/animation/passive pilot.
+          python3 - <<'PY'
+          import pathlib, json, re
+          source=pathlib.Path("game/main.gd").read_text()
+          target=pathlib.Path("/tmp/naru-one-game/game/main.gd")
+          manifest=json.loads(pathlib.Path("WORLD_INTEGRATION_MANIFEST.json").read_text())
+          names=set(manifest["p6"]["functions"]["game/main.gd"]+manifest["p7"]["functions"]["game/main.gd"])
+          pattern=re.compile(r"(?m)^func (\w+)\(")
+          def blocks(s):
+              matches=list(pattern.finditer(s))
+              return {m.group(1):(m.start(),matches[i+1].start() if i+1<len(matches) else len(s)) for i,m in enumerate(matches)}
+          sb=blocks(source)
+          original=target.read_text()
+          tb=blocks(original)
+          assert names <= sb.keys() and names <= tb.keys(), names-(sb.keys() & tb.keys())
+          for name in sorted(names,key=lambda n:tb[n][0],reverse=True):
+              a,b=tb[name]
+              c,d=sb[name]
+              original=original[:a]+source[c:d]+original[b:]
+          target.write_text(original)
+          print("P7 external UI functions:",sorted(names))
+          PY
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
           "$G" --headless --editor --path /tmp/naru-one-game --import 2>&1 | tee /tmp/one-import.log
           ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/one-import.log
@@ -117,14 +139,15 @@ jobs:
           set -o pipefail
           mkdir -p dist
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          "$G" --headless --path . --export-release "Web DEV" dist/index.html 2>&1 | tee /tmp/web-export.log
+          "$G" --headless --path /tmp/naru-one-game --export-release "Web DEV" "$GITHUB_WORKSPACE/dist/index.html" 2>&1 | tee /tmp/web-export.log
           test -s dist/index.html
           test -s dist/index.wasm
           test -s dist/index.pck
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
+          printf '%s\n' 07ca3712d2d948a7e866b89c43fd8f5db7046321 > dist/ONE_GAME_BASE_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - World DEV P7, placeholder art. Extract the entire folder.
+          NARU RPG - ONE GAME V11 + World P7 candidate (pinned base, external UI/service overlay). Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -155,14 +178,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P7
+          name: NARU-One-Game-V11-World-P7-Web-DEV
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P7-menu
+          name: NARU-One-Game-V11-World-P7-menu
           path: |
             web-menu.png
             ui-shots/
