@@ -1,0 +1,1 @@
+{"counts":{"passives":864,"patches":98,"patched_ids":98,"enemy_team":9,"critical":12,"chakra_threshold":23,"teams":35,"cases":840,"cap_violations":0,"stack_reductions":7962,"raw_max":1.090556,"applied_max":0.18},"gate":{"no_cap_violation":true,"all_fixtures":true,"unique":true,"invalid_hostile_events_remaining":true,"monotonic":true},"status":"DEV_DESIGN_NOT_RUNTIME"}
