@@ -83,3 +83,9 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P6/P7: 12 portraits, one arena, 12 prop crops, 5 UI parts, 3 mapped building buttons; 27 other building identities need art. No collision mapping or full UI redesign.
 - ART-P8: local V13 native review scoped PASS; latest CI artifact not available at check; Chat 00/01 reconcile art handoff, clustering and fall/cast/fallback. See art/e3/ART_R9_HANDOFF.md.
 - ART-P3 HOLD unchanged.
+
+## R10 next
+- ART-P2 REVIEW: 15 SW candidates/77 frame cells; 11 observed in exact One Game. Four directions/six actions and 12 complete kits still open. No new younger opponent replacements.
+- ART-P6/P7 REVIEW: 6-district local village layout, 30/30 building button navigation, 3/30 distinct illustrations. Need 27 building sprites and full interactive map; other UI not fully redesigned.
+- ART-P8 REVIEW: exact One Game native runtime with local anchor workaround; integrate V13 loader fix and tested adapter via Chat00. Resolve fallback, clumping and metadata support. See art/e3/ART_R10_HANDOFF.md.
+- ART-P3 HOLD unchanged.

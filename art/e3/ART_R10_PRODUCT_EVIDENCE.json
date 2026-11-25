@@ -1,0 +1,76 @@
+{
+  "batch": "ART-R10-PRODUCT-PARTIAL",
+  "status": "REVIEW_ONLY",
+  "art_parent": "322174afdfd0bb620c3363c9de1178b41b191aea",
+  "one_game_tested": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+  "gameplay_observed": "cca04232a5e502c84051bfd481cfc3229a5750cf",
+  "archive": {
+    "name": "Naru_ART_R10_private.zip",
+    "sha256": "26f88fad9d87ca6d1a01ee0f6969c946fd91aa7ae8c1ea9de02fded7dbddbf72",
+    "bytes": 20694556,
+    "library_file_id": "libfile_3f44fc4703e081918ccb7494bff39d5c",
+    "library_upload": true,
+    "zip_integrity": "PASS",
+    "manifest_sha256": "a16e3e4fdcc688f6ae938210beda4cc33d40bd2dae9104f996f3a0983360f9c9",
+    "evidence_sha256": "757a173174f89c8839a41c84bed3d6ad2287d4c6566f61b8992ce498e94909ef"
+  },
+  "qa": {
+    "ci": 45642585122,
+    "ci_result": "success",
+    "artifact": 15037940102,
+    "export_checksums": "7/7 PASS",
+    "engine": "Godot 4.4.1",
+    "native_contract_count": 0,
+    "local_numeric_contract_count": 6,
+    "initial_primary": 12,
+    "textures": 187,
+    "r3_draws": 472,
+    "r3_ids": 6,
+    "r3_frames_each": 8,
+    "candidate_keys": 44,
+    "new_candidate_keys": 11,
+    "fallback_draws": 2892,
+    "fallback_keys": 152,
+    "hp_changes": 1346,
+    "moved": true,
+    "video_frames": 361,
+    "fps": 30,
+    "resolution": [
+      1280,
+      720
+    ],
+    "video_sha256": "0eafd8fd762f2549f99e0c3a0d20891cd6e490231d4946c85712ba673312626a",
+    "pack_sha256": "1f524f0a0a5b062f5546a14eb75fb896e0204ff3519fecc09342d905b00e8830",
+    "trace_sha256": "55d812339609a7b0cb248f032bc13e5f94f1bcc42b1f34bf96b8fc17d6e06486",
+    "ui_trace_sha256": "59a9bf25aad6bd14daa7d2bf06716864a12fe2046060de61f787fac06ab63ef8",
+    "ui_source_sha256": "10e80bc4ee93516f3d43f40f75128cb415ef78024ed1343a313c3a8e205014e4",
+    "harness_sha256": "de1b1d43f27384cb7d2e4d54fcae0ee9ab9f5df5237fd8ccabdaf7f6fb734ff1",
+    "ui_screens": 13,
+    "district_captures": 6,
+    "building_button_navigation": 30,
+    "districts": 6,
+    "art_ci": "NOT_RUN"
+  },
+  "production": {
+    "new_candidate_clips": 15,
+    "frame_cells": 77,
+    "action_counts": {
+      "idle": 7,
+      "hit": 6,
+      "move": 2
+    },
+    "direction": "SW candidate",
+    "complete_ninja": 0,
+    "new_static_opponents": 0,
+    "illustrated_buildings": 3,
+    "building_navigation": 30,
+    "production_integrated": 0,
+    "skill_vfx": "HOLD"
+  },
+  "limits": [
+    "One Game V11 native anchor bug reproduced; local fixture validates numeric anchor and approved hash before native rendering. No remote gameplay fix. Older renderer ignores per-frame metadata; trace observes native branch selection, not every frame for candidates.",
+    "15 independently sourced SW rows cropped from R7/R8; not owner accepted, no mirroring. No new opponent costumes. No new skill VFX; all VFX pack entries unchanged. Older optional review clips and unused atlases omitted for pack budget.",
+    "Local village adapter groups existing 30 buttons into 6 proposed districts and tests original pressed signals reaching building screen. Three existing illustrated landmarks; 27 others text only. No building economy or construction rules changed. Other UI screens native with cosmetic styling, not complete redesign.",
+    "Clumping and fallback persist. No complete 12-character production kit. No production integration, merge, rig, tween, Codex Cloud or public binary distribution."
+  ]
+}
