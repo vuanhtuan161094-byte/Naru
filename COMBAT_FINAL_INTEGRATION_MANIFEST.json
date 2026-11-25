@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "V13_CANDIDATE_CI_REQUIRED",
+  "status": "V13_VERIFIED_BASELINE_FIX_CI_REQUIRED",
   "base_sha": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
   "head_sha": "13782ca61c5d7290715d96c4991592630013fdf7",
   "head_note": "Runtime code commit; this manifest and docs are published by a subsequent metadata-only commit. Exact build SHA is artifact BUILD_SHA.txt.",
@@ -216,7 +216,8 @@
         "confirm_form_effect",
         "signature_near_ready",
         "combo_skill_bonus",
-        "combo_pick_event"
+        "combo_pick_event",
+        "requested_form_route"
       ],
       "game/main.gd": [
         "update_battle_inspector"
@@ -265,5 +266,56 @@
     ],
     "note": "observational, not acceptance. Passive categories overlap; V12 event_receipts not event_only."
   },
-  "v13_acceptance": "Require exact CI, inspect distinct 12 combo attempts, 54 forms and disjoint eligible passive categories. No release or merge if unmet."
+  "v13_acceptance": "Verified 46d6d14 baseline can be reviewed for ONE GAME. Do not promote 221f857b/9fdcd54b until exact CI succeeds. Remaining 4 combo, 9 activation, 22 empowerment and 203 eligible passive observation gaps are not closed. Preserve all source, era, reflection, B2 duration and VFX holds. No shared service changes.",
+  "v13_verified": {
+    "sha": "46d6d1442c21f7f0acafcbb6e782f89e0219e615",
+    "ci": 45647915498,
+    "web": 15038778092,
+    "video": 15037184962,
+    "menu": 15038882917,
+    "eligible": 677,
+    "actual": 466,
+    "stat": 399,
+    "typed": 67,
+    "event_only": 8,
+    "no_receipt": 203,
+    "forms_activated": 45,
+    "forms_empowered": 32,
+    "combos_observed": [
+      "002",
+      "003",
+      "004",
+      "005",
+      "007",
+      "008",
+      "009",
+      "011"
+    ],
+    "combos_unobserved": [
+      "001",
+      "006",
+      "010",
+      "012"
+    ],
+    "scope": "both sides, all roster and focused fixtures; not full product acceptance"
+  },
+  "v13_fix": {
+    "runtime_sha": "221f857b22e45062829503561a49f5db3b126202",
+    "test_sha": "9fdcd54bfbc81aefdc361031ba901a3b4f55ee08",
+    "files": [
+      "game/combat.gd",
+      "game/combat_final_v12_test.gd"
+    ],
+    "functions": {
+      "game/combat.gd": [
+        "requested_form_route",
+        "tick"
+      ],
+      "game/combat_final_v12_test.gd": [
+        "v13_queued_form_check",
+        "_initialize"
+      ]
+    },
+    "note": "Exact automatic form prerequisite for queued ultimate, real CP reserve and legal checks; CI required"
+  }
 }
