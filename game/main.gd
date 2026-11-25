@@ -73,7 +73,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"DEV V5",16)
+	label(header,"DEV V6",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -416,6 +416,12 @@ func draw_field() -> void:
 			if not art.tile(field,p,q,x,y,plate):
 				var points=PackedVector2Array([p,p+Vector2(38,20)*q,p+Vector2(0,40)*q,p+Vector2(-38,20)*q])
 				field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
+	for job in sim.p2_jobs:
+		if job.dynamic:
+			var radius=float(job.skill.radius_m)
+			var outline=PackedVector2Array()
+			for i in range(33):outline.append(iso(Vector2(job.point)+Vector2.RIGHT.rotated(i*TAU/32.0)*radius))
+			field.draw_polyline(outline,Color(0.92,0.65,0.27,0.75),2,true)
 	for item in sim.terrain:
 		var rect: Rect2=item.rect
 		var points=PackedVector2Array([iso(rect.position),iso(Vector2(rect.end.x,rect.position.y)),iso(rect.end),iso(Vector2(rect.position.x,rect.end.y))])

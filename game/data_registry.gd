@@ -1,4 +1,5 @@
 extends RefCounted
+const P2Adapter=preload("res://game/skill_p2_adapter.gd")
 var ninjas: Dictionary = {}
 var skills: Dictionary = {}
 var names: Dictionary = {}
@@ -38,6 +39,11 @@ var affix_pools: Dictionary = {}
 var environments: Dictionary = {}
 var skill_policies: Dictionary = {}
 var combat_v3: Dictionary = {}
+var p2_skills: Dictionary={}
+var p2_fallback: Dictionary={}
+var p2_design: Dictionary={}
+var p2_forms: Dictionary={}
+var p2_combos: Dictionary={}
 var tactics: Dictionary = {}
 var formations: Dictionary = {}
 var errors: Array[String] = []
@@ -149,4 +155,25 @@ func load_all() -> bool:
 	for npc in npcs.values():
 		if not ninjas.has(npc.template_ninja_id):
 			errors.append("Missing template "+str(npc.template_ninja_id))
+	load_p2()
 	return errors.is_empty()
+
+func load_p2() -> void:
+	for letter in ["A","B","C","D","E","F","G","H","I"]:
+		var records=read_json("res://design/skill-p2/SKILL-P2-"+letter+".json")
+		if records is Dictionary:records=records.get("skills",[])
+		if not records is Array:errors.append("Missing P2 "+letter);continue
+		for raw in records:
+			var id=str(raw.skill_id)
+			if not skills.has(id) or p2_design.has(id):errors.append("Invalid P2 ID "+id);continue
+			p2_design[id]=raw
+			var compiled=P2Adapter.compile(raw,skills[id])
+			if compiled.has("skill"):p2_skills[id]=compiled.skill
+			else:p2_fallback[id]=compiled.reason
+	p2_forms=indexed("res://design/skill-p2/forms.json","form_id")
+	p2_combos=indexed("res://design/skill-p2/combos.json")
+	if p2_design.size()!=1152 or p2_forms.size()!=54 or p2_combos.size()!=12:errors.append("Incomplete P2 overlay")
+	# Preserve D4 status definitions; append explicitly authored extensions.
+	for row in read_json("res://design/skill-p2/status_extensions.json"):
+		status_catalog[row.id]={"id":row.id,"duration_s":row.duration_s,"stack":row.stack,"dispellable":row.dispellable,"hard_control":row.id=="sleep","max_stacks":1}
+	print("NARU_P2_REGISTRY ",p2_skills.size(),"/1152 fallback=",p2_fallback.size())

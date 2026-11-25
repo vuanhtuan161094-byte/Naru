@@ -31,6 +31,7 @@ func _initialize() -> void:
 	var event=store.begin_stage(stage)
 	check(not event.is_empty() and int(store.state.stamina)==114,"stage debit")
 	var sim=Combat.new()
+	sim.use_p2=false
 	sim.setup(reg,store.state,stage,42)
 	for i in range(24000):
 		sim.tick(0.05)
@@ -55,6 +56,7 @@ func _initialize() -> void:
 	for id in six.team:
 		if not six.owned.has(id): six.owned[id]={"level":1,"quality":reg.ninjas[id].initial_quality,"permanent":{}}
 	var full=Combat.new()
+	full.use_p2=false
 	full.setup(reg,six,reg.stages["STG-080"],42)
 	check(full.alive(0).size()==6 and full.alive(1).size()==6,"6v6 setup")
 	for i in range(200): full.tick(0.05)
@@ -105,6 +107,7 @@ func _initialize() -> void:
 	check(store.socket_gear(reg,gear_id,"RES-077"),"socket gem")
 	check(store.socket_gear(reg,gear_id,"RES-077",true),"return gem")
 	var equipped=Combat.new()
+	equipped.use_p2=false
 	equipped.setup(reg,store.state,stage,42)
 	check(float(equipped.actors[0].gear_stats.get("hp",0))>10,"gear stats affect combat")
 	var persisted=Store.new()
@@ -117,6 +120,7 @@ func _initialize() -> void:
 	store.state.inventory["RES-127"]=20
 	check(store.unlock_form(reg,"NIN-001","NIN-001-F1"),"unlock form transaction")
 	var form_sim=Combat.new()
+	form_sim.use_p2=false
 	form_sim.setup(reg,store.state,stage,42)
 	var actor=form_sim.actors[0]
 	actor.chakra=100
@@ -176,6 +180,7 @@ func _initialize() -> void:
 	check(int(village.state.world_tick)>world_tick,"NPC offline tick")
 	check(reg.boss_rules.size()==24 and reg.quests.size()==81 and reg.combos.size()==12,"campaign registry")
 	var boss_sim=Combat.new()
+	boss_sim.use_p2=false
 	boss_sim.setup(reg,store.state,reg.stages["STG-005"],42)
 	var boss_actor=boss_sim.actor_by_uid(boss_sim.boss_actor_uid)
 	check(not boss_actor.is_empty(),"boss mapped")
@@ -204,6 +209,7 @@ func _initialize() -> void:
 	check(quest.make_contract(reg,"SUM-001"),"contract transaction")
 	check(quest.assign_contract("SUM-001","NIN-001"),"contract owner")
 	var contract_sim=Combat.new()
+	contract_sim.use_p2=false
 	contract_sim.setup(reg,quest.state,stage,42)
 	var summoner=contract_sim.actors[0]
 	summoner.chakra=100
@@ -224,6 +230,7 @@ func _initialize() -> void:
 	invalid.inventory["RES-001"]=-1
 	check(not guard.valid(reg,invalid),"negative resource rejected")
 	var shield_sim=Combat.new()
+	shield_sim.use_p2=false
 	shield_sim.setup(reg,store.state,stage,42)
 	var a1=shield_sim.actors[0]
 	var a2=shield_sim.actors[1]
@@ -256,6 +263,7 @@ func _initialize() -> void:
 	for id in reg.ninjas:
 		for dispatch_id in reg.ninjas[id].skills+reg.ninjas[id].additional_skill_ids:
 			var run=Combat.new()
+			run.use_p2=false
 			run.registry=reg
 			run.rng.seed=42
 			run.add_actor(id,0,20,int(reg.ninjas[id].initial_quality),{},0,1.0,{"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids})
@@ -273,6 +281,7 @@ func _initialize() -> void:
 	check(tested==1152 and dispatch_count>=1152,"all 1152 authored skills dispatch effects")
 	for beast_id in reg.beasts:
 		var beast_sim=Combat.new()
+		beast_sim.use_p2=false
 		beast_sim.registry=reg
 		beast_sim.add_actor("NIN-001",0,20,2,{},0,1.0)
 		beast_sim.add_beast(beast_id,20)
@@ -353,6 +362,7 @@ func _initialize() -> void:
 	ids.sort()
 	for stage_key in ids:
 		var encounter=Combat.new()
+		encounter.use_p2=false
 		encounter.setup(reg,veteran.state,reg.stages[stage_key],42)
 		for i in range(20):encounter.tick(0.05)
 		if not encounter.primary_alive(0).is_empty():stage_count+=1
@@ -364,6 +374,7 @@ func _initialize() -> void:
 	check(stage_count==120,"all 120 stage encounters instantiate and tick")
 	check(boss_count==24,"all 24 boss phase payloads dispatch")
 	var burst=Combat.new()
+	burst.use_p2=false
 	burst.setup(reg,veteran.state,reg.stages["STG-005"],42)
 	var phase_boss=burst.actor_by_uid(burst.boss_actor_uid)
 	burst.hit(burst.actors[0],phase_boss,float(phase_boss.max_hp)*100,false)
@@ -393,6 +404,7 @@ func _initialize() -> void:
 		var entry=campaign_store.begin_stage(encounter_def)
 		if entry.is_empty():break
 		var match_sim=Combat.new()
+		match_sim.use_p2=false
 		match_sim.auto_player_ultimate=true
 		match_sim.setup(reg,campaign_store.state,encounter_def,42)
 		for tick_index in range(6000):
@@ -422,6 +434,7 @@ func _initialize() -> void:
 	check(dynamic_id=="SQUAD-4" and product.set_world_squad(dynamic_id,["NIN-002"]),"additional squad beyond V2 limit")
 	check(guard.valid(reg,product.state),"dynamic squad save accepted")
 	var action_sim=Combat.new()
+	action_sim.use_p2=false
 	action_sim.setup(reg,product.state,stage,42)
 	var actor_action=action_sim.actors[0]
 	var actor_target=action_sim.primary_alive(1)[0]
@@ -431,7 +444,9 @@ func _initialize() -> void:
 	action_sim.hit(actor_action,actor_action,10,false)
 	check(int(action_sim.counts.get(actor_action.id,0))==count_before,"self damage no permanent growth")
 	var replay_a=Combat.new()
+	replay_a.use_p2=false
 	var replay_b=Combat.new()
+	replay_b.use_p2=false
 	replay_a.setup(reg,product.state,stage,42)
 	replay_b.setup(reg,product.state,stage,42)
 	for tick_id in range(300):
@@ -503,6 +518,7 @@ func _initialize() -> void:
 		var stage_event=natural.begin_stage(stage_def)
 		if stage_event=="":break
 		var battle_natural=Combat.new()
+		battle_natural.use_p2=false
 		battle_natural.setup(reg,natural.state,stage_def,42+index)
 		for step_natural in range(3600):
 			for i in range(natural_team.size()):battle_natural.ultimate(i)

@@ -32,6 +32,13 @@ var effect_dispatch_count=0
 var art_events: Array[Dictionary]=[]
 var terrain: Array[Dictionary]=[]
 var qa_hold_ai=false
+var use_p2=true
+var p2_jobs: Array[Dictionary]=[]
+var p2_marks: Dictionary={}
+var p2_hits: Dictionary={}
+var p2_events: Dictionary={}
+var p2_casts=0
+var p2_resolved=0
 var cast_seq=0
 var tactical_choices=0
 var resolved_casts=0
@@ -149,7 +156,7 @@ func has_status(a: Dictionary,id: String) -> bool:
 	return false
 
 func hard_block(a: Dictionary) -> bool:
-	return has_status(a,"stun") or has_status(a,"freeze") or has_status(a,"fear") or has_status(a,"shock")
+	return has_status(a,"stun") or has_status(a,"freeze") or has_status(a,"fear") or has_status(a,"shock") or has_status(a,"sleep")
 
 func supported(skill: Dictionary) -> bool:
 	for effect in skill.effects:
@@ -160,6 +167,7 @@ func supported(skill: Dictionary) -> bool:
 	return true
 
 func ready(a: Dictionary,s: Dictionary) -> bool:
+	if s.has("p2") and not p2_ready(a,s):return false
 	if not supported(s) or not a.pending.is_empty() or a.busy>0 or hard_block(a): return false
 	if has_status(a,"silence") and s.damage_type!="physical": return false
 	for e in s.effects:
@@ -206,6 +214,8 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	if not cast_geometry(a,s,b):return -INF
 	if not ai_condition(a,s,b):return -INF
+	if s.has("p2"):
+		return p2_utility(a,s,b)
 	var score=0.0
 	for e in s.effects:
 		match str(e.type):
@@ -228,6 +238,7 @@ func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 
 func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	if not ready(a,s) or not cast_geometry(a,s,b) or not ai_condition(a,s,b):return false
+	if s.has("p2"):p2_casts+=1
 	a.chakra=float(a.chakra)-float(s.chakra)
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)/(1.0+rating(a,"attack_speed"))
@@ -240,6 +251,7 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 
 func targets_for(a: Dictionary,s: Dictionary,b: Dictionary) -> Array:
 	if b.is_empty():return []
+	if s.has("p2"):return p2_targets(a,s,b.pos,b.pos-a.pos,b)
 	if s.shape in ["single","self"]:return [b]
 	var result=[]
 	var direction: Vector2=(b.pos-a.pos).normalized()
@@ -284,6 +296,14 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 	art_event("status_applied",b.pos,0,id)
 
 func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> void:
+	if b.has("p2_arc") and int(b.p2_arc.expires)>ticks and b.p2_arc.hp>0 and a.uid!=b.uid:
+		var facing=Vector2(b.p2_arc.facing)
+		var incoming=(Vector2(a.pos)-Vector2(b.pos)).normalized()
+		if facing.dot(incoming)>=cos(deg_to_rad(float(b.p2_arc.angle)*0.5)):
+			var absorbed=minf(dmg,float(b.p2_arc.hp))
+			b.p2_arc.hp=float(b.p2_arc.hp)-absorbed
+			dmg-=absorbed
+	if dmg<=0:return
 	var blocked=minf(float(b.shield),dmg)
 	var remaining=blocked
 	for key in b.shield_sources.keys():
@@ -306,6 +326,7 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 				update_boss(b)
 				break
 	if old-b.hp>0.01:
+		b.statuses.erase("sleep")
 		art_event("damage",b.pos,old-b.hp)
 		last_progress_tick=ticks
 		if a.side!=b.side:award_action(b,"vitality")
@@ -385,7 +406,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 				"damage":
 					var physical=str(e.damage_type)=="physical"
 					var stat="patk" if physical else "natk"
-					var attack=float(a[stat])*(1.0+magnitude(a,"attack_up"))*form_multiplier(a,stat)
+					var attack=float(a[stat])*(1.0+magnitude(a,"attack_up"))*maxf(0.5,1.0-magnitude(a,"attack_down"))*form_multiplier(a,stat)
 					if e.damage_type=="genjutsu":attack=float(a.stats.genjutsu_power)*form_multiplier(a,"genjutsu_power")
 					attack*=formation_multiplier(a,"attack")
 					if not a.stance.is_empty() and a.stance.stat==stat:attack*=float(a.stance.multiplier)
@@ -429,6 +450,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 				"temporary_stance":a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
 				"counter":a.counter={"remaining":float(e.window_s),"coefficient":e.coefficient}
 				"activate_form":activate_form(a,str(e.form_id),false,str(s.skill_id))
+	if s.get("p2_subhit",false):return
 	if int(a.side)==0 and not a.summon:
 		mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+maxi(1,roundi(1.0+rating(a,"mastery_speed")))
 	if not a.summon and not a.get("beast",false) and registry.ninjas.has(a.id) and registry.ninjas[a.id].unique_talent_design.skill_id==s.skill_id:
@@ -457,10 +479,18 @@ func update_status(a: Dictionary,dt: float) -> void:
 	for id in a.form_cooldowns:a.form_cooldowns[id]=maxf(0.0,float(a.form_cooldowns[id])-dt)
 	if not a.active_form.is_empty():
 		a.active_form.remaining=float(a.active_form.remaining)-dt
+		if use_p2 and registry.p2_forms.has(a.active_form.id):
+			var drain=float(registry.p2_forms[a.active_form.id].effect.chakra_drain_per_s)*dt
+			a.chakra=maxf(0.0,float(a.chakra)-drain)
+			if drain>0 and a.chakra<=0:a.active_form.remaining=0
 		if a.active_form.remaining<=0:a.active_form={}
+			
 	for id in a.forms:
 		var rule=registry.form_rules[id]
-		if rule.activation=="hp_threshold_or_manual" and a.hp/a.max_hp<=float(rule.hp_threshold):activate_form(a,id,true)
+		if rule.activation=="hp_threshold_or_manual" and a.hp/a.max_hp<=float(rule.hp_threshold) and not a.get("hp_auto_forms",{}).has(id):
+			if activate_form(a,id,true):
+				if not a.has("hp_auto_forms"):a.hp_auto_forms={}
+				a.hp_auto_forms[id]=true
 	a.hp=minf(float(a.max_hp),float(a.hp)+float(a.stats.get("hp_regen",0))*dt)
 	var expired=0.0
 	for key in a.shield_sources.keys():
@@ -497,6 +527,7 @@ func tick(dt: float) -> void:
 	for zone in elemental_fields.duplicate():
 		if int(zone.expires)<=ticks:elemental_fields.erase(zone)
 	advance_projectiles(dt)
+	advance_p2()
 	for a in actors.duplicate():
 		if a.summon:
 			a.ttl=float(a.ttl)-dt
@@ -572,6 +603,9 @@ func form_ready(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> 
 	if a.summon or a.hp<=0 or not id in a.forms or not a.active_form.is_empty():return false
 	if float(a.form_cooldowns.get(id,0))>0:return false
 	var rule=registry.form_rules[id]
+	if use_p2 and registry.p2_forms.has(id) and not manual and registry.p2_skills.has(trigger_id):
+		for e in registry.p2_skills[trigger_id].effects:
+			if e.type=="activate_form" and e.form_id==id:return true
 	if not manual:
 		if rule.activation=="skill_trigger":return trigger_id in rule.trigger_skill_ids
 		# Some D4 skills explicitly activate a manual/HP form; honor that authored route without charging twice.
@@ -690,10 +724,14 @@ func spatial_reaction(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	return factor
 
 func skill_definition(id: String) -> Dictionary:
-	return encounter_skills[id] if encounter_skills.has(id) else registry.skills[id]
+	if encounter_skills.has(id):return encounter_skills[id]
+	if use_p2 and registry.p2_skills.has(id):return registry.p2_skills[id]
+	return registry.skills[id]
 
 func skill_name(id: String) -> String:
-	return str(encounter_names[id]) if encounter_names.has(id) else str(registry.names[id].name_vi)
+	if encounter_names.has(id):return str(encounter_names[id])
+	if use_p2 and registry.p2_skills.has(id):return str(registry.p2_design[id].name_vi)
+	return str(registry.names[id].name_vi)
 
 func add_beast(beast_id: String,level: int) -> void:
 	var def=registry.beasts[beast_id]
@@ -871,6 +909,7 @@ func has_debuff(a: Dictionary) -> bool:
 	return false
 
 func ai_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
+	if s.has("p2"):return p2_condition(a,s,b)
 	match str(s.ai.get("condition","valid_target")):
 		"ally_dispellable_status":return has_debuff(b)
 		"ally_hp_below_0.75":return float(b.hp)/float(b.max_hp)<0.75
@@ -909,6 +948,9 @@ func tactical_goal(a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vector2
 func resolve_pending(a: Dictionary,pending: Dictionary) -> void:
 	var skill=pending.skill
 	var target=actor_by_uid(int(pending.target_uid))
+	if skill.has("p2"):
+		p2_release(a,pending,target)
+		return
 	if not cast_geometry(a,skill,target):
 		missed_casts+=1
 		art_event("miss",pending.aim,0,str(skill.skill_id))
@@ -940,19 +982,24 @@ func advance_projectiles(dt: float) -> void:
 			for target in alive(1-int(source.side)):
 				if target.uid in p.hit_ids:continue
 				var nearest=Geometry2D.get_closest_point_to_segment(target.pos,from,to)
-				var radius=body_radius(target)+(float(skill.line_width_m)*0.5 if skill.shape=="line" else 0.0)
+				var radius=body_radius(target)+(float(skill.line_width_m)*0.5 if skill.shape in ["line","projectile_first"] else 0.0)
 				if target.pos.distance_to(nearest)<=radius:contacts.append(target)
 			contacts.sort_custom(func(x,y):
 				var dx=from.distance_to(x.pos)
 				var dy=from.distance_to(y.pos)
 				return int(x.uid)<int(y.uid) if is_equal_approx(dx,dy) else dx<dy)
 			for target in contacts:
-				if p.hit_ids.size()>=int(skill.max_targets):break
+				if p.hit_ids.size()>=int(p.get("contact_cap",skill.max_targets)):break
+				if skill.has("p2") and target.has("p2_absorb") and int(target.p2_absorb.expires)>ticks and int(target.p2_absorb.left)>0:
+					target.p2_absorb.left=int(target.p2_absorb.left)-1
+					target.chakra=minf(float(target.max_chakra),float(target.chakra)+float(target.p2_absorb.chakra))
+					p.distance_left=0.0
+					break
 				p.hit_ids.append(target.uid)
 			p.pos=to
 			p.distance_left=float(p.distance_left)-step
 			p.remaining=float(p.distance_left)/maxf(0.01,float(skill.projectile_speed_m_s))
-		if blocked or float(p.distance_left)<=0.0001 or p.hit_ids.size()>=int(skill.max_targets):
+		if blocked or float(p.distance_left)<=0.0001 or p.hit_ids.size()>=int(p.get("contact_cap",skill.max_targets)):
 			projectiles.erase(p)
 			var hits=[]
 			for uid in p.hit_ids:
@@ -964,7 +1011,238 @@ func advance_projectiles(dt: float) -> void:
 			else:
 				resolved_casts+=1
 				art_event("contact",p.pos,0,str(skill.skill_id))
-				release(source,skill,hits[0],hits)
+				if skill.has("p2"):
+					var actual=hits if skill.shape!="projectile_burst" else p2_targets(source,skill,hits[0].pos,Vector2(p.direction),hits[0])
+					p2_schedule(source,skill,hits[0].pos,Vector2(p.direction),actual,int(p.cast_id))
+				else:release(source,skill,hits[0],hits)
 
 func movement_speed(a: Dictionary) -> float:
 	return 2.2*formation_multiplier(a,"move")*(1.0+rating(a,"move_speed"))*(1.0+magnitude(a,"haste"))*(1.0-clampf(maxf(magnitude(a,"slow"),magnitude(a,"mud")),0.0,0.8))*terrain_speed(a.pos)
+
+func p2_ready(a: Dictionary,s: Dictionary) -> bool:
+	var cond=s.p2.conditions
+	if int(a.realm)<int(cond.get("unlock_realm",0)):return false
+	if cond.has("any_active_forms") and not a.active_form.get("id","") in cond.any_active_forms:return false
+	if cond.has("forbidden_active_forms") and a.active_form.get("id","") in cond.forbidden_active_forms:return false
+	if cond.has("requires_unlocked_form") and not str(cond.requires_unlocked_form) in a.forms:return false
+	return true
+
+func p2_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
+	if b.is_empty():return false
+	var p=s.p2.effect.params
+	match str(s.p2.conditions.ai):
+		"below_summon_cap":return summon_count(a,s.skill_id)<int(p.get("cap",1))
+		"chakra_below_70pct":return float(a.chakra)<float(a.max_chakra)*0.7
+		"ally_hp_below_75pct":return float(b.hp)<float(b.max_hp)*0.75
+		"ally_has_dispellable_status":
+			for target in p2_targets(a,s,b.pos,b.pos-a.pos,b):
+				if has_debuff(target):return true
+			return false
+		"allies_missing_hp":
+			for target in alive(int(a.side)):
+				if target.hp<target.max_hp*0.85 and target.pos.distance_to(a.pos)<=float(s.radius_m):return true
+			return false
+		"ally_chakra_below_70pct":
+			for target in alive(int(a.side)):
+				if target.chakra<target.max_chakra*0.7 and target.pos.distance_to(a.pos)<=float(s.radius_m):return true
+			return false
+		"owned_valid_mark_or_explicit_swap":return s.p2.effect.type=="position_swap" or p2_has_mark(a,b)
+		"no_valid_owned_mark":return not p2_has_mark(a,b)
+		"incoming_absorbable_projectile":return projectiles.any(func(q):return q.target==a.uid)
+		"incoming_frontal_threat","enemy_targeting_ally","ally_under_threat":
+			for enemy in alive(1-int(a.side)):
+				if enemy.pos.distance_to(b.pos)<3.5:return true
+			return false
+	return true
+
+func p2_utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
+	var kind=str(s.p2.effect.type)
+	var count=maxi(1,p2_targets(a,s,b.pos,b.pos-a.pos,b).size())
+	var score=float(s.p2.effect.total_coefficient)*18*count
+	if kind in ["heal","heal_pulse"]:score=45.0
+	if kind in ["shield","directional_shield"]:score=24.0 if b.shield<=0 else -25.0
+	if kind in ["stance","team_buff","chakra_regen"]:score=18.0
+	if kind=="summon":score=32.0
+	if kind in ["cleanse","absorb","counter","activate_form"]:score=35.0
+	if kind in ["wall","teleport","position_swap","mark","chakra_restore"]:score=17.0
+	if kind in ["zone_damage","zone_drain","trap"]:score+=12
+	return score+float(s.ai.base_priority)*2-float(s.chakra)*0.28
+
+func p2_targets(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,primary: Dictionary={}) -> Array:
+	var shape=str(s.shape)
+	var raw=s.p2
+	var ally=raw.target in ["allies_in_radius","ally_lowest_effective_hp"]
+	if shape in ["self","arc_self","summon"]:return [a]
+	if shape in ["single","single_ally","dash_contact","teleport_mark","projectile_first"]:
+		return [] if primary.is_empty() or primary.hp<=0 else [primary]
+	var center=Vector2(a.pos) if shape=="circle_self" else point
+	var result=[]
+	var dir=direction.normalized()
+	for b in alive(int(a.side) if ally else 1-int(a.side)):
+		var offset=Vector2(b.pos)-Vector2(a.pos)
+		var include=false
+		if shape=="line":include=offset.dot(dir)>=0 and offset.dot(dir)<=float(s.range_m)+body_radius(b) and absf(offset.cross(dir))<=float(s.line_width_m)*0.5+body_radius(b)
+		elif shape=="cone":include=offset.length()<=float(s.range_m)+body_radius(b) and dir.dot(offset.normalized())>=cos(deg_to_rad(float(raw.geometry.extent)*0.5))
+		else:include=b.pos.distance_to(center)<=float(s.radius_m)+body_radius(b)
+		if include and clear_segment(center if shape not in ["line","cone"] else a.pos,b.pos,0.01):result.append(b)
+	result.sort_custom(func(x,y):
+		var dx=x.pos.distance_to(center)
+		var dy=y.pos.distance_to(center)
+		return int(x.uid)<int(y.uid) if is_equal_approx(dx,dy) else dx<dy)
+	return result.slice(0,int(s.max_targets))
+
+func p2_has_mark(a: Dictionary,b: Dictionary) -> bool:
+	return int(p2_marks.get(str(a.uid)+":"+str(b.uid),0))>ticks
+
+func p2_set_mark(a: Dictionary,b: Dictionary,p: Dictionary) -> void:
+	var prefix=str(a.uid)+":"
+	var keys=p2_marks.keys().filter(func(k):return str(k).begins_with(prefix))
+	if keys.size()>=int(p.get("max_marks",3)):
+		keys.sort_custom(func(x,y):return int(p2_marks[x])<int(p2_marks[y]))
+		p2_marks.erase(keys[0])
+	p2_marks[prefix+str(b.uid)]=ticks+roundi(float(p.get("mark_ttl_s",p.get("duration_s",8)))*20)
+
+func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
+	var s=pending.skill
+	var raw=s.p2
+	var kind=str(raw.effect.type)
+	var p=raw.effect.params
+	var point=Vector2(pending.aim) if s.shape in ["circle_ground","zone_target","wall"] else Vector2(b.get("pos",pending.aim))
+	var direction=(point-Vector2(a.pos)).normalized()
+	if s.shape not in ["circle_ground","zone_target","wall"] and not cast_geometry(a,s,b):
+		missed_casts+=1
+		art_event("miss",point,0,str(s.skill_id))
+		return
+	if s.shape in ["circle_ground","zone_target","wall"] and (a.pos.distance_to(point)>float(s.range_m)+0.35 or not clear_segment(a.pos,point,0.02)):
+		missed_casts+=1
+		return
+	art_event("release",point,0,str(s.skill_id))
+	if s.shape=="wall":
+		var size_value=Vector2(float(p.get("thickness_m",0.45)),float(p.get("width_m",2.2)))
+		var rect=Rect2(point-size_value/2,size_value)
+		for unit in actors:
+			if unit.hp>0 and rect.grow(body_radius(unit)).has_point(unit.pos):return
+		terrain.append({"rect":rect,"kind":"obstacle","speed":1.0,"expires":ticks+roundi(float(p.get("duration_s",6))*20)})
+		p2_confirm(a,s,point,"effect")
+		return
+	if s.shape=="dash_contact":
+		move_actor(a,b.pos,maxf(0.0,a.pos.distance_to(b.pos)-float(p.get("stop_m",0.65))))
+		if a.pos.distance_to(b.pos)>body_radius(a)+body_radius(b)+0.25:return
+	if s.shape=="teleport_mark":
+		if kind=="position_swap":
+			if b.uid==boss_actor_uid or b.summon:return
+			var old_a=Vector2(a.pos)
+			var old_b=Vector2(b.pos)
+			a.pos=old_b
+			b.pos=old_a
+			if not position_clear(a,a.pos) or not position_clear(b,b.pos):
+				a.pos=old_a
+				b.pos=old_b
+				return
+		else:
+			if not p2_has_mark(a,b):return
+			var found=false
+			for i in range(8):
+				var dest=clamp_body(Vector2(b.pos)+Vector2.RIGHT.rotated(i*TAU/8.0)*0.9,body_radius(a))
+				if position_clear(a,dest):
+					a.pos=dest
+					found=true
+					break
+			if not found:return
+	if float(s.projectile_speed_m_s)>0 and b.uid!=a.uid:
+		var origin=Vector2(a.pos)
+		var length_value=float(s.range_m)
+		projectiles.append({"source":a.uid,"target":b.uid,"skill":s,"origin":origin,"pos":origin,"direction":direction,"remaining":length_value/float(s.projectile_speed_m_s),"distance_left":length_value,"hit_ids":[],"cast_id":pending.cast_id,"contact_cap":1 if s.shape in ["projectile_first","projectile_burst"] else int(s.max_targets)})
+		art_event("projectile_spawn",origin,0,str(s.skill_id))
+		return
+	p2_schedule(a,s,point,direction,p2_targets(a,s,point,direction,b),int(pending.cast_id))
+
+func p2_schedule(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,targets: Array,cast_id: int) -> void:
+	var raw=s.p2
+	var p=raw.effect.params
+	var kind=str(raw.effect.type)
+	var hits=maxi(1,int(raw.effect.hit_count))
+	var interval=maxi(1,roundi(float(p.get("tick_s",p.get("interval_s",0.12)))*20))
+	var dynamic=s.shape in ["circle_ground","zone_target"] or kind=="trap"
+	var ids=targets.map(func(b):return b.uid)
+	var start=ticks+roundi(float(p.get("delay_s",0))*20)
+	var job={"source":a.uid,"skill":s,"point":point,"direction":direction,"ids":ids,"dynamic":dynamic,"cast_id":cast_id,"index":0,"hits":hits,"interval":interval,"next":start,"expires":start+maxi(hits*interval,roundi(float(p.get("duration_s",0))*20))+2,"confirmed":false}
+	if p2_jobs.size()<256:p2_jobs.append(job)
+	advance_p2()
+
+func advance_p2() -> void:
+	for item in terrain.duplicate():
+		if item.has("expires") and int(item.expires)<=ticks:terrain.erase(item)
+	for key in p2_marks.keys():
+		if int(p2_marks[key])<=ticks:p2_marks.erase(key)
+	for job in p2_jobs.duplicate():
+		if int(job.next)>ticks:continue
+		var a=actor_by_uid(int(job.source))
+		if a.is_empty() or a.hp<=0 or int(job.expires)<ticks:
+			p2_jobs.erase(job)
+			continue
+		var s=job.skill
+		var targets=[]
+		if job.dynamic:targets=p2_targets(a,s,job.point,job.direction)
+		else:
+			for uid in job.ids:
+				var target=actor_by_uid(int(uid))
+				if not target.is_empty() and target.hp>0:targets.append(target)
+		if s.p2.effect.type=="trap" and targets.is_empty():
+			job.next=ticks+1
+			continue
+		for b in targets:
+			var key=str(job.cast_id)+":"+str(b.uid)+":"+str(job.index)
+			if p2_hits.has(key):continue
+			p2_hits[key]=ticks
+			p2_apply(a,s,b,int(job.hits),int(job.index))
+			if not job.confirmed:
+				job.confirmed=true
+				p2_confirm(a,s,b.pos,"effect",int(b.uid))
+		job.index=int(job.index)+1
+		job.next=ticks+int(job.interval)
+		if int(job.index)>=int(job.hits):p2_jobs.erase(job)
+	for key in p2_hits.keys():
+		if ticks-int(p2_hits[key])>600:p2_hits.erase(key)
+
+func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) -> void:
+	var raw=s.p2
+	var p=raw.effect.params
+	var kind=str(raw.effect.type)
+	var sub=s.duplicate(true)
+	sub.erase("p2")
+	sub.p2_subhit=true
+	sub.shape="single"
+	sub.effects=[]
+	for e in s.effects:
+		var effect=e.duplicate(true)
+		if e.has("coefficient"):effect.coefficient=float(e.coefficient)/float(hits)
+		if kind=="directional_shield" and e.type=="shield":continue
+		if index>0 and not e.type in ["damage","heal"]:continue
+		sub.effects.append(effect)
+	if not sub.effects.is_empty():release(a,sub,b,[b])
+	if kind=="directional_shield":
+		var facing=Vector2.RIGHT if a.side==0 else Vector2.LEFT
+		for enemy in alive(1-int(a.side)):
+			facing=(Vector2(enemy.pos)-Vector2(a.pos)).normalized()
+			break
+		a.p2_arc={"hp":float(a.natk)*float(raw.effect.total_coefficient),"angle":float(p.get("angle_deg",120)),"facing":facing,"expires":ticks+roundi(float(p.get("duration_s",4))*20)}
+	if kind=="absorb":a.p2_absorb={"left":int(p.get("max_projectiles",1)),"chakra":float(p.get("chakra_return",15)),"expires":ticks+roundi(float(p.get("duration_s",3))*20)}
+	if kind in ["mark","projectile_mark"]:p2_set_mark(a,b,p)
+	if kind=="chakra_restore":b.chakra=minf(float(b.max_chakra),float(b.chakra)+float(p.get("chakra_amount",12)))
+	if kind in ["chakra_drain","zone_drain"]:
+		var amount=minf(float(b.chakra),float(p.get("chakra_amount",p.get("chakra_per_tick",3))))
+		b.chakra=float(b.chakra)-amount
+		a.chakra=minf(float(a.max_chakra),float(a.chakra)+amount*float(p.get("transfer_fraction",0.3)))
+	var push=float(p.get("push_m",p.get("distance_m",0)))
+	if push>0 and b.uid!=boss_actor_uid:
+		var direction=(Vector2(b.pos)-Vector2(a.pos)).normalized()
+		if p.get("direction","away")=="towards_caster":direction=-direction
+		move_actor(b,Vector2(b.pos)+direction*push,push)
+
+func p2_confirm(a: Dictionary,s: Dictionary,point: Vector2,event: String,target_uid: int=0) -> void:
+	p2_resolved+=1
+	if a.side==0 and not a.summon:mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+1
+	art_event("contact",point,0,str(s.skill_id))
+	log.append(str(a.id)+" · "+skill_name(s.skill_id))
+	if log.size()>6:log.pop_front()

@@ -29,6 +29,13 @@ jobs:
           timeout 60 "$G" --headless --path . --script res://game/combat_v3_test.gd 2>&1 | tee /tmp/combat-v3.log
           grep NARU_COMBAT_V3_PASS /tmp/combat-v3.log
           ! grep -E 'Parse Error|SCRIPT ERROR|COMBAT_V3_FAIL' /tmp/combat-v3.log
+      - name: SKILL-P2 overlay runtime
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 120 "$G" --headless --path . --script res://game/skill_p2_test.gd 2>&1 | tee /tmp/skill-p2.log
+          grep NARU_SKILL_P2_PASS /tmp/skill-p2.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|P2_FAIL' /tmp/skill-p2.log
       - name: GP-P2 gameplay integration
         run: |
           set -o pipefail
@@ -61,7 +68,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - Web DEV V5, placeholder art. Extract the entire folder.
+          NARU RPG - Web DEV V6, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -81,14 +88,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V5
+          name: NARU-Web-DEV-V6
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V5-menu
+          name: NARU-Web-DEV-V6-menu
           path: |
             web-menu.png
             ui-shots/

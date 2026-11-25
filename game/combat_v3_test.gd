@@ -40,6 +40,7 @@ func _initialize() -> void:
 	Formation.ensure(reg,legacy)
 	check(legacy.formation_slots.size()==legacy.team.size() and legacy.formation_id=="FRM-01","legacy migration")
 	var sim=Combat.new()
+	sim.use_p2=false
 	sim.setup(reg,store.state,reg.stages["STG-001"],42)
 	check(sim.map_width==14 and sim.map_height==10,"standard")
 	var actor={}
@@ -57,15 +58,18 @@ func _initialize() -> void:
 	sim.move_actor(actor,Vector2(-100,-100),200.0)
 	check(actor.pos.x>=0.2 and actor.pos.y>=0.2,"continuous movement bounded")
 	var compact=Combat.new()
+	compact.use_p2=false
 	compact.setup(reg,store.state,reg.stages["STG-002"],42)
 	check(compact.map_width==12 and compact.map_height==8,"compact stage")
 	var large=Combat.new()
+	large.use_p2=false
 	large.setup(reg,store.state,reg.stages["STG-120"],42)
 	check(large.map_width==18 and large.map_height==12,"large stage")
 	var custom=reg.stages["STG-001"].duplicate(true)
 	custom.map_width=22
 	custom.map_height=15
 	var arbitrary=Combat.new()
+	arbitrary.use_p2=false
 	arbitrary.setup(reg,store.state,custom,42)
 	check(arbitrary.map_width==22 and arbitrary.map_height==15,"custom dimensions")
 	for slot in range(9):
@@ -76,6 +80,7 @@ func _initialize() -> void:
 	for id in reg.formations:
 		check(store.select_formation(reg,id),"select "+id)
 		var test_sim=Combat.new()
+		test_sim.use_p2=false
 		test_sim.setup(reg,store.state,reg.stages["STG-001"],42)
 		var unit=test_sim.primary_alive(0)[0]
 		check(test_sim.formation_multiplier(unit,reg.formations[id].stat)>=1.03,"formation stat "+id)
@@ -87,6 +92,7 @@ func _initialize() -> void:
 	var guard=preload("res://game/save_guard.gd")
 	check(guard.valid(reg,store.state),"secondary formation save")
 	var obstacle=Combat.new()
+	obstacle.use_p2=false
 	obstacle.registry=reg
 	obstacle.environment="forest"
 	obstacle.configure_terrain({"terrain":[{"center":[0.5,0.5],"size":[1.0,2.0],"kind":"obstacle"}]})
@@ -104,6 +110,7 @@ func _initialize() -> void:
 	for i in range(10):obstacle.move_actor(runner,blocker.pos,0.1)
 	check(runner.pos.distance_to(blocker.pos)>=0.68,"opposing body collision")
 	var shot=Combat.new()
+	shot.use_p2=false
 	shot.registry=reg
 	shot.qa_hold_ai=true
 	shot.add_actor("NIN-001",0,20,2,{},0,1.0)
@@ -132,6 +139,7 @@ func _initialize() -> void:
 	for id in reg.skills:
 		var raw=reg.skills[id]
 		var run=Combat.new()
+		run.use_p2=false
 		run.registry=reg
 		run.qa_hold_ai=true
 		run.rng.seed=42
