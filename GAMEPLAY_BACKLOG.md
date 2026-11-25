@@ -42,3 +42,8 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - IN_PROGRESS: P2 per-ID runtime ledger and NPC war tuning. Resolve/revert unconfirmed adapters before acceptance.
 
 - IN_PROGRESS P2 batch 4: additional specific parameter adapters (DOT, clone, charge, conditional geometry); verify timed outcomes and fallback IDs.
+
+## GP-SKILL-P2 handover
+- DONE scoped: ingest exact A–I/54 forms/12 combos, 16 geometry handlers, stable IDs, D4 explicit fallback, V6 batch 2 full CI and actual browser flow.
+- REVIEW: B3/B4 P2 timed per-ID audit, advanced parameters, NPC tuning, newer Web artifact. See exact CI statuses and audit counts in GAMEPLAY_STATUS.
+- READY: inspect cast-only/rejected IDs and gate unconfirmed adapters, finish residual special mechanics, actual combo chains/form migrations, effect budget precision, source/era review, full organic progression and final balance. No blanket P2 PASS.
