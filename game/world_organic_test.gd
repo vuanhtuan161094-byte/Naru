@@ -112,8 +112,9 @@ func _initialize() -> void:
 		# Leave room for three workshop rounds in the daily cycle.
 		advance(reg,store,82800)
 		# Preserve wood, stone and Ryo mission while recruiting/assigning newly owned workers.
-		for draw in range(5):
+		for draw in range(20 if next_stage>120 else 5):
 			if int(store.state.inventory.get("RES-002",0))>=100:store.draw(reg)
+			else:break
 		var owned=store.state.owned.keys()
 		var mission_resources=["RES-002","RES-118","RES-119","RES-120","RES-116","RES-003","RES-004","RES-005","RES-121","RES-122","RES-123","RES-124"]
 		for mission in store.state.missions.values():mission_resources.erase(str(mission.resource))
@@ -173,9 +174,9 @@ func _initialize() -> void:
 			var needs={}
 			if wave==0:
 				for recipe in reg.recipes.values():
-					if not settled_recipes.has(recipe.id):needs[recipe.output.resource_id]=1
+					if not settled_recipes.has(recipe.id):needs[recipe.output.resource_id]=int(store.state.inventory.get(recipe.output.resource_id,0))+int(recipe.output.qty)
 			else:
-				needs={"RES-110":12,"RES-059":20,"RES-100":12,"RES-127":5,"RES-125":3,"RES-113":12}
+				needs={"RES-110":12,"RES-059":20,"RES-100":30 if next_stage>120 else 12,"RES-127":5,"RES-125":3,"RES-113":12}
 			var plan=Guide.plan(reg,needs,store.state.inventory)
 			var recipes=reg.recipes.values()
 			recipes.sort_custom(func(a,b):
@@ -205,6 +206,7 @@ func _initialize() -> void:
 		for id in team:
 			var q=store.breakthrough_quote(id)
 			if store.xp_to_cap(id)==0:realm_need+=int(q.cost)
+		if next_stage>120:realm_need=maxi(realm_need,2*int(store.breakthrough_quote(str(team[0])).cost))
 		if realm_need>0 and int(store.state.inventory.get("RES-128",0))<realm_need:
 			var candidates=store.trial_roster(reg,"RES-128")
 			var roster=[]
@@ -217,6 +219,12 @@ func _initialize() -> void:
 				var trial=store.resource_trial_batch(reg,"RES-128",roster)
 				trial_attempts["RES-128"]=int(trial_attempts.get("RES-128",0))+int(trial.attempts)
 				trial_wins["RES-128"]=int(trial_wins.get("RES-128",0))+int(trial.wins)
+			if next_stage>120 and int(store.state.inventory.get("RES-128",0))<realm_need:
+				var reserve_roster=store.trial_roster(reg,"RES-128").slice(0,6)
+				if not reserve_roster.is_empty():
+					var extra_trial=store.resource_trial_batch(reg,"RES-128",reserve_roster)
+					trial_attempts["RES-128"]=int(trial_attempts.get("RES-128",0))+int(extra_trial.attempts)
+					trial_wins["RES-128"]=int(trial_wins.get("RES-128",0))+int(extra_trial.wins)
 		# Spend available stamina on already-cleared progression (actual fights).
 		if next_stage>10:
 			for replay_i in range(4 if next_stage>=60 else 2):
@@ -377,13 +385,51 @@ func _initialize() -> void:
 	for building in store.state.building_states:
 		var job=store.state.building_states[building].production
 		if not job.is_empty():print("NARU_WORLD_REVIEW_PENDING ",building," ",job)
+	for beast_id in store.state.beasts:
+		for host in reg.beasts[beast_id].compatibility.preferred_host_ids:
+			print("NARU_WORLD_P7R_BIND ",beast_id," ",host," ",store.beast_bind_reason(reg,str(host),beast_id))
 	print("NARU_WORLD_P7_TRIALS attempts=",trial_attempts," wins=",trial_wins," seal_stock=",store.state.inventory.get("RES-128",0)," bound=",beast_bound," last_loss=",last_stage_hp)
+	# Require valid primary JSON and exact persisted values, not int-vs-float dictionary equality.
+	var saved=JSON.parse_string(FileAccess.get_file_as_string(store.save_path))
+	var expected=JSON.parse_string(store.export_save())
+	if not Guard.valid(reg,saved) or not same_saved_value(saved,expected):
+		push_error("WORLD_ORGANIC_FAIL primary JSON round trip")
+		quit(1)
+		return
 	var loaded=Store.new()
 	loaded.save_path=store.save_path
 	loaded.load_or_new(reg)
-	if not Guard.valid(reg,loaded.state) or loaded.state.cleared.size()!=store.state.cleared.size() or loaded.state.inventory!=store.state.inventory:
-		push_error("WORLD_ORGANIC_FAIL reload")
+	var mismatches=[]
+	for key in ["inventory","cleared","owned","gear_instances","beasts","summon_contracts","team","stamina","ledger","building_states","jobs","missions","territory_states","faction_states","relations","world_squads","home_defense","source_cooldowns","high_water_timestamp","rng_seed","rng_state","reward_inbox"]:
+		if not same_saved_value(loaded.state.get(key),saved.get(key)):mismatches.append(key)
+	if not Guard.valid(reg,loaded.state) or not mismatches.is_empty() or loaded.load_notice!="":
+		push_error("WORLD_ORGANIC_FAIL reload fields="+str(mismatches)+" notice="+loaded.load_notice)
 		quit(1)
 		return
+	var missing_recipes=[]
+	for recipe_id in reg.recipes:
+		if not settled_recipes.has(recipe_id):
+			missing_recipes.append(recipe_id)
+			print("NARU_WORLD_P7R_RECIPE_GAP ",recipe_id," ",Village.recipe_quote(store.state,reg.recipes[recipe_id]))
+	print("NARU_WORLD_P7R_RELOAD_PASS fields=22 missing_recipes=",missing_recipes," beasts=",loaded.state.beasts)
 	print("NARU_WORLD_ORGANIC_INTEGRITY_PASS")
 	quit()
+
+func same_saved_value(a: Variant,b: Variant) -> bool:
+	if (a is int or a is float) and (b is int or b is float):
+		var x=float(a)
+		var y=float(b)
+		if x==floor(x) or y==floor(y):return x==y
+		return absf(x-y)<=1e-12*maxf(1.0,maxf(absf(x),absf(y)))
+	if typeof(a)!=typeof(b):return false
+	if a is Dictionary:
+		if a.size()!=b.size():return false
+		for key in a:
+			if not b.has(key) or not same_saved_value(a[key],b[key]):return false
+		return true
+	if a is Array:
+		if a.size()!=b.size():return false
+		for i in range(a.size()):
+			if not same_saved_value(a[i],b[i]):return false
+		return true
+	return a==b
