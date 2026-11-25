@@ -161,9 +161,8 @@ static func trade(reg,s: Dictionary,id: String,resource: String,qty: int,buy: bo
 static func resolve_team(reg,s: Dictionary,player_team: Array,enemy_team: Array,level: int,seed_value: int) -> bool:
 	if player_team.is_empty():return false
 	var sim=Combat.new()
-	sim.registry=reg
-	sim.auto_player_ultimate=true
-	sim.rng.seed=seed_value
+	var context=preload("res://game/world_combat_context.gd")
+	context.configure(sim,reg,s,seed_value)
 	var formation_config={"formation_id":"FRM-01","formation_slots":{},"formation_levels":s.get("formation_levels",{})}
 	if player_team==s.team:formation_config=s
 	else:
@@ -178,7 +177,7 @@ static func resolve_team(reg,s: Dictionary,player_team: Array,enemy_team: Array,
 	for id in player_team:
 		if not s.owned.has(id):return false
 		var p=s.owned[id]
-		sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,int(slots.get(id,sim.actors.size())),1.0,p,s.gear_instances)
+		sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,int(slots.get(id,sim.actors.size())),1.0,context.progress(s,id),s.gear_instances)
 	var slot=0
 	for id in enemy_team:
 		sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},slot,1.0)

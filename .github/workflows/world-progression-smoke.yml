@@ -85,7 +85,7 @@ jobs:
           set -o pipefail
           git fetch --depth=1 origin 07ca3712d2d948a7e866b89c43fd8f5db7046321
           git worktree add --detach /tmp/naru-one-game 07ca3712d2d948a7e866b89c43fd8f5db7046321
-          for path in game/content_service.gd game/progression_quotes.gd game/resource_guide.gd game/save_guard.gd game/save_store.gd game/village_service.gd game/world_organic_test.gd game/world_progression_test.gd game/world_rewards.gd game/world_service.gd; do
+          for path in game/content_service.gd game/progression_quotes.gd game/resource_guide.gd game/save_guard.gd game/save_store.gd game/village_service.gd game/world_organic_test.gd game/world_progression_test.gd game/world_rewards.gd game/world_service.gd game/world_combat_context.gd; do
             cp "$path" "/tmp/naru-one-game/$path"
           done
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64

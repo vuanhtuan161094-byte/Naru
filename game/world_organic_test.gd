@@ -198,6 +198,14 @@ func _initialize() -> void:
 			if int(store.state.inventory.get("RES-001",0))>=10000:
 				store.train_stat(reg,id,"intellect",5)
 				store.train_stat(reg,id,"vitality",5)
+			if day>=15:
+				for template_id in ["EQ-007-Q2","EQ-002-Q2","EQ-003-Q2","EQ-009-Q2"]:
+					var slot=str(reg.gear_templates[template_id].slot_id)
+					var equipped=str(n.gear.get(slot,""))
+					if equipped!="" and int(reg.gear_templates[store.state.gear_instances[equipped].template_id].quality)>=2:continue
+					var upgraded=store.craft_gear(reg,template_id)
+					if upgraded!="" and store.equip_gear(reg,id,upgraded):gear_count+=1
+					break
 			for key in n.gear.values():
 				if int(store.state.gear_instances[key].enhance)<5:store.enhance_gear(key)
 			for skill_id in reg.ninjas[id].skills:
@@ -211,10 +219,10 @@ func _initialize() -> void:
 			if int(n.level)<(int(n.realm)+1)*20 and int(store.state.inventory.get("RES-001",0))>=6000:
 				var purchase=mini(30,maxi(0,int((int(store.state.inventory["RES-001"])-4000)/600.0)))
 				if purchase>0:store.buy_training_scrolls("RES-117",purchase)
-			var qty=mini(50 if id==team[0] else 10,int(store.state.inventory.get("RES-117",0)))
-			if qty>0:store.train_batch(reg,id,"RES-117",qty)
-			var small_qty=mini(50 if id==team[0] else 10,int(store.state.inventory.get("RES-116",0)))
-			if small_qty>0:store.train_batch(reg,id,"RES-116",small_qty)
+			for batch_i in range(8 if id==team[0] else 2):
+				if store.xp_to_cap(id)==0:
+					if store.breakthrough(id)!="success":break
+				if not store.train_to_cap(reg,id,"RES-117") and not store.train_to_cap(reg,id,"RES-116"):break
 		# Rotate real trials on strongest current ninja; no fabricated material grant.
 		var strongest=str(team[0])
 		for resource in ["RES-128","RES-130","RES-134","RES-126","RES-131","RES-132", "RES-%03d" % (136+posmod(day,9))]:

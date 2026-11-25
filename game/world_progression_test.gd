@@ -69,6 +69,7 @@ func _initialize() -> void:
 	beast_capture_fixture(reg)
 	review_checks(reg)
 	p6_checks(reg)
+	defended_capture_fixture(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -361,5 +362,34 @@ func p6_checks(reg) -> void:
 	check(store.make_contract(reg,"SUM-001"),"P6 contract create")
 	check(store.assign_contract("SUM-001","NIN-001"),"P6 contract assign")
 	check(store.unassign_contract("SUM-001") and store.assign_contract("SUM-001","NIN-003"),"P6 reassign contract")
+	store.state.inventory["RES-116"]=100
+	var q=store.training_scroll_quote(reg,"NIN-001","RES-116")
+	check(int(q.qty)>0 and store.train_to_cap(reg,"NIN-001","RES-116"),"P6 bounded scroll transaction fixture")
+	check(int(store.state.inventory["RES-116"])==100-int(q.qty),"P6 exact scroll debit")
+	var context=preload("res://game/world_combat_context.gd")
+	check(int(context.progress(store.state,"NIN-003").contract_level)==1,"P6 linked summon progression")
 	check(Guard.valid(reg,store.state),"P6 save valid")
 	print("NARU_WORLD_P6_TRANSACTIONS_PASS")
+
+func defended_capture_fixture(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_p6_defended.json"
+	store.new_game(reg)
+	# Explicit strong roster and disputed border fixture; actual faction defenders and transaction.
+	for id in store.state.team:
+		var n=store.state.owned[id]
+		n.level=280
+		n.realm=14
+		n.permanent={"strength":100000,"vitality":100000,"intellect":100000,"spirit":100000,"agility":100000}
+	var target="TER-057"
+	var enemy="FAC-001"
+	store.state.territory_states[target].owner=enemy
+	check(not reg.factions[enemy].teams.is_empty(),"P6 real faction defender teams")
+	check(store.travel_to(reg,target),"P6 defended travel")
+	store.advance_clock(reg,int(store.state.high_water_timestamp)+130)
+	check(not store.capture_territory(reg,target),"P6 cannot capture without war")
+	check(store.diplomatic_action(reg,enemy,"war"),"P6 declare war")
+	check(store.capture_territory(reg,target),"P6 defended combat resolved")
+	check(store.state.territory_states[target].owner=="FAC-009","P6 defended capture win")
+	check(Guard.valid(reg,store.state),"P6 defended save")
+	print("NARU_WORLD_P6_DEFENDED_FIXTURE ",store.state.territory_states[target].owner)

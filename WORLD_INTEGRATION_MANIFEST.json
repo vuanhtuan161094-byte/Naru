@@ -65,18 +65,21 @@
       "art": "f529dccf856d034694ac1d1718b19770d84fa2bb"
     },
     "changed_files": [
-      "game/village_service.gd",
-      "game/resource_guide.gd",
-      "game/main.gd",
-      "game/world_organic_test.gd",
-      "game/save_store.gd",
-      "game/world_progression_test.gd",
       ".github/workflows/world-progression-smoke.yml",
-      "WORLD_STATUS.md",
-      "WORLD_BACKLOG.md",
-      "WORLD_INTEGRATION_READINESS.md",
       "HANDOFF_00_01_02.md",
-      "game/combat_stat_snapshot.gd"
+      "WORLD_BACKLOG.md",
+      "WORLD_INTEGRATION_MANIFEST.json",
+      "WORLD_INTEGRATION_READINESS.md",
+      "WORLD_STATUS.md",
+      "game/combat_stat_snapshot.gd",
+      "game/main.gd",
+      "game/resource_guide.gd",
+      "game/save_store.gd",
+      "game/village_service.gd",
+      "game/world_combat_context.gd",
+      "game/world_organic_test.gd",
+      "game/world_progression_test.gd",
+      "game/world_service.gd"
     ],
     "functions": {
       "game/village_service.gd": [
@@ -97,7 +100,10 @@
         "building_screen",
         "beast_detail",
         "craft_screen",
-        "gear_material_screen"
+        "gear_material_screen",
+        "contract_detail",
+        "training_screen",
+        "gear_craft_screen"
       ],
       "game/world_organic_test.gd": [
         "__preamble",
@@ -109,18 +115,38 @@
         "unassign_contract",
         "squad_capture",
         "player_preview",
-        "xp_to_cap"
+        "xp_to_cap",
+        "duel",
+        "capture_beast",
+        "training_scroll_quote",
+        "train_to_cap"
       ],
       "game/world_progression_test.gd": [
         "_initialize",
-        "p6_checks"
+        "p6_checks",
+        "defended_capture_fixture"
       ],
       "game/combat_stat_snapshot.gd": [
         "__preamble",
         "snapshot"
+      ],
+      "game/world_service.gd": [
+        "resolve_team"
+      ],
+      "game/world_combat_context.gd": [
+        "configure",
+        "progress"
       ]
     },
     "snapshot": "identical upstream V11; already in integration, do not overwrite newer",
-    "acceptance": "pending exact CI; no balance curve changes"
+    "acceptance": "P6B pending exact CI, no balance curve changes",
+    "p5r_verified": {
+      "run": 45641842098,
+      "web": 15035628444,
+      "wins": 54,
+      "resources": 134,
+      "recipes": 46,
+      "beast_attempts": 0
+    }
   }
 }

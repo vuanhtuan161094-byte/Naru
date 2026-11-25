@@ -577,10 +577,9 @@ func trial_ready(reg,id: String,trial_id: String) -> bool:
 func duel(reg,id: String,level: int,seed_value: int) -> bool:
 	var p=state.owned[id]
 	var sim=Combat.new()
-	sim.registry=reg
-	sim.auto_player_ultimate=true
-	sim.rng.seed=seed_value
-	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
+	var context=preload("res://game/world_combat_context.gd")
+	context.configure(sim,reg,state,seed_value)
+	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,context.progress(state,id),state.gear_instances)
 	sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},0,1.0)
 	for i in range(24000):
 		sim.tick(0.05)
@@ -770,10 +769,9 @@ func capture_beast(reg,id: String,beast_id: String) -> bool:
 	var old_rng=rng.state
 	debit(cost)
 	var sim=Combat.new()
-	sim.registry=reg
-	sim.auto_player_ultimate=true
-	sim.rng.seed=rng.randi()
-	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
+	var context=preload("res://game/world_combat_context.gd")
+	context.configure(sim,reg,state,rng.randi())
+	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,context.progress(state,id),state.gear_instances)
 	sim.add_beast(beast_id,int(req.realm)*20+10)
 	var won=false
 	for i in range(24000):
@@ -962,6 +960,19 @@ func xp_to_cap(id: String) -> int:
 	var total=0
 	for lv in range(int(p.level),(int(p.realm)+1)*20):total+=Quotes.xp_need(lv,int(p.realm))
 	return maxi(0,total-int(p.xp))
+
+func training_scroll_quote(reg,id: String,resource: String,limit: int=100) -> Dictionary:
+	if not state.owned.has(id) or not resource in ["RES-116","RES-117"] or limit<1 or limit>100:return {}
+	var p=state.owned[id]
+	var remaining=xp_to_cap(id)
+	var stats=Stats.derive(reg,reg.ninjas[id],p)
+	var unit=(200.0 if resource=="RES-116" else 1000.0)*(1+Stats.effect(reg,stats,"xp_efficiency"))
+	var qty=mini(limit,mini(int(state.inventory.get(resource,0)),ceili(float(remaining)/maxf(1.0,unit))))
+	return {"qty":qty,"xp":roundi(unit*qty),"remaining":remaining,"stock":int(state.inventory.get(resource,0))}
+
+func train_to_cap(reg,id: String,resource: String,limit: int=100) -> bool:
+	var q=training_scroll_quote(reg,id,resource,limit)
+	return not q.is_empty() and int(q.qty)>0 and train_batch(reg,id,resource,int(q.qty))
 
 func train_batch(reg,id: String,resource: String,quantity: int) -> bool:
 	if not state.owned.has(id) or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>100:return false

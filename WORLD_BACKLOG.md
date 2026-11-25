@@ -21,3 +21,5 @@ P5B REVIEW: 63 recipe / 9 beast fixture, frontier navigation and organic seconda
 P5R: P5A 54 clears, 104 resources, 14 settled, 0 beasts. Corrected observation strategy and persistence/capacity bugs. Outstanding endgame balancing and integrated V11 results; cannot mark product complete. P5B/P5R logs and Web require exact CI verification.
 
 P6: structural closure 150; 63 and 9 fixtures PASS P5B, organic 59/120 and zero beast attempts. P6 actual integrated V11 overlay observation pending; no blanket difficulty adjustment. Full organic resource/recipe/beast/host, defended capture and UI QA remain gates. Review merchant/mission economy under increased dispatch; not final balance.
+
+P6B: P5R 134/150, 46/63; 16 unseen resources, 17 recipes, realm3+ and natural beast/defended capture remain gates. P6B integrated evidence pending.

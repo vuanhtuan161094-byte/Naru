@@ -635,7 +635,9 @@ func gear_craft_screen() -> void:
 		rows.add_child(row)
 		var b=button(row,"%s | %s" % [def.name_vi,cost_text(def.craft.inputs)],func():gear_screen("Đã chế tạo" if not store.craft_gear(reg,id).is_empty() else "Chưa đủ nguyên liệu"))
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.disabled=int(store.state.building_states.get(def.craft.building_id,{}).get("level",0))<=0
+		var material_cost={}
+		for item in def.craft.inputs:material_cost[item.resource_id]=int(material_cost.get(item.resource_id,0))+int(item.qty)
+		b.disabled=int(store.state.building_states.get(def.craft.building_id,{}).get("level",0))<=0 or not store.has_cost(material_cost)
 		button(row,"Nguồn nguyên liệu",func():gear_material_screen(id))
 		if int(def.quality)==1:
 			var q=store.starter_gear_cost(reg,id)
@@ -1012,10 +1014,12 @@ func contract_detail(id: String,message: String="") -> void:
 		return
 	var contract=store.state.summon_contracts[id]
 	label(rows,"Cấp %d • Chủ: %s" % [int(contract.level),str(contract.owner)],17)
+	if str(contract.owner)!="":button(rows,"Thu hồi khế ước",func():contract_detail(id,"Đã thu hồi" if store.unassign_contract(id) else "Không thể thu hồi"))
 	button(rows,"Tăng cấp • %d Ryo" % store.contract_training_cost(id),func():contract_detail(id,"Đã tăng cấp" if store.train_contract(id) else "Thiếu Ryo"))
 	button(rows,"+5 cấp • %d Ryo" % store.contract_training_cost(id,5),func():contract_detail(id,"Đã tăng cấp" if store.train_contract(id,5) else "Thiếu Ryo"))
 	for ninja in store.state.owned:
-		button(rows,"Gán "+str(reg.ninjas[ninja].name_vi),func():contract_detail(id,"Đã gán" if store.assign_contract(id,ninja) else "Đã có chủ / đã có khế ước"))
+		var assign_button=button(rows,"Gán "+str(reg.ninjas[ninja].name_vi),func():contract_detail(id,"Đã gán" if store.assign_contract(id,ninja) else "Đã có chủ / đã có khế ước"))
+		assign_button.disabled=str(contract.owner)!="" or str(store.state.owned[ninja].summon_contract)!=""
 
 func bloodline_screen(message: String="") -> void:
 	var rows=activity_rows("HUYẾT KẾ VÀ ĐỒNG THUẬT",message,activities_screen)
@@ -1429,6 +1433,10 @@ func training_screen(id: String,message: String="") -> void:
 		for qty in [1,5,10,50,100]:
 			var use=button(line,"Dùng "+str(qty),func():training_screen(id,"Đã tu luyện" if store.train_batch(reg,id,resource,qty) else "Thiếu cuộn hoặc đạt trần cảnh"))
 			use.disabled=int(store.state.inventory.get(resource,0))<qty or int(p.level)>=(int(p.realm)+1)*20
+		var qcap=store.training_scroll_quote(reg,id,resource)
+		var until=button(line,"Tối đa "+str(qcap.qty),func():training_screen(id,"Đã tu luyện" if store.train_to_cap(reg,id,resource) else "Đã đạt trần / thiếu cuộn"))
+		until.disabled=int(qcap.qty)<=0
+		until.tooltip_text="XP nhận: "+str(qcap.xp)+" • Còn thiếu tới trần: "+str(qcap.remaining)
 		var price=120 if resource=="RES-116" else 600
 		var b=button(line,"Mua 5 • "+str(price*5)+" Ryo",func():training_screen(id,"Đã mua" if store.buy_training_scrolls(resource,5) else "Cần HQ2 / đủ Ryo / chỗ kho"))
 		b.disabled=Village.level(store.state,"BLD-001")<2
