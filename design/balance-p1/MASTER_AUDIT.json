@@ -1,0 +1,88 @@
+{
+  "source": {
+    "skills": 1152,
+    "prior_missing": 808,
+    "missing": 248,
+    "newly_linked": 560,
+    "limited_technique": 35,
+    "era_records": 176,
+    "era_ninja": 22,
+    "explicit_holds": 2,
+    "source_pages": 55,
+    "second_batch_newly_linked": 232
+  },
+  "combat": {
+    "skills": 1152,
+    "changed": 503,
+    "coefficient_changes": 341,
+    "forms": 54,
+    "combos": 12
+  },
+  "campaign": {
+    "stages": 120,
+    "npcs": 490,
+    "chapters": 24,
+    "buildings": 30,
+    "resources": 150,
+    "gear": 128,
+    "recipes": 63,
+    "jobs": 15,
+    "ninjas": 144,
+    "bosses": 24,
+    "territories": 60
+  },
+  "special": {
+    "stats": 48,
+    "formations": 8,
+    "beasts": 9,
+    "summons": 11,
+    "bloodlines": 7,
+    "recruitment_tiers": 8
+  },
+  "checks": {
+    "combat": {
+      "all_skills": true,
+      "finite": true,
+      "coefficient_budget": true,
+      "basic_free": true,
+      "all_forms": true,
+      "all_combos": true,
+      "form_uptime": true
+    },
+    "campaign": {
+      "stage_count": true,
+      "npc_count": true,
+      "chapter_count": true,
+      "resource_count": true,
+      "building_count": true,
+      "gear_count": true,
+      "recipe_count": true,
+      "profession_count": true,
+      "ninja_count": true,
+      "boss_count": true,
+      "territory_count": true,
+      "reward_refs": true,
+      "recipe_refs": true,
+      "finite_power": true,
+      "early_first_rewards_preserved": true
+    },
+    "special": {
+      "stats": true,
+      "formations": true,
+      "beasts": true,
+      "summons": true,
+      "bloodlines": true,
+      "recruit_pool": true,
+      "probability_sum": true,
+      "links": true
+    }
+  },
+  "runtime": "NOT_RUN_NEW_OVERLAY",
+  "upstream": {
+    "gameplay": "ffde762f0f4833f120f8c7d98c83a977e3d97ea7",
+    "tested": "1b5c8da242fe9d00a257cf9a4f625574d7872e47",
+    "ci": 45574564478,
+    "ci_result": "success",
+    "art": "100f1b1d495ee678a2e5f59d4e1a1fa7c1e8"
+  }
+}

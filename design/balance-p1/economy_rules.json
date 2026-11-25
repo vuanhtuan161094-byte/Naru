@@ -118,9 +118,11 @@
     "raid_protection_s": 43200,
     "raid_loss_fraction": 0.1,
     "home_protected": true,
-    "rule": "Count only newly resolved conflicts, not repeated border tension. One persisted war event per faction pair per cooldown. Existing saves retain counts.",
+    "rule": "Count only newly resolved conflicts, not repeated border tension. One persisted war event per faction pair per cooldown. Existing saves retain counts. Global persisted cadence is mandatory for the theoretical maximum; at most one new war event per six-hour global slot, not per faction.",
     "global_90d_new_war_theoretical_max": 360,
-    "warning": "Not a simulated expected war count; upper bound assumes global cadence."
+    "warning": "Not a simulated expected war count; upper bound assumes global cadence.",
+    "global_war_attempt_interval_ticks": 36,
+    "global_war_attempt_interval_s": 21600
   },
   "progression": {
     "level_xp": "ceil(100*L^1.6*(1+0.15*realm))",
