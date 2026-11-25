@@ -18,3 +18,5 @@ Authority: design/d1/Master_GDD_V1.0.md, design/MASTER_GDD_D2.md, design/d4/DECI
 
 - DEC-011 LOCKED: Owner chose combat B on 25/11/2026: 12x8 grid, initial formation, continuous free movement, 6v6, AI regular skills/manual ultimate. Geometry implementation and SKILL-P1 authorized; tuning values remain DEV, no merge or Codex Cloud.
 
+
+- DEC-012 LOCKED: Owner approved Combat V3: standard 14×10, variable maps, continuous movement, 3×3 choose six of nine, eight upgradeable formations and lineup links. Supersedes DEC-011's standard size; DEV numerical tuning delegated, no Codex Cloud or merge.

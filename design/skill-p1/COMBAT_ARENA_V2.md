@@ -14,3 +14,6 @@ Official site evidence links in audit_summary.json support named techniques or c
 ## Owner decision 25/11/2026
 B approved: 12x8 formation + continuous free movement. Implement COMBAT-P1/P2 in large batches; numerical radii, roles, range and hit tuning remain DEV defaults. Preserve IDs and saves. Do not assume all 64 detailed proposals have individually validated canon or production VFX. Remaining 1088 must be reviewed individually, not merely renamed.
 
+
+## Superseded geometry
+DEC-012 Combat V3 replaces default 12×8 with 14×10 and adds configurable maps, 3×3 deployment, formations and links. See COMBAT_V3.md. Other compatible mechanics remain applicable.

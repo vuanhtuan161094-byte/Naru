@@ -24,3 +24,6 @@ Gameplay HEAD advanced to c27f68f66f97ffe2e27721a970d257509fc7f68f: D1-A functio
 
 ## SKILL-P1 design checkpoint
 Structural audit all 144 ninja/1152 skills; 55 ninja duplicate names, 103 matching effect/geometry groups, 64 anchor skill proposals for eight versions and 14 form review records. Proposed hybrid arena contract requires owner review; 1088 skills still require individual source/mechanic review. D4 runtime unchanged, no merge. See design/skill-p1/BACKLOG.md.
+
+## Combat V3 — 2026-11-25
+OWNER LOCKED DEC-012; design/database updated. Gameplay integration separately tracked in implementation/e3-gameplay; QA pending exact-SHA evidence. No merge.

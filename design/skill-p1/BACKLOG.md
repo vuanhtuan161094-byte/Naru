@@ -10,3 +10,7 @@
 ## Owner decision
 B approved. COMBAT-P1/P2 READY for implementation now. COMBAT-P3 and P4 remain dependent on actual supported mechanics. No mass VFX generation before exact event/geometry verified.
 
+
+## Combat V3 (DEC-012)
+- READY: V3 runtime map bounds, 3×3 placement, eight formations, upgrades and positional links; save/UI and exact-SHA QA.
+- Existing SKILL-P1 audit continues; no automatic claim of full 1,152-skill geometry completion.
