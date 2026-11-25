@@ -40,3 +40,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - IN_PROGRESS P2 batch 2: combo events, form compatibility, summon role implementation and export path; detailed per-ID runtime audit next.
 
 - IN_PROGRESS: P2 per-ID runtime ledger and NPC war tuning. Resolve/revert unconfirmed adapters before acceptance.
+
+- IN_PROGRESS P2 batch 4: additional specific parameter adapters (DOT, clone, charge, conditional geometry); verify timed outcomes and fallback IDs.

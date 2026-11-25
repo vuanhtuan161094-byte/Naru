@@ -90,7 +90,8 @@ func fixture(reg,id: String) -> int:
 		if raw.conditions.ai in ["chakra_below_70pct","ally_chakra_below_70pct"]:a.chakra=a.max_chakra*0.5
 		if raw.conditions.ai=="ally_has_dispellable_status":sim.apply_status(b,a,{"status_id":"slow","chance":1.0,"duration_s":20})
 		if raw.conditions.has("any_active_forms"):a.active_form={"id":raw.conditions.any_active_forms[0],"remaining":20.0}
-		if raw.conditions.ai=="owned_valid_mark_or_explicit_swap":sim.p2_set_mark(a,b,{"duration_s":20})
+		if raw.conditions.ai=="owned_valid_mark_or_explicit_swap" or raw.effect.params.get("requires_owned_mark",false):sim.p2_set_mark(a,b,{"duration_s":20})
+		if raw.effect.params.get("requires_clone",false):sim.summon_actor(a,{"skill_id":"QA-CLONE"},{"template_id":"QA-CLONE","cap":1,"lifetime_s":20,"hp_owner_fraction":0.25,"attack_owner_fraction":0.3})
 		if raw.conditions.ai=="incoming_absorbable_projectile":
 			var dummy=reg.skills["NIN-003-S0"].duplicate(true)
 			dummy.projectile_speed_m_s=0.01

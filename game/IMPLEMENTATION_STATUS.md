@@ -68,3 +68,5 @@ GP-SKILL-P2 A–I batch 1: overlay with explicit fallback, P2 runtime gate and W
 P2 batch 2: actual event signatures, summon roles, form overlay, Web data include.
 
 P2 batch 3: per-ID audit, UI status, NPC war tuning and status/absorb bounds.
+
+P2 batch 4: additional mechanics with explicit fallback retained, pending CI.

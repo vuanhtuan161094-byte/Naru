@@ -213,6 +213,21 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 			if empowered.skill_id==id:factor*=float(empowered.coefficient_multiplier)
 	for e in s.effects:
 		if e.has("coefficient"):e.coefficient=float(e.coefficient)*factor
+		if e.has("tick_coefficient"):e.tick_coefficient=float(e.tick_coefficient)*factor
+	if s.has("p2"):
+		var params=s.p2.effect.params
+		if params.get("requires_clone_or_basic_fallback",false) and owned_clone(a).is_empty():
+			s.p2.effect.hit_count=1
+			for e in s.effects:
+				if e.type=="damage":e.coefficient=minf(float(e.coefficient),0.85*factor)
+		if params.has("conditional_variant") and not a.active_form.get("id","") in params.conditional_variant.throw_if_active_forms:
+			s.shape=params.conditional_variant.default_shape
+			s.range_m=float(params.conditional_variant.default_range_m)
+			s.projectile_speed_m_s=0
+			params.stop_m=0.65
+		if params.has("field_modifier") and (environment=="storm" or elemental_fields.any(func(zone):return zone.element=="fire")):
+			for e in s.effects:
+				if e.has("coefficient"):e.coefficient=float(e.coefficient)*float(params.field_modifier.coefficient_multiplier)
 	return s
 
 func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
@@ -242,7 +257,12 @@ func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 
 func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	if not ready(a,s) or not cast_geometry(a,s,b) or not ai_condition(a,s,b):return false
-	if s.has("p2"):p2_casts+=1
+	if s.has("p2"):
+		p2_casts+=1
+		var params=s.p2.effect.params
+		if params.get("once_per_battle",false) or params.get("finite_per_battle",false):
+			if not a.has("p2_used"):a.p2_used={}
+			a.p2_used[s.skill_id]=int(a.p2_used.get(s.skill_id,0))+1
 	a.chakra=float(a.chakra)-float(s.chakra)
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)/(1.0+rating(a,"attack_speed"))
@@ -311,6 +331,10 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 			b.p2_arc.hp=float(b.p2_arc.hp)-absorbed
 			dmg-=absorbed
 	if dmg<=0:return
+	if allow_counter and a.side!=b.side and b.has("p2_evade") and int(b.p2_evade.expires)>ticks and int(b.p2_evade.left)>0:
+		b.p2_evade.left=int(b.p2_evade.left)-1
+		art_event("miss",b.pos)
+		return
 	var blocked=minf(float(b.shield),dmg)
 	var remaining=blocked
 	for key in b.shield_sources.keys():
@@ -1059,6 +1083,10 @@ func movement_speed(a: Dictionary) -> float:
 
 func p2_ready(a: Dictionary,s: Dictionary) -> bool:
 	var cond=s.p2.conditions
+	var params=s.p2.effect.params
+	if params.get("requires_clone",false) and owned_clone(a).is_empty():return false
+	if params.get("once_per_battle",false) or params.get("finite_per_battle",false):
+		if int(a.get("p2_used",{}).get(s.skill_id,0))>=int(params.get("charges",1)):return false
 	if int(a.realm)<int(cond.get("unlock_realm",0)):return false
 	if cond.has("any_active_forms") and not a.active_form.get("id","") in cond.any_active_forms:return false
 	if cond.has("forbidden_active_forms") and a.active_form.get("id","") in cond.forbidden_active_forms:return false
@@ -1068,6 +1096,7 @@ func p2_ready(a: Dictionary,s: Dictionary) -> bool:
 func p2_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	if b.is_empty():return false
 	var p=s.p2.effect.params
+	if p.get("requires_owned_mark",false) and not p2_has_mark(a,b):return false
 	match str(s.p2.conditions.ai):
 		"below_summon_cap":return summon_count(a,s.skill_id)<int(p.get("cap",1))
 		"chakra_below_70pct":return float(a.chakra)<float(a.max_chakra)*0.7
@@ -1167,9 +1196,15 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 		terrain.append({"rect":rect,"kind":"obstacle","speed":1.0,"expires":ticks+roundi(float(p.get("duration_s",6))*20)})
 		p2_confirm(a,s,point,"contact_or_effect_confirmed")
 		return
+	if p.get("requires_owned_mark",false) and not p2_has_mark(a,b):return
 	if s.shape=="dash_contact":
 		move_actor(a,b.pos,maxf(0.0,a.pos.distance_to(b.pos)-float(p.get("stop_m",0.65))))
 		if a.pos.distance_to(b.pos)>body_radius(a)+body_radius(b)+0.25:return
+	if int(p.get("consume_clone",0))>0:
+		var clone=owned_clone(a)
+		if clone.is_empty():return
+		clone.hp=0
+	if p.get("consume_mark",false):p2_marks.erase(str(a.uid)+":"+str(b.uid))
 	if s.shape=="teleport_mark":
 		if kind=="position_swap":
 			if b.uid==boss_actor_uid or b.summon:return
@@ -1265,6 +1300,7 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 	var raw=s.p2
 	var p=raw.effect.params
 	var kind=str(raw.effect.type)
+	var before_hp=float(b.hp)
 	var sub=s.duplicate(true)
 	sub.erase("p2")
 	sub.p2_subhit=true
@@ -1277,6 +1313,12 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 		if index>0 and not e.type in ["damage","heal"]:continue
 		sub.effects.append(effect)
 	if not sub.effects.is_empty():release(a,sub,b,[b])
+	if p.get("interrupt_on_hit",false) and float(b.hp)<before_hp and not b.pending.is_empty() and b.pending.skill.interruptible:
+		b.pending={}
+		b.busy=0.0
+		art_event("interrupt",b.pos,0,str(s.skill_id))
+	if p.has("max_avoided_hits"):
+		a.p2_evade={"left":int(p.max_avoided_hits),"expires":ticks+roundi(float(p.get("duration_s",3))*20)}
 	if kind=="directional_shield":
 		var facing=Vector2.RIGHT if a.side==0 else Vector2.LEFT
 		for enemy in alive(1-int(a.side)):
@@ -1355,3 +1397,8 @@ func p2_combo(a: Dictionary,point: Vector2,target_uid: int) -> void:
 					apply_status(a,b,{"status_id":"chakra_up","chance":1.0,"duration_s":6.0,"magnitude":0.12})
 		art_event("combo",center,0,str(combo.id))
 		log.append(str(combo.name_vi))
+
+func owned_clone(a: Dictionary) -> Dictionary:
+	for b in actors:
+		if b.summon and b.owner==a.uid and b.hp>0:return b
+	return {}
