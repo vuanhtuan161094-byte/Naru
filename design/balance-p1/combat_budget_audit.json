@@ -1,0 +1,91 @@
+{
+  "base": "5f95090e982d5a0a46eeb65a11ee57e63e38d87f",
+  "counts": {
+    "skills": 1152,
+    "changed": 503,
+    "coefficient_changes": 341,
+    "forms": 54,
+    "combos": 12
+  },
+  "coefficient_sum": {
+    "baseline": 1324.38,
+    "proposed": 1167
+  },
+  "by_slot": [
+    {
+      "slot": 0,
+      "count": 144,
+      "old_mean": 0.85,
+      "new_mean": 0.85,
+      "mean_cd": 1.2,
+      "mean_chakra": 0
+    },
+    {
+      "slot": 1,
+      "count": 144,
+      "old_mean": 0.87,
+      "new_mean": 0.78,
+      "mean_cd": 9.27,
+      "mean_chakra": 14.09
+    },
+    {
+      "slot": 2,
+      "count": 144,
+      "old_mean": 0.93,
+      "new_mean": 0.84,
+      "mean_cd": 9.66,
+      "mean_chakra": 15.95
+    },
+    {
+      "slot": 3,
+      "count": 144,
+      "old_mean": 0.9,
+      "new_mean": 0.79,
+      "mean_cd": 11.19,
+      "mean_chakra": 18.01
+    },
+    {
+      "slot": 4,
+      "count": 144,
+      "old_mean": 0.75,
+      "new_mean": 0.67,
+      "mean_cd": 14.11,
+      "mean_chakra": 20.03
+    },
+    {
+      "slot": 5,
+      "count": 144,
+      "old_mean": 2.08,
+      "new_mean": 1.78,
+      "mean_cd": 31.09,
+      "mean_chakra": 47.4
+    },
+    {
+      "slot": 6,
+      "count": 144,
+      "old_mean": 1.33,
+      "new_mean": 1.19,
+      "mean_cd": 14.81,
+      "mean_chakra": 20.24
+    },
+    {
+      "slot": 7,
+      "count": 144,
+      "old_mean": 1.48,
+      "new_mean": 1.2,
+      "mean_cd": 20.9,
+      "mean_chakra": 28.31
+    }
+  ],
+  "checks": {
+    "all_skills": true,
+    "finite": true,
+    "coefficient_budget": true,
+    "basic_free": true,
+    "all_forms": true,
+    "all_combos": true,
+    "form_uptime": true
+  },
+  "method": "Analytical budget model, not gameplay simulation or live measured balance. Role factors do not equalize ninja rarity/potential. All numerical values DEV.",
+  "runtime": "NOT_RUN"
+}

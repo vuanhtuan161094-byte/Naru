@@ -1,0 +1,110 @@
+[
+  {
+    "combo_id": "COMBO-001",
+    "window_s": 4,
+    "cooldown_s": 30,
+    "total_coefficient": 0.55,
+    "max_targets": 3,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-002",
+    "window_s": 4,
+    "cooldown_s": 36,
+    "total_coefficient": 0.65,
+    "max_targets": 4,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-003",
+    "window_s": 4,
+    "cooldown_s": 24,
+    "total_coefficient": 0.4,
+    "max_targets": 1,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-004",
+    "window_s": 4,
+    "cooldown_s": 32,
+    "total_coefficient": 0.45,
+    "max_targets": 3,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-005",
+    "window_s": 4,
+    "cooldown_s": 24,
+    "total_coefficient": 0.4,
+    "max_targets": 1,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-006",
+    "window_s": 4,
+    "cooldown_s": 26,
+    "total_coefficient": 0.5,
+    "max_targets": 2,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-007",
+    "window_s": 4,
+    "cooldown_s": 30,
+    "total_coefficient": 0.45,
+    "max_targets": 1,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-008",
+    "window_s": 4,
+    "cooldown_s": 32,
+    "total_coefficient": 0.7,
+    "max_targets": 6,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-009",
+    "window_s": 4,
+    "cooldown_s": 38,
+    "total_coefficient": 0,
+    "max_targets": 6,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-010",
+    "window_s": 4,
+    "cooldown_s": 34,
+    "total_coefficient": 0.55,
+    "max_targets": 3,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-011",
+    "window_s": 4,
+    "cooldown_s": 30,
+    "total_coefficient": 0.75,
+    "max_targets": 6,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "combo_id": "COMBO-012",
+    "window_s": 4,
+    "cooldown_s": 40,
+    "total_coefficient": 0.7,
+    "max_targets": 4,
+    "rule": "Only actual confirmed distinct member events; consume once; no recursive combo; separate cooldown",
+    "status": "DEV_TUNING_PROPOSAL"
+  }
+]
