@@ -28,3 +28,6 @@ The current combat rules supersede previous arena geometry. See design/skill-p1/
 
 ## SKILL-P2 overlay (Combat V3)
 Design draft covering all 1,152 skill IDs, 54 forms, 12 combos; see design/skill-p2/README.md and audit.json. Numeric and non-canon adaptations are DEV; D4 remains runtime until reviewed integration. Stable IDs/save progression preserved.
+
+## SKILL-P2 A–I second-pass handoff — 25/11/2026
+Design evidence `e6e848b1cdc9334ab90289bfa63c018108d7e6d2`: 1,152 records / 144 kits, 54 forms, 12 combos, 146 VFX families / 18 production groups, 12 second-pass structural checks PASS. 38 official source pointers (8 pages opened); 10 limited technique context matches, 334 character context only, 808 without source pointer; 176 era-flagged skill records, 1 explicit HOLD. All values DEV. 3 proposed status extensions and 4 changed legacy form trigger routes need gameplay adapter. Runtime NOT_RUN on design branch; no production art claim. Read `design/skill-p2/HANDOFF_01_02.md`, `audit.json`, `production_groups.json`, `form_migration_review.json`, `status_extensions.json`. 01 and 02 work independently, no Codex Cloud, no merge. 00 next resolves source/era review and approves numerical tuning. 
