@@ -55,3 +55,7 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P7 REVIEW: prior 51 icons reused; real passive event HUD and generic mod marker; tooltip/source/overflow runtime tests open.
 - ART-P8 REVIEW: two actual V8 local 6v6 videos; high fixture receipt support verified in scope, still clumping, custom map and official gameplay integration open. See art/e3/ART_P2_R2_HANDOFF.md.
 - ART-P3 HOLD unchanged; no new skill VFX.
+
+## Move R3 next
+- ART-P2: six visually approved source Move clips, 48 normalized frame slots, runtime/foot placement pending. Keep R1 rejected. Next generate independently authored remaining three directions and Idle/Attack/Cast/Hit/Fall, character-specific. Do not mirror or reuse stills. R3 source style is now benchmark. No mass rollout of untested full kits.
+- ART-P8: reconcile latest gameplay renderer with 8-frame sheets; actual combat review NOT_RUN for this batch. Check Minato edge, direction and movement, preserve authoritative positions. VFX HOLD unchanged.
