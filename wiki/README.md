@@ -15,3 +15,5 @@ Bản thiết kế, không phải Wiki thông số đã nghiệm thu của bản
 
 ## Trạng thái
 Wiki sinh từ ID thiết kế, không bịa thêm công thức. Các cột P2/P1 là lựa chọn trước/sau điều chỉnh; không mặc định áp dụng vào save hiện tại. Một số dữ liệu chi tiết còn ở dạng tham chiếu ID/JSON. GDD và file JSON gốc là nguồn ưu tiên. 
+
+[Ma trận nghiệm thu toàn game](../design/product-audit/PRODUCT_AUDIT.md) · [Bàn giao sản xuất](../design/product-audit/HANDOFF_01_02.md)

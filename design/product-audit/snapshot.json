@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-25",
+  "design_base": "275f1419668594058f510a9a8c08c177688ffc28",
+  "gameplay": {
+    "sha": "197bd5d15146ff664ac55ef4cb506f3b820855ce",
+    "ci": 45582064721,
+    "job": 139094316792,
+    "status": "success",
+    "confirmed": 1134,
+    "enabled": 1134,
+    "fallback": 18,
+    "cast_only": 0,
+    "rejected": 0,
+    "web_artifact": {
+      "id": 15007960377,
+      "bytes": 10143235,
+      "digest": "sha256:33ccf491c727dd1d7edd63b750ab3df1a1c8a439f9269044a286779c362553cc",
+      "verification": "metadata and log only; not independently downloaded"
+    },
+    "economy90": {
+      "ryo": 623585,
+      "wars": 698
+    },
+    "ui_navigation": 17,
+    "p3_p4_balance_runtime": "not in reviewed gameplay tree"
+  },
+  "art": {
+    "sha": "100f1b1d495ee678a2e5f59d4e1a1fa81fa7c1e8",
+    "ci": 45576264528,
+    "status": "success",
+    "ci_scope": "safe DEV textures only",
+    "candidate_characters": 12,
+    "candidate_vfx": 14,
+    "walk_pilots": 6,
+    "complete_clips": 0,
+    "approved": 0,
+    "integrated": 0,
+    "private_review": "reported V5, not independently viewed this turn"
+  },
+  "source": {
+    "ids": 1152,
+    "pointer": 1152,
+    "limited_links": 41,
+    "scope": "context and secondary references; previous source ledgers not reverified"
+  },
+  "release": {
+    "final_accepted": 0,
+    "total_baseline_gates": 21,
+    "decision": "NO_FINAL_RELEASE; CONTINUE_PRODUCTION",
+    "notes": "Scoped passes are not final acceptance."
+  }
+}

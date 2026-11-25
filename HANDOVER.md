@@ -16,3 +16,6 @@ Keep private originals/ZIP in durable user-controlled storage, record exact SHA-
 ## Integration
 Follow INTEGRATION_LOG.md. No cross-branch edits except explicit coordination/integration permission. Actual approved files plus rights, hashes, metadata and runtime smoke required. One game only; public DEV fallback if private assets cannot be distributed.
 
+
+## PRODUCT-AUDIT / Wiki / SKILL-P4 (25/11/2026)
+Wiki `wiki/README.md`: 144 ninja/1152 skills, 54 forms/12 combos, progression, 150 resources, 63 recipes, 30 buildings, 128 gear, 15 jobs, 120 stages, 24 chapters, 60 territories,81 quests,288 trials. SKILL-P4 reviewed 248 prior missing-pointer rows with 30 source records (22 official,4 licensed,4 secondary); all 1152 now have context pointers, not individual canon proof. Prior source ledgers inherited, 6 new limited technique/role links. Product audit pinned 197bd5d1 CI 45582064721 PASS, 1134 confirmed/18 fallback; 17 UI navigation, V6 artifact 15007960377, art 100f1b1d CI 45576264528 safe DEV only, 12 static/14 VFX candidates, 0 complete clips/approved. P3/P4/P1 not present in checked gameplay tree. 21 baseline gates + 9 completion gates; no final acceptance. Read `design/product-audit/HANDOFF_01_02.md`. No gameplay/art writes or merge.
