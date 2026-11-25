@@ -1,0 +1,128 @@
+[
+  {
+    "id": "T01",
+    "module": "NewGame",
+    "acceptance": "initial_save_seed.json; inventory/ninja/building IDs valid; 3 starter ninjas",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T02",
+    "module": "Recruit",
+    "acceptance": "each 8 tier nonempty, distribution sums 100; same-template duplicate produces shards; pity independent",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T03",
+    "module": "NinjaGrowth",
+    "acceptance": "gain XP cap per realm, failed breakthrough retains XP and increments pity; success expands level cap",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T04",
+    "module": "SkillGrowth",
+    "acceptance": "level at grade cap blocked; grade success opens 20 levels; extra trial unlock persisted",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T05",
+    "module": "Combat",
+    "acceptance": "6vs6, no seventh slot, 20Hz, seed replay, active skills considered, ultimate manual only",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T06",
+    "module": "CombatEffects",
+    "acceptance": "damage/shield/heal/CC/cleanse/reactions/summons and locked form; no endless summon",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T07",
+    "module": "NoHardTimeout",
+    "acceptance": "manual battle remains after 120s; deadlock warning, withdraw works",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T08",
+    "module": "BattleResults",
+    "acceptance": "full heal, rewards once, eligible permanent stat gain, no gain on trivial/friendly",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T09",
+    "module": "Building",
+    "acceptance": "fixed lot, level 100 cap, cost/timer, insufficient resource prevents upgrade",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T10",
+    "module": "Production",
+    "acceptance": "job persists while deployed, recipe reserves input once; missing material pauses; no negative inventory",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T11",
+    "module": "Offline",
+    "acceptance": "0h,1h,24h,48h,backward clock, crash/reload; no replay, cap 24h",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T12",
+    "module": "World",
+    "acceptance": "connected map, travel event, sequential teams, claim and defense, protected home",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T13",
+    "module": "Diplomacy",
+    "acceptance": "NPC stock/production/trade/war evolve; prices respond to supply/relations; no upkeep",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T14",
+    "module": "Raid",
+    "acceptance": "only permitted resources lost, repairable condition, no ninja/building deletion",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T15",
+    "module": "Gear",
+    "acceptance": "16 slots; set highest threshold; enhancement pity, socket/removal, no sprite changes",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T16",
+    "module": "Beasts",
+    "acceptance": "capture/bind compatibility, one host; summon growth independent",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T17",
+    "module": "Campaign",
+    "acceptance": "120 stages unlock sequentially; boss phases once; stamina; reward first/repeat distinct",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T18",
+    "module": "Save",
+    "acceptance": "atomic save/load, schema version, migration, export/import; no corruption duplication",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T19",
+    "module": "UI",
+    "acceptance": "all screens reachable, Vietnamese glyphs, landscape resize, mouse+touch, no invisible buttons",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T20",
+    "module": "Art",
+    "acceptance": "owner-approved originals; alpha anchor, 4 directions, no rig; VFX charge/travel/hit/fade",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  },
+  {
+    "id": "T21",
+    "module": "Build",
+    "acceptance": "Godot native, Web served HTTP(S), Android debug APK, Windows portable; actual smoke test",
+    "status": "NOT_RUN_DESIGN_ACCEPTANCE"
+  }
+]

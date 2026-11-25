@@ -1,0 +1,53 @@
+{
+  "status": "PROPOSED",
+  "faction_tick_seconds": 600,
+  "production_tick_seconds": 60,
+  "offline_cap_seconds": 86400,
+  "max_ticks_per_offline": 1440,
+  "order": [
+    "advance_clock",
+    "complete_construction",
+    "complete_craft",
+    "apply_production",
+    "advance_travel",
+    "process_missions",
+    "process_faction_decisions",
+    "settle_combat",
+    "commit_ledger"
+  ],
+  "timestamps": {
+    "elapsed": "max(0,min(86400,now-last_committed))",
+    "last_committed": "set to current observed time after atomic commit; do not accumulate discarded time",
+    "clock_backward": "no reward; record anomaly; preserve high-water timestamp",
+    "idempotency": "unique event_id; transaction writes rewards and event IDs together"
+  },
+  "territory": {
+    "state": [
+      "undiscovered",
+      "discovered",
+      "neutral",
+      "owned",
+      "contested"
+    ],
+    "capture": "one deployment team at a time; must be adjacent discovered region; win all defending teams in order; home territory protected from transfer",
+    "extraction": "requires owner and building/crew rule, accrue each 60s tick, capped by stock capacity",
+    "travel": "route shortest path by travel seconds, explicit departure and arrival event",
+    "npc_rules": "stock shortfall -> buy -> trade, defend threatened regions, explore/claim neutral, declare war below relation threshold; max one major action per faction per 600s tick"
+  },
+  "raids": {
+    "loss_fraction": 0.1,
+    "exclude_currency_ids": [
+      "RES-002",
+      "RES-003",
+      "RES-004",
+      "RES-005"
+    ],
+    "building_condition_floor": 0.5,
+    "protection_seconds": 43200,
+    "never_delete_ninja_or_level": true,
+    "resolve_offline": "same deterministic encounter resolver; player defense roster saved; no interactive requirement while offline"
+  },
+  "team_assignment": "ninja can keep production job while fighting; only one deployed team per owned template; no upkeep; no unlimited loops per tick",
+  "battle_stalemate_offline": "if resolver reaches 120 seconds no effective progress, resolve as no conquest/no loot; manual battle continues or player withdraws",
+  "story_isolation": true
+}

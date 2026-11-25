@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "tiers_match": true,
+    "boss24": true,
+    "boss_mechanics": true,
+    "ui_unique": true,
+    "tests_unique": true,
+    "form_count": true,
+    "raid_exclusions": true,
+    "offline_cap": true
+  },
+  "counts": {
+    "boss": 24,
+    "ui": 17,
+    "acceptance_tests": 21
+  },
+  "runtime": false
+}

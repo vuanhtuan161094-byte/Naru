@@ -12,7 +12,12 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-004-S1"
+        "priority_skill_id": "NIN-004-S1",
+        "mechanic_effect": {
+          "type": "shield_self_fraction",
+          "fraction_max_hp": 0.1,
+          "duration_s": 6
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -22,12 +27,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-004-S5"
+        "priority_skill_id": "NIN-004-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-004-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "bell_test",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-002",
@@ -42,7 +52,14 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-027-S1"
+        "priority_skill_id": "NIN-027-S1",
+        "mechanic_effect": {
+          "type": "apply_status_enemy",
+          "status_id": "blind",
+          "magnitude": 0.2,
+          "duration_s": 4,
+          "max_targets": 3
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -52,12 +69,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-027-S5"
+        "priority_skill_id": "NIN-027-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-027-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "mist_and_water_clone",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-003",
@@ -72,7 +94,12 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-024-S1"
+        "priority_skill_id": "NIN-024-S1",
+        "mechanic_effect": {
+          "type": "shield_self_fraction",
+          "fraction_max_hp": 0.2,
+          "duration_s": 7
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -82,12 +109,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-024-S5"
+        "priority_skill_id": "NIN-024-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-024-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "sand_shield",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-004",
@@ -102,7 +134,15 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-022-S1"
+        "priority_skill_id": "NIN-022-S1",
+        "mechanic_effect": {
+          "type": "summon_boss_minion",
+          "count": 1,
+          "lifetime_s": 8,
+          "owner_hp_fraction": 0.15,
+          "owner_attack_fraction": 0.2,
+          "max_active": 2
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -112,12 +152,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-022-S5"
+        "priority_skill_id": "NIN-022-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-022-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "snake_summon",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-005",
@@ -132,7 +177,11 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-023-S1"
+        "priority_skill_id": "NIN-023-S1",
+        "mechanic_effect": {
+          "type": "heal_self_fraction",
+          "fraction": 0.12
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -142,12 +191,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-023-S5"
+        "priority_skill_id": "NIN-023-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-023-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "medical_counter",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-006",
@@ -162,7 +216,13 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-002-S1"
+        "priority_skill_id": "NIN-002-S1",
+        "mechanic_effect": {
+          "type": "apply_status_self",
+          "status_id": "attack_up",
+          "magnitude": 0.25,
+          "duration_s": 8
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -172,12 +232,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-002-S5"
+        "priority_skill_id": "NIN-002-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-002-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "curse_mark",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-007",
@@ -192,7 +257,15 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-063-S1"
+        "priority_skill_id": "NIN-063-S1",
+        "mechanic_effect": {
+          "type": "summon_boss_minion",
+          "count": 2,
+          "lifetime_s": 10,
+          "owner_hp_fraction": 0.15,
+          "owner_attack_fraction": 0.2,
+          "max_active": 2
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -202,12 +275,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-063-S5"
+        "priority_skill_id": "NIN-063-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-063-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "iron_sand_puppets",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-008",
@@ -222,7 +300,14 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-023-S1"
+        "priority_skill_id": "NIN-023-S1",
+        "mechanic_effect": {
+          "type": "apply_status_enemy",
+          "status_id": "chakra_lock",
+          "magnitude": 0.3,
+          "duration_s": 4,
+          "max_targets": 3
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -232,12 +317,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-023-S5"
+        "priority_skill_id": "NIN-023-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-023-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "chakra_scalpel",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-009",
@@ -252,7 +342,15 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-065-S1"
+        "priority_skill_id": "NIN-065-S1",
+        "mechanic_effect": {
+          "type": "summon_boss_minion",
+          "count": 2,
+          "lifetime_s": 10,
+          "owner_hp_fraction": 0.15,
+          "owner_attack_fraction": 0.2,
+          "max_active": 2
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -262,12 +360,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-065-S5"
+        "priority_skill_id": "NIN-065-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-065-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "multiple_mask_phases",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-010",
@@ -282,7 +385,14 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-060-S1"
+        "priority_skill_id": "NIN-060-S1",
+        "mechanic_effect": {
+          "type": "apply_status_enemy",
+          "status_id": "fear",
+          "magnitude": 1,
+          "duration_s": 2,
+          "max_targets": 3
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -292,12 +402,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-060-S5"
+        "priority_skill_id": "NIN-060-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-060-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "illusion_susanoo",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-011",
@@ -312,7 +427,14 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-067-S1"
+        "priority_skill_id": "NIN-067-S1",
+        "mechanic_effect": {
+          "type": "apply_status_enemy",
+          "status_id": "stun",
+          "magnitude": 1,
+          "duration_s": 1,
+          "max_targets": 3
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -322,12 +444,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-067-S5"
+        "priority_skill_id": "NIN-067-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-067-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "gravity_push_pull",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-012",
@@ -342,7 +469,12 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-091-S1"
+        "priority_skill_id": "NIN-091-S1",
+        "mechanic_effect": {
+          "type": "shield_self_fraction",
+          "fraction_max_hp": 0.25,
+          "duration_s": 6
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -352,12 +484,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-091-S5"
+        "priority_skill_id": "NIN-091-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-091-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "wind_and_izanagi",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-013",
@@ -372,7 +509,13 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-076-S1"
+        "priority_skill_id": "NIN-076-S1",
+        "mechanic_effect": {
+          "type": "apply_status_self",
+          "status_id": "attack_up",
+          "magnitude": 0.2,
+          "duration_s": 10
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -382,12 +525,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-076-S5"
+        "priority_skill_id": "NIN-076-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-076-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "bijuu_training",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-014",
@@ -402,7 +550,11 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-105-S1"
+        "priority_skill_id": "NIN-105-S1",
+        "mechanic_effect": {
+          "type": "heal_self_fraction",
+          "fraction": 0.15
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -412,12 +564,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-105-S5"
+        "priority_skill_id": "NIN-105-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-105-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "reanimated_jinchuriki",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-015",
@@ -432,7 +589,13 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-069-S1"
+        "priority_skill_id": "NIN-069-S1",
+        "mechanic_effect": {
+          "type": "apply_status_self",
+          "status_id": "evasion",
+          "magnitude": 60,
+          "duration_s": 4
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -442,12 +605,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-069-S5"
+        "priority_skill_id": "NIN-069-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-069-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "space_time_evade",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-016",
@@ -462,7 +630,14 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-099-S1"
+        "priority_skill_id": "NIN-099-S1",
+        "mechanic_effect": {
+          "type": "apply_status_enemy",
+          "status_id": "slow",
+          "magnitude": 0.35,
+          "duration_s": 5,
+          "max_targets": 3
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -472,12 +647,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-099-S5"
+        "priority_skill_id": "NIN-099-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-099-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "dimension_shift",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-017",
@@ -492,7 +672,13 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-042-S1"
+        "priority_skill_id": "NIN-042-S1",
+        "mechanic_effect": {
+          "type": "apply_status_self",
+          "status_id": "attack_up",
+          "magnitude": 0.25,
+          "duration_s": 8
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -502,12 +688,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-042-S5"
+        "priority_skill_id": "NIN-042-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-042-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "chidori_rasengan_duel",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-018",
@@ -522,7 +713,13 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-113-S1"
+        "priority_skill_id": "NIN-113-S1",
+        "mechanic_effect": {
+          "type": "apply_status_self",
+          "status_id": "defense_up",
+          "magnitude": 0.2,
+          "duration_s": 8
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -532,12 +729,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-113-S5"
+        "priority_skill_id": "NIN-113-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-113-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "sage_training",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-019",
@@ -552,7 +754,15 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-122-S1"
+        "priority_skill_id": "NIN-122-S1",
+        "mechanic_effect": {
+          "type": "summon_boss_minion",
+          "count": 1,
+          "lifetime_s": 10,
+          "owner_hp_fraction": 0.15,
+          "owner_attack_fraction": 0.2,
+          "max_active": 2
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -562,12 +772,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-122-S5"
+        "priority_skill_id": "NIN-122-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-122-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "nue_summon",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-020",
@@ -582,7 +797,12 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-130-S1"
+        "priority_skill_id": "NIN-130-S1",
+        "mechanic_effect": {
+          "type": "shield_self_fraction",
+          "fraction_max_hp": 0.2,
+          "duration_s": 6
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -592,12 +812,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-130-S5"
+        "priority_skill_id": "NIN-130-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-130-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "absorb_and_return",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-021",
@@ -612,7 +837,14 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-135-S1"
+        "priority_skill_id": "NIN-135-S1",
+        "mechanic_effect": {
+          "type": "apply_status_enemy",
+          "status_id": "poison",
+          "magnitude": 0.12,
+          "duration_s": 6,
+          "max_targets": 3
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -622,12 +854,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-135-S5"
+        "priority_skill_id": "NIN-135-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-135-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "poison_regeneration",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-022",
@@ -642,7 +879,13 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-132-S1"
+        "priority_skill_id": "NIN-132-S1",
+        "mechanic_effect": {
+          "type": "apply_status_self",
+          "status_id": "evasion",
+          "magnitude": 50,
+          "duration_s": 4
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -652,12 +895,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-132-S5"
+        "priority_skill_id": "NIN-132-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-132-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "size_shift",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-023",
@@ -672,7 +920,14 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-134-S1"
+        "priority_skill_id": "NIN-134-S1",
+        "mechanic_effect": {
+          "type": "apply_status_enemy",
+          "status_id": "mark",
+          "magnitude": 1,
+          "duration_s": 6,
+          "max_targets": 3
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -682,12 +937,17 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-134-S5"
+        "priority_skill_id": "NIN-134-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-134-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "claw_mark_teleport",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   },
   {
     "boss_id": "BOSS-024",
@@ -702,7 +962,13 @@
           "defense_multiplier": 1.12,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-132-S1"
+        "priority_skill_id": "NIN-132-S1",
+        "mechanic_effect": {
+          "type": "apply_status_self",
+          "status_id": "haste",
+          "magnitude": 0.2,
+          "duration_s": 8
+        }
       },
       {
         "hp_at_or_below": 0.35,
@@ -712,11 +978,16 @@
           "attack_multiplier": 1.18,
           "duration_s": 8
         },
-        "priority_skill_id": "NIN-132-S5"
+        "priority_skill_id": "NIN-132-S5",
+        "mechanic_effect": {
+          "type": "phase_burst",
+          "skill_id": "NIN-132-S5",
+          "only_if_eligible": true
+        }
       }
     ],
     "mechanic_label": "rotating_affix",
     "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
-    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+    "status": "PROPOSED_UNIQUE_PHASE_SEED"
   }
 ]
