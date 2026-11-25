@@ -1,0 +1,3534 @@
+[
+  {
+    "skill_id": "NIN-015-S0",
+    "ninja_id": "NIN-015",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-015-S1",
+    "ninja_id": "NIN-015",
+    "name_vi": "Phóng nhẫn cụ",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-015-S2",
+    "ninja_id": "NIN-015",
+    "name_vi": "Bẫy phi tiêu",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-015-S3",
+    "ninja_id": "NIN-015",
+    "name_vi": "Cuộn phi tiêu",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-015-S4",
+    "ninja_id": "NIN-015",
+    "name_vi": "Mưa shuriken",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-015-S5",
+    "ninja_id": "NIN-015",
+    "name_vi": "Mưa nhẫn cụ",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-015-S6",
+    "ninja_id": "NIN-015",
+    "name_vi": "Kunai dây trói",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-015-S7",
+    "ninja_id": "NIN-015",
+    "name_vi": "Đại cuộn nhẫn cụ",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_EXAM",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S0",
+    "ninja_id": "NIN-030",
+    "name_vi": "Đòn nhanh",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S1",
+    "ninja_id": "NIN-030",
+    "name_vi": "Kiếm thuật",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S2",
+    "ninja_id": "NIN-030",
+    "name_vi": "Ẩn thân",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S3",
+    "ninja_id": "NIN-030",
+    "name_vi": "Thuấn thân kiếm kích",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S4",
+    "ninja_id": "NIN-030",
+    "name_vi": "Ẩn thân kiếm sĩ",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S5",
+    "ninja_id": "NIN-030",
+    "name_vi": "Tam nhật nguyệt chi vũ",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S6",
+    "ninja_id": "NIN-030",
+    "name_vi": "Tam nhật nguyệt liên trảm",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-030-S7",
+    "ninja_id": "NIN-030",
+    "name_vi": "Kiếm thủ phản kích",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S0",
+    "ninja_id": "NIN-031",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S1",
+    "ninja_id": "NIN-031",
+    "name_vi": "Thẩm vấn",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [
+      "P4_IBIKI"
+    ],
+    "evidence": "LIMITED_TECHNIQUE_OR_ROLE_LINK",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S2",
+    "ninja_id": "NIN-031",
+    "name_vi": "Áp lực tinh thần",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S3",
+    "ninja_id": "NIN-031",
+    "name_vi": "Áp lực thẩm vấn",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S4",
+    "ninja_id": "NIN-031",
+    "name_vi": "Bẫy dây trói",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S5",
+    "ninja_id": "NIN-031",
+    "name_vi": "Kết giới thẩm vấn",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S6",
+    "ninja_id": "NIN-031",
+    "name_vi": "Phong tỏa ý chí",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-031-S7",
+    "ninja_id": "NIN-031",
+    "name_vi": "Kết giới truy vấn",
+    "source_ids": [
+      "P4_IBIKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S0",
+    "ninja_id": "NIN-032",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S1",
+    "ninja_id": "NIN-032",
+    "name_vi": "Thiên bản",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S2",
+    "ninja_id": "NIN-032",
+    "name_vi": "Phản công",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S3",
+    "ninja_id": "NIN-032",
+    "name_vi": "Thiên bản đánh lạc hướng",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S4",
+    "ninja_id": "NIN-032",
+    "name_vi": "Kunai đón đòn",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S5",
+    "ninja_id": "NIN-032",
+    "name_vi": "Loạt thiên bản",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S6",
+    "ninja_id": "NIN-032",
+    "name_vi": "Thiên bản liên xạ",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-032-S7",
+    "ninja_id": "NIN-032",
+    "name_vi": "Thế trận hộ vệ",
+    "source_ids": [
+      "P4_GENMA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S0",
+    "ninja_id": "NIN-033",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S1",
+    "ninja_id": "NIN-033",
+    "name_vi": "Sóng âm",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S2",
+    "ninja_id": "NIN-033",
+    "name_vi": "Chấn động",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S3",
+    "ninja_id": "NIN-033",
+    "name_vi": "Sóng âm phá nhịp",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S4",
+    "ninja_id": "NIN-033",
+    "name_vi": "Ống khuếch đại âm",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S5",
+    "ninja_id": "NIN-033",
+    "name_vi": "Âm áp",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S6",
+    "ninja_id": "NIN-033",
+    "name_vi": "Âm chấn liên kích",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-033-S7",
+    "ninja_id": "NIN-033",
+    "name_vi": "Sóng âm diện rộng",
+    "source_ids": [
+      "P4_DOSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S0",
+    "ninja_id": "NIN-034",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S1",
+    "ninja_id": "NIN-034",
+    "name_vi": "Sóng khí",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S2",
+    "ninja_id": "NIN-034",
+    "name_vi": "Cắt gió",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S3",
+    "ninja_id": "NIN-034",
+    "name_vi": "Khí áp đẩy lùi",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S4",
+    "ninja_id": "NIN-034",
+    "name_vi": "Sóng khí nén",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S5",
+    "ninja_id": "NIN-034",
+    "name_vi": "Trảm không cực ba",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S6",
+    "ninja_id": "NIN-034",
+    "name_vi": "Trảm không liên phát",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-034-S7",
+    "ninja_id": "NIN-034",
+    "name_vi": "Đại khí áp",
+    "source_ids": [
+      "P4_ZAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S0",
+    "ninja_id": "NIN-035",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S1",
+    "ninja_id": "NIN-035",
+    "name_vi": "Chuông ảo thuật",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S2",
+    "ninja_id": "NIN-035",
+    "name_vi": "Thiên bản",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S3",
+    "ninja_id": "NIN-035",
+    "name_vi": "Chuông nhiễu giác",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S4",
+    "ninja_id": "NIN-035",
+    "name_vi": "Thiên bản dây chuông",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S5",
+    "ninja_id": "NIN-035",
+    "name_vi": "Nhiễu âm",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S6",
+    "ninja_id": "NIN-035",
+    "name_vi": "Ảo thanh phân tâm",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-035-S7",
+    "ninja_id": "NIN-035",
+    "name_vi": "Liên xạ thiên bản",
+    "source_ids": [
+      "P4_EXAM"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S0",
+    "ninja_id": "NIN-044",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S1",
+    "ninja_id": "NIN-044",
+    "name_vi": "Siêu thú ngụy họa",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S2",
+    "ninja_id": "NIN-044",
+    "name_vi": "Chim mực",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S3",
+    "ninja_id": "NIN-044",
+    "name_vi": "Chim mực trinh sát",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S4",
+    "ninja_id": "NIN-044",
+    "name_vi": "Xà mực trói",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S5",
+    "ninja_id": "NIN-044",
+    "name_vi": "Hổ mực liên kích",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S6",
+    "ninja_id": "NIN-044",
+    "name_vi": "Hổ mực liên kích — liên kích",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-044-S7",
+    "ninja_id": "NIN-044",
+    "name_vi": "Đàn chim mực",
+    "source_ids": [
+      "P4_SAI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S0",
+    "ninja_id": "NIN-054",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S1",
+    "ninja_id": "NIN-054",
+    "name_vi": "Cuộn nhẫn cụ",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S2",
+    "ninja_id": "NIN-054",
+    "name_vi": "Mưa phi tiêu",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S3",
+    "ninja_id": "NIN-054",
+    "name_vi": "Cuộn nhẫn cụ kép",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S4",
+    "ninja_id": "NIN-054",
+    "name_vi": "Kunai dây trói",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S5",
+    "ninja_id": "NIN-054",
+    "name_vi": "Bão nhẫn cụ",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S6",
+    "ninja_id": "NIN-054",
+    "name_vi": "Mưa vũ khí",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-054-S7",
+    "ninja_id": "NIN-054",
+    "name_vi": "Cuộn nhẫn cụ đại trận",
+    "source_ids": [
+      "P4_TENTEN",
+      "P4_TENTEN_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S0",
+    "ninja_id": "NIN-059",
+    "name_vi": "Đòn nhanh",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S1",
+    "ninja_id": "NIN-059",
+    "name_vi": "Phong nhận",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S2",
+    "ninja_id": "NIN-059",
+    "name_vi": "Kiếm gió",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S3",
+    "ninja_id": "NIN-059",
+    "name_vi": "Kiếm gió xuyên",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S4",
+    "ninja_id": "NIN-059",
+    "name_vi": "Phong áp đẩy lùi",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S5",
+    "ninja_id": "NIN-059",
+    "name_vi": "Phong trảm",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S6",
+    "ninja_id": "NIN-059",
+    "name_vi": "Phong nhận liên phát",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-059-S7",
+    "ninja_id": "NIN-059",
+    "name_vi": "Phong trảm — chấn kích",
+    "source_ids": [
+      "P4_HAYATE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S0",
+    "ninja_id": "NIN-071",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S1",
+    "ninja_id": "NIN-071",
+    "name_vi": "Bào tử",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S2",
+    "ninja_id": "NIN-071",
+    "name_vi": "Ẩn thân",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S3",
+    "ninja_id": "NIN-071",
+    "name_vi": "Bào tử bám",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S4",
+    "ninja_id": "NIN-071",
+    "name_vi": "Mộc hóa che chắn",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S5",
+    "ninja_id": "NIN-071",
+    "name_vi": "Phân thân hỗ trợ",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S6",
+    "ninja_id": "NIN-071",
+    "name_vi": "Bào tử phân thân",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-071-S7",
+    "ninja_id": "NIN-071",
+    "name_vi": "Trinh sát ngụy trang",
+    "source_ids": [
+      "P4_ZETSU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S0",
+    "ninja_id": "NIN-080",
+    "name_vi": "Đòn nhanh",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S1",
+    "ninja_id": "NIN-080",
+    "name_vi": "Kiếm thuật",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S2",
+    "ninja_id": "NIN-080",
+    "name_vi": "Cận kích",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S3",
+    "ninja_id": "NIN-080",
+    "name_vi": "Kiếm đón đòn",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S4",
+    "ninja_id": "NIN-080",
+    "name_vi": "Kiếm khí áp chế",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S5",
+    "ninja_id": "NIN-080",
+    "name_vi": "Kiếm liên trảm",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S6",
+    "ninja_id": "NIN-080",
+    "name_vi": "Kiếm liên kích",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-080-S7",
+    "ninja_id": "NIN-080",
+    "name_vi": "Kiếm thủ hộ vệ",
+    "source_ids": [
+      "P4_SAMUI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S0",
+    "ninja_id": "NIN-081",
+    "name_vi": "Đòn nhanh",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S1",
+    "ninja_id": "NIN-081",
+    "name_vi": "Kiếm thuật",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S2",
+    "ninja_id": "NIN-081",
+    "name_vi": "Phản đòn",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S3",
+    "ninja_id": "NIN-081",
+    "name_vi": "Kiếm phản đòn",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S4",
+    "ninja_id": "NIN-081",
+    "name_vi": "Kiếm chặn đường",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S5",
+    "ninja_id": "NIN-081",
+    "name_vi": "Kiếm trận",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S6",
+    "ninja_id": "NIN-081",
+    "name_vi": "Kiếm liên trảm",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-081-S7",
+    "ninja_id": "NIN-081",
+    "name_vi": "Kiếm đột kích",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S0",
+    "ninja_id": "NIN-082",
+    "name_vi": "Đòn cận chiến",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S1",
+    "ninja_id": "NIN-082",
+    "name_vi": "Kiếm thuật",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S2",
+    "ninja_id": "NIN-082",
+    "name_vi": "Áp sát",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S3",
+    "ninja_id": "NIN-082",
+    "name_vi": "Kiếm thuật tấn công",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S4",
+    "ninja_id": "NIN-082",
+    "name_vi": "Kiếm phòng vệ",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S5",
+    "ninja_id": "NIN-082",
+    "name_vi": "Liên trảm",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S6",
+    "ninja_id": "NIN-082",
+    "name_vi": "Kiếm áp sát",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-082-S7",
+    "ninja_id": "NIN-082",
+    "name_vi": "Liên trảm — chấn kích",
+    "source_ids": [
+      "P4_CLOUD"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S0",
+    "ninja_id": "NIN-084",
+    "name_vi": "Đòn cận chiến",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S1",
+    "ninja_id": "NIN-084",
+    "name_vi": "Hiramekarei",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S2",
+    "ninja_id": "NIN-084",
+    "name_vi": "Chakra lưỡi kiếm",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S3",
+    "ninja_id": "NIN-084",
+    "name_vi": "Hiramekarei song đao",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S4",
+    "ninja_id": "NIN-084",
+    "name_vi": "Chakra đại kiếm",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S5",
+    "ninja_id": "NIN-084",
+    "name_vi": "Đại kiếm chakra",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S6",
+    "ninja_id": "NIN-084",
+    "name_vi": "Kiếm hộ vệ",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-084-S7",
+    "ninja_id": "NIN-084",
+    "name_vi": "Đại kiếm liên trảm",
+    "source_ids": [
+      "P4_MIST"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S0",
+    "ninja_id": "NIN-085",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S1",
+    "ninja_id": "NIN-085",
+    "name_vi": "Cảm tri",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S2",
+    "ninja_id": "NIN-085",
+    "name_vi": "Bạch nhãn",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S3",
+    "ninja_id": "NIN-085",
+    "name_vi": "Bạch nhãn trinh sát",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S4",
+    "ninja_id": "NIN-085",
+    "name_vi": "Cảm tri chakra",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S5",
+    "ninja_id": "NIN-085",
+    "name_vi": "Trinh sát chiến trường",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S6",
+    "ninja_id": "NIN-085",
+    "name_vi": "Thủy độn hộ vệ",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-085-S7",
+    "ninja_id": "NIN-085",
+    "name_vi": "Cảm ứng phá ảo",
+    "source_ids": [
+      "P4_AO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S0",
+    "ninja_id": "NIN-087",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S1",
+    "ninja_id": "NIN-087",
+    "name_vi": "Thổ độn",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S2",
+    "ninja_id": "NIN-087",
+    "name_vi": "Dung độn",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S3",
+    "ninja_id": "NIN-087",
+    "name_vi": "Dung độn vôi hóa",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S4",
+    "ninja_id": "NIN-087",
+    "name_vi": "Thổ độn trói",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S5",
+    "ninja_id": "NIN-087",
+    "name_vi": "Vôi hóa",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S6",
+    "ninja_id": "NIN-087",
+    "name_vi": "Thủy độn hỗ trợ",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-087-S7",
+    "ninja_id": "NIN-087",
+    "name_vi": "Dung độn phong tỏa",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S0",
+    "ninja_id": "NIN-088",
+    "name_vi": "Đòn phòng thủ",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S1",
+    "ninja_id": "NIN-088",
+    "name_vi": "Thổ thuẫn",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S2",
+    "ninja_id": "NIN-088",
+    "name_vi": "Thổ nhân",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S3",
+    "ninja_id": "NIN-088",
+    "name_vi": "Thổ nhân hộ vệ",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S4",
+    "ninja_id": "NIN-088",
+    "name_vi": "Thổ thuẫn — hộ vệ nhóm",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S5",
+    "ninja_id": "NIN-088",
+    "name_vi": "Cự thạch hộ vệ",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S6",
+    "ninja_id": "NIN-088",
+    "name_vi": "Thổ nhân trọng kích",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-088-S7",
+    "ninja_id": "NIN-088",
+    "name_vi": "Cự thạch phòng tuyến",
+    "source_ids": [
+      "P4_STONE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S0",
+    "ninja_id": "NIN-100",
+    "name_vi": "Đòn cận chiến",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S1",
+    "ninja_id": "NIN-100",
+    "name_vi": "Hỏa miêu",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S2",
+    "ninja_id": "NIN-100",
+    "name_vi": "Chakra vĩ thú",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S3",
+    "ninja_id": "NIN-100",
+    "name_vi": "Hỏa miêu áp sát",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S4",
+    "ninja_id": "NIN-100",
+    "name_vi": "Chakra Nhị Vĩ",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S5",
+    "ninja_id": "NIN-100",
+    "name_vi": "Nhị Vĩ bộc phát",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S6",
+    "ninja_id": "NIN-100",
+    "name_vi": "Hỏa cầu Vĩ Thú",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-100-S7",
+    "ninja_id": "NIN-100",
+    "name_vi": "Vuốt lửa",
+    "source_ids": [
+      "P4_YUGITO"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S0",
+    "ninja_id": "NIN-101",
+    "name_vi": "Đòn phòng thủ",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S1",
+    "ninja_id": "NIN-101",
+    "name_vi": "Thủy kính",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S2",
+    "ninja_id": "NIN-101",
+    "name_vi": "Thủy độn",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S3",
+    "ninja_id": "NIN-101",
+    "name_vi": "Thủy kính phản kích",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S4",
+    "ninja_id": "NIN-101",
+    "name_vi": "Thủy độn hộ thể",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S5",
+    "ninja_id": "NIN-101",
+    "name_vi": "Tam Vĩ bộc phát",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S6",
+    "ninja_id": "NIN-101",
+    "name_vi": "Chakra Tam Vĩ",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-101-S7",
+    "ninja_id": "NIN-101",
+    "name_vi": "Vĩ thú ngọc",
+    "source_ids": [
+      "P4_YAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S0",
+    "ninja_id": "NIN-102",
+    "name_vi": "Đòn cận chiến",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S1",
+    "ninja_id": "NIN-102",
+    "name_vi": "Dung độn",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [
+      "P4_ROSHI"
+    ],
+    "evidence": "LIMITED_TECHNIQUE_OR_ROLE_LINK",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S2",
+    "ninja_id": "NIN-102",
+    "name_vi": "Dung nham giáp",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [
+      "P4_ROSHI_MODE"
+    ],
+    "evidence": "LIMITED_TECHNIQUE_OR_ROLE_LINK",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S3",
+    "ninja_id": "NIN-102",
+    "name_vi": "Dung nham giáp — hồi chuyển",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S4",
+    "ninja_id": "NIN-102",
+    "name_vi": "Dung độn quyền",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S5",
+    "ninja_id": "NIN-102",
+    "name_vi": "Tứ Vĩ bộc phát",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S6",
+    "ninja_id": "NIN-102",
+    "name_vi": "Chakra Tứ Vĩ",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-102-S7",
+    "ninja_id": "NIN-102",
+    "name_vi": "Dung nham liên kích",
+    "source_ids": [
+      "P4_ROSHI",
+      "P4_ROSHI_MODE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S0",
+    "ninja_id": "NIN-103",
+    "name_vi": "Đòn cận chiến",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S1",
+    "ninja_id": "NIN-103",
+    "name_vi": "Hơi nước",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [
+      "P4_HAN"
+    ],
+    "evidence": "LIMITED_TECHNIQUE_OR_ROLE_LINK",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S2",
+    "ninja_id": "NIN-103",
+    "name_vi": "Tăng áp",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S3",
+    "ninja_id": "NIN-103",
+    "name_vi": "Hơi nước cường lực",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S4",
+    "ninja_id": "NIN-103",
+    "name_vi": "Thể thuật hơi nước",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S5",
+    "ninja_id": "NIN-103",
+    "name_vi": "Ngũ Vĩ bộc phát",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S6",
+    "ninja_id": "NIN-103",
+    "name_vi": "Chakra Ngũ Vĩ",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-103-S7",
+    "ninja_id": "NIN-103",
+    "name_vi": "Tăng áp liên kích",
+    "source_ids": [
+      "P4_HAN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S0",
+    "ninja_id": "NIN-104",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S1",
+    "ninja_id": "NIN-104",
+    "name_vi": "Bọt nước",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S2",
+    "ninja_id": "NIN-104",
+    "name_vi": "Bọt độc",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S3",
+    "ninja_id": "NIN-104",
+    "name_vi": "Bọt nước bẫy",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S4",
+    "ninja_id": "NIN-104",
+    "name_vi": "Bọt axit",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S5",
+    "ninja_id": "NIN-104",
+    "name_vi": "Lục Vĩ bộc phát",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S6",
+    "ninja_id": "NIN-104",
+    "name_vi": "Chakra Lục Vĩ",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-104-S7",
+    "ninja_id": "NIN-104",
+    "name_vi": "Bọt nước diện rộng",
+    "source_ids": [
+      "P4_UTAKATA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S0",
+    "ninja_id": "NIN-105",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S1",
+    "ninja_id": "NIN-105",
+    "name_vi": "Phấn côn trùng",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S2",
+    "ninja_id": "NIN-105",
+    "name_vi": "Phi hành",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S3",
+    "ninja_id": "NIN-105",
+    "name_vi": "Phấn côn trùng nhiễu",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S4",
+    "ninja_id": "NIN-105",
+    "name_vi": "Phi hành — né tránh",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S5",
+    "ninja_id": "NIN-105",
+    "name_vi": "Thất Vĩ bộc phát",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S6",
+    "ninja_id": "NIN-105",
+    "name_vi": "Chakra Thất Vĩ",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-105-S7",
+    "ninja_id": "NIN-105",
+    "name_vi": "Phấn sáng diện rộng",
+    "source_ids": [
+      "P4_FU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S0",
+    "ninja_id": "NIN-106",
+    "name_vi": "Phi tiêu",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S1",
+    "ninja_id": "NIN-106",
+    "name_vi": "Hào hỏa cầu",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S2",
+    "ninja_id": "NIN-106",
+    "name_vi": "Sharingan",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S3",
+    "ninja_id": "NIN-106",
+    "name_vi": "Sharingan quan sát",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S4",
+    "ninja_id": "NIN-106",
+    "name_vi": "Hỏa độn hỏa long",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S5",
+    "ninja_id": "NIN-106",
+    "name_vi": "Hỏa độn áp chế",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S6",
+    "ninja_id": "NIN-106",
+    "name_vi": "Hào hỏa liên kích",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-106-S7",
+    "ninja_id": "NIN-106",
+    "name_vi": "Ảo thuật áp chế",
+    "source_ids": [
+      "P4_FUGAKU"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S0",
+    "ninja_id": "NIN-110",
+    "name_vi": "Đòn phòng vệ",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S1",
+    "ninja_id": "NIN-110",
+    "name_vi": "Chưởng tiên thuật",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S2",
+    "ninja_id": "NIN-110",
+    "name_vi": "Độc châm",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S3",
+    "ninja_id": "NIN-110",
+    "name_vi": "Độc vụ",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S4",
+    "ninja_id": "NIN-110",
+    "name_vi": "Chưởng tiên thuật — hồi phục nhóm",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S5",
+    "ninja_id": "NIN-110",
+    "name_vi": "Trị liệu khẩn",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S6",
+    "ninja_id": "NIN-110",
+    "name_vi": "Độc châm liên phát",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-110-S7",
+    "ninja_id": "NIN-110",
+    "name_vi": "Trị liệu nhóm",
+    "source_ids": [
+      "P4_SHIZUNE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S0",
+    "ninja_id": "NIN-113",
+    "name_vi": "Đòn nhanh",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S1",
+    "ninja_id": "NIN-113",
+    "name_vi": "Tiềm ảnh xà thủ",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S2",
+    "ninja_id": "NIN-113",
+    "name_vi": "Lôi độn",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S3",
+    "ninja_id": "NIN-113",
+    "name_vi": "Xà phân thân",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S4",
+    "ninja_id": "NIN-113",
+    "name_vi": "Lôi độn liên kích",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S5",
+    "ninja_id": "NIN-113",
+    "name_vi": "Tiên nhân hóa",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [
+      "P4_MITSUKI"
+    ],
+    "evidence": "LIMITED_TECHNIQUE_OR_ROLE_LINK",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S6",
+    "ninja_id": "NIN-113",
+    "name_vi": "Tiên nhân hóa — khai mở",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [
+      "P4_MITSUKI"
+    ],
+    "evidence": "LIMITED_TECHNIQUE_OR_ROLE_LINK",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-113-S7",
+    "ninja_id": "NIN-113",
+    "name_vi": "Xà trói",
+    "source_ids": [
+      "P4_MITSUKI"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S0",
+    "ninja_id": "NIN-121",
+    "name_vi": "Đòn phòng thủ",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S1",
+    "ninja_id": "NIN-121",
+    "name_vi": "Thổ thuẫn",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S2",
+    "ninja_id": "NIN-121",
+    "name_vi": "Thổ trụ",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S3",
+    "ninja_id": "NIN-121",
+    "name_vi": "Thổ độn trụ đá",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S4",
+    "ninja_id": "NIN-121",
+    "name_vi": "Thổ độn tường đất",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S5",
+    "ninja_id": "NIN-121",
+    "name_vi": "Thổ độn chiến trận",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S6",
+    "ninja_id": "NIN-121",
+    "name_vi": "Thổ độn trói",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-121-S7",
+    "ninja_id": "NIN-121",
+    "name_vi": "Gậy đá liên kích",
+    "source_ids": [
+      "P4_IWABE"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S0",
+    "ninja_id": "NIN-131",
+    "name_vi": "Đòn cận chiến",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S1",
+    "ninja_id": "NIN-131",
+    "name_vi": "Vũ khí chakra",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S2",
+    "ninja_id": "NIN-131",
+    "name_vi": "Chém chakra",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S3",
+    "ninja_id": "NIN-131",
+    "name_vi": "Đao chakra",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S4",
+    "ninja_id": "NIN-131",
+    "name_vi": "Rìu chakra",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S5",
+    "ninja_id": "NIN-131",
+    "name_vi": "Vũ khí khổng lồ",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S6",
+    "ninja_id": "NIN-131",
+    "name_vi": "Vũ khí chakra liên kích",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-131-S7",
+    "ninja_id": "NIN-131",
+    "name_vi": "Đại vũ khí",
+    "source_ids": [
+      "P4_KINSHIKI",
+      "P4_KINSHIKI_GAME"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S0",
+    "ninja_id": "NIN-140",
+    "name_vi": "Đòn nhanh",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S1",
+    "ninja_id": "NIN-140",
+    "name_vi": "Thao túng vũ khí",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S2",
+    "ninja_id": "NIN-140",
+    "name_vi": "Sharingan",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S3",
+    "ninja_id": "NIN-140",
+    "name_vi": "Vũ khí điều khiển",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S4",
+    "ninja_id": "NIN-140",
+    "name_vi": "Sharingan quan sát",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S5",
+    "ninja_id": "NIN-140",
+    "name_vi": "Vũ khí liên kích",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S6",
+    "ninja_id": "NIN-140",
+    "name_vi": "Phi đao trói",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-140-S7",
+    "ninja_id": "NIN-140",
+    "name_vi": "Mưa vũ khí",
+    "source_ids": [
+      "P4_SHIN"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S0",
+    "ninja_id": "NIN-141",
+    "name_vi": "Đòn cận chiến",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S1",
+    "ninja_id": "NIN-141",
+    "name_vi": "Kiếm thuật",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S2",
+    "ninja_id": "NIN-141",
+    "name_vi": "Thủy độn",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S3",
+    "ninja_id": "NIN-141",
+    "name_vi": "Hiramekarei chakra",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S4",
+    "ninja_id": "NIN-141",
+    "name_vi": "Thủy độn hỗ trợ",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S5",
+    "ninja_id": "NIN-141",
+    "name_vi": "Hiramekarei",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S6",
+    "ninja_id": "NIN-141",
+    "name_vi": "Kiếm phòng thủ",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  },
+  {
+    "skill_id": "NIN-141-S7",
+    "ninja_id": "NIN-141",
+    "name_vi": "Kiếm liên trảm",
+    "source_ids": [
+      "P4_MIST",
+      "P4_KAGURA"
+    ],
+    "technique_link_ids": [],
+    "evidence": "IDENTITY_OR_ARC_CONTEXT_ONLY",
+    "canon_verified": false,
+    "numeric_status": "DEV",
+    "source_status": "PARTIAL_NOT_FULL_CANON",
+    "runtime_policy": "PRESERVE_P2_P3_GATE"
+  }
+]
