@@ -52,11 +52,11 @@ static func source_for(reg,resource: String) -> Dictionary:
 		if source.resource_id==resource:return source
 	return {}
 
-static func start_mission(reg,s: Dictionary,ninja: String,resource: String) -> bool:
+static func start_mission(reg,s: Dictionary,ninja: String,resource: String,repeat: bool=false) -> bool:
 	var source=source_for(reg,resource)
 	if source.is_empty() or not source.source_type in ["mission","mission_or_library"] or not s.owned.has(ninja) or s.missions.has(ninja):return false
 	if int(s.building_states[source.building_id].level)<=0 or int(s.building_states["BLD-001"].level)<int(source.source_min_hq):return false
-	s.missions[ninja]={"resource":resource,"remaining":int(source.period_seconds),"qty":int(source.base_yield)}
+	s.missions[ninja]={"resource":resource,"remaining":int(source.period_seconds),"qty":int(source.base_yield),"period":int(source.period_seconds),"repeat":repeat}
 	return true
 
 static func step(s: Dictionary,dt: int) -> void:
@@ -67,5 +67,6 @@ static func step(s: Dictionary,dt: int) -> void:
 		var resource=str(mission.resource)
 		if not resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"] and int(s.inventory.get(resource,0))+int(mission.qty)>10000+5000*int(s.building_states["BLD-020"].level):continue
 		s.inventory[resource]=int(s.inventory.get(resource,0))+int(mission.qty)
-		s.missions.erase(ninja)
+		if mission.get("repeat",false):mission.remaining=maxi(1,int(mission.period))
+		else:s.missions.erase(ninja)
 		bump(s,"finish_mission")

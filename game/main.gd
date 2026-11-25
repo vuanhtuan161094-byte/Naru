@@ -435,7 +435,9 @@ func building_screen(id: String,message: String="") -> void:
 			options.set_item_metadata(options.item_count-1,profession)
 		row.add_child(options)
 		button(row,"Phân công",func():building_screen(id,"Đã phân công" if store.assign_job(reg,ninja,id,str(options.get_selected_metadata())) else "Hết chỗ"))
-		if job.get("building","")==id:button(row,"Rút",func():building_screen(id,"Đã rút" if store.assign_job(reg,ninja,"","") else "Lỗi"))
+		if job.get("building","")==id:
+			button(row,"Thiên phú nghề",func():profession_screen(ninja,id))
+			button(row,"Rút",func():building_screen(id,"Đã rút" if store.assign_job(reg,ninja,"","") else "Lỗi"))
 	if not b.production.is_empty():
 		label(rows,"Đang sản xuất %s • còn %ds" % [b.production.recipe,int(b.production.remaining)],18)
 		button(rows,"Dừng và hoàn nguyên liệu",func():building_screen(id,"Đã dừng" if store.cancel_production(id) else "Kho đầy"))
@@ -659,3 +661,13 @@ func web_probe() -> void:
 	ok=ok and reloaded.state.cleared.has("STG-001") and not reloaded.finish_stage(reg,stage,event,true,{})
 	JavaScriptBridge.eval("window.naruProbe="+("true" if ok else "false"))
 	print("NARU_WEB_PROBE_"+("PASS" if ok else "FAIL"))
+
+func profession_screen(ninja: String,building_id: String,message: String="") -> void:
+	var rows=activity_rows("THIÊN PHÚ NGHỀ • "+str(reg.ninjas[ninja].name_vi),message,func():building_screen(building_id))
+	var job=store.state.jobs[ninja]
+	for profession in job.careers:
+		var career=job.careers[profession]
+		label(rows,"%s • Cấp %d • XP %d" % [reg.professions[profession].name_vi,int(career.level),int(career.xp)],18)
+		var titles={"yield":"Năng suất","economy":"Tiết kiệm nguyên liệu","quality":"Chất lượng","speed":"Tốc độ"}
+		for talent in titles:
+			button(rows,"%s (+%d điểm)" % [titles[talent],int(career.get("talents",{}).get(talent,0))],func():profession_screen(ninja,building_id,"Đã nâng" if store.choose_job_talent(ninja,profession,talent) else "Chưa có điểm"))

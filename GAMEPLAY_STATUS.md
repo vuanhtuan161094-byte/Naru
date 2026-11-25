@@ -28,3 +28,6 @@ Completion A 6a16124d CI 45552956564 PASS, 109 assertions. Completion B 24910e13
 
 ## Offensive A — 25/11/2026
 Enemy AI ultimate and auto-resolver player ultimate (manual retained in campaign), control chance/duration/resistance, form trigger guard, negative-only cleanse, chakra drain/conversion, counter rating, DOT source attribution, shared shield accounting, dedicated 9 DEV creature kits (27 skills, host baseline stat curve only), mastery signature factor and resource reward capacity. New CI covers all 1152 authored effect dispatches and 9 beast kits, high-power trial/evolution/capture fixtures; pending run. Numerical beast kit and drain/counter scaling proposed, not canon or balance verified. Rinnegan/implant compatibility remains held.
+
+## Offensive B
+15 profession identities retained; specialty affinity (5% proposed), 4 talent tracks, rank points at levels 1/10/25/50/100, output/speed/material economy/quality hooks; compatible building specialty map but non-specialist assignments remain allowed. Repeat missions, cancellation, daily boundary, production repeat reservation, territorial ownership index. Real starter-income integration test without inventory grant. Remaining economic simulation 30/90d and detailed training progression; CI pending.

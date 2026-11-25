@@ -57,7 +57,8 @@ static func construct(reg,s: Dictionary,id: String) -> bool:
 	var cost=upgrade_cost(reg,s,id)
 	if not cost_ok(s,cost):return false
 	debit(s,cost)
-	b.upgrade={"target":int(b.level)+1,"remaining":mini(604800,ceili(float(def.base_duration_s)*pow(1.10,maxi(0,int(b.level)-1))))}
+	var builder=trait_bonus(s,"BLD-001","speed")
+	b.upgrade={"target":int(b.level)+1,"remaining":mini(604800,ceili(float(def.base_duration_s)*pow(1.10,maxi(0,int(b.level)-1))/(1+builder)))}
 	return true
 
 static func workers(s: Dictionary,id: String) -> Array:
@@ -75,7 +76,8 @@ static func assign(reg,s: Dictionary,ninja: String,id: String,profession: String
 	var assigned=workers(s,id)
 	if not ninja in assigned and assigned.size()>=1+floori(float(level(s,id)-1)/10.0):return false
 	var job=s.jobs.get(ninja,{"building":"","profession":profession,"careers":{}})
-	if not job.careers.has(profession):job.careers[profession]={"level":1,"xp":0}
+	if not job.careers.has(profession):job.careers[profession]={"level":1,"xp":0,"talents":{}}
+	if not job.careers[profession].has("talents"):job.careers[profession].talents={}
 	job.building=id
 	job.profession=profession
 	s.jobs[ninja]=job
@@ -103,11 +105,14 @@ static func recipe_cost(recipe: Dictionary) -> Dictionary:
 	return result
 
 static func reserve(s: Dictionary,job: Dictionary,recipe: Dictionary) -> bool:
+	var id=str(recipe.building_id)
 	var cost=recipe_cost(recipe)
+	var savings=trait_bonus(s,id,"economy")
+	for resource in cost:cost[resource]=maxi(1,ceili(float(cost[resource])*(1-savings)))
 	if not cost_ok(s,cost):return false
 	debit(s,cost)
 	job.reserved=cost
-	job.remaining=int(recipe.duration_s)
+	job.remaining=maxi(1,ceili(float(recipe.duration_s)/(1+trait_bonus(s,id,"speed"))))
 	return true
 
 static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: bool) -> bool:
@@ -143,33 +148,31 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		if job.reserved.is_empty() and not reserve(s,job,recipe):continue
 		job.remaining=maxi(0,int(job.remaining)-dt)
 		if int(job.remaining)>0:continue
-		var qty=maxi(1,floori(float(recipe.output.qty)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*float(b.condition)))
+		var qty=maxi(1,floori(float(recipe.output.qty)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))
 		if not put(s,recipe.output.resource_id,qty):continue
-		award_job(s,id,qty)
+		award_job(s,id,maxi(1,roundi(float(qty)*(1+trait_bonus(s,id,"quality")))))
 		s.craft_count=int(s.craft_count)+1
 		Content.bump(s,"craft_item")
 		job.reserved={}
 		if not job.repeat:b.production={}
-	# Direct supply only for genuine producing sources, never event-only rewards.
+		else:reserve(s,job,recipe)
+	# Compute territorial resource access once per tick, rather than once per source.
+	var owned_resources={}
+	for territory in reg.territories.values():
+		if s.territory_states[territory.id].owner=="FAC-009":
+			for resource in territory.resources:owned_resources[resource.resource_id]=true
 	for source in reg.supply:
 		var id=str(source.building_id)
 		var kind=str(source.source_type)
 		if not kind in ["farm","herb_garden","chakra_spring","territory"]:continue
 		if level(s,id)<=0 or level(s,"BLD-001")<int(source.source_min_hq) or worker_level(s,id)==0:continue
-		if kind=="territory":
-			var owned_source=false
-			for territory in reg.territories.values():
-				var owner=s.get("territory_states",{}).get(territory.id,{}).get("owner",territory.owner_id)
-				if owner!="FAC-009":continue
-				for resource in territory.resources:
-					if resource.resource_id==source.resource_id:owned_source=true
-			if not owned_source:continue
+		if kind=="territory" and not owned_resources.has(source.resource_id):continue
 		var resource_id=str(source.resource_id)
 		var elapsed=int(s.supply_clock.get(resource_id,0))+dt
-		var period=int(source.period_seconds)
+		var period=maxi(1,ceili(float(source.period_seconds)/(1+trait_bonus(s,id,"speed"))))
 		if elapsed>=period:
 			var b=s.building_states[id]
-			var qty=maxi(1,floori(float(source.base_yield)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*float(b.condition)))
+			var qty=maxi(1,floori(float(source.base_yield)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))
 			if put(s,resource_id,qty):
 				award_job(s,id,qty)
 				s.production_count=int(s.production_count)+1
@@ -193,7 +196,11 @@ static func advance(reg,s: Dictionary,now: int) -> bool:
 	if now<=previous:return false
 	var elapsed=mini(86400,now-previous)
 	var remaining=elapsed
+	var cursor=now-elapsed
 	while remaining>0:
+		s.last_committed_timestamp=cursor
+		s.high_water_timestamp=cursor
+		Content.sync_day(s)
 		var dt=mini(60,remaining)
 		for b in s.building_states.values():
 			if not b.upgrade.is_empty():dt=mini(dt,maxi(1,int(b.upgrade.remaining)))
@@ -202,6 +209,11 @@ static func advance(reg,s: Dictionary,now: int) -> bool:
 			if int(mission.remaining)>0:dt=mini(dt,int(mission.remaining))
 		if not s.travel.is_empty():dt=mini(dt,maxi(1,int(s.travel.remaining)))
 		dt=mini(dt,600-int(s.world_seconds))
+		var bias=int(Time.get_time_zone_from_system().bias)*60
+		dt=mini(dt,86400-posmod(cursor+bias,86400))
+		cursor+=dt
+		s.last_committed_timestamp=cursor
+		s.high_water_timestamp=cursor
 		step(reg,s,dt)
 		remaining-=dt
 	s.last_committed_timestamp=now
@@ -209,3 +221,35 @@ static func advance(reg,s: Dictionary,now: int) -> bool:
 	s.last_offline_elapsed=elapsed
 	Content.sync_day(s)
 	return true
+
+static func specialty(id: String) -> String:
+	var mapping={"BLD-001":"JOB-01","BLD-002":"JOB-14","BLD-003":"JOB-02","BLD-004":"JOB-03","BLD-005":"JOB-04","BLD-006":"JOB-05","BLD-007":"JOB-14","BLD-008":"JOB-08","BLD-009":"JOB-14","BLD-010":"JOB-08","BLD-011":"JOB-11","BLD-012":"JOB-09","BLD-013":"JOB-07","BLD-014":"JOB-10","BLD-015":"JOB-10","BLD-016":"JOB-05","BLD-017":"JOB-06","BLD-018":"JOB-07","BLD-019":"JOB-08","BLD-020":"JOB-12","BLD-021":"JOB-12","BLD-022":"JOB-11","BLD-023":"JOB-13","BLD-024":"JOB-02","BLD-025":"JOB-03","BLD-026":"JOB-08","BLD-027":"JOB-08","BLD-028":"JOB-14","BLD-029":"JOB-12","BLD-030":"JOB-11"}
+	return str(mapping.get(id,""))
+
+static func talent_points(level_value: int) -> int:
+	var points=0
+	for threshold in [1,10,25,50,100]:
+		if level_value>=threshold:points+=1
+	return points
+
+static func choose_talent(s: Dictionary,ninja: String,profession: String,talent: String) -> bool:
+	if not s.jobs.has(ninja) or not talent in ["yield","economy","quality","speed"]:return false
+	var careers=s.jobs[ninja].careers
+	if not careers.has(profession):return false
+	var career=careers[profession]
+	if not career.has("talents"):career.talents={}
+	var used=0
+	for value in career.talents.values():used+=int(value)
+	if used>=talent_points(int(career.level)):return false
+	career.talents[talent]=int(career.talents.get(talent,0))+1
+	return true
+
+static func trait_bonus(s: Dictionary,id: String,talent: String) -> float:
+	var best=0.0
+	for ninja in workers(s,id):
+		var job=s.jobs[ninja]
+		var career=job.careers[job.profession]
+		var matching=job.profession==specialty(id) or (id=="BLD-017" and job.profession=="JOB-15")
+		var factor=0.06*int(career.get("talents",{}).get(talent,0))+(0.05 if matching else 0.0)
+		best=maxf(best,factor)
+	return minf(0.3,best) if talent=="economy" else minf(0.5,best)

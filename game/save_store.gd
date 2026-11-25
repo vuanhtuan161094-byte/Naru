@@ -333,7 +333,7 @@ func craft_gear(reg,template_id: String) -> String:
 	var id="GEAR-"+str(state.gear_seq)
 	Content.bump(state,"craft_item")
 	var profession_level=Village.worker_level(state,str(def.craft.building_id))
-	var quality=clampi(floori(1+0.04*profession_level+0.5*float(def.quality)+rng.randf_range(0,1.5)),1,8)
+	var quality=clampi(floori(1+0.04*profession_level+0.5*float(def.quality)+2*Village.trait_bonus(state,str(def.craft.building_id),"quality")+rng.randf_range(0,1.5)),1,8)
 	var affixes=[]
 	var pool=reg.affix_pools[def.affix_pool].duplicate()
 	for i in range(mini(int(def.affix_slots),pool.size())):
@@ -588,9 +588,9 @@ func claim_quest(reg,id: String) -> bool:
 	if not Content.claim(reg,state,id):return false
 	return commit_change(prior,rng.state)
 
-func start_mission(reg,id: String,resource: String) -> bool:
+func start_mission(reg,id: String,resource: String,repeat: bool=false) -> bool:
 	var prior=state.duplicate(true)
-	if not Content.start_mission(reg,state,id,resource):return false
+	if not Content.start_mission(reg,state,id,resource,repeat):return false
 	return commit_change(prior,rng.state)
 
 func resource_trial(reg,id: String,resource: String) -> bool:
@@ -750,3 +750,14 @@ func import_save(reg,raw: String) -> bool:
 	rng.seed=int(str(state.rng_seed))
 	rng.state=int(str(state.rng_state))
 	return commit_change(prior,old_rng)
+
+func stop_mission(id: String) -> bool:
+	if not state.missions.has(id):return false
+	var prior=state.duplicate(true)
+	state.missions.erase(id)
+	return commit_change(prior,rng.state)
+
+func choose_job_talent(id: String,profession: String,talent: String) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.choose_talent(state,id,profession,talent):return false
+	return commit_change(prior,rng.state)

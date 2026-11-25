@@ -8,8 +8,8 @@
 | GP-P2C | IN_PROGRESS | Remaining effect semantics, all unlocked skill scheduling and form guards, precise resistance, spatial reactions/environment, deterministic effect tests. |
 | GP-P3B | IN_PROGRESS | 48 stat formulas, quality/talents, permanent anti-farm, skill mastery/trial unlock, branch tests, gear affixes/sets/profession quality, bloodlines/forms. |
 | GP-P5A | DONE | HQ 1→9 and workshop construction verified CI 45550976926. |
-| GP-P5B | READY | 150 resources, 63 recipes, 30 fixed buildings cap 100, 15 professions, production/job+combat, stamina regen, no upkeep. |
-| GP-P6 | READY | Offline cap 24h ledger, clock rollback/replay/crash recovery, full save migration/import/export. |
+| GP-P5B | IN_PROGRESS | 150 resources, 63 recipes, 30 fixed buildings cap 100, 15 professions, production/job+combat, stamina regen, no upkeep. |
+| GP-P6 | IN_PROGRESS | Offline cap 24h ledger, clock rollback/replay/crash recovery, full save migration/import/export. |
 | GP-P7 | READY | 60 territories, 71 routes, 9 factions, diplomacy/trade/war/raids/sequential teams. |
 | GP-P8 | IN_PROGRESS | 120 stages, 24 bosses, 81 quests, 288 trials, 9 bijuu, 11 summons, 12 combos, actual mechanics. |
 | GP-P9 | BACKLOG | 17 functional Vietnamese screens, touch/desktop, asset adapter. |
