@@ -61,3 +61,8 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - READY: per-ID actual contribution audit; source/adapter gate resolution; typed control duration/conditional secondary/remaining authoritative events; continuous mastery; full synergy-P1 after published database; fixed-point CP and V5 manual ultimate; prior V7 remaining special fallbacks/organic progression/Android-PC.
 
 - REVIEW batch 2: 2016 synergy structural registry, 72 read-only pilot, source/target gate and AI/cleanse improvements, 12 roster windows. Full actual interaction audit, P2 remaining 792 records, 4 form-zero and 2 event mapping gaps, all special mechanics still READY.
+
+## Scope split — Chat03
+- TRANSFER Chat03: GP-P3B external progression/trials, GP-P5B village/economy/job, GP-P6 shared save ownership, GP-P7 world/territory, GP-P8 campaign progression, GP-P9 external screens and equipment/forge/recruit. Retain existing V8 behavior.
+- Chat01 REVIEW: V9 combat candidates, 12 designed-team observations, new 14 passive adapters/2 P2 adapters, exact-ID ultimate, growth DEV, PC/Android presets.
+- Chat01 READY: residual 9 special P2 + 2 era HOLD, 34 branch contracts, full fixed-point CP, V5 combo and form route tests, per-ID passive actual effect audit, art event contract and tactical quality. CI not yet verified.

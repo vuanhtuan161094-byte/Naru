@@ -1,0 +1,61 @@
+extends RefCounted
+# DEV V5 monotonic training. Old saves retain their IDs and G/L.
+static func factor(p: Dictionary) -> float:
+	return 1.0+0.50*(int(p.get("grade",1))-1)+0.02*(int(p.get("level",1))-1)
+
+static func star_discount(stars: int) -> float:
+	return 0.06 if stars>=15 else 0.04 if stars>=10 else 0.02 if stars>=5 else 0.0
+
+static func apply(reg,s: Dictionary,p: Dictionary,stars: int) -> void:
+	if s.kind=="basic":return
+	var f=factor(p)
+	var ratio=(f-1.0)/f
+	var branch=str(p.get("branch",""))
+	var specific=reg.depth_branches.get(branch,{})
+	var kind=str(s.p2.effect.type) if s.has("p2") else ""
+	var params=s.p2.effect.params if s.has("p2") else {}
+	# B1 only strengthens existing typed payload, B2 geometry once or paid CP.
+	var coefficient=f*(1.12 if branch.ends_with("-B1") and specific.is_empty() else 1.0)
+	for e in s.effects:
+		match str(e.type):
+			"damage","heal","shield","counter":
+				if e.has("coefficient"):e.coefficient=float(e.coefficient)*coefficient
+			"apply_status":
+				if e.has("tick_coefficient"):e.tick_coefficient=float(e.tick_coefficient)*coefficient
+				elif reg.status_catalog.get(e.status_id,{}).get("hard_control",false):
+					e.duration_s=float(e.get("duration_s",reg.status_catalog[e.status_id].duration_s))*(1.0+0.20*ratio)
+				elif e.status_id in ["attack_up","defense_up","accuracy_up","haste","chakra_up","evasion"]:
+					e.magnitude=float(e.get("magnitude",0.2))*(1.0+0.35*ratio)
+			"summon":
+				e.hp_owner_fraction=float(e.hp_owner_fraction)*(1.0+0.50*ratio)
+				e.attack_owner_fraction=float(e.attack_owner_fraction)*(1.0+0.50*ratio)
+			"chakra_restore":
+				e.amount=floorf(float(e.amount)*(1.0+0.50*ratio))
+			"activate_form":
+				s.chakra=float(s.chakra)*(1.0-0.15*ratio)
+	if kind=="wall":params.duration_s=float(params.get("duration_s",6))*(1.0+0.25*ratio)
+	if kind in ["chakra_restore","chakra_drain","zone_drain"]:
+		for key in ["chakra_amount","chakra_per_tick"]:
+			if params.has(key):params[key]=floorf(float(params[key])*(1.0+0.50*ratio))
+	if branch.ends_with("-B2") and specific.is_empty():
+		if s.shape in ["circle_ground","circle_self","circle_target","zone_target","projectile_burst","circle"]:s.radius_m=float(s.radius_m)*1.15
+		elif s.shape=="line":s.line_width_m=float(s.line_width_m)*1.15
+		elif s.chakra>0:s.chakra=float(s.chakra)*0.90
+	# Explicit V4 growth fields override generic parameters only once.
+	var growth=reg.depth_growth.get(s.skill_id,{})
+	if not growth.is_empty() and s.has("p2"):
+		var spec=growth.additional_scaling
+		var base=float(spec.base)
+		match str(spec.field):
+			"params.magnitude":
+				for e in s.effects:
+					if e.type=="apply_status":e.magnitude=base*(1.0+0.20*ratio)
+			"timing.windup_s":
+				var speed=0.20 if str(spec.formula).contains(".20") else 0.15
+				s.cast_s=maxf(0.12 if speed==0.20 else 0.25,float(s.cast_s)*(1.0-speed*ratio))
+			"params.mark_ttl_s":params.mark_ttl_s=base*(1.0+0.15*ratio)
+			"params.duration_s":params.duration_s=base*(1.0+0.15*ratio)
+			"params.chakra_amount":params.chakra_amount=floorf(base*(1.0+0.25*ratio))
+	# DOT fixed-total and aggregate drain branch contracts remain held until dedicated adapter tests.
+	if not specific.is_empty():s.depth_branch_hold=true
+	if s.chakra>0:s.chakra=maxf(1.0,float(s.chakra)*(1.0-star_discount(stars)))

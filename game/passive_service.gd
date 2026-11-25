@@ -2,8 +2,8 @@ extends RefCounted
 # Published PASSIVE-P1 contract. Opt-in DEV; never casts or spends chakra.
 const REALMS=[0,1,2,3,4,6]
 const DEFAULT={"level":1,"grade":1,"fails":0,"branch":"","mastery":0}
-const EVENTS=["derived_stats","continuous_aura","hp_threshold_crossed","chakra_threshold_crossed","critical_hit_confirmed","hostile_damage_confirmed","damage_taken_confirmed","kill_confirmed","heal_confirmed","cleanse_effective","summon_spawned","form_activated","status_applied","stance_effect_confirmed","resource_effect_confirmed","contact_or_effect_confirmed","mark_effect_confirmed","before_skill_effect","while_form_active","before_combo_payload"]
-const TYPES=["stat_relative_bonus","stat_relative_penalty","incoming_damage_reduction","received_heal_bonus","skill_cp_discount","skill_effect_bonus","form_skill_coefficient_bonus","summon_hp_fraction_bonus","combo_payload_bonus"]
+const EVENTS=["derived_stats","continuous_aura","hp_threshold_crossed","chakra_threshold_crossed","critical_hit_confirmed","hostile_damage_confirmed","damage_taken_confirmed","kill_confirmed","heal_confirmed","cleanse_effective","summon_spawned","form_activated","status_applied","stance_effect_confirmed","resource_effect_confirmed","contact_or_effect_confirmed","mark_effect_confirmed","before_skill_effect","while_form_active","before_combo_payload","wall_blocked","teleport_arrived","counter_triggered"]
+const TYPES=["stat_relative_bonus","stat_relative_penalty","incoming_damage_reduction","received_heal_bonus","skill_cp_discount","skill_effect_bonus","form_skill_coefficient_bonus","summon_hp_fraction_bonus","combo_payload_bonus","skill_status_duration_bonus"]
 static func gate(row: Dictionary) -> String:
 	if row.source.inherited_source_policy=="PRESERVE_P2_P3_GATE":return "HOLD_SOURCE_GATE"
 	if not row.trigger.event in EVENTS:return "HOLD_EVENT"
@@ -29,6 +29,9 @@ static func operation(row: Dictionary,p: Dictionary) -> Dictionary:
 	for br in row.progression.branches:
 		if br.id==progress(p,row.id).branch:return br.operation
 	return {}
+
+static func rows(sim,a: Dictionary) -> Array:
+	return sim.registry.passive_pilot_rows.get(a.id,[]) if sim.use_passive_pilot else sim.registry.passives_by_ninja.get(a.id,[])
 
 static func eligible(sim,a: Dictionary,row: Dictionary) -> bool:
 	return sim.use_passives and a.has("passive_base") and a.hp>0 and not a.get("beast",false) and int(a.realm)>=int(row.unlock.realm) and sim.registry.passive_ledger.get(row.id,"")=="DEV_CANDIDATE" and not str(sim.registry.p2_fallback.get(row.source.signature_id,"")).begins_with("HOLD") and not (sim.registry.synergy_gaps.get(row.id,"")=="FORM_ZERO_PAYLOAD_REVIEW")
@@ -72,7 +75,7 @@ static func refresh(sim) -> void:
 		if a.has("passive_base"):buckets[a.uid]={"personal":{},"aura":{},"team":{},"negative":{}}
 	for a in sim.actors:
 		if not buckets.has(a.uid) or a.hp<=0:continue
-		for row in sim.registry.passives_by_ninja.get(a.id,[]):
+		for row in rows(sim,a):
 			if not eligible(sim,a,row):continue
 			var event=str(row.trigger.event)
 			if not event in ["derived_stats","continuous_aura"]:continue
@@ -119,7 +122,7 @@ static func queue(sim,a: Dictionary,b: Dictionary,s: Dictionary,event: String,be
 	if sim.passive_seen.has(key):return
 	# Do not consume a dedup key for an ineligible target on a mixed-target parent.
 	var eligible_event=false
-	for row in sim.registry.passives_by_ninja.get(a.id,[]):
+	for row in rows(sim,a):
 		if not eligible(sim,a,row) or row.trigger.event!=event:continue
 		var ids=row.trigger.get("skill_ids",[])
 		if not ids.is_empty() and not s.skill_id in ids:continue
@@ -148,7 +151,7 @@ static func flush(sim) -> void:
 		sim.passive_queue.erase(receipt)
 		var a=sim.actor_by_uid(int(receipt.uid))
 		if a.is_empty() or a.hp<=0:continue
-		for row in sim.registry.passives_by_ninja.get(a.id,[]):
+		for row in rows(sim,a):
 			if not eligible(sim,a,row) or row.trigger.event!=receipt.event:continue
 			var skills=row.trigger.get("skill_ids",[])
 			if not skills.is_empty() and not receipt.skill in skills:continue
@@ -193,7 +196,7 @@ static func flush(sim) -> void:
 
 static func modify_skill(sim,a: Dictionary,s: Dictionary) -> void:
 	if not sim.use_passives or not s.has("p2"):return
-	for row in sim.registry.passives_by_ninja.get(a.id,[]):
+	for row in rows(sim,a):
 		if not eligible(sim,a,row) or not row.trigger.event in ["before_skill_effect","while_form_active"] or not s.skill_id in row.trigger.get("skill_ids",[]):continue
 		if row.trigger.event=="while_form_active":
 			var form=str(a.active_form.get("id",""))
@@ -205,9 +208,14 @@ static func modify_skill(sim,a: Dictionary,s: Dictionary) -> void:
 				if s.chakra>0:s.chakra=maxf(1.0,float(s.chakra)*(1.0-minf(val,0.08)))
 			"skill_effect_bonus","form_skill_coefficient_bonus":
 				for e in s.effects:
-					if e.has("coefficient") and e.type in ["damage","heal","shield"] and (row.effect.type=="form_skill_coefficient_bonus" or e.type==row.effect.key):
+					if e.has("coefficient") and e.type in ["damage","heal","shield"] and float(e.coefficient)>0 and (row.effect.type=="form_skill_coefficient_bonus" or e.type==row.effect.key):
 						e.coefficient=float(e.coefficient)*(1.0+minf(val,0.10))
 						if e.has("tick_coefficient"):e.tick_coefficient=float(e.tick_coefficient)*(1.0+minf(val,0.10))
+			"skill_status_duration_bonus":
+				for e in s.effects:
+					if e.type=="apply_status" and sim.registry.status_catalog.get(e.status_id,{}).get("hard_control",false):
+						var previous=float(e.get("duration_s",0))
+						if previous>0:e.duration_s=previous*(1.0+minf(val,0.10))
 			"summon_hp_fraction_bonus":
 				for e in s.effects:
 					if e.type=="summon":e.hp_owner_fraction=float(e.hp_owner_fraction)*(1.0+minf(val,0.10))
@@ -218,7 +226,7 @@ static func combo_bonus(sim,combo: Dictionary,entries: Array) -> float:
 	for entry in entries:
 		var a=sim.actor_by_uid(int(entry.uid))
 		if a.is_empty():continue
-		for row in sim.registry.passives_by_ninja.get(a.id,[]):
+		for row in rows(sim,a):
 			if eligible(sim,a,row) and row.effect.type=="combo_payload_bonus" and combo.id in row.effect.combo_ids:
 				value=maxf(value,potency(row,a,int(a.stars)))
 	return minf(value,0.08)
@@ -229,7 +237,7 @@ static func has_debuff(a: Dictionary) -> bool:
 	return false
 
 static func aura_source(sim,a: Dictionary) -> bool:
-	for row in sim.registry.passives_by_ninja.get(a.id,[]):
+	for row in rows(sim,a):
 		if eligible(sim,a,row) and row.trigger.event=="continuous_aura" and recipients(sim,a,row).size()>1:return true
 	return false
 

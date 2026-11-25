@@ -1,0 +1,5465 @@
+{
+  "audit": {
+    "teams": 12,
+    "cases": 144,
+    "recipient_stat_evaluations": 14688,
+    "cases_with_saturation": 144,
+    "max_saturated_keys": 13,
+    "post_clamp_violations": 0,
+    "excluded_element_or_complex_family_passive_ids": 1,
+    "limitations": "upper-bound synthetic simultaneous buffs, all eligible unlocked, radius assumed in range, all eligible B1 at G>=3; no time, active buffs, forms, combos, enemy debuff, B2, source gate or formation runtime; not 6v6 win-rate simulation; post-clamp violations tautologically zero",
+    "status": "ANALYTICAL_DEV_ONLY"
+  },
+  "teams": [
+    {
+      "id": "balanced-1",
+      "members": [
+        {
+          "id": "NIN-008",
+          "name": "Choji Akimichi (thiếu niên)",
+          "role": "đỡ đòn",
+          "identity": "choji-akimichi",
+          "family": "akimichi"
+        },
+        {
+          "id": "NIN-013",
+          "name": "Neji Hyuga (thiếu niên)",
+          "role": "đấu sĩ",
+          "identity": "neji-hyuga",
+          "family": "hyuga"
+        },
+        {
+          "id": "NIN-030",
+          "name": "Hayate Gekko",
+          "role": "sát thủ",
+          "identity": "hayate-gekko",
+          "family": null
+        },
+        {
+          "id": "NIN-054",
+          "name": "Tenten (Shippuden)",
+          "role": "công kích xa",
+          "identity": "tenten",
+          "family": null
+        },
+        {
+          "id": "NIN-063",
+          "name": "Sasori",
+          "role": "khống chế",
+          "identity": "sasori",
+          "family": null
+        },
+        {
+          "id": "NIN-021",
+          "name": "Tsunade",
+          "role": "trị liệu",
+          "identity": "tsunade",
+          "family": null
+        }
+      ]
+    },
+    {
+      "id": "sustain-1",
+      "members": [
+        {
+          "id": "NIN-008",
+          "name": "Choji Akimichi (thiếu niên)",
+          "role": "đỡ đòn",
+          "identity": "choji-akimichi",
+          "family": "akimichi"
+        },
+        {
+          "id": "NIN-055",
+          "name": "Gaara (Kazekage)",
+          "role": "đỡ đòn",
+          "identity": "gaara",
+          "family": "sand"
+        },
+        {
+          "id": "NIN-128",
+          "name": "Sakura Haruno (trưởng thành)",
+          "role": "trị liệu",
+          "identity": "sakura-haruno",
+          "family": "haruno"
+        },
+        {
+          "id": "NIN-023",
+          "name": "Kabuto Yakushi",
+          "role": "trị liệu",
+          "identity": "kabuto-yakushi",
+          "family": null
+        },
+        {
+          "id": "NIN-122",
+          "name": "Sumire Kakei",
+          "role": "hỗ trợ",
+          "identity": "sumire-kakei",
+          "family": null
+        },
+        {
+          "id": "NIN-076",
+          "name": "Killer B",
+          "role": "đấu sĩ",
+          "identity": "killer-b",
+          "family": null
+        }
+      ]
+    },
+    {
+      "id": "burst-1",
+      "members": [
+        {
+          "id": "NIN-002",
+          "name": "Sasuke Uchiha (thiếu niên)",
+          "role": "sát thủ",
+          "identity": "sasuke-uchiha",
+          "family": "uchiha"
+        },
+        {
+          "id": "NIN-028",
+          "name": "Haku",
+          "role": "sát thủ",
+          "identity": "haku",
+          "family": null
+        },
+        {
+          "id": "NIN-034",
+          "name": "Zaku Abumi",
+          "role": "công kích xa",
+          "identity": "zaku-abumi",
+          "family": null
+        },
+        {
+          "id": "NIN-056",
+          "name": "Temari (Shippuden)",
+          "role": "công kích xa",
+          "identity": "temari",
+          "family": null
+        },
+        {
+          "id": "NIN-053",
+          "name": "Rock Lee (Shippuden)",
+          "role": "đấu sĩ",
+          "identity": "rock-lee",
+          "family": "lee"
+        },
+        {
+          "id": "NIN-137",
+          "name": "Amado",
+          "role": "hỗ trợ",
+          "identity": "amado",
+          "family": null
+        }
+      ]
+    },
+    {
+      "id": "control-1",
+      "members": [
+        {
+          "id": "NIN-007",
+          "name": "Shikamaru Nara (thiếu niên)",
+          "role": "khống chế",
+          "identity": "shikamaru-nara",
+          "family": "nara"
+        },
+        {
+          "id": "NIN-022",
+          "name": "Orochimaru",
+          "role": "khống chế",
+          "identity": "orochimaru",
+          "family": null
+        },
+        {
+          "id": "NIN-039",
+          "name": "Tayuya",
+          "role": "khống chế",
+          "identity": "tayuya",
+          "family": null
+        },
+        {
+          "id": "NIN-108",
+          "name": "Inoichi Yamanaka",
+          "role": "hỗ trợ",
+          "identity": "inoichi-yamanaka",
+          "family": "yamanaka"
+        },
+        {
+          "id": "NIN-109",
+          "name": "Choza Akimichi",
+          "role": "đỡ đòn",
+          "identity": "choza-akimichi",
+          "family": "akimichi"
+        },
+        {
+          "id": "NIN-070",
+          "name": "Madara Uchiha",
+          "role": "công kích xa",
+          "identity": "madara-uchiha",
+          "family": "uchiha"
+        }
+      ]
+    },
+    {
+      "id": "frontline-1",
+      "members": [
+        {
+          "id": "NIN-008",
+          "name": "Choji Akimichi (thiếu niên)",
+          "role": "đỡ đòn",
+          "identity": "choji-akimichi",
+          "family": "akimichi"
+        },
+        {
+          "id": "NIN-055",
+          "name": "Gaara (Kazekage)",
+          "role": "đỡ đòn",
+          "identity": "gaara",
+          "family": "sand"
+        },
+        {
+          "id": "NIN-017",
+          "name": "Asuma Sarutobi",
+          "role": "đấu sĩ",
+          "identity": "asuma-sarutobi",
+          "family": null
+        },
+        {
+          "id": "NIN-049",
+          "name": "Hinata Hyuga (Shippuden)",
+          "role": "đấu sĩ",
+          "identity": "hinata-hyuga",
+          "family": "hyuga"
+        },
+        {
+          "id": "NIN-076",
+          "name": "Killer B",
+          "role": "đấu sĩ",
+          "identity": "killer-b",
+          "family": null
+        },
+        {
+          "id": "NIN-021",
+          "name": "Tsunade",
+          "role": "trị liệu",
+          "identity": "tsunade",
+          "family": null
+        }
+      ]
+    },
+    {
+      "id": "support-1",
+      "members": [
+        {
+          "id": "NIN-005",
+          "name": "Iruka Umino",
+          "role": "hỗ trợ",
+          "identity": "iruka-umino",
+          "family": null
+        },
+        {
+          "id": "NIN-079",
+          "name": "C",
+          "role": "hỗ trợ",
+          "identity": "c",
+          "family": null
+        },
+        {
+          "id": "NIN-128",
+          "name": "Sakura Haruno (trưởng thành)",
+          "role": "trị liệu",
+          "identity": "sakura-haruno",
+          "family": "haruno"
+        },
+        {
+          "id": "NIN-046",
+          "name": "Shikamaru Nara (Shippuden)",
+          "role": "khống chế",
+          "identity": "shikamaru-nara",
+          "family": "nara"
+        },
+        {
+          "id": "NIN-053",
+          "name": "Rock Lee (Shippuden)",
+          "role": "đấu sĩ",
+          "identity": "rock-lee",
+          "family": "lee"
+        },
+        {
+          "id": "NIN-070",
+          "name": "Madara Uchiha",
+          "role": "công kích xa",
+          "identity": "madara-uchiha",
+          "family": "uchiha"
+        }
+      ]
+    },
+    {
+      "id": "balanced-2",
+      "members": [
+        {
+          "id": "NIN-114",
+          "name": "Kawaki",
+          "role": "đỡ đòn",
+          "identity": "kawaki",
+          "family": null
+        },
+        {
+          "id": "NIN-077",
+          "name": "A (Raikage IV)",
+          "role": "đấu sĩ",
+          "identity": "a",
+          "family": null
+        },
+        {
+          "id": "NIN-134",
+          "name": "Code",
+          "role": "sát thủ",
+          "identity": "code",
+          "family": null
+        },
+        {
+          "id": "NIN-130",
+          "name": "Momoshiki Otsutsuki",
+          "role": "công kích xa",
+          "identity": "momoshiki-otsutsuki",
+          "family": null
+        },
+        {
+          "id": "NIN-143",
+          "name": "Yodo",
+          "role": "khống chế",
+          "identity": "yodo",
+          "family": null
+        },
+        {
+          "id": "NIN-003",
+          "name": "Sakura Haruno (thiếu niên)",
+          "role": "trị liệu",
+          "identity": "sakura-haruno",
+          "family": "haruno"
+        }
+      ]
+    },
+    {
+      "id": "sustain-2",
+      "members": [
+        {
+          "id": "NIN-114",
+          "name": "Kawaki",
+          "role": "đỡ đòn",
+          "identity": "kawaki",
+          "family": null
+        },
+        {
+          "id": "NIN-139",
+          "name": "Daemon",
+          "role": "đỡ đòn",
+          "identity": "daemon",
+          "family": null
+        },
+        {
+          "id": "NIN-110",
+          "name": "Shizune",
+          "role": "trị liệu",
+          "identity": "shizune",
+          "family": null
+        },
+        {
+          "id": "NIN-074",
+          "name": "Karin",
+          "role": "trị liệu",
+          "identity": "karin",
+          "family": null
+        },
+        {
+          "id": "NIN-108",
+          "name": "Inoichi Yamanaka",
+          "role": "hỗ trợ",
+          "identity": "inoichi-yamanaka",
+          "family": "yamanaka"
+        },
+        {
+          "id": "NIN-141",
+          "name": "Kagura Karatachi",
+          "role": "đấu sĩ",
+          "identity": "kagura-karatachi",
+          "family": null
+        }
+      ]
+    },
+    {
+      "id": "burst-2",
+      "members": [
+        {
+          "id": "NIN-089",
+          "name": "Mifune",
+          "role": "sát thủ",
+          "identity": "mifune",
+          "family": null
+        },
+        {
+          "id": "NIN-113",
+          "name": "Mitsuki",
+          "role": "sát thủ",
+          "identity": "mitsuki",
+          "family": null
+        },
+        {
+          "id": "NIN-096",
+          "name": "Tobirama Senju",
+          "role": "công kích xa",
+          "identity": "tobirama-senju",
+          "family": "senju"
+        },
+        {
+          "id": "NIN-133",
+          "name": "Delta",
+          "role": "công kích xa",
+          "identity": "delta",
+          "family": null
+        },
+        {
+          "id": "NIN-123",
+          "name": "Konohamaru (trưởng thành)",
+          "role": "đấu sĩ",
+          "identity": "konohamaru",
+          "family": null
+        },
+        {
+          "id": "NIN-122",
+          "name": "Sumire Kakei",
+          "role": "hỗ trợ",
+          "identity": "sumire-kakei",
+          "family": null
+        }
+      ]
+    },
+    {
+      "id": "control-2",
+      "members": [
+        {
+          "id": "NIN-067",
+          "name": "Pain (Thiên Đạo)",
+          "role": "khống chế",
+          "identity": "pain",
+          "family": null
+        },
+        {
+          "id": "NIN-090",
+          "name": "Hanzo",
+          "role": "khống chế",
+          "identity": "hanzo",
+          "family": null
+        },
+        {
+          "id": "NIN-116",
+          "name": "Shikadai Nara",
+          "role": "khống chế",
+          "identity": "shikadai-nara",
+          "family": "nara"
+        },
+        {
+          "id": "NIN-097",
+          "name": "Hagoromo Otsutsuki",
+          "role": "hỗ trợ",
+          "identity": "hagoromo-otsutsuki",
+          "family": null
+        },
+        {
+          "id": "NIN-061",
+          "name": "Kisame Hoshigaki",
+          "role": "đỡ đòn",
+          "identity": "kisame-hoshigaki",
+          "family": null
+        },
+        {
+          "id": "NIN-020",
+          "name": "Jiraiya",
+          "role": "công kích xa",
+          "identity": "jiraiya",
+          "family": null
+        }
+      ]
+    },
+    {
+      "id": "frontline-2",
+      "members": [
+        {
+          "id": "NIN-114",
+          "name": "Kawaki",
+          "role": "đỡ đòn",
+          "identity": "kawaki",
+          "family": null
+        },
+        {
+          "id": "NIN-139",
+          "name": "Daemon",
+          "role": "đỡ đòn",
+          "identity": "daemon",
+          "family": null
+        },
+        {
+          "id": "NIN-100",
+          "name": "Yugito Nii",
+          "role": "đấu sĩ",
+          "identity": "yugito-nii",
+          "family": null
+        },
+        {
+          "id": "NIN-115",
+          "name": "Himawari Uzumaki",
+          "role": "đấu sĩ",
+          "identity": "himawari-uzumaki",
+          "family": "uzumaki"
+        },
+        {
+          "id": "NIN-131",
+          "name": "Kinshiki Otsutsuki",
+          "role": "đấu sĩ",
+          "identity": "kinshiki-otsutsuki",
+          "family": null
+        },
+        {
+          "id": "NIN-003",
+          "name": "Sakura Haruno (thiếu niên)",
+          "role": "trị liệu",
+          "identity": "sakura-haruno",
+          "family": "haruno"
+        }
+      ]
+    },
+    {
+      "id": "support-2",
+      "members": [
+        {
+          "id": "NIN-124",
+          "name": "Moegi Kazamatsuri",
+          "role": "hỗ trợ",
+          "identity": "moegi-kazamatsuri",
+          "family": null
+        },
+        {
+          "id": "NIN-048",
+          "name": "Ino Yamanaka (Shippuden)",
+          "role": "hỗ trợ",
+          "identity": "ino-yamanaka",
+          "family": "yamanaka"
+        },
+        {
+          "id": "NIN-110",
+          "name": "Shizune",
+          "role": "trị liệu",
+          "identity": "shizune",
+          "family": null
+        },
+        {
+          "id": "NIN-132",
+          "name": "Isshiki Otsutsuki",
+          "role": "khống chế",
+          "identity": "isshiki-otsutsuki",
+          "family": null
+        },
+        {
+          "id": "NIN-123",
+          "name": "Konohamaru (trưởng thành)",
+          "role": "đấu sĩ",
+          "identity": "konohamaru",
+          "family": null
+        },
+        {
+          "id": "NIN-020",
+          "name": "Jiraiya",
+          "role": "công kích xa",
+          "identity": "jiraiya",
+          "family": null
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "team": "balanced-1",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 4,
+      "max_raw_relative": 0.25533,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.12767,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.17207,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-054",
+          "key": "natk",
+          "raw": 0.21093,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-063",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.25993,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.12997,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.17517,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.18082,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-054",
+          "key": "natk",
+          "raw": 0.21473,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.26453,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13227,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.17827,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.18402,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-054",
+          "key": "natk",
+          "raw": 0.21853,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.26913,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13457,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.18137,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.18722,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-054",
+          "key": "natk",
+          "raw": 0.22233,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.28704,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.14383,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.19557,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.20696,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-054",
+          "key": "natk",
+          "raw": 0.24146,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.2917,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.14616,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.19874,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.21032,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-054",
+          "key": "natk",
+          "raw": 0.24538,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.29636,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.1485,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.20192,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.21368,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "damage_reduction",
+          "raw": 0.10016,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.30102,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15083,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.20509,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.21704,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "damage_reduction",
+          "raw": 0.10174,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.31035,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15551,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.21145,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.22377,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "damage_reduction",
+          "raw": 0.10489,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.31501,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15784,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.21463,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.22713,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "damage_reduction",
+          "raw": 0.10647,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.31967,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16018,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "accuracy",
+          "raw": 0.18247,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.2178,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.23049,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-1",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.32433,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16251,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "accuracy",
+          "raw": 0.18513,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-013",
+          "key": "damage_reduction",
+          "raw": 0.22098,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-030",
+          "key": "patk",
+          "raw": 0.23385,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.24423,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13322,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.22203,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-023",
+          "key": "chakra_regen",
+          "raw": 0.22203,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.24863,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13562,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.22603,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-023",
+          "key": "chakra_regen",
+          "raw": 0.22603,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.25303,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13802,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.23003,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-023",
+          "key": "chakra_regen",
+          "raw": 0.23003,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.25743,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.14042,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.23403,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-023",
+          "key": "chakra_regen",
+          "raw": 0.23403,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.27842,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.1503,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.25255,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "damage_reduction",
+          "raw": 0.10348,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.28294,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15274,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.25665,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "damage_reduction",
+          "raw": 0.10516,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.28746,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15518,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.18189,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.18189,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.29198,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.18475,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.18475,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.30103,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.1625,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19047,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19047,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.30555,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16494,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19333,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19333,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.31007,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16738,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19619,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.225,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19619,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-1",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.31459,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16982,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19905,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.22828,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19905,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.24423,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.23313,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.21093,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.21093,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.21093,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.24863,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.23733,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.21473,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.21473,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.21473,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.25303,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.24153,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.21853,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.21853,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.21853,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.25743,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.24573,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.22233,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.22233,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.22233,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.27842,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.26671,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.24146,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.24146,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.24146,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.28294,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.27104,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.24538,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.24538,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.24538,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.28746,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.27537,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.2493,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.2493,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.2493,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.29198,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.2797,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.25322,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.25322,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.25322,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.30103,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.28837,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.26107,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.26107,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.26107,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.30555,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.2927,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.26499,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.26499,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.26499,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.31007,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.29703,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.26891,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.26891,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.26891,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-1",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.31459,
+      "examples": [
+        {
+          "recipient": "NIN-002",
+          "key": "accuracy",
+          "raw": 0.30136,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-034",
+          "key": "natk",
+          "raw": 0.27283,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-056",
+          "key": "natk",
+          "raw": 0.27283,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-053",
+          "key": "patk",
+          "raw": 0.27283,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.25533,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.13322,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_duration",
+          "raw": 0.12212,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.25993,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.25993,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.13562,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_resist",
+          "raw": 0.25993,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_duration",
+          "raw": 0.12432,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.26453,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.26453,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.13802,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_resist",
+          "raw": 0.26453,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_duration",
+          "raw": 0.12652,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.26913,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.26913,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.14042,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_resist",
+          "raw": 0.26913,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "control_duration",
+          "raw": 0.12872,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.28704,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.10348,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.28704,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.15522,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.10348,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.2917,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.10516,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.2917,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.15774,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.10516,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.29636,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.10684,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.29636,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.16026,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.10684,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.30102,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.10852,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.30102,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.16278,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.10852,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.31035,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.11189,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.31035,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.16783,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.11189,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.31501,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.11357,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.31501,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.17035,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.11357,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.31967,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.11525,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.31967,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.17287,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.11525,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-1",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.32433,
+      "examples": [
+        {
+          "recipient": "NIN-007",
+          "key": "damage_reduction",
+          "raw": 0.11693,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_resist",
+          "raw": 0.32433,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-007",
+          "key": "control_duration",
+          "raw": 0.17539,
+          "effective": 0.12
+        },
+        {
+          "recipient": "NIN-022",
+          "key": "damage_reduction",
+          "raw": 0.11693,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.17762,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13322,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-049",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 8,
+      "max_raw_relative": 0.18082,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13562,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.18082,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 8,
+      "max_raw_relative": 0.18402,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.13802,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.18402,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 8,
+      "max_raw_relative": 0.18722,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.14042,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.18722,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.20696,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.1503,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.20696,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.21032,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15274,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.21032,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.21368,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15518,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.18189,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.21368,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.21704,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.15762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.18475,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.21704,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.22377,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.1625,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19047,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.22377,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.22713,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16494,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19333,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.22713,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.23049,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16738,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19619,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.225,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.23049,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "frontline-1",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.23385,
+      "examples": [
+        {
+          "recipient": "NIN-008",
+          "key": "damage_reduction",
+          "raw": 0.16982,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "armor",
+          "raw": 0.19905,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-055",
+          "key": "damage_reduction",
+          "raw": 0.22828,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-017",
+          "key": "patk",
+          "raw": 0.23385,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.28864,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.22203,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.28864,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.22203,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-046",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.29384,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.22603,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.29384,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.22603,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-046",
+          "key": "control_resist",
+          "raw": 0.25993,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.29904,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.23003,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.29904,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.23003,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-046",
+          "key": "control_resist",
+          "raw": 0.26453,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.30424,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.23403,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.30424,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.23403,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-046",
+          "key": "control_resist",
+          "raw": 0.26913,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.33016,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.25255,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.33016,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.25255,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-046",
+          "key": "control_resist",
+          "raw": 0.28704,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.33552,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.25665,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.33552,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.25665,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-046",
+          "key": "control_resist",
+          "raw": 0.2917,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.34088,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.26075,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.34088,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.18189,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.26075,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.34624,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.26485,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.34624,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.18475,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.26485,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.35697,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.27305,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.35697,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19047,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.27305,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.36233,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.27715,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.36233,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19333,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.27715,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.36769,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.28125,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.36769,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19619,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.28125,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "support-1",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.37305,
+      "examples": [
+        {
+          "recipient": "NIN-005",
+          "key": "chakra_regen",
+          "raw": 0.28535,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-079",
+          "key": "chakra_regen",
+          "raw": 0.37305,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "healing",
+          "raw": 0.19905,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-128",
+          "key": "chakra_regen",
+          "raw": 0.28535,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.25533,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.13322,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-130",
+          "key": "natk",
+          "raw": 0.21093,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-143",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.25993,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.13562,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.18082,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-130",
+          "key": "natk",
+          "raw": 0.21473,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.26453,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.13802,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.18402,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-130",
+          "key": "natk",
+          "raw": 0.21853,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.26913,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.14042,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.18722,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-130",
+          "key": "natk",
+          "raw": 0.22233,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.28704,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.1503,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.20696,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "damage_reduction",
+          "raw": 0.10348,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.2917,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.15274,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.21032,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "damage_reduction",
+          "raw": 0.10516,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.29636,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.15518,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.21368,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "damage_reduction",
+          "raw": 0.10684,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.30102,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.15762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.21704,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "damage_reduction",
+          "raw": 0.10852,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.31035,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.1625,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.22377,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "damage_reduction",
+          "raw": 0.11189,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.31501,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.16494,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.22713,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "damage_reduction",
+          "raw": 0.11357,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.31967,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "armor",
+          "raw": 0.18247,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.16738,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.225,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.23049,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "balanced-2",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 11,
+      "max_raw_relative": 0.32433,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "armor",
+          "raw": 0.18513,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.16982,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-077",
+          "key": "damage_reduction",
+          "raw": 0.22828,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-134",
+          "key": "patk",
+          "raw": 0.23385,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.24423,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.22203,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-074",
+          "key": "chakra_regen",
+          "raw": 0.22203,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.24863,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.22603,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-074",
+          "key": "chakra_regen",
+          "raw": 0.22603,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.25303,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.23003,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-074",
+          "key": "chakra_regen",
+          "raw": 0.23003,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.25743,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.23403,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-074",
+          "key": "chakra_regen",
+          "raw": 0.23403,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.27842,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.25255,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "damage_reduction",
+          "raw": 0.10348,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.28294,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.25665,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "damage_reduction",
+          "raw": 0.10516,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.28746,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.26075,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "damage_reduction",
+          "raw": 0.10684,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.29198,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.26485,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "damage_reduction",
+          "raw": 0.10852,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.30103,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.27305,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "damage_reduction",
+          "raw": 0.11189,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.30555,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.27715,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "damage_reduction",
+          "raw": 0.11357,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 13,
+      "max_raw_relative": 0.31007,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "armor",
+          "raw": 0.18247,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.225,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "armor",
+          "raw": 0.18247,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.225,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "sustain-2",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 13,
+      "max_raw_relative": 0.31459,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "armor",
+          "raw": 0.18513,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.22828,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "armor",
+          "raw": 0.18513,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.22828,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 2,
+      "max_raw_relative": 0.24423,
+      "examples": [
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.21093,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-122",
+          "key": "chakra_regen",
+          "raw": 0.24423,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 4,
+      "max_raw_relative": 0.24863,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.18082,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.18082,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.21473,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-122",
+          "key": "chakra_regen",
+          "raw": 0.24863,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 4,
+      "max_raw_relative": 0.25303,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.18402,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.18402,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.21853,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-122",
+          "key": "chakra_regen",
+          "raw": 0.25303,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 4,
+      "max_raw_relative": 0.25743,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.18722,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.18722,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.22233,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-122",
+          "key": "chakra_regen",
+          "raw": 0.25743,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 4,
+      "max_raw_relative": 0.27842,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.20696,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.20696,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.24146,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-122",
+          "key": "chakra_regen",
+          "raw": 0.27842,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.28294,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.21032,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.21032,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.24538,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-123",
+          "key": "damage_reduction",
+          "raw": 0.10015,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.28746,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.21368,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.21368,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.2493,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-123",
+          "key": "damage_reduction",
+          "raw": 0.10175,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.29198,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.21704,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.21704,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.25322,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-123",
+          "key": "damage_reduction",
+          "raw": 0.10335,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.30103,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.22377,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.22377,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.26107,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-123",
+          "key": "damage_reduction",
+          "raw": 0.10656,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.30555,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.22713,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.22713,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.26499,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-123",
+          "key": "damage_reduction",
+          "raw": 0.10816,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.31007,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.23049,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.23049,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.26891,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-123",
+          "key": "damage_reduction",
+          "raw": 0.10976,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "burst-2",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.31459,
+      "examples": [
+        {
+          "recipient": "NIN-089",
+          "key": "patk",
+          "raw": 0.23385,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-113",
+          "key": "patk",
+          "raw": 0.23385,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-133",
+          "key": "natk",
+          "raw": 0.27283,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-123",
+          "key": "damage_reduction",
+          "raw": 0.11136,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.25533,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.12212,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.25993,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.25993,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.25993,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.25993,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.12432,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.26453,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.26453,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.26453,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.26453,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.12652,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.26913,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.26913,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.26913,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.26913,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.12872,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.28704,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.28704,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.28704,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.28704,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.14229,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.2917,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.2917,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.2917,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.2917,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.1446,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.29636,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.29636,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.29636,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.29636,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.14691,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.30102,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.30102,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.30102,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.30102,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.14922,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.31035,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.31035,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.31035,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.31035,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.15384,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.31501,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.31501,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.31501,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.31501,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.15615,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 8,
+      "max_raw_relative": 0.31967,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.31967,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.31967,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.31967,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.15846,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "control-2",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 8,
+      "max_raw_relative": 0.32433,
+      "examples": [
+        {
+          "recipient": "NIN-067",
+          "key": "control_resist",
+          "raw": 0.32433,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-090",
+          "key": "control_resist",
+          "raw": 0.32433,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_resist",
+          "raw": 0.32433,
+          "effective": 0.15
+        },
+        {
+          "recipient": "NIN-116",
+          "key": "control_duration",
+          "raw": 0.16077,
+          "effective": 0.12
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.18317,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-115",
+          "key": "damage_reduction",
+          "raw": 0.17762,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.18647,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.18082,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.18082,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.18977,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.18402,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.18402,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 9,
+      "max_raw_relative": 0.19307,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.18722,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.18722,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.20727,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.20696,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.20204,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.21064,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.21032,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.20532,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.214,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.21368,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.2086,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.21737,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.21704,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.21188,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.2241,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.22377,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.21844,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 10,
+      "max_raw_relative": 0.22747,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "patk",
+          "raw": 0.22713,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-100",
+          "key": "damage_reduction",
+          "raw": 0.22172,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.23083,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "armor",
+          "raw": 0.18247,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.225,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "armor",
+          "raw": 0.18247,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.225,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "frontline-2",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 12,
+      "max_raw_relative": 0.2342,
+      "examples": [
+        {
+          "recipient": "NIN-114",
+          "key": "armor",
+          "raw": 0.18513,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-114",
+          "key": "damage_reduction",
+          "raw": 0.22828,
+          "effective": 0.1
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "armor",
+          "raw": 0.18513,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-139",
+          "key": "damage_reduction",
+          "raw": 0.22828,
+          "effective": 0.1
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 1,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.28864,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.24423,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.28864,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.22203,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.25533,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 1,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.29384,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.24863,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.29384,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.22603,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.25993,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 1,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.29904,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.25303,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.29904,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.23003,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.26453,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 1,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.30424,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.25743,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.30424,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.23403,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.26913,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 3,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 5,
+      "max_raw_relative": 0.33016,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.27842,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.33016,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.25255,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.28704,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 3,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.33552,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.28294,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.33552,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.25665,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.2917,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 3,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.34088,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.28746,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.34088,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.26075,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.29636,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 3,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.34624,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.29198,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.34624,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.26485,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.30102,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 10,
+      "L": 20,
+      "star": 1,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.35697,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.30103,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.35697,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.27305,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.31035,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 10,
+      "L": 20,
+      "star": 5,
+      "saturated_recipient_stat_keys": 6,
+      "max_raw_relative": 0.36233,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.30555,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.36233,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.27715,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-132",
+          "key": "control_resist",
+          "raw": 0.31501,
+          "effective": 0.15
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 10,
+      "L": 20,
+      "star": 10,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.36769,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.31007,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.36769,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "healing",
+          "raw": 0.18247,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.28125,
+          "effective": 0.18
+        }
+      ]
+    },
+    {
+      "team": "support-2",
+      "G": 10,
+      "L": 20,
+      "star": 15,
+      "saturated_recipient_stat_keys": 7,
+      "max_raw_relative": 0.37305,
+      "examples": [
+        {
+          "recipient": "NIN-124",
+          "key": "chakra_regen",
+          "raw": 0.31459,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-048",
+          "key": "chakra_regen",
+          "raw": 0.37305,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "healing",
+          "raw": 0.18513,
+          "effective": 0.18
+        },
+        {
+          "recipient": "NIN-110",
+          "key": "chakra_regen",
+          "raw": 0.28535,
+          "effective": 0.18
+        }
+      ]
+    }
+  ]
+}

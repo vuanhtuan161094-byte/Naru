@@ -73,7 +73,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"DEV V6",16)
+	label(header,"DEV V9",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -387,7 +387,7 @@ func battle_view() -> void:
 			art.portrait_draws+=1
 		label(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],16)
 		for skill_id in a.skills:
-			if reg.skills[skill_id].kind!="ultimate":continue
+			if not reg.depth_ultimates.has(skill_id) and reg.skills[skill_id].kind!="ultimate":continue
 			var b=button(group,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(i,skill_id))
 			ult_actions.append({"button":b,"index":i,"skill":skill_id})
 		if a.contract!="":button(group,"Thông linh",func():sim.summon_contract(a))
@@ -500,8 +500,10 @@ func _process(delta: float) -> void:
 	for action in ult_actions:
 		var a=sim.actors[action.index]
 		var s=sim.effective_skill(a,action.skill)
-		action.button.disabled=paused or a.hp<=0 or not sim.ready(a,s)
-		action.button.text=str(reg.names[action.skill].name_vi)+" "+str(int(a.chakra))+"/"+str(ceili(s.chakra))+" CP"
+		action.button.disabled=paused or a.hp<=0 or (not sim.use_depth and not sim.ready(a,s))
+		var requested=sim.ultimate_requests.get(a.uid,"")==action.skill
+		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+" "+str(int(a.chakra))+"/"+str(ceili(s.chakra))+" CP"
+		action.button.tooltip_text=sim.ultimate_reason(a,action.skill)
 	log_label.text="  |  ".join(sim.log)
 	field.queue_redraw()
 
@@ -1217,6 +1219,16 @@ func settings_screen(message: String="") -> void:
 	passive_toggle.button_pressed=bool(store.state.get("settings",{}).get("passives_dev",false))
 	root.add_child(passive_toggle)
 	passive_toggle.toggled.connect(func(on):change_setting("passives_dev",on))
+	var pilot_toggle=CheckButton.new()
+	pilot_toggle.text="Thử nghiệm P2 pilot (72 nội tại, cần bật P1)"
+	pilot_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_pilot_dev",false))
+	root.add_child(pilot_toggle)
+	pilot_toggle.toggled.connect(func(on):change_setting("passive_pilot_dev",on))
+	var depth_toggle=CheckButton.new()
+	depth_toggle.text="Tăng trưởng V5 và hàng đợi tuyệt kỹ DEV"
+	depth_toggle.button_pressed=bool(store.state.get("settings",{}).get("depth_v5_dev",true))
+	root.add_child(depth_toggle)
+	depth_toggle.toggled.connect(func(on):change_setting("depth_v5_dev",on))
 	button(root,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
 	button(root,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen(store.load_notice if store.load_notice!="" else "Đã tải"))
 	button(root,"Xuất / nhập save",save_screen)
@@ -1369,7 +1381,8 @@ func passive_screen(id: String,message: String="") -> void:
 	label(root,"DEV • Sao %d • Cảnh %d • %s" % [int(p.stars),int(p.realm),"Bật thử trong Cài đặt" if not store.state.get("settings",{}).get("passives_dev",false) else "Đang bật"],17)
 	label(root,message,15)
 	var rows=scroll_rows(root)
-	for data in reg.passives_by_ninja.get(id,[]):
+	var pilot_on=store.state.get("settings",{}).get("passive_pilot_dev",false) and store.state.get("settings",{}).get("passives_dev",false)
+	for data in (reg.passive_pilot_rows.get(id,[]) if pilot_on else reg.passives_by_ninja.get(id,[])):
 		var key=str(data.id)
 		var sk=svc.progress(p,key)
 		var box=VBoxContainer.new()
@@ -1383,7 +1396,7 @@ func passive_screen(id: String,message: String="") -> void:
 			var predicted_ids=PackedStringArray(link.event_candidates)
 			if not explicit_ids.is_empty():heading.tooltip_text+=" | Liên kết thiết kế: "+", ".join(explicit_ids)
 			if not predicted_ids.is_empty():heading.tooltip_text+=" | Ứng viên sự kiện: "+", ".join(predicted_ids)
-		if reg.passive_pilot.has(key):heading.tooltip_text+=" | P2 pilot đề xuất (chưa áp dụng)"
+		if reg.passive_pilot.has(key):heading.tooltip_text+=" | P2 pilot DEV "+("đang thử" if pilot_on else "chưa bật")
 		if reg.synergy_gaps.has(key):heading.tooltip_text+=" | REVIEW: "+str(reg.synergy_gaps[key])
 		label(box,"%s • %s • %s • Cảnh %d • Thành thạo %d • %s" % [str(data.trigger.event),str(data.target.scope),str(data.effect.key),int(data.unlock.realm),int(sk.mastery),str(reg.passive_ledger[key])],14)
 		if not store.passive_allowed(reg,id,key):

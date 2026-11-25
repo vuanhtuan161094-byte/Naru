@@ -1,4 +1,5 @@
 extends RefCounted
+const Depth=preload("res://game/skill_depth_service.gd")
 const Passive=preload("res://game/passive_service.gd")
 const Stats=preload("res://game/stats_service.gd")
 const Formation=preload("res://game/formation_service.gd")
@@ -35,6 +36,13 @@ var terrain: Array[Dictionary]=[]
 var qa_hold_ai=false
 var use_p2=true
 var use_passives=false
+var use_passive_pilot=false
+var use_depth=false
+var ultimate_requests: Dictionary={}
+var ultimate_executed: Dictionary={}
+var ultimate_cancelled: Dictionary={}
+var passive_typed_receipts: Dictionary={}
+var mastery_casts: Dictionary={}
 var passive_queue: Array[Dictionary]=[]
 var passive_seen: Dictionary={}
 var passive_receipts: Dictionary={}
@@ -54,6 +62,8 @@ var missed_casts=0
 func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
 	use_passives=bool(save.get("settings",{}).get("passives_dev",false))
+	use_passive_pilot=use_passives and bool(save.get("settings",{}).get("passive_pilot_dev",false))
+	use_depth=bool(save.get("settings",{}).get("depth_v5_dev",true))
 	configure_map(stage)
 	configure_team_formation(save)
 	side_formations[1]="FRM-01"
@@ -88,7 +98,7 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 	var intellect=float(n.base_stats.intellect)+float(n.level_growth.intellect)*(level-1)*quality_growth+float(permanent.get("intellect",0))+float(allocated.get("intellect",0))
 	var spirit=float(n.base_stats.spirit)+float(n.level_growth.spirit)*(level-1)*quality_growth+float(permanent.get("spirit",0))+float(allocated.get("spirit",0))
 	var star_multiplier=1.0+0.04*(int(progress.get("stars",1))-1)
-	mult*=star_multiplier
+	if not use_depth:mult*=star_multiplier
 	var gear_stats={}
 	var set_counts={}
 	for gear_id in progress.get("gear",{}).values():
@@ -107,7 +117,13 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 	stat_progress.level=level
 	stat_progress.quality=quality
 	stat_progress.permanent=permanent
-	var all_stats=Stats.derive(registry,n,stat_progress,gear_stats)
+	var stat_ninja=n
+	if use_depth:
+		stat_ninja=n.duplicate(true)
+		for key in stat_ninja.base_stats:
+			stat_ninja.base_stats[key]=float(stat_ninja.base_stats[key])*star_multiplier
+			stat_ninja.level_growth[key]=float(stat_ninja.level_growth[key])*star_multiplier
+	var all_stats=Stats.derive(registry,stat_ninja,stat_progress,gear_stats)
 	for rule in registry.gear_rules.sets:
 		var best={}
 		for threshold in rule.thresholds:
@@ -143,13 +159,14 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 		if allied:
 			score=(1.0-clampf((float(b.hp)+float(b.shield))/maxf(1.0,float(b.max_hp)),0,1))*100.0-distance*2.0
 			if use_passives and Passive.aura_source(self,b):score+=6.0 # DEV preserve support source
+			if use_depth and b.hp<b.max_hp*0.3:score+=25.0
 			if skill.ai.condition=="ally_dispellable_status":
 				if not has_debuff(b):continue
 				score+=60
 		else:
 			score=-distance*5.0+(1-float(b.hp)/maxf(1.0,float(b.max_hp)))*12.0
 			if has_status(b,"mark") or p2_has_mark(a,b):score+=10
-			if skill.has("p2") and skill.p2.conditions.ai=="owned_valid_mark_or_explicit_swap" and skill.p2.effect.type!="position_swap" and not p2_has_mark(a,b):continue
+			if skill.has("p2") and skill.p2.conditions.ai=="owned_valid_mark_or_explicit_swap" and skill.p2.effect.type!="position_swap" and not skill.p2.effect.params.get("mark_throw_before_teleport",false) and not p2_has_mark(a,b):continue
 			if b.summon:score-=5
 			if use_passives and Passive.aura_source(self,b):score+=6.0 # DEV counter enemy support source
 			if use_passives and skill.element!="neutral":score+=clampf((float(registry.affinity.get(str(skill.element)+":"+str(b.element),1.0))-1.0)*10.0,-4.0,4.0)
@@ -216,9 +233,9 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 	s.cast_s=float(s.cast_s)/(1.0+rating(a,"cast_speed"))
 	s.radius_m=float(s.radius_m)*(1.0+rating(a,"area"))
 	s.line_width_m=float(s.line_width_m)*(1.0+rating(a,"area"))
-	var factor=(1+0.02*(int(p.level)-1))*(1+0.12*(int(p.grade)-1))
-	if str(p.branch).ends_with("-B1"):factor*=1.12
-	if str(p.branch).ends_with("-B2"):
+	var factor=1.0 if use_depth else (1+0.02*(int(p.level)-1))*(1+0.12*(int(p.grade)-1))
+	if not use_depth and str(p.branch).ends_with("-B1"):factor*=1.12
+	if not use_depth and str(p.branch).ends_with("-B2"):
 		s.radius_m=float(s.radius_m)*1.15
 		s.line_width_m=float(s.line_width_m)*1.15
 		if s.shape in ["line","circle"] and not s.has("p2"):s.max_targets=ceili(float(s.max_targets)*1.15)
@@ -246,7 +263,12 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 		if params.has("field_modifier") and (environment=="storm" or elemental_fields.any(func(zone):return zone.element=="fire")):
 			for e in s.effects:
 				if e.has("coefficient"):e.coefficient=float(e.coefficient)*float(params.field_modifier.coefficient_multiplier)
+	if use_depth:
+		Depth.apply(registry,s,p,int(a.get("stars",1)))
+		if id=="NIN-112-S4":s.cooldown_s=minf(float(s.cooldown_s),11.0*(1.0-rating(a,"cdr")))
 	Passive.modify_skill(self,a,s)
+	if use_depth and float(s.chakra)>0:s.chakra=maxf(1.0,ceilf(float(s.chakra)*100.0)/100.0)
+	if use_depth and registry.depth_ultimates.has(id):s.kind="ultimate"
 	return s
 
 func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
@@ -346,6 +368,7 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 	art_event("status_applied",b.pos,0,id)
 
 func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> void:
+	if a.side!=b.side and int(b.get("teleport_safe_until",0))>ticks:return
 	if b.has("p2_arc") and int(b.p2_arc.expires)>ticks and b.p2_arc.hp>0 and a.uid!=b.uid:
 		var facing=Vector2(b.p2_arc.facing)
 		var incoming=(Vector2(a.pos)-Vector2(b.pos)).normalized()
@@ -394,7 +417,9 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 		if not b.counter.is_empty():
 			var counter=b.counter
 			b.counter={}
+			var before_counter_hp=float(a.hp)
 			hit(b,a,float(b.patk)*float(counter.coefficient)*100.0/(100.0+float(a.armor)),false)
+			if before_counter_hp>float(a.hp) and counter.has("parent_skill"):Passive.queue(self,b,a,counter.parent_skill,"counter_triggered")
 		elif a.pos.distance_to(b.pos)<=1.8 and rng.randf()<rating(b,"counter")*0.25:
 			hit(b,a,float(b.patk)*0.25*100.0/(100.0+float(a.armor)),false)
 
@@ -565,7 +590,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 				"temporary_stance":
 					a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
 					Passive.queue(self,a,target,s,"stance_effect_confirmed")
-				"counter":a.counter={"remaining":float(e.window_s),"coefficient":e.coefficient}
+				"counter":a.counter={"remaining":float(e.window_s),"coefficient":e.coefficient,"parent_skill":s}
 				"activate_form":
 					if activate_form(a,str(e.form_id),false,str(s.skill_id)):Passive.queue(self,a,target,s,"form_activated")
 	if s.get("p2_subhit",false):return
@@ -581,6 +606,7 @@ func ultimate(index: int) -> bool:
 	if index<0 or index>=actors.size():return false
 	var a=actors[index]
 	if a.side!=0 or a.hp<=0 or a.summon or a.skills.size()<6:return false
+	if use_depth and ultimate_requests.get(a.uid,"")==a.skills[5]:return true
 	return ultimate_skill(index,a.skills[5])
 
 func ultimate_skill(index: int,id: String) -> bool:
@@ -589,7 +615,25 @@ func ultimate_skill(index: int,id: String) -> bool:
 	if a.side!=0 or a.hp<=0 or a.summon or not id in a.skills:return false
 	var s=effective_skill(a,id)
 	if s.kind!="ultimate":return false
-	return cast(a,s,target_for(a,s))
+	if not use_depth:return cast(a,s,target_for(a,s))
+	if ultimate_requests.get(a.uid,"")==id:
+		ultimate_requests.erase(a.uid)
+		ultimate_cancelled[id]=int(ultimate_cancelled.get(id,0))+1
+		return true
+	var prior=str(ultimate_requests.get(a.uid,""))
+	if not prior.is_empty():ultimate_cancelled[prior]=int(ultimate_cancelled.get(prior,0))+1
+	ultimate_requests[a.uid]=id
+	return true
+
+func ultimate_reason(a: Dictionary,id: String) -> String:
+	var s=effective_skill(a,id)
+	if a.hp<=0:return "KO"
+	if float(a.cooldowns.get(id,0))>0:return "Hồi chiêu"
+	if a.chakra<float(s.chakra):return "Chờ CP"
+	if not ready(a,s):return "Chờ hành động/hình thái"
+	var target=target_for(a,s)
+	if not cast_geometry(a,s,target) or not ai_condition(a,s,target):return "Chờ mục tiêu"
+	return "Sẵn sàng"
 
 func update_status(a: Dictionary,dt: float) -> void:
 	a.immune=maxf(0.0,float(a.immune)-dt)
@@ -654,6 +698,7 @@ func tick(dt: float) -> void:
 			if a.ttl<=0 or owner.is_empty() or owner.hp<=0:a.hp=0
 		if a.hp<=0:
 			a.pending={}
+			ultimate_requests.erase(a.uid)
 			continue
 		update_status(a,dt)
 		if a.hp<=0:continue
@@ -679,6 +724,13 @@ func tick(dt: float) -> void:
 					resolve_pending(a,pending)
 				else:continue
 		if a.busy>0 or hard_block(a) or qa_hold_ai:continue
+		if use_depth and ultimate_requests.has(a.uid):
+			var intent=str(ultimate_requests[a.uid])
+			var requested=effective_skill(a,intent)
+			if cast(a,requested,target_for(a,requested)):
+				ultimate_requests.erase(a.uid)
+				ultimate_executed[intent]=int(ultimate_executed.get(intent,0))+1
+				continue
 		if a.has("ai_goal") and ticks%int(registry.tactics.ai_interval_ticks)!=int(a.uid)%int(registry.tactics.ai_interval_ticks):
 			if not has_status(a,"bind"):move_actor(a,a.ai_goal,movement_speed(a)*dt)
 			continue
@@ -697,6 +749,9 @@ func tick(dt: float) -> void:
 		for id in a.skills:
 			var s=effective_skill(a,id)
 			if (s.kind=="ultimate" and a.side==0 and not auto_player_ultimate) or not ready(a,s):continue
+			if use_depth and ultimate_requests.has(a.uid) and s.chakra>0 and s.kind!="ultimate":
+				var reservation=effective_skill(a,str(ultimate_requests[a.uid]))
+				if a.chakra-s.chakra<minf(float(a.max_chakra),float(reservation.chakra)):continue
 			var b=target_for(a,s)
 			var score=utility(a,s,b)
 			if score>best_score:
@@ -904,6 +959,11 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 			var candidate=clamp_body(origin+direction.rotated(angle)*amount,body_radius(a))
 			if not position_clear(a,candidate) or not clear_segment(origin,candidate,body_radius(a)):continue
 			var score=(origin.distance_to(aim)-candidate.distance_to(aim))*10.0-absf(angle)*0.15
+			if use_depth:
+				for ally in primary_alive(int(a.side)):
+					if ally.uid==a.uid:continue
+					var spacing=body_radius(a)+body_radius(ally)+0.35
+					score-=maxf(0.0,spacing-candidate.distance_to(ally.pos))*2.0
 			if score>best:
 				best=score
 				chosen=candidate
@@ -1105,6 +1165,15 @@ func advance_projectiles(dt: float) -> void:
 		var from=Vector2(p.pos)
 		var to=from+Vector2(p.direction)*step
 		var blocked=not clear_segment(from,to,0.03) or not to.is_equal_approx(clamp_body(to,0.03))
+		if blocked and use_passives:
+			for wall in terrain:
+				if not wall.has("owner") or not wall.has("parent_skill"):continue
+				var owner=actor_by_uid(int(wall.owner))
+				if owner.is_empty() or owner.side==source.side:continue
+				var rect: Rect2=wall.rect.grow(0.03)
+				if rect.has_point(to) or rect.has_point(from) or Geometry2D.segment_intersects_segment(from,to,rect.position,Vector2(rect.end.x,rect.position.y))!=null or Geometry2D.segment_intersects_segment(from,to,rect.position,Vector2(rect.position.x,rect.end.y))!=null or Geometry2D.segment_intersects_segment(from,to,rect.end,Vector2(rect.end.x,rect.position.y))!=null or Geometry2D.segment_intersects_segment(from,to,rect.end,Vector2(rect.position.x,rect.end.y))!=null:
+					Passive.queue(self,owner,source,wall.parent_skill,"wall_blocked")
+					break
 		if not blocked and p2_intercept_segment(source,from,to):blocked=true
 		if not blocked:
 			var contacts=[]
@@ -1121,7 +1190,9 @@ func advance_projectiles(dt: float) -> void:
 				if p.hit_ids.size()>=int(p.get("contact_cap",skill.max_targets)):break
 				if skill.has("p2") and target.has("p2_absorb") and int(target.p2_absorb.expires)>ticks and int(target.p2_absorb.left)>0 and Vector2(target.p2_absorb.facing).dot(-Vector2(p.direction))>=cos(deg_to_rad(float(target.p2_absorb.angle)*0.5)):
 					target.p2_absorb.left=int(target.p2_absorb.left)-1
+					var old_absorb_cp=float(target.chakra)
 					target.chakra=minf(float(target.max_chakra),float(target.chakra)+float(target.p2_absorb.chakra))
+					if target.chakra>old_absorb_cp and target.p2_absorb.has("parent_skill"):Passive.queue(self,target,source,target.p2_absorb.parent_skill,"resource_effect_confirmed")
 					p.distance_left=0.0
 					break
 				p.hit_ids.append(target.uid)
@@ -1141,6 +1212,15 @@ func advance_projectiles(dt: float) -> void:
 				resolved_casts+=1
 				art_event("contact",p.pos,0,str(skill.skill_id))
 				if skill.has("p2"):
+					if skill.get("mark_teleport_throw",false):
+						if source.hp<=0:continue
+						var marked=hits[0]
+						p2_set_mark(source,marked,skill.p2.effect.params)
+						Passive.queue(self,source,marked,skill,"mark_effect_confirmed")
+						if not land_near(source,marked):continue
+						source.teleport_safe_until=ticks+roundi(float(skill.p2.effect.params.invulnerability_s)*20)
+						Passive.queue(self,source,marked,skill,"teleport_arrived")
+						art_event("teleport",source.pos,0,str(skill.skill_id))
 					var actual=hits if skill.shape!="projectile_burst" else p2_targets(source,skill,hits[0].pos,Vector2(p.direction),hits[0])
 					p2_schedule(source,skill,hits[0].pos,Vector2(p.direction),actual,int(p.cast_id))
 				else:release(source,skill,hits[0],hits)
@@ -1152,6 +1232,7 @@ func p2_ready(a: Dictionary,s: Dictionary) -> bool:
 	var cond=s.p2.conditions
 	var params=s.p2.effect.params
 	if params.get("requires_clone",false) and owned_clone(a).is_empty():return false
+	if params.get("requires_owned_clone_or_anchor",false) and cable_anchor(a).is_empty():return false
 	if params.get("once_per_battle",false) or params.get("finite_per_battle",false):
 		if int(a.get("p2_used",{}).get(s.skill_id,0))>=int(params.get("charges",1)):return false
 	if int(a.realm)<int(cond.get("unlock_realm",0)):return false
@@ -1180,7 +1261,7 @@ func p2_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 			for target in alive(int(a.side)):
 				if target.chakra<target.max_chakra*0.7 and target.pos.distance_to(a.pos)<=float(s.radius_m):return true
 			return false
-		"owned_valid_mark_or_explicit_swap":return s.p2.effect.type=="position_swap" or p2_has_mark(a,b)
+		"owned_valid_mark_or_explicit_swap":return s.p2.effect.type=="position_swap" or p.get("mark_throw_before_teleport",false) or p2_has_mark(a,b)
 		"no_valid_owned_mark":return not p2_has_mark(a,b)
 		"incoming_absorbable_projectile":return projectiles.any(func(q):return q.target==a.uid)
 		"incoming_frontal_threat","enemy_targeting_ally","ally_under_threat":
@@ -1193,8 +1274,9 @@ func p2_utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	var kind=str(s.p2.effect.type)
 	var count=maxi(1,p2_targets(a,s,b.pos,b.pos-a.pos,b).size())
 	var score=float(s.p2.effect.total_coefficient)*18*count
-	if kind in ["heal","heal_pulse"]:score=45.0
+	if kind in ["heal","heal_pulse"]:score=45.0 if not use_depth else 20.0+65.0*(1.0-float(b.hp)/maxf(1.0,float(b.max_hp)))
 	if kind in ["shield","directional_shield"]:score=24.0 if b.shield<=0 else -25.0
+	if use_depth and kind in ["shield","directional_shield"] and b.hp<b.max_hp*0.35:score+=25.0
 	if kind in ["stance","team_buff","chakra_regen"]:score=18.0
 	if kind=="summon":score=32.0
 	if kind in ["cleanse","absorb","counter","activate_form"]:score=35.0
@@ -1255,6 +1337,26 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 		missed_casts+=1
 		return
 	art_event("release",point,0,str(s.skill_id))
+	if p.get("requires_owned_clone_or_anchor",false):
+		var anchor=cable_anchor(a)
+		if anchor.is_empty():return
+		var end=Vector2(anchor.pos)
+		var start=Vector2(a.pos)
+		if start.distance_to(end)>float(s.range_m) or not clear_segment(start,end,0.02):return
+		var victims=[]
+		for target in alive(1-int(a.side)):
+			if target.pos.distance_to(Geometry2D.get_closest_point_to_segment(target.pos,start,end))<=float(s.line_width_m)*0.5+body_radius(target):victims.append(target)
+		victims.sort_custom(func(x,y):return x.pos.distance_to(start)<y.pos.distance_to(start))
+		p2_schedule(a,s,end,(end-start).normalized(),victims.slice(0,int(s.max_targets)),int(pending.cast_id))
+		return
+	if p.get("mark_throw_before_teleport",false):
+		# DEV throw speed 12m/s; swept hostile contact required before any mark or teleport.
+		var thrown=s.duplicate(true)
+		thrown.projectile_speed_m_s=12.0
+		thrown.mark_teleport_throw=true
+		projectiles.append({"source":a.uid,"target":b.uid,"skill":thrown,"origin":a.pos,"pos":a.pos,"direction":direction,"remaining":float(s.range_m)/12.0,"distance_left":float(s.range_m),"hit_ids":[],"cast_id":pending.cast_id,"contact_cap":1})
+		art_event("projectile_spawn",a.pos,0,str(s.skill_id))
+		return
 	if kind=="projectile_intercept":
 		var length_value=float(p.get("width_m",2.0))
 		var thickness=float(p.get("thickness_m",0.45))
@@ -1267,7 +1369,7 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 		var rect=Rect2(point-size_value/2,size_value)
 		for unit in actors:
 			if unit.hp>0 and rect.grow(body_radius(unit)).has_point(unit.pos):return
-		terrain.append({"rect":rect,"kind":"obstacle","speed":1.0,"expires":ticks+roundi(float(p.get("duration_s",6))*20)})
+		terrain.append({"rect":rect,"kind":"obstacle","speed":1.0,"expires":ticks+roundi(float(p.get("duration_s",6))*20),"owner":a.uid,"parent_skill":s})
 		p2_confirm(a,s,point,"contact_or_effect_confirmed")
 		return
 	if p.get("requires_owned_mark",false) and not p2_has_mark(a,b):return
@@ -1302,6 +1404,7 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 					found=true
 					break
 			if not found:return
+		Passive.queue(self,a,b,s,"teleport_arrived")
 	if float(s.projectile_speed_m_s)>0 and b.uid!=a.uid:
 		var origin=Vector2(a.pos)
 		var length_value=float(s.range_m)
@@ -1415,7 +1518,7 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 		for enemy in alive(1-int(a.side)):
 			facing=(Vector2(enemy.pos)-Vector2(a.pos)).normalized()
 			break
-		a.p2_absorb={"left":int(p.get("max_projectiles",1)),"chakra":float(p.get("chakra_return",15)),"expires":ticks+roundi(float(p.get("duration_s",3))*20),"facing":facing,"angle":float(p.get("angle_deg",120))}
+		a.p2_absorb={"left":int(p.get("max_projectiles",1)),"chakra":float(p.get("chakra_return",15)),"expires":ticks+roundi(float(p.get("duration_s",3))*20),"facing":facing,"angle":float(p.get("angle_deg",120)),"parent_skill":s}
 	if kind in ["mark","projectile_mark"]:
 		p2_set_mark(a,b,p)
 		if p2_has_mark(a,b):Passive.queue(self,a,b,s,"mark_effect_confirmed")
@@ -1439,7 +1542,11 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 
 func p2_confirm(a: Dictionary,s: Dictionary,point: Vector2,event: String,target_uid: int=0) -> void:
 	p2_resolved+=1
-	if a.side==0 and not a.summon:mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+1
+	if a.side==0 and not a.summon:
+		var parent=str(a.uid)+":"+str(s.get("passive_cast_id",0))+":"+str(s.skill_id)
+		if not mastery_casts.has(parent) or int(s.get("passive_cast_id",0))==0:
+			mastery_casts[parent]=true
+			mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+1
 	art_event("contact",point,0,str(s.skill_id))
 	if not a.summon and not a.get("beast",false):
 		p2_events[str(a.side)+":"+str(s.skill_id)]={"tick":ticks,"uid":a.uid,"event":event,"target_uid":target_uid,"point":point}
@@ -1511,4 +1618,18 @@ func p2_intercept_segment(source: Dictionary,from: Vector2,to: Vector2) -> bool:
 		barrier.left=int(barrier.left)-1
 		art_event("intercept",to)
 		return true
+	return false
+
+func cable_anchor(a: Dictionary) -> Dictionary:
+	# Kakashi's authored tracking summon is a DEV anchor; not an arbitrary living ally.
+	for b in actors:
+		if b.summon and b.owner==a.uid and b.hp>0 and b.get("summon_skill","")=="NIN-004-S2" and a.pos.distance_to(b.pos)<=4.0:return b
+	return {}
+
+func land_near(a: Dictionary,b: Dictionary) -> bool:
+	for i in range(8):
+		var dest=clamp_body(Vector2(b.pos)+Vector2.RIGHT.rotated(i*TAU/8.0)*0.9,body_radius(a))
+		if position_clear(a,dest):
+			a.pos=dest
+			return true
 	return false

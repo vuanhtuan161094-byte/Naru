@@ -43,6 +43,13 @@ jobs:
           timeout 120 "$G" --headless --path . --script res://game/passive_test.gd 2>&1 | tee /tmp/passive.log
           grep NARU_PASSIVE_PASS /tmp/passive.log
           ! grep -E 'Parse Error|SCRIPT ERROR|PASSIVE_FAIL' /tmp/passive.log
+      - name: V9 core combat and designed teams
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 180 "$G" --headless --path . --script res://game/core_v9_test.gd 2>&1 | tee /tmp/core-v9.log
+          grep NARU_CORE_V9_PASS /tmp/core-v9.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|CORE_V9_FAIL' /tmp/core-v9.log
       - name: GP-P2 gameplay integration
         run: |
           set -o pipefail
@@ -75,7 +82,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - Web DEV V8, placeholder art. Extract the entire folder.
+          NARU RPG - Web DEV V9, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -95,14 +102,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V8
+          name: NARU-Web-DEV-V9
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V8-menu
+          name: NARU-Web-DEV-V9-menu
           path: |
             web-menu.png
             ui-shots/

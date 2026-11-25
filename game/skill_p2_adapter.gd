@@ -8,7 +8,10 @@ static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	if raw.design_status=="HOLD_ERA" or raw.skill_id=="NIN-016-S7":return {"reason":"HOLD_ERA"}
 	if not kind in TYPES:return {"reason":"mechanic:"+kind}
 	for key in SPECIAL:
-		if p.has(key):return {"reason":"special:"+key}
+		if not p.has(key):continue
+		if raw.skill_id=="NIN-004-S6" and key in ["requires_owned_clone_or_anchor","adapter_gate"]:continue
+		if raw.skill_id=="NIN-093-S6" and key in ["mark_throw_before_teleport","invulnerability_s"]:continue
+		return {"reason":"special:"+key}
 	if kind=="summon" and not str(p.get("role","melee")) in ["melee","melee_decoy","track_bind","heal_ally","frontline","bind","guard","ranged_puppet","ranged","element_ranged"]:return {"reason":"summon_role"}
 	var s=base.duplicate(true)
 	var g=raw.geometry

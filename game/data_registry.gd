@@ -50,6 +50,11 @@ var synergy_passive: Dictionary={}
 var synergy_links: Dictionary={}
 var synergy_gaps: Dictionary={}
 var passive_pilot: Dictionary={}
+var depth_growth: Dictionary={}
+var depth_branches: Dictionary={}
+var depth_ultimates: Dictionary={}
+var depth_teams: Array=[]
+var passive_pilot_rows: Dictionary={}
 const Passive=preload("res://game/passive_service.gd")
 var p2_fallback: Dictionary={}
 var p2_design: Dictionary={}
@@ -171,6 +176,7 @@ func load_all() -> bool:
 	load_p2()
 	load_passives()
 	load_synergy_reference()
+	load_depth_reference()
 	return errors.is_empty()
 
 func load_p2() -> void:
@@ -238,3 +244,36 @@ func load_synergy_reference() -> void:
 	for row in pilot.patches:passive_pilot[row.id]=row
 	if synergy_active.size()!=1152 or synergy_passive.size()!=864 or synergy_links.size()!=864 or passive_pilot.size()!=72:errors.append("Incomplete synergy reference")
 	print("NARU_SYNERGY_REFERENCE ",synergy_active.size()+synergy_passive.size()," pilot=",passive_pilot.size()," gaps=",synergy_gaps.size()," STRUCTURAL_ONLY")
+
+func load_depth_reference() -> void:
+	for row in read_json("res://data/skill-depth-v4/growth-resolution.json"):depth_growth[row.id]=row
+	for row in read_json("res://data/skill-depth-v4/branch-resolution.json"):depth_branches[row.id]=row
+	for row in read_json("res://data/skill-depth-v5/manual-ultimate.json").skills:depth_ultimates[row.id]=row
+	depth_teams=read_json("res://data/combat-synergy-p1/6v6-passive-pressure.json").teams
+	# Four zero payload references: remove activation-only IDs, require real typed payload and exact form intersection.
+	for key in ["NIN-053-P5","NIN-076-P5","NIN-130-P5","NIN-136-P5"]:
+		var row=passives[key]
+		var valid=[]
+		for skill_id in row.trigger.skill_ids:
+			if not p2_skills.has(skill_id):continue
+			if not p2_skills[skill_id].effects.any(func(e):return e.type in ["damage","heal","shield"] and float(e.get("coefficient",0))>0):continue
+			for form_id in row.trigger.form_ids:
+				if p2_forms.has(form_id) and p2_forms[form_id].effect.empowered_skills.any(func(e):return e.skill_id==skill_id):
+					valid.append(skill_id)
+					break
+		if not valid.is_empty():
+			row.trigger.skill_ids=valid
+			row.effect.skill_ids=valid
+			synergy_gaps[key]="TYPED_INTERSECTION_DEV"
+	# Pilot proposal is an explicit opt-in, not a replacement for P1.
+	for id in passives:
+		var row=passives[id].duplicate(true)
+		if passive_pilot.has(id):
+			for key in passive_pilot[id].patch:row[key]=passive_pilot[id].patch[key]
+		if synergy_gaps.get(id,"")=="TYPED_INTERSECTION_DEV":
+			row.trigger.skill_ids=passives[id].trigger.skill_ids.duplicate()
+			row.effect.skill_ids=passives[id].effect.skill_ids.duplicate()
+		if not passive_pilot_rows.has(row.ninja_id):passive_pilot_rows[row.ninja_id]=[]
+		passive_pilot_rows[row.ninja_id].append(row)
+	if depth_ultimates.size()!=146 or depth_teams.size()!=12 or depth_branches.size()!=34 or depth_growth.size()!=85:errors.append("Incomplete depth contracts")
+	print("NARU_DEPTH_REFERENCE ",depth_growth.size()," ",depth_branches.size()," ",depth_ultimates.size()," teams=",depth_teams.size())
