@@ -59,3 +59,9 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 ## Move R3 next
 - ART-P2: six visually approved source Move clips, 48 normalized frame slots, runtime/foot placement pending. Keep R1 rejected. Next generate independently authored remaining three directions and Idle/Attack/Cast/Hit/Fall, character-specific. Do not mirror or reuse stills. R3 source style is now benchmark. No mass rollout of untested full kits.
 - ART-P8: reconcile latest gameplay renderer with 8-frame sheets; actual combat review NOT_RUN for this batch. Check Minato edge, direction and movement, preserve authoritative positions. VFX HOLD unchanged.
+
+## ART-P2 R5 next
+- ART-P2 IN_PROGRESS: 113 R4 extracted candidates, 766 frame cells, 51 local trial sheets, 35 played; six owner-approved Move R3 source cycles all observed in V10. Missing 31 rows plus visual rework, independently authored rear facing and cast; R4 cast held. Short per-action GIF production preferred to giant atlases. Zero complete production kits.
+- ART-P4 IN_PROGRESS: six opponent originals still missing quality replacement, generation rejected; old prototypes static only.
+- ART-P8 REVIEW: exact V10 native 6v6 scoped pass; fallback and clustering remain, no official integration. Chat01/00 handoff art/e3/ART_P2_R5_HANDOFF.md.
+- ART-P3 HOLD unchanged.

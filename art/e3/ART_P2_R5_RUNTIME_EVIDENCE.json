@@ -1,0 +1,101 @@
+{
+  "batch": "ART-P2-R5-RUNTIME-PARTIAL",
+  "art_parent": "4230302e6a1ff38efe44e91c30c0c7a124a9b620",
+  "design_sha": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+  "gameplay_sha": "a88304592515b33886591a025741742ef61aeef0",
+  "latest_gameplay_at_commit": "61152d8f2f31762274f6735da8ebe0d54f8f2bbe",
+  "archive": {
+    "name": "Naru_ART_P2_R5_private.zip",
+    "sha256": "32782749bd654c68c7354a886cb4cb14a19aa8c094032d22c8c9d268eda6339f",
+    "bytes": 37814360,
+    "manifest_sha256": "6f98c54593677b876195347b4c7dcf59e988ec64dd4061ac4e3c05a1b0a7da4c",
+    "library_file_id": "libfile_7d087c213f24819198a0dceed389ba85",
+    "library_upload": true,
+    "zip_integrity": "PASS"
+  },
+  "source_rows": [
+    {
+      "id": "NIN-041",
+      "detected_frames": 160,
+      "candidate_clips": 16
+    },
+    {
+      "id": "NIN-042",
+      "detected_frames": 158,
+      "candidate_clips": 17
+    },
+    {
+      "id": "NIN-043",
+      "detected_frames": 168,
+      "candidate_clips": 24
+    },
+    {
+      "id": "NIN-004",
+      "detected_frames": 168,
+      "candidate_clips": 24
+    },
+    {
+      "id": "NIN-060",
+      "detected_frames": 168,
+      "candidate_clips": 24
+    },
+    {
+      "id": "NIN-093",
+      "detected_frames": 152,
+      "candidate_clips": 8
+    }
+  ],
+  "qa": {
+    "gameplay_ci": 45638173068,
+    "ci_result": "success",
+    "artifact_id": 15035305971,
+    "export_checksum": "7/7 PASS",
+    "engine": "Godot 4.4.1",
+    "runtime": "SCOPED_LOCAL_PASS",
+    "map": [
+      14,
+      10
+    ],
+    "initial_primary": 12,
+    "moved": true,
+    "hp_changes": 1282,
+    "textures": 157,
+    "icons": 51,
+    "source_detected": 974,
+    "r4_candidate_clips": 113,
+    "r4_candidate_frames": 766,
+    "test_pack_clips": 51,
+    "test_pack_r4": 45,
+    "test_pack_r3": 6,
+    "actual_rendered_clips": 35,
+    "rendered_frame_indices": 143,
+    "observed_r3_move_frame_indices_per_ninja": 8,
+    "actual_actions": {
+      "idle": 9,
+      "move": 9,
+      "attack": 4,
+      "hit": 10,
+      "fall": 3,
+      "cast": 0
+    },
+    "fallback_draws": 3506,
+    "fallback_keys": 163,
+    "video_frames": 361,
+    "fps": 30,
+    "resolution": [
+      1280,
+      720
+    ],
+    "video_sha256": "84a3d8b0f807f6e5f4dedb68587d4ce666dbecd757ea1b9f2ed2c205e8c631ef",
+    "pack_sha256": "e30c5970bdfc4f3a29aa416b97aaa70a08a3295bcb4ce0207f34e501ea5b41ec",
+    "trace_sha256": "7eced03a4da10dd22ee4d19c259b9d896ae6ea2903cfc986ff2e45eceaa5ccc4",
+    "log_sha256": "d4940e8763309343cb14c64e2f91d6fad1cde545ec8aa983691e9cc6e4e290ef",
+    "art_ci": "NOT_RUN",
+    "production_complete_ninja": 0,
+    "production_integrated": 0
+  },
+  "limits": [
+    "R4 source segmentation: 113 rows with expected frame counts and distinct RGBA hashes, not artistic approval. Missing rows, irregular spacing, inconsistent directions, fringe/white hair issues; mask/anchor normalization may affect bounce. Sasuke last block held, Minato insufficient cells. No duplicates to pad.",
+    "Active pack 45 front-facing provisional R4 clips excluding cast and SE move, plus six owner-approved right-facing R3 clips mapped provisionally to move_se. Rear direction and cast held; fallback static explicitly. Actual V10 native dispatcher traced; no AI or combat changes. No new opponents; image generation returned wrong character, rejected. Prior six static enemy prototypes retained. Prior 51 icons/HUD reused, clumping persists. No rig, tween, new skill VFX, Cloud, merge, public fan art."
+  ]
+}
