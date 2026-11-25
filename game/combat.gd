@@ -572,7 +572,14 @@ func form_ready(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> 
 	if a.summon or a.hp<=0 or not id in a.forms or not a.active_form.is_empty():return false
 	if float(a.form_cooldowns.get(id,0))>0:return false
 	var rule=registry.form_rules[id]
-	if not manual:return rule.activation=="skill_trigger" and trigger_id in rule.trigger_skill_ids
+	if not manual:
+		if rule.activation=="skill_trigger":return trigger_id in rule.trigger_skill_ids
+		# Some D4 skills explicitly activate a manual/HP form; honor that authored route without charging twice.
+		if not trigger_id in a.skills:return false
+		var skill=skill_definition(trigger_id)
+		for e in skill.effects:
+			if e.type=="activate_form" and e.form_id==id:return true
+		return false
 	return rule.activation!="skill_trigger" and a.chakra>=float(rule.manual_chakra) and not hard_block(a)
 
 func activate_form(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> bool:
@@ -725,7 +732,8 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 		var origin=Vector2(a.pos)
 		var aim=route_waypoint(origin,goal,body_radius(a))
 		var direction=(aim-origin).normalized()
-		if direction==Vector2.ZERO:break
+		amount=minf(amount,origin.distance_to(aim))
+		if amount<0.001 or direction==Vector2.ZERO:break
 		var chosen=origin
 		var best=-INF
 		for angle in [0.0,0.55,-0.55,1.1,-1.1,1.57,-1.57]:
@@ -813,18 +821,35 @@ func position_clear(a: Dictionary,pos: Vector2) -> bool:
 
 func route_waypoint(origin: Vector2,goal: Vector2,radius: float) -> Vector2:
 	if clear_segment(origin,goal,radius):return goal
-	var best=goal
-	var cost=INF
+	# Visibility graph: expanded obstacle corners plus actual start/goal.
+	var nodes: Array[Vector2]=[origin,goal]
 	for item in terrain:
 		if item.kind!="obstacle":continue
-		var rect: Rect2=item.rect.grow(radius+0.12)
+		var rect: Rect2=item.rect.grow(radius+0.16)
 		for p in [rect.position,Vector2(rect.end.x,rect.position.y),rect.end,Vector2(rect.position.x,rect.end.y)]:
-			if not p.is_equal_approx(clamp_body(p,radius)) or not clear_segment(origin,p,radius):continue
-			var score=origin.distance_to(p)+p.distance_to(goal)
-			if score<cost:
-				cost=score
-				best=p
-	return best
+			if p.is_equal_approx(clamp_body(p,radius)) and p.distance_to(origin)>0.03 and clear_segment(p,p,radius):nodes.append(p)
+	var dist={0:0.0}
+	var prev={}
+	var closed={}
+	while true:
+		var current=-1
+		var best=INF
+		for index in dist:
+			if not closed.has(index) and float(dist[index])<best:
+				current=index
+				best=float(dist[index])
+		if current<0:return origin
+		if current==1:break
+		closed[current]=true
+		for i in range(1,nodes.size()):
+			if closed.has(i) or i==current or not clear_segment(nodes[current],nodes[i],radius):continue
+			var cost=best+nodes[current].distance_to(nodes[i])
+			if cost<float(dist.get(i,INF)):
+				dist[i]=cost
+				prev[i]=current
+	var next=1
+	while int(prev[next])!=0:next=int(prev[next])
+	return nodes[next]
 
 func terrain_speed(pos: Vector2) -> float:
 	var factor=1.0

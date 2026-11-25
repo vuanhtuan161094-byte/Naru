@@ -265,6 +265,7 @@ func _initialize() -> void:
 			defender.pos=attacker.pos+Vector2(1,0)
 			attacker.chakra=attacker.max_chakra
 			var skill=run.effective_skill(attacker,dispatch_id)
+			if skill.ai.condition=="ally_dispellable_status":run.apply_status(defender,attacker,{"status_id":"slow","chance":1.0,"duration_s":10})
 			var selected=run.target_for(attacker,skill)
 			run.release(attacker,skill,selected)
 			dispatch_count+=run.effect_dispatch_count

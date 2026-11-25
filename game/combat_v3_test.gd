@@ -151,7 +151,10 @@ func _initialize() -> void:
 			for i in range(160):
 				run.tick(0.05)
 				if caster.pending.is_empty() and run.projectiles.is_empty():break
-			if run.effect_dispatch_count>0:
+			var expected_form=""
+			for e in raw.effects:
+				if e.type=="activate_form":expected_form=e.form_id
+			if run.effect_dispatch_count>0 and (expected_form=="" or caster.active_form.get("id","")==expected_form):
 				timed+=1
 				count_by_shape[raw.shape]=int(count_by_shape.get(raw.shape,0))+1
 			else:failed_ids.append(id+" release")

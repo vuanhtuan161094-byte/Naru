@@ -58,3 +58,5 @@ Implemented first runtime batch: 14×10 default, 12×8/18×12 authored examples 
 Combat V3-B: tactical/terrain/geometry runtime and DEV V5 export, pending CI.
 
 Combat V3-C: secondary squads, cadence and timed skills audit, pending CI.
+
+V3-C fix: 20 authored form conflicts and obstacle visibility routing; legacy cleanse test fixture corrected. Pending CI.
