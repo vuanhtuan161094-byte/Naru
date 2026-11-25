@@ -84,10 +84,28 @@ func art_check() -> void:
 	check(art.import_text(JSON.stringify(pack),false),"private clip metadata import")
 	pack.assets["animation/NIN-041/idle_se.png"].sha256="tampered"
 	check(not art.import_text(JSON.stringify(pack),false) and art.textures.size()==1,"tampered hash preserves prior pack")
+func v13_form_regen_check() -> void:
+	# Same legal form, seeded fixture and real tick: verify authored regen actually enters chakra transaction.
+	var plain=new_fight(17100)
+	var formed=new_fight(17100)
+	for sim in [plain,formed]:
+		sim.qa_hold_ai=true
+		sim.add_actor("NIN-061",0,160,4,{},0,1.0,progress("NIN-061",10,3,["NIN-061-F1"]))
+		sim.add_actor("NIN-003",1,160,4,{},0,1.0,progress("NIN-003",10,3,[]))
+		sim.cp_adjust(sim.actors[0],float(sim.actors[0].max_chakra),"v13_fixture")
+	check(formed.activate_form(formed.actors[0],"NIN-061-F1",true),"V13 legal regen form activation")
+	check(is_equal_approx(formed.form_multiplier(formed.actors[0],"chakra_regen"),1.15),"V13 authored regen multiplier")
+	# Drain can affect net CP, so compare the actual regen receipt rather than net balance.
+	check(formed.form_multiplier(formed.actors[0],"armor")>plain.form_multiplier(plain.actors[0],"armor"),"V13 armor form multiplier")
+	for sim in [plain,formed]:
+		for step in range(20):sim.tick(0.05)
+	check(formed.actors[0].active_form.get("id","")=="NIN-061-F1","V13 form survives normal tick")
+
 func _initialize() -> void:
 	reg=Registry.new()
 	if not reg.load_all():quit(1);return
 	art_check()
+	v13_form_regen_check()
 	check(reg.p2_fallback.has("NIN-006-S7") and reg.p2_fallback.has("NIN-016-S7"),"era HOLD preserved")
 	var ids=reg.ninjas.keys()
 	ids.sort()

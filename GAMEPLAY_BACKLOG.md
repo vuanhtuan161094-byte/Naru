@@ -78,3 +78,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - V11 follow-up: review combo B2 secondary duration contract with Chat00; interval effects with identical 50ms tick quantization require design tuning, no artificial timing claims.
 
 - V12 FINAL: reconcile actual per-ID ledger (stat marginal, typed, event-only separately); remaining organic combo/form failures are not hidden by fixture. Review STG060+ with earned ONE GAME roster. Source/era/reflection and combo B2 duration HOLD; art production approval remains 0. Private pack loader metadata fixed; full directional/action coverage pending Chat02. Coordinator applies exact final delta, not full branch overwrite.
+
+- V13 REVIEW: authored form stat corrections, combo readiness and HUD, exact CI. Remaining COMBO-001/010/012, 11 not observed forms, empowered and passive coverage require actual new ledger. STG060/080/120 diagnostic losses handed to Chat03; no unilateral world tuning or hold clearance.

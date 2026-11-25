@@ -382,10 +382,10 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 	if rule.stack=="max" and b.statuses.has(key):
 		duration=maxf(duration,float(b.statuses[key].remaining))
 		mag=maxf(mag,float(b.statuses[key].magnitude))
-	b.statuses[key]={"id":id,"source":a.uid,"remaining":duration,"magnitude":mag,"dot":float(e.get("tick_coefficient",0.0))*float(a.natk),"next_tick":1.0}
+	b.statuses[key]={"id":id,"source":a.uid,"remaining":duration,"magnitude":mag,"dot":float(e.get("tick_coefficient",0.0))*float(a.natk)*form_multiplier(a,"natk"),"next_tick":1.0}
 	if e.has("fixed_dot_total_coefficient"):
 		var count=maxi(1,ceili(duration))
-		var total=maxi(0,roundi(float(e.fixed_dot_total_coefficient)*float(a.natk)))
+		var total=maxi(0,roundi(float(e.fixed_dot_total_coefficient)*float(a.natk)*form_multiplier(a,"natk")))
 		b.statuses[key].fixed_dot={"count":count,"done":0,"total":total,"unit":floori(float(total)/count),"elapsed":0.0,"interval":duration/count}
 		b.statuses[key].dot=0.0
 	if rule.hard_control and a.side!=b.side:credit(a,"control_applied_s",duration)
@@ -556,7 +556,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					if e.damage_type=="genjutsu":attack=float(a.stats.genjutsu_power)*form_multiplier(a,"genjutsu_power")
 					attack*=formation_multiplier(a,"attack")
 					if not a.stance.is_empty() and a.stance.stat==stat:attack*=float(a.stance.multiplier)
-					var defense=maxf(0.0,float(target.armor if physical else target.nres)*(1.0+magnitude(target,"defense_up"))-float(a.stats.get("armor_pen" if physical else "magic_pen",0)))
+					var defense=maxf(0.0,float(target.armor if physical else target.nres)*form_multiplier(target,"armor" if physical else "nres")*(1.0+magnitude(target,"defense_up"))-float(a.stats.get("armor_pen" if physical else "magic_pen",0)))
 					if e.damage_type=="genjutsu":defense=float(target.stats.genjutsu_resist)
 					defense*=formation_multiplier(target,"defense")
 					var realm_factor=clampf(1.0+0.04*(int(a.realm)-int(target.realm)),0.75,1.25)
@@ -587,7 +587,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 								Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"heal":
 					var before_hp=float(target.hp)
-					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0+float(target.get("passive_mods",{}).get("healing_received",0)))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
+					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*form_multiplier(a,"natk")*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0+float(target.get("passive_mods",{}).get("healing_received",0)))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
 					if target.hp-before_hp>0.01:
 						confirm_form_effect(a,s,"heal")
 						combo_record(a,s,"heal_confirmed",target,target.pos)
@@ -599,7 +599,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"shield":
 					var prior_shield=float(target.shield)
-					add_shield(a,target,float(a.natk)*float(e.coefficient),float(e.duration_s))
+					add_shield(a,target,float(a.natk)*form_multiplier(a,"natk")*float(e.coefficient),float(e.duration_s))
 					if float(target.shield)>prior_shield:
 						confirm_form_effect(a,s,"shield")
 						record_typed_passives(a,s,"coefficient","shield")
@@ -794,7 +794,7 @@ func tick(dt: float) -> void:
 		a.busy=maxf(0.0,float(a.busy)-dt)
 		a.shield_time=maxf(0.0,float(a.shield_time)-dt)
 		if a.shield_time<=0 and a.shield_sources.is_empty():a.shield=0.0
-		cp_continuous(a,float(a.regen)*dt*formation_multiplier(a,"chakra")*(1.0+magnitude(a,"chakra_up"))*(1.0-clampf(magnitude(a,"chakra_lock"),0.0,0.9)),"regen")
+		cp_continuous(a,float(a.regen)*form_multiplier(a,"chakra_regen")*dt*formation_multiplier(a,"chakra")*(1.0+magnitude(a,"chakra_up"))*(1.0-clampf(magnitude(a,"chakra_lock"),0.0,0.9)),"regen")
 		for id in a.cooldowns:a.cooldowns[id]=maxf(0.0,float(a.cooldowns[id])-dt)
 		if not a.pending.is_empty():
 			var pending=a.pending
@@ -1685,7 +1685,7 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 		var shield_coef=float(raw.effect.total_coefficient)
 		for e in s.effects:
 			if e.type=="shield":shield_coef=float(e.coefficient);break
-		a.p2_arc={"hp":float(a.natk)*shield_coef,"angle":float(p.get("angle_deg",120)),"facing":facing,"expires":ticks+roundi(float(p.get("duration_s",4))*20)}
+		a.p2_arc={"hp":float(a.natk)*form_multiplier(a,"natk")*shield_coef,"angle":float(p.get("angle_deg",120)),"facing":facing,"expires":ticks+roundi(float(p.get("duration_s",4))*20)}
 	if kind=="absorb":
 		var facing=Vector2.RIGHT if a.side==0 else Vector2.LEFT
 		for enemy in alive(1-int(a.side)):
@@ -2133,13 +2133,14 @@ func combo_skill_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 			for ally in primary_alive(int(a.side)):
 				if ally.id!=sig.actor_id or not sig.skill_id in ally.skills:continue
 				partners+=1
-				var event=combo_pick_event(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),contract,int(b.uid) if sig.hostile_anchor and str(contract.anchor_rule).begins_with("same_hostile") else 0)
+				var own_hostile=contract.signature_events.any(func(x):return x.skill_id==s.skill_id and x.hostile_anchor)
+				var event=combo_pick_event(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),contract,int(b.uid) if own_hostile and sig.hostile_anchor and str(contract.anchor_rule).begins_with("same_hostile") else 0)
 				if not event.is_empty():confirmed+=1
 		if partners==contract.signature_events.size()-1:
 			var sync=0.0
 			for sig in contract.signature_events:
 				if sig.actor_id!=a.id and signature_near_ready(int(a.side),sig,float(contract.window_s)):sync+=8.0
-			bonus=maxf(bonus,4.0+sync+float(confirmed)*38.0)
+			bonus=maxf(bonus,8.0+sync+float(confirmed)*48.0)
 	return bonus
 
 func confirm_tracking(a: Dictionary,target: Dictionary) -> void:
@@ -2165,6 +2166,8 @@ func combo_pick_event(key: String,contract: Dictionary,anchor: int=0) -> Diction
 		var row=history[i]
 		if ticks-int(row.tick)>float(contract.window_s)*20:continue
 		if anchor>0 and int(row.target_uid)!=anchor:continue
+		var owner=actor_by_uid(int(row.uid))
+		if owner.is_empty() or owner.hp<=0 or owner.summon:continue
 		return row
 	return {}
 
@@ -2188,17 +2191,21 @@ func combo_common_anchor(side: int,contract: Dictionary) -> int:
 	return 0
 
 func signature_near_ready(side: int,sig: Dictionary,window: float) -> bool:
-	var key=str(side)+":"+str(sig.skill_id)
+	var key=str(side)+":"+str(sig.actor_id)+":"+str(sig.skill_id)+":"+str(window)
 	if signature_ready_cache.has(key):return signature_ready_cache[key]
 	var ok=false
 	for ally in primary_alive(side):
 		if ally.id!=sig.actor_id or not sig.skill_id in ally.skills:continue
-		if not ally.pending.is_empty() and ally.pending.skill.skill_id==sig.skill_id:ok=true;break
+		if not ally.pending.is_empty() and ally.pending.skill.skill_id==sig.skill_id:
+			if float(ally.cast_left)<=window:ok=true;break
+			continue
 		var s=effective_skill(ally,sig.skill_id)
 		if s.kind=="ultimate" and side==0 and not auto_player_ultimate and ultimate_requests.get(ally.uid,"")!=sig.skill_id:continue
 		if s.has("p2") and not p2_ready(ally,s):continue
+		if hard_block(ally) or (has_status(ally,"silence") and s.damage_type!="physical"):continue
+		if s.effects.any(func(e):return e.type=="activate_form" and not form_ready(ally,str(e.form_id),false,str(s.skill_id))):continue
 		if float(ally.cooldowns.get(sig.skill_id,0))+float(ally.busy)>window:continue
-		if float(ally.chakra)+float(ally.regen)*window<float(s.chakra):continue
+		if float(ally.chakra)+float(ally.regen)*form_multiplier(ally,"chakra_regen")*window<float(s.chakra):continue
 		ok=true
 		break
 	signature_ready_cache[key]=ok
@@ -2206,6 +2213,8 @@ func signature_near_ready(side: int,sig: Dictionary,window: float) -> bool:
 
 func confirm_form_effect(a: Dictionary,s: Dictionary,kind: String) -> void:
 	var id=str(s.get("form_at_cast",""))
-	if id=="" or a.active_form.get("id","")!=id or int(s.get("passive_cast_id",0))<=0:return
+	if id=="" or int(s.get("passive_cast_id",0))<=0:return
+	# A launched empowered skill retains its authored coefficient after form expiry.
+	if not kind in ["damage","heal","shield"]:return
 	if float(s.get("form_empowered_factor",1.0))<=1.0:return
 	form_effect_evidence[id]={"skill":s.skill_id,"parent":s.passive_cast_id,"kind":kind,"factor":s.form_empowered_factor,"tick":ticks}

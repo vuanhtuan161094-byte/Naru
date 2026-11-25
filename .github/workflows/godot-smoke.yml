@@ -110,7 +110,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - Web DEV V12, placeholder art. Extract the entire folder.
+          NARU RPG - Web DEV V13, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -130,14 +130,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V12
+          name: NARU-Web-DEV-V13
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Web-DEV-V12-menu
+          name: NARU-Web-DEV-V13-menu
           path: |
             web-menu.png
             ui-shots/
@@ -157,9 +157,9 @@ jobs:
           "$G" --path . --fullscreen --resolution 1280x720 -- --combat-video >/tmp/naru-video.log 2>&1 &
           GAME=$!
           sleep 4
-          ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i :98.0 -t 24 -c:v libx264 -preset veryfast -pix_fmt yuv420p combat-video/Naru-V12-6v6.mp4
+          ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i :98.0 -t 24 -c:v libx264 -preset veryfast -pix_fmt yuv420p combat-video/Naru-V13-6v6.mp4
           kill "$GAME" 2>/dev/null || true
-          test -s combat-video/Naru-V12-6v6.mp4
+          test -s combat-video/Naru-V13-6v6.mp4
           grep NARU_VIDEO_BATTLE /tmp/naru-video.log
           ! grep -E 'SCRIPT ERROR|Parse Error' /tmp/naru-video.log
           cp /tmp/tactical-v10.log combat-video/TACTICAL_RUNTIME.log
@@ -171,6 +171,6 @@ jobs:
       - name: Upload Godot combat review
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-Combat-V12-Video
+          name: NARU-Combat-V13-Video
           path: combat-video/
           retention-days: 30

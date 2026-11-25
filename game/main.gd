@@ -1541,7 +1541,11 @@ func update_battle_inspector() -> void:
 	for key in a.get("passive_mods",{}):
 		var value=float(a.passive_mods[key])
 		if absf(value)>0.00001:states.append(str(key)+" %+.1f%%" % (value*100.0))
-	if not a.active_form.is_empty():states.append(str(a.active_form.id)+" %.1fs" % float(a.active_form.remaining))
+	if not a.active_form.is_empty():
+		states.append(str(a.active_form.id)+" %.1fs" % float(a.active_form.remaining))
+		for stat in reg.p2_forms.get(a.active_form.id,{}).get("effect",{}).get("stat",{}):
+			states.append(str(stat)+" ×%.2f" % sim.form_multiplier(a,stat))
+	if sim.ultimate_requests.has(a.uid):states.append("Chờ tuyệt kỹ: "+sim.skill_name(str(sim.ultimate_requests[a.uid])))
 	var head=str(reg.ninjas.get(a.id,{}).get("name_vi",a.id))+" • "+str(reg.ninjas.get(a.id,{}).get("role_hint","Triệu hồi"))
 	battle_inspector.text=head+" • HP %d/%d • CP %.2f/%.2f | " % [int(a.hp),int(a.max_hp),a.chakra,a.max_chakra]+", ".join(states)+" | "+" · ".join(labels)
 	battle_inspector.tooltip_text=battle_inspector.text
