@@ -1,0 +1,23 @@
+{
+  "characters": [
+    "naruto",
+    "sasuke",
+    "kakashi",
+    "itachi"
+  ],
+  "action": "walk_key_poses",
+  "direction": "front_three_quarter",
+  "anchor": [
+    32,
+    73
+  ],
+  "frame_width": 64,
+  "frame_height": 80,
+  "rows": 4,
+  "cols": 4,
+  "transparent_pixels": 53983,
+  "nontransparent_pixels": 27937,
+  "distinct_frames": true,
+  "runtime_test": false,
+  "owner_approved": false
+}
