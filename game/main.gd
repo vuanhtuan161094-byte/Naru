@@ -73,7 +73,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"DEV V4",16)
+	label(header,"DEV V5",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -416,6 +416,11 @@ func draw_field() -> void:
 			if not art.tile(field,p,q,x,y,plate):
 				var points=PackedVector2Array([p,p+Vector2(38,20)*q,p+Vector2(0,40)*q,p+Vector2(-38,20)*q])
 				field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
+	for item in sim.terrain:
+		var rect: Rect2=item.rect
+		var points=PackedVector2Array([iso(rect.position),iso(Vector2(rect.end.x,rect.position.y)),iso(rect.end),iso(Vector2(rect.position.x,rect.end.y))])
+		field.draw_colored_polygon(points,Color("#35414a") if item.kind=="obstacle" else Color(0.65,0.52,0.27,0.45))
+		field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
 	for a in sim.primary_alive(0):
 		if sim.link_count(a)>0:field.draw_arc(iso(a.pos),23,0,TAU,24,Color(0.4,0.85,1.0,0.7),2)
 	var render_order=sim.actors.duplicate()
@@ -450,7 +455,7 @@ func draw_field() -> void:
 		if not source.is_empty() and not target.is_empty():
 			var total=maxf(0.01,source.pos.distance_to(target.pos)/maxf(0.01,float(projectile.skill.projectile_speed_m_s)))
 			var progress=clampf(1-float(projectile.remaining)/total,0,1)
-			var at=source.pos.lerp(target.pos,progress)
+			var at=Vector2(projectile.get("pos",source.pos.lerp(target.pos,progress)))
 			var point=iso(at)-Vector2(0,24)
 			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,70):
 				field.draw_circle(point,5,Color("#ffcf84"))
@@ -1282,6 +1287,7 @@ func start_art_review() -> void:
 	sim.registry=reg
 	sim.rng.seed=42
 	sim.environment="forest"
+	sim.configure_terrain()
 	var left=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
 	var right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
 	for i in range(6):

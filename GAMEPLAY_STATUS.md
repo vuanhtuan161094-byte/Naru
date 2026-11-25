@@ -53,3 +53,6 @@ Private art: source art 33bfbd98, two private original archives independently ch
 
 ## Combat V3 — DEC-012 (25/11/2026)
 Implemented first runtime batch: 14×10 default, 12×8/18×12 authored examples and custom dimensions, bounded free movement, 3×3 slots, eight formations, persistent upgrades and distance/death-sensitive links, formation UI, dynamic projection, legacy save normalization, main squad world resolver. QA pending exact-SHA CI; no claim of completed 1,152-skill geometry audit or production art. No merge.
+
+## Combat V3-B — tactical and spatial runtime
+Inherits df69717d (CI 45568457947 success). Added DEV tactical terrain profiles, body radii, swept short movement, deterministic obstacle corner routing and separation both teams, safe summon landing, AI target scoring/condition evaluation, range/LOS recheck, fixed-direction projectile corridor and hit caps, runtime event positions, terrain renderer. Uses unchanged latest 1152 D4 skill contracts; 64 anchor proposals remain proposals. Numerical defaults in combat_v3_tactics.json. CI pending; no production balance claim.

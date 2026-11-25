@@ -1,0 +1,74 @@
+{
+  "status": "DEV_TUNING",
+  "body_radius": 0.35,
+  "summon_radius": 0.25,
+  "boss_radius": 0.65,
+  "ai_interval_ticks": 4,
+  "retreat_hp_ratio": 0.25,
+  "terrain": {
+    "forest": [
+      {
+        "center": [
+          0.5,
+          0.23
+        ],
+        "size": [
+          0.9,
+          1.2
+        ],
+        "kind": "obstacle"
+      },
+      {
+        "center": [
+          0.5,
+          0.77
+        ],
+        "size": [
+          0.9,
+          1.2
+        ],
+        "kind": "obstacle"
+      }
+    ],
+    "desert": [
+      {
+        "center": [
+          0.5,
+          0.5
+        ],
+        "size": [
+          3,
+          2.5
+        ],
+        "kind": "slow",
+        "speed": 0.75
+      }
+    ],
+    "cave": [
+      {
+        "center": [
+          0.5,
+          0.2
+        ],
+        "size": [
+          1.4,
+          1.4
+        ],
+        "kind": "obstacle"
+      },
+      {
+        "center": [
+          0.5,
+          0.8
+        ],
+        "size": [
+          1.4,
+          1.4
+        ],
+        "kind": "obstacle"
+      }
+    ]
+  },
+  "projectile": "fixed line corridor swept per tick, target cap, obstacle occlusion; no homing",
+  "source": "DEC-012 + approved hybrid geometry; numerical defaults provisional"
+}

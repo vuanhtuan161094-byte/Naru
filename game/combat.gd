@@ -30,6 +30,12 @@ var encounter_skills: Dictionary={}
 var encounter_names: Dictionary={}
 var effect_dispatch_count=0
 var art_events: Array[Dictionary]=[]
+var terrain: Array[Dictionary]=[]
+var qa_hold_ai=false
+var cast_seq=0
+var tactical_choices=0
+var resolved_casts=0
+var missed_casts=0
 
 func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
@@ -41,6 +47,7 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	rng.seed=seed_value
 	var kind=str(reg.territories.get(stage.get("territory_id",""),{}).get("kind",""))
 	if kind in ["forest","desert","cave"]:environment=kind
+	configure_terrain(stage)
 	for id in save.team:
 		var p=save.owned[id]
 		var progress=p.duplicate(true)
@@ -102,23 +109,33 @@ func alive(side: int) -> Array:
 
 func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 	var kind=str(skill.target)
-	if kind=="self": return a
-	var candidates=alive(int(a.side) if kind.begins_with("ally") else 1-int(a.side))
-	if not kind.begins_with("ally"):
+	if kind=="self":return a
+	var allied=kind.begins_with("ally")
+	if not allied:
 		for st in a.statuses.values():
 			if st.id=="taunt":
 				var forced=actor_by_uid(int(st.get("source",0)))
 				if not forced.is_empty() and forced.hp>0 and forced.side!=a.side:return forced
-	var best: Dictionary={}
-	var score=INF
-	for b in candidates:
-		var v=float(b.hp)/float(b.max_hp) if kind.begins_with("ally") else a.pos.distance_to(b.pos)
-		if not kind.begins_with("ally") and has_status(b,"mark"):v*=0.7
-		if v<score:
+	var best={}
+	var best_score=-INF
+	for b in alive(int(a.side) if allied else 1-int(a.side)):
+		var distance=a.pos.distance_to(b.pos)
+		var score=0.0
+		if allied:
+			score=(1.0-clampf((float(b.hp)+float(b.shield))/maxf(1.0,float(b.max_hp)),0,1))*100.0-distance*2.0
+			if skill.ai.condition=="ally_dispellable_status":
+				if not has_debuff(b):continue
+				score+=60
+		else:
+			score=-distance*5.0+(1-float(b.hp)/maxf(1.0,float(b.max_hp)))*12.0
+			if has_status(b,"mark"):score+=10
+			if b.summon:score-=5
+			if distance<=float(skill.range_m)+body_radius(b) and clear_segment(a.pos,b.pos,0.03):score+=30
+			if skill.shape in ["line","circle"]:score+=6*targets_for(a,skill,b).size()
+		if score>best_score or (is_equal_approx(score,best_score) and int(b.uid)<int(best.get("uid",999999))):
 			best=b
-			score=v
+			best_score=score
 	return best
-
 
 func magnitude(a: Dictionary,id: String) -> float:
 	var value=0.0
@@ -187,7 +204,8 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 	return s
 
 func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
-	if b.is_empty() or a.pos.distance_to(b.pos)>float(s.range_m)+0.1:return -INF
+	if not cast_geometry(a,s,b):return -INF
+	if not ai_condition(a,s,b):return -INF
 	var score=0.0
 	for e in s.effects:
 		match str(e.type):
@@ -203,7 +221,7 @@ func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 			"dash":score+=5.0
 			"activate_form":score+=45.0
 	score+=float(s.ai.base_priority)*2.0-float(s.chakra)*0.3
-	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5:
+	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5 and bool(s.ai.get("reserve_ultimate_chakra",true)):
 		var ultimate_skill=effective_skill(a,a.skills[5])
 		if a.chakra>=ultimate_skill.chakra and a.chakra-s.chakra<ultimate_skill.chakra: score-=35.0
 	return score
@@ -214,25 +232,33 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)/(1.0+rating(a,"attack_speed"))
 	a.last=skill_name(s.skill_id)
-	a.pending={"skill":s,"target_uid":b.uid}
+	cast_seq+=1
+	a.pending={"skill":s,"target_uid":b.uid,"origin":a.pos,"aim":b.pos,"cast_id":cast_seq}
 	a.cast_left=float(s.cast_s)
+	art_event("cast_start",a.pos,0,str(s.skill_id))
 	return true
 
 func targets_for(a: Dictionary,s: Dictionary,b: Dictionary) -> Array:
-	if s.shape=="single" or s.shape=="self":return [b]
-	var candidates=alive(int(b.side))
-	var result: Array=[b]
-	var direction: Vector2=b.pos-a.pos
-	for target in candidates:
-		if target.uid==b.uid:continue
+	if b.is_empty():return []
+	if s.shape in ["single","self"]:return [b]
+	var result=[]
+	var direction: Vector2=(b.pos-a.pos).normalized()
+	for target in alive(int(b.side)):
 		var include=false
-		if s.shape=="circle": include=target.pos.distance_to(b.pos)<=float(s.radius_m)
-		elif s.shape=="line" and direction.length()>0:
+		var radius=body_radius(target)
+		if s.shape=="circle":
+			include=target.pos.distance_to(b.pos)<=float(s.radius_m)+radius and clear_segment(b.pos,target.pos,0.02)
+		elif s.shape=="line":
 			var offset: Vector2=target.pos-a.pos
-			var projection=offset.dot(direction.normalized())
-			include=projection>=0 and projection<=float(s.range_m) and absf(offset.cross(direction.normalized()))<=float(s.line_width_m)*0.5
-		if include and result.size()<int(s.max_targets):result.append(target)
-	return result
+			var projection=offset.dot(direction)
+			include=projection>=-radius and projection<=float(s.range_m)+radius and absf(offset.cross(direction))<=float(s.line_width_m)*0.5+radius and clear_segment(a.pos,target.pos,0.02)
+		if target.uid==b.uid:include=true
+		if include:result.append(target)
+	result.sort_custom(func(x,y):
+		var dx=float(x.pos.distance_to(b.pos)) if s.shape=="circle" else float(x.pos.distance_to(a.pos))
+		var dy=float(y.pos.distance_to(b.pos)) if s.shape=="circle" else float(y.pos.distance_to(a.pos))
+		return int(x.uid)<int(y.uid) if is_equal_approx(dx,dy) else dx<dy)
+	return result.slice(0,maxi(1,int(s.max_targets)))
 
 func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 	var id=str(e.status_id)
@@ -332,7 +358,7 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.active_form={}
 	b.form_cooldowns={}
 	b.deployment_slot=-1
-	b.pos=clamp_position(a.pos+Vector2(0.3,0.5))
+	b.pos=safe_spawn(a)
 	b.pending={}
 	b.busy=0.0
 	b.statuses={}
@@ -342,14 +368,16 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.shield=0.0
 	b.shield_sources={}
 	b.chakra=0.0
+	if not position_clear(b,b.pos):return
 	actors.append(b)
 	art_event("summon",b.pos)
 
-func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
+func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[]) -> void:
 	if b.is_empty() or b.hp<=0:return
 	art_event("release",b.pos,0,str(s.skill_id))
 	var field_factor=spatial_reaction(a,s,b)
-	for target in targets_for(a,s,b):
+	for target in (targets_for(a,s,b) if locked_targets.is_empty() else locked_targets):
+		if target.hp<=0:continue
 		for e in s.effects:
 			effect_dispatch_count+=1
 			match str(e.type):
@@ -395,7 +423,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 							count+=1
 							if count>=int(e.max_statuses)+(1 if rng.randf()<rating(a,"cleanse") else 0):break
 				"chakra_restore":a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(e.amount))
-				"dash":a.pos=clamp_position(a.pos.move_toward(target.pos,minf(float(e.max_distance_m),maxf(0.0,a.pos.distance_to(target.pos)-float(e.stop_distance_m)))))
+				"dash":move_actor(a,target.pos,minf(float(e.max_distance_m),maxf(0.0,a.pos.distance_to(target.pos)-float(e.stop_distance_m))))
 				"summon":summon_actor(a,s,e)
 				"temporary_stance":a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
 				"counter":a.counter={"remaining":float(e.window_s),"coefficient":e.coefficient}
@@ -467,12 +495,7 @@ func tick(dt: float) -> void:
 	while not art_events.is_empty() and int(art_events[0].tick)<ticks-20:art_events.pop_front()
 	for zone in elemental_fields.duplicate():
 		if int(zone.expires)<=ticks:elemental_fields.erase(zone)
-	for p in projectiles.duplicate():
-		p.remaining=float(p.remaining)-dt
-		if p.remaining<=0:
-			projectiles.erase(p)
-			var source=actor_by_uid(int(p.source))
-			if not source.is_empty():release(source,p.skill,actor_by_uid(int(p.target)))
+	advance_projectiles(dt)
 	for a in actors.duplicate():
 		if a.summon:
 			a.ttl=float(a.ttl)-dt
@@ -501,13 +524,9 @@ func tick(dt: float) -> void:
 				a.cast_left=float(a.cast_left)-dt
 				if a.cast_left<=0:
 					a.pending={}
-					var target=actor_by_uid(int(pending.target_uid))
-					if not target.is_empty() and target.hp>0:
-						if float(skill.projectile_speed_m_s)>0 and target.uid!=a.uid:
-							projectiles.append({"source":a.uid,"target":target.uid,"skill":skill,"remaining":a.pos.distance_to(target.pos)/float(skill.projectile_speed_m_s)})
-						else:release(a,skill,target)
+					resolve_pending(a,pending)
 				else:continue
-		if a.busy>0 or hard_block(a):continue
+		if a.busy>0 or hard_block(a) or qa_hold_ai:continue
 		var basic=skill_definition(a.skills[0])
 		var enemy=target_for(a,basic)
 		if enemy.is_empty():continue
@@ -529,10 +548,13 @@ func tick(dt: float) -> void:
 				best=s
 				best_target=b
 				best_score=score
-		if not best.is_empty():cast(a,best,best_target)
-		elif not has_status(a,"bind") and a.pos.distance_to(enemy.pos)>float(basic.range_m):
+		if not best.is_empty():
+			cast(a,best,best_target)
+			tactical_choices+=1
+		elif not has_status(a,"bind"):
 			var speed=2.2*formation_multiplier(a,"move")*(1.0+rating(a,"move_speed"))*(1.0+magnitude(a,"haste"))*(1.0-clampf(maxf(magnitude(a,"slow"),magnitude(a,"mud")),0.0,0.8))
-			move_actor(a,enemy.pos,speed*dt)
+			var goal=tactical_goal(a,enemy,basic)
+			move_actor(a,goal,speed*dt*terrain_speed(a.pos))
 	# Remove dead temporary entities only once their launched projectiles resolve.
 	for a in actors.duplicate():
 		if a.summon and a.hp<=0 and not projectiles.any(func(p):return p.source==a.uid):actors.erase(a)
@@ -687,16 +709,29 @@ func art_event(kind: String,pos: Vector2,amount: float=0.0,skill: String="") -> 
 	if art_events.size()>128:art_events.pop_front()
 
 func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
-	var direction=(destination-Vector2(a.pos)).normalized()
-	var separation=Vector2.ZERO
-	for other in actors:
-		if other.uid==a.uid or other.side!=a.side or other.hp<=0:continue
-		var offset=Vector2(a.pos)-Vector2(other.pos)
-		var gap=offset.length()
-		if gap<0.6 and gap>0.001:separation+=offset.normalized()*(0.6-gap)
-	var step=(direction+separation*0.6).normalized()*distance
-	if step.length()>Vector2(a.pos).distance_to(destination):step=destination-Vector2(a.pos)
-	a.pos=clamp_position(Vector2(a.pos)+step)
+	if distance<=0:return
+	var goal=clamp_position(destination)
+	var initial=Vector2(a.pos)
+	# Small continuous swept steps prevent tunneling through actors and terrain.
+	var remaining=minf(distance,initial.distance_to(goal))
+	while remaining>0.001:
+		var amount=minf(0.22,remaining)
+		var origin=Vector2(a.pos)
+		var aim=route_waypoint(origin,goal,body_radius(a))
+		var direction=(aim-origin).normalized()
+		if direction==Vector2.ZERO:break
+		var chosen=origin
+		var best=-INF
+		for angle in [0.0,0.55,-0.55,1.1,-1.1,1.57,-1.57]:
+			var candidate=clamp_body(origin+direction.rotated(angle)*amount,body_radius(a))
+			if not position_clear(a,candidate) or not clear_segment(origin,candidate,body_radius(a)):continue
+			var score=(origin.distance_to(aim)-candidate.distance_to(aim))*10.0-absf(angle)*0.15
+			if score>best:
+				best=score
+				chosen=candidate
+		if chosen==origin:break
+		a.pos=chosen
+		remaining-=amount
 
 func configure_map(stage: Dictionary) -> void:
 	var rule=registry.combat_v3
@@ -731,3 +766,171 @@ func formation_multiplier(a: Dictionary,stat: String) -> float:
 	if str(rule.stat)==stat:value+=float(rule.base)+float(registry.combat_v3.upgrade.level_growth)*(int(side_levels.get(a.side,1))-1)
 	if stat==str(registry.combat_v3.links.stat):value+=float(registry.combat_v3.links.per_neighbor)*link_count(a)
 	return value
+
+func body_radius(a: Dictionary) -> float:
+	var rules=registry.tactics
+	if a.get("summon",false):return float(rules.summon_radius)
+	if int(a.get("uid",-1))==boss_actor_uid or a.get("beast",false):return float(rules.boss_radius)
+	return float(rules.body_radius)
+
+func clamp_body(p: Vector2,radius: float) -> Vector2:
+	return Vector2(clampf(p.x,radius,float(map_width)-radius),clampf(p.y,radius,float(map_height)-radius))
+
+func configure_terrain(stage: Dictionary={}) -> void:
+	terrain.clear()
+	var layout=stage.get("terrain",registry.tactics.terrain.get(environment,[]))
+	for item in layout:
+		var center=Vector2(float(item.center[0])*map_width,float(item.center[1])*map_height)
+		var size_value=Vector2(float(item.size[0]),float(item.size[1]))
+		terrain.append({"rect":Rect2(center-size_value/2,size_value),"kind":str(item.kind),"speed":float(item.get("speed",1.0))})
+
+func clear_segment(from: Vector2,to: Vector2,radius: float) -> bool:
+	for item in terrain:
+		if item.kind!="obstacle":continue
+		var rect: Rect2=item.rect.grow(radius)
+		if rect.has_point(from) or rect.has_point(to):return false
+		var corners=[rect.position,Vector2(rect.end.x,rect.position.y),rect.end,Vector2(rect.position.x,rect.end.y)]
+		for i in range(4):
+			if Geometry2D.segment_intersects_segment(from,to,corners[i],corners[(i+1)%4])!=null:return false
+	return true
+
+func position_clear(a: Dictionary,pos: Vector2) -> bool:
+	var radius=body_radius(a)
+	if not pos.is_equal_approx(clamp_body(pos,radius)) or not clear_segment(pos,pos,radius):return false
+	for other in actors:
+		if other.uid==a.uid or other.hp<=0:continue
+		var required=radius+body_radius(other)
+		var gap=pos.distance_to(other.pos)
+		# Existing overlap can be escaped, but not worsened.
+		if gap<required-0.01 and gap<=Vector2(a.pos).distance_to(other.pos)+0.001:return false
+	return true
+
+func route_waypoint(origin: Vector2,goal: Vector2,radius: float) -> Vector2:
+	if clear_segment(origin,goal,radius):return goal
+	var best=goal
+	var cost=INF
+	for item in terrain:
+		if item.kind!="obstacle":continue
+		var rect: Rect2=item.rect.grow(radius+0.12)
+		for p in [rect.position,Vector2(rect.end.x,rect.position.y),rect.end,Vector2(rect.position.x,rect.end.y)]:
+			if not p.is_equal_approx(clamp_body(p,radius)) or not clear_segment(origin,p,radius):continue
+			var score=origin.distance_to(p)+p.distance_to(goal)
+			if score<cost:
+				cost=score
+				best=p
+	return best
+
+func terrain_speed(pos: Vector2) -> float:
+	var factor=1.0
+	for item in terrain:
+		if item.kind=="slow" and item.rect.has_point(pos):factor=minf(factor,float(item.speed))
+	return factor
+
+func safe_spawn(a: Dictionary) -> Vector2:
+	for radius in [0.8,1.2,1.6,2.0]:
+		for i in range(8):
+			var p=clamp_body(Vector2(a.pos)+Vector2.RIGHT.rotated(TAU*i/8.0)*radius,float(registry.tactics.summon_radius))
+			var ghost={"uid":-1,"summon":true,"pos":p}
+			if position_clear(ghost,p):return p
+	return Vector2(a.pos)
+
+func has_debuff(a: Dictionary) -> bool:
+	for status in a.statuses.values():
+		if registry.status_catalog[status.id].dispellable and status.id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam"]:return true
+	return false
+
+func ai_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
+	match str(s.ai.get("condition","valid_target")):
+		"ally_dispellable_status":return has_debuff(b)
+		"ally_hp_below_0.75":return float(b.hp)/float(b.max_hp)<0.75
+		"ally_effective_hp_below_0.8":return (float(b.hp)+float(b.shield))/float(b.max_hp)<0.8
+		"self_chakra_below_0.5":return float(a.chakra)/maxf(1.0,float(a.max_chakra))<0.5
+		"active_summons_below_cap":
+			for e in s.effects:
+				if e.type=="summon":return summon_count(a,s.skill_id)<int(e.cap)
+		"unlocked_form_and_no_active_form":return a.active_form.is_empty()
+	return true
+
+func cast_geometry(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
+	if b.is_empty() or b.hp<=0:return false
+	if s.target=="self":return a.uid==b.uid
+	if s.target.begins_with("ally")!=(a.side==b.side):return false
+	return a.pos.distance_to(b.pos)<=float(s.range_m)+body_radius(b) and clear_segment(a.pos,b.pos,0.03)
+
+func tactical_goal(a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vector2:
+	var range_value=float(basic.range_m)
+	for id in a.skills:
+		var skill=skill_definition(id)
+		if skill.target=="enemy_ai" and skill.kind!="ultimate":range_value=maxf(range_value,float(skill.range_m))
+	var distance=a.pos.distance_to(enemy.pos)
+	# Backliners use affordable ranged attacks; advance if only melee is currently ready.
+	var desired=float(basic.range_m)*0.8
+	if range_value>=4:
+		for id in a.skills:
+			var skill=effective_skill(a,id)
+			if skill.target=="enemy_ai" and skill.kind!="ultimate" and ready(a,skill):desired=maxf(desired,float(skill.range_m)*0.8)
+	var direction=(Vector2(enemy.pos)-Vector2(a.pos)).normalized()
+	if distance>desired+0.12 or not clear_segment(a.pos,enemy.pos,0.04):return enemy.pos
+	if range_value>=4 and float(a.hp)/float(a.max_hp)<float(registry.tactics.retreat_hp_ratio) and distance<1.5:
+		return clamp_body(Vector2(a.pos)-direction*1.2,body_radius(a))
+	return a.pos
+
+func resolve_pending(a: Dictionary,pending: Dictionary) -> void:
+	var skill=pending.skill
+	var target=actor_by_uid(int(pending.target_uid))
+	if not cast_geometry(a,skill,target):
+		missed_casts+=1
+		art_event("miss",pending.aim,0,str(skill.skill_id))
+		return
+	if float(skill.projectile_speed_m_s)>0 and target.uid!=a.uid:
+		var origin=Vector2(a.pos)
+		var direction=(Vector2(pending.aim)-origin).normalized()
+		var length_value=minf(float(skill.range_m)+body_radius(target),maxf(0.1,origin.distance_to(pending.aim)+body_radius(target)))
+		if skill.shape=="line":length_value=float(skill.range_m)
+		projectiles.append({"source":a.uid,"target":target.uid,"skill":skill,"origin":origin,"pos":origin,"direction":direction,"remaining":length_value/maxf(0.01,float(skill.projectile_speed_m_s)),"distance_left":length_value,"hit_ids":[],"cast_id":pending.cast_id})
+		art_event("projectile_spawn",origin,0,str(skill.skill_id))
+	else:
+		resolved_casts+=1
+		release(a,skill,target)
+
+func advance_projectiles(dt: float) -> void:
+	for p in projectiles.duplicate():
+		var source=actor_by_uid(int(p.source))
+		if source.is_empty():
+			projectiles.erase(p)
+			continue
+		var skill=p.skill
+		var step=minf(float(p.distance_left),float(skill.projectile_speed_m_s)*dt)
+		var from=Vector2(p.pos)
+		var to=from+Vector2(p.direction)*step
+		var blocked=not clear_segment(from,to,0.03) or not to.is_equal_approx(clamp_body(to,0.03))
+		if not blocked:
+			var contacts=[]
+			for target in alive(1-int(source.side)):
+				if target.uid in p.hit_ids:continue
+				var nearest=Geometry2D.get_closest_point_to_segment(target.pos,from,to)
+				var radius=body_radius(target)+(float(skill.line_width_m)*0.5 if skill.shape=="line" else 0.0)
+				if target.pos.distance_to(nearest)<=radius:contacts.append(target)
+			contacts.sort_custom(func(x,y):
+				var dx=from.distance_to(x.pos)
+				var dy=from.distance_to(y.pos)
+				return int(x.uid)<int(y.uid) if is_equal_approx(dx,dy) else dx<dy)
+			for target in contacts:
+				if p.hit_ids.size()>=int(skill.max_targets):break
+				p.hit_ids.append(target.uid)
+			p.pos=to
+			p.distance_left=float(p.distance_left)-step
+			p.remaining=float(p.distance_left)/maxf(0.01,float(skill.projectile_speed_m_s))
+		if blocked or float(p.distance_left)<=0.0001 or p.hit_ids.size()>=int(skill.max_targets):
+			projectiles.erase(p)
+			var hits=[]
+			for uid in p.hit_ids:
+				var target=actor_by_uid(int(uid))
+				if not target.is_empty() and target.hp>0:hits.append(target)
+			if hits.is_empty():
+				missed_casts+=1
+				art_event("miss",p.pos,0,str(skill.skill_id))
+			else:
+				resolved_casts+=1
+				art_event("contact",p.pos,0,str(skill.skill_id))
+				release(source,skill,hits[0],hits)

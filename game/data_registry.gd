@@ -38,6 +38,7 @@ var affix_pools: Dictionary = {}
 var environments: Dictionary = {}
 var skill_policies: Dictionary = {}
 var combat_v3: Dictionary = {}
+var tactics: Dictionary = {}
 var formations: Dictionary = {}
 var errors: Array[String] = []
 
@@ -68,6 +69,9 @@ func indexed(path: String, key: String = "id") -> Dictionary:
 	return result
 
 func load_all() -> bool:
+	var tactical=read_json("res://data/combat_v3_tactics.json")
+	if tactical is Dictionary:tactics=tactical
+	else:errors.append("Missing tactical rules")
 	var v3=read_json("res://data/combat_v3.json")
 	if v3 is Dictionary:
 		combat_v3=v3
