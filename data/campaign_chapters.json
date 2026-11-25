@@ -1,0 +1,410 @@
+[
+  {
+    "id": "CH-001",
+    "era": "Naruto",
+    "name_vi": "Học viện và Đội 7",
+    "territory_id": "TER-003",
+    "source": "https://naruto-official.com/en/anime/naruto1",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-001",
+      "STG-002",
+      "STG-003",
+      "STG-004",
+      "STG-005"
+    ],
+    "requires": null,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-002",
+    "era": "Naruto",
+    "name_vi": "Hành trình Ba Quốc",
+    "territory_id": "TER-045",
+    "source": "https://naruto-official.com/en/anime/naruto1",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-006",
+      "STG-007",
+      "STG-008",
+      "STG-009",
+      "STG-010"
+    ],
+    "requires": "CH-001",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-003",
+    "era": "Naruto",
+    "name_vi": "Kỳ thi Trung nhẫn",
+    "territory_id": "TER-002",
+    "source": "https://naruto-official.com/en/anime/naruto1",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-011",
+      "STG-012",
+      "STG-013",
+      "STG-014",
+      "STG-015"
+    ],
+    "requires": "CH-002",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-004",
+    "era": "Naruto",
+    "name_vi": "Konoha bị tấn công",
+    "territory_id": "TER-001",
+    "source": "https://naruto-official.com/en/anime/naruto1",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-016",
+      "STG-017",
+      "STG-018",
+      "STG-019",
+      "STG-020"
+    ],
+    "requires": "CH-003",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-005",
+    "era": "Naruto",
+    "name_vi": "Tìm Tsunade",
+    "territory_id": "TER-005",
+    "source": "https://naruto-official.com/en/anime/naruto1",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-021",
+      "STG-022",
+      "STG-023",
+      "STG-024",
+      "STG-025"
+    ],
+    "requires": "CH-004",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-006",
+    "era": "Naruto",
+    "name_vi": "Truy tìm Sasuke",
+    "territory_id": "TER-004",
+    "source": "https://naruto-official.com/en/anime/naruto1",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-026",
+      "STG-027",
+      "STG-028",
+      "STG-029",
+      "STG-030"
+    ],
+    "requires": "CH-005",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-007",
+    "era": "Shippuden",
+    "name_vi": "Giải cứu Kazekage",
+    "territory_id": "TER-049",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-031",
+      "STG-032",
+      "STG-033",
+      "STG-034",
+      "STG-035"
+    ],
+    "requires": "CH-006",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-008",
+    "era": "Shippuden",
+    "name_vi": "Cầu Thiên Địa",
+    "territory_id": "TER-047",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-036",
+      "STG-037",
+      "STG-038",
+      "STG-039",
+      "STG-040"
+    ],
+    "requires": "CH-007",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-009",
+    "era": "Shippuden",
+    "name_vi": "Akatsuki bất tử",
+    "territory_id": "TER-005",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-041",
+      "STG-042",
+      "STG-043",
+      "STG-044",
+      "STG-045"
+    ],
+    "requires": "CH-008",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-010",
+    "era": "Shippuden",
+    "name_vi": "Truy tìm Itachi",
+    "territory_id": "TER-009",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-046",
+      "STG-047",
+      "STG-048",
+      "STG-049",
+      "STG-050"
+    ],
+    "requires": "CH-009",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-011",
+    "era": "Shippuden",
+    "name_vi": "Pain tấn công Làng Lá",
+    "territory_id": "TER-001",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-051",
+      "STG-052",
+      "STG-053",
+      "STG-054",
+      "STG-055"
+    ],
+    "requires": "CH-010",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-012",
+    "era": "Shippuden",
+    "name_vi": "Hội nghị Ngũ Kage",
+    "territory_id": "TER-043",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-056",
+      "STG-057",
+      "STG-058",
+      "STG-059",
+      "STG-060"
+    ],
+    "requires": "CH-011",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-013",
+    "era": "Shippuden",
+    "name_vi": "Tu luyện Vĩ Thú",
+    "territory_id": "TER-025",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-061",
+      "STG-062",
+      "STG-063",
+      "STG-064",
+      "STG-065"
+    ],
+    "requires": "CH-012",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-014",
+    "era": "Shippuden",
+    "name_vi": "Đại chiến mở màn",
+    "territory_id": "TER-052",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-066",
+      "STG-067",
+      "STG-068",
+      "STG-069",
+      "STG-070"
+    ],
+    "requires": "CH-013",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-015",
+    "era": "Shippuden",
+    "name_vi": "Đối đầu Obito",
+    "territory_id": "TER-052",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-071",
+      "STG-072",
+      "STG-073",
+      "STG-074",
+      "STG-075"
+    ],
+    "requires": "CH-014",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-016",
+    "era": "Shippuden",
+    "name_vi": "Lục Đạo và Kaguya",
+    "territory_id": "TER-051",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-076",
+      "STG-077",
+      "STG-078",
+      "STG-079",
+      "STG-080"
+    ],
+    "requires": "CH-015",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-017",
+    "era": "Shippuden",
+    "name_vi": "Trận cuối",
+    "territory_id": "TER-004",
+    "source": "https://naruto-official.com/en/anime/naruto2",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-081",
+      "STG-082",
+      "STG-083",
+      "STG-084",
+      "STG-085"
+    ],
+    "requires": "CH-016",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-018",
+    "era": "Boruto",
+    "name_vi": "Thế hệ mới",
+    "territory_id": "TER-001",
+    "source": "https://naruto-official.com/en/anime/boruto",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-086",
+      "STG-087",
+      "STG-088",
+      "STG-089",
+      "STG-090"
+    ],
+    "requires": "CH-017",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-019",
+    "era": "Boruto",
+    "name_vi": "Bí ẩn Nue",
+    "territory_id": "TER-055",
+    "source": "https://naruto-official.com/en/anime/boruto",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-091",
+      "STG-092",
+      "STG-093",
+      "STG-094",
+      "STG-095"
+    ],
+    "requires": "CH-018",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-020",
+    "era": "Boruto",
+    "name_vi": "Kỳ thi và Otsutsuki",
+    "territory_id": "TER-001",
+    "source": "https://naruto-official.com/en/anime/boruto",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-096",
+      "STG-097",
+      "STG-098",
+      "STG-099",
+      "STG-100"
+    ],
+    "requires": "CH-019",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-021",
+    "era": "Boruto",
+    "name_vi": "Kara xuất hiện",
+    "territory_id": "TER-056",
+    "source": "https://naruto-official.com/en/anime/boruto",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-101",
+      "STG-102",
+      "STG-103",
+      "STG-104",
+      "STG-105"
+    ],
+    "requires": "CH-020",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-022",
+    "era": "Boruto",
+    "name_vi": "Karma và Kawaki",
+    "territory_id": "TER-056",
+    "source": "https://naruto-official.com/en/anime/boruto",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-106",
+      "STG-107",
+      "STG-108",
+      "STG-109",
+      "STG-110"
+    ],
+    "requires": "CH-021",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-023",
+    "era": "Boruto",
+    "name_vi": "Nhẫn giới hậu chiến",
+    "territory_id": "TER-057",
+    "source": "https://naruto-official.com/en/anime/boruto",
+    "source_scope": "arc-level inspiration; encounter order and opponents are game design",
+    "stage_ids": [
+      "STG-111",
+      "STG-112",
+      "STG-113",
+      "STG-114",
+      "STG-115"
+    ],
+    "requires": "CH-022",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "CH-024",
+    "era": "Sandbox",
+    "name_vi": "Nhẫn giới vô tận",
+    "territory_id": "TER-058",
+    "source": null,
+    "source_scope": "original",
+    "stage_ids": [
+      "STG-116",
+      "STG-117",
+      "STG-118",
+      "STG-119",
+      "STG-120"
+    ],
+    "requires": "CH-023",
+    "status": "PROPOSED"
+  }
+]

@@ -1,0 +1,4902 @@
+[
+  {
+    "id": "NPC-001",
+    "template_ninja_id": "NIN-005",
+    "level": 5,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-002",
+    "template_ninja_id": "NIN-004",
+    "level": 5,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-003",
+    "template_ninja_id": "NIN-004",
+    "level": 7,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-004",
+    "template_ninja_id": "NIN-002",
+    "level": 7,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-005",
+    "template_ninja_id": "NIN-002",
+    "level": 9,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-006",
+    "template_ninja_id": "NIN-003",
+    "level": 9,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-007",
+    "template_ninja_id": "NIN-003",
+    "level": 11,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-008",
+    "template_ninja_id": "NIN-005",
+    "level": 11,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-009",
+    "template_ninja_id": "NIN-003",
+    "level": 13,
+    "realm": 0,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-010",
+    "template_ninja_id": "NIN-004",
+    "level": 13,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-011",
+    "template_ninja_id": "NIN-002",
+    "level": 13,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-012",
+    "template_ninja_id": "NIN-027",
+    "level": 14,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-013",
+    "template_ninja_id": "NIN-028",
+    "level": 14,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-014",
+    "template_ninja_id": "NIN-028",
+    "level": 16,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-015",
+    "template_ninja_id": "NIN-027",
+    "level": 16,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-016",
+    "template_ninja_id": "NIN-027",
+    "level": 18,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-017",
+    "template_ninja_id": "NIN-028",
+    "level": 18,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-018",
+    "template_ninja_id": "NIN-028",
+    "level": 20,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-019",
+    "template_ninja_id": "NIN-027",
+    "level": 20,
+    "realm": 0,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-020",
+    "template_ninja_id": "NIN-028",
+    "level": 22,
+    "realm": 1,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-021",
+    "template_ninja_id": "NIN-028",
+    "level": 22,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-022",
+    "template_ninja_id": "NIN-027",
+    "level": 22,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-023",
+    "template_ninja_id": "NIN-033",
+    "level": 23,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-024",
+    "template_ninja_id": "NIN-034",
+    "level": 23,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-025",
+    "template_ninja_id": "NIN-034",
+    "level": 25,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-026",
+    "template_ninja_id": "NIN-035",
+    "level": 25,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-027",
+    "template_ninja_id": "NIN-035",
+    "level": 27,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-028",
+    "template_ninja_id": "NIN-014",
+    "level": 27,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-029",
+    "template_ninja_id": "NIN-014",
+    "level": 29,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-030",
+    "template_ninja_id": "NIN-013",
+    "level": 29,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-031",
+    "template_ninja_id": "NIN-024",
+    "level": 31,
+    "realm": 1,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-032",
+    "template_ninja_id": "NIN-024",
+    "level": 31,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-033",
+    "template_ninja_id": "NIN-033",
+    "level": 31,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-034",
+    "template_ninja_id": "NIN-024",
+    "level": 32,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-035",
+    "template_ninja_id": "NIN-025",
+    "level": 32,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-036",
+    "template_ninja_id": "NIN-025",
+    "level": 34,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-037",
+    "template_ninja_id": "NIN-026",
+    "level": 34,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-038",
+    "template_ninja_id": "NIN-026",
+    "level": 36,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-039",
+    "template_ninja_id": "NIN-022",
+    "level": 36,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-040",
+    "template_ninja_id": "NIN-022",
+    "level": 38,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-041",
+    "template_ninja_id": "NIN-024",
+    "level": 38,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-042",
+    "template_ninja_id": "NIN-022",
+    "level": 40,
+    "realm": 1,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-043",
+    "template_ninja_id": "NIN-025",
+    "level": 40,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-044",
+    "template_ninja_id": "NIN-026",
+    "level": 40,
+    "realm": 1,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-045",
+    "template_ninja_id": "NIN-023",
+    "level": 41,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-046",
+    "template_ninja_id": "NIN-022",
+    "level": 41,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-047",
+    "template_ninja_id": "NIN-022",
+    "level": 43,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-048",
+    "template_ninja_id": "NIN-020",
+    "level": 43,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-049",
+    "template_ninja_id": "NIN-020",
+    "level": 45,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-050",
+    "template_ninja_id": "NIN-021",
+    "level": 45,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-051",
+    "template_ninja_id": "NIN-021",
+    "level": 47,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-052",
+    "template_ninja_id": "NIN-023",
+    "level": 47,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-053",
+    "template_ninja_id": "NIN-021",
+    "level": 49,
+    "realm": 2,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-054",
+    "template_ninja_id": "NIN-022",
+    "level": 49,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-055",
+    "template_ninja_id": "NIN-020",
+    "level": 49,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-056",
+    "template_ninja_id": "NIN-037",
+    "level": 50,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-057",
+    "template_ninja_id": "NIN-038",
+    "level": 50,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-058",
+    "template_ninja_id": "NIN-039",
+    "level": 50,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-059",
+    "template_ninja_id": "NIN-038",
+    "level": 52,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-060",
+    "template_ninja_id": "NIN-039",
+    "level": 52,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-061",
+    "template_ninja_id": "NIN-040",
+    "level": 52,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-062",
+    "template_ninja_id": "NIN-039",
+    "level": 54,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-063",
+    "template_ninja_id": "NIN-040",
+    "level": 54,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-064",
+    "template_ninja_id": "NIN-036",
+    "level": 54,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-065",
+    "template_ninja_id": "NIN-040",
+    "level": 56,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-066",
+    "template_ninja_id": "NIN-036",
+    "level": 56,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-067",
+    "template_ninja_id": "NIN-002",
+    "level": 56,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-068",
+    "template_ninja_id": "NIN-002",
+    "level": 58,
+    "realm": 2,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-069",
+    "template_ninja_id": "NIN-002",
+    "level": 58,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-070",
+    "template_ninja_id": "NIN-037",
+    "level": 58,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-071",
+    "template_ninja_id": "NIN-038",
+    "level": 58,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-072",
+    "template_ninja_id": "NIN-062",
+    "level": 59,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-073",
+    "template_ninja_id": "NIN-063",
+    "level": 59,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-074",
+    "template_ninja_id": "NIN-055",
+    "level": 59,
+    "realm": 2,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-075",
+    "template_ninja_id": "NIN-063",
+    "level": 61,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-076",
+    "template_ninja_id": "NIN-055",
+    "level": 61,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-077",
+    "template_ninja_id": "NIN-058",
+    "level": 61,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-078",
+    "template_ninja_id": "NIN-055",
+    "level": 63,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-079",
+    "template_ninja_id": "NIN-058",
+    "level": 63,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-080",
+    "template_ninja_id": "NIN-062",
+    "level": 63,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-081",
+    "template_ninja_id": "NIN-058",
+    "level": 65,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-082",
+    "template_ninja_id": "NIN-062",
+    "level": 65,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-083",
+    "template_ninja_id": "NIN-063",
+    "level": 65,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-084",
+    "template_ninja_id": "NIN-058",
+    "level": 67,
+    "realm": 3,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-085",
+    "template_ninja_id": "NIN-063",
+    "level": 67,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-086",
+    "template_ninja_id": "NIN-055",
+    "level": 67,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-087",
+    "template_ninja_id": "NIN-058",
+    "level": 67,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-088",
+    "template_ninja_id": "NIN-023",
+    "level": 68,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-089",
+    "template_ninja_id": "NIN-022",
+    "level": 68,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-090",
+    "template_ninja_id": "NIN-042",
+    "level": 68,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-091",
+    "template_ninja_id": "NIN-022",
+    "level": 70,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-092",
+    "template_ninja_id": "NIN-042",
+    "level": 70,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-093",
+    "template_ninja_id": "NIN-045",
+    "level": 70,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-094",
+    "template_ninja_id": "NIN-042",
+    "level": 72,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-095",
+    "template_ninja_id": "NIN-045",
+    "level": 72,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-096",
+    "template_ninja_id": "NIN-023",
+    "level": 72,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-097",
+    "template_ninja_id": "NIN-045",
+    "level": 74,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-098",
+    "template_ninja_id": "NIN-023",
+    "level": 74,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-099",
+    "template_ninja_id": "NIN-022",
+    "level": 74,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-100",
+    "template_ninja_id": "NIN-045",
+    "level": 76,
+    "realm": 3,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-101",
+    "template_ninja_id": "NIN-022",
+    "level": 76,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-102",
+    "template_ninja_id": "NIN-042",
+    "level": 76,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-103",
+    "template_ninja_id": "NIN-045",
+    "level": 76,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-104",
+    "template_ninja_id": "NIN-064",
+    "level": 77,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-105",
+    "template_ninja_id": "NIN-065",
+    "level": 77,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-106",
+    "template_ninja_id": "NIN-017",
+    "level": 77,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-107",
+    "template_ninja_id": "NIN-065",
+    "level": 79,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-108",
+    "template_ninja_id": "NIN-017",
+    "level": 79,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-109",
+    "template_ninja_id": "NIN-046",
+    "level": 79,
+    "realm": 3,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-110",
+    "template_ninja_id": "NIN-017",
+    "level": 81,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-111",
+    "template_ninja_id": "NIN-046",
+    "level": 81,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-112",
+    "template_ninja_id": "NIN-064",
+    "level": 81,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-113",
+    "template_ninja_id": "NIN-046",
+    "level": 83,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-114",
+    "template_ninja_id": "NIN-064",
+    "level": 83,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-115",
+    "template_ninja_id": "NIN-065",
+    "level": 83,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-116",
+    "template_ninja_id": "NIN-046",
+    "level": 85,
+    "realm": 4,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-117",
+    "template_ninja_id": "NIN-065",
+    "level": 85,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-118",
+    "template_ninja_id": "NIN-017",
+    "level": 85,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-119",
+    "template_ninja_id": "NIN-046",
+    "level": 85,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-120",
+    "template_ninja_id": "NIN-061",
+    "level": 86,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-121",
+    "template_ninja_id": "NIN-060",
+    "level": 86,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-122",
+    "template_ninja_id": "NIN-042",
+    "level": 86,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-123",
+    "template_ninja_id": "NIN-060",
+    "level": 88,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-124",
+    "template_ninja_id": "NIN-042",
+    "level": 88,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-125",
+    "template_ninja_id": "NIN-061",
+    "level": 88,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-126",
+    "template_ninja_id": "NIN-042",
+    "level": 90,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-127",
+    "template_ninja_id": "NIN-061",
+    "level": 90,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-128",
+    "template_ninja_id": "NIN-060",
+    "level": 90,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-129",
+    "template_ninja_id": "NIN-061",
+    "level": 92,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-130",
+    "template_ninja_id": "NIN-060",
+    "level": 92,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-131",
+    "template_ninja_id": "NIN-042",
+    "level": 92,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-132",
+    "template_ninja_id": "NIN-042",
+    "level": 94,
+    "realm": 4,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-133",
+    "template_ninja_id": "NIN-042",
+    "level": 94,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-134",
+    "template_ninja_id": "NIN-061",
+    "level": 94,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-135",
+    "template_ninja_id": "NIN-060",
+    "level": 94,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-136",
+    "template_ninja_id": "NIN-067",
+    "level": 95,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-137",
+    "template_ninja_id": "NIN-068",
+    "level": 95,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-138",
+    "template_ninja_id": "NIN-066",
+    "level": 95,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-139",
+    "template_ninja_id": "NIN-041",
+    "level": 95,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-140",
+    "template_ninja_id": "NIN-068",
+    "level": 97,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-141",
+    "template_ninja_id": "NIN-066",
+    "level": 97,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-142",
+    "template_ninja_id": "NIN-041",
+    "level": 97,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-143",
+    "template_ninja_id": "NIN-067",
+    "level": 97,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-144",
+    "template_ninja_id": "NIN-066",
+    "level": 99,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-145",
+    "template_ninja_id": "NIN-041",
+    "level": 99,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-146",
+    "template_ninja_id": "NIN-067",
+    "level": 99,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-147",
+    "template_ninja_id": "NIN-068",
+    "level": 99,
+    "realm": 4,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-148",
+    "template_ninja_id": "NIN-041",
+    "level": 101,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-149",
+    "template_ninja_id": "NIN-067",
+    "level": 101,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-150",
+    "template_ninja_id": "NIN-068",
+    "level": 101,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-151",
+    "template_ninja_id": "NIN-066",
+    "level": 101,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-152",
+    "template_ninja_id": "NIN-041",
+    "level": 103,
+    "realm": 5,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-153",
+    "template_ninja_id": "NIN-068",
+    "level": 103,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-154",
+    "template_ninja_id": "NIN-066",
+    "level": 103,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-155",
+    "template_ninja_id": "NIN-041",
+    "level": 103,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-156",
+    "template_ninja_id": "NIN-067",
+    "level": 103,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-157",
+    "template_ninja_id": "NIN-077",
+    "level": 104,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-158",
+    "template_ninja_id": "NIN-083",
+    "level": 104,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-159",
+    "template_ninja_id": "NIN-086",
+    "level": 104,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-160",
+    "template_ninja_id": "NIN-091",
+    "level": 104,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-161",
+    "template_ninja_id": "NIN-083",
+    "level": 106,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-162",
+    "template_ninja_id": "NIN-086",
+    "level": 106,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-163",
+    "template_ninja_id": "NIN-091",
+    "level": 106,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-164",
+    "template_ninja_id": "NIN-042",
+    "level": 106,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-165",
+    "template_ninja_id": "NIN-086",
+    "level": 108,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-166",
+    "template_ninja_id": "NIN-091",
+    "level": 108,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-167",
+    "template_ninja_id": "NIN-042",
+    "level": 108,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-168",
+    "template_ninja_id": "NIN-077",
+    "level": 108,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-169",
+    "template_ninja_id": "NIN-091",
+    "level": 110,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-170",
+    "template_ninja_id": "NIN-042",
+    "level": 110,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-171",
+    "template_ninja_id": "NIN-077",
+    "level": 110,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-172",
+    "template_ninja_id": "NIN-083",
+    "level": 110,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-173",
+    "template_ninja_id": "NIN-042",
+    "level": 112,
+    "realm": 5,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-174",
+    "template_ninja_id": "NIN-077",
+    "level": 112,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-175",
+    "template_ninja_id": "NIN-083",
+    "level": 112,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-176",
+    "template_ninja_id": "NIN-086",
+    "level": 112,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-177",
+    "template_ninja_id": "NIN-091",
+    "level": 112,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-178",
+    "template_ninja_id": "NIN-076",
+    "level": 113,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-179",
+    "template_ninja_id": "NIN-100",
+    "level": 113,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-180",
+    "template_ninja_id": "NIN-101",
+    "level": 113,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-181",
+    "template_ninja_id": "NIN-041",
+    "level": 113,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-182",
+    "template_ninja_id": "NIN-100",
+    "level": 115,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-183",
+    "template_ninja_id": "NIN-101",
+    "level": 115,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-184",
+    "template_ninja_id": "NIN-041",
+    "level": 115,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-185",
+    "template_ninja_id": "NIN-076",
+    "level": 115,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-186",
+    "template_ninja_id": "NIN-101",
+    "level": 117,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-187",
+    "template_ninja_id": "NIN-041",
+    "level": 117,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-188",
+    "template_ninja_id": "NIN-076",
+    "level": 117,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-189",
+    "template_ninja_id": "NIN-100",
+    "level": 117,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-190",
+    "template_ninja_id": "NIN-041",
+    "level": 119,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-191",
+    "template_ninja_id": "NIN-076",
+    "level": 119,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-192",
+    "template_ninja_id": "NIN-100",
+    "level": 119,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-193",
+    "template_ninja_id": "NIN-101",
+    "level": 119,
+    "realm": 5,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-194",
+    "template_ninja_id": "NIN-041",
+    "level": 121,
+    "realm": 6,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-195",
+    "template_ninja_id": "NIN-100",
+    "level": 121,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-196",
+    "template_ninja_id": "NIN-101",
+    "level": 121,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-197",
+    "template_ninja_id": "NIN-041",
+    "level": 121,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-198",
+    "template_ninja_id": "NIN-076",
+    "level": 121,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-199",
+    "template_ninja_id": "NIN-071",
+    "level": 122,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-200",
+    "template_ninja_id": "NIN-100",
+    "level": 122,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-201",
+    "template_ninja_id": "NIN-102",
+    "level": 122,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-202",
+    "template_ninja_id": "NIN-103",
+    "level": 122,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-203",
+    "template_ninja_id": "NIN-100",
+    "level": 124,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-204",
+    "template_ninja_id": "NIN-102",
+    "level": 124,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-205",
+    "template_ninja_id": "NIN-103",
+    "level": 124,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-206",
+    "template_ninja_id": "NIN-104",
+    "level": 124,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-207",
+    "template_ninja_id": "NIN-102",
+    "level": 126,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-208",
+    "template_ninja_id": "NIN-103",
+    "level": 126,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-209",
+    "template_ninja_id": "NIN-104",
+    "level": 126,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-210",
+    "template_ninja_id": "NIN-105",
+    "level": 126,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-211",
+    "template_ninja_id": "NIN-103",
+    "level": 128,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-212",
+    "template_ninja_id": "NIN-104",
+    "level": 128,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-213",
+    "template_ninja_id": "NIN-105",
+    "level": 128,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-214",
+    "template_ninja_id": "NIN-071",
+    "level": 128,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-215",
+    "template_ninja_id": "NIN-105",
+    "level": 130,
+    "realm": 6,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-216",
+    "template_ninja_id": "NIN-105",
+    "level": 130,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-217",
+    "template_ninja_id": "NIN-071",
+    "level": 130,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-218",
+    "template_ninja_id": "NIN-100",
+    "level": 130,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-219",
+    "template_ninja_id": "NIN-102",
+    "level": 130,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-220",
+    "template_ninja_id": "NIN-069",
+    "level": 131,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-221",
+    "template_ninja_id": "NIN-070",
+    "level": 131,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-222",
+    "template_ninja_id": "NIN-076",
+    "level": 131,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-223",
+    "template_ninja_id": "NIN-041",
+    "level": 131,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-224",
+    "template_ninja_id": "NIN-070",
+    "level": 133,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-225",
+    "template_ninja_id": "NIN-076",
+    "level": 133,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-226",
+    "template_ninja_id": "NIN-041",
+    "level": 133,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-227",
+    "template_ninja_id": "NIN-069",
+    "level": 133,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-228",
+    "template_ninja_id": "NIN-076",
+    "level": 135,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-229",
+    "template_ninja_id": "NIN-041",
+    "level": 135,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-230",
+    "template_ninja_id": "NIN-069",
+    "level": 135,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-231",
+    "template_ninja_id": "NIN-070",
+    "level": 135,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-232",
+    "template_ninja_id": "NIN-041",
+    "level": 137,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-233",
+    "template_ninja_id": "NIN-069",
+    "level": 137,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-234",
+    "template_ninja_id": "NIN-070",
+    "level": 137,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-235",
+    "template_ninja_id": "NIN-076",
+    "level": 137,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-236",
+    "template_ninja_id": "NIN-041",
+    "level": 139,
+    "realm": 6,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-237",
+    "template_ninja_id": "NIN-070",
+    "level": 139,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-238",
+    "template_ninja_id": "NIN-076",
+    "level": 139,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-239",
+    "template_ninja_id": "NIN-041",
+    "level": 139,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-240",
+    "template_ninja_id": "NIN-069",
+    "level": 139,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-241",
+    "template_ninja_id": "NIN-070",
+    "level": 140,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-242",
+    "template_ninja_id": "NIN-097",
+    "level": 140,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-243",
+    "template_ninja_id": "NIN-098",
+    "level": 140,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-244",
+    "template_ninja_id": "NIN-099",
+    "level": 140,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-245",
+    "template_ninja_id": "NIN-070",
+    "level": 140,
+    "realm": 6,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-246",
+    "template_ninja_id": "NIN-097",
+    "level": 142,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-247",
+    "template_ninja_id": "NIN-098",
+    "level": 142,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-248",
+    "template_ninja_id": "NIN-099",
+    "level": 142,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-249",
+    "template_ninja_id": "NIN-070",
+    "level": 142,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-250",
+    "template_ninja_id": "NIN-097",
+    "level": 142,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-251",
+    "template_ninja_id": "NIN-098",
+    "level": 144,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-252",
+    "template_ninja_id": "NIN-099",
+    "level": 144,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-253",
+    "template_ninja_id": "NIN-070",
+    "level": 144,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-254",
+    "template_ninja_id": "NIN-097",
+    "level": 144,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-255",
+    "template_ninja_id": "NIN-098",
+    "level": 144,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-256",
+    "template_ninja_id": "NIN-099",
+    "level": 146,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-257",
+    "template_ninja_id": "NIN-070",
+    "level": 146,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-258",
+    "template_ninja_id": "NIN-097",
+    "level": 146,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-259",
+    "template_ninja_id": "NIN-098",
+    "level": 146,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-260",
+    "template_ninja_id": "NIN-099",
+    "level": 146,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-261",
+    "template_ninja_id": "NIN-099",
+    "level": 148,
+    "realm": 7,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-262",
+    "template_ninja_id": "NIN-097",
+    "level": 148,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-263",
+    "template_ninja_id": "NIN-098",
+    "level": 148,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-264",
+    "template_ninja_id": "NIN-099",
+    "level": 148,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-265",
+    "template_ninja_id": "NIN-070",
+    "level": 148,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-266",
+    "template_ninja_id": "NIN-097",
+    "level": 148,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-267",
+    "template_ninja_id": "NIN-041",
+    "level": 149,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-268",
+    "template_ninja_id": "NIN-042",
+    "level": 149,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-269",
+    "template_ninja_id": "NIN-041",
+    "level": 149,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-270",
+    "template_ninja_id": "NIN-042",
+    "level": 149,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-271",
+    "template_ninja_id": "NIN-041",
+    "level": 149,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-272",
+    "template_ninja_id": "NIN-042",
+    "level": 151,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-273",
+    "template_ninja_id": "NIN-041",
+    "level": 151,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-274",
+    "template_ninja_id": "NIN-042",
+    "level": 151,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-275",
+    "template_ninja_id": "NIN-041",
+    "level": 151,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-276",
+    "template_ninja_id": "NIN-042",
+    "level": 151,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-277",
+    "template_ninja_id": "NIN-041",
+    "level": 153,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-278",
+    "template_ninja_id": "NIN-042",
+    "level": 153,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-279",
+    "template_ninja_id": "NIN-041",
+    "level": 153,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-280",
+    "template_ninja_id": "NIN-042",
+    "level": 153,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-281",
+    "template_ninja_id": "NIN-041",
+    "level": 153,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-282",
+    "template_ninja_id": "NIN-042",
+    "level": 155,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-283",
+    "template_ninja_id": "NIN-041",
+    "level": 155,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-284",
+    "template_ninja_id": "NIN-042",
+    "level": 155,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-285",
+    "template_ninja_id": "NIN-041",
+    "level": 155,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-286",
+    "template_ninja_id": "NIN-042",
+    "level": 155,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-287",
+    "template_ninja_id": "NIN-042",
+    "level": 157,
+    "realm": 7,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-288",
+    "template_ninja_id": "NIN-042",
+    "level": 157,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-289",
+    "template_ninja_id": "NIN-041",
+    "level": 157,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-290",
+    "template_ninja_id": "NIN-042",
+    "level": 157,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-291",
+    "template_ninja_id": "NIN-041",
+    "level": 157,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-292",
+    "template_ninja_id": "NIN-042",
+    "level": 157,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-293",
+    "template_ninja_id": "NIN-111",
+    "level": 158,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-294",
+    "template_ninja_id": "NIN-112",
+    "level": 158,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-295",
+    "template_ninja_id": "NIN-113",
+    "level": 158,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-296",
+    "template_ninja_id": "NIN-120",
+    "level": 158,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-297",
+    "template_ninja_id": "NIN-121",
+    "level": 158,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-298",
+    "template_ninja_id": "NIN-112",
+    "level": 160,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-299",
+    "template_ninja_id": "NIN-113",
+    "level": 160,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-300",
+    "template_ninja_id": "NIN-120",
+    "level": 160,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-301",
+    "template_ninja_id": "NIN-121",
+    "level": 160,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-302",
+    "template_ninja_id": "NIN-111",
+    "level": 160,
+    "realm": 7,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-303",
+    "template_ninja_id": "NIN-113",
+    "level": 162,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-304",
+    "template_ninja_id": "NIN-120",
+    "level": 162,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-305",
+    "template_ninja_id": "NIN-121",
+    "level": 162,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-306",
+    "template_ninja_id": "NIN-111",
+    "level": 162,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-307",
+    "template_ninja_id": "NIN-112",
+    "level": 162,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-308",
+    "template_ninja_id": "NIN-120",
+    "level": 164,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-309",
+    "template_ninja_id": "NIN-121",
+    "level": 164,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-310",
+    "template_ninja_id": "NIN-111",
+    "level": 164,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-311",
+    "template_ninja_id": "NIN-112",
+    "level": 164,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-312",
+    "template_ninja_id": "NIN-113",
+    "level": 164,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-313",
+    "template_ninja_id": "NIN-121",
+    "level": 166,
+    "realm": 8,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-314",
+    "template_ninja_id": "NIN-111",
+    "level": 166,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-315",
+    "template_ninja_id": "NIN-112",
+    "level": 166,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-316",
+    "template_ninja_id": "NIN-113",
+    "level": 166,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-317",
+    "template_ninja_id": "NIN-120",
+    "level": 166,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-318",
+    "template_ninja_id": "NIN-121",
+    "level": 166,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-319",
+    "template_ninja_id": "NIN-122",
+    "level": 167,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-320",
+    "template_ninja_id": "NIN-113",
+    "level": 167,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-321",
+    "template_ninja_id": "NIN-111",
+    "level": 167,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-322",
+    "template_ninja_id": "NIN-122",
+    "level": 167,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-323",
+    "template_ninja_id": "NIN-113",
+    "level": 167,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-324",
+    "template_ninja_id": "NIN-113",
+    "level": 169,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-325",
+    "template_ninja_id": "NIN-111",
+    "level": 169,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-326",
+    "template_ninja_id": "NIN-122",
+    "level": 169,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-327",
+    "template_ninja_id": "NIN-113",
+    "level": 169,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-328",
+    "template_ninja_id": "NIN-111",
+    "level": 169,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-329",
+    "template_ninja_id": "NIN-111",
+    "level": 171,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-330",
+    "template_ninja_id": "NIN-122",
+    "level": 171,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-331",
+    "template_ninja_id": "NIN-113",
+    "level": 171,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-332",
+    "template_ninja_id": "NIN-111",
+    "level": 171,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-333",
+    "template_ninja_id": "NIN-122",
+    "level": 171,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-334",
+    "template_ninja_id": "NIN-122",
+    "level": 173,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-335",
+    "template_ninja_id": "NIN-113",
+    "level": 173,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-336",
+    "template_ninja_id": "NIN-111",
+    "level": 173,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-337",
+    "template_ninja_id": "NIN-122",
+    "level": 173,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-338",
+    "template_ninja_id": "NIN-113",
+    "level": 173,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-339",
+    "template_ninja_id": "NIN-111",
+    "level": 175,
+    "realm": 8,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-340",
+    "template_ninja_id": "NIN-111",
+    "level": 175,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-341",
+    "template_ninja_id": "NIN-122",
+    "level": 175,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-342",
+    "template_ninja_id": "NIN-113",
+    "level": 175,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-343",
+    "template_ninja_id": "NIN-111",
+    "level": 175,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-344",
+    "template_ninja_id": "NIN-122",
+    "level": 175,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-345",
+    "template_ninja_id": "NIN-130",
+    "level": 176,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-346",
+    "template_ninja_id": "NIN-131",
+    "level": 176,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-347",
+    "template_ninja_id": "NIN-111",
+    "level": 176,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-348",
+    "template_ninja_id": "NIN-112",
+    "level": 176,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-349",
+    "template_ninja_id": "NIN-130",
+    "level": 176,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-350",
+    "template_ninja_id": "NIN-131",
+    "level": 178,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-351",
+    "template_ninja_id": "NIN-111",
+    "level": 178,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-352",
+    "template_ninja_id": "NIN-112",
+    "level": 178,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-353",
+    "template_ninja_id": "NIN-130",
+    "level": 178,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-354",
+    "template_ninja_id": "NIN-131",
+    "level": 178,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-355",
+    "template_ninja_id": "NIN-111",
+    "level": 180,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-356",
+    "template_ninja_id": "NIN-112",
+    "level": 180,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-357",
+    "template_ninja_id": "NIN-130",
+    "level": 180,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-358",
+    "template_ninja_id": "NIN-131",
+    "level": 180,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-359",
+    "template_ninja_id": "NIN-111",
+    "level": 180,
+    "realm": 8,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-360",
+    "template_ninja_id": "NIN-112",
+    "level": 182,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-361",
+    "template_ninja_id": "NIN-130",
+    "level": 182,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-362",
+    "template_ninja_id": "NIN-131",
+    "level": 182,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-363",
+    "template_ninja_id": "NIN-111",
+    "level": 182,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-364",
+    "template_ninja_id": "NIN-112",
+    "level": 182,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-365",
+    "template_ninja_id": "NIN-112",
+    "level": 184,
+    "realm": 9,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-366",
+    "template_ninja_id": "NIN-131",
+    "level": 184,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-367",
+    "template_ninja_id": "NIN-111",
+    "level": 184,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-368",
+    "template_ninja_id": "NIN-112",
+    "level": 184,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-369",
+    "template_ninja_id": "NIN-130",
+    "level": 184,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-370",
+    "template_ninja_id": "NIN-131",
+    "level": 184,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-371",
+    "template_ninja_id": "NIN-135",
+    "level": 185,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-372",
+    "template_ninja_id": "NIN-133",
+    "level": 185,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-373",
+    "template_ninja_id": "NIN-136",
+    "level": 185,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-374",
+    "template_ninja_id": "NIN-137",
+    "level": 185,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-375",
+    "template_ninja_id": "NIN-135",
+    "level": 185,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-376",
+    "template_ninja_id": "NIN-133",
+    "level": 185,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-377",
+    "template_ninja_id": "NIN-133",
+    "level": 187,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-378",
+    "template_ninja_id": "NIN-136",
+    "level": 187,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-379",
+    "template_ninja_id": "NIN-137",
+    "level": 187,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-380",
+    "template_ninja_id": "NIN-135",
+    "level": 187,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-381",
+    "template_ninja_id": "NIN-133",
+    "level": 187,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-382",
+    "template_ninja_id": "NIN-136",
+    "level": 187,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-383",
+    "template_ninja_id": "NIN-136",
+    "level": 189,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-384",
+    "template_ninja_id": "NIN-137",
+    "level": 189,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-385",
+    "template_ninja_id": "NIN-135",
+    "level": 189,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-386",
+    "template_ninja_id": "NIN-133",
+    "level": 189,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-387",
+    "template_ninja_id": "NIN-136",
+    "level": 189,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-388",
+    "template_ninja_id": "NIN-137",
+    "level": 189,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-389",
+    "template_ninja_id": "NIN-137",
+    "level": 191,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-390",
+    "template_ninja_id": "NIN-135",
+    "level": 191,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-391",
+    "template_ninja_id": "NIN-133",
+    "level": 191,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-392",
+    "template_ninja_id": "NIN-136",
+    "level": 191,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-393",
+    "template_ninja_id": "NIN-137",
+    "level": 191,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-394",
+    "template_ninja_id": "NIN-135",
+    "level": 191,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-395",
+    "template_ninja_id": "NIN-137",
+    "level": 193,
+    "realm": 9,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-396",
+    "template_ninja_id": "NIN-133",
+    "level": 193,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-397",
+    "template_ninja_id": "NIN-136",
+    "level": 193,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-398",
+    "template_ninja_id": "NIN-137",
+    "level": 193,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-399",
+    "template_ninja_id": "NIN-135",
+    "level": 193,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-400",
+    "template_ninja_id": "NIN-133",
+    "level": 193,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-401",
+    "template_ninja_id": "NIN-114",
+    "level": 194,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-402",
+    "template_ninja_id": "NIN-132",
+    "level": 194,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-403",
+    "template_ninja_id": "NIN-130",
+    "level": 194,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-404",
+    "template_ninja_id": "NIN-114",
+    "level": 194,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-405",
+    "template_ninja_id": "NIN-132",
+    "level": 194,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-406",
+    "template_ninja_id": "NIN-130",
+    "level": 194,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-407",
+    "template_ninja_id": "NIN-132",
+    "level": 196,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-408",
+    "template_ninja_id": "NIN-130",
+    "level": 196,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-409",
+    "template_ninja_id": "NIN-114",
+    "level": 196,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-410",
+    "template_ninja_id": "NIN-132",
+    "level": 196,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-411",
+    "template_ninja_id": "NIN-130",
+    "level": 196,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-412",
+    "template_ninja_id": "NIN-114",
+    "level": 196,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-413",
+    "template_ninja_id": "NIN-130",
+    "level": 198,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-414",
+    "template_ninja_id": "NIN-114",
+    "level": 198,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-415",
+    "template_ninja_id": "NIN-132",
+    "level": 198,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-416",
+    "template_ninja_id": "NIN-130",
+    "level": 198,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-417",
+    "template_ninja_id": "NIN-114",
+    "level": 198,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-418",
+    "template_ninja_id": "NIN-132",
+    "level": 198,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-419",
+    "template_ninja_id": "NIN-114",
+    "level": 200,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-420",
+    "template_ninja_id": "NIN-132",
+    "level": 200,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-421",
+    "template_ninja_id": "NIN-130",
+    "level": 200,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-422",
+    "template_ninja_id": "NIN-114",
+    "level": 200,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-423",
+    "template_ninja_id": "NIN-132",
+    "level": 200,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-424",
+    "template_ninja_id": "NIN-130",
+    "level": 200,
+    "realm": 9,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-425",
+    "template_ninja_id": "NIN-130",
+    "level": 202,
+    "realm": 10,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-426",
+    "template_ninja_id": "NIN-130",
+    "level": 202,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-427",
+    "template_ninja_id": "NIN-114",
+    "level": 202,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-428",
+    "template_ninja_id": "NIN-132",
+    "level": 202,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-429",
+    "template_ninja_id": "NIN-130",
+    "level": 202,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-430",
+    "template_ninja_id": "NIN-114",
+    "level": 202,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-431",
+    "template_ninja_id": "NIN-134",
+    "level": 203,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-432",
+    "template_ninja_id": "NIN-138",
+    "level": 203,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-433",
+    "template_ninja_id": "NIN-139",
+    "level": 203,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-434",
+    "template_ninja_id": "NIN-114",
+    "level": 203,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-435",
+    "template_ninja_id": "NIN-134",
+    "level": 203,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-436",
+    "template_ninja_id": "NIN-138",
+    "level": 203,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-437",
+    "template_ninja_id": "NIN-138",
+    "level": 205,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-438",
+    "template_ninja_id": "NIN-139",
+    "level": 205,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-439",
+    "template_ninja_id": "NIN-114",
+    "level": 205,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-440",
+    "template_ninja_id": "NIN-134",
+    "level": 205,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-441",
+    "template_ninja_id": "NIN-138",
+    "level": 205,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-442",
+    "template_ninja_id": "NIN-139",
+    "level": 205,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-443",
+    "template_ninja_id": "NIN-139",
+    "level": 207,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-444",
+    "template_ninja_id": "NIN-114",
+    "level": 207,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-445",
+    "template_ninja_id": "NIN-134",
+    "level": 207,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-446",
+    "template_ninja_id": "NIN-138",
+    "level": 207,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-447",
+    "template_ninja_id": "NIN-139",
+    "level": 207,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-448",
+    "template_ninja_id": "NIN-114",
+    "level": 207,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-449",
+    "template_ninja_id": "NIN-114",
+    "level": 209,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-450",
+    "template_ninja_id": "NIN-134",
+    "level": 209,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-451",
+    "template_ninja_id": "NIN-138",
+    "level": 209,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-452",
+    "template_ninja_id": "NIN-139",
+    "level": 209,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-453",
+    "template_ninja_id": "NIN-114",
+    "level": 209,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-454",
+    "template_ninja_id": "NIN-134",
+    "level": 209,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-455",
+    "template_ninja_id": "NIN-114",
+    "level": 211,
+    "realm": 10,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-456",
+    "template_ninja_id": "NIN-138",
+    "level": 211,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-457",
+    "template_ninja_id": "NIN-139",
+    "level": 211,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-458",
+    "template_ninja_id": "NIN-114",
+    "level": 211,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-459",
+    "template_ninja_id": "NIN-134",
+    "level": 211,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-460",
+    "template_ninja_id": "NIN-138",
+    "level": 211,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-461",
+    "template_ninja_id": "NIN-070",
+    "level": 212,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-462",
+    "template_ninja_id": "NIN-099",
+    "level": 212,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-463",
+    "template_ninja_id": "NIN-130",
+    "level": 212,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-464",
+    "template_ninja_id": "NIN-132",
+    "level": 212,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-465",
+    "template_ninja_id": "NIN-070",
+    "level": 212,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-466",
+    "template_ninja_id": "NIN-099",
+    "level": 212,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-467",
+    "template_ninja_id": "NIN-099",
+    "level": 214,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-468",
+    "template_ninja_id": "NIN-130",
+    "level": 214,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-469",
+    "template_ninja_id": "NIN-132",
+    "level": 214,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-470",
+    "template_ninja_id": "NIN-070",
+    "level": 214,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-471",
+    "template_ninja_id": "NIN-099",
+    "level": 214,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-472",
+    "template_ninja_id": "NIN-130",
+    "level": 214,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-473",
+    "template_ninja_id": "NIN-130",
+    "level": 216,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-474",
+    "template_ninja_id": "NIN-132",
+    "level": 216,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-475",
+    "template_ninja_id": "NIN-070",
+    "level": 216,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-476",
+    "template_ninja_id": "NIN-099",
+    "level": 216,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-477",
+    "template_ninja_id": "NIN-130",
+    "level": 216,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-478",
+    "template_ninja_id": "NIN-132",
+    "level": 216,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-479",
+    "template_ninja_id": "NIN-132",
+    "level": 218,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-480",
+    "template_ninja_id": "NIN-070",
+    "level": 218,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-481",
+    "template_ninja_id": "NIN-099",
+    "level": 218,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-482",
+    "template_ninja_id": "NIN-130",
+    "level": 218,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-483",
+    "template_ninja_id": "NIN-132",
+    "level": 218,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-484",
+    "template_ninja_id": "NIN-070",
+    "level": 218,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-485",
+    "template_ninja_id": "NIN-132",
+    "level": 220,
+    "realm": 10,
+    "quality_bonus": 1,
+    "stat_multiplier": 1.6,
+    "formation_slot": 0,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-486",
+    "template_ninja_id": "NIN-099",
+    "level": 220,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 1,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-487",
+    "template_ninja_id": "NIN-130",
+    "level": 220,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 2,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-488",
+    "template_ninja_id": "NIN-132",
+    "level": 220,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 3,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-489",
+    "template_ninja_id": "NIN-070",
+    "level": 220,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 4,
+    "status": "SIMULATED"
+  },
+  {
+    "id": "NPC-490",
+    "template_ninja_id": "NIN-099",
+    "level": 220,
+    "realm": 10,
+    "quality_bonus": 0,
+    "stat_multiplier": 1,
+    "formation_slot": 5,
+    "status": "SIMULATED"
+  }
+]

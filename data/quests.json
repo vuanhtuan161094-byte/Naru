@@ -1,0 +1,1792 @@
+[
+  {
+    "id": "QST-001",
+    "name_vi": "Hoàn thành Học viện và Đội 7",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-001",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 500
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-002",
+    "name_vi": "Hoàn thành Hành trình Ba Quốc",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-002",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 700
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-003",
+    "name_vi": "Hoàn thành Kỳ thi Trung nhẫn",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-003",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 900
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-004",
+    "name_vi": "Hoàn thành Konoha bị tấn công",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-004",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1100
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-005",
+    "name_vi": "Hoàn thành Tìm Tsunade",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-005",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1300
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-006",
+    "name_vi": "Hoàn thành Truy tìm Sasuke",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-006",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1500
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-007",
+    "name_vi": "Hoàn thành Giải cứu Kazekage",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-007",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1700
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-008",
+    "name_vi": "Hoàn thành Cầu Thiên Địa",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-008",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1900
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-009",
+    "name_vi": "Hoàn thành Akatsuki bất tử",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-009",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2100
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-010",
+    "name_vi": "Hoàn thành Truy tìm Itachi",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-010",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2300
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-011",
+    "name_vi": "Hoàn thành Pain tấn công Làng Lá",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-011",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2500
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-012",
+    "name_vi": "Hoàn thành Hội nghị Ngũ Kage",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-012",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2700
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-013",
+    "name_vi": "Hoàn thành Tu luyện Vĩ Thú",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-013",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2900
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-014",
+    "name_vi": "Hoàn thành Đại chiến mở màn",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-014",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 3100
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-015",
+    "name_vi": "Hoàn thành Đối đầu Obito",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-015",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 3300
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-016",
+    "name_vi": "Hoàn thành Lục Đạo và Kaguya",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-016",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 3500
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-017",
+    "name_vi": "Hoàn thành Trận cuối",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-017",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 3700
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-018",
+    "name_vi": "Hoàn thành Thế hệ mới",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-018",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 3900
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-019",
+    "name_vi": "Hoàn thành Bí ẩn Nue",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-019",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 4100
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-020",
+    "name_vi": "Hoàn thành Kỳ thi và Otsutsuki",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-020",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 4300
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-021",
+    "name_vi": "Hoàn thành Kara xuất hiện",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-021",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 4500
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-022",
+    "name_vi": "Hoàn thành Karma và Kawaki",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-022",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 4700
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-023",
+    "name_vi": "Hoàn thành Nhẫn giới hậu chiến",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-023",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 4900
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-024",
+    "name_vi": "Hoàn thành Nhẫn giới vô tận",
+    "type": "story",
+    "objective": {
+      "kind": "clear_chapter",
+      "target": "CH-024",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 5100
+      },
+      {
+        "resource_id": "RES-002",
+        "qty": 15
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-025",
+    "name_vi": "Khảo sát Rừng Tử Thần",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-002",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-007",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-026",
+    "name_vi": "Khảo sát Thung lũng Tận Cùng",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-004",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-027",
+    "name_vi": "Khảo sát Đường biên phía đông",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-005",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-008",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-028",
+    "name_vi": "Khảo sát Mỏ núi lửa",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-006",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-011",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-029",
+    "name_vi": "Khảo sát Nông trại ngoại thành",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-007",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-021",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-030",
+    "name_vi": "Khảo sát Trạm giao thương",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-008",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-031",
+    "name_vi": "Khảo sát Núi rừng phía bắc",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-009",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-007",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-032",
+    "name_vi": "Khảo sát Sa mạc cửa ngõ",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-011",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-016",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-033",
+    "name_vi": "Khảo sát Hẻm đá đỏ",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-012",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-010",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-034",
+    "name_vi": "Khảo sát Ốc đảo phía nam",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-013",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-035",
+    "name_vi": "Khảo sát Mỏ tinh thể gió",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-015",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-036",
+    "name_vi": "Khảo sát Tuyến thương nhân",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-016",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-016",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-037",
+    "name_vi": "Khảo sát Bờ biển sương mù",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-018",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-029",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-038",
+    "name_vi": "Khảo sát Đảo sương phía bắc",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-019",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-045",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-039",
+    "name_vi": "Khảo sát Làng chài ngoại vi",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-021",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-029",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-040",
+    "name_vi": "Khảo sát Hải lộ phía nam",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-022",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-029",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-041",
+    "name_vi": "Khảo sát Hẻm núi sấm",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-024",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-010",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-042",
+    "name_vi": "Khảo sát Đảo Rùa",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-025",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-043",
+    "name_vi": "Khảo sát Mỏ tinh thể lôi",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-026",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-012",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-044",
+    "name_vi": "Khảo sát Thung lũng mây",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-027",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-025",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-045",
+    "name_vi": "Khảo sát Trạm gác núi cao",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-028",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-046",
+    "name_vi": "Khảo sát Cao nguyên đá",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-030",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-010",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-047",
+    "name_vi": "Khảo sát Mỏ sắt phía tây",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-031",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-011",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-048",
+    "name_vi": "Khảo sát Hẻm núi sâu",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-032",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-049",
+    "name_vi": "Khảo sát Lò luyện khoáng",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-033",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-011",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-050",
+    "name_vi": "Khảo sát Đường núi biên giới",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-034",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-051",
+    "name_vi": "Khảo sát Kênh đào phía đông",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-036",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-052",
+    "name_vi": "Khảo sát Tháp mưa cũ",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-037",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-082",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-053",
+    "name_vi": "Khảo sát Đường giao thương",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-038",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-054",
+    "name_vi": "Khảo sát Phòng nghiên cứu ngầm",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-040",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-040",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-055",
+    "name_vi": "Khảo sát Hang rắn",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-041",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-040",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-056",
+    "name_vi": "Khảo sát Rừng biên giới",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-042",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-007",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-057",
+    "name_vi": "Khảo sát Thành samurai",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-043",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-011",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-058",
+    "name_vi": "Khảo sát Đèo tuyết",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-044",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-045",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-059",
+    "name_vi": "Khảo sát Cầu Đại Naruto",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-045",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-060",
+    "name_vi": "Khảo sát Bến sông",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-046",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-029",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-061",
+    "name_vi": "Khảo sát Cầu Thiên Địa",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-047",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-008",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-062",
+    "name_vi": "Khảo sát Đồng cỏ biên giới",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-048",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-021",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-063",
+    "name_vi": "Khảo sát Hang Akatsuki",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-049",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-064",
+    "name_vi": "Khảo sát Căn cứ Akatsuki",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-050",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-082",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-065",
+    "name_vi": "Khảo sát Di tích cổ",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-051",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-095",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-066",
+    "name_vi": "Khảo sát Chiến trường Đại chiến",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-052",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-067",
+    "name_vi": "Khảo sát Hang Ryuchi",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-054",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-147",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-068",
+    "name_vi": "Khảo sát Rừng Shikkotsu",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-055",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-147",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-069",
+    "name_vi": "Khảo sát Phòng nghiên cứu Kara",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-056",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-144",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-070",
+    "name_vi": "Khảo sát Khu phong ấn cổ",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-057",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-095",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-071",
+    "name_vi": "Khảo sát Làng người chơi",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-058",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-072",
+    "name_vi": "Khảo sát Rừng cạnh làng",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-059",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-073",
+    "name_vi": "Khảo sát Mỏ cạnh làng",
+    "type": "exploration",
+    "objective": {
+      "kind": "visit_territory",
+      "target": "TER-060",
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 10
+      }
+    ],
+    "repeatable": false,
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-074",
+    "name_vi": "Hoàn thành phó bản",
+    "type": "daily",
+    "objective": {
+      "kind": "clear_stage",
+      "target": null,
+      "count": 3
+    },
+    "reward": [
+      {
+        "resource_id": "RES-116",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-075",
+    "name_vi": "Thu hoạch công trình",
+    "type": "daily",
+    "objective": {
+      "kind": "collect_production",
+      "target": null,
+      "count": 5
+    },
+    "reward": [
+      {
+        "resource_id": "RES-001",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-076",
+    "name_vi": "Tu luyện ninja",
+    "type": "daily",
+    "objective": {
+      "kind": "train_ninja",
+      "target": null,
+      "count": 3
+    },
+    "reward": [
+      {
+        "resource_id": "RES-118",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-077",
+    "name_vi": "Chế tạo vật phẩm",
+    "type": "daily",
+    "objective": {
+      "kind": "craft_item",
+      "target": null,
+      "count": 2
+    },
+    "reward": [
+      {
+        "resource_id": "RES-113",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-078",
+    "name_vi": "Giao thương",
+    "type": "daily",
+    "objective": {
+      "kind": "trade",
+      "target": null,
+      "count": 2
+    },
+    "reward": [
+      {
+        "resource_id": "RES-003",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-079",
+    "name_vi": "Chiêu mộ ninja",
+    "type": "daily",
+    "objective": {
+      "kind": "recruit",
+      "target": null,
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-134",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-080",
+    "name_vi": "Hoàn thành nhiệm vụ",
+    "type": "daily",
+    "objective": {
+      "kind": "finish_mission",
+      "target": null,
+      "count": 3
+    },
+    "reward": [
+      {
+        "resource_id": "RES-003",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "QST-081",
+    "name_vi": "Chiến đấu lãnh thổ",
+    "type": "daily",
+    "objective": {
+      "kind": "territory_battle",
+      "target": null,
+      "count": 1
+    },
+    "reward": [
+      {
+        "resource_id": "RES-004",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-001",
+        "qty": 200
+      }
+    ],
+    "repeatable": true,
+    "reset": "local_day",
+    "status": "PROPOSED"
+  }
+]

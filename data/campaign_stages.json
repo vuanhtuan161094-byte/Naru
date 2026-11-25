@@ -1,0 +1,5532 @@
+[
+  {
+    "id": "STG-001",
+    "chapter_id": "CH-001",
+    "name_vi": "Tốt nghiệp",
+    "territory_id": "TER-003",
+    "enemy_ids": [
+      "NPC-001",
+      "NPC-002"
+    ],
+    "stamina_cost": 6,
+    "requires": null,
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 120
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 42
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-002",
+    "chapter_id": "CH-001",
+    "name_vi": "Bài kiểm tra chuông",
+    "territory_id": "TER-003",
+    "enemy_ids": [
+      "NPC-003",
+      "NPC-004"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-001",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 144
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 50
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-003",
+    "chapter_id": "CH-001",
+    "name_vi": "Luyện đội hình",
+    "territory_id": "TER-003",
+    "enemy_ids": [
+      "NPC-005",
+      "NPC-006"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-002",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 168
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 58
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-004",
+    "chapter_id": "CH-001",
+    "name_vi": "Thử thách Kakashi",
+    "territory_id": "TER-003",
+    "enemy_ids": [
+      "NPC-007",
+      "NPC-008"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-003",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 192
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 67
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-005",
+    "chapter_id": "CH-001",
+    "name_vi": "Khởi đầu nhiệm vụ",
+    "territory_id": "TER-003",
+    "enemy_ids": [
+      "NPC-009",
+      "NPC-010",
+      "NPC-011"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-004",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 216
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 75
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-001",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-006",
+    "chapter_id": "CH-002",
+    "name_vi": "Đường hộ tống",
+    "territory_id": "TER-045",
+    "enemy_ids": [
+      "NPC-012",
+      "NPC-013"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-005",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 228
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 79
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-007",
+    "chapter_id": "CH-002",
+    "name_vi": "Sương mù ven sông",
+    "territory_id": "TER-045",
+    "enemy_ids": [
+      "NPC-014",
+      "NPC-015"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-006",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 252
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 88
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-008",
+    "chapter_id": "CH-002",
+    "name_vi": "Đấu kiếm trong sương",
+    "territory_id": "TER-045",
+    "enemy_ids": [
+      "NPC-016",
+      "NPC-017"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-007",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 276
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 96
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-009",
+    "chapter_id": "CH-002",
+    "name_vi": "Băng kính",
+    "territory_id": "TER-045",
+    "enemy_ids": [
+      "NPC-018",
+      "NPC-019"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-008",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 300
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 105
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-010",
+    "chapter_id": "CH-002",
+    "name_vi": "Cầu Đại Naruto",
+    "territory_id": "TER-045",
+    "enemy_ids": [
+      "NPC-020",
+      "NPC-021",
+      "NPC-022"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-009",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 324
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 113
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-002",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-011",
+    "chapter_id": "CH-003",
+    "name_vi": "Thi kiến thức",
+    "territory_id": "TER-002",
+    "enemy_ids": [
+      "NPC-023",
+      "NPC-024"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-010",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 336
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 117
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-012",
+    "chapter_id": "CH-003",
+    "name_vi": "Rừng Tử Thần",
+    "territory_id": "TER-002",
+    "enemy_ids": [
+      "NPC-025",
+      "NPC-026"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-011",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 360
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 125
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-013",
+    "chapter_id": "CH-003",
+    "name_vi": "Âm Thanh phục kích",
+    "territory_id": "TER-002",
+    "enemy_ids": [
+      "NPC-027",
+      "NPC-028"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-012",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 384
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 134
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-014",
+    "chapter_id": "CH-003",
+    "name_vi": "Vòng loại",
+    "territory_id": "TER-002",
+    "enemy_ids": [
+      "NPC-029",
+      "NPC-030"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-013",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 408
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 142
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-015",
+    "chapter_id": "CH-003",
+    "name_vi": "Đối đầu Gaara",
+    "territory_id": "TER-002",
+    "enemy_ids": [
+      "NPC-031",
+      "NPC-032",
+      "NPC-033"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-014",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 432
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 151
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-003",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-016",
+    "chapter_id": "CH-004",
+    "name_vi": "Hỗn loạn sân thi",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-034",
+      "NPC-035"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-015",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 444
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 155
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-017",
+    "chapter_id": "CH-004",
+    "name_vi": "Chặn đội Cát",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-036",
+      "NPC-037"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-016",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 468
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 163
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-018",
+    "chapter_id": "CH-004",
+    "name_vi": "Cát bộc phát",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-038",
+      "NPC-039"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-017",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 492
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 172
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-019",
+    "chapter_id": "CH-004",
+    "name_vi": "Hộ vệ làng",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-040",
+      "NPC-041"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-018",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 516
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 180
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-020",
+    "chapter_id": "CH-004",
+    "name_vi": "Đối đầu Orochimaru",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-042",
+      "NPC-043",
+      "NPC-044"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-019",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 540
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 189
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-004",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-021",
+    "chapter_id": "CH-005",
+    "name_vi": "Quán trọ biên giới",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-045",
+      "NPC-046"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-020",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 552
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 193
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-022",
+    "chapter_id": "CH-005",
+    "name_vi": "Đụng độ Kabuto",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-047",
+      "NPC-048"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-021",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 576
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 201
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-023",
+    "chapter_id": "CH-005",
+    "name_vi": "Luyện Rasengan",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-049",
+      "NPC-050"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-022",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 600
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 210
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-024",
+    "chapter_id": "CH-005",
+    "name_vi": "Hỗ trợ Tam Nhẫn",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-051",
+      "NPC-052"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-023",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 624
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 218
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-025",
+    "chapter_id": "CH-005",
+    "name_vi": "Thử thách y thuật",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-053",
+      "NPC-054",
+      "NPC-055"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-024",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 648
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 226
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-005",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-026",
+    "chapter_id": "CH-006",
+    "name_vi": "Thổ lao",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-056",
+      "NPC-057",
+      "NPC-058"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-025",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 660
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 230
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-027",
+    "chapter_id": "CH-006",
+    "name_vi": "Tơ nhện",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-059",
+      "NPC-060",
+      "NPC-061"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-026",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 684
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 239
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-028",
+    "chapter_id": "CH-006",
+    "name_vi": "Ma âm",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-062",
+      "NPC-063",
+      "NPC-064"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-027",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 708
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 247
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-029",
+    "chapter_id": "CH-006",
+    "name_vi": "Song thân",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-065",
+      "NPC-066",
+      "NPC-067"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-028",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 732
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 256
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-030",
+    "chapter_id": "CH-006",
+    "name_vi": "Thung lũng Tận Cùng",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-068",
+      "NPC-069",
+      "NPC-070",
+      "NPC-071"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-029",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 756
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 264
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-006",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-031",
+    "chapter_id": "CH-007",
+    "name_vi": "Báo động Làng Cát",
+    "territory_id": "TER-049",
+    "enemy_ids": [
+      "NPC-072",
+      "NPC-073",
+      "NPC-074"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-030",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 768
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 268
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-032",
+    "chapter_id": "CH-007",
+    "name_vi": "Truy dấu trên sa mạc",
+    "territory_id": "TER-049",
+    "enemy_ids": [
+      "NPC-075",
+      "NPC-076",
+      "NPC-077"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-031",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 792
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 277
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-033",
+    "chapter_id": "CH-007",
+    "name_vi": "Hang phong ấn",
+    "territory_id": "TER-049",
+    "enemy_ids": [
+      "NPC-078",
+      "NPC-079",
+      "NPC-080"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-032",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 816
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 285
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-034",
+    "chapter_id": "CH-007",
+    "name_vi": "Trận rối",
+    "territory_id": "TER-049",
+    "enemy_ids": [
+      "NPC-081",
+      "NPC-082",
+      "NPC-083"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-033",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 840
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 294
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-035",
+    "chapter_id": "CH-007",
+    "name_vi": "Giải cứu Kazekage",
+    "territory_id": "TER-049",
+    "enemy_ids": [
+      "NPC-084",
+      "NPC-085",
+      "NPC-086",
+      "NPC-087"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-034",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 864
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 302
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-007",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-036",
+    "chapter_id": "CH-008",
+    "name_vi": "Điểm hẹn",
+    "territory_id": "TER-047",
+    "enemy_ids": [
+      "NPC-088",
+      "NPC-089",
+      "NPC-090"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-035",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 876
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 306
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-037",
+    "chapter_id": "CH-008",
+    "name_vi": "Trinh sát cầu",
+    "territory_id": "TER-047",
+    "enemy_ids": [
+      "NPC-091",
+      "NPC-092",
+      "NPC-093"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-036",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 900
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 315
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-038",
+    "chapter_id": "CH-008",
+    "name_vi": "Rắn phục kích",
+    "territory_id": "TER-047",
+    "enemy_ids": [
+      "NPC-094",
+      "NPC-095",
+      "NPC-096"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-037",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 924
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 323
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-039",
+    "chapter_id": "CH-008",
+    "name_vi": "Chakra bộc phát",
+    "territory_id": "TER-047",
+    "enemy_ids": [
+      "NPC-097",
+      "NPC-098",
+      "NPC-099"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-038",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 948
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 331
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-040",
+    "chapter_id": "CH-008",
+    "name_vi": "Gặp lại Sasuke",
+    "territory_id": "TER-047",
+    "enemy_ids": [
+      "NPC-100",
+      "NPC-101",
+      "NPC-102",
+      "NPC-103"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-039",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 972
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 340
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-008",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-041",
+    "chapter_id": "CH-009",
+    "name_vi": "Dấu vết Akatsuki",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-104",
+      "NPC-105",
+      "NPC-106"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-040",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 984
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 344
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-042",
+    "chapter_id": "CH-009",
+    "name_vi": "Phục kích",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-107",
+      "NPC-108",
+      "NPC-109"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-041",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1008
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 352
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-043",
+    "chapter_id": "CH-009",
+    "name_vi": "Nghi thức nguyền rủa",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-110",
+      "NPC-111",
+      "NPC-112"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-042",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1032
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 361
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-044",
+    "chapter_id": "CH-009",
+    "name_vi": "Bẫy bóng",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-113",
+      "NPC-114",
+      "NPC-115"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-043",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1056
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 369
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-045",
+    "chapter_id": "CH-009",
+    "name_vi": "Trận Kakuzu",
+    "territory_id": "TER-005",
+    "enemy_ids": [
+      "NPC-116",
+      "NPC-117",
+      "NPC-118",
+      "NPC-119"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-044",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1080
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 378
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-009",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-046",
+    "chapter_id": "CH-010",
+    "name_vi": "Truy dấu",
+    "territory_id": "TER-009",
+    "enemy_ids": [
+      "NPC-120",
+      "NPC-121",
+      "NPC-122"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-045",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1092
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 382
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-047",
+    "chapter_id": "CH-010",
+    "name_vi": "Đụng độ phân thân",
+    "territory_id": "TER-009",
+    "enemy_ids": [
+      "NPC-123",
+      "NPC-124",
+      "NPC-125"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-046",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1116
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 10
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 390
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-048",
+    "chapter_id": "CH-010",
+    "name_vi": "Hỏa độn đối kháng",
+    "territory_id": "TER-009",
+    "enemy_ids": [
+      "NPC-126",
+      "NPC-127",
+      "NPC-128"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-047",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1140
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 11
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 399
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-049",
+    "chapter_id": "CH-010",
+    "name_vi": "Ảo thuật",
+    "territory_id": "TER-009",
+    "enemy_ids": [
+      "NPC-129",
+      "NPC-130",
+      "NPC-131"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-048",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1164
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 11
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 407
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-050",
+    "chapter_id": "CH-010",
+    "name_vi": "Susanoo",
+    "territory_id": "TER-009",
+    "enemy_ids": [
+      "NPC-132",
+      "NPC-133",
+      "NPC-134",
+      "NPC-135"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-049",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1188
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 11
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 415
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-010",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-051",
+    "chapter_id": "CH-011",
+    "name_vi": "Tiên thuật",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-136",
+      "NPC-137",
+      "NPC-138",
+      "NPC-139"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-050",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1200
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 11
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 420
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-052",
+    "chapter_id": "CH-011",
+    "name_vi": "Vòng phòng thủ",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-140",
+      "NPC-141",
+      "NPC-142",
+      "NPC-143"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-051",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1224
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 11
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 428
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-053",
+    "chapter_id": "CH-011",
+    "name_vi": "Thần la thiên chinh",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-144",
+      "NPC-145",
+      "NPC-146",
+      "NPC-147"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-052",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1248
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 11
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 436
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-054",
+    "chapter_id": "CH-011",
+    "name_vi": "Thần phục trọng lực",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-148",
+      "NPC-149",
+      "NPC-150",
+      "NPC-151"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-053",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1272
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 445
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-055",
+    "chapter_id": "CH-011",
+    "name_vi": "Thiên Đạo",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-152",
+      "NPC-153",
+      "NPC-154",
+      "NPC-155",
+      "NPC-156"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-054",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1296
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 453
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-011",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-056",
+    "chapter_id": "CH-012",
+    "name_vi": "Đèo tuyết",
+    "territory_id": "TER-043",
+    "enemy_ids": [
+      "NPC-157",
+      "NPC-158",
+      "NPC-159",
+      "NPC-160"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-055",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1308
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 457
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-057",
+    "chapter_id": "CH-012",
+    "name_vi": "Samurai hộ vệ",
+    "territory_id": "TER-043",
+    "enemy_ids": [
+      "NPC-161",
+      "NPC-162",
+      "NPC-163",
+      "NPC-164"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-056",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1332
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 466
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-058",
+    "chapter_id": "CH-012",
+    "name_vi": "Hội nghị",
+    "territory_id": "TER-043",
+    "enemy_ids": [
+      "NPC-165",
+      "NPC-166",
+      "NPC-167",
+      "NPC-168"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-057",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1356
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 474
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-059",
+    "chapter_id": "CH-012",
+    "name_vi": "Đột nhập",
+    "territory_id": "TER-043",
+    "enemy_ids": [
+      "NPC-169",
+      "NPC-170",
+      "NPC-171",
+      "NPC-172"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-058",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1380
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 13
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 482
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-060",
+    "chapter_id": "CH-012",
+    "name_vi": "Truy đuổi Danzo",
+    "territory_id": "TER-043",
+    "enemy_ids": [
+      "NPC-173",
+      "NPC-174",
+      "NPC-175",
+      "NPC-176",
+      "NPC-177"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-059",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1404
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 13
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 491
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-012",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-061",
+    "chapter_id": "CH-013",
+    "name_vi": "Đảo Rùa",
+    "territory_id": "TER-025",
+    "enemy_ids": [
+      "NPC-178",
+      "NPC-179",
+      "NPC-180",
+      "NPC-181"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-060",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1416
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 13
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 495
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-062",
+    "chapter_id": "CH-013",
+    "name_vi": "Thử thách chakra",
+    "territory_id": "TER-025",
+    "enemy_ids": [
+      "NPC-182",
+      "NPC-183",
+      "NPC-184",
+      "NPC-185"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-061",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1440
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 13
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 503
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-063",
+    "chapter_id": "CH-013",
+    "name_vi": "Hợp tác Bát Vĩ",
+    "territory_id": "TER-025",
+    "enemy_ids": [
+      "NPC-186",
+      "NPC-187",
+      "NPC-188",
+      "NPC-189"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-062",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1464
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 13
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 512
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-064",
+    "chapter_id": "CH-013",
+    "name_vi": "Đối diện nội tâm",
+    "territory_id": "TER-025",
+    "enemy_ids": [
+      "NPC-190",
+      "NPC-191",
+      "NPC-192",
+      "NPC-193"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-063",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1488
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 13
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 520
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-065",
+    "chapter_id": "CH-013",
+    "name_vi": "Chakra Kurama",
+    "territory_id": "TER-025",
+    "enemy_ids": [
+      "NPC-194",
+      "NPC-195",
+      "NPC-196",
+      "NPC-197",
+      "NPC-198"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-064",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1512
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 14
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 529
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-013",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-066",
+    "chapter_id": "CH-014",
+    "name_vi": "Trinh sát chiến trường",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-199",
+      "NPC-200",
+      "NPC-201",
+      "NPC-202"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-065",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1524
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 14
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 533
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-067",
+    "chapter_id": "CH-014",
+    "name_vi": "Phân thân trắng",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-203",
+      "NPC-204",
+      "NPC-205",
+      "NPC-206"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-066",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1548
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 14
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 541
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-068",
+    "chapter_id": "CH-014",
+    "name_vi": "Đội tái sinh",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-207",
+      "NPC-208",
+      "NPC-209",
+      "NPC-210"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-067",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1572
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 14
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 550
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-069",
+    "chapter_id": "CH-014",
+    "name_vi": "Hộ vệ liên quân",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-211",
+      "NPC-212",
+      "NPC-213",
+      "NPC-214"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-068",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1596
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 14
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 558
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-070",
+    "chapter_id": "CH-014",
+    "name_vi": "Giao chiến Jinchuriki",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-215",
+      "NPC-216",
+      "NPC-217",
+      "NPC-218",
+      "NPC-219"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-069",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1620
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 567
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-014",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-071",
+    "chapter_id": "CH-015",
+    "name_vi": "Không gian Kamui",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-220",
+      "NPC-221",
+      "NPC-222",
+      "NPC-223"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-070",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1632
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 571
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-072",
+    "chapter_id": "CH-015",
+    "name_vi": "Đội liên quân",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-224",
+      "NPC-225",
+      "NPC-226",
+      "NPC-227"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-071",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1656
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 579
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-073",
+    "chapter_id": "CH-015",
+    "name_vi": "Susanoo áp chế",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-228",
+      "NPC-229",
+      "NPC-230",
+      "NPC-231"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-072",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1680
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 588
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-074",
+    "chapter_id": "CH-015",
+    "name_vi": "Vĩ thú liên kích",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-232",
+      "NPC-233",
+      "NPC-234",
+      "NPC-235"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-073",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1704
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 596
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-075",
+    "chapter_id": "CH-015",
+    "name_vi": "Obito",
+    "territory_id": "TER-052",
+    "enemy_ids": [
+      "NPC-236",
+      "NPC-237",
+      "NPC-238",
+      "NPC-239",
+      "NPC-240"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-074",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1728
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 604
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-015",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-076",
+    "chapter_id": "CH-016",
+    "name_vi": "Chakra Lục Đạo",
+    "territory_id": "TER-051",
+    "enemy_ids": [
+      "NPC-241",
+      "NPC-242",
+      "NPC-243",
+      "NPC-244",
+      "NPC-245"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-075",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1740
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 16
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 609
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-077",
+    "chapter_id": "CH-016",
+    "name_vi": "Cây thần",
+    "territory_id": "TER-051",
+    "enemy_ids": [
+      "NPC-246",
+      "NPC-247",
+      "NPC-248",
+      "NPC-249",
+      "NPC-250"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-076",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1764
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 16
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 617
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-078",
+    "chapter_id": "CH-016",
+    "name_vi": "Không gian đổi chiều",
+    "territory_id": "TER-051",
+    "enemy_ids": [
+      "NPC-251",
+      "NPC-252",
+      "NPC-253",
+      "NPC-254",
+      "NPC-255"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-077",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1788
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 16
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 625
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-079",
+    "chapter_id": "CH-016",
+    "name_vi": "Phong ấn",
+    "territory_id": "TER-051",
+    "enemy_ids": [
+      "NPC-256",
+      "NPC-257",
+      "NPC-258",
+      "NPC-259",
+      "NPC-260"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-078",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1812
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 16
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 634
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-080",
+    "chapter_id": "CH-016",
+    "name_vi": "Kaguya",
+    "territory_id": "TER-051",
+    "enemy_ids": [
+      "NPC-261",
+      "NPC-262",
+      "NPC-263",
+      "NPC-264",
+      "NPC-265",
+      "NPC-266"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-079",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1836
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 16
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 642
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-016",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-081",
+    "chapter_id": "CH-017",
+    "name_vi": "Ký ức Đội 7",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-267",
+      "NPC-268",
+      "NPC-269",
+      "NPC-270",
+      "NPC-271"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-080",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1848
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 16
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 646
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-082",
+    "chapter_id": "CH-017",
+    "name_vi": "Thể thuật",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-272",
+      "NPC-273",
+      "NPC-274",
+      "NPC-275",
+      "NPC-276"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-081",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1872
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 17
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 655
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-083",
+    "chapter_id": "CH-017",
+    "name_vi": "Rasengan và Chidori",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-277",
+      "NPC-278",
+      "NPC-279",
+      "NPC-280",
+      "NPC-281"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-082",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1896
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 17
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 663
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-084",
+    "chapter_id": "CH-017",
+    "name_vi": "Chakra cực hạn",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-282",
+      "NPC-283",
+      "NPC-284",
+      "NPC-285",
+      "NPC-286"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-083",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1920
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 17
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 672
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-085",
+    "chapter_id": "CH-017",
+    "name_vi": "Trận quyết định",
+    "territory_id": "TER-004",
+    "enemy_ids": [
+      "NPC-287",
+      "NPC-288",
+      "NPC-289",
+      "NPC-290",
+      "NPC-291",
+      "NPC-292"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-084",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1944
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 17
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 680
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-017",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-086",
+    "chapter_id": "CH-018",
+    "name_vi": "Học viện",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-293",
+      "NPC-294",
+      "NPC-295",
+      "NPC-296",
+      "NPC-297"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-085",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1956
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 17
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 684
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-087",
+    "chapter_id": "CH-018",
+    "name_vi": "Đội mới",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-298",
+      "NPC-299",
+      "NPC-300",
+      "NPC-301",
+      "NPC-302"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-086",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 1980
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 693
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-088",
+    "chapter_id": "CH-018",
+    "name_vi": "Thiết bị ninja",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-303",
+      "NPC-304",
+      "NPC-305",
+      "NPC-306",
+      "NPC-307"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-087",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2004
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 701
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-089",
+    "chapter_id": "CH-018",
+    "name_vi": "Luyện tập",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-308",
+      "NPC-309",
+      "NPC-310",
+      "NPC-311",
+      "NPC-312"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-088",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2028
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 709
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-090",
+    "chapter_id": "CH-018",
+    "name_vi": "Thử thách đội",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-313",
+      "NPC-314",
+      "NPC-315",
+      "NPC-316",
+      "NPC-317",
+      "NPC-318"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-089",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2052
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 718
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-018",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-091",
+    "chapter_id": "CH-019",
+    "name_vi": "Dấu chakra",
+    "territory_id": "TER-055",
+    "enemy_ids": [
+      "NPC-319",
+      "NPC-320",
+      "NPC-321",
+      "NPC-322",
+      "NPC-323"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-090",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2064
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 722
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-092",
+    "chapter_id": "CH-019",
+    "name_vi": "Trinh sát",
+    "territory_id": "TER-055",
+    "enemy_ids": [
+      "NPC-324",
+      "NPC-325",
+      "NPC-326",
+      "NPC-327",
+      "NPC-328"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-091",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2088
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 730
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-093",
+    "chapter_id": "CH-019",
+    "name_vi": "Nue xuất hiện",
+    "territory_id": "TER-055",
+    "enemy_ids": [
+      "NPC-329",
+      "NPC-330",
+      "NPC-331",
+      "NPC-332",
+      "NPC-333"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-092",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2112
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 19
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 739
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-094",
+    "chapter_id": "CH-019",
+    "name_vi": "Hộ vệ học viên",
+    "territory_id": "TER-055",
+    "enemy_ids": [
+      "NPC-334",
+      "NPC-335",
+      "NPC-336",
+      "NPC-337",
+      "NPC-338"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-093",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2136
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 19
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 747
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-095",
+    "chapter_id": "CH-019",
+    "name_vi": "Liên kết Nue",
+    "territory_id": "TER-055",
+    "enemy_ids": [
+      "NPC-339",
+      "NPC-340",
+      "NPC-341",
+      "NPC-342",
+      "NPC-343",
+      "NPC-344"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-094",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2160
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 19
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 756
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-019",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-096",
+    "chapter_id": "CH-020",
+    "name_vi": "Thi Trung nhẫn",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-345",
+      "NPC-346",
+      "NPC-347",
+      "NPC-348",
+      "NPC-349"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-095",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2172
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 19
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 760
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-097",
+    "chapter_id": "CH-020",
+    "name_vi": "Đối đầu nhẫn cụ",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-350",
+      "NPC-351",
+      "NPC-352",
+      "NPC-353",
+      "NPC-354"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-096",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2196
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 19
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 768
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-098",
+    "chapter_id": "CH-020",
+    "name_vi": "Chakra ngoại lai",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-355",
+      "NPC-356",
+      "NPC-357",
+      "NPC-358",
+      "NPC-359"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-097",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2220
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 20
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 777
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-099",
+    "chapter_id": "CH-020",
+    "name_vi": "Kinshiki",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-360",
+      "NPC-361",
+      "NPC-362",
+      "NPC-363",
+      "NPC-364"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-098",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2244
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 20
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 785
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-100",
+    "chapter_id": "CH-020",
+    "name_vi": "Momoshiki",
+    "territory_id": "TER-001",
+    "enemy_ids": [
+      "NPC-365",
+      "NPC-366",
+      "NPC-367",
+      "NPC-368",
+      "NPC-369",
+      "NPC-370"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-099",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2268
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 20
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 793
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-020",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-101",
+    "chapter_id": "CH-021",
+    "name_vi": "Tín hiệu mất tích",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-371",
+      "NPC-372",
+      "NPC-373",
+      "NPC-374",
+      "NPC-375",
+      "NPC-376"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-100",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2280
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 20
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 798
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-102",
+    "chapter_id": "CH-021",
+    "name_vi": "Căn cứ nghiên cứu",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-377",
+      "NPC-378",
+      "NPC-379",
+      "NPC-380",
+      "NPC-381",
+      "NPC-382"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-101",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2304
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 20
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 806
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-103",
+    "chapter_id": "CH-021",
+    "name_vi": "Sương độc",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-383",
+      "NPC-384",
+      "NPC-385",
+      "NPC-386",
+      "NPC-387",
+      "NPC-388"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-102",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2328
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 20
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 814
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-104",
+    "chapter_id": "CH-021",
+    "name_vi": "Delta",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-389",
+      "NPC-390",
+      "NPC-391",
+      "NPC-392",
+      "NPC-393",
+      "NPC-394"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-103",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2352
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 823
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-105",
+    "chapter_id": "CH-021",
+    "name_vi": "Đối đầu Kara",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-395",
+      "NPC-396",
+      "NPC-397",
+      "NPC-398",
+      "NPC-399",
+      "NPC-400"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-104",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2376
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 831
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-021",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-106",
+    "chapter_id": "CH-022",
+    "name_vi": "Vật chứa",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-401",
+      "NPC-402",
+      "NPC-403",
+      "NPC-404",
+      "NPC-405",
+      "NPC-406"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-105",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2388
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 835
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-107",
+    "chapter_id": "CH-022",
+    "name_vi": "Karma cộng hưởng",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-407",
+      "NPC-408",
+      "NPC-409",
+      "NPC-410",
+      "NPC-411",
+      "NPC-412"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-106",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2412
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 844
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-108",
+    "chapter_id": "CH-022",
+    "name_vi": "Bảo vệ đồng đội",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-413",
+      "NPC-414",
+      "NPC-415",
+      "NPC-416",
+      "NPC-417",
+      "NPC-418"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-107",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2436
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 852
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-109",
+    "chapter_id": "CH-022",
+    "name_vi": "Thu nhỏ",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-419",
+      "NPC-420",
+      "NPC-421",
+      "NPC-422",
+      "NPC-423",
+      "NPC-424"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-108",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2460
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 22
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 861
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-110",
+    "chapter_id": "CH-022",
+    "name_vi": "Isshiki",
+    "territory_id": "TER-056",
+    "enemy_ids": [
+      "NPC-425",
+      "NPC-426",
+      "NPC-427",
+      "NPC-428",
+      "NPC-429",
+      "NPC-430"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-109",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2484
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 22
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 869
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-022",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-111",
+    "chapter_id": "CH-023",
+    "name_vi": "Dấu vuốt",
+    "territory_id": "TER-057",
+    "enemy_ids": [
+      "NPC-431",
+      "NPC-432",
+      "NPC-433",
+      "NPC-434",
+      "NPC-435",
+      "NPC-436"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-110",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2496
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 22
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 873
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-112",
+    "chapter_id": "CH-023",
+    "name_vi": "Trinh sát",
+    "territory_id": "TER-057",
+    "enemy_ids": [
+      "NPC-437",
+      "NPC-438",
+      "NPC-439",
+      "NPC-440",
+      "NPC-441",
+      "NPC-442"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-111",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2520
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 22
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 882
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-113",
+    "chapter_id": "CH-023",
+    "name_vi": "Ảnh hưởng tâm trí",
+    "territory_id": "TER-057",
+    "enemy_ids": [
+      "NPC-443",
+      "NPC-444",
+      "NPC-445",
+      "NPC-446",
+      "NPC-447",
+      "NPC-448"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-112",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2544
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 22
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 890
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-114",
+    "chapter_id": "CH-023",
+    "name_vi": "Phản chiếu",
+    "territory_id": "TER-057",
+    "enemy_ids": [
+      "NPC-449",
+      "NPC-450",
+      "NPC-451",
+      "NPC-452",
+      "NPC-453",
+      "NPC-454"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-113",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2568
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 22
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 898
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 7
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-115",
+    "chapter_id": "CH-023",
+    "name_vi": "Thử thách Code",
+    "territory_id": "TER-057",
+    "enemy_ids": [
+      "NPC-455",
+      "NPC-456",
+      "NPC-457",
+      "NPC-458",
+      "NPC-459",
+      "NPC-460"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-114",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2592
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 23
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 907
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-023",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-116",
+    "chapter_id": "CH-024",
+    "name_vi": "Mở lãnh địa",
+    "territory_id": "TER-058",
+    "enemy_ids": [
+      "NPC-461",
+      "NPC-462",
+      "NPC-463",
+      "NPC-464",
+      "NPC-465",
+      "NPC-466"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-115",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2604
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 23
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 911
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-117",
+    "chapter_id": "CH-024",
+    "name_vi": "Tháp thử thách",
+    "territory_id": "TER-058",
+    "enemy_ids": [
+      "NPC-467",
+      "NPC-468",
+      "NPC-469",
+      "NPC-470",
+      "NPC-471",
+      "NPC-472"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-116",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2628
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 23
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 919
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-009",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-118",
+    "chapter_id": "CH-024",
+    "name_vi": "Chiến dịch liên quân",
+    "territory_id": "TER-058",
+    "enemy_ids": [
+      "NPC-473",
+      "NPC-474",
+      "NPC-475",
+      "NPC-476",
+      "NPC-477",
+      "NPC-478"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-117",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2652
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 23
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 4
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 928
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-036",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-119",
+    "chapter_id": "CH-024",
+    "name_vi": "Boss liên thế hệ",
+    "territory_id": "TER-058",
+    "enemy_ids": [
+      "NPC-479",
+      "NPC-480",
+      "NPC-481",
+      "NPC-482",
+      "NPC-483",
+      "NPC-484"
+    ],
+    "stamina_cost": 6,
+    "requires": "STG-118",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2676
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 23
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 5
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 936
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "boss_id": null,
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "STG-120",
+    "chapter_id": "CH-024",
+    "name_vi": "Thử luyện vô hạn",
+    "territory_id": "TER-058",
+    "enemy_ids": [
+      "NPC-485",
+      "NPC-486",
+      "NPC-487",
+      "NPC-488",
+      "NPC-489",
+      "NPC-490"
+    ],
+    "stamina_cost": 12,
+    "requires": "STG-119",
+    "first_clear_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 2700
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 3
+      }
+    ],
+    "repeat_rewards": [
+      {
+        "resource_id": "RES-001",
+        "qty": 944
+      },
+      {
+        "resource_id": "RES-116",
+        "qty": 8
+      },
+      {
+        "resource_id": "RES-128",
+        "qty": 1
+      }
+    ],
+    "boss_id": "BOSS-024",
+    "story_mode": "memory_reenactment",
+    "canon_status": "GAME_DESIGN_ENCOUNTER",
+    "status": "PROPOSED"
+  }
+]

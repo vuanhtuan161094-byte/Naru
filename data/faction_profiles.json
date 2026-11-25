@@ -1,0 +1,486 @@
+[
+  {
+    "id": "FAC-001",
+    "name_vi": "Làng Lá",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "balanced",
+    "leader_ninja_id": "NIN-004",
+    "territory_ids": [
+      "TER-001",
+      "TER-002",
+      "TER-003",
+      "TER-006",
+      "TER-007",
+      "TER-008"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 250,
+      "RES-009": 250,
+      "RES-011": 250,
+      "RES-021": 250,
+      "RES-036": 250,
+      "RES-076": 250
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.35,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-001-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-041",
+          "NIN-042",
+          "NIN-043"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-001-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-044",
+          "NIN-045",
+          "NIN-046"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-002",
+    "name_vi": "Làng Cát",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "trade",
+    "leader_ninja_id": "NIN-055",
+    "territory_ids": [
+      "TER-010",
+      "TER-011",
+      "TER-013",
+      "TER-014",
+      "TER-016"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 275,
+      "RES-009": 275,
+      "RES-011": 275,
+      "RES-021": 275,
+      "RES-036": 275,
+      "RES-076": 275
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.6,
+      "defense": 0.35,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-002-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-047",
+          "NIN-048",
+          "NIN-049"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-002-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-050",
+          "NIN-051",
+          "NIN-052"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-003",
+    "name_vi": "Làng Sương Mù",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "military",
+    "leader_ninja_id": "NIN-083",
+    "territory_ids": [
+      "TER-017",
+      "TER-018",
+      "TER-020",
+      "TER-021"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 300,
+      "RES-009": 300,
+      "RES-011": 300,
+      "RES-021": 300,
+      "RES-036": 300,
+      "RES-076": 300
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.35,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-003-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-053",
+          "NIN-054",
+          "NIN-055"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-003-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-056",
+          "NIN-057",
+          "NIN-058"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-004",
+    "name_vi": "Làng Mây",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "military",
+    "leader_ninja_id": "NIN-077",
+    "territory_ids": [
+      "TER-023",
+      "TER-024",
+      "TER-025",
+      "TER-027",
+      "TER-028"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 325,
+      "RES-009": 325,
+      "RES-011": 325,
+      "RES-021": 325,
+      "RES-036": 325,
+      "RES-076": 325
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.35,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-004-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-059",
+          "NIN-060",
+          "NIN-061"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-004-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-062",
+          "NIN-063",
+          "NIN-064"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-005",
+    "name_vi": "Làng Đá",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "territorial",
+    "leader_ninja_id": "NIN-086",
+    "territory_ids": [
+      "TER-029",
+      "TER-030",
+      "TER-031",
+      "TER-033"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 350,
+      "RES-009": 350,
+      "RES-011": 350,
+      "RES-021": 350,
+      "RES-036": 350,
+      "RES-076": 350
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.35,
+      "expansion": 0.6
+    },
+    "teams": [
+      {
+        "id": "FAC-005-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-065",
+          "NIN-066",
+          "NIN-067"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-005-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-068",
+          "NIN-069",
+          "NIN-070"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-006",
+    "name_vi": "Làng Mưa",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "defensive",
+    "leader_ninja_id": "NIN-067",
+    "territory_ids": [
+      "TER-035",
+      "TER-036",
+      "TER-038"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 375,
+      "RES-009": 375,
+      "RES-011": 375,
+      "RES-021": 375,
+      "RES-036": 375,
+      "RES-076": 375
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.6,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-006-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-071",
+          "NIN-072",
+          "NIN-073"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-006-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-074",
+          "NIN-075",
+          "NIN-076"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-007",
+    "name_vi": "Làng Âm Thanh",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "research",
+    "leader_ninja_id": "NIN-022",
+    "territory_ids": [
+      "TER-039",
+      "TER-040"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 400,
+      "RES-009": 400,
+      "RES-011": 400,
+      "RES-021": 400,
+      "RES-036": 400,
+      "RES-076": 400
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.35,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-007-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-077",
+          "NIN-078",
+          "NIN-079"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-007-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-080",
+          "NIN-081",
+          "NIN-082"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-008",
+    "name_vi": "Akatsuki",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "hostile",
+    "leader_ninja_id": "NIN-060",
+    "territory_ids": [
+      "TER-049",
+      "TER-050"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 425,
+      "RES-009": 425,
+      "RES-011": 425,
+      "RES-021": 425,
+      "RES-036": 425,
+      "RES-076": 425
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.35,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-008-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-083",
+          "NIN-084",
+          "NIN-085"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-008-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-086",
+          "NIN-087",
+          "NIN-088"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "FAC-009",
+    "name_vi": "Tổ chức người chơi",
+    "treasury_ryo": 10000,
+    "relation_default": 0,
+    "personality": "player",
+    "leader_ninja_id": null,
+    "territory_ids": [
+      "TER-058",
+      "TER-059",
+      "TER-060"
+    ],
+    "stock": {
+      "RES-001": 10000,
+      "RES-006": 450,
+      "RES-009": 450,
+      "RES-011": 450,
+      "RES-021": 450,
+      "RES-036": 450,
+      "RES-076": 450
+    },
+    "diplomacy": {
+      "war_threshold": -60,
+      "ally_threshold": 65,
+      "trade_threshold": -30
+    },
+    "strategy_weights": {
+      "production": 0.4,
+      "defense": 0.35,
+      "expansion": 0.25
+    },
+    "teams": [
+      {
+        "id": "FAC-009-TEAM-1",
+        "ninja_template_ids": [
+          "NIN-089",
+          "NIN-090",
+          "NIN-091"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      },
+      {
+        "id": "FAC-009-TEAM-2",
+        "ninja_template_ids": [
+          "NIN-092",
+          "NIN-093",
+          "NIN-094"
+        ],
+        "status": "SIMULATED_NPC_ROSTER"
+      }
+    ],
+    "status": "PROPOSED"
+  }
+]

@@ -1,0 +1,174 @@
+[
+  {
+    "id": "COMBO-001",
+    "name_vi": "Rasengan và Chidori",
+    "member_ids": [
+      "NIN-001",
+      "NIN-002"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "damage",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-002",
+    "name_vi": "Phong Lôi hợp kích",
+    "member_ids": [
+      "NIN-041",
+      "NIN-042"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "damage",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-003",
+    "name_vi": "Phân thân phối hợp",
+    "member_ids": [
+      "NIN-004",
+      "NIN-041"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "damage",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-004",
+    "name_vi": "Ino Shika Cho",
+    "member_ids": [
+      "NIN-046",
+      "NIN-047",
+      "NIN-048"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "control",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-005",
+    "name_vi": "Nhu quyền Hyuga",
+    "member_ids": [
+      "NIN-049",
+      "NIN-052"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "control",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-006",
+    "name_vi": "Thể thuật đồng môn",
+    "member_ids": [
+      "NIN-053",
+      "NIN-016"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "damage",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-007",
+    "name_vi": "Akatsuki phối hợp",
+    "member_ids": [
+      "NIN-060",
+      "NIN-061"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "damage",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-008",
+    "name_vi": "Đội Cát",
+    "member_ids": [
+      "NIN-055",
+      "NIN-056",
+      "NIN-057"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "shield",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-009",
+    "name_vi": "Tam Nhẫn",
+    "member_ids": [
+      "NIN-020",
+      "NIN-021",
+      "NIN-022"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "buff",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-010",
+    "name_vi": "Đội 7 thế hệ mới",
+    "member_ids": [
+      "NIN-111",
+      "NIN-112",
+      "NIN-113"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "damage",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-011",
+    "name_vi": "Phong ấn và Phi lôi thần",
+    "member_ids": [
+      "NIN-093",
+      "NIN-094"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "shield",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "COMBO-012",
+    "name_vi": "Song hùng",
+    "member_ids": [
+      "NIN-126",
+      "NIN-127"
+    ],
+    "trigger": "specified_members_alive_and_signature_skill_released_within_4s",
+    "cooldown_s": 30,
+    "effect": "damage",
+    "coefficient": 1.4,
+    "provenance": "GAME_ORIGINAL_COMBO",
+    "status": "PROPOSED"
+  }
+]
