@@ -768,6 +768,18 @@ func update_status(a: Dictionary,dt: float) -> void:
 func primary_alive(side: int) -> Array:
 	return alive(side).filter(func(a):return not a.summon)
 
+# A queued ultimate must not starve its own authored automatic form prerequisite.
+func requested_form_route(a: Dictionary,requested: Dictionary) -> String:
+	var required: Array=requested.get("p2",{}).get("conditions",{}).get("any_active_forms",[])
+	if required.is_empty() or a.active_form.get("id","") in required or not a.active_form.is_empty():return ""
+	for id in a.skills:
+		var route=decision_skill(a,id)
+		if route.kind=="ultimate" or not supported(route):continue
+		if route.has("p2") and not p2_ready(a,route):continue
+		for e in route.effects:
+			if e.type=="activate_form" and e.form_id in required and form_ready(a,str(e.form_id),false,str(id)):return str(id)
+	return ""
+
 func tick(dt: float) -> void:
 	if not outcome.is_empty():return
 	var started=Time.get_ticks_usec()
@@ -846,6 +858,15 @@ func tick(dt: float) -> void:
 		var best={}
 		var best_target={}
 		var best_score=0.0
+		var reservation={}
+		var form_route=""
+		var reserve_cp=0.0
+		if use_depth and ultimate_requests.has(a.uid):
+			reservation=decision_skill(a,str(ultimate_requests[a.uid]))
+			form_route=requested_form_route(a,reservation)
+			reserve_cp=float(reservation.chakra)
+			if form_route!="":reserve_cp+=float(decision_skill(a,form_route).chakra)
+			reserve_cp=minf(float(a.max_chakra),reserve_cp)
 		if a.uid==boss_actor_uid and not boss_phases.priority.is_empty():
 			var skill_id=str(boss_phases.priority[0])
 			var priority_skill=effective_skill(a,skill_id)
@@ -855,11 +876,14 @@ func tick(dt: float) -> void:
 		for id in a.skills:
 			var s=decision_skill(a,id)
 			if (s.kind=="ultimate" and a.side==0 and not auto_player_ultimate) or not ready(a,s):continue
-			if use_depth and ultimate_requests.has(a.uid) and s.chakra>0 and s.kind!="ultimate":
-				var reservation=decision_skill(a,str(ultimate_requests[a.uid]))
-				if a.chakra-s.chakra<minf(float(a.max_chakra),float(reservation.chakra)) and not survival_override(a,s):continue
+			if not reservation.is_empty() and s.kind!="ultimate":
+				if form_route!="" and id==form_route:
+					if not cp_affordable(a,reserve_cp):continue
+				elif s.chakra>0 and a.chakra-s.chakra<reserve_cp and not survival_override(a,s):continue
+				if form_route!="" and id!=form_route and s.effects.any(func(e):return e.type=="activate_form"):continue
 			var b=target_for(a,s)
 			var score=utility(a,s,b)
+			if form_route!="" and id==form_route and score>-INF:score+=100.0
 			if use_tactical and score>0:
 				if not a.has("meaningful_since"):a.meaningful_since={}
 				if not a.meaningful_since.has(id):a.meaningful_since[id]=ticks
