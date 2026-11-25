@@ -1,0 +1,17 @@
+{
+  "base": "3809a5a0ac1cd945b8215127fce3cb97d8b8f61f",
+  "counts": {
+    "previous_gaps": 248,
+    "reviewed": 248,
+    "new_context": 248,
+    "remaining_no_pointer": 0,
+    "all_with_pointer": 1152,
+    "limited_new_links": 6,
+    "new_source_records": 30,
+    "primary_or_official": 22,
+    "licensed": 4,
+    "secondary": 4
+  },
+  "scope": "Source pointer coverage only. Prior source ledgers inherited, not revalidated; no claim of complete canon. Search snippets only for new records.",
+  "unresolved": []
+}

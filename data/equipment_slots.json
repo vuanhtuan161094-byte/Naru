@@ -1,0 +1,242 @@
+[
+  {
+    "id": "EQ-001",
+    "name_vi": "Băng trán",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-002",
+    "name_vi": "Áo giáp",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-003",
+    "name_vi": "Găng tay",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-004",
+    "name_vi": "Quần",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-005",
+    "name_vi": "Giày",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-006",
+    "name_vi": "Vũ khí",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-007",
+    "name_vi": "Vũ khí phụ",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-008",
+    "name_vi": "Áo choàng",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-009",
+    "name_vi": "Dây chuyền",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-010",
+    "name_vi": "Nhẫn trái",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-011",
+    "name_vi": "Nhẫn phải",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-012",
+    "name_vi": "Bùa hộ mệnh",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-013",
+    "name_vi": "Bí quyển",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-014",
+    "name_vi": "Lõi chakra",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-015",
+    "name_vi": "Phù phong ấn",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "EQ-016",
+    "name_vi": "Bảo vật",
+    "visual_override": false,
+    "allowed_quality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+]

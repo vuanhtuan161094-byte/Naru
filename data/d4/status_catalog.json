@@ -1,0 +1,252 @@
+[
+  {
+    "id": "stun",
+    "name_vi": "không hành động",
+    "duration_s": 2,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": true,
+    "tick_s": null
+  },
+  {
+    "id": "bind",
+    "name_vi": "không di chuyển",
+    "duration_s": 3,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": true,
+    "tick_s": null
+  },
+  {
+    "id": "silence",
+    "name_vi": "không thi triển nhẫn thuật",
+    "duration_s": 2,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": true,
+    "tick_s": null
+  },
+  {
+    "id": "slow",
+    "name_vi": "giảm tốc di chuyển",
+    "duration_s": 4,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "blind",
+    "name_vi": "giảm chính xác",
+    "duration_s": 4,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "burn",
+    "name_vi": "sát thương Hỏa theo tick",
+    "duration_s": 5,
+    "stack": "per_source",
+    "max_stacks": 3,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": 1
+  },
+  {
+    "id": "poison",
+    "name_vi": "sát thương độc theo tick",
+    "duration_s": 6,
+    "stack": "per_source",
+    "max_stacks": 3,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": 1
+  },
+  {
+    "id": "wet",
+    "name_vi": "trạng thái Thủy",
+    "duration_s": 5,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "freeze",
+    "name_vi": "không hành động",
+    "duration_s": 2,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": true,
+    "tick_s": null
+  },
+  {
+    "id": "shock",
+    "name_vi": "gián đoạn thi triển",
+    "duration_s": 1,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": true,
+    "tick_s": null
+  },
+  {
+    "id": "mark",
+    "name_vi": "đánh dấu mục tiêu",
+    "duration_s": 6,
+    "stack": "per_source",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "chakra_lock",
+    "name_vi": "giảm hồi chakra",
+    "duration_s": 4,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "taunt",
+    "name_vi": "ưu tiên mục tiêu khiêu chiến",
+    "duration_s": 2,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "shield",
+    "name_vi": "hấp thụ sát thương",
+    "duration_s": 5,
+    "stack": "max_per_source",
+    "max_stacks": 1,
+    "dispellable": false,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "evasion",
+    "name_vi": "tăng né tránh",
+    "duration_s": 2,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "accuracy_up",
+    "name_vi": "tăng chính xác",
+    "duration_s": 6,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "attack_up",
+    "name_vi": "tăng công kích",
+    "duration_s": 6,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "defense_up",
+    "name_vi": "tăng phòng thủ",
+    "duration_s": 6,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "haste",
+    "name_vi": "tăng tốc",
+    "duration_s": 6,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "chakra_up",
+    "name_vi": "tăng hồi chakra",
+    "duration_s": 6,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "antiheal",
+    "name_vi": "giảm trị liệu",
+    "duration_s": 5,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "fear",
+    "name_vi": "gián đoạn hành động",
+    "duration_s": 2,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": true,
+    "tick_s": null
+  },
+  {
+    "id": "mud",
+    "name_vi": "giảm tốc vùng bùn",
+    "duration_s": 5,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "steam",
+    "name_vi": "giảm chính xác vùng hơi nước",
+    "duration_s": 4,
+    "stack": "max",
+    "max_stacks": 1,
+    "dispellable": true,
+    "hard_control": false,
+    "tick_s": null
+  },
+  {
+    "id": "control_immunity",
+    "name_vi": "kháng khống chế cứng",
+    "duration_s": 2,
+    "stack": "refresh",
+    "max_stacks": 1,
+    "dispellable": false,
+    "hard_control": false,
+    "tick_s": null
+  }
+]

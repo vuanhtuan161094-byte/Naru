@@ -1,0 +1,2 @@
+# SKILL-P4
+248 missing-pointer rows reviewed. 248 have new context pointers; 0 remain without pointers. 6 limited role/technique links. 30 newly reviewed search excerpts, not full manga chapters. All 1152 stable IDs retained, P2 mechanics, P3 snapshots and holds unchanged. No canonical numeric data. Do not treat character-level context as evidence for each skill. Prior P3 sources inherited, not independently revalidated. 

@@ -1,0 +1,8808 @@
+[
+  {
+    "stage_id": "STG-001",
+    "chapter_id": "CH-001",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-001",
+      "NPC-002"
+    ],
+    "baseline_power_proxy": 517.43,
+    "proposed_power_proxy": 517.43,
+    "recommended": {
+      "level": 5,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 848.16,
+      "enemy_player_proxy_ratio": 0.61
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 120
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 42
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 115,
+      "proposed_battle_xp": 115,
+      "xp_fraction_of_one_level": 0.0875
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.7,
+        1
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-002",
+    "chapter_id": "CH-001",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-003",
+      "NPC-004"
+    ],
+    "baseline_power_proxy": 536.73,
+    "proposed_power_proxy": 536.73,
+    "recommended": {
+      "level": 7,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 923.95,
+      "enemy_player_proxy_ratio": 0.58
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 144
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 50
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 130,
+      "proposed_battle_xp": 130,
+      "xp_fraction_of_one_level": 0.0578
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.7,
+        1
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-003",
+    "chapter_id": "CH-001",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-005",
+      "NPC-006"
+    ],
+    "baseline_power_proxy": 618.23,
+    "proposed_power_proxy": 618.23,
+    "recommended": {
+      "level": 9,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1000.95,
+      "enemy_player_proxy_ratio": 0.62
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 168
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 58
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 145,
+      "proposed_battle_xp": 152,
+      "xp_fraction_of_one_level": 0.0452
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.7,
+        1
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-004",
+    "chapter_id": "CH-001",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-007",
+      "NPC-008"
+    ],
+    "baseline_power_proxy": 692.32,
+    "proposed_power_proxy": 692.32,
+    "recommended": {
+      "level": 11,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1079.16,
+      "enemy_player_proxy_ratio": 0.64
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 192
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 67
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 160,
+      "proposed_battle_xp": 209,
+      "xp_fraction_of_one_level": 0.0451
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.7,
+        1
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-005",
+    "chapter_id": "CH-001",
+    "boss_id": "BOSS-001",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-009",
+      "NPC-010",
+      "NPC-011"
+    ],
+    "baseline_power_proxy": 1213.83,
+    "proposed_power_proxy": 1213.82,
+    "recommended": {
+      "level": 13,
+      "realm": 0,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1544.78,
+      "enemy_player_proxy_ratio": 0.79
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 216
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 75
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 175,
+      "proposed_battle_xp": 515,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.7,
+        1
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-006",
+    "chapter_id": "CH-002",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-012",
+      "NPC-013"
+    ],
+    "baseline_power_proxy": 684.25,
+    "proposed_power_proxy": 631.56,
+    "recommended": {
+      "level": 14,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1198.75,
+      "enemy_player_proxy_ratio": 0.53
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 234
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 81
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 190,
+      "proposed_battle_xp": 307,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-007",
+    "chapter_id": "CH-002",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-014",
+      "NPC-015"
+    ],
+    "baseline_power_proxy": 728.2,
+    "proposed_power_proxy": 672.12,
+    "recommended": {
+      "level": 16,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1279.98,
+      "enemy_player_proxy_ratio": 0.53
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 259
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 90
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 205,
+      "proposed_battle_xp": 381,
+      "xp_fraction_of_one_level": 0.0451
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-008",
+    "chapter_id": "CH-002",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-016",
+      "NPC-017"
+    ],
+    "baseline_power_proxy": 772.66,
+    "proposed_power_proxy": 713.16,
+    "recommended": {
+      "level": 18,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1362.41,
+      "enemy_player_proxy_ratio": 0.52
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 283
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 98
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 220,
+      "proposed_battle_xp": 459,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-009",
+    "chapter_id": "CH-002",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-018",
+      "NPC-019"
+    ],
+    "baseline_power_proxy": 817.63,
+    "proposed_power_proxy": 754.68,
+    "recommended": {
+      "level": 20,
+      "realm": 0,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1446.03,
+      "enemy_player_proxy_ratio": 0.52
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 308
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 107
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 235,
+      "proposed_battle_xp": 544,
+      "xp_fraction_of_one_level": 0.0451
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-010",
+    "chapter_id": "CH-002",
+    "boss_id": "BOSS-002",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-020",
+      "NPC-021",
+      "NPC-022"
+    ],
+    "baseline_power_proxy": 1567.88,
+    "proposed_power_proxy": 1447.68,
+    "recommended": {
+      "level": 22,
+      "realm": 1,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2041.1,
+      "enemy_player_proxy_ratio": 0.71
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 333
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 115
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 250,
+      "proposed_battle_xp": 1375,
+      "xp_fraction_of_one_level": 0.0851
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-011",
+    "chapter_id": "CH-003",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-023",
+      "NPC-024"
+    ],
+    "baseline_power_proxy": 969.58,
+    "proposed_power_proxy": 898.8,
+    "recommended": {
+      "level": 23,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1573.66,
+      "enemy_player_proxy_ratio": 0.57
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 353
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 121
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 265,
+      "proposed_battle_xp": 782,
+      "xp_fraction_of_one_level": 0.0451
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-012",
+    "chapter_id": "CH-003",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-025",
+      "NPC-026"
+    ],
+    "baseline_power_proxy": 1019.56,
+    "proposed_power_proxy": 945.13,
+    "recommended": {
+      "level": 25,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1660.21,
+      "enemy_player_proxy_ratio": 0.57
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 378
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 129
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 280,
+      "proposed_battle_xp": 893,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-013",
+    "chapter_id": "CH-003",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-027",
+      "NPC-028"
+    ],
+    "baseline_power_proxy": 1117.05,
+    "proposed_power_proxy": 1035.51,
+    "recommended": {
+      "level": 27,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1747.9,
+      "enemy_player_proxy_ratio": 0.59
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 404
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 139
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 295,
+      "proposed_battle_xp": 1010,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-014",
+    "chapter_id": "CH-003",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-029",
+      "NPC-030"
+    ],
+    "baseline_power_proxy": 1218.27,
+    "proposed_power_proxy": 1129.34,
+    "recommended": {
+      "level": 29,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1836.74,
+      "enemy_player_proxy_ratio": 0.61
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 429
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 147
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 310,
+      "proposed_battle_xp": 1132,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-015",
+    "chapter_id": "CH-003",
+    "boss_id": "BOSS-003",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-031",
+      "NPC-032",
+      "NPC-033"
+    ],
+    "baseline_power_proxy": 2582.19,
+    "proposed_power_proxy": 2393.54,
+    "recommended": {
+      "level": 31,
+      "realm": 1,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2568.94,
+      "enemy_player_proxy_ratio": 0.93
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 454
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 156
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 325,
+      "proposed_battle_xp": 2379,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-016",
+    "chapter_id": "CH-004",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-034",
+      "NPC-035"
+    ],
+    "baseline_power_proxy": 1371.66,
+    "proposed_power_proxy": 1275.65,
+    "recommended": {
+      "level": 32,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 1972.11,
+      "enemy_player_proxy_ratio": 0.65
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 478
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 162
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 340,
+      "proposed_battle_xp": 1325,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-017",
+    "chapter_id": "CH-004",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-036",
+      "NPC-037"
+    ],
+    "baseline_power_proxy": 1264.2,
+    "proposed_power_proxy": 1175.7,
+    "recommended": {
+      "level": 34,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2063.76,
+      "enemy_player_proxy_ratio": 0.57
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 504
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 171
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 355,
+      "proposed_battle_xp": 1460,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-018",
+    "chapter_id": "CH-004",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-038",
+      "NPC-039"
+    ],
+    "baseline_power_proxy": 1553.5,
+    "proposed_power_proxy": 1444.75,
+    "recommended": {
+      "level": 36,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2156.5,
+      "enemy_player_proxy_ratio": 0.67
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 529
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 180
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 370,
+      "proposed_battle_xp": 1600,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-019",
+    "chapter_id": "CH-004",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-040",
+      "NPC-041"
+    ],
+    "baseline_power_proxy": 1815.68,
+    "proposed_power_proxy": 1688.58,
+    "recommended": {
+      "level": 38,
+      "realm": 1,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2250.34,
+      "enemy_player_proxy_ratio": 0.75
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 555
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 189
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 1
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 385,
+      "proposed_battle_xp": 1745,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-020",
+    "chapter_id": "CH-004",
+    "boss_id": "BOSS-004",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-042",
+      "NPC-043",
+      "NPC-044"
+    ],
+    "baseline_power_proxy": 3051.49,
+    "proposed_power_proxy": 2838.9,
+    "recommended": {
+      "level": 40,
+      "realm": 1,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 3127.02,
+      "enemy_player_proxy_ratio": 0.91
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 581
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 198
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 400,
+      "proposed_battle_xp": 3577,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-021",
+    "chapter_id": "CH-005",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-045",
+      "NPC-046"
+    ],
+    "baseline_power_proxy": 1800.03,
+    "proposed_power_proxy": 1681.23,
+    "recommended": {
+      "level": 41,
+      "realm": 2,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2393.13,
+      "enemy_player_proxy_ratio": 0.7
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 608
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 205
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 415,
+      "proposed_battle_xp": 2227,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-022",
+    "chapter_id": "CH-005",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-047",
+      "NPC-048"
+    ],
+    "baseline_power_proxy": 2037.6,
+    "proposed_power_proxy": 1903.12,
+    "recommended": {
+      "level": 43,
+      "realm": 2,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2489.66,
+      "enemy_player_proxy_ratio": 0.76
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 634
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 214
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 430,
+      "proposed_battle_xp": 2403,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-023",
+    "chapter_id": "CH-005",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-049",
+      "NPC-050"
+    ],
+    "baseline_power_proxy": 2144.28,
+    "proposed_power_proxy": 2002.75,
+    "recommended": {
+      "level": 45,
+      "realm": 2,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2587.25,
+      "enemy_player_proxy_ratio": 0.77
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 660
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 223
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 445,
+      "proposed_battle_xp": 2585,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-024",
+    "chapter_id": "CH-005",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-051",
+      "NPC-052"
+    ],
+    "baseline_power_proxy": 2051.79,
+    "proposed_power_proxy": 1916.37,
+    "recommended": {
+      "level": 47,
+      "realm": 2,
+      "roster_size": 3,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 2685.88,
+      "enemy_player_proxy_ratio": 0.71
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 687
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 232
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 460,
+      "proposed_battle_xp": 2771,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-025",
+    "chapter_id": "CH-005",
+    "boss_id": "BOSS-005",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-053",
+      "NPC-054",
+      "NPC-055"
+    ],
+    "baseline_power_proxy": 3838.64,
+    "proposed_power_proxy": 3584.9,
+    "recommended": {
+      "level": 49,
+      "realm": 2,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 3714.06,
+      "enemy_player_proxy_ratio": 0.97
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 713
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 240
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 475,
+      "proposed_battle_xp": 5594,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-026",
+    "chapter_id": "CH-006",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-056",
+      "NPC-057",
+      "NPC-058"
+    ],
+    "baseline_power_proxy": 2898.58,
+    "proposed_power_proxy": 2715.97,
+    "recommended": {
+      "level": 50,
+      "realm": 2,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 3781.03,
+      "enemy_player_proxy_ratio": 0.72
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 743
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 248
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 490,
+      "proposed_battle_xp": 3059,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-027",
+    "chapter_id": "CH-006",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-059",
+      "NPC-060",
+      "NPC-061"
+    ],
+    "baseline_power_proxy": 2864.06,
+    "proposed_power_proxy": 2683.63,
+    "recommended": {
+      "level": 52,
+      "realm": 2,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 3915.97,
+      "enemy_player_proxy_ratio": 0.69
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 770
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 257
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 505,
+      "proposed_battle_xp": 3257,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-028",
+    "chapter_id": "CH-006",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-062",
+      "NPC-063",
+      "NPC-064"
+    ],
+    "baseline_power_proxy": 3031.68,
+    "proposed_power_proxy": 2840.68,
+    "recommended": {
+      "level": 54,
+      "realm": 2,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 4052.27,
+      "enemy_player_proxy_ratio": 0.7
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 797
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 266
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 520,
+      "proposed_battle_xp": 3460,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-029",
+    "chapter_id": "CH-006",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-065",
+      "NPC-066",
+      "NPC-067"
+    ],
+    "baseline_power_proxy": 2961.98,
+    "proposed_power_proxy": 2775.38,
+    "recommended": {
+      "level": 56,
+      "realm": 2,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 4189.91,
+      "enemy_player_proxy_ratio": 0.66
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 824
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 276
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 535,
+      "proposed_battle_xp": 3667,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-030",
+    "chapter_id": "CH-006",
+    "boss_id": "BOSS-006",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-068",
+      "NPC-069",
+      "NPC-070",
+      "NPC-071"
+    ],
+    "baseline_power_proxy": 4602.19,
+    "proposed_power_proxy": 4312.98,
+    "recommended": {
+      "level": 58,
+      "realm": 2,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 5411.1,
+      "enemy_player_proxy_ratio": 0.8
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 851
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 284
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 550,
+      "proposed_battle_xp": 7326,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-031",
+    "chapter_id": "CH-007",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-072",
+      "NPC-073",
+      "NPC-074"
+    ],
+    "baseline_power_proxy": 3501.35,
+    "proposed_power_proxy": 3294.77,
+    "recommended": {
+      "level": 59,
+      "realm": 2,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 4398.86,
+      "enemy_player_proxy_ratio": 0.75
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 884
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 293
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 565,
+      "proposed_battle_xp": 3986,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-032",
+    "chapter_id": "CH-007",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-075",
+      "NPC-076",
+      "NPC-077"
+    ],
+    "baseline_power_proxy": 3642.82,
+    "proposed_power_proxy": 3427.89,
+    "recommended": {
+      "level": 61,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 4539.8,
+      "enemy_player_proxy_ratio": 0.76
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 911
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 302
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 580,
+      "proposed_battle_xp": 4690,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-033",
+    "chapter_id": "CH-007",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-078",
+      "NPC-079",
+      "NPC-080"
+    ],
+    "baseline_power_proxy": 3701.85,
+    "proposed_power_proxy": 3483.44,
+    "recommended": {
+      "level": 63,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 4682.05,
+      "enemy_player_proxy_ratio": 0.74
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 939
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 311
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 595,
+      "proposed_battle_xp": 4938,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-034",
+    "chapter_id": "CH-007",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-081",
+      "NPC-082",
+      "NPC-083"
+    ],
+    "baseline_power_proxy": 3597.88,
+    "proposed_power_proxy": 3385.61,
+    "recommended": {
+      "level": 65,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 4825.58,
+      "enemy_player_proxy_ratio": 0.7
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 966
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 321
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 610,
+      "proposed_battle_xp": 5191,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-035",
+    "chapter_id": "CH-007",
+    "boss_id": "BOSS-007",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-084",
+      "NPC-085",
+      "NPC-086",
+      "NPC-087"
+    ],
+    "baseline_power_proxy": 6113.08,
+    "proposed_power_proxy": 5751.62,
+    "recommended": {
+      "level": 67,
+      "realm": 3,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 6213,
+      "enemy_player_proxy_ratio": 0.93
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 994
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 330
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 625,
+      "proposed_battle_xp": 10293,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-036",
+    "chapter_id": "CH-008",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-088",
+      "NPC-089",
+      "NPC-090"
+    ],
+    "baseline_power_proxy": 3937.09,
+    "proposed_power_proxy": 3716.61,
+    "recommended": {
+      "level": 68,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 5043.28,
+      "enemy_player_proxy_ratio": 0.74
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1030
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 339
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 640,
+      "proposed_battle_xp": 5580,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-037",
+    "chapter_id": "CH-008",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-091",
+      "NPC-092",
+      "NPC-093"
+    ],
+    "baseline_power_proxy": 4303.84,
+    "proposed_power_proxy": 4062.83,
+    "recommended": {
+      "level": 70,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 5190,
+      "enemy_player_proxy_ratio": 0.78
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1058
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 349
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 655,
+      "proposed_battle_xp": 5845,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-038",
+    "chapter_id": "CH-008",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-094",
+      "NPC-095",
+      "NPC-096"
+    ],
+    "baseline_power_proxy": 4078.01,
+    "proposed_power_proxy": 3849.63,
+    "recommended": {
+      "level": 72,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 5337.97,
+      "enemy_player_proxy_ratio": 0.72
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1086
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 357
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 670,
+      "proposed_battle_xp": 6114,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-039",
+    "chapter_id": "CH-008",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-097",
+      "NPC-098",
+      "NPC-099"
+    ],
+    "baseline_power_proxy": 4794.21,
+    "proposed_power_proxy": 4525.73,
+    "recommended": {
+      "level": 74,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 5487.18,
+      "enemy_player_proxy_ratio": 0.82
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1114
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 366
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 685,
+      "proposed_battle_xp": 6388,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-040",
+    "chapter_id": "CH-008",
+    "boss_id": "BOSS-008",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-100",
+      "NPC-101",
+      "NPC-102",
+      "NPC-103"
+    ],
+    "baseline_power_proxy": 7058.73,
+    "proposed_power_proxy": 6664.34,
+    "recommended": {
+      "level": 76,
+      "realm": 3,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 7047.04,
+      "enemy_player_proxy_ratio": 0.95
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1143
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 6
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 376
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 700,
+      "proposed_battle_xp": 12592,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-041",
+    "chapter_id": "CH-009",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-104",
+      "NPC-105",
+      "NPC-106"
+    ],
+    "baseline_power_proxy": 4308.07,
+    "proposed_power_proxy": 4084.05,
+    "recommended": {
+      "level": 77,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 5713.32,
+      "enemy_player_proxy_ratio": 0.71
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1181
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 386
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 715,
+      "proposed_battle_xp": 6808,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-042",
+    "chapter_id": "CH-009",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-107",
+      "NPC-108",
+      "NPC-109"
+    ],
+    "baseline_power_proxy": 4329.41,
+    "proposed_power_proxy": 4104.28,
+    "recommended": {
+      "level": 79,
+      "realm": 3,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 5865.6,
+      "enemy_player_proxy_ratio": 0.7
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1210
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 395
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 730,
+      "proposed_battle_xp": 7093,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-043",
+    "chapter_id": "CH-009",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-110",
+      "NPC-111",
+      "NPC-112"
+    ],
+    "baseline_power_proxy": 4557.84,
+    "proposed_power_proxy": 4320.84,
+    "recommended": {
+      "level": 81,
+      "realm": 4,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 6019.1,
+      "enemy_player_proxy_ratio": 0.72
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1239
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 10
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 405
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 745,
+      "proposed_battle_xp": 8146,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-044",
+    "chapter_id": "CH-009",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-113",
+      "NPC-114",
+      "NPC-115"
+    ],
+    "baseline_power_proxy": 4620.98,
+    "proposed_power_proxy": 4380.69,
+    "recommended": {
+      "level": 83,
+      "realm": 4,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 6173.8,
+      "enemy_player_proxy_ratio": 0.71
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1268
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 10
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 414
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 760,
+      "proposed_battle_xp": 8470,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-045",
+    "chapter_id": "CH-009",
+    "boss_id": "BOSS-009",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-116",
+      "NPC-117",
+      "NPC-118",
+      "NPC-119"
+    ],
+    "baseline_power_proxy": 7235.52,
+    "proposed_power_proxy": 6859.59,
+    "recommended": {
+      "level": 85,
+      "realm": 4,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 7912.12,
+      "enemy_player_proxy_ratio": 0.87
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1296
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 10
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 6
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 424
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 775,
+      "proposed_battle_xp": 16620,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-046",
+    "chapter_id": "CH-010",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-120",
+      "NPC-121",
+      "NPC-122"
+    ],
+    "baseline_power_proxy": 5883.46,
+    "proposed_power_proxy": 5595.16,
+    "recommended": {
+      "level": 86,
+      "realm": 4,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 6408.09,
+      "enemy_player_proxy_ratio": 0.87
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1338
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 10
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 434
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 790,
+      "proposed_battle_xp": 8965,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-047",
+    "chapter_id": "CH-010",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-123",
+      "NPC-124",
+      "NPC-125"
+    ],
+    "baseline_power_proxy": 6032.92,
+    "proposed_power_proxy": 5737.31,
+    "recommended": {
+      "level": 88,
+      "realm": 4,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 6565.76,
+      "enemy_player_proxy_ratio": 0.87
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1368
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 10
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 443
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 805,
+      "proposed_battle_xp": 9301,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-048",
+    "chapter_id": "CH-010",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-126",
+      "NPC-127",
+      "NPC-128"
+    ],
+    "baseline_power_proxy": 6183.56,
+    "proposed_power_proxy": 5880.57,
+    "recommended": {
+      "level": 90,
+      "realm": 4,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 6724.61,
+      "enemy_player_proxy_ratio": 0.87
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1397
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 11
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 453
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 820,
+      "proposed_battle_xp": 9641,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-049",
+    "chapter_id": "CH-010",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-129",
+      "NPC-130",
+      "NPC-131"
+    ],
+    "baseline_power_proxy": 6335.36,
+    "proposed_power_proxy": 6024.93,
+    "recommended": {
+      "level": 92,
+      "realm": 4,
+      "roster_size": 4,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 6884.62,
+      "enemy_player_proxy_ratio": 0.88
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1426
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 11
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 462
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 835,
+      "proposed_battle_xp": 9987,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-050",
+    "chapter_id": "CH-010",
+    "boss_id": "BOSS-010",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-132",
+      "NPC-133",
+      "NPC-134",
+      "NPC-135"
+    ],
+    "baseline_power_proxy": 10500.48,
+    "proposed_power_proxy": 9986.95,
+    "recommended": {
+      "level": 94,
+      "realm": 4,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 8807.23,
+      "enemy_player_proxy_ratio": 1.13
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1456
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 11
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 7
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 472
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 850,
+      "proposed_battle_xp": 19523,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-051",
+    "chapter_id": "CH-011",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-136",
+      "NPC-137",
+      "NPC-138",
+      "NPC-139"
+    ],
+    "baseline_power_proxy": 8415.81,
+    "proposed_power_proxy": 8037.1,
+    "recommended": {
+      "level": 95,
+      "realm": 4,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 8908.5,
+      "enemy_player_proxy_ratio": 0.9
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1500
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 11
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 483
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 865,
+      "proposed_battle_xp": 10513,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-052",
+    "chapter_id": "CH-011",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-140",
+      "NPC-141",
+      "NPC-142",
+      "NPC-143"
+    ],
+    "baseline_power_proxy": 8613.11,
+    "proposed_power_proxy": 8225.52,
+    "recommended": {
+      "level": 97,
+      "realm": 4,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 9112.12,
+      "enemy_player_proxy_ratio": 0.9
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1530
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 11
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 493
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 880,
+      "proposed_battle_xp": 10869,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-053",
+    "chapter_id": "CH-011",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-144",
+      "NPC-145",
+      "NPC-146",
+      "NPC-147"
+    ],
+    "baseline_power_proxy": 8811.85,
+    "proposed_power_proxy": 8415.33,
+    "recommended": {
+      "level": 99,
+      "realm": 4,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 9317.15,
+      "enemy_player_proxy_ratio": 0.9
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1560
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 11
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 502
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 895,
+      "proposed_battle_xp": 11230,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-054",
+    "chapter_id": "CH-011",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-148",
+      "NPC-149",
+      "NPC-150",
+      "NPC-151"
+    ],
+    "baseline_power_proxy": 9012.02,
+    "proposed_power_proxy": 8606.47,
+    "recommended": {
+      "level": 101,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 9523.6,
+      "enemy_player_proxy_ratio": 0.9
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1590
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 512
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 910,
+      "proposed_battle_xp": 12682,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-055",
+    "chapter_id": "CH-011",
+    "boss_id": "BOSS-011",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-152",
+      "NPC-153",
+      "NPC-154",
+      "NPC-155",
+      "NPC-156"
+    ],
+    "baseline_power_proxy": 13671.06,
+    "proposed_power_proxy": 13055.87,
+    "recommended": {
+      "level": 103,
+      "realm": 5,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 11677.74,
+      "enemy_player_proxy_ratio": 1.12
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1620
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 7
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 521
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 925,
+      "proposed_battle_xp": 24718,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-056",
+    "chapter_id": "CH-012",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-157",
+      "NPC-158",
+      "NPC-159",
+      "NPC-160"
+    ],
+    "baseline_power_proxy": 9832.25,
+    "proposed_power_proxy": 9419.3,
+    "recommended": {
+      "level": 104,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 9835.9,
+      "enemy_player_proxy_ratio": 0.96
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1668
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 533
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 940,
+      "proposed_battle_xp": 13290,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-057",
+    "chapter_id": "CH-012",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-161",
+      "NPC-162",
+      "NPC-163",
+      "NPC-164"
+    ],
+    "baseline_power_proxy": 8925.49,
+    "proposed_power_proxy": 8550.62,
+    "recommended": {
+      "level": 106,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 10045.84,
+      "enemy_player_proxy_ratio": 0.85
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1699
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 543
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 955,
+      "proposed_battle_xp": 13701,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-058",
+    "chapter_id": "CH-012",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-165",
+      "NPC-166",
+      "NPC-167",
+      "NPC-168"
+    ],
+    "baseline_power_proxy": 9307.77,
+    "proposed_power_proxy": 8916.86,
+    "recommended": {
+      "level": 108,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 10257.17,
+      "enemy_player_proxy_ratio": 0.87
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1729
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 553
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 970,
+      "proposed_battle_xp": 14117,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-059",
+    "chapter_id": "CH-012",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-169",
+      "NPC-170",
+      "NPC-171",
+      "NPC-172"
+    ],
+    "baseline_power_proxy": 9504.22,
+    "proposed_power_proxy": 9105.04,
+    "recommended": {
+      "level": 110,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 10469.87,
+      "enemy_player_proxy_ratio": 0.87
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1760
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 13
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 562
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 985,
+      "proposed_battle_xp": 14538,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-060",
+    "chapter_id": "CH-012",
+    "boss_id": "BOSS-012",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-173",
+      "NPC-174",
+      "NPC-175",
+      "NPC-176",
+      "NPC-177"
+    ],
+    "baseline_power_proxy": 14391.65,
+    "proposed_power_proxy": 13787.66,
+    "recommended": {
+      "level": 112,
+      "realm": 5,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 12820.71,
+      "enemy_player_proxy_ratio": 1.08
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1791
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 13
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 8
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 573
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1000,
+      "proposed_battle_xp": 28263,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-061",
+    "chapter_id": "CH-013",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-178",
+      "NPC-179",
+      "NPC-180",
+      "NPC-181"
+    ],
+    "baseline_power_proxy": 10171.53,
+    "proposed_power_proxy": 9785.01,
+    "recommended": {
+      "level": 113,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 10791.47,
+      "enemy_player_proxy_ratio": 0.91
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1841
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 13
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 585
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1015,
+      "proposed_battle_xp": 15177,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-062",
+    "chapter_id": "CH-013",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-182",
+      "NPC-183",
+      "NPC-184",
+      "NPC-185"
+    ],
+    "baseline_power_proxy": 10379.62,
+    "proposed_power_proxy": 9985.21,
+    "recommended": {
+      "level": 115,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 11007.56,
+      "enemy_player_proxy_ratio": 0.91
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1872
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 13
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 594
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1030,
+      "proposed_battle_xp": 15609,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-063",
+    "chapter_id": "CH-013",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-186",
+      "NPC-187",
+      "NPC-188",
+      "NPC-189"
+    ],
+    "baseline_power_proxy": 10589.05,
+    "proposed_power_proxy": 10186.66,
+    "recommended": {
+      "level": 117,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 11225,
+      "enemy_player_proxy_ratio": 0.91
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1904
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 13
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 605
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1045,
+      "proposed_battle_xp": 16046,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-064",
+    "chapter_id": "CH-013",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-190",
+      "NPC-191",
+      "NPC-192",
+      "NPC-193"
+    ],
+    "baseline_power_proxy": 10799.81,
+    "proposed_power_proxy": 10389.42,
+    "recommended": {
+      "level": 119,
+      "realm": 5,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 11443.78,
+      "enemy_player_proxy_ratio": 0.91
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1935
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 13
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 614
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1060,
+      "proposed_battle_xp": 16487,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-065",
+    "chapter_id": "CH-013",
+    "boss_id": "BOSS-013",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-194",
+      "NPC-195",
+      "NPC-196",
+      "NPC-197",
+      "NPC-198"
+    ],
+    "baseline_power_proxy": 16503.13,
+    "proposed_power_proxy": 15875.32,
+    "recommended": {
+      "level": 121,
+      "realm": 6,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 13996.66,
+      "enemy_player_proxy_ratio": 1.13
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1966
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 14
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 8
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 625
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1075,
+      "proposed_battle_xp": 34725,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-066",
+    "chapter_id": "CH-014",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-199",
+      "NPC-200",
+      "NPC-201",
+      "NPC-202"
+    ],
+    "baseline_power_proxy": 9755.19,
+    "proposed_power_proxy": 9413.74,
+    "recommended": {
+      "level": 122,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 11774.43,
+      "enemy_player_proxy_ratio": 0.8
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2020
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 14
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 637
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1090,
+      "proposed_battle_xp": 18627,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-067",
+    "chapter_id": "CH-014",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-203",
+      "NPC-204",
+      "NPC-205",
+      "NPC-206"
+    ],
+    "baseline_power_proxy": 9857.85,
+    "proposed_power_proxy": 9512.84,
+    "recommended": {
+      "level": 124,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 11996.52,
+      "enemy_player_proxy_ratio": 0.79
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2052
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 14
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 647
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1105,
+      "proposed_battle_xp": 19118,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-068",
+    "chapter_id": "CH-014",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-207",
+      "NPC-208",
+      "NPC-209",
+      "NPC-210"
+    ],
+    "baseline_power_proxy": 9925.98,
+    "proposed_power_proxy": 9578.57,
+    "recommended": {
+      "level": 126,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 12219.91,
+      "enemy_player_proxy_ratio": 0.78
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2083
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 14
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 658
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1120,
+      "proposed_battle_xp": 19614,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-069",
+    "chapter_id": "CH-014",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-211",
+      "NPC-212",
+      "NPC-213",
+      "NPC-214"
+    ],
+    "baseline_power_proxy": 9991.16,
+    "proposed_power_proxy": 9641.48,
+    "recommended": {
+      "level": 128,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 12444.61,
+      "enemy_player_proxy_ratio": 0.77
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2115
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 14
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 667
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1135,
+      "proposed_battle_xp": 20115,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-070",
+    "chapter_id": "CH-014",
+    "boss_id": "BOSS-014",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-215",
+      "NPC-216",
+      "NPC-217",
+      "NPC-218",
+      "NPC-219"
+    ],
+    "baseline_power_proxy": 14654.21,
+    "proposed_power_proxy": 14141.32,
+    "recommended": {
+      "level": 130,
+      "realm": 6,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 15204.72,
+      "enemy_player_proxy_ratio": 0.93
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2147
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 9
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 678
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1150,
+      "proposed_battle_xp": 38948,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-071",
+    "chapter_id": "CH-015",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-220",
+      "NPC-221",
+      "NPC-222",
+      "NPC-223"
+    ],
+    "baseline_power_proxy": 12843.27,
+    "proposed_power_proxy": 12445.12,
+    "recommended": {
+      "level": 131,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 12784.08,
+      "enemy_player_proxy_ratio": 0.97
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2204
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 691
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1165,
+      "proposed_battle_xp": 20874,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-072",
+    "chapter_id": "CH-015",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-224",
+      "NPC-225",
+      "NPC-226",
+      "NPC-227"
+    ],
+    "baseline_power_proxy": 13078.21,
+    "proposed_power_proxy": 12672.79,
+    "recommended": {
+      "level": 133,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 13012,
+      "enemy_player_proxy_ratio": 0.97
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2236
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 701
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1180,
+      "proposed_battle_xp": 21386,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-073",
+    "chapter_id": "CH-015",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-228",
+      "NPC-229",
+      "NPC-230",
+      "NPC-231"
+    ],
+    "baseline_power_proxy": 13314.52,
+    "proposed_power_proxy": 12901.78,
+    "recommended": {
+      "level": 135,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 13241.2,
+      "enemy_player_proxy_ratio": 0.97
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2268
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 712
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1195,
+      "proposed_battle_xp": 21903,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-074",
+    "chapter_id": "CH-015",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-232",
+      "NPC-233",
+      "NPC-234",
+      "NPC-235"
+    ],
+    "baseline_power_proxy": 13552.19,
+    "proposed_power_proxy": 13132.07,
+    "recommended": {
+      "level": 137,
+      "realm": 6,
+      "roster_size": 5,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 13471.67,
+      "enemy_player_proxy_ratio": 0.97
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2301
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 722
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1210,
+      "proposed_battle_xp": 22425,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-075",
+    "chapter_id": "CH-015",
+    "boss_id": "BOSS-015",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-236",
+      "NPC-237",
+      "NPC-238",
+      "NPC-239",
+      "NPC-240"
+    ],
+    "baseline_power_proxy": 19376.68,
+    "proposed_power_proxy": 18774.61,
+    "recommended": {
+      "level": 139,
+      "realm": 6,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 16444.08,
+      "enemy_player_proxy_ratio": 1.14
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2333
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 15
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 9
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 731
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1225,
+      "proposed_battle_xp": 43351,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-076",
+    "chapter_id": "CH-016",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-241",
+      "NPC-242",
+      "NPC-243",
+      "NPC-244",
+      "NPC-245"
+    ],
+    "baseline_power_proxy": 20508.25,
+    "proposed_power_proxy": 19934.02,
+    "recommended": {
+      "level": 140,
+      "realm": 6,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 16583.69,
+      "enemy_player_proxy_ratio": 1.2
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2393
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 16
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 747
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1240,
+      "proposed_battle_xp": 23216,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-077",
+    "chapter_id": "CH-016",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-246",
+      "NPC-247",
+      "NPC-248",
+      "NPC-249",
+      "NPC-250"
+    ],
+    "baseline_power_proxy": 21502.43,
+    "proposed_power_proxy": 20900.35,
+    "recommended": {
+      "level": 142,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 16864.03,
+      "enemy_player_proxy_ratio": 1.24
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2426
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 16
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 756
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1255,
+      "proposed_battle_xp": 25623,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-078",
+    "chapter_id": "CH-016",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-251",
+      "NPC-252",
+      "NPC-253",
+      "NPC-254",
+      "NPC-255"
+    ],
+    "baseline_power_proxy": 21624.06,
+    "proposed_power_proxy": 21018.59,
+    "recommended": {
+      "level": 144,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 17145.87,
+      "enemy_player_proxy_ratio": 1.23
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2459
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 16
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 766
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1270,
+      "proposed_battle_xp": 26203,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-079",
+    "chapter_id": "CH-016",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-256",
+      "NPC-257",
+      "NPC-258",
+      "NPC-259",
+      "NPC-260"
+    ],
+    "baseline_power_proxy": 22103.17,
+    "proposed_power_proxy": 21484.29,
+    "recommended": {
+      "level": 146,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 17429.2,
+      "enemy_player_proxy_ratio": 1.23
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2492
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 16
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 777
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1285,
+      "proposed_battle_xp": 26788,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-080",
+    "chapter_id": "CH-016",
+    "boss_id": "BOSS-016",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-261",
+      "NPC-262",
+      "NPC-263",
+      "NPC-264",
+      "NPC-265",
+      "NPC-266"
+    ],
+    "baseline_power_proxy": 29983.2,
+    "proposed_power_proxy": 29142.76,
+    "recommended": {
+      "level": 148,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 17714.01,
+      "enemy_player_proxy_ratio": 1.65
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2525
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 16
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 10
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 787
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1300,
+      "proposed_battle_xp": 51713,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-081",
+    "chapter_id": "CH-017",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-267",
+      "NPC-268",
+      "NPC-269",
+      "NPC-270",
+      "NPC-271"
+    ],
+    "baseline_power_proxy": 14246.67,
+    "proposed_power_proxy": 13904.74,
+    "recommended": {
+      "level": 149,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 17856.96,
+      "enemy_player_proxy_ratio": 0.78
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2588
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 16
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 802
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1315,
+      "proposed_battle_xp": 27674,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-082",
+    "chapter_id": "CH-017",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-272",
+      "NPC-273",
+      "NPC-274",
+      "NPC-275",
+      "NPC-276"
+    ],
+    "baseline_power_proxy": 13783.9,
+    "proposed_power_proxy": 13453.09,
+    "recommended": {
+      "level": 151,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 18143.98,
+      "enemy_player_proxy_ratio": 0.74
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2621
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 17
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 813
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1330,
+      "proposed_battle_xp": 28271,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-083",
+    "chapter_id": "CH-017",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-277",
+      "NPC-278",
+      "NPC-279",
+      "NPC-280",
+      "NPC-281"
+    ],
+    "baseline_power_proxy": 14703.26,
+    "proposed_power_proxy": 14350.39,
+    "recommended": {
+      "level": 153,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 18432.47,
+      "enemy_player_proxy_ratio": 0.78
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2655
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 17
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 823
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1345,
+      "proposed_battle_xp": 28872,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-084",
+    "chapter_id": "CH-017",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-282",
+      "NPC-283",
+      "NPC-284",
+      "NPC-285",
+      "NPC-286"
+    ],
+    "baseline_power_proxy": 14218.51,
+    "proposed_power_proxy": 13877.27,
+    "recommended": {
+      "level": 155,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 18722.41,
+      "enemy_player_proxy_ratio": 0.74
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2688
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 17
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 834
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1360,
+      "proposed_battle_xp": 29478,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-085",
+    "chapter_id": "CH-017",
+    "boss_id": "BOSS-017",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-287",
+      "NPC-288",
+      "NPC-289",
+      "NPC-290",
+      "NPC-291",
+      "NPC-292"
+    ],
+    "baseline_power_proxy": 18808.07,
+    "proposed_power_proxy": 18355.05,
+    "recommended": {
+      "level": 157,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 19013.79,
+      "enemy_player_proxy_ratio": 0.97
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2722
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 17
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 10
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 844
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1375,
+      "proposed_battle_xp": 56835,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-086",
+    "chapter_id": "CH-018",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-293",
+      "NPC-294",
+      "NPC-295",
+      "NPC-296",
+      "NPC-297"
+    ],
+    "baseline_power_proxy": 14730.99,
+    "proposed_power_proxy": 14421.64,
+    "recommended": {
+      "level": 158,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 19160.03,
+      "enemy_player_proxy_ratio": 0.75
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2788
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 17
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 859
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1390,
+      "proposed_battle_xp": 30397,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-087",
+    "chapter_id": "CH-018",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-298",
+      "NPC-299",
+      "NPC-300",
+      "NPC-301",
+      "NPC-302"
+    ],
+    "baseline_power_proxy": 14954.23,
+    "proposed_power_proxy": 14640.19,
+    "recommended": {
+      "level": 160,
+      "realm": 7,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 19453.58,
+      "enemy_player_proxy_ratio": 0.75
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2822
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 870
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1405,
+      "proposed_battle_xp": 31015,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-088",
+    "chapter_id": "CH-018",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-303",
+      "NPC-304",
+      "NPC-305",
+      "NPC-306",
+      "NPC-307"
+    ],
+    "baseline_power_proxy": 15178.55,
+    "proposed_power_proxy": 14859.8,
+    "recommended": {
+      "level": 162,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 19748.56,
+      "enemy_player_proxy_ratio": 0.75
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2856
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 880
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1420,
+      "proposed_battle_xp": 33952,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-089",
+    "chapter_id": "CH-018",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-308",
+      "NPC-309",
+      "NPC-310",
+      "NPC-311",
+      "NPC-312"
+    ],
+    "baseline_power_proxy": 15403.92,
+    "proposed_power_proxy": 15080.44,
+    "recommended": {
+      "level": 164,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 20044.97,
+      "enemy_player_proxy_ratio": 0.75
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2890
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 890
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1435,
+      "proposed_battle_xp": 34625,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-090",
+    "chapter_id": "CH-018",
+    "boss_id": "BOSS-018",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-313",
+      "NPC-314",
+      "NPC-315",
+      "NPC-316",
+      "NPC-317",
+      "NPC-318"
+    ],
+    "baseline_power_proxy": 20302.21,
+    "proposed_power_proxy": 19877.61,
+    "recommended": {
+      "level": 166,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 20342.79,
+      "enemy_player_proxy_ratio": 0.98
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2925
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 11
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 902
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1450,
+      "proposed_battle_xp": 66683,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-091",
+    "chapter_id": "CH-019",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-319",
+      "NPC-320",
+      "NPC-321",
+      "NPC-322",
+      "NPC-323"
+    ],
+    "baseline_power_proxy": 14906.24,
+    "proposed_power_proxy": 14652.84,
+    "recommended": {
+      "level": 167,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 20492.23,
+      "enemy_player_proxy_ratio": 0.72
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 2993
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 917
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1465,
+      "proposed_battle_xp": 35644,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-092",
+    "chapter_id": "CH-019",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-324",
+      "NPC-325",
+      "NPC-326",
+      "NPC-327",
+      "NPC-328"
+    ],
+    "baseline_power_proxy": 14645.27,
+    "proposed_power_proxy": 14396.3,
+    "recommended": {
+      "level": 169,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 20792.17,
+      "enemy_player_proxy_ratio": 0.69
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3028
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 18
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 928
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1480,
+      "proposed_battle_xp": 36330,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-093",
+    "chapter_id": "CH-019",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-329",
+      "NPC-330",
+      "NPC-331",
+      "NPC-332",
+      "NPC-333"
+    ],
+    "baseline_power_proxy": 15337.78,
+    "proposed_power_proxy": 15077.04,
+    "recommended": {
+      "level": 171,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 21093.52,
+      "enemy_player_proxy_ratio": 0.71
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3063
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 19
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 939
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1495,
+      "proposed_battle_xp": 37020,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-094",
+    "chapter_id": "CH-019",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-334",
+      "NPC-335",
+      "NPC-336",
+      "NPC-337",
+      "NPC-338"
+    ],
+    "baseline_power_proxy": 15555.02,
+    "proposed_power_proxy": 15290.59,
+    "recommended": {
+      "level": 173,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 21396.26,
+      "enemy_player_proxy_ratio": 0.71
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3098
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 19
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 949
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1510,
+      "proposed_battle_xp": 37715,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-095",
+    "chapter_id": "CH-019",
+    "boss_id": "BOSS-019",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-339",
+      "NPC-340",
+      "NPC-341",
+      "NPC-342",
+      "NPC-343",
+      "NPC-344"
+    ],
+    "baseline_power_proxy": 21577,
+    "proposed_power_proxy": 21207.31,
+    "recommended": {
+      "level": 175,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 21700.39,
+      "enemy_player_proxy_ratio": 0.98
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3132
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 19
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 5
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 11
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 961
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1525,
+      "proposed_battle_xp": 72561,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-096",
+    "chapter_id": "CH-020",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-345",
+      "NPC-346",
+      "NPC-347",
+      "NPC-348",
+      "NPC-349"
+    ],
+    "baseline_power_proxy": 22082.97,
+    "proposed_power_proxy": 21773.81,
+    "recommended": {
+      "level": 176,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 21852.97,
+      "enemy_player_proxy_ratio": 1
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3204
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 19
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 977
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1540,
+      "proposed_battle_xp": 38767,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-097",
+    "chapter_id": "CH-020",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-350",
+      "NPC-351",
+      "NPC-352",
+      "NPC-353",
+      "NPC-354"
+    ],
+    "baseline_power_proxy": 22486.85,
+    "proposed_power_proxy": 22172.04,
+    "recommended": {
+      "level": 178,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 22159.17,
+      "enemy_player_proxy_ratio": 1
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3240
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 19
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 987
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1555,
+      "proposed_battle_xp": 39474,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-098",
+    "chapter_id": "CH-020",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-355",
+      "NPC-356",
+      "NPC-357",
+      "NPC-358",
+      "NPC-359"
+    ],
+    "baseline_power_proxy": 20558.63,
+    "proposed_power_proxy": 20270.82,
+    "recommended": {
+      "level": 180,
+      "realm": 8,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 22466.75,
+      "enemy_player_proxy_ratio": 0.9
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3275
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 20
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 999
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1570,
+      "proposed_battle_xp": 40186,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-099",
+    "chapter_id": "CH-020",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-360",
+      "NPC-361",
+      "NPC-362",
+      "NPC-363",
+      "NPC-364"
+    ],
+    "baseline_power_proxy": 21729.71,
+    "proposed_power_proxy": 21425.49,
+    "recommended": {
+      "level": 182,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 22775.7,
+      "enemy_player_proxy_ratio": 0.94
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3310
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 20
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1009
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1585,
+      "proposed_battle_xp": 43692,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-100",
+    "chapter_id": "CH-020",
+    "boss_id": "BOSS-020",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-365",
+      "NPC-366",
+      "NPC-367",
+      "NPC-368",
+      "NPC-369",
+      "NPC-370"
+    ],
+    "baseline_power_proxy": 32570.24,
+    "proposed_power_proxy": 32116.55,
+    "recommended": {
+      "level": 184,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 23086,
+      "enemy_player_proxy_ratio": 1.39
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3346
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 20
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 12
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1020
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1600,
+      "proposed_battle_xp": 83984,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-101",
+    "chapter_id": "CH-021",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-371",
+      "NPC-372",
+      "NPC-373",
+      "NPC-374",
+      "NPC-375",
+      "NPC-376"
+    ],
+    "baseline_power_proxy": 24751.66,
+    "proposed_power_proxy": 24504.13,
+    "recommended": {
+      "level": 185,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 23241.67,
+      "enemy_player_proxy_ratio": 1.05
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3420
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 20
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1038
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1615,
+      "proposed_battle_xp": 44850,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-102",
+    "chapter_id": "CH-021",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-377",
+      "NPC-378",
+      "NPC-379",
+      "NPC-380",
+      "NPC-381",
+      "NPC-382"
+    ],
+    "baseline_power_proxy": 23972.34,
+    "proposed_power_proxy": 23732.63,
+    "recommended": {
+      "level": 187,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 23554.01,
+      "enemy_player_proxy_ratio": 1.01
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3456
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 20
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1048
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1630,
+      "proposed_battle_xp": 45628,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-103",
+    "chapter_id": "CH-021",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-383",
+      "NPC-384",
+      "NPC-385",
+      "NPC-386",
+      "NPC-387",
+      "NPC-388"
+    ],
+    "baseline_power_proxy": 24450.72,
+    "proposed_power_proxy": 24206.22,
+    "recommended": {
+      "level": 189,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 23867.7,
+      "enemy_player_proxy_ratio": 1.01
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3492
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 20
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1059
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1645,
+      "proposed_battle_xp": 46411,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-104",
+    "chapter_id": "CH-021",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-389",
+      "NPC-390",
+      "NPC-391",
+      "NPC-392",
+      "NPC-393",
+      "NPC-394"
+    ],
+    "baseline_power_proxy": 25923.04,
+    "proposed_power_proxy": 25663.8,
+    "recommended": {
+      "level": 191,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 24182.73,
+      "enemy_player_proxy_ratio": 1.06
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3528
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1070
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1660,
+      "proposed_battle_xp": 47200,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-105",
+    "chapter_id": "CH-021",
+    "boss_id": "BOSS-021",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-395",
+      "NPC-396",
+      "NPC-397",
+      "NPC-398",
+      "NPC-399",
+      "NPC-400"
+    ],
+    "baseline_power_proxy": 29654.09,
+    "proposed_power_proxy": 29352.14,
+    "recommended": {
+      "level": 193,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 24499.1,
+      "enemy_player_proxy_ratio": 1.2
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3564
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 12
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1081
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1675,
+      "proposed_battle_xp": 90653,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-106",
+    "chapter_id": "CH-022",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-401",
+      "NPC-402",
+      "NPC-403",
+      "NPC-404",
+      "NPC-405",
+      "NPC-406"
+    ],
+    "baseline_power_proxy": 35500.02,
+    "proposed_power_proxy": 35251.54,
+    "recommended": {
+      "level": 194,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 24657.78,
+      "enemy_player_proxy_ratio": 1.43
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3642
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1099
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1690,
+      "proposed_battle_xp": 48391,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-107",
+    "chapter_id": "CH-022",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-407",
+      "NPC-408",
+      "NPC-409",
+      "NPC-410",
+      "NPC-411",
+      "NPC-412"
+    ],
+    "baseline_power_proxy": 35974.47,
+    "proposed_power_proxy": 35722.66,
+    "recommended": {
+      "level": 196,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 24976.15,
+      "enemy_player_proxy_ratio": 1.43
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3679
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1110
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1705,
+      "proposed_battle_xp": 49192,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-108",
+    "chapter_id": "CH-022",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-413",
+      "NPC-414",
+      "NPC-415",
+      "NPC-416",
+      "NPC-417",
+      "NPC-418"
+    ],
+    "baseline_power_proxy": 36450.99,
+    "proposed_power_proxy": 36195.84,
+    "recommended": {
+      "level": 198,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 25295.84,
+      "enemy_player_proxy_ratio": 1.43
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3715
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 21
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1121
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1720,
+      "proposed_battle_xp": 49998,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-109",
+    "chapter_id": "CH-022",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-419",
+      "NPC-420",
+      "NPC-421",
+      "NPC-422",
+      "NPC-423",
+      "NPC-424"
+    ],
+    "baseline_power_proxy": 36929.57,
+    "proposed_power_proxy": 36671.04,
+    "recommended": {
+      "level": 200,
+      "realm": 9,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 25616.84,
+      "enemy_player_proxy_ratio": 1.43
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3752
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 22
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1133
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1735,
+      "proposed_battle_xp": 50808,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-110",
+    "chapter_id": "CH-022",
+    "boss_id": "BOSS-022",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-425",
+      "NPC-426",
+      "NPC-427",
+      "NPC-428",
+      "NPC-429",
+      "NPC-430"
+    ],
+    "baseline_power_proxy": 41763.47,
+    "proposed_power_proxy": 41472.59,
+    "recommended": {
+      "level": 202,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 25939.16,
+      "enemy_player_proxy_ratio": 1.6
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3789
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 22
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 12
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1143
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1750,
+      "proposed_battle_xp": 103735,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-111",
+    "chapter_id": "CH-023",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-431",
+      "NPC-432",
+      "NPC-433",
+      "NPC-434",
+      "NPC-435",
+      "NPC-436"
+    ],
+    "baseline_power_proxy": 35189.75,
+    "proposed_power_proxy": 35084.18,
+    "recommended": {
+      "level": 203,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 26100.81,
+      "enemy_player_proxy_ratio": 1.34
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3869
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 22
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1162
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1765,
+      "proposed_battle_xp": 55354,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-112",
+    "chapter_id": "CH-023",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-437",
+      "NPC-438",
+      "NPC-439",
+      "NPC-440",
+      "NPC-441",
+      "NPC-442"
+    ],
+    "baseline_power_proxy": 39909.02,
+    "proposed_power_proxy": 39789.29,
+    "recommended": {
+      "level": 205,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 26425.09,
+      "enemy_player_proxy_ratio": 1.51
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3906
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 22
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1174
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1780,
+      "proposed_battle_xp": 56229,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-113",
+    "chapter_id": "CH-023",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-443",
+      "NPC-444",
+      "NPC-445",
+      "NPC-446",
+      "NPC-447",
+      "NPC-448"
+    ],
+    "baseline_power_proxy": 38949.47,
+    "proposed_power_proxy": 38832.63,
+    "recommended": {
+      "level": 207,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 26750.67,
+      "enemy_player_proxy_ratio": 1.45
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3944
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 22
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1184
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1795,
+      "proposed_battle_xp": 57110,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-114",
+    "chapter_id": "CH-023",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-449",
+      "NPC-450",
+      "NPC-451",
+      "NPC-452",
+      "NPC-453",
+      "NPC-454"
+    ],
+    "baseline_power_proxy": 35057.05,
+    "proposed_power_proxy": 34951.87,
+    "recommended": {
+      "level": 209,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 27077.54,
+      "enemy_player_proxy_ratio": 1.29
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 3981
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 22
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1195
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 7
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1810,
+      "proposed_battle_xp": 57995,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-115",
+    "chapter_id": "CH-023",
+    "boss_id": "BOSS-023",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-455",
+      "NPC-456",
+      "NPC-457",
+      "NPC-458",
+      "NPC-459",
+      "NPC-460"
+    ],
+    "baseline_power_proxy": 39868.51,
+    "proposed_power_proxy": 39743.67,
+    "recommended": {
+      "level": 211,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 27405.7,
+      "enemy_player_proxy_ratio": 1.45
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 4018
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 23
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 9
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 12
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1207
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1825,
+      "proposed_battle_xp": 111228,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-116",
+    "chapter_id": "CH-024",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-461",
+      "NPC-462",
+      "NPC-463",
+      "NPC-464",
+      "NPC-465",
+      "NPC-466"
+    ],
+    "baseline_power_proxy": 41604.07,
+    "proposed_power_proxy": 41604.07,
+    "recommended": {
+      "level": 212,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 27570.26,
+      "enemy_player_proxy_ratio": 1.51
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 4102
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 23
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 2
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1226
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-006",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1840,
+      "proposed_battle_xp": 59333,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-117",
+    "chapter_id": "CH-024",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-467",
+      "NPC-468",
+      "NPC-469",
+      "NPC-470",
+      "NPC-471",
+      "NPC-472"
+    ],
+    "baseline_power_proxy": 42119.62,
+    "proposed_power_proxy": 42119.62,
+    "recommended": {
+      "level": 214,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 27900.35,
+      "enemy_player_proxy_ratio": 1.51
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 4140
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 23
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 3
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1237
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-009",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1855,
+      "proposed_battle_xp": 60231,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-118",
+    "chapter_id": "CH-024",
+    "boss_id": null,
+    "tier": "normal",
+    "enemy_ids": [
+      "NPC-473",
+      "NPC-474",
+      "NPC-475",
+      "NPC-476",
+      "NPC-477",
+      "NPC-478"
+    ],
+    "baseline_power_proxy": 43099.35,
+    "proposed_power_proxy": 43099.37,
+    "recommended": {
+      "level": 216,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 28231.71,
+      "enemy_player_proxy_ratio": 1.53
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 4177
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 23
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 4
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1249
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-036",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1870,
+      "proposed_battle_xp": 61134,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-119",
+    "chapter_id": "CH-024",
+    "boss_id": null,
+    "tier": "elite",
+    "enemy_ids": [
+      "NPC-479",
+      "NPC-480",
+      "NPC-481",
+      "NPC-482",
+      "NPC-483",
+      "NPC-484"
+    ],
+    "baseline_power_proxy": 43625.34,
+    "proposed_power_proxy": 43625.34,
+    "recommended": {
+      "level": 218,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 28564.35,
+      "enemy_player_proxy_ratio": 1.53
+    },
+    "stamina_cost": 6,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 4215
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 23
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 5
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1259
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-076",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1885,
+      "proposed_battle_xp": 62042,
+      "xp_fraction_of_one_level": 0.045
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.65,
+        0.85
+      ],
+      "target_median_duration_s": [
+        20,
+        90
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  },
+  {
+    "stage_id": "STG-120",
+    "chapter_id": "CH-024",
+    "boss_id": "BOSS-024",
+    "tier": "boss",
+    "enemy_ids": [
+      "NPC-485",
+      "NPC-486",
+      "NPC-487",
+      "NPC-488",
+      "NPC-489",
+      "NPC-490"
+    ],
+    "baseline_power_proxy": 49925.13,
+    "proposed_power_proxy": 49925.14,
+    "recommended": {
+      "level": 220,
+      "realm": 10,
+      "roster_size": 6,
+      "representative_quality_band": [
+        2,
+        4
+      ],
+      "power_proxy": 28898.26,
+      "enemy_player_proxy_ratio": 1.73
+    },
+    "stamina_cost": 12,
+    "rewards": {
+      "first": [
+        {
+          "resource_id": "RES-001",
+          "qty": 4253
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 24
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 3
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-132",
+          "qty": 10
+        },
+        {
+          "resource_id": "RES-134",
+          "qty": 12
+        }
+      ],
+      "repeat": [
+        {
+          "resource_id": "RES-001",
+          "qty": 1270
+        },
+        {
+          "resource_id": "RES-116",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-128",
+          "qty": 1
+        }
+      ],
+      "baseline_battle_xp": 1900,
+      "proposed_battle_xp": 118915,
+      "xp_fraction_of_one_level": 0.085
+    },
+    "acceptance": {
+      "target_win_rate": [
+        0.45,
+        0.7
+      ],
+      "target_median_duration_s": [
+        45,
+        150
+      ],
+      "no_hard_timeout": true
+    },
+    "status": "DEV_ANALYTICAL_NOT_SIMULATED"
+  }
+]

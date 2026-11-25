@@ -1,0 +1,276 @@
+[
+  {
+    "id": "FX-MELEE",
+    "families": [
+      "melee",
+      "melee_combo",
+      "palm",
+      "kick",
+      "lotus",
+      "smash",
+      "ground_smash",
+      "scalpel",
+      "giant",
+      "roll",
+      "butterfly",
+      "body",
+      "club",
+      "twin",
+      "claw",
+      "arm",
+      "bone",
+      "sword",
+      "scythe",
+      "weapon"
+    ],
+    "skill_count": 247,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-PROJECTILE",
+    "families": [
+      "kunai",
+      "needle",
+      "arrow",
+      "missile",
+      "paper",
+      "thread",
+      "wire",
+      "web"
+    ],
+    "skill_count": 107,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-CLONE",
+    "families": [
+      "clone",
+      "clone_combo",
+      "disguise",
+      "stealth",
+      "spore"
+    ],
+    "skill_count": 26,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-RASENGAN",
+    "families": [
+      "rasengan",
+      "rasengan_big",
+      "rasenshuriken",
+      "shuriken"
+    ],
+    "skill_count": 18,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-LIGHTNING",
+    "families": [
+      "lightning",
+      "lightning_aura",
+      "lightning_needle",
+      "lightning_lance",
+      "lightning_dash",
+      "blacklight",
+      "kirin",
+      "laser",
+      "beam"
+    ],
+    "skill_count": 34,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-FIRE",
+    "families": [
+      "fire",
+      "fireball",
+      "fire_dragon",
+      "ash",
+      "black_flame",
+      "blackfire",
+      "oil"
+    ],
+    "skill_count": 36,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-WATER",
+    "families": [
+      "water",
+      "water_dragon",
+      "shark",
+      "mist",
+      "bubble",
+      "ice"
+    ],
+    "skill_count": 46,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-EARTH",
+    "families": [
+      "earth",
+      "earth_wall",
+      "rock",
+      "golem",
+      "sand",
+      "wood",
+      "iron",
+      "lime",
+      "lava",
+      "dust",
+      "meteor",
+      "cube"
+    ],
+    "skill_count": 85,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-WIND",
+    "families": [
+      "wind",
+      "air",
+      "sound",
+      "tiger",
+      "peacock",
+      "elephant",
+      "steam"
+    ],
+    "skill_count": 74,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-ANIMAL",
+    "families": [
+      "dog",
+      "ninken",
+      "toad",
+      "snake",
+      "slug",
+      "katsuyu",
+      "spider",
+      "insect",
+      "beast",
+      "weasel",
+      "monkey",
+      "tapir",
+      "salamander",
+      "nue",
+      "demon",
+      "summon"
+    ],
+    "skill_count": 81,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-CHAKRA",
+    "families": [
+      "chakra",
+      "chakra_cloak",
+      "cloak",
+      "sage",
+      "gate",
+      "curse",
+      "white",
+      "eye",
+      "ocular",
+      "yin",
+      "moon",
+      "orb",
+      "mask",
+      "bijuu_bomb",
+      "karma",
+      "wing",
+      "shrink",
+      "element"
+    ],
+    "skill_count": 106,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-MIND",
+    "families": [
+      "mind",
+      "genjutsu",
+      "shadow",
+      "beguile",
+      "sense",
+      "scent",
+      "team",
+      "blood",
+      "seal",
+      "chain",
+      "parasite",
+      "gravity"
+    ],
+    "skill_count": 134,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-SUPPORT",
+    "families": [
+      "heal",
+      "cleanse",
+      "shield",
+      "byakugou",
+      "byakugo",
+      "reflect"
+    ],
+    "skill_count": 41,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-SPACE",
+    "families": [
+      "space",
+      "kamui",
+      "mark",
+      "raijin",
+      "raijin_mark",
+      "space_barrier"
+    ],
+    "skill_count": 26,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-SUSANOO",
+    "families": [
+      "susanoo",
+      "susanoo_shield",
+      "susanoo_sword"
+    ],
+    "skill_count": 8,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-TOXIC",
+    "families": [
+      "poison",
+      "acid",
+      "mucus"
+    ],
+    "skill_count": 17,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-ARTIFACT",
+    "families": [
+      "puppet",
+      "ink",
+      "clay",
+      "tech",
+      "trap"
+    ],
+    "skill_count": 60,
+    "status": "DESIGN_MAPPING_ONLY"
+  },
+  {
+    "id": "FX-OTHER",
+    "families": [
+      "fang"
+    ],
+    "skill_count": 6,
+    "status": "DESIGN_MAPPING_ONLY"
+  }
+]

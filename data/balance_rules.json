@@ -1,0 +1,187 @@
+{
+  "schema_version": "D2.1",
+  "status": "PROPOSED_NOT_BALANCED",
+  "locked": {
+    "max_team_size": 6,
+    "basic_initial": 1,
+    "auto_initial": 4,
+    "ultimate_initial": 1,
+    "all_unlocked_skills_available": true,
+    "stars_max": 15,
+    "building_max": 100,
+    "offline_max_seconds": 86400,
+    "upkeep": 0,
+    "no_battle_time_limit": true,
+    "unbounded_ninja_growth": true,
+    "unbounded_equipment_growth": true
+  },
+  "growth": {
+    "quality_labels": [
+      "N",
+      "R",
+      "SR",
+      "SSR",
+      "UR",
+      "LR",
+      "SP",
+      "EX"
+    ],
+    "quality_growth": [
+      1,
+      1.06,
+      1.12,
+      1.18,
+      1.25,
+      1.32,
+      1.4,
+      1.48
+    ],
+    "realm_levels": 20,
+    "points_per_level": 3,
+    "realm_bonus_points": 5,
+    "xp_formula": "round(100*L^1.6*(1+0.15*realm))",
+    "base_formula": "base + growth_per_level*(L-1)*quality_growth + allocated + training + permanent",
+    "derived": {
+      "hp": "250+18*vitality+5*L",
+      "patk": "20+3*strength+1.5*L",
+      "natk": "20+3*intellect+1.5*L",
+      "armor": "10+2*vitality",
+      "nres": "10+2*spirit",
+      "chakra_max": "100+3*spirit",
+      "chakra_regen": "2+0.04*spirit"
+    },
+    "permanent_gain": "0.02*sqrt(eligible_action_units)*difficulty*random(0.9,1.1)/(1+permanent_stat/100)^0.7",
+    "difficulty": "clamp(enemy_power/player_power,0,1.5); zero for trivial enemies <0.1",
+    "breakthrough": {
+      "base_rate": 0.65,
+      "pity_increment": 0.08,
+      "guarantee_after_failures": 5,
+      "cost": "ceil(3*(realm+1)^1.4)",
+      "resource_id": "RES-128"
+    },
+    "star_cost": "ceil(10*1.28^(star-1))",
+    "quality_cost": "ceil(15*1.6^(quality-1))"
+  },
+  "combat": {
+    "tick_hz": 20,
+    "hit": "clamp(0.85+(accuracy-evasion)/(200+abs(accuracy-evasion)),0.15,0.99)",
+    "physical": "max(1,round((PATK*coef+flat)*100/(100+max(0,armor-armor_pen))*crit*element*realm*reduction))",
+    "ninjutsu": "replace PATK/armor/armor_pen with NATK/nres/magic_pen",
+    "rating": "rating/(rating+100), clamp per derived effect",
+    "realm": "clamp(1+0.04*(attackerRealm-targetRealm),0.75,1.25)",
+    "crit_multiplier_base": 1.5,
+    "damage_reduction_cap": 0.65,
+    "cdr_cap": 0.5,
+    "lifesteal_cap": 0.35,
+    "auto_utility": "expected_damage+survival_need+control_need+reaction_bonus-cost_pressure; reserve ultimate chakra by profile",
+    "reaction_cooldown_s": 2,
+    "reactions": [
+      {
+        "a": "fire",
+        "b": "wind",
+        "kind": "amplify_fire",
+        "multiplier": 1.25,
+        "max_chain": 1
+      },
+      {
+        "a": "water",
+        "b": "lightning",
+        "kind": "conduct",
+        "multiplier": 1.2,
+        "max_chain": 1
+      },
+      {
+        "a": "water",
+        "b": "ice",
+        "kind": "freeze",
+        "multiplier": 1,
+        "max_chain": 1
+      },
+      {
+        "a": "earth",
+        "b": "water",
+        "kind": "mud",
+        "multiplier": 1,
+        "max_chain": 1
+      },
+      {
+        "a": "fire",
+        "b": "water",
+        "kind": "steam",
+        "multiplier": 1,
+        "max_chain": 1
+      },
+      {
+        "a": "earth",
+        "b": "lightning",
+        "kind": "break_earth_shield",
+        "multiplier": 1.2,
+        "max_chain": 1
+      },
+      {
+        "a": "wind",
+        "b": "poison",
+        "kind": "spread",
+        "multiplier": 1,
+        "max_chain": 1
+      }
+    ],
+    "deadlock": "Proposed no-progress detector after 120s with no meaningful HP change, player can withdraw; no fixed battle timeout"
+  },
+  "skill": {
+    "grade_level_cap": 20,
+    "grade_success": "max(.1,.75/(1+.15*(grade-1)))",
+    "pity_increment": 0.08,
+    "pity_guarantee_after": 4,
+    "level_cost": "ceil(4*level^1.35*(1+.25*grade))",
+    "grade_growth": "1+.12*(grade-1)",
+    "additional_unlock": "authored skill only, no unrelated jutsu; AI scheduler considers all active skills"
+  },
+  "equipment": {
+    "slots": 16,
+    "enhance_cost": "ceil(20*(1+enhance)^1.65)",
+    "enhance_gain": "base*(1+.06*enhance^.85)",
+    "success": "max(.05,.95/(1+.055*enhance))",
+    "pity": "min(1,base+.05*failures), guarantee after 20",
+    "failure": "no downgrade with protection resource RES-115; seed without protection loses materials only",
+    "refine_cost": "ceil(5*(refine+1)^1.4)",
+    "craft_quality": "clamp(floor(1+0.04*profession_level+0.5*material_quality+U[0,1.5)),1,8)"
+  },
+  "economy": {
+    "upgrade_cost": "ceil(base_cost*1.13^(target_level-2)) for level 2..100",
+    "upgrade_duration": "min(604800,ceil(base_duration*1.10^(target_level-2)))",
+    "production": "floor(base_output*(1+.07*(building_level-1))*(1+.025*profession_level)*condition)",
+    "price": "base_price*clamp((target_stock+1)/(stock+1),.5,3)^.35*clamp(1-.002*relation,.8,1.2)*war_factor",
+    "war_factor": 1.25,
+    "buy_spread": 1.1,
+    "sell_spread": 0.9,
+    "stamina_max": 120,
+    "stamina_regen_seconds": 360,
+    "normal_cost": 6,
+    "boss_cost": 12
+  },
+  "world": {
+    "tick_seconds": 600,
+    "offline_tick_seconds": 60,
+    "raid_loss_fraction": 0.1,
+    "building_damage_fraction": 0.5,
+    "protection_seconds": 43200,
+    "combat_order": "sequential teams; no ninja duplicated across deployed teams; heal after each encounter",
+    "offline": "atomic timestamp; clamp 0..86400; deterministic event ledger; no repeat reward"
+  },
+  "recruit": {
+    "weights": [
+      30,
+      25,
+      20,
+      13,
+      7,
+      3,
+      1.5,
+      0.5
+    ],
+    "pity_ssr": 20,
+    "pity_ur": 80,
+    "duplicate": "convert into same identity-version shards; separate versions have separate ID"
+  }
+}

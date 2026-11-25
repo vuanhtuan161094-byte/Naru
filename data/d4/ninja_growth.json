@@ -1,0 +1,332 @@
+{
+  "status": "PROPOSED",
+  "quality_max": 8,
+  "quality_upgrade_steps": [
+    {
+      "from": 1,
+      "to": 2,
+      "shards": 15,
+      "resources": [
+        {
+          "resource_id": "RES-132",
+          "qty": 2
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 1
+        }
+      ],
+      "min_realm": 1,
+      "min_mastery": 100,
+      "trial_required": true
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "shards": 24,
+      "resources": [
+        {
+          "resource_id": "RES-132",
+          "qty": 4
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 2
+        }
+      ],
+      "min_realm": 2,
+      "min_mastery": 200,
+      "trial_required": true
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "shards": 39,
+      "resources": [
+        {
+          "resource_id": "RES-132",
+          "qty": 6
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 3
+        }
+      ],
+      "min_realm": 3,
+      "min_mastery": 300,
+      "trial_required": true
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "shards": 62,
+      "resources": [
+        {
+          "resource_id": "RES-132",
+          "qty": 8
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 4
+        }
+      ],
+      "min_realm": 4,
+      "min_mastery": 400,
+      "trial_required": true
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "shards": 99,
+      "resources": [
+        {
+          "resource_id": "RES-132",
+          "qty": 10
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 5
+        }
+      ],
+      "min_realm": 5,
+      "min_mastery": 500,
+      "trial_required": true
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "shards": 158,
+      "resources": [
+        {
+          "resource_id": "RES-132",
+          "qty": 12
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 6
+        }
+      ],
+      "min_realm": 6,
+      "min_mastery": 600,
+      "trial_required": true
+    },
+    {
+      "from": 7,
+      "to": 8,
+      "shards": 252,
+      "resources": [
+        {
+          "resource_id": "RES-132",
+          "qty": 14
+        },
+        {
+          "resource_id": "RES-127",
+          "qty": 7
+        }
+      ],
+      "min_realm": 7,
+      "min_mastery": 700,
+      "trial_required": true
+    }
+  ],
+  "stars": [
+    {
+      "from": 1,
+      "to": 2,
+      "shards": 10,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "shards": 13,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "shards": 17,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "shards": 21,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "shards": 27,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "shards": 35,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 7
+        }
+      ]
+    },
+    {
+      "from": 7,
+      "to": 8,
+      "shards": 44,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "shards": 57,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 9
+        }
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "shards": 73,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "shards": 93,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 11
+        }
+      ]
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "shards": 119,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 12
+        }
+      ]
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "shards": 152,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 13
+        }
+      ]
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "shards": 194,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 14
+        }
+      ]
+    },
+    {
+      "from": 14,
+      "to": 15,
+      "shards": 248,
+      "resources": [
+        {
+          "resource_id": "RES-134",
+          "qty": 15
+        }
+      ]
+    }
+  ],
+  "realm": {
+    "levels_per_realm": 20,
+    "level_xp": "ceil(100*L^1.6*(1+0.15*realm))",
+    "cost_resource": "RES-128",
+    "cost": "ceil(3*(realm+1)^1.4)",
+    "success": "min(1,0.65+0.08*failures); guaranteed on attempt after 5 failures",
+    "pity_scope": "ninja_instance+target_realm",
+    "fail_consume": "consume cost, keep level and XP; no regression",
+    "quality_trial": "generated trial against own template, 1 enemy, min_level=realm*20+1; no stamina charge on trial, no repeat loot",
+    "overflow_xp": "bank XP until breakthrough, no automatic spend on failure"
+  },
+  "talents": [
+    {
+      "id": "TAL-01",
+      "name": "Bền bỉ",
+      "stat": "vitality",
+      "multiplier": 1.05
+    },
+    {
+      "id": "TAL-02",
+      "name": "Nhanh nhẹn",
+      "stat": "agility",
+      "multiplier": 1.05
+    },
+    {
+      "id": "TAL-03",
+      "name": "Tinh thông",
+      "stat": "mastery_speed",
+      "multiplier": 1.08
+    },
+    {
+      "id": "TAL-04",
+      "name": "Kiểm soát chakra",
+      "stat": "chakra_efficiency",
+      "rating_add": 8
+    },
+    {
+      "id": "TAL-05",
+      "name": "May mắn",
+      "stat": "insight",
+      "rating_add": 8
+    }
+  ],
+  "talent_roll": "one fixed talent plus one random on first ownership; duplicate does not reroll; no reroll system until separately approved"
+}

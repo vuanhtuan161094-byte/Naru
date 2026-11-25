@@ -1,0 +1,249 @@
+{
+  "status": "PROPOSED",
+  "price": {
+    "currency": "RES-002",
+    "single": 100,
+    "ten": 1000
+  },
+  "starter_grant": [
+    "NIN-001",
+    "NIN-003",
+    "NIN-005"
+  ],
+  "first_pull_guaranteed_min_quality": 3,
+  "guarantee_ssr": {
+    "every": 20,
+    "min_quality": 4
+  },
+  "guarantee_ur": {
+    "every": 80,
+    "min_quality": 5
+  },
+  "reset": "each counter resets only if obtained tier >= its threshold",
+  "draw_order": "highest triggered guarantee first, else weighted tier; renormalize eligible tier weights; uniform within tier; no empty tier",
+  "pool": [
+    {
+      "quality": 1,
+      "label": "N",
+      "ninja_ids": [
+        "NIN-005",
+        "NIN-006",
+        "NIN-030",
+        "NIN-032",
+        "NIN-033",
+        "NIN-034",
+        "NIN-035",
+        "NIN-120",
+        "NIN-121",
+        "NIN-124",
+        "NIN-125",
+        "NIN-144"
+      ],
+      "weight": 30
+    },
+    {
+      "quality": 2,
+      "label": "R",
+      "ninja_ids": [
+        "NIN-001",
+        "NIN-003",
+        "NIN-007",
+        "NIN-008",
+        "NIN-009",
+        "NIN-010",
+        "NIN-011",
+        "NIN-012",
+        "NIN-014",
+        "NIN-015",
+        "NIN-025",
+        "NIN-026",
+        "NIN-029",
+        "NIN-031",
+        "NIN-059",
+        "NIN-079",
+        "NIN-080",
+        "NIN-081",
+        "NIN-082",
+        "NIN-116",
+        "NIN-117",
+        "NIN-118",
+        "NIN-119",
+        "NIN-143"
+      ],
+      "weight": 25
+    },
+    {
+      "quality": 3,
+      "label": "SR",
+      "ninja_ids": [
+        "NIN-002",
+        "NIN-013",
+        "NIN-017",
+        "NIN-018",
+        "NIN-023",
+        "NIN-027",
+        "NIN-028",
+        "NIN-036",
+        "NIN-037",
+        "NIN-038",
+        "NIN-039",
+        "NIN-040",
+        "NIN-044",
+        "NIN-046",
+        "NIN-047",
+        "NIN-048",
+        "NIN-049",
+        "NIN-050",
+        "NIN-051",
+        "NIN-052",
+        "NIN-053",
+        "NIN-054",
+        "NIN-056",
+        "NIN-057",
+        "NIN-073",
+        "NIN-074",
+        "NIN-075",
+        "NIN-084",
+        "NIN-085",
+        "NIN-087",
+        "NIN-088",
+        "NIN-089",
+        "NIN-106",
+        "NIN-107",
+        "NIN-108",
+        "NIN-109",
+        "NIN-110",
+        "NIN-115",
+        "NIN-122",
+        "NIN-123",
+        "NIN-141",
+        "NIN-142"
+      ],
+      "weight": 20
+    },
+    {
+      "quality": 4,
+      "label": "SSR",
+      "ninja_ids": [
+        "NIN-004",
+        "NIN-016",
+        "NIN-019",
+        "NIN-020",
+        "NIN-021",
+        "NIN-022",
+        "NIN-024",
+        "NIN-041",
+        "NIN-042",
+        "NIN-043",
+        "NIN-045",
+        "NIN-055",
+        "NIN-058",
+        "NIN-061",
+        "NIN-062",
+        "NIN-063",
+        "NIN-064",
+        "NIN-065",
+        "NIN-066",
+        "NIN-071",
+        "NIN-072",
+        "NIN-078",
+        "NIN-090",
+        "NIN-091",
+        "NIN-092",
+        "NIN-094",
+        "NIN-100",
+        "NIN-101",
+        "NIN-102",
+        "NIN-103",
+        "NIN-104",
+        "NIN-105",
+        "NIN-111",
+        "NIN-112",
+        "NIN-113",
+        "NIN-114",
+        "NIN-128",
+        "NIN-129",
+        "NIN-133",
+        "NIN-135",
+        "NIN-136",
+        "NIN-137",
+        "NIN-140"
+      ],
+      "weight": 13
+    },
+    {
+      "quality": 5,
+      "label": "UR",
+      "ninja_ids": [
+        "NIN-060",
+        "NIN-067",
+        "NIN-068",
+        "NIN-076",
+        "NIN-077",
+        "NIN-083",
+        "NIN-086",
+        "NIN-093",
+        "NIN-096",
+        "NIN-126",
+        "NIN-127",
+        "NIN-131"
+      ],
+      "weight": 7
+    },
+    {
+      "quality": 6,
+      "label": "LR",
+      "ninja_ids": [
+        "NIN-069",
+        "NIN-070",
+        "NIN-095",
+        "NIN-130",
+        "NIN-134"
+      ],
+      "weight": 3
+    },
+    {
+      "quality": 7,
+      "label": "SP",
+      "ninja_ids": [
+        "NIN-098",
+        "NIN-138",
+        "NIN-139"
+      ],
+      "weight": 1.5
+    },
+    {
+      "quality": 8,
+      "label": "EX",
+      "ninja_ids": [
+        "NIN-097",
+        "NIN-099",
+        "NIN-132"
+      ],
+      "weight": 0.5
+    }
+  ],
+  "duplicate_shards_by_quality": [
+    10,
+    12,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50
+  ],
+  "unlock_shards_by_quality": [
+    20,
+    30,
+    40,
+    60,
+    80,
+    100,
+    120,
+    150
+  ],
+  "version_identity": "one owned instance per template; duplicate same template grants shards; separate versions may be owned but only one identity per active team (proposed)",
+  "map_recruit": "quest or territory reward may grant shards/whole ninja; all acquisitions same duplicate handler",
+  "no_paid_currency": true
+}

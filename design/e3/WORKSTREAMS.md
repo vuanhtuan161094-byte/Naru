@@ -1,0 +1,2 @@
+# E3 / F1 — Current workstreams
+E3 created branches; user subsequently assigned both streams directly to ChatGPT. Codex prompt archived for history only. 01 Gameplay on implementation/e3-gameplay works independently using DEV placeholders; 02 Art on art/e3-art01 produces actual assets. 00 coordinates on design/d2-d. Read HANDOVER.md on live design branch. No merge. HD Pixel Chibi, recognizable Naruto direction; individual art not approved. One integrated game, no second project. Art approval, binary availability, rights and integration tracked separately.

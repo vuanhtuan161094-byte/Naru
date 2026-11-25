@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "all_tiers_nonempty": true,
+    "pool_unique": true,
+    "pool_refs": true,
+    "weight100": true,
+    "starter_refs": true,
+    "starter_stock_refs": true,
+    "growth_resource_refs": true,
+    "supply_refs": true,
+    "boss_refs": true,
+    "high_armor_reduces": true,
+    "price_direction": true,
+    "xp_monotonic": true,
+    "quality_star_limit": true,
+    "gear_slot_count": true
+  },
+  "counts": {
+    "pool": 144,
+    "tiers": 8,
+    "direct_sources": 87,
+    "gear_sets": 6,
+    "bloodlines": 7,
+    "bosses": 24
+  },
+  "numeric_samples": {
+    "damage_110_vs_60": 111,
+    "damage_vs_high_armor": 25,
+    "price_low_supply": 146.89007046000737,
+    "price_high_supply": 78.45840978967507,
+    "xp_20": 12069,
+    "xp_21": 15006,
+    "xp_300": 2849415,
+    "upgrades_100": {
+      "BLD-001": 15910634,
+      "BLD-002": 20683824
+    }
+  },
+  "design_only": true,
+  "balance_calibrated": false
+}

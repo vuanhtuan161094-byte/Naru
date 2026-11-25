@@ -1,0 +1,216 @@
+{
+  "status": "PROPOSED_OWNER_REVIEW_NOT_RUNTIME",
+  "scope": "skill progression only; halt further design expansion until review",
+  "current_runtime": {
+    "sha": "197bd5d15146ff664ac55ef4cb506f3b820855ce",
+    "regression": "factor=(1+.02*(level-1))*(1+.12*(grade-1)); G1L20 1.38 -> G2L1 1.12",
+    "stars": "stored 1..15 and used in stage_difficulty power proxy; absent Stats.derive",
+    "mastery": "credited on win; P2 p2_confirm increments 1; need per-cast dedupe and trivial opponent exclusion",
+    "branch": "B2 radius multipliers applied twice for some P2 shapes (1.15*1.05); generic area on single/support may be meaningless"
+  },
+  "locked": {
+    "initial_slots": "S0+S1-4+S5",
+    "all_unlocked_skills": true,
+    "level_success": 1,
+    "grade_probability": true,
+    "linear_or_branch": true,
+    "unbounded_total_growth": true,
+    "stars_max": 15,
+    "manual_ultimate": true
+  },
+  "proposal": {
+    "skill_level": {
+      "cap_per_grade": 20,
+      "start": 1,
+      "formula": "F=1+0.50*(G-1)+0.02*(L-1)",
+      "explanation": "38% base from 19 level upgrades; +12 percentage points on grade advance, net monotonic; no multiplicative compounding",
+      "cost": "ceil(4*L^1.35*(1+0.25*G))",
+      "book_by_damage_type": {
+        "physical": "RES-118",
+        "ninjutsu": "RES-119",
+        "genjutsu": "RES-120",
+        "neutral": "RES-119"
+      }
+    },
+    "grade": {
+      "start": 1,
+      "cap": null,
+      "requires": "L=20 and sufficient RES-130; no additional star/cap gate proposed",
+      "cost": "ceil(5*G^1.45)",
+      "chance": "max(0.1,0.75/(1+0.15*(G-1)))",
+      "pity": "four consecutive failures for same ninja+skill+target grade guarantees fifth attempt",
+      "failure": "consume materials only; retain grade/level/mastery/branch",
+      "success": "G+1,L=1; reset only target-grade pity",
+      "no_reroll": true
+    },
+    "stars": {
+      "direct_skill_multiplier": false,
+      "proposed": "natural foundation stats and level growth only multiplied by 1+0.04*(stars-1); then add allocations, training, permanent, gear; derived stats calculated once",
+      "max": 15,
+      "examples": [
+        {
+          "star": 1,
+          "multiplier": 1
+        },
+        {
+          "star": 5,
+          "multiplier": 1.16
+        },
+        {
+          "star": 10,
+          "multiplier": 1.36
+        },
+        {
+          "star": 15,
+          "multiplier": 1.56
+        }
+      ],
+      "no_new_gate": true,
+      "reason": "avoid duplicate star effect; current +4% power proxy is not runtime stats; update power proxy to derive once"
+    },
+    "mastery": {
+      "counter": "confirmed meaningful casts, max once per cast_id+primary actor+skill, no subhit/summon/overheal/trivial enemy farming; commit once on legitimate win",
+      "base": 1,
+      "talent": "use accumulated fractional credit if talent, avoid round(1*1.08) losing bonus",
+      "direct_damage_multiplier": false,
+      "unlock": "retain existing 500/1500 and trial requirements; individual thresholds to verify via organic play",
+      "branch": "existing grade>=3; no new mastery requirement without approval"
+    },
+    "evolution": {
+      "path": "792 linear,216 branching; retain existing branch IDs; two exclusive branches; B2 geometry once only, no extra arbitrary targets; branches adapt by profile",
+      "extra": "288 additional skills via authored realm/previous skill grade/mastery/personal trial; predecessor stays available; no duplicate identity",
+      "holds": "P3 holds remain; source metadata unchanged"
+    },
+    "migration": {
+      "preserve": "all grade/level/fails/mastery/branch/skill IDs, no debit/refund or reset; invalid data report separately",
+      "compatibility": "do not change runtime until user approves; compare old/new stats from same save",
+      "numeric_validation": "formula monotonic and coefficient total arithmetic; not Godot simulation"
+    }
+  },
+  "profiles": {
+    "damage": {
+      "label": "Sát thương",
+      "primary": "base_total_coefficient * F",
+      "secondary": "preserve hit count and geometry; allocate budget across all hits/DoT; no separate F per hit"
+    },
+    "heal": {
+      "label": "Trị liệu",
+      "primary": "base_heal_coefficient * F",
+      "secondary": "effective missing HP only; no overheal mastery"
+    },
+    "shield": {
+      "label": "Hộ thuẫn",
+      "primary": "base_shield_coefficient * F",
+      "secondary": "duration and stack rule unchanged unless branch; shield absorption capped by actual hit"
+    },
+    "control": {
+      "label": "Khống chế",
+      "primary": "if base damage > 0: coefficient * F",
+      "secondary": "control duration = min(authored effect cap, base_duration*(1+0.20*(F-1)/F)); chance unchanged; boss <= authored cap"
+    },
+    "stance": {
+      "label": "Cường hóa/giải thuật",
+      "primary": "numeric buff magnitude = base*(1+0.35*(F-1)/F)",
+      "secondary": "stat caps still apply; cleanse count unchanged; if no magnitude, use bounded resource efficiency instead"
+    },
+    "resource": {
+      "label": "Chakra",
+      "primary": "restore/drain amount = floor(base*(1+0.50*(F-1)/F))",
+      "secondary": "actual missing/available chakra only; no recursive transfer; no free chakra generation"
+    },
+    "summon": {
+      "label": "Triệu hồi",
+      "primary": "summon HP and attack = base_owner_fraction*owner_stat*(1+0.50*(F-1)/F)",
+      "secondary": "cap, lifetime, role and no recursion unchanged; heal summon scales healing instead of attack"
+    },
+    "wall": {
+      "label": "Tường chắn",
+      "primary": "duration = base_duration*(1+0.25*(F-1)/F)",
+      "secondary": "if destructible wall supported, durability coefficient * F instead of duration bonus; never add both by default"
+    },
+    "form": {
+      "label": "Kích hoạt hình thái",
+      "primary": "activation skill CP = base_CP*(1-0.15*(F-1)/F)",
+      "secondary": "form stat multipliers, form duration and form cooldown unchanged; no double payment"
+    },
+    "utility": {
+      "label": "Dịch chuyển/đánh dấu/né/giải thuật đặc thù",
+      "primary": "damage if authored * F, otherwise base_CP*(1-0.15*(F-1)/F)",
+      "secondary": "preserve charge limits, targets, eligibility, mark count, invulnerability and teleport safe bounds"
+    }
+  },
+  "examples": [
+    {
+      "grade": 1,
+      "level1_factor": 1,
+      "level20_factor": 1.38,
+      "level1_to20_books": 2298,
+      "grade_attempt_cost": 5,
+      "first_attempt_probability": 0.75,
+      "max_attempts": 5,
+      "max_grade_cost": 25
+    },
+    {
+      "grade": 2,
+      "level1_factor": 1.5,
+      "level20_factor": 1.88,
+      "level1_to20_books": 2753,
+      "grade_attempt_cost": 14,
+      "first_attempt_probability": 0.6522,
+      "max_attempts": 5,
+      "max_grade_cost": 70
+    },
+    {
+      "grade": 3,
+      "level1_factor": 2,
+      "level20_factor": 2.38,
+      "level1_to20_books": 3208,
+      "grade_attempt_cost": 25,
+      "first_attempt_probability": 0.5769,
+      "max_attempts": 5,
+      "max_grade_cost": 125
+    },
+    {
+      "grade": 5,
+      "level1_factor": 3,
+      "level20_factor": 3.38,
+      "level1_to20_books": 4128,
+      "grade_attempt_cost": 52,
+      "first_attempt_probability": 0.4688,
+      "max_attempts": 5,
+      "max_grade_cost": 260
+    },
+    {
+      "grade": 10,
+      "level1_factor": 5.5,
+      "level20_factor": 5.88,
+      "level1_to20_books": 6411,
+      "grade_attempt_cost": 141,
+      "first_attempt_probability": 0.3191,
+      "max_attempts": 5,
+      "max_grade_cost": 705
+    },
+    {
+      "grade": 20,
+      "level1_factor": 10.5,
+      "level20_factor": 10.88,
+      "level1_to20_books": 10987,
+      "grade_attempt_cost": 386,
+      "first_attempt_probability": 0.1948,
+      "max_attempts": 5,
+      "max_grade_cost": 1930
+    }
+  ],
+  "checks": {
+    "all_ids": true,
+    "trainable": true,
+    "basic": true,
+    "linear": true,
+    "branch": true,
+    "extra_unlocks": true,
+    "monotonic": true,
+    "all_profiles": true,
+    "branch_ids": true,
+    "stars_no_double": true
+  }
+}

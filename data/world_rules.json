@@ -1,0 +1,39 @@
+{
+  "tick_seconds": 600,
+  "offline_max_seconds": 86400,
+  "initial_world": "fictional cross-era sandbox; story reenactment isolated from dynamic faction state",
+  "player_upkeep": 0,
+  "territory_capture": "win sequential team battles, noncaptureable home villages protected; player retains home even on raid defeat",
+  "npc_ai": {
+    "decision_order": [
+      "stock_shortfall",
+      "trade",
+      "defend",
+      "explore",
+      "claim_neutral",
+      "declare_war"
+    ],
+    "actions_per_tick": 1,
+    "random_seed": "save_seed+tick+faction_id",
+    "war_min_relation": -60,
+    "war_cooldown_ticks": 12,
+    "trade_stock_floor": 50,
+    "raid_loss_fraction": 0.1,
+    "repair_condition_floor": 0.5,
+    "raid_protection_seconds": 43200
+  },
+  "combat": {
+    "team_size": 6,
+    "teams_sequential": true,
+    "no_duplicate_ninja_in_simultaneous_deployment": true,
+    "recover_after_encounter": true,
+    "no_hard_time_limit": true
+  },
+  "story": {
+    "mode": "memory_reenactment",
+    "sandbox_mutation": false,
+    "stamina_on_start": true,
+    "first_clear_once": true
+  },
+  "status": "PROPOSED"
+}

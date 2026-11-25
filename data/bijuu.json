@@ -1,0 +1,299 @@
+[
+  {
+    "id": "BIJ-1",
+    "name": "Shukaku",
+    "tails": 1,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-024",
+    "capture_trial_id": "BIJ-TRIAL-1",
+    "capture_requires": {
+      "realm": 5,
+      "seal_resource": "RES-100",
+      "seal_qty": 1
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 5
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-024"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-2",
+    "name": "Matatabi",
+    "tails": 2,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-100",
+    "capture_trial_id": "BIJ-TRIAL-2",
+    "capture_requires": {
+      "realm": 6,
+      "seal_resource": "RES-100",
+      "seal_qty": 2
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 6
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-100"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-3",
+    "name": "Isobu",
+    "tails": 3,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-101",
+    "capture_trial_id": "BIJ-TRIAL-3",
+    "capture_requires": {
+      "realm": 7,
+      "seal_resource": "RES-100",
+      "seal_qty": 3
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 7
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-101"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-4",
+    "name": "Son Goku",
+    "tails": 4,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-102",
+    "capture_trial_id": "BIJ-TRIAL-4",
+    "capture_requires": {
+      "realm": 8,
+      "seal_resource": "RES-100",
+      "seal_qty": 4
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 8
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-102"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-5",
+    "name": "Kokuo",
+    "tails": 5,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-103",
+    "capture_trial_id": "BIJ-TRIAL-5",
+    "capture_requires": {
+      "realm": 9,
+      "seal_resource": "RES-100",
+      "seal_qty": 5
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 9
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-103"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-6",
+    "name": "Saiken",
+    "tails": 6,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-104",
+    "capture_trial_id": "BIJ-TRIAL-6",
+    "capture_requires": {
+      "realm": 10,
+      "seal_resource": "RES-100",
+      "seal_qty": 6
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 10
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-104"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-7",
+    "name": "Chomei",
+    "tails": 7,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-105",
+    "capture_trial_id": "BIJ-TRIAL-7",
+    "capture_requires": {
+      "realm": 11,
+      "seal_resource": "RES-100",
+      "seal_qty": 7
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 11
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-105"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-8",
+    "name": "Gyuki",
+    "tails": 8,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-076",
+    "capture_trial_id": "BIJ-TRIAL-8",
+    "capture_requires": {
+      "realm": 12,
+      "seal_resource": "RES-100",
+      "seal_qty": 8
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 12
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-076"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  },
+  {
+    "id": "BIJ-9",
+    "name": "Kurama",
+    "tails": 9,
+    "bind_requires": [
+      "capture",
+      "compatibility",
+      "seal_ritual"
+    ],
+    "status": "PROPOSED",
+    "canon_host_template_id": "NIN-041",
+    "capture_trial_id": "BIJ-TRIAL-9",
+    "capture_requires": {
+      "realm": 13,
+      "seal_resource": "RES-100",
+      "seal_qty": 9
+    },
+    "capture_reward": [
+      {
+        "resource_id": "RES-146",
+        "qty": 13
+      }
+    ],
+    "compatibility": {
+      "preferred_host_ids": [
+        "NIN-041"
+      ],
+      "other_hosts": "explicit approval and compatible seal; sandbox only",
+      "one_active_host": true
+    },
+    "bond_xp_formula": "ceil(100*level^1.6)",
+    "training_resource": "RES-146"
+  }
+]

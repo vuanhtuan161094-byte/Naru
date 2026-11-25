@@ -1,0 +1,82 @@
+{
+  "status": "PROPOSED",
+  "account_currency": {
+    "RES-001": 5000,
+    "RES-002": 1000,
+    "RES-006": 250,
+    "RES-009": 200,
+    "RES-011": 40,
+    "RES-021": 100,
+    "RES-036": 40,
+    "RES-076": 20,
+    "RES-116": 30,
+    "RES-128": 5,
+    "RES-130": 8,
+    "RES-134": 5
+  },
+  "ninja_ids": [
+    "NIN-001",
+    "NIN-003",
+    "NIN-005"
+  ],
+  "initial_stamina": 120,
+  "initial_buildings": [
+    {
+      "building_id": "BLD-001",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-002",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-011",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-012",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-013",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-014",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-015",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-016",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-020",
+      "level": 1,
+      "condition": 1
+    },
+    {
+      "building_id": "BLD-022",
+      "level": 1,
+      "condition": 1
+    }
+  ],
+  "world_home": "TER-058",
+  "starter_team": [
+    "NIN-001",
+    "NIN-003",
+    "NIN-005"
+  ],
+  "tutorial": "claim starting gift → assign job → start construction → recruit → fight STG-001 → upgrade ninja → save/reload"
+}

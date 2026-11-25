@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "TER-001",
+    "country": "Hỏa Quốc",
+    "name_vi": "Làng Lá",
+    "owner_id": "FAC-001",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-006",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-021",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-036",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 100,
+    "travel_seconds": 120,
+    "coords": [
+      6,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-002",
+    "country": "Hỏa Quốc",
+    "name_vi": "Rừng Tử Thần",
+    "owner_id": "FAC-001",
+    "kind": "forest",
+    "resources": [
+      {
+        "resource_id": "RES-007",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-040",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-047",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 120,
+    "travel_seconds": 135,
+    "coords": [
+      18,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-003",
+    "country": "Hỏa Quốc",
+    "name_vi": "Sân luyện Đội 7",
+    "owner_id": "FAC-001",
+    "kind": "training",
+    "resources": [
+      {
+        "resource_id": "RES-116",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-118",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-121",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 140,
+    "travel_seconds": 150,
+    "coords": [
+      30,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-004",
+    "country": "Hỏa Quốc",
+    "name_vi": "Thung lũng Tận Cùng",
+    "owner_id": null,
+    "kind": "valley",
+    "resources": [
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-076",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-079",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 160,
+    "travel_seconds": 165,
+    "coords": [
+      42,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-005",
+    "country": "Hỏa Quốc",
+    "name_vi": "Đường biên phía đông",
+    "owner_id": null,
+    "kind": "road",
+    "resources": [
+      {
+        "resource_id": "RES-008",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-024",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 180,
+    "travel_seconds": 180,
+    "coords": [
+      54,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-006",
+    "country": "Hỏa Quốc",
+    "name_vi": "Mỏ núi lửa",
+    "owner_id": "FAC-001",
+    "kind": "mine",
+    "resources": [
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-015",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-020",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 200,
+    "travel_seconds": 195,
+    "coords": [
+      66,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-007",
+    "country": "Hỏa Quốc",
+    "name_vi": "Nông trại ngoại thành",
+    "owner_id": "FAC-001",
+    "kind": "farm",
+    "resources": [
+      {
+        "resource_id": "RES-021",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-024",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-030",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 220,
+    "travel_seconds": 210,
+    "coords": [
+      78,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-008",
+    "country": "Hỏa Quốc",
+    "name_vi": "Trạm giao thương",
+    "owner_id": "FAC-001",
+    "kind": "market",
+    "resources": [
+      {
+        "resource_id": "RES-006",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-068",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-073",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 240,
+    "travel_seconds": 225,
+    "coords": [
+      90,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-009",
+    "country": "Hỏa Quốc",
+    "name_vi": "Núi rừng phía bắc",
+    "owner_id": null,
+    "kind": "forest",
+    "resources": [
+      {
+        "resource_id": "RES-007",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-048",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-054",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 260,
+    "travel_seconds": 240,
+    "coords": [
+      102,
+      6
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-010",
+    "country": "Phong Quốc",
+    "name_vi": "Làng Cát",
+    "owner_id": "FAC-002",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-016",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-046",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-079",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 280,
+    "travel_seconds": 255,
+    "coords": [
+      6,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-011",
+    "country": "Phong Quốc",
+    "name_vi": "Sa mạc cửa ngõ",
+    "owner_id": "FAC-002",
+    "kind": "desert",
+    "resources": [
+      {
+        "resource_id": "RES-016",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-018",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-046",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 300,
+    "travel_seconds": 270,
+    "coords": [
+      18,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-012",
+    "country": "Phong Quốc",
+    "name_vi": "Hẻm đá đỏ",
+    "owner_id": null,
+    "kind": "mine",
+    "resources": [
+      {
+        "resource_id": "RES-010",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-012",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 320,
+    "travel_seconds": 285,
+    "coords": [
+      30,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-013",
+    "country": "Phong Quốc",
+    "name_vi": "Ốc đảo phía nam",
+    "owner_id": "FAC-002",
+    "kind": "farm",
+    "resources": [
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-025",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-046",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 340,
+    "travel_seconds": 300,
+    "coords": [
+      42,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-014",
+    "country": "Phong Quốc",
+    "name_vi": "Bãi thử con rối",
+    "owner_id": "FAC-002",
+    "kind": "training",
+    "resources": [
+      {
+        "resource_id": "RES-072",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-105",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 360,
+    "travel_seconds": 315,
+    "coords": [
+      54,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-015",
+    "country": "Phong Quốc",
+    "name_vi": "Mỏ tinh thể gió",
+    "owner_id": null,
+    "kind": "mine",
+    "resources": [
+      {
+        "resource_id": "RES-076",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-079",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-089",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 380,
+    "travel_seconds": 330,
+    "coords": [
+      66,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-016",
+    "country": "Phong Quốc",
+    "name_vi": "Tuyến thương nhân",
+    "owner_id": "FAC-002",
+    "kind": "road",
+    "resources": [
+      {
+        "resource_id": "RES-016",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-067",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-073",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 400,
+    "travel_seconds": 345,
+    "coords": [
+      78,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-017",
+    "country": "Thủy Quốc",
+    "name_vi": "Làng Sương Mù",
+    "owner_id": "FAC-003",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-029",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-078",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 420,
+    "travel_seconds": 360,
+    "coords": [
+      90,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-018",
+    "country": "Thủy Quốc",
+    "name_vi": "Bờ biển sương mù",
+    "owner_id": "FAC-003",
+    "kind": "coast",
+    "resources": [
+      {
+        "resource_id": "RES-029",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-018",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-078",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 440,
+    "travel_seconds": 375,
+    "coords": [
+      102,
+      20
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-019",
+    "country": "Thủy Quốc",
+    "name_vi": "Đảo sương phía bắc",
+    "owner_id": null,
+    "kind": "island",
+    "resources": [
+      {
+        "resource_id": "RES-045",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-053",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-078",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 460,
+    "travel_seconds": 390,
+    "coords": [
+      6,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-020",
+    "country": "Thủy Quốc",
+    "name_vi": "Vịnh kiếm sĩ",
+    "owner_id": "FAC-003",
+    "kind": "training",
+    "resources": [
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-103",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-104",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 480,
+    "travel_seconds": 405,
+    "coords": [
+      18,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-021",
+    "country": "Thủy Quốc",
+    "name_vi": "Làng chài ngoại vi",
+    "owner_id": "FAC-003",
+    "kind": "farm",
+    "resources": [
+      {
+        "resource_id": "RES-029",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-018",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 500,
+    "travel_seconds": 420,
+    "coords": [
+      30,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-022",
+    "country": "Thủy Quốc",
+    "name_vi": "Hải lộ phía nam",
+    "owner_id": null,
+    "kind": "road",
+    "resources": [
+      {
+        "resource_id": "RES-029",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-067",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-073",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 520,
+    "travel_seconds": 435,
+    "coords": [
+      42,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-023",
+    "country": "Lôi Quốc",
+    "name_vi": "Làng Mây",
+    "owner_id": "FAC-004",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-010",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-080",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-013",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 540,
+    "travel_seconds": 450,
+    "coords": [
+      54,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-024",
+    "country": "Lôi Quốc",
+    "name_vi": "Hẻm núi sấm",
+    "owner_id": "FAC-004",
+    "kind": "mountain",
+    "resources": [
+      {
+        "resource_id": "RES-010",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-080",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 560,
+    "travel_seconds": 465,
+    "coords": [
+      66,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-025",
+    "country": "Lôi Quốc",
+    "name_vi": "Đảo Rùa",
+    "owner_id": "FAC-004",
+    "kind": "island",
+    "resources": [
+      {
+        "resource_id": "RES-076",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-121",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-147",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 580,
+    "travel_seconds": 480,
+    "coords": [
+      78,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-026",
+    "country": "Lôi Quốc",
+    "name_vi": "Mỏ tinh thể lôi",
+    "owner_id": null,
+    "kind": "mine",
+    "resources": [
+      {
+        "resource_id": "RES-012",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-080",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-089",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 600,
+    "travel_seconds": 495,
+    "coords": [
+      90,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-027",
+    "country": "Lôi Quốc",
+    "name_vi": "Thung lũng mây",
+    "owner_id": "FAC-004",
+    "kind": "farm",
+    "resources": [
+      {
+        "resource_id": "RES-025",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-028",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-044",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 620,
+    "travel_seconds": 510,
+    "coords": [
+      102,
+      34
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-028",
+    "country": "Lôi Quốc",
+    "name_vi": "Trạm gác núi cao",
+    "owner_id": "FAC-004",
+    "kind": "fort",
+    "resources": [
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-010",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-105",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 640,
+    "travel_seconds": 525,
+    "coords": [
+      6,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-029",
+    "country": "Thổ Quốc",
+    "name_vi": "Làng Đá",
+    "owner_id": "FAC-005",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-010",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-081",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 660,
+    "travel_seconds": 540,
+    "coords": [
+      18,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-030",
+    "country": "Thổ Quốc",
+    "name_vi": "Cao nguyên đá",
+    "owner_id": "FAC-005",
+    "kind": "mountain",
+    "resources": [
+      {
+        "resource_id": "RES-010",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-017",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-054",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 680,
+    "travel_seconds": 555,
+    "coords": [
+      30,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-031",
+    "country": "Thổ Quốc",
+    "name_vi": "Mỏ sắt phía tây",
+    "owner_id": "FAC-005",
+    "kind": "mine",
+    "resources": [
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-015",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-013",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 700,
+    "travel_seconds": 570,
+    "coords": [
+      42,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-032",
+    "country": "Thổ Quốc",
+    "name_vi": "Hẻm núi sâu",
+    "owner_id": null,
+    "kind": "mine",
+    "resources": [
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-014",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-081",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 720,
+    "travel_seconds": 585,
+    "coords": [
+      54,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-033",
+    "country": "Thổ Quốc",
+    "name_vi": "Lò luyện khoáng",
+    "owner_id": "FAC-005",
+    "kind": "market",
+    "resources": [
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-012",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-015",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 740,
+    "travel_seconds": 600,
+    "coords": [
+      66,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-034",
+    "country": "Thổ Quốc",
+    "name_vi": "Đường núi biên giới",
+    "owner_id": null,
+    "kind": "road",
+    "resources": [
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-018",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-054",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 760,
+    "travel_seconds": 615,
+    "coords": [
+      78,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-035",
+    "country": "Vũ Quốc",
+    "name_vi": "Làng Mưa",
+    "owner_id": "FAC-006",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-078",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-053",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 780,
+    "travel_seconds": 630,
+    "coords": [
+      90,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-036",
+    "country": "Vũ Quốc",
+    "name_vi": "Kênh đào phía đông",
+    "owner_id": "FAC-006",
+    "kind": "coast",
+    "resources": [
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-029",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-078",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 800,
+    "travel_seconds": 645,
+    "coords": [
+      102,
+      48
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-037",
+    "country": "Vũ Quốc",
+    "name_vi": "Tháp mưa cũ",
+    "owner_id": null,
+    "kind": "ruin",
+    "resources": [
+      {
+        "resource_id": "RES-082",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-096",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-136",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 820,
+    "travel_seconds": 660,
+    "coords": [
+      6,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-038",
+    "country": "Vũ Quốc",
+    "name_vi": "Đường giao thương",
+    "owner_id": "FAC-006",
+    "kind": "road",
+    "resources": [
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-068",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-069",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 840,
+    "travel_seconds": 675,
+    "coords": [
+      18,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-039",
+    "country": "Điền Quốc",
+    "name_vi": "Làng Âm Thanh",
+    "owner_id": "FAC-007",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-040",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-042",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 860,
+    "travel_seconds": 690,
+    "coords": [
+      30,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-040",
+    "country": "Điền Quốc",
+    "name_vi": "Phòng nghiên cứu ngầm",
+    "owner_id": "FAC-007",
+    "kind": "lab",
+    "resources": [
+      {
+        "resource_id": "RES-040",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-050",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-144",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 880,
+    "travel_seconds": 705,
+    "coords": [
+      42,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-041",
+    "country": "Điền Quốc",
+    "name_vi": "Hang rắn",
+    "owner_id": null,
+    "kind": "cave",
+    "resources": [
+      {
+        "resource_id": "RES-040",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-047",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-148",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 900,
+    "travel_seconds": 720,
+    "coords": [
+      54,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-042",
+    "country": "Điền Quốc",
+    "name_vi": "Rừng biên giới",
+    "owner_id": null,
+    "kind": "forest",
+    "resources": [
+      {
+        "resource_id": "RES-007",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-049",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-052",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 920,
+    "travel_seconds": 735,
+    "coords": [
+      66,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-043",
+    "country": "Thiết Quốc",
+    "name_vi": "Thành samurai",
+    "owner_id": null,
+    "kind": "fort",
+    "resources": [
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-059",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-103",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 940,
+    "travel_seconds": 750,
+    "coords": [
+      78,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-044",
+    "country": "Thiết Quốc",
+    "name_vi": "Đèo tuyết",
+    "owner_id": null,
+    "kind": "mountain",
+    "resources": [
+      {
+        "resource_id": "RES-045",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-054",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 960,
+    "travel_seconds": 765,
+    "coords": [
+      90,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-045",
+    "country": "Ba Quốc",
+    "name_vi": "Cầu Đại Naruto",
+    "owner_id": null,
+    "kind": "road",
+    "resources": [
+      {
+        "resource_id": "RES-006",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-029",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 980,
+    "travel_seconds": 780,
+    "coords": [
+      102,
+      62
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-046",
+    "country": "Ba Quốc",
+    "name_vi": "Bến sông",
+    "owner_id": null,
+    "kind": "coast",
+    "resources": [
+      {
+        "resource_id": "RES-029",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-008",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1000,
+    "travel_seconds": 795,
+    "coords": [
+      6,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-047",
+    "country": "Thảo Quốc",
+    "name_vi": "Cầu Thiên Địa",
+    "owner_id": null,
+    "kind": "road",
+    "resources": [
+      {
+        "resource_id": "RES-008",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-019",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-076",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1020,
+    "travel_seconds": 810,
+    "coords": [
+      18,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-048",
+    "country": "Thảo Quốc",
+    "name_vi": "Đồng cỏ biên giới",
+    "owner_id": null,
+    "kind": "farm",
+    "resources": [
+      {
+        "resource_id": "RES-021",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-023",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-036",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1040,
+    "travel_seconds": 825,
+    "coords": [
+      30,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-049",
+    "country": "Nhẫn giới",
+    "name_vi": "Hang Akatsuki",
+    "owner_id": "FAC-008",
+    "kind": "cave",
+    "resources": [
+      {
+        "resource_id": "RES-076",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-126",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-146",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1060,
+    "travel_seconds": 840,
+    "coords": [
+      42,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-050",
+    "country": "Nhẫn giới",
+    "name_vi": "Căn cứ Akatsuki",
+    "owner_id": "FAC-008",
+    "kind": "fort",
+    "resources": [
+      {
+        "resource_id": "RES-082",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-095",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-136",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1080,
+    "travel_seconds": 855,
+    "coords": [
+      54,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-051",
+    "country": "Nhẫn giới",
+    "name_vi": "Di tích cổ",
+    "owner_id": null,
+    "kind": "ruin",
+    "resources": [
+      {
+        "resource_id": "RES-095",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-137",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-139",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1100,
+    "travel_seconds": 870,
+    "coords": [
+      66,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-052",
+    "country": "Nhẫn giới",
+    "name_vi": "Chiến trường Đại chiến",
+    "owner_id": null,
+    "kind": "valley",
+    "resources": [
+      {
+        "resource_id": "RES-076",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-128",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-130",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1120,
+    "travel_seconds": 885,
+    "coords": [
+      78,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-053",
+    "country": "Nhẫn giới",
+    "name_vi": "Núi Myoboku",
+    "owner_id": null,
+    "kind": "training",
+    "resources": [
+      {
+        "resource_id": "RES-147",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-148",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-047",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": false,
+    "contested": false,
+    "defense_rating": 1140,
+    "travel_seconds": 900,
+    "coords": [
+      90,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-054",
+    "country": "Nhẫn giới",
+    "name_vi": "Hang Ryuchi",
+    "owner_id": null,
+    "kind": "cave",
+    "resources": [
+      {
+        "resource_id": "RES-147",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-148",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-040",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1160,
+    "travel_seconds": 915,
+    "coords": [
+      102,
+      76
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-055",
+    "country": "Nhẫn giới",
+    "name_vi": "Rừng Shikkotsu",
+    "owner_id": null,
+    "kind": "forest",
+    "resources": [
+      {
+        "resource_id": "RES-147",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-148",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-055",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1180,
+    "travel_seconds": 930,
+    "coords": [
+      6,
+      90
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-056",
+    "country": "Nhẫn giới",
+    "name_vi": "Phòng nghiên cứu Kara",
+    "owner_id": null,
+    "kind": "lab",
+    "resources": [
+      {
+        "resource_id": "RES-144",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-149",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-150",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1200,
+    "travel_seconds": 945,
+    "coords": [
+      18,
+      90
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-057",
+    "country": "Nhẫn giới",
+    "name_vi": "Khu phong ấn cổ",
+    "owner_id": null,
+    "kind": "ruin",
+    "resources": [
+      {
+        "resource_id": "RES-095",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-100",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-145",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1220,
+    "travel_seconds": 960,
+    "coords": [
+      30,
+      90
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-058",
+    "country": "Nhẫn giới",
+    "name_vi": "Làng người chơi",
+    "owner_id": "FAC-009",
+    "kind": "village",
+    "resources": [
+      {
+        "resource_id": "RES-006",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-021",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1240,
+    "travel_seconds": 975,
+    "coords": [
+      42,
+      90
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-059",
+    "country": "Nhẫn giới",
+    "name_vi": "Rừng cạnh làng",
+    "owner_id": "FAC-009",
+    "kind": "forest",
+    "resources": [
+      {
+        "resource_id": "RES-006",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-007",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-036",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1260,
+    "travel_seconds": 990,
+    "coords": [
+      54,
+      90
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "TER-060",
+    "country": "Nhẫn giới",
+    "name_vi": "Mỏ cạnh làng",
+    "owner_id": "FAC-009",
+    "kind": "mine",
+    "resources": [
+      {
+        "resource_id": "RES-009",
+        "yield_per_tick": 8
+      },
+      {
+        "resource_id": "RES-011",
+        "yield_per_tick": 6
+      },
+      {
+        "resource_id": "RES-015",
+        "yield_per_tick": 4
+      }
+    ],
+    "capture_allowed": true,
+    "contested": false,
+    "defense_rating": 1280,
+    "travel_seconds": 1005,
+    "coords": [
+      66,
+      90
+    ],
+    "provenance": "GAME_WORLD_LAYOUT_PROPOSED",
+    "status": "PROPOSED"
+  }
+]

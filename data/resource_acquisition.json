@@ -1,0 +1,1478 @@
+[
+  {
+    "resource_id": "RES-001",
+    "method": "mission",
+    "source_ids": [],
+    "base_yield": 24,
+    "period_seconds": 300,
+    "usage": "upgrade/recruit/trade",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-002",
+    "method": "mission",
+    "source_ids": [],
+    "base_yield": 23,
+    "period_seconds": 300,
+    "usage": "upgrade/recruit/trade",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-003",
+    "method": "mission",
+    "source_ids": [],
+    "base_yield": 22,
+    "period_seconds": 300,
+    "usage": "upgrade/recruit/trade",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-004",
+    "method": "mission",
+    "source_ids": [],
+    "base_yield": 21,
+    "period_seconds": 300,
+    "usage": "upgrade/recruit/trade",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-005",
+    "method": "mission",
+    "source_ids": [],
+    "base_yield": 20,
+    "period_seconds": 300,
+    "usage": "upgrade/recruit/trade",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-006",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 19,
+    "period_seconds": 300,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-007",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 18,
+    "period_seconds": 300,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-008",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 18,
+    "period_seconds": 300,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-009",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 17,
+    "period_seconds": 300,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-010",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 17,
+    "period_seconds": 300,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-011",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 16,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-012",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 15,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-013",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 15,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-014",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 15,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-015",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 14,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-016",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 14,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-017",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 13,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-018",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 13,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-019",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 13,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-020",
+    "method": "territory",
+    "source_ids": [],
+    "base_yield": 12,
+    "period_seconds": 360,
+    "usage": "construction/recipe",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-021",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 12,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-022",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 12,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-023",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 11,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-024",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 11,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-025",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 11,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-026",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 11,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-027",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 10,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-028",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 10,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-029",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 10,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-030",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 10,
+    "period_seconds": 420,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-031",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 10,
+    "period_seconds": 480,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-032",
+    "method": "farm",
+    "source_ids": [],
+    "base_yield": 9,
+    "period_seconds": 480,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-033",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-001"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-034",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-002"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-035",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-003"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "stamina items/recipe (optional)",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-036",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 9,
+    "period_seconds": 480,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-037",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 9,
+    "period_seconds": 480,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-038",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 480,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-039",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 480,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-040",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 480,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-041",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-042",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-043",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-044",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-045",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 8,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-046",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-047",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-048",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-049",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-050",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 540,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-051",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 600,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-052",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 600,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-053",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 600,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-054",
+    "method": "herb_garden",
+    "source_ids": [],
+    "base_yield": 7,
+    "period_seconds": 600,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-055",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-004"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "medicines/training",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-056",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-005"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-057",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-006"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-058",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-007"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-059",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-008"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-060",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-009"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-061",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-010"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-062",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-011"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-063",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-012"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-064",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-013"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-065",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-014"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-066",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-015"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-067",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-016"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-068",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-017"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-069",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-018"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-070",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-019"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-071",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-020"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-072",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-021"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-073",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-022"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-074",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-023"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-075",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-024"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "building/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-076",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 720,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-077",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 720,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-078",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 720,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-079",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 720,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-080",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 720,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-081",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 780,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-082",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 780,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-083",
+    "method": "chakra_spring",
+    "source_ids": [],
+    "base_yield": 5,
+    "period_seconds": 780,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-084",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-025"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-085",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-026"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-086",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-027"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-087",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-028"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-088",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-029"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-089",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-030"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-090",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-031"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "skill/equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-091",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-032"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-092",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-033"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-093",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-034"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-094",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-035"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-095",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-036"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-096",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-037"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-097",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-038"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-098",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-039"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-099",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-040"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-100",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-041"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "protection/bloodline",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-101",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-042"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-102",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-043"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-103",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-044"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-104",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-045"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-105",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-046"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-106",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-047"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-107",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-048"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-108",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-049"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-109",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-050"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-110",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-051"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-111",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-052"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-112",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-053"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-113",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-054"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-114",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-055"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-115",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-056"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "equipment",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-116",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 4,
+    "period_seconds": 960,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-117",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-057"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-118",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 4,
+    "period_seconds": 960,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-119",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 960,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-120",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 960,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-121",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-122",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-123",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-124",
+    "method": "mission_or_library",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-125",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-058"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "growth",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-126",
+    "method": "trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-127",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-059"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-128",
+    "method": "trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-129",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-060"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-130",
+    "method": "trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-131",
+    "method": "trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-132",
+    "method": "trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-133",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-061"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-134",
+    "method": "trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-135",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-062"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "breakthrough",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-136",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-137",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-138",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-139",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-140",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-141",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-142",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-143",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-144",
+    "method": "bloodline_trial",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-145",
+    "method": "recipe",
+    "source_ids": [
+      "RCP-063"
+    ],
+    "base_yield": 1,
+    "period_seconds": null,
+    "usage": "awakening",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-146",
+    "method": "boss_or_contract",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "binding/research",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-147",
+    "method": "boss_or_contract",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "binding/research",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-148",
+    "method": "boss_or_contract",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "binding/research",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-149",
+    "method": "boss_or_contract",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "binding/research",
+    "status": "PROPOSED"
+  },
+  {
+    "resource_id": "RES-150",
+    "method": "boss_or_contract",
+    "source_ids": [],
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "usage": "binding/research",
+    "status": "PROPOSED"
+  }
+]

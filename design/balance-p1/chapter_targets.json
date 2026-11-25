@@ -1,0 +1,434 @@
+[
+  {
+    "chapter": 1,
+    "stages": [
+      "STG-001",
+      "STG-002",
+      "STG-003",
+      "STG-004",
+      "STG-005"
+    ],
+    "recommended_level": [
+      5,
+      13
+    ],
+    "roster_size": 4,
+    "xp_per_first_clear": 1121,
+    "first_ryo": 840,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 2,
+    "stages": [
+      "STG-006",
+      "STG-007",
+      "STG-008",
+      "STG-009",
+      "STG-010"
+    ],
+    "recommended_level": [
+      14,
+      22
+    ],
+    "roster_size": 4,
+    "xp_per_first_clear": 3066,
+    "first_ryo": 1417,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 3,
+    "stages": [
+      "STG-011",
+      "STG-012",
+      "STG-013",
+      "STG-014",
+      "STG-015"
+    ],
+    "recommended_level": [
+      23,
+      31
+    ],
+    "roster_size": 4,
+    "xp_per_first_clear": 6196,
+    "first_ryo": 2018,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 4,
+    "stages": [
+      "STG-016",
+      "STG-017",
+      "STG-018",
+      "STG-019",
+      "STG-020"
+    ],
+    "recommended_level": [
+      32,
+      40
+    ],
+    "roster_size": 4,
+    "xp_per_first_clear": 9707,
+    "first_ryo": 2647,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 5,
+    "stages": [
+      "STG-021",
+      "STG-022",
+      "STG-023",
+      "STG-024",
+      "STG-025"
+    ],
+    "recommended_level": [
+      41,
+      49
+    ],
+    "roster_size": 4,
+    "xp_per_first_clear": 15580,
+    "first_ryo": 3302,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 6,
+    "stages": [
+      "STG-026",
+      "STG-027",
+      "STG-028",
+      "STG-029",
+      "STG-030"
+    ],
+    "recommended_level": [
+      50,
+      58
+    ],
+    "roster_size": 5,
+    "xp_per_first_clear": 20769,
+    "first_ryo": 3985,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 7,
+    "stages": [
+      "STG-031",
+      "STG-032",
+      "STG-033",
+      "STG-034",
+      "STG-035"
+    ],
+    "recommended_level": [
+      59,
+      67
+    ],
+    "roster_size": 5,
+    "xp_per_first_clear": 29098,
+    "first_ryo": 4694,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 8,
+    "stages": [
+      "STG-036",
+      "STG-037",
+      "STG-038",
+      "STG-039",
+      "STG-040"
+    ],
+    "recommended_level": [
+      68,
+      76
+    ],
+    "roster_size": 5,
+    "xp_per_first_clear": 36519,
+    "first_ryo": 5431,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 9,
+    "stages": [
+      "STG-041",
+      "STG-042",
+      "STG-043",
+      "STG-044",
+      "STG-045"
+    ],
+    "recommended_level": [
+      77,
+      85
+    ],
+    "roster_size": 5,
+    "xp_per_first_clear": 47137,
+    "first_ryo": 6194,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 10,
+    "stages": [
+      "STG-046",
+      "STG-047",
+      "STG-048",
+      "STG-049",
+      "STG-050"
+    ],
+    "recommended_level": [
+      86,
+      94
+    ],
+    "roster_size": 5,
+    "xp_per_first_clear": 57417,
+    "first_ryo": 6985,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 11,
+    "stages": [
+      "STG-051",
+      "STG-052",
+      "STG-053",
+      "STG-054",
+      "STG-055"
+    ],
+    "recommended_level": [
+      95,
+      103
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 70012,
+    "first_ryo": 7800,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 12,
+    "stages": [
+      "STG-056",
+      "STG-057",
+      "STG-058",
+      "STG-059",
+      "STG-060"
+    ],
+    "recommended_level": [
+      104,
+      112
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 83909,
+    "first_ryo": 8647,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 13,
+    "stages": [
+      "STG-061",
+      "STG-062",
+      "STG-063",
+      "STG-064",
+      "STG-065"
+    ],
+    "recommended_level": [
+      113,
+      121
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 98044,
+    "first_ryo": 9518,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 14,
+    "stages": [
+      "STG-066",
+      "STG-067",
+      "STG-068",
+      "STG-069",
+      "STG-070"
+    ],
+    "recommended_level": [
+      122,
+      130
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 116422,
+    "first_ryo": 10417,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 15,
+    "stages": [
+      "STG-071",
+      "STG-072",
+      "STG-073",
+      "STG-074",
+      "STG-075"
+    ],
+    "recommended_level": [
+      131,
+      139
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 129939,
+    "first_ryo": 11342,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 16,
+    "stages": [
+      "STG-076",
+      "STG-077",
+      "STG-078",
+      "STG-079",
+      "STG-080"
+    ],
+    "recommended_level": [
+      140,
+      148
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 153543,
+    "first_ryo": 12295,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 17,
+    "stages": [
+      "STG-081",
+      "STG-082",
+      "STG-083",
+      "STG-084",
+      "STG-085"
+    ],
+    "recommended_level": [
+      149,
+      157
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 171130,
+    "first_ryo": 13274,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 18,
+    "stages": [
+      "STG-086",
+      "STG-087",
+      "STG-088",
+      "STG-089",
+      "STG-090"
+    ],
+    "recommended_level": [
+      158,
+      166
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 196672,
+    "first_ryo": 14281,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 19,
+    "stages": [
+      "STG-091",
+      "STG-092",
+      "STG-093",
+      "STG-094",
+      "STG-095"
+    ],
+    "recommended_level": [
+      167,
+      175
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 219270,
+    "first_ryo": 15314,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 20,
+    "stages": [
+      "STG-096",
+      "STG-097",
+      "STG-098",
+      "STG-099",
+      "STG-100"
+    ],
+    "recommended_level": [
+      176,
+      184
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 246103,
+    "first_ryo": 16375,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 21,
+    "stages": [
+      "STG-101",
+      "STG-102",
+      "STG-103",
+      "STG-104",
+      "STG-105"
+    ],
+    "recommended_level": [
+      185,
+      193
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 274742,
+    "first_ryo": 17460,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 22,
+    "stages": [
+      "STG-106",
+      "STG-107",
+      "STG-108",
+      "STG-109",
+      "STG-110"
+    ],
+    "recommended_level": [
+      194,
+      202
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 302124,
+    "first_ryo": 18577,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 23,
+    "stages": [
+      "STG-111",
+      "STG-112",
+      "STG-113",
+      "STG-114",
+      "STG-115"
+    ],
+    "recommended_level": [
+      203,
+      211
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 337916,
+    "first_ryo": 19718,
+    "status": "DEV_TARGET"
+  },
+  {
+    "chapter": 24,
+    "stages": [
+      "STG-116",
+      "STG-117",
+      "STG-118",
+      "STG-119",
+      "STG-120"
+    ],
+    "recommended_level": [
+      212,
+      220
+    ],
+    "roster_size": 6,
+    "xp_per_first_clear": 361655,
+    "first_ryo": 20887,
+    "status": "DEV_TARGET"
+  }
+]

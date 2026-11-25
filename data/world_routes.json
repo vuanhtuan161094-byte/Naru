@@ -1,0 +1,499 @@
+[
+  {
+    "from": "TER-001",
+    "to": "TER-002",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-002",
+    "to": "TER-003",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-003",
+    "to": "TER-004",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-004",
+    "to": "TER-005",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-005",
+    "to": "TER-006",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-006",
+    "to": "TER-007",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-007",
+    "to": "TER-008",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-008",
+    "to": "TER-009",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-010",
+    "to": "TER-011",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-011",
+    "to": "TER-012",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-012",
+    "to": "TER-013",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-013",
+    "to": "TER-014",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-014",
+    "to": "TER-015",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-015",
+    "to": "TER-016",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-017",
+    "to": "TER-018",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-018",
+    "to": "TER-019",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-019",
+    "to": "TER-020",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-020",
+    "to": "TER-021",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-021",
+    "to": "TER-022",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-023",
+    "to": "TER-024",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-024",
+    "to": "TER-025",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-025",
+    "to": "TER-026",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-026",
+    "to": "TER-027",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-027",
+    "to": "TER-028",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-029",
+    "to": "TER-030",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-030",
+    "to": "TER-031",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-031",
+    "to": "TER-032",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-032",
+    "to": "TER-033",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-033",
+    "to": "TER-034",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-035",
+    "to": "TER-036",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-036",
+    "to": "TER-037",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-037",
+    "to": "TER-038",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-039",
+    "to": "TER-040",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-040",
+    "to": "TER-041",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-041",
+    "to": "TER-042",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-043",
+    "to": "TER-044",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-045",
+    "to": "TER-046",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-047",
+    "to": "TER-048",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-049",
+    "to": "TER-050",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-050",
+    "to": "TER-051",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-051",
+    "to": "TER-052",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-052",
+    "to": "TER-053",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-053",
+    "to": "TER-054",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-054",
+    "to": "TER-055",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-055",
+    "to": "TER-056",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-056",
+    "to": "TER-057",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-057",
+    "to": "TER-058",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-058",
+    "to": "TER-059",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-059",
+    "to": "TER-060",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-001",
+    "to": "TER-005",
+    "bidirectional": true,
+    "travel_seconds": 160,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-002",
+    "to": "TER-009",
+    "bidirectional": true,
+    "travel_seconds": 190,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-005",
+    "to": "TER-045",
+    "bidirectional": true,
+    "travel_seconds": 520,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-005",
+    "to": "TER-042",
+    "bidirectional": true,
+    "travel_seconds": 490,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-006",
+    "to": "TER-031",
+    "bidirectional": true,
+    "travel_seconds": 370,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-008",
+    "to": "TER-016",
+    "bidirectional": true,
+    "travel_seconds": 200,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-009",
+    "to": "TER-038",
+    "bidirectional": true,
+    "travel_seconds": 410,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-010",
+    "to": "TER-016",
+    "bidirectional": true,
+    "travel_seconds": 180,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-016",
+    "to": "TER-034",
+    "bidirectional": true,
+    "travel_seconds": 300,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-017",
+    "to": "TER-022",
+    "bidirectional": true,
+    "travel_seconds": 170,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-022",
+    "to": "TER-046",
+    "bidirectional": true,
+    "travel_seconds": 360,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-023",
+    "to": "TER-028",
+    "bidirectional": true,
+    "travel_seconds": 170,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-025",
+    "to": "TER-027",
+    "bidirectional": true,
+    "travel_seconds": 140,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-028",
+    "to": "TER-044",
+    "bidirectional": true,
+    "travel_seconds": 280,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-029",
+    "to": "TER-034",
+    "bidirectional": true,
+    "travel_seconds": 170,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-034",
+    "to": "TER-043",
+    "bidirectional": true,
+    "travel_seconds": 210,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-035",
+    "to": "TER-038",
+    "bidirectional": true,
+    "travel_seconds": 150,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-038",
+    "to": "TER-047",
+    "bidirectional": true,
+    "travel_seconds": 210,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-039",
+    "to": "TER-042",
+    "bidirectional": true,
+    "travel_seconds": 150,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-042",
+    "to": "TER-048",
+    "bidirectional": true,
+    "travel_seconds": 180,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-048",
+    "to": "TER-049",
+    "bidirectional": true,
+    "travel_seconds": 130,
+    "status": "PROPOSED"
+  },
+  {
+    "from": "TER-060",
+    "to": "TER-005",
+    "bidirectional": true,
+    "travel_seconds": 670,
+    "status": "PROPOSED"
+  }
+]

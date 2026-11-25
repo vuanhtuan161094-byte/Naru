@@ -1,0 +1,123 @@
+[
+  {
+    "id": "SUM-001",
+    "name": "Gamabunta",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 1,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.25
+  },
+  {
+    "id": "SUM-002",
+    "name": "Gamaken",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 2,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.27
+  },
+  {
+    "id": "SUM-003",
+    "name": "Gamahiro",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 3,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.29
+  },
+  {
+    "id": "SUM-004",
+    "name": "Manda",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 1,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.31
+  },
+  {
+    "id": "SUM-005",
+    "name": "Aoda",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 2,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.33
+  },
+  {
+    "id": "SUM-006",
+    "name": "Katsuyu",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 3,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.35
+  },
+  {
+    "id": "SUM-007",
+    "name": "Enma",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 1,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.37
+  },
+  {
+    "id": "SUM-008",
+    "name": "Pakkun",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 2,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.39
+  },
+  {
+    "id": "SUM-009",
+    "name": "Ninken",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 3,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.41000000000000003
+  },
+  {
+    "id": "SUM-010",
+    "name": "Kamatari",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 1,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.43
+  },
+  {
+    "id": "SUM-011",
+    "name": "Nue",
+    "level_growth": "unbounded",
+    "status": "PROPOSED",
+    "contract_resource": "RES-148",
+    "contract_qty": 2,
+    "level_cost": "ceil(30*level^1.5)",
+    "battle_lifetime_seconds": 12,
+    "owner_stat_fraction": 0.45
+  }
+]

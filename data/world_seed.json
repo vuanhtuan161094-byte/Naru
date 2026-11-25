@@ -1,0 +1,237 @@
+{
+  "status": "PROPOSED",
+  "factions": [
+    {
+      "id": "FAC-001",
+      "name_vi": "Làng Lá",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "balanced"
+    },
+    {
+      "id": "FAC-002",
+      "name_vi": "Làng Cát",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "trade"
+    },
+    {
+      "id": "FAC-003",
+      "name_vi": "Làng Sương Mù",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "military"
+    },
+    {
+      "id": "FAC-004",
+      "name_vi": "Làng Mây",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "military"
+    },
+    {
+      "id": "FAC-005",
+      "name_vi": "Làng Đá",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "territorial"
+    },
+    {
+      "id": "FAC-006",
+      "name_vi": "Làng Mưa",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "defensive"
+    },
+    {
+      "id": "FAC-007",
+      "name_vi": "Làng Âm Thanh",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "research"
+    },
+    {
+      "id": "FAC-008",
+      "name_vi": "Akatsuki",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "hostile"
+    },
+    {
+      "id": "FAC-009",
+      "name_vi": "Tổ chức người chơi",
+      "treasury_ryo": 10000,
+      "relation_default": 0,
+      "personality": "player"
+    }
+  ],
+  "bijuu": [
+    {
+      "id": "BIJ-1",
+      "name": "Shukaku",
+      "tails": 1,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-2",
+      "name": "Matatabi",
+      "tails": 2,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-3",
+      "name": "Isobu",
+      "tails": 3,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-4",
+      "name": "Son Goku",
+      "tails": 4,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-5",
+      "name": "Kokuo",
+      "tails": 5,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-6",
+      "name": "Saiken",
+      "tails": 6,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-7",
+      "name": "Chomei",
+      "tails": 7,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-8",
+      "name": "Gyuki",
+      "tails": 8,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "id": "BIJ-9",
+      "name": "Kurama",
+      "tails": 9,
+      "bind_requires": [
+        "capture",
+        "compatibility",
+        "seal_ritual"
+      ],
+      "status": "PROPOSED"
+    }
+  ],
+  "summons": [
+    {
+      "id": "SUM-001",
+      "name": "Gamabunta",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-002",
+      "name": "Gamaken",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-003",
+      "name": "Gamahiro",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-004",
+      "name": "Manda",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-005",
+      "name": "Aoda",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-006",
+      "name": "Katsuyu",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-007",
+      "name": "Enma",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-008",
+      "name": "Pakkun",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-009",
+      "name": "Ninken",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-010",
+      "name": "Kamatari",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "SUM-011",
+      "name": "Nue",
+      "level_growth": "unbounded",
+      "status": "PROPOSED"
+    }
+  ]
+}

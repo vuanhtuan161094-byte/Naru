@@ -1,0 +1,353 @@
+{
+  "snapshot": {
+    "date": "2026-11-25",
+    "design_base": "275f1419668594058f510a9a8c08c177688ffc28",
+    "gameplay": {
+      "sha": "197bd5d15146ff664ac55ef4cb506f3b820855ce",
+      "ci": 45582064721,
+      "job": 139094316792,
+      "status": "success",
+      "confirmed": 1134,
+      "enabled": 1134,
+      "fallback": 18,
+      "cast_only": 0,
+      "rejected": 0,
+      "web_artifact": {
+        "id": 15007960377,
+        "bytes": 10143235,
+        "digest": "sha256:33ccf491c727dd1d7edd63b750ab3df1a1c8a439f9269044a286779c362553cc",
+        "verification": "metadata and log only; not independently downloaded"
+      },
+      "economy90": {
+        "ryo": 623585,
+        "wars": 698
+      },
+      "ui_navigation": 17,
+      "p3_p4_balance_runtime": "not in reviewed gameplay tree"
+    },
+    "art": {
+      "sha": "100f1b1d495ee678a2e5f59d4e1a1fa81fa7c1e8",
+      "ci": 45576264528,
+      "status": "success",
+      "ci_scope": "safe DEV textures only",
+      "candidate_characters": 12,
+      "candidate_vfx": 14,
+      "walk_pilots": 6,
+      "complete_clips": 0,
+      "approved": 0,
+      "integrated": 0,
+      "private_review": "reported V5, not independently viewed this turn"
+    },
+    "source": {
+      "ids": 1152,
+      "pointer": 1152,
+      "limited_links": 41,
+      "scope": "context and secondary references; previous source ledgers not reverified"
+    },
+    "release": {
+      "final_accepted": 0,
+      "total_baseline_gates": 21,
+      "decision": "NO_FINAL_RELEASE; CONTINUE_PRODUCTION",
+      "notes": "Scoped passes are not final acceptance."
+    }
+  },
+  "baseline": [
+    {
+      "id": "T01",
+      "module": "NewGame",
+      "acceptance": "initial_save_seed.json; inventory/ninja/building IDs valid; 3 starter ninjas",
+      "status": "SCOPED_PASS",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "V6 registry + prior natural start",
+      "remaining_acceptance": "New save seed, tutorial and first click/reload; 3 starter ninja; no duplicate starter reward",
+      "final_accepted": false
+    },
+    {
+      "id": "T02",
+      "module": "Recruit",
+      "acceptance": "each 8 tier nonempty, distribution sums 100; same-template duplicate produces shards; pity independent",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "8 tiers and prior scoped recruitment tests",
+      "remaining_acceptance": "All acquisition routes, 20/80 pity edge, same-version shards, save persistence; test rates and no purchase with insufficient currency",
+      "final_accepted": false
+    },
+    {
+      "id": "T03",
+      "module": "NinjaGrowth",
+      "acceptance": "gain XP cap per realm, failed breakthrough retains XP and increments pity; success expands level cap",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Prior growth and trial transaction fixtures",
+      "remaining_acceptance": "Natural chapter 2+ progress; XP banking, pity, permanent gains anti-farm, unlimited growth precision; P1 curve compare",
+      "final_accepted": false
+    },
+    {
+      "id": "T04",
+      "module": "SkillGrowth",
+      "acceptance": "level at grade cap blocked; grade success opens 20 levels; extra trial unlock persisted",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Skill grade and unlock transaction foundation",
+      "remaining_acceptance": "All 288 personal trial links reachable; both branch outcomes meaningful, level/grade costs and save migration",
+      "final_accepted": false
+    },
+    {
+      "id": "T05",
+      "module": "Combat",
+      "acceptance": "6vs6, no seventh slot, 20Hz, seed replay, active skills considered, ultimate manual only",
+      "status": "SCOPED_PASS",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "V6 Combat V3 gate; 14x10 and variable maps, formations",
+      "remaining_acceptance": "6v6 actual mouse/touch; target selection, movement, separation, manual ults, seed replay across maps; no pile-up",
+      "final_accepted": false
+    },
+    {
+      "id": "T06",
+      "module": "CombatEffects",
+      "acceptance": "damage/shield/heal/CC/cleanse/reactions/summons and locked form; no endless summon",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "V6 1134 confirmed/1134 enabled, 18 D4 fallback",
+      "remaining_acceptance": "Resolve 17 non-HOLD fallbacks, plus P3 Guy HOLD; inspect each special outcome, form route and actual combo sequence, geometry and reaction caps",
+      "final_accepted": false
+    },
+    {
+      "id": "T07",
+      "module": "NoHardTimeout",
+      "acceptance": "manual battle remains after 120s; deadlock warning, withdraw works",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Baseline no hard limit and deadlock detector",
+      "remaining_acceptance": "Actual prolonged manual battle remains interactive; withdraw no reward duplicate; offline no-conquest outcome",
+      "final_accepted": false
+    },
+    {
+      "id": "T08",
+      "module": "BattleResults",
+      "acceptance": "full heal, rewards once, eligible permanent stat gain, no gain on trivial/friendly",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Legacy reward ledger and high-power fixture",
+      "remaining_acceptance": "Natural rewards once, heal after encounter, meaningful permanent growth; repeated reload/withdraw/overflow checks",
+      "final_accepted": false
+    },
+    {
+      "id": "T09",
+      "module": "Building",
+      "acceptance": "fixed lot, level 100 cap, cost/timer, insufficient resource prevents upgrade",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "HQ/workshop construction tested; 90d starter HQ15",
+      "remaining_acceptance": "30 buildings functional, fixed positions, level100 edge and repair; no resource debit on failed action",
+      "final_accepted": false
+    },
+    {
+      "id": "T10",
+      "module": "Production",
+      "acceptance": "job persists while deployed, recipe reserves input once; missing material pauses; no negative inventory",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "63 recipes/15 professions in database; seeded income",
+      "remaining_acceptance": "Every recipe input and output reachable, job remains while fighting, shortage/repeat/stop/reservation/overflow",
+      "final_accepted": false
+    },
+    {
+      "id": "T11",
+      "module": "Offline",
+      "acceptance": "0h,1h,24h,48h,backward clock, crash/reload; no replay, cap 24h",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "90d seeded simulation PASS, 24h policy",
+      "remaining_acceptance": "0/1/24/48h, backward clock, interrupted transaction, save recovery; actual no double ledger",
+      "final_accepted": false
+    },
+    {
+      "id": "T12",
+      "module": "World",
+      "acceptance": "connected map, travel event, sequential teams, claim and defense, protected home",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Independent teams, neutral capture and defense fixtures",
+      "remaining_acceptance": "Connected map, multiple squads by manpower, sequential defended conquest, actual travel and protected home; no fixed artificial team count",
+      "final_accepted": false
+    },
+    {
+      "id": "T13",
+      "module": "Diplomacy",
+      "acceptance": "NPC stock/production/trade/war evolve; prices respond to supply/relations; no upkeep",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "90d 698 wars, down from 2508; Ryo623585",
+      "remaining_acceptance": "P1 persisted global cadence, pair cooldown and finite stock; optional sinks, alliances, diplomacy, NPC development and actual resource balance",
+      "final_accepted": false
+    },
+    {
+      "id": "T14",
+      "module": "Raid",
+      "acceptance": "only permitted resources lost, repairable condition, no ninja/building deletion",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Prior controlled hostile raid/protection test",
+      "remaining_acceptance": "Offline real defense, permitted loss only, repair condition, home protected, no deleted levels/ninja",
+      "final_accepted": false
+    },
+    {
+      "id": "T15",
+      "module": "Gear",
+      "acceptance": "16 slots; set highest threshold; enhancement pity, socket/removal, no sprite changes",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "128 templates, gear transactions and set fixtures",
+      "remaining_acceptance": "16 slots, craft naturally, affix/sets/refine/evolve/gems/pity, protection and save; no equipment sprite changes",
+      "final_accepted": false
+    },
+    {
+      "id": "T16",
+      "module": "Beasts",
+      "acceptance": "capture/bind compatibility, one host; summon growth independent",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "9 DEV beast kits and capture fixture",
+      "remaining_acceptance": "9 capture routes, compatible host and one host/one beast, independent 11 summons, safe bounds; implants held until approved",
+      "final_accepted": false
+    },
+    {
+      "id": "T17",
+      "module": "Campaign",
+      "acceptance": "120 stages unlock sequentially; boss phases once; stamina; reward first/repeat distinct",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "120/120 high-power fixture; historical natural chapter1 5/5",
+      "remaining_acceptance": "All 24 chapters naturally playable, 24 boss phases, actual challenge and quest rewards, stamina, P1 tuned XP; no inflated stats as acceptance",
+      "final_accepted": false
+    },
+    {
+      "id": "T18",
+      "module": "Save",
+      "acceptance": "atomic save/load, schema version, migration, export/import; no corruption duplication",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Save/export/import nested validation and browser test",
+      "remaining_acceptance": "Old D4 to P2/P3/P1 save migration, corruption recovery, concurrent offline ledger, export/import and restart on each platform",
+      "final_accepted": false
+    },
+    {
+      "id": "T19",
+      "module": "UI",
+      "acceptance": "all screens reachable, Vietnamese glyphs, landscape resize, mouse+touch, no invisible buttons",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01+02",
+      "evidence": "V6 actual browser navigation 17/17",
+      "remaining_acceptance": "Visual quality consistent, Vietnamese fonts, no clipped/hidden controls, actual actions not mere navigation, responsive landscape/touch",
+      "final_accepted": false
+    },
+    {
+      "id": "T20",
+      "module": "Art",
+      "acceptance": "owner-approved originals; alpha anchor, 4 directions, no rig; VFX charge/travel/hit/fade",
+      "status": "NOT_ACCEPTED",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "02+01+00",
+      "evidence": "R5 12 candidate static,14 VFX mappings,6 walk pilots,0 approved/complete clips; safe DEV art CI PASS",
+      "remaining_acceptance": "First 12 distinct full-body actor kits in true 6v6; all 144 ninja×4×6 clips =3456 final, 54 forms, 9 beasts,11 summons, all skill mappings, 30 building visuals; actual event alignment and owner approval",
+      "final_accepted": false
+    },
+    {
+      "id": "T21",
+      "module": "Build",
+      "acceptance": "Godot native, Web served HTTP(S), Android debug APK, Windows portable; actual smoke test",
+      "status": "PARTIAL",
+      "baseline_status": "NOT_RUN_DESIGN_ACCEPTANCE",
+      "owner": "01",
+      "evidence": "Web V6 export+Chromium PASS; only Web preset in current repo",
+      "remaining_acceptance": "One Godot project, Web HTTP, Android debug APK and Windows portable, install/launch/save; native smoke. No public production release without rights and approval",
+      "final_accepted": false
+    }
+  ],
+  "additional": [
+    {
+      "id": "P22",
+      "owner": "01",
+      "priority": "P0",
+      "gate": "P2 residual",
+      "acceptance": "Separate HOLD from missing adapters; strict per-ID confirmed outcomes; D4 fallback explicitly visible until replaced; no fabricated PASS."
+    },
+    {
+      "id": "P23",
+      "owner": "01",
+      "priority": "P0",
+      "gate": "P3/P4 + P1 provenance",
+      "acceptance": "Import pinned design overlay, preserve source classifications, 2 explicit HOLDs (NIN-006-S7 and NIN-016-S7) not activated as new mechanics; D4 migration retains ID but no fatal repeatable new form; optional P1 ruleset and exact save migration."
+    },
+    {
+      "id": "P24",
+      "owner": "01",
+      "priority": "P0",
+      "gate": "Organic progression",
+      "acceptance": "Fresh legitimate save, chapter1 regression then chapters2–24 progression with earned XP/materials only, report bottlenecks and failures; controlled fixture separately."
+    },
+    {
+      "id": "P25",
+      "owner": "01",
+      "priority": "P1",
+      "gate": "Balance simulation",
+      "acceptance": "Compare D4/P2/P1 on same seeds, sample representative roles/rarity and 6v6 compositions, record win/duration/heal/CP/farm. 90d new economy, verify 6h persisted war cap and no storage loss; tune outliers."
+    },
+    {
+      "id": "P26",
+      "owner": "02",
+      "priority": "P0",
+      "gate": "12 ninja visual vertical slice",
+      "acceptance": "12 distinct actors ×4 directions×6 actions =288 complete clips; actual poses, no static translation, consistent R7 style, runtime capture with real 6v6 and no clipped HUD. Submit visual review; not automatic owner acceptance."
+    },
+    {
+      "id": "P27",
+      "owner": "02",
+      "priority": "P0",
+      "gate": "Anchor VFX",
+      "acceptance": "64 anchor skill mappings with applicable charge/release/travel/impact/residual, actual contact events and stable IDs; all 18 groups/146 families planned; reuse only genuine matching geometry."
+    },
+    {
+      "id": "P28",
+      "owner": "02+01",
+      "priority": "P1",
+      "gate": "Full visual production",
+      "acceptance": "144×24=3456 complete ninja clips, 54 forms,9 beasts,11 summons,1152 valid mappings; environment collision/30 buildings, 17 screen visual design, cut-in optional and audio basic; authorized asset provenance and owner review."
+    },
+    {
+      "id": "P29",
+      "owner": "01+02",
+      "priority": "P1",
+      "gate": "Cross-platform",
+      "acceptance": "Same Godot project Web/Windows/Android builds exact SHA; mouse/touch input, launch/save/reload actual exported binaries."
+    },
+    {
+      "id": "P30",
+      "owner": "00",
+      "priority": "P0",
+      "gate": "Release authority",
+      "acceptance": "All final gates evidence scoped to exact SHA, actual user visual/game review, no production merge absent explicit instruction; no canon-complete or rights-cleared assertion without evidence."
+    }
+  ],
+  "rule": "No final accepted until exact runtime and owner evidence; no false PASS from design data."
+}

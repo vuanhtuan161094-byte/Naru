@@ -1,0 +1,44 @@
+{
+  "base": "430c59bca6b7f122bb81bbc230d6af4c2c58d4cf",
+  "counts": {
+    "ninjas": 144,
+    "active": 1152,
+    "passives": 864,
+    "unique": 864,
+    "total": 2016,
+    "branch_passives": 576,
+    "branch_nodes": 1152,
+    "by_kind": {
+      "permanent_stat": 144,
+      "event_buff": 144,
+      "threshold_buff": 144,
+      "aura": 144,
+      "conditional_modifier": 171,
+      "event_team_buff": 57,
+      "event_debuff": 60
+    },
+    "by_scope": {
+      "self": 576,
+      "team": 130,
+      "combo": 27,
+      "family": 6,
+      "radius": 62,
+      "hit_primary_enemy": 60,
+      "element": 3
+    },
+    "source_hold_basis": 186
+  },
+  "checks": {
+    "counts": true,
+    "exact_six": true,
+    "skill_refs": true,
+    "form_refs": true,
+    "combo_refs": true,
+    "no_cast": true,
+    "monotone": true,
+    "branch_unique": true,
+    "base_valid": true
+  },
+  "status": "DEV_GENERATED_PER_ID_NOT_CANON_OR_RUNTIME",
+  "note": "mechanic-selected templates, not 864 individually researched canonical techniques; source pointer inherited from signature; retain existing 1152 active IDs"
+}

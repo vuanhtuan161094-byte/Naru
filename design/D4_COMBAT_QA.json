@@ -1,0 +1,28 @@
+{
+  "counts": {
+    "skills": 1152,
+    "statuses": 25,
+    "forms": 54,
+    "summons": 68,
+    "affinity": 400,
+    "environments": 6,
+    "reactions": 7
+  },
+  "checks": {
+    "count_1152": true,
+    "unique_ids": true,
+    "all_skill_refs": true,
+    "all_effects": true,
+    "all_form_refs": true,
+    "no_negative_cost": true,
+    "manual_ult": true,
+    "all_initial_and_extra": true,
+    "all_progression": true,
+    "all_trials": true,
+    "all_form_mappings": true,
+    "all_summons_unique": true,
+    "stats_48": true
+  },
+  "design_only": true,
+  "canon_verified": false
+}

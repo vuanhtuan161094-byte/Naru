@@ -1,0 +1,1835 @@
+{
+  "counts": {
+    "stats": 48,
+    "formations": 8,
+    "beasts": 9,
+    "summons": 11,
+    "bloodlines": 7,
+    "recruitment_tiers": 8
+  },
+  "stats": [
+    {
+      "stat_id": "vitality",
+      "existing_formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+      "unit": "points",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "strength",
+      "existing_formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+      "unit": "points",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "spirit",
+      "existing_formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+      "unit": "points",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "agility",
+      "existing_formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+      "unit": "points",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "intellect",
+      "existing_formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+      "unit": "points",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "potential",
+      "existing_formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+      "unit": "points",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "hp",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "flat",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "armor",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "nres",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "hp_regen",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "per_second",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "damage_reduction",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "crit_resist",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "patk",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "flat",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "armor_pen",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "flat",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "attack_speed",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "accuracy",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "evasion",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "counter",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "natk",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "flat",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "magic_pen",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "flat",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "ncrit",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "element_power",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "area",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "cast_speed",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "genjutsu_power",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "control_chance",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "control_duration",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "control_resist",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "genjutsu_resist",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "cleanse",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "chakra_max",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "flat",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "chakra_regen",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "per_second",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "chakra_efficiency",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "chakra_drain",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "chakra_drain_resist",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "chakra_conversion",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "move_speed",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "pcrit",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "crit_damage",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "lifesteal",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "healing",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "cdr",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "insight",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "training_speed",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "comprehension",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "xp_efficiency",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "mastery_speed",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    },
+    {
+      "stat_id": "absorption",
+      "existing_formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+      "unit": "rating",
+      "storage": "unbounded",
+      "policy": "preserve authored formula and unbounded rating storage; apply per-effect caps at resolution, not a storage cap",
+      "review": "DEV_FORMULA_REFERENCE; numerical behavior in actual Stats.derive/effect requires QA"
+    }
+  ],
+  "formations": [
+    {
+      "formation_id": "FRM-01",
+      "name_vi": "Cân Bằng",
+      "stat": "attack",
+      "link": "adjacent",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.03,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.046,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.066,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.086,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.106,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "formation_id": "FRM-02",
+      "name_vi": "Phong Thỉ",
+      "stat": "attack",
+      "link": "lane",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.06,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.076,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.096,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.116,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.136,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "formation_id": "FRM-03",
+      "name_vi": "Thiết Bích",
+      "stat": "defense",
+      "link": "rank",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.06,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.076,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.096,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.116,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.136,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "formation_id": "FRM-04",
+      "name_vi": "Hạc Dực",
+      "stat": "move",
+      "link": "adjacent",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.06,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.076,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.096,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.116,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.136,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "formation_id": "FRM-05",
+      "name_vi": "Trường Xà",
+      "stat": "chakra",
+      "link": "lane",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.06,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.076,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.096,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.116,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.136,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "formation_id": "FRM-06",
+      "name_vi": "Nguyệt Ảnh",
+      "stat": "attack",
+      "link": "diagonal",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.06,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.076,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.096,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.116,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.136,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "formation_id": "FRM-07",
+      "name_vi": "Bát Quái",
+      "stat": "defense",
+      "link": "diagonal",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.06,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.076,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.096,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.116,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.136,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "formation_id": "FRM-08",
+      "name_vi": "Linh Trận",
+      "stat": "chakra",
+      "link": "rank",
+      "level_samples": [
+        {
+          "level": 1,
+          "buff": 0.06,
+          "next_cost": 250
+        },
+        {
+          "level": 5,
+          "buff": 0.076,
+          "next_cost": 2796
+        },
+        {
+          "level": 10,
+          "buff": 0.096,
+          "next_cost": 7906
+        },
+        {
+          "level": 15,
+          "buff": 0.116,
+          "next_cost": 14524
+        },
+        {
+          "level": 20,
+          "buff": 0.136,
+          "next_cost": null
+        }
+      ],
+      "link_cap": 0.05,
+      "link_rule": "living primary ally, initial geometry and current distance; no summon's link, no infinite stack",
+      "status": "DEV_KEEP_EXISTING"
+    }
+  ],
+  "bijuu": [
+    {
+      "beast_id": "BIJ-1",
+      "name": "Shukaku",
+      "preferred_host_ids": [
+        "NIN-024"
+      ],
+      "capture_requires": {
+        "realm": 5,
+        "seal_resource": "RES-100",
+        "seal_qty": 1
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-2",
+      "name": "Matatabi",
+      "preferred_host_ids": [
+        "NIN-100"
+      ],
+      "capture_requires": {
+        "realm": 6,
+        "seal_resource": "RES-100",
+        "seal_qty": 2
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-3",
+      "name": "Isobu",
+      "preferred_host_ids": [
+        "NIN-101"
+      ],
+      "capture_requires": {
+        "realm": 7,
+        "seal_resource": "RES-100",
+        "seal_qty": 3
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-4",
+      "name": "Son Goku",
+      "preferred_host_ids": [
+        "NIN-102"
+      ],
+      "capture_requires": {
+        "realm": 8,
+        "seal_resource": "RES-100",
+        "seal_qty": 4
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-5",
+      "name": "Kokuo",
+      "preferred_host_ids": [
+        "NIN-103"
+      ],
+      "capture_requires": {
+        "realm": 9,
+        "seal_resource": "RES-100",
+        "seal_qty": 5
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-6",
+      "name": "Saiken",
+      "preferred_host_ids": [
+        "NIN-104"
+      ],
+      "capture_requires": {
+        "realm": 10,
+        "seal_resource": "RES-100",
+        "seal_qty": 6
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-7",
+      "name": "Chomei",
+      "preferred_host_ids": [
+        "NIN-105"
+      ],
+      "capture_requires": {
+        "realm": 11,
+        "seal_resource": "RES-100",
+        "seal_qty": 7
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-8",
+      "name": "Gyuki",
+      "preferred_host_ids": [
+        "NIN-076"
+      ],
+      "capture_requires": {
+        "realm": 12,
+        "seal_resource": "RES-100",
+        "seal_qty": 8
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "beast_id": "BIJ-9",
+      "name": "Kurama",
+      "preferred_host_ids": [
+        "NIN-041"
+      ],
+      "capture_requires": {
+        "realm": 13,
+        "seal_resource": "RES-100",
+        "seal_qty": 9
+      },
+      "training_resource": "RES-146",
+      "bond_xp_samples": [
+        {
+          "level": 1,
+          "next_xp": 100,
+          "host_stat_multiplier": 1.03
+        },
+        {
+          "level": 10,
+          "next_xp": 3982,
+          "host_stat_multiplier": 1.095
+        },
+        {
+          "level": 25,
+          "next_xp": 17247,
+          "host_stat_multiplier": 1.15
+        },
+        {
+          "level": 50,
+          "next_xp": 52282,
+          "host_stat_multiplier": 1.212
+        },
+        {
+          "level": 100,
+          "next_xp": 158490,
+          "host_stat_multiplier": 1.3
+        }
+      ],
+      "guard": "one host/one beast, native approved snapshot only; no shared duplicate. Sandbox graft/host compatibility held pending review.",
+      "status": "DEV_KEEP_EXISTING"
+    }
+  ],
+  "summons": [
+    {
+      "summon_id": "SUM-001",
+      "name": "Gamabunta",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.25,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.258
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.274
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.288
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.303
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.325
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-002",
+      "name": "Gamaken",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.27,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.278
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.296
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.311
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.327
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.351
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-003",
+      "name": "Gamahiro",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.29,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.299
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.318
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.333
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.352
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.377
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-004",
+      "name": "Manda",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.31,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.319
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.339
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.357
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.376
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.403
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-005",
+      "name": "Aoda",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.33,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.34
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.361
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.38
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.4
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.429
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-006",
+      "name": "Katsuyu",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.35,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.361
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.383
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.402
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.424
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.455
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-007",
+      "name": "Enma",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.37,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.381
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.405
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.426
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.448
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.481
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-008",
+      "name": "Pakkun",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.39,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.402
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.427
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.448
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.473
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.507
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-009",
+      "name": "Ninken",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.41000000000000003,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.422
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.449
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.472
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.497
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.533
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-010",
+      "name": "Kamatari",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.43,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.443
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.471
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.494
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.521
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.559
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    },
+    {
+      "summon_id": "SUM-011",
+      "name": "Nue",
+      "resource": "RES-148",
+      "base_owner_fraction": 0.45,
+      "level_samples": [
+        {
+          "level": 1,
+          "next_cost": 30,
+          "owner_fraction": 0.464
+        },
+        {
+          "level": 10,
+          "next_cost": 949,
+          "owner_fraction": 0.493
+        },
+        {
+          "level": 25,
+          "next_cost": 3750,
+          "owner_fraction": 0.518
+        },
+        {
+          "level": 50,
+          "next_cost": 10607,
+          "owner_fraction": 0.545
+        },
+        {
+          "level": 100,
+          "next_cost": 30000,
+          "owner_fraction": 0.585
+        }
+      ],
+      "battle_lifetime_s": 12,
+      "max_active_per_contract": 1,
+      "guard": "no recursive summons, owner scoped, no mastery or reward farming",
+      "status": "DEV_KEEP_EXISTING"
+    }
+  ],
+  "bloodline": [
+    {
+      "bloodline_id": "BL-137",
+      "name_vi": "Sharingan",
+      "group": "ocular",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "tier_samples": [
+        {
+          "tier": 1,
+          "cost": 10,
+          "multiplier": 1.05
+        },
+        {
+          "tier": 2,
+          "cost": 31,
+          "multiplier": 1.1
+        },
+        {
+          "tier": 3,
+          "cost": 58,
+          "multiplier": 1.15
+        },
+        {
+          "tier": 4,
+          "cost": 92,
+          "multiplier": 1.2
+        },
+        {
+          "tier": 5,
+          "cost": 132,
+          "multiplier": 1.25
+        }
+      ],
+      "native_policy": "native family/element and explicit snapshot compatibility",
+      "implant_policy": "HOLD until compatibility matrix and trial evidence; sandbox only; no campaign canon unlock",
+      "status": "DEV_GUARD"
+    },
+    {
+      "bloodline_id": "BL-138",
+      "name_vi": "Byakugan",
+      "group": "ocular",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "tier_samples": [
+        {
+          "tier": 1,
+          "cost": 10,
+          "multiplier": 1.05
+        },
+        {
+          "tier": 2,
+          "cost": 31,
+          "multiplier": 1.1
+        },
+        {
+          "tier": 3,
+          "cost": 58,
+          "multiplier": 1.15
+        },
+        {
+          "tier": 4,
+          "cost": 92,
+          "multiplier": 1.2
+        },
+        {
+          "tier": 5,
+          "cost": 132,
+          "multiplier": 1.25
+        }
+      ],
+      "native_policy": "native family/element and explicit snapshot compatibility",
+      "implant_policy": "HOLD until compatibility matrix and trial evidence; sandbox only; no campaign canon unlock",
+      "status": "DEV_GUARD"
+    },
+    {
+      "bloodline_id": "BL-139",
+      "name_vi": "Rinnegan",
+      "group": "ocular",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "tier_samples": [
+        {
+          "tier": 1,
+          "cost": 10,
+          "multiplier": 1.05
+        },
+        {
+          "tier": 2,
+          "cost": 31,
+          "multiplier": 1.1
+        },
+        {
+          "tier": 3,
+          "cost": 58,
+          "multiplier": 1.15
+        },
+        {
+          "tier": 4,
+          "cost": 92,
+          "multiplier": 1.2
+        },
+        {
+          "tier": 5,
+          "cost": 132,
+          "multiplier": 1.25
+        }
+      ],
+      "native_policy": "HOLD automatic Rinnegan from Uchiha family; require explicit compatible version, not family alone",
+      "implant_policy": "HOLD until compatibility matrix and trial evidence; sandbox only; no campaign canon unlock",
+      "status": "DEV_GUARD"
+    },
+    {
+      "bloodline_id": "BL-140",
+      "name_vi": "Mộc Độn",
+      "group": "body_bloodline",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "tier_samples": [
+        {
+          "tier": 1,
+          "cost": 10,
+          "multiplier": 1.05
+        },
+        {
+          "tier": 2,
+          "cost": 31,
+          "multiplier": 1.1
+        },
+        {
+          "tier": 3,
+          "cost": 58,
+          "multiplier": 1.15
+        },
+        {
+          "tier": 4,
+          "cost": 92,
+          "multiplier": 1.2
+        },
+        {
+          "tier": 5,
+          "cost": 132,
+          "multiplier": 1.25
+        }
+      ],
+      "native_policy": "native family/element and explicit snapshot compatibility",
+      "implant_policy": "HOLD until compatibility matrix and trial evidence; sandbox only; no campaign canon unlock",
+      "status": "DEV_GUARD"
+    },
+    {
+      "bloodline_id": "BL-141",
+      "name_vi": "Băng Độn",
+      "group": "body_bloodline",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "tier_samples": [
+        {
+          "tier": 1,
+          "cost": 10,
+          "multiplier": 1.05
+        },
+        {
+          "tier": 2,
+          "cost": 31,
+          "multiplier": 1.1
+        },
+        {
+          "tier": 3,
+          "cost": 58,
+          "multiplier": 1.15
+        },
+        {
+          "tier": 4,
+          "cost": 92,
+          "multiplier": 1.2
+        },
+        {
+          "tier": 5,
+          "cost": 132,
+          "multiplier": 1.25
+        }
+      ],
+      "native_policy": "native family/element and explicit snapshot compatibility",
+      "implant_policy": "HOLD until compatibility matrix and trial evidence; sandbox only; no campaign canon unlock",
+      "status": "DEV_GUARD"
+    },
+    {
+      "bloodline_id": "BL-142",
+      "name_vi": "Dung Độn",
+      "group": "body_bloodline",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "tier_samples": [
+        {
+          "tier": 1,
+          "cost": 10,
+          "multiplier": 1.05
+        },
+        {
+          "tier": 2,
+          "cost": 31,
+          "multiplier": 1.1
+        },
+        {
+          "tier": 3,
+          "cost": 58,
+          "multiplier": 1.15
+        },
+        {
+          "tier": 4,
+          "cost": 92,
+          "multiplier": 1.2
+        },
+        {
+          "tier": 5,
+          "cost": 132,
+          "multiplier": 1.25
+        }
+      ],
+      "native_policy": "native family/element and explicit snapshot compatibility",
+      "implant_policy": "HOLD until compatibility matrix and trial evidence; sandbox only; no campaign canon unlock",
+      "status": "DEV_GUARD"
+    },
+    {
+      "bloodline_id": "BL-143",
+      "name_vi": "Trần Độn",
+      "group": "body_bloodline",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "tier_samples": [
+        {
+          "tier": 1,
+          "cost": 10,
+          "multiplier": 1.05
+        },
+        {
+          "tier": 2,
+          "cost": 31,
+          "multiplier": 1.1
+        },
+        {
+          "tier": 3,
+          "cost": 58,
+          "multiplier": 1.15
+        },
+        {
+          "tier": 4,
+          "cost": 92,
+          "multiplier": 1.2
+        },
+        {
+          "tier": 5,
+          "cost": 132,
+          "multiplier": 1.25
+        }
+      ],
+      "native_policy": "native family/element and explicit snapshot compatibility",
+      "implant_policy": "HOLD until compatibility matrix and trial evidence; sandbox only; no campaign canon unlock",
+      "status": "DEV_GUARD"
+    }
+  ],
+  "recruitment": {
+    "currency": "RES-002",
+    "single": 100,
+    "first_pull_min_quality": 3,
+    "ssr_pity": {
+      "every": 20,
+      "min_quality": 4
+    },
+    "ur_pity": {
+      "every": 80,
+      "min_quality": 5
+    },
+    "tiers": [
+      {
+        "quality": 1,
+        "label": "N",
+        "ninja_count": 12,
+        "base_probability": 0.3,
+        "single_ninja_probability": 0.025
+      },
+      {
+        "quality": 2,
+        "label": "R",
+        "ninja_count": 24,
+        "base_probability": 0.25,
+        "single_ninja_probability": 0.010417
+      },
+      {
+        "quality": 3,
+        "label": "SR",
+        "ninja_count": 42,
+        "base_probability": 0.2,
+        "single_ninja_probability": 0.004762
+      },
+      {
+        "quality": 4,
+        "label": "SSR",
+        "ninja_count": 43,
+        "base_probability": 0.13,
+        "single_ninja_probability": 0.003023
+      },
+      {
+        "quality": 5,
+        "label": "UR",
+        "ninja_count": 12,
+        "base_probability": 0.07,
+        "single_ninja_probability": 0.005833
+      },
+      {
+        "quality": 6,
+        "label": "LR",
+        "ninja_count": 5,
+        "base_probability": 0.03,
+        "single_ninja_probability": 0.006
+      },
+      {
+        "quality": 7,
+        "label": "SP",
+        "ninja_count": 3,
+        "base_probability": 0.015,
+        "single_ninja_probability": 0.005
+      },
+      {
+        "quality": 8,
+        "label": "EX",
+        "ninja_count": 3,
+        "base_probability": 0.005,
+        "single_ninja_probability": 0.001667
+      }
+    ],
+    "no_real_money": true,
+    "policy": "pity counters independent; triggered highest tier first; no empty tier; preserve saves and duplicate shards",
+    "status": "DEV_BASE_PROBABILITY_NOT_PITY_SIMULATION"
+  },
+  "checks": {
+    "stats": true,
+    "formations": true,
+    "beasts": true,
+    "summons": true,
+    "bloodlines": true,
+    "recruit_pool": true,
+    "probability_sum": true,
+    "links": true
+  },
+  "status": "DEV_REFERENCE_AND_GUARD_NOT_RUNTIME"
+}

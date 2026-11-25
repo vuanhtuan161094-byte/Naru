@@ -1,0 +1,2002 @@
+[
+  {
+    "attack": "boil",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "boil",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "bone",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "dust",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "lightning",
+    "multiplier": 0.9
+  },
+  {
+    "attack": "earth",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "water",
+    "multiplier": 1.15
+  },
+  {
+    "attack": "earth",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "earth",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "explosion",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "water",
+    "multiplier": 0.9
+  },
+  {
+    "attack": "fire",
+    "defense": "wind",
+    "multiplier": 1.15
+  },
+  {
+    "attack": "fire",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "fire",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "gravity",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "ice",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "lava",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "earth",
+    "multiplier": 1.15
+  },
+  {
+    "attack": "lightning",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "wind",
+    "multiplier": 0.9
+  },
+  {
+    "attack": "lightning",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "lightning",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "magnet",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "neutral",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "poison",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "sage",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "space",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "earth",
+    "multiplier": 0.9
+  },
+  {
+    "attack": "water",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "fire",
+    "multiplier": 1.15
+  },
+  {
+    "attack": "water",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "water",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "fire",
+    "multiplier": 0.9
+  },
+  {
+    "attack": "wind",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "lightning",
+    "multiplier": 1.15
+  },
+  {
+    "attack": "wind",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "wind",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "wood",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "yang",
+    "defense": "yin",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "boil",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "bone",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "dust",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "earth",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "explosion",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "fire",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "gravity",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "ice",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "lava",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "lightning",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "magnet",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "neutral",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "poison",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "sage",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "space",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "water",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "wind",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "wood",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "yang",
+    "multiplier": 1
+  },
+  {
+    "attack": "yin",
+    "defense": "yin",
+    "multiplier": 1
+  }
+]

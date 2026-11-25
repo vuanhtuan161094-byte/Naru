@@ -1,0 +1,256 @@
+{
+  "status": "PROPOSED",
+  "sets": [
+    {
+      "id": "SET-1",
+      "name_vi": "Thể thuật",
+      "eligible_slots": [
+        "EQ-002",
+        "EQ-003",
+        "EQ-004",
+        "EQ-005",
+        "EQ-006",
+        "EQ-007"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "stat": "patk",
+          "multiplier": 1.04
+        },
+        {
+          "pieces": 4,
+          "stat": "patk",
+          "multiplier": 1.08
+        },
+        {
+          "pieces": 6,
+          "stat": "patk",
+          "multiplier": 1.12
+        }
+      ],
+      "max_one_set_per_item": true
+    },
+    {
+      "id": "SET-2",
+      "name_vi": "Nhẫn thuật",
+      "eligible_slots": [
+        "EQ-001",
+        "EQ-006",
+        "EQ-008",
+        "EQ-009",
+        "EQ-013",
+        "EQ-014"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "stat": "natk",
+          "multiplier": 1.04
+        },
+        {
+          "pieces": 4,
+          "stat": "natk",
+          "multiplier": 1.08
+        },
+        {
+          "pieces": 6,
+          "stat": "natk",
+          "multiplier": 1.12
+        }
+      ],
+      "max_one_set_per_item": true
+    },
+    {
+      "id": "SET-3",
+      "name_vi": "Hộ vệ",
+      "eligible_slots": [
+        "EQ-001",
+        "EQ-002",
+        "EQ-003",
+        "EQ-004",
+        "EQ-005",
+        "EQ-008"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "stat": "hp",
+          "multiplier": 1.05
+        },
+        {
+          "pieces": 4,
+          "stat": "hp",
+          "multiplier": 1.1
+        },
+        {
+          "pieces": 6,
+          "stat": "hp",
+          "multiplier": 1.15
+        }
+      ],
+      "max_one_set_per_item": true
+    },
+    {
+      "id": "SET-4",
+      "name_vi": "Trị liệu",
+      "eligible_slots": [
+        "EQ-009",
+        "EQ-010",
+        "EQ-011",
+        "EQ-012",
+        "EQ-013",
+        "EQ-016"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "stat": "healing",
+          "multiplier": 1.05
+        },
+        {
+          "pieces": 4,
+          "stat": "healing",
+          "multiplier": 1.1
+        },
+        {
+          "pieces": 6,
+          "stat": "healing",
+          "multiplier": 1.15
+        }
+      ],
+      "max_one_set_per_item": true
+    },
+    {
+      "id": "SET-5",
+      "name_vi": "Chakra",
+      "eligible_slots": [
+        "EQ-009",
+        "EQ-010",
+        "EQ-011",
+        "EQ-013",
+        "EQ-014",
+        "EQ-015"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "stat": "chakra_regen",
+          "multiplier": 1.05
+        },
+        {
+          "pieces": 4,
+          "stat": "chakra_regen",
+          "multiplier": 1.1
+        },
+        {
+          "pieces": 6,
+          "stat": "chakra_regen",
+          "multiplier": 1.15
+        }
+      ],
+      "max_one_set_per_item": true
+    },
+    {
+      "id": "SET-6",
+      "name_vi": "Tốc độ",
+      "eligible_slots": [
+        "EQ-003",
+        "EQ-004",
+        "EQ-005",
+        "EQ-007",
+        "EQ-010",
+        "EQ-011"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "stat": "move_speed",
+          "multiplier": 1.04
+        },
+        {
+          "pieces": 4,
+          "stat": "move_speed",
+          "multiplier": 1.08
+        },
+        {
+          "pieces": 6,
+          "stat": "move_speed",
+          "multiplier": 1.12
+        }
+      ],
+      "max_one_set_per_item": true
+    }
+  ],
+  "enhance": {
+    "cost_ryo": "ceil(20*(1+enhance)^1.65)",
+    "cost_stones": "ceil(1+enhance/5)",
+    "stone_resource": "RES-113",
+    "protect_resource": "RES-115",
+    "pity_scope": "equipment_instance+target_enhance",
+    "failure": "consume materials; never lose item or level; protection additionally refunds 50% stone cost",
+    "guarantee_after_failures": 20,
+    "uncapped": true
+  },
+  "refine": {
+    "resource": "RES-114",
+    "cost": "ceil(5*(refine+1)^1.4)",
+    "effect": "1+0.025*refine^0.8",
+    "uncapped": true
+  },
+  "evolve": {
+    "resource": "RES-132",
+    "cost": "ceil(3*(evolution+1)^1.4)",
+    "effect": "1+0.1*evolution^0.85",
+    "uncapped": true,
+    "quality_tier_max": 8
+  },
+  "reroll": {
+    "resource": "RES-112",
+    "cost": 5,
+    "one_affix_at_a_time": true,
+    "keep_old_or_accept_new": true
+  },
+  "socket": {
+    "max_by_quality": "min(4,floor(quality/2))",
+    "gems": [
+      {
+        "resource_id": "RES-077",
+        "stat": "element_power",
+        "rating_add": 5
+      },
+      {
+        "resource_id": "RES-078",
+        "stat": "nres",
+        "rating_add": 5
+      },
+      {
+        "resource_id": "RES-079",
+        "stat": "move_speed",
+        "rating_add": 5
+      },
+      {
+        "resource_id": "RES-080",
+        "stat": "natk",
+        "rating_add": 5
+      },
+      {
+        "resource_id": "RES-081",
+        "stat": "armor",
+        "rating_add": 5
+      },
+      {
+        "resource_id": "RES-082",
+        "stat": "genjutsu_power",
+        "rating_add": 5
+      },
+      {
+        "resource_id": "RES-083",
+        "stat": "chakra_max",
+        "rating_add": 5
+      }
+    ],
+    "remove": "return gem, no fee"
+  },
+  "no_visual_sprite_change": true
+}

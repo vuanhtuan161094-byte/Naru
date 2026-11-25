@@ -1,0 +1,339 @@
+[
+  {
+    "id": "P4_TENTEN",
+    "url": "https://naruto-official.com/en/anime/naruto2/list/01_628",
+    "type": "official_anime",
+    "finding": "Tenten and Neji obtain tools from ninja tool research lab",
+    "ninja_ids": [
+      "NIN-015",
+      "NIN-054"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_EXAM",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_267",
+    "type": "official_anime",
+    "finding": "Tenten fights Temari; Kin fights Shikamaru",
+    "ninja_ids": [
+      "NIN-015",
+      "NIN-035"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_TENTEN_GAME",
+    "url": "https://naruto-official.com/en/news/01_1794",
+    "type": "licensed_game",
+    "finding": "Tenten Scroll weapon in Shinobi Striker; not manga proof",
+    "ninja_ids": [
+      "NIN-015",
+      "NIN-054"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_HAYATE",
+    "url": "https://naruto-official.com/de/anime/naruto2/list/01_751",
+    "type": "official_anime",
+    "finding": "Hayate killed by Baki after discovering plot; later reanimated",
+    "ninja_ids": [
+      "NIN-030",
+      "NIN-059"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_IBIKI",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_248",
+    "type": "official_anime",
+    "finding": "Ibiki is interrogation specialist and exam proctor",
+    "ninja_ids": [
+      "NIN-031"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_GENMA",
+    "url": "https://naruto-official.com/en/news/01_1892",
+    "type": "official_quiz",
+    "finding": "Genma identified as Leaf jonin; no named technique proof",
+    "ninja_ids": [
+      "NIN-032"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_DOSU",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_275",
+    "type": "official_anime",
+    "finding": "Dosu faces Choji in exam preliminaries",
+    "ninja_ids": [
+      "NIN-033"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_ZAKU",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_264",
+    "type": "official_anime",
+    "finding": "Zaku from Sound faces Shino; prior arm injury",
+    "ninja_ids": [
+      "NIN-034"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_SAI",
+    "url": "https://naruto-official.com/en/anime/boruto/list/01_977",
+    "type": "official_anime",
+    "finding": "Sai advises Inojin about Super Beast Scroll training; character/family context",
+    "ninja_ids": [
+      "NIN-044"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_ZETSU",
+    "url": "https://naruto-official.com/anime/boruto/list/01_996",
+    "type": "official_anime",
+    "finding": "White Zetsu described as biological weapons created by Kaguya",
+    "ninja_ids": [
+      "NIN-071"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_SAMUI",
+    "url": "https://naruto-official.com/en/anime/naruto2/list/01_713",
+    "type": "official_anime",
+    "finding": "Samui fights alongside Atsui and Darui",
+    "ninja_ids": [
+      "NIN-080"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_CLOUD",
+    "url": "https://naruto-official.com/en/anime/naruto2/list/01_642",
+    "type": "official_anime",
+    "finding": "Karui and Omoi are Cloud ninja seeking captured teacher",
+    "ninja_ids": [
+      "NIN-081",
+      "NIN-082"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_MIST",
+    "url": "https://naruto-official.com/it/anime/boruto/list/01_972",
+    "type": "official_anime",
+    "finding": "Kagura accepts inheritance of Hiramekarei from Chojuro",
+    "ninja_ids": [
+      "NIN-084",
+      "NIN-141"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_AO",
+    "url": "https://naruto-official.com/de/anime/naruto2/list/01_651",
+    "type": "official_anime",
+    "finding": "Ao pursues Danzo amid Byakugan/chakra conflict; context only",
+    "ninja_ids": [
+      "NIN-085"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_STONE",
+    "url": "https://naruto-official.com/fr/anime/naruto2/list/01_686",
+    "type": "official_anime",
+    "finding": "Kurotsuchi and Akatsuchi are Iwa ninja",
+    "ninja_ids": [
+      "NIN-087",
+      "NIN-088"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_YUGITO",
+    "url": "https://naruto-official.com/fr/news/01_1848",
+    "type": "licensed_game",
+    "finding": "Two-Tails host transformation associated with Yugito",
+    "ninja_ids": [
+      "NIN-100"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_YAGURA",
+    "url": "https://naruto-official.com/fr/news/01_2233",
+    "type": "licensed_game",
+    "finding": "Three-Tails host transformation associated with Yagura",
+    "ninja_ids": [
+      "NIN-101"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_ROSHI",
+    "url": "https://naruto.fandom.com/wiki/Lava_Release%3A_Scorching_Stream_Rock_Technique",
+    "type": "secondary_wiki",
+    "finding": "Roshi lava technique; wiki cites manga chapter 564",
+    "ninja_ids": [
+      "NIN-102"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_ROSHI_MODE",
+    "url": "https://naruto.fandom.com/wiki/Lava_Release_Chakra_Mode",
+    "type": "secondary_wiki",
+    "finding": "Roshi lava chakra mode; wiki cites chapter 565",
+    "ninja_ids": [
+      "NIN-102"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_HAN",
+    "url": "https://naruto.fandom.com/wiki/Han",
+    "type": "secondary_wiki",
+    "finding": "Han steam-enhanced kick; search excerpt only",
+    "ninja_ids": [
+      "NIN-103"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_UTAKATA",
+    "url": "https://naruto-official.com/es/anime/naruto2/list/01_768",
+    "type": "official_anime",
+    "finding": "Utakata former Six-Tails host; bubble context in episode title",
+    "ninja_ids": [
+      "NIN-104"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_FU",
+    "url": "https://naruto.fandom.com/wiki/F%C5%AB",
+    "type": "secondary_wiki",
+    "finding": "Fu Seven-Tails host; source excerpt identifies extraction",
+    "ninja_ids": [
+      "NIN-105"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_FUGAKU",
+    "url": "https://naruto-official.com/en/news/01_1856",
+    "type": "official_manga_column",
+    "finding": "Fugaku leads Leaf Police Force, father of Sasuke",
+    "ninja_ids": [
+      "NIN-106"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_SHIZUNE",
+    "url": "https://naruto-official.com/en/news/01_1287",
+    "type": "official_anime_recap",
+    "finding": "Shizune arrives with Jiraiya and Naruto during Sannin conflict; context",
+    "ninja_ids": [
+      "NIN-110"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_MITSUKI",
+    "url": "https://naruto-official.com/en/news/01_1708?nolangsuggestion=1",
+    "type": "official_database",
+    "finding": "Mitsuki uses nature energy in Sage Mode",
+    "ninja_ids": [
+      "NIN-113"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_IWABE",
+    "url": "https://naruto-official.com/en/anime/boruto/list/01_1259",
+    "type": "official_anime",
+    "finding": "Iwabe and Denki captured by Funamushi squad; context only",
+    "ninja_ids": [
+      "NIN-121"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_KINSHIKI",
+    "url": "https://naruto-official.com/en/news/01_1556",
+    "type": "official_manga_recap",
+    "finding": "Kinshiki and Momoshiki attack Chunin exams",
+    "ninja_ids": [
+      "NIN-131"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_KINSHIKI_GAME",
+    "url": "https://naruto-official.com/en/news/01_1871",
+    "type": "licensed_game",
+    "finding": "Weapon styled after Kinshiki and Momoshiki chakra weapons",
+    "ninja_ids": [
+      "NIN-131"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_SHIN",
+    "url": "https://naruto-official.com/es/anime/boruto/list/01_966",
+    "type": "official_anime",
+    "finding": "Shin Uchiha kidnaps Sakura",
+    "ninja_ids": [
+      "NIN-140"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  },
+  {
+    "id": "P4_KAGURA",
+    "url": "https://naruto-official.com/en/anime/boruto/list/01_973",
+    "type": "official_anime",
+    "finding": "Kagura and new Seven Swordsmen confrontation",
+    "ninja_ids": [
+      "NIN-141"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED_THIS_TURN",
+    "scope": "identity or context only unless explicit technique match; no numeric confirmation"
+  }
+]

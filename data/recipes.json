@@ -1,0 +1,1412 @@
+[
+  {
+    "id": "RCP-001",
+    "building_id": "BLD-012",
+    "inputs": [
+      {
+        "resource_id": "RES-022",
+        "qty": 2
+      }
+    ],
+    "output": {
+      "resource_id": "RES-033",
+      "qty": 1
+    },
+    "duration_s": 105,
+    "min_building_level": 2,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-002",
+    "building_id": "BLD-012",
+    "inputs": [
+      {
+        "resource_id": "RES-021",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-034",
+      "qty": 1
+    },
+    "duration_s": 105,
+    "min_building_level": 2,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-003",
+    "building_id": "BLD-012",
+    "inputs": [
+      {
+        "resource_id": "RES-033",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-028",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-035",
+      "qty": 1
+    },
+    "duration_s": 105,
+    "min_building_level": 2,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-004",
+    "building_id": "BLD-018",
+    "inputs": [
+      {
+        "resource_id": "RES-036",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-042",
+        "qty": 2
+      }
+    ],
+    "output": {
+      "resource_id": "RES-055",
+      "qty": 1
+    },
+    "duration_s": 135,
+    "min_building_level": 3,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-005",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-006",
+        "qty": 2
+      }
+    ],
+    "output": {
+      "resource_id": "RES-056",
+      "qty": 1
+    },
+    "duration_s": 135,
+    "min_building_level": 3,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-006",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-017",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-057",
+      "qty": 1
+    },
+    "duration_s": 135,
+    "min_building_level": 3,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-007",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-009",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-016",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-058",
+      "qty": 1
+    },
+    "duration_s": 135,
+    "min_building_level": 3,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-008",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-011",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 2
+      }
+    ],
+    "output": {
+      "resource_id": "RES-059",
+      "qty": 1
+    },
+    "duration_s": 135,
+    "min_building_level": 3,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-009",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-012",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-060",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-010",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-013",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-061",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-011",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-014",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-062",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-012",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-060",
+        "qty": 2
+      }
+    ],
+    "output": {
+      "resource_id": "RES-063",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-013",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-064",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-014",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-008",
+        "qty": 3
+      }
+    ],
+    "output": {
+      "resource_id": "RES-065",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-015",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-065",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-073",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-066",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-016",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-028",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-018",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-067",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-017",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-006",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-008",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-068",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-018",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-074",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-019",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-069",
+      "qty": 1
+    },
+    "duration_s": 150,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-019",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-016",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-070",
+      "qty": 1
+    },
+    "duration_s": 165,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-020",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-017",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-015",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-071",
+      "qty": 1
+    },
+    "duration_s": 165,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-021",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-008",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-065",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-072",
+      "qty": 1
+    },
+    "duration_s": 165,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-022",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-023",
+        "qty": 3
+      }
+    ],
+    "output": {
+      "resource_id": "RES-073",
+      "qty": 1
+    },
+    "duration_s": 165,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-023",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-015",
+        "qty": 2
+      }
+    ],
+    "output": {
+      "resource_id": "RES-074",
+      "qty": 1
+    },
+    "duration_s": 165,
+    "min_building_level": 4,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-024",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-056",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-072",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-075",
+      "qty": 1
+    },
+    "duration_s": 165,
+    "min_building_level": 5,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-025",
+    "building_id": "BLD-016",
+    "inputs": [
+      {
+        "resource_id": "RES-076",
+        "qty": 3
+      }
+    ],
+    "output": {
+      "resource_id": "RES-084",
+      "qty": 1
+    },
+    "duration_s": 180,
+    "min_building_level": 5,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-026",
+    "building_id": "BLD-016",
+    "inputs": [
+      {
+        "resource_id": "RES-084",
+        "qty": 3
+      }
+    ],
+    "output": {
+      "resource_id": "RES-085",
+      "qty": 1
+    },
+    "duration_s": 180,
+    "min_building_level": 5,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-027",
+    "building_id": "BLD-016",
+    "inputs": [
+      {
+        "resource_id": "RES-076",
+        "qty": 4
+      },
+      {
+        "resource_id": "RES-089",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-086",
+      "qty": 1
+    },
+    "duration_s": 180,
+    "min_building_level": 5,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-028",
+    "building_id": "BLD-016",
+    "inputs": [
+      {
+        "resource_id": "RES-077",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-078",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-079",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-080",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-081",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-087",
+      "qty": 1
+    },
+    "duration_s": 180,
+    "min_building_level": 5,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-029",
+    "building_id": "BLD-016",
+    "inputs": [
+      {
+        "resource_id": "RES-086",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-085",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-088",
+      "qty": 1
+    },
+    "duration_s": 180,
+    "min_building_level": 5,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-030",
+    "building_id": "BLD-016",
+    "inputs": [
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-089",
+      "qty": 1
+    },
+    "duration_s": 180,
+    "min_building_level": 5,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-031",
+    "building_id": "BLD-016",
+    "inputs": [
+      {
+        "resource_id": "RES-089",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-090",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-032",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-068",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-091",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-033",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-069",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-090",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-092",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-034",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-091",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-092",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-093",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-035",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-072",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-094",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-036",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-085",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-094",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-093",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-095",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-037",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-091",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-096",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-038",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-092",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-090",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-097",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-039",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-094",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-082",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-098",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-040",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-094",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-083",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-099",
+      "qty": 1
+    },
+    "duration_s": 195,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-041",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-091",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-092",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-095",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-100",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-042",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-075",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-101",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-043",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-102",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-044",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-064",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-059",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-103",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-045",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-075",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-072",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-104",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 6,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-046",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-060",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-105",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-047",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-065",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-090",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-106",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-048",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-064",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-059",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-107",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-049",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-066",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-106",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-108",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-050",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-105",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-060",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-109",
+      "qty": 1
+    },
+    "duration_s": 210,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-051",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-063",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-105",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-084",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-110",
+      "qty": 1
+    },
+    "duration_s": 225,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-052",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-085",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-062",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-111",
+      "qty": 1
+    },
+    "duration_s": 225,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-053",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-010",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-016",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-112",
+      "qty": 1
+    },
+    "duration_s": 225,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-054",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-112",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-076",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-113",
+      "qty": 1
+    },
+    "duration_s": 225,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-055",
+    "building_id": "BLD-017",
+    "inputs": [
+      {
+        "resource_id": "RES-073",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-055",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-114",
+      "qty": 1
+    },
+    "duration_s": 225,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-056",
+    "building_id": "BLD-019",
+    "inputs": [
+      {
+        "resource_id": "RES-097",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-113",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-115",
+      "qty": 1
+    },
+    "duration_s": 225,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-057",
+    "building_id": "BLD-007",
+    "inputs": [
+      {
+        "resource_id": "RES-116",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-068",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-117",
+      "qty": 1
+    },
+    "duration_s": 225,
+    "min_building_level": 7,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-058",
+    "building_id": "BLD-007",
+    "inputs": [
+      {
+        "resource_id": "RES-118",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-119",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-120",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-121",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-125",
+      "qty": 1
+    },
+    "duration_s": 240,
+    "min_building_level": 8,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-059",
+    "building_id": "BLD-009",
+    "inputs": [
+      {
+        "resource_id": "RES-126",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-127",
+      "qty": 1
+    },
+    "duration_s": 240,
+    "min_building_level": 8,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-060",
+    "building_id": "BLD-009",
+    "inputs": [
+      {
+        "resource_id": "RES-128",
+        "qty": 2
+      },
+      {
+        "resource_id": "RES-093",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-129",
+      "qty": 1
+    },
+    "duration_s": 240,
+    "min_building_level": 8,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-061",
+    "building_id": "BLD-009",
+    "inputs": [
+      {
+        "resource_id": "RES-132",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-127",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-133",
+      "qty": 1
+    },
+    "duration_s": 255,
+    "min_building_level": 8,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-062",
+    "building_id": "BLD-009",
+    "inputs": [
+      {
+        "resource_id": "RES-126",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-125",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-135",
+      "qty": 1
+    },
+    "duration_s": 255,
+    "min_building_level": 9,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "RCP-063",
+    "building_id": "BLD-008",
+    "inputs": [
+      {
+        "resource_id": "RES-136",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-144",
+        "qty": 1
+      },
+      {
+        "resource_id": "RES-093",
+        "qty": 1
+      }
+    ],
+    "output": {
+      "resource_id": "RES-145",
+      "qty": 1
+    },
+    "duration_s": 270,
+    "min_building_level": 9,
+    "quality_formula": "craft_quality_v1",
+    "status": "PROPOSED"
+  }
+]

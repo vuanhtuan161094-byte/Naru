@@ -1,0 +1,7202 @@
+[
+  {
+    "ninja_id": "NIN-001",
+    "quality": 2,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 14
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.63
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 476.23
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1081
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2206.19
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4554.31
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-002",
+    "quality": 3,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 15
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.68
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 408.82
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 910.64
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 1829.64
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 3728.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-003",
+    "quality": 2,
+    "role": "trị liệu",
+    "base_stats": {
+      "vitality": 14,
+      "strength": 10,
+      "spirit": 19,
+      "agility": 12,
+      "intellect": 17,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.63,
+      "strength": 0.45,
+      "spirit": 0.86,
+      "agility": 0.54,
+      "intellect": 0.77,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 233.24
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 473.01
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1086.17
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2238.95
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4660.48
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-004",
+    "quality": 4,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 416.77
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 941.67
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 1908.05
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 3911.68
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-005",
+    "quality": 1,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 444.14
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 992.42
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2010.12
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 4130.89
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-006",
+    "quality": 1,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 14
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.63
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 465.81
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 1039.88
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2101.63
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 4308.87
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-007",
+    "quality": 2,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 465.08
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1056.26
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2162.67
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4480.36
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-008",
+    "quality": 2,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 14
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.63
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 526.94
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1236.38
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2580.65
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 5417.5
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-009",
+    "quality": 2,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 465.08
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1056.26
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2162.67
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4480.36
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-010",
+    "quality": 2,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 14
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.63
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 476.23
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1081
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2206.19
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4554.31
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-011",
+    "quality": 2,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 15
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.68
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 400.9
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 879.95
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 1752.33
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 3547.61
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-012",
+    "quality": 2,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 465.08
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1056.26
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2162.67
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4480.36
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-013",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 14
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.63
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-014",
+    "quality": 2,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 14
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.63
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 476.23
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1081
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2206.19
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4554.31
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-015",
+    "quality": 2,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 15
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.68
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 450.22
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1007.6
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2039.41
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4185.96
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-016",
+    "quality": 4,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 497.26
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1164.8
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2420.3
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5058.41
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-017",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-018",
+    "quality": 3,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 475.2
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1096.68
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2266.12
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4724.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-019",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 571.11
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1355.15
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2845.77
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5997.92
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-020",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 571.11
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1355.15
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2845.77
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5997.92
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-021",
+    "quality": 4,
+    "role": "trị liệu",
+    "base_stats": {
+      "vitality": 18,
+      "strength": 14,
+      "spirit": 23,
+      "agility": 16,
+      "intellect": 21,
+      "potential": 24
+    },
+    "growth": {
+      "vitality": 0.81,
+      "strength": 0.63,
+      "spirit": 1.03,
+      "agility": 0.72,
+      "intellect": 0.95,
+      "potential": 1.08
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 276.27
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 598.31
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1449.41
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 3084.24
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6561.86
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-022",
+    "quality": 4,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 14,
+      "spirit": 22,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 24
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.63,
+      "spirit": 0.99,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.08
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 275.1
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 588.93
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1414.83
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2997.03
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6357.59
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-023",
+    "quality": 3,
+    "role": "trị liệu",
+    "base_stats": {
+      "vitality": 14,
+      "strength": 10,
+      "spirit": 19,
+      "agility": 12,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.63,
+      "strength": 0.45,
+      "spirit": 0.86,
+      "agility": 0.54,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 233.24
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 483.49
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1128.34
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2347.31
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4916.42
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-024",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 14
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.63
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 551.7
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1337.46
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2842.11
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6037.3
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-025",
+    "quality": 2,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 15
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.68
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 450.22
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1007.6
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2039.41
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4185.96
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-026",
+    "quality": 2,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 15
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.68
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 450.22
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1007.6
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2039.41
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4185.96
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-027",
+    "quality": 3,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 408.82
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 910.64
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 1829.64
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 3728.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-028",
+    "quality": 3,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 408.82
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 910.64
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 1829.64
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 3728.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-029",
+    "quality": 2,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 400.9
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 879.95
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 1752.33
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 3547.61
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-030",
+    "quality": 1,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 393.03
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 849.61
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 1676.14
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 3370.04
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-031",
+    "quality": 2,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 465.08
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1056.26
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2162.67
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4480.36
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-032",
+    "quality": 1,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 440.72
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 970.42
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 1945.24
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 3965.37
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-033",
+    "quality": 1,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 455.02
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 1016.35
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2060.84
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 4240.82
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-034",
+    "quality": 1,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 440.72
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 970.42
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 1945.24
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 3965.37
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-035",
+    "quality": 1,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 455.02
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 1016.35
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2060.84
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 4240.82
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-036",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-037",
+    "quality": 3,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 539.28
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1286.6
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2710.35
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 5724.69
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-038",
+    "quality": 3,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 459.77
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1045.24
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2135.05
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4410.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-039",
+    "quality": 3,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 475.2
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1096.68
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2266.12
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4724.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-040",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-041",
+    "quality": 4,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 497.26
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1164.8
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2420.3
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5058.41
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-042",
+    "quality": 4,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 416.77
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 941.67
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 1908.05
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 3911.68
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-043",
+    "quality": 4,
+    "role": "trị liệu",
+    "base_stats": {
+      "vitality": 14,
+      "strength": 10,
+      "spirit": 19,
+      "agility": 12,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.63,
+      "strength": 0.45,
+      "spirit": 0.86,
+      "agility": 0.54,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 233.24
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 494.04
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1171.04
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2457.36
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5176.79
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-044",
+    "quality": 3,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 459.77
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1045.24
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2135.05
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4410.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-045",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 551.7
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1337.46
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2842.11
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6037.3
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-046",
+    "quality": 3,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 475.2
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1096.68
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2266.12
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4724.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-047",
+    "quality": 3,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 539.28
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1286.6
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2710.35
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 5724.69
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-048",
+    "quality": 3,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 463.68
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1070.17
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2208.76
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4598.53
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-049",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-050",
+    "quality": 3,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 408.82
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 910.64
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 1829.64
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 3728.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-051",
+    "quality": 3,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 475.2
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1096.68
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2266.12
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4724.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-052",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-053",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-054",
+    "quality": 3,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 459.77
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1045.24
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2135.05
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4410.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-055",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 551.7
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1337.46
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2842.11
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6037.3
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-056",
+    "quality": 3,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 459.77
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1045.24
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2135.05
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4410.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-057",
+    "quality": 3,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 459.77
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1045.24
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2135.05
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4410.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-058",
+    "quality": 4,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 473.55
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1109.77
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2310.38
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4838.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-059",
+    "quality": 2,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 400.9
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 879.95
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 1752.33
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 3547.61
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-060",
+    "quality": 5,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 14,
+      "spirit": 22,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 24
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.63,
+      "spirit": 0.99,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.08
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 275.1
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 604.8
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1479.8
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3165.34
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6756.88
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-061",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 25,
+      "strength": 19,
+      "spirit": 19,
+      "agility": 13,
+      "intellect": 15,
+      "potential": 22
+    },
+    "growth": {
+      "vitality": 1.13,
+      "strength": 0.86,
+      "spirit": 0.86,
+      "agility": 0.59,
+      "intellect": 0.68,
+      "potential": 0.99
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 297.57
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 660.44
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1630.21
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 3505.16
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 7508.08
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-062",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 469.38
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1083.32
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2232.14
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4638.76
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-063",
+    "quality": 4,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 485.39
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1137.59
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2371.16
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4972.19
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-064",
+    "quality": 4,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 497.26
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1164.8
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2420.3
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5058.41
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-065",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 469.38
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1083.32
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2232.14
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4638.76
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-066",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 469.38
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1083.32
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2232.14
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4638.76
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-067",
+    "quality": 5,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 14,
+      "spirit": 22,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 24
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.63,
+      "spirit": 0.99,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.08
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 275.1
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 604.8
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1479.8
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3165.34
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6756.88
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-068",
+    "quality": 5,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 14,
+      "spirit": 22,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 24
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.63,
+      "spirit": 0.99,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.08
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 275.1
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 604.8
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1479.8
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3165.34
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6756.88
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-069",
+    "quality": 6,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 15,
+      "strength": 20,
+      "spirit": 16,
+      "agility": 23,
+      "intellect": 18,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.68,
+      "strength": 0.9,
+      "spirit": 0.72,
+      "agility": 1.03,
+      "intellect": 0.81,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 6,
+        "proxy": 246.49
+      },
+      {
+        "level": 20,
+        "quality": 6,
+        "proxy": 541.69
+      },
+      {
+        "level": 60,
+        "quality": 6,
+        "proxy": 1309.11
+      },
+      {
+        "level": 120,
+        "quality": 6,
+        "proxy": 2768.41
+      },
+      {
+        "level": 220,
+        "quality": 6,
+        "proxy": 5855.27
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-070",
+    "quality": 6,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 6,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 6,
+        "proxy": 601.41
+      },
+      {
+        "level": 60,
+        "quality": 6,
+        "proxy": 1478.44
+      },
+      {
+        "level": 120,
+        "quality": 6,
+        "proxy": 3164.18
+      },
+      {
+        "level": 220,
+        "quality": 6,
+        "proxy": 6752.03
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-071",
+    "quality": 4,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 473.55
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1109.77
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2310.38
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4838.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-072",
+    "quality": 4,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 485.39
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1137.59
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2371.16
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4972.19
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-073",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-074",
+    "quality": 3,
+    "role": "trị liệu",
+    "base_stats": {
+      "vitality": 14,
+      "strength": 10,
+      "spirit": 19,
+      "agility": 12,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.63,
+      "strength": 0.45,
+      "spirit": 0.86,
+      "agility": 0.54,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 233.24
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 483.49
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1128.34
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2347.31
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4916.42
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-075",
+    "quality": 3,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 539.28
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1286.6
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2710.35
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 5724.69
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-076",
+    "quality": 5,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 20,
+      "strength": 21,
+      "spirit": 16,
+      "agility": 18,
+      "intellect": 16,
+      "potential": 22
+    },
+    "growth": {
+      "vitality": 0.9,
+      "strength": 0.95,
+      "spirit": 0.72,
+      "agility": 0.81,
+      "intellect": 0.72,
+      "potential": 0.99
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 279.2
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 617.47
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1510.11
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3222.97
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6864.79
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-077",
+    "quality": 5,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 20,
+      "strength": 21,
+      "spirit": 16,
+      "agility": 18,
+      "intellect": 16,
+      "potential": 22
+    },
+    "growth": {
+      "vitality": 0.9,
+      "strength": 0.95,
+      "spirit": 0.72,
+      "agility": 0.81,
+      "intellect": 0.72,
+      "potential": 0.99
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 279.2
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 617.47
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1510.11
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3222.97
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6864.79
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-078",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 469.38
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1083.32
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2232.14
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4638.76
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-079",
+    "quality": 2,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 453.88
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1031.05
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2108.66
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4362.66
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-080",
+    "quality": 2,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 400.9
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 879.95
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 1752.33
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 3547.61
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-081",
+    "quality": 2,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 400.9
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 879.95
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 1752.33
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 3547.61
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-082",
+    "quality": 2,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 476.23
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1081
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2206.19
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4554.31
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-083",
+    "quality": 5,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 586.2
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1416.35
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3003.57
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6371.28
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-084",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-085",
+    "quality": 3,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 463.68
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1070.17
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2208.76
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4598.53
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-086",
+    "quality": 5,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 586.2
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1416.35
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3003.57
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6371.28
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-087",
+    "quality": 3,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 475.2
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1096.68
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2266.12
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4724.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-088",
+    "quality": 3,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 539.28
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1286.6
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2710.35
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 5724.69
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-089",
+    "quality": 3,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 408.82
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 910.64
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 1829.64
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 3728.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-090",
+    "quality": 4,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 485.39
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1137.59
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2371.16
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4972.19
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-091",
+    "quality": 4,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 485.39
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1137.59
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2371.16
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4972.19
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-092",
+    "quality": 4,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 15,
+      "strength": 20,
+      "spirit": 16,
+      "agility": 23,
+      "intellect": 18,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.68,
+      "strength": 0.9,
+      "spirit": 0.72,
+      "agility": 1.03,
+      "intellect": 0.81,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 246.49
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 515.59
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1204.2
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2499.01
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5219.21
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-093",
+    "quality": 5,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 15,
+      "strength": 20,
+      "spirit": 16,
+      "agility": 23,
+      "intellect": 18,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.68,
+      "strength": 0.9,
+      "spirit": 0.72,
+      "agility": 1.03,
+      "intellect": 0.81,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 246.49
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 528.59
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1256.3
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 2632.56
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 5534.21
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-094",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 551.7
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1337.46
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2842.11
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6037.3
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-095",
+    "quality": 6,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 25,
+      "strength": 19,
+      "spirit": 19,
+      "agility": 13,
+      "intellect": 15,
+      "potential": 22
+    },
+    "growth": {
+      "vitality": 1.13,
+      "strength": 0.86,
+      "spirit": 0.86,
+      "agility": 0.59,
+      "intellect": 0.68,
+      "potential": 0.99
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 6,
+        "proxy": 297.57
+      },
+      {
+        "level": 20,
+        "quality": 6,
+        "proxy": 698.17
+      },
+      {
+        "level": 60,
+        "quality": 6,
+        "proxy": 1787.36
+      },
+      {
+        "level": 120,
+        "quality": 6,
+        "proxy": 3915.48
+      },
+      {
+        "level": 220,
+        "quality": 6,
+        "proxy": 8485.75
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-096",
+    "quality": 5,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 586.2
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1416.35
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3003.57
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6371.28
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-097",
+    "quality": 8,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 17,
+      "strength": 14,
+      "spirit": 21,
+      "agility": 18,
+      "intellect": 21,
+      "potential": 26
+    },
+    "growth": {
+      "vitality": 0.77,
+      "strength": 0.63,
+      "spirit": 0.95,
+      "agility": 0.81,
+      "intellect": 0.95,
+      "potential": 1.17
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 8,
+        "proxy": 268.43
+      },
+      {
+        "level": 20,
+        "quality": 8,
+        "proxy": 644.14
+      },
+      {
+        "level": 60,
+        "quality": 8,
+        "proxy": 1664.67
+      },
+      {
+        "level": 120,
+        "quality": 8,
+        "proxy": 3659.19
+      },
+      {
+        "level": 220,
+        "quality": 8,
+        "proxy": 7943.89
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-098",
+    "quality": 7,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 17,
+      "strength": 14,
+      "spirit": 21,
+      "agility": 18,
+      "intellect": 21,
+      "potential": 24
+    },
+    "growth": {
+      "vitality": 0.77,
+      "strength": 0.63,
+      "spirit": 0.95,
+      "agility": 0.81,
+      "intellect": 0.95,
+      "potential": 1.08
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 7,
+        "proxy": 268.43
+      },
+      {
+        "level": 20,
+        "quality": 7,
+        "proxy": 625.98
+      },
+      {
+        "level": 60,
+        "quality": 7,
+        "proxy": 1588.88
+      },
+      {
+        "level": 120,
+        "quality": 7,
+        "proxy": 3461
+      },
+      {
+        "level": 220,
+        "quality": 7,
+        "proxy": 7471.23
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-099",
+    "quality": 8,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 25
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.13
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 8,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 8,
+        "proxy": 636.62
+      },
+      {
+        "level": 60,
+        "quality": 8,
+        "proxy": 1623.6
+      },
+      {
+        "level": 120,
+        "quality": 8,
+        "proxy": 3541.61
+      },
+      {
+        "level": 220,
+        "quality": 8,
+        "proxy": 7649.34
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-100",
+    "quality": 4,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 497.26
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1164.8
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2420.3
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5058.41
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-101",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 551.7
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1337.46
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2842.11
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6037.3
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-102",
+    "quality": 4,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 497.26
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1164.8
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2420.3
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5058.41
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-103",
+    "quality": 4,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 497.26
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1164.8
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2420.3
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5058.41
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-104",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 469.38
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1083.32
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2232.14
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4638.76
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-105",
+    "quality": 4,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 473.55
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1109.77
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2310.38
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4838.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-106",
+    "quality": 3,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 475.2
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1096.68
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2266.12
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4724.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-107",
+    "quality": 3,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 475.2
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1096.68
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2266.12
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4724.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-108",
+    "quality": 3,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 463.68
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1070.17
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2208.76
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4598.53
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-109",
+    "quality": 3,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 539.28
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1286.6
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2710.35
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 5724.69
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-110",
+    "quality": 3,
+    "role": "trị liệu",
+    "base_stats": {
+      "vitality": 14,
+      "strength": 10,
+      "spirit": 19,
+      "agility": 12,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.63,
+      "strength": 0.45,
+      "spirit": 0.86,
+      "agility": 0.54,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 233.24
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 483.49
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1128.34
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2347.31
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4916.42
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-111",
+    "quality": 4,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 416.77
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 941.67
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 1908.05
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 3911.68
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-112",
+    "quality": 4,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 497.26
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1164.8
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2420.3
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5058.41
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-113",
+    "quality": 4,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 416.77
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 941.67
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 1908.05
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 3911.68
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-114",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 551.7
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1337.46
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2842.11
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6037.3
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-115",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-116",
+    "quality": 2,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 465.08
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1056.26
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2162.67
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4480.36
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-117",
+    "quality": 2,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 453.88
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1031.05
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2108.66
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4362.66
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-118",
+    "quality": 2,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 526.94
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1236.38
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2580.65
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 5417.5
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-119",
+    "quality": 2,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 476.23
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1081
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2206.19
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4554.31
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-120",
+    "quality": 1,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 444.14
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 992.42
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2010.12
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 4130.89
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-121",
+    "quality": 1,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 514.7
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 1186.83
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2453.06
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 5115.82
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-122",
+    "quality": 3,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 463.68
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1070.17
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2208.76
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4598.53
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-123",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-124",
+    "quality": 1,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 444.14
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 992.42
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2010.12
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 4130.89
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-125",
+    "quality": 1,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 444.14
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 992.42
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 2010.12
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 4130.89
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-126",
+    "quality": 5,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 20,
+      "strength": 21,
+      "spirit": 16,
+      "agility": 18,
+      "intellect": 16,
+      "potential": 22
+    },
+    "growth": {
+      "vitality": 0.9,
+      "strength": 0.95,
+      "spirit": 0.72,
+      "agility": 0.81,
+      "intellect": 0.72,
+      "potential": 0.99
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 279.2
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 617.47
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1510.11
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3222.97
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6864.79
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-127",
+    "quality": 5,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 15,
+      "strength": 20,
+      "spirit": 16,
+      "agility": 23,
+      "intellect": 18,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.68,
+      "strength": 0.9,
+      "spirit": 0.72,
+      "agility": 1.03,
+      "intellect": 0.81,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 246.49
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 528.59
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1256.3
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 2632.56
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 5534.21
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-128",
+    "quality": 4,
+    "role": "trị liệu",
+    "base_stats": {
+      "vitality": 14,
+      "strength": 10,
+      "spirit": 19,
+      "agility": 12,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.63,
+      "strength": 0.45,
+      "spirit": 0.86,
+      "agility": 0.54,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 233.24
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 494.04
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1171.04
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2457.36
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 5176.79
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-129",
+    "quality": 4,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 485.39
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1137.59
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2371.16
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4972.19
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-130",
+    "quality": 6,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 15,
+      "spirit": 19,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 23
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.68,
+      "spirit": 0.86,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.03
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 6,
+        "proxy": 269.68
+      },
+      {
+        "level": 20,
+        "quality": 6,
+        "proxy": 601.41
+      },
+      {
+        "level": 60,
+        "quality": 6,
+        "proxy": 1478.44
+      },
+      {
+        "level": 120,
+        "quality": 6,
+        "proxy": 3164.18
+      },
+      {
+        "level": 220,
+        "quality": 6,
+        "proxy": 6752.03
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-131",
+    "quality": 5,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 20,
+      "strength": 21,
+      "spirit": 16,
+      "agility": 18,
+      "intellect": 16,
+      "potential": 22
+    },
+    "growth": {
+      "vitality": 0.9,
+      "strength": 0.95,
+      "spirit": 0.72,
+      "agility": 0.81,
+      "intellect": 0.72,
+      "potential": 0.99
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 5,
+        "proxy": 279.2
+      },
+      {
+        "level": 20,
+        "quality": 5,
+        "proxy": 617.47
+      },
+      {
+        "level": 60,
+        "quality": 5,
+        "proxy": 1510.11
+      },
+      {
+        "level": 120,
+        "quality": 5,
+        "proxy": 3222.97
+      },
+      {
+        "level": 220,
+        "quality": 5,
+        "proxy": 6864.79
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-132",
+    "quality": 8,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 14,
+      "spirit": 22,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 26
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.63,
+      "spirit": 0.99,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.17
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 8,
+        "proxy": 275.1
+      },
+      {
+        "level": 20,
+        "quality": 8,
+        "proxy": 657.84
+      },
+      {
+        "level": 60,
+        "quality": 8,
+        "proxy": 1699.95
+      },
+      {
+        "level": 120,
+        "quality": 8,
+        "proxy": 3739.46
+      },
+      {
+        "level": 220,
+        "quality": 8,
+        "proxy": 8124
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-133",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 469.38
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1083.32
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2232.14
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4638.76
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-134",
+    "quality": 6,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 6,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 6,
+        "proxy": 435.5
+      },
+      {
+        "level": 60,
+        "quality": 6,
+        "proxy": 1015.35
+      },
+      {
+        "level": 120,
+        "quality": 6,
+        "proxy": 2095.23
+      },
+      {
+        "level": 220,
+        "quality": 6,
+        "proxy": 4351.01
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-135",
+    "quality": 4,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 551.7
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1337.46
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2842.11
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 6037.3
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-136",
+    "quality": 4,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 469.38
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1083.32
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2232.14
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4638.76
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-137",
+    "quality": 4,
+    "role": "hỗ trợ",
+    "base_stats": {
+      "vitality": 13,
+      "strength": 10,
+      "spirit": 17,
+      "agility": 14,
+      "intellect": 17,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.59,
+      "strength": 0.45,
+      "spirit": 0.77,
+      "agility": 0.63,
+      "intellect": 0.77,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 225.95
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 473.55
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 1109.77
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 2310.38
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 4838.44
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-138",
+    "quality": 7,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 14,
+      "spirit": 22,
+      "agility": 17,
+      "intellect": 23,
+      "potential": 24
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.63,
+      "spirit": 0.99,
+      "agility": 0.77,
+      "intellect": 1.03,
+      "potential": 1.08
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 7,
+        "proxy": 275.1
+      },
+      {
+        "level": 20,
+        "quality": 7,
+        "proxy": 639.24
+      },
+      {
+        "level": 60,
+        "quality": 7,
+        "proxy": 1622.23
+      },
+      {
+        "level": 120,
+        "quality": 7,
+        "proxy": 3536.17
+      },
+      {
+        "level": 220,
+        "quality": 7,
+        "proxy": 7639.07
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-139",
+    "quality": 7,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 25,
+      "strength": 19,
+      "spirit": 19,
+      "agility": 13,
+      "intellect": 15,
+      "potential": 22
+    },
+    "growth": {
+      "vitality": 1.13,
+      "strength": 0.86,
+      "spirit": 0.86,
+      "agility": 0.59,
+      "intellect": 0.68,
+      "potential": 0.99
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 7,
+        "proxy": 297.57
+      },
+      {
+        "level": 20,
+        "quality": 7,
+        "proxy": 720.02
+      },
+      {
+        "level": 60,
+        "quality": 7,
+        "proxy": 1879.27
+      },
+      {
+        "level": 120,
+        "quality": 7,
+        "proxy": 4156.61
+      },
+      {
+        "level": 220,
+        "quality": 7,
+        "proxy": 9061.77
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-140",
+    "quality": 4,
+    "role": "sát thủ",
+    "base_stats": {
+      "vitality": 11,
+      "strength": 16,
+      "spirit": 12,
+      "agility": 19,
+      "intellect": 14,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.5,
+      "strength": 0.72,
+      "spirit": 0.54,
+      "agility": 0.86,
+      "intellect": 0.63,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 4,
+        "proxy": 205.4
+      },
+      {
+        "level": 20,
+        "quality": 4,
+        "proxy": 416.77
+      },
+      {
+        "level": 60,
+        "quality": 4,
+        "proxy": 941.67
+      },
+      {
+        "level": 120,
+        "quality": 4,
+        "proxy": 1908.05
+      },
+      {
+        "level": 220,
+        "quality": 4,
+        "proxy": 3911.68
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-141",
+    "quality": 3,
+    "role": "đấu sĩ",
+    "base_stats": {
+      "vitality": 16,
+      "strength": 17,
+      "spirit": 12,
+      "agility": 14,
+      "intellect": 12,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.72,
+      "strength": 0.77,
+      "spirit": 0.54,
+      "agility": 0.63,
+      "intellect": 0.54,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 236.44
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 486.71
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1122.65
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2312.42
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 4804.18
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-142",
+    "quality": 3,
+    "role": "đỡ đòn",
+    "base_stats": {
+      "vitality": 21,
+      "strength": 15,
+      "spirit": 15,
+      "agility": 9,
+      "intellect": 11,
+      "potential": 16
+    },
+    "growth": {
+      "vitality": 0.95,
+      "strength": 0.68,
+      "spirit": 0.68,
+      "agility": 0.41,
+      "intellect": 0.5,
+      "potential": 0.72
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 3,
+        "proxy": 252.95
+      },
+      {
+        "level": 20,
+        "quality": 3,
+        "proxy": 539.28
+      },
+      {
+        "level": 60,
+        "quality": 3,
+        "proxy": 1286.6
+      },
+      {
+        "level": 120,
+        "quality": 3,
+        "proxy": 2710.35
+      },
+      {
+        "level": 220,
+        "quality": 3,
+        "proxy": 5724.69
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-143",
+    "quality": 2,
+    "role": "khống chế",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 10,
+      "spirit": 18,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 18
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.45,
+      "spirit": 0.81,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.81
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 2,
+        "proxy": 232.34
+      },
+      {
+        "level": 20,
+        "quality": 2,
+        "proxy": 465.08
+      },
+      {
+        "level": 60,
+        "quality": 2,
+        "proxy": 1056.26
+      },
+      {
+        "level": 120,
+        "quality": 2,
+        "proxy": 2162.67
+      },
+      {
+        "level": 220,
+        "quality": 2,
+        "proxy": 4480.36
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  },
+  {
+    "ninja_id": "NIN-144",
+    "quality": 1,
+    "role": "công kích xa",
+    "base_stats": {
+      "vitality": 12,
+      "strength": 11,
+      "spirit": 15,
+      "agility": 13,
+      "intellect": 19,
+      "potential": 17
+    },
+    "growth": {
+      "vitality": 0.54,
+      "strength": 0.5,
+      "spirit": 0.68,
+      "agility": 0.59,
+      "intellect": 0.86,
+      "potential": 0.77
+    },
+    "power_samples": [
+      {
+        "level": 1,
+        "quality": 1,
+        "proxy": 227.51
+      },
+      {
+        "level": 20,
+        "quality": 1,
+        "proxy": 440.72
+      },
+      {
+        "level": 60,
+        "quality": 1,
+        "proxy": 970.42
+      },
+      {
+        "level": 120,
+        "quality": 1,
+        "proxy": 1945.24
+      },
+      {
+        "level": 220,
+        "quality": 1,
+        "proxy": 3965.37
+      }
+    ],
+    "policy": "retain unique growth and quality; no universal equalization",
+    "status": "ANALYTIC_PROXY"
+  }
+]

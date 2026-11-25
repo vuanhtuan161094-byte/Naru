@@ -1,0 +1,21 @@
+{
+  "source_sha": "7b0e0f55f910773bf85121c58681b9b6eec759c3",
+  "counts": {
+    "buildings": 30,
+    "resources": 150,
+    "equipment": 128,
+    "recipes": 63,
+    "professions": 15,
+    "stages": 120,
+    "chapters": 24,
+    "stats": 48,
+    "formations": 8,
+    "beasts": 9,
+    "summons": 11,
+    "bloodlines": 7,
+    "territories": 60,
+    "quests": 81,
+    "trials": 288
+  },
+  "status": "DESIGN_REFERENCE_NOT_RUNTIME"
+}

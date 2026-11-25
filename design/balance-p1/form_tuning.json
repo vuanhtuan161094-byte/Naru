@@ -1,0 +1,974 @@
+[
+  {
+    "form_id": "NIN-001-F1",
+    "ninja_id": "NIN-001",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-001-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-002-F1",
+    "ninja_id": "NIN-002",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-002-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-002-F2",
+    "ninja_id": "NIN-002",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-002-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-004-F1",
+    "ninja_id": "NIN-004",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-004-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-004-F2",
+    "ninja_id": "NIN-004",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-004-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-008-F1",
+    "ninja_id": "NIN-008",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-008-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-008-F2",
+    "ninja_id": "NIN-008",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-008-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-014-F1",
+    "ninja_id": "NIN-014",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-014-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-016-F1",
+    "ninja_id": "NIN-016",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-016-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-020-F1",
+    "ninja_id": "NIN-020",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-020-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-021-F1",
+    "ninja_id": "NIN-021",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-021-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-022-F1",
+    "ninja_id": "NIN-022",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-022-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-024-F1",
+    "ninja_id": "NIN-024",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-024-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-036-F1",
+    "ninja_id": "NIN-036",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-036-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-041-F1",
+    "ninja_id": "NIN-041",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-041-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-041-F2",
+    "ninja_id": "NIN-041",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-041-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-041-F3",
+    "ninja_id": "NIN-041",
+    "activation": {
+      "cooldown_s": 70,
+      "duration_s": 20,
+      "manual_chakra": 55,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-041-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2857,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-042-F1",
+    "ninja_id": "NIN-042",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-042-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-042-F2",
+    "ninja_id": "NIN-042",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-042-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-042-F3",
+    "ninja_id": "NIN-042",
+    "activation": {
+      "cooldown_s": 70,
+      "duration_s": 20,
+      "manual_chakra": 55,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-042-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2857,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-043-F1",
+    "ninja_id": "NIN-043",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-043-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-047-F1",
+    "ninja_id": "NIN-047",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-047-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-053-F1",
+    "ninja_id": "NIN-053",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-053-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-060-F1",
+    "ninja_id": "NIN-060",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-060-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-060-F2",
+    "ninja_id": "NIN-060",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-060-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-061-F1",
+    "ninja_id": "NIN-061",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-061-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-065-F1",
+    "ninja_id": "NIN-065",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-065-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-069-F1",
+    "ninja_id": "NIN-069",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-069-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-069-F2",
+    "ninja_id": "NIN-069",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-069-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-070-F1",
+    "ninja_id": "NIN-070",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-070-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-070-F2",
+    "ninja_id": "NIN-070",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-070-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-070-F3",
+    "ninja_id": "NIN-070",
+    "activation": {
+      "cooldown_s": 70,
+      "duration_s": 20,
+      "manual_chakra": 55,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-070-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2857,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-075-F1",
+    "ninja_id": "NIN-075",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-075-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-076-F1",
+    "ninja_id": "NIN-076",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-076-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-077-F1",
+    "ninja_id": "NIN-077",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-077-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-095-F1",
+    "ninja_id": "NIN-095",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-095-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-100-F1",
+    "ninja_id": "NIN-100",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-100-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-101-F1",
+    "ninja_id": "NIN-101",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-101-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-102-F1",
+    "ninja_id": "NIN-102",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-102-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-103-F1",
+    "ninja_id": "NIN-103",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-103-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-104-F1",
+    "ninja_id": "NIN-104",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-104-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-105-F1",
+    "ninja_id": "NIN-105",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-105-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-111-F1",
+    "ninja_id": "NIN-111",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-111-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-112-F1",
+    "ninja_id": "NIN-112",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-112-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-113-F1",
+    "ninja_id": "NIN-113",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-113-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-114-F1",
+    "ninja_id": "NIN-114",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-114-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-118-F1",
+    "ninja_id": "NIN-118",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-118-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-126-F1",
+    "ninja_id": "NIN-126",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-126-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-126-F2",
+    "ninja_id": "NIN-126",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-126-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-127-F1",
+    "ninja_id": "NIN-127",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-127-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-127-F2",
+    "ninja_id": "NIN-127",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "manual_chakra": 45,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-127-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2667,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-128-F1",
+    "ninja_id": "NIN-128",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-128-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-130-F1",
+    "ninja_id": "NIN-130",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-130-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  },
+  {
+    "form_id": "NIN-136-F1",
+    "ninja_id": "NIN-136",
+    "activation": {
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "manual_chakra": 35,
+      "exit_if_chakra_exhausted": true,
+      "auto_hp_once_per_battle": true
+    },
+    "guard": {
+      "max_stat_multiplier": 1.35,
+      "exclusive_group": "NIN-136-FORM",
+      "full_fatal_gate_hold": true
+    },
+    "uptime_upper": 0.2,
+    "status": "DEV_TUNING_PROPOSAL"
+  }
+]

@@ -1,0 +1,332 @@
+[
+  {
+    "id": "JOB-01",
+    "name_vi": "xây dựng",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-02",
+    "name_vi": "huấn luyện thể thuật",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-03",
+    "name_vi": "nghiên cứu nhẫn thuật",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-04",
+    "name_vi": "luyện ảo thuật",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-05",
+    "name_vi": "kiểm soát chakra",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-06",
+    "name_vi": "rèn nhẫn cụ",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-07",
+    "name_vi": "dược",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-08",
+    "name_vi": "phong ấn",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-09",
+    "name_vi": "nông nghiệp",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-10",
+    "name_vi": "khai thác",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-11",
+    "name_vi": "trinh sát",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-12",
+    "name_vi": "thương mại",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-13",
+    "name_vi": "tình báo",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-14",
+    "name_vi": "nghiên cứu",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  },
+  {
+    "id": "JOB-15",
+    "name_vi": "chế tạo nhẫn cụ",
+    "level_cap": null,
+    "rank_milestones": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "xp_cost": "ceil(50*level^1.4)",
+    "xp_gain": "completed_work_units*quality_multiplier",
+    "production_bonus": "1+0.025*level",
+    "talents": [
+      "năng suất",
+      "tiết kiệm nguyên liệu",
+      "chất lượng",
+      "tốc độ"
+    ],
+    "status": "PROPOSED"
+  }
+]

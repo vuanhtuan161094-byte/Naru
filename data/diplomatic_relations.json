@@ -1,0 +1,254 @@
+[
+  {
+    "a": "FAC-001",
+    "b": "FAC-002",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-001",
+    "b": "FAC-003",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-001",
+    "b": "FAC-004",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-001",
+    "b": "FAC-005",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-001",
+    "b": "FAC-006",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-001",
+    "b": "FAC-007",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-001",
+    "b": "FAC-008",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-001",
+    "b": "FAC-009",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-002",
+    "b": "FAC-003",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-002",
+    "b": "FAC-004",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-002",
+    "b": "FAC-005",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-002",
+    "b": "FAC-006",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-002",
+    "b": "FAC-007",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-002",
+    "b": "FAC-008",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-002",
+    "b": "FAC-009",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-003",
+    "b": "FAC-004",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-003",
+    "b": "FAC-005",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-003",
+    "b": "FAC-006",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-003",
+    "b": "FAC-007",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-003",
+    "b": "FAC-008",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-003",
+    "b": "FAC-009",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-004",
+    "b": "FAC-005",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-004",
+    "b": "FAC-006",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-004",
+    "b": "FAC-007",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-004",
+    "b": "FAC-008",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-004",
+    "b": "FAC-009",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-005",
+    "b": "FAC-006",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-005",
+    "b": "FAC-007",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-005",
+    "b": "FAC-008",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-005",
+    "b": "FAC-009",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-006",
+    "b": "FAC-007",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-006",
+    "b": "FAC-008",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-006",
+    "b": "FAC-009",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-007",
+    "b": "FAC-008",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-007",
+    "b": "FAC-009",
+    "score": 0,
+    "state": "neutral",
+    "status": "PROPOSED"
+  },
+  {
+    "a": "FAC-008",
+    "b": "FAC-009",
+    "score": -40,
+    "state": "neutral",
+    "status": "PROPOSED"
+  }
+]

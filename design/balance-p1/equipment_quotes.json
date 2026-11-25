@@ -1,0 +1,5762 @@
+[
+  {
+    "equipment_id": "EQ-001-Q1",
+    "slot_id": "EQ-001",
+    "quality": 1,
+    "base_stat": "hp",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-001-Q2",
+    "slot_id": "EQ-001",
+    "quality": 2,
+    "base_stat": "hp",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-001-Q3",
+    "slot_id": "EQ-001",
+    "quality": 3,
+    "base_stat": "hp",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-001-Q4",
+    "slot_id": "EQ-001",
+    "quality": 4,
+    "base_stat": "hp",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-001-Q5",
+    "slot_id": "EQ-001",
+    "quality": 5,
+    "base_stat": "hp",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-001-Q6",
+    "slot_id": "EQ-001",
+    "quality": 6,
+    "base_stat": "hp",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-001-Q7",
+    "slot_id": "EQ-001",
+    "quality": 7,
+    "base_stat": "hp",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-001-Q8",
+    "slot_id": "EQ-001",
+    "quality": 8,
+    "base_stat": "hp",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q1",
+    "slot_id": "EQ-002",
+    "quality": 1,
+    "base_stat": "armor",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q2",
+    "slot_id": "EQ-002",
+    "quality": 2,
+    "base_stat": "armor",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q3",
+    "slot_id": "EQ-002",
+    "quality": 3,
+    "base_stat": "armor",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q4",
+    "slot_id": "EQ-002",
+    "quality": 4,
+    "base_stat": "armor",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q5",
+    "slot_id": "EQ-002",
+    "quality": 5,
+    "base_stat": "armor",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q6",
+    "slot_id": "EQ-002",
+    "quality": 6,
+    "base_stat": "armor",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q7",
+    "slot_id": "EQ-002",
+    "quality": 7,
+    "base_stat": "armor",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-002-Q8",
+    "slot_id": "EQ-002",
+    "quality": 8,
+    "base_stat": "armor",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q1",
+    "slot_id": "EQ-003",
+    "quality": 1,
+    "base_stat": "nres",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q2",
+    "slot_id": "EQ-003",
+    "quality": 2,
+    "base_stat": "nres",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q3",
+    "slot_id": "EQ-003",
+    "quality": 3,
+    "base_stat": "nres",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q4",
+    "slot_id": "EQ-003",
+    "quality": 4,
+    "base_stat": "nres",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q5",
+    "slot_id": "EQ-003",
+    "quality": 5,
+    "base_stat": "nres",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q6",
+    "slot_id": "EQ-003",
+    "quality": 6,
+    "base_stat": "nres",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q7",
+    "slot_id": "EQ-003",
+    "quality": 7,
+    "base_stat": "nres",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-003-Q8",
+    "slot_id": "EQ-003",
+    "quality": 8,
+    "base_stat": "nres",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q1",
+    "slot_id": "EQ-004",
+    "quality": 1,
+    "base_stat": "hp_regen",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q2",
+    "slot_id": "EQ-004",
+    "quality": 2,
+    "base_stat": "hp_regen",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q3",
+    "slot_id": "EQ-004",
+    "quality": 3,
+    "base_stat": "hp_regen",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q4",
+    "slot_id": "EQ-004",
+    "quality": 4,
+    "base_stat": "hp_regen",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q5",
+    "slot_id": "EQ-004",
+    "quality": 5,
+    "base_stat": "hp_regen",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q6",
+    "slot_id": "EQ-004",
+    "quality": 6,
+    "base_stat": "hp_regen",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q7",
+    "slot_id": "EQ-004",
+    "quality": 7,
+    "base_stat": "hp_regen",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-004-Q8",
+    "slot_id": "EQ-004",
+    "quality": 8,
+    "base_stat": "hp_regen",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q1",
+    "slot_id": "EQ-005",
+    "quality": 1,
+    "base_stat": "damage_reduction",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q2",
+    "slot_id": "EQ-005",
+    "quality": 2,
+    "base_stat": "damage_reduction",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q3",
+    "slot_id": "EQ-005",
+    "quality": 3,
+    "base_stat": "damage_reduction",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q4",
+    "slot_id": "EQ-005",
+    "quality": 4,
+    "base_stat": "damage_reduction",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q5",
+    "slot_id": "EQ-005",
+    "quality": 5,
+    "base_stat": "damage_reduction",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q6",
+    "slot_id": "EQ-005",
+    "quality": 6,
+    "base_stat": "damage_reduction",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q7",
+    "slot_id": "EQ-005",
+    "quality": 7,
+    "base_stat": "damage_reduction",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-005-Q8",
+    "slot_id": "EQ-005",
+    "quality": 8,
+    "base_stat": "damage_reduction",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q1",
+    "slot_id": "EQ-006",
+    "quality": 1,
+    "base_stat": "crit_resist",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q2",
+    "slot_id": "EQ-006",
+    "quality": 2,
+    "base_stat": "crit_resist",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q3",
+    "slot_id": "EQ-006",
+    "quality": 3,
+    "base_stat": "crit_resist",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q4",
+    "slot_id": "EQ-006",
+    "quality": 4,
+    "base_stat": "crit_resist",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q5",
+    "slot_id": "EQ-006",
+    "quality": 5,
+    "base_stat": "crit_resist",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q6",
+    "slot_id": "EQ-006",
+    "quality": 6,
+    "base_stat": "crit_resist",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q7",
+    "slot_id": "EQ-006",
+    "quality": 7,
+    "base_stat": "crit_resist",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-006-Q8",
+    "slot_id": "EQ-006",
+    "quality": 8,
+    "base_stat": "crit_resist",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q1",
+    "slot_id": "EQ-007",
+    "quality": 1,
+    "base_stat": "patk",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q2",
+    "slot_id": "EQ-007",
+    "quality": 2,
+    "base_stat": "patk",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q3",
+    "slot_id": "EQ-007",
+    "quality": 3,
+    "base_stat": "patk",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q4",
+    "slot_id": "EQ-007",
+    "quality": 4,
+    "base_stat": "patk",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q5",
+    "slot_id": "EQ-007",
+    "quality": 5,
+    "base_stat": "patk",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q6",
+    "slot_id": "EQ-007",
+    "quality": 6,
+    "base_stat": "patk",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q7",
+    "slot_id": "EQ-007",
+    "quality": 7,
+    "base_stat": "patk",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-007-Q8",
+    "slot_id": "EQ-007",
+    "quality": 8,
+    "base_stat": "patk",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q1",
+    "slot_id": "EQ-008",
+    "quality": 1,
+    "base_stat": "armor_pen",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q2",
+    "slot_id": "EQ-008",
+    "quality": 2,
+    "base_stat": "armor_pen",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q3",
+    "slot_id": "EQ-008",
+    "quality": 3,
+    "base_stat": "armor_pen",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q4",
+    "slot_id": "EQ-008",
+    "quality": 4,
+    "base_stat": "armor_pen",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q5",
+    "slot_id": "EQ-008",
+    "quality": 5,
+    "base_stat": "armor_pen",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q6",
+    "slot_id": "EQ-008",
+    "quality": 6,
+    "base_stat": "armor_pen",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q7",
+    "slot_id": "EQ-008",
+    "quality": 7,
+    "base_stat": "armor_pen",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-008-Q8",
+    "slot_id": "EQ-008",
+    "quality": 8,
+    "base_stat": "armor_pen",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q1",
+    "slot_id": "EQ-009",
+    "quality": 1,
+    "base_stat": "attack_speed",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q2",
+    "slot_id": "EQ-009",
+    "quality": 2,
+    "base_stat": "attack_speed",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q3",
+    "slot_id": "EQ-009",
+    "quality": 3,
+    "base_stat": "attack_speed",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q4",
+    "slot_id": "EQ-009",
+    "quality": 4,
+    "base_stat": "attack_speed",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q5",
+    "slot_id": "EQ-009",
+    "quality": 5,
+    "base_stat": "attack_speed",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q6",
+    "slot_id": "EQ-009",
+    "quality": 6,
+    "base_stat": "attack_speed",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q7",
+    "slot_id": "EQ-009",
+    "quality": 7,
+    "base_stat": "attack_speed",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-009-Q8",
+    "slot_id": "EQ-009",
+    "quality": 8,
+    "base_stat": "attack_speed",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q1",
+    "slot_id": "EQ-010",
+    "quality": 1,
+    "base_stat": "accuracy",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q2",
+    "slot_id": "EQ-010",
+    "quality": 2,
+    "base_stat": "accuracy",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q3",
+    "slot_id": "EQ-010",
+    "quality": 3,
+    "base_stat": "accuracy",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q4",
+    "slot_id": "EQ-010",
+    "quality": 4,
+    "base_stat": "accuracy",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q5",
+    "slot_id": "EQ-010",
+    "quality": 5,
+    "base_stat": "accuracy",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q6",
+    "slot_id": "EQ-010",
+    "quality": 6,
+    "base_stat": "accuracy",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q7",
+    "slot_id": "EQ-010",
+    "quality": 7,
+    "base_stat": "accuracy",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-010-Q8",
+    "slot_id": "EQ-010",
+    "quality": 8,
+    "base_stat": "accuracy",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q1",
+    "slot_id": "EQ-011",
+    "quality": 1,
+    "base_stat": "evasion",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q2",
+    "slot_id": "EQ-011",
+    "quality": 2,
+    "base_stat": "evasion",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q3",
+    "slot_id": "EQ-011",
+    "quality": 3,
+    "base_stat": "evasion",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q4",
+    "slot_id": "EQ-011",
+    "quality": 4,
+    "base_stat": "evasion",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q5",
+    "slot_id": "EQ-011",
+    "quality": 5,
+    "base_stat": "evasion",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q6",
+    "slot_id": "EQ-011",
+    "quality": 6,
+    "base_stat": "evasion",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q7",
+    "slot_id": "EQ-011",
+    "quality": 7,
+    "base_stat": "evasion",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-011-Q8",
+    "slot_id": "EQ-011",
+    "quality": 8,
+    "base_stat": "evasion",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-059",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-110",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q1",
+    "slot_id": "EQ-012",
+    "quality": 1,
+    "base_stat": "counter",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q2",
+    "slot_id": "EQ-012",
+    "quality": 2,
+    "base_stat": "counter",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q3",
+    "slot_id": "EQ-012",
+    "quality": 3,
+    "base_stat": "counter",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q4",
+    "slot_id": "EQ-012",
+    "quality": 4,
+    "base_stat": "counter",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q5",
+    "slot_id": "EQ-012",
+    "quality": 5,
+    "base_stat": "counter",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q6",
+    "slot_id": "EQ-012",
+    "quality": 6,
+    "base_stat": "counter",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q7",
+    "slot_id": "EQ-012",
+    "quality": 7,
+    "base_stat": "counter",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-012-Q8",
+    "slot_id": "EQ-012",
+    "quality": 8,
+    "base_stat": "counter",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q1",
+    "slot_id": "EQ-013",
+    "quality": 1,
+    "base_stat": "hp",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q2",
+    "slot_id": "EQ-013",
+    "quality": 2,
+    "base_stat": "hp",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q3",
+    "slot_id": "EQ-013",
+    "quality": 3,
+    "base_stat": "hp",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q4",
+    "slot_id": "EQ-013",
+    "quality": 4,
+    "base_stat": "hp",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q5",
+    "slot_id": "EQ-013",
+    "quality": 5,
+    "base_stat": "hp",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q6",
+    "slot_id": "EQ-013",
+    "quality": 6,
+    "base_stat": "hp",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q7",
+    "slot_id": "EQ-013",
+    "quality": 7,
+    "base_stat": "hp",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-013-Q8",
+    "slot_id": "EQ-013",
+    "quality": 8,
+    "base_stat": "hp",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q1",
+    "slot_id": "EQ-014",
+    "quality": 1,
+    "base_stat": "armor",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q2",
+    "slot_id": "EQ-014",
+    "quality": 2,
+    "base_stat": "armor",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q3",
+    "slot_id": "EQ-014",
+    "quality": 3,
+    "base_stat": "armor",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q4",
+    "slot_id": "EQ-014",
+    "quality": 4,
+    "base_stat": "armor",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q5",
+    "slot_id": "EQ-014",
+    "quality": 5,
+    "base_stat": "armor",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q6",
+    "slot_id": "EQ-014",
+    "quality": 6,
+    "base_stat": "armor",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q7",
+    "slot_id": "EQ-014",
+    "quality": 7,
+    "base_stat": "armor",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-014-Q8",
+    "slot_id": "EQ-014",
+    "quality": 8,
+    "base_stat": "armor",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q1",
+    "slot_id": "EQ-015",
+    "quality": 1,
+    "base_stat": "nres",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q2",
+    "slot_id": "EQ-015",
+    "quality": 2,
+    "base_stat": "nres",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q3",
+    "slot_id": "EQ-015",
+    "quality": 3,
+    "base_stat": "nres",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q4",
+    "slot_id": "EQ-015",
+    "quality": 4,
+    "base_stat": "nres",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q5",
+    "slot_id": "EQ-015",
+    "quality": 5,
+    "base_stat": "nres",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q6",
+    "slot_id": "EQ-015",
+    "quality": 6,
+    "base_stat": "nres",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q7",
+    "slot_id": "EQ-015",
+    "quality": 7,
+    "base_stat": "nres",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-015-Q8",
+    "slot_id": "EQ-015",
+    "quality": 8,
+    "base_stat": "nres",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q1",
+    "slot_id": "EQ-016",
+    "quality": 1,
+    "base_stat": "hp_regen",
+    "base_value": 10,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 10,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 14.25,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 19.26,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 26.68,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 40.07,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 1
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q2",
+    "slot_id": "EQ-016",
+    "quality": 2,
+    "base_stat": "hp_regen",
+    "base_value": 40,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 40,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 56.99,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 77.02,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 106.73,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 160.28,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 6
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 2
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q3",
+    "slot_id": "EQ-016",
+    "quality": 3,
+    "base_stat": "hp_regen",
+    "base_value": 90,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 90,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 128.23,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 173.3,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 240.15,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 360.64,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 9
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 3
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q4",
+    "slot_id": "EQ-016",
+    "quality": 4,
+    "base_stat": "hp_regen",
+    "base_value": 160,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 160,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 227.96,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 308.09,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 426.93,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 641.14,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 12
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 4
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q5",
+    "slot_id": "EQ-016",
+    "quality": 5,
+    "base_stat": "hp_regen",
+    "base_value": 250,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 250,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 356.19,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 481.39,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 667.08,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1001.78,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 15
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 5
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q6",
+    "slot_id": "EQ-016",
+    "quality": 6,
+    "base_stat": "hp_regen",
+    "base_value": 360,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 360,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 512.92,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 693.2,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 960.59,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1442.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 18
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 6
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q7",
+    "slot_id": "EQ-016",
+    "quality": 7,
+    "base_stat": "hp_regen",
+    "base_value": 490,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 490,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 698.14,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 943.52,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1307.47,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 1963.49,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 21
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 7
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  },
+  {
+    "equipment_id": "EQ-016-Q8",
+    "slot_id": "EQ-016",
+    "quality": 8,
+    "base_stat": "hp_regen",
+    "base_value": 640,
+    "enhance_samples": [
+      {
+        "level": 0,
+        "value": 640,
+        "next_cost": 20
+      },
+      {
+        "level": 10,
+        "value": 911.85,
+        "next_cost": 1046
+      },
+      {
+        "level": 25,
+        "value": 1232.35,
+        "next_cost": 4323
+      },
+      {
+        "level": 50,
+        "value": 1707.72,
+        "next_cost": 13138
+      },
+      {
+        "level": 100,
+        "value": 2564.56,
+        "next_cost": 40566
+      }
+    ],
+    "material_inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 24
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 8
+      }
+    ],
+    "status": "DEV_QUOTE_SAMPLE"
+  }
+]

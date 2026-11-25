@@ -1,0 +1,196 @@
+[
+  {
+    "id": "home",
+    "title_vi": "Làng ninja",
+    "content": "30 công trình vị trí cố định, toàn cảnh, thanh tài nguyên, nhiệm vụ, thời gian xây dựng",
+    "actions": [
+      "building.open",
+      "world.open",
+      "ninja.open"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "ninja_roster",
+    "title_vi": "Ninja",
+    "content": "lưới, tìm kiếm, lọc phẩm chất/hệ/nghề/thời kỳ",
+    "actions": [
+      "ninja.detail",
+      "team.edit"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "ninja_detail",
+    "title_vi": "Hồ sơ ninja",
+    "content": "48 chỉ số, sao, phẩm chất, cấp, cảnh giới, thiên phú, skill, hình thái, 16 slot",
+    "actions": [
+      "growth.level",
+      "growth.realm",
+      "skill.level",
+      "gear.equip"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "skill_tree",
+    "title_vi": "Nhẫn thuật",
+    "content": "cấp, giai, thành thạo, nhánh, điều kiện mở, chiêu bổ sung",
+    "actions": [
+      "skill.grade",
+      "skill.branch",
+      "trial.open"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "formation",
+    "title_vi": "Bố trận",
+    "content": "6 vị trí, nhiều đội, chọn danh sách ninja",
+    "actions": [
+      "team.save",
+      "battle.start"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "battle",
+    "title_vi": "Chiến đấu",
+    "content": "isometric, tự đánh, thanh HP/chakra, nút tuyệt kỹ của mọi skill đã mở, tốc độ 1x/2x/4x tùy nghiệm thu",
+    "actions": [
+      "battle.ultimate",
+      "battle.pause",
+      "battle.withdraw"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "results",
+    "title_vi": "Kết quả",
+    "content": "chiến thắng/thua, phần thưởng, tăng trưởng vĩnh viễn",
+    "actions": [
+      "reward.claim",
+      "stage.next"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "campaign",
+    "title_vi": "Cốt truyện",
+    "content": "24 chương 120 ải, thể lực, điều kiện khóa",
+    "actions": [
+      "stage.start"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "world",
+    "title_vi": "Nhẫn giới",
+    "content": "60 lãnh địa, đường di chuyển, sở hữu, ngoại giao",
+    "actions": [
+      "territory.inspect",
+      "deploy.send"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "diplomacy",
+    "title_vi": "Ngoại giao",
+    "content": "9 thế lực, điểm quan hệ, thương mại, liên minh, chiến tranh",
+    "actions": [
+      "trade.quote",
+      "relation.action"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "building",
+    "title_vi": "Công trình",
+    "content": "cấp 1–100, vị trí, worker, timer, tự động sản xuất",
+    "actions": [
+      "building.upgrade",
+      "job.assign",
+      "production.configure"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "craft",
+    "title_vi": "Chế tạo",
+    "content": "63 recipe, nguồn thiếu, chất lượng, hàng đợi",
+    "actions": [
+      "craft.enqueue",
+      "craft.cancel"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "inventory",
+    "title_vi": "Kho và trang bị",
+    "content": "150 tài nguyên, 128 mẫu equip, set, khảm, nâng cấp",
+    "actions": [
+      "inventory.inspect",
+      "gear.enhance",
+      "gear.refine"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "recruit",
+    "title_vi": "Chiêu mộ",
+    "content": "8 phẩm chất, tỷ lệ, pity, mảnh ninja",
+    "actions": [
+      "recruit.draw",
+      "recruit.unlock"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "beasts",
+    "title_vi": "Vĩ Thú / Thông linh",
+    "content": "9 Vĩ Thú 11 thông linh, điều kiện và phát triển",
+    "actions": [
+      "beast.capture",
+      "beast.bind",
+      "summon.train"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "quest",
+    "title_vi": "Nhiệm vụ",
+    "content": "81 nhiệm vụ và thử thách cá nhân",
+    "actions": [
+      "quest.claim"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  },
+  {
+    "id": "settings",
+    "title_vi": "Cài đặt",
+    "content": "âm thanh, cut-in, lưu/xuất/nhập, hiển thị",
+    "actions": [
+      "save.export",
+      "save.import",
+      "settings.update"
+    ],
+    "layout": "landscape_1280x720_responsive",
+    "status": "PROPOSED"
+  }
+]

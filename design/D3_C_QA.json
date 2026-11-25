@@ -1,0 +1,36 @@
+{
+  "counts": {
+    "territories": 60,
+    "links": 71,
+    "factions": 9,
+    "relations": 36,
+    "chapters": 24,
+    "stages": 120,
+    "npc_encounters": 490,
+    "bosses": 24,
+    "quests": 81,
+    "bijuu": 9,
+    "summons": 11,
+    "combos": 12,
+    "personal_trials": 288
+  },
+  "checks": {
+    "territory_unique": true,
+    "world_connected": true,
+    "world_resource_refs": true,
+    "owner_refs": true,
+    "all_chapters_have_five": true,
+    "stage_refs": true,
+    "enemy_refs": true,
+    "team_cap": true,
+    "rewards_refs": true,
+    "quest_rewards": true,
+    "boss_refs": true,
+    "bijuu_hosts": true,
+    "combo_refs": true,
+    "trial_count": true,
+    "relations_count": true
+  },
+  "runtime": false,
+  "balance_verified": false
+}

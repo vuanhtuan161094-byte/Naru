@@ -1,0 +1,666 @@
+[
+  {
+    "stat_id": "vitality",
+    "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+    "storage": "unbounded",
+    "unit": "points",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "strength",
+    "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+    "storage": "unbounded",
+    "unit": "points",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "spirit",
+    "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+    "storage": "unbounded",
+    "unit": "points",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "agility",
+    "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+    "storage": "unbounded",
+    "unit": "points",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "intellect",
+    "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+    "storage": "unbounded",
+    "unit": "points",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "potential",
+    "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
+    "storage": "unbounded",
+    "unit": "points",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "hp",
+    "base": 250,
+    "weights": {
+      "vitality": 18
+    },
+    "per_level": 5,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "flat",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "armor",
+    "base": 10,
+    "weights": {
+      "vitality": 2,
+      "strength": 0.3
+    },
+    "per_level": 0.2,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "nres",
+    "base": 10,
+    "weights": {
+      "spirit": 2,
+      "intellect": 0.3
+    },
+    "per_level": 0.2,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "hp_regen",
+    "base": 0.4,
+    "weights": {
+      "vitality": 0.025,
+      "spirit": 0.01
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "per_second",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "damage_reduction",
+    "base": 0,
+    "weights": {
+      "vitality": 0.25,
+      "spirit": 0.15
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "crit_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.3,
+      "spirit": 0.3
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "patk",
+    "base": 20,
+    "weights": {
+      "strength": 3
+    },
+    "per_level": 1.5,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "flat",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "armor_pen",
+    "base": 0,
+    "weights": {
+      "strength": 0.25,
+      "agility": 0.1
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "flat",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "attack_speed",
+    "base": 0,
+    "weights": {
+      "agility": 0.8,
+      "strength": 0.1
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 1,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "accuracy",
+    "base": 30,
+    "weights": {
+      "agility": 0.8,
+      "intellect": 0.25
+    },
+    "per_level": 0.2,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "evasion",
+    "base": 0,
+    "weights": {
+      "agility": 0.8
+    },
+    "per_level": 0.1,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "counter",
+    "base": 0,
+    "weights": {
+      "agility": 0.3,
+      "strength": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "natk",
+    "base": 20,
+    "weights": {
+      "intellect": 3
+    },
+    "per_level": 1.5,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "flat",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "magic_pen",
+    "base": 0,
+    "weights": {
+      "intellect": 0.3,
+      "spirit": 0.12
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "flat",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "ncrit",
+    "base": 0,
+    "weights": {
+      "intellect": 0.45,
+      "agility": 0.15
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "element_power",
+    "base": 0,
+    "weights": {
+      "intellect": 0.4,
+      "potential": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 1,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "area",
+    "base": 0,
+    "weights": {
+      "intellect": 0.3,
+      "spirit": 0.15
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 1,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "cast_speed",
+    "base": 0,
+    "weights": {
+      "agility": 0.5,
+      "intellect": 0.3
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 1,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "genjutsu_power",
+    "base": 10,
+    "weights": {
+      "intellect": 2,
+      "spirit": 1
+    },
+    "per_level": 0.5,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "control_chance",
+    "base": 0,
+    "weights": {
+      "intellect": 0.45,
+      "spirit": 0.3
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "control_duration",
+    "base": 0,
+    "weights": {
+      "spirit": 0.35,
+      "intellect": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.8,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "control_resist",
+    "base": 0,
+    "weights": {
+      "spirit": 0.65,
+      "vitality": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.7,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "genjutsu_resist",
+    "base": 0,
+    "weights": {
+      "spirit": 1.5,
+      "intellect": 0.3
+    },
+    "per_level": 0.2,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "cleanse",
+    "base": 0,
+    "weights": {
+      "spirit": 0.5,
+      "intellect": 0.15
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "chakra_max",
+    "base": 100,
+    "weights": {
+      "spirit": 3
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "flat",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "chakra_regen",
+    "base": 2,
+    "weights": {
+      "spirit": 0.04
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "per_second",
+    "conversion": "none",
+    "effect_cap_or_max_bonus": null,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "chakra_efficiency",
+    "base": 0,
+    "weights": {
+      "spirit": 0.35,
+      "intellect": 0.35
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.5,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "chakra_drain",
+    "base": 0,
+    "weights": {
+      "spirit": 0.25,
+      "intellect": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.35,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "chakra_drain_resist",
+    "base": 0,
+    "weights": {
+      "spirit": 0.6
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.7,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "chakra_conversion",
+    "base": 0,
+    "weights": {
+      "spirit": 0.4,
+      "potential": 0.15
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.7,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "move_speed",
+    "base": 0,
+    "weights": {
+      "agility": 0.8
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 1,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "pcrit",
+    "base": 0,
+    "weights": {
+      "strength": 0.35,
+      "agility": 0.45
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "crit_damage",
+    "base": 0,
+    "weights": {
+      "strength": 0.3,
+      "intellect": 0.25
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 2,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "lifesteal",
+    "base": 0,
+    "weights": {
+      "strength": 0.2,
+      "spirit": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.35,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "healing",
+    "base": 0,
+    "weights": {
+      "spirit": 0.7,
+      "intellect": 0.4
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 1,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "cdr",
+    "base": 0,
+    "weights": {
+      "intellect": 0.4,
+      "agility": 0.3
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 0.5,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "insight",
+    "base": 0,
+    "weights": {
+      "potential": 0.7,
+      "intellect": 0.3
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 2,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "training_speed",
+    "base": 0,
+    "weights": {
+      "potential": 0.7,
+      "vitality": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 2,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "comprehension",
+    "base": 0,
+    "weights": {
+      "potential": 0.6,
+      "intellect": 0.5
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 2,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "xp_efficiency",
+    "base": 0,
+    "weights": {
+      "potential": 0.6,
+      "spirit": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 2,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "mastery_speed",
+    "base": 0,
+    "weights": {
+      "potential": 0.7,
+      "intellect": 0.25
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 2,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  },
+  {
+    "stat_id": "absorption",
+    "base": 0,
+    "weights": {
+      "potential": 0.5,
+      "vitality": 0.3
+    },
+    "per_level": 0,
+    "formula": "max(0,base + sum(weights*base_stats)+per_level*level+specialization+gear_flat+permanent)",
+    "unit": "rating",
+    "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
+    "effect_cap_or_max_bonus": 2,
+    "storage": "unbounded",
+    "status": "PROPOSED"
+  }
+]
