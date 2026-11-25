@@ -38,3 +38,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - IN_PROGRESS GP-SKILL-P2: compiled A–I overlay, geometry/runtime scheduler and fallback ledger; separate adapter QA, combo/form route migration and specialized residuals READY. Web DEV V6 pending CI.
 
 - IN_PROGRESS P2 batch 2: combo events, form compatibility, summon role implementation and export path; detailed per-ID runtime audit next.
+
+- IN_PROGRESS: P2 per-ID runtime ledger and NPC war tuning. Resolve/revert unconfirmed adapters before acceptance.

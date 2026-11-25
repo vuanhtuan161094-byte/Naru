@@ -66,3 +66,5 @@ DEC-012 Combat V3 tested implementation 1b5c8da242fe9d00a257cf9a4f625574d7872e47
 GP-SKILL-P2 A–I batch 1: overlay with explicit fallback, P2 runtime gate and Web V6. Pending CI.
 
 P2 batch 2: actual event signatures, summon roles, form overlay, Web data include.
+
+P2 batch 3: per-ID audit, UI status, NPC war tuning and status/absorb bounds.

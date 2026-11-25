@@ -547,7 +547,10 @@ func skill_screen(id: String,message: String="") -> void:
 		var sk=store.skill_progress(store.state.owned[id],skill_id)
 		var row=HBoxContainer.new()
 		rows.add_child(row)
-		var name_label=label(row,"%s | Giai %d cấp %d | Thành thạo %d" % [reg.names[skill_id].name_vi,int(sk.grade),int(sk.level),int(store.state.owned[id].skill_mastery.get(skill_id,0))],18)
+		var overlay=reg.p2_skills.get(skill_id,{})
+		var shown=str(reg.p2_design[skill_id].name_vi) if not overlay.is_empty() else str(reg.names[skill_id].name_vi)
+		var name_label=label(row,"%s | %s | Giai %d cấp %d | Thành thạo %d" % [shown,"P2 "+str(overlay.shape) if not overlay.is_empty() else "D4 fallback",int(sk.grade),int(sk.level),int(store.state.owned[id].skill_mastery.get(skill_id,0))],16)
+		name_label.tooltip_text=shown+" • "+str(overlay.get("shape",reg.p2_fallback.get(skill_id,"D4")))
 		name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		if not store.skill_allowed(reg,id,skill_id):
 			var trial_id=str(reg.names[skill_id].unlock_require.challenge_id)

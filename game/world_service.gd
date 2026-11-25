@@ -376,7 +376,7 @@ static func strategic_power(reg,s: Dictionary,id: String) -> float:
 
 static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
 	var npc=s.faction_states[id]
-	if int(s.world_tick)-int(npc.last_war_tick)<36:return false
+	if int(s.world_tick)-int(npc.last_war_tick)<144:return false
 	var tension_seen={}
 	for route in reg.routes:
 		var target=""
@@ -393,9 +393,9 @@ static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
 				r.score=maxi(-100,int(r.score)-2)
 				if int(r.score)<=-60:r.state="war"
 			continue
-		if int(npc.stock.get("RES-001",0))<300:continue
+		if int(npc.stock.get("RES-001",0))<600:continue
 		npc.last_war_tick=int(s.world_tick)
-		npc.stock["RES-001"]=int(npc.stock["RES-001"])-300
+		npc.stock["RES-001"]=int(npc.stock["RES-001"])-600
 		var attack=strategic_power(reg,s,id)
 		var defense=strategic_power(reg,s,owner)*(1+0.05*(int(s.faction_states[owner].infrastructure.defense)-1))+float(reg.territories[target].defense_rating)*0.5
 		var roll=0.85+float(posmod(int(s.world_tick)*37+int(target.right(3))*17+int(id.right(3))*13,31))/100.0

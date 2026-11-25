@@ -126,6 +126,7 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 	var best={}
 	var best_score=-INF
 	for b in alive(int(a.side) if allied else 1-int(a.side)):
+		if not allied and a.statuses.has("beguile_tactical") and int(a.statuses.beguile_tactical.source)==int(b.uid):continue
 		var distance=a.pos.distance_to(b.pos)
 		var score=0.0
 		if allied:
@@ -290,8 +291,11 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 			if item.id==id:count+=1
 		if count>=int(rule.max_stacks):return
 	var duration=float(e.get("duration_s",rule.duration_s))
+	if id=="sleep" and b.uid==boss_actor_uid:duration=minf(duration,0.5)
+	if id=="beguile_tactical" and b.uid==boss_actor_uid:duration=minf(duration,0.7)
 	if rule.hard_control:duration*=clampf((1.0+rating(a,"control_duration"))*(1.0-rating(b,"control_resist")),0.3,1.8)
 	var mag=float(e.get("magnitude",0.2))
+	if id=="attack_down":mag=clampf(mag,0.0,0.4)
 	if rule.stack=="max" and b.statuses.has(key):
 		duration=maxf(duration,float(b.statuses[key].remaining))
 		mag=maxf(mag,float(b.statuses[key].magnitude))
@@ -467,7 +471,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					keys.sort_custom(func(x,y):return float(target.statuses[x].remaining)>float(target.statuses[y].remaining))
 					var count=0
 					for key in keys:
-						if registry.status_catalog[target.statuses[key].id].dispellable and target.statuses[key].id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam"]:
+						if registry.status_catalog[target.statuses[key].id].dispellable and target.statuses[key].id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam","sleep","attack_down","beguile_tactical"]:
 							target.statuses.erase(key)
 							count+=1
 							if count>=int(e.max_statuses)+(1 if rng.randf()<rating(a,"cleanse") else 0):break
@@ -938,7 +942,7 @@ func safe_spawn(a: Dictionary) -> Vector2:
 
 func has_debuff(a: Dictionary) -> bool:
 	for status in a.statuses.values():
-		if registry.status_catalog[status.id].dispellable and status.id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam"]:return true
+		if registry.status_catalog[status.id].dispellable and status.id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam","sleep","attack_down","beguile_tactical"]:return true
 	return false
 
 func ai_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
@@ -957,6 +961,7 @@ func ai_condition(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 func cast_geometry(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	if b.is_empty() or b.hp<=0:return false
 	if s.target=="self":return a.uid==b.uid
+	if a.statuses.has("beguile_tactical") and int(a.statuses.beguile_tactical.source)==int(b.uid):return false
 	if s.target.begins_with("ally")!=(a.side==b.side):return false
 	return a.pos.distance_to(b.pos)<=float(s.range_m)+body_radius(b) and clear_segment(a.pos,b.pos,0.03)
 
@@ -1023,7 +1028,7 @@ func advance_projectiles(dt: float) -> void:
 				return int(x.uid)<int(y.uid) if is_equal_approx(dx,dy) else dx<dy)
 			for target in contacts:
 				if p.hit_ids.size()>=int(p.get("contact_cap",skill.max_targets)):break
-				if skill.has("p2") and target.has("p2_absorb") and int(target.p2_absorb.expires)>ticks and int(target.p2_absorb.left)>0:
+				if skill.has("p2") and target.has("p2_absorb") and int(target.p2_absorb.expires)>ticks and int(target.p2_absorb.left)>0 and Vector2(target.p2_absorb.facing).dot(-Vector2(p.direction))>=cos(deg_to_rad(float(target.p2_absorb.angle)*0.5)):
 					target.p2_absorb.left=int(target.p2_absorb.left)-1
 					target.chakra=minf(float(target.max_chakra),float(target.chakra)+float(target.p2_absorb.chakra))
 					p.distance_left=0.0
@@ -1098,7 +1103,7 @@ func p2_utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	if kind=="summon":score=32.0
 	if kind in ["cleanse","absorb","counter","activate_form"]:score=35.0
 	if kind in ["wall","teleport","position_swap","mark","chakra_restore"]:score=17.0
-	if kind in ["zone_damage","zone_drain","trap"]:score+=12
+	if kind in ["zone_damage","zone_drain","trap","beguile_tactical"]:score+=12
 	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5:
 		var ult=effective_skill(a,a.skills[5])
 		if a.chakra>=ult.chakra and a.chakra-s.chakra<ult.chakra:score-=30
@@ -1160,7 +1165,7 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 		for unit in actors:
 			if unit.hp>0 and rect.grow(body_radius(unit)).has_point(unit.pos):return
 		terrain.append({"rect":rect,"kind":"obstacle","speed":1.0,"expires":ticks+roundi(float(p.get("duration_s",6))*20)})
-		p2_confirm(a,s,point,"effect")
+		p2_confirm(a,s,point,"contact_or_effect_confirmed")
 		return
 	if s.shape=="dash_contact":
 		move_actor(a,b.pos,maxf(0.0,a.pos.distance_to(b.pos)-float(p.get("stop_m",0.65))))
@@ -1199,7 +1204,7 @@ func p2_schedule(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,t
 	var p=raw.effect.params
 	var kind=str(raw.effect.type)
 	var hits=maxi(1,int(raw.effect.hit_count))
-	if kind in ["zone_damage","zone_drain"]:hits=mini(hits,maxi(1,int(p.get("hit_budget",hits))))
+	if kind in ["zone_damage","zone_drain","beguile_tactical"]:hits=mini(hits,maxi(1,int(p.get("hit_budget",hits))))
 	var interval=maxi(1,roundi(float(p.get("tick_s",p.get("interval_s",0.12)))*20))
 	var dynamic=s.shape in ["circle_ground","zone_target"] or kind=="trap"
 	var ids=targets.map(func(b):return b.uid)
@@ -1278,7 +1283,12 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 			facing=(Vector2(enemy.pos)-Vector2(a.pos)).normalized()
 			break
 		a.p2_arc={"hp":float(a.natk)*float(raw.effect.total_coefficient),"angle":float(p.get("angle_deg",120)),"facing":facing,"expires":ticks+roundi(float(p.get("duration_s",4))*20)}
-	if kind=="absorb":a.p2_absorb={"left":int(p.get("max_projectiles",1)),"chakra":float(p.get("chakra_return",15)),"expires":ticks+roundi(float(p.get("duration_s",3))*20)}
+	if kind=="absorb":
+		var facing=Vector2.RIGHT if a.side==0 else Vector2.LEFT
+		for enemy in alive(1-int(a.side)):
+			facing=(Vector2(enemy.pos)-Vector2(a.pos)).normalized()
+			break
+		a.p2_absorb={"left":int(p.get("max_projectiles",1)),"chakra":float(p.get("chakra_return",15)),"expires":ticks+roundi(float(p.get("duration_s",3))*20),"facing":facing,"angle":float(p.get("angle_deg",120))}
 	if kind in ["mark","projectile_mark"]:p2_set_mark(a,b,p)
 	if kind=="chakra_restore":b.chakra=minf(float(b.max_chakra),float(b.chakra)+float(p.get("chakra_amount",12)))
 	if kind in ["chakra_drain","zone_drain"]:
