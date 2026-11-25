@@ -39,3 +39,5 @@ D1-A: 17 screen functional navigation/UI, actual Godot UI, no art. Pending exact
 D1-B: training sinks, starter help, dynamic team count, backup safety, actual canvas click audit, Web V3. CI pending.
 
 D1-C: formation geometry, UI control sizing, meaningful-action growth, adjacent conquest guard, seeded replay and browser touch audit. CI pending.
+
+D1 Web DEV V3 verified SHA 8e78533790219620154dc14e8063a62036aeb999, CI 45563300995, 158 assertions, 17/17 actual browser screen navigation, 90d sim and export; artifact 14998937461, screenshots 14999215663. D1-C CI 45563525233 browser QA not yet confirmed. Scope and remaining tasks recorded in GAMEPLAY_STATUS.md.
