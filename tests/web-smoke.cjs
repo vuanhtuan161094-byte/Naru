@@ -1,5 +1,6 @@
 const { chromium } = require('playwright');
 const fs=require('fs');
+const crypto=require('crypto');
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--enable-unsafe-swiftshader','--use-gl=angle','--use-angle=swiftshader']});
  const page=await browser.newPage({viewport:{width:1280,height:720},hasTouch:true});
@@ -61,6 +62,21 @@ const fs=require('fs');
   await page.screenshot({path:'ui-shots/landscape-960.png'});
   const touchUI=await state();const touchButton=touchUI.buttons.find(b=>b.text==='Kho'&&!b.disabled);const touchCanvas=await page.locator('canvas').first().boundingBox();await page.touchscreen.tap(touchCanvas.x+touchButton.x*touchCanvas.width/touchUI.width,touchCanvas.y+touchButton.y*touchCanvas.height/touchUI.height);await waitScreen('inventory');
   console.log('NARU_UI_TOUCH_PASS');
+  await page.setViewportSize({width:1280,height:720});
+  await page.waitForTimeout(700);
+  await click('Cài đặt','settings');
+  // Test only generic CI texture, never upload private candidate images to GitHub.
+  const b64=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=96;c.height=112;const g=c.getContext('2d');g.fillStyle='#466c86';g.fillRect(16,12,64,92);g.fillStyle='#d8bf8c';g.fillRect(30,20,36,34);return c.toDataURL('image/png').split(',')[1]});
+  const png=Buffer.from(b64,'base64');
+  const pack={schema:1,status:'REVIEW_ONLY',assets:{'characters/NIN-041.png':{width:96,height:112,sha256:crypto.createHash('sha256').update(png).digest('hex'),png:b64}}};
+  await click('Nạp gói mỹ thuật riêng','settings');
+  await page.locator('#naru-review-file').setInputFiles({name:'ci-review.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(pack))});
+  await page.waitForFunction(()=>window.naruUI?.art_count===1,{},{timeout:15000});
+  await click('Trận thử mỹ thuật 6v6','battle');
+  await page.waitForFunction(()=>window.naruUI?.review===true&&window.naruUI?.art_draws>0,{},{timeout:15000});
+  await page.screenshot({path:'ui-shots/review-generic-ci.png'});
+  await click('Rút lui','settings');
+  console.log('NARU_ART_IMPORT_WEB_PASS');
   if(errors.length)throw new Error(errors.join('\n'));
   console.log('NARU_WEB_PROBE_PASS');
   console.log('NARU_UI_17_PASS '+[...seen].join(','));

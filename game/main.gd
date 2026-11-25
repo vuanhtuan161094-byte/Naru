@@ -504,6 +504,7 @@ func finish(won: bool) -> void:
 	if won and ok:
 		label(rows,"Phần thưởng đã nhận",22)
 		for reward in last_reward:label(rows,"%s +%d" % [reg.resources[reward.resource_id].name_vi,int(reward.qty)],18)
+		if not store.state.reward_inbox.is_empty():label(rows,"Tài nguyên vượt sức chứa được giữ trong Kho → Thưởng chờ nhận.",16)
 		label(rows,"Tăng trưởng ninja",22)
 		for id in last_growth:
 			var gains=[]
@@ -642,6 +643,7 @@ func inventory_screen() -> void:
 	button(row,"Lọc",func():inventory_query=search.text;inventory_screen())
 	button(row,"Trang bị sở hữu",gear_screen)
 	button(row,"Chế tạo",craft_screen)
+	button(row,"Thưởng chờ nhận ("+str(store.state.reward_inbox.size())+")",reward_inbox_screen)
 	var rows=scroll_rows(root)
 	for id in reg.resources:
 		var r=reg.resources[id]
@@ -891,7 +893,7 @@ func bloodline_screen(message: String="") -> void:
 	for ninja in store.state.owned:
 		for id in reg.bloodlines:
 			var def=reg.bloodlines[id]
-			if def.required_family_for_native==null or def.required_family_for_native!=reg.ninjas[ninja].family_hint or id=="BL-139":continue
+			if not store.native_bloodline_allowed(reg,ninja,id):continue
 			button(rows,"%s | %s | Bậc %s" % [reg.ninjas[ninja].name_vi,def.name_vi,store.state.owned[ninja].bloodline_levels.get(id,0)],func():bloodline_screen("Đã thức tỉnh / nâng cấp" if store.native_bloodline(reg,ninja,id) else "Thiếu điều kiện"))
 
 func save_screen(message: String="") -> void:
@@ -1143,6 +1145,9 @@ func craft_screen(message: String="") -> void:
 func resource_detail(id: String) -> void:
 	var rows=activity_rows(str(reg.resources[id].name_vi),"Trong kho: "+str(store.state.inventory.get(id,0)),inventory_screen)
 	screen_id="inventory"
+	if reg.resources[id].tradable and not id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:
+		var unit=maxi(1,floori(float(reg.resources[id].base_price_ryo)*0.35))
+		button(rows,"Bán 100 dư thừa • "+str(unit*100)+" Ryo",func():resource_trade_result(id,store.sell_surplus(reg,id,100)))
 	for source in reg.supply:
 		if source.resource_id==id:
 			label(rows,"Nguồn: "+str(source.source_type)+" • HQ "+str(source.source_min_hq)+" • "+str(source.base_yield)+" / "+str(source.period_seconds)+"s",17)
@@ -1282,3 +1287,15 @@ func start_art_review() -> void:
 		var id=right[i]
 		sim.add_actor(id,1,20,int(reg.ninjas[id].initial_quality),{},i,1.0)
 	battle_view()
+
+func resource_trade_result(id: String,ok: bool) -> void:
+	resource_detail(id)
+	label(root,"Đã bán" if ok else "Cần HQ2 và ít nhất 100 tài nguyên",16)
+
+func reward_inbox_screen(message: String="") -> void:
+	var rows=activity_rows("THƯỞNG CHỜ NHẬN",message,inventory_screen)
+	screen_id="inventory"
+	if store.state.reward_inbox.is_empty():label(rows,"Không có thưởng chờ.",18)
+	for id in store.state.reward_inbox:
+		var qty=int(store.state.reward_inbox[id])
+		button(rows,"%s ×%d • Nhận phần còn chỗ" % [reg.resources[id].name_vi,qty],func():reward_inbox_screen("Đã nhận" if store.collect_reward_inbox(id) else "Kho đầy"))

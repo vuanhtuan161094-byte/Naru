@@ -17,6 +17,8 @@ static func sync_day(s: Dictionary) -> void:
 static func bump(s: Dictionary,kind: String,amount: int=1) -> void:
 	sync_day(s)
 	s.daily_counts[kind]=int(s.daily_counts.get(kind,0))+amount
+	if not s.has("lifetime_counts"):s.lifetime_counts={}
+	s.lifetime_counts[kind]=int(s.lifetime_counts.get(kind,0))+amount
 
 static func objective(reg,s: Dictionary,q: Dictionary) -> int:
 	var obj=q.objective
@@ -27,7 +29,7 @@ static func objective(reg,s: Dictionary,q: Dictionary) -> int:
 			return 1
 		"visit_territory":
 			return int(s.territory_states[obj.target].visits)
-		_:return int(s.daily_counts.get(obj.kind,0))
+		_:return int(s.daily_counts.get(obj.kind,0)) if q.repeatable else int(s.get("lifetime_counts",{}).get(obj.kind,s.daily_counts.get(obj.kind,0)))
 
 static func claim_key(s: Dictionary,q: Dictionary) -> String:
 	return str(q.id)+":"+str(s.quest_day) if q.repeatable else str(q.id)

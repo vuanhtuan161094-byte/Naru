@@ -436,4 +436,42 @@ func _initialize() -> void:
 		replay_a.tick(0.05)
 		replay_b.tick(0.05)
 	check(replay_a.actors==replay_b.actors and replay_a.action_stats==replay_b.action_stats,"seeded battle deterministic replay")
+	var d3=Store.new()
+	d3.save_path="user://gp_d3_ci.json"
+	d3.new_game(reg)
+	for native_id in ["NIN-028","NIN-083","NIN-086"]:d3.grant(reg,native_id)
+	for pair in [["NIN-028","BL-141"],["NIN-083","BL-142"],["NIN-086","BL-143"]]:
+		d3.state.owned[pair[0]].realm=3
+		d3.state.inventory[reg.bloodlines[pair[1]].resource_id]=100
+		check(d3.native_bloodline(reg,pair[0],pair[1]),"authored native affinity "+str(pair[1]))
+	check(not d3.native_bloodline_allowed(reg,"NIN-001","BL-141") and not d3.native_bloodline_allowed(reg,"NIN-068","BL-139"),"bloodline compatibility gate")
+	d3.state.inventory["RES-116"]=Village.capacity(d3.state,"RES-116")
+	d3.grant_reward("RES-116",20)
+	check(int(d3.state.reward_inbox["RES-116"])==20,"overflow reward retained")
+	check(not d3.collect_reward_inbox("RES-116"),"overflow full warehouse gate")
+	d3.state.inventory["RES-116"]=int(d3.state.inventory["RES-116"])-10
+	check(d3.collect_reward_inbox("RES-116") and int(d3.state.reward_inbox["RES-116"])==10,"overflow partial claim")
+	d3.state.building_states["BLD-001"].level=2
+	check(d3.sell_surplus(reg,"RES-006",100),"optional surplus sale")
+	check(not d3.sell_surplus(reg,"RES-002",100),"premium sale forbidden")
+	var clock_mark=int(d3.state.high_water_timestamp)
+	check(d3.travel_to(reg,"TER-057"),"real adjacent neutral travel")
+	d3.advance_clock(reg,clock_mark+200)
+	check(d3.capture_territory(reg,"TER-057") and d3.state.territory_states["TER-057"].owner=="FAC-009","real neutral capture")
+	var raid_faction=str(d3.state.territory_states["TER-005"].owner)
+	var protected_ngoc=int(d3.state.inventory["RES-002"])
+	var old_ryo=int(d3.state.inventory["RES-001"])
+	check(ws.raid(reg,d3.state,raid_faction),"adjacent NPC raid")
+	check(int(d3.state.inventory["RES-002"])==protected_ngoc and int(d3.state.inventory["RES-001"])<old_ryo and float(d3.state.building_states["BLD-001"].condition)>=0.5,"raid loss limits and building protection")
+	check(not ws.raid(reg,d3.state,raid_faction),"raid protection cooldown")
+	check(guard.valid(reg,d3.state),"D3 save compatible")
+	var art_scene=preload("res://game/review_art.gd").new()
+	var image=Image.create(96,112,false,Image.FORMAT_RGBA8)
+	image.fill(Color(0.3,0.7,0.7,1))
+	var png=image.save_png_to_buffer()
+	var entry_art={"width":96,"height":112,"sha256":art_scene.hash_bytes(png),"png":Marshalls.raw_to_base64(png)}
+	var art_pack={"schema":1,"status":"REVIEW_ONLY","assets":{"characters/NIN-041.png":entry_art}}
+	check(art_scene.import_text(JSON.stringify(art_pack),false) and art_scene.count_characters()==1,"review art PNG hash and texture load")
+	entry_art.sha256="bad"
+	check(not art_scene.import_text(JSON.stringify(art_pack),false) and art_scene.count_characters()==1,"review art bad hash rejected atomically")
 	quit(0 if failures==0 else 1)

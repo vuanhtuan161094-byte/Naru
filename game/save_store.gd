@@ -135,16 +135,18 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 	if won:
 		var rewards=stage.repeat_rewards if state.cleared.has(stage.id) else stage.first_clear_rewards
 		for r in rewards:
-			state.inventory[r.resource_id]=int(state.inventory.get(r.resource_id,0))+int(r.qty)
+			grant_reward(str(r.resource_id),int(r.qty))
 		state.cleared[stage.id]=true
 		Content.bump(state,"clear_stage")
 		if stage.boss_id!=null and int(state.building_states["BLD-001"].level)>=8:
 			for source in reg.supply:
 				if source.source_type=="boss_or_contract" and int(state.building_states[source.building_id].level)>0:
-					state.inventory[source.resource_id]=int(state.inventory.get(source.resource_id,0))+int(source.base_yield)
+					grant_reward(str(source.resource_id),int(source.base_yield))
 		for id in entry.team:
 			var p=state.owned[id]
-			p.xp=int(p.xp)+100
+			var earned_xp=100+15*int(str(stage.id).right(3))
+			var stats=Stats.derive(reg,reg.ninjas[id],p)
+			p.xp=int(p.xp)+roundi(earned_xp*(1+Stats.effect(reg,stats,"xp_efficiency")))
 			apply_levels(p)
 			var actions=int(action_counts.get(id,0))
 			var difficulty=stage_difficulty(reg,stage,entry.team)
@@ -260,6 +262,8 @@ func ensure_account(reg) -> void:
 	Content.ensure(state)
 	if not state.has("gear_instances"):state.gear_instances={}
 	if not state.has("gear_seq"):state.gear_seq=0
+	if not state.has("reward_inbox"):state.reward_inbox={}
+	if not state.has("lifetime_counts"):state.lifetime_counts={}
 	if not state.has("building_states"):
 		state.building_states={}
 		for b in reg.initial.initial_buildings:state.building_states[b.building_id]=b.duplicate(true)
@@ -630,8 +634,8 @@ func native_bloodline(reg,id: String,bloodline: String) -> bool:
 	if not state.owned.has(id) or not reg.bloodlines.has(bloodline):return false
 	var p=state.owned[id]
 	var def=reg.bloodlines[bloodline]
-	# D4 explicitly requires compatibility review for Rinnegan and null native family.
-	if bloodline=="BL-139" or def.required_family_for_native==null or reg.ninjas[id].family_hint!=def.required_family_for_native:return false
+	# Native affinity is derived only from the authored template; implants/Rinnegan remain held.
+	if not native_bloodline_allowed(reg,id,bloodline):return false
 	var current=int(p.bloodline_levels.get(bloodline,0))
 	if current>=int(def.progression.tier_max) or int(p.realm)<int(def.native_unlock.realm):return false
 	if current==0:
@@ -739,7 +743,15 @@ func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
 	var player=0.0
 	for id in team:
 		var p=state.owned[id]
-		player+=float(p.level)*float(p.quality)*(1+0.04*(int(p.stars)-1))
+		var base=Stats.derive(reg,reg.ninjas[id],{"level":p.level,"quality":p.quality})
+		var actual=Stats.derive(reg,reg.ninjas[id],p)
+		var ratio=0.0
+		for key in ["hp","patk","natk","armor","nres"]:ratio+=float(actual[key])/maxf(1.0,float(base[key]))
+		var equipment_bonus=0.0
+		for gear_id in p.get("gear",{}).values():
+			var gear=state.gear_instances.get(gear_id,{})
+			if not gear.is_empty():equipment_bonus+=0.02*float(gear.quality)*(1+0.06*float(gear.enhance)+0.025*float(gear.refine))
+		player+=float(p.level)*float(p.quality)*(1+0.04*(int(p.stars)-1))*maxf(1.0,ratio/5.0+equipment_bonus)
 	var enemy=0.0
 	for id in stage.enemy_ids:
 		var npc=reg.npcs[id]
@@ -859,3 +871,41 @@ func create_world_squad() -> String:
 	var id="SQUAD-"+str(i)
 	state.world_squads[id]={"team":[],"location":World.HOME,"travel":{}}
 	return id if commit_change(prior,rng.state) else ""
+
+func native_bloodline_allowed(reg,id: String,bloodline: String) -> bool:
+	if not reg.ninjas.has(id) or not reg.bloodlines.has(bloodline) or bloodline=="BL-139":return false
+	var n=reg.ninjas[id]
+	var def=reg.bloodlines[bloodline]
+	var affinity={"BL-140":"wood","BL-141":"ice","BL-142":"lava","BL-143":"dust"}
+	if affinity.has(bloodline):return affinity[bloodline] in n.chakra_elements
+	return def.required_family_for_native!=null and n.family_hint==def.required_family_for_native
+
+func grant_reward(id: String,qty: int) -> void:
+	var available=maxi(0,Village.capacity(state,id)-int(state.inventory.get(id,0)))
+	var take=mini(qty,available)
+	state.inventory[id]=int(state.inventory.get(id,0))+take
+	if take<qty:
+		if not state.has("reward_inbox"):state.reward_inbox={}
+		state.reward_inbox[id]=int(state.reward_inbox.get(id,0))+qty-take
+
+func collect_reward_inbox(id: String) -> bool:
+	var qty=int(state.get("reward_inbox",{}).get(id,0))
+	var available=maxi(0,Village.capacity(state,id)-int(state.inventory.get(id,0)))
+	var take=mini(qty,available)
+	if take<=0:return false
+	var prior=state.duplicate(true)
+	state.inventory[id]=int(state.inventory.get(id,0))+take
+	state.reward_inbox[id]=qty-take
+	if int(state.reward_inbox[id])==0:state.reward_inbox.erase(id)
+	return commit_change(prior,rng.state)
+
+func sell_surplus(reg,id: String,qty: int) -> bool:
+	# Optional local merchant sink for capped stock; does not mint premium currency.
+	if not reg.resources.has(id) or not reg.resources[id].tradable or id in ["RES-001","RES-002","RES-003","RES-004","RES-005"] or qty<1 or qty>100:return false
+	if Village.level(state,"BLD-001")<2 or int(state.inventory.get(id,0))<qty:return false
+	var unit=maxi(1,floori(float(reg.resources[id].base_price_ryo)*0.35))
+	if int(state.inventory.get("RES-001",0))+unit*qty>Village.capacity(state,"RES-001"):return false
+	var prior=state.duplicate(true)
+	state.inventory[id]=int(state.inventory[id])-qty
+	state.inventory["RES-001"]=int(state.inventory.get("RES-001",0))+unit*qty
+	return commit_change(prior,rng.state)

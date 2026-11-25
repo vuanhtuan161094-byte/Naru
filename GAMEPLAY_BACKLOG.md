@@ -16,6 +16,7 @@
 | GP-P9B | IN_PROGRESS | V4 private review renderer and import; actual art remains review only. |
 | GP-P9 | READY | Remaining UI polish, accessibility/touch device coverage, asset adapter and advanced sub-actions. |
 | GP-P10A | DONE | Web DEV V1 CI 45553036319. |
+| GP-P10D | IN_PROGRESS | Web V4 cumulative gameplay + local review importer. |
 | GP-P10C | DONE | Verified Web DEV V3, CI 45563300995, artifact 14998937461; D1-C separate browser QA pending/not verified. |
 | GP-P10B | DONE | Web DEV V2 exact-SHA CI 45559078672; 150 checks, 90d sim, Chromium probe, artifact 14996917338. |
 | GP-P10 | BACKLOG | Final Web/Android/PC same project and acceptance gates. |

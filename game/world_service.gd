@@ -224,10 +224,14 @@ static func npc_tick(reg,s: Dictionary) -> void:
 		var npc=s.faction_states[id]
 		for territory in reg.territories.values():
 			if s.territory_states[territory.id].owner!=id:continue
+			# NPC territorial market revenue, no player upkeep or tax deduction.
+			npc.stock["RES-001"]=mini(50000,int(npc.stock.get("RES-001",0))+8+3*int(npc.infrastructure.production))
 			for resource in territory.resources:
 				var key=str(resource.resource_id)
 				npc.stock[key]=mini(50000,int(npc.stock.get(key,0))+roundi(float(resource.yield_per_tick)*10*(1+0.06*(int(npc.infrastructure.production)-1))))
-		var acted=develop_npc(reg,s,id)
+		var acted=false
+		if int(s.world_tick)%6==int(id.right(3))%6:acted=npc_border_action(reg,s,id)
+		if not acted:acted=develop_npc(reg,s,id)
 		# NPC buys a scarce stock from another NPC with finite money and inventory.
 		for resource in ["RES-006","RES-009","RES-021","RES-011"]:
 			if acted:break
@@ -362,6 +366,7 @@ static func strategic_power(reg,s: Dictionary,id: String) -> float:
 static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
 	var npc=s.faction_states[id]
 	if int(s.world_tick)-int(npc.last_war_tick)<36:return false
+	var tension_seen={}
 	for route in reg.routes:
 		var target=""
 		if s.territory_states[route.from].owner==id:target=route.to
@@ -372,7 +377,8 @@ static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
 		var r=relation(s,id,owner)
 		if r.state=="allied" or r.state=="trade":continue
 		if r.state!="war":
-			if int(s.world_tick)%36==int(id.right(3))%36:
+			if int(s.world_tick)%36==int(id.right(3))%36 and not tension_seen.has(owner):
+				tension_seen[owner]=true
 				r.score=maxi(-100,int(r.score)-2)
 				if int(r.score)<=-60:r.state="war"
 			continue
@@ -381,7 +387,7 @@ static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
 		npc.stock["RES-001"]=int(npc.stock["RES-001"])-300
 		var attack=strategic_power(reg,s,id)
 		var defense=strategic_power(reg,s,owner)*(1+0.05*(int(s.faction_states[owner].infrastructure.defense)-1))+float(reg.territories[target].defense_rating)*0.5
-		var roll=0.85+float(posmod(int(s.world_tick)*31+int(target.right(3))*17,31))/100.0
+		var roll=0.85+float(posmod(int(s.world_tick)*37+int(target.right(3))*17+int(id.right(3))*13,31))/100.0
 		s.npc_war_count=int(s.npc_war_count)+1
 		if attack*roll>defense:
 			s.territory_states[target].owner=id

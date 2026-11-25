@@ -31,6 +31,18 @@ static func valid(reg,s: Variant) -> bool:
 				var db=reg.forms if key=="forms" else reg.skills
 				if not db.has(item) or db[item].ninja_id!=id:return false
 		if not p.get("gear",{}) is Dictionary:return false
+		if not p.get("bloodline_levels",{}) is Dictionary:return false
+		var groups={}
+		for bloodline in p.get("bloodline_levels",{}):
+			if not reg.bloodlines.has(bloodline) or not integer(p.bloodline_levels[bloodline],1,5):return false
+			var group=reg.bloodlines[bloodline].exclusive_group
+			if groups.has(group):return false
+			groups[group]=true
+		if not p.get("skill_levels",{}) is Dictionary:return false
+		for skill_id in p.get("skill_levels",{}):
+			var progress=p.skill_levels[skill_id]
+			if not reg.skills.has(skill_id) or reg.skills[skill_id].ninja_id!=id or not progress is Dictionary:return false
+			if not integer(progress.get("level"),1,20) or not integer(progress.get("grade"),1) or not integer(progress.get("fails",0)):return false
 	var seen={}
 	for id in s.team:
 		if not s.owned.has(id) or seen.has(id):return false
@@ -54,8 +66,12 @@ static func valid(reg,s: Variant) -> bool:
 	return true
 
 static func nested_valid(reg,s: Dictionary) -> bool:
-	for key in ["building_states","jobs","missions","territory_states","faction_states","relations","world_squads","beasts","summon_contracts","source_cooldowns","travel","daily_counts","quest_claimed"]:
+	for key in ["building_states","jobs","missions","territory_states","faction_states","relations","world_squads","beasts","summon_contracts","source_cooldowns","travel","daily_counts","quest_claimed","reward_inbox","lifetime_counts"]:
 		if s.has(key) and not s[key] is Dictionary:return false
+	for id in s.get("reward_inbox",{}):
+		if not reg.resources.has(id) or not integer(s.reward_inbox[id]):return false
+	for id in s.get("lifetime_counts",{}):
+		if not integer(s.lifetime_counts[id]):return false
 	for id in s.get("building_states",{}):
 		var b=s.building_states[id]
 		if not reg.buildings.has(id) or not b is Dictionary or not integer(b.get("level"),0,100):return false

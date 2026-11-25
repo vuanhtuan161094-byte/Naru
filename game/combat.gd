@@ -331,6 +331,7 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.shield_sources={}
 	b.chakra=0.0
 	actors.append(b)
+	art_event("summon",b.pos)
 
 func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 	if b.is_empty() or b.hp<=0:return
@@ -517,7 +518,7 @@ func tick(dt: float) -> void:
 		if not best.is_empty():cast(a,best,best_target)
 		elif not has_status(a,"bind") and a.pos.distance_to(enemy.pos)>float(basic.range_m):
 			var speed=2.2*(1.0+rating(a,"move_speed"))*(1.0+magnitude(a,"haste"))*(1.0-clampf(maxf(magnitude(a,"slow"),magnitude(a,"mud")),0.0,0.8))
-			a.pos=a.pos.move_toward(enemy.pos,speed*dt)
+			move_actor(a,enemy.pos,speed*dt)
 	# Remove dead temporary entities only once their launched projectiles resolve.
 	for a in actors.duplicate():
 		if a.summon and a.hp<=0 and not projectiles.any(func(p):return p.source==a.uid):actors.erase(a)
@@ -670,3 +671,15 @@ func award_action(a: Dictionary,stat: String) -> void:
 func art_event(kind: String,pos: Vector2,amount: float=0.0,skill: String="") -> void:
 	art_events.append({"kind":kind,"pos":pos,"amount":amount,"skill":skill,"tick":ticks})
 	if art_events.size()>128:art_events.pop_front()
+
+func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
+	var direction=(destination-Vector2(a.pos)).normalized()
+	var separation=Vector2.ZERO
+	for other in actors:
+		if other.uid==a.uid or other.side!=a.side or other.hp<=0:continue
+		var offset=Vector2(a.pos)-Vector2(other.pos)
+		var gap=offset.length()
+		if gap<0.6 and gap>0.001:separation+=offset.normalized()*(0.6-gap)
+	var step=(direction+separation*0.6).normalized()*distance
+	if step.length()>Vector2(a.pos).distance_to(destination):step=destination-Vector2(a.pos)
+	a.pos=Vector2(clampf(float(a.pos.x)+step.x,0.2,11.8),clampf(float(a.pos.y)+step.y,0.2,7.8))
