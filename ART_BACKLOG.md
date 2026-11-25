@@ -10,4 +10,6 @@
 | ART-P5 | BACKLOG | 54 forms, 9 bijuu, 11 summons, bosses. |
 | ART-P6 | IN_PROGRESS | 12 tiles, 3 plates, arena; modular scenery, collision geometry, 30 buildings missing. |
 | ART-P7 | BACKLOG | Portraits/icons/UI and remaining VFX keys. |
-| ART-P8 | READY | Coordinator private opt-in adapter and real 6v6 runtime smoke; no public fan art or cross-branch overwrite. |
+| ART-P8 | IN_PROGRESS | Coordinator private opt-in adapter and real 6v6 runtime smoke; no public fan art or cross-branch overwrite. |
+
+ART-P8: source overlay and CI pending. Private fan art runtime BLOCKED pending private Godot environment; DEV smoke uses generic textures. ART-P2/P3R3/P6 remain ready/in progress.

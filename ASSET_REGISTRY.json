@@ -9245,5 +9245,14 @@
       "P6 environment style"
     ],
     "asset_approval": false
+  },
+  "runtime_review": {
+    "status": "CI_PENDING",
+    "gameplay_base": "a7ecee6ad6a7f58f7bf928a297e8e5373737c950",
+    "source": "art/runtime/apply_review.py",
+    "private_pack_sha256": "5c21d3bcfd94197b952f162c19a9371e62299d72bf644920abaf8b4a1ba02895",
+    "scope": "existing Godot project opt-in visual overlay; CI generic DEV textures only, no private art integrated",
+    "style_approved": true,
+    "integrated": false
   }
 }

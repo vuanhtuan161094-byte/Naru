@@ -1,0 +1,47 @@
+
+# Review-only fixture: real existing Combat simulation, no player save writes.
+func _art_review_boot() -> void:
+	art_fixture=true
+	sim=Combat.new()
+	sim.registry=reg
+	sim.rng.seed=42
+	sim.environment="forest"
+	var ids=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
+	for side in range(2):
+		for slot in range(6):
+			var id: String=ids[slot]
+			sim.add_actor(id,side,20,int(reg.ninjas[id].initial_quality),{},slot,1.0)
+	for a in sim.actors:
+		art_initial_pos[a.uid]=a.pos
+	art_initial_count=sim.actors.size()
+	clear()
+	label(root,"NARU • 6v6 ART REVIEW • QA fixture, not campaign",24)
+	status=label(root,"",18)
+	field=Control.new()
+	field.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+	field.custom_minimum_size=Vector2(0,480)
+	field.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	field.draw.connect(draw_field)
+	root.add_child(field)
+	log_label=label(root,"",16)
+	button(root,"Kết thúc review",func():get_tree().quit())
+
+func _art_review_tick(delta: float) -> void:
+	art_elapsed+=delta
+	accumulator+=minf(delta,0.25)
+	while accumulator>=0.05:
+		if sim.outcome.is_empty():
+			sim.tick(0.05)
+			for i in range(6):
+				sim.ultimate(i)
+		accumulator-=0.05
+	for a in sim.actors:
+		if art_initial_pos.has(a.uid) and a.pos.distance_to(art_initial_pos[a.uid])>0.1:
+			art_moved=true
+	status.text="6v6 fixture • ticks %d • %s" % [sim.ticks,sim.outcome]
+	log_label.text=" | ".join(sim.log)
+	field.queue_redraw()
+	if art_elapsed>=14.0:
+		var ok: bool=art_initial_count==12 and art_moved and sim.ticks>0 and art_review.sprite_draws>0 and art_review.tile_draws>0 and art_review.vfx_draws>0 and not sim.art_events.is_empty()
+		print("ART_RUNTIME_OK" if ok else "ART_RUNTIME_FAIL"," initial=",art_initial_count," ticks=",sim.ticks," moved=",art_moved," sprites=",art_review.sprite_draws," tiles=",art_review.tile_draws," vfx=",art_review.vfx_draws," releases=",sim.art_events.size())
+		get_tree().quit(0 if ok else 1)

@@ -1,0 +1,54 @@
+name: ART-P8 existing Godot DEV renderer smoke
+on:
+  push:
+    branches: ['art/e3-art01']
+    paths: ['art/runtime/**', '.github/workflows/art-runtime-smoke.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: art-source
+      - uses: actions/checkout@v4
+        with:
+          ref: 'a7ecee6ad6a7f58f7bf928a297e8e5373737c950'
+          path: gameplay
+      - name: Install pinned Godot and display
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y xvfb ffmpeg libgl1-mesa-dri
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          chmod +x /tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+      - name: Apply visual overlay with safe DEV textures only
+        run: python3 art-source/art/runtime/apply_review.py gameplay --dev-fixture
+      - name: Import Godot project
+        run: |
+          set -o pipefail
+          /tmp/godot/Godot_v4.4.1-stable_linux.x86_64 --headless --editor --path gameplay --import 2>&1 | tee import.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' import.log
+      - name: Real Godot 6v6 simulation and capture (DEV only)
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          set -o pipefail
+          mkdir -p evidence
+          timeout 150 xvfb-run -a /tmp/godot/Godot_v4.4.1-stable_linux.x86_64 --path gameplay --resolution 1280x720 --write-movie "$PWD/evidence/dev-6v6.avi" --fixed-fps 30 -- --art-review-smoke 2>&1 | tee evidence/runtime.log
+          grep ART_RUNTIME_OK evidence/runtime.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|ART_RUNTIME_FAIL' evidence/runtime.log
+          ffmpeg -hide_banner -loglevel error -i evidence/dev-6v6.avi -c:v libx264 -pix_fmt yuv420p -an evidence/dev-6v6.mp4
+          rm evidence/dev-6v6.avi
+          printf 'Art SHA: %s\nGameplay SHA: a7ecee6ad6a7f58f7bf928a297e8e5373737c950\nDEV geometric assets only; no private fan art.\n' "$GITHUB_SHA" > evidence/BUILD.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ART-P8-DEV-runtime-evidence
+          path: |
+            evidence/
+            import.log
+          retention-days: 7
