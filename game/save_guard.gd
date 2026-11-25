@@ -77,10 +77,16 @@ static func valid(reg,s: Variant) -> bool:
 			if not integer(item.get(key)):return false
 		if not item.get("gems") is Array:return false
 		if item.get("owner","")!="" and not s.owned.has(item.owner):return false
+	var equipped={}
 	for id in s.owned:
-		for gear_id in s.owned[id].get("gear",{}).values():
-			if not s.get("gear_instances",{}).has(gear_id) or s.gear_instances[gear_id].owner!=id:return false
-	if not nested_valid(reg,s):return false
+		for slot in s.owned[id].get("gear",{}):
+			var gear_id=s.owned[id].gear[slot]
+			if not s.get("gear_instances",{}).has(gear_id) or s.gear_instances[gear_id].owner!=id or equipped.has(gear_id):return false
+			if reg.gear_templates[s.gear_instances[gear_id].template_id].slot_id!=slot:return false
+			equipped[gear_id]=true
+	for gear_id in s.get("gear_instances",{}):
+		if s.gear_instances[gear_id].get("owner","")!="" and not equipped.has(gear_id):return false
+	if not nested_valid(reg,s) or not world_links_valid(reg,s):return false
 	for key in ["high_water_timestamp","last_committed_timestamp","simulation_seconds"]:
 		if s.has(key) and not integer(s[key]):return false
 	return true
@@ -164,4 +170,52 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 		var b=s.beasts[id]
 		if not reg.beasts.has(id) or not b is Dictionary or not integer(b.get("level"),1) or not integer(b.get("xp")):return false
 		if b.get("host","")!="" and (not s.owned.has(b.host) or s.owned[b.host].get("beast_id","")!=id):return false
+	return true
+
+# Optional legacy fields remain optional; when present, they must be internally coherent.
+static func travel_valid(reg,travel: Dictionary,roster: Array) -> bool:
+	if travel.is_empty():return true
+	if not reg.territories.has(travel.get("destination","")) or not integer(travel.get("remaining"),1):return false
+	if not travel.get("path",[]) is Array or not travel.get("team",roster) is Array:return false
+	if travel.get("team",roster)!=roster or roster.is_empty():return false
+	for territory in travel.get("path",[]):
+		if not reg.territories.has(territory):return false
+	return true
+
+static func world_links_valid(reg,s: Dictionary) -> bool:
+	for key in ["world_seconds","stamina_seconds","raid_protection","world_tick"]:
+		if s.has(key) and not integer(s[key]):return false
+	if int(s.get("world_seconds",0))>=600 or int(s.get("stamina_seconds",0))>=360:return false
+	if s.has("world_location") and not reg.territories.has(s.world_location):return false
+	if not travel_valid(reg,s.get("travel",{}),s.team):return false
+	for squad in s.get("world_squads",{}).values():
+		if not travel_valid(reg,squad.travel,squad.team):return false
+	if s.has("merchant_orders"):
+		var orders=s.merchant_orders
+		if not orders is Dictionary or not integer(orders.get("day"),0) or not integer(orders.get("used"),0,3):return false
+	for key in s.get("source_cooldowns",{}):
+		if not integer(s.source_cooldowns[key]):return false
+	for id in s.get("missions",{}):
+		var mission=s.missions[id]
+		if mission.has("period") and not integer(mission.period,1):return false
+		if mission.has("repeat") and not mission.repeat is bool:return false
+	for id in s.get("building_states",{}):
+		var job=s.building_states[id].get("production",{})
+		if job.is_empty():continue
+		if reg.recipes[job.recipe].building_id!=id:return false
+		if job.has("batches_left") and not integer(job.batches_left,1,20):return false
+		if job.has("repeat") and not job.repeat is bool:return false
+		for resource in job.reserved:
+			if not reg.resources.has(resource) or not integer(job.reserved[resource],1):return false
+	for id in s.get("summon_contracts",{}):
+		var contract=s.summon_contracts[id]
+		if not reg.contracts.has(id) or not contract is Dictionary or not integer(contract.get("level"),1):return false
+		var owner=contract.get("owner","")
+		if owner!="" and (not s.owned.has(owner) or s.owned[owner].get("summon_contract","")!=id):return false
+	for id in s.owned:
+		var ninja=s.owned[id]
+		var contract=ninja.get("summon_contract","")
+		if contract!="" and (not s.get("summon_contracts",{}).has(contract) or s.summon_contracts[contract].get("owner","")!=id):return false
+		var beast=ninja.get("beast_id","")
+		if beast!="" and (not s.get("beasts",{}).has(beast) or s.beasts[beast].get("host","")!=id):return false
 	return true

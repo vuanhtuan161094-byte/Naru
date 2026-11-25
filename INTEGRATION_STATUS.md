@@ -1,0 +1,3 @@
+# One Game — integration candidate
+
+Combat V11 pinned c1be2c869eb3827fabf80ec142a3cbc1665fa61e; WORLD-P5R cb8d2da1da0736ac8bf30ecf6a123742d238e5e7; design 0309dfc1; art f529dccf856d034694ac1d1718b19770d84fa2bb. Only main.gd overlaps relative to common ancestor. 21 world functions and passive_screen UI splice, latest Combat methods retained; WorldQuotes and ResourceGuide constants included. 16 exclusive world files copied by exact blob SHA. Combined CI uses both suites, schema 1, exact-SHA Web and native video. Art metadata only; private review packs never published. No production approval or balance claim. No merge to main. Pending combined CI and organic metrics; follow up on campaign, resource, beasts, stats preview and art fallback. See INTEGRATION_STATUS.json.

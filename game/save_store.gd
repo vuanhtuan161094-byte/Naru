@@ -1,5 +1,7 @@
 extends RefCounted
 const Passive=preload("res://game/passive_service.gd")
+const Rewards=preload("res://game/world_rewards.gd")
+const Quotes=preload("res://game/progression_quotes.gd")
 const Stats=preload("res://game/stats_service.gd")
 const SaveGuard=preload("res://game/save_guard.gd")
 const Content=preload("res://game/content_service.gd")
@@ -42,13 +44,7 @@ func load_or_new(reg) -> void:
 				rng.state=int(str(d.rng_state))
 				# Interrupted battles are refunded once, in the same persisted transaction.
 				var prior=state.duplicate(true)
-				var recovered=false
-				for event in state.ledger.values():
-					if event is Dictionary and event.get("status")=="started" and reg.stages.has(event.get("stage_id","")):
-						state.stamina=mini(120,int(state.stamina)+int(reg.stages[event.stage_id].stamina_cost))
-						event.status="interrupted"
-						recovered=true
-				if recovered:commit_change(prior,rng.state)
+				if recover_interrupted(reg):commit_change(prior,rng.state)
 				return
 	for p in [save_path,save_path+".bak",save_path+".tmp"]:
 		if FileAccess.file_exists(p):
@@ -57,6 +53,7 @@ func load_or_new(reg) -> void:
 	new_game(reg)
 
 func save_now() -> bool:
+	state.rng_seed=str(rng.seed)
 	state.rng_state=str(rng.state)
 	var f = FileAccess.open(save_path+".tmp",FileAccess.WRITE)
 	if f==null: return false
@@ -118,6 +115,8 @@ func draw(reg) -> String:
 	return id
 
 func begin_stage(stage: Dictionary) -> String:
+	for event in state.ledger.values():
+		if event is Dictionary and event.get("status")=="started":return ""
 	if stage.requires!=null and not state.cleared.has(str(stage.requires)): return ""
 	if int(state.stamina)<int(stage.stamina_cost) or state.team.is_empty(): return ""
 	var prior=state.duplicate(true)
@@ -144,8 +143,11 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 		Content.bump(state,"clear_stage")
 		if stage.boss_id!=null and int(state.building_states["BLD-001"].level)>=8:
 			for source in reg.supply:
-				if source.source_type=="boss_or_contract" and int(state.building_states[source.building_id].level)>0:
-					grant_reward(str(source.resource_id),int(source.base_yield))
+				if source.source_type!="boss_or_contract":continue
+				var building=str(source.building_id)
+				# Contract hall is available at HQ13; other special resources still require Beast Hall.
+				if source.resource_id=="RES-148" and Village.level(state,"BLD-026")>0:building="BLD-026"
+				if Village.level(state,building)>0:grant_reward(str(source.resource_id),int(source.base_yield))
 		for id in entry.team:
 			var p=state.owned[id]
 			var earned_xp=int(reg.campaign_xp.get(stage.id,{}).get("battle_xp",100+15*int(str(stage.id).right(3))))
@@ -185,7 +187,7 @@ func apply_levels(p: Dictionary) -> void:
 	ensure_growth(p)
 	var cap=(int(p.realm)+1)*20
 	while int(p.level)<cap:
-		var need=int(ceil(100*pow(float(p.level),1.6)*(1+0.15*float(p.realm))))
+		var need=Quotes.xp_need(int(p.level),int(p.realm))
 		if int(p.xp)<need: break
 		p.xp=int(p.xp)-need
 		p.level=int(p.level)+1
@@ -198,7 +200,7 @@ func commit_change(prior: Dictionary, old_rng: int) -> bool:
 	return false
 
 func set_team(ids: Array) -> bool:
-	if ids.size()>6 or not state.get("travel",{}).is_empty() or not World.roster_available(state,ids,"main"): return false
+	if ids.size()>6 or state.get("world_location",World.HOME)!=World.HOME or not state.get("travel",{}).is_empty() or not World.roster_available(state,ids,"main"): return false
 	var seen={}
 	for id in ids:
 		if seen.has(id) or not state.owned.has(id): return false
@@ -209,7 +211,7 @@ func set_team(ids: Array) -> bool:
 	return commit_change(prior,rng.state)
 
 func set_formation_slot(slot: int,id: String) -> bool:
-	if slot<0 or slot>8 or not state.get("travel",{}).is_empty():return false
+	if slot<0 or slot>8 or state.get("world_location",World.HOME)!=World.HOME or not state.get("travel",{}).is_empty():return false
 	var positions=Formation.normalize_slots(state.team,state.get("formation_slots",{}))
 	var occupied=""
 	for ninja in positions:
@@ -267,14 +269,14 @@ func train(id: String) -> bool:
 	apply_levels(p)
 	return commit_change(prior,rng.state)
 
-func allocate(id: String, stat: String) -> bool:
+func allocate(id: String, stat: String,quantity: int=1) -> bool:
 	if not state.owned.has(id) or not stat in ["strength","vitality","spirit","agility","intellect","potential"]: return false
 	var p=state.owned[id]
 	ensure_growth(p)
-	if int(p.points)<1: return false
+	if quantity<1 or quantity>100 or int(p.points)<quantity:return false
 	var prior=state.duplicate(true)
-	p.points=int(p.points)-1
-	p.allocated[stat]=int(p.allocated.get(stat,0))+1
+	p.points=int(p.points)-quantity
+	p.allocated[stat]=int(p.allocated.get(stat,0))+quantity
 	return commit_change(prior,rng.state)
 
 func breakthrough(id: String) -> String:
@@ -282,13 +284,13 @@ func breakthrough(id: String) -> String:
 	var p=state.owned[id]
 	ensure_growth(p)
 	if int(p.level)<(int(p.realm)+1)*20: return "locked"
-	var cost=int(ceil(3*pow(float(p.realm)+1,1.4)))
+	var cost=Quotes.realm_cost(int(p.realm))
 	if int(state.inventory.get("RES-128",0))<cost: return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	state.inventory["RES-128"]=int(state.inventory["RES-128"])-cost
 	var fails=int(p.realm_failures)
-	var won=fails>=5 or rng.randf()<minf(1.0,0.65+0.08*fails)
+	var won=fails>=5 or rng.randf()<Quotes.realm_chance(fails)
 	if won:
 		p.realm=int(p.realm)+1
 		Passive.migrate(id,p)
@@ -299,6 +301,19 @@ func breakthrough(id: String) -> String:
 		p.realm_failures=fails+1
 	if not commit_change(prior,old_rng): return "error"
 	return "success" if won else "failure"
+
+# DEV targeted conversion only for owned versions, preserving draw pity and duplicate identity.
+func shard_exchange_cost(quantity: int) -> Dictionary:
+	return {"RES-134":quantity*2,"RES-001":quantity*200}
+
+func exchange_shards(id: String,quantity: int) -> bool:
+	if not state.owned.has(id) or quantity<1 or quantity>20 or Village.level(state,"BLD-001")<5 or Village.level(state,"BLD-009")<=0:return false
+	var cost=shard_exchange_cost(quantity)
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	state.owned[id].shards=int(state.owned[id].shards)+quantity
+	return commit_change(prior,rng.state)
 
 func raise_star(reg,id: String) -> bool:
 	if not state.owned.has(id): return false
@@ -340,17 +355,16 @@ func skill_book(reg,skill_id: String) -> String:
 		"genjutsu":return "RES-120"
 		_:return "RES-119"
 
-func upgrade_skill(reg,id: String,skill_id: String) -> bool:
-	if not skill_allowed(reg,id,skill_id) or not reg.skill_policies.has(skill_id):return false
+func upgrade_skill(reg,id: String,skill_id: String,limit: int=1) -> bool:
+	if not skill_allowed(reg,id,skill_id) or not reg.skill_policies.has(skill_id) or limit<1 or limit>20:return false
 	var p=state.owned[id]
 	var sk=skill_progress(p,skill_id)
-	if int(sk.level)>=20:return false
-	var cost=int(ceil(4*pow(float(sk.level),1.35)*(1+0.25*float(sk.grade))))
 	var resource=skill_book(reg,skill_id)
-	if int(state.inventory.get(resource,0))<cost:return false
+	var quote=Quotes.skill_batch(int(sk.level),int(sk.grade),int(state.inventory.get(resource,0)),limit)
+	if int(quote.count)==0:return false
 	var prior=state.duplicate(true)
-	state.inventory[resource]=int(state.inventory[resource])-cost
-	sk.level=int(sk.level)+1
+	debit({resource:quote.cost})
+	sk.level=int(sk.level)+int(quote.count)
 	p.skill_levels[skill_id]=sk
 	return commit_change(prior,rng.state)
 
@@ -359,12 +373,12 @@ func advance_skill(reg,id: String,skill_id: String) -> String:
 	var p=state.owned[id]
 	var sk=skill_progress(p,skill_id)
 	if int(sk.level)<20:return "locked"
-	var cost=int(ceil(5*pow(float(sk.grade),1.45)))
+	var cost=Quotes.advance_cost(int(sk.grade))
 	if int(state.inventory.get("RES-130",0))<cost:return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	state.inventory["RES-130"]=int(state.inventory["RES-130"])-cost
-	var won=int(sk.fails)>=4 or rng.randf()<maxf(0.1,0.75/(1+0.15*(float(sk.grade)-1)))
+	var won=int(sk.fails)>=4 or rng.randf()<Quotes.grade_chance(int(sk.grade),int(sk.fails))
 	if won:
 		sk.grade=int(sk.grade)+1
 		sk.level=1
@@ -395,12 +409,26 @@ func has_cost(cost: Dictionary) -> bool:
 func debit(cost: Dictionary) -> void:
 	for key in cost:state.inventory[key]=int(state.inventory.get(key,0))-int(cost[key])
 
-func craft_gear(reg,template_id: String) -> String:
+# DEV early-game alternative: only Q1, fixed quality, no high-tier forge bypass.
+func starter_gear_cost(reg,template_id: String) -> Dictionary:
+	if not reg.gear_templates.has(template_id) or int(reg.gear_templates[template_id].quality)!=1:return {}
+	var def=reg.gear_templates[template_id]
+	if def.craft.building_id=="BLD-017":return {"RES-001":180,"RES-006":3,"RES-011":2}
+	return {"RES-001":180,"RES-006":3,"RES-076":2}
+
+func craft_gear(reg,template_id: String,starter: bool=false) -> String:
 	if not reg.gear_templates.has(template_id):return ""
 	var def=reg.gear_templates[template_id]
-	if int(state.building_states.get(def.craft.building_id,{}).get("level",0))<=0:return ""
+	var building=str(def.craft.building_id)
 	var cost={}
-	for r in def.craft.inputs:cost[r.resource_id]=int(cost.get(r.resource_id,0))+int(r.qty)
+	if starter:
+		if Village.level(state,"BLD-001")<2 or Village.level(state,"BLD-002")<1:return ""
+		cost=starter_gear_cost(reg,template_id)
+		if cost.is_empty():return ""
+		building="BLD-002"
+	else:
+		if Village.level(state,building)<=0:return ""
+		for r in def.craft.inputs:cost[r.resource_id]=int(cost.get(r.resource_id,0))+int(r.qty)
 	if not has_cost(cost):return ""
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
@@ -408,8 +436,8 @@ func craft_gear(reg,template_id: String) -> String:
 	state.gear_seq=int(state.gear_seq)+1
 	var id="GEAR-"+str(state.gear_seq)
 	Content.bump(state,"craft_item")
-	var profession_level=Village.worker_level(state,str(def.craft.building_id))
-	var quality=clampi(floori(1+0.04*profession_level+0.5*float(def.quality)+2*Village.trait_bonus(state,str(def.craft.building_id),"quality")+rng.randf_range(0,1.5)),1,8)
+	var profession_level=0 if starter else Village.worker_level(state,building)
+	var quality=1 if starter else clampi(floori(1+0.04*profession_level+0.5*float(def.quality)+2*Village.trait_bonus(state,building,"quality")+rng.randf_range(0,1.5)),1,8)
 	var affixes=[]
 	var pool=reg.affix_pools[def.affix_pool].duplicate()
 	for i in range(mini(int(def.affix_slots),pool.size())):
@@ -441,13 +469,12 @@ func enhance_gear(gear_id: String,protect: bool=false) -> String:
 	var gear=state.gear_instances[gear_id]
 	var n=int(gear.enhance)
 	var stones=int(ceil(1+float(n)/5))
-	var cost={"RES-001":int(ceil(20*pow(1+n,1.65))),"RES-113":stones}
-	if protect:cost["RES-115"]=1
+	var cost=Quotes.enhancement_cost(n,protect)
 	if not has_cost(cost):return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	debit(cost)
-	var won=int(gear.fails)>=20 or rng.randf()<minf(1.0,maxf(0.05,0.95/(1+0.055*n))+0.05*int(gear.fails))
+	var won=int(gear.fails)>=20 or rng.randf()<Quotes.enhancement_chance(n,int(gear.fails))
 	if won:
 		gear.enhance=n+1
 		gear.fails=0
@@ -516,7 +543,7 @@ func socket_gear(reg,gear_id: String,resource: String,remove: bool=false) -> boo
 	if remove:
 		if not resource in gear.gems:return false
 		gear.gems.erase(resource)
-		state.inventory[resource]=int(state.inventory.get(resource,0))+1
+		Rewards.deliver(state,resource,1)
 	else:
 		if gear.gems.size()>=mini(4,floori(float(gear.quality)/2)) or int(state.inventory.get(resource,0))<1:return false
 		state.inventory[resource]=int(state.inventory[resource])-1
@@ -616,9 +643,9 @@ func assign_job(reg,ninja: String,id: String,profession: String) -> bool:
 	if not Village.assign(reg,state,ninja,id,profession):return false
 	return commit_change(prior,rng.state)
 
-func production(reg,id: String,recipe: String,repeat: bool) -> bool:
+func production(reg,id: String,recipe: String,repeat: bool,batches: int=1) -> bool:
 	var prior=state.duplicate(true)
-	if not Village.queue_recipe(reg,state,id,recipe,repeat):return false
+	if not Village.queue_recipe(reg,state,id,recipe,repeat,batches):return false
 	return commit_change(prior,rng.state)
 
 func cancel_production(id: String) -> bool:
@@ -640,6 +667,12 @@ func trade_resource(reg,id: String,resource: String,qty: int,buy: bool) -> bool:
 	var prior=state.duplicate(true)
 	if not World.trade(reg,state,id,resource,qty,buy):return false
 	Content.bump(state,"trade")
+	return commit_change(prior,rng.state)
+
+func harvest_territory(reg,territory: String,resource: String) -> bool:
+	var prior=state.duplicate(true)
+	if not World.harvest(reg,state,territory,resource):return false
+	Content.bump(state,"collect_production")
 	return commit_change(prior,rng.state)
 
 func capture_territory(reg,id: String) -> bool:
@@ -669,53 +702,63 @@ func start_mission(reg,id: String,resource: String,repeat: bool=false) -> bool:
 	if not Content.start_mission(reg,state,id,resource,repeat):return false
 	return commit_change(prior,rng.state)
 
-func resource_trial(reg,id: String,resource: String) -> bool:
+func resource_trial_ready(reg,id: String,resource: String) -> bool:
 	if not state.owned.has(id):return false
 	var source=Content.source_for(reg,resource)
 	if source.is_empty() or not source.source_type in ["trial","bloodline_trial"]:return false
-	if int(state.building_states[source.building_id].level)<=0 or int(state.building_states["BLD-001"].level)<int(source.source_min_hq):return false
+	return Village.level(state,str(source.building_id))>0 and Village.level(state,"BLD-001")>=int(source.source_min_hq) and int(state.source_cooldowns.get(id+":"+resource,0))<=int(state.simulation_seconds)
+
+func resource_trial(reg,id: String,resource: String) -> bool:
+	if not resource_trial_ready(reg,id,resource):return false
+	var source=Content.source_for(reg,resource)
 	var now=int(state.simulation_seconds)
 	var key=id+":"+resource
-	if int(state.source_cooldowns.get(key,0))>now:return false
 	var p=state.owned[id]
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	var won=duel(reg,id,maxi(1,int(p.realm)*20+1),rng.randi())
 	state.source_cooldowns[key]=now+int(source.period_seconds)
-	if won and not Village.put(state,resource,int(source.base_yield)):
-		state=prior
-		rng.state=old_rng
-		return false
+	if won:Rewards.deliver(state,resource,int(source.base_yield))
 	if not commit_change(prior,old_rng):return false
 	return won
 
-func native_bloodline(reg,id: String,bloodline: String) -> bool:
-	if not state.owned.has(id) or not reg.bloodlines.has(bloodline):return false
+func native_bloodline_quote(reg,id: String,bloodline: String) -> Dictionary:
+	if not state.owned.has(id) or not native_bloodline_allowed(reg,id,bloodline):return {}
 	var p=state.owned[id]
 	var def=reg.bloodlines[bloodline]
-	# Native affinity is derived only from the authored template; implants/Rinnegan remain held.
-	if not native_bloodline_allowed(reg,id,bloodline):return false
 	var current=int(p.bloodline_levels.get(bloodline,0))
-	if current>=int(def.progression.tier_max) or int(p.realm)<int(def.native_unlock.realm):return false
+	var conflict=false
 	if current==0:
 		for other in p.bloodline_levels:
-			if reg.bloodlines[other].exclusive_group==def.exclusive_group:return false
+			if reg.bloodlines[other].exclusive_group==def.exclusive_group:conflict=true
 	var qty=int(def.native_unlock.resource_qty) if current==0 else ceili(10*pow(float(current),1.6))
 	var cost={str(def.resource_id):qty}
-	if not has_cost(cost):return false
+	return {"current":current,"max":int(def.progression.tier_max),"realm":int(def.native_unlock.realm),"resource":str(def.resource_id),"qty":qty,"cost":cost,"conflict":conflict,"ready":current<int(def.progression.tier_max) and int(p.realm)>=int(def.native_unlock.realm) and not conflict and has_cost(cost)}
+
+func native_bloodline(reg,id: String,bloodline: String) -> bool:
+	var quote=native_bloodline_quote(reg,id,bloodline)
+	if quote.is_empty() or not quote.ready:return false
 	var prior=state.duplicate(true)
-	debit(cost)
-	p.bloodline_levels[bloodline]=current+1
+	debit(quote.cost)
+	state.owned[id].bloodline_levels[bloodline]=int(quote.current)+1
 	return commit_change(prior,rng.state)
 
-func capture_beast(reg,id: String,beast_id: String) -> bool:
+
+func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
 	if not state.owned.has(id) or not reg.beasts.has(beast_id) or state.beasts.has(beast_id):return false
+	var req=reg.beasts[beast_id].capture_requires
+	return int(state.owned[id].realm)>=int(req.realm) and Village.level(state,"BLD-027")>0 and has_cost({str(req.seal_resource):int(req.seal_qty)})
+
+func beast_bind_ready(reg,id: String,beast_id: String) -> bool:
+	if not state.owned.has(id) or not state.beasts.has(beast_id) or not reg.beasts.has(beast_id):return false
+	return id in reg.beasts[beast_id].compatibility.preferred_host_ids and str(state.owned[id].beast_id)=="" and str(state.beasts[beast_id].host)=="" and has_cost({"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)})
+
+func capture_beast(reg,id: String,beast_id: String) -> bool:
+	if not beast_capture_ready(reg,id,beast_id):return false
 	var p=state.owned[id]
 	var def=reg.beasts[beast_id]
 	var req=def.capture_requires
-	if int(p.realm)<int(req.realm) or int(state.building_states["BLD-027"].level)<=0:return false
 	var cost={str(req.seal_resource):int(req.seal_qty)}
-	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	debit(cost)
@@ -735,18 +778,14 @@ func capture_beast(reg,id: String,beast_id: String) -> bool:
 	if won:
 		state.beasts[beast_id]={"host":"","level":1,"xp":0}
 		for reward in def.capture_reward:
-			if not Village.put(state,reward.resource_id,int(reward.qty)):
-				state=prior
-				rng.state=old_rng
-				return false
+			Rewards.deliver(state,str(reward.resource_id),int(reward.qty))
 	if not commit_change(prior,old_rng):return false
 	return won
 
 func bind_beast(reg,id: String,beast_id: String) -> bool:
-	if not state.owned.has(id) or not state.beasts.has(beast_id):return false
+	if not beast_bind_ready(reg,id,beast_id):return false
 	var p=state.owned[id]
 	var beast=state.beasts[beast_id]
-	if not id in reg.beasts[beast_id].compatibility.preferred_host_ids or str(p.beast_id)!="" or str(beast.host)!="":return false
 	var prior=state.duplicate(true)
 	var cost={"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)}
 	if not has_cost(cost):return false
@@ -755,14 +794,14 @@ func bind_beast(reg,id: String,beast_id: String) -> bool:
 	p.beast_id=beast_id
 	return commit_change(prior,rng.state)
 
-func train_beast(reg,beast_id: String) -> bool:
-	if not state.beasts.has(beast_id):return false
+func train_beast(reg,beast_id: String,quantity: int=1) -> bool:
+	if not state.beasts.has(beast_id) or quantity<1 or quantity>100:return false
 	var b=state.beasts[beast_id]
 	var resource=str(reg.beasts[beast_id].training_resource)
-	if int(state.inventory.get(resource,0))<1:return false
+	if int(state.inventory.get(resource,0))<quantity:return false
 	var prior=state.duplicate(true)
-	debit({resource:1})
-	b.xp=int(b.xp)+100
+	debit({resource:quantity})
+	b.xp=int(b.xp)+100*quantity
 	while int(b.xp)>=ceili(100*pow(float(b.level),1.6)):
 		b.xp=int(b.xp)-ceili(100*pow(float(b.level),1.6))
 		b.level=int(b.level)+1
@@ -788,14 +827,21 @@ func assign_contract(id: String,ninja: String) -> bool:
 	p.summon_contract=id
 	return commit_change(prior,rng.state)
 
-func train_contract(id: String) -> bool:
-	if not state.summon_contracts.has(id):return false
+func contract_training_cost(id: String,quantity: int=1) -> int:
+	if not state.summon_contracts.has(id) or quantity<1 or quantity>20:return 0
+	var total=0
+	var level=int(state.summon_contracts[id].level)
+	for n in range(level,level+quantity):total+=ceili(30*pow(float(n),1.5))
+	return total
+
+func train_contract(id: String,quantity: int=1) -> bool:
+	if not state.summon_contracts.has(id) or quantity<1 or quantity>20:return false
 	var c=state.summon_contracts[id]
-	var cost={"RES-001":ceili(30*pow(float(c.level),1.5))}
+	var cost={"RES-001":contract_training_cost(id,quantity)}
 	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
 	debit(cost)
-	c.level=int(c.level)+1
+	c.level=int(c.level)+quantity
 	return commit_change(prior,rng.state)
 
 func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
@@ -820,6 +866,15 @@ func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
 func export_save() -> String:
 	return JSON.stringify(state,"\t")
 
+func recover_interrupted(reg) -> bool:
+	var changed=false
+	for event in state.ledger.values():
+		if event is Dictionary and event.get("status")=="started" and reg.stages.has(event.get("stage_id","")):
+			state.stamina=mini(120,int(state.stamina)+int(reg.stages[event.stage_id].stamina_cost))
+			event.status="interrupted"
+			changed=true
+	return changed
+
 func import_save(reg,raw: String) -> bool:
 	if raw.length()>8000000:return false
 	var data=JSON.parse_string(raw)
@@ -828,6 +883,7 @@ func import_save(reg,raw: String) -> bool:
 	if int(data.get("high_water_timestamp",0))<int(state.get("high_water_timestamp",0)):return false
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
+	var old_seed=rng.seed
 	state=data
 	ensure_account(reg)
 	for id in state.owned:
@@ -835,7 +891,11 @@ func import_save(reg,raw: String) -> bool:
 		Passive.migrate(id,state.owned[id])
 	rng.seed=int(str(state.rng_seed))
 	rng.state=int(str(state.rng_state))
-	return commit_change(prior,old_rng)
+	recover_interrupted(reg)
+	if commit_change(prior,old_rng):return true
+	rng.seed=old_seed
+	rng.state=old_rng
+	return false
 
 func stop_mission(id: String) -> bool:
 	if not state.missions.has(id):return false
@@ -890,23 +950,29 @@ func training_quote(id: String,stat: String) -> Dictionary:
 	var current=float(p.get("training",{}).get(stat,0))
 	return {"building":row[0],"resource":row[1],"ryo":ceili(80*pow(1+current,1.35)),"qty":ceili(1+current/10.0)}
 
-func train_stat(reg,id: String,stat: String) -> bool:
-	if not state.owned.has(id):return false
+func train_stat(reg,id: String,stat: String,limit: int=1) -> bool:
+	if not state.owned.has(id) or limit<1 or limit>20:return false
 	var quote=training_quote(id,stat)
 	if quote.is_empty() or Village.level(state,quote.building)<=0:return false
-	var cost={"RES-001":quote.ryo,str(quote.resource):quote.qty}
-	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
 	var p=state.owned[id]
-	var stats=Stats.derive(reg,reg.ninjas[id],p)
-	debit(cost)
-	if not p.has("training"):p.training={}
-	p.training[stat]=float(p.training.get(stat,0))+1+Stats.effect(reg,stats,"training_speed")*0.5+Stats.effect(reg,stats,"absorption")*0.5
-	Content.bump(state,"train_ninja")
+	var done=0
+	for i in range(limit):
+		quote=training_quote(id,stat)
+		var cost={"RES-001":quote.ryo,str(quote.resource):quote.qty}
+		if not has_cost(cost):break
+		var stats=Stats.derive(reg,reg.ninjas[id],p)
+		debit(cost)
+		if not p.has("training"):p.training={}
+		p.training[stat]=float(p.training.get(stat,0))+1+Stats.effect(reg,stats,"training_speed")*0.5+Stats.effect(reg,stats,"absorption")*0.5
+		done+=1
+	if done==0:return false
+	Content.bump(state,"train_ninja",done)
 	return commit_change(prior,rng.state)
 
 func buy_training_scrolls(resource: String,quantity: int) -> bool:
-	if Village.level(state,"BLD-001")<2 or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>10:return false
+	var limit=100 if Village.level(state,"BLD-001")>=5 else 10
+	if Village.level(state,"BLD-001")<2 or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>limit:return false
 	var cost={"RES-001":quantity*(120 if resource=="RES-116" else 600)}
 	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
@@ -946,12 +1012,7 @@ func native_bloodline_allowed(reg,id: String,bloodline: String) -> bool:
 	return def.required_family_for_native!=null and n.family_hint==def.required_family_for_native
 
 func grant_reward(id: String,qty: int) -> void:
-	var available=maxi(0,Village.capacity(state,id)-int(state.inventory.get(id,0)))
-	var take=mini(qty,available)
-	state.inventory[id]=int(state.inventory.get(id,0))+take
-	if take<qty:
-		if not state.has("reward_inbox"):state.reward_inbox={}
-		state.reward_inbox[id]=int(state.reward_inbox.get(id,0))+qty-take
+	Rewards.deliver(state,id,qty)
 
 func collect_reward_inbox(id: String) -> bool:
 	var qty=int(state.get("reward_inbox",{}).get(id,0))
@@ -962,6 +1023,31 @@ func collect_reward_inbox(id: String) -> bool:
 	state.inventory[id]=int(state.inventory.get(id,0))+take
 	state.reward_inbox[id]=qty-take
 	if int(state.reward_inbox[id])==0:state.reward_inbox.erase(id)
+	return commit_change(prior,rng.state)
+
+# BALANCE-P1 optional daily merchant order, DEV; never auto-spend or sell scarce resources.
+func merchant_quote(reg,id: String) -> Dictionary:
+	if not reg.resources.has(id) or not reg.resources[id].tradable or Village.level(state,"BLD-021")<=0:return {}
+	var eligible=false
+	for source in reg.supply:
+		if source.resource_id==id and source.source_type in ["farm","herb_garden","chakra_spring","territory"]:eligible=true;break
+	if not eligible:return {}
+	var day=Content.day(state)
+	var orders=state.get("merchant_orders",{})
+	var used=int(orders.get("used",0)) if int(orders.get("day",-1))==day else 0
+	var cap=Village.capacity(state,id)
+	var stock=int(state.inventory.get(id,0))
+	var qty=mini(maxi(0,stock-ceili(cap*0.8)),ceili(cap*0.1))
+	var unit=maxi(1,floori(float(reg.resources[id].base_price_ryo)*0.55))
+	return {"day":day,"used":used,"qty":qty,"unit":unit,"total":qty*unit,"ready":used<3 and qty>0 and int(state.inventory.get("RES-001",0))+qty*unit<=Village.capacity(state,"RES-001")}
+
+func fulfill_merchant_order(reg,id: String) -> bool:
+	var q=merchant_quote(reg,id)
+	if q.is_empty() or not q.ready:return false
+	var prior=state.duplicate(true)
+	debit({id:int(q.qty)})
+	state.inventory["RES-001"]=int(state.inventory.get("RES-001",0))+int(q.total)
+	state.merchant_orders={"day":int(q.day),"used":int(q.used)+1}
 	return commit_change(prior,rng.state)
 
 func sell_surplus(reg,id: String,qty: int) -> bool:
@@ -998,32 +1084,34 @@ func set_squad_formation(reg,key: String,formation_id: String,slot: int=-1,ninja
 func passive_allowed(reg,id: String,key: String) -> bool:
 	return state.owned.has(id) and reg.passives.has(key) and reg.passives[key].ninja_id==id and int(state.owned[id].realm)>=int(reg.passives[key].unlock.realm)
 
-func upgrade_passive(reg,id: String,key: String) -> bool:
-	if not passive_allowed(reg,id,key):return false
+func passive_spend_allowed(reg,id: String,key: String) -> bool:
+	return passive_allowed(reg,id,key) and reg.passive_ledger.get(key,"")=="DEV_CANDIDATE" and reg.synergy_gaps.get(key,"")!="FORM_ZERO_PAYLOAD_REVIEW"
+
+func upgrade_passive(reg,id: String,key: String,limit: int=1) -> bool:
+	if not passive_spend_allowed(reg,id,key) or limit<1 or limit>20:return false
 	var p=state.owned[id]
 	var sk=Passive.progress(p,key)
-	if int(sk.level)>=20:return false
-	var cost=ceili(2*pow(float(sk.level),1.35)*(1+0.25*float(sk.grade)))
 	var resource=reg.passives[key].progression.book
-	if int(state.inventory.get(resource,0))<cost:return false
+	var quote=Quotes.skill_batch(int(sk.level),int(sk.grade),int(state.inventory.get(resource,0)),limit,true)
+	if int(quote.count)==0:return false
 	var prior=state.duplicate(true)
 	Passive.migrate(id,p)
-	state.inventory[resource]=int(state.inventory[resource])-cost
-	sk.level=int(sk.level)+1
+	debit({resource:quote.cost})
+	sk.level=int(sk.level)+int(quote.count)
 	p.passive_progress[key]=sk
 	return commit_change(prior,rng.state)
 
 func advance_passive(reg,id: String,key: String) -> String:
-	if not passive_allowed(reg,id,key):return "locked"
+	if not passive_spend_allowed(reg,id,key):return "locked"
 	var p=state.owned[id]
 	var sk=Passive.progress(p,key)
-	var cost=ceili(3*pow(float(sk.grade),1.45))
+	var cost=Quotes.advance_cost(int(sk.grade),true)
 	if int(sk.level)<20 or int(state.inventory.get("RES-130",0))<cost:return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	Passive.migrate(id,p)
 	state.inventory["RES-130"]=int(state.inventory["RES-130"])-cost
-	var won=int(sk.fails)>=4 or rng.randf()<maxf(0.10,0.75/(1+0.15*(float(sk.grade)-1)))
+	var won=int(sk.fails)>=4 or rng.randf()<Quotes.grade_chance(int(sk.grade),int(sk.fails))
 	if won:
 		sk.grade=int(sk.grade)+1
 		sk.level=1
@@ -1034,7 +1122,7 @@ func advance_passive(reg,id: String,key: String) -> String:
 	return "success" if won else "failure"
 
 func branch_passive(reg,id: String,key: String,branch_id: String) -> bool:
-	if not passive_allowed(reg,id,key):return false
+	if not passive_spend_allowed(reg,id,key):return false
 	var p=state.owned[id]
 	var sk=Passive.progress(p,key)
 	if not str(sk.branch).is_empty():return false

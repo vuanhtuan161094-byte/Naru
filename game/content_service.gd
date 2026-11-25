@@ -1,4 +1,5 @@
 extends RefCounted
+const Rewards=preload("res://game/world_rewards.gd")
 static func ensure(s: Dictionary) -> void:
 	for key in ["quest_claimed","daily_counts","beasts","summon_contracts","missions","source_cooldowns"]:
 		if not s.has(key):s[key]={}
@@ -42,10 +43,7 @@ static func claim(reg,s: Dictionary,id: String) -> bool:
 	if s.quest_claimed.has(key) or objective(reg,s,q)<int(q.objective.count):return false
 	var reward={}
 	for item in q.reward:reward[item.resource_id]=int(reward.get(item.resource_id,0))+int(item.qty)
-	for resource in reward:
-		if resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:continue
-		if int(s.inventory.get(resource,0))+int(reward[resource])>10000+5000*int(s.building_states["BLD-020"].level):return false
-	for resource in reward:s.inventory[resource]=int(s.inventory.get(resource,0))+int(reward[resource])
+	for resource in reward:Rewards.deliver(s,resource,int(reward[resource]))
 	s.quest_claimed[key]=true
 	return true
 
@@ -67,7 +65,7 @@ static func step(s: Dictionary,dt: int) -> void:
 		mission.remaining=maxi(0,int(mission.remaining)-dt)
 		if int(mission.remaining)>0:continue
 		var resource=str(mission.resource)
-		if not resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"] and int(s.inventory.get(resource,0))+int(mission.qty)>10000+5000*int(s.building_states["BLD-020"].level):continue
+		if int(s.inventory.get(resource,0))+int(mission.qty)>Rewards.capacity(s,resource):continue
 		s.inventory[resource]=int(s.inventory.get(resource,0))+int(mission.qty)
 		if mission.get("repeat",false):mission.remaining=maxi(1,int(mission.period))
 		else:s.missions.erase(ninja)

@@ -1,5 +1,6 @@
 extends RefCounted
 const Content=preload("res://game/content_service.gd")
+const Rewards=preload("res://game/world_rewards.gd")
 const World=preload("res://game/world_service.gd")
 static func ensure(reg,s: Dictionary) -> void:
 	if not s.has("building_states"):
@@ -35,8 +36,7 @@ static func debit(s: Dictionary,cost: Dictionary) -> void:
 	for id in cost:s.inventory[id]=int(s.inventory.get(id,0))-int(cost[id])
 
 static func capacity(s: Dictionary,id: String) -> int:
-	if id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:return 9000000000000
-	return 10000+5000*level(s,"BLD-020")
+	return Rewards.capacity(s,id)
 
 static func put(s: Dictionary,id: String,qty: int) -> bool:
 	if int(s.inventory.get(id,0))+qty>capacity(s,id):return false
@@ -115,12 +115,12 @@ static func reserve(s: Dictionary,job: Dictionary,recipe: Dictionary) -> bool:
 	job.remaining=maxi(1,ceili(float(recipe.duration_s)/(1+trait_bonus(s,id,"speed"))))
 	return true
 
-static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: bool) -> bool:
-	if not reg.recipes.has(recipe_id) or not reg.buildings.has(id):return false
+static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: bool,batches: int=1) -> bool:
+	if not reg.recipes.has(recipe_id) or not reg.buildings.has(id) or batches<1 or batches>20:return false
 	var recipe=reg.recipes[recipe_id]
 	var b=s.building_states[id]
 	if recipe.building_id!=id or int(b.level)<int(recipe.min_building_level) or not b.production.is_empty() or worker_level(s,id)==0:return false
-	var job={"recipe":recipe_id,"repeat":repeat,"reserved":{},"remaining":0}
+	var job={"recipe":recipe_id,"repeat":repeat,"reserved":{},"remaining":0,"batches_left":batches}
 	if not reserve(s,job,recipe) and not repeat:return false
 	b.production=job
 	return true
@@ -128,9 +128,7 @@ static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: 
 static func cancel(s: Dictionary,id: String) -> bool:
 	if not s.building_states.has(id) or s.building_states[id].production.is_empty():return false
 	var job=s.building_states[id].production
-	for resource in job.reserved:
-		if int(s.inventory.get(resource,0))+int(job.reserved[resource])>capacity(s,resource):return false
-	for resource in job.reserved:put(s,resource,int(job.reserved[resource]))
+	for resource in job.reserved:Rewards.deliver(s,resource,int(job.reserved[resource]))
 	s.building_states[id].production={}
 	return true
 
@@ -154,7 +152,10 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		s.craft_count=int(s.craft_count)+1
 		Content.bump(s,"craft_item")
 		job.reserved={}
-		if not job.repeat:b.production={}
+		if not job.repeat:
+			job.batches_left=int(job.get("batches_left",1))-1
+			if int(job.batches_left)<=0:b.production={}
+			else:reserve(s,job,recipe)
 		else:reserve(s,job,recipe)
 	# Compute territorial resource access once per tick, rather than once per source.
 	var owned_resources={}
@@ -170,7 +171,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		var resource_id=str(source.resource_id)
 		var elapsed=int(s.supply_clock.get(resource_id,0))+dt
 		var period=maxi(1,ceili(float(source.period_seconds)/(1+trait_bonus(s,id,"speed"))))
-		if elapsed>=period:
+		while elapsed>=period:
 			var b=s.building_states[id]
 			var qty=maxi(1,floori(float(source.base_yield)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))
 			if put(s,resource_id,qty):
@@ -178,7 +179,9 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 				s.production_count=int(s.production_count)+1
 				Content.bump(s,"collect_production")
 				elapsed-=period
-			else:elapsed=period
+			else:
+				elapsed=period
+				break
 		s.supply_clock[resource_id]=elapsed
 	if int(s.stamina)>=120:s.stamina_seconds=0
 	else:

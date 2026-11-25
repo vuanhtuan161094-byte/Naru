@@ -116,21 +116,32 @@ static func diplomacy(reg,s: Dictionary,id: String,action: String) -> bool:
 		_:return false
 	return true
 
-static func price(reg,s: Dictionary,id: String,resource: String,buy: bool) -> int:
-	var stock=int(s.faction_states[id].stock.get(resource,0))
+static func price_at_stock(reg,s: Dictionary,id: String,resource: String,buy: bool,stock: int) -> int:
 	var r=relation(s,PLAYER,id)
 	var factor=pow(clampf(251.0/(stock+1),0.5,3.0),0.35)*clampf(1.0-0.002*int(r.score),0.8,1.2)
 	return maxi(1,ceili(float(reg.resources[resource].base_price_ryo)*factor*1.1) if buy else floori(float(reg.resources[resource].base_price_ryo)*factor*0.9))
+
+static func quote_trade(reg,s: Dictionary,id: String,resource: String,qty: int,buy: bool) -> int:
+	if qty<1 or qty>100:return 0
+	var stock=int(s.faction_states[id].stock.get(resource,0))
+	var total=0
+	for i in range(qty):
+		# Price each unit at the same stock boundary in both directions.
+		total+=price_at_stock(reg,s,id,resource,buy,maxi(0,stock-i if buy else stock+i+1))
+	return total
+
+static func price(reg,s: Dictionary,id: String,resource: String,buy: bool) -> int:
+	return quote_trade(reg,s,id,resource,1,buy)
 
 static func trade(reg,s: Dictionary,id: String,resource: String,qty: int,buy: bool) -> bool:
 	if not reg.factions.has(id) or id==PLAYER or not reg.resources.has(resource) or resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"] or qty<=0 or qty>100:return false
 	if not bool(reg.resources[resource].tradable):return false
 	var r=relation(s,PLAYER,id)
 	if r.state=="war" or int(r.score)<-30:return false
-	if s.territory_states[s.world_location].owner!=id and r.state!="trade" and r.state!="allied":return false
+	if (not s.travel.is_empty() or s.territory_states[s.world_location].owner!=id) and r.state!="trade" and r.state!="allied":return false
 	var stock=s.faction_states[id].stock
-	# Price per unit against pre-trade stock; use a single unit transaction in UI.
-	var amount=price(reg,s,id,resource,buy)*qty
+	# Marginal prices prevent profit from reversing a bulk trade at the same faction.
+	var amount=quote_trade(reg,s,id,resource,qty,buy)
 	var capacity=10000+5000*int(s.building_states["BLD-020"].level)
 	if buy:
 		if int(stock.get(resource,0))<qty or int(s.inventory.get("RES-001",0))<amount or int(s.inventory.get(resource,0))+qty>capacity:return false
@@ -182,17 +193,71 @@ static func resolve_team(reg,s: Dictionary,player_team: Array,enemy_team: Array,
 static func capture(reg,s: Dictionary,id: String) -> bool:
 	return capture_with(reg,s,id,s.team,s.world_location,s.travel)
 
-static func capture_with(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> bool:
-	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed or location!=id or not travel.is_empty() or roster.is_empty():return false
-	var state=s.territory_states[id]
-	if not state.discovered or state.owner==PLAYER:return false
+# DEV supplementary territory harvest: only authored tradable recipe outputs,
+# one unit per 600 simulation seconds per owned territory/resource, same workshop and worker gate.
+# Raw direct supply and special/HOLD resources are excluded; no recipe-chain shortcut before unlocking its tier.
+static func harvest_quote(reg,s: Dictionary,territory: String,resource: String) -> Dictionary:
+	if not reg.territories.has(territory) or not reg.resources.has(resource) or not reg.resources[resource].tradable:return {}
+	if s.territory_states[territory].owner!=PLAYER:return {}
+	var listed=false
+	for row in reg.territories[territory].resources:
+		if row.resource_id==resource:listed=true
+	if not listed:return {}
+	for source in reg.supply:
+		if source.resource_id==resource:return {}
+	for recipe in reg.recipes.values():
+		if recipe.output.resource_id!=resource:continue
+		var building=str(recipe.building_id)
+		var crew=false
+		for job in s.jobs.values():
+			if job.building==building:crew=true;break
+		var remaining=maxi(0,int(s.source_cooldowns.get("territory:"+territory+":"+resource,0))-int(s.simulation_seconds))
+		return {"building":building,"level":int(recipe.min_building_level),"remaining":remaining,"ready":int(s.building_states[building].level)>=int(recipe.min_building_level) and crew and remaining==0}
+	return {}
+
+static func harvest(reg,s: Dictionary,territory: String,resource: String) -> bool:
+	var q=harvest_quote(reg,s,territory,resource)
+	if q.is_empty() or not q.ready:return false
+	var capacity=10000+5000*int(s.building_states["BLD-020"].level)
+	if int(s.inventory.get(resource,0))>=capacity:return false
+	s.inventory[resource]=int(s.inventory.get(resource,0))+1
+	s.source_cooldowns["territory:"+territory+":"+resource]=int(s.simulation_seconds)+600
+	note(s,"Khai thác "+territory+" • "+resource)
+	return true
+
+static func frontier(reg,s: Dictionary,location: String) -> Array:
+	var out=[]
+	for id in reg.territories:
+		if id==HOME or not reg.territories[id].capture_allowed or s.territory_states[id].owner==PLAYER:continue
+		var border=false
+		for edge in edges(reg,id):
+			if s.territory_states[edge.to].owner==PLAYER:border=true;break
+		if not border:continue
+		var route=path(reg,s,location,id)
+		if route.is_empty():continue
+		out.append({"id":id,"seconds":int(route.seconds),"owner":s.territory_states[id].owner})
+	out.sort_custom(func(a,b):return int(a.seconds)<int(b.seconds))
+	return out
+
+static func capture_reason(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> String:
+	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed:return "Lãnh địa được bảo hộ"
+	if location!=id or not travel.is_empty():return "Đội chưa đến"
+	if roster.is_empty():return "Chưa có đội"
+	var target=s.territory_states[id]
+	if not target.discovered:return "Chưa khám phá"
+	if target.owner==PLAYER:return "Đã sở hữu"
 	var border=false
 	for edge in edges(reg,id):
 		if s.territory_states[edge.to].owner==PLAYER:border=true
-	if not border:return false
+	if not border:return "Không giáp lãnh địa của bạn"
+	if target.owner!=null and relation(s,PLAYER,str(target.owner)).state!="war":return "Cần tuyên chiến"
+	return ""
+
+static func capture_with(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> bool:
+	if capture_reason(reg,s,id,roster,location,travel)!="":return false
+	var state=s.territory_states[id]
 	var owner=state.owner
 	if owner!=null:
-		if relation(s,PLAYER,owner).state!="war":return false
 		# Sequential defense teams; each battle uses new actors/full recovery.
 		for team in reg.factions[owner].teams:
 			var level=maxi(1,floori(float(reg.territories[id].defense_rating)/80.0)+int(s.faction_states[owner].infrastructure.training)-1)

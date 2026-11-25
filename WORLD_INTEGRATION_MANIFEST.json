@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "common_ancestor": "28f25de5c70f996eeb4241926c7dcde09bed7068",
+  "world_review_parent": "741eafcb5a5ac73ea89bdbbc8aa47ca44d16277e",
+  "gameplay": "61152d8f2f31762274f6735da8ebe0d54f8f2bbe",
+  "design": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+  "art": "4230302e6a1ff38efe44e91c30c0c7a124a9b620",
+  "main_world_only": [
+    "growth_screen",
+    "growth_detail",
+    "campaign",
+    "skill_screen",
+    "gear_craft_screen",
+    "gear_detail",
+    "awakening_screen",
+    "building_screen",
+    "frontier_screen",
+    "world_screen",
+    "faction_screen",
+    "mission_detail",
+    "beast_detail",
+    "contract_detail",
+    "bloodline_screen",
+    "squad_detail",
+    "ninja_gear_screen",
+    "craft_screen",
+    "resource_detail",
+    "training_screen",
+    "gear_material_screen"
+  ],
+  "main_gameplay_only": [
+    "__preamble",
+    "_ready",
+    "battle_view",
+    "draw_field",
+    "_process",
+    "finish",
+    "settings_screen",
+    "start_art_review",
+    "scroll_battle_visibility",
+    "inspect_battle_input",
+    "update_battle_inspector"
+  ],
+  "main_overlap": [
+    "passive_screen"
+  ],
+  "shared_notes": [
+    "Preserve Chat01 passive pilot selection/tooltip, integrate Chat03 cost quotes/bulk UI; underlying spend gate stays authored ledger, no HOLD bypass.",
+    "WorldQuotes and ResourceGuide constants must be retained; inspect placement in world source (not only preamble).",
+    "Art branch diverged at 86f784ec251712ae780f7fc555bf2ca89ff074a0; integrate selected approved manifest/adapter only, do not merge whole old art branch.",
+    "No merge performed; repeat compare at actual integration HEAD."
+  ],
+  "acceptance": {
+    "P4B": "PASS",
+    "P5A": "organic 54/120, 104/150, 14 settled/63, 16 queued, 104 ninja, 11 contracts, 42 gear, 0 beast attempts; final Chromium/artifact pending at audit",
+    "P5B": "transaction fixtures step PASS; 45-day integrity PASS, detailed log pending",
+    "P5R": "CI pending"
+  }
+}
