@@ -141,6 +141,7 @@ func growth_detail(id: String,message: String="") -> void:
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
 	button(nav,"Nhẫn thuật",func():skill_screen(id))
+	button(nav,"Thức tỉnh",func():awakening_screen(id))
 	button(nav,"Trở về",growth_screen)
 
 func campaign() -> void:
@@ -186,6 +187,8 @@ func start_battle(stage: Dictionary) -> void:
 		var a=sim.actors[i]
 		var b=button(row,str(reg.ninjas[a.id].name_vi).split(" (")[0],func(): sim.ultimate(i))
 		ult_buttons.append(b)
+		for form_id in a.forms:
+			if reg.form_rules[form_id].activation!="skill_trigger":button(row,"Biến thân",func():sim.activate_form(a,form_id,true))
 	log_label=label(root,"",16)
 	button(root,"Rút lui",func():finish(false))
 
@@ -233,7 +236,7 @@ func _process(delta: float) -> void:
 
 func finish(won: bool) -> void:
 	if sim==null:return
-	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts)
+	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts)
 	menu(("Chiến thắng" if won else "Thất bại / rút lui")+" • "+("Đã lưu kết quả" if ok else "Lỗi lưu kết quả"))
 
 func skill_screen(id: String,message: String="") -> void:
@@ -254,7 +257,9 @@ func skill_screen(id: String,message: String="") -> void:
 		var name_label=label(row,"%s | Giai %d cấp %d" % [reg.names[skill_id].name_vi,int(sk.grade),int(sk.level)],18)
 		name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		if not store.skill_allowed(reg,id,skill_id):
-			label(row,"Chưa mở: cần thử thách",16)
+			var trial_id=str(reg.names[skill_id].unlock_require.challenge_id)
+			var trial_button=button(row,"Thử thách mở khóa",func():skill_screen(id,"Đã mở" if store.run_trial(reg,id,trial_id) else "Chưa thắng hoặc chưa đủ điều kiện"))
+			trial_button.disabled=not store.trial_ready(reg,id,trial_id)
 		elif reg.skill_policies.has(skill_id):
 			button(row,"Tăng cấp",func():skill_screen(id,"Đã tăng cấp" if store.upgrade_skill(reg,id,skill_id) else "Thiếu sách hoặc đủ cấp"))
 			button(row,"Tiến giai",func():skill_screen(id,{"success":"Thành công","failure":"Thất bại, tăng bảo hiểm","locked":"Chưa đủ điều kiện","error":"Lỗi lưu"}[store.advance_skill(reg,id,skill_id)]))
@@ -326,3 +331,16 @@ func gear_detail(id: String,message: String="") -> void:
 		rows.add_child(gems)
 		button(gems,"Khảm "+resource+" ("+str(store.state.inventory.get(resource,0))+")",func():gear_detail(id,"Đã khảm" if store.socket_gear(reg,id,resource) else "Thiếu đá hoặc ô trống"))
 		if resource in g.gems:button(gems,"Tháo "+resource,func():gear_detail(id,"Đã tháo" if store.socket_gear(reg,id,resource,true) else "Lỗi"))
+
+func awakening_screen(id: String,message: String="") -> void:
+	clear()
+	var p=store.state.owned[id]
+	label(root,"THỨC TỈNH • "+str(reg.ninjas[id].name_vi),30)
+	label(root,"Phẩm %s | Thành thạo %d | Thiên phú %s" % [p.quality,store.total_mastery(p),p.get("talent","")],18)
+	label(root,message,18)
+	button(root,"Thử thách phẩm chất",func():awakening_screen(id,"Thắng thử thách" if store.quality_trial(reg,id) else "Chưa đủ điều kiện hoặc chưa thắng"))
+	button(root,"Tiến hóa phẩm chất",func():awakening_screen(id,"Đã tiến hóa" if store.evolve_quality(reg,id) else "Chưa đủ điều kiện"))
+	for form_id in reg.ninjas[id].form_ids:
+		var b=button(root,str(reg.forms[form_id].name_vi)+" • mở khóa",func():awakening_screen(id,"Đã mở hình thái" if store.unlock_form(reg,id,form_id) else "Chưa đủ cảnh giới hoặc tinh hoa"))
+		b.disabled=form_id in p.forms
+	button(root,"Trở về",func():growth_detail(id))

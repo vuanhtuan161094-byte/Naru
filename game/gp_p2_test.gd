@@ -110,4 +110,18 @@ func _initialize() -> void:
 	persisted.save_path=store.save_path
 	persisted.load_or_new(reg)
 	check(persisted.state.gear_instances[gear_id].owner=="NIN-001","gear reload")
+	check(equipped.actors[0].stats.size()==48,"48 typed stats")
+	check(not store.unlock_form(reg,"NIN-001","NIN-001-F1"),"form realm gate")
+	p.realm=3
+	store.state.inventory["RES-127"]=20
+	check(store.unlock_form(reg,"NIN-001","NIN-001-F1"),"unlock form transaction")
+	var form_sim=Combat.new()
+	form_sim.setup(reg,store.state,stage,42)
+	var actor=form_sim.actors[0]
+	actor.chakra=100
+	check(form_sim.activate_form(actor,"NIN-001-F1",true),"manual form activation")
+	check(actor.chakra==65 and form_sim.form_multiplier(actor,"patk")>1,"form chakra and multiplier")
+	check(not form_sim.activate_form(actor,"NIN-001-F1",true),"no form stacking")
+	check(not store.trial_ready(reg,"NIN-001","CHALLENGE-NIN-001-1"),"trial mastery gate")
+	check(not store.evolve_quality(reg,"NIN-001"),"quality trial gate")
 	quit(0 if failures==0 else 1)

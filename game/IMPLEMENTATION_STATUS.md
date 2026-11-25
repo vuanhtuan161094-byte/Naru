@@ -6,3 +6,5 @@ AI utility, projectile delay, line/circle targeting, damage hit/crit/affinity, t
 
 ## GP-P3A progression and equipment foundations
 Skill level 1–20, D4 grade chance/guarantee, branch selection, typed effect multiplier and area modifier applied at runtime. Proposed book resource by damage type (RES-118/119/120); basic skill does not have grade policy. Additional skills remain locked pending real trials. Gear registry 128 templates, craft requires correct existing workshop, unique ownership, equip/unequip, enhancement pity, protective material, refine/evolve, socket/remove, combat base-stat modifiers. Workshop construction is not yet implemented, so gear crafting is gated in normal play; CI uses explicit fixture. Gear affixes/set bonuses, profession-based quality, all stat formulas, quality evolution trials, forms and advanced skill unlock remain pending. Existing save schema extended without reset. No exports, no merge.
+
+GP-P3B partial: 48 typed formulas (no eval), talent migration, mastery, gated trial/quality/form transactions and runtime forms. Duel is auto only, no reward for unresolved. Not all 48 effects wired. QA pending. No merge.

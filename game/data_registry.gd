@@ -7,6 +7,10 @@ var npcs: Dictionary = {}
 var recruit: Dictionary = {}
 var initial: Dictionary = {}
 var growth: Dictionary = {}
+var stat_rules: Dictionary = {}
+var trials: Dictionary = {}
+var forms: Dictionary = {}
+var form_rules: Dictionary = {}
 var status_catalog: Dictionary = {}
 var reactions: Array = []
 var affinity: Dictionary = {}
@@ -55,6 +59,11 @@ func load_all() -> bool:
 	var g = read_json("res://data/d4/ninja_growth.json")
 	if g is Dictionary: growth = g
 	if growth.get("stars",[]).size()!=14: errors.append("Missing star rules")
+	stat_rules=indexed("res://data/stat_formulas.json","stat_id")
+	trials=indexed("res://data/personal_trials.json")
+	forms=indexed("res://data/ninja_forms.json")
+	form_rules=indexed("res://data/d4/form_contracts.json","form_id")
+	if stat_rules.size()!=48 or trials.size()!=288 or form_rules.size()!=54: errors.append("Missing growth definitions")
 	status_catalog=indexed("res://data/d4/status_catalog.json")
 	var reaction_data=read_json("res://data/d4/reactions.json")
 	if reaction_data is Array: reactions=reaction_data

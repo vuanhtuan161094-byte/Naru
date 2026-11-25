@@ -1,4 +1,5 @@
 extends RefCounted
+const Combat=preload("res://game/combat.gd")
 const PATH = "user://naru_save_v1.json"
 var state: Dictionary = {}
 var rng = RandomNumberGenerator.new()
@@ -22,6 +23,7 @@ func load_or_new(reg) -> void:
 				ensure_account(reg)
 				for id in state.owned:
 					ensure_growth(state.owned[id])
+					if not state.owned[id].has("talent"):state.owned[id].talent=reg.growth.talents[int(str(id).right(3))%reg.growth.talents.size()].id
 				rng.seed=int(str(d.rng_seed))
 				rng.state=int(str(d.rng_state))
 				return
@@ -49,6 +51,7 @@ func grant(reg,id: String) -> void:
 	else:
 		state.owned[id]={"level":1,"xp":0,"realm":0,"quality":reg.ninjas[id].initial_quality,"stars":1,"shards":0,"mastery":{},"permanent":{}}
 		ensure_growth(state.owned[id])
+		state.owned[id].talent=reg.growth.talents[rng.randi_range(0,reg.growth.talents.size()-1)].id
 
 func draw(reg) -> String:
 	var currency = str(reg.recruit.price.currency)
@@ -98,7 +101,7 @@ func begin_stage(stage: Dictionary) -> String:
 		return ""
 	return id
 
-func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary) -> bool:
+func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary,mastery_counts: Dictionary={}) -> bool:
 	var entry=state.ledger.get(event_id)
 	if not entry is Dictionary or entry.get("status")!="started" or entry.get("stage_id")!=stage.id: return false
 	var prior=state.duplicate(true)
@@ -115,6 +118,8 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 			var actions=int(action_counts.get(id,0))
 			# Permanent action growth requires difficulty and anti-farm gates; deferred.
 			if actions>0: p.battle_actions=int(p.get("battle_actions",0))+actions
+			for skill_id in mastery_counts:
+				if skill_allowed(reg,id,skill_id):p.skill_mastery[skill_id]=int(p.skill_mastery.get(skill_id,0))+int(mastery_counts[skill_id])
 	if not save_now():
 		state=prior
 		return false
@@ -364,4 +369,81 @@ func socket_gear(reg,gear_id: String,resource: String,remove: bool=false) -> boo
 		if gear.gems.size()>=mini(4,floori(float(gear.quality)/2)) or int(state.inventory.get(resource,0))<1:return false
 		state.inventory[resource]=int(state.inventory[resource])-1
 		gear.gems.append(resource)
+	return commit_change(prior,rng.state)
+
+func total_mastery(p: Dictionary) -> int:
+	var total=0
+	for value in p.skill_mastery.values():total+=int(value)
+	return total
+
+func unlock_form(reg,id: String,form_id: String) -> bool:
+	if not state.owned.has(id) or not reg.forms.has(form_id):return false
+	var p=state.owned[id]
+	var def=reg.forms[form_id]
+	if def.ninja_id!=id or form_id in p.forms or int(p.realm)<int(def.unlock_realm):return false
+	var cost={str(def.require_resource):int(def.resource_count)}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	p.forms.append(form_id)
+	return commit_change(prior,rng.state)
+
+func trial_ready(reg,id: String,trial_id: String) -> bool:
+	if not state.owned.has(id) or not reg.trials.has(trial_id):return false
+	var trial=reg.trials[trial_id]
+	var p=state.owned[id]
+	var req=reg.names[trial.skill_id].unlock_require
+	return trial.ninja_id==id and not trial.skill_id in p.unlocked_skills and int(p.realm)>=int(trial.requires_realm) and int(p.skill_mastery.get(req.prior_skill_id,0))>=int(req.mastery) and int(skill_progress(p,req.prior_skill_id).grade)>=int(req.grade)
+
+func duel(reg,id: String,level: int,seed_value: int) -> bool:
+	var p=state.owned[id]
+	var sim=Combat.new()
+	sim.registry=reg
+	sim.rng.seed=seed_value
+	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
+	sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},0,1.0)
+	for i in range(24000):
+		sim.tick(0.05)
+		if sim.outcome!="":return sim.outcome=="win"
+		if sim.deadlock:return false
+	return false
+
+func run_trial(reg,id: String,trial_id: String) -> bool:
+	if not trial_ready(reg,id,trial_id):return false
+	var p=state.owned[id]
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	var won=duel(reg,id,maxi(1,int(p.realm)*20+10),rng.randi())
+	if won:p.unlocked_skills.append(reg.trials[trial_id].skill_id)
+	if not commit_change(prior,old_rng):return false
+	return won
+
+func quality_trial(reg,id: String) -> bool:
+	if not state.owned.has(id):return false
+	var p=state.owned[id]
+	var tier=int(p.quality)
+	if tier>=8:return false
+	var rule=reg.growth.quality_upgrade_steps[tier-1]
+	if int(p.realm)<int(rule.min_realm) or total_mastery(p)<int(rule.min_mastery) or p.quality_trials.has(str(tier)):return false
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	var won=duel(reg,id,int(p.realm)*20+1,rng.randi())
+	if won:p.quality_trials[str(tier)]=true
+	if not commit_change(prior,old_rng):return false
+	return won
+
+func evolve_quality(reg,id: String) -> bool:
+	if not state.owned.has(id):return false
+	var p=state.owned[id]
+	var tier=int(p.quality)
+	if tier>=8:return false
+	var rule=reg.growth.quality_upgrade_steps[tier-1]
+	if int(p.realm)<int(rule.min_realm) or total_mastery(p)<int(rule.min_mastery) or not p.quality_trials.has(str(tier)) or int(p.shards)<int(rule.shards):return false
+	var cost={}
+	for r in rule.resources:cost[r.resource_id]=int(r.qty)
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	p.shards=int(p.shards)-int(rule.shards)
+	p.quality=tier+1
 	return commit_change(prior,rng.state)
