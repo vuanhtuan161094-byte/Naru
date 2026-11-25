@@ -47,3 +47,5 @@ D2 private visual adapter, actual combat event feedback and one-game local 6v6 r
 D3 NPC economy/war, progression, authored native affinities, reward overflow, surplus sale, lifetime quest counters, capture/raid fixture and Web art import. Pending CI.
 
 D2+D3 correction: review import backup and test preload.
+
+D3-Fix: correct raid frontier setup, peace/war guard, organic campaign sample. CI pending.

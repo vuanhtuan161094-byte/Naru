@@ -197,7 +197,7 @@ static func adjacent(reg,s: Dictionary,owner: String,other: String) -> bool:
 	return false
 
 static func raid(reg,s: Dictionary,id: String) -> bool:
-	if int(s.raid_protection)>0 or not adjacent(reg,s,id,PLAYER):return false
+	if not reg.factions.has(id) or id==PLAYER or relation(s,id,PLAYER).state!="war" or int(s.raid_protection)>0 or not adjacent(reg,s,id,PLAYER):return false
 	var teams=reg.factions[id].teams
 	if teams.is_empty():return false
 	var defenders=s.home_defense.duplicate()

@@ -459,7 +459,11 @@ func _initialize() -> void:
 	check(d3.travel_to(reg,"TER-057"),"real adjacent neutral travel")
 	d3.advance_clock(reg,clock_mark+200)
 	check(d3.capture_territory(reg,"TER-057") and d3.state.territory_states["TER-057"].owner=="FAC-009","real neutral capture")
-	var raid_faction=str(d3.state.territory_states["TER-005"].owner)
+	var raid_faction="FAC-001"
+	# Seed a hostile border after the neutral-capture path; initial neighboring TER-005 is neutral.
+	d3.state.territory_states["TER-005"].owner=raid_faction
+	check(not ws.raid(reg,d3.state,raid_faction),"peaceful border raid forbidden")
+	check(d3.diplomatic_action(reg,raid_faction,"war"),"war declaration before raid")
 	var protected_ngoc=int(d3.state.inventory["RES-002"])
 	var old_ryo=int(d3.state.inventory["RES-001"])
 	check(ws.raid(reg,d3.state,raid_faction),"adjacent NPC raid")
@@ -475,4 +479,39 @@ func _initialize() -> void:
 	check(art_scene.import_text(JSON.stringify(art_pack),false) and art_scene.count_characters()==1,"review art PNG hash and texture load")
 	entry_art.sha256="bad"
 	check(not art_scene.import_text(JSON.stringify(art_pack),false) and art_scene.count_characters()==1,"review art bad hash rejected atomically")
+	var natural=Store.new()
+	natural.save_path="user://gp_natural_ch1_ci.json"
+	natural.new_game(reg)
+	natural.rng.seed=42
+	natural.setup_starter_jobs(reg)
+	natural.construct(reg,"BLD-001")
+	natural.advance_clock(reg,int(natural.state.high_water_timestamp)+3600)
+	for draw_id in range(10):natural.draw(reg)
+	var natural_team=natural.state.owned.keys()
+	natural_team.sort_custom(func(x,y):return int(natural.state.owned[x].quality)>int(natural.state.owned[y].quality))
+	natural_team.resize(mini(6,natural_team.size()))
+	natural.set_team(natural_team)
+	# Spend actual starter funds/earned resources. No granted material or inflated stats.
+	for id in natural_team:
+		natural.buy_training_scrolls("RES-117",2)
+		natural.train_batch(reg,id,"RES-117",2)
+		natural.train_batch(reg,id,"RES-116",5)
+	var chapter_wins=0
+	for index in range(1,6):
+		var stage_def=reg.stages["STG-%03d" % index]
+		var stage_event=natural.begin_stage(stage_def)
+		if stage_event=="":break
+		var battle_natural=Combat.new()
+		battle_natural.setup(reg,natural.state,stage_def,42+index)
+		for step_natural in range(3600):
+			for i in range(natural_team.size()):battle_natural.ultimate(i)
+			battle_natural.tick(0.05)
+			if battle_natural.outcome!="":break
+		var won_natural=battle_natural.outcome=="win"
+		natural.finish_stage(reg,stage_def,stage_event,won_natural,battle_natural.counts,battle_natural.mastery_counts,battle_natural.action_stats)
+		print("NARU_NATURAL_STAGE ",stage_def.id," ",battle_natural.outcome)
+		if not won_natural:break
+		chapter_wins+=1
+	print("NARU_NATURAL_CHAPTER_WINS ",chapter_wins,"/5")
+	check(chapter_wins>=3,"natural starter progression at least 3 stages")
 	quit(0 if failures==0 else 1)
