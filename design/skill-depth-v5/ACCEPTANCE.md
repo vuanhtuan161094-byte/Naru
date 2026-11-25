@@ -1,0 +1,2 @@
+# V5 gates
+Design deliverables: 144/144 profiles; 3456 solo and 288 team analytic cases; 35 targeted gaps; 54 routes; 146 manual ult IDs; 12 combo contracts + 126 synthetic predicate tests; 1152 art reference IDs. Runtime NOT_RUN; owner must approve proposed values and explicit-intent policy. V4 gates R1-R10 stay open until Chat01 validates exact SHA. 4 absent organic combos not cleared by synthetic fixtures. No actual win-rate/DPS result, no canon upgrade. New AI proposal and targeted cases require replay. Source 250 gate retained. Do not merge.
