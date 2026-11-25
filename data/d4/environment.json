@@ -1,0 +1,41 @@
+[
+  {
+    "id": "clear",
+    "modifiers": {}
+  },
+  {
+    "id": "rain",
+    "modifiers": {
+      "fire": 0.9,
+      "lightning": 1.1,
+      "water": 1.1
+    }
+  },
+  {
+    "id": "forest",
+    "modifiers": {
+      "wood": 1.1,
+      "fire": 1.05
+    }
+  },
+  {
+    "id": "desert",
+    "modifiers": {
+      "water": 0.9,
+      "wind": 1.1
+    }
+  },
+  {
+    "id": "snow",
+    "modifiers": {
+      "ice": 1.1,
+      "fire": 0.95
+    }
+  },
+  {
+    "id": "cave",
+    "modifiers": {
+      "earth": 1.1
+    }
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "amplify_fire",
+    "elements": [
+      "fire",
+      "wind"
+    ],
+    "requires_overlap": true,
+    "cooldown_s": 2,
+    "max_chain": 1,
+    "multiplier": 1.25,
+    "status_id": null,
+    "once_per_cast_pair": true
+  },
+  {
+    "id": "conduct",
+    "elements": [
+      "water",
+      "lightning"
+    ],
+    "requires_overlap": true,
+    "cooldown_s": 2,
+    "max_chain": 1,
+    "multiplier": 1.2,
+    "status_id": "shock",
+    "once_per_cast_pair": true
+  },
+  {
+    "id": "freeze",
+    "elements": [
+      "water",
+      "ice"
+    ],
+    "requires_overlap": true,
+    "cooldown_s": 2,
+    "max_chain": 1,
+    "multiplier": 1,
+    "status_id": "freeze",
+    "once_per_cast_pair": true
+  },
+  {
+    "id": "mud",
+    "elements": [
+      "earth",
+      "water"
+    ],
+    "requires_overlap": true,
+    "cooldown_s": 2,
+    "max_chain": 1,
+    "multiplier": 1,
+    "status_id": "mud",
+    "once_per_cast_pair": true
+  },
+  {
+    "id": "steam",
+    "elements": [
+      "fire",
+      "water"
+    ],
+    "requires_overlap": true,
+    "cooldown_s": 2,
+    "max_chain": 1,
+    "multiplier": 1,
+    "status_id": "steam",
+    "once_per_cast_pair": true
+  },
+  {
+    "id": "break_earth_shield",
+    "elements": [
+      "earth",
+      "lightning"
+    ],
+    "requires_overlap": true,
+    "cooldown_s": 2,
+    "max_chain": 1,
+    "multiplier": 1.2,
+    "status_id": null,
+    "once_per_cast_pair": true
+  },
+  {
+    "id": "spread",
+    "elements": [
+      "wind",
+      "poison"
+    ],
+    "requires_overlap": true,
+    "cooldown_s": 2,
+    "max_chain": 1,
+    "multiplier": 1,
+    "status_id": "poison",
+    "once_per_cast_pair": true
+  }
+]
