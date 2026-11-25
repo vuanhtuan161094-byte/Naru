@@ -1,0 +1,872 @@
+[
+  {
+    "resource_id": "RES-001",
+    "source_type": "mission",
+    "building_id": "BLD-011",
+    "source_min_hq": 1,
+    "base_yield": 24,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-002",
+    "source_type": "mission",
+    "building_id": "BLD-022",
+    "source_min_hq": 1,
+    "base_yield": 23,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-003",
+    "source_type": "mission",
+    "building_id": "BLD-022",
+    "source_min_hq": 1,
+    "base_yield": 22,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-004",
+    "source_type": "mission",
+    "building_id": "BLD-022",
+    "source_min_hq": 1,
+    "base_yield": 21,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-005",
+    "source_type": "mission",
+    "building_id": "BLD-022",
+    "source_min_hq": 1,
+    "base_yield": 20,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-006",
+    "source_type": "territory",
+    "building_id": "BLD-015",
+    "source_min_hq": 1,
+    "base_yield": 19,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-007",
+    "source_type": "territory",
+    "building_id": "BLD-015",
+    "source_min_hq": 1,
+    "base_yield": 18,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-008",
+    "source_type": "territory",
+    "building_id": "BLD-015",
+    "source_min_hq": 1,
+    "base_yield": 18,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-009",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 17,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-010",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 17,
+    "period_seconds": 300,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-011",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 16,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-012",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 15,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-013",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 15,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-014",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 15,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-015",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 14,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-016",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 14,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-017",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 13,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-018",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 13,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-019",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 13,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-020",
+    "source_type": "territory",
+    "building_id": "BLD-014",
+    "source_min_hq": 1,
+    "base_yield": 12,
+    "period_seconds": 360,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-021",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 12,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-022",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 12,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-023",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 11,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-024",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 11,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-025",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 11,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-026",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 11,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-027",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 10,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-028",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 10,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-029",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 10,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-030",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 10,
+    "period_seconds": 420,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-031",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 10,
+    "period_seconds": 480,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-032",
+    "source_type": "farm",
+    "building_id": "BLD-012",
+    "source_min_hq": 1,
+    "base_yield": 9,
+    "period_seconds": 480,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-036",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 9,
+    "period_seconds": 480,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-037",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 9,
+    "period_seconds": 480,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-038",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 480,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-039",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 480,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-040",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 480,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-041",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-042",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-043",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-044",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-045",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 8,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-046",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-047",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-048",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-049",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-050",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 540,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-051",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 600,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-052",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 600,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-053",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 600,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-054",
+    "source_type": "herb_garden",
+    "building_id": "BLD-013",
+    "source_min_hq": 1,
+    "base_yield": 7,
+    "period_seconds": 600,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-076",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 1,
+    "base_yield": 5,
+    "period_seconds": 720,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-077",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 2,
+    "base_yield": 5,
+    "period_seconds": 720,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-078",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 2,
+    "base_yield": 5,
+    "period_seconds": 720,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-079",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 2,
+    "base_yield": 5,
+    "period_seconds": 720,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-080",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 2,
+    "base_yield": 5,
+    "period_seconds": 720,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-081",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 2,
+    "base_yield": 5,
+    "period_seconds": 780,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-082",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 2,
+    "base_yield": 5,
+    "period_seconds": 780,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-083",
+    "source_type": "chakra_spring",
+    "building_id": "BLD-016",
+    "source_min_hq": 2,
+    "base_yield": 5,
+    "period_seconds": 780,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-116",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 4,
+    "period_seconds": 960,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-118",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 4,
+    "period_seconds": 960,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-119",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 3,
+    "period_seconds": 960,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-120",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 3,
+    "period_seconds": 960,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-121",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-122",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-123",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-124",
+    "source_type": "mission_or_library",
+    "building_id": "BLD-002",
+    "source_min_hq": 2,
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-126",
+    "source_type": "trial",
+    "building_id": "BLD-009",
+    "source_min_hq": 3,
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-128",
+    "source_type": "trial",
+    "building_id": "BLD-009",
+    "source_min_hq": 3,
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-130",
+    "source_type": "trial",
+    "building_id": "BLD-009",
+    "source_min_hq": 3,
+    "base_yield": 3,
+    "period_seconds": 1020,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-131",
+    "source_type": "trial",
+    "building_id": "BLD-009",
+    "source_min_hq": 3,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-132",
+    "source_type": "trial",
+    "building_id": "BLD-009",
+    "source_min_hq": 3,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-134",
+    "source_type": "trial",
+    "building_id": "BLD-009",
+    "source_min_hq": 3,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-136",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-137",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-138",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-139",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-140",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1080,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-141",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-142",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-143",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-144",
+    "source_type": "bloodline_trial",
+    "building_id": "BLD-008",
+    "source_min_hq": 5,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-146",
+    "source_type": "boss_or_contract",
+    "building_id": "BLD-027",
+    "source_min_hq": 8,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-147",
+    "source_type": "boss_or_contract",
+    "building_id": "BLD-027",
+    "source_min_hq": 8,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-148",
+    "source_type": "boss_or_contract",
+    "building_id": "BLD-027",
+    "source_min_hq": 8,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-149",
+    "source_type": "boss_or_contract",
+    "building_id": "BLD-027",
+    "source_min_hq": 8,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  },
+  {
+    "resource_id": "RES-150",
+    "source_type": "boss_or_contract",
+    "building_id": "BLD-027",
+    "source_min_hq": 8,
+    "base_yield": 3,
+    "period_seconds": 1140,
+    "repeatable": true,
+    "status": "PROPOSED_SOURCE_CLASS"
+  }
+]

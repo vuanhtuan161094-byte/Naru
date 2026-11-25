@@ -1,0 +1,217 @@
+{
+  "status": "PROPOSED",
+  "bloodline": [
+    {
+      "id": "BL-137",
+      "name_vi": "Sharingan",
+      "required_family_for_native": "uchiha",
+      "resource_id": "RES-137",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "implant": {
+        "realm": 6,
+        "compatibility_resource": "RES-144",
+        "qty": 20,
+        "seal_resource": "RES-145",
+        "seal_qty": 3,
+        "requires_trial": true,
+        "forbidden_in_story_reenactment": true
+      },
+      "progression": {
+        "tier_max": 5,
+        "cost": "ceil(10*tier^1.6)",
+        "stats": [
+          "accuracy",
+          "genjutsu_power"
+        ],
+        "bonus": "1+0.05*tier"
+      },
+      "exclusive_group": "ocular",
+      "status": "PROPOSED_SANDBOX_RULE"
+    },
+    {
+      "id": "BL-138",
+      "name_vi": "Byakugan",
+      "required_family_for_native": "hyuga",
+      "resource_id": "RES-138",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "implant": {
+        "realm": 6,
+        "compatibility_resource": "RES-144",
+        "qty": 20,
+        "seal_resource": "RES-145",
+        "seal_qty": 3,
+        "requires_trial": true,
+        "forbidden_in_story_reenactment": true
+      },
+      "progression": {
+        "tier_max": 5,
+        "cost": "ceil(10*tier^1.6)",
+        "stats": [
+          "accuracy",
+          "armor_pen"
+        ],
+        "bonus": "1+0.05*tier"
+      },
+      "exclusive_group": "ocular",
+      "status": "PROPOSED_SANDBOX_RULE"
+    },
+    {
+      "id": "BL-139",
+      "name_vi": "Rinnegan",
+      "required_family_for_native": "uchiha",
+      "resource_id": "RES-139",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "implant": {
+        "realm": 6,
+        "compatibility_resource": "RES-144",
+        "qty": 20,
+        "seal_resource": "RES-145",
+        "seal_qty": 3,
+        "requires_trial": true,
+        "forbidden_in_story_reenactment": true
+      },
+      "progression": {
+        "tier_max": 5,
+        "cost": "ceil(10*tier^1.6)",
+        "stats": [
+          "natk",
+          "genjutsu_power"
+        ],
+        "bonus": "1+0.05*tier"
+      },
+      "exclusive_group": "ocular",
+      "status": "PROPOSED_SANDBOX_RULE"
+    },
+    {
+      "id": "BL-140",
+      "name_vi": "Mộc Độn",
+      "required_family_for_native": "senju",
+      "resource_id": "RES-140",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "implant": {
+        "realm": 6,
+        "compatibility_resource": "RES-144",
+        "qty": 20,
+        "seal_resource": "RES-145",
+        "seal_qty": 3,
+        "requires_trial": true,
+        "forbidden_in_story_reenactment": true
+      },
+      "progression": {
+        "tier_max": 5,
+        "cost": "ceil(10*tier^1.6)",
+        "stats": [
+          "natk",
+          "hp"
+        ],
+        "bonus": "1+0.05*tier"
+      },
+      "exclusive_group": "body_bloodline",
+      "status": "PROPOSED_SANDBOX_RULE"
+    },
+    {
+      "id": "BL-141",
+      "name_vi": "Băng Độn",
+      "required_family_for_native": null,
+      "resource_id": "RES-141",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "implant": {
+        "realm": 6,
+        "compatibility_resource": "RES-144",
+        "qty": 20,
+        "seal_resource": "RES-145",
+        "seal_qty": 3,
+        "requires_trial": true,
+        "forbidden_in_story_reenactment": true
+      },
+      "progression": {
+        "tier_max": 5,
+        "cost": "ceil(10*tier^1.6)",
+        "stats": [
+          "natk",
+          "control_duration"
+        ],
+        "bonus": "1+0.05*tier"
+      },
+      "exclusive_group": "body_bloodline",
+      "status": "PROPOSED_SANDBOX_RULE"
+    },
+    {
+      "id": "BL-142",
+      "name_vi": "Dung Độn",
+      "required_family_for_native": null,
+      "resource_id": "RES-142",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "implant": {
+        "realm": 6,
+        "compatibility_resource": "RES-144",
+        "qty": 20,
+        "seal_resource": "RES-145",
+        "seal_qty": 3,
+        "requires_trial": true,
+        "forbidden_in_story_reenactment": true
+      },
+      "progression": {
+        "tier_max": 5,
+        "cost": "ceil(10*tier^1.6)",
+        "stats": [
+          "natk",
+          "element_power"
+        ],
+        "bonus": "1+0.05*tier"
+      },
+      "exclusive_group": "body_bloodline",
+      "status": "PROPOSED_SANDBOX_RULE"
+    },
+    {
+      "id": "BL-143",
+      "name_vi": "Trần Độn",
+      "required_family_for_native": null,
+      "resource_id": "RES-143",
+      "native_unlock": {
+        "realm": 3,
+        "resource_qty": 10
+      },
+      "implant": {
+        "realm": 6,
+        "compatibility_resource": "RES-144",
+        "qty": 20,
+        "seal_resource": "RES-145",
+        "seal_qty": 3,
+        "requires_trial": true,
+        "forbidden_in_story_reenactment": true
+      },
+      "progression": {
+        "tier_max": 5,
+        "cost": "ceil(10*tier^1.6)",
+        "stats": [
+          "natk",
+          "magic_pen"
+        ],
+        "bonus": "1+0.05*tier"
+      },
+      "exclusive_group": "body_bloodline",
+      "status": "PROPOSED_SANDBOX_RULE"
+    }
+  ],
+  "eye_slots": 2,
+  "implant_rules": "only authored compatibility; no automatic conversion of clan or canon identity; no stacking multiple powers in one slot; Rinnegan requirements need specific review"
+}

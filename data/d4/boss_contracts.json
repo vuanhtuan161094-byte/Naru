@@ -1,0 +1,722 @@
+[
+  {
+    "boss_id": "BOSS-001",
+    "stage_id": "STG-005",
+    "ninja_template_id": "NIN-004",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-004-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-004-S5"
+      }
+    ],
+    "mechanic_label": "bell_test",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-002",
+    "stage_id": "STG-010",
+    "ninja_template_id": "NIN-027",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-027-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-027-S5"
+      }
+    ],
+    "mechanic_label": "mist_and_water_clone",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-003",
+    "stage_id": "STG-015",
+    "ninja_template_id": "NIN-024",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-024-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-024-S5"
+      }
+    ],
+    "mechanic_label": "sand_shield",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-004",
+    "stage_id": "STG-020",
+    "ninja_template_id": "NIN-022",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-022-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-022-S5"
+      }
+    ],
+    "mechanic_label": "snake_summon",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-005",
+    "stage_id": "STG-025",
+    "ninja_template_id": "NIN-023",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-023-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-023-S5"
+      }
+    ],
+    "mechanic_label": "medical_counter",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-006",
+    "stage_id": "STG-030",
+    "ninja_template_id": "NIN-002",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-002-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-002-S5"
+      }
+    ],
+    "mechanic_label": "curse_mark",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-007",
+    "stage_id": "STG-035",
+    "ninja_template_id": "NIN-063",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-063-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-063-S5"
+      }
+    ],
+    "mechanic_label": "iron_sand_puppets",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-008",
+    "stage_id": "STG-040",
+    "ninja_template_id": "NIN-023",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-023-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-023-S5"
+      }
+    ],
+    "mechanic_label": "chakra_scalpel",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-009",
+    "stage_id": "STG-045",
+    "ninja_template_id": "NIN-065",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-065-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-065-S5"
+      }
+    ],
+    "mechanic_label": "multiple_mask_phases",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-010",
+    "stage_id": "STG-050",
+    "ninja_template_id": "NIN-060",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-060-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-060-S5"
+      }
+    ],
+    "mechanic_label": "illusion_susanoo",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-011",
+    "stage_id": "STG-055",
+    "ninja_template_id": "NIN-067",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-067-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-067-S5"
+      }
+    ],
+    "mechanic_label": "gravity_push_pull",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-012",
+    "stage_id": "STG-060",
+    "ninja_template_id": "NIN-091",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-091-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-091-S5"
+      }
+    ],
+    "mechanic_label": "wind_and_izanagi",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-013",
+    "stage_id": "STG-065",
+    "ninja_template_id": "NIN-076",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-076-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-076-S5"
+      }
+    ],
+    "mechanic_label": "bijuu_training",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-014",
+    "stage_id": "STG-070",
+    "ninja_template_id": "NIN-105",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-105-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-105-S5"
+      }
+    ],
+    "mechanic_label": "reanimated_jinchuriki",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-015",
+    "stage_id": "STG-075",
+    "ninja_template_id": "NIN-069",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-069-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-069-S5"
+      }
+    ],
+    "mechanic_label": "space_time_evade",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-016",
+    "stage_id": "STG-080",
+    "ninja_template_id": "NIN-099",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-099-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-099-S5"
+      }
+    ],
+    "mechanic_label": "dimension_shift",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-017",
+    "stage_id": "STG-085",
+    "ninja_template_id": "NIN-042",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-042-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-042-S5"
+      }
+    ],
+    "mechanic_label": "chidori_rasengan_duel",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-018",
+    "stage_id": "STG-090",
+    "ninja_template_id": "NIN-113",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-113-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-113-S5"
+      }
+    ],
+    "mechanic_label": "sage_training",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-019",
+    "stage_id": "STG-095",
+    "ninja_template_id": "NIN-122",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-122-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-122-S5"
+      }
+    ],
+    "mechanic_label": "nue_summon",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-020",
+    "stage_id": "STG-100",
+    "ninja_template_id": "NIN-130",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-130-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-130-S5"
+      }
+    ],
+    "mechanic_label": "absorb_and_return",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-021",
+    "stage_id": "STG-105",
+    "ninja_template_id": "NIN-135",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-135-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-135-S5"
+      }
+    ],
+    "mechanic_label": "poison_regeneration",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-022",
+    "stage_id": "STG-110",
+    "ninja_template_id": "NIN-132",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-132-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-132-S5"
+      }
+    ],
+    "mechanic_label": "size_shift",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-023",
+    "stage_id": "STG-115",
+    "ninja_template_id": "NIN-134",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-134-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-134-S5"
+      }
+    ],
+    "mechanic_label": "claw_mark_teleport",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  },
+  {
+    "boss_id": "BOSS-024",
+    "stage_id": "STG-120",
+    "ninja_template_id": "NIN-132",
+    "phases": [
+      {
+        "hp_at_or_below": 0.7,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 20,
+          "defense_multiplier": 1.12,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-132-S1"
+      },
+      {
+        "hp_at_or_below": 0.35,
+        "once": true,
+        "modifier": {
+          "chakra_restore": 45,
+          "attack_multiplier": 1.18,
+          "duration_s": 8
+        },
+        "priority_skill_id": "NIN-132-S5"
+      }
+    ],
+    "mechanic_label": "rotating_affix",
+    "enemy_ultimate_policy": "AI fires eligible ultimate on boss phase; never force cast if locked or on cooldown",
+    "status": "PROPOSED_PHASE_TEMPLATE_NOT_UNIQUE_MECHANIC_IMPLEMENTED"
+  }
+]
