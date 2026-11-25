@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "all_ids": true,
+    "trainable": true,
+    "basic": true,
+    "linear": true,
+    "branch": true,
+    "extra_unlocks": true,
+    "monotonic": true,
+    "all_profiles": true,
+    "branch_ids": true,
+    "stars_no_double": true
+  },
+  "counts": {
+    "skills": 1152,
+    "trainable": 1008,
+    "basic": 144,
+    "linear": 792,
+    "branch": 216,
+    "extra_unlocks": 288,
+    "profiles": {
+      "basic": 144,
+      "summon": 56,
+      "damage": 478,
+      "control": 122,
+      "resource": 50,
+      "wall": 17,
+      "stance": 131,
+      "shield": 54,
+      "heal": 16,
+      "form": 41,
+      "utility": 43
+    }
+  },
+  "runtime": "NOT_RUN",
+  "status": "DRAFT_REVIEW"
+}

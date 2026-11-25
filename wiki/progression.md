@@ -130,3 +130,6 @@ S0 đánh thường; S1–4 tự động; S5 tuyệt kỹ người chơi bấm, 
 | EX | 3 | 0.50% |
 
 Xác suất nền không tính bảo hiểm. Không tiền thật; trùng ID thành mảnh, giữ bộ đếm bảo hiểm.
+
+## Đề xuất chi tiết kỹ năng (chưa chốt)
+Xem [SKILL-DEPTH V1](../design/skill-depth/README.md), không áp dụng vào V6. Cấp/giai, sao, thành thạo, nhánh và chi phí được tách rõ; lỗi giảm hệ số sau tiến giai cần sửa khi được duyệt.
