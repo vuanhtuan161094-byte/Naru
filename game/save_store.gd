@@ -841,6 +841,10 @@ func choose_job_talent(id: String,profession: String,talent: String) -> bool:
 func set_world_squad(key: String,roster: Array) -> bool:
 	var prior=state.duplicate(true)
 	if not World.set_squad(state,key,roster):return false
+	if not state.has("squad_formations"):state.squad_formations={}
+	var old=state.squad_formations.get(key,{"formation_id":"FRM-01","slots":{}})
+	old.slots=Formation.normalize_slots(roster,old.slots)
+	state.squad_formations[key]=old
 	return commit_change(prior,rng.state)
 
 func squad_travel(reg,key: String,dest: String) -> bool:
@@ -959,4 +963,24 @@ func sell_surplus(reg,id: String,qty: int) -> bool:
 	var prior=state.duplicate(true)
 	state.inventory[id]=int(state.inventory[id])-qty
 	state.inventory["RES-001"]=int(state.inventory.get("RES-001",0))+unit*qty
+	return commit_change(prior,rng.state)
+
+func set_squad_formation(reg,key: String,formation_id: String,slot: int=-1,ninja: String="") -> bool:
+	if not reg.formations.has(formation_id):return false
+	if key!="defense" and not state.world_squads.has(key):return false
+	if key!="defense":
+		var squad=state.world_squads[key]
+		if squad.location!=World.HOME or not squad.travel.is_empty():return false
+	var roster=state.home_defense if key=="defense" else state.world_squads[key].team
+	var config=state.get("squad_formations",{}).get(key,{"formation_id":"FRM-01","slots":{}})
+	var slots=Formation.normalize_slots(roster,config.slots)
+	if slot!=-1:
+		if slot<0 or slot>8 or not ninja in roster:return false
+		var old=int(slots[ninja])
+		for id in slots:
+			if int(slots[id])==slot:slots[id]=old;break
+		slots[ninja]=slot
+	var prior=state.duplicate(true)
+	if not state.has("squad_formations"):state.squad_formations={}
+	state.squad_formations[key]={"formation_id":formation_id,"slots":slots}
 	return commit_change(prior,rng.state)

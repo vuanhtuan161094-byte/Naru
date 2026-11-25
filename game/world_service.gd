@@ -148,10 +148,17 @@ static func resolve_team(reg,s: Dictionary,player_team: Array,enemy_team: Array,
 	sim.registry=reg
 	sim.auto_player_ultimate=true
 	sim.rng.seed=seed_value
-	var slots={}
-	if player_team==s.team:
-		sim.configure_team_formation(s)
-		slots=preload("res://game/formation_service.gd").normalize_slots(player_team,s.get("formation_slots",{}))
+	var formation_config={"formation_id":"FRM-01","formation_slots":{},"formation_levels":s.get("formation_levels",{})}
+	if player_team==s.team:formation_config=s
+	else:
+		var key="defense" if player_team==s.home_defense else ""
+		for squad_id in s.world_squads:
+			if s.world_squads[squad_id].team==player_team:key=squad_id;break
+		var saved=s.get("squad_formations",{}).get(key,{})
+		formation_config.formation_id=saved.get("formation_id","FRM-01")
+		formation_config.formation_slots=saved.get("slots",{})
+	sim.configure_team_formation(formation_config)
+	var slots=preload("res://game/formation_service.gd").normalize_slots(player_team,formation_config.get("formation_slots",{}))
 	for id in player_team:
 		if not s.owned.has(id):return false
 		var p=s.owned[id]

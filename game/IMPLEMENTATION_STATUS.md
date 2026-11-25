@@ -56,3 +56,5 @@ D2+D3 verified SHA e74fd59d8f23721e80f0443de0e5a228eac3bc88, CI 45565338505 PASS
 Implemented first runtime batch: 14×10 default, 12×8/18×12 authored examples and custom dimensions, bounded free movement, 3×3 slots, eight formations, persistent upgrades and distance/death-sensitive links, formation UI, dynamic projection, legacy save normalization, main squad world resolver. QA pending exact-SHA CI; no claim of completed 1,152-skill geometry audit or production art. No merge.
 
 Combat V3-B: tactical/terrain/geometry runtime and DEV V5 export, pending CI.
+
+Combat V3-C: secondary squads, cadence and timed skills audit, pending CI.

@@ -27,3 +27,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - READY after green: verify natural balance, extend secondary squad configuration UI, collision/pathfinding and SKILL-P1 geometry audit; art coordinate synchronization.
 
 - IN_PROGRESS: Combat V3-B terrain/body collision, tactical AI, D4 geometry/timing, Web V5. Pending exact-SHA CI.
+
+- IN_PROGRESS: V3-C secondary squad formation and timed 1152-skill fixture, V5 actual input audit.

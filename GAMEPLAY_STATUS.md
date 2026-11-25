@@ -56,3 +56,6 @@ Implemented first runtime batch: 14×10 default, 12×8/18×12 authored examples 
 
 ## Combat V3-B — tactical and spatial runtime
 Inherits df69717d (CI 45568457947 success). Added DEV tactical terrain profiles, body radii, swept short movement, deterministic obstacle corner routing and separation both teams, safe summon landing, AI target scoring/condition evaluation, range/LOS recheck, fixed-direction projectile corridor and hit caps, runtime event positions, terrain renderer. Uses unchanged latest 1152 D4 skill contracts; 64 anchor proposals remain proposals. Numerical defaults in combat_v3_tactics.json. CI pending; no production balance claim.
+
+## Combat V3-C — all squads and timed skills audit
+Shared account formation levels; secondary/defense formations and slots persisted independently, editor UI and resolver; validation. AI four-tick decisions with continuous movement, explicit interruption/status events. Dedicated fixture attempts every 1152 current D4 record via cast/windup/projectile/release; logs exact failures rather than counts from direct release alone. Tests all eight choices, cap, detour, collision, dodge and browser ninth slot/upgrade/14x10. CI pending; no individual canon redesign claim.

@@ -25,6 +25,13 @@ static func ensure(reg,state: Dictionary) -> void:
 	if not state.get("formation_levels") is Dictionary:state.formation_levels={}
 	for id in reg.formations:
 		state.formation_levels[id]=clampi(int(state.formation_levels.get(id,1)),1,int(reg.combat_v3.upgrade.max_level))
+	if not state.get("squad_formations") is Dictionary:state.squad_formations={}
+	var teams={"defense":state.get("home_defense",[])}
+	for key in state.get("world_squads",{}):teams[key]=state.world_squads[key].team
+	for key in teams:
+		var old=state.squad_formations.get(key,{})
+		var chosen=str(old.get("formation_id","FRM-01"))
+		state.squad_formations[key]={"formation_id":chosen if reg.formations.has(chosen) else "FRM-01","slots":normalize_slots(teams[key],old.get("slots",{}))}
 
 static func cost(reg,level: int) -> int:
 	return ceili(float(reg.combat_v3.upgrade.base_cost)*pow(float(level),float(reg.combat_v3.upgrade.cost_power)))

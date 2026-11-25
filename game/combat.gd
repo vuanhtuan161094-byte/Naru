@@ -227,7 +227,7 @@ func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	return score
 
 func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
-	if not ready(a,s) or utility(a,s,b)<=0:return false
+	if not ready(a,s) or not cast_geometry(a,s,b) or not ai_condition(a,s,b):return false
 	a.chakra=float(a.chakra)-float(s.chakra)
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)/(1.0+rating(a,"attack_speed"))
@@ -281,6 +281,7 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 		duration=maxf(duration,float(b.statuses[key].remaining))
 		mag=maxf(mag,float(b.statuses[key].magnitude))
 	b.statuses[key]={"id":id,"source":a.uid,"remaining":duration,"magnitude":mag,"dot":float(e.get("tick_coefficient",0.0))*float(a.natk),"next_tick":1.0}
+	art_event("status_applied",b.pos,0,id)
 
 func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> void:
 	var blocked=minf(float(b.shield),dmg)
@@ -518,6 +519,7 @@ func tick(dt: float) -> void:
 			if (hard_block(a) or (has_status(a,"silence") and skill.damage_type!="physical")) and skill.interruptible:
 				a.chakra=minf(float(a.max_chakra),float(a.chakra)+0.8*float(skill.chakra))
 				a.cooldowns[skill.skill_id]=float(skill.cooldown_s)*0.5
+				art_event("interrupt",a.pos,0,str(skill.skill_id))
 				a.pending={}
 				a.busy=0.0
 			else:
@@ -527,6 +529,9 @@ func tick(dt: float) -> void:
 					resolve_pending(a,pending)
 				else:continue
 		if a.busy>0 or hard_block(a) or qa_hold_ai:continue
+		if a.has("ai_goal") and ticks%int(registry.tactics.ai_interval_ticks)!=int(a.uid)%int(registry.tactics.ai_interval_ticks):
+			if not has_status(a,"bind"):move_actor(a,a.ai_goal,movement_speed(a)*dt)
+			continue
 		var basic=skill_definition(a.skills[0])
 		var enemy=target_for(a,basic)
 		if enemy.is_empty():continue
@@ -550,11 +555,12 @@ func tick(dt: float) -> void:
 				best_score=score
 		if not best.is_empty():
 			cast(a,best,best_target)
+			a.ai_goal=a.pos
 			tactical_choices+=1
 		elif not has_status(a,"bind"):
-			var speed=2.2*formation_multiplier(a,"move")*(1.0+rating(a,"move_speed"))*(1.0+magnitude(a,"haste"))*(1.0-clampf(maxf(magnitude(a,"slow"),magnitude(a,"mud")),0.0,0.8))
 			var goal=tactical_goal(a,enemy,basic)
-			move_actor(a,goal,speed*dt*terrain_speed(a.pos))
+			a.ai_goal=goal
+			move_actor(a,goal,movement_speed(a)*dt)
 	# Remove dead temporary entities only once their launched projectiles resolve.
 	for a in actors.duplicate():
 		if a.summon and a.hp<=0 and not projectiles.any(func(p):return p.source==a.uid):actors.erase(a)
@@ -934,3 +940,6 @@ func advance_projectiles(dt: float) -> void:
 				resolved_casts+=1
 				art_event("contact",p.pos,0,str(skill.skill_id))
 				release(source,skill,hits[0],hits)
+
+func movement_speed(a: Dictionary) -> float:
+	return 2.2*formation_multiplier(a,"move")*(1.0+rating(a,"move_speed"))*(1.0+magnitude(a,"haste"))*(1.0-clampf(maxf(magnitude(a,"slow"),magnitude(a,"mud")),0.0,0.8))*terrain_speed(a.pos)

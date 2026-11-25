@@ -12,7 +12,7 @@ static func valid(reg,s: Variant) -> bool:
 	var used_slots=[]
 	for id in s.get("formation_slots",{}):
 		var slot=s.formation_slots[id]
-		if not s.owned.has(id) or not integer(slot,0,8) or int(slot) in used_slots:return false
+		if not id in s.team or not s.owned.has(id) or not integer(slot,0,8) or int(slot) in used_slots:return false
 		used_slots.append(int(slot))
 	for id in s.get("formation_levels",{}):
 		if not reg.formations.has(id) or not integer(s.formation_levels[id],1,int(reg.combat_v3.upgrade.max_level)):return false
@@ -134,6 +134,16 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 			if not s.owned.has(id) or seen.has(id):return false
 			seen[id]=true
 		if not q.travel.is_empty() and (not reg.territories.has(q.travel.get("destination","")) or not integer(q.travel.get("remaining"))):return false
+	if not s.get("squad_formations",{}) is Dictionary:return false
+	for key in s.get("squad_formations",{}):
+		if key!="defense" and not s.get("world_squads",{}).has(key):return false
+		var config=s.squad_formations[key]
+		if not config is Dictionary or not reg.formations.has(config.get("formation_id","")) or not config.get("slots") is Dictionary:return false
+		var roster=defense if key=="defense" else s.world_squads[key].team
+		var taken=[]
+		for id in config.slots:
+			if not id in roster or not integer(config.slots[id],0,8) or int(config.slots[id]) in taken:return false
+			taken.append(int(config.slots[id]))
 	for id in s.get("beasts",{}):
 		var b=s.beasts[id]
 		if not reg.beasts.has(id) or not b is Dictionary or not integer(b.get("level"),1) or not integer(b.get("xp")):return false

@@ -994,6 +994,7 @@ func squad_menu(message: String="") -> void:
 func squad_detail(key: String,message: String="") -> void:
 	var rows=activity_rows("ĐỘI "+key,message,func():squad_menu())
 	var roster=store.state.home_defense if key=="defense" else store.state.world_squads[key].team
+	button(rows,"Bố trận 3×3 • "+key,func():squad_formation_screen(key))
 	for id in store.state.owned:
 		button(rows,("✓ " if id in roster else "+ ")+str(reg.ninjas[id].name_vi),func():
 			var next=roster.duplicate()
@@ -1232,7 +1233,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
@@ -1309,3 +1310,29 @@ func reward_inbox_screen(message: String="") -> void:
 	for id in store.state.reward_inbox:
 		var qty=int(store.state.reward_inbox[id])
 		button(rows,"%s ×%d • Nhận phần còn chỗ" % [reg.resources[id].name_vi,qty],func():reward_inbox_screen("Đã nhận" if store.collect_reward_inbox(id) else "Kho đầy"))
+
+func squad_formation_screen(key: String,message: String="") -> void:
+	var rows=activity_rows("TRẬN PHÁP • "+key,message,func():squad_detail(key))
+	var roster=store.state.home_defense if key=="defense" else store.state.world_squads[key].team
+	var config=store.state.get("squad_formations",{}).get(key,{"formation_id":"FRM-01","slots":{}})
+	var slots=preload("res://game/formation_service.gd").normalize_slots(roster,config.slots)
+	var row=HBoxContainer.new()
+	rows.add_child(row)
+	var options=OptionButton.new()
+	row.add_child(options)
+	var ids=reg.formations.keys()
+	for id in ids:options.add_item(str(reg.formations[id].name_vi)+" Lv."+str(store.state.formation_levels[id]))
+	options.select(ids.find(config.formation_id))
+	options.item_selected.connect(func(index):squad_formation_screen(key,"Đã chọn" if store.set_squad_formation(reg,key,ids[index]) else "Đội đang triển khai"))
+	var grid=GridContainer.new()
+	grid.columns=3
+	rows.add_child(grid)
+	for i in range(9):
+		var id=""
+		for ninja in slots:
+			if int(slots[ninja])==i:id=ninja;break
+		var b=button(grid,("▶ " if selected_slot==i else "")+str(i+1)+" • "+(str(reg.ninjas[id].name_vi) if id!="" else "Ô trống"),func():selected_slot=i;squad_formation_screen(key))
+		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	for id in roster:
+		button(rows,str(reg.ninjas[id].name_vi)+" → ô "+str(selected_slot+1),func():squad_formation_screen(key,"Đã đổi ô" if store.set_squad_formation(reg,key,config.formation_id,selected_slot,id) else "Đội đang triển khai"))
+	label(rows,"Cấp trận pháp dùng chung toàn tài khoản; bố trí từng đội độc lập.",16)
