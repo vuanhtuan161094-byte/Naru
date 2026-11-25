@@ -17,3 +17,11 @@ Bản thiết kế, không phải Wiki thông số đã nghiệm thu của bản
 Wiki sinh từ ID thiết kế, không bịa thêm công thức. Các cột P2/P1 là lựa chọn trước/sau điều chỉnh; không mặc định áp dụng vào save hiện tại. Một số dữ liệu chi tiết còn ở dạng tham chiếu ID/JSON. GDD và file JSON gốc là nguồn ưu tiên. 
 
 [Ma trận nghiệm thu toàn game](../design/product-audit/PRODUCT_AUDIT.md) · [Bàn giao sản xuất](../design/product-audit/HANDOFF_01_02.md)
+
+## PASSIVE-P2 / COMBAT-SYNERGY-P1 (DEV)
+- [Nội tại P2 — pilot 12 ninja / 72 nội tại](passive-p2-pilot.md)
+- [Luật tương tác, khắc chế, trận pháp và bài test 6v6](../design/combat-synergy-p1/README.md)
+- [Kiểm toán ID và liên kết ứng viên 2.016 kỹ năng](../design/combat-synergy-p1/interaction-audit.json)
+- [Phân tích áp lực giới hạn 12 đội hình](../design/combat-synergy-p1/6v6-passive-pressure.json)
+
+Còn 132 ninja / 792 nội tại cần cá thể hóa riêng. Chưa xác nhận cân bằng runtime, không thay Wiki active hoặc luật P1 đã có.
