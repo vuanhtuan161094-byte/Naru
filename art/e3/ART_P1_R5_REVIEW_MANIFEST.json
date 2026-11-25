@@ -1,0 +1,186 @@
+{
+  "batch": "ART-P1-R5-MANUAL-DRAFT",
+  "base_sha": "785524915d3b55ab5adacaaecbbe951c55a1b5d6",
+  "status": "REVIEW_ONLY_LOCAL_BINARY_NOT_UPLOADED",
+  "binary_location": "Chat attachment Naru_ART_P1_R5_review.zip; no PNG binary in GitHub",
+  "rights": "Public repository; recognizable fan art has not been cleared for public distribution. Keep binaries private.",
+  "records": [
+    {
+      "id": "NIN-041",
+      "name": "Naruto Shippuden",
+      "kind": "character_static",
+      "source": "Original hand-specified pixel clusters",
+      "approval": "REVIEW_ONLY",
+      "local_path": "sprites/NIN-041.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "direction": "three_quarter_candidate",
+      "action": "static",
+      "clips": [],
+      "bounding_box": [
+        18,
+        9,
+        80,
+        104
+      ],
+      "sha256": "6d7c04bd062a3c5cf2fa88fded45c99460df71f978e6cd376e4648bb40d9379d"
+    },
+    {
+      "id": "NIN-042",
+      "name": "Sasuke Shippuden",
+      "kind": "character_static",
+      "source": "Original hand-specified pixel clusters",
+      "approval": "REVIEW_ONLY",
+      "local_path": "sprites/NIN-042.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "direction": "three_quarter_candidate",
+      "action": "static",
+      "clips": [],
+      "bounding_box": [
+        20,
+        12,
+        83,
+        104
+      ],
+      "sha256": "59e24d55924441bba62d82985291414c03dd063f8d92bfceea5f2f9d6dbee913"
+    },
+    {
+      "id": "NIN-043",
+      "name": "Sakura Shippuden",
+      "kind": "character_static",
+      "source": "Original hand-specified pixel clusters",
+      "approval": "REVIEW_ONLY",
+      "local_path": "sprites/NIN-043.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "direction": "three_quarter_candidate",
+      "action": "static",
+      "clips": [],
+      "bounding_box": [
+        22,
+        12,
+        76,
+        104
+      ],
+      "sha256": "de64198e4caabe69aa050a787eafeffbdbf7f766cdd8a3c48e6c49201e3ddbe6"
+    },
+    {
+      "id": "NIN-004",
+      "name": "Kakashi",
+      "kind": "character_static",
+      "source": "Original hand-specified pixel clusters",
+      "approval": "REVIEW_ONLY",
+      "local_path": "sprites/NIN-004.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "direction": "three_quarter_candidate",
+      "action": "static",
+      "clips": [],
+      "bounding_box": [
+        18,
+        7,
+        81,
+        104
+      ],
+      "sha256": "3ccd67ae6110bc694469ea8acd84e0524343ea3b87506f92369fb65f019c34b1"
+    },
+    {
+      "id": "NIN-060",
+      "name": "Itachi",
+      "kind": "character_static",
+      "source": "Original hand-specified pixel clusters",
+      "approval": "REVIEW_ONLY",
+      "local_path": "sprites/NIN-060.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "direction": "three_quarter_candidate",
+      "action": "static",
+      "clips": [],
+      "bounding_box": [
+        24,
+        12,
+        74,
+        104
+      ],
+      "sha256": "52f01f329b5204f6f12c799b26ef53cfc2c4dedfad81e4130414656ef977e5e9"
+    },
+    {
+      "id": "NIN-093",
+      "name": "Minato",
+      "kind": "character_static",
+      "source": "Original hand-specified pixel clusters",
+      "approval": "REVIEW_ONLY",
+      "local_path": "sprites/NIN-093.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "direction": "three_quarter_candidate",
+      "action": "static",
+      "clips": [],
+      "bounding_box": [
+        17,
+        7,
+        80,
+        104
+      ],
+      "sha256": "234322c284137d51075c497008d256062be0db1cbbc92d2b50e9e8f2d4aea5f6"
+    }
+  ],
+  "atlas": {
+    "local_path": "atlas.png",
+    "size": [
+      576,
+      112
+    ],
+    "sha256": "d1bdd32b9853ff2436d13c536fd6b248d05f3907c17e87cd73cba75e3cd48bcb"
+  },
+  "qa": {
+    "rgba": "6/6",
+    "alpha_binary": "6/6",
+    "cell": "6/6",
+    "foot_bottom": "6/6",
+    "zip_integrity": "PASS",
+    "art_quality": "HOLD: R4 source missing; hand-drawn draft is not verified against benchmark; poses are predominantly front-facing, not full isometric",
+    "owner_approval": false,
+    "animation": false,
+    "vfx": false,
+    "godot_runtime": false
+  },
+  "next": "Recover R4 image, improve art quality, obtain owner approval, then produce true 4-direction frame-by-frame clips. Do not register as production asset."
+}
