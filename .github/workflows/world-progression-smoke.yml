@@ -61,7 +61,7 @@ jobs:
         run: |
           set -o pipefail
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 240 "$G" --headless --path . --script res://game/world_organic_test.gd 2>&1 | tee /tmp/world-organic.log
+          timeout 600 "$G" --headless --path . --script res://game/world_organic_test.gd 2>&1 | tee /tmp/world-organic.log
           grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/world-organic.log
           ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/world-organic.log
       - name: Economy 90-day starter simulation
@@ -89,7 +89,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - World DEV P3, placeholder art. Extract the entire folder.
+          NARU RPG - World DEV P4, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -105,18 +105,29 @@ jobs:
         run: |
           python3 -m http.server 8765 --directory dist >/tmp/naru-http.log 2>&1 &
           node tests/web-smoke.cjs
+      - name: Upload world QA logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-World-DEV-P4-QA
+          path: |
+            /tmp/world-progression.log
+            /tmp/world-organic.log
+            /tmp/economy-long.log
+            /tmp/gp-p2.log
+          retention-days: 30
       - name: Upload Web DEV archive
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P3
+          name: NARU-World-DEV-P4
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P3-menu
+          name: NARU-World-DEV-P4-menu
           path: |
             web-menu.png
             ui-shots/

@@ -278,6 +278,8 @@ func growth_detail(id: String,message: String="") -> void:
 	if int(p.stars)<15:
 		var star_rule=reg.growth.stars[int(p.stars)-1]
 		label(rows,"Sao kế tiếp: %d/%d mảnh • %s" % [int(p.shards),int(star_rule.shards),cost_text(star_rule.resources)],16)
+	var exchange=button(rows,"DEV đổi 5 mảnh ninja • 10 mảnh sao + 1000 Ryo",func():growth_detail(id,"Đã đổi" if store.exchange_shards(id,5) else "Cần Tổng bộ 5, Điện thức tỉnh và nguyên liệu"))
+	exchange.disabled=Village.level(store.state,"BLD-001")<5 or Village.level(store.state,"BLD-009")==0 or not store.has_cost(store.shard_exchange_cost(5))
 	var grid=GridContainer.new()
 	grid.columns=3
 	rows.add_child(grid)
@@ -634,6 +636,11 @@ func gear_craft_screen() -> void:
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		b.disabled=int(store.state.building_states.get(def.craft.building_id,{}).get("level",0))<=0
 		button(row,"Nguồn nguyên liệu",func():gear_material_screen(id))
+		if int(def.quality)==1:
+			var q=store.starter_gear_cost(reg,id)
+			var early=button(row,"DEV nhập môn • 180 Ryo",func():gear_screen("Đã chế Q1 nhập môn" if not store.craft_gear(reg,id,true).is_empty() else "Chưa đủ điều kiện"))
+			early.tooltip_text="HQ2, Học viện; "+("3 gỗ + 2 quặng sắt" if def.craft.building_id=="BLD-017" else "3 gỗ + 2 chakra")
+			early.disabled=Village.level(store.state,"BLD-001")<2 or Village.level(store.state,"BLD-002")==0 or not store.has_cost(q)
 
 func gear_detail(id: String,message: String="") -> void:
 	open_screen("inventory")
@@ -822,7 +829,14 @@ func world_screen(message: String="") -> void:
 	if selected_territory==store.state.world_location and t.owner!="FAC-009":button(side,"Chiếm lĩnh",func():world_screen(("Đã chiếm" if store.state.territory_states[selected_territory].owner=="FAC-009" else "Thất bại") if store.capture_territory(reg,selected_territory) else "Chưa đủ điều kiện"))
 	label(side,"Bảo hộ làng: %d giây" % int(store.state.raid_protection),16)
 	if t.discovered:
-		for resource in d.resources:label(side,str(reg.resources[resource.resource_id].name_vi)+" • "+str(resource.yield_per_tick)+"/tick",16)
+		for resource in d.resources:
+			var key=str(resource.resource_id)
+			label(side,str(reg.resources[key].name_vi)+" • sản lượng bản đồ "+str(resource.yield_per_tick),16)
+			var q=World.harvest_quote(reg,store.state,selected_territory,key)
+			if not q.is_empty():
+				var b=button(side,"DEV thu 1 • "+str(q.remaining)+"s",func():world_screen("Đã thu" if store.harvest_territory(reg,selected_territory,key) else "Thiếu điều kiện"))
+				b.disabled=not q.ready
+				b.tooltip_text=str(reg.buildings[q.building].name_vi)+" cấp "+str(q.level)+" và nhân lực"
 	var list_rows=scroll_rows(side)
 	for id in reg.territories:
 		var path=World.path(reg,store.state,store.state.world_location,id)
@@ -864,9 +878,11 @@ func faction_screen(id: String,message: String="") -> void:
 		var sell=preload("res://game/world_service.gd").price(reg,store.state,id,resource,false)
 		button(line,"Mua 1 (%d)" % buy,func():faction_screen(id,"Đã mua" if store.trade_resource(reg,id,resource,1,true) else "Thiếu điều kiện giao thương"))
 		button(line,"Bán 1 (%d)" % sell,func():faction_screen(id,"Đã bán" if store.trade_resource(reg,id,resource,1,false) else "Thiếu điều kiện giao thương"))
-		var buy_bulk=button(line,"Mua 10 (%d)" % (buy*10),func():faction_screen(id,"Đã mua" if store.trade_resource(reg,id,resource,10,true) else "Thiếu điều kiện giao thương"))
-		buy_bulk.disabled=stock<10 or int(store.state.inventory.get("RES-001",0))<buy*10
-		var sell_bulk=button(line,"Bán 10 (%d)" % (sell*10),func():faction_screen(id,"Đã bán" if store.trade_resource(reg,id,resource,10,false) else "Thiếu điều kiện giao thương"))
+		var bulk_buy_cost=World.quote_trade(reg,store.state,id,resource,10,true)
+		var bulk_sell_value=World.quote_trade(reg,store.state,id,resource,10,false)
+		var buy_bulk=button(line,"Mua 10 (%d)" % bulk_buy_cost,func():faction_screen(id,"Đã mua" if store.trade_resource(reg,id,resource,10,true) else "Thiếu điều kiện giao thương"))
+		buy_bulk.disabled=stock<10 or int(store.state.inventory.get("RES-001",0))<bulk_buy_cost
+		var sell_bulk=button(line,"Bán 10 (%d)" % bulk_sell_value,func():faction_screen(id,"Đã bán" if store.trade_resource(reg,id,resource,10,false) else "Thiếu điều kiện giao thương"))
 		sell_bulk.disabled=int(store.state.inventory.get(resource,0))<10
 
 func activity_rows(title: String,message: String,back: Callable) -> VBoxContainer:
@@ -1246,7 +1262,9 @@ func resource_detail(id: String) -> void:
 							var own=store.state.territory_states[territory.id].owner=="FAC-009"
 							label(rows,str(territory.name_vi)+(" • Đang kiểm soát" if own else " • Chưa kiểm soát"),16)
 				button(rows,"Mở nhẫn giới",func():world_screen())
-			if source.source_type=="boss_or_contract":button(rows,"Mở chiến dịch",campaign)
+			if source.source_type=="boss_or_contract":
+				if id=="RES-148":label(rows,"DEV: thưởng boss khi có Khu thông linh hoặc Điện Vĩ Thú.",16)
+				button(rows,"Mở chiến dịch",campaign)
 	for seller in ResourceGuide.sellers(reg,store.state,id):
 		var faction=str(seller.faction)
 		button(rows,"%s • kho %d • %d Ryo • %s" % [reg.factions[faction].name_vi,int(seller.stock),int(seller.price),"Có thể mua" if seller.accessible else "Cần giao thương"],func():faction_screen(faction))

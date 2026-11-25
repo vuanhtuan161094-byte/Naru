@@ -63,6 +63,7 @@ func _initialize() -> void:
 	progression_checks(reg)
 	coverage_checks(reg)
 	batch_checks(reg)
+	p4_checks(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -165,3 +166,48 @@ func batch_checks(reg) -> void:
 		check(store.train_beast(reg,id,10),"P3 beast batch "+str(id))
 		check(int(store.state.beasts[id].level)>1,"P3 beast level "+str(id))
 	print("NARU_WORLD_P3_FIXTURE ninja=",store.state.owned.size()," gear=",crafted," contracts=",store.state.summon_contracts.size()," beasts=",store.state.beasts.size())
+
+func p4_checks(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_progression_p4_ci.json"
+	store.new_game(reg)
+	check(store.craft_gear(reg,"EQ-001-Q1",true)=="","P4 starter HQ gate")
+	store.setup_starter_jobs(reg)
+	check(store.construct(reg,"BLD-001"),"P4 HQ build")
+	check(store.advance_clock(reg,int(store.state.high_water_timestamp)+3600),"P4 natural economy")
+	var before=int(store.state.inventory["RES-001"])
+	var gear=store.craft_gear(reg,"EQ-001-Q1",true)
+	check(gear!="" and int(store.state.inventory["RES-001"])==before-180,"P4 earned starter gear")
+	if gear!="":
+		check(int(store.state.gear_instances[gear].quality)==1 and store.equip_gear(reg,"NIN-001",gear),"P4 fixed Q1 equip")
+	check(store.craft_gear(reg,"EQ-001-Q2",true)=="","P4 no high tier bypass")
+	check(not store.exchange_shards("NIN-001",1),"P4 shard gate")
+	# Market fixture for same-stock-boundary quote; no positive round trip at any tested volume.
+	var world=preload("res://game/world_service.gd")
+	for qty in [1,10,100]:
+		var stock=store.state.faction_states["FAC-001"].stock
+		var initial=int(stock.get("RES-006",0))
+		var buy=world.quote_trade(reg,store.state,"FAC-001","RES-006",qty,true)
+		stock["RES-006"]=initial-qty
+		var sell=world.quote_trade(reg,store.state,"FAC-001","RES-006",qty,false)
+		check(buy>=sell,"P4 no reversal profit "+str(qty))
+		stock["RES-006"]=initial
+	# Explicit progression fixture; not evidence of naturally reaching HQ5 or harvest gate.
+	store.state.building_states["BLD-001"].level=5
+	store.state.building_states["BLD-009"].level=1
+	store.state.inventory["RES-134"]=10
+	var shards=int(store.state.owned["NIN-001"].shards)
+	check(store.exchange_shards("NIN-001",5),"P4 targeted exchange")
+	check(int(store.state.owned["NIN-001"].shards)==shards+5 and int(store.state.inventory["RES-134"])==0,"P4 shard exact cost")
+	check(not store.exchange_shards("NIN-001",1),"P4 no free shard")
+	check(not store.harvest_territory(reg,"TER-057","RES-095"),"P4 unowned harvest")
+	store.state.territory_states["TER-057"].owner="FAC-009"
+	store.state.building_states["BLD-019"].level=6
+	check(store.assign_job(reg,"NIN-005","BLD-019","JOB-10"),"P4 workshop crew")
+	var old=int(store.state.inventory.get("RES-095",0))
+	check(store.harvest_territory(reg,"TER-057","RES-095"),"P4 supplemental harvest")
+	check(int(store.state.inventory.get("RES-095",0))==old+1,"P4 exact harvest")
+	check(not store.harvest_territory(reg,"TER-057","RES-095"),"P4 cooldown")
+	check(not store.harvest_territory(reg,"TER-058","RES-006"),"P4 no raw double harvest")
+	check(Guard.valid(reg,store.state),"P4 save valid")
+	print("NARU_WORLD_P4_TRANSACTIONS_PASS")

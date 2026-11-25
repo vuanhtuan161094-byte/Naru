@@ -142,8 +142,11 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 		Content.bump(state,"clear_stage")
 		if stage.boss_id!=null and int(state.building_states["BLD-001"].level)>=8:
 			for source in reg.supply:
-				if source.source_type=="boss_or_contract" and int(state.building_states[source.building_id].level)>0:
-					grant_reward(str(source.resource_id),int(source.base_yield))
+				if source.source_type!="boss_or_contract":continue
+				var building=str(source.building_id)
+				# Contract hall is available at HQ13; other special resources still require Beast Hall.
+				if source.resource_id=="RES-148" and Village.level(state,"BLD-026")>0:building="BLD-026"
+				if Village.level(state,building)>0:grant_reward(str(source.resource_id),int(source.base_yield))
 		for id in entry.team:
 			var p=state.owned[id]
 			var earned_xp=int(reg.campaign_xp.get(stage.id,{}).get("battle_xp",100+15*int(str(stage.id).right(3))))
@@ -298,6 +301,19 @@ func breakthrough(id: String) -> String:
 	if not commit_change(prior,old_rng): return "error"
 	return "success" if won else "failure"
 
+# DEV targeted conversion only for owned versions, preserving draw pity and duplicate identity.
+func shard_exchange_cost(quantity: int) -> Dictionary:
+	return {"RES-134":quantity*2,"RES-001":quantity*200}
+
+func exchange_shards(id: String,quantity: int) -> bool:
+	if not state.owned.has(id) or quantity<1 or quantity>20 or Village.level(state,"BLD-001")<5 or Village.level(state,"BLD-009")<=0:return false
+	var cost=shard_exchange_cost(quantity)
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	state.owned[id].shards=int(state.owned[id].shards)+quantity
+	return commit_change(prior,rng.state)
+
 func raise_star(reg,id: String) -> bool:
 	if not state.owned.has(id): return false
 	var p=state.owned[id]
@@ -392,12 +408,26 @@ func has_cost(cost: Dictionary) -> bool:
 func debit(cost: Dictionary) -> void:
 	for key in cost:state.inventory[key]=int(state.inventory.get(key,0))-int(cost[key])
 
-func craft_gear(reg,template_id: String) -> String:
+# DEV early-game alternative: only Q1, fixed quality, no high-tier forge bypass.
+func starter_gear_cost(reg,template_id: String) -> Dictionary:
+	if not reg.gear_templates.has(template_id) or int(reg.gear_templates[template_id].quality)!=1:return {}
+	var def=reg.gear_templates[template_id]
+	if def.craft.building_id=="BLD-017":return {"RES-001":180,"RES-006":3,"RES-011":2}
+	return {"RES-001":180,"RES-006":3,"RES-076":2}
+
+func craft_gear(reg,template_id: String,starter: bool=false) -> String:
 	if not reg.gear_templates.has(template_id):return ""
 	var def=reg.gear_templates[template_id]
-	if int(state.building_states.get(def.craft.building_id,{}).get("level",0))<=0:return ""
+	var building=str(def.craft.building_id)
 	var cost={}
-	for r in def.craft.inputs:cost[r.resource_id]=int(cost.get(r.resource_id,0))+int(r.qty)
+	if starter:
+		if Village.level(state,"BLD-001")<2 or Village.level(state,"BLD-002")<1:return ""
+		cost=starter_gear_cost(reg,template_id)
+		if cost.is_empty():return ""
+		building="BLD-002"
+	else:
+		if Village.level(state,building)<=0:return ""
+		for r in def.craft.inputs:cost[r.resource_id]=int(cost.get(r.resource_id,0))+int(r.qty)
 	if not has_cost(cost):return ""
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
@@ -405,8 +435,8 @@ func craft_gear(reg,template_id: String) -> String:
 	state.gear_seq=int(state.gear_seq)+1
 	var id="GEAR-"+str(state.gear_seq)
 	Content.bump(state,"craft_item")
-	var profession_level=Village.worker_level(state,str(def.craft.building_id))
-	var quality=clampi(floori(1+0.04*profession_level+0.5*float(def.quality)+2*Village.trait_bonus(state,str(def.craft.building_id),"quality")+rng.randf_range(0,1.5)),1,8)
+	var profession_level=0 if starter else Village.worker_level(state,building)
+	var quality=1 if starter else clampi(floori(1+0.04*profession_level+0.5*float(def.quality)+2*Village.trait_bonus(state,building,"quality")+rng.randf_range(0,1.5)),1,8)
 	var affixes=[]
 	var pool=reg.affix_pools[def.affix_pool].duplicate()
 	for i in range(mini(int(def.affix_slots),pool.size())):
@@ -636,6 +666,12 @@ func trade_resource(reg,id: String,resource: String,qty: int,buy: bool) -> bool:
 	var prior=state.duplicate(true)
 	if not World.trade(reg,state,id,resource,qty,buy):return false
 	Content.bump(state,"trade")
+	return commit_change(prior,rng.state)
+
+func harvest_territory(reg,territory: String,resource: String) -> bool:
+	var prior=state.duplicate(true)
+	if not World.harvest(reg,state,territory,resource):return false
+	Content.bump(state,"collect_production")
 	return commit_change(prior,rng.state)
 
 func capture_territory(reg,id: String) -> bool:
