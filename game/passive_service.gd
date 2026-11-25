@@ -23,11 +23,13 @@ static func potency(row: Dictionary,p: Dictionary,stars: int) -> float:
 	var sk=progress(p,row.id)
 	var factor=1.0+0.50*(int(sk.grade)-1)+0.02*(int(sk.level)-1)
 	var bonus=0.06 if stars>=15 else 0.04 if stars>=10 else 0.02 if stars>=5 else 0.0
-	return float(row.effect.base)*(1.0+0.40*(factor-1.0)/factor+bonus)*(1.05 if str(sk.branch).ends_with("-B1") else 1.0)
+	var op=operation(row,p)
+	var multiplier=float(op.get("multiplier",1.0)) if op.get("field","")=="effect.magnitude" else 1.0
+	return float(row.effect.base)*(1.0+0.40*(factor-1.0)/factor+bonus)*multiplier
 
 static func operation(row: Dictionary,p: Dictionary) -> Dictionary:
 	for br in row.progression.branches:
-		if br.id==progress(p,row.id).branch:return br.operation
+		if br.id==progress(p,row.id).branch and int(progress(p,row.id).grade)>=int(br.grade):return br.operation
 	return {}
 
 static func rows(sim,a: Dictionary) -> Array:
@@ -80,7 +82,12 @@ static func refresh(sim) -> void:
 		for row in rows(sim,a):
 			if not eligible(sim,a,row):continue
 			var event=str(row.trigger.event)
-			if not event in ["derived_stats","continuous_aura"]:continue
+			if not event in ["derived_stats","continuous_aura"]:
+				var conditional_secondary=operation(row,a).get("secondary_effect",{})
+				if event in ["before_skill_effect","while_form_active"] and not conditional_secondary.is_empty() and sim.conditional_passive_active(a,row):
+					aggregate(buckets[a.uid].personal,str(conditional_secondary.key),float(conditional_secondary.base),false)
+				elif event=="before_combo_payload" and not conditional_secondary.is_empty():sim.passive_secondary_holds[row.id]="COMBO_SECONDARY_DURATION_REVIEW"
+				continue
 			var val=potency(row,a,int(a.stars))
 			for target in recipients(sim,a,row):
 				if not buckets.has(target.uid):continue

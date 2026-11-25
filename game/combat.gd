@@ -45,6 +45,8 @@ var pressure_mode=false
 var pressure_sample: Array=[]
 var pressure_since=0
 var combo_index: Dictionary={}
+var combo_skill_index: Dictionary={}
+var passive_secondary_holds: Dictionary={}
 var combo_consumed: Dictionary={}
 var decision_effective: Dictionary={}
 var decision_uid=0
@@ -160,6 +162,7 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 			if skill.ai.condition=="ally_dispellable_status":
 				if not has_debuff(b):continue
 				score+=60
+			if use_tactical and cast_geometry(a,skill,b) and ai_condition(a,skill,b):score+=100.0
 		else:
 			score=-distance*5.0+(1-float(b.hp)/maxf(1.0,float(b.max_hp)))*12.0
 			if has_status(b,"mark") or p2_has_mark(a,b):score+=10
@@ -811,10 +814,8 @@ func tick(dt: float) -> void:
 		var enemy=target_for(a,basic)
 		if enemy.is_empty():continue
 		if use_contract_v10 and a.summon and a.get("summon_skill","")=="NIN-004-S2" and not a.get("summon_tracking_sent",false) and enemy.side!=a.side:
-			var tracker=actor_by_uid(int(a.owner))
-			if not tracker.is_empty() and tracker.hp>0 and int(a.get("summon_parent",0))>0:
-				a.summon_tracking_sent=true
-				combo_record(tracker,{"skill_id":"NIN-004-S2","passive_cast_id":a.summon_parent},"summon_tracking_confirmed",enemy,enemy.pos)
+			a.tracking_target_uid=enemy.uid
+			if cast_geometry(a,basic,enemy):confirm_tracking(a,enemy)
 		if use_tactical and not a.summon:
 			if int(a.get("focus_uid",0))!=int(enemy.uid):
 				tactical_metrics.focus_switches+=1
@@ -891,7 +892,7 @@ func form_ready(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> 
 		var contract=form_routes_dev[id]
 		if a.id!=contract.ninja or int(a.realm)<int(contract.unlock_realm):return false
 		if manual:
-			var permitted=contract.mode in ["manual_stance","hp_threshold_or_manual"] or rule.activation in ["manual","hp_threshold_or_manual"]
+			var permitted=contract.mode in ["manual_stance","hp_threshold_or_manual"] or rule.activation in ["manual","manual_stance","hp_threshold_or_manual"]
 			return permitted and cp_affordable(a,float(contract.manual_cp)) and not hard_block(a)
 		return trigger_id in a.skills and contract.skill_routes.any(func(route):return route.id==trigger_id)
 	if use_p2 and registry.p2_forms.has(id) and not manual and registry.p2_skills.has(trigger_id):
@@ -1066,6 +1067,7 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 	var initial=Vector2(a.pos)
 	# Small continuous swept steps prevent tunneling through actors and terrain.
 	var remaining=minf(distance,initial.distance_to(goal))
+	var nearby_allies=primary_alive(int(a.side)) if use_depth else []
 	while remaining>0.001:
 		var amount=minf(0.22,remaining)
 		var origin=Vector2(a.pos)
@@ -1080,7 +1082,7 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 			if not position_clear(a,candidate) or not clear_segment(origin,candidate,body_radius(a)):continue
 			var score=(origin.distance_to(aim)-candidate.distance_to(aim))*10.0-absf(angle)*0.15
 			if use_depth:
-				for ally in primary_alive(int(a.side)):
+				for ally in nearby_allies:
 					if ally.uid==a.uid:continue
 					var spacing=body_radius(a)+body_radius(ally)+0.35
 					score-=maxf(0.0,spacing-candidate.distance_to(ally.pos))*2.0
@@ -1091,6 +1093,9 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 		a.pos=chosen
 		remaining-=amount
 	if a.pos.distance_to(initial)>0.001:
+		if use_contract_v10 and a.summon and a.get("summon_skill","")=="NIN-004-S2":
+			var tracked=actor_by_uid(int(a.get("tracking_target_uid",0)))
+			if not tracked.is_empty() and a.pos.distance_to(tracked.pos)<initial.distance_to(tracked.pos):confirm_tracking(a,tracked)
 		a.facing=(Vector2(a.pos)-initial).normalized()
 		if int(a.get("move_until",0))<ticks:a.move_started=ticks
 		a.move_until=ticks+3
@@ -1557,11 +1562,12 @@ func p2_schedule(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,t
 	var kind=str(raw.effect.type)
 	var hits=maxi(1,int(raw.effect.hit_count))
 	if kind in ["zone_damage","zone_drain","beguile_tactical"]:hits=mini(hits,maxi(1,int(p.get("hit_budget",hits))))
-	var interval=maxi(1,roundi(float(p.get("interval_s",p.get("tick_s",0.12)))*20))
+	var interval_exact=maxf(1.0,float(p.get("interval_s",p.get("tick_s",0.12)))*20.0)
+	var interval=ceili(interval_exact)
 	var dynamic=s.shape in ["circle_ground","zone_target"] or kind=="trap"
 	var ids=targets.map(func(b):return b.uid)
 	var start=ticks+roundi(float(p.get("delay_s",0))*20)
-	var job={"source":a.uid,"skill":s,"point":point,"direction":direction,"ids":ids,"dynamic":dynamic,"cast_id":cast_id,"index":0,"hits":hits,"interval":interval,"next":start,"expires":start+maxi(hits*interval,roundi(float(p.get("duration_s",0))*20))+2,"confirmed":false}
+	var job={"source":a.uid,"skill":s,"point":point,"direction":direction,"ids":ids,"dynamic":dynamic,"cast_id":cast_id,"index":0,"hits":hits,"interval":interval,"interval_exact":interval_exact,"start":start,"next":start,"expires":start+maxi(hits*interval,roundi(float(p.get("duration_s",0))*20))+2,"confirmed":false}
 	if p2_jobs.size()<256:p2_jobs.append(job)
 	advance_p2()
 
@@ -1621,7 +1627,7 @@ func advance_p2() -> void:
 				job.confirmed=true
 				p2_confirm(a,s,b.pos,event,int(b.uid))
 		job.index=int(job.index)+1
-		job.next=ticks+int(job.interval)
+		job.next=maxi(ticks+1,int(job.get("start",ticks))+ceili(float(job.index)*float(job.get("interval_exact",job.interval))))
 		if int(job.index)>=int(job.hits):p2_jobs.erase(job)
 	for key in p2_hits.keys():
 		if ticks-int(p2_hits[key])>600:p2_hits.erase(key)
@@ -1908,6 +1914,8 @@ func load_combat_contracts() -> void:
 			var key=str(sig.skill_id)+":"+str(sig.event)
 			if not combo_index.has(key):combo_index[key]=[]
 			if not row.id in combo_index[key]:combo_index[key].append(row.id)
+			if not combo_skill_index.has(sig.skill_id):combo_skill_index[sig.skill_id]=[]
+			if not row.id in combo_skill_index[sig.skill_id]:combo_skill_index[sig.skill_id].append(row.id)
 	for row in registry.read_json("res://data/skill-depth-v5/form-routes.json").rows:form_routes_dev[row.id]=row
 
 func combo_record(a: Dictionary,s: Dictionary,event: String,b: Dictionary,point: Vector2) -> void:
@@ -2068,7 +2076,8 @@ func update_pressure() -> void:
 func combo_target_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 	if not use_contract_v10 or a.summon:return 0.0
 	var bonus=0.0
-	for contract in combo_contracts_dev.values():
+	for contract_id in combo_skill_index.get(s.skill_id,[]):
+		var contract=combo_contracts_dev[contract_id]
 		if not a.id in contract.members:continue
 		if not contract.signature_events.any(func(sig):return sig.skill_id==s.skill_id and sig.hostile_anchor):continue
 		if not str(contract.anchor_rule).begins_with("same_hostile"):continue
@@ -2081,8 +2090,9 @@ func combo_target_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 func combo_skill_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 	if not use_contract_v10 or a.summon:return 0.0
 	var bonus=0.0
-	for contract in combo_contracts_dev.values():
-		if not a.id in contract.members or not contract.signature_events.any(func(sig):return sig.skill_id==s.skill_id):continue
+	for contract_id in combo_skill_index.get(s.skill_id,[]):
+		var contract=combo_contracts_dev[contract_id]
+		if not a.id in contract.members:continue
 		if ticks-int(combo_clock.get(str(a.side)+":"+str(contract.id),-100000))<float(contract.cooldown_s)*20:continue
 		var partners=0
 		var confirmed=0
@@ -2095,3 +2105,20 @@ func combo_skill_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 				if not event.is_empty() and ticks-int(event.tick)<=float(contract.window_s)*20:confirmed+=1
 		if partners==contract.signature_events.size()-1:bonus=maxf(bonus,8.0+float(confirmed)*28.0)
 	return bonus
+
+func confirm_tracking(a: Dictionary,target: Dictionary) -> void:
+	if a.get("summon_tracking_sent",false) or target.hp<=0 or target.side==a.side:return
+	var owner=actor_by_uid(int(a.owner))
+	if owner.is_empty() or owner.hp<=0 or int(a.get("summon_parent",0))<=0:return
+	a.summon_tracking_sent=true
+	combo_record(owner,{"skill_id":"NIN-004-S2","passive_cast_id":a.summon_parent},"summon_tracking_confirmed",target,target.pos)
+
+func conditional_passive_active(a: Dictionary,row: Dictionary) -> bool:
+	if row.trigger.event=="while_form_active":
+		if not a.active_form.get("id","") in row.trigger.form_ids:return false
+	if not a.pending.is_empty() and a.pending.skill.get("passive_typed",[]).any(func(e):return e.id==row.id):return true
+	for p in projectiles:
+		if p.source==a.uid and p.skill.get("passive_typed",[]).any(func(e):return e.id==row.id):return true
+	for job in p2_jobs:
+		if job.source==a.uid and job.skill.get("passive_typed",[]).any(func(e):return e.id==row.id):return true
+	return false

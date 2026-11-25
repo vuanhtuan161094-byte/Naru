@@ -74,3 +74,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - REVIEW V10 batch 2 exact passive/branch effect fixtures, CP parent cap, animation phase timing. NIN-139-P2 mechanic HOLD while reflection adapter is unresolved; 186 source gate unchanged.
 
 - V11 REVIEW: actual per-ID 432 branch typed effects; 12 real rotation windows and all 54 correct-realm forms; measure spacing, focus/avoidance, tick duration, starter regression. No claim of organic all 12 combos or 54 forms until evidence. Trial runtime and all passive conditions/mastery still require full per-ID acceptance. Reflection + rights gates remain.
+
+- V11 follow-up: review combo B2 secondary duration contract with Chat00; interval effects with identical 50ms tick quantization require design tuning, no artificial timing claims.
