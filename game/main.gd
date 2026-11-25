@@ -69,6 +69,7 @@ func menu(message: String="") -> void:
 	button(row,"Chiêu mộ (100 ngọc)",recruit_one)
 	button(row,"Đội hình",roster)
 	button(row,"Tu luyện",growth_screen)
+	button(row,"Trang bị",gear_screen)
 	button(row,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
 	button(row,"Cốt truyện",campaign)
 	button(row,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
@@ -137,7 +138,10 @@ func growth_detail(id: String,message: String="") -> void:
 	for key in stats:
 		button(root,"%s +1 | Đã phân bổ %s" % [stats[key],p.allocated.get(key,0)],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key) else "Không còn điểm"))
 	label(root,message,18)
-	button(root,"Trở về",growth_screen)
+	var nav=HBoxContainer.new()
+	root.add_child(nav)
+	button(nav,"Nhẫn thuật",func():skill_screen(id))
+	button(nav,"Trở về",growth_screen)
 
 func campaign() -> void:
 	clear()
@@ -231,3 +235,94 @@ func finish(won: bool) -> void:
 	if sim==null:return
 	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts)
 	menu(("Chiến thắng" if won else "Thất bại / rút lui")+" • "+("Đã lưu kết quả" if ok else "Lỗi lưu kết quả"))
+
+func skill_screen(id: String,message: String="") -> void:
+	clear()
+	label(root,"NHẪN THUẬT • "+str(reg.ninjas[id].name_vi),26)
+	button(root,"Trở về",func():growth_detail(id))
+	label(root,message,16)
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for skill_id in reg.ninjas[id].skills+reg.ninjas[id].additional_skill_ids:
+		var sk=store.skill_progress(store.state.owned[id],skill_id)
+		var row=HBoxContainer.new()
+		rows.add_child(row)
+		var name_label=label(row,"%s | Giai %d cấp %d" % [reg.names[skill_id].name_vi,int(sk.grade),int(sk.level)],18)
+		name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		if not store.skill_allowed(reg,id,skill_id):
+			label(row,"Chưa mở: cần thử thách",16)
+		elif reg.skill_policies.has(skill_id):
+			button(row,"Tăng cấp",func():skill_screen(id,"Đã tăng cấp" if store.upgrade_skill(reg,id,skill_id) else "Thiếu sách hoặc đủ cấp"))
+			button(row,"Tiến giai",func():skill_screen(id,{"success":"Thành công","failure":"Thất bại, tăng bảo hiểm","locked":"Chưa đủ điều kiện","error":"Lỗi lưu"}[store.advance_skill(reg,id,skill_id)]))
+			for branch in reg.skill_policies[skill_id].branches:
+				if int(sk.grade)>=int(branch.unlock_grade) and str(sk.branch).is_empty():
+					button(row,str(branch.name_vi),func():skill_screen(id,"Đã chọn nhánh" if store.choose_skill_branch(reg,id,skill_id,branch.id) else "Không thể chọn"))
+
+func gear_screen(message: String="") -> void:
+	clear()
+	label(root,"TRANG BỊ • kho cá nhân",30)
+	label(root,message,18)
+	var nav=HBoxContainer.new()
+	root.add_child(nav)
+	button(nav,"Trở về",func():menu())
+	button(nav,"Công thức chế tạo",gear_craft_screen)
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	if store.state.gear_instances.is_empty():label(rows,"Chưa có trang bị. Cần mở Xưởng chế tạo và đủ nguyên liệu.",18)
+	for id in store.state.gear_instances:
+		var g=store.state.gear_instances[id]
+		button(rows,"%s +%d | Tinh luyện %d | %s" % [reg.gear_templates[g.template_id].name_vi,int(g.enhance),int(g.refine),reg.ninjas[g.owner].name_vi if not str(g.owner).is_empty() else "Chưa mặc"],func():gear_detail(id))
+
+func gear_craft_screen() -> void:
+	clear()
+	label(root,"CÔNG THỨC TRANG BỊ",30)
+	label(root,"Cần xưởng đúng loại và đủ nguyên liệu. Hệ thống xây xưởng thuộc lô làng.",16)
+	button(root,"Trở về",func():gear_screen())
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for id in reg.gear_templates:
+		var def=reg.gear_templates[id]
+		var b=button(rows,"%s | %s" % [def.name_vi,str(def.craft.inputs)],func():gear_screen("Đã chế tạo" if not store.craft_gear(reg,id).is_empty() else "Chưa đủ nguyên liệu"))
+		b.disabled=int(store.state.building_states.get(def.craft.building_id,{}).get("level",0))<=0
+
+func gear_detail(id: String,message: String="") -> void:
+	clear()
+	var g=store.state.gear_instances[id]
+	var def=reg.gear_templates[g.template_id]
+	label(root,"%s +%d" % [def.name_vi,int(g.enhance)],30)
+	label(root,"Phẩm %d | Tinh luyện %d | Tiến hóa %d | Bảo hiểm %d/20" % [int(g.quality),int(g.refine),int(g.evolution),int(g.fails)],18)
+	label(root,message,18)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	button(row,"Cường hóa",func():gear_detail(id,store.enhance_gear(id)))
+	button(row,"Cường hóa bảo hộ",func():gear_detail(id,store.enhance_gear(id,true)))
+	button(row,"Tinh luyện",func():gear_detail(id,"Đã tinh luyện" if store.refine_gear(id) else "Thiếu nguyên liệu"))
+	button(row,"Tiến hóa",func():gear_detail(id,"Đã tiến hóa" if store.refine_gear(id,true) else "Thiếu nguyên liệu"))
+	button(root,"Trở về",func():gear_screen())
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for ninja in store.state.owned:
+		var b=button(rows,("Tháo khỏi " if g.owner==ninja else "Mặc cho ")+str(reg.ninjas[ninja].name_vi),func():gear_detail(id,"Đã cập nhật" if store.equip_gear(reg,ninja,id) else "Hãy tháo khỏi chủ cũ"))
+		b.disabled=not str(g.owner).is_empty() and g.owner!=ninja
+	for gem in reg.gear_rules.socket.gems:
+		var resource=str(gem.resource_id)
+		var gems=HBoxContainer.new()
+		rows.add_child(gems)
+		button(gems,"Khảm "+resource+" ("+str(store.state.inventory.get(resource,0))+")",func():gear_detail(id,"Đã khảm" if store.socket_gear(reg,id,resource) else "Thiếu đá hoặc ô trống"))
+		if resource in g.gems:button(gems,"Tháo "+resource,func():gear_detail(id,"Đã tháo" if store.socket_gear(reg,id,resource,true) else "Lỗi"))

@@ -76,4 +76,38 @@ func _initialize() -> void:
 	target.last_element="water"
 	target.reaction_tick=-1000
 	check(is_equal_approx(full.reaction(source,target,"lightning"),1.2),"water lightning reaction")
+	store.state.inventory["RES-119"]=1000
+	var skill_id="NIN-001-S2"
+	check(store.upgrade_skill(reg,"NIN-001",skill_id),"skill level transaction")
+	var p=store.state.owned["NIN-001"]
+	p.skill_levels[skill_id].level=20
+	p.skill_levels[skill_id].fails=4
+	check(store.advance_skill(reg,"NIN-001",skill_id)=="success","skill grade pity")
+	check(int(p.skill_levels[skill_id].grade)==2,"skill grade persisted")
+	check(store.craft_gear(reg,"EQ-001-Q1").is_empty(),"gear locked without workshop")
+	# Explicit CI fixture, not a player grant.
+	store.state.building_states["BLD-017"]={"level":1}
+	store.state.inventory["RES-059"]=100
+	store.state.inventory["RES-110"]=100
+	store.state.inventory["RES-113"]=100
+	store.state.inventory["RES-114"]=100
+	store.state.inventory["RES-132"]=100
+	store.state.inventory["RES-077"]=5
+	var gear_id=store.craft_gear(reg,"EQ-001-Q1")
+	check(not gear_id.is_empty(),"gear craft costs")
+	check(store.equip_gear(reg,"NIN-001",gear_id),"equip gear")
+	check(not store.equip_gear(reg,"NIN-003",gear_id),"reject shared gear")
+	store.state.gear_instances[gear_id].fails=20
+	check(store.enhance_gear(gear_id)=="success","enhance pity")
+	check(store.refine_gear(gear_id),"refine gear")
+	check(store.refine_gear(gear_id,true),"evolve gear")
+	check(store.socket_gear(reg,gear_id,"RES-077"),"socket gem")
+	check(store.socket_gear(reg,gear_id,"RES-077",true),"return gem")
+	var equipped=Combat.new()
+	equipped.setup(reg,store.state,stage,42)
+	check(float(equipped.actors[0].gear_stats.get("hp",0))>10,"gear stats affect combat")
+	var persisted=Store.new()
+	persisted.save_path=store.save_path
+	persisted.load_or_new(reg)
+	check(persisted.state.gear_instances[gear_id].owner=="NIN-001","gear reload")
 	quit(0 if failures==0 else 1)

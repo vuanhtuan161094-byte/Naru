@@ -10,6 +10,9 @@ var growth: Dictionary = {}
 var status_catalog: Dictionary = {}
 var reactions: Array = []
 var affinity: Dictionary = {}
+var gear_templates: Dictionary = {}
+var gear_rules: Dictionary = {}
+var skill_policies: Dictionary = {}
 var errors: Array[String] = []
 
 func read_json(path: String) -> Variant:
@@ -59,6 +62,11 @@ func load_all() -> bool:
 	if affinity_data is Array:
 		for item in affinity_data: affinity[str(item.attack)+":"+str(item.defense)]=float(item.multiplier)
 	if status_catalog.size()!=25 or reactions.size()!=7: errors.append("Missing combat rules")
+	gear_templates=indexed("res://data/equipment_templates.json")
+	skill_policies=indexed("res://data/skill_progression_policies.json","skill_id")
+	var gear_data=read_json("res://data/d4/equipment_rules.json")
+	if gear_data is Dictionary: gear_rules=gear_data
+	if gear_templates.size()!=128 or skill_policies.size()!=1008: errors.append("Missing progression data")
 	if ninjas.size()!=144 or skills.size()!=1152 or stages.size()!=120:
 		errors.append("Expected 144/1152/120")
 	for row in ninjas.values():
