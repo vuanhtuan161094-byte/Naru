@@ -993,11 +993,16 @@ func beast_detail(id: String,message: String="") -> void:
 		var bulk=button(rows,"Tu luyện ×"+str(qty),func():beast_detail(id,"Đã tu luyện" if store.train_beast(reg,id,qty) else "Thiếu tài nguyên"))
 		bulk.disabled=qty<=0
 		button(rows,"Nguồn tinh hoa",func():resource_detail(str(def.training_resource)))
+		for host in def.compatibility.preferred_host_ids:
+			var reason=store.beast_bind_reason(reg,str(host),id)
+			label(rows,"Chủ thể tương thích: "+str(reg.ninjas[host].name_vi)+" • "+("Sẵn sàng" if reason=="" else reason),16)
+			if not store.state.owned.has(host):button(rows,"Mở chiêu mộ",recruit_screen)
 	for ninja in store.state.owned:
 		if store.state.beasts.has(id):
 			if not ninja in def.compatibility.preferred_host_ids:continue
 			var bind=button(rows,"Phong ấn vào "+str(reg.ninjas[ninja].name_vi),func():beast_detail(id,"Đã phong ấn" if store.bind_beast(reg,ninja,id) else "Không tương thích / thiếu ấn"))
 			bind.disabled=not store.beast_bind_ready(reg,ninja,id)
+			bind.tooltip_text=store.beast_bind_reason(reg,ninja,id)
 		else:
 			var capture=button(rows,"Thử thu phục với "+str(reg.ninjas[ninja].name_vi)+" • cảnh "+str(store.state.owned[ninja].realm),func():beast_detail(id,"Đã thu phục" if store.capture_beast(reg,ninja,id) else "Không thắng / thiếu điều kiện"))
 			capture.disabled=not store.beast_capture_ready(reg,ninja,id)
@@ -1289,8 +1294,8 @@ func craft_screen(message: String="") -> void:
 		b.tooltip_text="Mẻ đủ nguyên liệu: "+str(quote.affordable)+" • Xưởng "+str(quote.level)+"/"+str(quote.required_level)+(" • Chưa có nhân lực" if not quote.staffed else "")
 		button(line,"Nguồn",func():resource_detail(str(recipe.output.resource_id)))
 
-func resource_detail(id: String) -> void:
-	var rows=activity_rows(str(reg.resources[id].name_vi),"Trong kho: "+str(store.state.inventory.get(id,0)),inventory_screen)
+func resource_detail(id: String,message: String="") -> void:
+	var rows=activity_rows(str(reg.resources[id].name_vi),"Trong kho: "+str(store.state.inventory.get(id,0))+((" • "+message) if message!="" else ""),inventory_screen)
 	screen_id="inventory"
 	if reg.resources[id].tradable and not id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:
 		var unit=maxi(1,floori(float(reg.resources[id].base_price_ryo)*0.35))
@@ -1316,7 +1321,7 @@ func resource_detail(id: String) -> void:
 				label(rows,"Sẵn sàng: "+str(ready.size())+" ninja • mỗi ninja đấu riêng và có hồi chiêu",16)
 				var batch=button(rows,"Đấu thử thách với "+str(roster.size())+" ninja",func():
 					var result=store.resource_trial_batch(reg,id,roster)
-					resource_detail(id))
+					resource_detail(id,"Đã đấu %d, thắng %d, nhận %d" % [int(result.attempts),int(result.wins),int(result.earned)]))
 				batch.disabled=roster.is_empty()
 				batch.tooltip_text=", ".join(PackedStringArray(names))
 			if source.source_type=="territory":
