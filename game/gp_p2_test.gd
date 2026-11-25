@@ -531,4 +531,40 @@ func _initialize() -> void:
 		chapter_wins+=1
 	print("NARU_NATURAL_CHAPTER_WINS ",chapter_wins,"/5")
 	check(chapter_wins>=3,"natural starter progression at least 3 stages")
+	var organic=Store.new()
+	organic.save_path="user://gp_organic_ch1_ci.json"
+	organic.new_game(reg)
+	organic.rng.seed=42
+	organic.setup_starter_jobs(reg)
+	organic.construct(reg,"BLD-001")
+	organic.advance_clock(reg,int(organic.state.high_water_timestamp)+3600)
+	for organic_draw_id in range(10):organic.draw(reg)
+	var organic_team=organic.state.owned.keys()
+	organic_team.sort_custom(func(x,y):return int(organic.state.owned[x].quality)>int(organic.state.owned[y].quality))
+	organic_team.resize(mini(6,organic_team.size()))
+	organic.set_team(organic_team)
+	# Spend actual starter funds/earned resources. No granted material or inflated stats.
+	for id in organic_team:
+		organic.buy_training_scrolls("RES-117",2)
+		organic.train_batch(reg,id,"RES-117",2)
+		organic.train_batch(reg,id,"RES-116",5)
+	var organic_wins=0
+	for index in range(1,11):
+		var organic_stage_def=reg.stages["STG-%03d" % index]
+		var organic_stage_event=organic.begin_stage(organic_stage_def)
+		if organic_stage_event=="":break
+		var battle_organic=Combat.new()
+		battle_organic.use_p2=true
+		battle_organic.setup(reg,organic.state,organic_stage_def,42+index)
+		for step_organic in range(3600):
+			for i in range(organic_team.size()):battle_organic.ultimate(i)
+			battle_organic.tick(0.05)
+			if battle_organic.outcome!="":break
+		var won_organic=battle_organic.outcome=="win"
+		organic.finish_stage(reg,organic_stage_def,organic_stage_event,won_organic,battle_organic.counts,battle_organic.mastery_counts,battle_organic.action_stats)
+		print("NARU_P2_ORGANIC_STAGE ",organic_stage_def.id," ",battle_organic.outcome)
+		if not won_organic:break
+		organic_wins+=1
+	print("NARU_P2_ORGANIC_WINS ",organic_wins,"/10")
+	# Observational gate: actual P2 starter progression, no fabricated balance claim.
 	quit(0 if failures==0 else 1)

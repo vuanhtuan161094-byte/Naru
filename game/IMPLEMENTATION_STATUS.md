@@ -76,3 +76,5 @@ GP-SKILL-P2 handover: latest code b26ef37f198159f1f72a9c38892070d39168742f; Late
 P2 batch 5 strict per-ID confirmation gate; corrected fixture, not gameplay range. Pending CI.
 
 P2 batch 6: strict gate exposed clone-dash collision; fixed launch consumption before movement. Rerun required.
+
+A+B / V7 candidate: see GAMEPLAY_STATUS.md; six special candidates, P3 second HOLD, exact DEV campaign XP and global NPC war cadence. CI pending; no production acceptance.

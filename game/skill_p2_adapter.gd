@@ -1,11 +1,11 @@
 extends RefCounted
 # Explicit allow-list; unknown special parameters keep D4, never silently become P2.
-const TYPES=["damage","multi_hit","decoy","chakra_regen","dash_damage","dash_multi_hit","counter","wall","projectile_damage","stance","line_damage","zone_damage","area_damage","shield","cone_damage","ground_damage","heal","cleanse","activate_form","heal_pulse","status","directional_shield","teleport","projectile_mark","team_buff","trap","chakra_drain","mark","chakra_restore","displace","zone_drain","pierce","absorb","position_swap","summon","beguile_tactical"]
-const SPECIAL=["requires_owned_clone_or_anchor","adapter_gate","eye_strain","do_not_add_duplicate_dot","retrieve","max_objects","shrink_target","requires_contact_with_ally","mark_throw_before_teleport","invulnerability_s","decoy_evasion_once"]
+const TYPES=["damage","multi_hit","decoy","chakra_regen","dash_damage","dash_multi_hit","counter","wall","projectile_damage","stance","line_damage","zone_damage","area_damage","shield","cone_damage","ground_damage","heal","cleanse","activate_form","heal_pulse","status","directional_shield","teleport","projectile_mark","team_buff","trap","chakra_drain","mark","chakra_restore","displace","zone_drain","pierce","absorb","position_swap","summon","beguile_tactical","projectile_intercept"]
+const SPECIAL=["requires_owned_clone_or_anchor","adapter_gate","retrieve","max_objects","requires_contact_with_ally","mark_throw_before_teleport","invulnerability_s"]
 static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	var p=raw.effect.params
 	var kind=str(raw.effect.type)
-	if raw.design_status=="HOLD_ERA":return {"reason":"HOLD_ERA"}
+	if raw.design_status=="HOLD_ERA" or raw.skill_id=="NIN-016-S7":return {"reason":"HOLD_ERA"}
 	if not kind in TYPES:return {"reason":"mechanic:"+kind}
 	for key in SPECIAL:
 		if p.has(key):return {"reason":"special:"+key}
@@ -60,6 +60,6 @@ static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 		s.effects.append({"type":"apply_status","status_id":"evasion","chance":1.0,"duration_s":float(p.get("duration_s",5)),"magnitude":float(secondary.magnitude)})
 	if kind=="counter":s.effects.append({"type":"counter","window_s":float(p.get("duration_s",4)),"coefficient":coef})
 	# New mechanisms have explicit engine dispatch, not fake D4 effect.
-	if s.effects.is_empty() and not kind in ["wall","teleport","position_swap","absorb","chakra_restore","mark","projectile_mark"]:return {"reason":"empty:"+kind}
+	if s.effects.is_empty() and not kind in ["wall","teleport","position_swap","absorb","chakra_restore","mark","projectile_mark","projectile_intercept"]:return {"reason":"empty:"+kind}
 	s.ai={"base_priority":int(base.ai.base_priority),"condition":"ally_dispellable_status" if raw.conditions.ai=="ally_has_dispellable_status" and s.target!="self" else "valid_target","reserve_ultimate_chakra":true}
 	return {"skill":s}

@@ -49,6 +49,24 @@ func _initialize() -> void:
 	# Distinguish coverage from observed effects. These ID lists are not a blanket PASS.
 	check(confirmed+cast_only.size()+rejected.size()==reg.p2_skills.size(),"P2 per-ID timed audit reconciled")
 	check(cast_only.is_empty() and rejected.is_empty(),"all enabled P2 candidates confirm at least one actual effect in valid fixture")
+	check(reg.p2_fallback.has("NIN-006-S7") and reg.p2_fallback.has("NIN-016-S7"),"both P3 era holds preserve D4 fallback")
+	var special=Combat.new()
+	special.registry=reg
+	special.qa_hold_ai=true
+	special.add_actor("NIN-093",0,160,4,{},0,1.0)
+	special.add_actor("NIN-003",1,160,4,{},0,1.0)
+	var defender=special.actors[0]
+	var enemy=special.actors[1]
+	defender.pos=Vector2(5,5)
+	enemy.pos=Vector2(8,5)
+	defender.chakra=defender.max_chakra
+	var intercept=special.effective_skill(defender,"NIN-093-S7")
+	check(special.cast(defender,intercept,enemy),"projectile-only barrier cast")
+	for i in range(20):special.tick(0.05)
+	check(special.p2_intercepts.size()==1 and special.clear_segment(defender.pos,enemy.pos,0.03),"barrier does not block movement")
+	check(not special.p2_intercept_segment(defender,defender.pos,enemy.pos),"friendly projectile passes")
+	check(special.p2_intercept_segment(enemy,enemy.pos,defender.pos),"one hostile projectile intercepted")
+	check(not special.p2_intercept_segment(enemy,enemy.pos,defender.pos),"intercept charge exhausted")
 	var combos_ok=0
 	for combo in reg.p2_combos.values():
 		var trial=Combat.new()

@@ -30,6 +30,11 @@ static func ensure(reg,s: Dictionary) -> void:
 		if not s.world_squads.has(key):s.world_squads[key]={"team":[],"location":HOME,"travel":{}}
 	if not s.has("home_defense"):s.home_defense=[]
 	if not s.has("npc_war_count"):s.npc_war_count=0
+	if not s.has("npc_last_global_war_tick"):s.npc_last_global_war_tick=-1000
+	if not s.has("npc_pair_war_ticks"):s.npc_pair_war_ticks={}
+	# Recover the global cadence from older per-faction state on migration.
+	for npc in s.faction_states.values():
+		s.npc_last_global_war_tick=maxi(int(s.npc_last_global_war_tick),int(npc.get("last_war_tick",-1000)))
 	for id in s.faction_states:
 		var npc=s.faction_states[id]
 		if not npc.has("infrastructure"):npc.infrastructure={"production":1,"defense":1,"training":1}
@@ -376,7 +381,7 @@ static func strategic_power(reg,s: Dictionary,id: String) -> float:
 
 static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
 	var npc=s.faction_states[id]
-	if int(s.world_tick)-int(npc.last_war_tick)<144:return false
+	if int(s.world_tick)-int(npc.last_war_tick)<72:return false
 	var tension_seen={}
 	for route in reg.routes:
 		var target=""
@@ -393,8 +398,13 @@ static func npc_border_action(reg,s: Dictionary,id: String) -> bool:
 				r.score=maxi(-100,int(r.score)-2)
 				if int(r.score)<=-60:r.state="war"
 			continue
+		var pair=relation_key(id,str(owner))
+		if int(s.world_tick)-int(s.npc_last_global_war_tick)<36:continue
+		if int(s.world_tick)-int(s.npc_pair_war_ticks.get(pair,-1000))<72:continue
 		if int(npc.stock.get("RES-001",0))<600:continue
 		npc.last_war_tick=int(s.world_tick)
+		s.npc_last_global_war_tick=int(s.world_tick)
+		s.npc_pair_war_ticks[pair]=int(s.world_tick)
 		npc.stock["RES-001"]=int(npc.stock["RES-001"])-600
 		var attack=strategic_power(reg,s,id)
 		var defense=strategic_power(reg,s,owner)*(1+0.05*(int(s.faction_states[owner].infrastructure.defense)-1))+float(reg.territories[target].defense_rating)*0.5

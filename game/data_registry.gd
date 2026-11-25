@@ -4,6 +4,7 @@ var ninjas: Dictionary = {}
 var skills: Dictionary = {}
 var names: Dictionary = {}
 var stages: Dictionary = {}
+var campaign_xp: Dictionary = {}
 var npcs: Dictionary = {}
 var recruit: Dictionary = {}
 var initial: Dictionary = {}
@@ -88,6 +89,8 @@ func load_all() -> bool:
 	names = indexed("res://data/skills.json")
 	names.merge(indexed("res://data/additional_skills.json"))
 	stages = indexed("res://data/campaign_stages.json")
+	campaign_xp=indexed("res://data/campaign_xp_dev.json","stage_id")
+	if campaign_xp.size()!=120:errors.append("Missing DEV campaign XP")
 	npcs = indexed("res://data/encounter_npcs.json")
 	var r = read_json("res://data/d4/recruitment.json")
 	var s = read_json("res://data/d4/initial_save_seed.json")

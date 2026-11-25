@@ -145,7 +145,7 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 					grant_reward(str(source.resource_id),int(source.base_yield))
 		for id in entry.team:
 			var p=state.owned[id]
-			var earned_xp=100+15*int(str(stage.id).right(3))
+			var earned_xp=int(reg.campaign_xp.get(stage.id,{}).get("battle_xp",100+15*int(str(stage.id).right(3))))
 			var stats=Stats.derive(reg,reg.ninjas[id],p)
 			p.xp=int(p.xp)+roundi(earned_xp*(1+Stats.effect(reg,stats,"xp_efficiency")))
 			apply_levels(p)

@@ -1,0 +1,482 @@
+[
+  {
+    "stage_id": "STG-001",
+    "battle_xp": 115
+  },
+  {
+    "stage_id": "STG-002",
+    "battle_xp": 130
+  },
+  {
+    "stage_id": "STG-003",
+    "battle_xp": 152
+  },
+  {
+    "stage_id": "STG-004",
+    "battle_xp": 209
+  },
+  {
+    "stage_id": "STG-005",
+    "battle_xp": 515
+  },
+  {
+    "stage_id": "STG-006",
+    "battle_xp": 307
+  },
+  {
+    "stage_id": "STG-007",
+    "battle_xp": 381
+  },
+  {
+    "stage_id": "STG-008",
+    "battle_xp": 459
+  },
+  {
+    "stage_id": "STG-009",
+    "battle_xp": 544
+  },
+  {
+    "stage_id": "STG-010",
+    "battle_xp": 1375
+  },
+  {
+    "stage_id": "STG-011",
+    "battle_xp": 782
+  },
+  {
+    "stage_id": "STG-012",
+    "battle_xp": 893
+  },
+  {
+    "stage_id": "STG-013",
+    "battle_xp": 1010
+  },
+  {
+    "stage_id": "STG-014",
+    "battle_xp": 1132
+  },
+  {
+    "stage_id": "STG-015",
+    "battle_xp": 2379
+  },
+  {
+    "stage_id": "STG-016",
+    "battle_xp": 1325
+  },
+  {
+    "stage_id": "STG-017",
+    "battle_xp": 1460
+  },
+  {
+    "stage_id": "STG-018",
+    "battle_xp": 1600
+  },
+  {
+    "stage_id": "STG-019",
+    "battle_xp": 1745
+  },
+  {
+    "stage_id": "STG-020",
+    "battle_xp": 3577
+  },
+  {
+    "stage_id": "STG-021",
+    "battle_xp": 2227
+  },
+  {
+    "stage_id": "STG-022",
+    "battle_xp": 2403
+  },
+  {
+    "stage_id": "STG-023",
+    "battle_xp": 2585
+  },
+  {
+    "stage_id": "STG-024",
+    "battle_xp": 2771
+  },
+  {
+    "stage_id": "STG-025",
+    "battle_xp": 5594
+  },
+  {
+    "stage_id": "STG-026",
+    "battle_xp": 3059
+  },
+  {
+    "stage_id": "STG-027",
+    "battle_xp": 3257
+  },
+  {
+    "stage_id": "STG-028",
+    "battle_xp": 3460
+  },
+  {
+    "stage_id": "STG-029",
+    "battle_xp": 3667
+  },
+  {
+    "stage_id": "STG-030",
+    "battle_xp": 7326
+  },
+  {
+    "stage_id": "STG-031",
+    "battle_xp": 3986
+  },
+  {
+    "stage_id": "STG-032",
+    "battle_xp": 4690
+  },
+  {
+    "stage_id": "STG-033",
+    "battle_xp": 4938
+  },
+  {
+    "stage_id": "STG-034",
+    "battle_xp": 5191
+  },
+  {
+    "stage_id": "STG-035",
+    "battle_xp": 10293
+  },
+  {
+    "stage_id": "STG-036",
+    "battle_xp": 5580
+  },
+  {
+    "stage_id": "STG-037",
+    "battle_xp": 5845
+  },
+  {
+    "stage_id": "STG-038",
+    "battle_xp": 6114
+  },
+  {
+    "stage_id": "STG-039",
+    "battle_xp": 6388
+  },
+  {
+    "stage_id": "STG-040",
+    "battle_xp": 12592
+  },
+  {
+    "stage_id": "STG-041",
+    "battle_xp": 6808
+  },
+  {
+    "stage_id": "STG-042",
+    "battle_xp": 7093
+  },
+  {
+    "stage_id": "STG-043",
+    "battle_xp": 8146
+  },
+  {
+    "stage_id": "STG-044",
+    "battle_xp": 8470
+  },
+  {
+    "stage_id": "STG-045",
+    "battle_xp": 16620
+  },
+  {
+    "stage_id": "STG-046",
+    "battle_xp": 8965
+  },
+  {
+    "stage_id": "STG-047",
+    "battle_xp": 9301
+  },
+  {
+    "stage_id": "STG-048",
+    "battle_xp": 9641
+  },
+  {
+    "stage_id": "STG-049",
+    "battle_xp": 9987
+  },
+  {
+    "stage_id": "STG-050",
+    "battle_xp": 19523
+  },
+  {
+    "stage_id": "STG-051",
+    "battle_xp": 10513
+  },
+  {
+    "stage_id": "STG-052",
+    "battle_xp": 10869
+  },
+  {
+    "stage_id": "STG-053",
+    "battle_xp": 11230
+  },
+  {
+    "stage_id": "STG-054",
+    "battle_xp": 12682
+  },
+  {
+    "stage_id": "STG-055",
+    "battle_xp": 24718
+  },
+  {
+    "stage_id": "STG-056",
+    "battle_xp": 13290
+  },
+  {
+    "stage_id": "STG-057",
+    "battle_xp": 13701
+  },
+  {
+    "stage_id": "STG-058",
+    "battle_xp": 14117
+  },
+  {
+    "stage_id": "STG-059",
+    "battle_xp": 14538
+  },
+  {
+    "stage_id": "STG-060",
+    "battle_xp": 28263
+  },
+  {
+    "stage_id": "STG-061",
+    "battle_xp": 15177
+  },
+  {
+    "stage_id": "STG-062",
+    "battle_xp": 15609
+  },
+  {
+    "stage_id": "STG-063",
+    "battle_xp": 16046
+  },
+  {
+    "stage_id": "STG-064",
+    "battle_xp": 16487
+  },
+  {
+    "stage_id": "STG-065",
+    "battle_xp": 34725
+  },
+  {
+    "stage_id": "STG-066",
+    "battle_xp": 18627
+  },
+  {
+    "stage_id": "STG-067",
+    "battle_xp": 19118
+  },
+  {
+    "stage_id": "STG-068",
+    "battle_xp": 19614
+  },
+  {
+    "stage_id": "STG-069",
+    "battle_xp": 20115
+  },
+  {
+    "stage_id": "STG-070",
+    "battle_xp": 38948
+  },
+  {
+    "stage_id": "STG-071",
+    "battle_xp": 20874
+  },
+  {
+    "stage_id": "STG-072",
+    "battle_xp": 21386
+  },
+  {
+    "stage_id": "STG-073",
+    "battle_xp": 21903
+  },
+  {
+    "stage_id": "STG-074",
+    "battle_xp": 22425
+  },
+  {
+    "stage_id": "STG-075",
+    "battle_xp": 43351
+  },
+  {
+    "stage_id": "STG-076",
+    "battle_xp": 23216
+  },
+  {
+    "stage_id": "STG-077",
+    "battle_xp": 25623
+  },
+  {
+    "stage_id": "STG-078",
+    "battle_xp": 26203
+  },
+  {
+    "stage_id": "STG-079",
+    "battle_xp": 26788
+  },
+  {
+    "stage_id": "STG-080",
+    "battle_xp": 51713
+  },
+  {
+    "stage_id": "STG-081",
+    "battle_xp": 27674
+  },
+  {
+    "stage_id": "STG-082",
+    "battle_xp": 28271
+  },
+  {
+    "stage_id": "STG-083",
+    "battle_xp": 28872
+  },
+  {
+    "stage_id": "STG-084",
+    "battle_xp": 29478
+  },
+  {
+    "stage_id": "STG-085",
+    "battle_xp": 56835
+  },
+  {
+    "stage_id": "STG-086",
+    "battle_xp": 30397
+  },
+  {
+    "stage_id": "STG-087",
+    "battle_xp": 31015
+  },
+  {
+    "stage_id": "STG-088",
+    "battle_xp": 33952
+  },
+  {
+    "stage_id": "STG-089",
+    "battle_xp": 34625
+  },
+  {
+    "stage_id": "STG-090",
+    "battle_xp": 66683
+  },
+  {
+    "stage_id": "STG-091",
+    "battle_xp": 35644
+  },
+  {
+    "stage_id": "STG-092",
+    "battle_xp": 36330
+  },
+  {
+    "stage_id": "STG-093",
+    "battle_xp": 37020
+  },
+  {
+    "stage_id": "STG-094",
+    "battle_xp": 37715
+  },
+  {
+    "stage_id": "STG-095",
+    "battle_xp": 72561
+  },
+  {
+    "stage_id": "STG-096",
+    "battle_xp": 38767
+  },
+  {
+    "stage_id": "STG-097",
+    "battle_xp": 39474
+  },
+  {
+    "stage_id": "STG-098",
+    "battle_xp": 40186
+  },
+  {
+    "stage_id": "STG-099",
+    "battle_xp": 43692
+  },
+  {
+    "stage_id": "STG-100",
+    "battle_xp": 83984
+  },
+  {
+    "stage_id": "STG-101",
+    "battle_xp": 44850
+  },
+  {
+    "stage_id": "STG-102",
+    "battle_xp": 45628
+  },
+  {
+    "stage_id": "STG-103",
+    "battle_xp": 46411
+  },
+  {
+    "stage_id": "STG-104",
+    "battle_xp": 47200
+  },
+  {
+    "stage_id": "STG-105",
+    "battle_xp": 90653
+  },
+  {
+    "stage_id": "STG-106",
+    "battle_xp": 48391
+  },
+  {
+    "stage_id": "STG-107",
+    "battle_xp": 49192
+  },
+  {
+    "stage_id": "STG-108",
+    "battle_xp": 49998
+  },
+  {
+    "stage_id": "STG-109",
+    "battle_xp": 50808
+  },
+  {
+    "stage_id": "STG-110",
+    "battle_xp": 103735
+  },
+  {
+    "stage_id": "STG-111",
+    "battle_xp": 55354
+  },
+  {
+    "stage_id": "STG-112",
+    "battle_xp": 56229
+  },
+  {
+    "stage_id": "STG-113",
+    "battle_xp": 57110
+  },
+  {
+    "stage_id": "STG-114",
+    "battle_xp": 57995
+  },
+  {
+    "stage_id": "STG-115",
+    "battle_xp": 111228
+  },
+  {
+    "stage_id": "STG-116",
+    "battle_xp": 59333
+  },
+  {
+    "stage_id": "STG-117",
+    "battle_xp": 60231
+  },
+  {
+    "stage_id": "STG-118",
+    "battle_xp": 61134
+  },
+  {
+    "stage_id": "STG-119",
+    "battle_xp": 62042
+  },
+  {
+    "stage_id": "STG-120",
+    "battle_xp": 118915
+  }
+]

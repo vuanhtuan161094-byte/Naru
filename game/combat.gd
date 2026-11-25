@@ -34,6 +34,7 @@ var terrain: Array[Dictionary]=[]
 var qa_hold_ai=false
 var use_p2=true
 var p2_jobs: Array[Dictionary]=[]
+var p2_intercepts: Array[Dictionary]=[]
 var p2_marks: Dictionary={}
 var p2_hits: Dictionary={}
 var p2_events: Dictionary={}
@@ -216,6 +217,8 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 		if e.has("tick_coefficient"):e.tick_coefficient=float(e.tick_coefficient)*factor
 	if s.has("p2"):
 		var params=s.p2.effect.params
+		# DEV ocular strain: extra 6% maximum chakra, charged through ordinary cast transaction.
+		if params.get("eye_strain",false):s.chakra+=float(a.max_chakra)*0.06
 		if params.get("requires_clone_or_basic_fallback",false) and owned_clone(a).is_empty():
 			s.p2.effect.hit_count=1
 			for e in s.effects:
@@ -334,6 +337,10 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 	if allow_counter and a.side!=b.side and b.has("p2_evade") and int(b.p2_evade.expires)>ticks and int(b.p2_evade.left)>0:
 		b.p2_evade.left=int(b.p2_evade.left)-1
 		art_event("miss",b.pos)
+		if b.p2_evade.get("decoy_counter",false) and not b.counter.is_empty():
+			var response=b.counter
+			b.counter={}
+			hit(b,a,float(b.patk)*float(response.coefficient)*100.0/(100.0+float(a.armor)),false)
 		return
 	var blocked=minf(float(b.shield),dmg)
 	var remaining=blocked
@@ -884,7 +891,7 @@ func body_radius(a: Dictionary) -> float:
 	var rules=registry.tactics
 	if a.get("summon",false):return float(rules.summon_radius)
 	if int(a.get("uid",-1))==boss_actor_uid or a.get("beast",false):return float(rules.boss_radius)
-	return float(rules.body_radius)
+	return float(rules.body_radius)* (0.65 if int(a.get("p2_shrink_until",0))>ticks else 1.0)
 
 func clamp_body(p: Vector2,radius: float) -> Vector2:
 	return Vector2(clampf(p.x,radius,float(map_width)-radius),clampf(p.y,radius,float(map_height)-radius))
@@ -1039,6 +1046,7 @@ func advance_projectiles(dt: float) -> void:
 		var from=Vector2(p.pos)
 		var to=from+Vector2(p.direction)*step
 		var blocked=not clear_segment(from,to,0.03) or not to.is_equal_approx(clamp_body(to,0.03))
+		if not blocked and p2_intercept_segment(source,from,to):blocked=true
 		if not blocked:
 			var contacts=[]
 			for target in alive(1-int(source.side)):
@@ -1188,6 +1196,13 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 		missed_casts+=1
 		return
 	art_event("release",point,0,str(s.skill_id))
+	if kind=="projectile_intercept":
+		var length_value=float(p.get("width_m",2.0))
+		var thickness=float(p.get("thickness_m",0.45))
+		var size_value=Vector2(thickness,length_value) if absf(direction.x)>=absf(direction.y) else Vector2(length_value,thickness)
+		p2_intercepts.append({"owner":a.uid,"side":a.side,"rect":Rect2(point-size_value/2,size_value),"left":int(p.get("max_projectiles",1)),"expires":ticks+roundi(float(p.get("duration_s",6))*20)})
+		p2_confirm(a,s,point,"contact_or_effect_confirmed")
+		return
 	if s.shape=="wall":
 		var size_value=Vector2(float(p.get("thickness_m",0.45)),float(p.get("width_m",2.2)))
 		var rect=Rect2(point-size_value/2,size_value)
@@ -1251,6 +1266,8 @@ func p2_schedule(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,t
 	advance_p2()
 
 func advance_p2() -> void:
+	for barrier in p2_intercepts.duplicate():
+		if int(barrier.expires)<=ticks or int(barrier.left)<=0:p2_intercepts.erase(barrier)
 	for item in terrain.duplicate():
 		if item.has("expires") and int(item.expires)<=ticks:terrain.erase(item)
 	for key in p2_marks.keys():
@@ -1282,12 +1299,14 @@ func advance_p2() -> void:
 			var before_shield=float(b.shield)
 			var before_status=b.statuses.duplicate(true)
 			var before_pos=Vector2(a.pos)
+			var before_evade=a.get("p2_evade",{}).duplicate(true)
+			var before_shrink=int(a.get("p2_shrink_until",0))
 			p2_apply(a,s,b,int(job.hits),int(job.index))
 			var event="effect"
 			if actors.size()>before_actor_count:event="summon_spawned"
 			elif before_form!=str(a.active_form.get("id","")):event="form_activated"
 			elif float(b.hp)>before_hp:event="heal_confirmed"
-			elif float(b.hp)<before_hp or float(b.shield)!=before_shield or float(b.chakra)!=before_chakra or before_status!=b.statuses or before_pos!=a.pos:event="contact_or_effect_confirmed"
+			elif float(b.hp)<before_hp or float(b.shield)!=before_shield or float(b.chakra)!=before_chakra or before_status!=b.statuses or before_pos!=a.pos or before_evade!=a.get("p2_evade",{}) or before_shrink!=int(a.get("p2_shrink_until",0)):event="contact_or_effect_confirmed"
 			elif s.p2.effect.type in ["directional_shield","absorb","mark","projectile_mark","counter","teleport","position_swap"]:event="contact_or_effect_confirmed"
 			if not job.confirmed and event!="effect":
 				job.confirmed=true
@@ -1319,6 +1338,11 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 		b.pending={}
 		b.busy=0.0
 		art_event("interrupt",b.pos,0,str(s.skill_id))
+	if p.get("decoy_evasion_once",false) and index==0:
+		a.p2_evade={"left":1,"expires":ticks+roundi(float(p.get("duration_s",4))*20),"decoy_counter":true}
+	if p.has("shrink_target") and index==0:
+		# Only caster body shrinks; no living target can be stored/shrunk by another unit.
+		a.p2_shrink_until=ticks+roundi(float(p.get("duration_s",3))*20)
 	if p.has("max_avoided_hits"):
 		a.p2_evade={"left":int(p.max_avoided_hits),"expires":ticks+roundi(float(p.get("duration_s",3))*20)}
 	if kind=="directional_shield":
@@ -1404,3 +1428,18 @@ func owned_clone(a: Dictionary) -> Dictionary:
 	for b in actors:
 		if b.summon and b.owner==a.uid and b.hp>0:return b
 	return {}
+
+# Projectile-only barrier: does not alter actor pathing; consumes one hostile projectile.
+func p2_intercept_segment(source: Dictionary,from: Vector2,to: Vector2) -> bool:
+	for barrier in p2_intercepts:
+		if int(barrier.side)==int(source.side) or int(barrier.left)<=0 or int(barrier.expires)<=ticks:continue
+		var rect: Rect2=barrier.rect.grow(0.03)
+		var corners=[rect.position,Vector2(rect.end.x,rect.position.y),rect.end,Vector2(rect.position.x,rect.end.y)]
+		var contact=rect.has_point(from) or rect.has_point(to)
+		for i in range(4):
+			if Geometry2D.segment_intersects_segment(from,to,corners[i],corners[(i+1)%4])!=null:contact=true
+		if not contact:continue
+		barrier.left=int(barrier.left)-1
+		art_event("intercept",to)
+		return true
+	return false

@@ -30,6 +30,10 @@ func _initialize() -> void:
 			if int(qty)<0:
 				quit(1)
 				return
+	if int(s.npc_war_count)>360:
+		push_error("NPC wars exceed global 6-hour cadence")
+		quit(1)
+		return
 	if Village.level(s,"BLD-001")<15 or not game.save_now():
 		quit(1)
 		return

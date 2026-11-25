@@ -75,6 +75,11 @@ static func valid(reg,s: Variant) -> bool:
 	return true
 
 static func nested_valid(reg,s: Dictionary) -> bool:
+	if s.has("npc_last_global_war_tick") and not integer(s.npc_last_global_war_tick,-1000):return false
+	if not s.get("npc_pair_war_ticks",{}) is Dictionary:return false
+	for key in s.get("npc_pair_war_ticks",{}):
+		var pair=str(key).split(":")
+		if pair.size()!=2 or pair[0]>=pair[1] or not reg.factions.has(pair[0]) or not reg.factions.has(pair[1]) or not integer(s.npc_pair_war_ticks[key],0):return false
 	for key in ["building_states","jobs","missions","territory_states","faction_states","relations","world_squads","beasts","summon_contracts","source_cooldowns","travel","daily_counts","quest_claimed","reward_inbox","lifetime_counts"]:
 		if s.has(key) and not s[key] is Dictionary:return false
 	for id in s.get("reward_inbox",{}):
