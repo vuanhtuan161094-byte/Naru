@@ -14,3 +14,5 @@ B approved. COMBAT-P1/P2 READY for implementation now. COMBAT-P3 and P4 remain d
 ## Combat V3 (DEC-012)
 - READY: V3 runtime map bounds, 3×3 placement, eight formations, upgrades and positional links; save/UI and exact-SHA QA.
 - Existing SKILL-P1 audit continues; no automatic claim of full 1,152-skill geometry completion.
+
+- REVIEW: gameplay batch `df69717d`; Combat V3 dedicated Godot test and GP-P2 success. Full workflow tracked at run 45568457947. Art/secondary-squad UI/full skill audit are separate.

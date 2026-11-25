@@ -27,3 +27,6 @@ Structural audit all 144 ninja/1152 skills; 55 ninja duplicate names, 103 matchi
 
 ## Combat V3 — 2026-11-25
 OWNER LOCKED DEC-012; design/database updated. Gameplay integration separately tracked in implementation/e3-gameplay; QA pending exact-SHA evidence. No merge.
+
+## Combat V3 handoff — 2026-11-25
+DEC-012 design SHA `1f6f6cf6c7b1bee5e308d1fa593459c9cefb9ad4`; gameplay SHA `df69717de7a71bc8687af7be3986c585c30e9772` on implementation/e3-gameplay. Exact-SHA CI: https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45568457947 . Observed: Set up job: success; Run actions/checkout@v4: success; Install Godot 4.4.1 stable: success; Import and load registry: success; Combat V3 formation and arena: success; GP-P2 gameplay integration: success; Economy 90-day starter simulation: in_progress; Install matching Web templates: pending; Export Web DEV: pending; Install Chromium browser QA: pending; Browser runtime smoke: pending; Upload Web DEV archive: pending; Upload browser screenshot: pending; Post Run actions/checkout@v4: pending. New runtime 14×10, compact 12×8 (STG-002), large 18×12 (STG-120), custom dimensions, 3×3 slots, eight formations, upgrades, link break, legacy save migration and dynamic isometric projection. No merge. Full skill geometry audit and secondary squad placement UI remain separate; tuning DEV.
