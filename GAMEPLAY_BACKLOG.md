@@ -29,3 +29,8 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - IN_PROGRESS: Combat V3-B terrain/body collision, tactical AI, D4 geometry/timing, Web V5. Pending exact-SHA CI.
 
 - IN_PROGRESS: V3-C secondary squad formation and timed 1152-skill fixture, V5 actual input audit.
+
+## Combat V3 handover
+- DONE scoped: inherited map/formation foundation; tactical movement, collision, static terrain and detour; eight formation choices/upgrades/links; secondary squad formation data/UI; all 1152 timed cast/effect dispatch, 20 form conflict corrections, cumulative Godot and 90d economy gates.
+- REVIEW: Web DEV V5 1b5c8da2 CI 45574564478; export PASS, browser/upload not fully verified at handover.
+- READY: individual mechanics/canon review (64 anchor proposals plus 1088 remaining), exact effect semantics and balance, advanced terrain/pathing/role coordination, current art synchronization and runtime review. No merge.
