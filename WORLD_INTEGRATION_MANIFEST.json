@@ -203,5 +203,61 @@
       ]
     },
     "status": "CANDIDATE_PENDING_90D_V11"
+  },
+  "p7r": {
+    "base": "f1bc9f30edd48fc9fc2cf6bb1024244d45ba4fb0",
+    "one_game": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+    "verified_combat": "46d6d1442c21f7f0acafcbb6e782f89e0219e615",
+    "verified_combat_run": 45647915498,
+    "newer_combat": "92409e0053fc58c996e2aebf3e1e4a0ca40b4d60",
+    "newer_run": 45649455759,
+    "p7_reproduced": {
+      "runs": [
+        45648319745,
+        45649274063
+      ],
+      "wins": 120,
+      "clear_day": 37,
+      "resources": 150,
+      "recipes": 62,
+      "beasts": 2,
+      "bound": 0,
+      "reload": "FAIL"
+    },
+    "files": [
+      "game/save_store.gd",
+      "game/world_organic_test.gd",
+      "game/world_progression_test.gd",
+      "game/main.gd",
+      ".github/workflows/world-progression-smoke.yml",
+      "WORLD_STATUS.md",
+      "WORLD_BACKLOG.md",
+      "WORLD_INTEGRATION_MANIFEST.json",
+      "WORLD_INTEGRATION_READINESS.md",
+      "HANDOFF_00_01_02.md"
+    ],
+    "functions": {
+      "game/save_store.gd": [
+        "save_now",
+        "export_save",
+        "beast_bind_reason",
+        "beast_bind_ready",
+        "bind_beast"
+      ],
+      "game/main.gd": [
+        "resource_detail",
+        "beast_detail"
+      ],
+      "game/world_organic_test.gd": [
+        "_initialize",
+        "same_saved_value"
+      ],
+      "game/world_progression_test.gd": [
+        "_initialize",
+        "p7r_checks"
+      ]
+    },
+    "status": "RELEASE_CANDIDATE_PENDING_CI",
+    "combat_policy": "unmodified verified V13 runtime copied only in ephemeral overlay"
   }
 }
