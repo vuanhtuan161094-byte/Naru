@@ -6,6 +6,7 @@ var stages: Dictionary = {}
 var npcs: Dictionary = {}
 var recruit: Dictionary = {}
 var initial: Dictionary = {}
+var growth: Dictionary = {}
 var errors: Array[String] = []
 
 func read_json(path: String) -> Variant:
@@ -45,6 +46,9 @@ func load_all() -> bool:
 	var s = read_json("res://data/d4/initial_save_seed.json")
 	if r is Dictionary: recruit = r
 	if s is Dictionary: initial = s
+	var g = read_json("res://data/d4/ninja_growth.json")
+	if g is Dictionary: growth = g
+	if growth.get("stars",[]).size()!=14: errors.append("Missing star rules")
 	if ninjas.size()!=144 or skills.size()!=1152 or stages.size()!=120:
 		errors.append("Expected 144/1152/120")
 	for row in ninjas.values():

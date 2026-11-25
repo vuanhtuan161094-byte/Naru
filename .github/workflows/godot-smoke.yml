@@ -22,3 +22,10 @@ jobs:
           timeout 60 "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/smoke.log
           grep NARU_REGISTRY_OK /tmp/smoke.log
           ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/smoke.log
+      - name: GP-P2 gameplay integration
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 90 "$G" --headless --path . --script res://game/gp_p2_test.gd 2>&1 | tee /tmp/gp-p2.log
+          grep 'GP_P2_OK 6v6 ticks' /tmp/gp-p2.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|GP_P2_FAIL' /tmp/gp-p2.log

@@ -62,12 +62,14 @@ func menu(message: String="") -> void:
 	sim=null
 	clear()
 	label(root,"NARU  /  TỔ CHỨC NINJA",34)
-	label(root,"DEV • Lô gameplay đầu tiên — mỹ thuật tạm",16)
+	label(root,"DEV • GP-P2 — mỹ thuật tạm",16)
 	label(root,"Ryo: %s     Ngọc: %s     Thể lực: %s     Ninja: %s / 144" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.stamina,store.state.owned.size()])
 	var row=HBoxContainer.new()
 	root.add_child(row)
 	button(row,"Chiêu mộ (100 ngọc)",recruit_one)
 	button(row,"Đội hình",roster)
+	button(row,"Tu luyện",growth_screen)
+	button(row,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
 	button(row,"Cốt truyện",campaign)
 	button(row,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
 	label(root,"Đội hình hiện tại")
@@ -94,11 +96,48 @@ func roster() -> void:
 		var p=store.state.owned[id]
 		var title=("%s  |  Cấp %d  |  Mảnh %d" % [reg.ninjas[id].name_vi,int(p.level),int(p.shards)])
 		button(rows,("✓ " if id in store.state.team else "+ ")+title,func():
-			if id in store.state.team: store.state.team.erase(id)
-			elif store.state.team.size()<6: store.state.team.append(id)
-			store.save_now()
+			var team=store.state.team.duplicate()
+			if id in team: team.erase(id)
+			elif team.size()<6: team.append(id)
+			store.set_team(team)
 			roster()
 		)
+
+func growth_screen() -> void:
+	clear()
+	label(root,"TU LUYỆN NINJA",30)
+	label(root,"Cuộn EXP nhỏ: %s | Đá đột phá: %s" % [store.state.inventory.get("RES-116",0),store.state.inventory.get("RES-128",0)],18)
+	button(root,"Trở về",func():menu())
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for id in store.state.owned:
+		var p=store.state.owned[id]
+		button(rows,"%s | Cấp %d | Cảnh %d | %d sao" % [reg.ninjas[id].name_vi,int(p.level),int(p.realm),int(p.stars)],func():growth_detail(id))
+
+func growth_detail(id: String,message: String="") -> void:
+	clear()
+	var p=store.state.owned[id]
+	store.ensure_growth(p)
+	label(root,str(reg.ninjas[id].name_vi),30)
+	label(root,"Cấp %d / %d | Cảnh %d | XP %d | Điểm %d | Sao %d | Mảnh %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.xp),int(p.points),int(p.stars),int(p.shards)],18)
+	label(root,"Cuộn EXP: %s | Đá đột phá: %s | Bảo hiểm: %d/5" % [store.state.inventory.get("RES-116",0),store.state.inventory.get("RES-128",0),int(p.realm_failures)],18)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	button(row,"Dùng 1 cuộn (+200 XP)",func():growth_detail(id,"Đã tu luyện" if store.train(id) else "Thiếu cuộn hoặc đã đạt giới hạn cảnh"))
+	button(row,"Đột phá",func():
+		var result=store.breakthrough(id)
+		var messages={"success":"Đột phá thành công","failure":"Thất bại, đã tăng bảo hiểm","locked":"Chưa đủ điều kiện","error":"Lỗi lưu"}
+		growth_detail(id,messages[result]))
+	button(row,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu mảnh/vật liệu hoặc đã đủ 15 sao"))
+	var stats={"strength":"Sức mạnh","vitality":"Thể chất","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng"}
+	for key in stats:
+		button(root,"%s +1 | Đã phân bổ %s" % [stats[key],p.allocated.get(key,0)],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key) else "Không còn điểm"))
+	label(root,message,18)
+	button(root,"Trở về",growth_screen)
 
 func campaign() -> void:
 	clear()
@@ -156,7 +195,9 @@ func draw_field() -> void:
 			var p=iso(Vector2(x,y))
 			var points=PackedVector2Array([p,p+Vector2(38,20),p+Vector2(0,40),p+Vector2(-38,20)])
 			field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
-	for a in sim.actors:
+	var render_order=sim.actors.duplicate()
+	render_order.sort_custom(func(a,b):return a.pos.x+a.pos.y<b.pos.x+b.pos.y)
+	for a in render_order:
 		if a.hp<=0:continue
 		var p=iso(a.pos)
 		var c=Color("#e3a33e") if a.side==0 else Color("#b65364")

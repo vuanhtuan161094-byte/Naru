@@ -12,21 +12,25 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	rng.seed=seed_value
 	for id in save.team:
 		var p=save.owned[id]
-		add_actor(id,0,int(p.level),int(p.quality),p.permanent,actors.size(),1.0)
+		add_actor(id,0,int(p.level),int(p.quality),p.permanent,actors.size(),1.0,p)
 	var j=0
 	for id in stage.enemy_ids:
 		var n=reg.npcs[id]
 		add_actor(str(n.template_ninja_id),1,int(n.level),int(reg.ninjas[n.template_ninja_id].initial_quality)+int(n.quality_bonus),{},j,float(n.stat_multiplier))
 		j+=1
 
-func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionary,slot: int,mult: float) -> void:
+func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionary,slot: int,mult: float,progress: Dictionary={}) -> void:
 	var n=registry.ninjas[id]
-	var strength=float(n.base_stats.strength)+float(n.level_growth.strength)*(level-1)+float(permanent.get("strength",0))
-	var vit=float(n.base_stats.vitality)+float(n.level_growth.vitality)*(level-1)
-	var intellect=float(n.base_stats.intellect)+float(n.level_growth.intellect)*(level-1)
-	var spirit=float(n.base_stats.spirit)+float(n.level_growth.spirit)*(level-1)
+	var quality_growth=[1.0,1.06,1.12,1.18,1.25,1.32,1.4,1.48][clampi(quality,1,8)-1]
+	var allocated=progress.get("allocated",{})
+	var strength=float(n.base_stats.strength)+float(n.level_growth.strength)*(level-1)*quality_growth+float(permanent.get("strength",0))+float(allocated.get("strength",0))
+	var vit=float(n.base_stats.vitality)+float(n.level_growth.vitality)*(level-1)*quality_growth+float(permanent.get("vitality",0))+float(allocated.get("vitality",0))
+	var intellect=float(n.base_stats.intellect)+float(n.level_growth.intellect)*(level-1)*quality_growth+float(permanent.get("intellect",0))+float(allocated.get("intellect",0))
+	var spirit=float(n.base_stats.spirit)+float(n.level_growth.spirit)*(level-1)*quality_growth+float(permanent.get("spirit",0))+float(allocated.get("spirit",0))
+	var star_multiplier=1.0+0.04*(int(progress.get("stars",1))-1)
+	mult*=star_multiplier
 	var hp=(250+18*vit+5*level)*mult
-	actors.append({"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":(20+3*strength+1.5*level)*mult,"natk":(20+3*intellect+1.5*level)*mult,"armor":10+2*vit,"nres":10+2*spirit,"chakra":0.0,"max_chakra":100+3*spirit,"regen":2+0.04*spirit,"pos":Vector2(1.0 if side==0 else 10.0,1.0+slot*1.2),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"skills":n.skills.duplicate(),"last":"","quality":quality})
+	actors.append({"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":(20+3*strength+1.5*level)*mult,"natk":(20+3*intellect+1.5*level)*mult,"armor":10+2*vit,"nres":10+2*spirit,"chakra":0.0,"max_chakra":100+3*spirit,"regen":2+0.04*spirit,"pos":Vector2(1.0 if side==0 else 10.0,1.0+slot*1.2),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"skills":n.skills.duplicate(),"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
 
 func alive(side: int) -> Array:
 	return actors.filter(func(a): return int(a.side)==side and float(a.hp)>0.0)
@@ -53,7 +57,7 @@ func supported(skill: Dictionary) -> bool:
 	return true
 
 func ready(a: Dictionary,s: Dictionary) -> bool:
-	return supported(s) and float(a.busy)<=0 and float(a.stun)<=0 and float(a.chakra)>=float(s.chakra) and float(a.cooldowns.get(s.skill_id,0))<=0
+	return supported(s) and a.pending.is_empty() and float(a.busy)<=0 and float(a.stun)<=0 and float(a.chakra)>=float(s.chakra) and float(a.cooldowns.get(s.skill_id,0))<=0
 
 func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	if b.is_empty() or not ready(a,s): return false
@@ -63,13 +67,20 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)
 	a.last=str(registry.names[s.skill_id].name_vi)
+	a.pending={"skill":s,"target":b}
+	a.cast_left=float(s.cast_s)
+	return true
+
+func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
+	if b.hp<=0: return
 	for e in s.effects:
 		match str(e.type):
 			"damage":
 				var physical=str(e.damage_type)=="physical"
 				var attack=float(a.patk if physical else a.natk)
 				var defense=float(b.armor if physical else b.nres)
-				var dmg=maxf(1.0,attack*float(e.coefficient)*100.0/(100.0+defense))
+				var realm_factor=clampf(1.0+0.04*(int(a.realm)-int(b.realm)),0.75,1.25)
+				var dmg=maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor))
 				var blocked=minf(float(b.shield),dmg)
 				b.shield=float(b.shield)-blocked
 				b.hp=maxf(0.0,float(b.hp)-dmg+blocked)
@@ -85,7 +96,6 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	if int(a.side)==0: counts[a.id]=int(counts.get(a.id,0))+1
 	log.append(str(a.id)+" · "+str(a.last))
 	if log.size()>6: log.pop_front()
-	return true
 
 func ultimate(index: int) -> bool:
 	if index<0 or index>=actors.size(): return false
@@ -98,8 +108,24 @@ func tick(dt: float) -> void:
 	if not outcome.is_empty(): return
 	ticks+=1
 	for a in actors:
-		if a.hp<=0: continue
+		if a.hp<=0:
+			a.pending={}
+			continue
 		a.busy=maxf(0.0,float(a.busy)-dt)
+		if not a.pending.is_empty():
+			var pending=a.pending
+			var skill=pending.skill
+			if a.stun>0 and skill.interruptible:
+				a.chakra=minf(float(a.max_chakra),float(a.chakra)+0.8*float(skill.chakra))
+				a.cooldowns[skill.skill_id]=float(skill.cooldown_s)*0.5
+				a.pending={}
+				a.busy=0.0
+			else:
+				a.cast_left=float(a.cast_left)-dt
+				if a.cast_left<=0:
+					a.pending={}
+					release(a,skill,pending.target)
+				else: continue
 		a.stun=maxf(0.0,float(a.stun)-dt)
 		a.shield_time=maxf(0.0,float(a.shield_time)-dt)
 		if a.shield_time<=0: a.shield=0.0
