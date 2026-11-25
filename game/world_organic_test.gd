@@ -6,6 +6,9 @@ const Combat=preload("res://game/combat.gd")
 const Guide=preload("res://game/resource_guide.gd")
 const Guard=preload("res://game/save_guard.gd")
 var seen={}
+var gear_count=0
+var boss_replays=0
+var beast_attempts=0
 func observe(s: Dictionary) -> void:
 	for id in s.inventory:
 		if int(s.inventory[id])>0:seen[id]=true
@@ -13,6 +16,20 @@ func observe(s: Dictionary) -> void:
 func advance(reg,store,seconds: int) -> void:
 	store.advance_clock(reg,int(store.state.high_water_timestamp)+seconds)
 	observe(store.state)
+
+func battle(reg,store,stage: Dictionary,seed_value: int) -> String:
+	var event=store.begin_stage(stage)
+	if event=="":return "locked"
+	var sim=Combat.new()
+	sim.use_p2=true
+	sim.setup(reg,store.state,stage,seed_value)
+	for tick in range(3600):
+		for i in range(store.state.team.size()):sim.ultimate(i)
+		sim.tick(0.05)
+		if sim.outcome!="":break
+	var won=sim.outcome=="win"
+	if not store.finish_stage(reg,stage,event,won,sim.counts,sim.mastery_counts,sim.action_stats):return "error"
+	return "win" if won else "loss"
 
 func _initialize() -> void:
 	var reg=Registry.new()
@@ -42,7 +59,9 @@ func _initialize() -> void:
 	var starter_equipped=0
 	for id in team:
 		var gear=store.craft_gear(reg,"EQ-001-Q1",true)
-		if gear!="" and store.equip_gear(reg,id,gear):starter_equipped+=1
+		if gear!="" and store.equip_gear(reg,id,gear):
+			starter_equipped+=1
+			gear_count+=1
 	print("NARU_WORLD_ORGANIC_STARTER_GEAR ",starter_equipped)
 	for id in team:
 		store.buy_training_scrolls("RES-117",2)
@@ -62,7 +81,8 @@ func _initialize() -> void:
 		for draw in range(5):
 			if int(store.state.inventory.get("RES-002",0))>=100:store.draw(reg)
 		var owned=store.state.owned.keys()
-		var mission_resources=["RES-002","RES-118","RES-119","RES-120","RES-116"]
+		var mission_resources=["RES-002","RES-118","RES-119","RES-120","RES-116","RES-003","RES-004","RES-005","RES-121","RES-122","RES-123","RES-124"]
+		for mission in store.state.missions.values():mission_resources.erase(str(mission.resource))
 		for ninja in owned:
 			if mission_resources.is_empty():break
 			if not store.state.missions.has(ninja):
@@ -91,6 +111,13 @@ func _initialize() -> void:
 		# Manual-ultimate API, no enemy/stat fixtures. A loss retries on a later day.
 		for id in team:
 			var n=store.state.owned[id]
+			if int(store.state.inventory.get("RES-001",0))>=4000:
+				for template_id in ["EQ-007-Q1","EQ-002-Q1","EQ-003-Q1","EQ-009-Q1","EQ-011-Q1","EQ-005-Q1"]:
+					var slot=str(reg.gear_templates[template_id].slot_id)
+					if n.gear.has(slot):continue
+					var item=store.craft_gear(reg,template_id,true)
+					if item!="" and store.equip_gear(reg,id,item):gear_count+=1
+					break
 			if int(n.level)>=(int(n.realm)+1)*20:
 				if int(store.state.inventory.get("RES-128",0))<int(ceil(3*pow(float(n.realm)+1,1.4))) and Village.level(store.state,"BLD-009")>0:store.resource_trial(reg,id,"RES-128")
 				store.breakthrough(id)
@@ -107,21 +134,12 @@ func _initialize() -> void:
 		for attempt in range(5):
 			if next_stage>120:break
 			var stage=reg.stages["STG-%03d" % next_stage]
-			var event=store.begin_stage(stage)
-			if event=="":break
-			var sim=Combat.new()
-			sim.use_p2=true
-			sim.setup(reg,store.state,stage,42+day*100+next_stage)
-			for tick in range(3600):
-				for i in range(team.size()):sim.ultimate(i)
-				sim.tick(0.05)
-				if sim.outcome!="":break
-			var won=sim.outcome=="win"
-			if not store.finish_stage(reg,stage,event,won,sim.counts,sim.mastery_counts,sim.action_stats):
+			var result=battle(reg,store,stage,42+day*100+next_stage)
+			if result=="error":
 				push_error("WORLD_ORGANIC_FAIL settle")
 				quit(1)
 				return
-			if won:
+			if result=="win":
 				wins+=1
 				next_stage+=1
 			else:break
@@ -129,8 +147,25 @@ func _initialize() -> void:
 		if captured:
 			for resource in reg.territories["TER-057"].resources:store.harvest_territory(reg,"TER-057",str(resource.resource_id))
 		if Village.level(store.state,"BLD-026")>0:
+			if int(store.state.inventory.get("RES-148",0))<2 and store.state.cleared.has("STG-005"):
+				var replay=battle(reg,store,reg.stages["STG-005"],9000+day)
+				if replay=="error":
+					push_error("WORLD_ORGANIC_FAIL replay settle")
+					quit(1)
+					return
+				if replay=="win":boss_replays+=1
 			for contract_id in reg.contracts:
 				if not store.state.summon_contracts.has(contract_id) and store.make_contract(reg,contract_id):break
+		if Village.level(store.state,"BLD-027")>0:
+			var attempted=false
+			for beast_id in reg.beasts:
+				if attempted:break
+				for ninja in team:
+					if store.beast_capture_ready(reg,ninja,beast_id):
+						beast_attempts+=1
+						store.capture_beast(reg,ninja,beast_id)
+						attempted=true
+						break
 		observe(store.state)
 		print("NARU_WORLD_ORGANIC_DAY ",day," HQ=",Village.level(store.state,"BLD-001")," WINS=",wins," STOCK_IDS=",seen.size()," QUEUED_RECIPES=",crafted.size()," RYO=",store.state.inventory.get("RES-001",0))
 	var completed=0
@@ -141,7 +176,7 @@ func _initialize() -> void:
 	var missing=[]
 	for id in reg.resources:
 		if not seen.has(id):missing.append(id)
-	print("NARU_WORLD_ORGANIC_OBSERVED wins=",wins,"/120 seen=",seen.size(),"/150 queued=",crafted.size(),"/63 settled=",completed," ninja=",store.state.owned.size()," contracts=",store.state.summon_contracts.size()," captured=",captured," missing=",missing)
+	print("NARU_WORLD_ORGANIC_OBSERVED wins=",wins,"/120 seen=",seen.size(),"/150 queued=",crafted.size(),"/63 settled=",completed," ninja=",store.state.owned.size()," contracts=",store.state.summon_contracts.size()," captured=",captured," gear=",gear_count," boss_replays=",boss_replays," beast_attempts=",beast_attempts," beasts=",store.state.beasts.size()," missing=",missing)
 	# Only integrity is a hard gate. Coverage/wins are observations, not fabricated PASS.
 	if not Guard.valid(reg,store.state) or not store.save_now():
 		push_error("WORLD_ORGANIC_FAIL save")

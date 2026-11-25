@@ -190,6 +190,8 @@ static func world_links_valid(reg,s: Dictionary) -> bool:
 	if not travel_valid(reg,s.get("travel",{}),s.team):return false
 	for squad in s.get("world_squads",{}).values():
 		if not travel_valid(reg,squad.travel,squad.team):return false
+	for key in s.get("source_cooldowns",{}):
+		if not integer(s.source_cooldowns[key]):return false
 	for id in s.get("missions",{}):
 		var mission=s.missions[id]
 		if mission.has("period") and not integer(mission.period,1):return false

@@ -209,5 +209,7 @@ func p4_checks(reg) -> void:
 	check(int(store.state.inventory.get("RES-095",0))==old+1,"P4 exact harvest")
 	check(not store.harvest_territory(reg,"TER-057","RES-095"),"P4 cooldown")
 	check(not store.harvest_territory(reg,"TER-058","RES-006"),"P4 no raw double harvest")
+	check(not store.beast_capture_ready(reg,"NIN-001","BIJ-1"),"P4 beast gate")
+	check(not store.beast_bind_ready(reg,"NIN-001","BIJ-1"),"P4 no uncaptured beast bind")
 	check(Guard.valid(reg,store.state),"P4 save valid")
 	print("NARU_WORLD_P4_TRANSACTIONS_PASS")

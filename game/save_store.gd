@@ -737,14 +737,21 @@ func native_bloodline(reg,id: String,bloodline: String) -> bool:
 	p.bloodline_levels[bloodline]=current+1
 	return commit_change(prior,rng.state)
 
-func capture_beast(reg,id: String,beast_id: String) -> bool:
+func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
 	if not state.owned.has(id) or not reg.beasts.has(beast_id) or state.beasts.has(beast_id):return false
+	var req=reg.beasts[beast_id].capture_requires
+	return int(state.owned[id].realm)>=int(req.realm) and Village.level(state,"BLD-027")>0 and has_cost({str(req.seal_resource):int(req.seal_qty)})
+
+func beast_bind_ready(reg,id: String,beast_id: String) -> bool:
+	if not state.owned.has(id) or not state.beasts.has(beast_id) or not reg.beasts.has(beast_id):return false
+	return id in reg.beasts[beast_id].compatibility.preferred_host_ids and str(state.owned[id].beast_id)=="" and str(state.beasts[beast_id].host)=="" and has_cost({"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)})
+
+func capture_beast(reg,id: String,beast_id: String) -> bool:
+	if not beast_capture_ready(reg,id,beast_id):return false
 	var p=state.owned[id]
 	var def=reg.beasts[beast_id]
 	var req=def.capture_requires
-	if int(p.realm)<int(req.realm) or int(state.building_states["BLD-027"].level)<=0:return false
 	var cost={str(req.seal_resource):int(req.seal_qty)}
-	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	debit(cost)
@@ -769,10 +776,9 @@ func capture_beast(reg,id: String,beast_id: String) -> bool:
 	return won
 
 func bind_beast(reg,id: String,beast_id: String) -> bool:
-	if not state.owned.has(id) or not state.beasts.has(beast_id):return false
+	if not beast_bind_ready(reg,id,beast_id):return false
 	var p=state.owned[id]
 	var beast=state.beasts[beast_id]
-	if not id in reg.beasts[beast_id].compatibility.preferred_host_ids or str(p.beast_id)!="" or str(beast.host)!="":return false
 	var prior=state.duplicate(true)
 	var cost={"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)}
 	if not has_cost(cost):return false

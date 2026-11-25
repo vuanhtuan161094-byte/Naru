@@ -954,6 +954,9 @@ func beast_detail(id: String,message: String="") -> void:
 	var def=reg.beasts[id]
 	var req=def.capture_requires
 	label(rows,"Thu phục: cảnh %d • %d %s • công trình %s" % [int(req.realm),int(req.seal_qty),reg.resources[req.seal_resource].name_vi,reg.buildings["BLD-027"].name_vi],17)
+	label(rows,"Thử thu phục tiêu ấn kể cả khi thất bại. Chỉ phong ấn vào chủ thể tương thích đã duyệt.",15)
+	button(rows,"Nguồn ấn thu phục",func():resource_detail(str(req.seal_resource)))
+	button(rows,"Điện Vĩ Thú",func():building_screen("BLD-027"))
 	if store.state.beasts.has(id):
 		var beast=store.state.beasts[id]
 		label(rows,"Cấp %d • XP %d/%d • Chủ thể %s" % [int(beast.level),int(beast.xp),ceili(100*pow(float(beast.level),1.6)),str(beast.host)],17)
@@ -962,8 +965,12 @@ func beast_detail(id: String,message: String="") -> void:
 		button(rows,"Nguồn tinh hoa",func():resource_detail(str(def.training_resource)))
 	for ninja in store.state.owned:
 		if store.state.beasts.has(id):
-			button(rows,"Phong ấn vào "+str(reg.ninjas[ninja].name_vi),func():beast_detail(id,"Đã phong ấn" if store.bind_beast(reg,ninja,id) else "Không tương thích / thiếu ấn"))
-		else:button(rows,"Thử thu phục với "+str(reg.ninjas[ninja].name_vi),func():beast_detail(id,"Đã thu phục" if store.capture_beast(reg,ninja,id) else "Không thắng / thiếu điều kiện"))
+			if not ninja in def.compatibility.preferred_host_ids:continue
+			var bind=button(rows,"Phong ấn vào "+str(reg.ninjas[ninja].name_vi),func():beast_detail(id,"Đã phong ấn" if store.bind_beast(reg,ninja,id) else "Không tương thích / thiếu ấn"))
+			bind.disabled=not store.beast_bind_ready(reg,ninja,id)
+		else:
+			var capture=button(rows,"Thử thu phục với "+str(reg.ninjas[ninja].name_vi)+" • cảnh "+str(store.state.owned[ninja].realm),func():beast_detail(id,"Đã thu phục" if store.capture_beast(reg,ninja,id) else "Không thắng / thiếu điều kiện"))
+			capture.disabled=not store.beast_capture_ready(reg,ninja,id)
 
 func contract_screen(message: String="") -> void:
 	var rows=activity_rows("THÔNG LINH THÚ • 11",message,activities_screen)
@@ -1260,11 +1267,22 @@ func resource_detail(id: String) -> void:
 					for item in territory.resources:
 						if item.resource_id==id:
 							var own=store.state.territory_states[territory.id].owner=="FAC-009"
-							label(rows,str(territory.name_vi)+(" • Đang kiểm soát" if own else " • Chưa kiểm soát"),16)
+							var territory_id=str(territory.id)
+							button(rows,str(territory.name_vi)+(" • Đang kiểm soát" if own else " • Chưa kiểm soát"),func():selected_territory=territory_id;world_screen())
 				button(rows,"Mở nhẫn giới",func():world_screen())
 			if source.source_type=="boss_or_contract":
 				if id=="RES-148":label(rows,"DEV: thưởng boss khi có Khu thông linh hoặc Điện Vĩ Thú.",16)
 				button(rows,"Mở chiến dịch",campaign)
+				for stage_id in reg.stages:
+					if reg.stages[stage_id].boss_id!=null and store.state.cleared.has(stage_id):
+						var stage=reg.stages[stage_id]
+						var replay=button(rows,"Đánh lại "+str(stage.name_vi)+" • "+str(stage.stamina_cost)+" thể lực",func():start_battle(stage))
+						replay.disabled=int(store.state.stamina)<int(stage.stamina_cost) or store.state.team.is_empty()
+	for territory in reg.territories.values():
+		var q=World.harvest_quote(reg,store.state,str(territory.id),id)
+		if q.is_empty():continue
+		var target=str(territory.id)
+		button(rows,"DEV khai thác "+str(territory.name_vi)+" • "+("Sẵn sàng" if q.ready else "Cần xưởng / nhân lực / hồi"),func():selected_territory=target;world_screen())
 	for seller in ResourceGuide.sellers(reg,store.state,id):
 		var faction=str(seller.faction)
 		button(rows,"%s • kho %d • %d Ryo • %s" % [reg.factions[faction].name_vi,int(seller.stock),int(seller.price),"Có thể mua" if seller.accessible else "Cần giao thương"],func():faction_screen(faction))
