@@ -250,6 +250,8 @@ func growth_screen() -> void:
 			b.add_theme_constant_override("icon_max_width",48)
 	if grid.get_child_count()==0:label(rows,"Không có ninja phù hợp.",18)
 
+const WorldQuotes=preload("res://game/progression_quotes.gd")
+
 func growth_detail(id: String,message: String="") -> void:
 	open_screen("ninja_detail")
 	var p=store.state.owned[id]
@@ -260,14 +262,21 @@ func growth_detail(id: String,message: String="") -> void:
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
 	button(nav,"Tu luyện EXP",func():training_screen(id))
-	button(nav,"Đột phá",func():growth_detail(id,store.breakthrough(id)))
-	button(nav,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu điều kiện"))
+	var realm_cost=WorldQuotes.realm_cost(int(p.realm))
+	var breakthrough_button=button(nav,"Đột phá • %d ấn" % realm_cost,func():growth_detail(id,store.breakthrough(id)))
+	breakthrough_button.disabled=int(p.level)<(int(p.realm)+1)*20 or int(store.state.inventory.get("RES-128",0))<realm_cost
+	var star_button=button(nav,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu điều kiện"))
+	star_button.disabled=int(p.stars)>=15
 	button(nav,"Nhẫn thuật",func():skill_screen(id))
 	button(nav,"Thức tỉnh",func():awakening_screen(id))
 	button(nav,"Trang bị ninja",func():ninja_gear_screen(id))
 	button(nav,"Trở về",growth_screen)
 	var rows=scroll_rows(root)
 	label(rows,"Thiên phú: "+str(p.get("talent",""))+" • "+str(reg.ninjas[id].fixed_talent),17)
+	label(rows,"XP lên cấp: %d/%d | Đột phá: %d %s • %.0f%% • bảo hiểm %d/5" % [int(p.xp),WorldQuotes.xp_need(int(p.level),int(p.realm)),realm_cost,reg.resources["RES-128"].name_vi,100*WorldQuotes.realm_chance(int(p.realm_failures)),int(p.realm_failures)],16)
+	if int(p.stars)<15:
+		var star_rule=reg.growth.stars[int(p.stars)-1]
+		label(rows,"Sao kế tiếp: %d/%d mảnh • %s" % [int(p.shards),int(star_rule.shards),cost_text(star_rule.resources)],16)
 	var grid=GridContainer.new()
 	grid.columns=3
 	rows.add_child(grid)
@@ -275,6 +284,9 @@ func growth_detail(id: String,message: String="") -> void:
 	for key in stats:
 		var b=button(grid,"%s +1 | Đã cộng %s" % [stats[key],p.allocated.get(key,0)],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key) else "Không còn điểm"))
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		b.disabled=int(p.points)<1
+		var bulk=button(grid,"%s +10" % stats[key],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key,10) else "Thiếu điểm"))
+		bulk.disabled=int(p.points)<10
 	var preview=Combat.new()
 	preview.registry=reg
 	preview.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,store.state.gear_instances)
@@ -317,6 +329,7 @@ func campaign() -> void:
 			var b=button(line,"Chưa mở" if locked else "Vào "+id,func():start_battle(s))
 			b.disabled=locked or int(store.state.stamina)<int(s.stamina_cost) or store.state.team.is_empty()
 			if s.boss_id!=null:label(line,"BOSS",16)
+			b.tooltip_text="Thưởng: "+cost_text(s.repeat_rewards if store.state.cleared.has(id) else s.first_clear_rewards)
 		label(rows,"Thắng ải để mở ải kế tiếp. Tuyệt kỹ do người chơi điều khiển.",17)
 	chapter_select.item_selected.connect(populate)
 	populate.call(chapter_select.selected)
@@ -566,8 +579,18 @@ func skill_screen(id: String,message: String="") -> void:
 			var trial_button=button(row,"Thử thách mở khóa",func():skill_screen(id,"Đã mở" if store.run_trial(reg,id,trial_id) else "Chưa thắng hoặc chưa đủ điều kiện"))
 			trial_button.disabled=not store.trial_ready(reg,id,trial_id)
 		elif reg.skill_policies.has(skill_id):
-			button(row,"Tăng cấp",func():skill_screen(id,"Đã tăng cấp" if store.upgrade_skill(reg,id,skill_id) else "Thiếu sách hoặc đủ cấp"))
-			button(row,"Tiến giai",func():skill_screen(id,{"success":"Thành công","failure":"Thất bại, tăng bảo hiểm","locked":"Chưa đủ điều kiện","error":"Lỗi lưu"}[store.advance_skill(reg,id,skill_id)]))
+			var book=store.skill_book(reg,skill_id)
+			var quote=WorldQuotes.skill_batch(int(sk.level),int(sk.grade),int(store.state.inventory.get(book,0)),20)
+			var single=button(row,"+1 (%d)" % WorldQuotes.level_cost(int(sk.level),int(sk.grade)),func():skill_screen(id,"Đã tăng cấp" if store.upgrade_skill(reg,id,skill_id) else "Thiếu sách hoặc đủ cấp"))
+			single.disabled=int(quote.count)==0
+			single.tooltip_text=reg.resources[book].name_vi
+			var bulk=button(row,"+%d (%d)" % [int(quote.count),int(quote.cost)],func():skill_screen(id,"Đã tăng cấp" if store.upgrade_skill(reg,id,skill_id,20) else "Thiếu sách"))
+			bulk.disabled=int(quote.count)<2
+			bulk.tooltip_text=reg.resources[book].name_vi
+			var grade_cost=WorldQuotes.advance_cost(int(sk.grade))
+			var grade=button(row,"Giai %d • %.0f%%" % [grade_cost,100*WorldQuotes.grade_chance(int(sk.grade),int(sk.fails))],func():skill_screen(id,{"success":"Thành công","failure":"Thất bại, tăng bảo hiểm","locked":"Chưa đủ điều kiện","error":"Lỗi lưu"}[store.advance_skill(reg,id,skill_id)]))
+			grade.disabled=int(sk.level)<20 or int(store.state.inventory.get("RES-130",0))<grade_cost
+			grade.tooltip_text=reg.resources["RES-130"].name_vi+" • bảo hiểm "+str(sk.fails)+"/4"
 			for branch in reg.skill_policies[skill_id].branches:
 				if int(sk.grade)>=int(branch.unlock_grade) and str(sk.branch).is_empty():
 					button(row,str(branch.name_vi),func():skill_screen(id,"Đã chọn nhánh" if store.choose_skill_branch(reg,id,skill_id,branch.id) else "Không thể chọn"))
@@ -617,8 +640,12 @@ func gear_detail(id: String,message: String="") -> void:
 	label(root,message,18)
 	var row=HBoxContainer.new()
 	root.add_child(row)
-	button(row,"Cường hóa",func():gear_detail(id,store.enhance_gear(id)))
-	button(row,"Cường hóa bảo hộ",func():gear_detail(id,store.enhance_gear(id,true)))
+	var quote=WorldQuotes.enhancement_cost(int(g.enhance))
+	label(root,"Cường hóa: %d Ryo + %d đá • %.1f%% thành công" % [int(quote["RES-001"]),int(quote["RES-113"]),100*WorldQuotes.enhancement_chance(int(g.enhance),int(g.fails))],16)
+	var enhance=button(row,"Cường hóa",func():gear_detail(id,store.enhance_gear(id)))
+	enhance.disabled=not store.has_cost(quote)
+	var protected_button=button(row,"Bảo hộ +1 bùa",func():gear_detail(id,store.enhance_gear(id,true)))
+	protected_button.disabled=not store.has_cost(WorldQuotes.enhancement_cost(int(g.enhance),true))
 	button(row,"Tinh luyện",func():gear_detail(id,"Đã tinh luyện" if store.refine_gear(id) else "Thiếu nguyên liệu"))
 	button(row,"Tiến hóa",func():gear_detail(id,"Đã tiến hóa" if store.refine_gear(id,true) else "Thiếu nguyên liệu"))
 	button(root,"Trở về",func():gear_screen())
@@ -644,6 +671,9 @@ func awakening_screen(id: String,message: String="") -> void:
 	label(root,"THỨC TỈNH • "+str(reg.ninjas[id].name_vi),30)
 	label(root,"Phẩm %s | Thành thạo %d | Thiên phú %s" % [p.quality,store.total_mastery(p),p.get("talent","")],18)
 	label(root,message,18)
+	if int(p.quality)<8:
+		var rule=reg.growth.quality_upgrade_steps[int(p.quality)-1]
+		label(root,"Phẩm kế: cảnh %d • thành thạo %d • mảnh %d/%d • %s" % [int(rule.min_realm),int(rule.min_mastery),int(p.shards),int(rule.shards),cost_text(rule.resources)],16)
 	button(root,"Thử thách phẩm chất",func():awakening_screen(id,"Thắng thử thách" if store.quality_trial(reg,id) else "Chưa đủ điều kiện hoặc chưa thắng"))
 	button(root,"Tiến hóa phẩm chất",func():awakening_screen(id,"Đã tiến hóa" if store.evolve_quality(reg,id) else "Chưa đủ điều kiện"))
 	for form_id in reg.ninjas[id].form_ids:
@@ -825,6 +855,10 @@ func faction_screen(id: String,message: String="") -> void:
 		var sell=preload("res://game/world_service.gd").price(reg,store.state,id,resource,false)
 		button(line,"Mua 1 (%d)" % buy,func():faction_screen(id,"Đã mua" if store.trade_resource(reg,id,resource,1,true) else "Thiếu điều kiện giao thương"))
 		button(line,"Bán 1 (%d)" % sell,func():faction_screen(id,"Đã bán" if store.trade_resource(reg,id,resource,1,false) else "Thiếu điều kiện giao thương"))
+		var buy_bulk=button(line,"Mua 10 (%d)" % (buy*10),func():faction_screen(id,"Đã mua" if store.trade_resource(reg,id,resource,10,true) else "Thiếu điều kiện giao thương"))
+		buy_bulk.disabled=stock<10 or int(store.state.inventory.get("RES-001",0))<buy*10
+		var sell_bulk=button(line,"Bán 10 (%d)" % (sell*10),func():faction_screen(id,"Đã bán" if store.trade_resource(reg,id,resource,10,false) else "Thiếu điều kiện giao thương"))
+		sell_bulk.disabled=int(store.state.inventory.get(resource,0))<10
 
 func activity_rows(title: String,message: String,back: Callable) -> VBoxContainer:
 	clear()
@@ -892,7 +926,13 @@ func beast_screen(message: String="") -> void:
 
 func beast_detail(id: String,message: String="") -> void:
 	var rows=activity_rows("VĨ THÚ • "+str(reg.beasts[id].name),message,func():beast_screen())
-	if store.state.beasts.has(id):button(rows,"Tu luyện vĩ thú",func():beast_detail(id,"Đã tu luyện" if store.train_beast(reg,id) else "Thiếu tài nguyên"))
+	var def=reg.beasts[id]
+	var req=def.capture_requires
+	label(rows,"Thu phục: cảnh %d • %d %s • công trình %s" % [int(req.realm),int(req.seal_qty),reg.resources[req.seal_resource].name_vi,reg.buildings["BLD-027"].name_vi],17)
+	if store.state.beasts.has(id):
+		var beast=store.state.beasts[id]
+		label(rows,"Cấp %d • XP %d/%d • Chủ thể %s" % [int(beast.level),int(beast.xp),ceili(100*pow(float(beast.level),1.6)),str(beast.host)],17)
+		button(rows,"Tu luyện • 1 "+str(reg.resources[def.training_resource].name_vi),func():beast_detail(id,"Đã tu luyện" if store.train_beast(reg,id) else "Thiếu tài nguyên"))
 	for ninja in store.state.owned:
 		if store.state.beasts.has(id):
 			button(rows,"Phong ấn vào "+str(reg.ninjas[ninja].name_vi),func():beast_detail(id,"Đã phong ấn" if store.bind_beast(reg,ninja,id) else "Không tương thích / thiếu ấn"))
@@ -906,10 +946,14 @@ func contract_screen(message: String="") -> void:
 
 func contract_detail(id: String,message: String="") -> void:
 	var rows=activity_rows(str(reg.contracts[id].name),message,func():contract_screen())
+	var def=reg.contracts[id]
 	if not store.state.summon_contracts.has(id):
+		label(rows,"Cần %d %s • %s" % [int(def.contract_qty),reg.resources[def.contract_resource].name_vi,reg.buildings["BLD-026"].name_vi],17)
 		button(rows,"Ký khế ước",func():contract_detail(id,"Đã ký" if store.make_contract(reg,id) else "Thiếu vật liệu / công trình"))
 		return
-	button(rows,"Tăng cấp",func():contract_detail(id,"Đã tăng cấp" if store.train_contract(id) else "Thiếu Ryo"))
+	var contract=store.state.summon_contracts[id]
+	label(rows,"Cấp %d • Chủ: %s" % [int(contract.level),str(contract.owner)],17)
+	button(rows,"Tăng cấp • %d Ryo" % ceili(30*pow(float(contract.level),1.5)),func():contract_detail(id,"Đã tăng cấp" if store.train_contract(id) else "Thiếu Ryo"))
 	for ninja in store.state.owned:
 		button(rows,"Gán "+str(reg.ninjas[ninja].name_vi),func():contract_detail(id,"Đã gán" if store.assign_contract(id,ninja) else "Đã có chủ / đã có khế ước"))
 
@@ -1407,10 +1451,15 @@ func passive_screen(id: String,message: String="") -> void:
 			continue
 		var nav=HBoxContainer.new()
 		box.add_child(nav)
-		var level_button=button(nav,"Tăng cấp",func():passive_screen(id,"Đã tăng cấp" if store.upgrade_passive(reg,id,key) else "Thiếu sách hoặc đủ cấp"))
-		level_button.disabled=int(sk.level)>=20
+		var book=str(data.progression.book)
+		var quote=WorldQuotes.skill_batch(int(sk.level),int(sk.grade),int(store.state.inventory.get(book,0)),20,true)
+		label(box,"%s: %d • Tiến giai %d %s • %.0f%% • bảo hiểm %d/4" % [reg.resources[book].name_vi,int(store.state.inventory.get(book,0)),WorldQuotes.advance_cost(int(sk.grade),true),reg.resources["RES-130"].name_vi,100*WorldQuotes.grade_chance(int(sk.grade),int(sk.fails)),int(sk.fails)],14)
+		var level_button=button(nav,"+1 (%d)" % WorldQuotes.level_cost(int(sk.level),int(sk.grade),true),func():passive_screen(id,"Đã tăng cấp" if store.upgrade_passive(reg,id,key) else "Thiếu sách hoặc đủ cấp"))
+		level_button.disabled=int(quote.count)==0
+		var bulk=button(nav,"+%d (%d)" % [int(quote.count),int(quote.cost)],func():passive_screen(id,"Đã tăng cấp" if store.upgrade_passive(reg,id,key,20) else "Thiếu sách"))
+		bulk.disabled=int(quote.count)<2
 		var grade_button=button(nav,"Tiến giai (%d/4)" % int(sk.fails),func():passive_screen(id,store.advance_passive(reg,id,key)))
-		grade_button.disabled=int(sk.level)<20
+		grade_button.disabled=int(sk.level)<20 or int(store.state.inventory.get("RES-130",0))<WorldQuotes.advance_cost(int(sk.grade),true)
 		for br in data.progression.branches:
 			if int(sk.grade)>=int(br.grade) and str(sk.branch).is_empty():
 				var branch_id=str(br.id)

@@ -127,7 +127,7 @@ static func trade(reg,s: Dictionary,id: String,resource: String,qty: int,buy: bo
 	if not bool(reg.resources[resource].tradable):return false
 	var r=relation(s,PLAYER,id)
 	if r.state=="war" or int(r.score)<-30:return false
-	if s.territory_states[s.world_location].owner!=id and r.state!="trade" and r.state!="allied":return false
+	if (not s.travel.is_empty() or s.territory_states[s.world_location].owner!=id) and r.state!="trade" and r.state!="allied":return false
 	var stock=s.faction_states[id].stock
 	# Price per unit against pre-trade stock; use a single unit transaction in UI.
 	var amount=price(reg,s,id,resource,buy)*qty

@@ -168,7 +168,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		var resource_id=str(source.resource_id)
 		var elapsed=int(s.supply_clock.get(resource_id,0))+dt
 		var period=maxi(1,ceili(float(source.period_seconds)/(1+trait_bonus(s,id,"speed"))))
-		if elapsed>=period:
+		while elapsed>=period:
 			var b=s.building_states[id]
 			var qty=maxi(1,floori(float(source.base_yield)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))
 			if put(s,resource_id,qty):
@@ -176,7 +176,9 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 				s.production_count=int(s.production_count)+1
 				Content.bump(s,"collect_production")
 				elapsed-=period
-			else:elapsed=period
+			else:
+				elapsed=period
+				break
 		s.supply_clock[resource_id]=elapsed
 	if int(s.stamina)>=120:s.stamina_seconds=0
 	else:

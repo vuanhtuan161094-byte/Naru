@@ -10,3 +10,5 @@
 | W-F | READY | 9 beasts/11 summons development; retain implant/Rinnegan HOLD |
 | W-G | READY | Complete nested migration, atomic recovery, user-facing costs/locks, mobile interaction and Web evidence |
 No blanket DONE from database counts or inherited CI.
+
+P2 REVIEW: shared progression quotes, batch spending and HOLD guard; exact CI pending. A/B/C/D/E/F/G remain READY for complete acceptance. Natural chapter 2+ and earned-only crafting chain remain highest priority; no claim all 144 or 120 stages actually progressed.

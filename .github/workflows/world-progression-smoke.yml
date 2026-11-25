@@ -82,7 +82,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - World DEV P1, placeholder art. Extract the entire folder.
+          NARU RPG - World DEV P2, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -102,14 +102,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P1
+          name: NARU-World-DEV-P2
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P1-menu
+          name: NARU-World-DEV-P2-menu
           path: |
             web-menu.png
             ui-shots/

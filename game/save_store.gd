@@ -1,6 +1,7 @@
 extends RefCounted
 const Passive=preload("res://game/passive_service.gd")
 const Rewards=preload("res://game/world_rewards.gd")
+const Quotes=preload("res://game/progression_quotes.gd")
 const Stats=preload("res://game/stats_service.gd")
 const SaveGuard=preload("res://game/save_guard.gd")
 const Content=preload("res://game/content_service.gd")
@@ -186,7 +187,7 @@ func apply_levels(p: Dictionary) -> void:
 	ensure_growth(p)
 	var cap=(int(p.realm)+1)*20
 	while int(p.level)<cap:
-		var need=int(ceil(100*pow(float(p.level),1.6)*(1+0.15*float(p.realm))))
+		var need=Quotes.xp_need(int(p.level),int(p.realm))
 		if int(p.xp)<need: break
 		p.xp=int(p.xp)-need
 		p.level=int(p.level)+1
@@ -199,7 +200,7 @@ func commit_change(prior: Dictionary, old_rng: int) -> bool:
 	return false
 
 func set_team(ids: Array) -> bool:
-	if ids.size()>6 or not state.get("travel",{}).is_empty() or not World.roster_available(state,ids,"main"): return false
+	if ids.size()>6 or state.get("world_location",World.HOME)!=World.HOME or not state.get("travel",{}).is_empty() or not World.roster_available(state,ids,"main"): return false
 	var seen={}
 	for id in ids:
 		if seen.has(id) or not state.owned.has(id): return false
@@ -210,7 +211,7 @@ func set_team(ids: Array) -> bool:
 	return commit_change(prior,rng.state)
 
 func set_formation_slot(slot: int,id: String) -> bool:
-	if slot<0 or slot>8 or not state.get("travel",{}).is_empty():return false
+	if slot<0 or slot>8 or state.get("world_location",World.HOME)!=World.HOME or not state.get("travel",{}).is_empty():return false
 	var positions=Formation.normalize_slots(state.team,state.get("formation_slots",{}))
 	var occupied=""
 	for ninja in positions:
@@ -268,14 +269,14 @@ func train(id: String) -> bool:
 	apply_levels(p)
 	return commit_change(prior,rng.state)
 
-func allocate(id: String, stat: String) -> bool:
+func allocate(id: String, stat: String,quantity: int=1) -> bool:
 	if not state.owned.has(id) or not stat in ["strength","vitality","spirit","agility","intellect","potential"]: return false
 	var p=state.owned[id]
 	ensure_growth(p)
-	if int(p.points)<1: return false
+	if quantity<1 or quantity>100 or int(p.points)<quantity:return false
 	var prior=state.duplicate(true)
-	p.points=int(p.points)-1
-	p.allocated[stat]=int(p.allocated.get(stat,0))+1
+	p.points=int(p.points)-quantity
+	p.allocated[stat]=int(p.allocated.get(stat,0))+quantity
 	return commit_change(prior,rng.state)
 
 func breakthrough(id: String) -> String:
@@ -283,13 +284,13 @@ func breakthrough(id: String) -> String:
 	var p=state.owned[id]
 	ensure_growth(p)
 	if int(p.level)<(int(p.realm)+1)*20: return "locked"
-	var cost=int(ceil(3*pow(float(p.realm)+1,1.4)))
+	var cost=Quotes.realm_cost(int(p.realm))
 	if int(state.inventory.get("RES-128",0))<cost: return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	state.inventory["RES-128"]=int(state.inventory["RES-128"])-cost
 	var fails=int(p.realm_failures)
-	var won=fails>=5 or rng.randf()<minf(1.0,0.65+0.08*fails)
+	var won=fails>=5 or rng.randf()<Quotes.realm_chance(fails)
 	if won:
 		p.realm=int(p.realm)+1
 		Passive.migrate(id,p)
@@ -341,17 +342,16 @@ func skill_book(reg,skill_id: String) -> String:
 		"genjutsu":return "RES-120"
 		_:return "RES-119"
 
-func upgrade_skill(reg,id: String,skill_id: String) -> bool:
-	if not skill_allowed(reg,id,skill_id) or not reg.skill_policies.has(skill_id):return false
+func upgrade_skill(reg,id: String,skill_id: String,limit: int=1) -> bool:
+	if not skill_allowed(reg,id,skill_id) or not reg.skill_policies.has(skill_id) or limit<1 or limit>20:return false
 	var p=state.owned[id]
 	var sk=skill_progress(p,skill_id)
-	if int(sk.level)>=20:return false
-	var cost=int(ceil(4*pow(float(sk.level),1.35)*(1+0.25*float(sk.grade))))
 	var resource=skill_book(reg,skill_id)
-	if int(state.inventory.get(resource,0))<cost:return false
+	var quote=Quotes.skill_batch(int(sk.level),int(sk.grade),int(state.inventory.get(resource,0)),limit)
+	if int(quote.count)==0:return false
 	var prior=state.duplicate(true)
-	state.inventory[resource]=int(state.inventory[resource])-cost
-	sk.level=int(sk.level)+1
+	debit({resource:quote.cost})
+	sk.level=int(sk.level)+int(quote.count)
 	p.skill_levels[skill_id]=sk
 	return commit_change(prior,rng.state)
 
@@ -360,12 +360,12 @@ func advance_skill(reg,id: String,skill_id: String) -> String:
 	var p=state.owned[id]
 	var sk=skill_progress(p,skill_id)
 	if int(sk.level)<20:return "locked"
-	var cost=int(ceil(5*pow(float(sk.grade),1.45)))
+	var cost=Quotes.advance_cost(int(sk.grade))
 	if int(state.inventory.get("RES-130",0))<cost:return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	state.inventory["RES-130"]=int(state.inventory["RES-130"])-cost
-	var won=int(sk.fails)>=4 or rng.randf()<maxf(0.1,0.75/(1+0.15*(float(sk.grade)-1)))
+	var won=int(sk.fails)>=4 or rng.randf()<Quotes.grade_chance(int(sk.grade),int(sk.fails))
 	if won:
 		sk.grade=int(sk.grade)+1
 		sk.level=1
@@ -442,13 +442,12 @@ func enhance_gear(gear_id: String,protect: bool=false) -> String:
 	var gear=state.gear_instances[gear_id]
 	var n=int(gear.enhance)
 	var stones=int(ceil(1+float(n)/5))
-	var cost={"RES-001":int(ceil(20*pow(1+n,1.65))),"RES-113":stones}
-	if protect:cost["RES-115"]=1
+	var cost=Quotes.enhancement_cost(n,protect)
 	if not has_cost(cost):return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	debit(cost)
-	var won=int(gear.fails)>=20 or rng.randf()<minf(1.0,maxf(0.05,0.95/(1+0.055*n))+0.05*int(gear.fails))
+	var won=int(gear.fails)>=20 or rng.randf()<Quotes.enhancement_chance(n,int(gear.fails))
 	if won:
 		gear.enhance=n+1
 		gear.fails=0
@@ -991,32 +990,34 @@ func set_squad_formation(reg,key: String,formation_id: String,slot: int=-1,ninja
 func passive_allowed(reg,id: String,key: String) -> bool:
 	return state.owned.has(id) and reg.passives.has(key) and reg.passives[key].ninja_id==id and int(state.owned[id].realm)>=int(reg.passives[key].unlock.realm)
 
-func upgrade_passive(reg,id: String,key: String) -> bool:
-	if not passive_allowed(reg,id,key):return false
+func passive_spend_allowed(reg,id: String,key: String) -> bool:
+	return passive_allowed(reg,id,key) and reg.passive_ledger.get(key,"")=="DEV_CANDIDATE" and reg.synergy_gaps.get(key,"")!="FORM_ZERO_PAYLOAD_REVIEW"
+
+func upgrade_passive(reg,id: String,key: String,limit: int=1) -> bool:
+	if not passive_spend_allowed(reg,id,key) or limit<1 or limit>20:return false
 	var p=state.owned[id]
 	var sk=Passive.progress(p,key)
-	if int(sk.level)>=20:return false
-	var cost=ceili(2*pow(float(sk.level),1.35)*(1+0.25*float(sk.grade)))
 	var resource=reg.passives[key].progression.book
-	if int(state.inventory.get(resource,0))<cost:return false
+	var quote=Quotes.skill_batch(int(sk.level),int(sk.grade),int(state.inventory.get(resource,0)),limit,true)
+	if int(quote.count)==0:return false
 	var prior=state.duplicate(true)
 	Passive.migrate(id,p)
-	state.inventory[resource]=int(state.inventory[resource])-cost
-	sk.level=int(sk.level)+1
+	debit({resource:quote.cost})
+	sk.level=int(sk.level)+int(quote.count)
 	p.passive_progress[key]=sk
 	return commit_change(prior,rng.state)
 
 func advance_passive(reg,id: String,key: String) -> String:
-	if not passive_allowed(reg,id,key):return "locked"
+	if not passive_spend_allowed(reg,id,key):return "locked"
 	var p=state.owned[id]
 	var sk=Passive.progress(p,key)
-	var cost=ceili(3*pow(float(sk.grade),1.45))
+	var cost=Quotes.advance_cost(int(sk.grade),true)
 	if int(sk.level)<20 or int(state.inventory.get("RES-130",0))<cost:return "locked"
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
 	Passive.migrate(id,p)
 	state.inventory["RES-130"]=int(state.inventory["RES-130"])-cost
-	var won=int(sk.fails)>=4 or rng.randf()<maxf(0.10,0.75/(1+0.15*(float(sk.grade)-1)))
+	var won=int(sk.fails)>=4 or rng.randf()<Quotes.grade_chance(int(sk.grade),int(sk.fails))
 	if won:
 		sk.grade=int(sk.grade)+1
 		sk.level=1
@@ -1027,7 +1028,7 @@ func advance_passive(reg,id: String,key: String) -> String:
 	return "success" if won else "failure"
 
 func branch_passive(reg,id: String,key: String,branch_id: String) -> bool:
-	if not passive_allowed(reg,id,key):return false
+	if not passive_spend_allowed(reg,id,key):return false
 	var p=state.owned[id]
 	var sk=Passive.progress(p,key)
 	if not str(sk.branch).is_empty():return false

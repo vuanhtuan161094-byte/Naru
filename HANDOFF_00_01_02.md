@@ -3,3 +3,5 @@ Chat 00: Review reward inbox routing for finite rewards/refunds, invalid legacy 
 Chat 01: shared changes are narrowly scoped in game/save_store.gd (reward routing only), game/save_guard.gd (validation), game/main.gd (noncombat UI methods). Integrate hunks, never wholesale overwrite newer main/save_store; preserve passive and combat edits. Existing Combat engine is unchanged. Keep progression IDs and schema 1; no new mandatory fields. Campaign/territory calls use existing engine.
 Chat 02: no asset changes; UI text/layout changes need visual review after private art integration.
 CI: World DEV separate workflow. Exact branch SHA and CI must be checked before any acceptance. No merge, force push or Codex Cloud.
+
+P2: Chat01 new HEAD f50f49c2 not merged. Shared SaveStore signatures add optional limit/quantity with original default; quote service owns D4 transaction costs only, no combat coefficient changes. Backend passive HOLD gate matches V8 UI; reconcile with Chat01 newer adapter ledger and star C implementation. Main roster home gate, stale-location trade guard and periodic supply handling require coordinator review.
