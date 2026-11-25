@@ -64,6 +64,7 @@ func _initialize() -> void:
 	coverage_checks(reg)
 	batch_checks(reg)
 	p4_checks(reg)
+	p5_checks(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -213,3 +214,35 @@ func p4_checks(reg) -> void:
 	check(not store.beast_bind_ready(reg,"NIN-001","BIJ-1"),"P4 no uncaptured beast bind")
 	check(Guard.valid(reg,store.state),"P4 save valid")
 	print("NARU_WORLD_P4_TRANSACTIONS_PASS")
+
+func p5_checks(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_progression_p5_ci.json"
+	store.new_game(reg)
+	check(store.merchant_quote(reg,"RES-006").is_empty(),"P5 merchant hall gate")
+	# Scoped capacity/limit fixture; not organic proof.
+	store.state.building_states["BLD-021"].level=1
+	store.state.building_states["BLD-001"].level=11
+	var cap=Village.capacity(store.state,"RES-006")
+	store.state.inventory["RES-006"]=cap
+	var q=store.merchant_quote(reg,"RES-006")
+	var ryo=int(store.state.inventory["RES-001"])
+	check(store.fulfill_merchant_order(reg,"RES-006"),"P5 merchant first")
+	check(int(store.state.inventory["RES-001"])==ryo+int(q.total) and int(store.state.inventory["RES-006"])==cap-int(q.qty),"P5 merchant exact exchange")
+	check(store.fulfill_merchant_order(reg,"RES-006"),"P5 merchant second")
+	check(not store.fulfill_merchant_order(reg,"RES-006"),"P5 reserve floor")
+	store.state.inventory["RES-009"]=cap
+	check(store.fulfill_merchant_order(reg,"RES-009"),"P5 merchant third")
+	check(not store.fulfill_merchant_order(reg,"RES-009"),"P5 daily limit")
+	check(store.advance_clock(reg,int(store.state.high_water_timestamp)+86400),"P5 day advance")
+	check(store.fulfill_merchant_order(reg,"RES-009"),"P5 next day order")
+	check(store.buy_training_scrolls("RES-116",50),"P5 bulk scroll purchase")
+	store.state.building_states["BLD-003"].level=1
+	store.state.inventory["RES-118"]=20
+	check(store.train_stat(reg,"NIN-001","strength",5),"P5 stat batch")
+	check(float(store.state.owned["NIN-001"].training.strength)>=5,"P5 stat gain")
+	check(Guard.valid(reg,store.state),"P5 new save compatible")
+	var invalid=store.state.duplicate(true)
+	invalid.merchant_orders.used=4
+	check(not Guard.valid(reg,invalid),"P5 rejects invalid merchant count")
+	print("NARU_WORLD_P5_TRANSACTIONS_PASS")

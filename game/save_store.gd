@@ -701,14 +701,17 @@ func start_mission(reg,id: String,resource: String,repeat: bool=false) -> bool:
 	if not Content.start_mission(reg,state,id,resource,repeat):return false
 	return commit_change(prior,rng.state)
 
-func resource_trial(reg,id: String,resource: String) -> bool:
+func resource_trial_ready(reg,id: String,resource: String) -> bool:
 	if not state.owned.has(id):return false
 	var source=Content.source_for(reg,resource)
 	if source.is_empty() or not source.source_type in ["trial","bloodline_trial"]:return false
-	if int(state.building_states[source.building_id].level)<=0 or int(state.building_states["BLD-001"].level)<int(source.source_min_hq):return false
+	return Village.level(state,str(source.building_id))>0 and Village.level(state,"BLD-001")>=int(source.source_min_hq) and int(state.source_cooldowns.get(id+":"+resource,0))<=int(state.simulation_seconds)
+
+func resource_trial(reg,id: String,resource: String) -> bool:
+	if not resource_trial_ready(reg,id,resource):return false
+	var source=Content.source_for(reg,resource)
 	var now=int(state.simulation_seconds)
 	var key=id+":"+resource
-	if int(state.source_cooldowns.get(key,0))>now:return false
 	var p=state.owned[id]
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
@@ -939,23 +942,29 @@ func training_quote(id: String,stat: String) -> Dictionary:
 	var current=float(p.get("training",{}).get(stat,0))
 	return {"building":row[0],"resource":row[1],"ryo":ceili(80*pow(1+current,1.35)),"qty":ceili(1+current/10.0)}
 
-func train_stat(reg,id: String,stat: String) -> bool:
-	if not state.owned.has(id):return false
+func train_stat(reg,id: String,stat: String,limit: int=1) -> bool:
+	if not state.owned.has(id) or limit<1 or limit>20:return false
 	var quote=training_quote(id,stat)
 	if quote.is_empty() or Village.level(state,quote.building)<=0:return false
-	var cost={"RES-001":quote.ryo,str(quote.resource):quote.qty}
-	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
 	var p=state.owned[id]
-	var stats=Stats.derive(reg,reg.ninjas[id],p)
-	debit(cost)
-	if not p.has("training"):p.training={}
-	p.training[stat]=float(p.training.get(stat,0))+1+Stats.effect(reg,stats,"training_speed")*0.5+Stats.effect(reg,stats,"absorption")*0.5
-	Content.bump(state,"train_ninja")
+	var done=0
+	for i in range(limit):
+		quote=training_quote(id,stat)
+		var cost={"RES-001":quote.ryo,str(quote.resource):quote.qty}
+		if not has_cost(cost):break
+		var stats=Stats.derive(reg,reg.ninjas[id],p)
+		debit(cost)
+		if not p.has("training"):p.training={}
+		p.training[stat]=float(p.training.get(stat,0))+1+Stats.effect(reg,stats,"training_speed")*0.5+Stats.effect(reg,stats,"absorption")*0.5
+		done+=1
+	if done==0:return false
+	Content.bump(state,"train_ninja",done)
 	return commit_change(prior,rng.state)
 
 func buy_training_scrolls(resource: String,quantity: int) -> bool:
-	if Village.level(state,"BLD-001")<2 or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>10:return false
+	var limit=100 if Village.level(state,"BLD-001")>=5 else 10
+	if Village.level(state,"BLD-001")<2 or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>limit:return false
 	var cost={"RES-001":quantity*(120 if resource=="RES-116" else 600)}
 	if not has_cost(cost):return false
 	var prior=state.duplicate(true)
@@ -1006,6 +1015,31 @@ func collect_reward_inbox(id: String) -> bool:
 	state.inventory[id]=int(state.inventory.get(id,0))+take
 	state.reward_inbox[id]=qty-take
 	if int(state.reward_inbox[id])==0:state.reward_inbox.erase(id)
+	return commit_change(prior,rng.state)
+
+# BALANCE-P1 optional daily merchant order, DEV; never auto-spend or sell scarce resources.
+func merchant_quote(reg,id: String) -> Dictionary:
+	if not reg.resources.has(id) or not reg.resources[id].tradable or Village.level(state,"BLD-021")<=0:return {}
+	var eligible=false
+	for source in reg.supply:
+		if source.resource_id==id and source.source_type in ["farm","herb_garden","chakra_spring","territory"]:eligible=true;break
+	if not eligible:return {}
+	var day=Content.day(state)
+	var orders=state.get("merchant_orders",{})
+	var used=int(orders.get("used",0)) if int(orders.get("day",-1))==day else 0
+	var cap=Village.capacity(state,id)
+	var stock=int(state.inventory.get(id,0))
+	var qty=mini(maxi(0,stock-ceili(cap*0.8)),ceili(cap*0.1))
+	var unit=maxi(1,floori(float(reg.resources[id].base_price_ryo)*0.55))
+	return {"day":day,"used":used,"qty":qty,"unit":unit,"total":qty*unit,"ready":used<3 and qty>0 and int(state.inventory.get("RES-001",0))+qty*unit<=Village.capacity(state,"RES-001")}
+
+func fulfill_merchant_order(reg,id: String) -> bool:
+	var q=merchant_quote(reg,id)
+	if q.is_empty() or not q.ready:return false
+	var prior=state.duplicate(true)
+	debit({id:int(q.qty)})
+	state.inventory["RES-001"]=int(state.inventory.get("RES-001",0))+int(q.total)
+	state.merchant_orders={"day":int(q.day),"used":int(q.used)+1}
 	return commit_change(prior,rng.state)
 
 func sell_surplus(reg,id: String,qty: int) -> bool:

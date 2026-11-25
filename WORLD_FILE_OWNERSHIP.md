@@ -6,3 +6,4 @@ Shared coordination: game/main.gd, game/save_store.gd, game/save_guard.gd; only 
 P2 exclusive: game/progression_quotes.gd. World service market guard added; shared main/save_store changes limited to noncombat UI/progression.
 P3 exclusive: game/resource_guide.gd, game/world_organic_test.gd. Shared SaveStore, SaveGuard and main targeted world hunks; Village finite queue changes.
 P4: WorldService market quote + territory harvest, shared Store/main progression/contract and UI hunks, organic/transaction QA and branch workflow only.
+P5: shared SaveStore/main/SaveGuard changes external progression/merchant only; WorldService readiness helper; test and workflow. No combat engine, registry or art changes.

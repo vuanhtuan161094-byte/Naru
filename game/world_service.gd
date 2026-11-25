@@ -225,17 +225,25 @@ static func harvest(reg,s: Dictionary,territory: String,resource: String) -> boo
 	note(s,"Khai thác "+territory+" • "+resource)
 	return true
 
-static func capture_with(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> bool:
-	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed or location!=id or not travel.is_empty() or roster.is_empty():return false
-	var state=s.territory_states[id]
-	if not state.discovered or state.owner==PLAYER:return false
+static func capture_reason(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> String:
+	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed:return "Lãnh địa được bảo hộ"
+	if location!=id or not travel.is_empty():return "Đội chưa đến"
+	if roster.is_empty():return "Chưa có đội"
+	var target=s.territory_states[id]
+	if not target.discovered:return "Chưa khám phá"
+	if target.owner==PLAYER:return "Đã sở hữu"
 	var border=false
 	for edge in edges(reg,id):
 		if s.territory_states[edge.to].owner==PLAYER:border=true
-	if not border:return false
+	if not border:return "Không giáp lãnh địa của bạn"
+	if target.owner!=null and relation(s,PLAYER,str(target.owner)).state!="war":return "Cần tuyên chiến"
+	return ""
+
+static func capture_with(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> bool:
+	if capture_reason(reg,s,id,roster,location,travel)!="":return false
+	var state=s.territory_states[id]
 	var owner=state.owner
 	if owner!=null:
-		if relation(s,PLAYER,owner).state!="war":return false
 		# Sequential defense teams; each battle uses new actors/full recovery.
 		for team in reg.factions[owner].teams:
 			var level=maxi(1,floori(float(reg.territories[id].defense_rating)/80.0)+int(s.faction_states[owner].infrastructure.training)-1)

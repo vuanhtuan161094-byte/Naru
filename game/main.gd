@@ -826,7 +826,10 @@ func world_screen(message: String="") -> void:
 	label(side,"Sở hữu: "+str(t.owner)+" • Phòng thủ "+str(d.defense_rating) if t.discovered else "Chưa khám phá",17)
 	if not store.state.travel.is_empty():label(side,"Đang đi • "+str(store.state.travel.remaining)+" giây",16)
 	elif selected_territory!=store.state.world_location and not route.is_empty():button(side,"Đi "+str(route.seconds)+" giây",func():world_screen("Đã xuất phát" if store.travel_to(reg,selected_territory) else "Không thể đi"))
-	if selected_territory==store.state.world_location and t.owner!="FAC-009":button(side,"Chiếm lĩnh",func():world_screen(("Đã chiếm" if store.state.territory_states[selected_territory].owner=="FAC-009" else "Thất bại") if store.capture_territory(reg,selected_territory) else "Chưa đủ điều kiện"))
+	if selected_territory==store.state.world_location and t.owner!="FAC-009":
+		var reason=World.capture_reason(reg,store.state,selected_territory,store.state.team,store.state.world_location,store.state.travel)
+		var capture=button(side,"Chiếm lĩnh" if reason=="" else reason,func():world_screen(("Đã chiếm" if store.state.territory_states[selected_territory].owner=="FAC-009" else "Thất bại") if store.capture_territory(reg,selected_territory) else "Chưa đủ điều kiện"))
+		capture.disabled=reason!=""
 	label(side,"Bảo hộ làng: %d giây" % int(store.state.raid_protection),16)
 	if t.discovered:
 		for resource in d.resources:
@@ -938,7 +941,10 @@ func mission_detail(ninja: String,message: String="") -> void:
 		if source.source_type in ["mission","mission_or_library"]:
 			button(rows,text_value,func():mission_detail(ninja,"Đã phái đi" if store.start_mission(reg,ninja,resource) else "Chưa đủ điều kiện"))
 			button(rows,"Tự lặp: "+str(reg.resources[resource].name_vi),func():mission_detail(ninja,"Đã bật" if store.start_mission(reg,ninja,resource,true) else "Chưa đủ điều kiện"))
-		else:button(rows,text_value+" • đấu thử thách",func():mission_detail(ninja,"Đã thắng" if store.resource_trial(reg,ninja,resource) else "Chưa thắng / chưa đủ điều kiện"))
+		else:
+			var cooldown=maxi(0,int(store.state.source_cooldowns.get(ninja+":"+resource,0))-int(store.state.simulation_seconds))
+			var trial=button(rows,text_value+" • đấu thử thách • hồi "+str(cooldown)+"s",func():mission_detail(ninja,"Đã thắng" if store.resource_trial(reg,ninja,resource) else "Chưa thắng / chưa đủ điều kiện"))
+			trial.disabled=not store.resource_trial_ready(reg,ninja,resource)
 
 func beast_screen(message: String="") -> void:
 	var rows=activity_rows("VĨ THÚ • 9",message,activities_screen)
@@ -1256,6 +1262,11 @@ func resource_detail(id: String) -> void:
 		var qty=mini(100,int(store.state.inventory.get(id,0)))
 		var sell=button(rows,"Bán %d • %d Ryo" % [qty,unit*qty],func():resource_trade_result(id,store.sell_surplus(reg,id,qty)))
 		sell.disabled=qty<=0
+	var order=store.merchant_quote(reg,id)
+	if not order.is_empty():
+		var order_button=button(rows,"Đơn thương hội DEV: %d vật phẩm → %d Ryo (%d/3 hôm nay)" % [int(order.qty),int(order.total),int(order.used)],func():resource_trade_result(id,store.fulfill_merchant_order(reg,id)))
+		order_button.disabled=not order.ready
+		order_button.tooltip_text="Chỉ bán phần vượt 80% kho; tối đa 10% sức chứa mỗi đơn."
 	for source in reg.supply:
 		if source.resource_id==id:
 			label(rows,"Nguồn: "+str(source.source_type)+" • HQ "+str(source.source_min_hq)+" • "+str(source.base_yield)+" / "+str(source.period_seconds)+"s",17)
@@ -1388,10 +1399,15 @@ func training_screen(id: String,message: String="") -> void:
 		var line=HBoxContainer.new()
 		rows.add_child(line)
 		label(line,"%s • Có %d" % [reg.resources[resource].name_vi,int(store.state.inventory.get(resource,0))],17)
-		for qty in [1,5,10]:button(line,"Dùng "+str(qty),func():training_screen(id,"Đã tu luyện" if store.train_batch(reg,id,resource,qty) else "Thiếu cuộn hoặc đạt trần cảnh"))
+		for qty in [1,5,10,50,100]:
+			var use=button(line,"Dùng "+str(qty),func():training_screen(id,"Đã tu luyện" if store.train_batch(reg,id,resource,qty) else "Thiếu cuộn hoặc đạt trần cảnh"))
+			use.disabled=int(store.state.inventory.get(resource,0))<qty or int(p.level)>=(int(p.realm)+1)*20
 		var price=120 if resource=="RES-116" else 600
 		var b=button(line,"Mua 5 • "+str(price*5)+" Ryo",func():training_screen(id,"Đã mua" if store.buy_training_scrolls(resource,5) else "Cần HQ2 / đủ Ryo / chỗ kho"))
 		b.disabled=Village.level(store.state,"BLD-001")<2
+		var bulk=button(line,"Mua 100",func():training_screen(id,"Đã mua" if store.buy_training_scrolls(resource,100) else "Thiếu Ryo hoặc chỗ kho"))
+		bulk.disabled=Village.level(store.state,"BLD-001")<5 or int(store.state.inventory.get("RES-001",0))<price*100
+		bulk.tooltip_text=str(price*100)+" Ryo"
 	label(rows,"Tu luyện chuyên biệt • tăng chỉ số nền",20)
 	for stat in ["strength","vitality","spirit","agility","intellect","potential"]:
 		var q=store.training_quote(id,stat)
@@ -1402,6 +1418,8 @@ func training_screen(id: String,message: String="") -> void:
 		button(line,"Mở "+str(reg.buildings[q.building].name_vi),func():building_screen(q.building))
 		var b=button(line,"Tu luyện",func():training_screen(id,"Đã tăng" if store.train_stat(reg,id,stat) else "Thiếu công trình / nguyên liệu"))
 		b.disabled=Village.level(store.state,q.building)<=0
+		var bulk=button(line,"Tối đa 10 lần",func():training_screen(id,"Đã tu luyện" if store.train_stat(reg,id,stat,10) else "Thiếu nguyên liệu"))
+		bulk.disabled=b.disabled or not store.has_cost({"RES-001":q.ryo,str(q.resource):q.qty})
 
 func choose_review_art() -> void:
 	if OS.has_feature("web"):
