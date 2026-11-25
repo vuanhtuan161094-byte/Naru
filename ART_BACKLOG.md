@@ -43,3 +43,9 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P2 IN_PROGRESS: Naruto 24 candidate sheets (six actions x four output directions, two mirrored); Godot importer/playback PASS, visual quality NOT_ACCEPTED. Improve front/rear costume depth, true rear/left pose geometry, attack weight shift, hand seals and fall. Five other ninja remain static; continue only once benchmark passes, then character-specific costumes and actions. No counting candidate clips as complete.
 - ART-P3/P3R3 HOLD by owner, existing mappings unchanged.
 - ART-P8: current V7 importer accepts sheets, actual combat dispatch remains Chat 01 responsibility. Preserve stable IDs and event timing. See art/e3/ART_P2_ANIM_R1_EVIDENCE.json.
+
+## ART-P2 / Combat Presentation P1 next
+- ART-P2 BLOCKED on quality source: R1 REJECTED, zero new ninja/frames/clips; independently drawn full-body Naruto poses before expansion. No rough templates, mirrors or transformed stills. Special states summon/form/stun/fall open. Continue independent tasks.
+- ART-P3 HOLD until stable Chat00 design, no skill VFX.
+- ART-P7 REVIEW: 51 original icon PNGs, metadata, atlas, local HUD; owner review, overflow/tooltip, real passive receipt adapter and new IDs pending.
+- ART-P8 REVIEW: exact V7 local 6v6 HUD capture scoped PASS, four status IDs + FRM-01 observed; no production integration. Chat01 reconcile animation dispatcher, clustering/projection; custom sizes/dodge/cast/fall open. See art/e3/COMBAT_PRESENTATION_P1_HANDOFF.md.

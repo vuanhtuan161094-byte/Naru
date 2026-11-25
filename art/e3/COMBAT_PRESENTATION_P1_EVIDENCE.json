@@ -1,0 +1,583 @@
+{
+  "batch": "ART-P2-COMBAT-PRESENTATION-P1",
+  "design_sha": "80f1dad95fbad9327c2359a13450f8b9da1353b7",
+  "gameplay_sha": "63ac6b2051bbb2aab1d2d166df3ee6bec6bcd8db",
+  "art_parent": "b708caab97a23a96512c03fae39514b0b6dbdf8c",
+  "latest_gameplay_at_commit": "7f78d4ba3c7e08f59f78223da69b28ac877cfc97",
+  "archive": {
+    "name": "Naru_Presentation_P1_private.zip",
+    "sha256": "00891993c68c5860a755768af9e8daf103d25fd86072f6f02a3d5568a1dc524f",
+    "bytes": 2567792,
+    "library_file_id": "libfile_a6e03ddafa7c8191841f3ad6657ca671",
+    "library_upload": true,
+    "integrity": "PASS",
+    "evidence_sha256": "b99b1a0c3a8480bd41e507ede1b99310aba48a8b4132dbcf66933966f5ffd316"
+  },
+  "icons": [
+    {
+      "id": "stun",
+      "category": "status",
+      "path": "icons/status/stun.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "bind",
+      "category": "status",
+      "path": "icons/status/bind.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "silence",
+      "category": "status",
+      "path": "icons/status/silence.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "slow",
+      "category": "status",
+      "path": "icons/status/slow.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "blind",
+      "category": "status",
+      "path": "icons/status/blind.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "burn",
+      "category": "status",
+      "path": "icons/status/burn.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "poison",
+      "category": "status",
+      "path": "icons/status/poison.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "wet",
+      "category": "status",
+      "path": "icons/status/wet.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "freeze",
+      "category": "status",
+      "path": "icons/status/freeze.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "shock",
+      "category": "status",
+      "path": "icons/status/shock.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "mark",
+      "category": "status",
+      "path": "icons/status/mark.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "chakra_lock",
+      "category": "status",
+      "path": "icons/status/chakra_lock.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "taunt",
+      "category": "status",
+      "path": "icons/status/taunt.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "shield",
+      "category": "status",
+      "path": "icons/status/shield.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "evasion",
+      "category": "status",
+      "path": "icons/status/evasion.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "accuracy_up",
+      "category": "status",
+      "path": "icons/status/accuracy_up.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "attack_up",
+      "category": "status",
+      "path": "icons/status/attack_up.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "defense_up",
+      "category": "status",
+      "path": "icons/status/defense_up.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "haste",
+      "category": "status",
+      "path": "icons/status/haste.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "chakra_up",
+      "category": "status",
+      "path": "icons/status/chakra_up.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "antiheal",
+      "category": "status",
+      "path": "icons/status/antiheal.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "fear",
+      "category": "status",
+      "path": "icons/status/fear.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "mud",
+      "category": "status",
+      "path": "icons/status/mud.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "steam",
+      "category": "status",
+      "path": "icons/status/steam.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "control_immunity",
+      "category": "status",
+      "path": "icons/status/control_immunity.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "sleep",
+      "category": "status",
+      "path": "icons/status/sleep.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "attack_down",
+      "category": "status",
+      "path": "icons/status/attack_down.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "beguile_tactical",
+      "category": "status",
+      "path": "icons/status/beguile_tactical.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "self",
+      "category": "receipt",
+      "path": "icons/receipt/self.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "event",
+      "category": "receipt",
+      "path": "icons/receipt/event.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "threshold",
+      "category": "receipt",
+      "path": "icons/receipt/threshold.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "aura",
+      "category": "receipt",
+      "path": "icons/receipt/aura.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "team",
+      "category": "receipt",
+      "path": "icons/receipt/team.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "form",
+      "category": "receipt",
+      "path": "icons/receipt/form.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "combo",
+      "category": "receipt",
+      "path": "icons/receipt/combo.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "debuff",
+      "category": "receipt",
+      "path": "icons/receipt/debuff.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "fire",
+      "category": "element",
+      "path": "icons/element/fire.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "water",
+      "category": "element",
+      "path": "icons/element/water.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "wind",
+      "category": "element",
+      "path": "icons/element/wind.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "earth",
+      "category": "element",
+      "path": "icons/element/earth.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "lightning",
+      "category": "element",
+      "path": "icons/element/lightning.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "neutral",
+      "category": "element",
+      "path": "icons/element/neutral.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "talent",
+      "category": "talent",
+      "path": "icons/talent/talent.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-01",
+      "category": "formation",
+      "path": "icons/formation/FRM-01.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-02",
+      "category": "formation",
+      "path": "icons/formation/FRM-02.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-03",
+      "category": "formation",
+      "path": "icons/formation/FRM-03.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-04",
+      "category": "formation",
+      "path": "icons/formation/FRM-04.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-05",
+      "category": "formation",
+      "path": "icons/formation/FRM-05.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-06",
+      "category": "formation",
+      "path": "icons/formation/FRM-06.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-07",
+      "category": "formation",
+      "path": "icons/formation/FRM-07.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "FRM-08",
+      "category": "formation",
+      "path": "icons/formation/FRM-08.png",
+      "size": [
+        32,
+        32
+      ],
+      "status": "REVIEW_ONLY"
+    }
+  ],
+  "icon_manifest_sha256": "b53b5289937dde014380411fab616d883ba29356deeeacce275bd9f84244fe29",
+  "atlas_sha256": "dc0a9ee70669e8c42bbff9d53e7eea526f28afbdfd64e5f8cbeacbd26876d8df",
+  "qa": {
+    "gameplay_ci": 45590271237,
+    "gameplay_ci_result": "success",
+    "artifact_id": 15010279542,
+    "export_checksums": "7/7 PASS",
+    "engine": "4.4.1.stable.official.49a5bc7b6",
+    "icon_png_checks": "51/51 PASS, distinct file hashes and transparent corner",
+    "runtime": "SCOPED_LOCAL_PASS",
+    "initial_primary": 12,
+    "map": [
+      14,
+      10
+    ],
+    "prior_private_textures": 106,
+    "loaded_new_icons": 51,
+    "observed_statuses": [
+      "burn",
+      "shock",
+      "taunt",
+      "bind"
+    ],
+    "observed_formations": [
+      "FRM-01"
+    ],
+    "moved": true,
+    "hp_changes": 1258,
+    "icon_draw_calls": 3779,
+    "link_draw_calls": 1726,
+    "draw_frames": 361,
+    "video_frames": 361,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "video_sha256": "af1939c912b4b64f49e16721f28bf0dfbedc2320265f4e6b8192a284b777dcc7",
+    "log_sha256": "8145de3a9facac586905a36407c318a592002641615d13405afa7960db06e187",
+    "tested_overlay_sha256": "1614cdd012bad4c5325b19ca5e2aae205aac9da22fd77ed9f3c900d2cd8c886c",
+    "tested_harness_sha256": "2e20cbd009bf3163a9d33f715ee9ee80c55ac7d8e01f818bd807a7870bc17a22",
+    "art_ci": "NOT_RUN"
+  },
+  "animation": {
+    "new_ninja": 0,
+    "new_clips": 0,
+    "new_frames": 0,
+    "approved": 0,
+    "prior_r1": "REJECTED_BY_OWNER_DO_NOT_ROLLOUT",
+    "blocker": "Image creation unavailable; do not substitute reused heads, mirrored or transformed stills, or previous rough templates"
+  },
+  "limits": [
+    "Real V7 Main and combat with local review overlay only; previous R6 private art reused, no new animation or skill VFX.",
+    "51 icons loaded; four status IDs and FRM-01 plus aura indicator observed. Draw counts and HP samples are not unique gameplay events. Formation explicitly enabled via existing configure_team_formation in local nonreward fixture. No passive engine receipt integration or dodge/hit/cast animation proof.",
+    "Actor clustering persists. HUD source not merged into gameplay; custom map size not tested. Formation and element icons are symbolic emblems. Video shows legacy DEV V6 header from exact V7 source.",
+    "No public binary distribution, Codex Cloud, rig, merge. Tested scripts and individual hashes inside archive."
+  ]
+}
