@@ -1,0 +1,11 @@
+{
+  "status": "HOLD_ART_PRODUCTION",
+  "existing_art": "D2 low-detail PNG samples",
+  "r2_spec": "ART-01 R2",
+  "approved": false,
+  "planned_four_directions": 4,
+  "frames_per_direction": 42,
+  "planned_characters": 4,
+  "planned_frame_cells": 672,
+  "runtime": false
+}
