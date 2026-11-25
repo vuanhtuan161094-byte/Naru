@@ -1,0 +1,20 @@
+{
+  "base": "2970f31d87e6e15e382fdfe1a0ad8c43cf026df0",
+  "counts": {
+    "skills": 1152,
+    "prior_missing": 808,
+    "missing": 480,
+    "newly_linked": 328,
+    "limited_technique": 28,
+    "era_records": 176,
+    "era_ninja": 22,
+    "explicit_holds": 2,
+    "source_pages": 35
+  },
+  "checks": {
+    "all_ids": true,
+    "all_forms": true,
+    "source_refs": true
+  },
+  "status": "PARTIAL_SOURCE_RESEARCH_ALL_IDS_CLASSIFIED"
+}

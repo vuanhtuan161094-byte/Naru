@@ -1,0 +1,484 @@
+[
+  {
+    "id": "S3_SAKURA",
+    "url": "https://naruto-official.com/en/news/01_1743",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Sakura resists Ino's Mind Transfer using chakra control; later medical training belongs to later snapshot",
+    "ninja_ids": [
+      "NIN-003",
+      "NIN-043",
+      "NIN-128"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SOUND",
+    "url": "https://naruto-official.com/en/news/01_1296",
+    "type": "OFFICIAL_ANIME_RECAP",
+    "finding": "Choji's clan pills, Kimimaro bone weapons, Rasengan and Chidori, Sand siblings' intervention",
+    "ninja_ids": [
+      "NIN-006",
+      "NIN-007",
+      "NIN-008",
+      "NIN-011",
+      "NIN-013",
+      "NIN-014",
+      "NIN-024",
+      "NIN-025",
+      "NIN-026",
+      "NIN-036",
+      "NIN-037",
+      "NIN-038",
+      "NIN-039",
+      "NIN-040"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SOUND4",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_333",
+    "type": "OFFICIAL_EPISODE_SYNOPSIS",
+    "finding": "Four Sound ninja and Sasuke curse mark context",
+    "ninja_ids": [
+      "NIN-037",
+      "NIN-038",
+      "NIN-039",
+      "NIN-040"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_TEAM8",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_430",
+    "type": "OFFICIAL_EPISODE_SYNOPSIS",
+    "finding": "Shino parasitic insect tracking, Kiba and Hinata team context",
+    "ninja_ids": [
+      "NIN-010",
+      "NIN-011",
+      "NIN-012"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_TEAM8B",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_372",
+    "type": "OFFICIAL_EPISODE_SYNOPSIS",
+    "finding": "Bikochu search by team eight",
+    "ninja_ids": [
+      "NIN-010",
+      "NIN-011",
+      "NIN-012"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_INO",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_266",
+    "type": "OFFICIAL_EPISODE_SYNOPSIS",
+    "finding": "Ino Mind Transfer temporarily takes over opponent mind",
+    "ninja_ids": [
+      "NIN-009",
+      "NIN-003"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_INOSHIKA",
+    "url": "https://naruto-official.com/en/news/01_1327",
+    "type": "OFFICIAL_ANIME_RECAP",
+    "finding": "Nara Shadow Possession/Paralysis and Yamanaka Mind Transfer, trio coordinated attack",
+    "ninja_ids": [
+      "NIN-046",
+      "NIN-047",
+      "NIN-048",
+      "NIN-107",
+      "NIN-108",
+      "NIN-109"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_ASUMA",
+    "url": "https://naruto-official.com/en/news/01_1316",
+    "type": "OFFICIAL_ANIME_RECAP",
+    "finding": "Asuma and team vs Hidan/Kakuzu; shadow restraint ritual counter",
+    "ninja_ids": [
+      "NIN-017",
+      "NIN-046",
+      "NIN-047",
+      "NIN-048",
+      "NIN-064",
+      "NIN-065"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_KURENAI",
+    "url": "https://naruto-official.com/en/news/01_1786",
+    "type": "LICENSED_GAME_ARTICLE",
+    "finding": "Kurenai team 8; game portrayal not proof of manga moves",
+    "ninja_ids": [
+      "NIN-018"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_KUSHINA",
+    "url": "https://naruto-official.com/en/news/01_1833",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Kushina jinchuriki and family timeline",
+    "ninja_ids": [
+      "NIN-094"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_GUY",
+    "url": "https://naruto-official.com/en/news/01_1673",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Guy and Lee mentor bond; gate progression context",
+    "ninja_ids": [
+      "NIN-016",
+      "NIN-014",
+      "NIN-053"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_IRUKA",
+    "url": "https://naruto-official.com/en/news/01_1788",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Iruka teacher and protective role",
+    "ninja_ids": [
+      "NIN-005"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_KAKASHI",
+    "url": "https://naruto-official.com/en/news/01_1904",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Kakashi later war and Sharingan storyline",
+    "ninja_ids": [
+      "NIN-004"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_MINATO",
+    "url": "https://naruto-official.com/en/news/01_1681",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Reanimated war Minato can use Kurama chakra; distinct from living Minato",
+    "ninja_ids": [
+      "NIN-093"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_KISAME",
+    "url": "https://naruto-official.com/en/news/01_2348",
+    "type": "LICENSED_PRODUCT_ARTICLE",
+    "finding": "Samehada weapon, Kakuzu Jiongu hearts; secondary evidence only",
+    "ninja_ids": [
+      "NIN-061",
+      "NIN-065"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_HAKU",
+    "url": "https://naruto-official.com/en/news/01_2406",
+    "type": "LICENSED_PRODUCT_ARTICLE",
+    "finding": "Names Haku's ice mirror technique; Zabuza association",
+    "ninja_ids": [
+      "NIN-027",
+      "NIN-028"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_HAKU2",
+    "url": "https://naruto-official.com/en/news/01_2713",
+    "type": "LICENSED_GAME_ARTICLE",
+    "finding": "Haku ice style, speed and senbon; game adaptation",
+    "ninja_ids": [
+      "NIN-028"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_KAGE",
+    "url": "https://naruto-official.com/en/news/01_1321",
+    "type": "OFFICIAL_ANIME_RECAP",
+    "finding": "Five Kage summit roster and Darui/Cee entourage",
+    "ninja_ids": [
+      "NIN-055",
+      "NIN-077",
+      "NIN-078",
+      "NIN-079",
+      "NIN-083",
+      "NIN-086",
+      "NIN-089",
+      "NIN-091"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SAND",
+    "url": "https://naruto-official.com/en/anime/naruto1/list/01_349",
+    "type": "OFFICIAL_EPISODE_SYNOPSIS",
+    "finding": "Sand team joins Leaf against Sound",
+    "ninja_ids": [
+      "NIN-024",
+      "NIN-025",
+      "NIN-026",
+      "NIN-056",
+      "NIN-057"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_INOJIN",
+    "url": "https://naruto-official.com/en/anime/boruto/list/01_1084",
+    "type": "OFFICIAL_EPISODE_SYNOPSIS",
+    "finding": "Inojin trains Mind Transfer",
+    "ninja_ids": [
+      "NIN-117"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SUMIRE",
+    "url": "https://naruto-official.com/de/anime/boruto/list/01_957",
+    "type": "OFFICIAL_EPISODE_SYNOPSIS",
+    "finding": "Sumire and Nue dimensional portal; German official synopsis",
+    "ninja_ids": [
+      "NIN-122"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_KURAMA",
+    "url": "https://naruto-official.com/en/news/01_1896",
+    "type": "OFFICIAL_DATABASE",
+    "finding": "Kurama dies after Baryon, later revives in Himawari",
+    "ninja_ids": [
+      "NIN-115",
+      "NIN-126"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_TBV",
+    "url": "https://naruto-official.com/en/special/tbv",
+    "type": "OFFICIAL_SERIES_HUB",
+    "finding": "TBV chronology and named database entries; not per-move proof",
+    "ninja_ids": [
+      "NIN-111",
+      "NIN-112",
+      "NIN-114",
+      "NIN-115",
+      "NIN-126",
+      "NIN-127",
+      "NIN-132",
+      "NIN-138"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_HIDAN",
+    "url": "https://naruto-official.com/en/news/01_1749",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Jashin ritual linked injury, ritual premise",
+    "ninja_ids": [
+      "NIN-064"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_DEIDARA",
+    "url": "https://naruto-official.com/en/news/01_1781",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Explosive clay artist context",
+    "ninja_ids": [
+      "NIN-062"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SASORI",
+    "url": "https://naruto-official.com/en/news/01_1641",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Puppetry character context",
+    "ninja_ids": [
+      "NIN-063"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_ITACHI",
+    "url": "https://naruto-official.com/en/news/01_1814",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Itachi story and identity",
+    "ninja_ids": [
+      "NIN-060"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_EIDA",
+    "url": "https://naruto-official.com/en/news/01_1692",
+    "type": "OFFICIAL_DATABASE",
+    "finding": "Beguile ability is shinjutsu, not conventional genjutsu",
+    "ninja_ids": [
+      "NIN-138"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SUKUNA",
+    "url": "https://naruto-official.com/en/news/01_1713",
+    "type": "OFFICIAL_DATABASE",
+    "finding": "Sukunahikona ability reference",
+    "ninja_ids": [
+      "NIN-132",
+      "NIN-114"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_DAIKOKUTEN",
+    "url": "https://naruto-official.com/en/news/01_1712",
+    "type": "OFFICIAL_DATABASE",
+    "finding": "Isshiki ability inherited by Kawaki through Karma",
+    "ninja_ids": [
+      "NIN-132",
+      "NIN-114"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_TOBIRAMA",
+    "url": "https://naruto-official.com/en/news/01_1694",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Flying Raijin counter and cooperation with Minato",
+    "ninja_ids": [
+      "NIN-096",
+      "NIN-093"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SHIKAMARU",
+    "url": "https://naruto-official.com/en/news/01_1910",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Shadow Possession used tactically and against Hidan",
+    "ninja_ids": [
+      "NIN-007",
+      "NIN-046",
+      "NIN-129"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_NARUTO",
+    "url": "https://naruto-official.com/en/news/01_1610",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Naruto learns Rasengan and toad summoning after training",
+    "ninja_ids": [
+      "NIN-001",
+      "NIN-041"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_TSUNADE",
+    "url": "https://naruto-official.com/en/news/01_1868",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Tsunade medical treatment and Fifth Hokage timeline",
+    "ninja_ids": [
+      "NIN-021"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  },
+  {
+    "id": "S3_SASUKE",
+    "url": "https://naruto-official.com/en/news/01_1856",
+    "type": "OFFICIAL_MANGA_COLUMN",
+    "finding": "Sasuke early history, revenge and departure",
+    "ninja_ids": [
+      "NIN-002"
+    ],
+    "verification": "SEARCH_EXCERPT_REVIEWED",
+    "numeric_values": "NONE",
+    "scope": "Source context unless explicit skill linkage below; licensed adaptations not manga evidence."
+  }
+]

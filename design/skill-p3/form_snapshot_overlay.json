@@ -1,0 +1,504 @@
+[
+  {
+    "form_id": "NIN-001-F1",
+    "ninja_id": "NIN-001",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_NARUTO"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-002-F1",
+    "ninja_id": "NIN-002",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SASUKE"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-002-F2",
+    "ninja_id": "NIN-002",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SASUKE"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-004-F1",
+    "ninja_id": "NIN-004",
+    "snapshot": "Shippuden pre-war to war composite",
+    "restriction": "Kamui requires F2 and later training gate; no double Mangekyo or post-loss Sharingan.",
+    "source_ids": [
+      "S3_KAKASHI"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-004-F2",
+    "ninja_id": "NIN-004",
+    "snapshot": "Shippuden pre-war to war composite",
+    "restriction": "Kamui requires F2 and later training gate; no double Mangekyo or post-loss Sharingan.",
+    "source_ids": [
+      "S3_KAKASHI"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-008-F1",
+    "ninja_id": "NIN-008",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SOUND"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-008-F2",
+    "ninja_id": "NIN-008",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SOUND"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-014-F1",
+    "ninja_id": "NIN-014",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SOUND",
+      "S3_GUY"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-016-F1",
+    "ninja_id": "NIN-016",
+    "snapshot": "Shippuden war Guy, nonfatal playable abstraction",
+    "restriction": "S5/S6 require ranked gate thresholds; S7 eighth-gate-only Tịch tượng held in normal repeatable combat; retain old ID and DEV fallback until nonfatal alternative reviewed.",
+    "source_ids": [
+      "S3_GUY"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-020-F1",
+    "ninja_id": "NIN-020",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-021-F1",
+    "ninja_id": "NIN-021",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_TSUNADE"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-022-F1",
+    "ninja_id": "NIN-022",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-024-F1",
+    "ninja_id": "NIN-024",
+    "snapshot": "Part I Shukaku host",
+    "restriction": "F1 only before extraction; do not transfer this gate to Kazekage ID.",
+    "source_ids": [
+      "S3_SOUND",
+      "S3_SAND"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-036-F1",
+    "ninja_id": "NIN-036",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SOUND"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-041-F1",
+    "ninja_id": "NIN-041",
+    "snapshot": "Shippuden composite before end of war",
+    "restriction": "S5 contact before Sage, thrown only F1/F3; S6 Sage/Six Paths; S7 Kurama-compatible cloak.",
+    "source_ids": [
+      "S3_NARUTO"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-041-F2",
+    "ninja_id": "NIN-041",
+    "snapshot": "Shippuden composite before end of war",
+    "restriction": "S5 contact before Sage, thrown only F1/F3; S6 Sage/Six Paths; S7 Kurama-compatible cloak.",
+    "source_ids": [
+      "S3_NARUTO"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-041-F3",
+    "ninja_id": "NIN-041",
+    "snapshot": "Shippuden composite before end of war",
+    "restriction": "S5 contact before Sage, thrown only F1/F3; S6 Sage/Six Paths; S7 Kurama-compatible cloak.",
+    "source_ids": [
+      "S3_NARUTO"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-042-F1",
+    "ninja_id": "NIN-042",
+    "snapshot": "Shippuden composite pre-Rinnegan",
+    "restriction": "Sharingan stance, Mangekyo/EMS/Susanoo mutually exclusive forms; Kirin before/after Mangekyo; Amaterasu only unlocked ocular mode.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-042-F2",
+    "ninja_id": "NIN-042",
+    "snapshot": "Shippuden composite pre-Rinnegan",
+    "restriction": "Sharingan stance, Mangekyo/EMS/Susanoo mutually exclusive forms; Kirin before/after Mangekyo; Amaterasu only unlocked ocular mode.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-042-F3",
+    "ninja_id": "NIN-042",
+    "snapshot": "Shippuden composite pre-Rinnegan",
+    "restriction": "Sharingan stance, Mangekyo/EMS/Susanoo mutually exclusive forms; Kirin before/after Mangekyo; Amaterasu only unlocked ocular mode.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-043-F1",
+    "ninja_id": "NIN-043",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SAKURA"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-047-F1",
+    "ninja_id": "NIN-047",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_INOSHIKA",
+      "S3_ASUMA"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-053-F1",
+    "ninja_id": "NIN-053",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_GUY"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-060-F1",
+    "ninja_id": "NIN-060",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_ITACHI"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-060-F2",
+    "ninja_id": "NIN-060",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_ITACHI"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-061-F1",
+    "ninja_id": "NIN-061",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_KISAME"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-065-F1",
+    "ninja_id": "NIN-065",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_ASUMA",
+      "S3_KISAME"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-069-F1",
+    "ninja_id": "NIN-069",
+    "snapshot": "War composite Obito",
+    "restriction": "Ten-Tails form excludes Kamui/phase skills; no simultaneous modes.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-069-F2",
+    "ninja_id": "NIN-069",
+    "snapshot": "War composite Obito",
+    "restriction": "Ten-Tails form excludes Kamui/phase skills; no simultaneous modes.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-070-F1",
+    "ninja_id": "NIN-070",
+    "snapshot": "War composite Madara",
+    "restriction": "Susanoo/ocular/Ten-Tails mutually exclusive; meteor requires war memory; no unrestricted resurrection.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-070-F2",
+    "ninja_id": "NIN-070",
+    "snapshot": "War composite Madara",
+    "restriction": "Susanoo/ocular/Ten-Tails mutually exclusive; meteor requires war memory; no unrestricted resurrection.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-070-F3",
+    "ninja_id": "NIN-070",
+    "snapshot": "War composite Madara",
+    "restriction": "Susanoo/ocular/Ten-Tails mutually exclusive; meteor requires war memory; no unrestricted resurrection.",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-075-F1",
+    "ninja_id": "NIN-075",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-076-F1",
+    "ninja_id": "NIN-076",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-077-F1",
+    "ninja_id": "NIN-077",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_KAGE"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-095-F1",
+    "ninja_id": "NIN-095",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-100-F1",
+    "ninja_id": "NIN-100",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-101-F1",
+    "ninja_id": "NIN-101",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-102-F1",
+    "ninja_id": "NIN-102",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-103-F1",
+    "ninja_id": "NIN-103",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-104-F1",
+    "ninja_id": "NIN-104",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-105-F1",
+    "ninja_id": "NIN-105",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-111-F1",
+    "ninja_id": "NIN-111",
+    "snapshot": "Boruto Naruto Next Generations pre-TBV",
+    "restriction": "Karma gate; no Uzuhiko or TBV techniques injected silently.",
+    "source_ids": [
+      "S3_TBV"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-112-F1",
+    "ninja_id": "NIN-112",
+    "snapshot": "Boruto NNG pre-TBV",
+    "restriction": "Sharingan/Chidori; no TBV Ohirume under old ID.",
+    "source_ids": [
+      "S3_TBV"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-113-F1",
+    "ninja_id": "NIN-113",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-114-F1",
+    "ninja_id": "NIN-114",
+    "snapshot": "Boruto NNG Karma composite",
+    "restriction": "No unrestricted Isshiki ocular techniques; later shinjutsu need separate snapshot.",
+    "source_ids": [
+      "S3_TBV",
+      "S3_SUKUNA",
+      "S3_DAIKOKUTEN"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-118-F1",
+    "ninja_id": "NIN-118",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-126-F1",
+    "ninja_id": "NIN-126",
+    "snapshot": "Hokage pre-Kurama loss",
+    "restriction": "F2 Kurama and S5 Bijuu bomb are valid only this snapshot. Post-loss and Baryon separate/HOLD.",
+    "source_ids": [
+      "S3_KURAMA",
+      "S3_TBV"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-126-F2",
+    "ninja_id": "NIN-126",
+    "snapshot": "Hokage pre-Kurama loss",
+    "restriction": "F2 Kurama and S5 Bijuu bomb are valid only this snapshot. Post-loss and Baryon separate/HOLD.",
+    "source_ids": [
+      "S3_KURAMA",
+      "S3_TBV"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-127-F1",
+    "ninja_id": "NIN-127",
+    "snapshot": "Adult Sasuke pre-Rinnegan loss",
+    "restriction": "Amenotejikara requires F1; post-loss variant no Rinnegan abilities.",
+    "source_ids": [
+      "S3_TBV"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-127-F2",
+    "ninja_id": "NIN-127",
+    "snapshot": "Adult Sasuke pre-Rinnegan loss",
+    "restriction": "Amenotejikara requires F1; post-loss variant no Rinnegan abilities.",
+    "source_ids": [
+      "S3_TBV"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-128-F1",
+    "ninja_id": "NIN-128",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [
+      "S3_SAKURA"
+    ],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-130-F1",
+    "ninja_id": "NIN-130",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  },
+  {
+    "form_id": "NIN-136-F1",
+    "ninja_id": "NIN-136",
+    "snapshot": "P2_ERA",
+    "restriction": "Retain unlock and mutual exclusion; numeric DEV",
+    "source_ids": [],
+    "status": "DEV_SNAPSHOT_REVIEW"
+  }
+]

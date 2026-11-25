@@ -1,0 +1,112 @@
+{
+  "111": {
+    "snapshot": "Boruto Naruto Next Generations pre-TBV",
+    "decision": "Karma gate; no Uzuhiko or TBV techniques injected silently.",
+    "mode": "SNAPSHOT_LOCK"
+  },
+  "112": {
+    "snapshot": "Boruto NNG pre-TBV",
+    "decision": "Sharingan/Chidori; no TBV Ohirume under old ID.",
+    "mode": "SNAPSHOT_LOCK"
+  },
+  "114": {
+    "snapshot": "Boruto NNG Karma composite",
+    "decision": "No unrestricted Isshiki ocular techniques; later shinjutsu need separate snapshot.",
+    "mode": "COMPOSITE_GATED"
+  },
+  "115": {
+    "snapshot": "Boruto NNG child, pre-TBV Kurama revival",
+    "decision": "No Kurama access for this ID. TBV Himawari explicitly separate future candidate, not silently added.",
+    "mode": "SNAPSHOT_LOCK"
+  },
+  "126": {
+    "snapshot": "Hokage pre-Kurama loss",
+    "decision": "F2 Kurama and S5 Bijuu bomb are valid only this snapshot. Post-loss and Baryon separate/HOLD.",
+    "mode": "SNAPSHOT_LOCK"
+  },
+  "127": {
+    "snapshot": "Adult Sasuke pre-Rinnegan loss",
+    "decision": "Amenotejikara requires F1; post-loss variant no Rinnegan abilities.",
+    "mode": "SNAPSHOT_LOCK"
+  },
+  "137": {
+    "snapshot": "Boruto scientist support",
+    "decision": "All battle moves game-original tools/support; no claim canon fighter kit.",
+    "mode": "DEV_ADAPTATION"
+  },
+  "138": {
+    "snapshot": "Boruto Eida",
+    "decision": "Short target restriction DEV, not direct mind control, no forced allegiance.",
+    "mode": "BOUNDED_ADAPTATION"
+  },
+  "139": {
+    "snapshot": "Boruto Daemon",
+    "decision": "Contact-condition reflection, capped, nonrecursive; details await primary source.",
+    "mode": "BOUNDED_ADAPTATION"
+  },
+  "003": {
+    "snapshot": "Part I before Tsunade apprenticeship",
+    "decision": "Keep basic support and first aid as explicitly game-original; no medical chakra mastery/Byakugo.",
+    "mode": "DEV_ADAPTATION"
+  },
+  "004": {
+    "snapshot": "Shippuden pre-war to war composite",
+    "decision": "Kamui requires F2 and later training gate; no double Mangekyo or post-loss Sharingan.",
+    "mode": "COMPOSITE_GATED"
+  },
+  "006": {
+    "snapshot": "Part I academy-era",
+    "decision": "S7 Rasengan remains HOLD; later acquisition belongs to later era or separate unlocked memory scenario.",
+    "mode": "HOLD_SKILL"
+  },
+  "016": {
+    "snapshot": "Shippuden war Guy, nonfatal playable abstraction",
+    "decision": "S5/S6 require ranked gate thresholds; S7 eighth-gate-only Tịch tượng held in normal repeatable combat; retain old ID and DEV fallback until nonfatal alternative reviewed.",
+    "mode": "HOLD_SKILL"
+  },
+  "024": {
+    "snapshot": "Part I Shukaku host",
+    "decision": "F1 only before extraction; do not transfer this gate to Kazekage ID.",
+    "mode": "SNAPSHOT_LOCK"
+  },
+  "041": {
+    "snapshot": "Shippuden composite before end of war",
+    "decision": "S5 contact before Sage, thrown only F1/F3; S6 Sage/Six Paths; S7 Kurama-compatible cloak.",
+    "mode": "COMPOSITE_GATED"
+  },
+  "042": {
+    "snapshot": "Shippuden composite pre-Rinnegan",
+    "decision": "Sharingan stance, Mangekyo/EMS/Susanoo mutually exclusive forms; Kirin before/after Mangekyo; Amaterasu only unlocked ocular mode.",
+    "mode": "COMPOSITE_GATED"
+  },
+  "055": {
+    "snapshot": "Kazekage after extraction",
+    "decision": "Sand shield, bind and terrain remain; no Shukaku form prerequisite.",
+    "mode": "SNAPSHOT_LOCK"
+  },
+  "064": {
+    "snapshot": "Akatsuki ritual Hidan",
+    "decision": "Owned blood mark plus ritual circle; linked injury once per trigger, no immortality in ordinary battle.",
+    "mode": "BOUNDED_ADAPTATION"
+  },
+  "069": {
+    "snapshot": "War composite Obito",
+    "decision": "Ten-Tails form excludes Kamui/phase skills; no simultaneous modes.",
+    "mode": "COMPOSITE_GATED"
+  },
+  "070": {
+    "snapshot": "War composite Madara",
+    "decision": "Susanoo/ocular/Ten-Tails mutually exclusive; meteor requires war memory; no unrestricted resurrection.",
+    "mode": "COMPOSITE_GATED"
+  },
+  "091": {
+    "snapshot": "Five Kage Summit Danzo",
+    "decision": "Izanagi finite charge with eye cost; no reversal of economic/save rewards.",
+    "mode": "BOUNDED_ADAPTATION"
+  },
+  "092": {
+    "snapshot": "Shisui before death",
+    "decision": "Kotoamatsukami tactical bounded control; no permanent team flip.",
+    "mode": "BOUNDED_ADAPTATION"
+  }
+}
