@@ -1,4 +1,5 @@
 extends RefCounted
+const World=preload("res://game/world_service.gd")
 static func ensure(reg,s: Dictionary) -> void:
 	if not s.has("building_states"):
 		s.building_states={}
@@ -18,6 +19,7 @@ static func ensure(reg,s: Dictionary) -> void:
 	if not s.has("simulation_seconds"):s.simulation_seconds=0
 	if not s.has("production_count"):s.production_count=0
 	if not s.has("craft_count"):s.craft_count=0
+	World.ensure(reg,s)
 
 static func level(s: Dictionary,id: String) -> int:
 	return int(s.building_states.get(id,{}).get("level",0))
@@ -178,6 +180,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		s.stamina=mini(120,int(s.stamina)+amount)
 		s.stamina_seconds=int(s.stamina_seconds)%360 if int(s.stamina)<120 else 0
 	s.simulation_seconds=int(s.simulation_seconds)+dt
+	World.step(reg,s,dt)
 
 static func advance(reg,s: Dictionary,now: int) -> bool:
 	ensure(reg,s)

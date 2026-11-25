@@ -10,3 +10,5 @@ Skill level 1–20, D4 grade chance/guarantee, branch selection, typed effect mu
 GP-P3B partial: 48 typed formulas (no eval), talent migration, mastery, gated trial/quality/form transactions and runtime forms. Duel is auto only, no reward for unresolved. Not all 48 effects wired. QA pending. No merge.
 
 GP-P4 / GP-P5A-B / GP-P6 partial: building/recipe/jobs/clock runtime, inventory screen and construction UI, real workshop path. 24h clock cap, no replay; source coverage incomplete and NPC not yet simulated. QA pending.
+
+GP-P5 world partial: route/travel, diplomacy, finite stock trade, NPC tick, capture sequential defense, raid/repair. World offline now active. No multi-team deployment, full NPC-vs-NPC war, or complete balancing. CI pending.

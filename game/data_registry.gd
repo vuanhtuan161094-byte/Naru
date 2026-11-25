@@ -12,6 +12,9 @@ var recipes: Dictionary = {}
 var resources: Dictionary = {}
 var professions: Dictionary = {}
 var territories: Dictionary = {}
+var factions: Dictionary = {}
+var routes: Array = []
+var relation_defs: Array = []
 var supply: Array = []
 var stat_rules: Dictionary = {}
 var trials: Dictionary = {}
@@ -70,6 +73,12 @@ func load_all() -> bool:
 	resources=indexed("res://data/resources.json")
 	professions=indexed("res://data/professions.json")
 	territories=indexed("res://data/territories.json")
+	factions=indexed("res://data/faction_profiles.json")
+	var route_data=read_json("res://data/world_routes.json")
+	if route_data is Array:routes=route_data
+	var relation_data=read_json("res://data/diplomatic_relations.json")
+	if relation_data is Array:relation_defs=relation_data
+	if factions.size()!=9 or routes.size()!=71 or relation_defs.size()!=36:errors.append("Missing world content")
 	var supplies=read_json("res://data/d4/direct_supply.json")
 	if supplies is Array:supply=supplies
 	if buildings.size()!=30 or recipes.size()!=63 or resources.size()!=150 or professions.size()!=15 or territories.size()!=60:errors.append("Missing village content")

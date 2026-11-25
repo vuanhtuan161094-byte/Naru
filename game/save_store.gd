@@ -1,4 +1,5 @@
 extends RefCounted
+const World=preload("res://game/world_service.gd")
 const Village=preload("res://game/village_service.gd")
 const Combat=preload("res://game/combat.gd")
 const PATH = "user://naru_save_v1.json"
@@ -148,7 +149,7 @@ func commit_change(prior: Dictionary, old_rng: int) -> bool:
 	return false
 
 func set_team(ids: Array) -> bool:
-	if ids.size()>6: return false
+	if ids.size()>6 or not state.get("travel",{}).is_empty(): return false
 	var seen={}
 	for id in ids:
 		if seen.has(id) or not state.owned.has(id): return false
@@ -473,4 +474,35 @@ func production(reg,id: String,recipe: String,repeat: bool) -> bool:
 func cancel_production(id: String) -> bool:
 	var prior=state.duplicate(true)
 	if not Village.cancel(state,id):return false
+	return commit_change(prior,rng.state)
+
+func travel_to(reg,id: String) -> bool:
+	var prior=state.duplicate(true)
+	if not World.depart(reg,state,id):return false
+	return commit_change(prior,rng.state)
+
+func diplomatic_action(reg,id: String,action: String) -> bool:
+	var prior=state.duplicate(true)
+	if not World.diplomacy(reg,state,id,action):return false
+	return commit_change(prior,rng.state)
+
+func trade_resource(reg,id: String,resource: String,qty: int,buy: bool) -> bool:
+	var prior=state.duplicate(true)
+	if not World.trade(reg,state,id,resource,qty,buy):return false
+	return commit_change(prior,rng.state)
+
+func capture_territory(reg,id: String) -> bool:
+	var prior=state.duplicate(true)
+	if not World.capture(reg,state,id):return false
+	return commit_change(prior,rng.state)
+
+func repair_building(reg,id: String) -> bool:
+	if not reg.buildings.has(id):return false
+	var b=state.building_states[id]
+	if int(b.level)<=0 or float(b.condition)>=1:return false
+	var cost={"RES-001":ceili(float(reg.buildings[id].base_upgrade_ryo)*(1-float(b.condition))*int(b.level))}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	b.condition=1.0
 	return commit_change(prior,rng.state)

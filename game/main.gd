@@ -73,6 +73,7 @@ func menu(message: String="") -> void:
 	button(row,"Tu luyện",growth_screen)
 	button(row,"Trang bị",gear_screen)
 	button(row,"Làng",village_screen)
+	button(row,"Nhẫn giới",world_screen)
 	button(row,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
 	button(row,"Cốt truyện",campaign)
 	button(row,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
@@ -401,6 +402,7 @@ func building_screen(id: String,message: String="") -> void:
 	upgrade.disabled=not b.upgrade.is_empty() or int(b.level)>=100
 	if not b.upgrade.is_empty():label(root,"Còn %d giây" % int(b.upgrade.remaining),18)
 	button(nav,"Làm mới",func():building_screen(id))
+	if float(b.condition)<1:button(nav,"Sửa chữa",func():building_screen(id,"Đã sửa" if store.repair_building(reg,id) else "Thiếu Ryo"))
 	button(nav,"Trở về",func():village_screen())
 	var scroll=ScrollContainer.new()
 	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -434,3 +436,70 @@ func building_screen(id: String,message: String="") -> void:
 			label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
 			button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
 			button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
+
+func world_screen(message: String="") -> void:
+	clear()
+	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
+	label(root,"NHẪN GIỚI • 60 lãnh địa",28)
+	label(root,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" | "+message,18)
+	var nav=HBoxContainer.new()
+	root.add_child(nav)
+	button(nav,"Trở về",func():menu())
+	button(nav,"Làm mới",func():world_screen())
+	button(nav,"Ngoại giao",diplomacy_screen)
+	if not store.state.travel.is_empty():label(root,"Đang di chuyển • còn %ds" % int(store.state.travel.remaining),18)
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for id in reg.territories:
+		var t=store.state.territory_states[id]
+		var route=preload("res://game/world_service.gd").path(reg,store.state,store.state.world_location,id)
+		var row=HBoxContainer.new()
+		rows.add_child(row)
+		label(row,"%s • %s • %s" % [id,reg.territories[id].name_vi if t.discovered or not route.is_empty() else "Chưa khám phá",str(t.owner) if t.discovered else "?"],16)
+		if id!=store.state.world_location and not route.is_empty() and store.state.travel.is_empty():
+			button(row,"Đi (%ds)" % int(route.seconds),func():world_screen("Đã xuất phát" if store.travel_to(reg,id) else "Không thể đi"))
+		if id==store.state.world_location and t.owner!="FAC-009":
+			button(row,"Chiếm lĩnh",func():world_screen("Đã xử lý giao tranh" if store.capture_territory(reg,id) else "Chưa đủ điều kiện hoặc không thể chiếm"))
+	if not store.state.world_log.is_empty():label(root,str(store.state.world_log.back()),16)
+
+func diplomacy_screen(message: String="") -> void:
+	clear()
+	label(root,"NGOẠI GIAO",28)
+	label(root,message,18)
+	button(root,"Trở về",func():world_screen())
+	for id in reg.factions:
+		if id=="FAC-009":continue
+		var r=preload("res://game/world_service.gd").relation(store.state,"FAC-009",id)
+		button(root,"%s | %s | %d" % [reg.factions[id].name_vi,r.state,int(r.score)],func():faction_screen(id))
+
+func faction_screen(id: String,message: String="") -> void:
+	clear()
+	var r=preload("res://game/world_service.gd").relation(store.state,"FAC-009",id)
+	label(root,"%s | Quan hệ %d | %s" % [reg.factions[id].name_vi,int(r.score),r.state],28)
+	label(root,message,18)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	var actions={"gift":"Tặng 200 Ryo","trade":"Hiệp định thương mại","ally":"Đồng minh","war":"Tuyên chiến","peace":"Đình chiến","break":"Hủy hiệp định"}
+	for action in actions:button(row,actions[action],func():faction_screen(id,"Đã xử lý" if store.diplomatic_action(reg,id,action) else "Không đủ điều kiện"))
+	button(root,"Trở về",func():diplomacy_screen())
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for resource in reg.resources:
+		if not reg.resources[resource].tradable or resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:continue
+		var stock=int(store.state.faction_states[id].stock.get(resource,0))
+		if stock==0 and int(store.state.inventory.get(resource,0))==0:continue
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		label(line,"%s | NPC %d | Bạn %d" % [reg.resources[resource].name_vi,stock,int(store.state.inventory.get(resource,0))],16)
+		var buy=preload("res://game/world_service.gd").price(reg,store.state,id,resource,true)
+		var sell=preload("res://game/world_service.gd").price(reg,store.state,id,resource,false)
+		button(line,"Mua 1 (%d)" % buy,func():faction_screen(id,"Đã mua" if store.trade_resource(reg,id,resource,1,true) else "Thiếu điều kiện giao thương"))
+		button(line,"Bán 1 (%d)" % sell,func():faction_screen(id,"Đã bán" if store.trade_resource(reg,id,resource,1,false) else "Thiếu điều kiện giao thương"))
