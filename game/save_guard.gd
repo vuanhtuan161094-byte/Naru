@@ -47,6 +47,17 @@ static func valid(reg,s: Variant) -> bool:
 			var group=reg.bloodlines[bloodline].exclusive_group
 			if groups.has(group):return false
 			groups[group]=true
+		if not p.get("passive_progress",{}) is Dictionary:return false
+		for key in p.get("passive_progress",{}):
+			var pp=p.passive_progress[key]
+			if not reg.passives.has(key) or reg.passives[key].ninja_id!=id or int(p.realm)<int(reg.passives[key].unlock.realm) or not pp is Dictionary:return false
+			if not integer(pp.get("level"),1,20) or not integer(pp.get("grade"),1) or not integer(pp.get("fails"),0,4) or not integer(pp.get("mastery",0)):return false
+			if not pp.get("branch","") is String:return false
+			if not str(pp.get("branch","")).is_empty():
+				var valid_branch=false
+				for br in reg.passives[key].progression.branches:
+					if br.id==pp.branch and int(pp.grade)>=int(br.grade):valid_branch=true
+				if not valid_branch:return false
 		if not p.get("skill_levels",{}) is Dictionary:return false
 		for skill_id in p.get("skill_levels",{}):
 			var progress=p.skill_levels[skill_id]

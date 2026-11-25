@@ -1,4 +1,5 @@
 extends RefCounted
+const Passive=preload("res://game/passive_service.gd")
 const Stats=preload("res://game/stats_service.gd")
 const Formation=preload("res://game/formation_service.gd")
 var map_width: int=14
@@ -33,6 +34,11 @@ var art_events: Array[Dictionary]=[]
 var terrain: Array[Dictionary]=[]
 var qa_hold_ai=false
 var use_p2=true
+var use_passives=false
+var passive_queue: Array[Dictionary]=[]
+var passive_seen: Dictionary={}
+var passive_receipts: Dictionary={}
+var passive_mastery: Dictionary={}
 var p2_jobs: Array[Dictionary]=[]
 var p2_intercepts: Array[Dictionary]=[]
 var p2_marks: Dictionary={}
@@ -47,6 +53,7 @@ var missed_casts=0
 
 func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
+	use_passives=bool(save.get("settings",{}).get("passives_dev",false))
 	configure_map(stage)
 	configure_team_formation(save)
 	side_formations[1]="FRM-01"
@@ -70,6 +77,7 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 			boss_actor_uid=int(actors.back().uid)
 			boss_phases={"rule":registry.boss_rules[stage.boss_id],"fired":{},"priority":[]}
 		j+=1
+	Passive.refresh(self)
 
 func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionary,slot: int,mult: float,progress: Dictionary={},gear_instances: Dictionary={}) -> void:
 	var n=registry.ninjas[id]
@@ -111,6 +119,8 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 	var hp=float(all_stats.hp)*mult
 	next_uid+=1
 	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"deployment_slot":slot,"pos":Formation.spawn(side,slot,map_width,map_height,float(registry.combat_v3.deployment.rank_spacing),float(registry.combat_v3.deployment.lane_spacing)),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"shield_sources":{},"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
+
+	Passive.attach(actors.back(),progress)
 
 func alive(side: int) -> Array:
 	return actors.filter(func(a): return int(a.side)==side and float(a.hp)>0.0)
@@ -231,6 +241,7 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 		if params.has("field_modifier") and (environment=="storm" or elemental_fields.any(func(zone):return zone.element=="fire")):
 			for e in s.effects:
 				if e.has("coefficient"):e.coefficient=float(e.coefficient)*float(params.field_modifier.coefficient_multiplier)
+	Passive.modify_skill(self,a,s)
 	return s
 
 func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
@@ -266,11 +277,15 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 		if params.get("once_per_battle",false) or params.get("finite_per_battle",false):
 			if not a.has("p2_used"):a.p2_used={}
 			a.p2_used[s.skill_id]=int(a.p2_used.get(s.skill_id,0))+1
+	var before_cp=float(a.chakra)/maxf(1.0,float(a.max_chakra))
 	a.chakra=float(a.chakra)-float(s.chakra)
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)/(1.0+rating(a,"attack_speed"))
 	a.last=skill_name(s.skill_id)
 	cast_seq+=1
+	s=s.duplicate(true)
+	s.passive_cast_id=cast_seq
+	if s.chakra>0:Passive.queue(self,a,a,s,"chakra_threshold_crossed",before_cp,float(a.chakra)/maxf(1.0,float(a.max_chakra)))
 	a.pending={"skill":s,"target_uid":b.uid,"origin":a.pos,"aim":b.pos,"cast_id":cast_seq}
 	a.cast_left=float(s.cast_s)
 	art_event("cast_start",a.pos,0,str(s.skill_id))
@@ -334,6 +349,7 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 			b.p2_arc.hp=float(b.p2_arc.hp)-absorbed
 			dmg-=absorbed
 	if dmg<=0:return
+	if use_passives:dmg*=1.0-clampf(float(b.get("passive_mods",{}).get("damage_reduction",0)),0,0.10)
 	if allow_counter and a.side!=b.side and b.has("p2_evade") and int(b.p2_evade.expires)>ticks and int(b.p2_evade.left)>0:
 		b.p2_evade.left=int(b.p2_evade.left)-1
 		art_event("miss",b.pos)
@@ -394,6 +410,7 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	var count=summon_count(a,s.skill_id)
 	if count>=int(e.cap):return
 	var b=a.duplicate(true)
+	for key in ["passive_base","passive_mods","passive_progress","passive_timed","passive_icd","passive_rearm"]:b.erase(key)
 	next_uid+=1
 	b.uid=next_uid
 	b.id=str(e.template_id)
@@ -487,16 +504,33 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 						var before_hp=float(target.hp)
 						var crit=1.5+rating(a,"crit_damage") if e.damage_type!="genjutsu" and rng.randf()<maxf(0.0,rating(a,"pcrit" if physical else "ncrit")-rating(target,"crit_resist")) else 1.0
 						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))))
-						if before_hp-float(target.hp)>0.01 and target.side!=a.side:award_action(a,"strength" if physical else "intellect")
+						if before_hp-float(target.hp)>0.01 and target.side!=a.side:
+							award_action(a,"strength" if physical else "intellect")
+							if not a.summon and not target.summon and a.hp>0:
+								if target.hp>0:
+									Passive.queue(self,a,target,s,"hostile_damage_confirmed")
+									Passive.queue(self,target,a,s,"damage_taken_confirmed")
+									Passive.queue(self,target,a,s,"hp_threshold_crossed",before_hp/maxf(1.0,float(target.max_hp)),float(target.hp)/maxf(1.0,float(target.max_hp)))
+								else:Passive.queue(self,a,target,s,"kill_confirmed")
+								if crit>1.0:Passive.queue(self,a,target,s,"critical_hit_confirmed")
+								Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"heal":
 					var before_hp=float(target.hp)
-					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
+					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0+float(target.get("passive_mods",{}).get("healing_received",0)))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
 					if target.hp-before_hp>0.01:
 						award_action(a,"spirit")
 						art_event("heal",target.pos,float(target.hp)-before_hp)
+						Passive.queue(self,a,target,s,"heal_confirmed")
+						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"shield":
 					add_shield(a,target,float(a.natk)*float(e.coefficient),float(e.duration_s))
-				"apply_status":apply_status(a,target,e)
+				"apply_status":
+					var before_status=target.statuses.duplicate(true)
+					apply_status(a,target,e)
+					if before_status!=target.statuses:
+						Passive.queue(self,a,target,s,"status_applied")
+						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
+						if a.uid==target.uid and str(e.status_id) in ["attack_up","defense_up","evasion","haste","accuracy_up","chakra_up"]:Passive.queue(self,a,target,s,"stance_effect_confirmed")
 				"cleanse":
 					var keys=target.statuses.keys()
 					keys.sort_custom(func(x,y):return float(target.statuses[x].remaining)>float(target.statuses[y].remaining))
@@ -506,12 +540,25 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 							target.statuses.erase(key)
 							count+=1
 							if count>=int(e.max_statuses)+(1 if rng.randf()<rating(a,"cleanse") else 0):break
-				"chakra_restore":a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(e.amount))
+					if use_passives:count+=Passive.cleanse(target,maxi(0,int(e.max_statuses)-count))
+					if count>0:
+						Passive.queue(self,a,target,s,"cleanse_effective")
+						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
+				"chakra_restore":
+					var old_cp=float(a.chakra)
+					a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(e.amount))
+					if a.chakra>old_cp:Passive.queue(self,a,target,s,"resource_effect_confirmed")
 				"dash":move_actor(a,target.pos,minf(float(e.max_distance_m),maxf(0.0,a.pos.distance_to(target.pos)-float(e.stop_distance_m))))
-				"summon":summon_actor(a,s,e)
-				"temporary_stance":a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
+				"summon":
+					var prior_count=actors.size()
+					summon_actor(a,s,e)
+					if actors.size()>prior_count:Passive.queue(self,a,target,s,"summon_spawned")
+				"temporary_stance":
+					a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
+					Passive.queue(self,a,target,s,"stance_effect_confirmed")
 				"counter":a.counter={"remaining":float(e.window_s),"coefficient":e.coefficient}
-				"activate_form":activate_form(a,str(e.form_id),false,str(s.skill_id))
+				"activate_form":
+					if activate_form(a,str(e.form_id),false,str(s.skill_id)):Passive.queue(self,a,target,s,"form_activated")
 	if s.get("p2_subhit",false):return
 	if int(a.side)==0 and not a.summon:
 		mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+maxi(1,roundi(1.0+rating(a,"mastery_speed")))
@@ -585,6 +632,7 @@ func primary_alive(side: int) -> Array:
 func tick(dt: float) -> void:
 	if not outcome.is_empty():return
 	ticks+=1
+	Passive.refresh(self)
 	while not art_events.is_empty() and int(art_events[0].tick)<ticks-20:art_events.pop_front()
 	for zone in elemental_fields.duplicate():
 		if int(zone.expires)<=ticks:elemental_fields.erase(zone)
@@ -657,6 +705,7 @@ func tick(dt: float) -> void:
 	# Remove dead temporary entities only once their launched projectiles resolve.
 	for a in actors.duplicate():
 		if a.summon and a.hp<=0 and not projectiles.any(func(p):return p.source==a.uid):actors.erase(a)
+	Passive.flush(self)
 	deadlock=ticks-last_progress_tick>=2400
 	if primary_alive(1).is_empty():outcome="win"
 	elif primary_alive(0).is_empty():outcome="loss"
@@ -1357,12 +1406,21 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 			facing=(Vector2(enemy.pos)-Vector2(a.pos)).normalized()
 			break
 		a.p2_absorb={"left":int(p.get("max_projectiles",1)),"chakra":float(p.get("chakra_return",15)),"expires":ticks+roundi(float(p.get("duration_s",3))*20),"facing":facing,"angle":float(p.get("angle_deg",120))}
-	if kind in ["mark","projectile_mark"]:p2_set_mark(a,b,p)
-	if kind=="chakra_restore":b.chakra=minf(float(b.max_chakra),float(b.chakra)+float(p.get("chakra_amount",12)))
+	if kind in ["mark","projectile_mark"]:
+		p2_set_mark(a,b,p)
+		if p2_has_mark(a,b):Passive.queue(self,a,b,s,"mark_effect_confirmed")
+	if kind=="chakra_restore":
+		var old_cp=float(b.chakra)
+		b.chakra=minf(float(b.max_chakra),float(b.chakra)+float(p.get("chakra_amount",12)))
+		if b.chakra>old_cp:Passive.queue(self,a,b,s,"resource_effect_confirmed")
 	if kind in ["chakra_drain","zone_drain"]:
+		var old_cp=float(b.chakra)
 		var amount=minf(float(b.chakra),float(p.get("chakra_amount",p.get("chakra_per_tick",3))))
 		b.chakra=float(b.chakra)-amount
 		a.chakra=minf(float(a.max_chakra),float(a.chakra)+amount*float(p.get("transfer_fraction",0.3)))
+		if amount>0:
+			Passive.queue(self,a,b,s,"resource_effect_confirmed")
+			if a.side!=b.side and not a.summon:Passive.queue(self,b,a,s,"chakra_threshold_crossed",old_cp/maxf(1.0,float(b.max_chakra)),float(b.chakra)/maxf(1.0,float(b.max_chakra)))
 	var push=float(p.get("push_m",p.get("distance_m",0)))
 	if push>0 and b.uid!=boss_actor_uid:
 		var direction=(Vector2(b.pos)-Vector2(a.pos)).normalized()
@@ -1404,6 +1462,7 @@ func p2_combo(a: Dictionary,point: Vector2,target_uid: int) -> void:
 		combo_clock[key]=ticks
 		for signature in combo.signature_events:p2_events.erase(str(a.side)+":"+str(signature.skill_id))
 		var effect=combo.effect
+		var passive_combo_factor=1.0+Passive.combo_bonus(self,combo,entries)
 		var candidates=alive(int(a.side) if effect.type in ["shield","buff"] else 1-int(a.side))
 		var center=Vector2(a.pos) if effect.shape=="circle_self" else point
 		var selected=[]
@@ -1413,11 +1472,11 @@ func p2_combo(a: Dictionary,point: Vector2,target_uid: int) -> void:
 		for b in selected.slice(0,int(effect.max_targets)):
 			match str(effect.type):
 				"damage":
-					hit(a,b,float(a.natk)*float(effect.total_coefficient)*100/(100+float(b.nres)),false)
+					hit(a,b,float(a.natk)*float(effect.total_coefficient)*passive_combo_factor*100/(100+float(b.nres)),false)
 					if combo.id=="COMBO-006":apply_status(a,b,{"status_id":"stun","chance":1.0,"duration_s":0.5})
 				"bind","control":apply_status(a,b,{"status_id":"bind" if effect.type=="bind" else "slow","chance":1.0,"duration_s":1.0 if effect.type=="bind" else 1.5})
 				"chakra_drain":b.chakra=maxf(0,float(b.chakra)-12)
-				"shield":add_shield(a,b,float(a.natk)*float(effect.total_coefficient),5)
+				"shield":add_shield(a,b,float(a.natk)*float(effect.total_coefficient)*passive_combo_factor,5)
 				"buff":
 					apply_status(a,b,{"status_id":"defense_up","chance":1.0,"duration_s":6.0,"magnitude":0.12})
 					apply_status(a,b,{"status_id":"chakra_up","chance":1.0,"duration_s":6.0,"magnitude":0.12})

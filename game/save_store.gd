@@ -1,4 +1,5 @@
 extends RefCounted
+const Passive=preload("res://game/passive_service.gd")
 const Stats=preload("res://game/stats_service.gd")
 const SaveGuard=preload("res://game/save_guard.gd")
 const Content=preload("res://game/content_service.gd")
@@ -35,6 +36,7 @@ func load_or_new(reg) -> void:
 				ensure_account(reg)
 				for id in state.owned:
 					ensure_growth(state.owned[id])
+					Passive.migrate(id,state.owned[id])
 					if not state.owned[id].has("talent"):state.owned[id].talent=reg.growth.talents[int(str(id).right(3))%reg.growth.talents.size()].id
 				rng.seed=int(str(d.rng_seed))
 				rng.state=int(str(d.rng_state))
@@ -76,6 +78,7 @@ func grant(reg,id: String) -> void:
 	else:
 		state.owned[id]={"level":1,"xp":0,"realm":0,"quality":reg.ninjas[id].initial_quality,"stars":1,"shards":0,"mastery":{},"permanent":{}}
 		ensure_growth(state.owned[id])
+		Passive.migrate(id,state.owned[id])
 		state.owned[id].talent=reg.growth.talents[rng.randi_range(0,reg.growth.talents.size()-1)].id
 
 func draw(reg) -> String:
@@ -127,7 +130,7 @@ func begin_stage(stage: Dictionary) -> String:
 		return ""
 	return id
 
-func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary,mastery_counts: Dictionary={},action_stats: Dictionary={}) -> bool:
+func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary,mastery_counts: Dictionary={},action_stats: Dictionary={},passive_mastery: Dictionary={}) -> bool:
 	var entry=state.ledger.get(event_id)
 	if not entry is Dictionary or entry.get("status")!="started" or entry.get("stage_id")!=stage.id: return false
 	var prior=state.duplicate(true)
@@ -158,6 +161,10 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 					if not stat in ["strength","vitality","intellect","spirit","agility","potential"]:continue
 					var prior_gain=float(p.permanent.get(stat,0))
 					p.permanent[stat]=prior_gain+0.02*sqrt(float(breakdown[stat]))*difficulty*rng.randf_range(0.9,1.1)/pow(1+prior_gain/100.0,0.7)
+			if difficulty>=0.1:
+				Passive.migrate(id,p)
+				for passive_id in passive_mastery:
+					if p.passive_progress.has(passive_id) and reg.passives[passive_id].ninja_id==id:p.passive_progress[passive_id].mastery=int(p.passive_progress[passive_id].mastery)+1
 			for skill_id in mastery_counts:
 				if skill_allowed(reg,id,skill_id):
 					var talent=reg.ninjas[id].unique_talent_design
@@ -284,6 +291,7 @@ func breakthrough(id: String) -> String:
 	var won=fails>=5 or rng.randf()<minf(1.0,0.65+0.08*fails)
 	if won:
 		p.realm=int(p.realm)+1
+		Passive.migrate(id,p)
 		p.realm_failures=0
 		p.points=int(p.points)+5
 		apply_levels(p)
@@ -822,7 +830,9 @@ func import_save(reg,raw: String) -> bool:
 	var old_rng=rng.state
 	state=data
 	ensure_account(reg)
-	for id in state.owned:ensure_growth(state.owned[id])
+	for id in state.owned:
+		ensure_growth(state.owned[id])
+		Passive.migrate(id,state.owned[id])
 	rng.seed=int(str(state.rng_seed))
 	rng.state=int(str(state.rng_state))
 	return commit_change(prior,old_rng)
@@ -984,3 +994,55 @@ func set_squad_formation(reg,key: String,formation_id: String,slot: int=-1,ninja
 	if not state.has("squad_formations"):state.squad_formations={}
 	state.squad_formations[key]={"formation_id":formation_id,"slots":slots}
 	return commit_change(prior,rng.state)
+
+func passive_allowed(reg,id: String,key: String) -> bool:
+	return state.owned.has(id) and reg.passives.has(key) and reg.passives[key].ninja_id==id and int(state.owned[id].realm)>=int(reg.passives[key].unlock.realm)
+
+func upgrade_passive(reg,id: String,key: String) -> bool:
+	if not passive_allowed(reg,id,key):return false
+	var p=state.owned[id]
+	var sk=Passive.progress(p,key)
+	if int(sk.level)>=20:return false
+	var cost=ceili(2*pow(float(sk.level),1.35)*(1+0.25*float(sk.grade)))
+	var resource=reg.passives[key].progression.book
+	if int(state.inventory.get(resource,0))<cost:return false
+	var prior=state.duplicate(true)
+	Passive.migrate(id,p)
+	state.inventory[resource]=int(state.inventory[resource])-cost
+	sk.level=int(sk.level)+1
+	p.passive_progress[key]=sk
+	return commit_change(prior,rng.state)
+
+func advance_passive(reg,id: String,key: String) -> String:
+	if not passive_allowed(reg,id,key):return "locked"
+	var p=state.owned[id]
+	var sk=Passive.progress(p,key)
+	var cost=ceili(3*pow(float(sk.grade),1.45))
+	if int(sk.level)<20 or int(state.inventory.get("RES-130",0))<cost:return "locked"
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	Passive.migrate(id,p)
+	state.inventory["RES-130"]=int(state.inventory["RES-130"])-cost
+	var won=int(sk.fails)>=4 or rng.randf()<maxf(0.10,0.75/(1+0.15*(float(sk.grade)-1)))
+	if won:
+		sk.grade=int(sk.grade)+1
+		sk.level=1
+		sk.fails=0
+	else:sk.fails=int(sk.fails)+1
+	p.passive_progress[key]=sk
+	if not commit_change(prior,old_rng):return "error"
+	return "success" if won else "failure"
+
+func branch_passive(reg,id: String,key: String,branch_id: String) -> bool:
+	if not passive_allowed(reg,id,key):return false
+	var p=state.owned[id]
+	var sk=Passive.progress(p,key)
+	if not str(sk.branch).is_empty():return false
+	for br in reg.passives[key].progression.branches:
+		if br.id==branch_id and int(sk.grade)>=int(br.grade):
+			var prior=state.duplicate(true)
+			Passive.migrate(id,p)
+			sk.branch=branch_id
+			p.passive_progress[key]=sk
+			return commit_change(prior,rng.state)
+	return false

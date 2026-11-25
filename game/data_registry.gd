@@ -41,6 +41,11 @@ var environments: Dictionary = {}
 var skill_policies: Dictionary = {}
 var combat_v3: Dictionary = {}
 var p2_skills: Dictionary={}
+var passives: Dictionary={}
+var passives_by_ninja: Dictionary={}
+var passive_ledger: Dictionary={}
+var passive_rules: Dictionary={}
+const Passive=preload("res://game/passive_service.gd")
 var p2_fallback: Dictionary={}
 var p2_design: Dictionary={}
 var p2_forms: Dictionary={}
@@ -159,6 +164,7 @@ func load_all() -> bool:
 		if not ninjas.has(npc.template_ninja_id):
 			errors.append("Missing template "+str(npc.template_ninja_id))
 	load_p2()
+	load_passives()
 	return errors.is_empty()
 
 func load_p2() -> void:
@@ -180,3 +186,26 @@ func load_p2() -> void:
 	for row in read_json("res://data/skill-p2/status_extensions.json"):
 		status_catalog[row.id]={"id":row.id,"duration_s":row.duration_s,"stack":row.stack,"dispellable":row.dispellable,"hard_control":row.id=="sleep","max_stacks":1}
 	print("NARU_P2_REGISTRY ",p2_skills.size(),"/1152 fallback=",p2_fallback.size())
+
+func load_passives() -> void:
+	for i in range(1,13):
+		var path="res://data/passive-p1/passives-%02d.json" % i
+		for row in read_json(path):
+			if passives.has(row.id) or not ninjas.has(row.ninja_id):errors.append("Invalid passive "+str(row.id));continue
+			passives[row.id]=row
+	var overlay=read_json("res://data/passive-p1/review-overlay.json")
+	for patch in overlay.patches:
+		if not passives.has(patch.id):errors.append("Invalid passive overlay");continue
+		for key in patch.patch:passives[patch.id][key]=patch.patch[key]
+	passive_rules=read_json("res://data/passive-p1/stacking-rules.json")
+	var counts={}
+	for row in passives.values():
+		if not passives_by_ninja.has(row.ninja_id):passives_by_ninja[row.ninja_id]=[]
+		passives_by_ninja[row.ninja_id].append(row)
+		var state=Passive.gate(row)
+		passive_ledger[row.id]=state
+		counts[state]=int(counts.get(state,0))+1
+	if passives.size()!=864 or passive_ledger.size()!=864 or passives_by_ninja.size()!=144:errors.append("Incomplete passive registry")
+	for id in passives_by_ninja:
+		if passives_by_ninja[id].size()!=6:errors.append("Invalid passive kit "+id)
+	print("NARU_PASSIVE_REGISTRY ",passives.size()," ",counts)

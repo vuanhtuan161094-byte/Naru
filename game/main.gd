@@ -454,6 +454,12 @@ func draw_field() -> void:
 		field.draw_rect(Rect2(bar,Vector2(46*float(a.hp)/float(a.max_hp),5)),Color("#80c484") if a.side==0 else Color("#e57470"))
 		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(46,3)),Color("#182028"))
 		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(46*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
+		var badge_index=0
+		for mod in a.get("passive_mods",{}):
+			var v=float(a.passive_mods[mod])
+			if absf(v)<0.00001 or badge_index>=6:continue
+			field.draw_circle(bar+Vector2(4+8*badge_index,-5),3,Color("#82d5a4") if v>0 else Color("#ed827b"))
+			badge_index+=1
 		if sprite_top<=48:field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,13),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
 	for projectile in sim.projectiles if bool(store.state.get("settings",{}).get("projectiles",true)) else []:
 		var source=sim.actor_by_uid(int(projectile.source))
@@ -506,7 +512,7 @@ func finish(won: bool) -> void:
 		review_mode=false
 		settings_screen("Kết thúc trận review mỹ thuật • không lưu thưởng")
 		return
-	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts,sim.action_stats)
+	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts,sim.action_stats,sim.passive_mastery)
 	var elapsed=sim.ticks*0.05
 	sim=null
 	open_screen("results")
@@ -535,7 +541,10 @@ func finish(won: bool) -> void:
 func skill_screen(id: String,message: String="") -> void:
 	open_screen("skill_tree")
 	label(root,"NHẪN THUẬT • "+str(reg.ninjas[id].name_vi),26)
-	button(root,"Trở về",func():growth_detail(id))
+	var skill_nav=HBoxContainer.new()
+	root.add_child(skill_nav)
+	button(skill_nav,"Trở về",func():growth_detail(id))
+	button(skill_nav,"Nội tại P1–P6 (DEV)",func():passive_screen(id))
 	label(root,message,16)
 	var scroll=ScrollContainer.new()
 	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -1203,6 +1212,11 @@ func settings_screen(message: String="") -> void:
 	effect.button_pressed=bool(store.state.get("settings",{}).get("projectiles",true))
 	root.add_child(effect)
 	effect.toggled.connect(func(on):change_setting("projectiles",on))
+	var passive_toggle=CheckButton.new()
+	passive_toggle.text="Thử nghiệm nội tại P1–P6 (DEV, mặc định tắt)"
+	passive_toggle.button_pressed=bool(store.state.get("settings",{}).get("passives_dev",false))
+	root.add_child(passive_toggle)
+	passive_toggle.toggled.connect(func(on):change_setting("passives_dev",on))
 	button(root,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
 	button(root,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen(store.load_notice if store.load_notice!="" else "Đã tải"))
 	button(root,"Xuất / nhập save",save_screen)
@@ -1345,3 +1359,36 @@ func squad_formation_screen(key: String,message: String="") -> void:
 	for id in roster:
 		button(rows,str(reg.ninjas[id].name_vi)+" → ô "+str(selected_slot+1),func():squad_formation_screen(key,"Đã đổi ô" if store.set_squad_formation(reg,key,config.formation_id,selected_slot,id) else "Đội đang triển khai"))
 	label(rows,"Cấp trận pháp dùng chung toàn tài khoản; bố trí từng đội độc lập.",16)
+
+func passive_screen(id: String,message: String="") -> void:
+	open_screen("skill_tree")
+	var p=store.state.owned[id]
+	var svc=preload("res://game/passive_service.gd")
+	label(root,"NỘI TẠI P1–P6 • "+str(reg.ninjas[id].name_vi),24)
+	button(root,"Trở về nhẫn thuật",func():skill_screen(id))
+	label(root,"DEV • Sao %d • Cảnh %d • %s" % [int(p.stars),int(p.realm),"Bật thử trong Cài đặt" if not store.state.get("settings",{}).get("passives_dev",false) else "Đang bật"],17)
+	label(root,message,15)
+	var rows=scroll_rows(root)
+	for data in reg.passives_by_ninja.get(id,[]):
+		var key=str(data.id)
+		var sk=svc.progress(p,key)
+		var box=VBoxContainer.new()
+		rows.add_child(box)
+		var value=svc.potency(data,p,int(p.stars))
+		var heading=label(box,"P%d • %s | G%d L%d • %.2f%%" % [int(data.slot),str(data.name_vi),int(sk.grade),int(sk.level),value*100],18)
+		heading.tooltip_text=str(data.trigger.condition)+" | "+str(data.counterplay)+" | "+str(reg.passive_ledger[key])
+		label(box,"%s • %s • %s • Cảnh %d • Thành thạo %d • %s" % [str(data.trigger.event),str(data.target.scope),str(data.effect.key),int(data.unlock.realm),int(sk.mastery),str(reg.passive_ledger[key])],14)
+		if not store.passive_allowed(reg,id,key):
+			label(box,"Chưa mở khóa",15)
+			continue
+		var nav=HBoxContainer.new()
+		box.add_child(nav)
+		var level_button=button(nav,"Tăng cấp",func():passive_screen(id,"Đã tăng cấp" if store.upgrade_passive(reg,id,key) else "Thiếu sách hoặc đủ cấp"))
+		level_button.disabled=int(sk.level)>=20
+		var grade_button=button(nav,"Tiến giai (%d/4)" % int(sk.fails),func():passive_screen(id,store.advance_passive(reg,id,key)))
+		grade_button.disabled=int(sk.level)<20
+		for br in data.progression.branches:
+			if int(sk.grade)>=int(br.grade) and str(sk.branch).is_empty():
+				var branch_id=str(br.id)
+				button(nav,str(br.name),func():passive_screen(id,"Đã chọn nhánh" if store.branch_passive(reg,id,key,branch_id) else "Không thể chọn"))
+		if not str(sk.branch).is_empty():label(box,"Nhánh: "+str(sk.branch),14)

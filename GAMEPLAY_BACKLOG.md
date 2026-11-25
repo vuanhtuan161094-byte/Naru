@@ -55,3 +55,7 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 ## A+B / V7 batch
 - REVIEW: 6 new candidate adapters, second P3 HOLD, global NPC war cadence + pair save fields, 120 stage XP values, natural P2 campaign observational test, Web DEV V7 CI/export. Exact-SHA checks required.
 - READY: remaining special fallback (ritual/link/cable/retrieve/mark throw/reflection), full skill-depth/star C and BALANCE-P1 overlays, organic progression beyond chapter 2, final migration/recovery, full UI and PC/Android. No blanket completion.
+
+## PASSIVE-P1 / synergy batch 1
+- REVIEW: 864 registry, runtime DEV ledger, opt-in engine and progression, UI, scoped actual event/6v6 smoke, V8 export. CI pending.
+- READY: per-ID actual contribution audit; source/adapter gate resolution; typed control duration/conditional secondary/remaining authoritative events; continuous mastery; full synergy-P1 after published database; fixed-point CP and V5 manual ultimate; prior V7 remaining special fallbacks/organic progression/Android-PC.
