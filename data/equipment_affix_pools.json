@@ -1,0 +1,30 @@
+{
+  "offense": [
+    "patk",
+    "natk",
+    "pcrit",
+    "ncrit",
+    "armor_pen",
+    "magic_pen",
+    "crit_damage"
+  ],
+  "defense": [
+    "hp",
+    "armor",
+    "nres",
+    "damage_reduction",
+    "crit_resist",
+    "control_resist",
+    "hp_regen"
+  ],
+  "utility": [
+    "chakra_max",
+    "chakra_regen",
+    "accuracy",
+    "evasion",
+    "move_speed",
+    "healing",
+    "cdr",
+    "mastery_speed"
+  ]
+}
