@@ -1,0 +1,6 @@
+{
+  "boss_count": 24,
+  "boss_identity_matches": true,
+  "faction_team_refs": true,
+  "player_no_preloaded_npc_teams": true
+}

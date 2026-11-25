@@ -10,14 +10,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "bell_test",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "bell_test"
   },
   {
     "id": "BOSS-002",
@@ -30,14 +33,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "mist_and_water_clone",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "mist_and_water_clone"
   },
   {
     "id": "BOSS-003",
@@ -50,14 +56,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "sand_shield",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "sand_shield"
   },
   {
     "id": "BOSS-004",
@@ -70,14 +79,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "snake_summon",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "snake_summon"
   },
   {
     "id": "BOSS-005",
@@ -90,14 +102,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "medical_counter",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "medical_counter"
   },
   {
     "id": "BOSS-006",
@@ -110,14 +125,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "curse_mark",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "curse_mark"
   },
   {
     "id": "BOSS-007",
@@ -130,14 +148,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "iron_sand_puppets",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "iron_sand_puppets"
   },
   {
     "id": "BOSS-008",
@@ -150,14 +171,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "chakra_scalpel",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "chakra_scalpel"
   },
   {
     "id": "BOSS-009",
@@ -170,14 +194,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "multiple_mask_phases",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "multiple_mask_phases"
   },
   {
     "id": "BOSS-010",
@@ -190,14 +217,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "illusion_susanoo",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "illusion_susanoo"
   },
   {
     "id": "BOSS-011",
@@ -210,14 +240,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "gravity_push_pull",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "gravity_push_pull"
   },
   {
     "id": "BOSS-012",
@@ -230,14 +263,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "wind_and_izanagi",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "wind_and_izanagi"
   },
   {
     "id": "BOSS-013",
@@ -250,14 +286,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "bijuu_training",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "bijuu_training"
   },
   {
     "id": "BOSS-014",
@@ -270,14 +309,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "reanimated_jinchuriki",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "reanimated_jinchuriki"
   },
   {
     "id": "BOSS-015",
@@ -290,14 +332,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "space_time_evade",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "space_time_evade"
   },
   {
     "id": "BOSS-016",
@@ -310,14 +355,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "dimension_shift",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "dimension_shift"
   },
   {
     "id": "BOSS-017",
@@ -330,14 +378,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "chidori_rasengan_duel",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "chidori_rasengan_duel"
   },
   {
     "id": "BOSS-018",
@@ -350,14 +401,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "sage_training",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "sage_training"
   },
   {
     "id": "BOSS-019",
@@ -370,14 +424,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "nue_summon",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "nue_summon"
   },
   {
     "id": "BOSS-020",
@@ -390,14 +447,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "absorb_and_return",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "absorb_and_return"
   },
   {
     "id": "BOSS-021",
@@ -410,14 +470,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "poison_regeneration",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "poison_regeneration"
   },
   {
     "id": "BOSS-022",
@@ -430,14 +493,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "size_shift",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "size_shift"
   },
   {
     "id": "BOSS-023",
@@ -450,14 +516,17 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "claw_mark_teleport",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "claw_mark_teleport"
   },
   {
     "id": "BOSS-024",
@@ -470,13 +539,16 @@
     "phases": [
       {
         "trigger_hp": 0.7,
-        "action": "skill_priority_change"
+        "action": "rotating_affix",
+        "requires_authored_skill_mapping": true
       },
       {
         "trigger_hp": 0.35,
-        "action": "chakra_refill_and_defensive_stance"
+        "action": "signature_burst",
+        "requires_authored_skill_mapping": true
       }
     ],
-    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING"
+    "status": "PROPOSED_REQUIRES_INDIVIDUAL_TUNING",
+    "mechanic_design": "rotating_affix"
   }
 ]

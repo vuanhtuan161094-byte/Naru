@@ -81,7 +81,7 @@
   },
   {
     "id": "NPC-009",
-    "template_ninja_id": "NIN-003",
+    "template_ninja_id": "NIN-004",
     "level": 13,
     "realm": 0,
     "quality_bonus": 1,
@@ -191,7 +191,7 @@
   },
   {
     "id": "NPC-020",
-    "template_ninja_id": "NIN-028",
+    "template_ninja_id": "NIN-027",
     "level": 22,
     "realm": 1,
     "quality_bonus": 1,
@@ -521,7 +521,7 @@
   },
   {
     "id": "NPC-053",
-    "template_ninja_id": "NIN-021",
+    "template_ninja_id": "NIN-023",
     "level": 49,
     "realm": 2,
     "quality_bonus": 1,
@@ -831,7 +831,7 @@
   },
   {
     "id": "NPC-084",
-    "template_ninja_id": "NIN-058",
+    "template_ninja_id": "NIN-063",
     "level": 67,
     "realm": 3,
     "quality_bonus": 1,
@@ -991,7 +991,7 @@
   },
   {
     "id": "NPC-100",
-    "template_ninja_id": "NIN-045",
+    "template_ninja_id": "NIN-023",
     "level": 76,
     "realm": 3,
     "quality_bonus": 1,
@@ -1151,7 +1151,7 @@
   },
   {
     "id": "NPC-116",
-    "template_ninja_id": "NIN-046",
+    "template_ninja_id": "NIN-065",
     "level": 85,
     "realm": 4,
     "quality_bonus": 1,
@@ -1311,7 +1311,7 @@
   },
   {
     "id": "NPC-132",
-    "template_ninja_id": "NIN-042",
+    "template_ninja_id": "NIN-060",
     "level": 94,
     "realm": 4,
     "quality_bonus": 1,
@@ -1511,7 +1511,7 @@
   },
   {
     "id": "NPC-152",
-    "template_ninja_id": "NIN-041",
+    "template_ninja_id": "NIN-067",
     "level": 103,
     "realm": 5,
     "quality_bonus": 1,
@@ -1721,7 +1721,7 @@
   },
   {
     "id": "NPC-173",
-    "template_ninja_id": "NIN-042",
+    "template_ninja_id": "NIN-091",
     "level": 112,
     "realm": 5,
     "quality_bonus": 1,
@@ -1931,7 +1931,7 @@
   },
   {
     "id": "NPC-194",
-    "template_ninja_id": "NIN-041",
+    "template_ninja_id": "NIN-076",
     "level": 121,
     "realm": 6,
     "quality_bonus": 1,
@@ -2351,7 +2351,7 @@
   },
   {
     "id": "NPC-236",
-    "template_ninja_id": "NIN-041",
+    "template_ninja_id": "NIN-069",
     "level": 139,
     "realm": 6,
     "quality_bonus": 1,
@@ -3121,7 +3121,7 @@
   },
   {
     "id": "NPC-313",
-    "template_ninja_id": "NIN-121",
+    "template_ninja_id": "NIN-113",
     "level": 166,
     "realm": 8,
     "quality_bonus": 1,
@@ -3381,7 +3381,7 @@
   },
   {
     "id": "NPC-339",
-    "template_ninja_id": "NIN-111",
+    "template_ninja_id": "NIN-122",
     "level": 175,
     "realm": 8,
     "quality_bonus": 1,
@@ -3641,7 +3641,7 @@
   },
   {
     "id": "NPC-365",
-    "template_ninja_id": "NIN-112",
+    "template_ninja_id": "NIN-130",
     "level": 184,
     "realm": 9,
     "quality_bonus": 1,
@@ -3941,7 +3941,7 @@
   },
   {
     "id": "NPC-395",
-    "template_ninja_id": "NIN-137",
+    "template_ninja_id": "NIN-135",
     "level": 193,
     "realm": 9,
     "quality_bonus": 1,
@@ -4241,7 +4241,7 @@
   },
   {
     "id": "NPC-425",
-    "template_ninja_id": "NIN-130",
+    "template_ninja_id": "NIN-132",
     "level": 202,
     "realm": 10,
     "quality_bonus": 1,
@@ -4541,7 +4541,7 @@
   },
   {
     "id": "NPC-455",
-    "template_ninja_id": "NIN-114",
+    "template_ninja_id": "NIN-134",
     "level": 211,
     "realm": 10,
     "quality_bonus": 1,

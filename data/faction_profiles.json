@@ -37,20 +37,20 @@
       {
         "id": "FAC-001-TEAM-1",
         "ninja_template_ids": [
+          "NIN-004",
           "NIN-041",
-          "NIN-042",
           "NIN-043"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-001-TEAM-2",
         "ninja_template_ids": [
-          "NIN-044",
-          "NIN-045",
-          "NIN-046"
+          "NIN-046",
+          "NIN-047",
+          "NIN-048"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -92,20 +92,20 @@
       {
         "id": "FAC-002-TEAM-1",
         "ninja_template_ids": [
-          "NIN-047",
-          "NIN-048",
-          "NIN-049"
+          "NIN-055",
+          "NIN-056",
+          "NIN-057"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-002-TEAM-2",
         "ninja_template_ids": [
-          "NIN-050",
-          "NIN-051",
-          "NIN-052"
+          "NIN-058",
+          "NIN-059",
+          "NIN-142"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -146,20 +146,20 @@
       {
         "id": "FAC-003-TEAM-1",
         "ninja_template_ids": [
-          "NIN-053",
-          "NIN-054",
-          "NIN-055"
+          "NIN-083",
+          "NIN-084",
+          "NIN-085"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-003-TEAM-2",
         "ninja_template_ids": [
-          "NIN-056",
-          "NIN-057",
-          "NIN-058"
+          "NIN-101",
+          "NIN-141",
+          "NIN-027"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -201,20 +201,20 @@
       {
         "id": "FAC-004-TEAM-1",
         "ninja_template_ids": [
-          "NIN-059",
-          "NIN-060",
-          "NIN-061"
+          "NIN-076",
+          "NIN-077",
+          "NIN-078"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-004-TEAM-2",
         "ninja_template_ids": [
-          "NIN-062",
-          "NIN-063",
-          "NIN-064"
+          "NIN-079",
+          "NIN-080",
+          "NIN-081"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -255,20 +255,19 @@
       {
         "id": "FAC-005-TEAM-1",
         "ninja_template_ids": [
-          "NIN-065",
-          "NIN-066",
-          "NIN-067"
+          "NIN-086",
+          "NIN-087",
+          "NIN-088"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-005-TEAM-2",
         "ninja_template_ids": [
-          "NIN-068",
-          "NIN-069",
-          "NIN-070"
+          "NIN-102",
+          "NIN-103"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -308,20 +307,18 @@
       {
         "id": "FAC-006-TEAM-1",
         "ninja_template_ids": [
-          "NIN-071",
-          "NIN-072",
-          "NIN-073"
+          "NIN-067",
+          "NIN-068",
+          "NIN-066"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-006-TEAM-2",
         "ninja_template_ids": [
-          "NIN-074",
-          "NIN-075",
-          "NIN-076"
+          "NIN-090"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -360,20 +357,20 @@
       {
         "id": "FAC-007-TEAM-1",
         "ninja_template_ids": [
-          "NIN-077",
-          "NIN-078",
-          "NIN-079"
+          "NIN-022",
+          "NIN-023",
+          "NIN-029"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-007-TEAM-2",
         "ninja_template_ids": [
-          "NIN-080",
-          "NIN-081",
-          "NIN-082"
+          "NIN-036",
+          "NIN-037",
+          "NIN-038"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -412,20 +409,20 @@
       {
         "id": "FAC-008-TEAM-1",
         "ninja_template_ids": [
-          "NIN-083",
-          "NIN-084",
-          "NIN-085"
+          "NIN-060",
+          "NIN-061",
+          "NIN-062"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       },
       {
         "id": "FAC-008-TEAM-2",
         "ninja_template_ids": [
-          "NIN-086",
-          "NIN-087",
-          "NIN-088"
+          "NIN-063",
+          "NIN-064",
+          "NIN-065"
         ],
-        "status": "SIMULATED_NPC_ROSTER"
+        "status": "CROSS_ERA_GAME_DESIGN_ROSTER"
       }
     ],
     "status": "PROPOSED"
@@ -461,26 +458,7 @@
       "defense": 0.35,
       "expansion": 0.25
     },
-    "teams": [
-      {
-        "id": "FAC-009-TEAM-1",
-        "ninja_template_ids": [
-          "NIN-089",
-          "NIN-090",
-          "NIN-091"
-        ],
-        "status": "SIMULATED_NPC_ROSTER"
-      },
-      {
-        "id": "FAC-009-TEAM-2",
-        "ninja_template_ids": [
-          "NIN-092",
-          "NIN-093",
-          "NIN-094"
-        ],
-        "status": "SIMULATED_NPC_ROSTER"
-      }
-    ],
+    "teams": [],
     "status": "PROPOSED"
   }
 ]
