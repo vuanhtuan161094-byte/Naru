@@ -719,7 +719,7 @@ func building_screen(id: String,message: String="") -> void:
 			button(row,"Rút",func():building_screen(id,"Đã rút" if store.assign_job(reg,ninja,"","") else "Lỗi"))
 	if not b.production.is_empty():
 		label(rows,"Đang sản xuất %s • còn %ds" % [b.production.recipe,int(b.production.remaining)],18)
-		button(rows,"Dừng và hoàn nguyên liệu",func():building_screen(id,"Đã dừng" if store.cancel_production(id) else "Kho đầy"))
+		button(rows,"Dừng và hoàn nguyên liệu",func():building_screen(id,"Đã dừng; phần vượt kho ở Hộp thưởng" if store.cancel_production(id) else "Không thể dừng"))
 	else:
 		for recipe_id in def.recipe_ids:
 			var recipe=reg.recipes[recipe_id]
@@ -727,6 +727,7 @@ func building_screen(id: String,message: String="") -> void:
 			rows.add_child(row)
 			var output=str(reg.resources[recipe.output.resource_id].name_vi)
 			label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
+			label(row,cost_text(recipe.inputs),15)
 			button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
 			button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
 
@@ -1115,10 +1116,10 @@ func ninja_gear_screen(id: String) -> void:
 		if equipped!="":button(rows,"%s • %s" % [slot,reg.gear_templates[store.state.gear_instances[equipped].template_id].name_vi],func():gear_detail(equipped))
 		else:
 			label(rows,slot+" • "+str(reg.gear_templates.get(slot+"-Q1",{}).get("name_vi","Trang bị"))+" • Trống",17)
-			for gear_id in store.state.gear_instances:
-				var g=store.state.gear_instances[gear_id]
-				if g.owner=="" and reg.gear_templates[g.template_id].slot_id==slot:
-					button(rows,"Mặc "+str(reg.gear_templates[g.template_id].name_vi),func():store.equip_gear(reg,id,gear_id);ninja_gear_screen(id))
+		for gear_id in store.state.gear_instances:
+			var g=store.state.gear_instances[gear_id]
+			if g.owner=="" and reg.gear_templates[g.template_id].slot_id==slot:
+				button(rows,("Thay bằng " if equipped!="" else "Mặc ")+str(reg.gear_templates[g.template_id].name_vi),func():store.equip_gear(reg,id,gear_id);ninja_gear_screen(id))
 	button(rows,"Chế tạo trang bị",gear_craft_screen)
 
 func recruit_screen(message: String="") -> void:
@@ -1172,14 +1173,26 @@ func resource_detail(id: String) -> void:
 	screen_id="inventory"
 	if reg.resources[id].tradable and not id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:
 		var unit=maxi(1,floori(float(reg.resources[id].base_price_ryo)*0.35))
-		button(rows,"Bán 100 dư thừa • "+str(unit*100)+" Ryo",func():resource_trade_result(id,store.sell_surplus(reg,id,100)))
+		var qty=mini(100,int(store.state.inventory.get(id,0)))
+		var sell=button(rows,"Bán %d • %d Ryo" % [qty,unit*qty],func():resource_trade_result(id,store.sell_surplus(reg,id,qty)))
+		sell.disabled=qty<=0
 	for source in reg.supply:
 		if source.resource_id==id:
 			label(rows,"Nguồn: "+str(source.source_type)+" • HQ "+str(source.source_min_hq)+" • "+str(source.base_yield)+" / "+str(source.period_seconds)+"s",17)
 			button(rows,"Mở "+str(reg.buildings[source.building_id].name_vi),func():building_screen(source.building_id))
+			if source.source_type in ["mission","mission_or_library","trial","bloodline_trial"]:
+				button(rows,"Chọn ninja thực hiện",mission_screen)
+			if source.source_type=="territory":
+				for territory in reg.territories.values():
+					for item in territory.resources:
+						if item.resource_id==id:
+							var own=store.state.territory_states[territory.id].owner=="FAC-009"
+							label(rows,str(territory.name_vi)+(" • Đang kiểm soát" if own else " • Chưa kiểm soát"),16)
+				button(rows,"Mở nhẫn giới",func():world_screen())
+			if source.source_type=="boss_or_contract":button(rows,"Mở chiến dịch",campaign)
 	for recipe in reg.recipes.values():
 		if recipe.output.resource_id==id:
-			label(rows,"Công thức: "+cost_text(recipe.inputs),17)
+			label(rows,"Công thức: "+cost_text(recipe.inputs)+" • Cấp xưởng "+str(recipe.min_building_level)+" • "+str(recipe.duration_s)+" giây",17)
 			button(rows,"Mở xưởng",func():building_screen(recipe.building_id))
 		for item in recipe.inputs:
 			if item.resource_id==id:label(rows,"Dùng để chế: "+str(reg.resources[recipe.output.resource_id].name_vi),16)

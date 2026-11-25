@@ -1,0 +1,12 @@
+# WORLD_BACKLOG
+| ID | State | Scope |
+|---|---|---|
+| W-P1 | REVIEW | Reward/refund conservation, links, save guards, world CI; exact runtime NOT_RUN at commit |
+| W-A | READY | 144 ninja organic progression, star C and skill-depth V5 shared interface, 15-star and branch paths, exact costs UI |
+| W-B | READY | 128 gear crafting reachability, all slots, quality and affix validation, enhancement pity |
+| W-C | READY | 150 resources/63 recipes/30 buildings/15 jobs timed dependency traversal; earned-only economy and optional sinks |
+| W-D | READY | Organic chapter 2+ through 24, 120 stages, 24 bosses, 490 NPCs, 81 quest and 288 trial claim coverage |
+| W-E | READY | 60 territories/9 factions defended conquest, capture incentives, diplomatic and raid loop |
+| W-F | READY | 9 beasts/11 summons development; retain implant/Rinnegan HOLD |
+| W-G | READY | Complete nested migration, atomic recovery, user-facing costs/locks, mobile interaction and Web evidence |
+No blanket DONE from database counts or inherited CI.

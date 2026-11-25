@@ -1,5 +1,6 @@
 extends RefCounted
 const Content=preload("res://game/content_service.gd")
+const Rewards=preload("res://game/world_rewards.gd")
 const World=preload("res://game/world_service.gd")
 static func ensure(reg,s: Dictionary) -> void:
 	if not s.has("building_states"):
@@ -35,8 +36,7 @@ static func debit(s: Dictionary,cost: Dictionary) -> void:
 	for id in cost:s.inventory[id]=int(s.inventory.get(id,0))-int(cost[id])
 
 static func capacity(s: Dictionary,id: String) -> int:
-	if id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:return 9000000000000
-	return 10000+5000*level(s,"BLD-020")
+	return Rewards.capacity(s,id)
 
 static func put(s: Dictionary,id: String,qty: int) -> bool:
 	if int(s.inventory.get(id,0))+qty>capacity(s,id):return false
@@ -128,9 +128,7 @@ static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: 
 static func cancel(s: Dictionary,id: String) -> bool:
 	if not s.building_states.has(id) or s.building_states[id].production.is_empty():return false
 	var job=s.building_states[id].production
-	for resource in job.reserved:
-		if int(s.inventory.get(resource,0))+int(job.reserved[resource])>capacity(s,resource):return false
-	for resource in job.reserved:put(s,resource,int(job.reserved[resource]))
+	for resource in job.reserved:Rewards.deliver(s,resource,int(job.reserved[resource]))
 	s.building_states[id].production={}
 	return true
 

@@ -1,5 +1,6 @@
 extends RefCounted
 const Passive=preload("res://game/passive_service.gd")
+const Rewards=preload("res://game/world_rewards.gd")
 const Stats=preload("res://game/stats_service.gd")
 const SaveGuard=preload("res://game/save_guard.gd")
 const Content=preload("res://game/content_service.gd")
@@ -516,7 +517,7 @@ func socket_gear(reg,gear_id: String,resource: String,remove: bool=false) -> boo
 	if remove:
 		if not resource in gear.gems:return false
 		gear.gems.erase(resource)
-		state.inventory[resource]=int(state.inventory.get(resource,0))+1
+		Rewards.deliver(state,resource,1)
 	else:
 		if gear.gems.size()>=mini(4,floori(float(gear.quality)/2)) or int(state.inventory.get(resource,0))<1:return false
 		state.inventory[resource]=int(state.inventory[resource])-1
@@ -735,10 +736,7 @@ func capture_beast(reg,id: String,beast_id: String) -> bool:
 	if won:
 		state.beasts[beast_id]={"host":"","level":1,"xp":0}
 		for reward in def.capture_reward:
-			if not Village.put(state,reward.resource_id,int(reward.qty)):
-				state=prior
-				rng.state=old_rng
-				return false
+			Rewards.deliver(state,str(reward.resource_id),int(reward.qty))
 	if not commit_change(prior,old_rng):return false
 	return won
 
@@ -946,12 +944,7 @@ func native_bloodline_allowed(reg,id: String,bloodline: String) -> bool:
 	return def.required_family_for_native!=null and n.family_hint==def.required_family_for_native
 
 func grant_reward(id: String,qty: int) -> void:
-	var available=maxi(0,Village.capacity(state,id)-int(state.inventory.get(id,0)))
-	var take=mini(qty,available)
-	state.inventory[id]=int(state.inventory.get(id,0))+take
-	if take<qty:
-		if not state.has("reward_inbox"):state.reward_inbox={}
-		state.reward_inbox[id]=int(state.reward_inbox.get(id,0))+qty-take
+	Rewards.deliver(state,id,qty)
 
 func collect_reward_inbox(id: String) -> bool:
 	var qty=int(state.get("reward_inbox",{}).get(id,0))

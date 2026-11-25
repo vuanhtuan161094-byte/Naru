@@ -1,0 +1,116 @@
+name: Naru World DEV smoke
+on:
+  push:
+    branches: ['implementation/e3-world-progression']
+  workflow_dispatch:
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot 4.4.1 stable
+        run: |
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          chmod +x /tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+      - name: Import and load registry
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          "$G" --headless --editor --path . --import 2>&1 | tee /tmp/import.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/import.log
+          timeout 60 "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/smoke.log
+          grep NARU_REGISTRY_OK /tmp/smoke.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/smoke.log
+      - name: Combat V3 formation and arena
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 60 "$G" --headless --path . --script res://game/combat_v3_test.gd 2>&1 | tee /tmp/combat-v3.log
+          grep NARU_COMBAT_V3_PASS /tmp/combat-v3.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|COMBAT_V3_FAIL' /tmp/combat-v3.log
+      - name: SKILL-P2 overlay runtime
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 120 "$G" --headless --path . --script res://game/skill_p2_test.gd 2>&1 | tee /tmp/skill-p2.log
+          grep NARU_SKILL_P2_PASS /tmp/skill-p2.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|P2_FAIL' /tmp/skill-p2.log
+      - name: PASSIVE-P1 runtime and save smoke
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 120 "$G" --headless --path . --script res://game/passive_test.gd 2>&1 | tee /tmp/passive.log
+          grep NARU_PASSIVE_PASS /tmp/passive.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|PASSIVE_FAIL' /tmp/passive.log
+      - name: GP-P2 gameplay integration
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 180 "$G" --headless --path . --script res://game/gp_p2_test.gd 2>&1 | tee /tmp/gp-p2.log
+          grep 'GP_P2_OK 6v6 ticks' /tmp/gp-p2.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|GP_P2_FAIL' /tmp/gp-p2.log
+      - name: World progression transaction and save checks
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 60 "$G" --headless --path . --script res://game/world_progression_test.gd 2>&1 | tee /tmp/world-progression.log
+          grep NARU_WORLD_PROGRESSION_PASS /tmp/world-progression.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_PROGRESSION_FAIL' /tmp/world-progression.log
+      - name: Economy 90-day starter simulation
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 240 "$G" --headless --path . --script res://game/economy_long_test.gd 2>&1 | tee /tmp/economy-long.log
+          grep NARU_ECONOMY_90D_PASS /tmp/economy-long.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/economy-long.log
+      - name: Install matching Web templates
+        run: |
+          curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+          unzip -q /tmp/templates.tpz -d /tmp/naru-templates
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.4.1.stable"
+          cp /tmp/naru-templates/templates/web_nothreads_release.zip "$HOME/.local/share/godot/export_templates/4.4.1.stable/"
+      - name: Export Web DEV
+        run: |
+          set -o pipefail
+          mkdir -p dist
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          "$G" --headless --path . --export-release "Web DEV" dist/index.html 2>&1 | tee /tmp/web-export.log
+          test -s dist/index.html
+          test -s dist/index.wasm
+          test -s dist/index.pck
+          ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
+          printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
+          cat > dist/README.txt <<'EOF'
+          NARU RPG - World DEV P1, placeholder art. Extract the entire folder.
+          In this folder run: python -m http.server 8000
+          Open http://localhost:8000/index.html in Chromium/Chrome.
+          Do not open index.html directly with file://.
+          Save data is browser-local; use the in-game JSON export to back up.
+          Private review art is NOT bundled. Settings > Nap goi my thuat rieng > choose the private JSON review pack. The file stays local.
+          EOF
+          (cd dist && sha256sum index.* > SHA256SUMS.txt)
+      - name: Install Chromium browser QA
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Browser runtime smoke
+        run: |
+          python3 -m http.server 8765 --directory dist >/tmp/naru-http.log 2>&1 &
+          node tests/web-smoke.cjs
+      - name: Upload Web DEV archive
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-World-DEV-P1
+          path: dist/
+          retention-days: 30
+      - name: Upload browser screenshot
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-World-DEV-P1-menu
+          path: |
+            web-menu.png
+            ui-shots/
+          retention-days: 30

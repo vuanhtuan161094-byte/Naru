@@ -1,0 +1,11 @@
+# WORLD_STATUS — P1 / 25-11-2026
+Branch implementation/e3-world-progression; parent 28f25de5c70f996eeb4241926c7dcde09bed7068. Design 0309dfc1cb1c24bb904a47eb9bba46c16deb62ef; art 2f76ea5130f0fc1ba6bbe5747cecb676b490a726. Read branch status, design handover/decisions, balance economy and save contract; inspected noncombat services, targeted data, UI and workflow. Full Wiki/database record-by-record audit NOT_RUN.
+## Implemented, pending CI
+- Capacity-aware reward/refund delivery shares the existing reward inbox. Quest rewards, reserved recipe cancellation, removed gems and beast capture rewards no longer fail solely on full storage. Existing campaign reward delivery reuses helper; recurring production/mission output still waits for space, avoiding unlimited mailbox production.
+- Save guard checks gear owner/slot bijection, world clock bounds, travel locations/path/rosters, production recipe/building and reservation IDs, mission period, summon and beast reciprocal ownership. Existing schema 1 and IDs retained; legacy optional fields remain optional. Corrupt saves follow existing backup recovery; older saves with inconsistent links may be rejected (review migration policy before integration).
+- Resource screen shows partial sale 1–100, territorial ownership and functional links to missions/world/campaign; recipe time/level/input display; equipment replacement from occupied slot.
+- Added dedicated Godot 4.4.1 world branch workflow with targeted test, inherited full gameplay/browser/90-day/export gates and separate World DEV P1 artifacts. No PASS or artifact claim until exact-SHA evidence.
+## Structural inspection
+150/150 resources have a direct supply, recipe output, quest or stage reward reference; 15/15 territorial source IDs have at least one capturable/home territory. 128 gear craft definitions have no input missing from this structural union. This is not a timed reachability or economic balance test. Inherited evidence V7 organic 9/10 first two chapters and 356 NPC wars/90 days, not Chat 03 rerun.
+## Restrictions
+No combat engine, stats formula, passive engine, art, other branch or project.godot changes. No merge/Cloud. New numerical tuning not introduced. Reward routing and stricter validation are implementation choices pending coordinator review.
