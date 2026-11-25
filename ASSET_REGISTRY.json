@@ -6,32 +6,68 @@
     {
       "id": "NIN-001",
       "name_vi": "Naruto Uzumaki (thiếu niên)",
-      "status": "MISSING",
-      "binary_availability": "MISSING",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
-      "clips": []
+      "clips": [],
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "sha256": "5ee1f93620543a6e842247ac59705e80404854dcfa057bb3ef580781e213f4a8",
+      "local_path": "characters/NIN-001.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
     },
     {
       "id": "NIN-002",
       "name_vi": "Sasuke Uchiha (thiếu niên)",
-      "status": "MISSING",
-      "binary_availability": "MISSING",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
-      "clips": []
+      "clips": [],
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "sha256": "de1739a42dd489a64264ee56d1fde6da807dc46442b17c567bf8a34ba2f89fd9",
+      "local_path": "characters/NIN-002.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
     },
     {
       "id": "NIN-003",
       "name_vi": "Sakura Haruno (thiếu niên)",
-      "status": "MISSING",
-      "binary_availability": "MISSING",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
-      "clips": []
+      "clips": [],
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "sha256": "12f264db67e03bc37b0350e397972993579a9f53f0b185ad27593389d666c768",
+      "local_path": "characters/NIN-003.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
     },
     {
       "id": "NIN-004",
@@ -168,12 +204,24 @@
     {
       "id": "NIN-016",
       "name_vi": "Might Guy",
-      "status": "MISSING",
-      "binary_availability": "MISSING",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
-      "clips": []
+      "clips": [],
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "sha256": "2076360803e05d56c9d79abc26934b9cf79bb46950cfe51352c040e4acbb63d9",
+      "local_path": "characters/NIN-016.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
     },
     {
       "id": "NIN-017",
@@ -736,12 +784,24 @@
     {
       "id": "NIN-068",
       "name_vi": "Nagato",
-      "status": "MISSING",
-      "binary_availability": "MISSING",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
-      "clips": []
+      "clips": [],
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "sha256": "73dac6d6d0e0e777a6fe039ae2f7b4b684a474bd673981b0d7892aaea5a487a1",
+      "local_path": "characters/NIN-068.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
     },
     {
       "id": "NIN-069",
@@ -756,12 +816,24 @@
     {
       "id": "NIN-070",
       "name_vi": "Madara Uchiha",
-      "status": "MISSING",
-      "binary_availability": "MISSING",
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
       "owner_approved": false,
       "rights_cleared": false,
       "runtime_integrated": false,
-      "clips": []
+      "clips": [],
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "sha256": "7461f6599b4ec1a5e8ab80dd43937c211c58026e92dc3465c95b1ce5f25c0275",
+      "local_path": "characters/NIN-070.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
     },
     {
       "id": "NIN-071",
@@ -1838,7 +1910,21 @@
     {
       "id": "VFX-NIN-003-S2",
       "skill_id": "NIN-003-S2",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "heal",
+      "phase_paths": [
+        "vfx/VFX-NIN-003-S2/charge.png",
+        "vfx/VFX-NIN-003-S2/travel.png",
+        "vfx/VFX-NIN-003-S2/impact.png",
+        "vfx/VFX-NIN-003-S2/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-003-S3",
@@ -1848,7 +1934,21 @@
     {
       "id": "VFX-NIN-003-S4",
       "skill_id": "NIN-003-S4",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "shield",
+      "phase_paths": [
+        "vfx/VFX-NIN-003-S4/charge.png",
+        "vfx/VFX-NIN-003-S4/travel.png",
+        "vfx/VFX-NIN-003-S4/impact.png",
+        "vfx/VFX-NIN-003-S4/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-003-S5",
@@ -1858,12 +1958,40 @@
     {
       "id": "VFX-NIN-004-S0",
       "skill_id": "NIN-004-S0",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "kunai",
+      "phase_paths": [
+        "vfx/VFX-NIN-004-S0/charge.png",
+        "vfx/VFX-NIN-004-S0/travel.png",
+        "vfx/VFX-NIN-004-S0/impact.png",
+        "vfx/VFX-NIN-004-S0/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-004-S1",
       "skill_id": "NIN-004-S1",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "earthwall",
+      "phase_paths": [
+        "vfx/VFX-NIN-004-S1/charge.png",
+        "vfx/VFX-NIN-004-S1/travel.png",
+        "vfx/VFX-NIN-004-S1/impact.png",
+        "vfx/VFX-NIN-004-S1/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-004-S2",
@@ -1873,7 +2001,21 @@
     {
       "id": "VFX-NIN-004-S3",
       "skill_id": "NIN-004-S3",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "waterdragon",
+      "phase_paths": [
+        "vfx/VFX-NIN-004-S3/charge.png",
+        "vfx/VFX-NIN-004-S3/travel.png",
+        "vfx/VFX-NIN-004-S3/impact.png",
+        "vfx/VFX-NIN-004-S3/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-004-S4",
@@ -3253,7 +3395,21 @@
     {
       "id": "VFX-NIN-041-S5",
       "skill_id": "NIN-041-S5",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "rasenshuriken",
+      "phase_paths": [
+        "vfx/VFX-NIN-041-S5/charge.png",
+        "vfx/VFX-NIN-041-S5/travel.png",
+        "vfx/VFX-NIN-041-S5/impact.png",
+        "vfx/VFX-NIN-041-S5/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-042-S0",
@@ -3553,12 +3709,40 @@
     {
       "id": "VFX-NIN-043-S1",
       "skill_id": "NIN-043-S1",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "heal",
+      "phase_paths": [
+        "vfx/VFX-NIN-043-S1/charge.png",
+        "vfx/VFX-NIN-043-S1/travel.png",
+        "vfx/VFX-NIN-043-S1/impact.png",
+        "vfx/VFX-NIN-043-S1/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-043-S2",
       "skill_id": "NIN-043-S2",
-      "status": "MISSING"
+      "status": "REVIEW_ONLY",
+      "binary_availability": "PRIVATE_LIBRARY_ARCHIVE_CONFIRMED",
+      "archive": "Naru_R5_review_private.zip",
+      "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+      "family": "groundsmash",
+      "phase_paths": [
+        "vfx/VFX-NIN-043-S2/charge.png",
+        "vfx/VFX-NIN-043-S2/travel.png",
+        "vfx/VFX-NIN-043-S2/impact.png",
+        "vfx/VFX-NIN-043-S2/residual.png"
+      ],
+      "clips": [],
+      "owner_approved": false,
+      "rights_cleared": false,
+      "runtime_integrated": false
     },
     {
       "id": "VFX-NIN-043-S3",
@@ -9096,18 +9280,18 @@
   },
   "counts": {
     "characters": 144,
-    "review_character_candidates": 6,
+    "review_character_candidates": 12,
     "style_tests": 4,
     "forms": 54,
     "vfx_keys": 1152,
     "approved": 0,
     "integrated": 0,
-    "review_vfx_candidates": 6,
-    "private_library_character_candidates": 6,
+    "review_vfx_candidates": 14,
+    "private_library_character_candidates": 12,
     "environment_review": 16,
-    "review_animation_pilot": 1,
+    "review_animation_pilot": 6,
     "review_generic_vfx_families": 4,
-    "review_portraits": 6
+    "review_portraits": 12
   },
   "evidence_note": "This commit records F1D review pack; binaries stored in private Library, no runtime verification.",
   "environment_review": [
@@ -9250,17 +9434,12 @@
     "asset_approval": false
   },
   "runtime_review": {
-    "status": "PRIVATE_LOCAL_R3_SCOPED_PASS",
-    "gameplay_base": "a7ecee6ad6a7f58f7bf928a297e8e5373737c950",
-    "source": "art/runtime/apply_review.py",
-    "private_pack_sha256": "5c21d3bcfd94197b952f162c19a9371e62299d72bf644920abaf8b4a1ba02895",
-    "scope": "existing Godot project opt-in visual overlay; CI generic DEV textures only, no private art integrated",
-    "style_approved": true,
-    "integrated": false,
-    "evidence": "art/runtime/ART_COMBAT_R3_EVIDENCE.json",
-    "private_archive": "Naru_Combat_Sprint_R3_private.zip",
-    "private_archive_sha256": "7950e331ea629a715e3a2396b1cca748540917fed7a558645daff91f43d28110",
-    "latest_remote_gameplay": "5919893de0404ed9a48b7b6babdfbb30e17b9184"
+    "status": "V5_PRIVATE_LOCAL_SCOPED_PASS",
+    "gameplay_base": "1b5c8da242fe9d00a257cf9a4f625574d7872e47",
+    "evidence": "art/runtime/ART_R5_V5_EVIDENCE.json",
+    "private_archive": "Naru_R5_review_private.zip",
+    "private_archive_sha256": "915cc8ec6a7a54586f6b761664bfa9a3e4c36531324d40cdd792f958f30298a4",
+    "integrated": false
   },
   "r3_review": {
     "animation_pilots": [
@@ -9383,5 +9562,497 @@
       "png_decode_hash_pass": 59,
       "storage": "local chat output; not public GitHub"
     }
+  },
+  "r5_review": {
+    "archive": "Naru_R5_review_private.zip",
+    "archive_sha256": "915cc8ec6a7a54586f6b761664bfa9a3e4c36531324d40cdd792f958f30298a4",
+    "manifest": "art/runtime/ART_R5_V5_EVIDENCE.json",
+    "walk_pilots": [
+      {
+        "id": "NIN-004",
+        "sha256": "48823803a87f24a4a5681d09cf91bb3303ea46d88b95108e0da108e10e45de9d",
+        "path": "animation/NIN-004/walk_screen_right.png",
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "direction": "screen_right_candidate",
+        "action": "walk",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              96,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              192,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              288,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          }
+        ],
+        "status": "REVIEW_ONLY",
+        "notes": "direct raster redraw using shared manually specified pose templates; inconsistent with R7, not full four-direction authored set"
+      },
+      {
+        "id": "NIN-041",
+        "sha256": "0a11229cd3d13bfec69865fa9a9e589ed7391a1877961136ef78200b2b47c9df",
+        "path": "animation/NIN-041/walk_screen_right.png",
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "direction": "screen_right_candidate",
+        "action": "walk",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              96,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              192,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              288,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          }
+        ],
+        "status": "REVIEW_ONLY",
+        "notes": "direct raster redraw using shared manually specified pose templates; inconsistent with R7, not full four-direction authored set"
+      },
+      {
+        "id": "NIN-042",
+        "sha256": "1b551ead5eff0f25e000afcefd8483bbc6af09a125c8d21e182c0e6151922264",
+        "path": "animation/NIN-042/walk_screen_right.png",
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "direction": "screen_right_candidate",
+        "action": "walk",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              96,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              192,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              288,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          }
+        ],
+        "status": "REVIEW_ONLY",
+        "notes": "direct raster redraw using shared manually specified pose templates; inconsistent with R7, not full four-direction authored set"
+      },
+      {
+        "id": "NIN-043",
+        "sha256": "14880d8d64246f0722f9ce5366f0d4111b1d562e3f7b658a8e9970124e32e43c",
+        "path": "animation/NIN-043/walk_screen_right.png",
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "direction": "screen_right_candidate",
+        "action": "walk",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              96,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              192,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              288,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          }
+        ],
+        "status": "REVIEW_ONLY",
+        "notes": "direct raster redraw using shared manually specified pose templates; inconsistent with R7, not full four-direction authored set"
+      },
+      {
+        "id": "NIN-060",
+        "sha256": "bfd2290a56aa601078a7bb8cbe36f4769060ac201a63f9b85d09276c41516d15",
+        "path": "animation/NIN-060/walk_screen_right.png",
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "direction": "screen_right_candidate",
+        "action": "walk",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              96,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              192,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              288,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          }
+        ],
+        "status": "REVIEW_ONLY",
+        "notes": "direct raster redraw using shared manually specified pose templates; inconsistent with R7, not full four-direction authored set"
+      },
+      {
+        "id": "NIN-093",
+        "sha256": "cda0671161dffde703486e3dff305872245c7520fd06af38fdd8453f74944e6b",
+        "path": "animation/NIN-093/walk_screen_right.png",
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "direction": "screen_right_candidate",
+        "action": "walk",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              96,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              192,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          },
+          {
+            "rect": [
+              288,
+              0,
+              96,
+              112
+            ],
+            "duration_ms": 100
+          }
+        ],
+        "status": "REVIEW_ONLY",
+        "notes": "direct raster redraw using shared manually specified pose templates; inconsistent with R7, not full four-direction authored set"
+      }
+    ],
+    "opponents": [
+      "NIN-001",
+      "NIN-002",
+      "NIN-003",
+      "NIN-016",
+      "NIN-068",
+      "NIN-070"
+    ],
+    "vfx_candidates": [
+      {
+        "id": "VFX-NIN-003-S2",
+        "skill_id": "NIN-003-S2",
+        "family": "heal",
+        "phase_paths": [
+          "vfx/VFX-NIN-003-S2/charge.png",
+          "vfx/VFX-NIN-003-S2/travel.png",
+          "vfx/VFX-NIN-003-S2/impact.png",
+          "vfx/VFX-NIN-003-S2/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      },
+      {
+        "id": "VFX-NIN-003-S4",
+        "skill_id": "NIN-003-S4",
+        "family": "shield",
+        "phase_paths": [
+          "vfx/VFX-NIN-003-S4/charge.png",
+          "vfx/VFX-NIN-003-S4/travel.png",
+          "vfx/VFX-NIN-003-S4/impact.png",
+          "vfx/VFX-NIN-003-S4/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      },
+      {
+        "id": "VFX-NIN-004-S0",
+        "skill_id": "NIN-004-S0",
+        "family": "kunai",
+        "phase_paths": [
+          "vfx/VFX-NIN-004-S0/charge.png",
+          "vfx/VFX-NIN-004-S0/travel.png",
+          "vfx/VFX-NIN-004-S0/impact.png",
+          "vfx/VFX-NIN-004-S0/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      },
+      {
+        "id": "VFX-NIN-004-S1",
+        "skill_id": "NIN-004-S1",
+        "family": "earthwall",
+        "phase_paths": [
+          "vfx/VFX-NIN-004-S1/charge.png",
+          "vfx/VFX-NIN-004-S1/travel.png",
+          "vfx/VFX-NIN-004-S1/impact.png",
+          "vfx/VFX-NIN-004-S1/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      },
+      {
+        "id": "VFX-NIN-004-S3",
+        "skill_id": "NIN-004-S3",
+        "family": "waterdragon",
+        "phase_paths": [
+          "vfx/VFX-NIN-004-S3/charge.png",
+          "vfx/VFX-NIN-004-S3/travel.png",
+          "vfx/VFX-NIN-004-S3/impact.png",
+          "vfx/VFX-NIN-004-S3/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      },
+      {
+        "id": "VFX-NIN-041-S5",
+        "skill_id": "NIN-041-S5",
+        "family": "rasenshuriken",
+        "phase_paths": [
+          "vfx/VFX-NIN-041-S5/charge.png",
+          "vfx/VFX-NIN-041-S5/travel.png",
+          "vfx/VFX-NIN-041-S5/impact.png",
+          "vfx/VFX-NIN-041-S5/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      },
+      {
+        "id": "VFX-NIN-043-S1",
+        "skill_id": "NIN-043-S1",
+        "family": "heal",
+        "phase_paths": [
+          "vfx/VFX-NIN-043-S1/charge.png",
+          "vfx/VFX-NIN-043-S1/travel.png",
+          "vfx/VFX-NIN-043-S1/impact.png",
+          "vfx/VFX-NIN-043-S1/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      },
+      {
+        "id": "VFX-NIN-043-S2",
+        "skill_id": "NIN-043-S2",
+        "family": "groundsmash",
+        "phase_paths": [
+          "vfx/VFX-NIN-043-S2/charge.png",
+          "vfx/VFX-NIN-043-S2/travel.png",
+          "vfx/VFX-NIN-043-S2/impact.png",
+          "vfx/VFX-NIN-043-S2/residual.png"
+        ],
+        "cell": [
+          128,
+          128
+        ],
+        "frames_per_phase": 6,
+        "status": "REVIEW_ONLY",
+        "notes": "candidate mapping from current authored skill names only; phase applicability and geometry/attachment require Chat 01 review; shared heal, some identical phase sheets; kunai travel static, not animated"
+      }
+    ],
+    "complete_four_direction_clips": 0
   }
 }

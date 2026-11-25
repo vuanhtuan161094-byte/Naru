@@ -19,3 +19,10 @@ ART-P8 R2 local scoped PASS; remote gameplay integration pending Chat 00, no rel
 Combat R3: ART-P2 pilot (one screen-right Naruto walk, 4 poses, not completed four-direction); P3R3 partial 4 generic families and real HP feedback/clone smoke; P6 partial open arena decorative; P7 partial 6 portraits; P8 local scoped PASS on pinned older base. READY: full-body pose authoring, latest-SHA private integration, distinct opponents, collision scenery, true hit event VFX and functioning touch HUD. R3 installer not tested; source pack private.
 
 R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Continue full-body frames, distinct opponents, skill VFX, field/HUD. Verify pack builder and runtime before acceptance.
+
+## R5 after SKILL-P2 assignment
+- ART-P2 IN_PROGRESS: six provisional rightward walk clips, 0/144 complete required four-direction/action clips; all six must be redrawn consistent with R7, all other actions missing.
+- ART-P4 IN_PROGRESS: six enemy static prototypes, all REVIEW_ONLY; refine before approval.
+- ART-P3R3 IN_PROGRESS: 7 family prototypes, 8 candidate mappings; distinguish charge/travel/impact/residual; kunai static travel, shared heal; confirm mechanics with Chat 01, no bulk duplication.
+- ART-P6/P7 IN_PROGRESS: reused V5 environment/HUD, six additional portraits; no new terrain assets, custom size/formation visual gate open.
+- ART-P8 REVIEW: native exact-SHA V5 6v6 video obtained, no production approval; inspect clustering, style consistency and individual playback; Chat 00 reviews evidence.
