@@ -49,3 +49,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - READY: inspect cast-only/rejected IDs and gate unconfirmed adapters, finish residual special mechanics, actual combo chains/form migrations, effect budget precision, source/era review, full organic progression and final balance. No blanket P2 PASS.
 
 - REVIEW P2 batch 5 strict candidate confirmation gate and fixture range correction; exact CI pending.
+
+- REVIEW P2 batch 6: 1133 confirmed/1134 enabled, 18 explicit fallback; fixed NIN-001-S6 clone consumption order. Strict gate rerun required. Remaining unsupported residual special effects and individual semantic tests remain READY.

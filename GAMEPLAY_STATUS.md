@@ -97,3 +97,5 @@ Batch 3:
 - NARU_UI_17_PASS home,building,craft,inventory,ninja_roster,ninja_detail,skill_tree,recruit,formation,world,diplomacy,beasts,quest,settings,campaign,battle,results
 
 P2 batch 5 correction: B3 full CI 45580896224 PASS, 1076 confirmed/1077 active candidates; NIN-043-S3 rejected because fixture distance 3 exceeded 2.5+body radius. Correct test distance based on authored range, no increase to game range; enforce no unconfirmed candidate in new gate. NPC 90d wars 698 versus 2508. B4 code  b26ef37f passed dedicated Godot and legacy integration/90d/export; browser pending. B5 CI pending.
+
+P2 batch 6: strict CI 45581884263 failed 1133 confirmed / 1134 enabled / 18 compile fallbacks: NIN-001-S6 cast-only, clone consumed after collision-tested dash. Consume owned clone at launch before dash (no bypass of terrain or other bodies), emit expire event. Strict gate retained; no blanket PASS before rerun. B3 last fully verified V6 artifact 15006288549 (SHA256 83b007955d1ca66ab9a23d76c185808379c26c284a3d1ce757d4a18881d95856; 10,140,619 bytes, 7 checksums verified). 

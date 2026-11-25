@@ -1197,13 +1197,15 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 		p2_confirm(a,s,point,"contact_or_effect_confirmed")
 		return
 	if p.get("requires_owned_mark",false) and not p2_has_mark(a,b):return
-	if s.shape=="dash_contact":
-		move_actor(a,b.pos,maxf(0.0,a.pos.distance_to(b.pos)-float(p.get("stop_m",0.65))))
-		if a.pos.distance_to(b.pos)>body_radius(a)+body_radius(b)+0.25:return
 	if int(p.get("consume_clone",0))>0:
 		var clone=owned_clone(a)
 		if clone.is_empty():return
+		# Consume the clone on launch, before swept movement; it must not obstruct its owner.
 		clone.hp=0
+		art_event("expire",clone.pos,0,str(s.skill_id))
+	if s.shape=="dash_contact":
+		move_actor(a,b.pos,maxf(0.0,a.pos.distance_to(b.pos)-float(p.get("stop_m",0.65))))
+		if a.pos.distance_to(b.pos)>body_radius(a)+body_radius(b)+0.25:return
 	if p.get("consume_mark",false):p2_marks.erase(str(a.uid)+":"+str(b.uid))
 	if s.shape=="teleport_mark":
 		if kind=="position_swap":
