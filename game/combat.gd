@@ -18,6 +18,10 @@ var projectiles: Array[Dictionary]=[]
 var next_uid=0
 var last_progress_tick=0
 var deadlock=false
+var auto_player_ultimate=false
+var encounter_skills: Dictionary={}
+var encounter_names: Dictionary={}
+var effect_dispatch_count=0
 
 func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
@@ -129,7 +133,7 @@ func ready(a: Dictionary,s: Dictionary) -> bool:
 	if not supported(s) or not a.pending.is_empty() or a.busy>0 or hard_block(a): return false
 	if has_status(a,"silence") and s.damage_type!="physical": return false
 	for e in s.effects:
-		if e.type=="activate_form" and not form_ready(a,str(e.form_id),false):return false
+		if e.type=="activate_form" and not form_ready(a,str(e.form_id),false,str(s.skill_id)):return false
 	return a.chakra>=float(s.chakra) and float(a.cooldowns.get(s.skill_id,0))<=0
 
 func actor_by_uid(uid: int) -> Dictionary:
@@ -144,10 +148,10 @@ func summon_count(a: Dictionary,skill_id: String) -> int:
 	return count
 
 func rating(a: Dictionary,key: String) -> float:
-	return Stats.effect(registry,a.stats,key)
+	return Stats.effect(registry,a.stats,key)*form_multiplier(a,key)
 
 func effective_skill(a: Dictionary,id: String) -> Dictionary:
-	var base=registry.skills[id]
+	var base=skill_definition(id)
 	if a.summon:return base
 	var p=a.skill_levels.get(id,{"level":1,"grade":1,"branch":""})
 	var s=base.duplicate(true)
@@ -186,8 +190,8 @@ func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 			"dash":score+=5.0
 			"activate_form":score+=45.0
 	score+=float(s.ai.base_priority)*2.0-float(s.chakra)*0.3
-	if s.kind=="auto" and a.side==0:
-		var ultimate_skill=registry.skills[a.skills[5]]
+	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5:
+		var ultimate_skill=effective_skill(a,a.skills[5])
 		if a.chakra>=ultimate_skill.chakra and a.chakra-s.chakra<ultimate_skill.chakra: score-=35.0
 	return score
 
@@ -196,7 +200,7 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	a.chakra=float(a.chakra)-float(s.chakra)
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)/(1.0+rating(a,"attack_speed"))
-	a.last=str(registry.names[s.skill_id].name_vi)
+	a.last=skill_name(s.skill_id)
 	a.pending={"skill":s,"target_uid":b.uid}
 	a.cast_left=float(s.cast_s)
 	return true
@@ -221,9 +225,9 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 	var id=str(e.status_id)
 	if not registry.status_catalog.has(id):return
 	var rule=registry.status_catalog[id]
-	if rule.hard_control and b.immune>0:return
+	if rule.hard_control and (b.immune>0 or has_status(b,"control_immunity")):return
 	var chance=float(e.get("chance",1.0))
-	if rule.hard_control and chance<1.0:chance=clampf(chance*(1.0-rating(b,"control_resist")),0.0,0.95)
+	if rule.hard_control and chance<1.0:chance=clampf(chance*(1.0+rating(a,"control_chance"))*(1.0-rating(b,"control_resist")),0.0,0.95)
 	if rng.randf()>chance:return
 	var key=id+":"+str(a.uid) if rule.stack=="per_source" else id
 	if not b.statuses.has(key) and rule.stack=="per_source":
@@ -232,6 +236,7 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 			if item.id==id:count+=1
 		if count>=int(rule.max_stacks):return
 	var duration=float(e.get("duration_s",rule.duration_s))
+	if rule.hard_control:duration*=clampf((1.0+rating(a,"control_duration"))*(1.0-rating(b,"control_resist")),0.3,1.8)
 	var mag=float(e.get("magnitude",0.2))
 	if rule.stack=="max" and b.statuses.has(key):
 		duration=maxf(duration,float(b.statuses[key].remaining))
@@ -254,10 +259,13 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 	if old-b.hp>0.01:
 		last_progress_tick=ticks
 		if a.uid!=b.uid:a.hp=minf(float(a.max_hp),float(a.hp)+(old-b.hp)*rating(a,"lifesteal"))
-	if allow_counter and b.hp>0 and b.side!=a.side and not b.counter.is_empty():
-		var counter=b.counter
-		b.counter={}
-		hit(b,a,float(b.patk)*float(counter.coefficient)*100.0/(100.0+float(a.armor)),false)
+	if allow_counter and b.hp>0 and b.side!=a.side and a.hp>0 and not hard_block(b):
+		if not b.counter.is_empty():
+			var counter=b.counter
+			b.counter={}
+			hit(b,a,float(b.patk)*float(counter.coefficient)*100.0/(100.0+float(a.armor)),false)
+		elif a.pos.distance_to(b.pos)<=1.8 and rng.randf()<rating(b,"counter")*0.25:
+			hit(b,a,float(b.patk)*0.25*100.0/(100.0+float(a.armor)),false)
 
 func reaction(a: Dictionary,b: Dictionary,element: String) -> float:
 	var value=1.0
@@ -279,6 +287,10 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	next_uid+=1
 	b.uid=next_uid
 	b.id=str(e.template_id)
+	b["beast"]=false
+	b.immune=0.0
+	b.shield_time=0.0
+	b.contract_cd=0.0
 	b.summon=true
 	b.owner=a.uid
 	b.summon_skill=s.skill_id
@@ -312,6 +324,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 	var field_factor=spatial_reaction(a,s,b)
 	for target in targets_for(a,s,b):
 		for e in s.effects:
+			effect_dispatch_count+=1
 			match str(e.type):
 				"damage":
 					var physical=str(e.damage_type)=="physical"
@@ -322,10 +335,14 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 					var defense=maxf(0.0,float(target.armor if physical else target.nres)*(1.0+magnitude(target,"defense_up"))-float(a.stats.get("armor_pen" if physical else "magic_pen",0)))
 					if e.damage_type=="genjutsu":defense=float(target.stats.genjutsu_resist)
 					var realm_factor=clampf(1.0+0.04*(int(a.realm)-int(target.realm)),0.75,1.25)
-					var element_factor=float(registry.affinity.get(str(s.element)+":"+str(target.element),1.0))*maxf(field_factor,reaction(a,target,str(s.element)))*float(registry.environments.get(environment,{}).get("modifiers",{}).get(s.element,1.0))
+					var element_factor=float(registry.affinity.get(str(s.element)+":"+str(target.element),1.0))*maxf(field_factor,reaction(a,target,str(s.element)) if field_factor==1.0 else 1.0)*float(registry.environments.get(environment,{}).get("modifiers",{}).get(s.element,1.0))
 					if s.element!="neutral":element_factor*=1.0+rating(a,"element_power")
 					var hit_rate=clampf(0.85+(rating(a,"accuracy")-rating(target,"evasion"))/(200.0+absf(rating(a,"accuracy")-rating(target,"evasion")))+magnitude(a,"accuracy_up")-magnitude(a,"blind")-magnitude(a,"steam")-magnitude(target,"evasion"),0.15,0.99)
 					if rng.randf()<hit_rate:
+						if s.kind!="basic" and a.side!=target.side:
+							var drain=minf(float(target.chakra),float(s.chakra)*rating(a,"chakra_drain")*(1.0-rating(target,"chakra_drain_resist")))
+							target.chakra=float(target.chakra)-drain
+							a.chakra=minf(float(a.max_chakra),float(a.chakra)+drain*rating(a,"chakra_conversion"))
 						var crit=1.5+rating(a,"crit_damage") if e.damage_type!="genjutsu" and rng.randf()<maxf(0.0,rating(a,"pcrit" if physical else "ncrit")-rating(target,"crit_resist")) else 1.0
 						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))))
 				"heal":target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
@@ -337,29 +354,29 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 					keys.sort_custom(func(x,y):return float(target.statuses[x].remaining)>float(target.statuses[y].remaining))
 					var count=0
 					for key in keys:
-						if registry.status_catalog[target.statuses[key].id].dispellable:
+						if registry.status_catalog[target.statuses[key].id].dispellable and target.statuses[key].id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam"]:
 							target.statuses.erase(key)
 							count+=1
-							if count>=int(e.max_statuses):break
+							if count>=int(e.max_statuses)+(1 if rng.randf()<rating(a,"cleanse") else 0):break
 				"chakra_restore":a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(e.amount))
 				"dash":a.pos=a.pos.move_toward(target.pos,minf(float(e.max_distance_m),maxf(0.0,a.pos.distance_to(target.pos)-float(e.stop_distance_m))))
 				"summon":summon_actor(a,s,e)
 				"temporary_stance":a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
 				"counter":a.counter={"remaining":float(e.window_s),"coefficient":e.coefficient}
-				"activate_form":activate_form(a,str(e.form_id),false)
+				"activate_form":activate_form(a,str(e.form_id),false,str(s.skill_id))
 	if int(a.side)==0 and not a.summon:
 		counts[a.id]=int(counts.get(a.id,0))+1
 		mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+maxi(1,roundi(1.0+rating(a,"mastery_speed")))
-	if not a.summon and registry.ninjas[a.id].unique_talent_design.skill_id==s.skill_id:
+	if not a.summon and not a.get("beast",false) and registry.ninjas.has(a.id) and registry.ninjas[a.id].unique_talent_design.skill_id==s.skill_id:
 		signature_ticks[str(a.side)+":"+str(a.id)]=ticks
 		try_combo(a)
-	log.append(str(a.id)+" · "+str(registry.names[s.skill_id].name_vi))
+	log.append(str(a.id)+" · "+skill_name(s.skill_id))
 	if log.size()>6:log.pop_front()
 
 func ultimate(index: int) -> bool:
 	if index<0 or index>=actors.size():return false
 	var a=actors[index]
-	if a.side!=0 or a.hp<=0 or a.summon:return false
+	if a.side!=0 or a.hp<=0 or a.summon or a.skills.size()<6:return false
 	var s=effective_skill(a,a.skills[5])
 	return cast(a,s,target_for(a,s))
 
@@ -389,7 +406,8 @@ func update_status(a: Dictionary,dt: float) -> void:
 			st.next_tick=float(st.next_tick)-dt
 			if st.next_tick<=0:
 				st.next_tick=1.0
-				hit(a,a,float(st.dot),false)
+				var source=actor_by_uid(int(st.get("source",0)))
+				hit(a if source.is_empty() else source,a,float(st.dot),false)
 		if st.remaining<=0:
 			if registry.status_catalog[st.id].hard_control:a.immune=2.0
 			a.statuses.erase(key)
@@ -447,7 +465,7 @@ func tick(dt: float) -> void:
 						else:release(a,skill,target)
 				else:continue
 		if a.busy>0 or hard_block(a):continue
-		var basic=registry.skills[a.skills[0]]
+		var basic=skill_definition(a.skills[0])
 		var enemy=target_for(a,basic)
 		if enemy.is_empty():continue
 		var best={}
@@ -461,7 +479,7 @@ func tick(dt: float) -> void:
 				continue
 		for id in a.skills:
 			var s=effective_skill(a,id)
-			if s.kind=="ultimate" or not ready(a,s):continue
+			if (s.kind=="ultimate" and a.side==0 and not auto_player_ultimate) or not ready(a,s):continue
 			var b=target_for(a,s)
 			var score=utility(a,s,b)
 			if score>best_score:
@@ -479,14 +497,15 @@ func tick(dt: float) -> void:
 	if primary_alive(1).is_empty():outcome="win"
 	elif primary_alive(0).is_empty():outcome="loss"
 
-func form_ready(a: Dictionary,id: String,manual: bool) -> bool:
+func form_ready(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> bool:
 	if a.summon or a.hp<=0 or not id in a.forms or not a.active_form.is_empty():return false
 	if float(a.form_cooldowns.get(id,0))>0:return false
 	var rule=registry.form_rules[id]
-	return not manual or (rule.activation!="skill_trigger" and a.chakra>=float(rule.manual_chakra) and not hard_block(a))
+	if not manual:return rule.activation=="skill_trigger" and trigger_id in rule.trigger_skill_ids
+	return rule.activation!="skill_trigger" and a.chakra>=float(rule.manual_chakra) and not hard_block(a)
 
-func activate_form(a: Dictionary,id: String,manual: bool) -> bool:
-	if not form_ready(a,id,manual):return false
+func activate_form(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> bool:
+	if not form_ready(a,id,manual,trigger_id):return false
 	var rule=registry.form_rules[id]
 	if manual:a.chakra=float(a.chakra)-float(rule.manual_chakra)
 	a.active_form={"id":id,"remaining":float(rule.duration_s)}
@@ -518,8 +537,7 @@ func try_combo(a: Dictionary) -> void:
 			"control":apply_status(a,enemies[0],{"status_id":"bind","chance":0.8,"duration_s":3.0})
 			"shield":
 				for member in members:
-					member.shield=maxf(float(member.shield),float(a.natk)*float(combo.coefficient))
-					member.shield_time=maxf(float(member.shield_time),5.0)
+					add_shield(a,member,float(a.natk)*float(combo.coefficient),5.0)
 			"buff":
 				for member in members:apply_status(a,member,{"status_id":"attack_up","chance":1.0,"duration_s":6.0,"magnitude":0.2})
 		log.append(str(combo.name_vi))
@@ -538,8 +556,7 @@ func update_boss(a: Dictionary) -> void:
 		var e=phase.mechanic_effect
 		match str(e.type):
 			"shield_self_fraction":
-				a.shield=maxf(float(a.shield),float(a.max_hp)*float(e.fraction_max_hp))
-				a.shield_time=maxf(float(a.shield_time),float(e.duration_s))
+				add_shield(a,a,float(a.max_hp)*float(e.fraction_max_hp),float(e.duration_s))
 			"apply_status_enemy":
 				var enemies=primary_alive(1-int(a.side))
 				for target in enemies.slice(0,int(e.max_targets)):apply_status(a,target,{"status_id":e.status_id,"chance":1.0,"duration_s":e.duration_s,"magnitude":e.magnitude})
@@ -592,3 +609,25 @@ func spatial_reaction(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 		if reacted:break
 	elemental_fields.append({"element":element,"side":a.side,"pos":b.pos,"radius":radius,"expires":ticks+40,"used":reacted})
 	return factor
+
+func skill_definition(id: String) -> Dictionary:
+	return encounter_skills[id] if encounter_skills.has(id) else registry.skills[id]
+
+func skill_name(id: String) -> String:
+	return str(encounter_names[id]) if encounter_names.has(id) else str(registry.names[id].name_vi)
+
+func add_beast(beast_id: String,level: int) -> void:
+	var def=registry.beasts[beast_id]
+	var rule=registry.beast_combat[beast_id]
+	# Host supplies only a baseline stat curve; runtime uses a separate creature ID and skill kit.
+	add_actor(def.canon_host_template_id,1,level,int(registry.ninjas[def.canon_host_template_id].initial_quality),{},0,float(rule.stat_multiplier))
+	var a=actors.back()
+	a.id=beast_id
+	a["beast"]=true
+	a.element=rule.element
+	a.skills=[]
+	for skill in rule.skills:
+		var id=str(skill.skill_id)
+		encounter_skills[id]=skill
+		encounter_names[id]=skill.name_vi
+		a.skills.append(id)

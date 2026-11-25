@@ -18,6 +18,7 @@ var bosses: Dictionary = {}
 var boss_rules: Dictionary = {}
 var quests: Dictionary = {}
 var beasts: Dictionary = {}
+var beast_combat: Dictionary = {}
 var contracts: Dictionary = {}
 var combos: Dictionary = {}
 var bloodlines: Dictionary = {}
@@ -89,6 +90,8 @@ func load_all() -> bool:
 	boss_rules=indexed("res://data/d4/boss_contracts.json","boss_id")
 	quests=indexed("res://data/quests.json")
 	beasts=indexed("res://data/bijuu.json")
+	beast_combat=indexed("res://data/d4/dev_beast_combat.json")
+	if beast_combat.size()!=9:errors.append("Missing DEV beast combat")
 	contracts=indexed("res://data/summons.json")
 	combos=indexed("res://data/combo_skills.json")
 	var bloodline_data=read_json("res://data/d4/bloodline_rules.json")

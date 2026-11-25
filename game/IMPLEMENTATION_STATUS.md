@@ -23,3 +23,5 @@ Gameplay Completion A: combat stat and shield improvements, gear affixes/sets, p
 Completion B: spatial cast overlap, timer splitting, Web DEV preset and browser probe/artifact workflow, CI pending.
 
 Completion A CI 45552956564 PASS (109). Completion B CI 45553036319 PASS (110 + Chromium actual WASM gameplay probe). Web DEV artifact 14993879097, screenshot 14993799208. Scope and limitations in GAMEPLAY_STATUS.md.
+
+Offensive A: combat AI, stats, status guards, 9 dedicated DEV beast kits, trial/evolution/capture positive-path and full authored effect dispatch tests. CI pending.

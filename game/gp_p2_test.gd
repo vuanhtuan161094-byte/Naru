@@ -250,4 +250,57 @@ func _initialize() -> void:
 	lightning.element="lightning"
 	shield_sim.spatial_reaction(a1,water,a2)
 	check(is_equal_approx(shield_sim.spatial_reaction(a1,lightning,a2),1.2),"spatial element overlap")
+	var dispatch_count=0
+	var tested=0
+	for id in reg.ninjas:
+		for skill_id in reg.ninjas[id].skills+reg.ninjas[id].additional_skill_ids:
+			var run=Combat.new()
+			run.registry=reg
+			run.rng.seed=42
+			run.add_actor(id,0,20,int(reg.ninjas[id].initial_quality),{},0,1.0,{"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids})
+			run.add_actor("NIN-001",1,20,2,{},0,1.0)
+			var attacker=run.actors[0]
+			var defender=run.actors[1]
+			defender.pos=attacker.pos+Vector2(1,0)
+			attacker.chakra=attacker.max_chakra
+			var skill=run.effective_skill(attacker,skill_id)
+			var selected=run.target_for(attacker,skill)
+			run.release(attacker,skill,selected)
+			dispatch_count+=run.effect_dispatch_count
+			if run.effect_dispatch_count>0:tested+=1
+	check(tested==1152 and dispatch_count>=1152,"all 1152 authored skills dispatch effects")
+	for beast_id in reg.beasts:
+		var beast_sim=Combat.new()
+		beast_sim.registry=reg
+		beast_sim.add_actor("NIN-001",0,20,2,{},0,1.0)
+		beast_sim.add_beast(beast_id,20)
+		var beast=beast_sim.actors[1]
+		beast.pos=beast_sim.actors[0].pos+Vector2(1,0)
+		beast_sim.release(beast,beast_sim.effective_skill(beast,beast.skills[1]),beast_sim.actors[0])
+		check(beast.id==beast_id and beast.skills.size()==3 and beast_sim.effect_dispatch_count>=2,"beast kit "+beast_id)
+	# Explicit high-power fixture tests the real transaction, not balance.
+	var veteran=Store.new()
+	veteran.save_path="user://gp_veteran_ci.json"
+	veteran.new_game(reg)
+	var v=veteran.state.owned["NIN-001"]
+	v.realm=6
+	v.level=120
+	v.permanent={"strength":100000,"vitality":100000,"intellect":100000,"spirit":100000,"agility":100000}
+	v.skill_mastery["NIN-001-S2"]=2000
+	var trial=reg.trials["CHALLENGE-NIN-001-1"]
+	var req=reg.names[trial.skill_id].unlock_require
+	v.skill_mastery[req.prior_skill_id]=2000
+	v.skill_levels[req.prior_skill_id]={"level":20,"grade":int(req.grade),"fails":0,"branch":""}
+	check(veteran.run_trial(reg,"NIN-001",trial.id),"personal trial success")
+	check(trial.skill_id in v.unlocked_skills,"additional skill persists")
+	v.shards=1000
+	veteran.state.inventory["RES-132"]=100
+	veteran.state.inventory["RES-127"]=100
+	check(veteran.quality_trial(reg,"NIN-001"),"quality trial success")
+	var old_quality=int(v.quality)
+	check(veteran.evolve_quality(reg,"NIN-001") and int(v.quality)==old_quality+1,"quality evolution success")
+	veteran.state.building_states["BLD-027"].level=1
+	veteran.state.inventory["RES-100"]=20
+	check(veteran.capture_beast(reg,"NIN-001","BIJ-1"),"beast capture success")
+	check(veteran.state.beasts.has("BIJ-1") and not veteran.capture_beast(reg,"NIN-001","BIJ-1"),"beast unique capture")
 	quit(0 if failures==0 else 1)

@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "BIJ-1",
+    "element": "wind",
+    "stat_multiplier": 1.25,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-1-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-1-S1",
+        "name_vi": "Phong đạn",
+        "kind": "auto",
+        "element": "wind",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "bind",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-1-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-2",
+    "element": "fire",
+    "stat_multiplier": 1.285,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-2-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-2-S1",
+        "name_vi": "Hỏa miêu",
+        "kind": "auto",
+        "element": "fire",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "burn",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-2-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-3",
+    "element": "water",
+    "stat_multiplier": 1.32,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-3-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-3-S1",
+        "name_vi": "Thủy phá",
+        "kind": "auto",
+        "element": "water",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "wet",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-3-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-4",
+    "element": "fire",
+    "stat_multiplier": 1.355,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-4-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-4-S1",
+        "name_vi": "Dung nham",
+        "kind": "auto",
+        "element": "fire",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "burn",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-4-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-5",
+    "element": "earth",
+    "stat_multiplier": 1.3900000000000001,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-5-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-5-S1",
+        "name_vi": "Hơi nước",
+        "kind": "auto",
+        "element": "earth",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "stun",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-5-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-6",
+    "element": "water",
+    "stat_multiplier": 1.425,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-6-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-6-S1",
+        "name_vi": "Axit",
+        "kind": "auto",
+        "element": "water",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "poison",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-6-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-7",
+    "element": "poison",
+    "stat_multiplier": 1.46,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-7-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-7-S1",
+        "name_vi": "Phấn độc",
+        "kind": "auto",
+        "element": "poison",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "poison",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-7-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-8",
+    "element": "lightning",
+    "stat_multiplier": 1.495,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-8-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-8-S1",
+        "name_vi": "Lôi xúc tu",
+        "kind": "auto",
+        "element": "lightning",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "shock",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-8-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "BIJ-9",
+    "element": "neutral",
+    "stat_multiplier": 1.53,
+    "status": "PROPOSED_DEV_NOT_CANON_VERIFIED",
+    "skills": [
+      {
+        "skill_id": "BIJ-9-S0",
+        "name_vi": "Vĩ thú vồ",
+        "kind": "basic",
+        "element": "neutral",
+        "damage_type": "physical",
+        "range_m": 2,
+        "target": "enemy_ai",
+        "shape": "single",
+        "radius_m": 0,
+        "line_width_m": 0,
+        "max_targets": 1,
+        "cast_s": 0.4,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 0,
+        "chakra": 0,
+        "cooldown_s": 1.6,
+        "interruptible": false,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.1,
+            "damage_type": "physical"
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-9-S1",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "auto",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 6,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 2,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 0.7,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 20,
+        "cooldown_s": 6,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 1.7,
+            "damage_type": "ninjutsu"
+          },
+          {
+            "type": "apply_status",
+            "status_id": "fear",
+            "chance": 0.8,
+            "duration_s": 3,
+            "magnitude": 0.2,
+            "tick_coefficient": 0.12
+          }
+        ],
+        "ai": {
+          "base_priority": 4,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      },
+      {
+        "skill_id": "BIJ-9-S2",
+        "name_vi": "Vĩ thú ngọc",
+        "kind": "ultimate",
+        "element": "neutral",
+        "damage_type": "ninjutsu",
+        "range_m": 9,
+        "target": "enemy_ai",
+        "shape": "circle",
+        "radius_m": 3,
+        "line_width_m": 0,
+        "max_targets": 6,
+        "cast_s": 1.5,
+        "recovery_s": 0.5,
+        "projectile_speed_m_s": 8,
+        "chakra": 55,
+        "cooldown_s": 16,
+        "interruptible": true,
+        "trigger": "ai",
+        "effects": [
+          {
+            "type": "damage",
+            "coefficient": 3.2,
+            "damage_type": "ninjutsu"
+          }
+        ],
+        "ai": {
+          "base_priority": 8,
+          "condition": "valid_target",
+          "reserve_ultimate_chakra": false
+        }
+      }
+    ]
+  }
+]

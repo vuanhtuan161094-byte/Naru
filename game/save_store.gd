@@ -143,7 +143,10 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 				var prior_gain=float(p.permanent.get("strength",0))
 				p.permanent.strength=prior_gain+0.02*sqrt(float(actions))*difficulty*rng.randf_range(0.9,1.1)/pow(1+prior_gain/100.0,0.7)
 			for skill_id in mastery_counts:
-				if skill_allowed(reg,id,skill_id):p.skill_mastery[skill_id]=int(p.skill_mastery.get(skill_id,0))+int(mastery_counts[skill_id])
+				if skill_allowed(reg,id,skill_id):
+					var talent=reg.ninjas[id].unique_talent_design
+					var factor=float(talent.value) if talent.skill_id==skill_id and talent.bonus=="mastery_gain_multiplier" else 1.0
+					p.skill_mastery[skill_id]=int(p.skill_mastery.get(skill_id,0))+maxi(1,roundi(float(mastery_counts[skill_id])*factor))
 	if not save_now():
 		state=prior
 		rng.state=old_rng
@@ -472,6 +475,7 @@ func duel(reg,id: String,level: int,seed_value: int) -> bool:
 	var p=state.owned[id]
 	var sim=Combat.new()
 	sim.registry=reg
+	sim.auto_player_ultimate=true
 	sim.rng.seed=seed_value
 	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
 	sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},0,1.0)
@@ -602,7 +606,10 @@ func resource_trial(reg,id: String,resource: String) -> bool:
 	var old_rng=rng.state
 	var won=duel(reg,id,maxi(1,int(p.realm)*20+1),rng.randi())
 	state.source_cooldowns[key]=now+int(source.period_seconds)
-	if won:state.inventory[resource]=int(state.inventory.get(resource,0))+int(source.base_yield)
+	if won and not Village.put(state,resource,int(source.base_yield)):
+		state=prior
+		rng.state=old_rng
+		return false
 	if not commit_change(prior,old_rng):return false
 	return won
 
@@ -638,9 +645,10 @@ func capture_beast(reg,id: String,beast_id: String) -> bool:
 	debit(cost)
 	var sim=Combat.new()
 	sim.registry=reg
+	sim.auto_player_ultimate=true
 	sim.rng.seed=rng.randi()
 	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
-	sim.add_actor(def.canon_host_template_id,1,int(req.realm)*20+10,int(reg.ninjas[def.canon_host_template_id].initial_quality),{},0,1.25)
+	sim.add_beast(beast_id,int(req.realm)*20+10)
 	var won=false
 	for i in range(24000):
 		sim.tick(0.05)
@@ -650,7 +658,11 @@ func capture_beast(reg,id: String,beast_id: String) -> bool:
 		if sim.deadlock:break
 	if won:
 		state.beasts[beast_id]={"host":"","level":1,"xp":0}
-		for reward in def.capture_reward:state.inventory[reward.resource_id]=int(state.inventory.get(reward.resource_id,0))+int(reward.qty)
+		for reward in def.capture_reward:
+			if not Village.put(state,reward.resource_id,int(reward.qty)):
+				state=prior
+				rng.state=old_rng
+				return false
 	if not commit_change(prior,old_rng):return false
 	return won
 
