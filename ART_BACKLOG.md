@@ -70,3 +70,9 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P2 IN_PROGRESS: R3 six approved Move source cycles preserved; 113 prior R4 candidates still unapproved. Three new runs HOLD_WRONG_ACTION; zero new required clips. Produce actual Idle/Attack/Cast/Hit/Fall and independent directions in short sequences, no repeats to meet counts. Six opponents still pending quality replacement.
 - ART-P8 BLOCKED on native V11 anchor validation: proposed numeric fix and regression in art/e3/ART_P2_R6_HANDOFF.md; local scoped playback verified, latest SHA and production patch not verified. Coordinate with Chat01, do not alter gameplay branch from art.
 - ART-P3 HOLD unchanged.
+
+## R8 next
+- ART-P2: segment/repair R7 and validate direction/action; preserve approved Move R3. No new confirmed clips.
+- ART-P4: reject wrong younger variants; process Guy/Madara/Nagato source after review.
+- ART-P6/P7: 12 portrait candidates and arena plate prepared; buildings/HUD still source only.
+- ART-P8: latest gameplay runtime not tested. Export actual 6v6 once clean assets are available. VFX HOLD.

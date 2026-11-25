@@ -1,0 +1,25 @@
+{
+  "batch": "R8_CHECKPOINT",
+  "status": "REVIEW_ONLY",
+  "art_parent": "197c27790f2b7b49e435c3fe5002a5f23025b2ef",
+  "design_head": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+  "gameplay_head_observed": "dd76c16ff1af9221a1e4662b3e9d2924109b90f1",
+  "archive": "Naru_R8_checkpoint_private.zip",
+  "archive_sha256": "d9e3c93f9cabbed1efd56eb018b1e7f817755f81cee2c925583916a45ca2dcaa",
+  "archive_bytes": 39060797,
+  "manifest_sha256": "6ecd4aa1fda7e39bb9b6cd6904ce31eed5e561ca164a8d497adc59e678cc69ec",
+  "library_file_id": "libfile_b0d2256b4a9481918c99ed38561580fc",
+  "library_upload": true,
+  "source_count": 16,
+  "new_portrait_candidates": 12,
+  "new_arena_candidates": 1,
+  "new_completed_clips": 0,
+  "new_complete_ninja": 0,
+  "official_integration": 0,
+  "gameplay_runtime": "NOT_RUN",
+  "art_ci": "NOT_RUN",
+  "skill_vfx": "HOLD",
+  "limits": [
+    "Six R7 animation sheets unsegmented. First three intended R8 opponents wear Shippuden costumes, HOLD_WRONG_VARIANT. Guy/Madara/Nagato source only. Twelve grid-cropped portraits have possible fringe/clipping. One resized arena decorative only. Building and HUD atlases source only. No gameplay changes."
+  ]
+}
