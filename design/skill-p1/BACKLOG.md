@@ -1,5 +1,5 @@
 # SKILL-P1 backlog
-- DONE scoped: structural/name/effect geometry audit 144/1152, 64 anchor design proposals, 13 anchor form reviews (see generated count), 2 proposed combos, combat geometry contract draft.
+- DONE scoped: structural/name/effect geometry audit 144/1152, 64 anchor design proposals, 14 anchor form review records, 2 proposed combos, combat geometry contract draft.
 - REVIEW: owner confirm hybrid 12x8 or alternative, formation, collision, targeting; review Naruto Shippuden kit before committing runtime mechanic changes. 
 - READY after approval: COMBAT-P1/P2 gameplay implement common geometry/events; art can continue approved character animation independently, use event metadata but hold mass skill VFX. 
 - READY after P2: COMBAT-P3 integrate 64 anchor skills individually with approved numeric balancing, form mapping, combo and VFX.

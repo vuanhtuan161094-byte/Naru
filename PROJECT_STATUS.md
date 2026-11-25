@@ -21,3 +21,6 @@ Live docs: gameplay GAMEPLAY_STATUS.md / GAMEPLAY_BACKLOG.md; art ART_STATUS.md 
 
 ## Concurrent gameplay update during review
 Gameplay HEAD advanced to c27f68f66f97ffe2e27721a970d257509fc7f68f: D1-A functional 17-screen UI layer, navigation, fixed village grid, coordinate world map, formation, resource inspection, battle controls/results. CI 45563077560: in_progress/not concluded at review; do not treat as accepted manual UI/UX. Latest confirmed Web DEV artifact above remains from 5919893 unless a newer successful export is confirmed.
+
+## SKILL-P1 design checkpoint
+Structural audit all 144 ninja/1152 skills; 55 ninja duplicate names, 103 matching effect/geometry groups, 64 anchor skill proposals for eight versions and 14 form review records. Proposed hybrid arena contract requires owner review; 1088 skills still require individual source/mechanic review. D4 runtime unchanged, no merge. See design/skill-p1/BACKLOG.md.
