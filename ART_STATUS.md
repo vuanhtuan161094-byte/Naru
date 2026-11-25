@@ -17,3 +17,5 @@ Reference screenshot + four games studied; new HUD and apparent camera projectio
 
 ## R4 integration preparation
 Live gameplay HEAD 3281f02c7e116a406eece3f67a728a1102e220ef inspected; V4 now has private JSON importer, actual combat events and separate six enemy IDs. R3 full-source installer must not overwrite newer gameplay. New art-only V4 pack builder implements schema 1, PNG geometry/hash and importer limits. No new assets or runtime verification claimed; pack builder NOT_RUN. R4 production remains IN_PROGRESS. GitHub write access confirmed; no gameplay branch write.
+
+R4 pack builder exact blob 65031a0e73e4c939c7086231edd89cc60b1f38e4 local PASS: 59 PNG entries, 59 decode/hash/dimension checks, 3,669,878 bytes, SHA256 1764a30a385c46377f73c434cc912805c50a4cada4b6b1feeffc91b39e51a7a0. Existing assets repackaged, not new art; Godot R4 NOT_RUN.

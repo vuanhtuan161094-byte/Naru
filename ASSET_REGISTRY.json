@@ -9373,7 +9373,15 @@
     "native_importer": "game/review_art.gd",
     "pack_builder": "art/runtime/build_v4_review_pack.py",
     "new_assets": 0,
-    "qa": "NOT_RUN",
-    "notes": "No R3 full-source overwrite; use V4 schema 1 private importer. R4 animation and aesthetic acceptance remain open."
+    "qa": "PACK_BUILDER_LOCAL_PASS",
+    "notes": "No R3 full-source overwrite; use V4 schema 1 private importer. R4 animation and aesthetic acceptance remain open.",
+    "pack": {
+      "assets": 59,
+      "bytes": 3669878,
+      "sha256": "1764a30a385c46377f73c434cc912805c50a4cada4b6b1feeffc91b39e51a7a0",
+      "status": "REVIEW_ONLY",
+      "png_decode_hash_pass": 59,
+      "storage": "local chat output; not public GitHub"
+    }
   }
 }
