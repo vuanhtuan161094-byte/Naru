@@ -76,3 +76,10 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P4: reject wrong younger variants; process Guy/Madara/Nagato source after review.
 - ART-P6/P7: 12 portrait candidates and arena plate prepared; buildings/HUD still source only.
 - ART-P8: latest gameplay runtime not tested. Export actual 6v6 once clean assets are available. VFX HOLD.
+
+## R9 next
+- ART-P2: 46 provisional SE clips, 257 cells; native V13 32 new keys actually observed. Finish quality and four directions; 0 complete ninja. Preserve six approved R3 moves.
+- ART-P4: three new static opponents + candidates; three younger variants still held, keep prior prototypes. No complete kits.
+- ART-P6/P7: 12 portraits, one arena, 12 prop crops, 5 UI parts, 3 mapped building buttons; 27 other building identities need art. No collision mapping or full UI redesign.
+- ART-P8: local V13 native review scoped PASS; latest CI artifact not available at check; Chat 00/01 reconcile art handoff, clustering and fall/cast/fallback. See art/e3/ART_R9_HANDOFF.md.
+- ART-P3 HOLD unchanged.
