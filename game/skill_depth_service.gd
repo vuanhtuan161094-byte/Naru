@@ -56,6 +56,18 @@ static func apply(reg,s: Dictionary,p: Dictionary,stars: int) -> void:
 			"params.mark_ttl_s":params.mark_ttl_s=base*(1.0+0.15*ratio)
 			"params.duration_s":params.duration_s=base*(1.0+0.15*ratio)
 			"params.chakra_amount":params.chakra_amount=floorf(base*(1.0+0.25*ratio))
-	# DOT fixed-total and aggregate drain branch contracts remain held until dedicated adapter tests.
-	if not specific.is_empty():s.depth_branch_hold=true
+	# Exact V4 branch contract; duration never multiplies total DOT budget.
+	if not specific.is_empty() and s.has("p2"):
+		if specific.old_hold=="DOT_FIXED_TOTAL_ADAPTER":
+			for e in s.effects:
+				if not e.has("tick_coefficient"):continue
+				var old_duration=float(e.duration_s)
+				e.fixed_dot_total_coefficient=float(e.tick_coefficient)*maxf(1.0,floorf(old_duration))
+				e.fixed_dot_skill=s.skill_id
+				e.duration_s=old_duration*float(specific.operation.multiplier)
+				e.tick_coefficient=0.0
+		elif specific.old_hold=="RESOURCE_LOOP_TEST":
+			if params.has("chakra_per_tick"):
+				params.chakra_per_tick=float(params.chakra_per_tick)*float(specific.operation.multiplier)
+				s.depth_drain_contract=true
 	if s.chakra>0:s.chakra=maxf(1.0,float(s.chakra)*(1.0-star_discount(stars)))

@@ -39,6 +39,68 @@ func _initialize() -> void:
 	sim.qa_hold_ai=false
 	sim.tick(0.05)
 	check(int(sim.ultimate_executed.get("NIN-001-S5",0))==1,"exact requested ultimate cast")
+	var cp=Combat.new()
+	cp.use_depth=true
+	var dummy={"chakra":0.0,"max_chakra":10.0}
+	for i in range(10):cp.cp_continuous(dummy,0.003,"regen")
+	check(int(dummy.cp_units)==3,"fractional regen conservation")
+	cp.cp_adjust(dummy,-100.0,"cast")
+	check(dummy.cp_units==0 and dummy.chakra==0.0,"no negative CP")
+	cp.cp_adjust(dummy,5.0,"restore")
+	cp.cp_resize(dummy,20.0)
+	check(dummy.cp_units==1000,"max CP ratio preserved")
+	var obj=Combat.new()
+	obj.registry=reg
+	obj.qa_hold_ai=true
+	obj.add_actor("NIN-132",0,140,4,{},0,1.0)
+	obj.add_actor("NIN-003",1,140,4,{},0,1.0)
+	var owner=obj.actors[0]
+	var victim=obj.actors[1]
+	owner.pos=Vector2(4,4)
+	victim.pos=Vector2(8,4)
+	var object_skill=obj.effective_skill(owner,"NIN-132-S2")
+	var object_pos=Vector2(6,4)
+	for index in range(3):check(obj.retrieve_object(owner,object_skill,object_pos,index,false),"retrieve nonliving object "+str(index))
+	check(not obj.retrieve_object(owner,object_skill,object_pos,4,false),"max three object tokens")
+	check(victim.pos==Vector2(8,4) and obj.actors.size()==2,"living actors never stored")
+	var dot_candidates=0
+	var drain_candidates=0
+	var branch_holds=[]
+	for branch in reg.depth_branches.values():
+		var branch_skill=str(branch.skill)
+		if not reg.p2_skills.has(branch_skill):
+			branch_holds.append(branch.id)
+			continue
+		var skill=reg.p2_skills[branch_skill].duplicate(true)
+		Depth.apply(reg,skill,{"grade":3,"level":20,"branch":branch.id},5)
+		if branch.old_hold=="DOT_FIXED_TOTAL_ADAPTER" and skill.effects.any(func(e):return e.has("fixed_dot_total_coefficient") and float(e.fixed_dot_total_coefficient)>0):
+			dot_candidates+=1
+		elif branch.old_hold=="RESOURCE_LOOP_TEST" and skill.get("depth_drain_contract",false):
+			drain_candidates+=1
+		else:branch_holds.append(branch.id)
+	check(dot_candidates+drain_candidates+branch_holds.size()==34,"34 special branch records reconciled")
+	print("NARU_V9_BRANCH_ADAPTERS dot=",dot_candidates," drain=",drain_candidates," HOLD=",branch_holds)
+	var dot_sim=Combat.new()
+	dot_sim.registry=reg
+	dot_sim.qa_hold_ai=true
+	dot_sim.add_actor("NIN-042",0,140,4,{},0,1.0)
+	dot_sim.add_actor("NIN-003",1,140,4,{},0,1.0)
+	var dot_owner=dot_sim.actors[0]
+	var dot_target=dot_sim.actors[1]
+	dot_owner.natk=100.0
+	dot_target.max_hp=100000.0
+	dot_target.hp=100000.0
+	dot_target.stats.hp_regen=0.0
+	var dot_skill=reg.p2_skills["NIN-042-S2"].duplicate(true)
+	Depth.apply(reg,dot_skill,{"grade":3,"level":20,"branch":"NIN-042-S2-B2"},5)
+	for effect in dot_skill.effects:
+		if not effect.has("fixed_dot_total_coefficient"):continue
+		var applied=effect.duplicate(true)
+		applied.chance=1.0
+		dot_sim.apply_status(dot_owner,dot_target,applied)
+		var expected=roundi(float(applied.fixed_dot_total_coefficient)*float(dot_owner.natk))
+		for i in range(ceili(float(applied.duration_s)*20)+2):dot_sim.update_status(dot_target,0.05)
+		check(absf((100000.0-float(dot_target.hp))-expected)<0.01,"fixed DOT total across duration")
 	var observed={}
 	var formed={}
 	for index in range(reg.depth_teams.size()):

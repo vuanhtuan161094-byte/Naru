@@ -1,6 +1,6 @@
 extends RefCounted
 # Explicit allow-list; unknown special parameters keep D4, never silently become P2.
-const TYPES=["damage","multi_hit","decoy","chakra_regen","dash_damage","dash_multi_hit","counter","wall","projectile_damage","stance","line_damage","zone_damage","area_damage","shield","cone_damage","ground_damage","heal","cleanse","activate_form","heal_pulse","status","directional_shield","teleport","projectile_mark","team_buff","trap","chakra_drain","mark","chakra_restore","displace","zone_drain","pierce","absorb","position_swap","summon","beguile_tactical","projectile_intercept"]
+const TYPES=["damage","multi_hit","decoy","chakra_regen","dash_damage","dash_multi_hit","counter","wall","projectile_damage","stance","line_damage","zone_damage","area_damage","shield","cone_damage","ground_damage","heal","cleanse","activate_form","heal_pulse","status","directional_shield","teleport","projectile_mark","team_buff","trap","chakra_drain","mark","chakra_restore","displace","zone_drain","pierce","absorb","position_swap","summon","beguile_tactical","projectile_intercept","ritual_zone"]
 const SPECIAL=["requires_owned_clone_or_anchor","adapter_gate","retrieve","max_objects","requires_contact_with_ally","mark_throw_before_teleport","invulnerability_s"]
 static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	var p=raw.effect.params
@@ -11,6 +11,7 @@ static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 		if not p.has(key):continue
 		if raw.skill_id=="NIN-004-S6" and key in ["requires_owned_clone_or_anchor","adapter_gate"]:continue
 		if raw.skill_id=="NIN-093-S6" and key in ["mark_throw_before_teleport","invulnerability_s"]:continue
+		if raw.skill_id in ["NIN-132-S2","NIN-132-S4","NIN-132-S5","NIN-132-S6"] and key in ["retrieve","max_objects"]:continue
 		return {"reason":"special:"+key}
 	if kind=="summon" and not str(p.get("role","melee")) in ["melee","melee_decoy","track_bind","heal_ally","frontline","bind","guard","ranged_puppet","ranged","element_ranged"]:return {"reason":"summon_role"}
 	var s=base.duplicate(true)
@@ -37,7 +38,7 @@ static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	s.effects=[]
 	var coef=float(raw.effect.total_coefficient)
 	var dot_fraction=clampf(float(p.get("dot_fraction_of_total",0)),0,0.9)
-	var damage_types=["damage","multi_hit","decoy","dash_damage","dash_multi_hit","projectile_damage","line_damage","zone_damage","area_damage","cone_damage","ground_damage","status","teleport","projectile_mark","trap","chakra_drain","mark","displace","zone_drain","pierce"]
+	var damage_types=["damage","multi_hit","decoy","dash_damage","dash_multi_hit","projectile_damage","line_damage","zone_damage","area_damage","cone_damage","ground_damage","status","teleport","projectile_mark","trap","chakra_drain","mark","displace","zone_drain","pierce","ritual_zone"]
 	if kind in damage_types and coef>0:s.effects.append({"type":"damage","coefficient":coef*(1-dot_fraction),"damage_type":raw.damage_type})
 	if kind in ["heal","heal_pulse"]:s.effects.append({"type":"heal","coefficient":coef})
 	if kind=="shield":s.effects.append({"type":"shield","coefficient":coef,"duration_s":float(p.get("duration_s",5))})

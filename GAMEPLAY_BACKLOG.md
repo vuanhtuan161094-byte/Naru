@@ -66,3 +66,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - TRANSFER Chat03: GP-P3B external progression/trials, GP-P5B village/economy/job, GP-P6 shared save ownership, GP-P7 world/territory, GP-P8 campaign progression, GP-P9 external screens and equipment/forge/recruit. Retain existing V8 behavior.
 - Chat01 REVIEW: V9 combat candidates, 12 designed-team observations, new 14 passive adapters/2 P2 adapters, exact-ID ultimate, growth DEV, PC/Android presets.
 - Chat01 READY: residual 9 special P2 + 2 era HOLD, 34 branch contracts, full fixed-point CP, V5 combo and form route tests, per-ID passive actual effect audit, art event contract and tactical quality. CI not yet verified.
+
+- REVIEW V9 batch 2: 5 more P2 special candidates, CP fixed-point combat ledger, 34 typed branch adapter records and fixtures. READY: 4 reflection mechanics clarification, 2 era holds, exact full V5 combo/form semantics, per-ID passive audit and balance, visual event integration.

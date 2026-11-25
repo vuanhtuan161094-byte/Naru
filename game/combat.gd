@@ -43,6 +43,8 @@ var ultimate_executed: Dictionary={}
 var ultimate_cancelled: Dictionary={}
 var passive_typed_receipts: Dictionary={}
 var mastery_casts: Dictionary={}
+var cp_refund_units: Dictionary={}
+var cp_telemetry: Dictionary={}
 var passive_queue: Array[Dictionary]=[]
 var passive_seen: Dictionary={}
 var passive_receipts: Dictionary={}
@@ -50,6 +52,8 @@ var passive_mastery: Dictionary={}
 var p2_jobs: Array[Dictionary]=[]
 var p2_intercepts: Array[Dictionary]=[]
 var p2_marks: Dictionary={}
+var ritual_zones: Array[Dictionary]=[]
+var retrieved_objects: Array[Dictionary]=[]
 var p2_hits: Dictionary={}
 var p2_events: Dictionary={}
 var p2_casts=0
@@ -136,6 +140,7 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 	next_uid+=1
 	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"deployment_slot":slot,"pos":Formation.spawn(side,slot,map_width,map_height,float(registry.combat_v3.deployment.rank_spacing),float(registry.combat_v3.deployment.lane_spacing)),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"shield_sources":{},"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
 
+	if use_depth:cp_resize(actors.back(),float(actors.back().max_chakra))
 	Passive.attach(actors.back(),progress)
 
 func alive(side: int) -> Array:
@@ -207,7 +212,7 @@ func ready(a: Dictionary,s: Dictionary) -> bool:
 	if has_status(a,"silence") and s.damage_type!="physical": return false
 	for e in s.effects:
 		if e.type=="activate_form" and not form_ready(a,str(e.form_id),false,str(s.skill_id)):return false
-	return a.chakra>=float(s.chakra) and float(a.cooldowns.get(s.skill_id,0))<=0
+	return cp_affordable(a,float(s.chakra)) and float(a.cooldowns.get(s.skill_id,0))<=0
 
 func actor_by_uid(uid: int) -> Dictionary:
 	for a in actors:
@@ -305,7 +310,7 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 			if not a.has("p2_used"):a.p2_used={}
 			a.p2_used[s.skill_id]=int(a.p2_used.get(s.skill_id,0))+1
 	var before_cp=float(a.chakra)/maxf(1.0,float(a.max_chakra))
-	a.chakra=float(a.chakra)-float(s.chakra)
+	cp_adjust(a,-float(s.chakra),"cast")
 	a.cooldowns[s.skill_id]=float(s.cooldown_s)
 	a.busy=float(s.cast_s)+float(s.recovery_s)/(1.0+rating(a,"attack_speed"))
 	a.last=skill_name(s.skill_id)
@@ -350,7 +355,8 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 	if rule.hard_control and chance<1.0:chance=clampf(chance*(1.0+rating(a,"control_chance"))*(1.0-rating(b,"control_resist")),0.0,0.95)
 	if rng.randf()>chance:return
 	var key=id+":"+str(a.uid) if rule.stack=="per_source" else id
-	if not b.statuses.has(key) and rule.stack=="per_source":
+	if e.has("fixed_dot_total_coefficient"):key=id+":"+str(a.uid)+":"+str(e.get("fixed_dot_skill",""))
+	if not b.statuses.has(key) and (rule.stack=="per_source" or e.has("fixed_dot_total_coefficient")):
 		var count=0
 		for item in b.statuses.values():
 			if item.id==id:count+=1
@@ -365,6 +371,11 @@ func apply_status(a: Dictionary,b: Dictionary,e: Dictionary) -> void:
 		duration=maxf(duration,float(b.statuses[key].remaining))
 		mag=maxf(mag,float(b.statuses[key].magnitude))
 	b.statuses[key]={"id":id,"source":a.uid,"remaining":duration,"magnitude":mag,"dot":float(e.get("tick_coefficient",0.0))*float(a.natk),"next_tick":1.0}
+	if e.has("fixed_dot_total_coefficient"):
+		var count=maxi(1,ceili(duration))
+		var total=maxi(0,roundi(float(e.fixed_dot_total_coefficient)*float(a.natk)))
+		b.statuses[key].fixed_dot={"count":count,"done":0,"total":total,"unit":floori(float(total)/count),"elapsed":0.0,"interval":duration/count}
+		b.statuses[key].dot=0.0
 	art_event("status_applied",b.pos,0,id)
 
 func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> void:
@@ -499,6 +510,7 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.shield=0.0
 	b.shield_sources={}
 	b.chakra=0.0
+	for cp_key in ["cp_units","cp_max_units","cp_remainder"]:b.erase(cp_key)
 	if not position_clear(b,b.pos):return
 	actors.append(b)
 	art_event("summon",b.pos)
@@ -529,8 +541,8 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					if rng.randf()<hit_rate:
 						if s.kind!="basic" and a.side!=target.side:
 							var drain=minf(float(target.chakra),float(s.chakra)*rating(a,"chakra_drain")*(1.0-rating(target,"chakra_drain_resist")))
-							target.chakra=float(target.chakra)-drain
-							a.chakra=minf(float(a.max_chakra),float(a.chakra)+drain*rating(a,"chakra_conversion"))
+							var taken=-cp_adjust(target,-drain,"hostile_drain")
+							cp_adjust(a,taken*rating(a,"chakra_conversion"),"conversion")
 						var before_hp=float(target.hp)
 						var crit=1.5+rating(a,"crit_damage") if e.damage_type!="genjutsu" and rng.randf()<maxf(0.0,rating(a,"pcrit" if physical else "ncrit")-rating(target,"crit_resist")) else 1.0
 						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))))
@@ -578,7 +590,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
 				"chakra_restore":
 					var old_cp=float(a.chakra)
-					a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(e.amount))
+					cp_adjust(a,float(e.amount),"restore")
 					if a.chakra>old_cp:Passive.queue(self,a,target,s,"resource_effect_confirmed")
 				"dash":move_actor(a,target.pos,minf(float(e.max_distance_m),maxf(0.0,a.pos.distance_to(target.pos)-float(e.stop_distance_m))))
 				"summon":
@@ -643,7 +655,7 @@ func update_status(a: Dictionary,dt: float) -> void:
 		a.active_form.remaining=float(a.active_form.remaining)-dt
 		if use_p2 and registry.p2_forms.has(a.active_form.id):
 			var drain=float(registry.p2_forms[a.active_form.id].effect.chakra_drain_per_s)*dt
-			a.chakra=maxf(0.0,float(a.chakra)-drain)
+			cp_continuous(a,-drain,"form_drain")
 			if drain>0 and a.chakra<=0:a.active_form.remaining=0
 		if a.active_form.remaining<=0:a.active_form={}
 			
@@ -665,7 +677,16 @@ func update_status(a: Dictionary,dt: float) -> void:
 	for key in a.statuses.keys():
 		var st=a.statuses[key]
 		st.remaining=float(st.remaining)-dt
-		if st.dot>0:
+		if st.has("fixed_dot"):
+			var budget=st.fixed_dot
+			budget.elapsed=float(budget.elapsed)+dt
+			while int(budget.done)<int(budget.count) and float(budget.elapsed)+0.00001>=float(budget.interval)*(int(budget.done)+1):
+				var source=actor_by_uid(int(st.source))
+				if source.is_empty() or source.hp<=0 or a.hp<=0:break
+				budget.done=int(budget.done)+1
+				var portion=int(budget.unit) if int(budget.done)<int(budget.count) else int(budget.total)-int(budget.unit)*(int(budget.count)-1)
+				hit(source,a,float(portion),false)
+		elif st.dot>0:
 			st.next_tick=float(st.next_tick)-dt
 			if st.next_tick<=0:
 				st.next_tick=1.0
@@ -706,13 +727,13 @@ func tick(dt: float) -> void:
 		a.busy=maxf(0.0,float(a.busy)-dt)
 		a.shield_time=maxf(0.0,float(a.shield_time)-dt)
 		if a.shield_time<=0 and a.shield_sources.is_empty():a.shield=0.0
-		a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(a.regen)*dt*formation_multiplier(a,"chakra")*(1.0+magnitude(a,"chakra_up"))*(1.0-clampf(magnitude(a,"chakra_lock"),0.0,0.9)))
+		cp_continuous(a,float(a.regen)*dt*formation_multiplier(a,"chakra")*(1.0+magnitude(a,"chakra_up"))*(1.0-clampf(magnitude(a,"chakra_lock"),0.0,0.9)),"regen")
 		for id in a.cooldowns:a.cooldowns[id]=maxf(0.0,float(a.cooldowns[id])-dt)
 		if not a.pending.is_empty():
 			var pending=a.pending
 			var skill=pending.skill
 			if (hard_block(a) or (has_status(a,"silence") and skill.damage_type!="physical")) and skill.interruptible:
-				a.chakra=minf(float(a.max_chakra),float(a.chakra)+0.8*float(skill.chakra))
+				cp_adjust(a,0.8*float(skill.chakra),"interrupt_refund")
 				a.cooldowns[skill.skill_id]=float(skill.cooldown_s)*0.5
 				art_event("interrupt",a.pos,0,str(skill.skill_id))
 				a.pending={}
@@ -798,7 +819,7 @@ func activate_form(a: Dictionary,id: String,manual: bool,trigger_id: String="") 
 	if not form_ready(a,id,manual,trigger_id):return false
 	var rule=registry.form_rules[id]
 	var p2_rule=registry.p2_forms.get(id,{}).get("activation",{}) if use_p2 else {}
-	if manual:a.chakra=float(a.chakra)-float(p2_rule.get("manual_chakra",rule.manual_chakra))
+	if manual:cp_adjust(a,-float(p2_rule.get("manual_chakra",rule.manual_chakra)),"manual_form")
 	a.active_form={"id":id,"remaining":float(p2_rule.get("duration_s",rule.duration_s))}
 	a.form_cooldowns[id]=float(p2_rule.get("cooldown_s",rule.cooldown_s))
 	art_event("form_activated",a.pos,0,id)
@@ -844,7 +865,7 @@ func update_boss(a: Dictionary) -> void:
 		if boss_phases.fired.has(i) or crossed_ratio>float(phase.hp_at_or_below)+0.000001:continue
 		boss_phases.fired[i]=true
 		var modifier=phase.modifier
-		a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(modifier.get("chakra_restore",0)))
+		cp_adjust(a,float(modifier.get("chakra_restore",0)),"talent")
 		if modifier.has("attack_multiplier"):apply_status(a,a,{"status_id":"attack_up","chance":1.0,"duration_s":modifier.duration_s,"magnitude":float(modifier.attack_multiplier)-1.0})
 		if modifier.has("defense_multiplier"):apply_status(a,a,{"status_id":"defense_up","chance":1.0,"duration_s":modifier.duration_s,"magnitude":float(modifier.defense_multiplier)-1.0})
 		var e=phase.mechanic_effect
@@ -867,7 +888,7 @@ func summon_contract(a: Dictionary) -> bool:
 	var def=registry.contracts[a.contract]
 	var key={"skill_id":str(a.contract)}
 	if summon_count(a,a.contract)>0:return false
-	a.chakra=float(a.chakra)-30
+	cp_adjust(a,-30.0,"contract")
 	a.contract_cd=40.0
 	var factor=float(def.owner_stat_fraction)*(1+0.03*sqrt(float(a.contract_level)))
 	summon_actor(a,key,{"template_id":a.contract,"cap":1,"lifetime_s":def.battle_lifetime_seconds,"hp_owner_fraction":factor,"attack_owner_fraction":factor})
@@ -1191,7 +1212,7 @@ func advance_projectiles(dt: float) -> void:
 				if skill.has("p2") and target.has("p2_absorb") and int(target.p2_absorb.expires)>ticks and int(target.p2_absorb.left)>0 and Vector2(target.p2_absorb.facing).dot(-Vector2(p.direction))>=cos(deg_to_rad(float(target.p2_absorb.angle)*0.5)):
 					target.p2_absorb.left=int(target.p2_absorb.left)-1
 					var old_absorb_cp=float(target.chakra)
-					target.chakra=minf(float(target.max_chakra),float(target.chakra)+float(target.p2_absorb.chakra))
+					cp_adjust(target,float(target.p2_absorb.chakra),"absorb")
 					if target.chakra>old_absorb_cp and target.p2_absorb.has("parent_skill"):Passive.queue(self,target,source,target.p2_absorb.parent_skill,"resource_effect_confirmed")
 					p.distance_left=0.0
 					break
@@ -1233,6 +1254,7 @@ func p2_ready(a: Dictionary,s: Dictionary) -> bool:
 	var params=s.p2.effect.params
 	if params.get("requires_clone",false) and owned_clone(a).is_empty():return false
 	if params.get("requires_owned_clone_or_anchor",false) and cable_anchor(a).is_empty():return false
+	if params.has("retrieve") and retrieved_count(a)>=int(params.max_objects):return false
 	if params.get("once_per_battle",false) or params.get("finite_per_battle",false):
 		if int(a.get("p2_used",{}).get(s.skill_id,0))>=int(params.get("charges",1)):return false
 	if int(a.realm)<int(cond.get("unlock_realm",0)):return false
@@ -1364,15 +1386,22 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 		p2_intercepts.append({"owner":a.uid,"side":a.side,"rect":Rect2(point-size_value/2,size_value),"left":int(p.get("max_projectiles",1)),"expires":ticks+roundi(float(p.get("duration_s",6))*20)})
 		p2_confirm(a,s,point,"contact_or_effect_confirmed")
 		return
+	if kind=="ritual_zone":
+		if not p2_has_mark(a,b):return
+		ritual_zones.append({"owner":a.uid,"point":point,"radius":float(p.trigger_radius_m),"expires":ticks+roundi(float(p.duration_s)*20),"cast_id":pending.cast_id})
+		p2_schedule(a,s,point,direction,[],int(pending.cast_id))
+		return
 	if s.shape=="wall":
 		var size_value=Vector2(float(p.get("thickness_m",0.45)),float(p.get("width_m",2.2)))
 		var rect=Rect2(point-size_value/2,size_value)
 		for unit in actors:
 			if unit.hp>0 and rect.grow(body_radius(unit)).has_point(unit.pos):return
+		if p.has("retrieve") and not retrieve_object(a,s,point,int(pending.cast_id),true):return
 		terrain.append({"rect":rect,"kind":"obstacle","speed":1.0,"expires":ticks+roundi(float(p.get("duration_s",6))*20),"owner":a.uid,"parent_skill":s})
 		p2_confirm(a,s,point,"contact_or_effect_confirmed")
 		return
 	if p.get("requires_owned_mark",false) and not p2_has_mark(a,b):return
+	if p.has("retrieve") and not retrieve_object(a,s,point,int(pending.cast_id),false):return
 	if int(p.get("consume_clone",0))>0:
 		var clone=owned_clone(a)
 		if clone.is_empty():return
@@ -1428,6 +1457,12 @@ func p2_schedule(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,t
 	advance_p2()
 
 func advance_p2() -> void:
+	for zone in ritual_zones.duplicate():
+		var owner=actor_by_uid(int(zone.owner))
+		if int(zone.expires)<=ticks or owner.is_empty() or owner.hp<=0:ritual_zones.erase(zone)
+	for item in retrieved_objects.duplicate():
+		var owner=actor_by_uid(int(item.owner))
+		if int(item.expires)<=ticks or owner.is_empty() or owner.hp<=0:retrieved_objects.erase(item)
 	for barrier in p2_intercepts.duplicate():
 		if int(barrier.expires)<=ticks or int(barrier.left)<=0:p2_intercepts.erase(barrier)
 	for item in terrain.duplicate():
@@ -1447,7 +1482,10 @@ func advance_p2() -> void:
 			for uid in job.ids:
 				var target=actor_by_uid(int(uid))
 				if not target.is_empty() and target.hp>0:targets.append(target)
-		if s.p2.effect.type=="trap" and targets.is_empty():
+		if s.p2.effect.type=="ritual_zone":
+			if not ritual_zones.any(func(zone):return int(zone.cast_id)==int(job.cast_id)):p2_jobs.erase(job);continue
+			targets=targets.filter(func(unit):return p2_has_mark(a,unit)).slice(0,int(s.max_targets))
+		if s.p2.effect.type in ["trap","ritual_zone"] and targets.is_empty():
 			job.next=ticks+1
 			continue
 		for b in targets:
@@ -1524,13 +1562,21 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 		if p2_has_mark(a,b):Passive.queue(self,a,b,s,"mark_effect_confirmed")
 	if kind=="chakra_restore":
 		var old_cp=float(b.chakra)
-		b.chakra=minf(float(b.max_chakra),float(b.chakra)+float(p.get("chakra_amount",12)))
+		cp_adjust(b,float(p.get("chakra_amount",12)),"restore")
 		if b.chakra>old_cp:Passive.queue(self,a,b,s,"resource_effect_confirmed")
 	if kind in ["chakra_drain","zone_drain"]:
 		var old_cp=float(b.chakra)
-		var amount=minf(float(b.chakra),float(p.get("chakra_amount",p.get("chakra_per_tick",3))))
-		b.chakra=float(b.chakra)-amount
-		a.chakra=minf(float(a.max_chakra),float(a.chakra)+amount*float(p.get("transfer_fraction",0.3)))
+		var amount=0.0
+		if b.side!=a.side:
+			amount=-cp_adjust(b,-minf(float(b.chakra),float(p.get("chakra_amount",p.get("chakra_per_tick",3)))),"hostile_drain")
+			var give=amount*float(p.get("transfer_fraction",0.3))
+			if s.get("depth_drain_contract",false):
+				var parent=str(s.get("passive_cast_id",0))
+				var used=int(cp_refund_units.get(parent,0))
+				give=minf(give,float(maxi(0,roundi(float(s.chakra)*100.0)-used))/100.0)
+				var actual=cp_adjust(a,give,"bounded_drain_refund")
+				cp_refund_units[parent]=used+roundi(actual*100.0)
+			else:cp_adjust(a,give,"drain_refund")
 		if amount>0:
 			Passive.queue(self,a,b,s,"resource_effect_confirmed")
 			if a.side!=b.side and not a.summon:Passive.queue(self,b,a,s,"chakra_threshold_crossed",old_cp/maxf(1.0,float(b.max_chakra)),float(b.chakra)/maxf(1.0,float(b.max_chakra)))
@@ -1592,7 +1638,7 @@ func p2_combo(a: Dictionary,point: Vector2,target_uid: int) -> void:
 					hit(a,b,float(a.natk)*float(effect.total_coefficient)*passive_combo_factor*100/(100+float(b.nres)),false)
 					if combo.id=="COMBO-006":apply_status(a,b,{"status_id":"stun","chance":1.0,"duration_s":0.5})
 				"bind","control":apply_status(a,b,{"status_id":"bind" if effect.type=="bind" else "slow","chance":1.0,"duration_s":1.0 if effect.type=="bind" else 1.5})
-				"chakra_drain":b.chakra=maxf(0,float(b.chakra)-12)
+				"chakra_drain":cp_adjust(b,-12.0,"combo_drain")
 				"shield":add_shield(a,b,float(a.natk)*float(effect.total_coefficient)*passive_combo_factor,5)
 				"buff":
 					apply_status(a,b,{"status_id":"defense_up","chance":1.0,"duration_s":6.0,"magnitude":0.12})
@@ -1633,3 +1679,57 @@ func land_near(a: Dictionary,b: Dictionary) -> bool:
 			a.pos=dest
 			return true
 	return false
+
+func retrieved_count(a: Dictionary) -> int:
+	return retrieved_objects.filter(func(item):return item.owner==a.uid and int(item.expires)>ticks).size()
+
+func retrieve_object(a: Dictionary,s: Dictionary,point: Vector2,parent: int,solid: bool) -> bool:
+	var p=s.p2.effect.params
+	if p.get("retrieve","")!="preauthored_nonliving_object" or retrieved_count(a)>=int(p.max_objects):return false
+	if not point.is_equal_approx(clamp_body(point,0.05)) or not clear_segment(point,point,0.02):return false
+	# DEV nonliving preauthored effect token. Never stores or moves a living actor.
+	var duration=float(p.get("duration_s",0.1))
+	retrieved_objects.append({"owner":a.uid,"skill":s.skill_id,"point":point,"parent":parent,"solid":solid,"expires":ticks+maxi(2,roundi(duration*20))})
+	art_event("object_retrieved",point,0,str(s.skill_id))
+	return true
+
+# Fixed point CP for battle only, integer hundredths; chakra is compatible read mirror.
+func cp_affordable(a: Dictionary,cost: float) -> bool:
+	return roundi(float(a.chakra)*100.0)>=roundi(cost*100.0) if use_depth else float(a.chakra)>=cost
+
+func cp_adjust(a: Dictionary,delta: float,reason: String) -> float:
+	var before=float(a.chakra)
+	if use_depth:
+		var capacity=maxi(0,roundi(float(a.max_chakra)*100.0))
+		var old=clampi(roundi(before*100.0),0,capacity)
+		var next=clampi(old+roundi(delta*100.0),0,capacity)
+		a.cp_units=next
+		a.cp_max_units=capacity
+		a.chakra=float(next)/100.0
+		var actual=next-old
+		cp_telemetry[reason]=int(cp_telemetry.get(reason,0))+actual
+		return float(actual)/100.0
+	a.chakra=clampf(before+delta,0.0,float(a.max_chakra))
+	return float(a.chakra)-before
+
+func cp_continuous(a: Dictionary,delta: float,reason: String) -> float:
+	if not use_depth:return cp_adjust(a,delta,reason)
+	if not a.has("cp_remainder"):a.cp_remainder={}
+	var precise=absf(delta)*100.0+float(a.cp_remainder.get(reason,0.0))
+	var whole=floori(precise+0.0000001)
+	a.cp_remainder[reason]=maxf(0.0,precise-whole)
+	var result=cp_adjust(a,float(whole)/100.0*(1.0 if delta>=0 else -1.0),reason)
+	if (delta>=0 and a.chakra>=a.max_chakra) or (delta<0 and a.chakra<=0):a.cp_remainder[reason]=0.0
+	return result
+
+func cp_resize(a: Dictionary,new_max: float) -> void:
+	var old_max=maxf(0.01,float(a.max_chakra))
+	var ratio=clampf(float(a.chakra)/old_max,0.0,1.0)
+	var capacity=float(maxi(1,roundi(new_max*100.0)))/100.0 if use_depth else new_max
+	if is_equal_approx(old_max,capacity) and (not use_depth or a.has("cp_units")):return
+	a.max_chakra=capacity
+	a.chakra=ratio*capacity
+	if use_depth:
+		a.chakra=float(roundi(float(a.chakra)*100.0))/100.0
+		a.cp_units=roundi(float(a.chakra)*100.0)
+		a.cp_max_units=roundi(capacity*100.0)

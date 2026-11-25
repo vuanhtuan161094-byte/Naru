@@ -109,11 +109,9 @@ static func refresh(sim) -> void:
 			a[key]=float(original[key])*(1.0+float(mods.get(key,0)))
 		a.regen=float(original.regen)*(1.0+float(mods.get("chakra_regen",0)))
 		var hp_ratio=float(a.hp)/maxf(1.0,float(a.max_hp))
-		var cp_ratio=float(a.chakra)/maxf(1.0,float(a.max_chakra))
 		a.max_hp=float(original.max_hp)*(1.0+float(mods.get("hp",0)))
-		a.max_chakra=float(original.max_chakra)*(1.0+float(mods.get("chakra_max",0)))
+		sim.cp_resize(a,float(original.max_chakra)*(1.0+float(mods.get("chakra_max",0))))
 		a.hp=clampf(hp_ratio*float(a.max_hp),0,float(a.max_hp))
-		a.chakra=clampf(cp_ratio*float(a.max_chakra),0,float(a.max_chakra))
 
 static func queue(sim,a: Dictionary,b: Dictionary,s: Dictionary,event: String,before: float=-1,after: float=-1) -> void:
 	if not sim.use_passives or a.is_empty() or not a.has("passive_base") or a.hp<=0 or a.get("beast",false) or int(s.get("passive_cast_id",0))<=0:return
