@@ -263,9 +263,11 @@ func growth_detail(id: String,message: String="") -> void:
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
 	button(nav,"Tu luyện EXP",func():training_screen(id))
-	var realm_cost=WorldQuotes.realm_cost(int(p.realm))
-	var breakthrough_button=button(nav,"Đột phá • %d ấn" % realm_cost,func():growth_detail(id,store.breakthrough(id)))
-	breakthrough_button.disabled=int(p.level)<(int(p.realm)+1)*20 or int(store.state.inventory.get("RES-128",0))<realm_cost
+	var realm_quote=store.breakthrough_quote(id)
+	var realm_cost=int(realm_quote.cost)
+	var breakthrough_button=button(nav,"Đột phá • %d/%d ấn" % [int(realm_quote.stock),realm_cost],func():growth_detail(id,store.breakthrough(id)))
+	breakthrough_button.disabled=not realm_quote.ready
+	breakthrough_button.tooltip_text="Còn thiếu "+str(realm_quote.missing)+" ấn • XP tích lũy "+str(realm_quote.banked_xp)
 	var star_button=button(nav,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu điều kiện"))
 	star_button.disabled=int(p.stars)>=15
 	button(nav,"Nhẫn thuật",func():skill_screen(id))
@@ -987,7 +989,9 @@ func beast_detail(id: String,message: String="") -> void:
 		var beast=store.state.beasts[id]
 		label(rows,"Cấp %d • XP %d/%d • Chủ thể %s" % [int(beast.level),int(beast.xp),ceili(100*pow(float(beast.level),1.6)),str(beast.host)],17)
 		button(rows,"Tu luyện • 1 "+str(reg.resources[def.training_resource].name_vi),func():beast_detail(id,"Đã tu luyện" if store.train_beast(reg,id) else "Thiếu tài nguyên"))
-		button(rows,"Tu luyện ×10",func():beast_detail(id,"Đã tu luyện" if store.train_beast(reg,id,10) else "Thiếu tài nguyên"))
+		var qty=mini(100,int(store.state.inventory.get(def.training_resource,0)))
+		var bulk=button(rows,"Tu luyện ×"+str(qty),func():beast_detail(id,"Đã tu luyện" if store.train_beast(reg,id,qty) else "Thiếu tài nguyên"))
+		bulk.disabled=qty<=0
 		button(rows,"Nguồn tinh hoa",func():resource_detail(str(def.training_resource)))
 	for ninja in store.state.owned:
 		if store.state.beasts.has(id):
@@ -1304,6 +1308,17 @@ func resource_detail(id: String) -> void:
 			button(rows,"Mở "+str(reg.buildings[source.building_id].name_vi),func():building_screen(source.building_id))
 			if source.source_type in ["mission","mission_or_library","trial","bloodline_trial"]:
 				button(rows,"Chọn ninja thực hiện",mission_screen)
+			if source.source_type in ["trial","bloodline_trial"]:
+				var ready=store.trial_roster(reg,id)
+				var roster=ready.slice(0,6)
+				var names=[]
+				for ninja in roster:names.append(reg.ninjas[ninja].name_vi)
+				label(rows,"Sẵn sàng: "+str(ready.size())+" ninja • mỗi ninja đấu riêng và có hồi chiêu",16)
+				var batch=button(rows,"Đấu thử thách với "+str(roster.size())+" ninja",func():
+					var result=store.resource_trial_batch(reg,id,roster)
+					resource_detail(id))
+				batch.disabled=roster.is_empty()
+				batch.tooltip_text=", ".join(PackedStringArray(names))
 			if source.source_type=="territory":
 				for territory in reg.territories.values():
 					for item in territory.resources:

@@ -148,5 +148,60 @@
       "recipes": 46,
       "beast_attempts": 0
     }
+  },
+  "p7": {
+    "base": "2b51e0818b39c16ee3bf0e9a0dbaa4f3478786d4",
+    "one_game": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+    "source_heads": {
+      "gameplay": "23568929384bbd4e80df8439d90851516cee270a",
+      "art": "7fa22ea470eaa96d80bd6ddf063b3f175779113b",
+      "design": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef"
+    },
+    "p6b": {
+      "ci": 45643976205,
+      "integrated_45d": {
+        "wins": 76,
+        "resources": 122,
+        "recipes": 33,
+        "beast_attempts": 0,
+        "defended_wins": 2,
+        "lead_banked_xp": 2625645
+      }
+    },
+    "files": [
+      "game/save_store.gd",
+      "game/main.gd",
+      "game/world_organic_test.gd",
+      "game/world_progression_test.gd",
+      ".github/workflows/world-progression-smoke.yml",
+      "WORLD_STATUS.md",
+      "WORLD_BACKLOG.md",
+      "WORLD_INTEGRATION_MANIFEST.json",
+      "WORLD_INTEGRATION_READINESS.md",
+      "HANDOFF_00_01_02.md"
+    ],
+    "functions": {
+      "game/save_store.gd": [
+        "trial_roster",
+        "resource_trial_batch",
+        "breakthrough_quote",
+        "interrupt_stage"
+      ],
+      "game/main.gd": [
+        "growth_detail",
+        "resource_detail",
+        "beast_detail"
+      ],
+      "game/world_organic_test.gd": [
+        "__preamble",
+        "battle",
+        "_initialize"
+      ],
+      "game/world_progression_test.gd": [
+        "_initialize",
+        "p7_checks"
+      ]
+    },
+    "status": "CANDIDATE_PENDING_90D_V11"
   }
 }

@@ -70,6 +70,7 @@ func _initialize() -> void:
 	review_checks(reg)
 	p6_checks(reg)
 	defended_capture_fixture(reg)
+	p7_checks(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -393,3 +394,29 @@ func defended_capture_fixture(reg) -> void:
 	check(store.state.territory_states[target].owner=="FAC-009","P6 defended capture win")
 	check(Guard.valid(reg,store.state),"P6 defended save")
 	print("NARU_WORLD_P6_DEFENDED_FIXTURE ",store.state.territory_states[target].owner)
+
+func p7_checks(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_p7_ci.json"
+	store.new_game(reg)
+	var initial=int(store.state.stamina)
+	var event=store.begin_stage(reg.stages["STG-001"])
+	check(event!="" and store.interrupt_stage(reg,event),"P7 watchdog refund")
+	check(int(store.state.stamina)==initial and not store.interrupt_stage(reg,event),"P7 refund once")
+	check(not store.finish_stage(reg,reg.stages["STG-001"],event,true,{}),"P7 interrupted cannot reward")
+	var q=store.breakthrough_quote("NIN-001")
+	check(not q.ready and int(q.missing)>=0,"P7 breakthrough quote")
+	store.state.building_states["BLD-001"].level=5
+	store.state.building_states["BLD-009"].level=1
+	var roster=["NIN-001","NIN-003"]
+	for id in roster:
+		store.state.owned[id].level=20
+		store.state.owned[id].permanent={"strength":100000,"vitality":100000,"intellect":100000,"spirit":100000,"agility":100000}
+	var before=int(store.state.inventory.get("RES-128",0))
+	check(int(store.resource_trial_batch(reg,"RES-128",["NIN-001","NIN-001"]).attempts)==0,"P7 duplicate trial rejected")
+	var trial=store.resource_trial_batch(reg,"RES-128",roster)
+	check(int(trial.attempts)==2 and int(trial.wins)==2,"P7 actual two duels fixture")
+	check(int(store.state.inventory.get("RES-128",0))==before+int(trial.earned),"P7 exact trial rewards")
+	check(int(store.resource_trial_batch(reg,"RES-128",roster).attempts)==0,"P7 per-ninja cooldown")
+	check(Guard.valid(reg,store.state),"P7 save guard")
+	print("NARU_WORLD_P7_TRANSACTIONS_PASS")

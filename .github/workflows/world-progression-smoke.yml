@@ -61,14 +61,14 @@ jobs:
         run: |
           set -o pipefail
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 1500 "$G" --headless --path . --script res://game/world_organic_test.gd 2>&1 | tee /tmp/world-organic.log
+          timeout 3600 "$G" --headless --path . --script res://game/world_organic_test.gd -- organic-days=45 2>&1 | tee /tmp/world-organic.log
           grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/world-organic.log
           ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/world-organic.log
       - name: Upload early world QA logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P6-early-QA
+          name: NARU-World-DEV-P7-early-QA
           path: |
             /tmp/world-progression.log
             /tmp/world-organic.log
@@ -80,7 +80,7 @@ jobs:
           timeout 240 "$G" --headless --path . --script res://game/economy_long_test.gd 2>&1 | tee /tmp/economy-long.log
           grep NARU_ECONOMY_90D_PASS /tmp/economy-long.log
           ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/economy-long.log
-      - name: Test P6 services against pinned ONE GAME V11
+      - name: Test P7 services against pinned ONE GAME V11
         run: |
           set -o pipefail
           git fetch --depth=1 origin 07ca3712d2d948a7e866b89c43fd8f5db7046321
@@ -94,14 +94,14 @@ jobs:
           timeout 240 "$G" --headless --path /tmp/naru-one-game --script res://game/world_progression_test.gd 2>&1 | tee /tmp/one-world-transactions.log
           grep NARU_WORLD_PROGRESSION_PASS /tmp/one-world-transactions.log
           ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_PROGRESSION_FAIL' /tmp/one-world-transactions.log
-          timeout 1500 "$G" --headless --path /tmp/naru-one-game --script res://game/world_organic_test.gd -- organic-days=45 2>&1 | tee /tmp/one-world-organic.log
+          timeout 3600 "$G" --headless --path /tmp/naru-one-game --script res://game/world_organic_test.gd -- organic-days=90 2>&1 | tee /tmp/one-world-organic.log
           grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/one-world-organic.log
           ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/one-world-organic.log
       - name: Upload pinned ONE GAME world evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-P6-ONE-GAME-V11-QA
+          name: NARU-P7-ONE-GAME-V11-QA
           path: |
             /tmp/one-world-transactions.log
             /tmp/one-world-organic.log
@@ -124,7 +124,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - World DEV P6, placeholder art. Extract the entire folder.
+          NARU RPG - World DEV P7, placeholder art. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -144,7 +144,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P6-QA
+          name: NARU-World-DEV-P7-QA
           path: |
             /tmp/world-progression.log
             /tmp/world-organic.log
@@ -155,14 +155,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P6
+          name: NARU-World-DEV-P7
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-World-DEV-P6-menu
+          name: NARU-World-DEV-P7-menu
           path: |
             web-menu.png
             ui-shots/

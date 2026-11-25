@@ -16,3 +16,5 @@ P5R: exact function inventory WORLD_INTEGRATION_MANIFEST.json; Chat01 61152d8f, 
 P6: ONE GAME status files and V11 contract read. Pure stat snapshot exact copied dependency, no engine modifications. Apply external main functions + service hunks only; keep integrated pilot/animation. Pinned 07ca3712 ephemeral service/test overlay CI added, no merge; separate branch Web DEV is not integrated build. No NPC/XP curve changes until V11 earned evidence. See manifest exact delta.
 
 P6B: include caller adapter and listed functions, preserve V11 snapshot, engine and art. P5R final 54/120, 134/150, 46/63, zero beast attempts. P6 integrated evidence pending. No merge or XP curve changes.
+
+P7 candidate: P6B exact CI success, V11 45d 76/120 and 2.625m XP banked on lead at realm3; 29 seals, hall1, no beasts. Prioritize real realm trials and workshop dependencies. Apply external service/UI hunks only, preserve V11+ engine and HOLD. P7 90d pinned V11 pending; no main/integration changes.

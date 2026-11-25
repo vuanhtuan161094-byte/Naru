@@ -23,3 +23,5 @@ P5R: P5A 54 clears, 104 resources, 14 settled, 0 beasts. Corrected observation s
 P6: structural closure 150; 63 and 9 fixtures PASS P5B, organic 59/120 and zero beast attempts. P6 actual integrated V11 overlay observation pending; no blanket difficulty adjustment. Full organic resource/recipe/beast/host, defended capture and UI QA remain gates. Review merchant/mission economy under increased dispatch; not final balance.
 
 P6B: P5R 134/150, 46/63; 16 unseen resources, 17 recipes, realm3+ and natural beast/defended capture remain gates. P6B integrated evidence pending.
+
+P7 candidate: P6B integrated 76/120, 122/150, 33/63, realm3/4; banked XP and shortage of breakthrough seals are confirmed blockers. Observe P7 90d actual results, missing IDs, boss loss HP, natural beasts and reload. No claim 120/150/63/9 until observed; no bulk enemy nerf.

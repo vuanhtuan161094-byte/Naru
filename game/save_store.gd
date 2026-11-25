@@ -129,6 +129,15 @@ func begin_stage(stage: Dictionary) -> String:
 		return ""
 	return id
 
+# Watchdog is not a defeat: refund the reserved stamina and persist the interrupted ledger.
+func interrupt_stage(reg,event_id: String) -> bool:
+	var entry=state.ledger.get(event_id,{})
+	if not entry is Dictionary or entry.get("status")!="started" or not reg.stages.has(entry.get("stage_id","")):return false
+	var prior=state.duplicate(true)
+	state.stamina=mini(120,int(state.stamina)+int(reg.stages[entry.stage_id].stamina_cost))
+	entry.status="interrupted"
+	return commit_change(prior,rng.state)
+
 func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary,mastery_counts: Dictionary={},action_stats: Dictionary={},passive_mastery: Dictionary={}) -> bool:
 	var entry=state.ledger.get(event_id)
 	if not entry is Dictionary or entry.get("status")!="started" or entry.get("stage_id")!=stage.id: return false
@@ -278,6 +287,13 @@ func allocate(id: String, stat: String,quantity: int=1) -> bool:
 	p.points=int(p.points)-quantity
 	p.allocated[stat]=int(p.allocated.get(stat,0))+quantity
 	return commit_change(prior,rng.state)
+
+func breakthrough_quote(id: String) -> Dictionary:
+	if not state.owned.has(id):return {}
+	var p=state.owned[id]
+	var cost=Quotes.realm_cost(int(p.realm))
+	var stock=int(state.inventory.get("RES-128",0))
+	return {"cost":cost,"stock":stock,"missing":maxi(0,cost-stock),"ready":int(p.level)>=(int(p.realm)+1)*20 and stock>=cost,"chance":Quotes.realm_chance(int(p.get("realm_failures",0))),"banked_xp":int(p.xp)}
 
 func breakthrough(id: String) -> String:
 	if not state.owned.has(id): return "locked"
@@ -706,6 +722,30 @@ func resource_trial_ready(reg,id: String,resource: String) -> bool:
 	var source=Content.source_for(reg,resource)
 	if source.is_empty() or not source.source_type in ["trial","bloodline_trial"]:return false
 	return Village.level(state,str(source.building_id))>0 and Village.level(state,"BLD-001")>=int(source.source_min_hq) and int(state.source_cooldowns.get(id+":"+resource,0))<=int(state.simulation_seconds)
+
+# Explicit roster dispatch; every trial is a real duel, with its own persisted cooldown.
+func trial_roster(reg,resource: String) -> Array:
+	var ready=[]
+	for id in state.owned:
+		if resource_trial_ready(reg,id,resource):ready.append(id)
+	ready.sort_custom(func(a,b):
+		return int(state.owned[a].level)*int(state.owned[a].quality)>int(state.owned[b].level)*int(state.owned[b].quality))
+	return ready
+
+func resource_trial_batch(reg,resource: String,roster: Array) -> Dictionary:
+	var result={"attempts":0,"wins":0,"earned":0}
+	if roster.size()<1 or roster.size()>6:return result
+	var unique={}
+	for id in roster:
+		if unique.has(id) or not state.owned.has(id):return result
+		unique[id]=true
+	for id in roster:
+		if not resource_trial_ready(reg,id,resource):continue
+		result.attempts+=1
+		if resource_trial(reg,id,resource):
+			result.wins+=1
+			result.earned+=int(Content.source_for(reg,resource).base_yield)
+	return result
 
 func resource_trial(reg,id: String,resource: String) -> bool:
 	if not resource_trial_ready(reg,id,resource):return false

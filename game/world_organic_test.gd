@@ -17,6 +17,10 @@ var stage_losses={}
 var watchdogs=0
 var defended_attempts=0
 var defended_wins=0
+var trial_attempts={}
+var trial_wins={}
+var last_stage_hp={}
+var beast_bound=0
 func observe(s: Dictionary) -> void:
 	for id in s.inventory:
 		if int(s.inventory[id])>0:seen[id]=true
@@ -43,7 +47,17 @@ func battle(reg,store,stage: Dictionary,seed_value: int) -> String:
 		sim.tick(0.05)
 		if sim.outcome!="":break
 	var won=sim.outcome=="win"
-	if sim.outcome=="":watchdogs+=1
+	if sim.outcome=="":
+		watchdogs+=1
+		return "watchdog" if store.interrupt_stage(reg,event) else "error"
+	if not won:
+		var player_hp=0.0
+		var enemy_hp=0.0
+		for actor in sim.actors:
+			if actor.summon:continue
+			if int(actor.side)==0:player_hp+=maxf(0.0,float(actor.hp))
+			else:enemy_hp+=maxf(0.0,float(actor.hp))
+		last_stage_hp={"stage":stage.id,"player_hp":player_hp,"enemy_hp":enemy_hp,"ticks":sim.ticks}
 	if not store.finish_stage(reg,stage,event,won,sim.counts,sim.mastery_counts,sim.action_stats,sim.passive_mastery):return "error"
 	return "win" if won else "loss"
 
@@ -53,7 +67,7 @@ func _initialize() -> void:
 		quit(1)
 		return
 	var store=Store.new()
-	store.save_path="user://world_organic_p5_review.json"
+	store.save_path="user://world_organic_p7.json"
 	store.new_game(reg)
 	store.rng.seed=42
 	store.setup_starter_jobs(reg)
@@ -84,7 +98,7 @@ func _initialize() -> void:
 		store.train_batch(reg,id,"RES-117",2)
 		store.train_batch(reg,id,"RES-116",5)
 	# Earn-only: 60 days by default; integration CI may request 45–90 days.
-	var days=60
+	var days=90
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("organic-days="):days=clampi(int(arg.trim_prefix("organic-days=")),45,90)
 	var crafted={}
@@ -95,7 +109,8 @@ func _initialize() -> void:
 		var jobs=["BLD-012","BLD-013","BLD-016","BLD-017","BLD-019","BLD-018","BLD-007","BLD-009","BLD-008","BLD-026","BLD-027","BLD-021","BLD-003","BLD-004","BLD-005"]
 		for building in jobs:
 			if Village.level(store.state,building)<(1 if building in ["BLD-021","BLD-003","BLD-004","BLD-005","BLD-026","BLD-027"] else 9):store.construct(reg,building)
-		advance(reg,store,86400)
+		# Leave room for three workshop rounds in the daily cycle.
+		advance(reg,store,82800)
 		# Preserve wood, stone and Ryo mission while recruiting/assigning newly owned workers.
 		for draw in range(5):
 			if int(store.state.inventory.get("RES-002",0))>=100:store.draw(reg)
@@ -137,7 +152,12 @@ func _initialize() -> void:
 					advance(reg,store,int(entry.seconds))
 				if store.squad_capture(reg,"SQUAD-2") and store.state.territory_states[target].owner=="FAC-009":frontier_captures+=1
 				break
-		for raw in ["RES-006","RES-009","RES-021"]:store.fulfill_merchant_order(reg,raw)
+		var offers=[]
+		for raw in reg.resources:
+			var q=store.merchant_quote(reg,raw)
+			if not q.is_empty() and q.ready:offers.append({"id":raw,"total":q.total})
+		offers.sort_custom(func(a,b):return int(a.total)>int(b.total))
+		for offer in offers.slice(0,3):store.fulfill_merchant_order(reg,str(offer.id))
 		# Buy actual missing raw stock; no fictional source for neutral-only commodities.
 		for raw in reg.resources:
 			if int(str(raw).right(3))<6 or int(str(raw).right(3))>20 or int(store.state.inventory.get(raw,0))>=10:continue
@@ -148,29 +168,58 @@ func _initialize() -> void:
 			var job=store.state.building_states[building].production
 			if not job.is_empty() and job.reserved.is_empty() and int(job.remaining)==0:
 				if store.cancel_production(building):stalls_cleared+=1
-		var needs={"RES-110":4,"RES-100":4,"RES-127":5,"RES-125":3}
-		var plan=Guide.plan(reg,needs,store.state.inventory)
-		var recipes=reg.recipes.values()
-		recipes.sort_custom(func(a,b):
-			var pa=0 if plan.orders.has(a.id) else 1 if not settled_recipes.has(a.id) else 2
-			var pb=0 if plan.orders.has(b.id) else 1 if not settled_recipes.has(b.id) else 2
-			return pa<pb)
-		for recipe in recipes:
-			if (not plan.orders.has(recipe.id) and settled_recipes.has(recipe.id) and int(store.state.inventory.get(recipe.output.resource_id,0))>=5) or Village.level(store.state,recipe.building_id)<int(recipe.min_building_level) or Village.worker_level(store.state,recipe.building_id)==0:continue
-			if not store.state.building_states[recipe.building_id].production.is_empty():continue
-			for item in recipe.inputs:
-				var id=str(item.resource_id)
-				var shortage=maxi(0,int(item.qty)-int(store.state.inventory.get(id,0)))
-				if shortage==0:continue
-				for seller in Guide.sellers(reg,store.state,id):
-					if seller.accessible and int(seller.stock)>=shortage:
-						if store.trade_resource(reg,str(seller.faction),id,shortage,true):break
-			if store.production(reg,str(recipe.building_id),str(recipe.id),false,1):
-				crafted[recipe.id]=str(recipe.output.resource_id)
-		advance(reg,store,3600)
+		# Coverage wave + gear/seal waves; each workshop still uses real inputs and elapsed time.
+		for wave in range(3):
+			var needs={}
+			if wave==0:
+				for recipe in reg.recipes.values():
+					if not settled_recipes.has(recipe.id):needs[recipe.output.resource_id]=1
+			else:
+				needs={"RES-110":12,"RES-059":20,"RES-100":12,"RES-127":5,"RES-125":3,"RES-113":12}
+			var plan=Guide.plan(reg,needs,store.state.inventory)
+			var recipes=reg.recipes.values()
+			recipes.sort_custom(func(a,b):
+				var pa=0 if not settled_recipes.has(a.id) and wave==0 else 1 if plan.orders.has(a.id) else 2
+				var pb=0 if not settled_recipes.has(b.id) and wave==0 else 1 if plan.orders.has(b.id) else 2
+				return pa<pb)
+			for recipe in recipes:
+				if settled_recipes.has(recipe.id) and not plan.orders.has(recipe.id):continue
+				var building=str(recipe.building_id)
+				if Village.level(store.state,building)<int(recipe.min_building_level) or Village.worker_level(store.state,building)==0:continue
+				if not store.state.building_states[building].production.is_empty():continue
+				for item in recipe.inputs:
+					var id=str(item.resource_id)
+					var shortage=maxi(0,int(item.qty)-int(store.state.inventory.get(id,0)))
+					if shortage==0:continue
+					for seller in Guide.sellers(reg,store.state,id):
+						if seller.accessible and int(seller.stock)>=shortage:
+							if store.trade_resource(reg,str(seller.faction),id,shortage,true):break
+				var quote=Village.recipe_quote(store.state,recipe)
+				if not quote.ready:continue
+				var batch=1 if wave==0 else mini(3,mini(int(quote.affordable),maxi(1,int(plan.orders.get(recipe.id,1)))))
+				if store.production(reg,building,str(recipe.id),false,batch):
+					crafted[recipe.id]=str(recipe.output.resource_id)
+			advance(reg,store,1200)
+		# Prioritize banked XP and realm seals over shard conversion and other sinks.
+		var realm_need=0
+		for id in team:
+			var q=store.breakthrough_quote(id)
+			if store.xp_to_cap(id)==0:realm_need+=int(q.cost)
+		if realm_need>0 and int(store.state.inventory.get("RES-128",0))<realm_need:
+			var candidates=store.trial_roster(reg,"RES-128")
+			var roster=[]
+			for id in team:
+				if id in candidates:roster.append(id)
+			for id in candidates:
+				if roster.size()>=6:break
+				if not id in roster:roster.append(id)
+			if not roster.is_empty():
+				var trial=store.resource_trial_batch(reg,"RES-128",roster)
+				trial_attempts["RES-128"]=int(trial_attempts.get("RES-128",0))+int(trial.attempts)
+				trial_wins["RES-128"]=int(trial_wins.get("RES-128",0))+int(trial.wins)
 		# Spend available stamina on already-cleared progression (actual fights).
-		if next_stage>10 and day%2==0:
-			for replay_i in range(2):
+		if next_stage>10:
+			for replay_i in range(4 if next_stage>=60 else 2):
 				var repeat_result=battle(reg,store,reg.stages["STG-%03d" % (next_stage-1)],70000+day*10+replay_i)
 				if repeat_result=="error":
 					push_error("WORLD_ORGANIC_FAIL repeat settle")
@@ -187,7 +236,6 @@ func _initialize() -> void:
 					if item!="" and store.equip_gear(reg,id,item):gear_count+=1
 					break
 			if int(n.level)>=(int(n.realm)+1)*20:
-				if int(store.state.inventory.get("RES-128",0))<int(ceil(3*pow(float(n.realm)+1,1.4))) and Village.level(store.state,"BLD-009")>0:store.resource_trial(reg,id,"RES-128")
 				store.breakthrough(id)
 			if int(n.quality)<8 and day%3==0:
 				store.quality_trial(reg,id)
@@ -214,7 +262,7 @@ func _initialize() -> void:
 					if int(store.skill_progress(n,skill_id).level)==20:store.advance_skill(reg,id,skill_id)
 			if int(n.stars)<15:
 				var step=reg.growth.stars[int(n.stars)-1]
-				if int(n.shards)<int(step.shards):store.exchange_shards(id,mini(20,int(step.shards)-int(n.shards)))
+				if int(n.shards)<int(step.shards) and int(store.state.inventory.get("RES-001",0))>=12000:store.exchange_shards(id,mini(20,int(step.shards)-int(n.shards)))
 				store.raise_star(reg,id)
 			if int(n.level)<(int(n.realm)+1)*20 and int(store.state.inventory.get("RES-001",0))>=6000:
 				var purchase=mini(30,maxi(0,int((int(store.state.inventory["RES-001"])-4000)/600.0)))
@@ -226,7 +274,16 @@ func _initialize() -> void:
 		# Rotate real trials on strongest current ninja; no fabricated material grant.
 		var strongest=str(team[0])
 		for resource in ["RES-128","RES-130","RES-134","RES-126","RES-131","RES-132", "RES-%03d" % (136+posmod(day,9))]:
-			if int(store.state.inventory.get(resource,0))<30 and store.resource_trial_ready(reg,strongest,resource):store.resource_trial(reg,strongest,resource)
+			if int(store.state.inventory.get(resource,0))>=30:continue
+			var candidates=store.trial_roster(reg,resource)
+			var roster=[]
+			for id in team:
+				if id in candidates:roster.append(id)
+				if roster.size()>=2:break
+			if not roster.is_empty():
+				var result=store.resource_trial_batch(reg,resource,roster)
+				trial_attempts[resource]=int(trial_attempts.get(resource,0))+int(result.attempts)
+				trial_wins[resource]=int(trial_wins.get(resource,0))+int(result.wins)
 		for bloodline in reg.bloodlines:
 			if store.native_bloodline_allowed(reg,strongest,bloodline):store.native_bloodline(reg,strongest,bloodline)
 		for contract_id in store.state.summon_contracts:
@@ -252,8 +309,9 @@ func _initialize() -> void:
 					return
 				break
 		for quest in reg.quests:store.claim_quest(reg,quest)
-		if captured:
-			for resource in reg.territories["TER-057"].resources:store.harvest_territory(reg,"TER-057",str(resource.resource_id))
+		for territory in reg.territories.values():
+			if store.state.territory_states[territory.id].owner!="FAC-009":continue
+			for resource in territory.resources:store.harvest_territory(reg,str(territory.id),str(resource.resource_id))
 		if Village.level(store.state,"BLD-026")>0:
 			if int(store.state.inventory.get("RES-148",0))<2 and store.state.cleared.has("STG-005"):
 				var replay=battle(reg,store,reg.stages["STG-005"],9000+day)
@@ -281,12 +339,20 @@ func _initialize() -> void:
 		if Village.level(store.state,"BLD-027")>0:
 			var attempted=false
 			for beast_id in reg.beasts:
-				if attempted:break
+				if store.state.beasts.has(beast_id):
+					for host in reg.beasts[beast_id].compatibility.preferred_host_ids:
+						if store.bind_beast(reg,str(host),beast_id):beast_bound+=1
+					var training_resource=str(reg.beasts[beast_id].training_resource)
+					var qty=mini(20,int(store.state.inventory.get(training_resource,0)))
+					if qty>0:store.train_beast(reg,beast_id,qty)
+					continue
+				if attempted:continue
 				for ninja in team:
 					if store.beast_capture_ready(reg,ninja,beast_id):
 						beast_attempts+=1
 						if store.capture_beast(reg,ninja,beast_id):
-							for host in reg.beasts[beast_id].compatibility.preferred_host_ids:store.bind_beast(reg,str(host),beast_id)
+							for host in reg.beasts[beast_id].compatibility.preferred_host_ids:
+								if store.bind_beast(reg,str(host),beast_id):beast_bound+=1
 						attempted=true
 						break
 		observe(store.state)
@@ -311,5 +377,13 @@ func _initialize() -> void:
 	for building in store.state.building_states:
 		var job=store.state.building_states[building].production
 		if not job.is_empty():print("NARU_WORLD_REVIEW_PENDING ",building," ",job)
+	print("NARU_WORLD_P7_TRIALS attempts=",trial_attempts," wins=",trial_wins," seal_stock=",store.state.inventory.get("RES-128",0)," bound=",beast_bound," last_loss=",last_stage_hp)
+	var loaded=Store.new()
+	loaded.save_path=store.save_path
+	loaded.load_or_new(reg)
+	if not Guard.valid(reg,loaded.state) or loaded.state.cleared.size()!=store.state.cleared.size() or loaded.state.inventory!=store.state.inventory:
+		push_error("WORLD_ORGANIC_FAIL reload")
+		quit(1)
+		return
 	print("NARU_WORLD_ORGANIC_INTEGRITY_PASS")
 	quit()
