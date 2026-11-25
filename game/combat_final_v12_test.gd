@@ -52,7 +52,7 @@ func progress(id: String,stars: int,grade: int,form_ids: Array) -> Dictionary:
 		if grade>=3 and reg.depth_exact_branches.has(candidate):branch=candidate
 		skills[skill_id]={"grade":grade,"level":20,"branch":branch}
 	return {"realm":7,"stars":stars,"forms":form_ids,"unlocked_skills":n.additional_skill_ids,"passive_progress":passives,"skill_levels":skills}
-func run_fight(sim,steps: int,manual: bool=true) -> void:
+func run_fight(sim,steps: int,manual: bool=true,collect_evidence: bool=true) -> void:
 	for step in range(steps):
 		if manual and step%20==0:
 			for i in range(sim.actors.size()):
@@ -65,7 +65,7 @@ func run_fight(sim,steps: int,manual: bool=true) -> void:
 						break
 		sim.tick(0.05)
 		if sim.outcome!="":break
-	collect(sim)
+	if collect_evidence:collect(sim)
 func art_check() -> void:
 	var art=Art.new()
 	art.load_move_contract()
@@ -106,11 +106,13 @@ func _initialize() -> void:
 		run_fight(sim,600)
 		print("NARU_V12_ROSTER ",batch," outcome=",sim.outcome if sim.outcome!="" else "OBSERVED_ONLY"," ticks=",sim.ticks," actual_mod_ids=",sim.passive_applied_ledger.size()," stats=",sim.runtime_metrics)
 	# Focused real form routes, normal CP regen, no synthetic activation or cooldown skip.
+	var form_index=0
 	for form in reg.p2_forms:
 		var contract=reg.p2_forms[form]
 		var route=reg.form_rules[form]
 		var id=str(route.ninja_id)
-		var sim=new_fight(13000+activated.size(),"forest")
+		var sim=new_fight(13000+form_index,"forest")
+		form_index+=1
 		var p=progress(id,10,3,[form])
 		sim.add_actor(id,0,160,4,{},0,1.0,p)
 		sim.add_actor("NIN-003",1,160,4,{},0,1.0,progress("NIN-003",10,3,[]))
@@ -163,11 +165,16 @@ func _initialize() -> void:
 	sim.add_actor(id,0,160,4,p.permanent,0,1.0,p)
 	check(snap.stats==sim.actors[0].stats,"permanent preview matches pre-passive combat snapshot")
 	var unobserved=eligible.keys().filter(func(k):return not applied.has(k) and not typed.has(k))
-	print("NARU_V12_LEDGER eligible=",eligible.size()," actual_stat=",applied.size()," typed=",typed.size()," event=",proc.size()," unobserved=",unobserved)
+	var event_only=proc.keys().filter(func(k):return not applied.has(k) and not typed.has(k))
+	var eligible_actual=eligible.keys().filter(func(k):return applied.has(k) or typed.has(k))
+	var eligible_event_only=eligible.keys().filter(func(k):return proc.has(k) and not applied.has(k) and not typed.has(k))
+	var eligible_no_receipt=eligible.keys().filter(func(k):return not proc.has(k) and not applied.has(k) and not typed.has(k))
+	check(eligible_actual.size()+eligible_event_only.size()+eligible_no_receipt.size()==eligible.size(),"eligible passive categories partition roster IDs")
+	print("NARU_V12_LEDGER eligible=",eligible.size()," actual_stat=",applied.size()," typed=",typed.size()," event_only=",event_only.size()," eligible_actual=",eligible_actual.size()," eligible_event_only=",eligible_event_only.size()," eligible_no_receipt=",eligible_no_receipt.size()," unobserved=",unobserved)
 	print("NARU_V12_FORMS activated=",activated.keys()," empowered=",form_effects.keys())
 	print("NARU_V12_COMBOS actual=",combos.keys())
 	campaign_probe()
-	var out={"eligible":eligible.keys(),"stat_effect":applied,"typed_effect":typed,"event_only":proc.keys(),"unobserved":unobserved,"forms_activated":activated.keys(),"forms_empowered":form_effects,"combos":combos}
+	var out={"schema":2,"scope":"roster_and_focused_form_combo_fixtures_excluding_campaign_diagnostic","eligible":eligible.keys(),"stat_effect":applied,"typed_effect":typed,"event_receipts":proc.keys(),"event_only":event_only,"eligible_actual":eligible_actual,"eligible_event_only":eligible_event_only,"eligible_no_receipt":eligible_no_receipt,"unobserved":unobserved,"forms_activated":activated.keys(),"forms_empowered":form_effects,"combos":combos}
 	var file=FileAccess.open("user://combat_v12_ledger.json",FileAccess.WRITE)
 	if file!=null:file.store_string(JSON.stringify(out,"  "));file.close()
 	print("NARU_FINAL_V12_PASS" if failed==0 else "NARU_FINAL_V12_FAIL")
@@ -192,7 +199,7 @@ func campaign_probe() -> void:
 		var save={"team":team,"owned":owned,"gear_instances":{},"formation_id":"FRM-03","formation_levels":{"FRM-03":5},"formation_slots":{},"settings":{"passives_dev":true,"depth_v5_dev":true}}
 		var sim=Combat.new()
 		sim.setup(reg,save,stage,16000+int(stage_id.right(3)))
-		run_fight(sim,800)
+		run_fight(sim,800,true,false)
 		var enemy_ratio=0.0
 		for a in sim.actors:
 			if not a.summon and a.side==1:enemy_ratio+=float(a.hp)/maxf(1.0,float(a.max_hp))
