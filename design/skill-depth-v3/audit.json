@@ -1,0 +1,36 @@
+{
+  "base": "4d9244eb84e74a74914455189a5365d9d97c93e6",
+  "checks": {
+    "forms": true,
+    "combos": true,
+    "form_refs": true,
+    "combo_refs": true,
+    "monotonic": true,
+    "nonnegative_form_cost": true,
+    "chakra_fixed": true
+  },
+  "counts": {
+    "skills": 1152,
+    "unique": 1152,
+    "branches": 432,
+    "branch_hold": 34,
+    "trials": 288,
+    "efficiency_only": 85,
+    "balance_flags": 107,
+    "balance_unique": 96,
+    "chakra_fixed": true,
+    "evidence_join": true,
+    "forms": 54,
+    "combos": 12,
+    "form_modes": {
+      "duration": 31,
+      "maintenance_efficiency": 11,
+      "activation_efficiency": 12
+    },
+    "combo_legacy_conflicts": 12,
+    "combo_explicit_holds": 2
+  },
+  "skill_audit": "audit-skills.json",
+  "runtime": "NOT_RUN",
+  "status": "DESIGN_CANDIDATE_NOT_ACCEPTED"
+}
