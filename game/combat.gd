@@ -135,10 +135,11 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 				score+=60
 		else:
 			score=-distance*5.0+(1-float(b.hp)/maxf(1.0,float(b.max_hp)))*12.0
-			if has_status(b,"mark"):score+=10
+			if has_status(b,"mark") or p2_has_mark(a,b):score+=10
+			if skill.has("p2") and skill.p2.conditions.ai=="owned_valid_mark_or_explicit_swap" and skill.p2.effect.type!="position_swap" and not p2_has_mark(a,b):continue
 			if b.summon:score-=5
 			if distance<=float(skill.range_m)+body_radius(b) and clear_segment(a.pos,b.pos,0.03):score+=30
-			if skill.shape in ["line","circle"]:score+=6*targets_for(a,skill,b).size()
+			if skill.shape in ["line","circle","cone","circle_ground","circle_target","zone_target","projectile_burst"]:score+=6*targets_for(a,skill,b).size()
 		if score>best_score or (is_equal_approx(score,best_score) and int(b.uid)<int(best.get("uid",999999))):
 			best=b
 			best_score=score
@@ -203,9 +204,11 @@ func effective_skill(a: Dictionary,id: String) -> Dictionary:
 	if str(p.branch).ends_with("-B2"):
 		s.radius_m=float(s.radius_m)*1.15
 		s.line_width_m=float(s.line_width_m)*1.15
-		if s.shape in ["line","circle"]:s.max_targets=ceili(float(s.max_targets)*1.15)
+		if s.shape in ["line","circle"] and not s.has("p2"):s.max_targets=ceili(float(s.max_targets)*1.15)
+		if s.has("p2") and s.shape in ["circle_ground","circle_self","circle_target","zone_target","projectile_burst"]:s.radius_m*=1.05
 	if not a.active_form.is_empty():
-		for empowered in registry.form_rules[a.active_form.id].empowered_skills:
+		var empowered_rows=registry.p2_forms[a.active_form.id].effect.empowered_skills if use_p2 and registry.p2_forms.has(a.active_form.id) else registry.form_rules[a.active_form.id].empowered_skills
+		for empowered in empowered_rows:
 			if empowered.skill_id==id:factor*=float(empowered.coefficient_multiplier)
 	for e in s.effects:
 		if e.has("coefficient"):e.coefficient=float(e.coefficient)*factor
@@ -372,6 +375,30 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.patk=float(a.patk)*float(e.attack_owner_fraction)
 	b.natk=float(a.natk)*float(e.attack_owner_fraction)
 	b.skills=[a.skills[0]]
+	if e.has("p2_role"):
+		var role=str(e.p2_role)
+		var p=e.p2_params
+		var summon_skill=skill_definition(a.skills[0]).duplicate(true)
+		summon_skill.erase("p2")
+		summon_skill.skill_id="SUMMON-RUNTIME-"+str(b.uid)
+		summon_skill.shape="single"
+		summon_skill.target="enemy_ai"
+		summon_skill.range_m=4.0 if role in ["ranged","ranged_puppet","element_ranged"] else 1.2
+		summon_skill.projectile_speed_m_s=0
+		summon_skill.chakra=0
+		summon_skill.effects=[{"type":"damage","coefficient":0.85,"damage_type":"physical"}]
+		if role in ["track_bind","bind"]:summon_skill.effects.append({"type":"apply_status","status_id":"bind","chance":0.8,"duration_s":float(p.get("on_contact_status_s",1.0))})
+		if role in ["guard","frontline"]:summon_skill.effects.append({"type":"apply_status","status_id":"taunt","chance":0.7,"duration_s":1.0})
+		if role=="heal_ally":
+			summon_skill.target="ally_lowest_effective_hp"
+			summon_skill.range_m=4.0
+			summon_skill.cooldown_s=float(p.get("interval_s",2))
+			summon_skill.effects=[{"type":"heal","coefficient":float(p.get("heal_coefficient",0.35))}]
+			summon_skill.ai.condition="ally_hp_below_0.75"
+			b.natk=float(a.natk)
+		encounter_skills[summon_skill.skill_id]=summon_skill
+		encounter_names[summon_skill.skill_id]="Triệu hồi • "+role
+		b.skills=[summon_skill.skill_id]
 	b.skill_levels={}
 	b.gear_stats={}
 	b.forms=[]
@@ -453,7 +480,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 	if s.get("p2_subhit",false):return
 	if int(a.side)==0 and not a.summon:
 		mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+maxi(1,roundi(1.0+rating(a,"mastery_speed")))
-	if not a.summon and not a.get("beast",false) and registry.ninjas.has(a.id) and registry.ninjas[a.id].unique_talent_design.skill_id==s.skill_id:
+	if not use_p2 and not a.summon and not a.get("beast",false) and registry.ninjas.has(a.id) and registry.ninjas[a.id].unique_talent_design.skill_id==s.skill_id:
 		signature_ticks[str(a.side)+":"+str(a.id)]=ticks
 		try_combo(a)
 	log.append(str(a.id)+" · "+skill_name(s.skill_id))
@@ -614,18 +641,24 @@ func form_ready(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> 
 		for e in skill.effects:
 			if e.type=="activate_form" and e.form_id==id:return true
 		return false
+	if use_p2 and registry.p2_forms.has(id):
+		var route=registry.p2_forms[id].activation
+		if route.mode in ["manual_stance","hp_threshold_or_manual"] or not route.legacy_routes.is_empty():return a.chakra>=float(route.manual_chakra) and not hard_block(a)
 	return rule.activation!="skill_trigger" and a.chakra>=float(rule.manual_chakra) and not hard_block(a)
 
 func activate_form(a: Dictionary,id: String,manual: bool,trigger_id: String="") -> bool:
 	if not form_ready(a,id,manual,trigger_id):return false
 	var rule=registry.form_rules[id]
-	if manual:a.chakra=float(a.chakra)-float(rule.manual_chakra)
-	a.active_form={"id":id,"remaining":float(rule.duration_s)}
-	a.form_cooldowns[id]=float(rule.cooldown_s)
+	var p2_rule=registry.p2_forms.get(id,{}).get("activation",{}) if use_p2 else {}
+	if manual:a.chakra=float(a.chakra)-float(p2_rule.get("manual_chakra",rule.manual_chakra))
+	a.active_form={"id":id,"remaining":float(p2_rule.get("duration_s",rule.duration_s))}
+	a.form_cooldowns[id]=float(p2_rule.get("cooldown_s",rule.cooldown_s))
+	art_event("form_activated",a.pos,0,id)
 	return true
 
 func form_multiplier(a: Dictionary,stat: String) -> float:
 	if a.active_form.is_empty():return 1.0
+	if use_p2 and registry.p2_forms.has(a.active_form.id):return float(registry.p2_forms[a.active_form.id].effect.stat.get(stat,1.0))
 	return float(registry.form_rules[a.active_form.id].stat_multipliers.get(stat,1.0))
 
 func try_combo(a: Dictionary) -> void:
@@ -1066,6 +1099,9 @@ func p2_utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	if kind in ["cleanse","absorb","counter","activate_form"]:score=35.0
 	if kind in ["wall","teleport","position_swap","mark","chakra_restore"]:score=17.0
 	if kind in ["zone_damage","zone_drain","trap"]:score+=12
+	if s.kind=="auto" and a.side==0 and not auto_player_ultimate and a.skills.size()>5:
+		var ult=effective_skill(a,a.skills[5])
+		if a.chakra>=ult.chakra and a.chakra-s.chakra<ult.chakra:score-=30
 	return score+float(s.ai.base_priority)*2-float(s.chakra)*0.28
 
 func p2_targets(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,primary: Dictionary={}) -> Array:
@@ -1108,6 +1144,7 @@ func p2_release(a: Dictionary,pending: Dictionary,b: Dictionary) -> void:
 	var kind=str(raw.effect.type)
 	var p=raw.effect.params
 	var point=Vector2(pending.aim) if s.shape in ["circle_ground","zone_target","wall"] else Vector2(b.get("pos",pending.aim))
+	if s.shape=="wall":point=Vector2(a.pos).lerp(point,0.5)
 	var direction=(point-Vector2(a.pos)).normalized()
 	if s.shape not in ["circle_ground","zone_target","wall"] and not cast_geometry(a,s,b):
 		missed_casts+=1
@@ -1162,6 +1199,7 @@ func p2_schedule(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,t
 	var p=raw.effect.params
 	var kind=str(raw.effect.type)
 	var hits=maxi(1,int(raw.effect.hit_count))
+	if kind in ["zone_damage","zone_drain"]:hits=mini(hits,maxi(1,int(p.get("hit_budget",hits))))
 	var interval=maxi(1,roundi(float(p.get("tick_s",p.get("interval_s",0.12)))*20))
 	var dynamic=s.shape in ["circle_ground","zone_target"] or kind=="trap"
 	var ids=targets.map(func(b):return b.uid)
@@ -1195,10 +1233,23 @@ func advance_p2() -> void:
 			var key=str(job.cast_id)+":"+str(b.uid)+":"+str(job.index)
 			if p2_hits.has(key):continue
 			p2_hits[key]=ticks
+			var before_hp=float(b.hp)
+			var before_actor_count=actors.size()
+			var before_form=str(a.active_form.get("id",""))
+			var before_chakra=float(b.chakra)
+			var before_shield=float(b.shield)
+			var before_status=b.statuses.duplicate(true)
+			var before_pos=Vector2(a.pos)
 			p2_apply(a,s,b,int(job.hits),int(job.index))
-			if not job.confirmed:
+			var event="effect"
+			if actors.size()>before_actor_count:event="summon_spawned"
+			elif before_form!=str(a.active_form.get("id","")):event="form_activated"
+			elif float(b.hp)>before_hp:event="heal_confirmed"
+			elif float(b.hp)<before_hp or float(b.shield)!=before_shield or float(b.chakra)!=before_chakra or before_status!=b.statuses or before_pos!=a.pos:event="contact_or_effect_confirmed"
+			elif s.p2.effect.type in ["directional_shield","absorb","mark","projectile_mark","counter","teleport","position_swap"]:event="contact_or_effect_confirmed"
+			if not job.confirmed and event!="effect":
 				job.confirmed=true
-				p2_confirm(a,s,b.pos,"effect",int(b.uid))
+				p2_confirm(a,s,b.pos,event,int(b.uid))
 		job.index=int(job.index)+1
 		job.next=ticks+int(job.interval)
 		if int(job.index)>=int(job.hits):p2_jobs.erase(job)
@@ -1244,5 +1295,53 @@ func p2_confirm(a: Dictionary,s: Dictionary,point: Vector2,event: String,target_
 	p2_resolved+=1
 	if a.side==0 and not a.summon:mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+1
 	art_event("contact",point,0,str(s.skill_id))
+	if not a.summon and not a.get("beast",false):
+		p2_events[str(a.side)+":"+str(s.skill_id)]={"tick":ticks,"uid":a.uid,"event":event,"target_uid":target_uid,"point":point}
+		p2_combo(a,point,target_uid)
 	log.append(str(a.id)+" · "+skill_name(s.skill_id))
 	if log.size()>6:log.pop_front()
+
+func p2_combo(a: Dictionary,point: Vector2,target_uid: int) -> void:
+	for combo in registry.p2_combos.values():
+		if not a.id in combo.member_ids:continue
+		var key=str(a.side)+":"+str(combo.id)
+		if ticks-int(combo_clock.get(key,-100000))<int(combo.cooldown_s)*20:continue
+		var good=true
+		var entries=[]
+		for signature in combo.signature_events:
+			var record=p2_events.get(str(a.side)+":"+str(signature.skill_id),{})
+			if record.is_empty() or ticks-int(record.tick)>float(combo.window_s)*20:
+				good=false;break
+			var owner=actor_by_uid(int(record.uid))
+			if owner.is_empty() or owner.hp<=0 or owner.summon:
+				good=false;break
+			if signature.event=="contact_or_effect_confirmed":
+				if not record.event in ["contact_or_effect_confirmed","heal_confirmed","form_activated","summon_spawned"]:good=false;break
+			elif record.event!=signature.event:good=false;break
+			entries.append(record)
+		if not good:continue
+		if combo.id in ["COMBO-001","COMBO-005"]:
+			var target=int(entries[0].target_uid)
+			if target<=0 or entries.any(func(x):return int(x.target_uid)!=target):continue
+		combo_clock[key]=ticks
+		for signature in combo.signature_events:p2_events.erase(str(a.side)+":"+str(signature.skill_id))
+		var effect=combo.effect
+		var candidates=alive(int(a.side) if effect.type in ["shield","buff"] else 1-int(a.side))
+		var center=Vector2(a.pos) if effect.shape=="circle_self" else point
+		var selected=[]
+		for b in candidates:
+			if (effect.shape=="single" and b.uid==target_uid) or (effect.shape!="single" and b.pos.distance_to(center)<=float(effect.radius_m)+body_radius(b)):selected.append(b)
+		selected.sort_custom(func(x,y):return x.pos.distance_to(center)<y.pos.distance_to(center))
+		for b in selected.slice(0,int(effect.max_targets)):
+			match str(effect.type):
+				"damage":
+					hit(a,b,float(a.natk)*float(effect.total_coefficient)*100/(100+float(b.nres)),false)
+					if combo.id=="COMBO-006":apply_status(a,b,{"status_id":"stun","chance":1.0,"duration_s":0.5})
+				"bind","control":apply_status(a,b,{"status_id":"bind" if effect.type=="bind" else "slow","chance":1.0,"duration_s":1.0 if effect.type=="bind" else 1.5})
+				"chakra_drain":b.chakra=maxf(0,float(b.chakra)-12)
+				"shield":add_shield(a,b,float(a.natk)*float(effect.total_coefficient),5)
+				"buff":
+					apply_status(a,b,{"status_id":"defense_up","chance":1.0,"duration_s":6.0,"magnitude":0.12})
+					apply_status(a,b,{"status_id":"chakra_up","chance":1.0,"duration_s":6.0,"magnitude":0.12})
+		art_event("combo",center,0,str(combo.id))
+		log.append(str(combo.name_vi))

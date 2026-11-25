@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sleep",
+    "behavior": "hard control, ends on confirmed damage, immunity applies",
+    "duration_s": 1.5,
+    "stack": "refresh",
+    "dispellable": true,
+    "boss_cap_s": 0.5
+  },
+  {
+    "id": "attack_down",
+    "behavior": "attack multiplier max(0.5,1-magnitude)",
+    "duration_s": 4,
+    "stack": "max",
+    "dispellable": true,
+    "magnitude_cap": 0.4
+  },
+  {
+    "id": "beguile_tactical",
+    "behavior": "DEV adaptation: eligible actor cannot target Eida directly briefly; may target others; no command takeover",
+    "duration_s": 2,
+    "stack": "refresh",
+    "dispellable": true,
+    "boss_cap_s": 0.7
+  }
+]

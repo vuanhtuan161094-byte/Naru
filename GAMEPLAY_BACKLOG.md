@@ -36,3 +36,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - READY: individual mechanics/canon review (64 anchor proposals plus 1088 remaining), exact effect semantics and balance, advanced terrain/pathing/role coordination, current art synchronization and runtime review. No merge.
 
 - IN_PROGRESS GP-SKILL-P2: compiled A–I overlay, geometry/runtime scheduler and fallback ledger; separate adapter QA, combo/form route migration and specialized residuals READY. Web DEV V6 pending CI.
+
+- IN_PROGRESS P2 batch 2: combo events, form compatibility, summon role implementation and export path; detailed per-ID runtime audit next.

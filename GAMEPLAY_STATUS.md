@@ -68,3 +68,5 @@ Database blob equality with live design: combat_v3 224c8c0a0c5de7359d1bfdd5a40c7
 
 ## GP-SKILL-P2 A–I integration batch 1
 Design HEAD 2970f31d; exact design directory copied by tree SHA. Preserve D4 registry and save IDs; per-ID allow-listed compiled P2 overlay, explicit fallback reasons for special parameters and HOLD. Native new geometry/pending hit scheduler, ground/zone/trap, walls, dash/safe marked teleport/swap, chakra drain/restore, directional guard, status extensions, form drain, visible ground outlines; no claim all specific parameters/combos/form migration done. Legacy D4 tests explicitly exercise D4; P2 test runs new actual cast and browser default uses P2. CI pending. Prior V5 CI 45574564478 PASS artifact 15003444861. 
+
+P2 batch 2: runtime data under data/skill-p2 (same design tree), export inclusion; wall safe midpoint, confirmed effects vs attempted, actual summon roles, 54 form runtime stat/drain/empowerment overlays, 12 declared combo signature windows and bounded effects, player chakra reserve. Remaining special fallback explicit; exact QA pending. Prior batch CI 45580341267 headless P2 basic PASS; export configuration corrected here.

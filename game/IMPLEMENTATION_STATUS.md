@@ -64,3 +64,5 @@ V3-C fix: 20 authored form conflicts and obstacle visibility routing; legacy cle
 DEC-012 Combat V3 tested implementation 1b5c8da242fe9d00a257cf9a4f625574d7872e47, CI 45574564478. Godot registry, dedicated Combat V3, GP-P2, 90-day economy and Web export PASS. Chromium in_progress/not yet verified; artifact not yet confirmed. Do not mark V5 full acceptance until browser and upload pass. 1152 timed skill fixture passes, including actual form activation check; details in GAMEPLAY_STATUS. No art wait or merge.
 
 GP-SKILL-P2 A–I batch 1: overlay with explicit fallback, P2 runtime gate and Web V6. Pending CI.
+
+P2 batch 2: actual event signatures, summon roles, form overlay, Web data include.

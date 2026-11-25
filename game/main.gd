@@ -392,7 +392,7 @@ func battle_view() -> void:
 			ult_actions.append({"button":b,"index":i,"skill":skill_id})
 		if a.contract!="":button(group,"Thông linh",func():sim.summon_contract(a))
 		for form_id in a.forms:
-			if reg.form_rules[form_id].activation!="skill_trigger":button(group,"Biến thân",func():sim.activate_form(a,form_id,true))
+			if reg.form_rules[form_id].activation!="skill_trigger" or reg.p2_forms.get(form_id,{}).get("activation",{}).get("mode","") in ["manual_stance","hp_threshold_or_manual"]:button(group,"Biến thân",func():sim.activate_form(a,form_id,true))
 	# Scroll vertically too: all unlocked forms/ultimate actions remain reachable.
 	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	log_label=label(root,"",14)

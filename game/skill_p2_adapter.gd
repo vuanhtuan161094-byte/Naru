@@ -1,7 +1,7 @@
 extends RefCounted
 # Explicit allow-list; unknown special parameters keep D4, never silently become P2.
 const TYPES=["damage","multi_hit","decoy","chakra_regen","dash_damage","dash_multi_hit","counter","wall","projectile_damage","stance","line_damage","zone_damage","area_damage","shield","cone_damage","ground_damage","heal","cleanse","activate_form","heal_pulse","status","directional_shield","teleport","projectile_mark","team_buff","trap","chakra_drain","mark","chakra_restore","displace","zone_drain","pierce","absorb","position_swap","summon"]
-const SPECIAL=["requires_clone_or_basic_fallback","requires_clone","consume_clone","requires_owned_clone_or_anchor","adapter_gate","secondary_stance","conditional_variant","dot_fraction_of_total","eye_strain","do_not_add_duplicate_dot","field_modifier","retrieve","max_objects","shrink_target","charges","finite_per_battle","requires_contact_with_ally","mark_throw_before_teleport","invulnerability_s","requires_owned_mark","decoy_evasion_once","once_per_battle","on_contact_status","heal_coefficient","role","max_avoided_hits","interrupt_on_hit"]
+const SPECIAL=["requires_clone_or_basic_fallback","requires_clone","consume_clone","requires_owned_clone_or_anchor","adapter_gate","secondary_stance","conditional_variant","dot_fraction_of_total","eye_strain","do_not_add_duplicate_dot","field_modifier","retrieve","max_objects","shrink_target","charges","finite_per_battle","requires_contact_with_ally","mark_throw_before_teleport","invulnerability_s","requires_owned_mark","decoy_evasion_once","once_per_battle","max_avoided_hits","interrupt_on_hit"]
 static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	var p=raw.effect.params
 	var kind=str(raw.effect.type)
@@ -9,6 +9,7 @@ static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	if not kind in TYPES:return {"reason":"mechanic:"+kind}
 	for key in SPECIAL:
 		if p.has(key):return {"reason":"special:"+key}
+	if kind=="summon" and not str(p.get("role","melee")) in ["melee","melee_decoy","track_bind","heal_ally","frontline","bind","guard","ranged_puppet","ranged","element_ranged"]:return {"reason":"summon_role"}
 	var s=base.duplicate(true)
 	var g=raw.geometry
 	var t=raw.timing
@@ -41,7 +42,7 @@ static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	if kind=="activate_form":
 		if not p.has("form_id"):return {"reason":"missing_form"}
 		s.effects.append({"type":"activate_form","form_id":p.form_id})
-	if kind=="summon":s.effects.append({"type":"summon","template_id":"SUMMON-SKILL-"+str(raw.skill_id),"cap":int(p.cap),"lifetime_s":float(p.ttl_s),"hp_owner_fraction":float(p.hp_fraction),"attack_owner_fraction":float(p.attack_fraction),"can_summon":false})
+	if kind=="summon":s.effects.append({"type":"summon","template_id":"SUMMON-SKILL-"+str(raw.skill_id),"cap":int(p.cap),"lifetime_s":float(p.ttl_s),"hp_owner_fraction":float(p.hp_fraction),"attack_owner_fraction":float(p.attack_fraction),"can_summon":false,"p2_role":str(p.get("role","melee")),"p2_params":p})
 	if p.has("status"):
 		s.effects.append({"type":"apply_status","status_id":p.status,"chance":float(p.get("chance",1)),"duration_s":float(p.get("status_s",1.5)),"magnitude":float(p.get("magnitude",0.2))})
 	if kind in ["stance","team_buff","chakra_regen"]:
@@ -52,5 +53,5 @@ static func compile(raw: Dictionary,base: Dictionary) -> Dictionary:
 	if kind=="counter":s.effects.append({"type":"counter","window_s":float(p.get("duration_s",4)),"coefficient":coef})
 	# New mechanisms have explicit engine dispatch, not fake D4 effect.
 	if s.effects.is_empty() and not kind in ["wall","teleport","position_swap","absorb","chakra_restore","mark","projectile_mark"]:return {"reason":"empty:"+kind}
-	s.ai={"base_priority":int(base.ai.base_priority),"condition":"valid_target","reserve_ultimate_chakra":true}
+	s.ai={"base_priority":int(base.ai.base_priority),"condition":"ally_dispellable_status" if raw.conditions.ai=="ally_has_dispellable_status" and s.target!="self" else "valid_target","reserve_ultimate_chakra":true}
 	return {"skill":s}
