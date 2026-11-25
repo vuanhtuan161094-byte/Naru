@@ -13,6 +13,7 @@
 | GP-P7 | READY | Two independent squads, defense roster, NPC development and strategic wars PASS scoped; player capture/raid acceptance and strategic balance remain. |
 | GP-P8 | READY | 120 stage wins/rewards high-power fixture, 24 boss phases, 81 objective/288 trial links PASS; real progression balancing and remaining individual content tests. |
 | GP-P9A | DONE | Scoped 17-screen functional UI and actual mouse navigation V3; CI 45563300995. |
+| GP-P9B | IN_PROGRESS | V4 private review renderer and import; actual art remains review only. |
 | GP-P9 | READY | Remaining UI polish, accessibility/touch device coverage, asset adapter and advanced sub-actions. |
 | GP-P10A | DONE | Web DEV V1 CI 45553036319. |
 | GP-P10C | DONE | Verified Web DEV V3, CI 45563300995, artifact 14998937461; D1-C separate browser QA pending/not verified. |

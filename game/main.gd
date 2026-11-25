@@ -16,6 +16,11 @@ var ult_buttons: Array[Button]=[]
 var selected_stage="STG-001"
 var clock_accumulator=0.0
 var web_qa=false
+const ReviewArt=preload("res://game/review_art.gd")
+var art=ReviewArt.new()
+var art_callback: JavaScriptObject
+var review_mode=false
+var private_backdrop: TextureRect
 var screen_id="home"
 var shell: VBoxContainer
 var header: HBoxContainer
@@ -42,10 +47,18 @@ const Content=preload("res://game/content_service.gd")
 
 func _ready() -> void:
 	theme=make_theme()
+	art.restore()
 	var bg=ColorRect.new()
 	bg.color=Color("#101b23")
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
+	private_backdrop=TextureRect.new()
+	private_backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	private_backdrop.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+	private_backdrop.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	private_backdrop.modulate=Color(0.32,0.37,0.37,0.65)
+	private_backdrop.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	add_child(private_backdrop)
 	shell=VBoxContainer.new()
 	shell.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	shell.offset_left=18
@@ -60,7 +73,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"DEV V3",16)
+	label(header,"DEV V4",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -123,6 +136,7 @@ func button(parent: Node,title: String,fn: Callable) -> Button:
 
 func menu(message: String="") -> void:
 	sim=null
+	review_mode=false
 	home_screen(message)
 
 func recruit_one() -> void:
@@ -234,6 +248,11 @@ func growth_screen() -> void:
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		b.custom_minimum_size.y=76
 		b.modulate=quality_color(int(p.quality))
+		var portrait=art.texture("portraits/"+id+".png")
+		if portrait!=null:
+			b.icon=portrait
+			b.expand_icon=true
+			b.add_theme_constant_override("icon_max_width",48)
 	if grid.get_child_count()==0:label(rows,"Không có ninja phù hợp.",18)
 
 func growth_detail(id: String,message: String="") -> void:
@@ -312,6 +331,7 @@ func start_battle(stage: Dictionary) -> void:
 	if id.is_empty():
 		menu("Thiếu thể lực, đội hình hoặc điều kiện mở ải")
 		return
+	review_mode=false
 	selected_stage=stage.id
 	battle_stage=stage
 	event_id=id
@@ -320,13 +340,17 @@ func start_battle(stage: Dictionary) -> void:
 	for ninja in store.state.team:last_growth[ninja]=store.state.owned[ninja].permanent.duplicate(true)
 	sim=Combat.new()
 	sim.setup(reg,store.state,stage,int(store.state.battle_seq))
+	battle_view()
+
+func battle_view() -> void:
+	art.reset_battle()
 	accumulator=0
 	paused=false
 	battle_speed=1.0
 	open_screen("battle")
 	var toolbar=HBoxContainer.new()
 	root.add_child(toolbar)
-	status=label(toolbar,"CHIẾN ĐẤU • "+str(stage.name_vi),19)
+	status=label(toolbar,"CHIẾN ĐẤU • "+str(battle_stage.name_vi),19)
 	status.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	var pause_button=Button.new()
 	pause_button.text="Tạm dừng"
@@ -338,6 +362,7 @@ func start_battle(stage: Dictionary) -> void:
 	field.custom_minimum_size=Vector2(0,290)
 	field.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	field.clip_contents=true
+	field.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	field.draw.connect(draw_field)
 	root.add_child(field)
 	var scroll=ScrollContainer.new()
@@ -349,12 +374,23 @@ func start_battle(stage: Dictionary) -> void:
 	scroll.add_child(row)
 	ult_buttons.clear()
 	ult_actions.clear()
-	for i in range(store.state.team.size()):
+	for i in range(sim.primary_alive(0).size()):
 		var a=sim.actors[i]
 		var group=VBoxContainer.new()
 		group.custom_minimum_size.x=175
 		row.add_child(group)
-		label(group,str(reg.ninjas[a.id].name_vi).split(" (")[0],16)
+		var name_row=HBoxContainer.new()
+		group.add_child(name_row)
+		var portrait=art.texture("portraits/"+str(a.id)+".png")
+		if portrait!=null:
+			var image=TextureRect.new()
+			image.texture=portrait
+			image.custom_minimum_size=Vector2(32,32)
+			image.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+			image.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+			name_row.add_child(image)
+			art.portrait_draws+=1
+		label(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],16)
 		for skill_id in a.skills:
 			if reg.skills[skill_id].kind!="ultimate":continue
 			var b=button(group,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(i,skill_id))
@@ -368,38 +404,57 @@ func start_battle(stage: Dictionary) -> void:
 	log_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 
 func iso(p: Vector2) -> Vector2:
-	var scale_value=minf(field.size.x/950.0,field.size.y/470.0)
-	return Vector2(field.size.x*0.44+(p.x-p.y)*38*scale_value,42+(p.x+p.y)*20*scale_value)
+	var scale_value=minf(field.size.x/950.0,maxf(0.3,(field.size.y-96)/410.0))
+	return Vector2(field.size.x*0.44+(p.x-p.y)*38*scale_value,92+(p.x+p.y)*20*scale_value)
 
 func draw_field() -> void:
 	if sim==null:return
+	var plate=art.background(field,sim.environment)
+	var q=minf(field.size.x/950.0,maxf(0.3,(field.size.y-96)/410.0))
 	for x in range(12):
 		for y in range(8):
 			var p=iso(Vector2(x,y))
-			var q=minf(field.size.x/950.0,field.size.y/470.0)
-			var points=PackedVector2Array([p,p+Vector2(38,20)*q,p+Vector2(0,40)*q,p+Vector2(-38,20)*q])
-			field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
+			if not art.tile(field,p,q,x,y,plate):
+				var points=PackedVector2Array([p,p+Vector2(38,20)*q,p+Vector2(0,40)*q,p+Vector2(-38,20)*q])
+				field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
 	var render_order=sim.actors.duplicate()
 	render_order.sort_custom(func(a,b):return a.pos.x+a.pos.y<b.pos.x+b.pos.y)
 	for a in render_order:
 		if a.hp<=0:continue
 		var p=iso(a.pos)
 		var c=Color("#e3a33e") if a.side==0 else Color("#b65364")
-		field.draw_circle(p,13,Color("#152029"))
-		field.draw_rect(Rect2(p-Vector2(9,30),Vector2(18,26)),c)
-		field.draw_circle(p-Vector2(0,34),9,Color("#e4bc91"))
-		field.draw_rect(Rect2(p-Vector2(20,52),Vector2(40,4)),Color("#222733"))
-		field.draw_rect(Rect2(p-Vector2(20,52),Vector2(40*float(a.hp)/float(a.max_hp),4)),Color("#80c484"))
-		field.draw_rect(Rect2(p-Vector2(20,46),Vector2(40,3)),Color("#222733"))
-		field.draw_rect(Rect2(p-Vector2(20,46),Vector2(40*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
-		field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,12),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,13)
+		field.draw_set_transform(p,0,Vector2(1,0.48))
+		field.draw_circle(Vector2.ZERO,17,Color(0.02,0.04,0.05,0.65))
+		field.draw_arc(Vector2.ZERO,20,0,TAU,32,c,2)
+		field.draw_set_transform(Vector2.ZERO)
+		var sprite_top=art.draw_actor(field,a,p,sim.ticks)
+		if sprite_top<=0:
+			# Original generic geometric DEV actor, not an approved ninja sprite.
+			field.draw_colored_polygon(PackedVector2Array([p+Vector2(-12,-3),p+Vector2(-11,-28),p+Vector2(11,-28),p+Vector2(12,-3)]),c.darkened(0.3))
+			field.draw_rect(Rect2(p-Vector2(7,10),Vector2(5,10)),Color("#15242e"))
+			field.draw_rect(Rect2(p-Vector2(-2,10),Vector2(5,10)),Color("#15242e"))
+			field.draw_circle(p-Vector2(0,34),11,Color("#ddbc9a"))
+			field.draw_rect(Rect2(p-Vector2(12,46),Vector2(24,8)),Color("#26333c"))
+			field.draw_rect(Rect2(p-Vector2(5,42),Vector2(10,4)),c)
+			sprite_top=48
+		var bar=p-Vector2(23,sprite_top+8)
+		field.draw_rect(Rect2(bar,Vector2(46,5)),Color("#182028"))
+		field.draw_rect(Rect2(bar,Vector2(46*float(a.hp)/float(a.max_hp),5)),Color("#80c484") if a.side==0 else Color("#e57470"))
+		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(46,3)),Color("#182028"))
+		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(46*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
+		if sprite_top<=48:field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,13),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
 	for projectile in sim.projectiles if bool(store.state.get("settings",{}).get("projectiles",true)) else []:
 		var source=sim.actor_by_uid(int(projectile.source))
 		var target=sim.actor_by_uid(int(projectile.target))
 		if not source.is_empty() and not target.is_empty():
 			var total=maxf(0.01,source.pos.distance_to(target.pos)/maxf(0.01,float(projectile.skill.projectile_speed_m_s)))
-			var at=source.pos.lerp(target.pos,clampf(1-float(projectile.remaining)/total,0,1))
-			field.draw_circle(iso(at)-Vector2(0,24),5,Color("#ffcf84"))
+			var progress=clampf(1-float(projectile.remaining)/total,0,1)
+			var at=source.pos.lerp(target.pos,progress)
+			var point=iso(at)-Vector2(0,24)
+			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,70):
+				field.draw_circle(point,5,Color("#ffcf84"))
+	if bool(store.state.get("settings",{}).get("cutin",true)):art.effects(field,sim,iso)
+	field.draw_string(ThemeDB.fallback_font,Vector2(12,19),art.source_label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("#c7d5d5"))
 
 func _process(delta: float) -> void:
 	if not reg.ninjas.is_empty() and not store.state.is_empty():
@@ -434,6 +489,11 @@ func _process(delta: float) -> void:
 
 func finish(won: bool) -> void:
 	if sim==null:return
+	if review_mode:
+		sim=null
+		review_mode=false
+		settings_screen("Kết thúc trận review mỹ thuật • không lưu thưởng")
+		return
 	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts,sim.action_stats)
 	var elapsed=sim.ticks*0.05
 	sim=null
@@ -965,6 +1025,8 @@ func make_theme() -> Theme:
 
 func open_screen(id: String) -> void:
 	screen_id=id
+	if private_backdrop!=null:
+		private_backdrop.texture=art.texture("environment/village_plate.png") if id=="home" else null
 	navigation.visible=id!="battle"
 	clear()
 	update_resources()
@@ -1123,6 +1185,12 @@ func settings_screen(message: String="") -> void:
 	button(root,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
 	button(root,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen(store.load_notice if store.load_notice!="" else "Đã tải"))
 	button(root,"Xuất / nhập save",save_screen)
+	var art_row=HBoxContainer.new()
+	root.add_child(art_row)
+	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
+	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
+	button(art_row,"Bật / tắt review",func():art.enabled=not art.enabled;settings_screen(art.source_label))
+	label(root,art.source_label+" • "+str(art.count_characters())+" sprite tĩnh; không phải bản phát hành.",16)
 	label(root,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 
 func change_setting(key: String,value: bool) -> void:
@@ -1150,7 +1218,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
@@ -1175,3 +1243,42 @@ func training_screen(id: String,message: String="") -> void:
 		button(line,"Mở "+str(reg.buildings[q.building].name_vi),func():building_screen(q.building))
 		var b=button(line,"Tu luyện",func():training_screen(id,"Đã tăng" if store.train_stat(reg,id,stat) else "Thiếu công trình / nguyên liệu"))
 		b.disabled=Village.level(store.state,q.building)<=0
+
+func choose_review_art() -> void:
+	if OS.has_feature("web"):
+		art_callback=JavaScriptBridge.create_callback(_receive_art_web)
+		JavaScriptBridge.get_interface("window").naruReviewArtCallback=art_callback
+		JavaScriptBridge.eval("(function(){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.id='naru-review-file';input.style.position='fixed';input.style.left='-9999px';document.body.appendChild(input);input.onchange=async()=>{const f=input.files[0];if(f && f.size<=12000000){window.naruReviewArtCallback(await f.text());}input.remove();};input.click();})()")
+	else:
+		var dialog=FileDialog.new()
+		dialog.file_mode=FileDialog.FILE_MODE_OPEN_FILE
+		dialog.access=FileDialog.ACCESS_FILESYSTEM
+		dialog.add_filter("*.json","Gói mỹ thuật review")
+		add_child(dialog)
+		dialog.file_selected.connect(func(path):receive_art(FileAccess.get_file_as_string(path));dialog.queue_free())
+		dialog.canceled.connect(dialog.queue_free)
+		dialog.popup_centered_ratio(0.8)
+
+func _receive_art_web(args: Array) -> void:
+	if args.size()==1:receive_art(str(args[0]))
+
+func receive_art(raw: String) -> void:
+	var ok=art.import_text(raw)
+	settings_screen("Đã nạp review cục bộ; không tải lên mạng." if ok else art.error)
+
+func start_art_review() -> void:
+	review_mode=true
+	battle_stage={"name_vi":"Review 6v6 • không thưởng"}
+	sim=Combat.new()
+	sim.registry=reg
+	sim.rng.seed=42
+	sim.environment="forest"
+	var left=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
+	var right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
+	for i in range(6):
+		var id=left[i]
+		sim.add_actor(id,0,20,int(reg.ninjas[id].initial_quality),{},i,1.0)
+	for i in range(6):
+		var id=right[i]
+		sim.add_actor(id,1,20,int(reg.ninjas[id].initial_quality),{},i,1.0)
+	battle_view()

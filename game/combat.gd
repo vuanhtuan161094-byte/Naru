@@ -23,6 +23,7 @@ var auto_player_ultimate=false
 var encounter_skills: Dictionary={}
 var encounter_names: Dictionary={}
 var effect_dispatch_count=0
+var art_events: Array[Dictionary]=[]
 
 func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
@@ -267,6 +268,7 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true) -> voi
 				update_boss(b)
 				break
 	if old-b.hp>0.01:
+		art_event("damage",b.pos,old-b.hp)
 		last_progress_tick=ticks
 		if a.side!=b.side:award_action(b,"vitality")
 		if a.uid!=b.uid:a.hp=minf(float(a.max_hp),float(a.hp)+(old-b.hp)*rating(a,"lifesteal"))
@@ -332,6 +334,7 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 
 func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 	if b.is_empty() or b.hp<=0:return
+	art_event("release",b.pos,0,str(s.skill_id))
 	var field_factor=spatial_reaction(a,s,b)
 	for target in targets_for(a,s,b):
 		for e in s.effects:
@@ -361,7 +364,9 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 				"heal":
 					var before_hp=float(target.hp)
 					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
-					if target.hp-before_hp>0.01:award_action(a,"spirit")
+					if target.hp-before_hp>0.01:
+						award_action(a,"spirit")
+						art_event("heal",target.pos,float(target.hp)-before_hp)
 				"shield":
 					add_shield(a,target,float(a.natk)*float(e.coefficient),float(e.duration_s))
 				"apply_status":apply_status(a,target,e)
@@ -444,6 +449,7 @@ func primary_alive(side: int) -> Array:
 func tick(dt: float) -> void:
 	if not outcome.is_empty():return
 	ticks+=1
+	while not art_events.is_empty() and int(art_events[0].tick)<ticks-20:art_events.pop_front()
 	for zone in elemental_fields.duplicate():
 		if int(zone.expires)<=ticks:elemental_fields.erase(zone)
 	for p in projectiles.duplicate():
@@ -660,3 +666,7 @@ func award_action(a: Dictionary,stat: String) -> void:
 	counts[a.id]=int(counts.get(a.id,0))+1
 	if not action_stats.has(a.id):action_stats[a.id]={}
 	action_stats[a.id][stat]=int(action_stats[a.id].get(stat,0))+1
+
+func art_event(kind: String,pos: Vector2,amount: float=0.0,skill: String="") -> void:
+	art_events.append({"kind":kind,"pos":pos,"amount":amount,"skill":skill,"tick":ticks})
+	if art_events.size()>128:art_events.pop_front()
