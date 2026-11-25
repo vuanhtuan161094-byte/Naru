@@ -33,3 +33,6 @@ DEC-012 design SHA `1f6f6cf6c7b1bee5e308d1fa593459c9cefb9ad4`; gameplay SHA `df6
 
 ## Coordinator reassignment — SKILL-P2
 Reviewed gameplay `1b5c8da2` and art `fb61fa48`. Exact gameplay CI 45574564478 partial PASS (registry/Combat V3/GP-P2), economy/Web pending. Prior timed 1132/1152, 20 form-route fixes pending final exact log. Art registry 6 static, 6 skill VFX candidates, 0/144 complete clips and 0/54 forms; R4 59 PNG repack only, current Godot R4 not run. See design/skill-p1/SKILL_P2_ASSIGNMENT.md and SKILL_P2_QUEUE.json. 00 design audit, 01 gameplay, 02 art. No production branch edits.
+
+## SKILL-P2 A–I design draft — 25/11/2026
+144 kits × 8 = 1,152 unique skill records, 54 forms, 12 combos, 145 VFX families; nine batch files, official source ledger and structural QA. 64 anchor proposals incorporated as draft; 10 limited direct technique context matches, 334 context-only, 808 lack source pointer, 176 skill records flagged by ninja era. No claim of 1,152 canon-confirmed skills or runtime approval. D4 baseline untouched. Chat 01 and 02 consume reviewed batches and family manifest; no gameplay/art branch edits.

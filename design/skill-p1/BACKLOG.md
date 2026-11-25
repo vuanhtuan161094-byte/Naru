@@ -21,3 +21,7 @@ B approved. COMBAT-P1/P2 READY for implementation now. COMBAT-P3 and P4 remain d
 - READY (00): review 64 anchor proposals then 1088 individual contracts in eight 136-skill lots; 54 forms/12 combos. Queue exact coverage validated; no runtime promotion yet.
 - IN_PROGRESS (01): V3-C exact CI, shared geometry/events, consume reviewed overlays, organic gameplay and Web DEV V5.
 - IN_PROGRESS (02): R4 actual animation/VFX/terrain and current-SHA 6v6 private Godot video; no mass blind duplication.
+
+## SKILL-P2 A–I design draft — 25/11/2026
+144 kits × 8 = 1,152 unique skill records, 54 forms, 12 combos, 145 VFX families; nine batch files, official source ledger and structural QA. 64 anchor proposals incorporated as draft; 10 limited direct technique context matches, 334 context-only, 808 lack source pointer, 176 skill records flagged by ninja era. No claim of 1,152 canon-confirmed skills or runtime approval. D4 baseline untouched. Chat 01 and 02 consume reviewed batches and family manifest; no gameplay/art branch edits.
+- REVIEW: per-skill adapter/anchor reconciliation, era/source gaps, balance, runtime integration and art production remain.

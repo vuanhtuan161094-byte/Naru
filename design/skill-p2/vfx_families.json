@@ -1,0 +1,2459 @@
+[
+  {
+    "id": "kunai",
+    "skill_count": 73,
+    "skills": [
+      "NIN-003-S7",
+      "NIN-004-S0",
+      "NIN-005-S0",
+      "NIN-005-S6",
+      "NIN-006-S6",
+      "NIN-007-S0",
+      "NIN-009-S0",
+      "NIN-012-S0",
+      "NIN-015-S0",
+      "NIN-018-S0",
+      "NIN-019-S0",
+      "NIN-020-S0",
+      "NIN-022-S0",
+      "NIN-025-S0",
+      "NIN-026-S0",
+      "NIN-031-S0",
+      "NIN-033-S0",
+      "NIN-034-S0",
+      "NIN-035-S0",
+      "NIN-038-S0",
+      "NIN-039-S0",
+      "NIN-044-S0",
+      "NIN-046-S0",
+      "NIN-048-S0",
+      "NIN-051-S0",
+      "NIN-054-S0",
+      "NIN-056-S0",
+      "NIN-057-S0",
+      "NIN-058-S0",
+      "NIN-060-S0",
+      "NIN-062-S0",
+      "NIN-063-S0",
+      "NIN-065-S0",
+      "NIN-066-S0",
+      "NIN-067-S0",
+      "NIN-068-S0",
+      "NIN-070-S0",
+      "NIN-071-S0",
+      "NIN-072-S0",
+      "NIN-074-S0",
+      "NIN-078-S0",
+      "NIN-079-S0",
+      "NIN-083-S0",
+      "NIN-085-S0",
+      "NIN-086-S0",
+      "NIN-087-S0",
+      "NIN-090-S0",
+      "NIN-091-S0",
+      "NIN-093-S0",
+      "NIN-096-S0",
+      "NIN-097-S0",
+      "NIN-098-S0",
+      "NIN-099-S0",
+      "NIN-104-S0",
+      "NIN-105-S0",
+      "NIN-106-S0",
+      "NIN-107-S0",
+      "NIN-108-S0",
+      "NIN-116-S0",
+      "NIN-117-S0",
+      "NIN-120-S0",
+      "NIN-122-S0",
+      "NIN-124-S0",
+      "NIN-125-S0",
+      "NIN-129-S0",
+      "NIN-130-S0",
+      "NIN-132-S0",
+      "NIN-133-S0",
+      "NIN-136-S0",
+      "NIN-137-S0",
+      "NIN-138-S0",
+      "NIN-143-S0",
+      "NIN-144-S0"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "melee",
+    "skill_count": 60,
+    "skills": [
+      "NIN-001-S0",
+      "NIN-002-S0",
+      "NIN-002-S2",
+      "NIN-003-S0",
+      "NIN-006-S0",
+      "NIN-006-S2",
+      "NIN-008-S0",
+      "NIN-010-S0",
+      "NIN-011-S0",
+      "NIN-013-S0",
+      "NIN-014-S0",
+      "NIN-016-S0",
+      "NIN-017-S0",
+      "NIN-021-S0",
+      "NIN-023-S0",
+      "NIN-024-S0",
+      "NIN-027-S0",
+      "NIN-028-S0",
+      "NIN-029-S0",
+      "NIN-037-S0",
+      "NIN-037-S4",
+      "NIN-040-S0",
+      "NIN-041-S0",
+      "NIN-043-S0",
+      "NIN-045-S0",
+      "NIN-047-S0",
+      "NIN-050-S0",
+      "NIN-053-S0",
+      "NIN-055-S0",
+      "NIN-069-S0",
+      "NIN-075-S0",
+      "NIN-077-S0",
+      "NIN-088-S0",
+      "NIN-092-S0",
+      "NIN-094-S0",
+      "NIN-095-S0",
+      "NIN-100-S0",
+      "NIN-101-S0",
+      "NIN-102-S0",
+      "NIN-103-S0",
+      "NIN-109-S0",
+      "NIN-110-S0",
+      "NIN-111-S0",
+      "NIN-112-S0",
+      "NIN-113-S0",
+      "NIN-114-S0",
+      "NIN-118-S0",
+      "NIN-119-S0",
+      "NIN-121-S0",
+      "NIN-123-S0",
+      "NIN-126-S0",
+      "NIN-128-S0",
+      "NIN-131-S0",
+      "NIN-134-S0",
+      "NIN-135-S0",
+      "NIN-139-S0",
+      "NIN-139-S3",
+      "NIN-139-S7",
+      "NIN-140-S0",
+      "NIN-142-S0"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "sword",
+    "skill_count": 60,
+    "skills": [
+      "NIN-027-S7",
+      "NIN-030-S0",
+      "NIN-030-S1",
+      "NIN-030-S3",
+      "NIN-030-S5",
+      "NIN-030-S6",
+      "NIN-030-S7",
+      "NIN-032-S2",
+      "NIN-032-S4",
+      "NIN-042-S0",
+      "NIN-059-S0",
+      "NIN-061-S0",
+      "NIN-061-S4",
+      "NIN-073-S0",
+      "NIN-073-S2",
+      "NIN-073-S6",
+      "NIN-076-S0",
+      "NIN-076-S2",
+      "NIN-076-S3",
+      "NIN-080-S0",
+      "NIN-080-S1",
+      "NIN-080-S2",
+      "NIN-080-S3",
+      "NIN-080-S4",
+      "NIN-080-S5",
+      "NIN-080-S6",
+      "NIN-080-S7",
+      "NIN-081-S0",
+      "NIN-081-S1",
+      "NIN-081-S2",
+      "NIN-081-S3",
+      "NIN-081-S4",
+      "NIN-081-S5",
+      "NIN-081-S6",
+      "NIN-081-S7",
+      "NIN-082-S0",
+      "NIN-082-S1",
+      "NIN-082-S2",
+      "NIN-082-S3",
+      "NIN-082-S4",
+      "NIN-082-S5",
+      "NIN-082-S6",
+      "NIN-082-S7",
+      "NIN-084-S0",
+      "NIN-084-S3",
+      "NIN-084-S6",
+      "NIN-089-S0",
+      "NIN-089-S1",
+      "NIN-089-S2",
+      "NIN-089-S3",
+      "NIN-089-S4",
+      "NIN-089-S5",
+      "NIN-089-S6",
+      "NIN-089-S7",
+      "NIN-127-S0",
+      "NIN-141-S0",
+      "NIN-141-S1",
+      "NIN-141-S6",
+      "NIN-141-S7",
+      "NIN-144-S2"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "mind",
+    "skill_count": 38,
+    "skills": [
+      "NIN-009-S1",
+      "NIN-009-S3",
+      "NIN-009-S5",
+      "NIN-009-S6",
+      "NIN-009-S7",
+      "NIN-018-S1",
+      "NIN-018-S3",
+      "NIN-018-S5",
+      "NIN-018-S6",
+      "NIN-018-S7",
+      "NIN-023-S6",
+      "NIN-031-S1",
+      "NIN-031-S2",
+      "NIN-031-S3",
+      "NIN-031-S5",
+      "NIN-031-S6",
+      "NIN-031-S7",
+      "NIN-048-S1",
+      "NIN-048-S4",
+      "NIN-048-S5",
+      "NIN-048-S6",
+      "NIN-079-S2",
+      "NIN-079-S4",
+      "NIN-092-S5",
+      "NIN-092-S6",
+      "NIN-092-S7",
+      "NIN-106-S7",
+      "NIN-108-S1",
+      "NIN-108-S4",
+      "NIN-108-S5",
+      "NIN-108-S6",
+      "NIN-108-S7",
+      "NIN-117-S2",
+      "NIN-117-S6",
+      "NIN-138-S2",
+      "NIN-138-S4",
+      "NIN-138-S5",
+      "NIN-138-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "wind",
+    "skill_count": 33,
+    "skills": [
+      "NIN-017-S1",
+      "NIN-017-S3",
+      "NIN-017-S5",
+      "NIN-017-S6",
+      "NIN-017-S7",
+      "NIN-025-S1",
+      "NIN-025-S2",
+      "NIN-025-S3",
+      "NIN-025-S4",
+      "NIN-025-S5",
+      "NIN-025-S6",
+      "NIN-025-S7",
+      "NIN-056-S1",
+      "NIN-056-S3",
+      "NIN-056-S4",
+      "NIN-056-S5",
+      "NIN-056-S7",
+      "NIN-059-S1",
+      "NIN-059-S2",
+      "NIN-059-S3",
+      "NIN-059-S4",
+      "NIN-059-S5",
+      "NIN-059-S6",
+      "NIN-059-S7",
+      "NIN-091-S1",
+      "NIN-091-S3",
+      "NIN-091-S7",
+      "NIN-111-S3",
+      "NIN-116-S2",
+      "NIN-116-S3",
+      "NIN-116-S7",
+      "NIN-123-S3",
+      "NIN-143-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "water",
+    "skill_count": 32,
+    "skills": [
+      "NIN-027-S2",
+      "NIN-027-S4",
+      "NIN-027-S5",
+      "NIN-027-S6",
+      "NIN-061-S2",
+      "NIN-061-S3",
+      "NIN-061-S5",
+      "NIN-061-S7",
+      "NIN-073-S1",
+      "NIN-073-S3",
+      "NIN-073-S4",
+      "NIN-073-S5",
+      "NIN-073-S7",
+      "NIN-078-S4",
+      "NIN-085-S6",
+      "NIN-087-S6",
+      "NIN-096-S1",
+      "NIN-096-S3",
+      "NIN-096-S4",
+      "NIN-096-S5",
+      "NIN-096-S7",
+      "NIN-101-S1",
+      "NIN-101-S2",
+      "NIN-101-S3",
+      "NIN-101-S4",
+      "NIN-122-S1",
+      "NIN-122-S3",
+      "NIN-125-S1",
+      "NIN-125-S3",
+      "NIN-125-S7",
+      "NIN-141-S2",
+      "NIN-141-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "chakra",
+    "skill_count": 31,
+    "skills": [
+      "NIN-001-S4",
+      "NIN-003-S3",
+      "NIN-074-S4",
+      "NIN-075-S7",
+      "NIN-084-S1",
+      "NIN-084-S2",
+      "NIN-084-S4",
+      "NIN-084-S5",
+      "NIN-084-S7",
+      "NIN-097-S1",
+      "NIN-097-S2",
+      "NIN-097-S7",
+      "NIN-098-S2",
+      "NIN-098-S4",
+      "NIN-114-S7",
+      "NIN-115-S5",
+      "NIN-115-S7",
+      "NIN-130-S4",
+      "NIN-130-S5",
+      "NIN-130-S6",
+      "NIN-130-S7",
+      "NIN-131-S1",
+      "NIN-131-S2",
+      "NIN-131-S3",
+      "NIN-131-S4",
+      "NIN-131-S5",
+      "NIN-131-S6",
+      "NIN-131-S7",
+      "NIN-133-S4",
+      "NIN-141-S3",
+      "NIN-141-S5"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "palm",
+    "skill_count": 28,
+    "skills": [
+      "NIN-010-S2",
+      "NIN-010-S3",
+      "NIN-010-S5",
+      "NIN-010-S6",
+      "NIN-010-S7",
+      "NIN-013-S2",
+      "NIN-013-S3",
+      "NIN-013-S4",
+      "NIN-013-S5",
+      "NIN-013-S6",
+      "NIN-049-S0",
+      "NIN-049-S2",
+      "NIN-049-S3",
+      "NIN-049-S4",
+      "NIN-049-S5",
+      "NIN-049-S6",
+      "NIN-052-S0",
+      "NIN-052-S1",
+      "NIN-052-S2",
+      "NIN-052-S3",
+      "NIN-052-S4",
+      "NIN-052-S5",
+      "NIN-052-S6",
+      "NIN-098-S6",
+      "NIN-115-S0",
+      "NIN-115-S2",
+      "NIN-115-S4",
+      "NIN-115-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "fire",
+    "skill_count": 27,
+    "skills": [
+      "NIN-002-S1",
+      "NIN-019-S1",
+      "NIN-019-S4",
+      "NIN-020-S6",
+      "NIN-065-S2",
+      "NIN-065-S6",
+      "NIN-069-S1",
+      "NIN-069-S4",
+      "NIN-070-S1",
+      "NIN-070-S3",
+      "NIN-092-S2",
+      "NIN-092-S4",
+      "NIN-100-S1",
+      "NIN-100-S3",
+      "NIN-100-S6",
+      "NIN-100-S7",
+      "NIN-106-S1",
+      "NIN-106-S4",
+      "NIN-106-S5",
+      "NIN-106-S6",
+      "NIN-112-S1",
+      "NIN-112-S6",
+      "NIN-123-S2",
+      "NIN-123-S4",
+      "NIN-136-S1",
+      "NIN-136-S3",
+      "NIN-136-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "shadow",
+    "skill_count": 27,
+    "skills": [
+      "NIN-007-S1",
+      "NIN-007-S2",
+      "NIN-007-S3",
+      "NIN-007-S4",
+      "NIN-007-S5",
+      "NIN-007-S6",
+      "NIN-046-S1",
+      "NIN-046-S2",
+      "NIN-046-S3",
+      "NIN-046-S4",
+      "NIN-046-S5",
+      "NIN-046-S6",
+      "NIN-107-S1",
+      "NIN-107-S3",
+      "NIN-107-S4",
+      "NIN-107-S5",
+      "NIN-107-S6",
+      "NIN-116-S1",
+      "NIN-116-S4",
+      "NIN-116-S5",
+      "NIN-116-S6",
+      "NIN-129-S1",
+      "NIN-129-S2",
+      "NIN-129-S3",
+      "NIN-129-S4",
+      "NIN-129-S5",
+      "NIN-129-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "puppet",
+    "skill_count": 26,
+    "skills": [
+      "NIN-026-S1",
+      "NIN-026-S3",
+      "NIN-026-S5",
+      "NIN-026-S6",
+      "NIN-026-S7",
+      "NIN-057-S1",
+      "NIN-057-S2",
+      "NIN-057-S3",
+      "NIN-057-S4",
+      "NIN-057-S5",
+      "NIN-057-S6",
+      "NIN-057-S7",
+      "NIN-058-S2",
+      "NIN-058-S4",
+      "NIN-058-S5",
+      "NIN-058-S6",
+      "NIN-058-S7",
+      "NIN-063-S3",
+      "NIN-063-S5",
+      "NIN-063-S7",
+      "NIN-144-S1",
+      "NIN-144-S3",
+      "NIN-144-S4",
+      "NIN-144-S5",
+      "NIN-144-S6",
+      "NIN-144-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "eye",
+    "skill_count": 24,
+    "skills": [
+      "NIN-002-S4",
+      "NIN-010-S1",
+      "NIN-010-S4",
+      "NIN-013-S1",
+      "NIN-013-S7",
+      "NIN-049-S1",
+      "NIN-049-S7",
+      "NIN-052-S7",
+      "NIN-085-S2",
+      "NIN-085-S3",
+      "NIN-091-S5",
+      "NIN-091-S6",
+      "NIN-098-S1",
+      "NIN-098-S3",
+      "NIN-106-S2",
+      "NIN-106-S3",
+      "NIN-112-S2",
+      "NIN-112-S3",
+      "NIN-115-S1",
+      "NIN-115-S3",
+      "NIN-138-S1",
+      "NIN-138-S3",
+      "NIN-140-S2",
+      "NIN-140-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "sound",
+    "skill_count": 22,
+    "skills": [
+      "NIN-033-S1",
+      "NIN-033-S2",
+      "NIN-033-S3",
+      "NIN-033-S4",
+      "NIN-033-S5",
+      "NIN-033-S6",
+      "NIN-033-S7",
+      "NIN-035-S1",
+      "NIN-035-S3",
+      "NIN-035-S5",
+      "NIN-035-S6",
+      "NIN-039-S1",
+      "NIN-039-S3",
+      "NIN-039-S5",
+      "NIN-039-S6",
+      "NIN-039-S7",
+      "NIN-143-S1",
+      "NIN-143-S2",
+      "NIN-143-S3",
+      "NIN-143-S4",
+      "NIN-143-S5",
+      "NIN-143-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "earth",
+    "skill_count": 21,
+    "skills": [
+      "NIN-019-S3",
+      "NIN-037-S1",
+      "NIN-037-S2",
+      "NIN-037-S3",
+      "NIN-037-S5",
+      "NIN-037-S6",
+      "NIN-037-S7",
+      "NIN-065-S3",
+      "NIN-086-S7",
+      "NIN-087-S1",
+      "NIN-087-S4",
+      "NIN-088-S1",
+      "NIN-088-S4",
+      "NIN-121-S1",
+      "NIN-121-S3",
+      "NIN-121-S4",
+      "NIN-121-S5",
+      "NIN-121-S6",
+      "NIN-124-S1",
+      "NIN-124-S3",
+      "NIN-124-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "beast",
+    "skill_count": 20,
+    "skills": [
+      "NIN-011-S1",
+      "NIN-011-S4",
+      "NIN-024-S7",
+      "NIN-050-S1",
+      "NIN-076-S5",
+      "NIN-076-S7",
+      "NIN-100-S2",
+      "NIN-100-S4",
+      "NIN-100-S5",
+      "NIN-101-S5",
+      "NIN-101-S6",
+      "NIN-101-S7",
+      "NIN-102-S5",
+      "NIN-102-S6",
+      "NIN-103-S5",
+      "NIN-103-S6",
+      "NIN-104-S5",
+      "NIN-104-S6",
+      "NIN-105-S5",
+      "NIN-105-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lightning",
+    "skill_count": 19,
+    "skills": [
+      "NIN-002-S5",
+      "NIN-002-S6",
+      "NIN-076-S1",
+      "NIN-076-S4",
+      "NIN-076-S6",
+      "NIN-077-S1",
+      "NIN-077-S2",
+      "NIN-077-S3",
+      "NIN-077-S4",
+      "NIN-077-S5",
+      "NIN-077-S6",
+      "NIN-077-S7",
+      "NIN-078-S2",
+      "NIN-112-S5",
+      "NIN-112-S7",
+      "NIN-113-S2",
+      "NIN-113-S4",
+      "NIN-127-S1",
+      "NIN-127-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "sense",
+    "skill_count": 19,
+    "skills": [
+      "NIN-009-S2",
+      "NIN-009-S4",
+      "NIN-020-S4",
+      "NIN-048-S2",
+      "NIN-048-S3",
+      "NIN-048-S7",
+      "NIN-074-S1",
+      "NIN-074-S3",
+      "NIN-074-S7",
+      "NIN-079-S1",
+      "NIN-079-S3",
+      "NIN-079-S5",
+      "NIN-079-S6",
+      "NIN-085-S1",
+      "NIN-085-S4",
+      "NIN-085-S5",
+      "NIN-108-S2",
+      "NIN-108-S3",
+      "NIN-138-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "heal",
+    "skill_count": 18,
+    "skills": [
+      "NIN-003-S2",
+      "NIN-021-S1",
+      "NIN-021-S4",
+      "NIN-023-S2",
+      "NIN-023-S4",
+      "NIN-023-S5",
+      "NIN-023-S7",
+      "NIN-043-S1",
+      "NIN-043-S7",
+      "NIN-074-S2",
+      "NIN-110-S1",
+      "NIN-110-S4",
+      "NIN-110-S5",
+      "NIN-110-S7",
+      "NIN-128-S1",
+      "NIN-128-S3",
+      "NIN-135-S2",
+      "NIN-135-S4"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "insect",
+    "skill_count": 17,
+    "skills": [
+      "NIN-012-S1",
+      "NIN-012-S2",
+      "NIN-012-S3",
+      "NIN-012-S4",
+      "NIN-012-S5",
+      "NIN-012-S6",
+      "NIN-012-S7",
+      "NIN-051-S1",
+      "NIN-051-S2",
+      "NIN-051-S3",
+      "NIN-051-S4",
+      "NIN-051-S5",
+      "NIN-051-S6",
+      "NIN-051-S7",
+      "NIN-105-S1",
+      "NIN-105-S3",
+      "NIN-105-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "weapon",
+    "skill_count": 16,
+    "skills": [
+      "NIN-015-S1",
+      "NIN-015-S3",
+      "NIN-015-S4",
+      "NIN-015-S5",
+      "NIN-015-S7",
+      "NIN-054-S1",
+      "NIN-054-S2",
+      "NIN-054-S3",
+      "NIN-054-S5",
+      "NIN-054-S6",
+      "NIN-054-S7",
+      "NIN-140-S1",
+      "NIN-140-S3",
+      "NIN-140-S5",
+      "NIN-140-S6",
+      "NIN-140-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "giant",
+    "skill_count": 15,
+    "skills": [
+      "NIN-008-S1",
+      "NIN-008-S3",
+      "NIN-008-S4",
+      "NIN-008-S5",
+      "NIN-047-S1",
+      "NIN-047-S3",
+      "NIN-047-S4",
+      "NIN-109-S1",
+      "NIN-109-S3",
+      "NIN-109-S4",
+      "NIN-109-S5",
+      "NIN-109-S7",
+      "NIN-118-S1",
+      "NIN-118-S3",
+      "NIN-118-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "kick",
+    "skill_count": 15,
+    "skills": [
+      "NIN-014-S1",
+      "NIN-014-S2",
+      "NIN-014-S3",
+      "NIN-016-S1",
+      "NIN-016-S3",
+      "NIN-053-S1",
+      "NIN-053-S3",
+      "NIN-053-S7",
+      "NIN-119-S1",
+      "NIN-119-S2",
+      "NIN-119-S3",
+      "NIN-119-S4",
+      "NIN-119-S5",
+      "NIN-119-S6",
+      "NIN-119-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "snake",
+    "skill_count": 15,
+    "skills": [
+      "NIN-022-S1",
+      "NIN-022-S2",
+      "NIN-022-S3",
+      "NIN-022-S4",
+      "NIN-022-S5",
+      "NIN-022-S6",
+      "NIN-029-S1",
+      "NIN-029-S2",
+      "NIN-029-S3",
+      "NIN-029-S4",
+      "NIN-029-S5",
+      "NIN-029-S6",
+      "NIN-113-S1",
+      "NIN-113-S3",
+      "NIN-113-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "wood",
+    "skill_count": 15,
+    "skills": [
+      "NIN-045-S1",
+      "NIN-045-S2",
+      "NIN-045-S3",
+      "NIN-045-S4",
+      "NIN-045-S5",
+      "NIN-045-S6",
+      "NIN-045-S7",
+      "NIN-070-S2",
+      "NIN-071-S4",
+      "NIN-095-S1",
+      "NIN-095-S2",
+      "NIN-095-S3",
+      "NIN-095-S4",
+      "NIN-095-S5",
+      "NIN-095-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "gravity",
+    "skill_count": 15,
+    "skills": [
+      "NIN-067-S1",
+      "NIN-067-S2",
+      "NIN-067-S3",
+      "NIN-067-S4",
+      "NIN-067-S5",
+      "NIN-067-S6",
+      "NIN-067-S7",
+      "NIN-068-S1",
+      "NIN-068-S4",
+      "NIN-068-S5",
+      "NIN-068-S7",
+      "NIN-086-S1",
+      "NIN-086-S2",
+      "NIN-086-S3",
+      "NIN-086-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "poison",
+    "skill_count": 14,
+    "skills": [
+      "NIN-026-S2",
+      "NIN-026-S4",
+      "NIN-063-S1",
+      "NIN-090-S1",
+      "NIN-090-S3",
+      "NIN-090-S5",
+      "NIN-090-S7",
+      "NIN-104-S2",
+      "NIN-110-S2",
+      "NIN-110-S3",
+      "NIN-110-S6",
+      "NIN-135-S1",
+      "NIN-135-S3",
+      "NIN-135-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "tech",
+    "skill_count": 14,
+    "skills": [
+      "NIN-120-S1",
+      "NIN-120-S2",
+      "NIN-120-S3",
+      "NIN-120-S4",
+      "NIN-120-S5",
+      "NIN-120-S6",
+      "NIN-120-S7",
+      "NIN-137-S1",
+      "NIN-137-S2",
+      "NIN-137-S3",
+      "NIN-137-S4",
+      "NIN-137-S5",
+      "NIN-137-S6",
+      "NIN-137-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "sand",
+    "skill_count": 13,
+    "skills": [
+      "NIN-024-S1",
+      "NIN-024-S2",
+      "NIN-024-S3",
+      "NIN-024-S4",
+      "NIN-024-S5",
+      "NIN-024-S6",
+      "NIN-055-S1",
+      "NIN-055-S2",
+      "NIN-055-S3",
+      "NIN-055-S4",
+      "NIN-055-S5",
+      "NIN-055-S6",
+      "NIN-055-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "clone",
+    "skill_count": 12,
+    "skills": [
+      "NIN-001-S1",
+      "NIN-001-S3",
+      "NIN-006-S1",
+      "NIN-006-S4",
+      "NIN-006-S5",
+      "NIN-041-S1",
+      "NIN-060-S3",
+      "NIN-092-S3",
+      "NIN-111-S1",
+      "NIN-111-S4",
+      "NIN-123-S1",
+      "NIN-126-S1"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "rasengan",
+    "skill_count": 12,
+    "skills": [
+      "NIN-001-S5",
+      "NIN-001-S6",
+      "NIN-006-S7",
+      "NIN-020-S5",
+      "NIN-041-S2",
+      "NIN-093-S2",
+      "NIN-093-S4",
+      "NIN-111-S2",
+      "NIN-111-S5",
+      "NIN-111-S6",
+      "NIN-123-S5",
+      "NIN-123-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "team",
+    "skill_count": 12,
+    "skills": [
+      "NIN-003-S5",
+      "NIN-005-S5",
+      "NIN-007-S7",
+      "NIN-046-S7",
+      "NIN-107-S2",
+      "NIN-107-S7",
+      "NIN-124-S2",
+      "NIN-124-S4",
+      "NIN-124-S5",
+      "NIN-124-S6",
+      "NIN-125-S6",
+      "NIN-129-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "ink",
+    "skill_count": 12,
+    "skills": [
+      "NIN-044-S1",
+      "NIN-044-S2",
+      "NIN-044-S3",
+      "NIN-044-S4",
+      "NIN-044-S5",
+      "NIN-044-S6",
+      "NIN-044-S7",
+      "NIN-117-S1",
+      "NIN-117-S3",
+      "NIN-117-S4",
+      "NIN-117-S5",
+      "NIN-117-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "space",
+    "skill_count": 12,
+    "skills": [
+      "NIN-069-S2",
+      "NIN-069-S3",
+      "NIN-069-S5",
+      "NIN-069-S6",
+      "NIN-069-S7",
+      "NIN-092-S1",
+      "NIN-099-S1",
+      "NIN-099-S3",
+      "NIN-099-S5",
+      "NIN-099-S7",
+      "NIN-127-S2",
+      "NIN-127-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "bone",
+    "skill_count": 10,
+    "skills": [
+      "NIN-036-S0",
+      "NIN-036-S1",
+      "NIN-036-S2",
+      "NIN-036-S3",
+      "NIN-036-S4",
+      "NIN-036-S5",
+      "NIN-036-S6",
+      "NIN-036-S7",
+      "NIN-099-S2",
+      "NIN-099-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "iron",
+    "skill_count": 10,
+    "skills": [
+      "NIN-063-S2",
+      "NIN-063-S4",
+      "NIN-063-S6",
+      "NIN-142-S1",
+      "NIN-142-S2",
+      "NIN-142-S3",
+      "NIN-142-S4",
+      "NIN-142-S5",
+      "NIN-142-S6",
+      "NIN-142-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lava",
+    "skill_count": 10,
+    "skills": [
+      "NIN-083-S1",
+      "NIN-083-S3",
+      "NIN-083-S6",
+      "NIN-087-S2",
+      "NIN-087-S7",
+      "NIN-102-S1",
+      "NIN-102-S2",
+      "NIN-102-S3",
+      "NIN-102-S4",
+      "NIN-102-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "sage",
+    "skill_count": 9,
+    "skills": [
+      "NIN-020-S7",
+      "NIN-075-S2",
+      "NIN-075-S6",
+      "NIN-095-S6",
+      "NIN-113-S5",
+      "NIN-113-S6",
+      "NIN-126-S4",
+      "NIN-136-S5",
+      "NIN-136-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "needle",
+    "skill_count": 9,
+    "skills": [
+      "NIN-028-S1",
+      "NIN-028-S7",
+      "NIN-032-S0",
+      "NIN-032-S1",
+      "NIN-032-S3",
+      "NIN-032-S5",
+      "NIN-032-S6",
+      "NIN-035-S2",
+      "NIN-035-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "steam",
+    "skill_count": 9,
+    "skills": [
+      "NIN-083-S2",
+      "NIN-083-S4",
+      "NIN-083-S5",
+      "NIN-083-S7",
+      "NIN-103-S1",
+      "NIN-103-S2",
+      "NIN-103-S3",
+      "NIN-103-S4",
+      "NIN-103-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "karma",
+    "skill_count": 9,
+    "skills": [
+      "NIN-111-S7",
+      "NIN-114-S2",
+      "NIN-114-S4",
+      "NIN-114-S5",
+      "NIN-114-S6",
+      "NIN-130-S1",
+      "NIN-130-S2",
+      "NIN-130-S3",
+      "NIN-133-S2"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "wire",
+    "skill_count": 8,
+    "skills": [
+      "NIN-002-S3",
+      "NIN-005-S1",
+      "NIN-005-S3",
+      "NIN-015-S2",
+      "NIN-015-S6",
+      "NIN-031-S4",
+      "NIN-035-S4",
+      "NIN-054-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "curse",
+    "skill_count": 8,
+    "skills": [
+      "NIN-002-S7",
+      "NIN-029-S7",
+      "NIN-064-S5",
+      "NIN-064-S7",
+      "NIN-075-S1",
+      "NIN-075-S3",
+      "NIN-075-S4",
+      "NIN-075-S5"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "roll",
+    "skill_count": 8,
+    "skills": [
+      "NIN-008-S2",
+      "NIN-008-S6",
+      "NIN-047-S2",
+      "NIN-047-S6",
+      "NIN-109-S2",
+      "NIN-109-S6",
+      "NIN-118-S2",
+      "NIN-118-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "mark",
+    "skill_count": 8,
+    "skills": [
+      "NIN-096-S2",
+      "NIN-096-S6",
+      "NIN-134-S1",
+      "NIN-134-S2",
+      "NIN-134-S3",
+      "NIN-134-S4",
+      "NIN-134-S5",
+      "NIN-134-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "cleanse",
+    "skill_count": 7,
+    "skills": [
+      "NIN-003-S1",
+      "NIN-003-S6",
+      "NIN-018-S2",
+      "NIN-018-S4",
+      "NIN-043-S4",
+      "NIN-079-S7",
+      "NIN-085-S7"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "air",
+    "skill_count": 7,
+    "skills": [
+      "NIN-034-S1",
+      "NIN-034-S2",
+      "NIN-034-S3",
+      "NIN-034-S4",
+      "NIN-034-S5",
+      "NIN-034-S6",
+      "NIN-034-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "parasite",
+    "skill_count": 7,
+    "skills": [
+      "NIN-040-S2",
+      "NIN-040-S4",
+      "NIN-072-S2",
+      "NIN-072-S4",
+      "NIN-072-S5",
+      "NIN-072-S6",
+      "NIN-072-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "clay",
+    "skill_count": 7,
+    "skills": [
+      "NIN-062-S1",
+      "NIN-062-S2",
+      "NIN-062-S3",
+      "NIN-062-S4",
+      "NIN-062-S5",
+      "NIN-062-S6",
+      "NIN-062-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "paper",
+    "skill_count": 7,
+    "skills": [
+      "NIN-066-S1",
+      "NIN-066-S2",
+      "NIN-066-S3",
+      "NIN-066-S4",
+      "NIN-066-S5",
+      "NIN-066-S6",
+      "NIN-066-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "chain",
+    "skill_count": 7,
+    "skills": [
+      "NIN-074-S5",
+      "NIN-074-S6",
+      "NIN-094-S1",
+      "NIN-094-S3",
+      "NIN-094-S4",
+      "NIN-094-S5",
+      "NIN-094-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "shield",
+    "skill_count": 6,
+    "skills": [
+      "NIN-003-S4",
+      "NIN-005-S2",
+      "NIN-005-S4",
+      "NIN-005-S7",
+      "NIN-032-S7",
+      "NIN-058-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "fang",
+    "skill_count": 6,
+    "skills": [
+      "NIN-011-S5",
+      "NIN-011-S6",
+      "NIN-050-S2",
+      "NIN-050-S5",
+      "NIN-050-S6",
+      "NIN-050-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "gate",
+    "skill_count": 6,
+    "skills": [
+      "NIN-014-S4",
+      "NIN-014-S7",
+      "NIN-016-S2",
+      "NIN-016-S4",
+      "NIN-053-S4",
+      "NIN-053-S5"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "ice",
+    "skill_count": 6,
+    "skills": [
+      "NIN-028-S2",
+      "NIN-028-S3",
+      "NIN-028-S4",
+      "NIN-028-S5",
+      "NIN-028-S6",
+      "NIN-099-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "stealth",
+    "skill_count": 6,
+    "skills": [
+      "NIN-030-S2",
+      "NIN-030-S4",
+      "NIN-071-S2",
+      "NIN-071-S7",
+      "NIN-072-S1",
+      "NIN-072-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "susanoo",
+    "skill_count": 6,
+    "skills": [
+      "NIN-060-S5",
+      "NIN-070-S4",
+      "NIN-070-S5",
+      "NIN-070-S6",
+      "NIN-127-S5",
+      "NIN-127-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "butterfly",
+    "skill_count": 5,
+    "skills": [
+      "NIN-008-S7",
+      "NIN-047-S5",
+      "NIN-047-S7",
+      "NIN-118-S5",
+      "NIN-118-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "smash",
+    "skill_count": 5,
+    "skills": [
+      "NIN-021-S2",
+      "NIN-021-S3",
+      "NIN-112-S4",
+      "NIN-128-S2",
+      "NIN-128-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "twin",
+    "skill_count": 5,
+    "skills": [
+      "NIN-040-S1",
+      "NIN-040-S3",
+      "NIN-040-S5",
+      "NIN-040-S6",
+      "NIN-040-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "scythe",
+    "skill_count": 5,
+    "skills": [
+      "NIN-064-S0",
+      "NIN-064-S1",
+      "NIN-064-S3",
+      "NIN-064-S6",
+      "NIN-090-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "nue",
+    "skill_count": 5,
+    "skills": [
+      "NIN-122-S2",
+      "NIN-122-S4",
+      "NIN-122-S5",
+      "NIN-122-S6",
+      "NIN-122-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "reflect",
+    "skill_count": 5,
+    "skills": [
+      "NIN-139-S1",
+      "NIN-139-S2",
+      "NIN-139-S4",
+      "NIN-139-S5",
+      "NIN-139-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lotus",
+    "skill_count": 4,
+    "skills": [
+      "NIN-014-S5",
+      "NIN-014-S6",
+      "NIN-053-S2",
+      "NIN-053-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "toad",
+    "skill_count": 4,
+    "skills": [
+      "NIN-020-S2",
+      "NIN-123-S7",
+      "NIN-136-S2",
+      "NIN-136-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "byakugo",
+    "skill_count": 4,
+    "skills": [
+      "NIN-021-S5",
+      "NIN-021-S7",
+      "NIN-128-S5",
+      "NIN-128-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "spore",
+    "skill_count": 4,
+    "skills": [
+      "NIN-071-S1",
+      "NIN-071-S3",
+      "NIN-071-S5",
+      "NIN-071-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "seal",
+    "skill_count": 4,
+    "skills": [
+      "NIN-094-S2",
+      "NIN-094-S6",
+      "NIN-097-S5",
+      "NIN-097-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "cube",
+    "skill_count": 4,
+    "skills": [
+      "NIN-132-S2",
+      "NIN-132-S4",
+      "NIN-132-S5",
+      "NIN-132-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "beam",
+    "skill_count": 4,
+    "skills": [
+      "NIN-133-S1",
+      "NIN-133-S3",
+      "NIN-133-S5",
+      "NIN-133-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "clone_combo",
+    "skill_count": 3,
+    "skills": [
+      "NIN-001-S2",
+      "NIN-001-S7",
+      "NIN-041-S4"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "dog",
+    "skill_count": 3,
+    "skills": [
+      "NIN-011-S2",
+      "NIN-011-S3",
+      "NIN-050-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "web",
+    "skill_count": 3,
+    "skills": [
+      "NIN-038-S1",
+      "NIN-038-S3",
+      "NIN-038-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "arrow",
+    "skill_count": 3,
+    "skills": [
+      "NIN-038-S2",
+      "NIN-038-S5",
+      "NIN-038-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "rasengan_big",
+    "skill_count": 3,
+    "skills": [
+      "NIN-041-S3",
+      "NIN-041-S6",
+      "NIN-126-S3"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "rasenshuriken",
+    "skill_count": 3,
+    "skills": [
+      "NIN-041-S5",
+      "NIN-126-S2",
+      "NIN-126-S7"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "thread",
+    "skill_count": 3,
+    "skills": [
+      "NIN-058-S1",
+      "NIN-065-S1",
+      "NIN-065-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "blacklight",
+    "skill_count": 3,
+    "skills": [
+      "NIN-078-S1",
+      "NIN-078-S3",
+      "NIN-078-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "golem",
+    "skill_count": 3,
+    "skills": [
+      "NIN-088-S2",
+      "NIN-088-S3",
+      "NIN-088-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "rock",
+    "skill_count": 3,
+    "skills": [
+      "NIN-088-S5",
+      "NIN-088-S7",
+      "NIN-121-S2"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "raijin",
+    "skill_count": 3,
+    "skills": [
+      "NIN-093-S1",
+      "NIN-093-S5",
+      "NIN-093-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "bubble",
+    "skill_count": 3,
+    "skills": [
+      "NIN-104-S1",
+      "NIN-104-S3",
+      "NIN-104-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "arm",
+    "skill_count": 3,
+    "skills": [
+      "NIN-114-S1",
+      "NIN-114-S3",
+      "NIN-133-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "shrink",
+    "skill_count": 3,
+    "skills": [
+      "NIN-132-S1",
+      "NIN-132-S3",
+      "NIN-132-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "ocular",
+    "skill_count": 2,
+    "skills": [
+      "NIN-004-S4",
+      "NIN-042-S4"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lightning_lance",
+    "skill_count": 2,
+    "skills": [
+      "NIN-004-S6",
+      "NIN-042-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "scent",
+    "skill_count": 2,
+    "skills": [
+      "NIN-011-S7",
+      "NIN-050-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "ash",
+    "skill_count": 2,
+    "skills": [
+      "NIN-017-S2",
+      "NIN-017-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "monkey",
+    "skill_count": 2,
+    "skills": [
+      "NIN-019-S2",
+      "NIN-019-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "element",
+    "skill_count": 2,
+    "skills": [
+      "NIN-019-S5",
+      "NIN-019-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "oil",
+    "skill_count": 2,
+    "skills": [
+      "NIN-020-S1",
+      "NIN-020-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "slug",
+    "skill_count": 2,
+    "skills": [
+      "NIN-021-S6",
+      "NIN-128-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "scalpel",
+    "skill_count": 2,
+    "skills": [
+      "NIN-023-S1",
+      "NIN-023-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "mist",
+    "skill_count": 2,
+    "skills": [
+      "NIN-027-S1",
+      "NIN-027-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "demon",
+    "skill_count": 2,
+    "skills": [
+      "NIN-039-S2",
+      "NIN-039-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "chakra_cloak",
+    "skill_count": 2,
+    "skills": [
+      "NIN-041-S7",
+      "NIN-126-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "black_flame",
+    "skill_count": 2,
+    "skills": [
+      "NIN-042-S7",
+      "NIN-060-S4"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "weasel",
+    "skill_count": 2,
+    "skills": [
+      "NIN-056-S2",
+      "NIN-056-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "shark",
+    "skill_count": 2,
+    "skills": [
+      "NIN-061-S1",
+      "NIN-061-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "blood",
+    "skill_count": 2,
+    "skills": [
+      "NIN-064-S2",
+      "NIN-064-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "mask",
+    "skill_count": 2,
+    "skills": [
+      "NIN-065-S4",
+      "NIN-065-S5"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "summon",
+    "skill_count": 2,
+    "skills": [
+      "NIN-068-S2",
+      "NIN-068-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "laser",
+    "skill_count": 2,
+    "skills": [
+      "NIN-078-S5",
+      "NIN-078-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "dust",
+    "skill_count": 2,
+    "skills": [
+      "NIN-086-S5",
+      "NIN-086-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lime",
+    "skill_count": 2,
+    "skills": [
+      "NIN-087-S3",
+      "NIN-087-S5"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "salamander",
+    "skill_count": 2,
+    "skills": [
+      "NIN-090-S2",
+      "NIN-090-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "tapir",
+    "skill_count": 2,
+    "skills": [
+      "NIN-091-S2",
+      "NIN-091-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "moon",
+    "skill_count": 2,
+    "skills": [
+      "NIN-098-S5",
+      "NIN-098-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "wing",
+    "skill_count": 2,
+    "skills": [
+      "NIN-105-S2",
+      "NIN-105-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "mucus",
+    "skill_count": 2,
+    "skills": [
+      "NIN-125-S4",
+      "NIN-125-S5"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "body",
+    "skill_count": 2,
+    "skills": [
+      "NIN-135-S5",
+      "NIN-135-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "earth_wall",
+    "skill_count": 1,
+    "skills": [
+      "NIN-004-S1"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "ninken",
+    "skill_count": 1,
+    "skills": [
+      "NIN-004-S2"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "water_dragon",
+    "skill_count": 1,
+    "skills": [
+      "NIN-004-S3"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lightning_dash",
+    "skill_count": 1,
+    "skills": [
+      "NIN-004-S5"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "kamui",
+    "skill_count": 1,
+    "skills": [
+      "NIN-004-S7"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "disguise",
+    "skill_count": 1,
+    "skills": [
+      "NIN-006-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "peacock",
+    "skill_count": 1,
+    "skills": [
+      "NIN-016-S5"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "tiger",
+    "skill_count": 1,
+    "skills": [
+      "NIN-016-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "elephant",
+    "skill_count": 1,
+    "skills": [
+      "NIN-016-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "white",
+    "skill_count": 1,
+    "skills": [
+      "NIN-022-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "spider",
+    "skill_count": 1,
+    "skills": [
+      "NIN-038-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lightning_aura",
+    "skill_count": 1,
+    "skills": [
+      "NIN-042-S1"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "fire_dragon",
+    "skill_count": 1,
+    "skills": [
+      "NIN-042-S2"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "lightning_needle",
+    "skill_count": 1,
+    "skills": [
+      "NIN-042-S3"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "kirin",
+    "skill_count": 1,
+    "skills": [
+      "NIN-042-S5"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "ground_smash",
+    "skill_count": 1,
+    "skills": [
+      "NIN-043-S2"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "melee_combo",
+    "skill_count": 1,
+    "skills": [
+      "NIN-043-S3"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "byakugou",
+    "skill_count": 1,
+    "skills": [
+      "NIN-043-S5"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "katsuyu",
+    "skill_count": 1,
+    "skills": [
+      "NIN-043-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "fireball",
+    "skill_count": 1,
+    "skills": [
+      "NIN-060-S1"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "genjutsu",
+    "skill_count": 1,
+    "skills": [
+      "NIN-060-S2"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "susanoo_shield",
+    "skill_count": 1,
+    "skills": [
+      "NIN-060-S6"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "susanoo_sword",
+    "skill_count": 1,
+    "skills": [
+      "NIN-060-S7"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "missile",
+    "skill_count": 1,
+    "skills": [
+      "NIN-068-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "meteor",
+    "skill_count": 1,
+    "skills": [
+      "NIN-070-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "raijin_mark",
+    "skill_count": 1,
+    "skills": [
+      "NIN-093-S3"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "space_barrier",
+    "skill_count": 1,
+    "skills": [
+      "NIN-093-S7"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "orb",
+    "skill_count": 1,
+    "skills": [
+      "NIN-097-S3"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "yin",
+    "skill_count": 1,
+    "skills": [
+      "NIN-097-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "acid",
+    "skill_count": 1,
+    "skills": [
+      "NIN-104-S4"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "club",
+    "skill_count": 1,
+    "skills": [
+      "NIN-121-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "trap",
+    "skill_count": 1,
+    "skills": [
+      "NIN-125-S2"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "bijuu_bomb",
+    "skill_count": 1,
+    "skills": [
+      "NIN-126-S5"
+    ],
+    "priority": "P0_ANCHOR",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "blackfire",
+    "skill_count": 1,
+    "skills": [
+      "NIN-127-S7"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  },
+  {
+    "id": "claw",
+    "skill_count": 1,
+    "skills": [
+      "NIN-134-S6"
+    ],
+    "priority": "P1",
+    "production": "original reusable phase assets with per-skill scale,color,geometry,character motif; no duplicate frame set counted as unique",
+    "status": "MAPPING_DESIGN_ONLY"
+  }
+]

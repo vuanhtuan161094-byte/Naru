@@ -3,7 +3,7 @@
   "design_head": "6d937b63fe42efe198307a4aaf1744751192031d",
   "gameplay_observed": "1b5c8da242fe9d00a257cf9a4f625574d7872e47",
   "art_observed": "fb61fa487d544bee51c2ceae7cae56e5cd0f8247",
-  "status": "ASSIGNED_NOT_COMPLETED",
+  "status": "DESIGN_DRAFT_ALL_IDS_PRESENT_REVIEW_REQUIRED",
   "owner_rules": "DEC-012",
   "counts": {
     "ninja": 144,
@@ -14,7 +14,7 @@
   "batches": [
     {
       "id": "SKILL-P2-A",
-      "design_status": "64_PROPOSED_REVIEW_REQUIRED",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-001",
         "NIN-041",
@@ -90,11 +90,14 @@
         "NIN-093-S5",
         "NIN-093-S6",
         "NIN-093-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-A.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-B",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-002",
         "NIN-003",
@@ -251,11 +254,14 @@
         "NIN-019-S5",
         "NIN-019-S6",
         "NIN-019-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-B.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-C",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-020",
         "NIN-021",
@@ -412,11 +418,14 @@
         "NIN-036-S5",
         "NIN-036-S6",
         "NIN-036-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-C.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-D",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-037",
         "NIN-038",
@@ -573,11 +582,14 @@
         "NIN-056-S5",
         "NIN-056-S6",
         "NIN-056-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-D.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-E",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-057",
         "NIN-058",
@@ -734,11 +746,14 @@
         "NIN-074-S5",
         "NIN-074-S6",
         "NIN-074-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-E.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-F",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-075",
         "NIN-076",
@@ -895,11 +910,14 @@
         "NIN-091-S5",
         "NIN-091-S6",
         "NIN-091-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-F.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-G",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-092",
         "NIN-094",
@@ -1056,11 +1074,14 @@
         "NIN-109-S5",
         "NIN-109-S6",
         "NIN-109-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-G.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-H",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-110",
         "NIN-111",
@@ -1217,11 +1238,14 @@
         "NIN-127-S5",
         "NIN-127-S6",
         "NIN-127-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-H.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     },
     {
       "id": "SKILL-P2-I",
-      "design_status": "INDIVIDUAL_REVIEW_PENDING",
+      "design_status": "DRAFT_RECORDS_PRESENT",
       "ninja_ids": [
         "NIN-128",
         "NIN-129",
@@ -1378,7 +1402,10 @@
         "NIN-144-S5",
         "NIN-144-S6",
         "NIN-144-S7"
-      ]
+      ],
+      "path": "design/skill-p2/SKILL-P2-I.json",
+      "runtime": "NOT_INTEGRATED",
+      "art": "MAPPING_ONLY"
     }
   ],
   "art_priority_ninja_ids": [

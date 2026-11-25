@@ -25,3 +25,6 @@ Xem balance_rules.json. Tăng trưởng rating lưu vô hạn nhưng tỷ lệ b
 
 ## Combat V3 — DEC-012 (LOCKED)
 The current combat rules supersede previous arena geometry. See design/skill-p1/COMBAT_V3.md and data/combat_v3.json.
+
+## SKILL-P2 overlay (Combat V3)
+Design draft covering all 1,152 skill IDs, 54 forms, 12 combos; see design/skill-p2/README.md and audit.json. Numeric and non-canon adaptations are DEV; D4 remains runtime until reviewed integration. Stable IDs/save progression preserved.

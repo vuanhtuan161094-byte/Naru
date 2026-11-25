@@ -1,0 +1,3541 @@
+[
+  {
+    "form_id": "NIN-001-F1",
+    "ninja_id": "NIN-001",
+    "name_vi": "Chakra Cửu Vĩ sơ khai",
+    "family": "cloak",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "hp_threshold_or_manual",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-001-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.18,
+        "natk": 1.18,
+        "move_speed": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_cloak",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-001-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-001-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-001-F1",
+      "family": "cloak",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "NARUTO_EARLY"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-002-F1",
+    "ninja_id": "NIN-002",
+    "name_vi": "Sharingan",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-002-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-002-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-002-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-002-F1",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "SASUKE_EARLY",
+      "EARLY_ARC"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-002-F2",
+    "ninja_id": "NIN-002",
+    "name_vi": "Ấn chú",
+    "family": "curse",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-002-S7"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-002-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.15
+      },
+      "drain": 1,
+      "exit": "fatigue_3s",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-002-S5",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-002-S6",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-002-F2",
+      "family": "curse",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "SASUKE_EARLY",
+      "EARLY_ARC"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-004-F1",
+    "ninja_id": "NIN-004",
+    "name_vi": "Sharingan",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-004-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-004-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-004-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Snapshot composite: Kamui/Mangekyo are later Kakashi; gate advanced forms, retain ID for saves.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-004-F1",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "EARLY_ARC",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-004-F2",
+    "ninja_id": "NIN-004",
+    "name_vi": "Mangekyo",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-004-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-004-S5",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-004-S6",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Snapshot composite: Kamui/Mangekyo are later Kakashi; gate advanced forms, retain ID for saves.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-004-F2",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "EARLY_ARC",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-008-F1",
+    "ninja_id": "NIN-008",
+    "name_vi": "Bội hóa",
+    "family": "giant",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-008-S1",
+        "NIN-008-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-008-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "armor": 1.2,
+        "patk": 1.15
+      },
+      "drain": 0,
+      "body_radius_scale": 1.25,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-008-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-008-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-008-F1",
+      "family": "giant",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-008-F2",
+    "ninja_id": "NIN-008",
+    "name_vi": "Điệp hóa",
+    "family": "butterfly",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-008-S7"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-008-S7"
+      ],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-008-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.28,
+        "move_speed": 1.12
+      },
+      "drain": 1.5,
+      "exit": "fatigue_4s",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-008-S5",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-008-S6",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-008-F2",
+      "family": "butterfly",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-014-F1",
+    "ninja_id": "NIN-014",
+    "name_vi": "Bát Môn",
+    "family": "gate",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-014-S7"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-014-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.25,
+        "move_speed": 1.2,
+        "attack_speed": 1.15
+      },
+      "hp_drain_pct_per_s": 0.008,
+      "exit": "fatigue_5s",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-014-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-014-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-014-F1",
+      "family": "gate",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "LEE"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-016-F1",
+    "ninja_id": "NIN-016",
+    "name_vi": "Bát Môn",
+    "family": "gate",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-016-S2"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-016-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.25,
+        "move_speed": 1.2,
+        "attack_speed": 1.15
+      },
+      "hp_drain_pct_per_s": 0.008,
+      "exit": "fatigue_5s",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-016-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-016-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Eight Gates techniques require gate-specific unlock, do not imply early base Guy has all; eighth gate not freely repeatable.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-016-F1",
+      "family": "gate",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-020-F1",
+    "ninja_id": "NIN-020",
+    "name_vi": "Tiên nhân",
+    "family": "sage",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-020-S7"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-020-S7"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-020-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.14,
+        "natk": 1.2,
+        "accuracy": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_sage",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-020-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-020-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-020-F1",
+      "family": "sage",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "JIRAIYA"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-021-F1",
+    "ninja_id": "NIN-021",
+    "name_vi": "Bách Hào",
+    "family": "byakugo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-021-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-021-S5",
+        "NIN-021-S7"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-021-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.15,
+        "armor": 1.1
+      },
+      "regen_pct_per_s": 0.015,
+      "drain": 1,
+      "exit": "remove_regen",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-021-S2",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-021-S3",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-021-F1",
+      "family": "byakugo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "TSUNADE"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-022-F1",
+    "ninja_id": "NIN-022",
+    "name_vi": "Bạch xà",
+    "family": "snake",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-022-S7"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-022-S7"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-022-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.15,
+        "evasion": 1.15
+      },
+      "drain": 1,
+      "exit": "remove_body",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": []
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-022-F1",
+      "family": "snake",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "OROCHI"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-024-F1",
+    "ninja_id": "NIN-024",
+    "name_vi": "Chakra Nhất Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-024-S7"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-024-S7"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-024-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-024-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Pre-Kazekage Shukaku snapshot only.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-024-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "GAARA",
+      "SAND"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-036-F1",
+    "ninja_id": "NIN-036",
+    "name_vi": "Ấn chú",
+    "family": "curse",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-036-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.15
+      },
+      "drain": 1,
+      "exit": "fatigue_3s",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-036-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-036-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-036-F1",
+      "family": "curse",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-041-F1",
+    "ninja_id": "NIN-041",
+    "name_vi": "Tiên nhân",
+    "family": "sage",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-041-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.14,
+        "natk": 1.2,
+        "accuracy": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_sage",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-041-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-041-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Sage/war composite unlocks; thrown Rasenshuriken gated; keep stage provenance.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-041-F1",
+      "family": "sage",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "NARUTO_LATE",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-041-F2",
+    "ninja_id": "NIN-041",
+    "name_vi": "Chakra Kurama",
+    "family": "cloak",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "hp_threshold_or_manual",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 45,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-041-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.18,
+        "natk": 1.18,
+        "move_speed": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_cloak",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-041-S5",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-041-S6",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Sage/war composite unlocks; thrown Rasenshuriken gated; keep stage provenance.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-041-F2",
+      "family": "cloak",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "NARUTO_LATE",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-041-F3",
+    "ninja_id": "NIN-041",
+    "name_vi": "Lục Đạo",
+    "family": "six",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 7,
+      "resource_id": "RES-127",
+      "resource_count": 15,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 55,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 20,
+      "one_active_group": "NIN-041-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.25,
+        "patk": 1.2,
+        "move_speed": 1.15
+      },
+      "drain": 1.5,
+      "exit": "remove_six_paths",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-041-S5",
+          "coefficient_multiplier": 1.2100000000000002
+        },
+        {
+          "skill_id": "NIN-041-S6",
+          "coefficient_multiplier": 1.2100000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Sage/war composite unlocks; thrown Rasenshuriken gated; keep stage provenance.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-041-F3",
+      "family": "six",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "NARUTO_LATE",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-042-F1",
+    "ninja_id": "NIN-042",
+    "name_vi": "Mangekyo",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-042-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-042-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-042-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Shippuden composite: Mangekyo/EMS/Susanoo separate gates; no Rinnegan assumed.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-042-F1",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "SASUKE_LATE",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-042-F2",
+    "ninja_id": "NIN-042",
+    "name_vi": "Vĩnh Hằng Mangekyo",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-042-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-042-S6",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-042-S7",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Shippuden composite: Mangekyo/EMS/Susanoo separate gates; no Rinnegan assumed.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-042-F2",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "SASUKE_LATE",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-042-F3",
+    "ninja_id": "NIN-042",
+    "name_vi": "Susanoo",
+    "family": "susanoo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 7,
+      "resource_id": "RES-127",
+      "resource_count": 15,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 55,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 20,
+      "one_active_group": "NIN-042-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "armor": 1.3,
+        "nres": 1.25,
+        "natk": 1.1
+      },
+      "body_radius_scale": 1.3,
+      "drain": 1.5,
+      "exit": "remove_avatar_safe_resize",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-042-S6",
+          "coefficient_multiplier": 1.2100000000000002
+        },
+        {
+          "skill_id": "NIN-042-S7",
+          "coefficient_multiplier": 1.2100000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Shippuden composite: Mangekyo/EMS/Susanoo separate gates; no Rinnegan assumed.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-042-F3",
+      "family": "susanoo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "SASUKE_LATE",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-043-F1",
+    "ninja_id": "NIN-043",
+    "name_vi": "Bách Hào",
+    "family": "byakugo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-043-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-043-S5"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-043-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.15,
+        "armor": 1.1
+      },
+      "regen_pct_per_s": 0.015,
+      "drain": 1,
+      "exit": "remove_regen",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-043-S2",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-043-S3",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-043-F1",
+      "family": "byakugo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-047-F1",
+    "ninja_id": "NIN-047",
+    "name_vi": "Điệp hóa",
+    "family": "butterfly",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-047-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-047-S5",
+        "NIN-047-S7"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-047-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.28,
+        "move_speed": 1.12
+      },
+      "drain": 1.5,
+      "exit": "fatigue_4s",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-047-S3",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-047-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-047-F1",
+      "family": "butterfly",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-053-F1",
+    "ninja_id": "NIN-053",
+    "name_vi": "Bát Môn",
+    "family": "gate",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-053-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-053-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.25,
+        "move_speed": 1.2,
+        "attack_speed": 1.15
+      },
+      "hp_drain_pct_per_s": 0.008,
+      "exit": "fatigue_5s",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-053-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-053-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-053-F1",
+      "family": "gate",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "LEE"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-060-F1",
+    "ninja_id": "NIN-060",
+    "name_vi": "Mangekyo",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-060-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-060-S4",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-060-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-060-F1",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "ITACHI",
+      "ITACHI_WAR"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-060-F2",
+    "ninja_id": "NIN-060",
+    "name_vi": "Susanoo",
+    "family": "susanoo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-060-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-060-S5"
+      ],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-060-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "armor": 1.3,
+        "nres": 1.25,
+        "natk": 1.1
+      },
+      "body_radius_scale": 1.3,
+      "drain": 1.5,
+      "exit": "remove_avatar_safe_resize",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-060-S4",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-060-S7",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-060-F2",
+      "family": "susanoo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "ITACHI",
+      "ITACHI_WAR"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-061-F1",
+    "ninja_id": "NIN-061",
+    "name_vi": "Hợp thể Samehada",
+    "family": "samehada",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-061-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "armor": 1.15,
+        "patk": 1.2,
+        "chakra_regen": 1.15
+      },
+      "drain": 0,
+      "exit": "remove_fusion",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-061-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-061-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-061-F1",
+      "family": "samehada",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-065-F1",
+    "ninja_id": "NIN-065",
+    "name_vi": "Địa oán ngu",
+    "family": "mask",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-065-S7"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-065-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.2,
+        "armor": 1.1
+      },
+      "drain": 1,
+      "exit": "remove_threads",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-065-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-065-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-065-F1",
+      "family": "mask",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "IMMORTALS"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-069-F1",
+    "ninja_id": "NIN-069",
+    "name_vi": "Mangekyo",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-069-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-069-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-069-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Kamui and Ten-Tails modes mutually exclusive; avoid teleport/intangibility during incompatible mode.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-069-F1",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "OBITO",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-069-F2",
+    "ninja_id": "NIN-069",
+    "name_vi": "Jinchuriki Thập Vĩ",
+    "family": "ten",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "hp_threshold_or_manual",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 45,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-069-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.22,
+        "natk": 1.25,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1.5,
+      "exit": "safe_resize_no_permanent_effect",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-069-S5",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-069-S6",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Kamui and Ten-Tails modes mutually exclusive; avoid teleport/intangibility during incompatible mode.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-069-F2",
+      "family": "ten",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "OBITO",
+      "TEAM7"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-070-F1",
+    "ninja_id": "NIN-070",
+    "name_vi": "Susanoo",
+    "family": "susanoo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-070-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-070-S5",
+        "NIN-070-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-070-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "armor": 1.3,
+        "nres": 1.25,
+        "natk": 1.1
+      },
+      "body_radius_scale": 1.3,
+      "drain": 1.5,
+      "exit": "remove_avatar_safe_resize",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-070-S3",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-070-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "War composite, separate EMS/Rinnegan/Ten-Tails; do not freely mix all forms.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-070-F1",
+      "family": "susanoo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "MADARA",
+      "WAR"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-070-F2",
+    "ninja_id": "NIN-070",
+    "name_vi": "Rinnegan",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-070-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-070-S3",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-070-S7",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "War composite, separate EMS/Rinnegan/Ten-Tails; do not freely mix all forms.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-070-F2",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "MADARA",
+      "WAR"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-070-F3",
+    "ninja_id": "NIN-070",
+    "name_vi": "Jinchuriki Thập Vĩ",
+    "family": "ten",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 7,
+      "resource_id": "RES-127",
+      "resource_count": 15,
+      "mode": "hp_threshold_or_manual",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 55,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 20,
+      "one_active_group": "NIN-070-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.22,
+        "natk": 1.25,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1.5,
+      "exit": "safe_resize_no_permanent_effect",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-070-S3",
+          "coefficient_multiplier": 1.2100000000000002
+        },
+        {
+          "skill_id": "NIN-070-S7",
+          "coefficient_multiplier": 1.2100000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "War composite, separate EMS/Rinnegan/Ten-Tails; do not freely mix all forms.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-070-F3",
+      "family": "ten",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "MADARA",
+      "WAR"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-075-F1",
+    "ninja_id": "NIN-075",
+    "name_vi": "Tiên nhân hóa",
+    "family": "curse",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-075-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-075-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.15
+      },
+      "drain": 1,
+      "exit": "fatigue_3s",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-075-S4",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-075-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-075-F1",
+      "family": "curse",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-076-F1",
+    "ninja_id": "NIN-076",
+    "name_vi": "Chakra Bát Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-076-S5",
+        "NIN-076-S7"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": 0.35,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-076-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-076-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-076-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-076-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "IMMORTALS",
+      "BIJUU"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-077-F1",
+    "ninja_id": "NIN-077",
+    "name_vi": "Lôi độn giáp",
+    "family": "lightning",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-077-S7"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-077-S7"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-077-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "move_speed": 1.25,
+        "patk": 1.15,
+        "armor": 1.15
+      },
+      "drain": 1.25,
+      "exit": "remove_armor",
+      "chakra_drain_per_s": 1.25,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-077-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-077-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-077-F1",
+      "family": "lightning",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-095-F1",
+    "ninja_id": "NIN-095",
+    "name_vi": "Tiên nhân",
+    "family": "sage",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-095-S6"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-095-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-095-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.14,
+        "natk": 1.2,
+        "accuracy": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_sage",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-095-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-095-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-095-F1",
+      "family": "sage",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "HASHIRAMA"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-100-F1",
+    "ninja_id": "NIN-100",
+    "name_vi": "Nhị Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-100-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-100-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-100-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-100-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-100-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-101-F1",
+    "ninja_id": "NIN-101",
+    "name_vi": "Tam Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-101-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-101-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-101-S3",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-101-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-101-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-102-F1",
+    "ninja_id": "NIN-102",
+    "name_vi": "Tứ Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-102-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-102-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-102-S4",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-102-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-102-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-103-F1",
+    "ninja_id": "NIN-103",
+    "name_vi": "Ngũ Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-103-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-103-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-103-S4",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-103-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-103-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-104-F1",
+    "ninja_id": "NIN-104",
+    "name_vi": "Lục Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-104-S5"
+      ],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-104-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-104-S2",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-104-S4",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-104-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-105-F1",
+    "ninja_id": "NIN-105",
+    "name_vi": "Thất Vĩ",
+    "family": "beast",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-105-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-105-S5",
+        "NIN-105-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-105-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.2,
+        "natk": 1.2,
+        "armor": 1.15
+      },
+      "body_radius_scale": 1.25,
+      "drain": 1,
+      "exit": "safe_resize",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": []
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-105-F1",
+      "family": "beast",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-111-F1",
+    "ninja_id": "NIN-111",
+    "name_vi": "Karma",
+    "family": "karma",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-111-S7"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-111-S7"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-111-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.2,
+        "patk": 1.15
+      },
+      "drain": 1.2,
+      "exit": "remove_karma",
+      "chakra_drain_per_s": 1.2,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-111-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-111-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Boruto snapshot pre-TBV unless explicit variant; Karma limited.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-111-F1",
+      "family": "karma",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "BORUTO",
+      "KARMA"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-112-F1",
+    "ninja_id": "NIN-112",
+    "name_vi": "Sharingan",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-112-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-112-S6",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-112-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Early Boruto Sarada not TBV Mangekyo; no Ohirume in this ID.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-112-F1",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-113-F1",
+    "ninja_id": "NIN-113",
+    "name_vi": "Tiên nhân",
+    "family": "sage",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-113-S5",
+        "NIN-113-S6"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-113-S5",
+        "NIN-113-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-113-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.14,
+        "natk": 1.2,
+        "accuracy": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_sage",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-113-S2",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-113-S4",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-113-F1",
+      "family": "sage",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-114-F1",
+    "ninja_id": "NIN-114",
+    "name_vi": "Karma",
+    "family": "karma",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-114-S5",
+        "NIN-114-S6"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-114-S5",
+        "NIN-114-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-114-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.2,
+        "patk": 1.15
+      },
+      "drain": 1.2,
+      "exit": "remove_karma",
+      "chakra_drain_per_s": 1.2,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-114-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Karma snapshot; no automatic Isshiki abilities before appropriate era.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-114-F1",
+      "family": "karma",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "KARMA",
+      "DAIKOKUTEN",
+      "SUKUNA"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-118-F1",
+    "ninja_id": "NIN-118",
+    "name_vi": "Điệp hóa",
+    "family": "butterfly",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-118-S5",
+        "NIN-118-S6"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-118-S5",
+        "NIN-118-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-118-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.28,
+        "move_speed": 1.12
+      },
+      "drain": 1.5,
+      "exit": "fatigue_4s",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-118-S3",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-118-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-118-F1",
+      "family": "butterfly",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-126-F1",
+    "ninja_id": "NIN-126",
+    "name_vi": "Tiên nhân",
+    "family": "sage",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-126-S4"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-126-S4"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-126-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.14,
+        "natk": 1.2,
+        "accuracy": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_sage",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-126-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-126-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Pre-Kurama-loss composite required for Kurama/Vijuu bomb; Baryon held.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-126-F1",
+      "family": "sage",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "NARUTO_LATE",
+      "CYBORGS"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-126-F2",
+    "ninja_id": "NIN-126",
+    "name_vi": "Chakra Kurama",
+    "family": "cloak",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-126-S6"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-126-S6"
+      ],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-126-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.18,
+        "natk": 1.18,
+        "move_speed": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_cloak",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-126-S5",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-126-S7",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Pre-Kurama-loss composite required for Kurama/Vijuu bomb; Baryon held.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-126-F2",
+      "family": "cloak",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "NARUTO_LATE",
+      "CYBORGS"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-127-F1",
+    "ninja_id": "NIN-127",
+    "name_vi": "Rinnegan",
+    "family": "eye",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "manual_stance",
+      "skill_triggers": [],
+      "previous_trigger_skill_ids": [],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-127-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "accuracy": 1.15,
+        "evasion": 1.12
+      },
+      "drain": 1,
+      "exit": "remove_eye_buff",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-127-S3",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-127-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Pre-Rinnegan-loss snapshot only for Amenotejikara; post-loss variant not silently mixed.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-127-F1",
+      "family": "eye",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "SASUKE_LATE",
+      "CYBORGS"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-127-F2",
+    "ninja_id": "NIN-127",
+    "name_vi": "Susanoo",
+    "family": "susanoo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 5,
+      "resource_id": "RES-127",
+      "resource_count": 10,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-127-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-127-S5"
+      ],
+      "manual_chakra": 45,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 16,
+      "one_active_group": "NIN-127-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "armor": 1.3,
+        "nres": 1.25,
+        "natk": 1.1
+      },
+      "body_radius_scale": 1.3,
+      "drain": 1.5,
+      "exit": "remove_avatar_safe_resize",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-127-S3",
+          "coefficient_multiplier": 1.1800000000000002
+        },
+        {
+          "skill_id": "NIN-127-S7",
+          "coefficient_multiplier": 1.1800000000000002
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": "Pre-Rinnegan-loss snapshot only for Amenotejikara; post-loss variant not silently mixed.",
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-127-F2",
+      "family": "susanoo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "SASUKE_LATE",
+      "CYBORGS"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-128-F1",
+    "ninja_id": "NIN-128",
+    "name_vi": "Bách Hào",
+    "family": "byakugo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-128-S5"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-128-S5"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-128-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.15,
+        "armor": 1.1
+      },
+      "regen_pct_per_s": 0.015,
+      "drain": 1,
+      "exit": "remove_regen",
+      "chakra_drain_per_s": 1,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-128-S2",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-128-S4",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-128-F1",
+      "family": "byakugo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-130-F1",
+    "ninja_id": "NIN-130",
+    "name_vi": "Hợp nhất chakra",
+    "family": "momo",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-130-S5",
+        "NIN-130-S6"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-130-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-130-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "natk": 1.25,
+        "armor": 1.15
+      },
+      "drain": 1.5,
+      "exit": "remove_fusion",
+      "chakra_drain_per_s": 1.5,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-130-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-130-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-130-F1",
+      "family": "momo",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [
+      "MOMO",
+      "KARMA"
+    ],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  },
+  {
+    "form_id": "NIN-136-F1",
+    "ninja_id": "NIN-136",
+    "name_vi": "Tiên nhân",
+    "family": "sage",
+    "activation": {
+      "requires_unlock": true,
+      "unlock_realm": 3,
+      "resource_id": "RES-127",
+      "resource_count": 5,
+      "mode": "skill_or_existing_manual_route",
+      "skill_triggers": [
+        "NIN-136-S6"
+      ],
+      "previous_trigger_skill_ids": [
+        "NIN-136-S6"
+      ],
+      "manual_chakra": 35,
+      "hp_threshold": null,
+      "cooldown_s": 60,
+      "duration_s": 12,
+      "one_active_group": "NIN-136-FORM",
+      "no_double_chakra_charge": true
+    },
+    "effect": {
+      "stat": {
+        "patk": 1.14,
+        "natk": 1.2,
+        "accuracy": 1.1
+      },
+      "drain": 0,
+      "exit": "remove_sage",
+      "chakra_drain_per_s": 0,
+      "hp_floor": 1,
+      "empowered_skills": [
+        {
+          "skill_id": "NIN-136-S5",
+          "coefficient_multiplier": 1.1500000000000001
+        },
+        {
+          "skill_id": "NIN-136-S7",
+          "coefficient_multiplier": 1.1500000000000001
+        }
+      ]
+    },
+    "constraints": {
+      "snapshot": null,
+      "nonrecursive": true,
+      "no_permanent_growth_from_toggle": true,
+      "disallow_incompatible_forms": true,
+      "resize_requires_safe_landing": true,
+      "held": "Baryon/8th Gate full fatal version excluded; irreversible outcomes not repeatable"
+    },
+    "vfx": {
+      "key": "NIN-136-F1",
+      "family": "sage",
+      "phases": [
+        "activation",
+        "loop",
+        "exit"
+      ],
+      "actor_overlay": true
+    },
+    "source_ids": [],
+    "status": "DEV_DESIGN_NOT_INTEGRATED"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "design_version": "SKILL-P2-V3",
+  "source_head": "0506339db224cdba4071a16d9a58250f0d592c44",
+  "counts": {
+    "skills": 1152,
+    "ninjas": 144,
+    "forms": 54,
+    "combos": 12,
+    "vfx_families": 145,
+    "explicit_anchor_proposals": 64,
+    "technique_context_matches": 10,
+    "source_context_only": 334,
+    "no_source_pointer": 808,
+    "era_flagged": 176,
+    "held": 1,
+    "shapes": {
+      "single": 252,
+      "summon": 56,
+      "self": 166,
+      "dash_contact": 74,
+      "projectile_burst": 44,
+      "single_ally": 36,
+      "circle_self": 86,
+      "projectile_first": 82,
+      "wall": 18,
+      "line": 74,
+      "zone_target": 69,
+      "circle_ground": 61,
+      "cone": 65,
+      "circle_target": 47,
+      "teleport_mark": 13,
+      "arc_self": 9
+    }
+  },
+  "qa": {
+    "unique_skill_ids": true,
+    "all_original_ids": true,
+    "each_ninja_eight": true,
+    "form_refs": true,
+    "combo_members": true,
+    "vfx_mapping": true,
+    "runtime_test": "NOT_RUN_DESIGN_ONLY"
+  },
+  "status": "DESIGN_DRAFT_COMPLETE_COVERAGE_REVIEW_REQUIRED"
+}

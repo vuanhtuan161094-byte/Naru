@@ -1,0 +1,306 @@
+[
+  {
+    "id": "NARUTO_EARLY",
+    "url": "https://naruto-official.com/en/news/01_1610",
+    "scope": "Naruto learns Rasengan and summons; character/era context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "NARUTO_LATE",
+    "url": "https://naruto-official.com/en/news/01_1611",
+    "scope": "Naruto later learns to control tailed beast chakra",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "SASUKE_EARLY",
+    "url": "https://naruto-official.com/en/news/01_1856",
+    "scope": "Sasuke learns Fireball; early character context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "SASUKE_LATE",
+    "url": "https://naruto-official.com/en/news/01_1858",
+    "scope": "Sasuke later story context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "TEAM7",
+    "url": "https://naruto-official.com/en/news/01_1342",
+    "scope": "Team 7 summoning and combination attack in war",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "LEE",
+    "url": "https://naruto-official.com/en/news/01_1652",
+    "scope": "Lee taijutsu and Chunin exams context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "SHIKAMARU",
+    "url": "https://naruto-official.com/en/news/01_1910",
+    "scope": "Shikamaru team strategy context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "GAARA",
+    "url": "https://naruto-official.com/en/news/01_1688",
+    "scope": "Gaara sand and Shukaku timeline",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "SAND",
+    "url": "https://naruto-official.com/en/news/01_1555",
+    "scope": "Gaara sand manipulation",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "NEJI",
+    "url": "https://naruto-official.com/en/news/01_1817",
+    "scope": "Neji Hyuga context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "HINATA",
+    "url": "https://naruto-official.com/en/news/01_1668",
+    "scope": "Hinata timeline and Team Eight context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "JIRAIYA",
+    "url": "https://naruto-official.com/en/news/01_1643",
+    "scope": "Jiraiya sage and toad-associated character context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "TSUNADE",
+    "url": "https://naruto-official.com/en/news/01_1868",
+    "scope": "Tsunade story context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "OROCHI",
+    "url": "https://naruto-official.com/en/news/01_1629",
+    "scope": "Orochimaru timeline context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "DEIDARA",
+    "url": "https://naruto-official.com/en/news/01_1781",
+    "scope": "Deidara explosive art context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "SASORI",
+    "url": "https://naruto-official.com/en/news/01_1641",
+    "scope": "Sasori puppeteer context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "HIDAN",
+    "url": "https://naruto-official.com/en/news/01_1749",
+    "scope": "Hidan Jashin context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "IMMORTALS",
+    "url": "https://naruto-official.com/en/news/01_1316",
+    "scope": "Hidan/Kakuzu arc and Killer Bee tailed beast control",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "PAIN",
+    "url": "https://naruto-official.com/en/news/01_1321",
+    "scope": "Pain six paths and Naruto conflict context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "OBITO",
+    "url": "https://naruto-official.com/en/news/01_1706",
+    "scope": "Obito timeline and graft context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "MADARA",
+    "url": "https://naruto-official.com/en/news/01_1663",
+    "scope": "Madara historical/war context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "HASHIRAMA",
+    "url": "https://naruto-official.com/en/news/01_1627",
+    "scope": "Wood style, Sage Jutsu and thousand-arm statue",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "TOBIRAMA",
+    "url": "https://naruto-official.com/en/news/01_1694",
+    "scope": "Tobirama Flying Raijin and clone counter context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "SHISUI",
+    "url": "https://naruto-official.com/en/news/01_1625",
+    "scope": "Shisui teleport and Kotoamatsukami context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "ITACHI",
+    "url": "https://naruto-official.com/en/news/01_1287",
+    "scope": "Itachi Tsukuyomi story context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "ITACHI_WAR",
+    "url": "https://naruto-official.com/en/news/01_1333",
+    "scope": "Izanami and Reanimation story context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "MINATO",
+    "url": "https://naruto-official.com/en/news/01_1521",
+    "scope": "Minato ninjutsu inheritance and development",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "BORUTO",
+    "url": "https://naruto-official.com/en/news/01_1745",
+    "scope": "Boruto Karma and later conflict context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "KARMA",
+    "url": "https://naruto-official.com/en/news/01_1770",
+    "scope": "Karma and vessel relationship",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "MOMO",
+    "url": "https://naruto-official.com/en/news/01_1767",
+    "scope": "Momoshiki implanted Karma in Boruto",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "DAIKOKUTEN",
+    "url": "https://naruto-official.com/en/news/01_1712",
+    "scope": "Isshiki technique inherited by Kawaki",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "SUKUNA",
+    "url": "https://naruto-official.com/en/news/01_1713",
+    "scope": "Isshiki/Kawaki ocular technique",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "EIDA",
+    "url": "https://naruto-official.com/en/news/01_1692",
+    "scope": "Eida beguile ability context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "CYBORGS",
+    "url": "https://naruto-official.com/en/news/01_1568",
+    "scope": "Eida/Daemon and Isshiki arc context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "KONAN",
+    "url": "https://naruto-official.com/en/news/01_2338",
+    "scope": "Official licensed product article describes paper technique; secondary context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "WAR",
+    "url": "https://naruto-official.com/en/news/01_1355",
+    "scope": "War finale narrative context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "EARLY_ARC",
+    "url": "https://naruto-official.com/en/news/01_1282",
+    "scope": "Early Team 7, exam and Sasuke/Gaara context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  },
+  {
+    "id": "BIJUU",
+    "url": "https://naruto-official.com/en/news/01_1327",
+    "scope": "Nine-Tails training and war narrative context",
+    "evidence_level": "OFFICIAL_TECHNIQUE_OR_CHARACTER_CONTEXT",
+    "verified_scope": "source search result examined; not full chapter-by-chapter verification",
+    "numeric_values": "NONE"
+  }
+]
