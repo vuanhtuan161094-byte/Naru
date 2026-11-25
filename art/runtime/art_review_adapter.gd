@@ -5,6 +5,13 @@ var cache: Dictionary = {}
 var sprite_draws: int = 0
 var vfx_draws: int = 0
 var tile_draws: int = 0
+var has_plate: bool = false
+
+func background(field: Control, forest: bool) -> void:
+	var t := texture("environment/arena_960x540.png") if forest else null
+	has_plate = t != null
+	if has_plate:
+		field.draw_texture_rect(t, Rect2(Vector2.ZERO,field.size),false,Color(0.8,0.8,0.8,1.0))
 
 func texture(path: String) -> Texture2D:
 	if not cache.has(path):
@@ -14,7 +21,7 @@ func texture(path: String) -> Texture2D:
 func tile(field: Control, p: Vector2, x: int, y: int) -> bool:
 	var t := texture("environment/grass_%d.png" % ((x+y)%4))
 	if t == null: return false
-	field.draw_texture_rect(t, Rect2(p+Vector2(-38,0),Vector2(76,40)),false)
+	field.draw_texture_rect(t, Rect2(p+Vector2(-38,0),Vector2(76,40)),false,Color(1,1,1,0.30) if has_plate else Color.WHITE)
 	tile_draws += 1
 	return true
 

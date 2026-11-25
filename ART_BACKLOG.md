@@ -13,3 +13,5 @@
 | ART-P8 | IN_PROGRESS | Coordinator private opt-in adapter and real 6v6 runtime smoke; no public fan art or cross-branch overwrite. |
 
 ART-P8: source overlay and CI pending. Private fan art runtime BLOCKED pending private Godot environment; DEV smoke uses generic textures. ART-P2/P3R3/P6 remain ready/in progress.
+
+ART-P8 R2 local scoped PASS; remote gameplay integration pending Chat 00, no release. Next READY: ART-P2 true walk/attack poses, ART-P3R3 VFX coverage/quality and clone fallback, ART-P6 modular obstacles/geometry. Local review video saved in private Library.

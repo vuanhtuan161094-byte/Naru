@@ -24,6 +24,7 @@ func _art_review_boot() -> void:
 	field.draw.connect(draw_field)
 	root.add_child(field)
 	log_label=label(root,"",16)
+	log_label.clip_text=true
 	button(root,"Kết thúc review",func():get_tree().quit())
 
 func _art_review_tick(delta: float) -> void:

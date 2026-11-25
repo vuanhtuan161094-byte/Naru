@@ -61,6 +61,12 @@ def main():
     ms=once(ms,'\t\tfield.draw_rect(Rect2(p-Vector2(9,30),Vector2(18,26)),c)\n\t\tfield.draw_circle(p-Vector2(0,34),9,Color("#e4bc91"))','\t\tif not art_review.actor(field,a,p):\n\t\t\tfield.draw_rect(Rect2(p-Vector2(9,30),Vector2(18,26)),c)\n\t\t\tfield.draw_circle(p-Vector2(0,34),9,Color("#e4bc91"))')
     ms=once(ms,'\t\tfield.draw_string(ThemeDB.fallback_font,p+Vector2(-16,12),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,14)','\t\tfield.draw_string(ThemeDB.fallback_font,p+Vector2(-16,12),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,14)\n\tart_review.effects(field,sim,iso)')
     ms=once(ms,"func _process(delta: float) -> void:\n","func _process(delta: float) -> void:\n\tif art_fixture:\n\t\t_art_review_tick(delta)\n\t\treturn\n")
+    # Clamp label minimum width, center projected 12x8 field, keep art HP above head.
+    ms=once(ms,'\tlog_label=label(root,"",16)','\tlog_label=label(root,"",16)\n\tlog_label.clip_text=true')
+    ms=once(ms,'return Vector2(field.size.x*0.45+(p.x-p.y)*38,45+(p.x+p.y)*20)','return Vector2(field.size.x*0.5-76+(p.x-p.y)*38,maxf(88.0,(field.size.y-400.0)*0.5)+(p.x+p.y)*20)')
+    ms=once(ms,'\tif sim==null:return\n\tfor x in range(12):','\tif sim==null:return\n\tart_review.background(field,sim.environment=="forest")\n\tfor x in range(12):')
+    ms=once(ms,'\t\tif not art_review.actor(field,a,p):','\t\tvar has_sprite: bool=art_review.actor(field,a,p)\n\t\tif not has_sprite:')
+    ms=once(ms,'\t\tfield.draw_rect(Rect2(p-Vector2(20,52),Vector2(40,4)),Color("#222733"))\n\t\tfield.draw_rect(Rect2(p-Vector2(20,52),Vector2(40*float(a.hp)/float(a.max_hp),4)),Color("#80c484"))','\t\tvar hp_y: float=88.0 if has_sprite else 52.0\n\t\tfield.draw_rect(Rect2(p-Vector2(20,hp_y),Vector2(40,4)),Color("#222733"))\n\t\tfield.draw_rect(Rect2(p-Vector2(20,hp_y),Vector2(40*clampf(float(a.hp)/float(a.max_hp),0,1),4)),Color("#80c484") if a.side==0 else Color("#db7068"))')
     ms += (HERE/"fixture.gdinc").read_text()
     cs=once(cs,"var deadlock=false","var deadlock=false\nvar art_events: Array[Dictionary]=[]")
     cs=once(cs,"\tvar field_factor=spatial_reaction(a,s,b)","\tart_events.append({\"tick\":ticks,\"skill_id\":str(s.skill_id),\"target_pos\":b.pos})\n\tif art_events.size()>128: art_events.pop_front()\n\tvar field_factor=spatial_reaction(a,s,b)")

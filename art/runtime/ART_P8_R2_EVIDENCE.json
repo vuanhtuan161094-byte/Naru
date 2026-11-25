@@ -1,0 +1,46 @@
+{
+  "batch": "ART-P8-R2",
+  "gameplay_base": "a7ecee6ad6a7f58f7bf928a297e8e5373737c950",
+  "dev_ci": {
+    "sha": "978e64e19cc0ee8d13429ec519c1aeabc895ba34",
+    "run_id": 45558751278,
+    "conclusion": "success",
+    "initial": 12,
+    "ticks": 280,
+    "sprite_draws": 5002,
+    "tile_draws": 46944,
+    "vfx_draws": 6227
+  },
+  "bootstrap_ci": {
+    "sha": "ff95b2723af77265b72035ac313e5a6c2536ad1d",
+    "run_id": 45558835696,
+    "conclusion": "success"
+  },
+  "private_local": {
+    "engine": "4.4.1.stable.official.49a5bc7b6",
+    "initial": 12,
+    "ticks": 280,
+    "moved": true,
+    "sprite_draws": 4300,
+    "tile_draws": 40416,
+    "vfx_draws": 468,
+    "release_buffer_size": 128,
+    "video_frames": 421,
+    "video_seconds": 14.033333,
+    "video_sha256": "abe57329a3d3992ed79e313b57257acb13585cac8b733a7d44c0894bf200655c",
+    "screenshot_sha256": "c52224cfdf02af4b7e1c4e7936432b72964c3c73d34f1cce237c5ff7ca34b317",
+    "log_sha256": "965fb9bd671b151702ff89370f0d84131f8eba2546d9ad84d36c19f3d4d238c4",
+    "archive": "Naru_ART_P8_private_runtime_R2.zip",
+    "archive_sha256": "29c072451dc2bcaf562d335cdcd63057b0ab1de0f7ccd50fe881f37fc59d795d",
+    "library_upload": true,
+    "source_blobs": {
+      "apply_review": "b99ef4fa96dfe265a74a2e85ff3bddbbf499c26b",
+      "adapter": "c0975aebe12219edbef50fb7e8b1443578d7a635",
+      "fixture": "d7ec55b7b0997fd007c313370a61f66cf7914ff7"
+    },
+    "status": "SCOPED_LOCAL_PASS"
+  },
+  "limitations": [
+    "Actual Combat QA fixture, not campaign playthrough; six static duplicated identities, summons fallback; no limb animation; VFX release is not confirmed damage and 468 draw calls are not unique skills; environment plate decorative, no collision mapping; no approved asset or remote gameplay integration; no public private-art binaries."
+  ]
+}
