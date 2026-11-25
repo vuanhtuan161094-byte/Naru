@@ -49,3 +49,9 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P3 HOLD until stable Chat00 design, no skill VFX.
 - ART-P7 REVIEW: 51 original icon PNGs, metadata, atlas, local HUD; owner review, overflow/tooltip, real passive receipt adapter and new IDs pending.
 - ART-P8 REVIEW: exact V7 local 6v6 HUD capture scoped PASS, four status IDs + FRM-01 observed; no production integration. Chat01 reconcile animation dispatcher, clustering/projection; custom sizes/dodge/cast/fall open. See art/e3/COMBAT_PRESENTATION_P1_HANDOFF.md.
+
+## ART-P2 R2 next
+- ART-P2 IN_PROGRESS: one genuine 8-frame rightward run candidate tested in V8, visual approval and isometric alignment pending. Produce independent full-body remaining actions/directions and character-specific poses; five benchmark ninja remain static. R1 rejected; no mass rollout.
+- ART-P7 REVIEW: prior 51 icons reused; real passive event HUD and generic mod marker; tooltip/source/overflow runtime tests open.
+- ART-P8 REVIEW: two actual V8 local 6v6 videos; high fixture receipt support verified in scope, still clumping, custom map and official gameplay integration open. See art/e3/ART_P2_R2_HANDOFF.md.
+- ART-P3 HOLD unchanged; no new skill VFX.

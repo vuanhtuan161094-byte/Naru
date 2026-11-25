@@ -1,0 +1,213 @@
+{
+  "batch": "ART-P2-FBF-R2",
+  "design_sha": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+  "gameplay_sha": "28f25de5c70f996eeb4241926c7dcde09bed7068",
+  "art_parent": "2f76ea5130f0fc1ba6bbe5747cecb676b490a726",
+  "latest_gameplay_at_commit": "f50f49c269b008cc8b40c761b95b8e6ae5a7126d",
+  "archive": {
+    "name": "Naru_ART_P2_R2_private.zip",
+    "sha256": "da0704eb1d3d2bd16186b4929f46d06ac2ad7689f17b15eb65c203d6b13dfc55",
+    "bytes": 10480820,
+    "manifest_sha256": "f22dd059b47ec770d62bf833f871efd36a3c1fd264edc8a48efc59abf22d5441",
+    "library_file_id": "libfile_cd4a52c2c81481919a3a3282eaccb51e",
+    "library_upload": true,
+    "integrity": "PASS"
+  },
+  "clip": {
+    "id": "NIN-041",
+    "action": "walk",
+    "direction": "screen_right_candidate",
+    "cell": [
+      96,
+      112
+    ],
+    "anchor": [
+      48,
+      104
+    ],
+    "sheet_size": [
+      768,
+      112
+    ],
+    "path": "animation/NIN-041/walk_screen_right_r2.png",
+    "source_sha256": "05c4386f8b438fa4aa2f8281a77c6b34cffce36954c5da2a01b10bcf4e56ba2c",
+    "sheet_sha256": "7e8985f25f14557938ad708192f2bf30a6e312a76364a84a575de24c46963d3e",
+    "frames": [
+      {
+        "rect": [
+          0,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      },
+      {
+        "rect": [
+          96,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      },
+      {
+        "rect": [
+          192,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      },
+      {
+        "rect": [
+          288,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      },
+      {
+        "rect": [
+          384,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      },
+      {
+        "rect": [
+          480,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      },
+      {
+        "rect": [
+          576,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      },
+      {
+        "rect": [
+          672,
+          0,
+          96,
+          112
+        ],
+        "duration_ms": 100
+      }
+    ],
+    "distinct_rgba_frames": 8,
+    "status": "REVIEW_ONLY"
+  },
+  "qa": {
+    "ci": 45631683495,
+    "conclusion": "success",
+    "artifact_id": 15032221113,
+    "export_checksums": "7/7 PASS",
+    "engine": "4.4.1.stable.official.49a5bc7b6",
+    "map": [
+      14,
+      10
+    ],
+    "loaded_textures": 107,
+    "prior_icons_loaded": 51,
+    "ordinary": {
+      "initial_primary": 12,
+      "moved": true,
+      "hp_changes": 1278,
+      "run_draws": 46,
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "statuses": [
+        "burn",
+        "shock",
+        "fear",
+        "taunt"
+      ],
+      "formation": [
+        "FRM-01"
+      ],
+      "link_draws": 1759,
+      "passive_mods": [
+        "hp",
+        "accuracy",
+        "healing",
+        "move_speed",
+        "control_resist"
+      ],
+      "receipt_ids": 0,
+      "video_sha256": "1f795336837964bd2759181139b36de8349d8a731cf96a264f7310fd908e84fd",
+      "log_sha256": "26815181a7b77b1e8dd3955e256aa9e19b03b69c7df7dc70ab0521f13014b936"
+    },
+    "high_fixture": {
+      "level": 140,
+      "realm": 6,
+      "stars": 5,
+      "initial_primary": 12,
+      "moved": true,
+      "hp_changes": 1850,
+      "run_draws": 32,
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "statuses": [
+        "burn",
+        "shock",
+        "fear",
+        "taunt",
+        "chakra_up",
+        "defense_up",
+        "shield",
+        "haste"
+      ],
+      "link_draws": 3622,
+      "receipt_ids": 15,
+      "receipt_count": 19,
+      "video_sha256": "ca125505a64feb9ae779e5135fb9fd1e7946b09b2a88a87afa698cda207dea11",
+      "log_sha256": "35d920fdaf10cf2e306976ad173dd1ce1c009ee25992b673f31d1b19d14527b7"
+    },
+    "video_frames_each": 361,
+    "fps": 30,
+    "resolution": [
+      1280,
+      720
+    ],
+    "art_ci": "NOT_RUN",
+    "production_integration": 0
+  },
+  "tested_sources": {
+    "adapter": "08b4a7b9959bfede1e37daf57f054ec7f1c27d50594f95eab5beb816a088f158",
+    "hud": "e0909722a9a69d0075f939b29d34b133a5816bedec66afc8ece44ba78ba189f0",
+    "ordinary": "a39ad0e9aadeb2dca7a11515baa91f2c13ded78082e7502e9351679bc5a4f8bd",
+    "high": "9eba140336047d4063ec3b3af17b1d16587be50063dce71f3af26d2aae657f95"
+  },
+  "limits": [
+    "One generated 8-pose full-body run, near side view; fixed common canvas scale/placement, not four independently authored isometric views. No new idle, attack, cast, hit, fall. Two mixed-action GIFs rejected, not included. Naruto and other five not complete; R1 still rejected.",
+    "Actual V8 Main/Combat with local override only, existing 106 textures and 51 icons reused. Generic active-stat glyph not source/scope attribution. Passive event banner only reads actual passive_proc events. High fixture synthetic, explicitly enabled DEV passives, not balance proof. Overflow implemented but not observed. Renderer display scale adjusted only, clumping persists. No new skill VFX or public binaries."
+  ]
+}
