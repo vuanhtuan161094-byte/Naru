@@ -13,6 +13,8 @@ var activated={}
 var form_effects={}
 var combos={}
 var eligible={}
+var combo_attempts={}
+var form_attempts={}
 func check(ok: bool,label: String) -> void:
 	if ok:print("FINAL_V12_OK ",label)
 	else:failed+=1;push_error("FINAL_V12_FAIL "+label)
@@ -95,11 +97,14 @@ func v13_form_regen_check() -> void:
 		sim.cp_adjust(sim.actors[0],float(sim.actors[0].max_chakra),"v13_fixture")
 	check(formed.activate_form(formed.actors[0],"NIN-061-F1",true),"V13 legal regen form activation")
 	check(is_equal_approx(formed.form_multiplier(formed.actors[0],"chakra_regen"),1.15),"V13 authored regen multiplier")
-	# Drain can affect net CP, so compare the actual regen receipt rather than net balance.
+	# Equal headroom after a legally paid activation; disable unrelated passive modifiers in this scoped comparison.
 	check(formed.form_multiplier(formed.actors[0],"armor")>plain.form_multiplier(plain.actors[0],"armor"),"V13 armor form multiplier")
 	for sim in [plain,formed]:
+		sim.use_passives=false
+		for actor in sim.actors:sim.cp_adjust(actor,float(actor.max_chakra)*0.5-float(actor.chakra),"v13_fixture_headroom")
 		for step in range(20):sim.tick(0.05)
 	check(formed.actors[0].active_form.get("id","")=="NIN-061-F1","V13 form survives normal tick")
+	check(int(formed.cp_telemetry.get("regen",0))>int(plain.cp_telemetry.get("regen",0)),"V13 actual chakra regen receipt increases")
 
 func _initialize() -> void:
 	reg=Registry.new()
@@ -139,14 +144,22 @@ func _initialize() -> void:
 				var a=sim.actors[0]
 				if sim.form_ready(a,form,true):sim.activate_form(a,form,true)
 				var route_record=sim.form_routes_dev.get(form,{})
-				for r in route_record.get("skill_routes",[]):
-					if r.id in a.skills and reg.depth_ultimates.has(r.id) and not sim.ultimate_requests.has(a.uid):sim.ultimate_skill(0,r.id)
+				if a.active_form.get("id","")==form:
+					for empowered in contract.effect.empowered_skills:
+						if empowered.skill_id in a.skills and reg.depth_ultimates.has(empowered.skill_id) and not sim.ultimate_requests.has(a.uid):
+							sim.ultimate_skill(0,empowered.skill_id)
+							break
+				else:
+					for r in route_record.get("skill_routes",[]):
+						if r.id in a.skills and reg.depth_ultimates.has(r.id) and not sim.ultimate_requests.has(a.uid):sim.ultimate_skill(0,r.id)
 			sim.tick(0.05)
 			if sim.outcome!="":break
 		collect(sim)
+		form_attempts[form]={"activated":sim.form_receipts.has(form),"empowered_effect":sim.form_effect_evidence.has(form),"outcome":sim.outcome,"ticks":sim.ticks,"skills":sim.skill_effect_ledger}
 		print("NARU_V12_FORM ",form," activated=",sim.form_receipts.has(form)," empowered_effect=",sim.form_effect_evidence.has(form))
-	# Six remaining signature combinations, no injected receipts. Two ordinary scenarios.
-	for id in ["COMBO-001","COMBO-003","COMBO-004","COMBO-005","COMBO-010","COMBO-012"]:
+	# All twelve authored signature combinations, no injected receipts. Two ordinary scenarios.
+	for id in ["COMBO-001","COMBO-002","COMBO-003","COMBO-004","COMBO-005","COMBO-006","COMBO-007","COMBO-008","COMBO-009","COMBO-010","COMBO-011","COMBO-012"]:
+		combo_attempts[id]=[]
 		var contract=reg.read_json("res://data/skill-depth-v5/combo-contracts.json").filter(func(row):return row.id==id)[0]
 		for attempt in range(2):
 			var sim=new_fight(14000+int(id.right(3))*10+attempt,["forest","desert"][attempt])
@@ -167,6 +180,10 @@ func _initialize() -> void:
 				sim.tick(0.05)
 				if sim.outcome!="":break
 			collect(sim)
+			var signatures={}
+			for sig in contract.signature_events:
+				signatures[sig.skill_id]={"cast_ledger":sim.skill_effect_ledger.get(sig.skill_id,{}),"remaining_history":sim.combo_event_history.get("0:"+str(sig.skill_id)+":"+str(sig.event),[]).size()}
+			combo_attempts[id].append({"seed":attempt,"evidence":sim.combo_evidence.get(id,{}),"outcome":sim.outcome,"ticks":sim.ticks,"signatures":signatures})
 			print("NARU_V12_COMBO ",id," seed=",attempt," actual=",sim.combo_evidence.get(id,{})," outcome=",sim.outcome if sim.outcome!="" else "OBSERVED_ONLY")
 			if sim.combo_receipts.has(id):break
 	# Permanent preview and actual actor parity, including beast snapshot if attached.
@@ -192,7 +209,7 @@ func _initialize() -> void:
 	print("NARU_V12_FORMS activated=",activated.keys()," empowered=",form_effects.keys())
 	print("NARU_V12_COMBOS actual=",combos.keys())
 	campaign_probe()
-	var out={"schema":2,"scope":"roster_and_focused_form_combo_fixtures_excluding_campaign_diagnostic","eligible":eligible.keys(),"stat_effect":applied,"typed_effect":typed,"event_receipts":proc.keys(),"event_only":event_only,"eligible_actual":eligible_actual,"eligible_event_only":eligible_event_only,"eligible_no_receipt":eligible_no_receipt,"unobserved":unobserved,"forms_activated":activated.keys(),"forms_empowered":form_effects,"combos":combos}
+	var out={"schema":2,"scope":"roster_and_focused_form_combo_fixtures_excluding_campaign_diagnostic","eligible":eligible.keys(),"stat_effect":applied,"typed_effect":typed,"event_receipts":proc.keys(),"event_only":event_only,"eligible_actual":eligible_actual,"eligible_event_only":eligible_event_only,"eligible_no_receipt":eligible_no_receipt,"unobserved":unobserved,"forms_activated":activated.keys(),"forms_empowered":form_effects,"combos":combos,"form_attempts":form_attempts,"combo_attempts":combo_attempts}
 	var file=FileAccess.open("user://combat_v12_ledger.json",FileAccess.WRITE)
 	if file!=null:file.store_string(JSON.stringify(out,"  "));file.close()
 	print("NARU_FINAL_V12_PASS" if failed==0 else "NARU_FINAL_V12_FAIL")

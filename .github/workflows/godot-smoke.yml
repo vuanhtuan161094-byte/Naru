@@ -71,11 +71,11 @@ jobs:
           timeout 240 "$G" --headless --path . --script res://game/product_combat_v11_test.gd 2>&1 | tee /tmp/product-v11.log
           grep NARU_PRODUCT_V11_PASS /tmp/product-v11.log
           ! grep -E 'Parse Error|SCRIPT ERROR|PRODUCT_V11_FAIL' /tmp/product-v11.log
-      - name: V12 final product runtime ledger and art adapter
+      - name: V13 product runtime ledger and art adapter
         run: |
           set -o pipefail
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 420 "$G" --headless --path . --script res://game/combat_final_v12_test.gd 2>&1 | tee /tmp/final-v12.log
+          timeout 600 "$G" --headless --path . --script res://game/combat_final_v12_test.gd 2>&1 | tee /tmp/final-v12.log
           grep NARU_FINAL_V12_PASS /tmp/final-v12.log
           ! grep -E 'Parse Error|SCRIPT ERROR|FINAL_V12_FAIL' /tmp/final-v12.log
       - name: GP-P2 gameplay integration

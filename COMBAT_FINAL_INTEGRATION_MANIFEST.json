@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "FINAL_DELTA_CANDIDATE_CI_REQUIRED",
+  "status": "V13_CANDIDATE_CI_REQUIRED",
   "base_sha": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
   "head_sha": "13782ca61c5d7290715d96c4991592630013fdf7",
   "head_note": "Runtime code commit; this manifest and docs are published by a subsequent metadata-only commit. Exact build SHA is artifact BUILD_SHA.txt.",
@@ -199,5 +199,71 @@
     "Align 03 preview with player wrapper; keep world changes",
     "Integrate private art only after appropriate permission and runtime evidence",
     "Review real V12 HUD/video; no release declaration until exact CI succeeds"
-  ]
+  ],
+  "v13_runtime_sha": "23568929384bbd4e80df8439d90851516cee270a",
+  "v13_note": "Following handoff commit expands focused test and workflow only; use final exact SHA from CI BUILD_SHA.txt. Existing V12 manifest remains baseline for cumulative delta.",
+  "v13_delta": {
+    "runtime_files": [
+      "game/combat.gd",
+      "game/main.gd"
+    ],
+    "functions": {
+      "game/combat.gd": [
+        "apply_status",
+        "release",
+        "tick",
+        "p2_apply",
+        "confirm_form_effect",
+        "signature_near_ready",
+        "combo_skill_bonus",
+        "combo_pick_event"
+      ],
+      "game/main.gd": [
+        "update_battle_inspector"
+      ]
+    },
+    "test_files": [
+      "game/combat_final_v12_test.gd",
+      ".github/workflows/godot-smoke.yml"
+    ],
+    "save_schema_unchanged": true,
+    "world_services_unchanged": true,
+    "art_unchanged": true,
+    "holds_unchanged": true
+  },
+  "verified_v12": {
+    "sha": "5b046abd7aeb1f3b7976ca5480228094629b5055",
+    "ci": 45644956660,
+    "web": 15038375641,
+    "video": 15038106627,
+    "forms_activated": 43,
+    "forms_empowered": 26,
+    "eligible_passives": 677,
+    "stat_ids": 393,
+    "typed_ids": 60,
+    "event_receipts": 194,
+    "observed_combos": [
+      "COMBO-003",
+      "COMBO-004",
+      "COMBO-005",
+      "COMBO-011"
+    ],
+    "missing_targeted": [
+      "COMBO-001",
+      "COMBO-010",
+      "COMBO-012"
+    ],
+    "campaign_diagnostic_losses": [
+      "STG-060",
+      "STG-080",
+      "STG-120"
+    ],
+    "campaign_diagnostic_wins": [
+      "STG-065",
+      "STG-070",
+      "STG-100"
+    ],
+    "note": "observational, not acceptance. Passive categories overlap; V12 event_receipts not event_only."
+  },
+  "v13_acceptance": "Require exact CI, inspect distinct 12 combo attempts, 54 forms and disjoint eligible passive categories. No release or merge if unmet."
 }
