@@ -1,0 +1,2 @@
+# SKILL-DEPTH V4 FINAL DESIGN CANDIDATE
+Skill-only design overlay. [Wiki 1152 IDs](wiki/README.md) · [Acceptance](ACCEPTANCE.md). Baseline V3 6768459fbf64d4db018d538f2298ebc35e6c7beb. V4 design fixes for 34 branches and 85 skills; 96 outliers reviewed (one provisional cooldown change); 20736 isolated numeric cases; 288 encounter specs; typed 12 combos; reviewed 54 forms. All values DEV, no runtime pass, no source HOLD cleared. See audit-balance.json, audit-encounters.json. No Codex Cloud, merge or gameplay/art code.
