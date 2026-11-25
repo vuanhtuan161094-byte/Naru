@@ -1,0 +1,2 @@
+# Naru agent instructions
+Read design/e3/WORKSTREAMS.md and design/e3/CODEX_EXECUTION_PROMPT.md first. Implementation on implementation/e3-gameplay only; art on art/e3-art01 only. Never merge, publish, force-push or overwrite user-locked design. Single Godot project, GDScript, offline-first, Vietnamese, Compatibility. D4 proposed contracts override older fields by ID; no eval formula strings. No rig; DEV art fallback until owner asset approval. No fake QA/build claims. Use large coherent batches and preserve IDs. Document all incomplete features and deviations.
