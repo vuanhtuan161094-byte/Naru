@@ -1,0 +1,218 @@
+[
+  {
+    "boss_id": "BOSS-001",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-002",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-003",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-004",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-005",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-006",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-007",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-008",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-009",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-010",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-011",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-012",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-013",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-014",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-015",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-016",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-017",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-018",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-019",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-020",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-021",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-022",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-023",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  },
+  {
+    "boss_id": "BOSS-024",
+    "phase_policy": "existing authored phase thresholds, fire once, no overkill skip; control cap 0.7s and no instant kill",
+    "target_duration_s": [
+      45,
+      150
+    ],
+    "status": "DEV_QA_TARGET"
+  }
+]

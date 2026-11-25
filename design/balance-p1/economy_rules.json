@@ -1,0 +1,161 @@
+{
+  "version": "BALANCE-P1-DEV",
+  "status": "PROPOSED_NOT_RUNTIME",
+  "observed": {
+    "source": "GAMEPLAY_STATUS.md e74fd59d / ffde762f historical 90d seed test",
+    "days": [
+      {
+        "day": 1,
+        "hq": 2,
+        "ryo": 11812,
+        "wars": 0
+      },
+      {
+        "day": 7,
+        "hq": 8,
+        "ryo": 52340,
+        "wars": 148
+      },
+      {
+        "day": 30,
+        "hq": 15,
+        "ryo": 208865,
+        "wars": 863
+      },
+      {
+        "day": 90,
+        "hq": 15,
+        "ryo": 623585,
+        "wars": 2508
+      }
+    ],
+    "notes": "Historical run, not reproduced here. Ryo growth and near-cap wood/stone; war count not calibrated."
+  },
+  "locked": {
+    "offline_cap_s": 86400,
+    "upkeep": 0,
+    "building_cap": 100,
+    "stamina_cap": 120,
+    "stamina_regen_s": 360,
+    "never_remove_existing_resources": true
+  },
+  "currency": {
+    "starter_seed": {
+      "RES-001": 5000,
+      "RES-002": 1000,
+      "RES-006": 250,
+      "RES-009": 200,
+      "RES-011": 40,
+      "RES-021": 100,
+      "RES-036": 40,
+      "RES-076": 20,
+      "RES-116": 30,
+      "RES-128": 5,
+      "RES-130": 8,
+      "RES-134": 5
+    },
+    "ryo": {
+      "preserve_initial": true,
+      "optional_sinks": [
+        "formation upgrades",
+        "XP scrolls",
+        "targeted stat training",
+        "gear crafting/refine",
+        "merchant contracts",
+        "building upgrades"
+      ],
+      "no_tax_or_upkeep": true
+    },
+    "premium": {
+      "no_real_money": true,
+      "pity_preserve": true
+    }
+  },
+  "buildings": {
+    "early_level_2_to_10_cost": "baseline unchanged",
+    "late_cost_multiplier": "1+0.012*max(0,target_level-10)",
+    "duration": "min(604800,ceil(base_duration*1.10^(level-2)))",
+    "wood_stone_sink": "only explicit upgrades and requested bulk crafting",
+    "stock_capacity": "10000+5000*warehouse_level for non-currency",
+    "overflow": "pause before debit or use reward inbox; never destroy reserved inputs",
+    "offline": "same rates as online, event ledger and 24h cap"
+  },
+  "profession": {
+    "xp": "ceil(50*level^1.4)",
+    "production_bonus": "1+0.025*min(level,50)+0.10*sqrt(max(0,level-50))",
+    "talent_cap": {
+      "material_saving": 0.25,
+      "quality_bonus": 2,
+      "speed_bonus": 0.35,
+      "output_bonus": 0.35
+    },
+    "uncapped_level": true
+  },
+  "market": {
+    "npc_finite_stock": true,
+    "local_surplus_price_fraction": 0.35,
+    "buy_spread": 1.1,
+    "sell_spread": 0.9,
+    "anti_arbitrage": "same stock snapshot; require buy>=sell; no duplicate resource grant",
+    "optional_daily_merchant_order": {
+      "slots": 3,
+      "quantity": "min(stock,ceil(capacity*0.1))",
+      "price_factor": 0.55,
+      "cooldown_s": 86400,
+      "never_forced": true
+    }
+  },
+  "world": {
+    "faction_tick_s": 600,
+    "war_attempt_interval_ticks": 36,
+    "war_attempt_interval_hours": 6,
+    "per_faction_war_cooldown_ticks": 72,
+    "war_cooldown_hours": 12,
+    "world_max_new_wars_per_tick": 1,
+    "minimum_relation": -40,
+    "min_war_budget": 200,
+    "war_budget_per_enemy_team": 150,
+    "raid_protection_s": 43200,
+    "raid_loss_fraction": 0.1,
+    "home_protected": true,
+    "rule": "Count only newly resolved conflicts, not repeated border tension. One persisted war event per faction pair per cooldown. Existing saves retain counts.",
+    "global_90d_new_war_theoretical_max": 360,
+    "warning": "Not a simulated expected war count; upper bound assumes global cadence."
+  },
+  "progression": {
+    "level_xp": "ceil(100*L^1.6*(1+0.15*realm))",
+    "realm_levels": 20,
+    "points_per_level": 3,
+    "realm_pity": "guaranteed after 5 failures",
+    "stars_cap": 15,
+    "quality_max": 8,
+    "keep_infinite_growth": true,
+    "train_scroll_xp": 200,
+    "early_scroll_ryo": 120,
+    "late_optional_bulk_training": "XP value per unit constant unless tier authored; no free inflated grant",
+    "mastery": "credit confirmed meaningful action only; no farm summons or overheal",
+    "stage_xp": "max(100+15*stage_index,ceil(level_xp(recommended_level)*0.045 normal or 0.085 boss))"
+  },
+  "equipment": {
+    "enhance_cost": "ceil(20*(1+enhance)^1.65)",
+    "enhance_gain": "base*(1+.06*enhance^.85)",
+    "pity": "guarantee after 20 failures",
+    "no_downgrade_without_explicit_owner_approval": true,
+    "affix_pool": "preserve authored compatibility",
+    "set_threshold": "only highest attained threshold",
+    "rating_caps": "existing D4 caps, no 100% dodge/reduction",
+    "material_sinks": "enhance, refine, evolve, gems; never auto-spend"
+  },
+  "recruitment": {
+    "keep_d4_weights": true,
+    "keep_pity_counters": true,
+    "duplicate": "same version shards; no reroll",
+    "no_paid_currency": true
+  },
+  "qa_targets": {
+    "first_chapter": "preserve historical natural 5/5 path",
+    "chapter2_plus": "play naturally with starter seed and earned resources, no high-power fixture as balance proof",
+    "day90": "no storage loss, no mandatory spend; optional sink uptake measured; do not claim Ryo target without real sim",
+    "all_resource_sources": "actual first reachable source per resource; report missing rather than grant free"
+  }
+}

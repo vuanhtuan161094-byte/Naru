@@ -1,0 +1,106 @@
+{
+  "source": "3728387780a5399ddfe1e6c8022ce7146b1b83f2",
+  "counts": {
+    "stages": 120,
+    "npcs": 490,
+    "chapters": 24,
+    "buildings": 30,
+    "resources": 150,
+    "gear": 128,
+    "recipes": 63,
+    "jobs": 15,
+    "ninjas": 144,
+    "bosses": 24,
+    "territories": 60
+  },
+  "checks": {
+    "stage_count": true,
+    "npc_count": true,
+    "chapter_count": true,
+    "resource_count": true,
+    "building_count": true,
+    "gear_count": true,
+    "recipe_count": true,
+    "profession_count": true,
+    "ninja_count": true,
+    "boss_count": true,
+    "territory_count": true,
+    "reward_refs": true,
+    "recipe_refs": true,
+    "finite_power": true,
+    "early_first_rewards_preserved": true
+  },
+  "not_tested": [
+    "actual Godot win rate",
+    "90-day new economy simulation",
+    "full source reachability",
+    "all skill effects",
+    "gear and roster synergy"
+  ],
+  "samples": [
+    {
+      "stage": "STG-001",
+      "level": 5,
+      "old_xp": 115,
+      "new_xp": 115,
+      "ratio": 0.61
+    },
+    {
+      "stage": "STG-005",
+      "level": 13,
+      "old_xp": 175,
+      "new_xp": 515,
+      "ratio": 0.79
+    },
+    {
+      "stage": "STG-010",
+      "level": 22,
+      "old_xp": 250,
+      "new_xp": 1375,
+      "ratio": 0.71
+    },
+    {
+      "stage": "STG-020",
+      "level": 40,
+      "old_xp": 400,
+      "new_xp": 3577,
+      "ratio": 0.91
+    },
+    {
+      "stage": "STG-040",
+      "level": 76,
+      "old_xp": 700,
+      "new_xp": 12592,
+      "ratio": 0.95
+    },
+    {
+      "stage": "STG-060",
+      "level": 112,
+      "old_xp": 1000,
+      "new_xp": 28263,
+      "ratio": 1.08
+    },
+    {
+      "stage": "STG-080",
+      "level": 148,
+      "old_xp": 1300,
+      "new_xp": 51713,
+      "ratio": 1.65
+    },
+    {
+      "stage": "STG-100",
+      "level": 184,
+      "old_xp": 1600,
+      "new_xp": 83984,
+      "ratio": 1.39
+    },
+    {
+      "stage": "STG-120",
+      "level": 220,
+      "old_xp": 1900,
+      "new_xp": 118915,
+      "ratio": 1.73
+    }
+  ],
+  "notes": "Power proxy omits gear, allocation, AI, HP/chakra dynamics, role synergy, formations; not an exact Godot power formula. All values proposals. Existing first-chapter NPC levels and rewards preserved; later multiplier only modestly changed."
+}

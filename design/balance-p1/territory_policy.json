@@ -1,0 +1,482 @@
+[
+  {
+    "territory_id": "TER-001",
+    "name_vi": "Làng Lá",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-002",
+    "name_vi": "Rừng Tử Thần",
+    "kind": "forest",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-003",
+    "name_vi": "Sân luyện Đội 7",
+    "kind": "training",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-004",
+    "name_vi": "Thung lũng Tận Cùng",
+    "kind": "valley",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-005",
+    "name_vi": "Đường biên phía đông",
+    "kind": "road",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-006",
+    "name_vi": "Mỏ núi lửa",
+    "kind": "mine",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-007",
+    "name_vi": "Nông trại ngoại thành",
+    "kind": "farm",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-008",
+    "name_vi": "Trạm giao thương",
+    "kind": "market",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-009",
+    "name_vi": "Núi rừng phía bắc",
+    "kind": "forest",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-010",
+    "name_vi": "Làng Cát",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-011",
+    "name_vi": "Sa mạc cửa ngõ",
+    "kind": "desert",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-012",
+    "name_vi": "Hẻm đá đỏ",
+    "kind": "mine",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-013",
+    "name_vi": "Ốc đảo phía nam",
+    "kind": "farm",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-014",
+    "name_vi": "Bãi thử con rối",
+    "kind": "training",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-015",
+    "name_vi": "Mỏ tinh thể gió",
+    "kind": "mine",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-016",
+    "name_vi": "Tuyến thương nhân",
+    "kind": "road",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-017",
+    "name_vi": "Làng Sương Mù",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-018",
+    "name_vi": "Bờ biển sương mù",
+    "kind": "coast",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-019",
+    "name_vi": "Đảo sương phía bắc",
+    "kind": "island",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-020",
+    "name_vi": "Vịnh kiếm sĩ",
+    "kind": "training",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-021",
+    "name_vi": "Làng chài ngoại vi",
+    "kind": "farm",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-022",
+    "name_vi": "Hải lộ phía nam",
+    "kind": "road",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-023",
+    "name_vi": "Làng Mây",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-024",
+    "name_vi": "Hẻm núi sấm",
+    "kind": "mountain",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-025",
+    "name_vi": "Đảo Rùa",
+    "kind": "island",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-026",
+    "name_vi": "Mỏ tinh thể lôi",
+    "kind": "mine",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-027",
+    "name_vi": "Thung lũng mây",
+    "kind": "farm",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-028",
+    "name_vi": "Trạm gác núi cao",
+    "kind": "fort",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-029",
+    "name_vi": "Làng Đá",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-030",
+    "name_vi": "Cao nguyên đá",
+    "kind": "mountain",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-031",
+    "name_vi": "Mỏ sắt phía tây",
+    "kind": "mine",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-032",
+    "name_vi": "Hẻm núi sâu",
+    "kind": "mine",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-033",
+    "name_vi": "Lò luyện khoáng",
+    "kind": "market",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-034",
+    "name_vi": "Đường núi biên giới",
+    "kind": "road",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-035",
+    "name_vi": "Làng Mưa",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-036",
+    "name_vi": "Kênh đào phía đông",
+    "kind": "coast",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-037",
+    "name_vi": "Tháp mưa cũ",
+    "kind": "ruin",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-038",
+    "name_vi": "Đường giao thương",
+    "kind": "road",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-039",
+    "name_vi": "Làng Âm Thanh",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-040",
+    "name_vi": "Phòng nghiên cứu ngầm",
+    "kind": "lab",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-041",
+    "name_vi": "Hang rắn",
+    "kind": "cave",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-042",
+    "name_vi": "Rừng biên giới",
+    "kind": "forest",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-043",
+    "name_vi": "Thành samurai",
+    "kind": "fort",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-044",
+    "name_vi": "Đèo tuyết",
+    "kind": "mountain",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-045",
+    "name_vi": "Cầu Đại Naruto",
+    "kind": "road",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-046",
+    "name_vi": "Bến sông",
+    "kind": "coast",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-047",
+    "name_vi": "Cầu Thiên Địa",
+    "kind": "road",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-048",
+    "name_vi": "Đồng cỏ biên giới",
+    "kind": "farm",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-049",
+    "name_vi": "Hang Akatsuki",
+    "kind": "cave",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-050",
+    "name_vi": "Căn cứ Akatsuki",
+    "kind": "fort",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-051",
+    "name_vi": "Di tích cổ",
+    "kind": "ruin",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-052",
+    "name_vi": "Chiến trường Đại chiến",
+    "kind": "valley",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-053",
+    "name_vi": "Núi Myoboku",
+    "kind": "training",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-054",
+    "name_vi": "Hang Ryuchi",
+    "kind": "cave",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-055",
+    "name_vi": "Rừng Shikkotsu",
+    "kind": "forest",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-056",
+    "name_vi": "Phòng nghiên cứu Kara",
+    "kind": "lab",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-057",
+    "name_vi": "Khu phong ấn cổ",
+    "kind": "ruin",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-058",
+    "name_vi": "Làng người chơi",
+    "kind": "village",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-059",
+    "name_vi": "Rừng cạnh làng",
+    "kind": "forest",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  },
+  {
+    "territory_id": "TER-060",
+    "name_vi": "Mỏ cạnh làng",
+    "kind": "mine",
+    "war_policy": "global_cadence_and_pair_cooldown",
+    "extraction_policy": "existing yield, reserve inputs, capacity and ownership",
+    "status": "DEV_POLICY"
+  }
+]

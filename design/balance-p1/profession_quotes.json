@@ -1,0 +1,647 @@
+[
+  {
+    "profession_id": "JOB-01",
+    "name_vi": "xây dựng",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-02",
+    "name_vi": "huấn luyện thể thuật",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-03",
+    "name_vi": "nghiên cứu nhẫn thuật",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-04",
+    "name_vi": "luyện ảo thuật",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-05",
+    "name_vi": "kiểm soát chakra",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-06",
+    "name_vi": "rèn nhẫn cụ",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-07",
+    "name_vi": "dược",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-08",
+    "name_vi": "phong ấn",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-09",
+    "name_vi": "nông nghiệp",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-10",
+    "name_vi": "khai thác",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-11",
+    "name_vi": "trinh sát",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-12",
+    "name_vi": "thương mại",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-13",
+    "name_vi": "tình báo",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-14",
+    "name_vi": "nghiên cứu",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  },
+  {
+    "profession_id": "JOB-15",
+    "name_vi": "chế tạo nhẫn cụ",
+    "levels": [
+      {
+        "level": 1,
+        "old_production_multiplier": 1.02,
+        "proposed_multiplier": 1.02,
+        "xp_cost": 50
+      },
+      {
+        "level": 10,
+        "old_production_multiplier": 1.25,
+        "proposed_multiplier": 1.25,
+        "xp_cost": 1256
+      },
+      {
+        "level": 25,
+        "old_production_multiplier": 1.63,
+        "proposed_multiplier": 1.63,
+        "xp_cost": 4530
+      },
+      {
+        "level": 50,
+        "old_production_multiplier": 2.25,
+        "proposed_multiplier": 2.25,
+        "xp_cost": 11955
+      },
+      {
+        "level": 100,
+        "old_production_multiplier": 3.5,
+        "proposed_multiplier": 2.96,
+        "xp_cost": 31548
+      },
+      {
+        "level": 200,
+        "old_production_multiplier": 6,
+        "proposed_multiplier": 3.47,
+        "xp_cost": 83256
+      }
+    ],
+    "status": "DEV_SAMPLE"
+  }
+]
