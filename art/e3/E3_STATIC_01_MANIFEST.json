@@ -1,0 +1,151 @@
+{
+  "batch": "E3-STATIC-01",
+  "status": "REVIEW_ONLY_LOCAL_BINARY_PENDING_UPLOAD",
+  "records": [
+    {
+      "id": "ART-R3-001",
+      "name": "amber_fighter",
+      "path": "sprites/ART-R3-001_amber_fighter.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "atlas_rect": [
+        0,
+        0,
+        96,
+        112
+      ],
+      "alpha_pixels": 6640,
+      "opaque_pixels": 4112,
+      "bounding_box": [
+        8,
+        4,
+        87,
+        104
+      ],
+      "sha256": "33160cbe6db35e6f8d2f4a52e5939c0b4ef2921dfcf3175cad090b2bc61a870f",
+      "action": "static",
+      "direction": "three_quarter_candidate",
+      "clips": [],
+      "approval": "REVIEW_ONLY"
+    },
+    {
+      "id": "ART-R3-002",
+      "name": "teal_scout",
+      "path": "sprites/ART-R3-002_teal_scout.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "atlas_rect": [
+        96,
+        0,
+        96,
+        112
+      ],
+      "alpha_pixels": 6798,
+      "opaque_pixels": 3954,
+      "bounding_box": [
+        11,
+        4,
+        85,
+        104
+      ],
+      "sha256": "4b736d6fc150036f45a1ff4ea5a34c15ea7dcbef7b789044295ab6839524ba83",
+      "action": "static",
+      "direction": "three_quarter_candidate",
+      "clips": [],
+      "approval": "REVIEW_ONLY"
+    },
+    {
+      "id": "ART-R3-003",
+      "name": "masked_veteran",
+      "path": "sprites/ART-R3-003_masked_veteran.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "atlas_rect": [
+        192,
+        0,
+        96,
+        112
+      ],
+      "alpha_pixels": 6848,
+      "opaque_pixels": 3904,
+      "bounding_box": [
+        17,
+        4,
+        78,
+        104
+      ],
+      "sha256": "e3ea44fb8d721ba0b2616959abaf42823f9cfc9b138bf0c4545dbb0a2e96ee54",
+      "action": "static",
+      "direction": "three_quarter_candidate",
+      "clips": [],
+      "approval": "REVIEW_ONLY"
+    },
+    {
+      "id": "ART-R3-004",
+      "name": "indigo_mystic",
+      "path": "sprites/ART-R3-004_indigo_mystic.png",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "atlas_rect": [
+        288,
+        0,
+        96,
+        112
+      ],
+      "alpha_pixels": 5915,
+      "opaque_pixels": 4837,
+      "bounding_box": [
+        7,
+        4,
+        88,
+        104
+      ],
+      "sha256": "ddc89d18d15fb8136bb25473b401487d9472bc53d687e61a4ad67585b002a10f",
+      "action": "static",
+      "direction": "three_quarter_candidate",
+      "clips": [],
+      "approval": "REVIEW_ONLY"
+    }
+  ],
+  "atlas": {
+    "path": "ART01_E3_static_atlas.png",
+    "width": 384,
+    "height": 112,
+    "sha256": "977fe565b28c8b51c79425d9443c837427205f20d93c2c2707281da9c8a1a3b6"
+  },
+  "qa": {
+    "rgba": true,
+    "dimensions_96x112": true,
+    "alpha_nonempty": true,
+    "visual_review": "3x dark background preview; edge/foot anchor cleanup pending",
+    "animation": false,
+    "godot_runtime": false,
+    "owner_approval": false
+  },
+  "provenance": "Extracted original R3 generated concept, background removal and nearest-neighbor normalization. No original advertisement copied. No official character mapping.",
+  "binary_location": "Chat attachment Naru_E3_ART01_static_pack.zip; PNG binaries NOT uploaded to repository in this session."
+}
