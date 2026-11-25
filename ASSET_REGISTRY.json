@@ -9365,5 +9365,15 @@
         "status": "REVIEW_ONLY"
       }
     ]
+  },
+  "r4_preparation": {
+    "gameplay_head": "3281f02c7e116a406eece3f67a728a1102e220ef",
+    "design_head": "f53892eb8bb14d5ecb01c85f89f076be497d8e22",
+    "status": "IN_PROGRESS",
+    "native_importer": "game/review_art.gd",
+    "pack_builder": "art/runtime/build_v4_review_pack.py",
+    "new_assets": 0,
+    "qa": "NOT_RUN",
+    "notes": "No R3 full-source overwrite; use V4 schema 1 private importer. R4 animation and aesthetic acceptance remain open."
   }
 }
