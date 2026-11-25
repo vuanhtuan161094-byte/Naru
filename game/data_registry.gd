@@ -37,6 +37,8 @@ var gear_rules: Dictionary = {}
 var affix_pools: Dictionary = {}
 var environments: Dictionary = {}
 var skill_policies: Dictionary = {}
+var combat_v3: Dictionary = {}
+var formations: Dictionary = {}
 var errors: Array[String] = []
 
 func read_json(path: String) -> Variant:
@@ -66,6 +68,11 @@ func indexed(path: String, key: String = "id") -> Dictionary:
 	return result
 
 func load_all() -> bool:
+	var v3=read_json("res://data/combat_v3.json")
+	if v3 is Dictionary:
+		combat_v3=v3
+		for rule in v3.get("formations",[]):formations[rule.id]=rule
+	if formations.size()!=8 or int(combat_v3.get("version",0))!=3:errors.append("Missing Combat V3 rules")
 	ninjas = indexed("res://data/ninjas.json")
 	skills = indexed("res://data/d4/skill_contracts.json","skill_id")
 	names = indexed("res://data/skills.json")

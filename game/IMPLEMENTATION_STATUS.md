@@ -51,3 +51,6 @@ D2+D3 correction: review import backup and test preload.
 D3-Fix: correct raid frontier setup, peace/war guard, organic campaign sample. CI pending.
 
 D2+D3 verified SHA e74fd59d8f23721e80f0443de0e5a228eac3bc88, CI 45565338505 PASS (181 checks, natural chapter 1 5/5, 90d, Web 17 screens/touch/generic art import, artifact 14999672939). Private exact-SHA native PCK 6v6 review verified local 59 PNG, 90 capture frames, no script errors. Review only; private images absent from GitHub. See GAMEPLAY_STATUS.md for scopes, hashes, failures corrected, and remaining work.
+
+## Combat V3 — DEC-012 (25/11/2026)
+Implemented first runtime batch: 14×10 default, 12×8/18×12 authored examples and custom dimensions, bounded free movement, 3×3 slots, eight formations, persistent upgrades and distance/death-sensitive links, formation UI, dynamic projection, legacy save normalization, main squad world resolver. QA pending exact-SHA CI; no claim of completed 1,152-skill geometry audit or production art. No merge.

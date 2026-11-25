@@ -21,3 +21,7 @@
 | GP-P10B | DONE | Web DEV V2 exact-SHA CI 45559078672; 150 checks, 90d sim, Chromium probe, artifact 14996917338. |
 | GP-P10 | BACKLOG | Final Web/Android/PC same project and acceptance gates. |
 Work independently on READY tasks; no merge, Codex Cloud, public release, or art wait. See GAMEPLAY_STATUS for evidence and proposed values.
+
+## Combat V3
+- REVIEW: runtime/map/save/UI/formation batch, exact-SHA Godot + browser CI.
+- READY after green: verify natural balance, extend secondary squad configuration UI, collision/pathfinding and SKILL-P1 geometry audit; art coordinate synchronization.

@@ -148,10 +148,14 @@ static func resolve_team(reg,s: Dictionary,player_team: Array,enemy_team: Array,
 	sim.registry=reg
 	sim.auto_player_ultimate=true
 	sim.rng.seed=seed_value
+	var slots={}
+	if player_team==s.team:
+		sim.configure_team_formation(s)
+		slots=preload("res://game/formation_service.gd").normalize_slots(player_team,s.get("formation_slots",{}))
 	for id in player_team:
 		if not s.owned.has(id):return false
 		var p=s.owned[id]
-		sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,sim.actors.size(),1.0,p,s.gear_instances)
+		sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,int(slots.get(id,sim.actors.size())),1.0,p,s.gear_instances)
 	var slot=0
 	for id in enemy_team:
 		sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},slot,1.0)

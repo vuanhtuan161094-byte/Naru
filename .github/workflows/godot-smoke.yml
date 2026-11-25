@@ -22,6 +22,13 @@ jobs:
           timeout 60 "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/smoke.log
           grep NARU_REGISTRY_OK /tmp/smoke.log
           ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/smoke.log
+      - name: Combat V3 formation and arena
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 60 "$G" --headless --path . --script res://game/combat_v3_test.gd 2>&1 | tee /tmp/combat-v3.log
+          grep NARU_COMBAT_V3_PASS /tmp/combat-v3.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|COMBAT_V3_FAIL' /tmp/combat-v3.log
       - name: GP-P2 gameplay integration
         run: |
           set -o pipefail

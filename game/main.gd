@@ -143,54 +143,49 @@ func recruit_one() -> void:
 	var id=store.draw(reg)
 	recruit_screen("Chiêu mộ: "+str(reg.ninjas[id].name_vi) if not id.is_empty() else "Không đủ ngọc")
 
-func roster() -> void:
+func roster(message: String="") -> void:
 	open_screen("formation")
-	label(root,"BỐ TRẬN • đội cốt truyện",26)
+	label(root,"BỐ TRẬN • 3×3 • "+str(store.state.team.size())+"/6 ninja",26)
 	var tools=HBoxContainer.new()
 	root.add_child(tools)
 	button(tools,"Đội viễn chinh / phòng thủ",squad_menu)
 	button(tools,"Vào cốt truyện",campaign)
-	label(tools,"Ô 1–3: hàng trước • 4–6: hàng sau",16)
+	label(tools,"Hàng trước • giữa • sau",16)
+	var options=OptionButton.new()
+	tools.add_child(options)
+	var ids=reg.formations.keys()
+	for id in ids:
+		var rule=reg.formations[id]
+		options.add_item(str(rule.name_vi)+" • Lv."+str(store.state.formation_levels[id]))
+	options.select(ids.find(store.state.formation_id))
+	options.disabled=not store.state.travel.is_empty()
+	options.item_selected.connect(func(index):store.select_formation(reg,str(ids[index]));roster())
+	var active=str(store.state.formation_id)
+	var current=int(store.state.formation_levels[active])
+	var up=button(tools,"Nâng trận pháp • "+str(ceili(float(reg.combat_v3.upgrade.base_cost)*pow(float(current),float(reg.combat_v3.upgrade.cost_power))))+" Ryo",func():roster("Đã nâng trận pháp" if store.upgrade_formation(reg,active) else "Không đủ Ryo hoặc đang triển khai"))
+	up.disabled=current>=int(reg.combat_v3.upgrade.max_level) or not store.state.travel.is_empty()
+	var rule=reg.formations[active]
+	var stats={"attack":"Công kích","defense":"Phòng thủ","move":"Tốc độ","chakra":"Hồi chakra"}
+	var link_names={"adjacent":"ô kề","rank":"cùng hàng","lane":"cùng cột","diagonal":"chéo"}
+	label(root,"%s +%.1f%% • Liên kết %s: +2,5%% thủ/đồng đội gần (tối đa 2) • %s" % [stats[rule.stat],100.0*(float(rule.base)+float(reg.combat_v3.upgrade.level_growth)*(current-1)),link_names[rule.link],message],16)
 	var slots=GridContainer.new()
 	slots.columns=3
 	root.add_child(slots)
-	for i in range(6):
-		var id=str(store.state.team[i]) if i<store.state.team.size() else ""
+	for i in range(9):
+		var id=""
+		for ninja in store.state.formation_slots:
+			if int(store.state.formation_slots[ninja])==i:id=str(ninja);break
 		var b=button(slots,("▶ " if selected_slot==i else "")+str(i+1)+" • "+(reg.ninjas[id].name_vi if id!="" else "Ô trống"),func():selected_slot=i;roster())
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.custom_minimum_size.y=48
+		b.custom_minimum_size.y=44
 	var controls=HBoxContainer.new()
 	root.add_child(controls)
-	button(controls,"Bỏ ninja khỏi ô",func():
-		var team=store.state.team.duplicate()
-		if selected_slot<team.size():
-			team.remove_at(selected_slot)
-			store.set_team(team)
-		roster())
-	button(controls,"Đổi lên trước",func():
-		var team=store.state.team.duplicate()
-		if selected_slot>0 and selected_slot<team.size():
-			var tmp=team[selected_slot-1]
-			team[selected_slot-1]=team[selected_slot]
-			team[selected_slot]=tmp
-			if store.set_team(team):selected_slot-=1
-		roster())
+	button(controls,"Bỏ ninja khỏi ô",func():roster("Đã bỏ" if store.set_formation_slot(selected_slot,"") else "Ô trống hoặc đang triển khai"))
 	var rows=scroll_rows(root)
 	for id in store.state.owned:
 		var p=store.state.owned[id]
 		var b=button(rows,"%s | Cấp %d | Phẩm %d%s" % [reg.ninjas[id].name_vi,int(p.level),int(p.quality)," | Đang trong đội" if id in store.state.team else ""],func():
-			var team=store.state.team.duplicate()
-			if id in team:
-				var old=team.find(id)
-				if selected_slot<team.size():
-					var other=team[selected_slot]
-					team[selected_slot]=id
-					team[old]=other
-			elif selected_slot<team.size():team[selected_slot]=id
-			elif team.size()<6:team.append(id)
-			var ok=store.set_team(team)
-			roster()
-			if not ok:label(root,"Ninja đang được triển khai hoặc đã thuộc đội khác.",16))
+			roster("Đã bố trận" if store.set_formation_slot(selected_slot,id) else "Đã đủ 6 ninja hoặc ninja đang triển khai ở đội khác"))
 		b.disabled=not store.state.travel.is_empty()
 
 func growth_screen() -> void:
@@ -350,7 +345,7 @@ func battle_view() -> void:
 	open_screen("battle")
 	var toolbar=HBoxContainer.new()
 	root.add_child(toolbar)
-	status=label(toolbar,"CHIẾN ĐẤU • "+str(battle_stage.name_vi),19)
+	status=label(toolbar,"CHIẾN ĐẤU • "+str(battle_stage.name_vi)+" • "+str(sim.map_width)+"×"+str(sim.map_height),19)
 	status.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	var pause_button=Button.new()
 	pause_button.text="Tạm dừng"
@@ -403,20 +398,26 @@ func battle_view() -> void:
 	log_label=label(root,"",14)
 	log_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 
+func arena_scale() -> float:
+	var span=float(sim.map_width+sim.map_height)
+	return maxf(0.12,minf((field.size.x-40.0)/(span*38.0),(field.size.y-88.0)/(span*20.0)))
+
 func iso(p: Vector2) -> Vector2:
-	var scale_value=minf(field.size.x/950.0,maxf(0.3,(field.size.y-96)/410.0))
-	return Vector2(field.size.x*0.44+(p.x-p.y)*38*scale_value,92+(p.x+p.y)*20*scale_value)
+	var q=arena_scale()
+	return Vector2(field.size.x*0.5+(p.x-p.y-float(sim.map_width-sim.map_height)*0.5)*38*q,72+(p.x+p.y)*20*q)
 
 func draw_field() -> void:
 	if sim==null:return
 	var plate=art.background(field,sim.environment)
-	var q=minf(field.size.x/950.0,maxf(0.3,(field.size.y-96)/410.0))
-	for x in range(12):
-		for y in range(8):
+	var q=arena_scale()
+	for x in range(sim.map_width):
+		for y in range(sim.map_height):
 			var p=iso(Vector2(x,y))
 			if not art.tile(field,p,q,x,y,plate):
 				var points=PackedVector2Array([p,p+Vector2(38,20)*q,p+Vector2(0,40)*q,p+Vector2(-38,20)*q])
 				field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
+	for a in sim.primary_alive(0):
+		if sim.link_count(a)>0:field.draw_arc(iso(a.pos),23,0,TAU,24,Color(0.4,0.85,1.0,0.7),2)
 	var render_order=sim.actors.duplicate()
 	render_order.sort_custom(func(a,b):return a.pos.x+a.pos.y<b.pos.x+b.pos.y)
 	for a in render_order:

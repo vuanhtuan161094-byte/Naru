@@ -1,0 +1,112 @@
+{
+  "version": 3,
+  "decision": "DEC-012",
+  "default_map": "standard",
+  "maps": {
+    "standard": {
+      "width": 14,
+      "height": 10
+    },
+    "compact": {
+      "width": 12,
+      "height": 8
+    },
+    "large": {
+      "width": 18,
+      "height": 12
+    }
+  },
+  "bounds": {
+    "min_width": 10,
+    "max_width": 30,
+    "min_height": 6,
+    "max_height": 20
+  },
+  "deployment": {
+    "rows": 3,
+    "columns": 3,
+    "max_units": 6,
+    "default_slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "rank_spacing": 1.2,
+    "lane_spacing": 1.5
+  },
+  "upgrade": {
+    "max_level": 20,
+    "currency": "RES-001",
+    "base_cost": 250,
+    "cost_power": 1.5,
+    "level_growth": 0.004
+  },
+  "links": {
+    "range": 3.5,
+    "max_neighbors": 2,
+    "per_neighbor": 0.025,
+    "stat": "defense"
+  },
+  "formations": [
+    {
+      "id": "FRM-01",
+      "name_vi": "Cân Bằng",
+      "stat": "attack",
+      "base": 0.03,
+      "link": "adjacent"
+    },
+    {
+      "id": "FRM-02",
+      "name_vi": "Phong Thỉ",
+      "stat": "attack",
+      "base": 0.06,
+      "link": "lane"
+    },
+    {
+      "id": "FRM-03",
+      "name_vi": "Thiết Bích",
+      "stat": "defense",
+      "base": 0.06,
+      "link": "rank"
+    },
+    {
+      "id": "FRM-04",
+      "name_vi": "Hạc Dực",
+      "stat": "move",
+      "base": 0.06,
+      "link": "adjacent"
+    },
+    {
+      "id": "FRM-05",
+      "name_vi": "Trường Xà",
+      "stat": "chakra",
+      "base": 0.06,
+      "link": "lane"
+    },
+    {
+      "id": "FRM-06",
+      "name_vi": "Nguyệt Ảnh",
+      "stat": "attack",
+      "base": 0.06,
+      "link": "diagonal"
+    },
+    {
+      "id": "FRM-07",
+      "name_vi": "Bát Quái",
+      "stat": "defense",
+      "base": 0.06,
+      "link": "diagonal"
+    },
+    {
+      "id": "FRM-08",
+      "name_vi": "Linh Trận",
+      "stat": "chakra",
+      "base": 0.06,
+      "link": "rank"
+    }
+  ],
+  "tuning_status": "DEV_TUNING"
+}

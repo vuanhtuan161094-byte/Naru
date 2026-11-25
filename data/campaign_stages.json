@@ -85,7 +85,8 @@
     "boss_id": null,
     "story_mode": "memory_reenactment",
     "canon_status": "GAME_DESIGN_ENCOUNTER",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "map_profile": "compact"
   },
   {
     "id": "STG-003",
@@ -5527,6 +5528,7 @@
     "boss_id": "BOSS-024",
     "story_mode": "memory_reenactment",
     "canon_status": "GAME_DESIGN_ENCOUNTER",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "map_profile": "large"
   }
 ]

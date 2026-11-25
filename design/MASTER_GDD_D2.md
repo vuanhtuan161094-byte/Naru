@@ -22,3 +22,6 @@ Xem balance_rules.json. Tăng trưởng rating lưu vô hạn nhưng tỷ lệ b
 2. Xác minh hồ sơ, nguồn từng kỹ năng, phiên bản, 4 hướng thực; art test ở battle 12 actor. Không dùng ảnh quảng cáo làm asset.
 3. Duyệt tham số, xác định công thức còn thiếu (tất cả 48 derived stats, skill riêng, đồ set, loot, profession, world AI và gacha banner). Chưa có simulation/runtime balancing.
 4. Chỉ sau owner duyệt mới tạo prototype Godot; chưa triển khai chính thức trong D2.
+
+## Combat V3 — DEC-012
+Current default 14×10, configurable map dimensions, continuous movement, 3×3 six-of-nine, eight upgradeable formations and formation links. See design/skill-p1/COMBAT_V3.md.

@@ -1,5 +1,11 @@
 extends RefCounted
 const Stats=preload("res://game/stats_service.gd")
+const Formation=preload("res://game/formation_service.gd")
+var map_width: int=14
+var map_height: int=10
+var side_formations: Dictionary={}
+var side_levels: Dictionary={}
+
 var mastery_counts: Dictionary={}
 var combo_clock: Dictionary={}
 var signature_ticks: Dictionary={}
@@ -27,6 +33,11 @@ var art_events: Array[Dictionary]=[]
 
 func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
+	configure_map(stage)
+	configure_team_formation(save)
+	side_formations[1]="FRM-01"
+	side_levels[1]=1
+	var slots=Formation.normalize_slots(save.team,save.get("formation_slots",{}))
 	rng.seed=seed_value
 	var kind=str(reg.territories.get(stage.get("territory_id",""),{}).get("kind",""))
 	if kind in ["forest","desert","cave"]:environment=kind
@@ -35,7 +46,7 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 		var progress=p.duplicate(true)
 		progress.beast_level=int(save.get("beasts",{}).get(p.get("beast_id",""),{}).get("level",0))
 		progress.contract_level=int(save.get("summon_contracts",{}).get(p.get("summon_contract",""),{}).get("level",0))
-		add_actor(id,0,int(p.level),int(p.quality),p.permanent,actors.size(),1.0,progress,save.get("gear_instances",{}))
+		add_actor(id,0,int(p.level),int(p.quality),p.permanent,int(slots[id]),1.0,progress,save.get("gear_instances",{}))
 	var j=0
 	for id in stage.enemy_ids:
 		var n=reg.npcs[id]
@@ -84,7 +95,7 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 		for key in ["hp","patk","natk","chakra_max"]:all_stats[key]*=1.0+0.03*sqrt(float(beast_level))
 	var hp=float(all_stats.hp)*mult
 	next_uid+=1
-	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"pos":Vector2((1.0 if side==0 else 10.0)+(-0.8 if side==0 else 0.8)*(1 if slot>=3 else 0),1.0+(slot%3)*1.2),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"shield_sources":{},"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
+	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"deployment_slot":slot,"pos":Formation.spawn(side,slot,map_width,map_height,float(registry.combat_v3.deployment.rank_spacing),float(registry.combat_v3.deployment.lane_spacing)),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"shield_sources":{},"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
 
 func alive(side: int) -> Array:
 	return actors.filter(func(a): return int(a.side)==side and float(a.hp)>0.0)
@@ -320,7 +331,8 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.contract_level=0
 	b.active_form={}
 	b.form_cooldowns={}
-	b.pos=a.pos+Vector2(0.3,0.5)
+	b.deployment_slot=-1
+	b.pos=clamp_position(a.pos+Vector2(0.3,0.5))
 	b.pending={}
 	b.busy=0.0
 	b.statuses={}
@@ -346,9 +358,11 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 					var stat="patk" if physical else "natk"
 					var attack=float(a[stat])*(1.0+magnitude(a,"attack_up"))*form_multiplier(a,stat)
 					if e.damage_type=="genjutsu":attack=float(a.stats.genjutsu_power)*form_multiplier(a,"genjutsu_power")
+					attack*=formation_multiplier(a,"attack")
 					if not a.stance.is_empty() and a.stance.stat==stat:attack*=float(a.stance.multiplier)
 					var defense=maxf(0.0,float(target.armor if physical else target.nres)*(1.0+magnitude(target,"defense_up"))-float(a.stats.get("armor_pen" if physical else "magic_pen",0)))
 					if e.damage_type=="genjutsu":defense=float(target.stats.genjutsu_resist)
+					defense*=formation_multiplier(target,"defense")
 					var realm_factor=clampf(1.0+0.04*(int(a.realm)-int(target.realm)),0.75,1.25)
 					var element_factor=float(registry.affinity.get(str(s.element)+":"+str(target.element),1.0))*maxf(field_factor,reaction(a,target,str(s.element)) if field_factor==1.0 else 1.0)*float(registry.environments.get(environment,{}).get("modifiers",{}).get(s.element,1.0))
 					if s.element!="neutral":element_factor*=1.0+rating(a,"element_power")
@@ -381,7 +395,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 							count+=1
 							if count>=int(e.max_statuses)+(1 if rng.randf()<rating(a,"cleanse") else 0):break
 				"chakra_restore":a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(e.amount))
-				"dash":a.pos=a.pos.move_toward(target.pos,minf(float(e.max_distance_m),maxf(0.0,a.pos.distance_to(target.pos)-float(e.stop_distance_m))))
+				"dash":a.pos=clamp_position(a.pos.move_toward(target.pos,minf(float(e.max_distance_m),maxf(0.0,a.pos.distance_to(target.pos)-float(e.stop_distance_m)))))
 				"summon":summon_actor(a,s,e)
 				"temporary_stance":a.stance={"remaining":float(e.duration_s),"stat":e.stat,"multiplier":e.multiplier}
 				"counter":a.counter={"remaining":float(e.window_s),"coefficient":e.coefficient}
@@ -473,7 +487,7 @@ func tick(dt: float) -> void:
 		a.busy=maxf(0.0,float(a.busy)-dt)
 		a.shield_time=maxf(0.0,float(a.shield_time)-dt)
 		if a.shield_time<=0 and a.shield_sources.is_empty():a.shield=0.0
-		a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(a.regen)*dt*(1.0+magnitude(a,"chakra_up"))*(1.0-clampf(magnitude(a,"chakra_lock"),0.0,0.9)))
+		a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(a.regen)*dt*formation_multiplier(a,"chakra")*(1.0+magnitude(a,"chakra_up"))*(1.0-clampf(magnitude(a,"chakra_lock"),0.0,0.9)))
 		for id in a.cooldowns:a.cooldowns[id]=maxf(0.0,float(a.cooldowns[id])-dt)
 		if not a.pending.is_empty():
 			var pending=a.pending
@@ -517,7 +531,7 @@ func tick(dt: float) -> void:
 				best_score=score
 		if not best.is_empty():cast(a,best,best_target)
 		elif not has_status(a,"bind") and a.pos.distance_to(enemy.pos)>float(basic.range_m):
-			var speed=2.2*(1.0+rating(a,"move_speed"))*(1.0+magnitude(a,"haste"))*(1.0-clampf(maxf(magnitude(a,"slow"),magnitude(a,"mud")),0.0,0.8))
+			var speed=2.2*formation_multiplier(a,"move")*(1.0+rating(a,"move_speed"))*(1.0+magnitude(a,"haste"))*(1.0-clampf(maxf(magnitude(a,"slow"),magnitude(a,"mud")),0.0,0.8))
 			move_actor(a,enemy.pos,speed*dt)
 	# Remove dead temporary entities only once their launched projectiles resolve.
 	for a in actors.duplicate():
@@ -682,4 +696,38 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 		if gap<0.6 and gap>0.001:separation+=offset.normalized()*(0.6-gap)
 	var step=(direction+separation*0.6).normalized()*distance
 	if step.length()>Vector2(a.pos).distance_to(destination):step=destination-Vector2(a.pos)
-	a.pos=Vector2(clampf(float(a.pos.x)+step.x,0.2,11.8),clampf(float(a.pos.y)+step.y,0.2,7.8))
+	a.pos=clamp_position(Vector2(a.pos)+step)
+
+func configure_map(stage: Dictionary) -> void:
+	var rule=registry.combat_v3
+	var profile=rule.maps.get(stage.get("map_profile",rule.default_map),rule.maps[rule.default_map])
+	map_width=clampi(int(stage.get("map_width",profile.width)),int(rule.bounds.min_width),int(rule.bounds.max_width))
+	map_height=clampi(int(stage.get("map_height",profile.height)),int(rule.bounds.min_height),int(rule.bounds.max_height))
+
+func clamp_position(p: Vector2) -> Vector2:
+	return Vector2(clampf(p.x,0.2,float(map_width)-0.2),clampf(p.y,0.2,float(map_height)-0.2))
+
+func configure_team_formation(save: Dictionary) -> void:
+	var id=str(save.get("formation_id","FRM-01"))
+	if not registry.formations.has(id):id="FRM-01"
+	side_formations[0]=id
+	side_levels[0]=clampi(int(save.get("formation_levels",{}).get(id,1)),1,int(registry.combat_v3.upgrade.max_level))
+
+func link_count(a: Dictionary) -> int:
+	if a.summon or a.hp<=0 or not side_formations.has(a.side):return 0
+	var rule=registry.formations[side_formations[a.side]]
+	var config=registry.combat_v3.links
+	var count=0
+	for b in actors:
+		if b.uid==a.uid or b.side!=a.side or b.summon or b.hp<=0:continue
+		if a.pos.distance_to(b.pos)>float(config.range):continue
+		if Formation.linked(int(a.get("deployment_slot",-1)),int(b.get("deployment_slot",-1)),str(rule.link)):count+=1
+	return mini(count,int(config.max_neighbors))
+
+func formation_multiplier(a: Dictionary,stat: String) -> float:
+	if a.summon or not side_formations.has(a.side):return 1.0
+	var rule=registry.formations[side_formations[a.side]]
+	var value=1.0
+	if str(rule.stat)==stat:value+=float(rule.base)+float(registry.combat_v3.upgrade.level_growth)*(int(side_levels.get(a.side,1))-1)
+	if stat==str(registry.combat_v3.links.stat):value+=float(registry.combat_v3.links.per_neighbor)*link_count(a)
+	return value

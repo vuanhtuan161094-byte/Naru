@@ -7,6 +7,15 @@ static func valid(reg,s: Variant) -> bool:
 	for key in ["inventory","owned","cleared","ledger"]:
 		if not s.get(key) is Dictionary:return false
 	if not s.get("team") is Array or s.team.size()>6:return false
+	if s.has("formation_id") and not reg.formations.has(s.formation_id):return false
+	if not s.get("formation_slots",{}) is Dictionary or not s.get("formation_levels",{}) is Dictionary:return false
+	var used_slots=[]
+	for id in s.get("formation_slots",{}):
+		var slot=s.formation_slots[id]
+		if not s.owned.has(id) or not integer(slot,0,8) or int(slot) in used_slots:return false
+		used_slots.append(int(slot))
+	for id in s.get("formation_levels",{}):
+		if not reg.formations.has(id) or not integer(s.formation_levels[id],1,int(reg.combat_v3.upgrade.max_level)):return false
 	for key in ["rng_seed","rng_state"]:
 		if not str(s.get(key,"")).is_valid_int():return false
 	for key in ["stamina","pity4","pity5","draws","battle_seq"]:

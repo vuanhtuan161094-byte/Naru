@@ -5,6 +5,7 @@ const Content=preload("res://game/content_service.gd")
 const World=preload("res://game/world_service.gd")
 const Village=preload("res://game/village_service.gd")
 const Combat=preload("res://game/combat.gd")
+const Formation=preload("res://game/formation_service.gd")
 const PATH = "user://naru_save_v1.json"
 var state: Dictionary = {}
 var rng = RandomNumberGenerator.new()
@@ -197,6 +198,55 @@ func set_team(ids: Array) -> bool:
 		seen[id]=true
 	var prior=state.duplicate(true)
 	state.team=ids.duplicate()
+	state.formation_slots=Formation.normalize_slots(state.team)
+	return commit_change(prior,rng.state)
+
+func set_formation_slot(slot: int,id: String) -> bool:
+	if slot<0 or slot>8 or not state.get("travel",{}).is_empty():return false
+	var positions=Formation.normalize_slots(state.team,state.get("formation_slots",{}))
+	var occupied=""
+	for ninja in positions:
+		if int(positions[ninja])==slot:occupied=str(ninja);break
+	var team=state.team.duplicate()
+	if id=="":
+		if occupied=="":return false
+		team.erase(occupied)
+		positions.erase(occupied)
+	elif not state.owned.has(id):return false
+	elif id in team:
+		var old=int(positions[id])
+		positions[id]=slot
+		if occupied!="" and occupied!=id:positions[occupied]=old
+	else:
+		if occupied!="":
+			team.erase(occupied)
+			positions.erase(occupied)
+		if team.size()>=6:return false
+		team.append(id)
+		positions[id]=slot
+	if not World.roster_available(state,team,"main"):return false
+	var prior=state.duplicate(true)
+	team.sort_custom(func(a,b):return int(positions[a])<int(positions[b]))
+	state.team=team
+	state.formation_slots=positions
+	return commit_change(prior,rng.state)
+
+func select_formation(reg,id: String) -> bool:
+	if not reg.formations.has(id) or not state.get("travel",{}).is_empty():return false
+	var prior=state.duplicate(true)
+	state.formation_id=id
+	return commit_change(prior,rng.state)
+
+func upgrade_formation(reg,id: String) -> bool:
+	if not reg.formations.has(id) or not state.get("travel",{}).is_empty():return false
+	var level=int(state.formation_levels.get(id,1))
+	if level>=int(reg.combat_v3.upgrade.max_level):return false
+	var currency=str(reg.combat_v3.upgrade.currency)
+	var cost={currency:Formation.cost(reg,level)}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	state.formation_levels[id]=level+1
 	return commit_change(prior,rng.state)
 
 func train(id: String) -> bool:
@@ -258,6 +308,7 @@ func raise_star(reg,id: String) -> bool:
 	return commit_change(prior,rng.state)
 
 func ensure_account(reg) -> void:
+	Formation.ensure(reg,state)
 	Village.ensure(reg,state)
 	Content.ensure(state)
 	if not state.has("gear_instances"):state.gear_instances={}
