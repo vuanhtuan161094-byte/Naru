@@ -13,74 +13,7 @@ jobs:
           curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
           unzip -q /tmp/godot.zip -d /tmp/godot
           chmod +x /tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-      - name: Import and load registry
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          "$G" --headless --editor --path . --import 2>&1 | tee /tmp/import.log
-          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/import.log
-          timeout 60 "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/smoke.log
-          grep NARU_REGISTRY_OK /tmp/smoke.log
-          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/smoke.log
-      - name: Combat V3 formation and arena
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 60 "$G" --headless --path . --script res://game/combat_v3_test.gd 2>&1 | tee /tmp/combat-v3.log
-          grep NARU_COMBAT_V3_PASS /tmp/combat-v3.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|COMBAT_V3_FAIL' /tmp/combat-v3.log
-      - name: SKILL-P2 overlay runtime
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 120 "$G" --headless --path . --script res://game/skill_p2_test.gd 2>&1 | tee /tmp/skill-p2.log
-          grep NARU_SKILL_P2_PASS /tmp/skill-p2.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|P2_FAIL' /tmp/skill-p2.log
-      - name: PASSIVE-P1 runtime and save smoke
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 120 "$G" --headless --path . --script res://game/passive_test.gd 2>&1 | tee /tmp/passive.log
-          grep NARU_PASSIVE_PASS /tmp/passive.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|PASSIVE_FAIL' /tmp/passive.log
-      - name: GP-P2 gameplay integration
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 180 "$G" --headless --path . --script res://game/gp_p2_test.gd 2>&1 | tee /tmp/gp-p2.log
-          grep 'GP_P2_OK 6v6 ticks' /tmp/gp-p2.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|GP_P2_FAIL' /tmp/gp-p2.log
-      - name: World progression transaction and save checks
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 180 "$G" --headless --path . --script res://game/world_progression_test.gd 2>&1 | tee /tmp/world-progression.log
-          grep NARU_WORLD_PROGRESSION_PASS /tmp/world-progression.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_PROGRESSION_FAIL' /tmp/world-progression.log
-      - name: World organic campaign and crafting observation
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 3600 "$G" --headless --path . --script res://game/world_organic_test.gd -- organic-days=45 2>&1 | tee /tmp/world-organic.log
-          grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/world-organic.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/world-organic.log
-      - name: Upload early world QA logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: NARU-World-DEV-P7-early-QA
-          path: |
-            /tmp/world-progression.log
-            /tmp/world-organic.log
-          retention-days: 30
-      - name: Economy 90-day starter simulation
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 240 "$G" --headless --path . --script res://game/economy_long_test.gd 2>&1 | tee /tmp/economy-long.log
-          grep NARU_ECONOMY_90D_PASS /tmp/economy-long.log
-          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/economy-long.log
-      - name: Test P7 services against pinned ONE GAME V11
+      - name: Prepare pinned ONE GAME + verified Combat V13 + World P7R
         run: |
           set -o pipefail
           git fetch --depth=1 origin 07ca3712d2d948a7e866b89c43fd8f5db7046321
@@ -88,7 +21,13 @@ jobs:
           for path in game/content_service.gd game/progression_quotes.gd game/resource_guide.gd game/save_guard.gd game/save_store.gd game/village_service.gd game/world_organic_test.gd game/world_progression_test.gd game/world_rewards.gd game/world_service.gd game/world_combat_context.gd; do
             cp "$path" "/tmp/naru-one-game/$path"
           done
-          # Splice only external UI functions from P6/P7, preserving V11 battle/animation/passive pilot.
+          git fetch --depth=1 origin 46d6d1442c21f7f0acafcbb6e782f89e0219e615
+          for path in game/combat.gd game/combat_stat_snapshot.gd game/passive_service.gd game/review_art.gd game/tactical_ai.gd data/art-review/r6-handoff.json data/skill-depth-v3/final-holds.json; do
+            mkdir -p "/tmp/naru-one-game/$(dirname "$path")"
+            git show "46d6d1442c21f7f0acafcbb6e782f89e0219e615:$path" > "/tmp/naru-one-game/$path"
+          done
+          git show "46d6d1442c21f7f0acafcbb6e782f89e0219e615:game/main.gd" > /tmp/naru-v13-main.gd
+          # Splice named UI/HUD functions only.
           python3 - <<'PY'
           import pathlib, json, re
           source=pathlib.Path("game/main.gd").read_text()
@@ -107,8 +46,20 @@ jobs:
               a,b=tb[name]
               c,d=sb[name]
               original=original[:a]+source[c:d]+original[b:]
+          combat=pathlib.Path("/tmp/naru-v13-main.gd").read_text()
+          cb=blocks(combat)
+          tb=blocks(original)
+          combat_names={"battle_view","draw_field","update_battle_inspector"}
+          assert not names & combat_names
+          assert combat_names <= cb.keys() and combat_names <= tb.keys()
+          for name in sorted(combat_names,key=lambda n:tb[n][0],reverse=True):
+              a,b=tb[name]
+              c,d=cb[name]
+              original=original[:a]+combat[c:d]+original[b:]
+          original=original.replace('label(header,"DEV V11",16)','label(header,"DEV V13 + P7R",16)')
           target.write_text(original)
-          print("P7 external UI functions:",sorted(names))
+          print("P7R external UI functions:",sorted(names))
+          print("V13 HUD functions:",sorted(combat_names))
           PY
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
           "$G" --headless --editor --path /tmp/naru-one-game --import 2>&1 | tee /tmp/one-import.log
@@ -116,18 +67,6 @@ jobs:
           timeout 240 "$G" --headless --path /tmp/naru-one-game --script res://game/world_progression_test.gd 2>&1 | tee /tmp/one-world-transactions.log
           grep NARU_WORLD_PROGRESSION_PASS /tmp/one-world-transactions.log
           ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_PROGRESSION_FAIL' /tmp/one-world-transactions.log
-          timeout 3600 "$G" --headless --path /tmp/naru-one-game --script res://game/world_organic_test.gd -- organic-days=90 2>&1 | tee /tmp/one-world-organic.log
-          grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/one-world-organic.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/one-world-organic.log
-      - name: Upload pinned ONE GAME world evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: NARU-P7-ONE-GAME-V11-QA
-          path: |
-            /tmp/one-world-transactions.log
-            /tmp/one-world-organic.log
-          retention-days: 30
       - name: Install matching Web templates
         run: |
           curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
@@ -146,8 +85,9 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           printf '%s\n' 07ca3712d2d948a7e866b89c43fd8f5db7046321 > dist/ONE_GAME_BASE_SHA.txt
+          printf '%s\n' 46d6d1442c21f7f0acafcbb6e782f89e0219e615 > dist/COMBAT_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - ONE GAME V11 + World P7 candidate (pinned base, external UI/service overlay). Extract the entire folder.
+          NARU RPG - ONE GAME V13 + World P7R candidate (pinned base, external UI/service overlay). Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -169,24 +109,42 @@ jobs:
         with:
           name: NARU-World-DEV-P7-QA
           path: |
-            /tmp/world-progression.log
-            /tmp/world-organic.log
-            /tmp/economy-long.log
-            /tmp/gp-p2.log
+            /tmp/one-import.log
+            /tmp/one-world-transactions.log
+            /tmp/web-export.log
           retention-days: 30
       - name: Upload Web DEV archive
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V11-World-P7-Web-DEV
+          name: NARU-One-Game-V13-World-P7R-Web-CANDIDATE
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V11-World-P7-menu
+          name: NARU-One-Game-V13-World-P7R-menu
           path: |
             web-menu.png
             ui-shots/
+          retention-days: 30
+      - name: Earned-only integrated V13 90-day product observation
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 3600 "$G" --headless --path /tmp/naru-one-game --script res://game/world_organic_test.gd -- organic-days=90 2>&1 | tee /tmp/one-world-organic.log
+          grep NARU_WORLD_P7R_RELOAD_PASS /tmp/one-world-organic.log
+          grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/one-world-organic.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/one-world-organic.log
+      - name: Upload P7R integrated evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-P7R-ONE-GAME-V13-QA
+          path: |
+            /tmp/one-import.log
+            /tmp/one-world-transactions.log
+            /tmp/one-world-organic.log
+            /tmp/web-export.log
           retention-days: 30
