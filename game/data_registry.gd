@@ -13,6 +13,14 @@ var resources: Dictionary = {}
 var professions: Dictionary = {}
 var territories: Dictionary = {}
 var factions: Dictionary = {}
+var chapters: Dictionary = {}
+var bosses: Dictionary = {}
+var boss_rules: Dictionary = {}
+var quests: Dictionary = {}
+var beasts: Dictionary = {}
+var contracts: Dictionary = {}
+var combos: Dictionary = {}
+var bloodlines: Dictionary = {}
 var routes: Array = []
 var relation_defs: Array = []
 var supply: Array = []
@@ -74,6 +82,17 @@ func load_all() -> bool:
 	professions=indexed("res://data/professions.json")
 	territories=indexed("res://data/territories.json")
 	factions=indexed("res://data/faction_profiles.json")
+	chapters=indexed("res://data/campaign_chapters.json")
+	bosses=indexed("res://data/bosses.json")
+	boss_rules=indexed("res://data/d4/boss_contracts.json","boss_id")
+	quests=indexed("res://data/quests.json")
+	beasts=indexed("res://data/bijuu.json")
+	contracts=indexed("res://data/summons.json")
+	combos=indexed("res://data/combo_skills.json")
+	var bloodline_data=read_json("res://data/d4/bloodline_rules.json")
+	if bloodline_data is Dictionary:
+		for item in bloodline_data.bloodline:bloodlines[item.id]=item
+	if chapters.size()!=24 or bosses.size()!=24 or boss_rules.size()!=24 or quests.size()!=81 or beasts.size()!=9 or contracts.size()!=11 or combos.size()!=12:errors.append("Missing campaign content")
 	var route_data=read_json("res://data/world_routes.json")
 	if route_data is Array:routes=route_data
 	var relation_data=read_json("res://data/diplomatic_relations.json")

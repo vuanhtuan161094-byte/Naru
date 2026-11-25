@@ -1,4 +1,5 @@
 extends RefCounted
+const Content=preload("res://game/content_service.gd")
 const World=preload("res://game/world_service.gd")
 const Village=preload("res://game/village_service.gd")
 const Combat=preload("res://game/combat.gd")
@@ -84,6 +85,7 @@ func draw(reg) -> String:
 	state.pity4=0 if tier>=4 else int(state.pity4)+1
 	state.pity5=0 if tier>=5 else int(state.pity5)+1
 	grant(reg,id)
+	Content.bump(state,"recruit")
 	if not save_now():
 		state=prior
 		rng.state=old_rng
@@ -113,6 +115,11 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 		for r in rewards:
 			state.inventory[r.resource_id]=int(state.inventory.get(r.resource_id,0))+int(r.qty)
 		state.cleared[stage.id]=true
+		Content.bump(state,"clear_stage")
+		if stage.boss_id!=null and int(state.building_states["BLD-001"].level)>=8:
+			for source in reg.supply:
+				if source.source_type=="boss_or_contract" and int(state.building_states[source.building_id].level)>0:
+					state.inventory[source.resource_id]=int(state.inventory.get(source.resource_id,0))+int(source.base_yield)
 		for id in entry.team:
 			var p=state.owned[id]
 			p.xp=int(p.xp)+100
@@ -128,9 +135,9 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 	return true
 
 func ensure_growth(p: Dictionary) -> void:
-	for k in {"points":0,"allocated":{},"realm_failures":0,"skill_levels":{},"battle_actions":0,"gear":{},"unlocked_skills":[],"skill_mastery":{},"quality_trials":{},"forms":[]}:
+	for k in {"points":0,"allocated":{},"realm_failures":0,"skill_levels":{},"battle_actions":0,"gear":{},"unlocked_skills":[],"skill_mastery":{},"quality_trials":{},"forms":[],"bloodline_levels":{},"summon_contract":"","beast_id":""}:
 		if not p.has(k):
-			p[k]={"points":0,"allocated":{},"realm_failures":0,"skill_levels":{},"battle_actions":0,"gear":{},"unlocked_skills":[],"skill_mastery":{},"quality_trials":{},"forms":[]}[k]
+			p[k]={"points":0,"allocated":{},"realm_failures":0,"skill_levels":{},"battle_actions":0,"gear":{},"unlocked_skills":[],"skill_mastery":{},"quality_trials":{},"forms":[],"bloodline_levels":{},"summon_contract":"","beast_id":""}[k]
 
 func apply_levels(p: Dictionary) -> void:
 	ensure_growth(p)
@@ -165,6 +172,7 @@ func train(id: String) -> bool:
 	var prior=state.duplicate(true)
 	state.inventory["RES-116"]=int(state.inventory["RES-116"])-1
 	p.xp=int(p.xp)+200
+	Content.bump(state,"train_ninja")
 	apply_levels(p)
 	return commit_change(prior,rng.state)
 
@@ -217,6 +225,7 @@ func raise_star(reg,id: String) -> bool:
 
 func ensure_account(reg) -> void:
 	Village.ensure(reg,state)
+	Content.ensure(state)
 	if not state.has("gear_instances"):state.gear_instances={}
 	if not state.has("gear_seq"):state.gear_seq=0
 	if not state.has("building_states"):
@@ -302,6 +311,7 @@ func craft_gear(reg,template_id: String) -> String:
 	debit(cost)
 	state.gear_seq=int(state.gear_seq)+1
 	var id="GEAR-"+str(state.gear_seq)
+	Content.bump(state,"craft_item")
 	state.gear_instances[id]={"template_id":template_id,"owner":"","enhance":0,"refine":0,"evolution":0,"fails":0,"quality":int(def.quality),"gems":[]}
 	if not commit_change(prior,rng.state):return ""
 	return id
@@ -489,11 +499,13 @@ func diplomatic_action(reg,id: String,action: String) -> bool:
 func trade_resource(reg,id: String,resource: String,qty: int,buy: bool) -> bool:
 	var prior=state.duplicate(true)
 	if not World.trade(reg,state,id,resource,qty,buy):return false
+	Content.bump(state,"trade")
 	return commit_change(prior,rng.state)
 
 func capture_territory(reg,id: String) -> bool:
 	var prior=state.duplicate(true)
 	if not World.capture(reg,state,id):return false
+	Content.bump(state,"territory_battle")
 	return commit_change(prior,rng.state)
 
 func repair_building(reg,id: String) -> bool:
@@ -505,4 +517,135 @@ func repair_building(reg,id: String) -> bool:
 	var prior=state.duplicate(true)
 	debit(cost)
 	b.condition=1.0
+	return commit_change(prior,rng.state)
+
+func claim_quest(reg,id: String) -> bool:
+	var prior=state.duplicate(true)
+	if not Content.claim(reg,state,id):return false
+	return commit_change(prior,rng.state)
+
+func start_mission(reg,id: String,resource: String) -> bool:
+	var prior=state.duplicate(true)
+	if not Content.start_mission(reg,state,id,resource):return false
+	return commit_change(prior,rng.state)
+
+func resource_trial(reg,id: String,resource: String) -> bool:
+	if not state.owned.has(id):return false
+	var source=Content.source_for(reg,resource)
+	if source.is_empty() or not source.source_type in ["trial","bloodline_trial"]:return false
+	if int(state.building_states[source.building_id].level)<=0 or int(state.building_states["BLD-001"].level)<int(source.source_min_hq):return false
+	var now=int(state.simulation_seconds)
+	var key=id+":"+resource
+	if int(state.source_cooldowns.get(key,0))>now:return false
+	var p=state.owned[id]
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	var won=duel(reg,id,maxi(1,int(p.realm)*20+1),rng.randi())
+	state.source_cooldowns[key]=now+int(source.period_seconds)
+	if won:state.inventory[resource]=int(state.inventory.get(resource,0))+int(source.base_yield)
+	if not commit_change(prior,old_rng):return false
+	return won
+
+func native_bloodline(reg,id: String,bloodline: String) -> bool:
+	if not state.owned.has(id) or not reg.bloodlines.has(bloodline):return false
+	var p=state.owned[id]
+	var def=reg.bloodlines[bloodline]
+	# D4 explicitly requires compatibility review for Rinnegan and null native family.
+	if bloodline=="BL-139" or def.required_family_for_native==null or reg.ninjas[id].family_hint!=def.required_family_for_native:return false
+	var current=int(p.bloodline_levels.get(bloodline,0))
+	if current>=int(def.progression.tier_max) or int(p.realm)<int(def.native_unlock.realm):return false
+	if current==0:
+		for other in p.bloodline_levels:
+			if reg.bloodlines[other].exclusive_group==def.exclusive_group:return false
+	var qty=int(def.native_unlock.resource_qty) if current==0 else ceili(10*pow(float(current),1.6))
+	var cost={str(def.resource_id):qty}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	p.bloodline_levels[bloodline]=current+1
+	return commit_change(prior,rng.state)
+
+func capture_beast(reg,id: String,beast_id: String) -> bool:
+	if not state.owned.has(id) or not reg.beasts.has(beast_id) or state.beasts.has(beast_id):return false
+	var p=state.owned[id]
+	var def=reg.beasts[beast_id]
+	var req=def.capture_requires
+	if int(p.realm)<int(req.realm) or int(state.building_states["BLD-027"].level)<=0:return false
+	var cost={str(req.seal_resource):int(req.seal_qty)}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	debit(cost)
+	var sim=Combat.new()
+	sim.registry=reg
+	sim.rng.seed=rng.randi()
+	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
+	sim.add_actor(def.canon_host_template_id,1,int(req.realm)*20+10,int(reg.ninjas[def.canon_host_template_id].initial_quality),{},0,1.25)
+	var won=false
+	for i in range(24000):
+		sim.tick(0.05)
+		if sim.outcome!="":
+			won=sim.outcome=="win"
+			break
+		if sim.deadlock:break
+	if won:
+		state.beasts[beast_id]={"host":"","level":1,"xp":0}
+		for reward in def.capture_reward:state.inventory[reward.resource_id]=int(state.inventory.get(reward.resource_id,0))+int(reward.qty)
+	if not commit_change(prior,old_rng):return false
+	return won
+
+func bind_beast(reg,id: String,beast_id: String) -> bool:
+	if not state.owned.has(id) or not state.beasts.has(beast_id):return false
+	var p=state.owned[id]
+	var beast=state.beasts[beast_id]
+	if not id in reg.beasts[beast_id].compatibility.preferred_host_ids or str(p.beast_id)!="" or str(beast.host)!="":return false
+	var prior=state.duplicate(true)
+	var cost={"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)}
+	if not has_cost(cost):return false
+	debit(cost)
+	beast.host=id
+	p.beast_id=beast_id
+	return commit_change(prior,rng.state)
+
+func train_beast(reg,beast_id: String) -> bool:
+	if not state.beasts.has(beast_id):return false
+	var b=state.beasts[beast_id]
+	var resource=str(reg.beasts[beast_id].training_resource)
+	if int(state.inventory.get(resource,0))<1:return false
+	var prior=state.duplicate(true)
+	debit({resource:1})
+	b.xp=int(b.xp)+100
+	while int(b.xp)>=ceili(100*pow(float(b.level),1.6)):
+		b.xp=int(b.xp)-ceili(100*pow(float(b.level),1.6))
+		b.level=int(b.level)+1
+	return commit_change(prior,rng.state)
+
+func make_contract(reg,id: String) -> bool:
+	if not reg.contracts.has(id) or state.summon_contracts.has(id) or int(state.building_states["BLD-026"].level)<=0:return false
+	var def=reg.contracts[id]
+	var cost={str(def.contract_resource):int(def.contract_qty)}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	state.summon_contracts[id]={"owner":"","level":1}
+	return commit_change(prior,rng.state)
+
+func assign_contract(id: String,ninja: String) -> bool:
+	if not state.summon_contracts.has(id) or not state.owned.has(ninja):return false
+	var c=state.summon_contracts[id]
+	var p=state.owned[ninja]
+	if str(c.owner)!="" or str(p.summon_contract)!="":return false
+	var prior=state.duplicate(true)
+	c.owner=ninja
+	p.summon_contract=id
+	return commit_change(prior,rng.state)
+
+func train_contract(id: String) -> bool:
+	if not state.summon_contracts.has(id):return false
+	var c=state.summon_contracts[id]
+	var cost={"RES-001":ceili(30*pow(float(c.level),1.5))}
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	c.level=int(c.level)+1
 	return commit_change(prior,rng.state)

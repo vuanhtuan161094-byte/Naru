@@ -1,4 +1,5 @@
 extends RefCounted
+const Content=preload("res://game/content_service.gd")
 const World=preload("res://game/world_service.gd")
 static func ensure(reg,s: Dictionary) -> void:
 	if not s.has("building_states"):
@@ -20,6 +21,7 @@ static func ensure(reg,s: Dictionary) -> void:
 	if not s.has("production_count"):s.production_count=0
 	if not s.has("craft_count"):s.craft_count=0
 	World.ensure(reg,s)
+	Content.ensure(s)
 
 static func level(s: Dictionary,id: String) -> int:
 	return int(s.building_states.get(id,{}).get("level",0))
@@ -145,6 +147,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		if not put(s,recipe.output.resource_id,qty):continue
 		award_job(s,id,qty)
 		s.craft_count=int(s.craft_count)+1
+		Content.bump(s,"craft_item")
 		job.reserved={}
 		if not job.repeat:b.production={}
 	# Direct supply only for genuine producing sources, never event-only rewards.
@@ -170,6 +173,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 			if put(s,resource_id,qty):
 				award_job(s,id,qty)
 				s.production_count=int(s.production_count)+1
+				Content.bump(s,"collect_production")
 				elapsed-=period
 			else:elapsed=period
 		s.supply_clock[resource_id]=elapsed
@@ -181,6 +185,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		s.stamina_seconds=int(s.stamina_seconds)%360 if int(s.stamina)<120 else 0
 	s.simulation_seconds=int(s.simulation_seconds)+dt
 	World.step(reg,s,dt)
+	Content.step(s,dt)
 
 static func advance(reg,s: Dictionary,now: int) -> bool:
 	ensure(reg,s)
@@ -195,4 +200,5 @@ static func advance(reg,s: Dictionary,now: int) -> bool:
 	s.last_committed_timestamp=now
 	s.high_water_timestamp=now
 	s.last_offline_elapsed=elapsed
+	Content.sync_day(s)
 	return true

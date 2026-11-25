@@ -1,6 +1,10 @@
 extends RefCounted
 const Stats=preload("res://game/stats_service.gd")
 var mastery_counts: Dictionary={}
+var combo_clock: Dictionary={}
+var signature_ticks: Dictionary={}
+var boss_phases: Dictionary={}
+var boss_actor_uid=0
 var actors: Array[Dictionary] = []
 var registry
 var outcome = ""
@@ -18,11 +22,17 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	rng.seed=seed_value
 	for id in save.team:
 		var p=save.owned[id]
-		add_actor(id,0,int(p.level),int(p.quality),p.permanent,actors.size(),1.0,p,save.get("gear_instances",{}))
+		var progress=p.duplicate(true)
+		progress.beast_level=int(save.get("beasts",{}).get(p.get("beast_id",""),{}).get("level",0))
+		progress.contract_level=int(save.get("summon_contracts",{}).get(p.get("summon_contract",""),{}).get("level",0))
+		add_actor(id,0,int(p.level),int(p.quality),p.permanent,actors.size(),1.0,progress,save.get("gear_instances",{}))
 	var j=0
 	for id in stage.enemy_ids:
 		var n=reg.npcs[id]
 		add_actor(str(n.template_ninja_id),1,int(n.level),int(reg.ninjas[n.template_ninja_id].initial_quality)+int(n.quality_bonus),{},j,float(n.stat_multiplier))
+		if stage.get("boss_id")!=null and registry.bosses.has(stage.boss_id) and registry.bosses[stage.boss_id].primary_enemy_id==id:
+			boss_actor_uid=int(actors.back().uid)
+			boss_phases={"rule":registry.boss_rules[stage.boss_id],"fired":{},"priority":[]}
 		j+=1
 
 func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionary,slot: int,mult: float,progress: Dictionary={},gear_instances: Dictionary={}) -> void:
@@ -50,9 +60,12 @@ func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionar
 	stat_progress.quality=quality
 	stat_progress.permanent=permanent
 	var all_stats=Stats.derive(registry,n,stat_progress,gear_stats)
+	var beast_level=int(progress.get("beast_level",0))
+	if beast_level>0:
+		for key in ["hp","patk","natk","chakra_max"]:all_stats[key]*=1.0+0.03*sqrt(float(beast_level))
 	var hp=float(all_stats.hp)*mult
 	next_uid+=1
-	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"pos":Vector2(1.0 if side==0 else 10.0,1.0+slot*1.2),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
+	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"pos":Vector2(1.0 if side==0 else 10.0,1.0+slot*1.2),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
 
 func alive(side: int) -> Array:
 	return actors.filter(func(a): return int(a.side)==side and float(a.hp)>0.0)
@@ -239,6 +252,8 @@ func summon_actor(a: Dictionary,s: Dictionary,e: Dictionary) -> void:
 	b.skill_levels={}
 	b.gear_stats={}
 	b.forms=[]
+	b.contract=""
+	b.contract_level=0
 	b.active_form={}
 	b.form_cooldowns={}
 	b.pos=a.pos+Vector2(0.3,0.5)
@@ -294,6 +309,9 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary) -> void:
 	if int(a.side)==0 and not a.summon:
 		counts[a.id]=int(counts.get(a.id,0))+1
 		mastery_counts[s.skill_id]=int(mastery_counts.get(s.skill_id,0))+maxi(1,roundi(1.0+rating(a,"mastery_speed")))
+	if not a.summon and registry.ninjas[a.id].unique_talent_design.skill_id==s.skill_id:
+		signature_ticks[str(a.side)+":"+str(a.id)]=ticks
+		try_combo(a)
 	log.append(str(a.id)+" · "+str(registry.names[s.skill_id].name_vi))
 	if log.size()>6:log.pop_front()
 
@@ -306,6 +324,7 @@ func ultimate(index: int) -> bool:
 
 func update_status(a: Dictionary,dt: float) -> void:
 	a.immune=maxf(0.0,float(a.immune)-dt)
+	a.contract_cd=maxf(0.0,float(a.contract_cd)-dt)
 	for id in a.form_cooldowns:a.form_cooldowns[id]=maxf(0.0,float(a.form_cooldowns[id])-dt)
 	if not a.active_form.is_empty():
 		a.active_form.remaining=float(a.active_form.remaining)-dt
@@ -352,6 +371,7 @@ func tick(dt: float) -> void:
 			continue
 		update_status(a,dt)
 		if a.hp<=0:continue
+		if a.uid==boss_actor_uid:update_boss(a)
 		a.busy=maxf(0.0,float(a.busy)-dt)
 		a.shield_time=maxf(0.0,float(a.shield_time)-dt)
 		if a.shield_time<=0:a.shield=0.0
@@ -382,6 +402,12 @@ func tick(dt: float) -> void:
 		var best={}
 		var best_target={}
 		var best_score=0.0
+		if a.uid==boss_actor_uid and not boss_phases.priority.is_empty():
+			var skill_id=str(boss_phases.priority[0])
+			var priority_skill=effective_skill(a,skill_id)
+			if cast(a,priority_skill,target_for(a,priority_skill)):
+				boss_phases.priority.pop_front()
+				continue
 		for id in a.skills:
 			var s=effective_skill(a,id)
 			if s.kind=="ultimate" or not ready(a,s):continue
@@ -419,3 +445,68 @@ func activate_form(a: Dictionary,id: String,manual: bool) -> bool:
 func form_multiplier(a: Dictionary,stat: String) -> float:
 	if a.active_form.is_empty():return 1.0
 	return float(registry.form_rules[a.active_form.id].stat_multipliers.get(stat,1.0))
+
+func try_combo(a: Dictionary) -> void:
+	for combo in registry.combos.values():
+		if not a.id in combo.member_ids:continue
+		var key=str(a.side)+":"+str(combo.id)
+		if ticks-int(combo_clock.get(key,-100000))<int(combo.cooldown_s)*20:continue
+		var members=[]
+		for id in combo.member_ids:
+			var member={}
+			for b in primary_alive(int(a.side)):
+				if b.id==id:member=b
+			if member.is_empty() or ticks-int(signature_ticks.get(str(a.side)+":"+str(id),-100000))>80:break
+			members.append(member)
+		if members.size()!=combo.member_ids.size():continue
+		combo_clock[key]=ticks
+		var enemies=primary_alive(1-int(a.side))
+		if enemies.is_empty():continue
+		match str(combo.effect):
+			"damage":hit(a,enemies[0],float(a.natk)*float(combo.coefficient)*100.0/(100.0+float(enemies[0].nres)))
+			"control":apply_status(a,enemies[0],{"status_id":"bind","chance":0.8,"duration_s":3.0})
+			"shield":
+				for member in members:
+					member.shield=maxf(float(member.shield),float(a.natk)*float(combo.coefficient))
+					member.shield_time=maxf(float(member.shield_time),5.0)
+			"buff":
+				for member in members:apply_status(a,member,{"status_id":"attack_up","chance":1.0,"duration_s":6.0,"magnitude":0.2})
+		log.append(str(combo.name_vi))
+
+func update_boss(a: Dictionary) -> void:
+	if boss_phases.is_empty():return
+	var rule=boss_phases.rule
+	for i in range(rule.phases.size()):
+		var phase=rule.phases[i]
+		if boss_phases.fired.has(i) or a.hp/a.max_hp>float(phase.hp_at_or_below):continue
+		boss_phases.fired[i]=true
+		var modifier=phase.modifier
+		a.chakra=minf(float(a.max_chakra),float(a.chakra)+float(modifier.get("chakra_restore",0)))
+		if modifier.has("attack_multiplier"):apply_status(a,a,{"status_id":"attack_up","chance":1.0,"duration_s":modifier.duration_s,"magnitude":float(modifier.attack_multiplier)-1.0})
+		if modifier.has("defense_multiplier"):apply_status(a,a,{"status_id":"defense_up","chance":1.0,"duration_s":modifier.duration_s,"magnitude":float(modifier.defense_multiplier)-1.0})
+		var e=phase.mechanic_effect
+		match str(e.type):
+			"shield_self_fraction":
+				a.shield=maxf(float(a.shield),float(a.max_hp)*float(e.fraction_max_hp))
+				a.shield_time=maxf(float(a.shield_time),float(e.duration_s))
+			"apply_status_enemy":
+				var enemies=primary_alive(1-int(a.side))
+				for target in enemies.slice(0,int(e.max_targets)):apply_status(a,target,{"status_id":e.status_id,"chance":1.0,"duration_s":e.duration_s,"magnitude":e.magnitude})
+			"apply_status_self":apply_status(a,a,{"status_id":e.status_id,"chance":1.0,"duration_s":e.duration_s,"magnitude":e.magnitude})
+			"heal_self_fraction":a.hp=minf(float(a.max_hp),float(a.hp)+float(a.max_hp)*float(e.fraction))
+			"summon_boss_minion":
+				for n in range(int(e.count)):summon_actor(a,{"skill_id":str(rule.boss_id)+"-minion"},{"template_id":str(rule.boss_id)+"-MINION","cap":e.max_active,"lifetime_s":e.lifetime_s,"hp_owner_fraction":e.owner_hp_fraction,"attack_owner_fraction":e.owner_attack_fraction})
+			"phase_burst":pass
+		if phase.priority_skill_id in a.skills and not phase.priority_skill_id in boss_phases.priority:boss_phases.priority.append(phase.priority_skill_id)
+		log.append("Boss: giai đoạn "+str(i+1))
+
+func summon_contract(a: Dictionary) -> bool:
+	if a.summon or a.hp<=0 or a.side!=0 or a.contract=="" or a.contract_cd>0 or a.chakra<30 or hard_block(a):return false
+	var def=registry.contracts[a.contract]
+	var key={"skill_id":str(a.contract)}
+	if summon_count(a,a.contract)>0:return false
+	a.chakra=float(a.chakra)-30
+	a.contract_cd=40.0
+	var factor=float(def.owner_stat_fraction)*(1+0.03*sqrt(float(a.contract_level)))
+	summon_actor(a,key,{"template_id":a.contract,"cap":1,"lifetime_s":def.battle_lifetime_seconds,"hp_owner_fraction":factor,"attack_owner_fraction":factor})
+	return true

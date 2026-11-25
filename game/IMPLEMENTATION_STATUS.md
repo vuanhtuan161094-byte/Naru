@@ -12,3 +12,5 @@ GP-P3B partial: 48 typed formulas (no eval), talent migration, mastery, gated tr
 GP-P4 / GP-P5A-B / GP-P6 partial: building/recipe/jobs/clock runtime, inventory screen and construction UI, real workshop path. 24h clock cap, no replay; source coverage incomplete and NPC not yet simulated. QA pending.
 
 GP-P5 world partial: route/travel, diplomacy, finite stock trade, NPC tick, capture sequential defense, raid/repair. World offline now active. No multi-team deployment, full NPC-vs-NPC war, or complete balancing. CI pending.
+
+GP-P6 content partial: boss phase dispatch, signature combos, quests, mission timers, resource duels, native bloodline, beasts, summon contracts. DEV proxy beast combat, no unauthorized compatibility. CI pending.

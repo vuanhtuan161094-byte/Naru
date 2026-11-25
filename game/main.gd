@@ -74,6 +74,7 @@ func menu(message: String="") -> void:
 	button(row,"Trang bị",gear_screen)
 	button(row,"Làng",village_screen)
 	button(row,"Nhẫn giới",world_screen)
+	button(row,"Hoạt động",activities_screen)
 	button(row,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
 	button(row,"Cốt truyện",campaign)
 	button(row,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
@@ -191,6 +192,7 @@ func start_battle(stage: Dictionary) -> void:
 		var a=sim.actors[i]
 		var b=button(row,str(reg.ninjas[a.id].name_vi).split(" (")[0],func(): sim.ultimate(i))
 		ult_buttons.append(b)
+		if a.contract!="":button(row,"Thông linh",func():sim.summon_contract(a))
 		for form_id in a.forms:
 			if reg.form_rules[form_id].activation!="skill_trigger":button(row,"Biến thân",func():sim.activate_form(a,form_id,true))
 	log_label=label(root,"",16)
@@ -503,3 +505,90 @@ func faction_screen(id: String,message: String="") -> void:
 		var sell=preload("res://game/world_service.gd").price(reg,store.state,id,resource,false)
 		button(line,"Mua 1 (%d)" % buy,func():faction_screen(id,"Đã mua" if store.trade_resource(reg,id,resource,1,true) else "Thiếu điều kiện giao thương"))
 		button(line,"Bán 1 (%d)" % sell,func():faction_screen(id,"Đã bán" if store.trade_resource(reg,id,resource,1,false) else "Thiếu điều kiện giao thương"))
+
+func activity_rows(title: String,message: String,back: Callable) -> VBoxContainer:
+	clear()
+	label(root,title,28)
+	label(root,message,18)
+	button(root,"Trở về",back)
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	return rows
+
+func activities_screen() -> void:
+	clear()
+	label(root,"HOẠT ĐỘNG NINJA",30)
+	button(root,"Nhiệm vụ",quest_screen)
+	button(root,"Phái ninja làm nhiệm vụ / thử thách tài nguyên",mission_screen)
+	button(root,"Vĩ thú và phong ấn",beast_screen)
+	button(root,"Thông linh thú",contract_screen)
+	button(root,"Huyết kế và đồng thuật",bloodline_screen)
+	button(root,"Trở về",func():menu())
+
+func quest_screen(message: String="") -> void:
+	var rows=activity_rows("NHIỆM VỤ • 81",message,activities_screen)
+	preload("res://game/content_service.gd").sync_day(store.state)
+	for id in reg.quests:
+		var q=reg.quests[id]
+		var count=preload("res://game/content_service.gd").objective(reg,store.state,q)
+		var done=store.state.quest_claimed.has(preload("res://game/content_service.gd").claim_key(store.state,q))
+		var b=button(rows,"%s | %d/%d | %s" % [q.name_vi,count,int(q.objective.count),"Đã nhận" if done else "Nhận thưởng"],func():quest_screen("Đã nhận" if store.claim_quest(reg,id) else "Chưa hoàn thành"))
+		b.disabled=done or count<int(q.objective.count)
+
+func mission_screen(message: String="") -> void:
+	var rows=activity_rows("NHIỆM VỤ VÀ THỬ THÁCH TÀI NGUYÊN",message,activities_screen)
+	for ninja in store.state.owned:
+		button(rows,str(reg.ninjas[ninja].name_vi),func():mission_detail(ninja))
+
+func mission_detail(ninja: String,message: String="") -> void:
+	var rows=activity_rows("PHÁI ĐI • "+str(reg.ninjas[ninja].name_vi),message,func():mission_screen())
+	var job=store.state.missions.get(ninja,{})
+	if not job.is_empty():label(rows,"Đang làm nhiệm vụ "+str(job.resource)+" • còn "+str(job.remaining)+"s",18)
+	for source in reg.supply:
+		if not source.source_type in ["mission","mission_or_library","trial","bloodline_trial"]:continue
+		var resource=str(source.resource_id)
+		var text_value="%s ×%d | Tổng bộ %d" % [reg.resources[resource].name_vi,int(source.base_yield),int(source.source_min_hq)]
+		if source.source_type in ["mission","mission_or_library"]:
+			button(rows,text_value,func():mission_detail(ninja,"Đã phái đi" if store.start_mission(reg,ninja,resource) else "Chưa đủ điều kiện"))
+		else:button(rows,text_value+" • đấu thử thách",func():mission_detail(ninja,"Đã thắng" if store.resource_trial(reg,ninja,resource) else "Chưa thắng / chưa đủ điều kiện"))
+
+func beast_screen(message: String="") -> void:
+	var rows=activity_rows("VĨ THÚ • 9",message,activities_screen)
+	for id in reg.beasts:
+		var b=store.state.beasts.get(id,{})
+		button(rows,"%s | %s" % [reg.beasts[id].name,"Chưa thu phục" if b.is_empty() else "Cấp "+str(b.level)+" | "+str(b.host)],func():beast_detail(id))
+
+func beast_detail(id: String,message: String="") -> void:
+	var rows=activity_rows("VĨ THÚ • "+str(reg.beasts[id].name),message,func():beast_screen())
+	if store.state.beasts.has(id):button(rows,"Tu luyện vĩ thú",func():beast_detail(id,"Đã tu luyện" if store.train_beast(reg,id) else "Thiếu tài nguyên"))
+	for ninja in store.state.owned:
+		if store.state.beasts.has(id):
+			button(rows,"Phong ấn vào "+str(reg.ninjas[ninja].name_vi),func():beast_detail(id,"Đã phong ấn" if store.bind_beast(reg,ninja,id) else "Không tương thích / thiếu ấn"))
+		else:button(rows,"Thử thu phục với "+str(reg.ninjas[ninja].name_vi),func():beast_detail(id,"Đã thu phục" if store.capture_beast(reg,ninja,id) else "Không thắng / thiếu điều kiện"))
+
+func contract_screen(message: String="") -> void:
+	var rows=activity_rows("THÔNG LINH THÚ • 11",message,activities_screen)
+	for id in reg.contracts:
+		var c=store.state.summon_contracts.get(id,{})
+		button(rows,"%s | %s" % [reg.contracts[id].name,"Chưa ký" if c.is_empty() else "Cấp "+str(c.level)],func():contract_detail(id))
+
+func contract_detail(id: String,message: String="") -> void:
+	var rows=activity_rows(str(reg.contracts[id].name),message,func():contract_screen())
+	if not store.state.summon_contracts.has(id):
+		button(rows,"Ký khế ước",func():contract_detail(id,"Đã ký" if store.make_contract(reg,id) else "Thiếu vật liệu / công trình"))
+		return
+	button(rows,"Tăng cấp",func():contract_detail(id,"Đã tăng cấp" if store.train_contract(id) else "Thiếu Ryo"))
+	for ninja in store.state.owned:
+		button(rows,"Gán "+str(reg.ninjas[ninja].name_vi),func():contract_detail(id,"Đã gán" if store.assign_contract(id,ninja) else "Đã có chủ / đã có khế ước"))
+
+func bloodline_screen(message: String="") -> void:
+	var rows=activity_rows("HUYẾT KẾ VÀ ĐỒNG THUẬT",message,activities_screen)
+	for ninja in store.state.owned:
+		for id in reg.bloodlines:
+			var def=reg.bloodlines[id]
+			if def.required_family_for_native==null or def.required_family_for_native!=reg.ninjas[ninja].family_hint or id=="BL-139":continue
+			button(rows,"%s | %s | Bậc %s" % [reg.ninjas[ninja].name_vi,def.name_vi,store.state.owned[ninja].bloodline_levels.get(id,0)],func():bloodline_screen("Đã thức tỉnh / nâng cấp" if store.native_bloodline(reg,ninja,id) else "Thiếu điều kiện"))

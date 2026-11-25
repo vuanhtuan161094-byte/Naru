@@ -173,4 +173,40 @@ func _initialize() -> void:
 	initial_time+=600
 	village.advance_clock(reg,initial_time)
 	check(int(village.state.world_tick)>world_tick,"NPC offline tick")
+	check(reg.boss_rules.size()==24 and reg.quests.size()==81 and reg.combos.size()==12,"campaign registry")
+	var boss_sim=Combat.new()
+	boss_sim.setup(reg,store.state,reg.stages["STG-005"],42)
+	var boss_actor=boss_sim.actor_by_uid(boss_sim.boss_actor_uid)
+	check(not boss_actor.is_empty(),"boss mapped")
+	boss_actor.hp=boss_actor.max_hp*0.6
+	boss_sim.update_boss(boss_actor)
+	check(boss_sim.boss_phases.fired.has(0) and boss_actor.shield>0,"boss phase shield")
+	var shield=float(boss_actor.shield)
+	boss_actor.shield=0
+	boss_sim.update_boss(boss_actor)
+	check(boss_actor.shield==0 and shield>0,"boss phase once")
+	var quest=Store.new()
+	quest.save_path="user://gp_content_ci.json"
+	quest.new_game(reg)
+	check(not quest.claim_quest(reg,"QST-079"),"quest gate")
+	quest.draw(reg)
+	check(quest.claim_quest(reg,"QST-079"),"daily quest reward")
+	check(not quest.claim_quest(reg,"QST-079"),"quest once")
+	check(quest.start_mission(reg,"NIN-001","RES-001"),"mission dispatch")
+	var mission_time=int(quest.state.high_water_timestamp)+300
+	quest.advance_clock(reg,mission_time)
+	check(quest.state.missions.is_empty(),"mission time completion")
+	check(not quest.capture_beast(reg,"NIN-001","BIJ-1"),"beast unlock gate")
+	check(not quest.make_contract(reg,"SUM-001"),"contract building gate")
+	quest.state.building_states["BLD-026"].level=1
+	quest.state.inventory["RES-148"]=10
+	check(quest.make_contract(reg,"SUM-001"),"contract transaction")
+	check(quest.assign_contract("SUM-001","NIN-001"),"contract owner")
+	var contract_sim=Combat.new()
+	contract_sim.setup(reg,quest.state,stage,42)
+	var summoner=contract_sim.actors[0]
+	summoner.chakra=100
+	check(contract_sim.summon_contract(summoner),"contract battle summon")
+	check(not contract_sim.summon_contract(summoner),"contract cooldown")
+	check(not quest.native_bloodline(reg,"NIN-001","BL-137"),"bloodline native gate")
 	quit(0 if failures==0 else 1)

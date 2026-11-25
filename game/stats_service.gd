@@ -20,6 +20,10 @@ static func derive(reg,n: Dictionary,p: Dictionary,gear: Dictionary={}) -> Dicti
 	for rule in reg.growth.talents:
 		if rule.id==p.get("talent","") and not n.base_stats.has(rule.stat) and result.has(rule.stat):
 			result[rule.stat]=result[rule.stat]*float(rule.get("multiplier",1))+float(rule.get("rating_add",0))
+	for id in p.get("bloodline_levels",{}):
+		if not reg.bloodlines.has(id):continue
+		for stat in reg.bloodlines[id].progression.stats:
+			if result.has(stat):result[stat]*=1+0.05*int(p.bloodline_levels[id])
 	return result
 
 static func effect(reg,stats: Dictionary,id: String) -> float:
