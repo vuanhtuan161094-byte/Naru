@@ -72,3 +72,5 @@ P2 batch 3: per-ID audit, UI status, NPC war tuning and status/absorb bounds.
 P2 batch 4: additional mechanics with explicit fallback retained, pending CI.
 
 GP-SKILL-P2 handover: latest code b26ef37f198159f1f72a9c38892070d39168742f; Latest fully verified artifact: f5115f688b0d8fbd75d8e759512287924bf81116, CI 45580896224, https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45580896224/artifacts/15006288549, 10140619 bytes, sha256:83b007955d1ca66ab9a23d76c185808379c26c284a3d1ce757d4a18881d95856. B3/B4 Godot gates scoped, full CI status in GAMEPLAY_STATUS. Residual D4 fallback and audit gaps retained; no blanket PASS.
+
+P2 batch 5 strict per-ID confirmation gate; corrected fixture, not gameplay range. Pending CI.

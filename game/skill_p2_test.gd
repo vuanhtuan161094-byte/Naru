@@ -48,6 +48,7 @@ func _initialize() -> void:
 	print("P2_REJECTED_IDS ",JSON.stringify(rejected))
 	# Distinguish coverage from observed effects. These ID lists are not a blanket PASS.
 	check(confirmed+cast_only.size()+rejected.size()==reg.p2_skills.size(),"P2 per-ID timed audit reconciled")
+	check(cast_only.is_empty() and rejected.is_empty(),"all enabled P2 candidates confirm at least one actual effect in valid fixture")
 	var combos_ok=0
 	for combo in reg.p2_combos.values():
 		var trial=Combat.new()
@@ -82,7 +83,8 @@ func fixture(reg,id: String) -> int:
 		var a=sim.actors[0]
 		var b=sim.actors[1]
 		a.pos=Vector2(5,5)
-		b.pos=Vector2(8,5) if raw.geometry.shape in ["wall","teleport_mark","dash_contact"] else Vector2(6.0,5)
+		var distance=minf(3.0,float(raw.geometry.range_m)*0.85) if raw.geometry.shape in ["wall","teleport_mark","dash_contact"] else 1.0
+		b.pos=Vector2(5+maxf(0.85,distance),5)
 		a.hp=a.max_hp*0.55
 		b.hp=b.max_hp*0.9
 		a.chakra=a.max_chakra*0.95

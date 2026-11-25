@@ -95,3 +95,5 @@ Batch 3:
 - NARU_ECONOMY_DAY 30 HQ=15 RYO=208865 WOOD=14989 STONE=14975 JOB=21 NPC_WARS=219
 - NARU_ECONOMY_DAY 90 HQ=15 RYO=623585 WOOD=14989 STONE=14975 JOB=21 NPC_WARS=698
 - NARU_UI_17_PASS home,building,craft,inventory,ninja_roster,ninja_detail,skill_tree,recruit,formation,world,diplomacy,beasts,quest,settings,campaign,battle,results
+
+P2 batch 5 correction: B3 full CI 45580896224 PASS, 1076 confirmed/1077 active candidates; NIN-043-S3 rejected because fixture distance 3 exceeded 2.5+body radius. Correct test distance based on authored range, no increase to game range; enforce no unconfirmed candidate in new gate. NPC 90d wars 698 versus 2508. B4 code  b26ef37f passed dedicated Godot and legacy integration/90d/export; browser pending. B5 CI pending.
