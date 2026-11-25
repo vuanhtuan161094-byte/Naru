@@ -892,6 +892,16 @@ func tick(dt: float) -> void:
 				best=s
 				best_target=b
 				best_score=score
+		# A legal manually queued ultimate takes movement priority over repeated basic attacks.
+		# Keep pathing, dodge, bind, costs and emergency allied support intact.
+		if use_tactical and not reservation.is_empty() and form_route=="" and not has_status(a,"bind") and ready(a,reservation) and reservation.target!="self":
+			var intended_target=target_for(a,reservation)
+			if not intended_target.is_empty() and ai_condition(a,reservation,intended_target) and not cast_geometry(a,reservation,intended_target):
+				if best.is_empty() or not survival_override(a,best):
+					a.ai_goal=Vector2(intended_target.pos)
+					a.goal_until=ticks+8
+					move_actor(a,a.ai_goal,movement_speed(a)*dt)
+					continue
 		if not best.is_empty():
 			if cast(a,best,best_target):
 				runtime_metrics.cast_choices+=1
