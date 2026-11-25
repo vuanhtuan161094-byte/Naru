@@ -1194,7 +1194,10 @@ func settings_screen(message: String="") -> void:
 	root.add_child(art_row)
 	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
 	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
-	button(art_row,"Bật / tắt review",func():art.enabled=not art.enabled;settings_screen(art.source_label))
+	button(art_row,"Bật / tắt review",func():
+		art.enabled=not art.enabled and not art.textures.is_empty()
+		art.source_label="REVIEW RIÊNG • "+str(art.textures.size())+" ảnh" if art.enabled else "DEV • tắt gói review"
+		settings_screen(art.source_label))
 	label(root,art.source_label+" • "+str(art.count_characters())+" sprite tĩnh; không phải bản phát hành.",16)
 	label(root,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 

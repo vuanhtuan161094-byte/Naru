@@ -2,6 +2,7 @@ extends SceneTree
 const Registry=preload("res://game/data_registry.gd")
 const Store=preload("res://game/save_store.gd")
 const Combat=preload("res://game/combat.gd")
+const Village=preload("res://game/village_service.gd")
 var failures=0
 func check(ok: bool,label: String) -> void:
 	if not ok:

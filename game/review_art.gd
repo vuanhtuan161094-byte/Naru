@@ -75,7 +75,13 @@ func import_text(raw: String,persist: bool=true) -> bool:
 		file.store_string(raw)
 		file.flush()
 		file.close()
+		if FileAccess.file_exists(PATH):
+			if FileAccess.file_exists(PATH+".bak"):DirAccess.remove_absolute(PATH+".bak")
+			if DirAccess.rename_absolute(PATH,PATH+".bak")!=OK:
+				error="Không sao lưu được gói cũ"
+				return false
 		if DirAccess.rename_absolute(PATH+".tmp",PATH)!=OK:
+			if FileAccess.file_exists(PATH+".bak"):DirAccess.rename_absolute(PATH+".bak",PATH)
 			error="Không lưu được gói cục bộ"
 			return false
 	textures=staged
@@ -84,7 +90,8 @@ func import_text(raw: String,persist: bool=true) -> bool:
 	return true
 
 func restore() -> void:
-	if FileAccess.file_exists(PATH):import_text(FileAccess.get_file_as_string(PATH),false)
+	for path in [PATH,PATH+".bak"]:
+		if FileAccess.file_exists(path) and import_text(FileAccess.get_file_as_string(path),false):return
 
 func texture(path: String) -> Texture2D:
 	if not enabled:return null

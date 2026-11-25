@@ -45,3 +45,5 @@ D1 Web DEV V3 verified SHA 8e78533790219620154dc14e8063a62036aeb999, CI 45563300
 D2 private visual adapter, actual combat event feedback and one-game local 6v6 review; no private art in GitHub. Pending CI.
 
 D3 NPC economy/war, progression, authored native affinities, reward overflow, surplus sale, lifetime quest counters, capture/raid fixture and Web art import. Pending CI.
+
+D2+D3 correction: review import backup and test preload.

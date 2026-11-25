@@ -40,3 +40,5 @@ Live art HEAD 33bfbd98, six static candidate character IDs, six portraits, one r
 
 ## D3 — gameplay corrections / Web V4 (pending CI)
 NPC income 8+3*production per held territory per tick, border war priority at 6 tick cadence, tension per neighbor, deterministic roll varies over time; strategic wars remain abstract, real player capture/raid acceptance fixtures. Campaign XP scaling 100+15*stage index and XP efficiency, actual-stat anti-farm ratio with gear estimate, authored innate ice/lava/dust/wood access (no new implant/Rinnegan compatibility), capped stage reward with inbox and partial claims, optional local surplus sale at HQ2 (35% reference price), lifetime quest counts and deeper save guard, bounded allied movement separation. Web V4 CI includes actual mouse/touch and generic PNG private-art import through browser file selector; no private fan art in CI. D1-C previous run 45563525233 verified PASS incl touch. New numbers proposed not final; pending exact-SHA CI.
+
+D2+D3 correction: test script Village preload and local review pack replace/backup recovery, accurate enabled/disabled label. CI pending.
