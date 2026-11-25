@@ -123,12 +123,33 @@ func v13_queued_form_check() -> void:
 	check(sim.form_receipts.has("NIN-126-F2") and not sim.form_receipts.has("NIN-126-F1"),"paid prerequisite activation wins over unrelated form")
 	check(int(sim.cp_telemetry.get("cast",0))<0,"prerequisite used real chakra transaction")
 
+func v13_queued_approach_check() -> void:
+	# Controlled real movement/cast: no teleport, forced hit or free runtime chakra.
+	var sim=new_fight(17101)
+	sim.add_actor("NIN-001",0,160,4,{},0,1.0,progress("NIN-001",10,3,[]))
+	sim.add_actor("NIN-003",1,160,4,{},0,1.0,progress("NIN-003",10,3,[]))
+	var a=sim.actors[0]
+	var b=sim.actors[1]
+	a.pos=Vector2(2,5)
+	b.pos=Vector2(8,5)
+	b.busy=10.0
+	sim.cp_adjust(a,float(a.max_chakra),"v13_fixture")
+	var requested=sim.effective_skill(a,"NIN-001-S5")
+	check(not sim.cast_geometry(a,requested,b),"queued ultimate starts outside legal range")
+	check(sim.ultimate_skill(0,"NIN-001-S5"),"queue short range ultimate")
+	for step in range(100):
+		sim.tick(0.05)
+		if sim.ultimate_executed.has("NIN-001-S5"):break
+	check(a.pos.distance_to(Vector2(2,5))>0.5,"queued ultimate advances by normal movement")
+	check(sim.ultimate_executed.has("NIN-001-S5"),"queued ultimate casts after reaching real range")
+
 func _initialize() -> void:
 	reg=Registry.new()
 	if not reg.load_all():quit(1);return
 	art_check()
 	v13_form_regen_check()
 	v13_queued_form_check()
+	v13_queued_approach_check()
 	check(reg.p2_fallback.has("NIN-006-S7") and reg.p2_fallback.has("NIN-016-S7"),"era HOLD preserved")
 	var ids=reg.ninjas.keys()
 	ids.sort()
