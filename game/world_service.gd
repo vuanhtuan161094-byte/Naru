@@ -225,6 +225,20 @@ static func harvest(reg,s: Dictionary,territory: String,resource: String) -> boo
 	note(s,"Khai thác "+territory+" • "+resource)
 	return true
 
+static func frontier(reg,s: Dictionary,location: String) -> Array:
+	var out=[]
+	for id in reg.territories:
+		if id==HOME or not reg.territories[id].capture_allowed or s.territory_states[id].owner==PLAYER:continue
+		var border=false
+		for edge in edges(reg,id):
+			if s.territory_states[edge.to].owner==PLAYER:border=true;break
+		if not border:continue
+		var route=path(reg,s,location,id)
+		if route.is_empty():continue
+		out.append({"id":id,"seconds":int(route.seconds),"owner":s.territory_states[id].owner})
+	out.sort_custom(func(a,b):return int(a.seconds)<int(b.seconds))
+	return out
+
 static func capture_reason(reg,s: Dictionary,id: String,roster: Array,location: String,travel: Dictionary) -> String:
 	if not reg.territories.has(id) or id==HOME or not reg.territories[id].capture_allowed:return "Lãnh địa được bảo hộ"
 	if location!=id or not travel.is_empty():return "Đội chưa đến"

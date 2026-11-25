@@ -776,6 +776,15 @@ func building_screen(id: String,message: String="") -> void:
 			button(row,"5 mẻ",func():building_screen(id,"Đã đặt 5 mẻ" if store.production(reg,id,recipe_id,false,5) else "Chưa đủ điều kiện"))
 			button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
 
+func frontier_screen() -> void:
+	var rows=activity_rows("BIÊN GIỚI NHẪN GIỚI","Lãnh địa giáp vùng sở hữu, có đường đi hiện tại.",func():world_screen())
+	for entry in World.frontier(reg,store.state,store.state.world_location):
+		var id=str(entry.id)
+		var owner="Trung lập" if entry.owner==null else str(reg.factions[entry.owner].name_vi)
+		var materials=[]
+		for item in reg.territories[id].resources:materials.append(str(reg.resources[item.resource_id].name_vi))
+		button(rows,"%s • %s • %ds • %s" % [reg.territories[id].name_vi,owner,int(entry.seconds),", ".join(PackedStringArray(materials))],func():selected_territory=id;world_screen())
+
 func world_screen(message: String="") -> void:
 	open_screen("world")
 	label(root,"NHẪN GIỚI • 60 lãnh địa / 71 đường",26)
@@ -783,6 +792,7 @@ func world_screen(message: String="") -> void:
 	root.add_child(row)
 	button(row,"Ngoại giao",diplomacy_screen)
 	button(row,"Đội viễn chinh / phòng thủ",squad_menu)
+	button(row,"Biên giới",frontier_screen)
 	button(row,"Làm mới",func():world_screen())
 	label(row,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" • "+message,16)
 	var content=HBoxContainer.new()
@@ -1003,8 +1013,14 @@ func bloodline_screen(message: String="") -> void:
 	for ninja in store.state.owned:
 		for id in reg.bloodlines:
 			var def=reg.bloodlines[id]
-			if not store.native_bloodline_allowed(reg,ninja,id):continue
-			button(rows,"%s | %s | Bậc %s" % [reg.ninjas[ninja].name_vi,def.name_vi,store.state.owned[ninja].bloodline_levels.get(id,0)],func():bloodline_screen("Đã thức tỉnh / nâng cấp" if store.native_bloodline(reg,ninja,id) else "Thiếu điều kiện"))
+			var q=store.native_bloodline_quote(reg,ninja,id)
+			if q.is_empty():continue
+			var row=HBoxContainer.new()
+			rows.add_child(row)
+			var b=button(row,"%s | %s | Bậc %d/%d • cảnh %d • %d %s" % [reg.ninjas[ninja].name_vi,def.name_vi,int(q.current),int(q.max),int(q.realm),int(q.qty),reg.resources[q.resource].name_vi],func():bloodline_screen("Đã thức tỉnh / nâng cấp" if store.native_bloodline(reg,ninja,id) else "Thiếu điều kiện"))
+			b.disabled=not q.ready
+			b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			button(row,"Nguồn",func():resource_detail(str(q.resource)))
 
 func save_screen(message: String="") -> void:
 	open_screen("settings")

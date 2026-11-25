@@ -65,6 +65,8 @@ func _initialize() -> void:
 	batch_checks(reg)
 	p4_checks(reg)
 	p5_checks(reg)
+	full_recipe_fixture(reg)
+	beast_capture_fixture(reg)
 	if failures==0:print("NARU_WORLD_PROGRESSION_PASS")
 	quit(0 if failures==0 else 1)
 
@@ -246,3 +248,67 @@ func p5_checks(reg) -> void:
 	invalid.merchant_orders.used=4
 	check(not Guard.valid(reg,invalid),"P5 rejects invalid merchant count")
 	print("NARU_WORLD_P5_TRANSACTIONS_PASS")
+
+func full_recipe_fixture(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_recipe_full_p5.json"
+	store.new_game(reg)
+	for resource in reg.resources:store.state.inventory[resource]=10000
+	store.state.building_states["BLD-001"].level=15
+	var assigned={}
+	var index=0
+	var ninjas=reg.ninjas.keys()
+	for recipe in reg.recipes.values():
+		var building=str(recipe.building_id)
+		if assigned.has(building):continue
+		store.state.building_states[building].level=9
+		var ninja=str(ninjas[index])
+		index+=1
+		if not store.state.owned.has(ninja):store.grant(reg,ninja)
+		check(store.assign_job(reg,ninja,building,Village.specialty(building)),"P5 recipe worker "+building)
+		assigned[building]=true
+	var count=0
+	for recipe in reg.recipes.values():
+		var building=str(recipe.building_id)
+		var resource=str(recipe.output.resource_id)
+		var before=int(store.state.inventory.get(resource,0))
+		if not store.production(reg,building,str(recipe.id),false):
+			check(false,"P5 recipe enqueue "+str(recipe.id))
+			continue
+		store.advance_clock(reg,int(store.state.high_water_timestamp)+600)
+		var settled=store.state.building_states[building].production.is_empty() and int(store.state.inventory.get(resource,0))>before
+		check(settled,"P5 recipe settle "+str(recipe.id))
+		if settled:count+=1
+	check(count==63,"P5 all recipes real transactions fixture")
+	check(Guard.valid(reg,store.state),"P5 recipe fixture save")
+	print("NARU_WORLD_P5_RECIPE_FIXTURE ",count,"/63")
+
+func beast_capture_fixture(reg) -> void:
+	var store=Store.new()
+	store.save_path="user://world_beast_full_p5.json"
+	store.new_game(reg)
+	store.state.building_states["BLD-001"].level=15
+	store.state.building_states["BLD-027"].level=1
+	store.state.inventory["RES-100"]=1000
+	var veteran=store.state.owned["NIN-001"]
+	veteran.realm=14
+	veteran.level=280
+	veteran.permanent={"strength":100000,"vitality":100000,"intellect":100000,"spirit":100000,"agility":100000}
+	var captured=0
+	var bound=0
+	for beast_id in reg.beasts:
+		var won=store.capture_beast(reg,"NIN-001",beast_id)
+		check(won,"P5 capture "+str(beast_id))
+		if not won:continue
+		captured+=1
+		check(not store.capture_beast(reg,"NIN-001",beast_id),"P5 capture unique "+str(beast_id))
+		for host in reg.beasts[beast_id].compatibility.preferred_host_ids:
+			if not store.state.owned.has(host):store.grant(reg,host)
+			if store.bind_beast(reg,host,beast_id):
+				bound+=1
+				break
+		check(str(store.state.beasts[beast_id].host)!="","P5 compatible bind "+str(beast_id))
+		check(store.train_beast(reg,beast_id),"P5 train captured "+str(beast_id))
+	check(captured==9 and bound==9,"P5 capture and bind all fixture")
+	check(Guard.valid(reg,store.state),"P5 beast fixture save")
+	print("NARU_WORLD_P5_BEAST_FIXTURE captured=",captured," bound=",bound)

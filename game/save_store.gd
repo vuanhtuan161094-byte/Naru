@@ -721,24 +721,27 @@ func resource_trial(reg,id: String,resource: String) -> bool:
 	if not commit_change(prior,old_rng):return false
 	return won
 
-func native_bloodline(reg,id: String,bloodline: String) -> bool:
-	if not state.owned.has(id) or not reg.bloodlines.has(bloodline):return false
+func native_bloodline_quote(reg,id: String,bloodline: String) -> Dictionary:
+	if not state.owned.has(id) or not native_bloodline_allowed(reg,id,bloodline):return {}
 	var p=state.owned[id]
 	var def=reg.bloodlines[bloodline]
-	# Native affinity is derived only from the authored template; implants/Rinnegan remain held.
-	if not native_bloodline_allowed(reg,id,bloodline):return false
 	var current=int(p.bloodline_levels.get(bloodline,0))
-	if current>=int(def.progression.tier_max) or int(p.realm)<int(def.native_unlock.realm):return false
+	var conflict=false
 	if current==0:
 		for other in p.bloodline_levels:
-			if reg.bloodlines[other].exclusive_group==def.exclusive_group:return false
+			if reg.bloodlines[other].exclusive_group==def.exclusive_group:conflict=true
 	var qty=int(def.native_unlock.resource_qty) if current==0 else ceili(10*pow(float(current),1.6))
 	var cost={str(def.resource_id):qty}
-	if not has_cost(cost):return false
+	return {"current":current,"max":int(def.progression.tier_max),"realm":int(def.native_unlock.realm),"resource":str(def.resource_id),"qty":qty,"cost":cost,"conflict":conflict,"ready":current<int(def.progression.tier_max) and int(p.realm)>=int(def.native_unlock.realm) and not conflict and has_cost(cost)}
+
+func native_bloodline(reg,id: String,bloodline: String) -> bool:
+	var quote=native_bloodline_quote(reg,id,bloodline)
+	if quote.is_empty() or not quote.ready:return false
 	var prior=state.duplicate(true)
-	debit(cost)
-	p.bloodline_levels[bloodline]=current+1
+	debit(quote.cost)
+	state.owned[id].bloodline_levels[bloodline]=int(quote.current)+1
 	return commit_change(prior,rng.state)
+
 
 func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
 	if not state.owned.has(id) or not reg.beasts.has(beast_id) or state.beasts.has(beast_id):return false

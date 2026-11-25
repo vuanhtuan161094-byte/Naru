@@ -4,11 +4,13 @@ const Store=preload("res://game/save_store.gd")
 const Village=preload("res://game/village_service.gd")
 const Combat=preload("res://game/combat.gd")
 const Guide=preload("res://game/resource_guide.gd")
+const World=preload("res://game/world_service.gd")
 const Guard=preload("res://game/save_guard.gd")
 var seen={}
 var gear_count=0
 var boss_replays=0
 var beast_attempts=0
+var frontier_captures=0
 func observe(s: Dictionary) -> void:
 	for id in s.inventory:
 		if int(s.inventory[id])>0:seen[id]=true
@@ -95,6 +97,19 @@ func _initialize() -> void:
 					break
 		for faction in reg.factions:
 			if faction!="FAC-009":store.diplomatic_action(reg,faction,"trade")
+		var squad=store.state.world_squads["SQUAD-2"]
+		if squad.team.is_empty():
+			for ninja in owned:
+				if not ninja in team and store.set_world_squad("SQUAD-2",[ninja]):break
+		if not squad.team.is_empty() and squad.travel.is_empty():
+			for entry in World.frontier(reg,store.state,str(squad.location)):
+				if entry.owner!=null:continue
+				var target=str(entry.id)
+				if target!=str(squad.location):
+					if not store.squad_travel(reg,"SQUAD-2",target):continue
+					advance(reg,store,int(entry.seconds))
+				if store.squad_capture(reg,"SQUAD-2") and store.state.territory_states[target].owner=="FAC-009":frontier_captures+=1
+				break
 		for raw in ["RES-006","RES-009","RES-021"]:store.fulfill_merchant_order(reg,raw)
 		# Buy actual missing raw stock; no fictional source for neutral-only commodities.
 		for raw in reg.resources:
@@ -211,5 +226,6 @@ func _initialize() -> void:
 		push_error("WORLD_ORGANIC_FAIL save")
 		quit(1)
 		return
+	print("NARU_WORLD_P5_FRONTIER_CAPTURES ",frontier_captures)
 	print("NARU_WORLD_ORGANIC_INTEGRITY_PASS")
 	quit()
