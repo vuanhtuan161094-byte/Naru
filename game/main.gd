@@ -14,6 +14,7 @@ var field: Control
 var log_label: Label
 var ult_buttons: Array[Button]=[]
 var selected_stage="STG-001"
+var clock_accumulator=0.0
 
 func _ready() -> void:
 	var bg=ColorRect.new()
@@ -36,6 +37,7 @@ func _ready() -> void:
 		print("NARU_REGISTRY_OK ",reg.ninjas.size()," ",reg.skills.size()," ",reg.stages.size())
 		get_tree().quit()
 		return
+	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	menu()
 
 func clear() -> void:
@@ -70,6 +72,7 @@ func menu(message: String="") -> void:
 	button(row,"Đội hình",roster)
 	button(row,"Tu luyện",growth_screen)
 	button(row,"Trang bị",gear_screen)
+	button(row,"Làng",village_screen)
 	button(row,"Tải lại",func(): store.load_or_new(reg); menu("Đã tải lại"))
 	button(row,"Cốt truyện",campaign)
 	button(row,"Lưu game",func(): menu("Đã lưu" if store.save_now() else "Lưu thất bại"))
@@ -216,6 +219,10 @@ func draw_field() -> void:
 		field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,12),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,14)
 
 func _process(delta: float) -> void:
+	clock_accumulator+=delta
+	if clock_accumulator>=15.0:
+		clock_accumulator=0.0
+		store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	if sim==null:return
 	accumulator+=minf(delta,0.25)
 	while accumulator>=0.05:
@@ -344,3 +351,86 @@ func awakening_screen(id: String,message: String="") -> void:
 		var b=button(root,str(reg.forms[form_id].name_vi)+" • mở khóa",func():awakening_screen(id,"Đã mở hình thái" if store.unlock_form(reg,id,form_id) else "Chưa đủ cảnh giới hoặc tinh hoa"))
 		b.disabled=form_id in p.forms
 	button(root,"Trở về",func():growth_detail(id))
+
+func village_screen(message: String="") -> void:
+	clear()
+	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
+	label(root,"LÀNG NINJA • 30 lô cố định",30)
+	label(root,("Ryo %d | Gỗ %d | Đá %d | " % [int(store.state.inventory.get("RES-001",0)),int(store.state.inventory.get("RES-006",0)),int(store.state.inventory.get("RES-009",0))])+message,18)
+	var row=HBoxContainer.new()
+	root.add_child(row)
+	button(row,"Trở về",func():menu())
+	button(row,"Làm mới",func():village_screen())
+	button(row,"Kho tài nguyên",inventory_screen)
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for id in reg.buildings:
+		var b=store.state.building_states[id]
+		var def=reg.buildings[id]
+		var detail="Chưa xây" if int(b.level)==0 else "Cấp %d" % int(b.level)
+		if not b.upgrade.is_empty():detail+=" | Đang xây %ds" % int(b.upgrade.remaining)
+		button(rows,"%s • %s • %s" % [def.fixed_slot,def.name_vi,detail],func():building_screen(id))
+
+func inventory_screen() -> void:
+	clear()
+	label(root,"KHO TÀI NGUYÊN",30)
+	button(root,"Trở về",func():village_screen())
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for id in reg.resources:label(rows,"%s  •  %s" % [reg.resources[id].name_vi,store.state.inventory.get(id,0)],18)
+
+func building_screen(id: String,message: String="") -> void:
+	clear()
+	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
+	var b=store.state.building_states[id]
+	var def=reg.buildings[id]
+	label(root,"%s • Cấp %d/100" % [def.name_vi,int(b.level)],28)
+	label(root,("Yêu cầu Tổng bộ %d | " % int(def.unlock_hq))+message,18)
+	var cost=preload("res://game/village_service.gd").upgrade_cost(reg,store.state,id)
+	var nav=HBoxContainer.new()
+	root.add_child(nav)
+	var upgrade=button(nav,"Xây/nâng cấp: %d Ryo, %d gỗ, %d đá" % [cost["RES-001"],cost["RES-006"],cost["RES-009"]],func():building_screen(id,"Đã đặt lịch" if store.construct(reg,id) else "Chưa đủ điều kiện"))
+	upgrade.disabled=not b.upgrade.is_empty() or int(b.level)>=100
+	if not b.upgrade.is_empty():label(root,"Còn %d giây" % int(b.upgrade.remaining),18)
+	button(nav,"Làm mới",func():building_screen(id))
+	button(nav,"Trở về",func():village_screen())
+	var scroll=ScrollContainer.new()
+	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(scroll)
+	var rows=VBoxContainer.new()
+	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	if int(b.level)==0:return
+	label(rows,"Nhân lực (không ảnh hưởng đội chiến đấu)",20)
+	for ninja in store.state.owned:
+		var job=store.state.jobs.get(ninja,{})
+		var row=HBoxContainer.new()
+		rows.add_child(row)
+		label(row,str(reg.ninjas[ninja].name_vi),16)
+		var options=OptionButton.new()
+		for profession in reg.professions:
+			options.add_item(str(reg.professions[profession].name_vi))
+			options.set_item_metadata(options.item_count-1,profession)
+		row.add_child(options)
+		button(row,"Phân công",func():building_screen(id,"Đã phân công" if store.assign_job(reg,ninja,id,str(options.get_selected_metadata())) else "Hết chỗ"))
+		if job.get("building","")==id:button(row,"Rút",func():building_screen(id,"Đã rút" if store.assign_job(reg,ninja,"","") else "Lỗi"))
+	if not b.production.is_empty():
+		label(rows,"Đang sản xuất %s • còn %ds" % [b.production.recipe,int(b.production.remaining)],18)
+		button(rows,"Dừng và hoàn nguyên liệu",func():building_screen(id,"Đã dừng" if store.cancel_production(id) else "Kho đầy"))
+	else:
+		for recipe_id in def.recipe_ids:
+			var recipe=reg.recipes[recipe_id]
+			var row=HBoxContainer.new()
+			rows.add_child(row)
+			var output=str(reg.resources[recipe.output.resource_id].name_vi)
+			label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
+			button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
+			button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))

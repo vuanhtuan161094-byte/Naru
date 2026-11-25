@@ -7,6 +7,12 @@ var npcs: Dictionary = {}
 var recruit: Dictionary = {}
 var initial: Dictionary = {}
 var growth: Dictionary = {}
+var buildings: Dictionary = {}
+var recipes: Dictionary = {}
+var resources: Dictionary = {}
+var professions: Dictionary = {}
+var territories: Dictionary = {}
+var supply: Array = []
 var stat_rules: Dictionary = {}
 var trials: Dictionary = {}
 var forms: Dictionary = {}
@@ -59,6 +65,14 @@ func load_all() -> bool:
 	var g = read_json("res://data/d4/ninja_growth.json")
 	if g is Dictionary: growth = g
 	if growth.get("stars",[]).size()!=14: errors.append("Missing star rules")
+	buildings=indexed("res://data/buildings.json")
+	recipes=indexed("res://data/recipes.json")
+	resources=indexed("res://data/resources.json")
+	professions=indexed("res://data/professions.json")
+	territories=indexed("res://data/territories.json")
+	var supplies=read_json("res://data/d4/direct_supply.json")
+	if supplies is Array:supply=supplies
+	if buildings.size()!=30 or recipes.size()!=63 or resources.size()!=150 or professions.size()!=15 or territories.size()!=60:errors.append("Missing village content")
 	stat_rules=indexed("res://data/stat_formulas.json","stat_id")
 	trials=indexed("res://data/personal_trials.json")
 	forms=indexed("res://data/ninja_forms.json")

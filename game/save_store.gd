@@ -1,4 +1,5 @@
 extends RefCounted
+const Village=preload("res://game/village_service.gd")
 const Combat=preload("res://game/combat.gd")
 const PATH = "user://naru_save_v1.json"
 var state: Dictionary = {}
@@ -214,6 +215,7 @@ func raise_star(reg,id: String) -> bool:
 	return commit_change(prior,rng.state)
 
 func ensure_account(reg) -> void:
+	Village.ensure(reg,state)
 	if not state.has("gear_instances"):state.gear_instances={}
 	if not state.has("gear_seq"):state.gear_seq=0
 	if not state.has("building_states"):
@@ -446,4 +448,29 @@ func evolve_quality(reg,id: String) -> bool:
 	debit(cost)
 	p.shards=int(p.shards)-int(rule.shards)
 	p.quality=tier+1
+	return commit_change(prior,rng.state)
+
+func advance_clock(reg,now: int) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.advance(reg,state,now):return false
+	return commit_change(prior,rng.state)
+
+func construct(reg,id: String) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.construct(reg,state,id):return false
+	return commit_change(prior,rng.state)
+
+func assign_job(reg,ninja: String,id: String,profession: String) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.assign(reg,state,ninja,id,profession):return false
+	return commit_change(prior,rng.state)
+
+func production(reg,id: String,recipe: String,repeat: bool) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.queue_recipe(reg,state,id,recipe,repeat):return false
+	return commit_change(prior,rng.state)
+
+func cancel_production(id: String) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.cancel(state,id):return false
 	return commit_change(prior,rng.state)

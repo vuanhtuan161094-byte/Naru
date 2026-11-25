@@ -124,4 +124,36 @@ func _initialize() -> void:
 	check(not form_sim.activate_form(actor,"NIN-001-F1",true),"no form stacking")
 	check(not store.trial_ready(reg,"NIN-001","CHALLENGE-NIN-001-1"),"trial mastery gate")
 	check(not store.evolve_quality(reg,"NIN-001"),"quality trial gate")
+	var village=Store.new()
+	village.save_path="user://gp_village_ci.json"
+	village.new_game(reg)
+	var initial_time=int(village.state.high_water_timestamp)
+	village.state.inventory["RES-001"]=100000
+	village.state.inventory["RES-006"]=10000
+	village.state.inventory["RES-009"]=10000
+	for target_level in range(2,10):
+		check(village.construct(reg,"BLD-001"),"HQ upgrade queued "+str(target_level))
+		initial_time+=1000
+		check(village.advance_clock(reg,initial_time) and int(village.state.building_states["BLD-001"].level)==target_level,"HQ timer "+str(target_level))
+	check(village.construct(reg,"BLD-017"),"workshop real construction")
+	initial_time+=1000
+	village.advance_clock(reg,initial_time)
+	check(int(village.state.building_states["BLD-017"].level)==1,"workshop completed")
+	check(village.assign_job(reg,"NIN-001","BLD-017","JOB-01"),"profession assignment")
+	check("NIN-001" in village.state.team,"job coexists with battle")
+	check(village.assign_job(reg,"NIN-003","BLD-012","JOB-01"),"farm worker")
+	check(village.construct(reg,"BLD-012"),"farm upgrade queued")
+	initial_time+=1000
+	village.advance_clock(reg,initial_time)
+	village.state.inventory["RES-022"]=20
+	check(village.production(reg,"BLD-012","RCP-001",false),"recipe reserve")
+	var before_recipe=int(village.state.inventory.get("RES-033",0))
+	initial_time+=120
+	village.advance_clock(reg,initial_time)
+	check(int(village.state.inventory.get("RES-033",0))>before_recipe,"recipe completed")
+	village.state.stamina=0
+	initial_time+=172800
+	check(village.advance_clock(reg,initial_time) and int(village.state.last_offline_elapsed)==86400,"offline cap")
+	check(int(village.state.stamina)==120,"stamina regen")
+	check(not village.advance_clock(reg,initial_time) and not village.advance_clock(reg,initial_time-1),"offline replay and clock rollback")
 	quit(0 if failures==0 else 1)
