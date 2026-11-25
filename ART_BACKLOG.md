@@ -33,3 +33,8 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P3R3 IN_PROGRESS: five revised/new skill mappings, 16 sheets/128 cells, shared residual; contact event alignment and skill playback pending.
 - ART-P6/P7 IN_PROGRESS: two color grades, HUD and custom map still open.
 - ART-P8 REVIEW: exact V6 Godot review video obtained, benchmark FAIL visual quality (clumping and style mismatch). Chat 01/00 handoff ready, no gameplay fix claim.
+
+## Owner reprioritization — base animation
+- ART-P2 IN_PROGRESS, highest priority: six cleaned source sprites, Naruto four pilot clips/22 cells REVIEW_ONLY. Continue high-quality Idle/Walk/Hit/Seal first, then Attack/Fall and four directions. Seal is optional cast subtype; no repeated counting. No mass production of rough frames.
+- ART-P3/P3R3 BLOCKED (owner HOLD, await finalized skill mechanics); preserve current VFX.
+- ART-P4/P5/P6/P7 secondary/backlog; ART-P8 runtime support via Chat 01, no new gameplay test claimed. See art/e3/BASE_ANIMATION_HANDOFF.md.

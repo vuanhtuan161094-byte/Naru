@@ -1,0 +1,387 @@
+{
+  "batch": "ART-BASE-ANIM-PILOT",
+  "decision": "Owner 25/11/2026: prioritize base animation, HOLD skill-specific VFX while design continues",
+  "design_sha": "58daae9add95f10e9325dcd61c8ca9676fec7ec3",
+  "gameplay_sha": "197bd5d15146ff664ac55ef4cb506f3b820855ce",
+  "art_parent": "b02ccca00581f472184f78473290387d01fe442e",
+  "archive": {
+    "name": "Naru_BaseAnimation_Pilot.zip",
+    "sha256": "4c0207e6eb035aa79df1c3478f6300e8cdef30021c48f18261ad5dc4410093df",
+    "bytes": 593808,
+    "manifest_sha256": "bc9a676e512282d61161602d94ddb422f1c1e20646a81d738acc173a0998d88e",
+    "library_upload": true,
+    "library_file_id": "libfile_c671f4df04248191b3f969334865de83"
+  },
+  "static_candidates": [
+    {
+      "id": "NIN-041",
+      "sha256": "ade628f71de31f1df4ddea1ff9447069b6e10a9c679dd0f63d97ee7ca7785d6f",
+      "bbox": [
+        20,
+        10,
+        76,
+        104
+      ],
+      "path": "characters/NIN-041.png",
+      "status": "REVIEW_ONLY",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
+    },
+    {
+      "id": "NIN-042",
+      "sha256": "7944376813c7a5c879f8842939dd6b4b5c8fe193749b9aa7b16475a9996b7bdb",
+      "bbox": [
+        23,
+        10,
+        73,
+        104
+      ],
+      "path": "characters/NIN-042.png",
+      "status": "REVIEW_ONLY",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
+    },
+    {
+      "id": "NIN-043",
+      "sha256": "ae2cf39f1b72840004a490fda8c725e01060214d09820b2fd277a70451e774f6",
+      "bbox": [
+        23,
+        10,
+        72,
+        104
+      ],
+      "path": "characters/NIN-043.png",
+      "status": "REVIEW_ONLY",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
+    },
+    {
+      "id": "NIN-004",
+      "sha256": "4c78b5d36c30b2f5179c860c6df18a1b809b17fa1726a154e02affe2e582df5c",
+      "bbox": [
+        22,
+        10,
+        73,
+        104
+      ],
+      "path": "characters/NIN-004.png",
+      "status": "REVIEW_ONLY",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
+    },
+    {
+      "id": "NIN-060",
+      "sha256": "ed7bb87c14bf002fca86d860484cc28cfdc1db48771a276559933a0b74d17b47",
+      "bbox": [
+        22,
+        10,
+        73,
+        104
+      ],
+      "path": "characters/NIN-060.png",
+      "status": "REVIEW_ONLY",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
+    },
+    {
+      "id": "NIN-093",
+      "sha256": "5e494f4fcdff9b474aaeb4a4ef42e6a6b1088d8ef68ff65ca5b4b96478032610",
+      "bbox": [
+        12,
+        10,
+        83,
+        104
+      ],
+      "path": "characters/NIN-093.png",
+      "status": "REVIEW_ONLY",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ]
+    }
+  ],
+  "animation_candidates": [
+    {
+      "id": "NIN-041",
+      "action": "idle",
+      "direction": "SE_candidate",
+      "sha256": "4db2251481245c988169fbe5c53e78f13722c6e1a86175522091b84f63dda6f5",
+      "path": "animation/NIN-041/idle_SE.png",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 160
+        }
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "walk",
+      "direction": "SE_candidate",
+      "sha256": "732ba7138046296209475b1de885a9609b1a89726aa2d8814c72ae1fdf210c2e",
+      "path": "animation/NIN-041/walk_SE.png",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 85
+        }
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "hit",
+      "direction": "SE_candidate",
+      "sha256": "d291a5682284a552603ac3b75a87c483a23dd1c5d538ab997d87de317a4ee337",
+      "path": "animation/NIN-041/hit_SE.png",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 120
+        }
+      ],
+      "status": "REVIEW_ONLY"
+    },
+    {
+      "id": "NIN-041",
+      "action": "seal",
+      "direction": "SE_candidate",
+      "sha256": "75df74f469420a526a4c7d50ca4f547e116470eeb9eb920df61ad4eb3ea6c1eb",
+      "path": "animation/NIN-041/seal_SE.png",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 110
+        }
+      ],
+      "status": "REVIEW_ONLY"
+    }
+  ],
+  "qa": {
+    "static_format_alpha_hash": "6/6 PASS",
+    "clip_format_hash": "4/4 PASS",
+    "distinct_frames": 22,
+    "visual": "REVIEW_ONLY, torso flat and head reused; idle local pixel edits only; walk six rather than target eight; seal subclip not full cast; single direction",
+    "runtime": "NOT_RUN",
+    "art_ci": "NOT_RUN",
+    "complete_production_clips": 0
+  },
+  "notes": "Six static alternatives cleaned from original generated individual R6 source images; previous R7 asset registry preserved, no replacement in runtime. Direct independently authored raster body contours (walk/hit/seal), fixed head feature from clean sprite; no rig or full-image translation. Four new candidate clips only."
+}
