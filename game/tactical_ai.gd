@@ -27,6 +27,11 @@ static func target_bonus(sim,a: Dictionary,b: Dictionary,s: Dictionary,allied: b
 	for ally in sim.primary_alive(int(a.side)):
 		if ally.uid!=a.uid and int(ally.get("focus_uid",0))==b.uid:occupied+=1
 	var score=-float(occupied)*4.0
+	if int(a.get("focus_uid",0))==b.uid and sim.ticks<int(a.get("focus_until",0)):score+=11.0
+	if sim.pressure_mode:
+		if br in ["trị liệu","hỗ trợ"]:score+=28.0
+		score+=minf(occupied,3)*8.0
+	score+=sim.combo_target_bonus(a,b,s)
 	if r=="sát thủ":
 		score+=missing*40.0
 		if br in ["trị liệu","hỗ trợ","công kích xa"]:score+=12.0
@@ -70,14 +75,14 @@ static func spacing(sim,a: Dictionary,p: Vector2) -> float:
 static func avoid(sim,a: Dictionary) -> Vector2:
 	var origin=Vector2(a.pos)
 	var risk=hazard(sim,a,origin)
-	if risk<=0:return origin
+	if risk<=0 or sim.ticks<int(a.get("dodge_until",0)):return origin
 	var best=origin
 	var best_score=risk*8.0+spacing(sim,a,origin)
 	for i in range(8):
 		var point=sim.clamp_body(origin+Vector2.RIGHT.rotated(i*TAU/8.0)*1.1,sim.body_radius(a))
 		if not sim.position_clear(a,point) or not sim.clear_segment(origin,point,sim.body_radius(a)):continue
 		var value=hazard(sim,a,point)*8.0+spacing(sim,a,point)+0.25
-		if value<best_score:best_score=value;best=point
+		if value+2.0<best_score:best_score=value;best=point
 	return best
 
 static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vector2:
@@ -90,7 +95,7 @@ static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vecto
 	var ranged=r in ["công kích xa","trị liệu","hỗ trợ","khống chế"]
 	if ranged:
 		for id in a.skills:
-			var s=sim.effective_skill(a,id)
+			var s=sim.decision_skill(a,id)
 			if s.kind!="ultimate" and s.target=="enemy_ai" and sim.ready(a,s):desired=maxf(desired,float(s.range_m)*0.78)
 		desired=maxf(desired,2.2)
 		if r in ["trị liệu","hỗ trợ"]:
@@ -115,18 +120,23 @@ static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vecto
 		if not sim.position_clear(a,p):continue
 		var value=origin.distance_to(p)*0.7+spacing(sim,a,p)+hazard(sim,a,p)*8.0
 		if not sim.clear_segment(p,center,0.03):value+=5.0
+		value+=(1.0-sim.terrain_speed(p))*2.0
+		value-=sim.prospective_links(a,p)*0.45
+		if a.has("ai_goal") and sim.ticks<int(a.get("goal_until",0)):value+=minf(2.0,p.distance_to(a.ai_goal)*0.6)
 		for ally in sim.primary_alive(int(a.side)):
 			if ally.uid==a.uid:continue
 			if ally.has("ai_goal"):value+=maxf(0.0,1.0-p.distance_to(ally.ai_goal))*3.0
 		if value<best_score:best_score=value;best=p
 	if best_score==INF:return center
-	if origin.distance_to(center)<desired+0.2 and origin.distance_to(center)>desired-0.3 and sim.clear_segment(origin,center,0.03) and spacing(sim,a,origin)<0.35:return origin
+	if origin.distance_to(center)<desired+0.4 and origin.distance_to(center)>desired-0.45 and sim.clear_segment(origin,center,0.03) and spacing(sim,a,origin)<0.35:return origin
 	return best
 
 static func skill_bonus(sim,a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 	if b.is_empty():return 0.0
 	var r=role(sim,a)
-	var score=0.0
+	var score=sim.combo_skill_bonus(a,b,s)
+	if sim.pressure_mode and b.side!=a.side:
+		if r in ["sát thủ","khống chế","đấu sĩ"] and role(sim,b) in ["trị liệu","hỗ trợ"]:score+=15.0
 	for e in s.effects:
 		match str(e.type):
 			"heal":
@@ -135,6 +145,7 @@ static func skill_bonus(sim,a: Dictionary,b: Dictionary,s: Dictionary) -> float:
 				if hp_ratio(b)<0.25:score+=30.0
 			"shield":score+=minf(25.0,threat(sim,b)*8.0) if r in ["đỡ đòn","hỗ trợ"] and b.shield<=0 else 0.0
 			"apply_status":
+				if sim.pressure_mode and e.status_id in ["antiheal","chakra_lock","silence","attack_down"]:score+=18.0
 				if sim.registry.status_catalog.get(e.status_id,{}).get("hard_control",false):
 					score+=10.0 if not sim.hard_block(b) and b.immune<=0 else -18.0
 			"cleanse":score+=20.0 if sim.has_debuff(b) else -25.0

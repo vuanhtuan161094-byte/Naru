@@ -56,7 +56,7 @@ func _initialize() -> void:
 				for id in sim.combo_receipts:combos[id]=true
 				for id in sim.form_receipts:forms[id]=true
 				check(sim.actors.all(func(a):return a.chakra>=0 and a.chakra<=a.max_chakra+0.01),"CP bounded team "+str(i+1))
-			print("NARU_V10_TEAM ",i+1," tactical=",enabled," outcome=",sim.outcome if sim.outcome!="" else "OBSERVATION_WINDOW"," metrics=",sim.tactical_metrics," contribution=",sim.contribution.size())
+			print("NARU_V11_TEAM ",i+1," tactical=",enabled," outcome=",sim.outcome if sim.outcome!="" else "OBSERVATION_WINDOW"," metrics=",sim.tactical_metrics," runtime=",sim.runtime_metrics," contribution=",sim.contribution.size())
 	print("NARU_V10_SPACING baseline=",baseline," tactical=",modern)
 	print("NARU_V10_OBSERVED proc_ids=",procs.size()," typed_ids=",typed.size()," combos=",combos.keys()," forms=",forms.keys())
 	check(baseline.pairs>0 and modern.pairs>0,"paired spatial samples")
@@ -75,7 +75,7 @@ func _initialize() -> void:
 		sim.use_contract_v10=true
 		sim.load_combat_contracts()
 		var n=reg.ninjas[contract.ninja]
-		sim.add_actor(contract.ninja,0,140,4,{},0,1.0,{"realm":6,"forms":[contract.id],"unlocked_skills":n.additional_skill_ids})
+		sim.add_actor(contract.ninja,0,140,4,{},0,1.0,{"realm":int(contract.unlock_realm),"forms":[contract.id],"unlocked_skills":n.additional_skill_ids})
 		var a=sim.actors[0]
 		a.chakra=a.max_chakra
 		var ok=false

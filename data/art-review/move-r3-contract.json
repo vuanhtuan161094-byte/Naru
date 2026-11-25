@@ -1,0 +1,585 @@
+{
+  "source_sha": "4230302e6a1ff38efe44e91c30c0c7a124a9b620",
+  "status": "REVIEW_ONLY",
+  "owner_visual_approved": true,
+  "archive": "Naru_ART_P2_Move_R3_private.zip",
+  "archive_sha256": "76c2ab25165e9e325470f7f5beb14d297f03a8abcea4cf9c77e44e80db49d54b",
+  "manifest": "art/e3/ART_P2_MOVE_R3_EVIDENCE.json",
+  "clips": [
+    {
+      "id": "NIN-041",
+      "action": "walk",
+      "direction": "screen_right_candidate",
+      "path": "animation/NIN-041/walk_screen_right_r3.png",
+      "sha256": "d280db780f00bee32e7057acc8bb42210b7c0ec8d44f82b51d93e388a31491a7",
+      "source": "source/NIN-041.gif",
+      "source_sha256": "34f1077deefbf435070a4f8367bf8c7990eb78fb019d0b8a380117b2328f1812",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "status": "REVIEW_ONLY",
+      "owner_visual_approved": true,
+      "runtime_integrated": false,
+      "rights_cleared": false
+    },
+    {
+      "id": "NIN-042",
+      "action": "walk",
+      "direction": "screen_right_candidate",
+      "path": "animation/NIN-042/walk_screen_right_r3.png",
+      "sha256": "f25f03a72ead3912e6199017dfae90e0207e5bd486fc125bb714559d3d14e868",
+      "source": "source/NIN-042.gif",
+      "source_sha256": "9b8d86e8ea7eaa84472a784fa7adeae5bff1325baf1230726d93b88ac8efef20",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "status": "REVIEW_ONLY",
+      "owner_visual_approved": true,
+      "runtime_integrated": false,
+      "rights_cleared": false
+    },
+    {
+      "id": "NIN-043",
+      "action": "walk",
+      "direction": "screen_right_candidate",
+      "path": "animation/NIN-043/walk_screen_right_r3.png",
+      "sha256": "48223046cd52d72eb35e11f103065e77f687a574e2e2ab3e6d247b6f41bb927c",
+      "source": "source/NIN-043.gif",
+      "source_sha256": "8ad749684bf9fcc6ed1f7da747239632495df552994850b1698560b01358d727",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "status": "REVIEW_ONLY",
+      "owner_visual_approved": true,
+      "runtime_integrated": false,
+      "rights_cleared": false
+    },
+    {
+      "id": "NIN-004",
+      "action": "walk",
+      "direction": "screen_right_candidate",
+      "path": "animation/NIN-004/walk_screen_right_r3.png",
+      "sha256": "713ee72aca36e1f8c2d3beec78242e970a761d1d909c0742aac0d94df0367f55",
+      "source": "source/NIN-004.gif",
+      "source_sha256": "a48c88f315168cb82218d1e0e11950230cf63f2c428df54d535f44c041766409",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "status": "REVIEW_ONLY",
+      "owner_visual_approved": true,
+      "runtime_integrated": false,
+      "rights_cleared": false
+    },
+    {
+      "id": "NIN-060",
+      "action": "walk",
+      "direction": "screen_right_candidate",
+      "path": "animation/NIN-060/walk_screen_right_r3.png",
+      "sha256": "70e8356af3a09346dd9bd98902df4ef457ffadc922d93f00d3dc3a602b9be9af",
+      "source": "source/NIN-060.gif",
+      "source_sha256": "fd9f4c0ea880f31a904de1e854116f336cac2efead8cc40d244724782b0d9e13",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "status": "REVIEW_ONLY",
+      "owner_visual_approved": true,
+      "runtime_integrated": false,
+      "rights_cleared": false
+    },
+    {
+      "id": "NIN-093",
+      "action": "walk",
+      "direction": "screen_right_candidate",
+      "path": "animation/NIN-093/walk_screen_right_r3.png",
+      "sha256": "41db3cc97484e78a1a5d05611abe52f6e10d50f12d4d2c51aadc066229509a07",
+      "source": "source/NIN-093.gif",
+      "source_sha256": "542235b142b4021c7e2e924dce9c119559d887ebaa988444da0e69fe7da5ea2a",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            384,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            480,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            576,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            672,
+            0,
+            96,
+            112
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "status": "REVIEW_ONLY",
+      "owner_visual_approved": true,
+      "runtime_integrated": false,
+      "rights_cleared": false
+    }
+  ],
+  "candidate_clips": 6,
+  "frame_slots": 48,
+  "distinct_within_clip": 48,
+  "production_complete_clips": 0,
+  "runtime": "NOT_RUN"
+}

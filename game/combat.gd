@@ -1,5 +1,6 @@
 extends RefCounted
 const Tactical=preload("res://game/tactical_ai.gd")
+const CombatStats=preload("res://game/combat_stat_snapshot.gd")
 const Depth=preload("res://game/skill_depth_service.gd")
 const Passive=preload("res://game/passive_service.gd")
 const Stats=preload("res://game/stats_service.gd")
@@ -40,6 +41,17 @@ var use_passives=false
 var use_passive_pilot=false
 var use_depth=false
 var use_tactical=false
+var pressure_mode=false
+var pressure_sample: Array=[]
+var pressure_since=0
+var combo_index: Dictionary={}
+var combo_consumed: Dictionary={}
+var decision_effective: Dictionary={}
+var decision_uid=0
+var runtime_metrics={"max_actors":0,"max_jobs":0,"max_projectiles":0,"tick_usec_total":0,"tick_usec_max":0,"pressure_entries":0,"cast_choices":0}
+var skill_effect_ledger: Dictionary={}
+var passive_continuous_ledger: Dictionary={}
+var passive_active_ledger: Dictionary={}
 var contribution: Dictionary={}
 var animation_events: Array[Dictionary]=[]
 var animation_seq=0
@@ -111,47 +123,11 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 
 func add_actor(id: String,side: int,level: int,quality: int,permanent: Dictionary,slot: int,mult: float,progress: Dictionary={},gear_instances: Dictionary={}) -> void:
 	var n=registry.ninjas[id]
-	var quality_growth=[1.0,1.06,1.12,1.18,1.25,1.32,1.4,1.48][clampi(quality,1,8)-1]
-	var allocated=progress.get("allocated",{})
-	var strength=float(n.base_stats.strength)+float(n.level_growth.strength)*(level-1)*quality_growth+float(permanent.get("strength",0))+float(allocated.get("strength",0))
-	var vit=float(n.base_stats.vitality)+float(n.level_growth.vitality)*(level-1)*quality_growth+float(permanent.get("vitality",0))+float(allocated.get("vitality",0))
-	var intellect=float(n.base_stats.intellect)+float(n.level_growth.intellect)*(level-1)*quality_growth+float(permanent.get("intellect",0))+float(allocated.get("intellect",0))
-	var spirit=float(n.base_stats.spirit)+float(n.level_growth.spirit)*(level-1)*quality_growth+float(permanent.get("spirit",0))+float(allocated.get("spirit",0))
 	var star_multiplier=1.0+0.04*(int(progress.get("stars",1))-1)
 	if not use_depth:mult*=star_multiplier
-	var gear_stats={}
-	var set_counts={}
-	for gear_id in progress.get("gear",{}).values():
-		if not gear_instances.has(gear_id):continue
-		var item=gear_instances[gear_id]
-		var def=registry.gear_templates[item.template_id]
-		for affix in item.get("affixes",[]):gear_stats[affix.stat]=float(gear_stats.get(affix.stat,0))+float(affix.value)
-		var set_id=str(item.get("set_id",""))
-		if not set_id.is_empty():set_counts[set_id]=int(set_counts.get(set_id,0))+1
-		var value=float(def.base_value)*(1+0.06*pow(float(item.enhance),0.85))*(1+0.025*pow(float(item.refine),0.8))*(1+0.1*pow(float(item.evolution),0.85))
-		gear_stats[def.base_stat]=float(gear_stats.get(def.base_stat,0))+value
-		for resource in item.gems:
-			for gem in registry.gear_rules.socket.gems:
-				if gem.resource_id==resource:gear_stats[gem.stat]=float(gear_stats.get(gem.stat,0))+float(gem.rating_add)
-	var stat_progress=progress.duplicate(true)
-	stat_progress.level=level
-	stat_progress.quality=quality
-	stat_progress.permanent=permanent
-	var stat_ninja=n
-	if use_depth:
-		stat_ninja=n.duplicate(true)
-		for key in stat_ninja.base_stats:
-			stat_ninja.base_stats[key]=float(stat_ninja.base_stats[key])*star_multiplier
-			stat_ninja.level_growth[key]=float(stat_ninja.level_growth[key])*star_multiplier
-	var all_stats=Stats.derive(registry,stat_ninja,stat_progress,gear_stats)
-	for rule in registry.gear_rules.sets:
-		var best={}
-		for threshold in rule.thresholds:
-			if int(set_counts.get(rule.id,0))>=int(threshold.pieces):best=threshold
-		if not best.is_empty():all_stats[best.stat]*=float(best.multiplier)
-	var beast_level=int(progress.get("beast_level",0))
-	if beast_level>0:
-		for key in ["hp","patk","natk","chakra_max"]:all_stats[key]*=1.0+0.03*sqrt(float(beast_level))
+	var snapshot=CombatStats.snapshot(registry,n,level,quality,permanent,progress,gear_instances,use_depth)
+	var gear_stats=snapshot.gear
+	var all_stats=snapshot.stats
 	var hp=float(all_stats.hp)*mult
 	next_uid+=1
 	actors.append({"uid":next_uid,"summon":false,"owner":0,"ttl":0.0,"statuses":{},"immune":0.0,"counter":{},"stance":{},"element":str(n.chakra_elements[0]) if not n.chakra_elements.is_empty() else "neutral","last_element":"","element_tick":-1000,"reaction_tick":-1000,"id":id,"side":side,"hp":hp,"max_hp":hp,"patk":float(all_stats.patk)*mult,"natk":float(all_stats.natk)*mult,"armor":all_stats.armor,"nres":all_stats.nres,"chakra":0.0,"max_chakra":all_stats.chakra_max,"regen":all_stats.chakra_regen,"deployment_slot":slot,"pos":Formation.spawn(side,slot,map_width,map_height,float(registry.combat_v3.deployment.rank_spacing),float(registry.combat_v3.deployment.lane_spacing)),"cooldowns":{},"busy":0.0,"stun":0.0,"shield":0.0,"shield_time":0.0,"shield_sources":{},"skills":n.skills.duplicate()+progress.get("unlocked_skills",[]),"skill_levels":progress.get("skill_levels",{}).duplicate(true),"gear_stats":gear_stats,"stats":all_stats,"forms":progress.get("forms",[]).duplicate(),"active_form":{},"form_cooldowns":{},"contract":progress.get("summon_contract",""),"contract_level":int(progress.get("contract_level",0)),"contract_cd":0.0,"last":"","quality":quality,"realm":int(progress.get("realm",floori(float(level-1)/20.0))),"pending":{},"cast_left":0.0})
@@ -320,6 +296,9 @@ func utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 
 func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	if not ready(a,s) or not cast_geometry(a,s,b) or not ai_condition(a,s,b):return false
+	var ledger=skill_effect_ledger.get(s.skill_id,{"cast":0,"confirmed":0})
+	ledger.cast+=1
+	skill_effect_ledger[s.skill_id]=ledger
 	if s.has("p2"):
 		p2_casts+=1
 		var params=s.p2.effect.params
@@ -582,6 +561,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 						var crit=1.5+rating(a,"crit_damage") if e.damage_type!="genjutsu" and rng.randf()<maxf(0.0,rating(a,"pcrit" if physical else "ncrit")-rating(target,"crit_resist")) else 1.0
 						hit(a,target,maxf(1.0,round(attack*float(e.coefficient)*100.0/(100.0+defense)*realm_factor*element_factor*crit*(1.0-minf(0.65,rating(target,"damage_reduction"))))))
 						if before_hp-float(target.hp)>0.01 and target.side!=a.side:
+							combo_record(a,s,"contact_or_effect_confirmed",target,target.pos)
 							record_typed_passives(a,s,"coefficient")
 							award_action(a,"strength" if physical else "intellect")
 							if not a.summon and not target.summon and a.hp>0:
@@ -596,6 +576,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					var before_hp=float(target.hp)
 					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*float(e.coefficient)*(1.0+rating(a,"healing"))*(1.0+float(target.get("passive_mods",{}).get("healing_received",0)))*(1.0-clampf(magnitude(target,"antiheal"),0.0,0.9)))
 					if target.hp-before_hp>0.01:
+						combo_record(a,s,"heal_confirmed",target,target.pos)
 						award_action(a,"spirit")
 						record_typed_passives(a,s,"coefficient")
 						credit(a,"heal",float(target.hp)-before_hp)
@@ -612,6 +593,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					var before_status=target.statuses.duplicate(true)
 					apply_status(a,target,e)
 					if before_status!=target.statuses:
+						if target.side!=a.side:combo_record(a,s,"contact_or_effect_confirmed",target,target.pos)
 						record_typed_passives(a,s,"duration")
 						Passive.queue(self,a,target,s,"status_applied")
 						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
@@ -641,6 +623,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 					var prior_count=actors.size()
 					summon_actor(a,s,e)
 					if actors.size()>prior_count:
+						combo_record(a,s,"summon_spawned",a,a.pos)
 						record_typed_passives(a,s,"summon")
 						Passive.queue(self,a,target,s,"summon_spawned")
 						Passive.queue(self,a,target,s,"contact_or_effect_confirmed")
@@ -688,11 +671,22 @@ func ultimate_skill(index: int,id: String) -> bool:
 func ultimate_reason(a: Dictionary,id: String) -> String:
 	var s=effective_skill(a,id)
 	if a.hp<=0:return "KO"
-	if float(a.cooldowns.get(id,0))>0:return "Hồi chiêu"
+	if not id in a.skills:return "Chưa mở khóa"
+	if not a.pending.is_empty() and a.pending.skill.skill_id==id:return "Đang thi triển"
+	if float(a.cooldowns.get(id,0))>0:return "Hồi %.1fs" % float(a.cooldowns[id])
 	if not cp_affordable(a,float(s.chakra)):return "Chờ CP"
-	if not ready(a,s):return "Chờ hành động/hình thái"
+	if s.has("p2"):
+		var cond=s.p2.conditions
+		if int(a.realm)<int(cond.get("unlock_realm",0)):return "Thiếu cảnh giới"
+		if cond.has("any_active_forms") and not a.active_form.get("id","") in cond.any_active_forms:return "Cần hình thái"
+		if cond.has("requires_unlocked_form") and not cond.requires_unlocked_form in a.forms:return "Chưa mở hình thái"
+		if s.p2.effect.params.get("requires_clone",false) and owned_clone(a).is_empty():return "Cần phân thân"
+		if s.p2.effect.params.get("requires_owned_clone_or_anchor",false) and cable_anchor(a).is_empty():return "Cần vật neo"
+	if hard_block(a):return "Đang bị khống chế"
+	if not ready(a,s):return "Chờ hành động/điều kiện"
 	var target=target_for(a,s)
-	if not cast_geometry(a,s,target) or not ai_condition(a,s,target):return "Chờ mục tiêu"
+	if target.is_empty() and s.has("p2") and s.p2.conditions.ai=="owned_valid_mark_or_explicit_swap":return "Cần dấu ấn hợp lệ"
+	if not cast_geometry(a,s,target) or not ai_condition(a,s,target):return "Chờ mục tiêu/tầm đánh"
 	return "Sẵn sàng"
 
 func update_status(a: Dictionary,dt: float) -> void:
@@ -710,7 +704,7 @@ func update_status(a: Dictionary,dt: float) -> void:
 			a.active_form={}
 	if a.get("combo_regen_until",0)>ticks and a.hp>0:
 		var previous=float(a.hp)
-		a.hp=minf(float(a.max_hp),float(a.hp)+float(a.max_hp)*0.01*dt)
+		a.hp=minf(float(a.max_hp),float(a.hp)+float(a.max_hp)*0.01*dt*(1.0-clampf(magnitude(a,"antiheal"),0.0,0.9)))
 		var source=actor_by_uid(int(a.get("combo_regen_owner",0)))
 		if not source.is_empty():credit(source,"heal",float(a.hp)-previous)
 			
@@ -720,7 +714,7 @@ func update_status(a: Dictionary,dt: float) -> void:
 			if activate_form(a,id,true):
 				if not a.has("hp_auto_forms"):a.hp_auto_forms={}
 				a.hp_auto_forms[id]=true
-	a.hp=minf(float(a.max_hp),float(a.hp)+float(a.stats.get("hp_regen",0))*dt)
+	a.hp=minf(float(a.max_hp),float(a.hp)+float(a.stats.get("hp_regen",0))*dt*(1.0-clampf(magnitude(a,"antiheal"),0.0,0.9)))
 	var expired=0.0
 	for key in a.shield_sources.keys():
 		var layer=a.shield_sources[key]
@@ -760,6 +754,7 @@ func primary_alive(side: int) -> Array:
 
 func tick(dt: float) -> void:
 	if not outcome.is_empty():return
+	var started=Time.get_ticks_usec()
 	ticks+=1
 	Passive.refresh(self)
 	while not art_events.is_empty() and int(art_events[0].tick)<ticks-20:art_events.pop_front()
@@ -800,9 +795,11 @@ func tick(dt: float) -> void:
 					resolve_pending(a,pending)
 				else:continue
 		if a.busy>0 or hard_block(a) or qa_hold_ai:continue
+		decision_effective.clear()
+		decision_uid=int(a.uid)
 		if use_depth and ultimate_requests.has(a.uid):
 			var intent=str(ultimate_requests[a.uid])
-			var requested=effective_skill(a,intent)
+			var requested=decision_skill(a,intent)
 			if cast(a,requested,target_for(a,requested)):
 				ultimate_requests.erase(a.uid)
 				ultimate_executed[intent]=int(ultimate_executed.get(intent,0))+1
@@ -810,7 +807,7 @@ func tick(dt: float) -> void:
 		if a.has("ai_goal") and ticks%int(registry.tactics.ai_interval_ticks)!=int(a.uid)%int(registry.tactics.ai_interval_ticks):
 			if not has_status(a,"bind"):move_actor(a,a.ai_goal,movement_speed(a)*dt)
 			continue
-		var basic=skill_definition(a.skills[0])
+		var basic=decision_skill(a,a.skills[0])
 		var enemy=target_for(a,basic)
 		if enemy.is_empty():continue
 		if use_contract_v10 and a.summon and a.get("summon_skill","")=="NIN-004-S2" and not a.get("summon_tracking_sent",false) and enemy.side!=a.side:
@@ -819,12 +816,15 @@ func tick(dt: float) -> void:
 				a.summon_tracking_sent=true
 				combo_record(tracker,{"skill_id":"NIN-004-S2","passive_cast_id":a.summon_parent},"summon_tracking_confirmed",enemy,enemy.pos)
 		if use_tactical and not a.summon:
-			if int(a.get("focus_uid",0))!=int(enemy.uid):tactical_metrics.focus_switches+=1
+			if int(a.get("focus_uid",0))!=int(enemy.uid):
+				tactical_metrics.focus_switches+=1
+				a.focus_until=ticks+16
 			a.focus_uid=enemy.uid
 			if not has_status(a,"bind"):
 				var dodge=Tactical.avoid(self,a)
 				if dodge!=a.pos:
 					a.ai_goal=dodge
+					a.dodge_until=ticks+10
 					move_actor(a,dodge,movement_speed(a)*dt)
 					tactical_metrics.dodge_moves+=1
 					continue
@@ -838,32 +838,48 @@ func tick(dt: float) -> void:
 				boss_phases.priority.pop_front()
 				continue
 		for id in a.skills:
-			var s=effective_skill(a,id)
+			var s=decision_skill(a,id)
 			if (s.kind=="ultimate" and a.side==0 and not auto_player_ultimate) or not ready(a,s):continue
 			if use_depth and ultimate_requests.has(a.uid) and s.chakra>0 and s.kind!="ultimate":
-				var reservation=effective_skill(a,str(ultimate_requests[a.uid]))
-				if a.chakra-s.chakra<minf(float(a.max_chakra),float(reservation.chakra)):continue
+				var reservation=decision_skill(a,str(ultimate_requests[a.uid]))
+				if a.chakra-s.chakra<minf(float(a.max_chakra),float(reservation.chakra)) and not survival_override(a,s):continue
 			var b=target_for(a,s)
 			var score=utility(a,s,b)
+			if use_tactical and score>0:
+				if not a.has("meaningful_since"):a.meaningful_since={}
+				if not a.meaningful_since.has(id):a.meaningful_since[id]=ticks
+				score+=minf(12.0,maxf(0.0,float(ticks-int(a.meaningful_since[id]))-float(s.cooldown_s)*40.0)*0.04)
 			if score>best_score:
 				best=s
 				best_target=b
 				best_score=score
 		if not best.is_empty():
-			cast(a,best,best_target)
-			if use_tactical and best_target.side!=a.side:a.focus_uid=best_target.uid
+			if cast(a,best,best_target):
+				runtime_metrics.cast_choices+=1
+				if a.has("meaningful_since"):a.meaningful_since.erase(best.skill_id)
+				if use_tactical and best_target.side!=a.side and best.kind=="basic":a.focus_uid=best_target.uid
 			a.ai_goal=a.pos
 			tactical_choices+=1
 		elif not has_status(a,"bind"):
 			var goal=tactical_goal(a,enemy,basic)
 			a.ai_goal=goal
+			a.goal_until=ticks+8
 			move_actor(a,goal,movement_speed(a)*dt)
 	# Remove dead temporary entities only once their launched projectiles resolve.
 	for a in actors.duplicate():
 		if a.summon and a.hp<=0 and not projectiles.any(func(p):return p.source==a.uid):actors.erase(a)
+	decision_uid=0
+	decision_effective.clear()
 	Passive.flush(self)
 	if use_tactical and ticks%10==0:sample_spacing()
-	deadlock=ticks-last_progress_tick>=2400
+	if use_tactical and ticks%100==0:update_pressure()
+	runtime_metrics.max_actors=maxi(int(runtime_metrics.max_actors),actors.size())
+	runtime_metrics.max_jobs=maxi(int(runtime_metrics.max_jobs),p2_jobs.size())
+	runtime_metrics.max_projectiles=maxi(int(runtime_metrics.max_projectiles),projectiles.size())
+	var elapsed=Time.get_ticks_usec()-started
+	runtime_metrics.tick_usec_total+=elapsed
+	runtime_metrics.tick_usec_max=maxi(int(runtime_metrics.tick_usec_max),elapsed)
+	deadlock=ticks-last_progress_tick>=2400 or (pressure_mode and ticks-pressure_since>=1200)
 	if primary_alive(1).is_empty():outcome="win"
 	elif primary_alive(0).is_empty():outcome="loss"
 
@@ -1415,7 +1431,7 @@ func p2_targets(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,pr
 		var offset=Vector2(b.pos)-Vector2(a.pos)
 		var include=false
 		if shape=="line":include=offset.dot(dir)>=0 and offset.dot(dir)<=float(s.range_m)+body_radius(b) and absf(offset.cross(dir))<=float(s.line_width_m)*0.5+body_radius(b)
-		elif shape=="cone":include=offset.length()<=float(s.range_m)+body_radius(b) and dir.dot(offset.normalized())>=cos(deg_to_rad(float(raw.geometry.extent)*0.5))
+		elif shape=="cone":include=offset.length()<=float(s.range_m)+body_radius(b) and dir.dot(offset.normalized())>=cos(deg_to_rad(float(raw.effect.params.get("angle_deg",raw.geometry.extent))*0.5))
 		else:include=b.pos.distance_to(center)<=float(s.radius_m)+body_radius(b)
 		if include and clear_segment(center if shape not in ["line","cone"] else a.pos,b.pos,0.01):result.append(b)
 	result.sort_custom(func(x,y):
@@ -1541,7 +1557,7 @@ func p2_schedule(a: Dictionary,s: Dictionary,point: Vector2,direction: Vector2,t
 	var kind=str(raw.effect.type)
 	var hits=maxi(1,int(raw.effect.hit_count))
 	if kind in ["zone_damage","zone_drain","beguile_tactical"]:hits=mini(hits,maxi(1,int(p.get("hit_budget",hits))))
-	var interval=maxi(1,roundi(float(p.get("tick_s",p.get("interval_s",0.12)))*20))
+	var interval=maxi(1,roundi(float(p.get("interval_s",p.get("tick_s",0.12)))*20))
 	var dynamic=s.shape in ["circle_ground","zone_target"] or kind=="trap"
 	var ids=targets.map(func(b):return b.uid)
 	var start=ticks+roundi(float(p.get("delay_s",0))*20)
@@ -1681,6 +1697,9 @@ func p2_apply(a: Dictionary,s: Dictionary,b: Dictionary,hits: int,index: int) ->
 
 func p2_confirm(a: Dictionary,s: Dictionary,point: Vector2,event: String,target_uid: int=0) -> void:
 	p2_resolved+=1
+	var ledger=skill_effect_ledger.get(s.skill_id,{"cast":0,"confirmed":0})
+	ledger.confirmed+=1
+	skill_effect_ledger[s.skill_id]=ledger
 	if a.side==0 and not a.summon:
 		var parent=str(a.uid)+":"+str(s.get("passive_cast_id",0))+":"+str(s.skill_id)
 		if not mastery_casts.has(parent) or int(s.get("passive_cast_id",0))==0:
@@ -1883,16 +1902,21 @@ func sample_spacing() -> void:
 				if gap<1.15:tactical_metrics.crowded_pairs+=1
 
 func load_combat_contracts() -> void:
-	for row in registry.read_json("res://data/skill-depth-v5/combo-contracts.json"):combo_contracts_dev[row.id]=row
+	for row in registry.read_json("res://data/skill-depth-v5/combo-contracts.json"):
+		combo_contracts_dev[row.id]=row
+		for sig in row.signature_events:
+			var key=str(sig.skill_id)+":"+str(sig.event)
+			if not combo_index.has(key):combo_index[key]=[]
+			if not row.id in combo_index[key]:combo_index[key].append(row.id)
 	for row in registry.read_json("res://data/skill-depth-v5/form-routes.json").rows:form_routes_dev[row.id]=row
 
 func combo_record(a: Dictionary,s: Dictionary,event: String,b: Dictionary,point: Vector2) -> void:
 	if not use_contract_v10 or a.summon or a.get("beast",false) or a.hp<=0 or int(s.get("passive_cast_id",0))<=0:return
 	var id=str(s.skill_id)
-	var interested=false
-	for contract in combo_contracts_dev.values():
-		if contract.signature_events.any(func(row):return row.skill_id==id and row.event==event and row.actor_id==a.id):interested=true;break
-	if not interested:return
+	var interested=combo_index.get(id+":"+event,[])
+	if interested.is_empty():return
+	var consumed_key=str(a.uid)+":"+str(s.passive_cast_id)+":"+id+":"+event
+	if combo_consumed.has(consumed_key):return
 	var key=str(a.side)+":"+id+":"+event
 	var old=p2_events.get(key,{})
 	if int(old.get("parent",0))==int(s.passive_cast_id):return
@@ -1930,7 +1954,14 @@ func combo_resolve(a: Dictionary) -> void:
 			keys.append(event_key)
 		if not good:continue
 		if str(contract.anchor_rule).begins_with("same_hostile") and (hostile.is_empty() or hostile.any(func(uid):return uid!=hostile[0])):continue
-		if contract.id=="COMBO-004" and not linked_ally in owner_ids:continue
+		if contract.id=="COMBO-004":
+			var cleaned=actor_by_uid(linked_ally)
+			if cleaned.is_empty() or cleaned.hp<=0:continue
+			var linked=false
+			for owner_uid in owner_ids:
+				var owner=actor_by_uid(int(owner_uid))
+				if owner_uid!=linked_ally and owner.pos.distance_to(cleaned.pos)<=float(registry.combat_v3.links.range):linked=true
+			if not linked:continue
 		if contract.id=="COMBO-012":
 			var form_owner=actor_by_uid(int(entries.back().uid))
 			if form_owner.is_empty() or form_owner.active_form.is_empty():continue
@@ -1948,7 +1979,11 @@ func combo_resolve(a: Dictionary) -> void:
 		targets.sort_custom(func(x,y):return x.pos.distance_to(center)<y.pos.distance_to(center))
 		if targets.is_empty():continue
 		combo_clock[key]=ticks
-		for event_key in keys:p2_events.erase(event_key)
+		for event_key in keys:
+			var used=p2_events[event_key]
+			var parts=event_key.split(":")
+			combo_consumed[str(used.uid)+":"+str(used.parent)+":"+parts[1]+":"+parts[2]]=ticks
+			p2_events.erase(event_key)
 		var bonus=1.0+Passive.combo_bonus(self,contract,entries)
 		for target in targets.slice(0,int(effect.max_targets)):
 			if float(payload.get("damage_coefficient",0))>0:hit(a,target,float(a.natk)*float(payload.damage_coefficient)*bonus*100.0/(100.0+float(target.nres)),false)
@@ -1995,3 +2030,68 @@ func refund_parent_cp(a: Dictionary,s: Dictionary,requested: float,reason: Strin
 	var actual=cp_adjust(a,maxf(0.0,amount),reason)
 	cp_refund_units[key]=used+roundi(actual*100.0)
 	return actual
+
+func decision_skill(a: Dictionary,id: String) -> Dictionary:
+	if decision_uid!=int(a.uid):return effective_skill(a,id)
+	if not decision_effective.has(id):decision_effective[id]=effective_skill(a,id)
+	return decision_effective[id]
+
+func survival_override(a: Dictionary,s: Dictionary) -> bool:
+	var b=target_for(a,s)
+	if b.is_empty() or b.side!=a.side or b.hp>b.max_hp*0.15:return false
+	if Tactical.threat(self,b)<=0:return false
+	return s.effects.any(func(e):return e.type in ["heal","shield","cleanse"])
+
+func prospective_links(a: Dictionary,p: Vector2) -> int:
+	if a.summon or not side_formations.has(a.side):return 0
+	var rule=registry.formations[side_formations[a.side]]
+	var result=0
+	for b in primary_alive(int(a.side)):
+		if b.uid!=a.uid and p.distance_to(b.pos)<=float(registry.combat_v3.links.range) and Formation.linked(int(a.deployment_slot),int(b.deployment_slot),str(rule.link)):result+=1
+	return mini(result,int(registry.combat_v3.links.max_neighbors))
+
+func update_pressure() -> void:
+	# No artificial damage or timeout; change legal tactical priorities.
+	var sample=0.0
+	for a in actors:
+		if not a.summon:sample+=float(a.hp)/maxf(1.0,float(a.max_hp))
+	pressure_sample.append(sample)
+	if pressure_sample.size()>7:pressure_sample.pop_front()
+	var flat=pressure_sample.size()==7 and absf(float(pressure_sample.front())-sample)<0.15
+	if flat and not pressure_mode:
+		pressure_since=ticks
+		runtime_metrics.pressure_entries+=1
+	pressure_mode=flat
+	for key in combo_consumed.keys():
+		if ticks-int(combo_consumed[key])>1200:combo_consumed.erase(key)
+
+func combo_target_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
+	if not use_contract_v10 or a.summon:return 0.0
+	var bonus=0.0
+	for contract in combo_contracts_dev.values():
+		if not a.id in contract.members:continue
+		if not contract.signature_events.any(func(sig):return sig.skill_id==s.skill_id and sig.hostile_anchor):continue
+		if not str(contract.anchor_rule).begins_with("same_hostile"):continue
+		for sig in contract.signature_events:
+			if sig.actor_id==a.id or not sig.hostile_anchor:continue
+			var event=p2_events.get(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),{})
+			if not event.is_empty() and ticks-int(event.tick)<=float(contract.window_s)*20 and int(event.target_uid)==b.uid:bonus+=28.0
+	return bonus
+
+func combo_skill_bonus(a: Dictionary,b: Dictionary,s: Dictionary) -> float:
+	if not use_contract_v10 or a.summon:return 0.0
+	var bonus=0.0
+	for contract in combo_contracts_dev.values():
+		if not a.id in contract.members or not contract.signature_events.any(func(sig):return sig.skill_id==s.skill_id):continue
+		if ticks-int(combo_clock.get(str(a.side)+":"+str(contract.id),-100000))<float(contract.cooldown_s)*20:continue
+		var partners=0
+		var confirmed=0
+		for sig in contract.signature_events:
+			if sig.actor_id==a.id:continue
+			for ally in primary_alive(int(a.side)):
+				if ally.id!=sig.actor_id or not sig.skill_id in ally.skills:continue
+				partners+=1
+				var event=p2_events.get(str(a.side)+":"+str(sig.skill_id)+":"+str(sig.event),{})
+				if not event.is_empty() and ticks-int(event.tick)<=float(contract.window_s)*20:confirmed+=1
+		if partners==contract.signature_events.size()-1:bonus=maxf(bonus,8.0+float(confirmed)*28.0)
+	return bonus

@@ -11,6 +11,9 @@ var effect_draws=0
 var portrait_draws=0
 var last_pos: Dictionary={}
 var motion: Dictionary={}
+var review_move_r3: Dictionary={}
+var review_clip_hashes: Dictionary={}
+var review_move_draws=0
 
 func hash_bytes(bytes: PackedByteArray) -> String:
 	var h=HashingContext.new()
@@ -20,6 +23,8 @@ func hash_bytes(bytes: PackedByteArray) -> String:
 
 func import_text(raw: String,persist: bool=true) -> bool:
 	error=""
+	load_move_contract()
+	var staged_hashes={}
 	if raw.length()>MAX_BYTES:
 		error="Gói quá lớn"
 		return false
@@ -67,6 +72,7 @@ func import_text(raw: String,persist: bool=true) -> bool:
 			error="Sprite sai cell 96×112"
 			return false
 		staged[path]=ImageTexture.create_from_image(img)
+		staged_hashes[path]=str(entry.sha256)
 	if persist:
 		var file=FileAccess.open(PATH+".tmp",FileAccess.WRITE)
 		if file==null:
@@ -85,6 +91,7 @@ func import_text(raw: String,persist: bool=true) -> bool:
 			error="Không lưu được gói cục bộ"
 			return false
 	textures=staged
+	review_clip_hashes=staged_hashes
 	enabled=true
 	source_label="REVIEW RIÊNG • "+str(textures.size())+" ảnh"
 	return true
@@ -109,6 +116,7 @@ func reset_battle() -> void:
 	actor_draws=0
 	effect_draws=0
 	portrait_draws=0
+	review_move_draws=0
 
 func background(field: Control,environment: String) -> bool:
 	var t=texture("environment/arena_open_r3.png")
@@ -134,25 +142,34 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	if prior.distance_to(p)>0.25:
 		motion[a.uid]={"right":p.x>prior.x,"until":ticks+4}
 	last_pos[a.uid]=p
-	if t==null:return 0.0
+	var action=str(state.get("action","Idle")).to_lower()
+	var direction=str(state.get("direction","SE")).to_lower()
+	var authored=texture("animation/"+id+"/"+action+"_"+direction+".png")
+	var r3=review_move_r3.get(id,{})
+	var r3_texture: Texture2D=null
+	if action=="move" and direction in ["se","ne"] and not r3.is_empty() and review_clip_hashes.get(r3.path,"")==r3.sha256:r3_texture=texture(r3.path)
+	if t==null and authored==null and r3_texture==null:return 0.0
 	var height=92.0*display_scale
 	var scale_value=height/112.0
 	var dest=Rect2(p-Vector2(48,104)*scale_value,Vector2(96,112)*scale_value)
 	# One provisional authored rightward walk pilot, never mirror or fabricate missing clips.
 	var moving=motion.get(a.uid,{})
 	var walk=texture("animation/"+id+"/walk_screen_right.png")
-	var action=str(state.get("action","Idle")).to_lower()
-	var direction=str(state.get("direction","SE")).to_lower()
-	var authored=texture("animation/"+id+"/"+action+"_"+direction+".png")
 	if authored!=null and authored.get_height()==112 and authored.get_width()%96==0:
 		var frame_count=maxi(1,authored.get_width()/96)
 		var age=maxi(0,ticks-int(state.get("started_tick",0)))
 		var frame=posmod(floori(float(age)/2.0),frame_count) if action in ["idle","move"] else mini(frame_count-1,floori(float(age)/2.0))
 		field.draw_texture_rect_region(authored,dest,Rect2(frame*96,0,96,112))
-	elif walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
+	elif r3_texture!=null and r3_texture.get_width()==768 and r3_texture.get_height()==112:
+		var age=maxi(0,ticks-int(state.get("started_tick",0)))*50
+		var frame=posmod(floori(float(age)/100.0),8)
+		field.draw_texture_rect_region(r3_texture,dest,Rect2(frame*96,0,96,112))
+		review_move_draws+=1
+	elif action=="move" and walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
 		var frame=posmod(floori(float(ticks)/2.0),4)
 		field.draw_texture_rect_region(walk,dest,Rect2(frame*96,0,96,112))
-	else:field.draw_texture_rect(t,dest,false)
+	elif t!=null:field.draw_texture_rect(t,dest,false)
+	else:return 0.0
 	actor_draws+=1
 	return 104.0*scale_value
 
@@ -188,3 +205,12 @@ func effects(field: Control,sim,project: Callable) -> void:
 			if event.kind!="summon":
 				var text_value=("+" if event.kind=="heal" else "-")+str(roundi(float(event.amount)))
 				field.draw_string(ThemeDB.fallback_font,at+Vector2(-14,-28-25*progress),text_value,HORIZONTAL_ALIGNMENT_LEFT,-1,15,Color(0.56,1,0.63,1-progress*0.8) if event.kind=="heal" else Color(1,0.83,0.58,1-progress*0.8))
+
+func load_move_contract() -> void:
+	if not review_move_r3.is_empty():return
+	var path="res://data/art-review/move-r3-contract.json"
+	if not FileAccess.file_exists(path):return
+	var record=JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not record is Dictionary:return
+	for clip in record.get("clips",[]):
+		if clip.get("owner_visual_approved",false) and clip.status=="REVIEW_ONLY" and clip.frames.size()==8 and clip.anchor==[48,104]:review_move_r3[clip.id]=clip

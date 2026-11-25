@@ -51,6 +51,7 @@ var synergy_links: Dictionary={}
 var synergy_gaps: Dictionary={}
 var passive_pilot: Dictionary={}
 var depth_growth: Dictionary={}
+var depth_exact_branches: Dictionary={}
 var depth_branches: Dictionary={}
 var depth_ultimates: Dictionary={}
 var depth_teams: Array=[]
@@ -246,6 +247,8 @@ func load_synergy_reference() -> void:
 	print("NARU_SYNERGY_REFERENCE ",synergy_active.size()+synergy_passive.size()," pilot=",passive_pilot.size()," gaps=",synergy_gaps.size()," STRUCTURAL_ONLY")
 
 func load_depth_reference() -> void:
+	for row in read_json("res://data/skill-depth-v3/branch-contracts.json").rows:depth_exact_branches[row.id]=row
+	if depth_exact_branches.size()!=432:errors.append("Incomplete V3 branch contracts")
 	for row in read_json("res://data/skill-depth-v4/growth-resolution.json"):depth_growth[row.id]=row
 	for row in read_json("res://data/skill-depth-v4/branch-resolution.json"):depth_branches[row.id]=row
 	for row in read_json("res://data/skill-depth-v5/manual-ultimate.json").skills:depth_ultimates[row.id]=row

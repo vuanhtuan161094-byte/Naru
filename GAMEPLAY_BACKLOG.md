@@ -72,3 +72,5 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - REVIEW Combat V10 tactical/animation/HUD/typed passive/12 combo/54 route integration and exact CI. READY: per-ID typed actual effects, detailed special combo negatives, role balance and visual overlap, source/fallback decisions. Organic campaign regression shared with Chat03, do not inflate stats.
 
 - REVIEW V10 batch 2 exact passive/branch effect fixtures, CP parent cap, animation phase timing. NIN-139-P2 mechanic HOLD while reflection adapter is unresolved; 186 source gate unchanged.
+
+- V11 REVIEW: actual per-ID 432 branch typed effects; 12 real rotation windows and all 54 correct-realm forms; measure spacing, focus/avoidance, tick duration, starter regression. No claim of organic all 12 combos or 54 forms until evidence. Trial runtime and all passive conditions/mastery still require full per-ID acceptance. Reflection + rights gates remain.

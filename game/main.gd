@@ -31,6 +31,11 @@ var battle_speed=1.0
 var ult_actions: Array[Dictionary]=[]
 var battle_cards: Array[Dictionary]=[]
 var observation_mode=false
+var battle_inspector: Label
+var inspected_uid=0
+var hud_clock=0.0
+var form_actions: Array[Dictionary]=[]
+var last_video_ult_tick=-1
 var qa_clock=0.0
 var roster_query=""
 var roster_quality=0
@@ -75,7 +80,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"DEV V10",16)
+	label(header,"DEV V11",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -348,6 +353,10 @@ func battle_view() -> void:
 	accumulator=0
 	paused=false
 	observation_mode=false
+	inspected_uid=0
+	hud_clock=1.0
+	form_actions.clear()
+	last_video_ult_tick=-1
 	battle_speed=1.0
 	open_screen("battle")
 	var toolbar=HBoxContainer.new()
@@ -367,7 +376,10 @@ func battle_view() -> void:
 	field.clip_contents=true
 	field.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	field.draw.connect(draw_field)
+	field.gui_input.connect(inspect_battle_input)
 	root.add_child(field)
+	battle_inspector=label(root,"Chạm ninja trên sân để xem kỹ năng và trạng thái",14)
+	battle_inspector.custom_minimum_size.y=24
 	var scroll=ScrollContainer.new()
 	scroll.name="BattleActions"
 	scroll.custom_minimum_size.y=138
@@ -395,7 +407,8 @@ func battle_view() -> void:
 			image.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 			name_row.add_child(image)
 			art.portrait_draws+=1
-		label(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],16)
+		var inspect=button(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],func():inspected_uid=a.uid;hud_clock=1.0)
+		inspect.custom_minimum_size=Vector2(135,36)
 		var state_label=label(group,"",13)
 		battle_cards.append({"uid":a.uid,"label":state_label})
 		for skill_id in a.skills:
@@ -404,7 +417,9 @@ func battle_view() -> void:
 			ult_actions.append({"button":b,"index":i,"skill":skill_id})
 		if a.contract!="":button(group,"Thông linh",func():sim.summon_contract(a))
 		for form_id in a.forms:
-			if reg.form_rules[form_id].activation!="skill_trigger" or reg.p2_forms.get(form_id,{}).get("activation",{}).get("mode","") in ["manual_stance","hp_threshold_or_manual"]:button(group,"Biến thân",func():sim.activate_form(a,form_id,true))
+			if reg.form_rules[form_id].activation!="skill_trigger" or reg.p2_forms.get(form_id,{}).get("activation",{}).get("mode","") in ["manual_stance","hp_threshold_or_manual"]:
+				var fb=button(group,"Biến thân "+str(form_id).right(2),func():sim.activate_form(a,form_id,true))
+				form_actions.append({"button":fb,"uid":a.uid,"form":form_id})
 	# Scroll vertically too: all unlocked forms/ultimate actions remain reachable.
 	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	log_label=label(root,"",14)
@@ -511,7 +526,8 @@ func _process(delta: float) -> void:
 			qa_clock=0
 			publish_ui_probe()
 	if sim==null:return
-	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks%20==0:
+	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks%20==0 and last_video_ult_tick!=sim.ticks:
+		last_video_ult_tick=sim.ticks
 		for i in range(6):sim.ultimate(i)
 	if not paused:
 		accumulator+=minf(delta,0.25)*battle_speed
@@ -521,8 +537,13 @@ func _process(delta: float) -> void:
 			if not sim.outcome.is_empty():
 				finish(sim.outcome=="win")
 				return
+	hud_clock+=delta
+	field.queue_redraw()
+	if hud_clock<0.12:return
+	hud_clock=0.0
 	status.text="Đội %d • Địch %d • %.1fs • %sx%s" % [sim.primary_alive(0).size(),sim.primary_alive(1).size(),sim.ticks*0.05,int(battle_speed)," • Tạm dừng" if paused else ""]
-	if sim.deadlock:status.text+=" • Bế tắc"
+	if sim.deadlock:status.text+=" • Giằng co"
+	elif sim.pressure_mode:status.text+=" • Đổi chiến thuật"
 	status.text+=" • "+str(sim.side_formations.get(0,"FRM-01"))
 	for card in battle_cards:
 		var unit=sim.actor_by_uid(int(card.uid))
@@ -542,8 +563,13 @@ func _process(delta: float) -> void:
 		var reason=sim.ultimate_reason(a,action.skill)
 		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+"\n"+("%.2f CP" % float(s.chakra))+" • "+reason
 		action.button.tooltip_text=reason
+	for action in form_actions:
+		var a=sim.actor_by_uid(int(action.uid))
+		action.button.disabled=paused or not sim.form_ready(a,action.form,true)
+		var cd=float(a.form_cooldowns.get(action.form,0))
+		action.button.text="Biến thân "+str(action.form).right(2)+(" • %.1fs" % cd if cd>0 else "")
+	update_battle_inspector()
 	log_label.text="  |  ".join(sim.log)
-	field.queue_redraw()
 
 func finish(won: bool) -> void:
 	if sim==null:return
@@ -555,11 +581,17 @@ func finish(won: bool) -> void:
 	var ok=store.finish_stage(reg,battle_stage,event_id,won,sim.counts,sim.mastery_counts,sim.action_stats,sim.passive_mastery)
 	var elapsed=sim.ticks*0.05
 	var contribution_rows=sim.contribution.duplicate(true)
+	var outcome_reason="Địch bị hạ toàn bộ" if won else ("Đội bị hạ toàn bộ" if sim.outcome=="loss" else "Người chơi rút lui")
+	var combos=sim.combo_receipts.duplicate()
+	var forms=sim.form_receipts.duplicate()
+	for a in sim.actors:
+		if not a.summon and a.side==0 and not contribution_rows.has(a.uid):contribution_rows[a.uid]={"id":a.id,"side":a.side,"damage":0,"heal":0,"taken":0,"absorbed":0,"control_applied_s":0}
 	sim=null
 	open_screen("results")
 	label(root,"CHIẾN THẮNG" if won else "THẤT BẠI / RÚT LUI",34)
 	label(root,"%s • %.1f giây • %s" % [battle_stage.name_vi,elapsed,"Đã lưu kết quả" if ok else "Lỗi lưu kết quả"],18)
 	var rows=scroll_rows(root)
+	label(rows,outcome_reason+" • Combo: "+str(combos.size())+" • Hình thái: "+str(forms.size()),18)
 	label(rows,"Đóng góp chiến đấu • HP thực tế / thời lượng khống chế áp dụng",20)
 	for entry in contribution_rows.values():
 		if int(entry.side)!=0:continue
@@ -1376,12 +1408,17 @@ func start_art_review() -> void:
 	sim.configure_terrain()
 	var left=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
 	var right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
+	var level=20
+	if "--combat-video" in OS.get_cmdline_user_args():
+		left=["NIN-055","NIN-041","NIN-042","NIN-043","NIN-007","NIN-004"]
+		right=["NIN-070","NIN-060","NIN-093","NIN-021","NIN-008","NIN-022"]
+		level=140
 	for i in range(6):
 		var id=left[i]
-		sim.add_actor(id,0,20,int(reg.ninjas[id].initial_quality),{},i,1.0)
+		sim.add_actor(id,0,level,int(reg.ninjas[id].initial_quality),{},i,1.0,{"realm":6,"stars":5,"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids} if level>20 else {})
 	for i in range(6):
 		var id=right[i]
-		sim.add_actor(id,1,20,int(reg.ninjas[id].initial_quality),{},i,1.0)
+		sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},i,1.0,{"realm":6,"stars":5,"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids} if level>20 else {})
 	battle_view()
 
 func resource_trade_result(id: String,ok: bool) -> void:
@@ -1470,3 +1507,34 @@ func passive_screen(id: String,message: String="") -> void:
 func scroll_battle_visibility() -> void:
 	var panel=root.get_node_or_null("BattleActions")
 	if panel!=null:panel.visible=not observation_mode
+
+func inspect_battle_input(event: InputEvent) -> void:
+	if sim==null:return
+	var point=Vector2.ZERO
+	if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:point=event.position
+	elif event is InputEventScreenTouch and event.pressed:point=event.position
+	else:return
+	var best={}
+	var distance=42.0
+	for a in sim.actors:
+		if a.hp<=0:continue
+		var d=point.distance_to(iso(a.pos)-Vector2(0,18))
+		if d<distance:best=a;distance=d
+	if not best.is_empty():
+		inspected_uid=best.uid
+		hud_clock=1.0
+
+func update_battle_inspector() -> void:
+	if battle_inspector==null or inspected_uid==0:return
+	var a=sim.actor_by_uid(inspected_uid)
+	if a.is_empty():return
+	var labels=[]
+	for id in a.skills:
+		var s=sim.effective_skill(a,id)
+		var cd=float(a.cooldowns.get(id,0))
+		labels.append(sim.skill_name(id)+" "+("%.1fs" % cd if cd>0 else "%.1f CP" % float(s.chakra)))
+	var states=[]
+	for st in a.statuses.values():states.append(str(st.id)+" %.1fs" % float(st.remaining))
+	var head=str(reg.ninjas.get(a.id,{}).get("name_vi",a.id))+" • "+str(reg.ninjas.get(a.id,{}).get("role_hint","Triệu hồi"))
+	battle_inspector.text=head+" • HP %d/%d • CP %.2f/%.2f | " % [int(a.hp),int(a.max_hp),a.chakra,a.max_chakra]+", ".join(states)+" | "+" · ".join(labels)
+	battle_inspector.tooltip_text=battle_inspector.text

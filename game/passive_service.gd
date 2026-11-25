@@ -86,6 +86,7 @@ static func refresh(sim) -> void:
 				if not buckets.has(target.uid):continue
 				var group="aura" if event=="continuous_aura" else "personal"
 				aggregate(buckets[target.uid][group],str(row.effect.key),val,group=="aura")
+				if val>0:sim.passive_continuous_ledger[row.id]={"kind":event,"owner":a.uid,"target":target.uid,"value":val}
 			var secondary=operation(row,a).get("secondary_effect",{})
 			if not secondary.is_empty():aggregate(buckets[a.uid].personal,str(secondary.key),float(secondary.base),false)
 	for a in sim.actors:
@@ -184,6 +185,7 @@ static func flush(sim) -> void:
 		if not secondary.is_empty():a.passive_timed[str(a.uid)+":"+str(row.id)+":B2"]={"owner":a.uid,"key":secondary.key,"group":"personal","value":float(secondary.base),"expires":expiry,"id":row.id}
 		a.passive_icd[row.id]=sim.ticks+roundi(icd*20)
 		sim.passive_receipts[row.id]=int(sim.passive_receipts.get(row.id,0))+1
+		sim.passive_active_ledger[row.id]={"owner":a.uid,"value":value,"expires":expiry,"kind":row.trigger.event}
 		if a.side==0:sim.passive_mastery[row.id]=1
 		sim.art_event("passive_proc",a.pos,0,str(row.id))
 	for a in sim.actors:
