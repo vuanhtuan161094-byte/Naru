@@ -1,0 +1,1942 @@
+[
+  {
+    "skill_id": "NIN-001-S0",
+    "ninja_id": "NIN-001",
+    "old_name": "Cận chiến phân thân",
+    "proposed_name": "Cận chiến phân thân",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 1.1,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic, no clone spawn per strike",
+    "vfx_family": "melee",
+    "vfx_key": "VFX-NIN-001-S0",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-001-S1",
+    "ninja_id": "NIN-001",
+    "old_name": "Ảnh phân thân",
+    "proposed_name": "Ảnh Phân Thân",
+    "kind": "auto",
+    "shape": "summon",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "2 clones, 8s, safe free slots, inherited 25% HP/30% attack",
+    "vfx_family": "clone",
+    "vfx_key": "VFX-NIN-001-S1",
+    "source_refs": [
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-001-S2",
+    "ninja_id": "NIN-001",
+    "old_name": "Liên kích phân thân",
+    "proposed_name": "Uzumaki liên đạn",
+    "kind": "auto",
+    "shape": "single",
+    "cast_range_m": 1.6,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.65,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "3 hits total with clones; target locked, cancel on interruption",
+    "vfx_family": "clone_combo",
+    "vfx_key": "VFX-NIN-001-S2",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-001-S3",
+    "ninja_id": "NIN-001",
+    "old_name": "Phân thân đánh lạc hướng",
+    "proposed_name": "Phân thân đánh lạc hướng",
+    "kind": "auto",
+    "shape": "single",
+    "cast_range_m": 3,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.45,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "decoy redirects one enemy; not unconditional stun",
+    "vfx_family": "clone",
+    "vfx_key": "VFX-NIN-001-S3",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-001-S4",
+    "ninja_id": "NIN-001",
+    "old_name": "Chakra Cửu Vĩ",
+    "proposed_name": "Chakra Cửu Vĩ",
+    "kind": "auto",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "temporary chakra regen; early cloak is separate unlock",
+    "vfx_family": "chakra",
+    "vfx_key": "VFX-NIN-001-S4",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-001-S5",
+    "ninja_id": "NIN-001",
+    "old_name": "Rasengan",
+    "proposed_name": "Rasengan",
+    "kind": "ultimate",
+    "shape": "dash_contact",
+    "cast_range_m": 3,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 3.2,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "rush to valid adjacent contact then one hit + 0.6 push; manual",
+    "vfx_family": "rasengan",
+    "vfx_key": "VFX-NIN-001-S5",
+    "source_refs": [
+      "RASENGAN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-001-S6",
+    "ninja_id": "NIN-001",
+    "old_name": "Rasengan phối hợp",
+    "proposed_name": "Rasengan phối hợp",
+    "kind": "auto",
+    "shape": "dash_contact",
+    "cast_range_m": 3,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "if clone present, consume one for follow-up; total cap 2.0",
+    "vfx_family": "rasengan",
+    "vfx_key": "VFX-NIN-001-S6",
+    "source_refs": [
+      "RASENGAN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-001-S7",
+    "ninja_id": "NIN-001",
+    "old_name": "Đòn phản công phân thân",
+    "proposed_name": "Phản công phân thân",
+    "kind": "auto",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.3,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "4s decoy counter once; clone evasion then strike attacker",
+    "vfx_family": "clone_combo",
+    "vfx_key": "VFX-NIN-001-S7",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 28,
+    "old_cooldown_s": 20,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S0",
+    "ninja_id": "NIN-041",
+    "old_name": "Kunai và thể thuật",
+    "proposed_name": "Kunai và thể thuật",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 1.2,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic",
+    "vfx_family": "melee",
+    "vfx_key": "VFX-NIN-041-S0",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S1",
+    "ninja_id": "NIN-041",
+    "old_name": "Đa trọng ảnh phân thân",
+    "proposed_name": "Đa Trọng Ảnh Phân Thân",
+    "kind": "auto",
+    "shape": "summon",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "3 clones max, 10s; 25% HP/30% attack, no recursive summon",
+    "vfx_family": "clone",
+    "vfx_key": "VFX-NIN-041-S1",
+    "source_refs": [
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S2",
+    "ninja_id": "NIN-041",
+    "old_name": "Rasengan",
+    "proposed_name": "Rasengan",
+    "kind": "auto",
+    "shape": "dash_contact",
+    "cast_range_m": 3,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.65,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "single contact damage, push 0.6, no ranged orb",
+    "vfx_family": "rasengan",
+    "vfx_key": "VFX-NIN-041-S2",
+    "source_refs": [
+      "RASENGAN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S3",
+    "ninja_id": "NIN-041",
+    "old_name": "Đại Ngọc Rasengan",
+    "proposed_name": "Đại Ngọc Rasengan",
+    "kind": "auto",
+    "shape": "circle_target",
+    "cast_range_m": 2,
+    "extent": 1.7,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "large impact, 3 enemies max, push 0.8",
+    "vfx_family": "rasengan_big",
+    "vfx_key": "VFX-NIN-041-S3",
+    "source_refs": [
+      "MINATO_RASEN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S4",
+    "ninja_id": "NIN-041",
+    "old_name": "Phân thân hỗ trợ",
+    "proposed_name": "Liên kích ảnh phân thân",
+    "kind": "auto",
+    "shape": "single",
+    "cast_range_m": 2.5,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "two clone-assisted hits; game adaptation; no passive attack-up copy",
+    "vfx_family": "clone_combo",
+    "vfx_key": "VFX-NIN-041-S4",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S5",
+    "ninja_id": "NIN-041",
+    "old_name": "Phong Độn: Rasen Shuriken",
+    "proposed_name": "Phong Độn: Rasen Shuriken",
+    "kind": "ultimate",
+    "shape": "projectile_burst",
+    "cast_range_m": 7,
+    "extent": 2.3,
+    "extent_unit": "radius_m",
+    "total_coefficient": 3.2,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "base contact before Sage unlock; thrown version with Sage; total 4 ticks, max 6 enemies, no repeated full coefficient",
+    "vfx_family": "rasenshuriken",
+    "vfx_key": "VFX-NIN-041-S5",
+    "source_refs": [
+      "NARUTO_WIND",
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S6",
+    "ninja_id": "NIN-041",
+    "old_name": "Tiên Pháp Rasengan",
+    "proposed_name": "Tiên Pháp: Đại Ngọc Rasengan",
+    "kind": "auto",
+    "shape": "circle_target",
+    "cast_range_m": 3,
+    "extent": 2.2,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2.35,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "requires Sage or Six Paths; 4 enemies, stronger stagger; no passive copy",
+    "vfx_family": "rasengan_big",
+    "vfx_key": "VFX-NIN-041-S6",
+    "source_refs": [
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-041-S7",
+    "ninja_id": "NIN-041",
+    "old_name": "Chakra Kurama hộ thể",
+    "proposed_name": "Chakra Kurama hộ thể",
+    "kind": "auto",
+    "shape": "circle_self",
+    "cast_range_m": 0,
+    "extent": 3,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.35,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "shield up to 6 allies; requires Kurama-compatible active state",
+    "vfx_family": "chakra_cloak",
+    "vfx_key": "VFX-NIN-041-S7",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 28,
+    "old_cooldown_s": 20,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S0",
+    "ninja_id": "NIN-126",
+    "old_name": "Đòn cận chiến",
+    "proposed_name": "Thể thuật Hokage",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 1.2,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.85,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic",
+    "vfx_family": "melee",
+    "vfx_key": "VFX-NIN-126-S0",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S1",
+    "ninja_id": "NIN-126",
+    "old_name": "Ảnh phân thân",
+    "proposed_name": "Ảnh Phân Thân chiến thuật",
+    "kind": "auto",
+    "shape": "summon",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "3 clones, 12s, defend flanks; no recursive clone",
+    "vfx_family": "clone",
+    "vfx_key": "VFX-NIN-126-S1",
+    "source_refs": [
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S2",
+    "ninja_id": "NIN-126",
+    "old_name": "Rasen Shuriken",
+    "proposed_name": "Phong Độn: Rasen Shuriken",
+    "kind": "auto",
+    "shape": "projectile_burst",
+    "cast_range_m": 7,
+    "extent": 2,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.85,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "non-ultimate area burst; 3 ticks total, max 4 targets",
+    "vfx_family": "rasenshuriken",
+    "vfx_key": "VFX-NIN-126-S2",
+    "source_refs": [
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S3",
+    "ninja_id": "NIN-126",
+    "old_name": "Đại Ngọc Rasengan",
+    "proposed_name": "Đại Ngọc Rasengan",
+    "kind": "auto",
+    "shape": "circle_target",
+    "cast_range_m": 2.5,
+    "extent": 2,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2.1,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "impact and knockback max 4",
+    "vfx_family": "rasengan_big",
+    "vfx_key": "VFX-NIN-126-S3",
+    "source_refs": [
+      "RASENGAN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S4",
+    "ninja_id": "NIN-126",
+    "old_name": "Tiên nhân chế độ",
+    "proposed_name": "Tiên Nhân Chế Độ",
+    "kind": "auto",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "activate F1 if unlocked; shared form group",
+    "vfx_family": "sage",
+    "vfx_key": "VFX-NIN-126-S4",
+    "source_refs": [
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S5",
+    "ninja_id": "NIN-126",
+    "old_name": "Chakra Kurama",
+    "proposed_name": "Vĩ Thú Ngọc",
+    "kind": "ultimate",
+    "shape": "projectile_burst",
+    "cast_range_m": 9,
+    "extent": 3,
+    "extent_unit": "radius_m",
+    "total_coefficient": 3.6,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "manual ult; requires pre-loss Kurama form or compatible version; otherwise blocked, UI states reason",
+    "vfx_family": "bijuu_bomb",
+    "vfx_key": "VFX-NIN-126-S5",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S6",
+    "ninja_id": "NIN-126",
+    "old_name": "Chakra Kurama",
+    "proposed_name": "Chakra Kurama",
+    "kind": "auto",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "activate F2 only pre-loss era, no duplicate ultimate name",
+    "vfx_family": "chakra_cloak",
+    "vfx_key": "VFX-NIN-126-S6",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-126-S7",
+    "ninja_id": "NIN-126",
+    "old_name": "Rasen Shuriken",
+    "proposed_name": "Tiên Pháp: Rasen Shuriken",
+    "kind": "auto",
+    "shape": "projectile_burst",
+    "cast_range_m": 8,
+    "extent": 2.5,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2.45,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "requires active Sage or Kurama-compatible sage; distinct from S2",
+    "vfx_family": "rasenshuriken",
+    "vfx_key": "VFX-NIN-126-S7",
+    "source_refs": [
+      "NARUTO_SAGE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 28,
+    "old_cooldown_s": 20,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S0",
+    "ninja_id": "NIN-042",
+    "old_name": "Kiếm Kusanagi",
+    "proposed_name": "Kiếm Kusanagi",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 1.4,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.85,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic",
+    "vfx_family": "sword",
+    "vfx_key": "VFX-NIN-042-S0",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S1",
+    "ninja_id": "NIN-042",
+    "old_name": "Chidori lưu",
+    "proposed_name": "Chidori Lưu",
+    "kind": "auto",
+    "shape": "circle_self",
+    "cast_range_m": 0,
+    "extent": 1.8,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.45,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "radial shock and short stagger, max 4",
+    "vfx_family": "lightning_aura",
+    "vfx_key": "VFX-NIN-042-S1",
+    "source_refs": [
+      "CHIDORI"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S2",
+    "ninja_id": "NIN-042",
+    "old_name": "Hào long hỏa",
+    "proposed_name": "Hào Long Hỏa",
+    "kind": "auto",
+    "shape": "projectile_burst",
+    "cast_range_m": 6,
+    "extent": 1.6,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.65,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "fire dragon projectile impact burn; max 3",
+    "vfx_family": "fire_dragon",
+    "vfx_key": "VFX-NIN-042-S2",
+    "source_refs": [
+      "SASUKE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S3",
+    "ninja_id": "NIN-042",
+    "old_name": "Chidori senbon",
+    "proposed_name": "Chidori Senbon",
+    "kind": "auto",
+    "shape": "cone",
+    "cast_range_m": 5,
+    "extent": 45,
+    "extent_unit": "degrees",
+    "total_coefficient": 1.4,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "fan of needles total hit budget, no repeated hit per needle",
+    "vfx_family": "lightning_needle",
+    "vfx_key": "VFX-NIN-042-S3",
+    "source_refs": [
+      "CHIDORI"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S4",
+    "ninja_id": "NIN-042",
+    "old_name": "Sharingan quan sát",
+    "proposed_name": "Sharingan",
+    "kind": "auto",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "accuracy/evasion stance; not free hard CC immunity",
+    "vfx_family": "ocular",
+    "vfx_key": "VFX-NIN-042-S4",
+    "source_refs": [
+      "SASUKE_EARLY"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S5",
+    "ninja_id": "NIN-042",
+    "old_name": "Kirin",
+    "proposed_name": "Kirin",
+    "kind": "ultimate",
+    "shape": "circle_ground",
+    "cast_range_m": 8,
+    "extent": 2.5,
+    "extent_unit": "radius_m",
+    "total_coefficient": 3.4,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "manual; 1.2s telegraph; enhanced when storm/heated field; lightning descends at locked point",
+    "vfx_family": "kirin",
+    "vfx_key": "VFX-NIN-042-S5",
+    "source_refs": [
+      "SASUKE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S6",
+    "ninja_id": "NIN-042",
+    "old_name": "Chidori dạng thương",
+    "proposed_name": "Chidori dạng thương",
+    "kind": "auto",
+    "shape": "line",
+    "cast_range_m": 5,
+    "extent": 0.7,
+    "extent_unit": "width_m",
+    "total_coefficient": 1.95,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "fixed lightning lance, pierces up to 3",
+    "vfx_family": "lightning_lance",
+    "vfx_key": "VFX-NIN-042-S6",
+    "source_refs": [
+      "CHIDORI"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-042-S7",
+    "ninja_id": "NIN-042",
+    "old_name": "Amaterasu",
+    "proposed_name": "Amaterasu",
+    "kind": "auto",
+    "shape": "zone_target",
+    "cast_range_m": 6,
+    "extent": 1.1,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "Mangekyo required; black flame 5s total DoT; no permanent unbounded burn",
+    "vfx_family": "black_flame",
+    "vfx_key": "VFX-NIN-042-S7",
+    "source_refs": [
+      "ITACHI",
+      "SASUKE"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 28,
+    "old_cooldown_s": 20,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S0",
+    "ninja_id": "NIN-043",
+    "old_name": "Quái lực",
+    "proposed_name": "Quái lực",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 1.1,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.95,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic",
+    "vfx_family": "melee",
+    "vfx_key": "VFX-NIN-043-S0",
+    "source_refs": [
+      "SAKURA"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S1",
+    "ninja_id": "NIN-043",
+    "old_name": "Chưởng tiên thuật",
+    "proposed_name": "Chưởng Tiên Thuật",
+    "kind": "auto",
+    "shape": "single_ally",
+    "cast_range_m": 4,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.65,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "heal lowest effective HP; no overheal growth",
+    "vfx_family": "heal",
+    "vfx_key": "VFX-NIN-043-S1",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S2",
+    "ninja_id": "NIN-043",
+    "old_name": "Địa chấn quyền",
+    "proposed_name": "Địa Chấn Quyền",
+    "kind": "auto",
+    "shape": "circle_target",
+    "cast_range_m": 1.6,
+    "extent": 1.9,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical ground smash, max 4, push .6",
+    "vfx_family": "ground_smash",
+    "vfx_key": "VFX-NIN-043-S2",
+    "source_refs": [
+      "SAKURA"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S3",
+    "ninja_id": "NIN-043",
+    "old_name": "Địa chấn quyền",
+    "proposed_name": "Quái Lực Liên Kích",
+    "kind": "auto",
+    "shape": "dash_contact",
+    "cast_range_m": 2.5,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.55,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "two-hit physical combo distinct from S2, game adaptation",
+    "vfx_family": "melee_combo",
+    "vfx_key": "VFX-NIN-043-S3",
+    "source_refs": [
+      "SAKURA"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S4",
+    "ninja_id": "NIN-043",
+    "old_name": "Giải trạng thái",
+    "proposed_name": "Giải thuật",
+    "kind": "auto",
+    "shape": "single_ally",
+    "cast_range_m": 4,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "remove up to two dispellable debuffs, priority hard CC",
+    "vfx_family": "cleanse",
+    "vfx_key": "VFX-NIN-043-S4",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S5",
+    "ninja_id": "NIN-043",
+    "old_name": "Bách Hào",
+    "proposed_name": "Bách Hào",
+    "kind": "ultimate",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "manual form; self regeneration not instant all-team heal",
+    "vfx_family": "byakugou",
+    "vfx_key": "VFX-NIN-043-S5",
+    "source_refs": [
+      "SAKURA_WAR"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S6",
+    "ninja_id": "NIN-043",
+    "old_name": "Thông linh Katsuyu",
+    "proposed_name": "Thông linh Katsuyu",
+    "kind": "auto",
+    "shape": "summon",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "healing summon, not generic melee clone; max one, periodic ally heal",
+    "vfx_family": "katsuyu",
+    "vfx_key": "VFX-NIN-043-S6",
+    "source_refs": [
+      "KATSUYU_GAME"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-043-S7",
+    "ninja_id": "NIN-043",
+    "old_name": "Bách Hào hồi phục",
+    "proposed_name": "Bách Hào hồi phục",
+    "kind": "auto",
+    "shape": "circle_self",
+    "cast_range_m": 0,
+    "extent": 3,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "requires Bách Hào; healing pulse up to 6 allies, total coefficient over 3 pulses",
+    "vfx_family": "heal",
+    "vfx_key": "VFX-NIN-043-S7",
+    "source_refs": [
+      "SAKURA_WAR"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 28,
+    "old_cooldown_s": 20,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S0",
+    "ninja_id": "NIN-004",
+    "old_name": "Kunai liên kích",
+    "proposed_name": "Kunai liên kích",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 2,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic",
+    "vfx_family": "kunai",
+    "vfx_key": "VFX-NIN-004-S0",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S1",
+    "ninja_id": "NIN-004",
+    "old_name": "Thổ lưu bích",
+    "proposed_name": "Thổ Lưu Bích",
+    "kind": "auto",
+    "shape": "wall",
+    "cast_range_m": 4,
+    "extent": 2,
+    "extent_unit": "width_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "place temporary wall on valid grid edge; allied movement/LOS rules; not merely shield",
+    "vfx_family": "earth_wall",
+    "vfx_key": "VFX-NIN-004-S1",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S2",
+    "ninja_id": "NIN-004",
+    "old_name": "Thông linh nhẫn khuyển",
+    "proposed_name": "Thông linh nhẫn khuyển",
+    "kind": "auto",
+    "shape": "summon",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "tracking dog closes on marked target and briefly binds; no generic clone",
+    "vfx_family": "ninken",
+    "vfx_key": "VFX-NIN-004-S2",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S3",
+    "ninja_id": "NIN-004",
+    "old_name": "Thủy long đạn",
+    "proposed_name": "Thủy Long Đạn",
+    "kind": "auto",
+    "shape": "projectile_burst",
+    "cast_range_m": 6,
+    "extent": 1.5,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.7,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "water dragon impact, wet, max 3",
+    "vfx_family": "water_dragon",
+    "vfx_key": "VFX-NIN-004-S3",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S4",
+    "ninja_id": "NIN-004",
+    "old_name": "Sharingan quan sát",
+    "proposed_name": "Sharingan quan sát",
+    "kind": "auto",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "short accuracy/evasion boost",
+    "vfx_family": "ocular",
+    "vfx_key": "VFX-NIN-004-S4",
+    "source_refs": [
+      "KAKASHI"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S5",
+    "ninja_id": "NIN-004",
+    "old_name": "Raikiri",
+    "proposed_name": "Raikiri",
+    "kind": "ultimate",
+    "shape": "dash_contact",
+    "cast_range_m": 4,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 3.25,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "manual piercing contact, shock; telegraph and stop at target",
+    "vfx_family": "lightning_dash",
+    "vfx_key": "VFX-NIN-004-S5",
+    "source_refs": [
+      "KAKASHI_WAR"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S6",
+    "ninja_id": "NIN-004",
+    "old_name": "Lôi truyền dẫn",
+    "proposed_name": "Lôi truyền dẫn",
+    "kind": "auto",
+    "shape": "line",
+    "cast_range_m": 4,
+    "extent": 0.7,
+    "extent_unit": "width_m",
+    "total_coefficient": 1.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "lightning cable; source/clone connection needs specific runtime; fallback held",
+    "vfx_family": "lightning_lance",
+    "vfx_key": "VFX-NIN-004-S6",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-004-S7",
+    "ninja_id": "NIN-004",
+    "old_name": "Kamui",
+    "proposed_name": "Kamui",
+    "kind": "ultimate",
+    "shape": "zone_target",
+    "cast_range_m": 6,
+    "extent": 1,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2.4,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "Mangekyo required; delayed spatial distortion, interrupt, no instant-kill boss",
+    "vfx_family": "kamui",
+    "vfx_key": "VFX-NIN-004-S7",
+    "source_refs": [
+      "KAKASHI"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 50,
+    "old_cooldown_s": 35,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S0",
+    "ninja_id": "NIN-060",
+    "old_name": "Kunai liên kích",
+    "proposed_name": "Kunai liên kích",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 2.2,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.8,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic",
+    "vfx_family": "kunai",
+    "vfx_key": "VFX-NIN-060-S0",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S1",
+    "ninja_id": "NIN-060",
+    "old_name": "Hào hỏa cầu",
+    "proposed_name": "Hào Hỏa Cầu",
+    "kind": "auto",
+    "shape": "projectile_burst",
+    "cast_range_m": 6,
+    "extent": 1.5,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.55,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "fire projectile area burn max 3",
+    "vfx_family": "fireball",
+    "vfx_key": "VFX-NIN-060-S1",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S2",
+    "ninja_id": "NIN-060",
+    "old_name": "Tsukuyomi",
+    "proposed_name": "Tsukuyomi",
+    "kind": "auto",
+    "shape": "single",
+    "cast_range_m": 5,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.75,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "genjutsu single, 2s control + mental damage, resist and boss cap",
+    "vfx_family": "genjutsu",
+    "vfx_key": "VFX-NIN-060-S2",
+    "source_refs": [
+      "ITACHI"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S3",
+    "ninja_id": "NIN-060",
+    "old_name": "Ảnh phân thân",
+    "proposed_name": "Ảnh phân thân",
+    "kind": "auto",
+    "shape": "summon",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "one illusion/clone decoy, threat diversion, no recursive cast",
+    "vfx_family": "clone",
+    "vfx_key": "VFX-NIN-060-S3",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S4",
+    "ninja_id": "NIN-060",
+    "old_name": "Amaterasu",
+    "proposed_name": "Amaterasu",
+    "kind": "auto",
+    "shape": "zone_target",
+    "cast_range_m": 6,
+    "extent": 1.2,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "black flame 5s total, status/zone distinction, eye cost",
+    "vfx_family": "black_flame",
+    "vfx_key": "VFX-NIN-060-S4",
+    "source_refs": [
+      "ITACHI"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S5",
+    "ninja_id": "NIN-060",
+    "old_name": "Susanoo",
+    "proposed_name": "Susanoo",
+    "kind": "ultimate",
+    "shape": "self",
+    "cast_range_m": 0,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "manual form: defensive avatar; unlock and finite duration",
+    "vfx_family": "susanoo",
+    "vfx_key": "VFX-NIN-060-S5",
+    "source_refs": [
+      "ITACHI_WAR"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S6",
+    "ninja_id": "NIN-060",
+    "old_name": "Susanoo Khiên Yata",
+    "proposed_name": "Susanoo: Khiên Yata",
+    "kind": "auto",
+    "shape": "arc_self",
+    "cast_range_m": 0,
+    "extent": 120,
+    "extent_unit": "degrees",
+    "total_coefficient": 1.5,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "requires Susanoo; directional shield against front arc, no total invulnerability",
+    "vfx_family": "susanoo_shield",
+    "vfx_key": "VFX-NIN-060-S6",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-060-S7",
+    "ninja_id": "NIN-060",
+    "old_name": "Susanoo Kiếm Totsuka",
+    "proposed_name": "Susanoo: Kiếm Totsuka",
+    "kind": "ultimate",
+    "shape": "line",
+    "cast_range_m": 4,
+    "extent": 1.2,
+    "extent_unit": "width_m",
+    "total_coefficient": 3.2,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "requires Susanoo; seal short ordinary targets, boss resistance; no permanent delete",
+    "vfx_family": "susanoo_sword",
+    "vfx_key": "VFX-NIN-060-S7",
+    "source_refs": [
+      "ITACHI_WAR"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 50,
+    "old_cooldown_s": 35,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S0",
+    "ninja_id": "NIN-093",
+    "old_name": "Đòn nhanh",
+    "proposed_name": "Kunai nhanh",
+    "kind": "basic",
+    "shape": "single",
+    "cast_range_m": 2.2,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.85,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "physical basic",
+    "vfx_family": "kunai",
+    "vfx_key": "VFX-NIN-093-S0",
+    "source_refs": [],
+    "source_scope": "game adaptation or unverified technique; source review needed",
+    "old_chakra": 0,
+    "old_cooldown_s": 1.2,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S1",
+    "ninja_id": "NIN-093",
+    "old_name": "Phi lôi thần",
+    "proposed_name": "Phi Lôi Thần",
+    "kind": "auto",
+    "shape": "teleport_mark",
+    "cast_range_m": 7,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "teleport to valid marked point only; no random blink or wall penetration",
+    "vfx_family": "raijin",
+    "vfx_key": "VFX-NIN-093-S1",
+    "source_refs": [
+      "RAIJIN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 12,
+    "old_cooldown_s": 6,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S2",
+    "ninja_id": "NIN-093",
+    "old_name": "Rasengan",
+    "proposed_name": "Rasengan",
+    "kind": "auto",
+    "shape": "dash_contact",
+    "cast_range_m": 3,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.7,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "contact strike; marked target enables approach",
+    "vfx_family": "rasengan",
+    "vfx_key": "VFX-NIN-093-S2",
+    "source_refs": [
+      "RASENGAN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 16,
+    "old_cooldown_s": 8,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S3",
+    "ninja_id": "NIN-093",
+    "old_name": "Phi lôi thần đánh dấu",
+    "proposed_name": "Phi Lôi Thần đánh dấu",
+    "kind": "auto",
+    "shape": "projectile_first",
+    "cast_range_m": 6,
+    "extent": 0.35,
+    "extent_unit": "radius_m",
+    "total_coefficient": 0.45,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "kunai hit places owned marker; max 3 markers per caster",
+    "vfx_family": "raijin_mark",
+    "vfx_key": "VFX-NIN-093-S3",
+    "source_refs": [
+      "RAIJIN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 18,
+    "old_cooldown_s": 11,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S4",
+    "ninja_id": "NIN-093",
+    "old_name": "Rasengan liên kích",
+    "proposed_name": "Rasengan liên kích",
+    "kind": "auto",
+    "shape": "single",
+    "cast_range_m": 2.5,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 1.85,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "mark-assisted double hit total, mark consumed per design",
+    "vfx_family": "rasengan",
+    "vfx_key": "VFX-NIN-093-S4",
+    "source_refs": [
+      "MINATO_RASEN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S5",
+    "ninja_id": "NIN-093",
+    "old_name": "Phi lôi thần liên kích",
+    "proposed_name": "Phi Lôi Thần liên kích",
+    "kind": "ultimate",
+    "shape": "teleport_mark",
+    "cast_range_m": 8,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 3.4,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "manual marked target burst, safe adjacent arrival; total capped over 3 strikes",
+    "vfx_family": "raijin",
+    "vfx_key": "VFX-NIN-093-S5",
+    "source_refs": [
+      "MINATO",
+      "RAIJIN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 45,
+    "old_cooldown_s": 30,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S6",
+    "ninja_id": "NIN-093",
+    "old_name": "Phi lôi thần cấp hai",
+    "proposed_name": "Phi Lôi Thần cấp hai",
+    "kind": "auto",
+    "shape": "teleport_mark",
+    "cast_range_m": 8,
+    "extent": 0,
+    "extent_unit": "radius_m",
+    "total_coefficient": 2.2,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "throw marked kunai then blink behind target, dodge window limited",
+    "vfx_family": "raijin",
+    "vfx_key": "VFX-NIN-093-S6",
+    "source_refs": [
+      "MINATO",
+      "RAIJIN"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 20,
+    "old_cooldown_s": 14,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  },
+  {
+    "skill_id": "NIN-093-S7",
+    "ninja_id": "NIN-093",
+    "old_name": "Kết giới dịch chuyển",
+    "proposed_name": "Kết giới dịch chuyển",
+    "kind": "auto",
+    "shape": "wall",
+    "cast_range_m": 4,
+    "extent": 2,
+    "extent_unit": "width_m",
+    "total_coefficient": 0,
+    "coefficient_note": "proposed total across hits; physical/ninjutsu/mental/heal/shield by mechanic; no canon numeric data",
+    "mechanic": "temporary directional intercept redirects one eligible projectile; no infinite reflection",
+    "vfx_family": "space_barrier",
+    "vfx_key": "VFX-NIN-093-S7",
+    "source_refs": [
+      "MINATO"
+    ],
+    "source_scope": "partial technique or character evidence; game mechanics proposed",
+    "old_chakra": 28,
+    "old_cooldown_s": 20,
+    "progression": {
+      "preserve_existing_grade_level_mastery_and_trial_ids": true,
+      "grade_3_branches": [
+        "power",
+        "mechanic_or_geometry"
+      ],
+      "branch_detail": "manual tuning required; no generic area branch on self/single unless defined"
+    },
+    "status": "PROPOSED_NOT_RUNTIME"
+  }
+]

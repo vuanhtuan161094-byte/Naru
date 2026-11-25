@@ -1,0 +1,144 @@
+{
+  "forms": [
+    {
+      "form_id": "NIN-001-F1",
+      "ninja_id": "NIN-001",
+      "name": "Chakra Cửu Vĩ sơ khai",
+      "realm": 3,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-004-F1",
+      "ninja_id": "NIN-004",
+      "name": "Sharingan",
+      "realm": 3,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-004-F2",
+      "ninja_id": "NIN-004",
+      "name": "Mangekyo",
+      "realm": 5,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-041-F1",
+      "ninja_id": "NIN-041",
+      "name": "Tiên nhân",
+      "realm": 3,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-041-F2",
+      "ninja_id": "NIN-041",
+      "name": "Chakra Kurama",
+      "realm": 5,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-041-F3",
+      "ninja_id": "NIN-041",
+      "name": "Lục Đạo",
+      "realm": 7,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-042-F1",
+      "ninja_id": "NIN-042",
+      "name": "Mangekyo",
+      "realm": 3,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-042-F2",
+      "ninja_id": "NIN-042",
+      "name": "Vĩnh Hằng Mangekyo",
+      "realm": 5,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-042-F3",
+      "ninja_id": "NIN-042",
+      "name": "Susanoo",
+      "realm": 7,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-043-F1",
+      "ninja_id": "NIN-043",
+      "name": "Bách Hào",
+      "realm": 3,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-060-F1",
+      "ninja_id": "NIN-060",
+      "name": "Mangekyo",
+      "realm": 3,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-060-F2",
+      "ninja_id": "NIN-060",
+      "name": "Susanoo",
+      "realm": 5,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-126-F1",
+      "ninja_id": "NIN-126",
+      "name": "Tiên nhân",
+      "realm": 3,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    },
+    {
+      "form_id": "NIN-126-F2",
+      "ninja_id": "NIN-126",
+      "name": "Chakra Kurama",
+      "realm": 5,
+      "rule": "Keep unlock and stable ID; mutually exclusive per actor; explicit technique gating and visual form adapter required",
+      "status": "PROPOSED_REVIEW"
+    }
+  ],
+  "combos": [
+    {
+      "id": "SKP1-COMBO-TEAM7",
+      "participants": [
+        "NIN-041",
+        "NIN-042",
+        "NIN-043"
+      ],
+      "trigger": "Sakura ground smash interrupts; Naruto or Sasuke follow-up within 2s; separate authored skill damage, bonus capped at 15% once per 20s",
+      "vfx": "combined team 7 cue",
+      "status": "PROPOSED_NOT_RUNTIME"
+    },
+    {
+      "id": "SKP1-COMBO-MINATO-NARUTO",
+      "participants": [
+        "NIN-093",
+        "NIN-041"
+      ],
+      "trigger": "Minato mark then Naruto contact Rasengan within 2s; mark is owner-scoped and does not permit arbitrary teleport; bonus capped at 15%",
+      "vfx": "gold mark and blue contact",
+      "status": "PROPOSED_NOT_RUNTIME"
+    }
+  ],
+  "baryon": {
+    "status": "HOLD",
+    "reason": "era/irreversible Kurama consequence, not repeatable default form",
+    "source_ref": "BARYON"
+  }
+}

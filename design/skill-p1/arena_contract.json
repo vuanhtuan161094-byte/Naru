@@ -1,0 +1,186 @@
+{
+  "version": "SKILL-P1-ARENA-V2-PROPOSED",
+  "status": "PENDING_OWNER_REVIEW",
+  "locked_baseline": "6v6 isometric free movement after formation, AI normal skills and manual ultimate, no time limit",
+  "ground": {
+    "width_m": 12,
+    "height_m": 8,
+    "tile_m": 1,
+    "grid": [
+      12,
+      8
+    ],
+    "coordinates": "world x,y in [0,12]x[0,8], tile center i+0.5,j+0.5; screen projection only",
+    "projection": "screen=(origin_x+(x-y)*half_tile_w,origin_y+(x+y)*half_tile_h), fit bounds to viewport",
+    "body_radius_m": 0.35,
+    "summon_radius_m": 0.25,
+    "boss_radius_m": 0.65,
+    "cell_occupancy": "not turn-based; multiple bodies per tile only if no overlap",
+    "formation": {
+      "player_front": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "player_back": [
+        [
+          1.5,
+          2
+        ],
+        [
+          1.5,
+          4
+        ],
+        [
+          1.5,
+          6
+        ]
+      ],
+      "enemy_front": [
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          6
+        ]
+      ],
+      "enemy_back": [
+        [
+          10.5,
+          2
+        ],
+        [
+          10.5,
+          4
+        ],
+        [
+          10.5,
+          6
+        ]
+      ]
+    },
+    "terrain": "grid for walkability/cost, obstacles + dynamic walls, continuous path following, local separation and swept collision; no clipping or teleport without valid landing"
+  },
+  "timing": {
+    "tick_hz": 20,
+    "ai_interval_ticks": 4,
+    "windup_release_recovery": true,
+    "hit_events": [
+      "cast_start",
+      "release",
+      "projectile_spawn",
+      "contact",
+      "damage_confirmed",
+      "miss",
+      "status_applied",
+      "zone_tick",
+      "expire"
+    ],
+    "no_hard_timeout": true
+  },
+  "shape_library": [
+    {
+      "id": "single",
+      "rule": "one valid target; range measured center distance minus target radius"
+    },
+    {
+      "id": "single_ally",
+      "rule": "one ally, optionally self"
+    },
+    {
+      "id": "self",
+      "rule": "caster only"
+    },
+    {
+      "id": "circle_self",
+      "rule": "circle centered on caster at release"
+    },
+    {
+      "id": "circle_target",
+      "rule": "circle centered on target snapshot at release"
+    },
+    {
+      "id": "circle_ground",
+      "rule": "locked ground point at cast; dodgeable"
+    },
+    {
+      "id": "line",
+      "rule": "fixed origin and direction; swept capsule; width total"
+    },
+    {
+      "id": "cone",
+      "rule": "sector angle in degrees and range"
+    },
+    {
+      "id": "arc_self",
+      "rule": "directional front protection/attack"
+    },
+    {
+      "id": "projectile_first",
+      "rule": "fixed path hits first valid body/wall"
+    },
+    {
+      "id": "projectile_burst",
+      "rule": "travel trajectory then AoE at impact"
+    },
+    {
+      "id": "zone_target",
+      "rule": "persistent world-space zone, interval, expiry, hit budget"
+    },
+    {
+      "id": "dash_contact",
+      "rule": "swept displacement then hit at contact"
+    },
+    {
+      "id": "teleport_mark",
+      "rule": "owned mark with safe landing and expiry"
+    },
+    {
+      "id": "summon",
+      "rule": "safe free spawn location, cap and TTL"
+    },
+    {
+      "id": "wall",
+      "rule": "walkability and optional projectile obstruction"
+    }
+  ],
+  "ai": {
+    "roles": [
+      "frontline",
+      "melee",
+      "ranged",
+      "support",
+      "control",
+      "assassin"
+    ],
+    "target_score": "role+threat+distance+vulnerability+mark; stable UID tie break; retain target until invalid or clearly better",
+    "movement": "melee seeks adjacent slot, ranged holds desired range, healer stays behind, retreat if threatened; no forced pileup",
+    "ultimate": "player click queues eligible manual skill, AI chooses target/point and telegraph; no default player auto ult"
+  },
+  "hit_rules": {
+    "friendly_fire": false,
+    "range_at_start_and_release": true,
+    "ground_lock": "fixed at cast",
+    "target_lock": "UID; cancel if invalid before release, no silent retarget",
+    "projectile": "fixed start/dir/speed, swept collision, no homing unless explicit",
+    "aoe": "intersect target hurt circle, deterministic distance then UID cap",
+    "multi_hit": "total coefficient apportioned over declared hits; dedupe by cast_id/target_uid/hit_index",
+    "zones": "fixed world shape, ticks interval, no unlimited recursion",
+    "vfx": "same origin, shape, facing, release and impact as simulation; never determines hit"
+  }
+}

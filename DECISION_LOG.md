@@ -10,3 +10,8 @@
 | DEC-007 | PROPOSED | D4 numerical defaults, Godot 4.4.1 currently tested, not permanent version lock. |
 | DEC-008 | HOLD | Production art until quality approval, binary availability, rights and runtime verification. |
 Authority: design/d1/Master_GDD_V1.0.md, design/MASTER_GDD_D2.md, design/d4/DECISION_REGISTER.md; user decisions override proposals. Append changes with evidence and affected IDs.
+
+## SKILL-P1 (25/11/2026)
+- DEC-009 PROPOSED: hybrid 12x8 continuous arena, collision/target geometry and event contract. Owner questioned current combat and requested full skill audit; approval of new geometry pending.
+- DEC-010 PROPOSED: 64 anchor skill revisions; preserve IDs, no runtime overwrite until geometry and content approved. Remaining 1088 require individual review.
+

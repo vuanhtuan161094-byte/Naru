@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "source_gameplay_sha": "467ddf6918178b703481cfa43b2bbf5776ae7696",
+  "definition": "Exact signature = target,shape,range,radius,line width,max targets,element,effect payload; excludes costs/timing. Matching signature is a review flag, not necessarily defect or duplicate skill.",
+  "counts": {
+    "ninjas": 144,
+    "skills": 1152,
+    "forms": 54,
+    "duplicate_name_ninjas": 55,
+    "duplicate_geometry_ninjas": 103,
+    "unique_effect_geometry_signatures": 350,
+    "shapes": {
+      "single": 741,
+      "self": 256,
+      "line": 114,
+      "circle": 41
+    },
+    "damage_coefficients": {
+      "1.55": 323,
+      "0.45": 218,
+      "0.8": 144,
+      "3.2": 78,
+      "1.25": 19
+    },
+    "anchor_versions": 8,
+    "anchor_skill_proposals": 64,
+    "remaining_individual_skill_review": 1088
+  },
+  "canon_scope": "No full 144-character canon audit; official pages inspected for anchors only; source pointers not proof of each skill; 1088 non-anchor records queued.",
+  "sources": {
+    "RASENGAN": "https://naruto-official.com/en/news/01_1802",
+    "NARUTO_SAGE": "https://naruto-official.com/en/news/01_1321",
+    "NARUTO_WIND": "https://naruto-official.com/en/news/01_1316",
+    "BARYON": "https://naruto-official.com/en/news/01_1895",
+    "CHIDORI": "https://naruto-official.com/en/news/01_1715",
+    "SASUKE": "https://naruto-official.com/en/news/01_1858",
+    "SASUKE_EARLY": "https://naruto-official.com/en/news/01_1856",
+    "SAKURA": "https://naruto-official.com/en/news/01_1743",
+    "SAKURA_WAR": "https://naruto-official.com/en/news/01_1342",
+    "KATSUYU_GAME": "https://naruto-official.com/en/news/01_1803",
+    "KAKASHI": "https://naruto-official.com/en/news/01_1903",
+    "KAKASHI_WAR": "https://naruto-official.com/en/news/01_1327",
+    "ITACHI": "https://naruto-official.com/en/anime/naruto2/list/01_581",
+    "ITACHI_WAR": "https://naruto-official.com/en/news/01_1333",
+    "MINATO": "https://naruto-official.com/en/news/01_1517",
+    "RAIJIN": "https://naruto-official.com/en/news/01_1709",
+    "MINATO_RASEN": "https://naruto-official.com/en/news/01_1521"
+  },
+  "checks": {
+    "count_144": true,
+    "count_1152": true,
+    "all_skills_named": true,
+    "all_anchor_ids": true,
+    "unique_anchor_ids": true,
+    "all_forms": true
+  }
+}
