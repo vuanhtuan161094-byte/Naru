@@ -8,3 +8,8 @@ ID, source branch/SHA, exact asset files+IDs, SHA-256, actual binary location, u
 3. Copy only approved files/metadata into existing game with expected HEAD; do not merge branches. Coordinate concurrent work.
 4. Godot smoke plus screenshot/video; record destination SHA, tested scope, rollback. Mark INTEGRATED only after runtime evidence.
 5. Web DEV build can use labeled placeholders; no release claim until mandatory gates pass.
+
+## 2026-11-25 coordinator review — ART-P8 R2 / Web DEV V2
+- Art review request read at f36081d; private R7 and runtime evidence ZIPs recovered from Library, both exact SHA256 match, ZIP integrity PASS. R7 manifest 52/52 hashes; six RGBA 96x112. R2 screenshot, MP4 and runtime-log hashes match. R4 reference recovered privately.
+- Local evidence is actual Godot Combat fixture on gameplay a7ecee6, not normal campaign and not current gameplay 5919893. Static actor movement, six mirrored identities, DEV summon fallback, no limb clips. CI 45559348599 only safe DEV textures. No approval of individual assets or distribution rights inferred.
+- Current Web DEV V2 (CI 45559516356, artifact 14997755844) has no private R7 art. Reconcile adapter against current HEAD, validate one existing game in disposable private checkout and actual campaign path before asking for production integration permission. No cross-branch write, no merge, no private assets pushed. Integration remains REVIEW / not integrated.

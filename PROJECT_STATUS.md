@@ -1,13 +1,20 @@
-# PROJECT_STATUS — F1 snapshot 25/11/2026
-Naru One Game. Snapshot, not live status. Read current HEAD on next review.
-Design 86f784ec251712ae780f7fc555bf2ca89ff074a0, PR #1 open draft not merged. Gameplay 53739d1d4925ccb97bba07fad0f09216b242cba8: GP-P3A CI 45549766017 success, skill level/grade and gear transactions (workshop fixture only); no export/full QA. Prior GP-P2B CI 45549608200 also passed. Art 59b2cced2f84c418ad651a51b95d3d711cae3045: six R5 candidates and four R3 style tests, manifests only, no approved production binaries. Main b44b99dc0e3749e816cdb6c82fb8ba15219465cd.
-## Live documents
-- [Gameplay status](https://github.com/vuanhtuan161094-byte/Naru/blob/implementation/e3-gameplay/GAMEPLAY_STATUS.md), [backlog](https://github.com/vuanhtuan161094-byte/Naru/blob/implementation/e3-gameplay/GAMEPLAY_BACKLOG.md).
-- [Art status](https://github.com/vuanhtuan161094-byte/Naru/blob/art/e3-art01/ART_STATUS.md), [backlog](https://github.com/vuanhtuan161094-byte/Naru/blob/art/e3-art01/ART_BACKLOG.md), [registry](https://github.com/vuanhtuan161094-byte/Naru/blob/art/e3-art01/ASSET_REGISTRY.json).
-- [Decisions](DECISION_LOG.md), [integration](INTEGRATION_LOG.md), [handover](HANDOVER.md).
-## Next
-01 GP-P3B, GP-P5A real workshop construction, remaining GP-P2C effect semantics, then remaining systems. 02 ART-P1R6 + independent VFX/environment. 00 review only on demand, owner decisions, integration/build.
-Risks: R3/R5 binaries private chat only, need durable storage; CI not release acceptance; D4 proposals not all verified. No merge/no Codex Cloud. F1 management updates do not constitute game code or asset production.
-
-## F1 management commits
-Gameplay status/backlog: 844d15e5fa017a55be6dd6d666468a1197d5bd61; art status/backlog/registry: 04cd78b70fcb8909348afbf92a44ddee70534f4e. These are documentation/registry commits, not new gameplay or art production. GP-P3A landed during F1; expected-SHA check prevented overwriting it.
+# PROJECT_STATUS — Coordinator review 2026-11-25 13:44 ICT
+Snapshot, not a live dashboard. Re-read heads before next review. One Naru Godot game; no Codex Cloud, no merge.
+## Reviewed HEADs
+- Gameplay 5919893de0404ed9a48b7b6babdfbb30e17b9184: documentation after ABC/Web DEV V2. Exact HEAD CI 45559516356 success (registry, integration, 90-day sim, Web export, Chromium, artifacts). Last implementation evidence a77ad31bbc8bb6d8a78a2a3592a4354fbef2c338, CI 45559078672, 150 scoped headless assertions. Prior failure runs superseded by ABC-Fix, not hidden.
+- Art f36081df4f93c30078c2c3a4019dd5dd9f3d983d: CI 45559348599 success, safe DEV textures only. Private local R2 recorded against older gameplay a7ecee6ad6a7f58f7bf928a297e8e5373737c950, not latest ABC.
+- Design prior c53b56639497c7fa3818098878dfe51922ee271c, PR #1 draft/open/not merged. Main b44b99dc0e3749e816cdb6c82fb8ba15219465cd.
+## Web DEV V2
+https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45559516356/artifacts/14997755844 (9,916,507 bytes; GitHub artifact digest sha256:7b9d69541e9c23fb7118f3d1c145cb7e1c932fbcd48bceeb7c42409045d650ca, expires 2026-12-25). Menu screenshot artifact 14997412844. Exported Godot WASM, browser automated probe PASS; serve complete extracted folder via HTTP. Not public deployment, not final release; no private R7 asset integration. Artifact metadata verified; latest ZIP not downloaded/rehashed here.
+## Gameplay
+- 144 ninja / 1152 authored skill records; dispatch coverage in controlled fixtures, not all skill timing/AI/pathing/balance. 48 stat formulas, skill/gear growth, quality/trial, forms, 9 DEV beast kits implemented in part. Native bloodlines exist; compatibility implants/Rinnegan held.
+- 30 buildings/63 recipes/150 resources/15 professions; 90-day seeded economy sim PASS with Ryo surplus and stock saturation; not all chains verified. 
+- 60 territories/9 factions, squads/travel/defense, strategic NPC wars; player raid/capture and NPC balance require acceptance.
+- 120/120 stages high-power fixture + reward commits, 24 boss payloads, 81 quest objectives, 288 trial links. Not normal player progression/full claim/trial completion. Save validation/import/export/recovery partial. Functional DEV UI, manual click/touch/full UX missing. Android/PC exports not verified, 21 final gates not fully passed.
+## Art and independent coordinator verification
+- Six R7 character static candidates; style direction owner-approved, individual assets REVIEW_ONLY; 138 character templates missing; 54 form templates pending. Six VFX candidates (24 sheets, 144 distinct frames per clip aggregate per art records); 1146 skill-key mappings missing. 12 tiles + three plates + one arena. Actual four-direction limb clips 0/144 for six sample ninjas. No approved or remotely integrated production asset.
+- Library private Naru_F1D_review_pack_v2.zip (6,787,391 bytes) independently retrieved, SHA256 5c21d3bcfd94197b952f162c19a9371e62299d72bf644920abaf8b4a1ba02895, ZIP integrity PASS, 52/52 manifest file hashes PASS, 6/6 RGBA 96x112. Private Naru_ART_P8_private_runtime_R2.zip (2,083,393 bytes) retrieved, SHA256 29c072451dc2bcaf562d335cdcd63057b0ab1de0f7ccd50fe881f37fc59d795d, ZIP integrity PASS. MP4/screenshot/runtime-log digests match evidence manifest. Runtime log ART_RUNTIME_OK initial=12 ticks=280 moved=true sprites=4300 tiles=40416 vfx=468 releases=128; 421 frames/14.03 seconds. This is a previous local capture on older base, not rerun by coordinator. Visually inspect screenshot: recognizable R7 static sprites, forest, HP bars, DEV summon fallback and clustered combat. Not actual limb animation or player campaign.
+- Recovered private R4 reference from Library /Naruto/Naru_ART01_R4_character_review.jpg, SHA256 f17bc686fb947345553f85c9f075093edadce7398a972db43be591c883f3c26e. Art stream can resume comparison; no public image commit.
+## Next recommended
+00: private integration reconciliation on newest gameplay HEAD; review actual campaign path and 6v6 with adapter, keep fallback and private files excluded. Owner approval required before remote production integration. 01: finish gameplay residuals, real progression, player capture/raid, economy sinks, save edge cases, user-facing functional UI and browser manual play. 02: prioritize true walk/attack/cast frames for six anchors, VFX event timing, summon fallback, environment collision/geometry; extend only after runtime visual acceptance. No production merge. Avoid repeating completed broad fixture tests without a specific defect.
+Live docs: gameplay GAMEPLAY_STATUS.md / GAMEPLAY_BACKLOG.md; art ART_STATUS.md / ART_BACKLOG.md / ASSET_REGISTRY.json. 
