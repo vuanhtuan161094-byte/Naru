@@ -1,14 +1,15 @@
 # ART_BACKLOG
 | ID | State | Scope |
 |---|---|---|
-| ART-P1R3 | REVIEW | 4 style-test manifests, not production. |
-| ART-P1R5 | REVIEW | 6 static candidates; missing repo binary, not approved. |
-| ART-P1R6 | READY | Recover R4/reference if available, refine six anchor ninja, true three-quarter pose, pixel quality, JPEG preview and private RGBA/ZIP with hash/durable path. |
-| ART-P2 | BACKLOG | After style approval, 4 directions, idle/walk/attack/cast/hit/fall, distinct frame-by-frame poses, metadata, GIF/video. |
-| ART-P3 | READY | Independent VFX families and 3–5 actual samples; Rasengan/Chidori/Susanoo; charge/travel/impact/fade. |
-| ART-P4 | BACKLOG | 18+48+72 additional ninja after six anchors, runtime-scale consistency. |
-| ART-P5 | BACKLOG | 54 form candidates, 9 bijuu, 11 summons, bosses. |
+| ART-P1R3 | REVIEW | Historical 4 style-test manifests, not production. |
+| ART-P1R5 | REVIEW | Historical superseded six static candidates; no repo binary. |
+| ART-P1R6 | REVIEW | Six normalized static candidates, JPEG/PNG/atlas, private Library ZIP confirmed; R4 missing, owner art review pending. |
+| ART-P2 | BACKLOG | After style approval, 4 directions, 6 actions, distinct poses and timing. |
+| ART-P3 | REVIEW | VFX01 actual 3 candidates / 12 phase sheets / 60 frames; raster GIF only; refine shape/impact/fade and attachment. |
+| ART-P3R2 | READY | Improve VFX01 aesthetic and attachment; test sprite-first effects independently, preserve VFX keys. |
+| ART-P4 | BACKLOG | 138 additional ninja after six anchors. |
+| ART-P5 | BACKLOG | 54 forms, 9 bijuu, 11 summons, bosses. |
 | ART-P6 | READY | Isometric battle environment, village panorama, fixed building art; coordinate geometry. |
-| ART-P7 | BACKLOG | Portrait/icons/UI art, family variants mapped to 1152 VFX keys. |
+| ART-P7 | BACKLOG | Portrait/icons/UI art and VFX family variants. |
 | ART-P8 | BACKLOG | Approved files + metadata handoff, permission, Godot integration review. |
-If reference unavailable mark blocker and proceed with independent tasks. No rig/poster substitutes. Approval and rights separate.
+Next independent batch ART-P6 + ART-P3R2. No rig/poster substitutes. Approval, durable storage, rights and runtime integration are separate gates.

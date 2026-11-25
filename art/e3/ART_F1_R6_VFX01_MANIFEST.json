@@ -1,0 +1,890 @@
+{
+  "batch": "F1-ART-R6-VFX01",
+  "base_sha": "04cd78b70fcb8909348afbf92a44ddee70534f4e",
+  "design_sha": "c53b56639497c7fa3818098878dfe51922ee271c",
+  "character_archive": {
+    "storage": "Private ChatGPT Library",
+    "filename": "Naru_ART_P1_R6_private.zip",
+    "sha256": "c207da51c9ba099846faf2b849b1d65e71f19e61a26ee3d7fe9f85c1552fbfd9",
+    "upload_confirmed": true
+  },
+  "vfx_archive": {
+    "storage": "Private ChatGPT Library",
+    "filename": "Naru_ART_P3_VFX01.zip",
+    "sha256": "5059c6ffe8eb6872e4b7ab9b93c1fa9bf737c2d76f91f0ecad8689bf287c2cc6",
+    "upload_confirmed": true
+  },
+  "characters": [
+    {
+      "id": "NIN-041",
+      "kind": "character_static",
+      "status": "REVIEW_ONLY",
+      "source": "Generated R6 fan art; alpha threshold and largest component, nearest resize, 48-color normalization",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "bbox": [
+        20,
+        16,
+        73,
+        104
+      ],
+      "sha256": "92b6dc009a70697c076c257a7ac139a93ca868ff34239a0fbb0f04a81fed7524",
+      "local_path": "sprites/NIN-041.png",
+      "atlas_rect": [
+        0,
+        0,
+        96,
+        112
+      ],
+      "clips": [],
+      "direction": "three_quarter_candidate"
+    },
+    {
+      "id": "NIN-042",
+      "kind": "character_static",
+      "status": "REVIEW_ONLY",
+      "source": "Generated R6 fan art; alpha threshold and largest component, nearest resize, 48-color normalization",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "bbox": [
+        25,
+        16,
+        72,
+        104
+      ],
+      "sha256": "c9e58d9de0ec6738bd46af468bc14282c7429217ce1156128e3eb183e7f8d968",
+      "local_path": "sprites/NIN-042.png",
+      "atlas_rect": [
+        96,
+        0,
+        96,
+        112
+      ],
+      "clips": [],
+      "direction": "three_quarter_candidate"
+    },
+    {
+      "id": "NIN-043",
+      "kind": "character_static",
+      "status": "REVIEW_ONLY",
+      "source": "Generated R6 fan art; alpha threshold and largest component, nearest resize, 48-color normalization",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "bbox": [
+        26,
+        16,
+        72,
+        104
+      ],
+      "sha256": "6e3f0e711466dba90346316914efd3f88092e40a128ec6a6c57bc6fd8500dd4f",
+      "local_path": "sprites/NIN-043.png",
+      "atlas_rect": [
+        192,
+        0,
+        96,
+        112
+      ],
+      "clips": [],
+      "direction": "three_quarter_candidate"
+    },
+    {
+      "id": "NIN-004",
+      "kind": "character_static",
+      "status": "REVIEW_ONLY",
+      "source": "Generated R6 fan art; alpha threshold and largest component, nearest resize, 48-color normalization",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "bbox": [
+        24,
+        16,
+        71,
+        104
+      ],
+      "sha256": "c8f731a71f05e0f1416d4b18d9c26a958a7901c2229cf699886d39a2e7363b62",
+      "local_path": "sprites/NIN-004.png",
+      "atlas_rect": [
+        288,
+        0,
+        96,
+        112
+      ],
+      "clips": [],
+      "direction": "three_quarter_candidate"
+    },
+    {
+      "id": "NIN-060",
+      "kind": "character_static",
+      "status": "REVIEW_ONLY",
+      "source": "Generated R6 fan art; alpha threshold and largest component, nearest resize, 48-color normalization",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "bbox": [
+        26,
+        16,
+        73,
+        104
+      ],
+      "sha256": "86e2b60fa43f1d1074d1d888cc2fc7cf76e78eec2141d6ba49f083145d9669e7",
+      "local_path": "sprites/NIN-060.png",
+      "atlas_rect": [
+        384,
+        0,
+        96,
+        112
+      ],
+      "clips": [],
+      "direction": "three_quarter_candidate"
+    },
+    {
+      "id": "NIN-093",
+      "kind": "character_static",
+      "status": "REVIEW_ONLY",
+      "source": "Generated R6 fan art; alpha threshold and largest component, nearest resize, 48-color normalization",
+      "cell": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        104
+      ],
+      "bbox": [
+        16,
+        16,
+        83,
+        104
+      ],
+      "sha256": "0dca4335b9fbd619e7254cab1abef714c79700f3285883d4b7a85b1870f982e2",
+      "local_path": "sprites/NIN-093.png",
+      "atlas_rect": [
+        480,
+        0,
+        96,
+        112
+      ],
+      "clips": [],
+      "direction": "three_quarter_candidate"
+    }
+  ],
+  "vfx": [
+    {
+      "id": "VFX-NIN-041-S2",
+      "kind": "vfx",
+      "status": "REVIEW_ONLY",
+      "source": "Original procedural raster frames",
+      "cell": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        64
+      ],
+      "clips": [
+        {
+          "phase": "charge",
+          "path": "VFX-NIN-041-S2/charge.png",
+          "sha256": "76bad4f708eb613224fa5ffba4ec51c87e9c8c4e96a82042e48a7c277dce7e3c",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "travel",
+          "path": "VFX-NIN-041-S2/travel.png",
+          "sha256": "ad9d7cf173b492caac678b8d72b339944f695515376ab84f364b72cf0ae22283",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "impact",
+          "path": "VFX-NIN-041-S2/impact.png",
+          "sha256": "f2bfa4b9ebb29d71e93b03cabf890d2c29f938ffd58299a9bab88d574092b0c0",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "residual",
+          "path": "VFX-NIN-041-S2/residual.png",
+          "sha256": "5819e390518c8978a5839df420ca4a4b7c03720ef593c63f977146123a8cde3a",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VFX-NIN-042-S1",
+      "kind": "vfx",
+      "status": "REVIEW_ONLY",
+      "source": "Original procedural raster frames",
+      "cell": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        64
+      ],
+      "clips": [
+        {
+          "phase": "charge",
+          "path": "VFX-NIN-042-S1/charge.png",
+          "sha256": "9175ed3abe1e622158e0fd7c8b10a433237fb359d5364dafcf362c08d23be155",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "travel",
+          "path": "VFX-NIN-042-S1/travel.png",
+          "sha256": "f30e3fdc000f855c09e3288f4b9b95888adfe09e324d673be054d8019944622e",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "impact",
+          "path": "VFX-NIN-042-S1/impact.png",
+          "sha256": "d36bcfa960dcd8bde44c059e97c8bf89bb06c196aeafa0720a7c72615b5aa655",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "residual",
+          "path": "VFX-NIN-042-S1/residual.png",
+          "sha256": "319b46b55e6ea7be561ac42937378ebdbe4fd5660ac9a5a24f5c9f36d2da4e34",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VFX-NIN-060-S5",
+      "kind": "vfx",
+      "status": "REVIEW_ONLY",
+      "source": "Original procedural raster frames",
+      "cell": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        64
+      ],
+      "clips": [
+        {
+          "phase": "charge",
+          "path": "VFX-NIN-060-S5/charge.png",
+          "sha256": "83e545854c7e8106a976f19a37d68c62c263497e7d6eee5180508a22551749ea",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "travel",
+          "path": "VFX-NIN-060-S5/travel.png",
+          "sha256": "70244721ba3a79bf2a695a21458a6d52572dbc8a56bdbc78282c36da028e0b41",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "impact",
+          "path": "VFX-NIN-060-S5/impact.png",
+          "sha256": "fc5ad7574d550d8ce4c1c82b7493b372c2861dfe04ea354f037d54c4fbd1e737",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        },
+        {
+          "phase": "residual",
+          "path": "VFX-NIN-060-S5/residual.png",
+          "sha256": "e08075f6983ade88bd0c5b5c00cfd6018cf167257fcbffbb23ef06c7922ef108",
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                128,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                256,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                384,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            },
+            {
+              "rect": [
+                512,
+                0,
+                128,
+                128
+              ],
+              "duration_ms": 80
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "atlas_sha256": "ee6b9ff41eb4d86c9afe0770de993b99bb7a9be186cb437da8db7ccc8048cc16",
+  "qa": {
+    "character_rgba_dimensions_binary_alpha": "6/6",
+    "character_bottom_exclusive_104": "6/6",
+    "vfx_distinct_frames_per_clip": "60/60",
+    "vfx_phase_sheets": "12",
+    "archive_integrity": "PASS local zip test",
+    "storage": "Library upload success; no remote readback hash verification",
+    "runtime": "NOT_RUN",
+    "owner_approval": false
+  },
+  "limitations": [
+    "R4 benchmark not recovered",
+    "R6 downsampled source; single pose, not full isometric",
+    "VFX raster preview only; actors static; Chidori flow gameplay attachment needs correction/confirmation; Susanoo torso is prototype",
+    "No approved rights or public binary publication"
+  ]
+}
