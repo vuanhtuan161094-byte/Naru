@@ -1,0 +1,38 @@
+name: ART-P8 local-only runtime bootstrap
+on:
+  push:
+    branches: ['art/e3-art01']
+    paths: ['.github/workflows/art-local-bootstrap.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 'a7ecee6ad6a7f58f7bf928a297e8e5373737c950'
+          fetch-depth: 0
+          path: gameplay
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: art-source
+          persist-credentials: false
+      - name: Package public engine and exact source for offline private review
+        run: |
+          set -eu
+          mkdir -p transfer
+          curl -fL --retry 3 -o transfer/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          git -C gameplay bundle create "$PWD/transfer/gameplay.bundle" HEAD
+          git -C gameplay rev-parse HEAD > transfer/GAMEPLAY_SHA.txt
+          test "$(cat transfer/GAMEPLAY_SHA.txt)" = "a7ecee6ad6a7f58f7bf928a297e8e5373737c950"
+          cp -r art-source/art/runtime transfer/runtime
+          (cd transfer && sha256sum godot.zip gameplay.bundle > SHA256SUMS.txt)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ART-P8-local-bootstrap
+          path: transfer/
+          retention-days: 3
