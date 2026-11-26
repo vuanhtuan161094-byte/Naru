@@ -904,6 +904,16 @@ func tick(dt: float) -> void:
 					a.goal_until=ticks+8
 					move_actor(a,a.ai_goal,movement_speed(a)*dt)
 					continue
+		# Backline units may make a short safe retreat between casts. Do not delay
+		# active ultimate requests, healing, control or a legal non-basic skill.
+		if use_tactical and not a.summon and reservation.is_empty() and not has_status(a,"bind") and (best.is_empty() or best.kind=="basic") and ticks>=int(a.get("backline_until",0)):
+			var retreat=Tactical.backline_goal(self,a,enemy,basic)
+			if not retreat.is_equal_approx(a.pos):
+				a.ai_goal=retreat
+				a.goal_until=ticks+4
+				a.backline_until=ticks+16
+				move_actor(a,retreat,movement_speed(a)*dt)
+				continue
 		if not best.is_empty():
 			if cast(a,best,best_target):
 				runtime_metrics.cast_choices+=1

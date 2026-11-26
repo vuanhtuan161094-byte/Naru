@@ -1,0 +1,3 @@
+# P10 tactical spacing
+
+Backline retreat only when base attack range >=3.5m; no pressure, no summon, no queued ultimate, no bind, no legal non-basic cast. Destination must be clear and in true range. Cooldown 16 ticks prevents continuous retreat. The style benchmark deploys six real actors per side using front/rear slots, nine distinct existing identities; no claim of 12 completed kits. Local Godot 4.4.1 import and timed casts 1152/1152 PASS. Actual 12-second private capture loaded 224 textures, trace at tick 240: 8609 art draws, 4025 fallback, 1411 clone draws, 697 summon draws, 2497 directional pose fallback. Visual gate remains HOLD; no delivery of unapproved video. Full CI pending.

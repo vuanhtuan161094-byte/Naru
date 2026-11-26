@@ -1873,14 +1873,15 @@ func start_art_review() -> void:
 		if "--style-benchmark" in OS.get_cmdline_user_args() and art.enabled:
 			# Nine higher-detail identities in twelve real actor slots; this is a mirror-match review, not twelve new kits.
 			left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
-			right=["NIN-016","NIN-070","NIN-068","NIN-041","NIN-042","NIN-043"]
+			right=["NIN-016","NIN-041","NIN-042","NIN-070","NIN-068","NIN-043"]
 			battle_stage.name_vi="Benchmark mỹ thuật • 9 danh tính / 12 ninja"
+	var review_slots=[0,1,2,6,7,8] if "--style-benchmark" in OS.get_cmdline_user_args() else [0,1,2,3,4,5]
 	for i in range(6):
 		var id=left[i]
-		sim.add_actor(id,0,level,int(reg.ninjas[id].initial_quality),{},i,1.0,{"realm":6,"stars":5,"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids} if level>20 else {})
+		sim.add_actor(id,0,level,int(reg.ninjas[id].initial_quality),{},review_slots[i],1.0,{"realm":6,"stars":5,"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids} if level>20 else {})
 	for i in range(6):
 		var id=right[i]
-		sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},i,1.0,{"realm":6,"stars":5,"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids} if level>20 else {})
+		sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},review_slots[i],1.0,{"realm":6,"stars":5,"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids} if level>20 else {})
 	battle_view()
 
 func resource_trade_result(id: String,ok: bool) -> void:

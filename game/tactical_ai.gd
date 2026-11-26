@@ -94,6 +94,32 @@ static func avoid(sim,a: Dictionary) -> Vector2:
 		if value+2.0<best_score:best_score=value;best=point
 	return best
 
+# Preserve ranged attack reach while backing away from nearby melee threats.
+# Only real, pathable positions; no teleport or changes to skill range.
+static func backline_goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vector2:
+	var origin=Vector2(a.pos)
+	var reach=float(basic.range_m)
+	if reach<3.5 or sim.pressure_mode or a.summon:return origin
+	var nearest=INF
+	var threat_pos=origin
+	for foe in sim.primary_alive(1-int(a.side)):
+		var d=origin.distance_to(foe.pos)
+		if d<nearest:nearest=d;threat_pos=Vector2(foe.pos)
+	if nearest>=reach*0.65:return origin
+	var away=(origin-threat_pos).normalized()
+	if away==Vector2.ZERO:away=Vector2.LEFT if a.side==0 else Vector2.RIGHT
+	var best=origin
+	var score=0.0
+	for angle in [0.0,0.45,-0.45,0.9,-0.9,1.4,-1.4]:
+		var point=sim.clamp_body(origin+away.rotated(angle)*1.25,sim.body_radius(a))
+		if not sim.position_clear(a,point) or not sim.clear_segment(origin,point,sim.body_radius(a)):continue
+		if point.distance_to(enemy.pos)>reach+sim.body_radius(enemy) or not sim.clear_segment(point,enemy.pos,0.03):continue
+		var gap=INF
+		for foe in sim.primary_alive(1-int(a.side)):gap=minf(gap,point.distance_to(foe.pos))
+		var value=(gap-nearest)*3.0+spacing(sim,a,origin)-spacing(sim,a,point)-hazard(sim,a,point)*8.0
+		if value>score+0.1:score=value;best=point
+	return best
+
 static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vector2:
 	var r=role(sim,a)
 	var origin=Vector2(a.pos)
