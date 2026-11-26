@@ -37,6 +37,17 @@ var observation_mode=false
 var battle_details=false
 var battle_grid=false
 var battle_actions_panel: ScrollContainer
+var battle_dock: PanelContainer
+var battle_dock_content: VBoxContainer
+var battle_selected_portrait: TextureRect
+var battle_skill_info: Label
+var battle_state_info: Label
+var battle_mini: HBoxContainer
+var battle_observe_button: Button
+var battle_detail_button: Button
+var battle_grid_button: Button
+var battle_speed_buttons: Dictionary={}
+var battle_team_status: Label
 var battle_action_groups: Dictionary={}
 const BattleCamera=preload("res://game/battle_camera.gd")
 var battle_inspector: Label
@@ -412,103 +423,205 @@ func battle_view() -> void:
 	battle_details=false
 	battle_grid=false
 	battle_action_groups.clear()
+	battle_speed_buttons.clear()
 	inspected_uid=0
 	hud_clock=1.0
 	form_actions.clear()
 	last_video_ult_tick=-1
 	battle_speed=1.0
 	open_screen("battle")
+	var toolbar_frame=PanelContainer.new()
+	toolbar_frame.add_theme_stylebox_override("panel",combat_panel(Color("#0b2427"),Color("#69877c"),5))
+	root.add_child(toolbar_frame)
 	var toolbar=HBoxContainer.new()
-	root.add_child(toolbar)
-	status=label(toolbar,"CHIẾN ĐẤU • "+str(battle_stage.name_vi)+" • "+str(sim.map_width)+"×"+str(sim.map_height),19)
+	toolbar.add_theme_constant_override("separation",5)
+	toolbar_frame.add_child(toolbar)
+	status=label(toolbar,"CHIẾN ĐẤU • "+str(battle_stage.name_vi),16)
 	status.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	var pause_button=Button.new()
-	pause_button.text="Tạm dừng"
-	toolbar.add_child(pause_button)
+	status.add_theme_color_override("font_color",Color("#f4d39a"))
+	battle_team_status=label(toolbar,"6 VS 6",14)
+	battle_team_status.custom_minimum_size.x=105
+	var pause_button=combat_button(toolbar,"Tạm dừng",func():pass,88)
 	pause_button.pressed.connect(func():paused=not paused;pause_button.text="Tiếp tục" if paused else "Tạm dừng")
-	for speed in [1.0,2.0,4.0]:button(toolbar,str(int(speed))+"x",func():battle_speed=speed)
-	var observe=button(toolbar,"Quan sát",func():
-		observation_mode=not observation_mode
-		scroll_battle_visibility())
-	observe.tooltip_text="Ẩn/hiện toàn bộ thanh điều khiển dưới sân"
-	var detail=button(toolbar,"Chi tiết",func():battle_details=not battle_details;scroll_battle_visibility())
-	detail.tooltip_text="Hiện/ẩn trạng thái, kỹ năng và nhật ký"
-	var grid_button=button(toolbar,"Lưới",func():battle_grid=not battle_grid;field.queue_redraw())
-	grid_button.tooltip_text="Hiện/ẩn ô sân và liên kết đội hình"
-	button(toolbar,"Rút lui",func():finish(false))
+	for speed in [1.0,2.0,4.0]:
+		var b=combat_button(toolbar,str(int(speed))+"x",func():battle_speed=speed;refresh_battle_toggles(),38)
+		battle_speed_buttons[speed]=b
+	battle_observe_button=combat_button(toolbar,"Quan sát",func():observation_mode=not observation_mode;scroll_battle_visibility(),82)
+	battle_detail_button=combat_button(toolbar,"Chi tiết",func():battle_details=not battle_details;scroll_battle_visibility(),72)
+	battle_grid_button=combat_button(toolbar,"Lưới",func():battle_grid=not battle_grid;refresh_battle_toggles();field.queue_redraw(),48)
+	combat_button(toolbar,"Rút lui",func():finish(false),72).add_theme_color_override("font_color",Color("#ffaca0"))
+	var body=HBoxContainer.new()
+	body.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	body.add_theme_constant_override("separation",6)
+	root.add_child(body)
+	var left=VBoxContainer.new()
+	left.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	left.add_theme_constant_override("separation",5)
+	body.add_child(left)
 	field=Control.new()
-	field.custom_minimum_size=Vector2(0,320)
+	field.custom_minimum_size=Vector2(300,280)
 	field.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	field.clip_contents=true
 	field.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	field.draw.connect(draw_field)
 	field.gui_input.connect(inspect_battle_input)
-	root.add_child(field)
-	battle_inspector=label(root,"Chạm ninja trên sân để xem kỹ năng và trạng thái",14)
-	battle_inspector.custom_minimum_size.y=22
-	battle_inspector.visible=false
-	battle_inspector.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-	var scroll=ScrollContainer.new()
-	scroll.name="BattleActions"
-	scroll.custom_minimum_size.y=92
-	battle_actions_panel=scroll
-	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
-	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
-	root.add_child(scroll)
+	left.add_child(field)
+	battle_actions_panel=ScrollContainer.new()
+	battle_actions_panel.name="BattleActions"
+	battle_actions_panel.custom_minimum_size.y=112
+	battle_actions_panel.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
+	battle_actions_panel.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	left.add_child(battle_actions_panel)
 	var row=HBoxContainer.new()
 	row.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	row.add_theme_constant_override("separation",5)
-	scroll.add_child(row)
+	battle_actions_panel.add_child(row)
+	battle_mini=HBoxContainer.new()
+	battle_mini.alignment=BoxContainer.ALIGNMENT_CENTER
+	battle_mini.custom_minimum_size.y=40
+	left.add_child(battle_mini)
+	battle_dock=PanelContainer.new()
+	battle_dock.name="BattleDetailDock"
+	battle_dock.custom_minimum_size.x=300
+	battle_dock.add_theme_stylebox_override("panel",combat_panel(Color("#0d2427"),Color("#789286"),6))
+	body.add_child(battle_dock)
+	var dock_scroll=ScrollContainer.new()
+	dock_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	dock_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	battle_dock.add_child(dock_scroll)
+	battle_dock_content=VBoxContainer.new()
+	battle_dock_content.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	battle_dock_content.add_theme_constant_override("separation",8)
+	dock_scroll.add_child(battle_dock_content)
+	var dock_title=HBoxContainer.new()
+	battle_dock_content.add_child(dock_title)
+	var title=label(dock_title,"CHI TIẾT NINJA",16)
+	title.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	title.add_theme_color_override("font_color",Color("#f5d39a"))
+	combat_button(dock_title,"Thu gọn",func():battle_details=false;scroll_battle_visibility(),68)
+	battle_selected_portrait=TextureRect.new()
+	battle_selected_portrait.custom_minimum_size=Vector2(0,88)
+	battle_selected_portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+	battle_selected_portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	battle_dock_content.add_child(battle_selected_portrait)
+	battle_inspector=combat_wrap(battle_dock_content,"Chạm ninja để xem chi tiết",15)
+	label(battle_dock_content,"KỸ NĂNG",15).add_theme_color_override("font_color",Color("#e9c477"))
+	battle_skill_info=combat_wrap(battle_dock_content,"",13)
+	label(battle_dock_content,"TRẠNG THÁI",15).add_theme_color_override("font_color",Color("#e9c477"))
+	battle_state_info=combat_wrap(battle_dock_content,"",13)
 	ult_buttons.clear()
 	ult_actions.clear()
 	battle_cards.clear()
-	for i in range(sim.primary_alive(0).size()):
-		var a=sim.primary_alive(0)[i]
+	for a in sim.primary_alive(0):
 		var actor_index=sim.actors.find(a)
+		var uid=int(a.uid)
+		var card=PanelContainer.new()
+		card.custom_minimum_size.x=112
+		card.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		card.add_theme_stylebox_override("panel",combat_panel(Color("#102b2d"),Color("#59796f"),5))
+		row.add_child(card)
 		var group=VBoxContainer.new()
-		group.custom_minimum_size.x=116
-		group.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		row.add_child(group)
-		var name_row=HBoxContainer.new()
-		group.add_child(name_row)
+		group.add_theme_constant_override("separation",3)
+		card.add_child(group)
+		var top=HBoxContainer.new()
+		top.add_theme_constant_override("separation",4)
+		group.add_child(top)
 		var portrait=art.texture("portraits/"+str(a.id)+".png")
+		var mini=combat_button(battle_mini,str(a.id).right(3),func():select_battle_actor(uid),40)
+		mini.custom_minimum_size=Vector2(40,40)
 		if portrait!=null:
+			mini.icon=portrait
+			mini.expand_icon=true
+			mini.text=""
 			var image=TextureRect.new()
 			image.texture=portrait
-			image.custom_minimum_size=Vector2(28,28)
+			image.custom_minimum_size=Vector2(38,42)
 			image.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+			image.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED
 			image.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
-			name_row.add_child(image)
+			top.add_child(image)
 			art.portrait_draws+=1
-		var inspect=button(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],func():select_battle_actor(int(a.uid)))
-		inspect.custom_minimum_size=Vector2(90,30)
-		inspect.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		inspect.add_theme_font_size_override("font_size",14)
-		var state_label=label(group,"",13)
-		battle_cards.append({"uid":a.uid,"label":state_label})
+		var text_col=VBoxContainer.new()
+		text_col.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		text_col.add_theme_constant_override("separation",2)
+		top.add_child(text_col)
+		var short_name=str(reg.ninjas[a.id].name_vi).split(" (")[0]
+		mini.tooltip_text=short_name
+		var inspect=combat_button(text_col,short_name,func():select_battle_actor(uid),0)
+		inspect.custom_minimum_size=Vector2(0,23)
+		inspect.add_theme_font_size_override("font_size",12)
+		var hp=combat_meter(text_col,Color("#87c95c"))
+		var cp=combat_meter(text_col,Color("#56b8e4"))
+		var state_label=label(group,"",11)
+		battle_cards.append({"uid":uid,"label":state_label,"hp":hp,"cp":cp,"panel":card,"mini":mini})
 		var extra=VBoxContainer.new()
-		group.add_child(extra)
-		battle_action_groups[a.uid]=extra
+		battle_dock_content.add_child(extra)
+		battle_action_groups[uid]=extra
 		extra.visible=false
 		var first=true
 		for skill_id in a.skills:
 			if not reg.depth_ultimates.has(skill_id) and reg.skills[skill_id].kind!="ultimate":continue
-			var b=button(group if first else extra,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(actor_index,skill_id))
-			b.custom_minimum_size=Vector2(0,30)
-			b.add_theme_font_size_override("font_size",13)
+			var b=combat_button(group if first else extra,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(actor_index,skill_id),0)
+			b.custom_minimum_size=Vector2(0,32)
 			ult_actions.append({"button":b,"index":actor_index,"skill":skill_id})
 			first=false
-		if a.contract!="":button(extra,"Thông linh",func():sim.summon_contract(a))
+		if a.contract!="":combat_button(extra,"Thông linh",func():sim.summon_contract(a),0)
 		for form_id in a.forms:
 			if reg.form_rules[form_id].activation!="skill_trigger" or reg.p2_forms.get(form_id,{}).get("activation",{}).get("mode","") in ["manual_stance","hp_threshold_or_manual"]:
-				var fb=button(extra,"Biến thân "+str(form_id).right(2),func():sim.activate_form(a,form_id,true))
-				form_actions.append({"button":fb,"uid":a.uid,"form":form_id})
-	# Scroll vertically too: all unlocked forms/ultimate actions remain reachable.
-	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
-	log_label=label(root,"",14)
-	log_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-	log_label.visible=false
+				var fb=combat_button(extra,"Biến thân "+str(form_id).right(2),func():sim.activate_form(a,form_id,true),0)
+				form_actions.append({"button":fb,"uid":uid,"form":form_id})
+	label(battle_dock_content,"NHẬT KÝ CHIẾN ĐẤU",15).add_theme_color_override("font_color",Color("#e9c477"))
+	log_label=combat_wrap(battle_dock_content,"",12)
+	if not battle_cards.is_empty():inspected_uid=int(battle_cards[0].uid)
 	scroll_battle_visibility()
+
+func combat_panel(bg:Color,edge:Color,rounding:int=5) -> StyleBoxFlat:
+	var s=StyleBoxFlat.new()
+	s.bg_color=bg
+	s.border_color=edge
+	s.set_border_width_all(1)
+	s.set_corner_radius_all(rounding)
+	s.content_margin_left=5
+	s.content_margin_right=5
+	s.content_margin_top=4
+	s.content_margin_bottom=4
+	return s
+
+func combat_button(parent:Node,caption:String,action:Callable,w:float) -> Button:
+	var b=button(parent,caption,action)
+	b.custom_minimum_size=Vector2(w,32)
+	b.add_theme_font_size_override("font_size",13)
+	b.add_theme_stylebox_override("normal",combat_panel(Color("#163538"),Color("#6a8880")))
+	b.add_theme_stylebox_override("hover",combat_panel(Color("#24484a"),Color("#e7bf76")))
+	b.add_theme_stylebox_override("pressed",combat_panel(Color("#685031"),Color("#e7bf76")))
+	return b
+
+func combat_meter(parent:Node,col:Color) -> ProgressBar:
+	var bar=ProgressBar.new()
+	bar.max_value=100
+	bar.show_percentage=false
+	bar.custom_minimum_size.y=6
+	bar.add_theme_stylebox_override("background",combat_panel(Color("#08171a"),Color("#405650"),2))
+	var fill=StyleBoxFlat.new()
+	fill.bg_color=col
+	fill.set_corner_radius_all(2)
+	bar.add_theme_stylebox_override("fill",fill)
+	parent.add_child(bar)
+	return bar
+
+func combat_wrap(parent:Node,caption:String,font_size:int) -> Label:
+	var l=label(parent,caption,font_size)
+	l.text_overrun_behavior=TextServer.OVERRUN_NO_TRIMMING
+	l.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	return l
+
+func refresh_battle_toggles() -> void:
+	for speed in battle_speed_buttons:
+		battle_speed_buttons[speed].self_modulate=Color("#f4cc82") if float(speed)==battle_speed else Color.WHITE
+	if is_instance_valid(battle_observe_button):battle_observe_button.self_modulate=Color("#f4cc82") if observation_mode else Color.WHITE
+	if is_instance_valid(battle_detail_button):battle_detail_button.self_modulate=Color("#f4cc82") if battle_details and not observation_mode else Color.WHITE
+	if is_instance_valid(battle_grid_button):battle_grid_button.self_modulate=Color("#f4cc82") if battle_grid else Color.WHITE
 
 func arena_scale() -> float:
 	return BattleCamera.sprite_scale(field.size,Vector2(sim.map_width,sim.map_height))
@@ -634,10 +747,11 @@ func _process(delta: float) -> void:
 	field.queue_redraw()
 	if hud_clock<0.12:return
 	hud_clock=0.0
-	status.text="Đội %d • Địch %d • %.1fs • %sx%s" % [sim.primary_alive(0).size(),sim.primary_alive(1).size(),sim.ticks*0.05,int(battle_speed)," • Tạm dừng" if paused else ""]
+	status.text="CHIẾN ĐẤU • "+str(battle_stage.name_vi)+" • %.1fs" % (sim.ticks*0.05)
+	battle_team_status.text="%d VS %d" % [sim.primary_alive(0).size(),sim.primary_alive(1).size()]
 	if sim.deadlock:status.text+=" • Giằng co"
 	elif sim.pressure_mode:status.text+=" • Đổi chiến thuật"
-	status.text+=" • "+str(sim.side_formations.get(0,"FRM-01"))
+	if battle_details:status.tooltip_text=str(sim.side_formations.get(0,"FRM-01"))
 	for card in battle_cards:
 		var unit=sim.actor_by_uid(int(card.uid))
 		if unit.is_empty():continue
@@ -646,6 +760,8 @@ func _process(delta: float) -> void:
 			if not st.id in marks:marks.append(st.id)
 		if not unit.active_form.is_empty():marks.append(unit.active_form.id)
 		if unit.shield>0:marks.append("Khiên")
+		card.hp.value=100.0*float(unit.hp)/maxf(1.0,float(unit.max_hp))
+		card.cp.value=100.0*float(unit.chakra)/maxf(1.0,float(unit.max_chakra))
 		card.label.text="HP %d%% • CP %.0f" % [roundi(100.0*float(unit.hp)/maxf(1.0,float(unit.max_hp))),float(unit.chakra)]
 		card.label.tooltip_text=card.label.text+" • "+",".join(marks)
 	for action in ult_actions:
@@ -662,7 +778,7 @@ func _process(delta: float) -> void:
 		var cd=float(a.form_cooldowns.get(action.form,0))
 		action.button.text="Biến thân "+str(action.form).right(2)+(" • %.1fs" % cd if cd>0 else "")
 	update_battle_inspector()
-	log_label.text="  |  ".join(sim.log)
+	if battle_details and not observation_mode:log_label.text="\n".join(sim.log.slice(maxi(0,sim.log.size()-8)))
 
 func finish(won: bool) -> void:
 	if sim==null:return
@@ -1624,7 +1740,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
@@ -1827,17 +1943,22 @@ func passive_screen(id: String,message: String="") -> void:
 		if not str(sk.branch).is_empty():label(box,"Nhánh: "+str(sk.branch),14)
 
 func scroll_battle_visibility() -> void:
-	if is_instance_valid(battle_actions_panel):
-		battle_actions_panel.visible=not observation_mode
-		battle_actions_panel.custom_minimum_size.y=160 if battle_details else 92
-	if is_instance_valid(battle_inspector):battle_inspector.visible=battle_details and not observation_mode
-	if is_instance_valid(log_label):log_label.visible=battle_details and not observation_mode
+	if is_instance_valid(battle_actions_panel):battle_actions_panel.visible=not observation_mode
+	if is_instance_valid(battle_mini):battle_mini.visible=observation_mode
+	if is_instance_valid(battle_dock):battle_dock.visible=battle_details and not observation_mode
 	for uid in battle_action_groups:
 		var group=battle_action_groups[uid]
-		if is_instance_valid(group):group.visible=battle_details and int(uid)==inspected_uid
+		if is_instance_valid(group):group.visible=battle_details and not observation_mode and int(uid)==inspected_uid
+	for card in battle_cards:
+		var selected=int(card.uid)==inspected_uid
+		card.panel.add_theme_stylebox_override("panel",combat_panel(Color("#19382e") if selected else Color("#102b2d"),Color("#e8bd73") if selected else Color("#59796f")))
+		card.mini.self_modulate=Color("#f4cc82") if selected else Color.WHITE
+	refresh_battle_toggles()
+	update_battle_inspector()
 
 func select_battle_actor(uid: int) -> void:
 	inspected_uid=uid
+	observation_mode=false
 	battle_details=true
 	hud_clock=1.0
 	scroll_battle_visibility()
@@ -1858,14 +1979,14 @@ func inspect_battle_input(event: InputEvent) -> void:
 		select_battle_actor(int(best.uid))
 
 func update_battle_inspector() -> void:
-	if battle_inspector==null or inspected_uid==0:return
+	if not is_instance_valid(battle_inspector) or not battle_details or observation_mode or inspected_uid==0 or sim==null:return
 	var a=sim.actor_by_uid(inspected_uid)
 	if a.is_empty():return
 	var labels=[]
 	for id in a.skills:
 		var s=sim.effective_skill(a,id)
 		var cd=float(a.cooldowns.get(id,0))
-		labels.append(sim.skill_name(id)+" "+("%.1fs" % cd if cd>0 else "%.1f CP" % float(s.chakra)))
+		labels.append(sim.skill_name(id)+"  •  "+("CD %.1fs" % cd if cd>0 else "%.1f CP" % float(s.chakra)))
 	var states=[]
 	for st in a.statuses.values():states.append(str(st.id)+" %.1fs" % float(st.remaining))
 	for key in a.get("passive_mods",{}):
@@ -1877,7 +1998,11 @@ func update_battle_inspector() -> void:
 			states.append(str(stat)+" ×%.2f" % sim.form_multiplier(a,stat))
 	if sim.ultimate_requests.has(a.uid):states.append("Chờ tuyệt kỹ: "+sim.skill_name(str(sim.ultimate_requests[a.uid])))
 	var head=str(reg.ninjas.get(a.id,{}).get("name_vi",a.id))+" • "+str(reg.ninjas.get(a.id,{}).get("role_hint","Triệu hồi"))
-	battle_inspector.text=head+" • HP %d/%d • CP %.2f/%.2f | " % [int(a.hp),int(a.max_hp),a.chakra,a.max_chakra]+", ".join(states)+" | "+" · ".join(labels)
+	battle_selected_portrait.texture=art.texture("portraits/"+str(a.id)+".png")
+	battle_selected_portrait.visible=battle_selected_portrait.texture!=null
+	battle_inspector.text=head+"\nHP %d/%d\nCP %.1f/%.1f" % [int(a.hp),int(a.max_hp),a.chakra,a.max_chakra]
+	battle_skill_info.text="\n".join(labels)
+	battle_state_info.text="Không có hiệu ứng" if states.is_empty() else "\n".join(states)
 	battle_inspector.tooltip_text=battle_inspector.text
 func frontier_screen() -> void:
 	var rows=activity_rows("BIÊN GIỚI NHẪN GIỚI","Lãnh địa giáp vùng sở hữu, có đường đi hiện tại.",func():world_screen())
