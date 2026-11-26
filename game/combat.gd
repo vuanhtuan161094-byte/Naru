@@ -100,7 +100,7 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	registry=reg
 	use_passives=bool(save.get("settings",{}).get("passives_dev",false))
 	use_passive_pilot=use_passives and bool(save.get("settings",{}).get("passive_pilot_dev",false))
-	use_passive_mixed=use_passive_pilot and bool(save.get("settings",{}).get("passive_mixed_dev",false))
+	use_passive_mixed=use_passive_pilot and bool(save.get("settings",{}).get("passive_mixed_dev",true))
 	use_depth=bool(save.get("settings",{}).get("depth_v5_dev",true))
 	use_tactical=bool(save.get("settings",{}).get("tactical_v4_dev",true))
 	use_contract_v10=bool(save.get("settings",{}).get("contract_v10_dev",true))

@@ -82,7 +82,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"ONE GAME V2 • P3",16)
+	label(header,"ONE GAME V2 • P4",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -1523,13 +1523,13 @@ func settings_screen(message: String="") -> void:
 	root.add_child(passive_toggle)
 	passive_toggle.toggled.connect(func(on):change_setting("passives_dev",on))
 	var pilot_toggle=CheckButton.new()
-	pilot_toggle.text="P2 pilot (12 ninja; cô lập thử nghiệm, cần bật P1)"
+	pilot_toggle.text="P2 pilot (12 ninja; cần bật P1)"
 	pilot_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_pilot_dev",false))
 	root.add_child(pilot_toggle)
 	pilot_toggle.toggled.connect(func(on):change_setting("passive_pilot_dev",on))
 	var mixed_toggle=CheckButton.new()
-	mixed_toggle.text="P2 hỗn hợp DEV: dùng P1 cho 132 ninja ngoài pilot"
-	mixed_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_mixed_dev",false))
+	mixed_toggle.text="P2 hỗn hợp DEV (mặc định): giữ P1 cho ninja ngoài pilot"
+	mixed_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_mixed_dev",true))
 	root.add_child(mixed_toggle)
 	mixed_toggle.toggled.connect(func(on):change_setting("passive_mixed_dev",on))
 	var depth_toggle=CheckButton.new()
@@ -1715,8 +1715,8 @@ func passive_screen(id: String,message: String="") -> void:
 	label(root,message,15)
 	var rows=scroll_rows(root)
 	var pilot_on=store.state.get("settings",{}).get("passive_pilot_dev",false) and store.state.get("settings",{}).get("passives_dev",false)
-	var pilot_rows=reg.passive_pilot_rows.get(id,[])
-	var mixed_on=pilot_on and bool(store.state.get("settings",{}).get("passive_mixed_dev",false))
+	var pilot_rows=reg.passive_pilot_rows.get(id,[]) if reg.passive_pilot_ninjas.has(id) else []
+	var mixed_on=pilot_on and bool(store.state.get("settings",{}).get("passive_mixed_dev",true))
 	var pilot_isolated=pilot_on and pilot_rows.is_empty() and not mixed_on
 	if mixed_on and pilot_rows.is_empty():label(rows,"P2 hỗn hợp DEV • nội tại P1 đang hoạt động cho ninja ngoài pilot.",15)
 	if pilot_isolated:label(rows,"Ninja chưa thuộc 12 mẫu pilot P2. Nội tại P1 bên dưới chỉ xem; tắt pilot để sử dụng cấu hình P1.",15)

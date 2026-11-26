@@ -56,6 +56,7 @@ var depth_branches: Dictionary={}
 var depth_ultimates: Dictionary={}
 var depth_teams: Array=[]
 var passive_pilot_rows: Dictionary={}
+var passive_pilot_ninjas: Dictionary={}
 const Passive=preload("res://game/passive_service.gd")
 var p2_fallback: Dictionary={}
 var p2_design: Dictionary={}
@@ -242,8 +243,10 @@ func load_synergy_reference() -> void:
 				if not skills.has(id):errors.append("Invalid synergy reference "+str(id))
 	for row in audit.gaps:synergy_gaps[row.id]=row.type
 	var pilot=read_json("res://data/passive-p2/pilot-overlay.json")
-	for row in pilot.patches:passive_pilot[row.id]=row
-	if synergy_active.size()!=1152 or synergy_passive.size()!=864 or synergy_links.size()!=864 or passive_pilot.size()!=72:errors.append("Incomplete synergy reference")
+	for row in pilot.patches:
+		passive_pilot[row.id]=row
+		if passives.has(row.id):passive_pilot_ninjas[passives[row.id].ninja_id]=true
+	if synergy_active.size()!=1152 or synergy_passive.size()!=864 or synergy_links.size()!=864 or passive_pilot.size()!=72 or passive_pilot_ninjas.size()!=12:errors.append("Incomplete synergy reference")
 	print("NARU_SYNERGY_REFERENCE ",synergy_active.size()+synergy_passive.size()," pilot=",passive_pilot.size()," gaps=",synergy_gaps.size()," STRUCTURAL_ONLY")
 
 func load_depth_reference() -> void:

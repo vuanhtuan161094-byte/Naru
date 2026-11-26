@@ -14,14 +14,15 @@ func _initialize() -> void:
 	check(reg.passives.size()==864 and reg.passives_by_ninja.size()==144 and reg.skills.size()==1152,"864 distinct passive records and 1152 active retained")
 	check(reg.synergy_active.size()==1152 and reg.synergy_passive.size()==864 and reg.synergy_links.size()==864,"2016 structural references, not runtime claims")
 	check(reg.passive_pilot.size()==72 and is_equal_approx(float(reg.passives["NIN-001-P4"].effect.base),0.06),"P2 proposal not applied automatically")
-	# Isolated pilot remains default; explicitly mixed mode restores authored P1 outside pilot.
+	# Explicit isolated mode suppresses nonpilot kits; mixed preserves legacy fallback.
 	var selector=Combat.new()
 	selector.registry=reg
 	selector.use_passives=true
 	selector.use_passive_pilot=true
 	var outside=""
 	for id in reg.ninjas:
-		if not reg.passive_pilot_rows.has(id):outside=id;break
+		if not reg.passive_pilot_ninjas.has(id):outside=id;break
+	check(reg.passive_pilot_ninjas.size()==12 and reg.passive_pilot_rows.size()==144,"actual pilot membership distinct from mixed rows")
 	check(outside!="","nonpilot roster exists")
 	check(Passive.rows(selector,{"id":outside}).is_empty(),"isolated pilot unchanged")
 	selector.use_passive_mixed=true

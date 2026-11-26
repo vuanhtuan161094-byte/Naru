@@ -1,3 +1,3 @@
-# PRODUCT P3 — integrated candidate
+# PRODUCT P4 — P3 regression correction
 
-P2 exact SHA bf021b51 CI 45740982477 success. P3 private review pack: 224 PNG, 27 recomposed building markers plus 3 existing landmarks, separate village ground, no new character/VFX frames. P3 runtime panorama and R11/grid fallback use existing gameplay callbacks. Mixed passive DEV is opt-in: existing P2 pilot for 12 ninja and P1 for 132 remaining, no new effect coefficient or gate change. Existing isolated pilot/default settings remain. Individualized 792 P2 designs still pending. VFX remains HOLD, review-sheet coverage shown only. Exact SHA CI required; no merge main.
+P3 CI 45749302419 and 45749231642 failed new passive fixture: all 144 registry pilot-row lists exist by design, only 12 have P2 patches. Correct membership based on actual 72 patched IDs, retain mixed fallback by default when pilot enabled, explicit false isolates 12, P1/holds unchanged. Test checks 12/144 membership and both modes. New exact CI required. P3 art remains private review only.

@@ -34,8 +34,8 @@ static func operation(row: Dictionary,p: Dictionary) -> Dictionary:
 
 static func rows(sim,a: Dictionary) -> Array:
 	if sim.use_passive_pilot:
-		var pilot=sim.registry.passive_pilot_rows.get(a.id,[])
-		if not pilot.is_empty() or not sim.use_passive_mixed:return pilot
+		if sim.registry.passive_pilot_ninjas.has(a.id):return sim.registry.passive_pilot_rows.get(a.id,[])
+		if not sim.use_passive_mixed:return []
 	# Mixed DEV uses existing authored P1 for nonpilot only; eligible() retains all gates.
 	return sim.registry.passives_by_ninja.get(a.id,[])
 
