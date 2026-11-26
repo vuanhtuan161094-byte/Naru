@@ -1,0 +1,55 @@
+name: R12 actual Godot native combat capture
+on:
+  push:
+    branches: [integration/one-game]
+    paths:
+      - '.github/workflows/r12-native-capture.yml'
+      - 'game/main.gd'
+      - 'game/review_art.gd'
+      - 'game/battle_camera.gd'
+      - 'assets/production/r12/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct exact public artwork
+        run: python3 tools/assemble_public_art.py
+      - name: Install native display and capture tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb xauth ffmpeg libgl1-mesa-dri
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          chmod +x /tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+      - name: Native actual 6v6 Godot capture (no poster)
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          set -euo pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          "$G" --headless --path . --editor --import --quit 2>&1 | tee /tmp/r12-import.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/r12-import.log
+          "$G" --headless --path . --script game/battle_camera_test.gd
+          xvfb-run -a -s "-screen 0 1280x720x24" bash tools/capture-private.sh "$G" "$PWD" "$PWD/assets/public/naru-art.json"
+          mkdir -p r12-native
+          cp private-combat-review/Combat-private.mp4 r12-native/R12-native-6v6.mp4
+          cp private-combat-review/runtime.log r12-native/
+          cp /tmp/r12-import.log r12-native/import.log
+          grep NARU_PRIVATE_CAPTURE_ART_READY r12-native/runtime.log
+          grep NARU_PRIVATE_TRACE r12-native/runtime.log
+          ffmpeg -v error -ss 2 -i r12-native/R12-native-6v6.mp4 -frames:v 1 r12-native/02s.png
+          ffmpeg -v error -ss 5 -i r12-native/R12-native-6v6.mp4 -frames:v 1 r12-native/05s.png
+          ffmpeg -v error -ss 10 -i r12-native/R12-native-6v6.mp4 -frames:v 1 r12-native/10s.png
+          printf '%s\n' "$GITHUB_SHA" > r12-native/BUILD_SHA.txt
+          (cd r12-native && sha256sum *.mp4 *.png > SHA256SUMS.txt)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: NARU-R12-ACTUAL-GODOT-NATIVE
+          path: r12-native/
+          if-no-files-found: warn
