@@ -132,6 +132,17 @@ func _ready() -> void:
 	apply_settings()
 	menu(store.load_notice)
 	if "--combat-video" in OS.get_cmdline_user_args():
+		if "--private-capture" in OS.get_cmdline_user_args():
+			if not art.enabled or art.textures.size()<224:
+				push_error("NARU_PRIVATE_CAPTURE_FAIL missing P3 art pack")
+				get_tree().quit(2)
+				return
+			for id in ["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093","NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]:
+				if art.texture("characters/"+id+".png")==null:
+					push_error("NARU_PRIVATE_CAPTURE_FAIL missing "+id)
+					get_tree().quit(2)
+					return
+			print("NARU_PRIVATE_CAPTURE_ART_READY ",art.textures.size()," textures, 12 character identities")
 		start_art_review()
 		print("NARU_VIDEO_BATTLE ",sim.actors.size()," actors")
 		return
