@@ -59,8 +59,15 @@
         "Shino Aburame (thiếu niên)",
         "Neji Hyuga (thiếu niên)"
       ],
-      "status": "SOURCE_RETRY_REQUIRED",
-      "accepted": 0
+      "status": "STATIC_DRAFT_HOLD",
+      "accepted": 0,
+      "draft_static": 12,
+      "archive": {
+        "name": "Naru_R13_01_static_HOLD.zip",
+        "sha256": "b8bece1e94c3ba3f73eba289792a6b44993842ab7c239a4bbff99a24f3a96bcf",
+        "bytes": 298148
+      },
+      "reason": "Original manual static drafts fail benchmark detail, generator repeatedly returned promotional boards; no production integration."
     },
     {
       "batch": "R13-02",
