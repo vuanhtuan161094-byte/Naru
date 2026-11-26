@@ -143,7 +143,7 @@ jobs:
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
           Save data is browser-local; use the in-game JSON export to back up.
-          Private review art is NOT bundled. Settings > Nap goi my thuat rieng > choose the private JSON review pack. The file stays local.
+          Private review art is NOT bundled. For local play, put the private JSON review pack beside index.html as naru-art.json; loopback auto-loads it. Manual import also works. Do not publish the private pack.
           EOF
           (cd dist && sha256sum index.* > SHA256SUMS.txt)
       - name: Install Chromium browser QA
@@ -158,14 +158,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P5R-Web-DEV
+          name: NARU-One-Game-V2-P6-Web-DEV
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P5R-Web-DEV-menu
+          name: NARU-One-Game-V2-P6-Web-DEV-menu
           path: |
             web-menu.png
             ui-shots/
@@ -198,7 +198,7 @@ jobs:
       - name: Upload Godot combat review
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P5R-Combat-Video
+          name: NARU-One-Game-V2-P6-Combat-Video
           path: combat-video/
           retention-days: 30
       - name: Earned-only integrated 90-day observation and strict reload
@@ -213,7 +213,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P5R-QA
+          name: NARU-One-Game-V2-P6-QA
           path: |
             /tmp/import.log
             /tmp/final-v12.log

@@ -34,8 +34,8 @@
       4,
       5
     ],
-    "rank_spacing": 1.2,
-    "lane_spacing": 1.5
+    "rank_spacing": 1.45,
+    "lane_spacing": 2
   },
   "upgrade": {
     "max_level": 20,
@@ -108,5 +108,5 @@
       "link": "rank"
     }
   ],
-  "tuning_status": "DEV_TUNING"
+  "tuning_status": "DEV_TUNING_P6_SPREAD"
 }

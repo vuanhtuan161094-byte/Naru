@@ -69,7 +69,8 @@ static func spacing(sim,a: Dictionary,p: Vector2) -> float:
 	for ally in sim.primary_alive(int(a.side)):
 		if ally.uid==a.uid:continue
 		var gap=p.distance_to(ally.pos)
-		cost+=maxf(0.0,1.35-gap)*2.0
+		var preferred=1.65 if role(sim,a) in ["công kích xa","trị liệu","hỗ trợ","khống chế"] else 1.45
+		cost+=maxf(0.0,preferred-gap)*2.5
 	return cost
 
 static func avoid(sim,a: Dictionary) -> Vector2:

@@ -21,6 +21,7 @@ var art=ReviewArt.new()
 const VillageMap=preload("res://game/village_map_r11.gd")
 var village_map=VillageMap.new()
 var art_callback: JavaScriptObject
+var auto_art_callback: JavaScriptObject
 var review_mode=false
 var private_backdrop: TextureRect
 var screen_id="home"
@@ -62,6 +63,10 @@ const Content=preload("res://game/content_service.gd")
 func _ready() -> void:
 	theme=make_theme()
 	art.restore()
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--art-pack="):
+			var path=arg.trim_prefix("--art-pack=")
+			if FileAccess.file_exists(path):art.import_text(FileAccess.get_file_as_string(path),false)
 	var bg=ColorRect.new()
 	bg.color=Color("#101b23")
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -119,6 +124,7 @@ func _ready() -> void:
 		start_art_review()
 		print("NARU_VIDEO_BATTLE ",sim.actors.size()," actors")
 		return
+	if OS.has_feature("web") and not web_qa and art.textures.is_empty():call_deferred("try_local_art_pack")
 	if web_qa:
 		JavaScriptBridge.eval("window.naruReady=true")
 		call_deferred("web_probe")
@@ -534,7 +540,7 @@ func draw_field() -> void:
 		var rect: Rect2=item.rect
 		var points=PackedVector2Array([iso(rect.position),iso(Vector2(rect.end.x,rect.position.y)),iso(rect.end),iso(Vector2(rect.position.x,rect.end.y))])
 		field.draw_colored_polygon(points,Color("#35414a") if item.kind=="obstacle" else Color(0.65,0.52,0.27,0.45))
-		field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
+		if battle_grid:field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
 	for pair in sim.formation_pairs(0) if battle_grid else []:
 		field.draw_line(iso(pair[0]),iso(pair[1]),Color(0.4,0.85,1.0,0.35),1.5,true)
 	for a in sim.primary_alive(0):
@@ -553,11 +559,7 @@ func draw_field() -> void:
 		field.draw_set_transform(Vector2.ZERO)
 		var depth_scale=lerpf(0.88,1.05,clampf(float(a.pos.y)/maxf(1.0,float(sim.map_height)),0,1))
 		var visual_scale=q*depth_scale*(0.76 if a.get("summon",false) else 1.0)
-		var nearest=1000.0
-		for other in sim.actors:
-			if other.uid!=a.uid and other.hp>0:nearest=minf(nearest,p.distance_to(iso(other.pos)))
-		# Keep the feet at the true world location; use bounded size reduction only.
-		visual_scale*=clampf(nearest/36.0,0.72,1.0)
+		# Stable scale: no frame-by-frame shrinking when actors pass each other.
 		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,sim.animation_state(a))
 		if sprite_top<=0:
 			# Original generic geometric DEV actor, not an approved ninja sprite.
@@ -570,13 +572,14 @@ func draw_field() -> void:
 			field.draw_rect(Rect2(-Vector2(5,42),Vector2(10,4)),c)
 			field.draw_set_transform(Vector2.ZERO)
 			sprite_top=48*visual_scale
-		if a.hp<=0:continue
+		if a.hp<=0 or (a.get("summon",false) and a.uid!=inspected_uid and not battle_details):continue
 		var bar_width=clampf(46*visual_scale,22,42)
 		var bar=p-Vector2(bar_width*0.5,sprite_top+8)
 		field.draw_rect(Rect2(bar,Vector2(bar_width,5)),Color("#182028"))
 		field.draw_rect(Rect2(bar,Vector2(bar_width*float(a.hp)/float(a.max_hp),5)),Color("#80c484") if a.side==0 else Color("#e57470"))
-		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width,3)),Color("#182028"))
-		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
+		if a.side==0 or battle_details or a.uid==inspected_uid:
+			field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width,3)),Color("#182028"))
+			field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
 		var badge_index=0
 		for st in a.statuses.values() if battle_details or a.uid==inspected_uid else []:
 			if badge_index>=4:break
@@ -643,8 +646,8 @@ func _process(delta: float) -> void:
 			if not st.id in marks:marks.append(st.id)
 		if not unit.active_form.is_empty():marks.append(unit.active_form.id)
 		if unit.shield>0:marks.append("Khiên")
-		card.label.text="HP %d%% • CP %.1f • %s" % [roundi(100.0*float(unit.hp)/maxf(1.0,float(unit.max_hp))),float(unit.chakra),",".join(marks)]
-		card.label.tooltip_text=card.label.text
+		card.label.text="HP %d%% • CP %.0f" % [roundi(100.0*float(unit.hp)/maxf(1.0,float(unit.max_hp))),float(unit.chakra)]
+		card.label.tooltip_text=card.label.text+" • "+",".join(marks)
 	for action in ult_actions:
 		var a=sim.actors[action.index]
 		var s=sim.effective_skill(a,action.skill)
@@ -1673,6 +1676,19 @@ func choose_review_art() -> void:
 		dialog.canceled.connect(dialog.queue_free)
 		dialog.popup_centered_ratio(0.8)
 
+# Private offline distribution: only the explicit loopback-host sibling file, never remote.
+func try_local_art_pack() -> void:
+	if not OS.has_feature("web"):return
+	auto_art_callback=JavaScriptBridge.create_callback(_receive_local_art)
+	JavaScriptBridge.get_interface("window").naruLocalArtCallback=auto_art_callback
+	JavaScriptBridge.eval("(async()=>{if(!['localhost','127.0.0.1','[::1]'].includes(location.hostname))return;try{const r=await fetch(new URL('naru-art.json',location.href),{cache:'no-store',credentials:'same-origin',redirect:'error'});if(!r.ok)return;const b=await r.blob();if(b.size<=16000000)window.naruLocalArtCallback(await b.text());}catch(e){}})()")
+
+func _receive_local_art(args: Array) -> void:
+	if args.size()!=1:return
+	if art.import_text(str(args[0]),false):
+		if screen_id=="home":home_screen("Đã nạp mỹ thuật riêng P3")
+		print("NARU_LOCAL_ART_LOADED ",art.textures.size())
+
 func _receive_art_web(args: Array) -> void:
 	if args.size()==1:receive_art(str(args[0]))
 
@@ -1699,8 +1715,12 @@ func start_art_review() -> void:
 	var right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
 	var level=20
 	if "--combat-video" in OS.get_cmdline_user_args():
-		left=["NIN-055","NIN-041","NIN-042","NIN-043","NIN-007","NIN-004"]
-		right=["NIN-070","NIN-060","NIN-093","NIN-021","NIN-008","NIN-022"]
+		if art.enabled:
+			left=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
+			right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
+		else:
+			left=["NIN-055","NIN-041","NIN-042","NIN-043","NIN-007","NIN-004"]
+			right=["NIN-070","NIN-060","NIN-093","NIN-021","NIN-008","NIN-022"]
 		level=140
 	for i in range(6):
 		var id=left[i]

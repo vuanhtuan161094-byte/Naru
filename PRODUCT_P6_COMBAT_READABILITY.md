@@ -1,0 +1,3 @@
+# P6 straight 2.5D combat readability
+
+Ground-only projection (lower 59% of field), horizontal ranks, stable sprite scale, no per-frame shrink, less status clutter, compact ally HP/CP, fewer overlay marks. Deployment spacing DEV 1.45/2.0 vs 1.2/1.5, role-aware tactical spacing mild increase; changes starting distance and movement choices, not hitboxes or cast ranges. Full CI balance regression required. Native --art-pack=path and loopback sibling naru-art.json optional auto-load; private data never pushed. Native capture uses the 12 covered identities if pack provided. Public CI remains generic placeholder unless supplied separately. Art HOLD remains. No Codex, rig, tween or merge.

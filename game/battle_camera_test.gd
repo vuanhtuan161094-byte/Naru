@@ -15,7 +15,7 @@ func _initialize() -> void:
 					push_error("BATTLE_LAYOUT_FAIL straight depth axis");quit(1);return
 			for p in [Vector2.ZERO,Vector2(arena.x,0),arena,Vector2(0,arena.y)]:
 				var pos=Camera.project(p,view,arena)
-				if not Rect2(Vector2.ZERO,view).has_point(pos):
+				if not Rect2(Vector2.ZERO,view).has_point(pos) or pos.y<Camera.ground_top(view):
 					push_error("BATTLE_LAYOUT_FAIL out of bounds");quit(1);return
 	print("NARU_BATTLE_LAYOUT_PASS 12 map/viewport combinations; zero shear on both axes")
 	quit(0)
