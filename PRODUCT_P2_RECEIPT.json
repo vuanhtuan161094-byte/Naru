@@ -1,0 +1,52 @@
+{
+  "base": "f899aef2527bdcb3232700752bed280604defb49",
+  "run": 45735949933,
+  "ci": "success",
+  "web": 15079950102,
+  "video": 15079735760,
+  "screens": 15079585664,
+  "qa": 15079373662,
+  "organic": {
+    "wins": 120,
+    "resources": 150,
+    "recipes": 63,
+    "ninja": 142,
+    "contracts": 11,
+    "beasts": 6,
+    "reload_fields": 22
+  },
+  "private_r11": {
+    "archive_sha256": "578e33f7b1e431cf1e9deed4bd6112a6bce26cf51c6af20f5a639c0768acbeaf",
+    "pack_sha256": "bfd9f2de3bffae19f09368c0118d250e1567842e7d75ce2ab30b156178380acf",
+    "bytes": 11890183,
+    "textures": 223,
+    "clip_metadata": 67,
+    "portraits": 12,
+    "characters": 12,
+    "building_markers": 30,
+    "schematic_markers": 27,
+    "complete_kits": 0,
+    "validation": "offline PNG decode, SHA256 and metadata checks only; not native runtime acceptance",
+    "private_assets_not_bundled": true
+  },
+  "p2": {
+    "status": "CI_REQUIRED",
+    "ui": [
+      "navigation current section",
+      "shared portrait/building detail panel",
+      "roster larger portraits",
+      "village mode indicator",
+      "coverage ledger in settings",
+      "nonpilot P1 visible read-only during P2 isolation"
+    ],
+    "mechanics": "unchanged",
+    "holds": "unchanged including VFX",
+    "remaining": [
+      "new animation art",
+      "27 detailed buildings and seamless village",
+      "792 individualized passive designs",
+      "VFX source approval and production",
+      "visual review of P2"
+    ]
+  }
+}

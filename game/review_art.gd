@@ -122,6 +122,24 @@ func count_characters() -> int:
 		if str(path).begins_with("characters/"):count+=1
 	return count
 
+# Exact direction/action coverage; a static sprite or legacy walk is not a completed kit.
+func product_coverage() -> Dictionary:
+	var counts={"characters":0,"portraits":0,"buildings":0,"clips":clip_metadata.size(),"complete_kits":0}
+	for path in textures:
+		var name=str(path)
+		if name.begins_with("characters/"):
+			counts.characters+=1
+			var id=name.get_file().get_basename()
+			var complete=true
+			for action in ["idle","move","attack","cast","hit","fall"]:
+				for direction in ["se","sw","ne","nw"]:
+					var key="animation/"+id+"/"+action+"_"+direction+".png"
+					if not textures.has(key) or not clip_metadata.has(key):complete=false
+			if complete:counts.complete_kits+=1
+		elif name.begins_with("portraits/"):counts.portraits+=1
+		elif name.begins_with("environment/buildings/"):counts.buildings+=1
+	return counts
+
 func reset_battle() -> void:
 	last_pos={}
 	motion={}

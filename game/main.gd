@@ -82,7 +82,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"ONE GAME V2 RC",16)
+	label(header,"ONE GAME V2 • P2",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -122,6 +122,31 @@ func clear() -> void:
 	for c in root.get_children():
 		root.remove_child(c)
 		c.queue_free()
+
+# Shared product header: uses private authored images when present, without changing gameplay.
+func product_art_header(parent: Node,path: String,title_text: String,subtitle: String,extent: int) -> VBoxContainer:
+	var frame=PanelContainer.new()
+	frame.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	parent.add_child(frame)
+	var row=HBoxContainer.new()
+	row.add_theme_constant_override("separation",12)
+	frame.add_child(row)
+	var tex=art.texture(path)
+	if tex!=null:
+		var portrait=TextureRect.new()
+		portrait.texture=tex
+		portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+		portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		portrait.custom_minimum_size=Vector2(extent,extent)
+		portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE
+		row.add_child(portrait)
+	var info=VBoxContainer.new()
+	info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	info.alignment=BoxContainer.ALIGNMENT_CENTER
+	row.add_child(info)
+	label(info,title_text,27).modulate=Color("#f1d398")
+	label(info,subtitle,17)
+	return info
 
 func label(parent: Node,value: String,size: int=22) -> Label:
 	var l=Label.new()
@@ -254,13 +279,13 @@ func growth_screen() -> void:
 		if roster_job!="" and n.profession_hint!=roster_job:continue
 		var b=button(grid,"%s\nCấp %d • Phẩm %d • %d sao" % [n.name_vi,int(p.level),int(p.quality),int(p.stars)],func():growth_detail(id))
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.custom_minimum_size.y=76
+		b.custom_minimum_size.y=84
 		b.modulate=quality_color(int(p.quality))
 		var portrait=art.texture("portraits/"+id+".png")
 		if portrait!=null:
 			b.icon=portrait
 			b.expand_icon=true
-			b.add_theme_constant_override("icon_max_width",48)
+			b.add_theme_constant_override("icon_max_width",64)
 	if grid.get_child_count()==0:label(rows,"Không có ninja phù hợp.",18)
 
 const WorldQuotes=preload("res://game/progression_quotes.gd")
@@ -270,9 +295,8 @@ func growth_detail(id: String,message: String="") -> void:
 	open_screen("ninja_detail")
 	var p=store.state.owned[id]
 	store.ensure_growth(p)
-	label(root,str(reg.ninjas[id].name_vi),27)
-	label(root,"Cấp %d/%d • Cảnh %d • Phẩm %d • Sao %d/15 • Mảnh %d • Điểm %d • XP %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.quality),int(p.stars),int(p.shards),int(p.points),int(p.xp)],17)
-	label(root,message,16)
+	var info=product_art_header(root,"portraits/"+id+".png",str(reg.ninjas[id].name_vi),"Cấp %d/%d • Cảnh %d • Phẩm %d • Sao %d/15 • Mảnh %d • Điểm %d • XP %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.quality),int(p.stars),int(p.shards),int(p.points),int(p.xp)],88)
+	if message!="":label(info,message,16)
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
 	button(nav,"Tu luyện EXP",func():training_screen(id))
@@ -813,8 +837,9 @@ func building_screen(id: String,message: String="") -> void:
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	var b=store.state.building_states[id]
 	var def=reg.buildings[id]
-	label(root,"%s • Cấp %d/100" % [def.name_vi,int(b.level)],28)
-	label(root,("Yêu cầu Tổng bộ %d | " % int(def.unlock_hq))+message,18)
+	var info=product_art_header(root,"environment/buildings/"+id+".png","%s • Cấp %d/100" % [def.name_vi,int(b.level)],"Yêu cầu Tổng bộ %d | %s" % [int(def.unlock_hq),message],80)
+	var status_text="Đang xây / nâng cấp" if not b.upgrade.is_empty() else "Đã xây" if int(b.level)>0 else "Chưa xây"
+	label(info,status_text+" • Tình trạng %.0f%%" % (float(b.condition)*100),15)
 	var cost=preload("res://game/village_service.gd").upgrade_cost(reg,store.state,id)
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
@@ -1231,13 +1256,26 @@ func squad_detail(key: String,message: String="") -> void:
 func make_theme() -> Theme:
 	var t=Theme.new()
 	t.default_font_size=17
-	t.set_color("font_color","Label",Color("#e3e9ea"))
+	t.set_color("font_color","Label",Color("#e8e9e5"))
+	t.set_color("font_color","LineEdit",Color("#f0eee8"))
+	t.set_color("font_placeholder_color","LineEdit",Color("#9ca7aa"))
+	for control_type in ["LineEdit","PanelContainer"]:
+		var panel=StyleBoxFlat.new()
+		panel.bg_color=Color("#182a34")
+		panel.border_color=Color("#65716b")
+		panel.set_border_width_all(1)
+		panel.set_corner_radius_all(7)
+		panel.content_margin_left=8
+		panel.content_margin_right=8
+		panel.content_margin_top=6
+		panel.content_margin_bottom=6
+		t.set_stylebox("normal" if control_type=="LineEdit" else "panel",control_type,panel)
 	for state_key in ["normal","hover","pressed","disabled","focus"]:
 		var style=StyleBoxFlat.new()
 		style.bg_color=Color("#263d49") if state_key=="normal" else Color("#395b68") if state_key=="hover" else Color("#745a35") if state_key=="pressed" else Color("#202d35") if state_key=="disabled" else Color("#395b68")
 		style.border_color=Color("#55717c") if state_key!="focus" else Color("#f1bb69")
 		style.set_border_width_all(1)
-		style.set_corner_radius_all(5)
+		style.set_corner_radius_all(7)
 		style.content_margin_left=10
 		style.content_margin_right=10
 		style.content_margin_top=6
@@ -1252,6 +1290,10 @@ func open_screen(id: String) -> void:
 	if private_backdrop!=null:
 		private_backdrop.texture=art.texture("environment/village_plate.png") if id=="home" else null
 	navigation.visible=id!="battle"
+	var section={"home":"Làng","building":"Làng","craft":"Làng","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Bố trận","recruit":"Chiêu mộ","campaign":"Cốt truyện","world":"Nhẫn giới","diplomacy":"Nhẫn giới","inventory":"Kho","quest":"Nhiệm vụ","beasts":"Vĩ Thú","settings":"Cài đặt"}
+	for item in navigation.get_children():
+		if item is Button:
+			item.self_modulate=Color("#f8d493") if item.text==section.get(id,"") else Color.WHITE
 	clear()
 	update_resources()
 
@@ -1295,8 +1337,13 @@ func home_screen(message: String="") -> void:
 		tile.custom_minimum_size.y=56
 		if int(b.level)==0:tile.modulate=Color("#a4b2ba")
 	# R11 review pack is optional; original grid remains if a marker is unavailable.
-	village_map.apply(self)
-	label(root,"Khởi đầu: phân công khai thác gỗ / mỏ, phái nhiệm vụ Ryo, rồi nâng Tổng bộ.",16)
+	var mapped=village_map.apply(self)
+	var footer=HBoxContainer.new()
+	root.add_child(footer)
+	var hint=label(footer,"Khởi đầu: phân công khai thác gỗ / mỏ, phái nhiệm vụ Ryo, rồi nâng Tổng bộ.",15)
+	hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	var map_status=label(footer,"30 công trình • Review R11" if mapped else "30 công trình • Giao diện chuẩn",14)
+	map_status.modulate=Color("#ebc77e") if mapped else Color("#a5b4b6")
 
 func quality_color(q: int) -> Color:
 	return [Color("#c9d1d2"),Color("#99d7ae"),Color("#9fc9ef"),Color("#d0afea"),Color("#efc479"),Color("#eaa495"),Color("#f2dc8e"),Color("#ffdbb5")][clampi(q,1,8)-1]
@@ -1476,7 +1523,7 @@ func settings_screen(message: String="") -> void:
 	root.add_child(passive_toggle)
 	passive_toggle.toggled.connect(func(on):change_setting("passives_dev",on))
 	var pilot_toggle=CheckButton.new()
-	pilot_toggle.text="Thử nghiệm P2 pilot (72 nội tại, cần bật P1)"
+	pilot_toggle.text="P2 pilot (12 ninja; cô lập thử nghiệm, cần bật P1)"
 	pilot_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_pilot_dev",false))
 	root.add_child(pilot_toggle)
 	pilot_toggle.toggled.connect(func(on):change_setting("passive_pilot_dev",on))
@@ -1496,7 +1543,9 @@ func settings_screen(message: String="") -> void:
 		art.enabled=not art.enabled and not art.textures.is_empty()
 		art.source_label="REVIEW RIÊNG • "+str(art.textures.size())+" ảnh" if art.enabled else "DEV • tắt gói review"
 		settings_screen(art.source_label))
-	label(root,art.source_label+" • "+str(art.count_characters())+" sprite tĩnh; không phải bản phát hành.",16)
+	var coverage=art.product_coverage()
+	label(root,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
+	label(root,"Animation có metadata: %d • Bộ đủ 24 clip chuẩn: %d • VFX HOLD (chỉ review)" % [coverage.clips,coverage.complete_kits],15)
 	label(root,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 
 func change_setting(key: String,value: bool) -> void:
@@ -1661,7 +1710,10 @@ func passive_screen(id: String,message: String="") -> void:
 	label(root,message,15)
 	var rows=scroll_rows(root)
 	var pilot_on=store.state.get("settings",{}).get("passive_pilot_dev",false) and store.state.get("settings",{}).get("passives_dev",false)
-	for data in (reg.passive_pilot_rows.get(id,[]) if pilot_on else reg.passives_by_ninja.get(id,[])):
+	var pilot_rows=reg.passive_pilot_rows.get(id,[])
+	var pilot_isolated=pilot_on and pilot_rows.is_empty()
+	if pilot_isolated:label(rows,"Ninja chưa thuộc 12 mẫu pilot P2. Nội tại P1 bên dưới chỉ xem; tắt pilot để sử dụng cấu hình P1.",15)
+	for data in (pilot_rows if pilot_on and not pilot_isolated else reg.passives_by_ninja.get(id,[])):
 		var key=str(data.id)
 		var sk=svc.progress(p,key)
 		var box=VBoxContainer.new()
@@ -1678,6 +1730,9 @@ func passive_screen(id: String,message: String="") -> void:
 		if reg.passive_pilot.has(key):heading.tooltip_text+=" | P2 pilot DEV "+("đang thử" if pilot_on else "chưa bật")
 		if reg.synergy_gaps.has(key):heading.tooltip_text+=" | REVIEW: "+str(reg.synergy_gaps[key])
 		label(box,"%s • %s • %s • Cảnh %d • Thành thạo %d • %s" % [str(data.trigger.event),str(data.target.scope),str(data.effect.key),int(data.unlock.realm),int(sk.mastery),str(reg.passive_ledger[key])],14)
+		if pilot_isolated:
+			label(box,"P1 tham khảo • không chạy trong pilot P2",15)
+			continue
 		if not store.passive_allowed(reg,id,key):
 			label(box,"Chưa mở khóa",15)
 			continue
