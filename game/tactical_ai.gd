@@ -30,7 +30,7 @@ static func target_bonus(sim,a: Dictionary,b: Dictionary,s: Dictionary,allied: b
 	# Spread opening basic targets across lanes. Keep deliberate combo, pressure,
 	# taunt and role-based focus rules intact.
 	if s.kind=="basic" and not sim.pressure_mode:
-		score-=maxf(0.0,float(occupied)-1.0)*8.0
+		score-=maxf(0.0,float(occupied)-1.0)*12.0
 		if sim.ticks<100 and a.has("deployment_slot") and b.has("deployment_slot"):
 			var lane_diff=absi(int(a.deployment_slot)%3-int(b.deployment_slot)%3)
 			score-=float(lane_diff)*12.0
@@ -77,7 +77,7 @@ static func spacing(sim,a: Dictionary,p: Vector2) -> float:
 		if ally.uid==a.uid:continue
 		var delta=p-Vector2(ally.pos)
 		var gap=Vector2(delta.x,delta.y*0.72).length()
-		var preferred=1.9 if role(sim,a) in ["công kích xa","trị liệu","hỗ trợ","khống chế"] else 1.65
+		var preferred=2.1 if role(sim,a) in ["công kích xa","trị liệu","hỗ trợ","khống chế"] else 1.75
 		cost+=maxf(0.0,preferred-gap)*3.0
 	return cost
 

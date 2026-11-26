@@ -55,6 +55,7 @@ var inspected_uid=0
 var hud_clock=0.0
 var form_actions: Array[Dictionary]=[]
 var last_video_ult_tick=-1
+var last_private_trace_tick=-1
 var qa_clock=0.0
 var roster_query=""
 var roster_quality=0
@@ -697,8 +698,10 @@ func draw_field() -> void:
 		# The original clip labels are diamond-isometric directions. Use their actual
 		# facing in the straight horizontal camera, without mirroring any frame.
 		presentation_state.direction=BattleCamera.sprite_direction(face,int(a.side))
+		presentation_state.render_id=art.presentation_id(a,sim.actor_by_uid(int(a.get("owner",0))))
 		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,presentation_state)
-		if sprite_top<=0:
+		var missing_sprite=sprite_top<=0
+		if missing_sprite:
 			# Original generic geometric DEV actor, not an approved ninja sprite.
 			field.draw_set_transform(p,0,Vector2.ONE*visual_scale)
 			field.draw_colored_polygon(PackedVector2Array([Vector2(-12,-3),Vector2(-11,-28),Vector2(11,-28),Vector2(12,-3)]),c.darkened(0.3))
@@ -729,7 +732,7 @@ func draw_field() -> void:
 			if absf(v)<0.00001 or badge_index>=6:continue
 			field.draw_circle(bar+Vector2(4+8*badge_index,-5),3,Color("#82d5a4") if v>0 else Color("#ed827b"))
 			badge_index+=1
-		if art.texture("characters/"+str(a.id)+".png")==null:field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,13),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
+		if missing_sprite and battle_details:field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,13),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
 	for projectile in sim.projectiles if bool(store.state.get("settings",{}).get("projectiles",true)) else []:
 		var source=sim.actor_by_uid(int(projectile.source))
 		var target=sim.actor_by_uid(int(projectile.target))
@@ -756,6 +759,9 @@ func _process(delta: float) -> void:
 			qa_clock=0
 			publish_ui_probe()
 	if sim==null:return
+	if "--private-capture" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=120 and sim.ticks%120==0 and last_private_trace_tick!=sim.ticks:
+		last_private_trace_tick=sim.ticks
+		print("NARU_PRIVATE_TRACE tick=",sim.ticks," actors=",sim.primary_alive(0).size()+sim.primary_alive(1).size()," draws=",art.actor_draws," fallback=",art.fallback_draws," clone=",art.clone_draws," summon=",art.summon_draws," directional_pose=",art.directional_pose_draws)
 	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=60 and sim.ticks%40==0 and last_video_ult_tick!=sim.ticks:
 		last_video_ult_tick=sim.ticks
 		# Stagger actual manual requests so the sample does not queue every ultimate simultaneously.
@@ -1864,6 +1870,11 @@ func start_art_review() -> void:
 			left=["NIN-055","NIN-041","NIN-042","NIN-043","NIN-007","NIN-004"]
 			right=["NIN-070","NIN-060","NIN-093","NIN-021","NIN-008","NIN-022"]
 		level=140
+		if "--style-benchmark" in OS.get_cmdline_user_args() and art.enabled:
+			# Nine higher-detail identities in twelve real actor slots; this is a mirror-match review, not twelve new kits.
+			left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
+			right=["NIN-016","NIN-070","NIN-068","NIN-041","NIN-042","NIN-043"]
+			battle_stage.name_vi="Benchmark mỹ thuật • 9 danh tính / 12 ninja"
 	for i in range(6):
 		var id=left[i]
 		sim.add_actor(id,0,level,int(reg.ninjas[id].initial_quality),{},i,1.0,{"realm":6,"stars":5,"forms":reg.ninjas[id].form_ids,"unlocked_skills":reg.ninjas[id].additional_skill_ids} if level>20 else {})

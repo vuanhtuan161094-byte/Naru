@@ -4,6 +4,8 @@ on:
     branches: [integration/one-game]
     paths:
       - '.github/workflows/native-private-review.yml'
+      - 'game/review_art.gd'
+      - 'game/main.gd'
   workflow_dispatch:
 permissions:
   contents: read

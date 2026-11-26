@@ -1,0 +1,3 @@
+# P9 art runtime fixes
+
+Render exact clone skills with owner art, not a generic person; authored directional idle cel fallback only (counted as missing action, no mirrored or fabricated frames). Two original static summon drawings for Kakashi ninken and Sakura Katsuyu, not animation. Explicit style benchmark uses nine higher-detail identities in twelve slots (three mirrored team identities); default review retains original twelve distinct identities. Trace logs distinguish actual draws, missing action fallbacks, clone and summon draws. No private art published. Tactical spacing and focus change DEV; CI required. Art acceptance remains HOLD until 12 distinct consistent complete kits and footage verified.

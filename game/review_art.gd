@@ -17,6 +17,11 @@ var review_move_draws=0
 var clip_metadata: Dictionary={}
 var clip_draws: Dictionary={}
 var fallback_draws=0
+var directional_pose_draws=0
+var clone_draws=0
+var summon_draws=0
+const CLONE_SKILLS=["NIN-001-S1","NIN-041-S1","NIN-060-S3","NIN-070-S2"]
+const SUMMON_ART={"NIN-004-S2":preload("res://assets/production/summon/ninken.svg"),"NIN-043-S6":preload("res://assets/production/summon/katsuyu.svg")}
 
 func hash_bytes(bytes: PackedByteArray) -> String:
 	var h=HashingContext.new()
@@ -150,6 +155,9 @@ func reset_battle() -> void:
 	review_move_draws=0
 	clip_draws={}
 	fallback_draws=0
+	directional_pose_draws=0
+	clone_draws=0
+	summon_draws=0
 
 func background(field: Control,environment: String) -> bool:
 	var t=texture("environment/arena_open_r3.png")
@@ -173,8 +181,29 @@ func tile(field: Control,p: Vector2,q: float,x: int,y: int,plate: bool) -> bool:
 	field.draw_texture_rect(t,Rect2(p+Vector2(-38,0)*q,Vector2(76,40)*q),false,Color(1,1,1,0.36) if plate else Color.WHITE)
 	return true
 
+func presentation_id(a:Dictionary,owner:Dictionary={}) -> String:
+	if bool(a.get("summon",false)) and str(a.get("summon_skill","")) in CLONE_SKILLS and not owner.is_empty():
+		return str(owner.id)
+	return str(a.id)
+
+func pose_path(id:String,direction:String) -> String:
+	var exact="animation/"+id+"/idle_"+direction+".png"
+	if texture(exact)!=null:return exact
+	var front="sw" if direction in ["nw","sw"] else "se"
+	var alternate="animation/"+id+"/idle_"+front+".png"
+	return alternate if texture(alternate)!=null else ""
+
 func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale: float=1.0,state: Dictionary={}) -> float:
-	var id=str(a.id)
+	var id=str(state.get("render_id",a.id))
+	if bool(a.get("summon",false)) and SUMMON_ART.has(str(a.get("summon_skill",""))):
+		var prop:Texture2D=SUMMON_ART[str(a.summon_skill)]
+		var w=76.0*display_scale
+		var h=w*float(prop.get_height())/float(prop.get_width())
+		field.draw_texture_rect(prop,Rect2(p-Vector2(w*0.5,h),Vector2(w,h)),false)
+		summon_draws+=1
+		actor_draws+=1
+		return h
+	if id!=str(a.id):clone_draws+=1
 	var t=texture("characters/"+id+".png")
 	var prior: Vector2=last_pos.get(a.uid,p)
 	if prior.distance_to(p)>0.25:
@@ -184,10 +213,11 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	var direction=str(state.get("direction","SE")).to_lower()
 	var clip_path="animation/"+id+"/"+action+"_"+direction+".png"
 	var authored=texture(clip_path)
+	var pose=texture(pose_path(id,direction))
 	var r3=review_move_r3.get(id,{})
 	var r3_texture: Texture2D=null
 	if action=="move" and direction in ["se","ne"] and not r3.is_empty() and review_clip_hashes.get(r3.path,"")==r3.sha256:r3_texture=texture(r3.path)
-	if t==null and authored==null and r3_texture==null:
+	if t==null and authored==null and r3_texture==null and pose==null:
 		fallback_draws+=1
 		return 0.0
 	var height=112.0*display_scale
@@ -196,7 +226,7 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	# One provisional authored rightward walk pilot, never mirror or fabricate missing clips.
 	var moving=motion.get(a.uid,{})
 	var walk=texture("animation/"+id+"/walk_screen_right.png")
-	if r3_texture!=null and r3_texture.get_width()==768 and r3_texture.get_height()==112:
+	if authored==null and r3_texture!=null and r3_texture.get_width()==768 and r3_texture.get_height()==112:
 		var frame=frame_at(r3.frames,maxi(0,ticks-int(state.get("started_tick",0)))*50,true)
 		field.draw_texture_rect_region(r3_texture,dest,Rect2(frame*96,0,96,112))
 		review_move_draws+=1
@@ -212,6 +242,11 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	elif action=="move" and walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
 		var frame=posmod(floori(float(ticks)/2.0),4)
 		field.draw_texture_rect_region(walk,dest,Rect2(frame*96,0,96,112))
+	elif pose!=null and pose.get_height()==112 and pose.get_width()%96==0:
+		# Honest static authored directional pose when the requested action is missing.
+		field.draw_texture_rect_region(pose,dest,Rect2(0,0,96,112))
+		directional_pose_draws+=1
+		fallback_draws+=1
 	elif t!=null:
 		field.draw_texture_rect(t,dest,false)
 		fallback_draws+=1
