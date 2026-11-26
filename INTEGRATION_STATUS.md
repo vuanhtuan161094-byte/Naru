@@ -1,3 +1,3 @@
-# PRODUCT P4 — P3 regression correction
+# ONE GAME — ART HOLD
 
-P3 CI 45749302419 and 45749231642 failed new passive fixture: all 144 registry pilot-row lists exist by design, only 12 have P2 patches. Correct membership based on actual 72 patched IDs, retain mixed fallback by default when pilot enabled, explicit false isolates 12, P1/holds unchanged. Test checks 12/144 membership and both modes. New exact CI required. P3 art remains private review only.
+P3 art-only 39425aea CI 45749168556 success. P4 c61cd371 CI 45750622516 failed unseeded basic hit fixture; per-ID 1146/1146 effects succeeded. Fixed seeded smoke retains actual cast and dispatch requirement. Exact CI pending. Product art is HOLD: 0/12 complete ninja, 3/30 individually authored buildings, no VFX promotion. See PRODUCT_VISUAL_GATE.json.

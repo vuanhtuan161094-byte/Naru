@@ -82,7 +82,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"ONE GAME V2 • P4",16)
+	label(header,"ONE GAME V2 • ART HOLD",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:

@@ -1,0 +1,22 @@
+{
+  "status": "ART_HOLD",
+  "gameplay_ci_is_not_visual_acceptance": true,
+  "baseline": {
+    "sha": "39425aeac919ba9026cb1e2bcb9f5ed9acb210f0",
+    "ci": 45749168556
+  },
+  "rejected": [
+    "R11 mixed character styles",
+    "P3 27 reused architectural compositions",
+    "grid-like panorama",
+    "unapproved VFX"
+  ],
+  "acceptance": {
+    "character": "12 distinct consistent designs; 4 directions x 6 actions; authored distinct cels; correct silhouette, foot anchor and no mirrored substitutions",
+    "village": "30 individually recognizable buildings; coherent terrain, roads, depth and palette; clickable without opaque grid covering scene",
+    "battle": "native Godot real 6v6; visual readability at gameplay scale; frame continuity and readable status",
+    "ui": "native screenshots of actual 17 screens; no clipping and coherent style",
+    "vfx": "approved sprite-first charge/travel/contact/residual; no generic placeholder accepted"
+  },
+  "release": "HOLD until actual native visual evidence and owner acceptance; CI alone cannot promote"
+}
