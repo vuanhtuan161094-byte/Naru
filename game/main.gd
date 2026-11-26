@@ -551,7 +551,8 @@ func draw_field() -> void:
 		field.draw_arc(Vector2.ZERO,radius+1,0,TAU,24,c,1.4)
 		if a.uid==inspected_uid:field.draw_arc(Vector2.ZERO,radius+5,0,TAU,24,Color("#e9f5ff"),2)
 		field.draw_set_transform(Vector2.ZERO)
-		var visual_scale=q*(0.76 if a.get("summon",false) else 1.0)
+		var depth_scale=lerpf(0.88,1.05,clampf(float(a.pos.y)/maxf(1.0,float(sim.map_height)),0,1))
+		var visual_scale=q*depth_scale*(0.76 if a.get("summon",false) else 1.0)
 		var nearest=1000.0
 		for other in sim.actors:
 			if other.uid!=a.uid and other.hp>0:nearest=minf(nearest,p.distance_to(iso(other.pos)))
@@ -1831,7 +1832,7 @@ func inspect_battle_input(event: InputEvent) -> void:
 	var distance=42.0
 	for a in sim.actors:
 		if a.hp<=0:continue
-		var d=point.distance_to(iso(a.pos)-Vector2(0,18))
+		var d=point.distance_to(iso(a.pos)-Vector2(0,22*arena_scale()))
 		if d<distance:best=a;distance=d
 	if not best.is_empty():
 		select_battle_actor(int(best.uid))

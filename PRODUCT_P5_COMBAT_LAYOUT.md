@@ -1,3 +1,3 @@
-# P5 horizontal battle layout
+# P5R straight 2.5D combat
 
-Presentation only: horizontal oblique camera, full-width field, no resource header during battle, compact party HUD, selectable detail/log and grid, preserved ultimate/contract/form actions, depth sorted by projected feet, bounded sprite size reduction for crowded actors without altering world position. No gameplay map, collision, AI, range, save or private assets changed. CI and native capture required; visual art HOLD remains.
+Zero shear: world X maps only to screen X, world Y maps only to screen Y; left/right ranks remain level, depth via modest scale and foot Y draw order. 14x10 and other arena profiles unchanged. Preserve P5 compact HUD and detail toggles. CI tests strict equal axes and captures compact/detail/observation screenshots. Existing directional authored sprites and private pack are unchanged; straight camera is not an art acceptance. No gameplay, AI, hitbox or balance changes.
