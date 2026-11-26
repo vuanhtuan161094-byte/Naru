@@ -57,7 +57,7 @@ func save_now() -> bool:
 	state.rng_state=str(rng.state)
 	var f = FileAccess.open(save_path+".tmp",FileAccess.WRITE)
 	if f==null: return false
-	f.store_string(JSON.stringify(state))
+	f.store_string(JSON.stringify(state,"",true,true))
 	f.flush()
 	f.close()
 	if FileAccess.file_exists(save_path):
@@ -128,6 +128,15 @@ func begin_stage(stage: Dictionary) -> String:
 		state=prior
 		return ""
 	return id
+
+# Watchdog is not a defeat: refund the reserved stamina and persist the interrupted ledger.
+func interrupt_stage(reg,event_id: String) -> bool:
+	var entry=state.ledger.get(event_id,{})
+	if not entry is Dictionary or entry.get("status")!="started" or not reg.stages.has(entry.get("stage_id","")):return false
+	var prior=state.duplicate(true)
+	state.stamina=mini(120,int(state.stamina)+int(reg.stages[entry.stage_id].stamina_cost))
+	entry.status="interrupted"
+	return commit_change(prior,rng.state)
 
 func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts: Dictionary,mastery_counts: Dictionary={},action_stats: Dictionary={},passive_mastery: Dictionary={}) -> bool:
 	var entry=state.ledger.get(event_id)
@@ -278,6 +287,13 @@ func allocate(id: String, stat: String,quantity: int=1) -> bool:
 	p.points=int(p.points)-quantity
 	p.allocated[stat]=int(p.allocated.get(stat,0))+quantity
 	return commit_change(prior,rng.state)
+
+func breakthrough_quote(id: String) -> Dictionary:
+	if not state.owned.has(id):return {}
+	var p=state.owned[id]
+	var cost=Quotes.realm_cost(int(p.realm))
+	var stock=int(state.inventory.get("RES-128",0))
+	return {"cost":cost,"stock":stock,"missing":maxi(0,cost-stock),"ready":int(p.level)>=(int(p.realm)+1)*20 and stock>=cost,"chance":Quotes.realm_chance(int(p.get("realm_failures",0))),"banked_xp":int(p.xp)}
 
 func breakthrough(id: String) -> String:
 	if not state.owned.has(id): return "locked"
@@ -577,10 +593,9 @@ func trial_ready(reg,id: String,trial_id: String) -> bool:
 func duel(reg,id: String,level: int,seed_value: int) -> bool:
 	var p=state.owned[id]
 	var sim=Combat.new()
-	sim.registry=reg
-	sim.auto_player_ultimate=true
-	sim.rng.seed=seed_value
-	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
+	var context=preload("res://game/world_combat_context.gd")
+	context.configure(sim,reg,state,seed_value)
+	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,context.progress(state,id),state.gear_instances)
 	sim.add_actor(id,1,level,int(reg.ninjas[id].initial_quality),{},0,1.0)
 	for i in range(24000):
 		sim.tick(0.05)
@@ -708,6 +723,30 @@ func resource_trial_ready(reg,id: String,resource: String) -> bool:
 	if source.is_empty() or not source.source_type in ["trial","bloodline_trial"]:return false
 	return Village.level(state,str(source.building_id))>0 and Village.level(state,"BLD-001")>=int(source.source_min_hq) and int(state.source_cooldowns.get(id+":"+resource,0))<=int(state.simulation_seconds)
 
+# Explicit roster dispatch; every trial is a real duel, with its own persisted cooldown.
+func trial_roster(reg,resource: String) -> Array:
+	var ready=[]
+	for id in state.owned:
+		if resource_trial_ready(reg,id,resource):ready.append(id)
+	ready.sort_custom(func(a,b):
+		return int(state.owned[a].level)*int(state.owned[a].quality)>int(state.owned[b].level)*int(state.owned[b].quality))
+	return ready
+
+func resource_trial_batch(reg,resource: String,roster: Array) -> Dictionary:
+	var result={"attempts":0,"wins":0,"earned":0}
+	if roster.size()<1 or roster.size()>6:return result
+	var unique={}
+	for id in roster:
+		if unique.has(id) or not state.owned.has(id):return result
+		unique[id]=true
+	for id in roster:
+		if not resource_trial_ready(reg,id,resource):continue
+		result.attempts+=1
+		if resource_trial(reg,id,resource):
+			result.wins+=1
+			result.earned+=int(Content.source_for(reg,resource).base_yield)
+	return result
+
 func resource_trial(reg,id: String,resource: String) -> bool:
 	if not resource_trial_ready(reg,id,resource):return false
 	var source=Content.source_for(reg,resource)
@@ -744,14 +783,31 @@ func native_bloodline(reg,id: String,bloodline: String) -> bool:
 	return commit_change(prior,rng.state)
 
 
-func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
-	if not state.owned.has(id) or not reg.beasts.has(beast_id) or state.beasts.has(beast_id):return false
+func beast_capture_reason(reg,id: String,beast_id: String) -> String:
+	if not state.owned.has(id) or not reg.beasts.has(beast_id):return "Chưa sở hữu ninja"
+	if state.beasts.has(beast_id):return "Đã thu phục"
 	var req=reg.beasts[beast_id].capture_requires
-	return int(state.owned[id].realm)>=int(req.realm) and Village.level(state,"BLD-027")>0 and has_cost({str(req.seal_resource):int(req.seal_qty)})
+	if Village.level(state,"BLD-027")==0:return "Cần Điện Vĩ Thú"
+	if int(state.owned[id].realm)<int(req.realm):return "Thiếu cảnh giới %d/%d" % [int(state.owned[id].realm),int(req.realm)]
+	if not has_cost({str(req.seal_resource):int(req.seal_qty)}):return "Thiếu ấn phong ấn"
+	return ""
+
+func beast_capture_ready(reg,id: String,beast_id: String) -> bool:
+	return beast_capture_reason(reg,id,beast_id)==""
+
+func beast_bind_reason(reg,id: String,beast_id: String) -> String:
+	if not reg.beasts.has(beast_id):return "Vĩ thú không hợp lệ"
+	if not id in reg.beasts[beast_id].compatibility.preferred_host_ids:return "Không tương thích"
+	if not state.owned.has(id):return "Chưa chiêu mộ chủ thể"
+	if not state.beasts.has(beast_id):return "Chưa thu phục"
+	if str(state.owned[id].get("beast_id",""))!="" or str(state.beasts[beast_id].host)!="":return "Đã liên kết"
+	var req=reg.beasts[beast_id].capture_requires
+	if not has_cost({str(req.seal_resource):int(req.seal_qty)}):return "Thiếu ấn phong ấn"
+	return ""
 
 func beast_bind_ready(reg,id: String,beast_id: String) -> bool:
-	if not state.owned.has(id) or not state.beasts.has(beast_id) or not reg.beasts.has(beast_id):return false
-	return id in reg.beasts[beast_id].compatibility.preferred_host_ids and str(state.owned[id].beast_id)=="" and str(state.beasts[beast_id].host)=="" and has_cost({"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)})
+	return beast_bind_reason(reg,id,beast_id)==""
+
 
 func capture_beast(reg,id: String,beast_id: String) -> bool:
 	if not beast_capture_ready(reg,id,beast_id):return false
@@ -763,10 +819,9 @@ func capture_beast(reg,id: String,beast_id: String) -> bool:
 	var old_rng=rng.state
 	debit(cost)
 	var sim=Combat.new()
-	sim.registry=reg
-	sim.auto_player_ultimate=true
-	sim.rng.seed=rng.randi()
-	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,p,state.gear_instances)
+	var context=preload("res://game/world_combat_context.gd")
+	context.configure(sim,reg,state,rng.randi())
+	sim.add_actor(id,0,int(p.level),int(p.quality),p.permanent,0,1.0,context.progress(state,id),state.gear_instances)
 	sim.add_beast(beast_id,int(req.realm)*20+10)
 	var won=false
 	for i in range(24000):
@@ -787,7 +842,8 @@ func bind_beast(reg,id: String,beast_id: String) -> bool:
 	var p=state.owned[id]
 	var beast=state.beasts[beast_id]
 	var prior=state.duplicate(true)
-	var cost={"RES-100":int(reg.beasts[beast_id].capture_requires.seal_qty)}
+	var req=reg.beasts[beast_id].capture_requires
+	var cost={str(req.seal_resource):int(req.seal_qty)}
 	if not has_cost(cost):return false
 	debit(cost)
 	beast.host=id
@@ -815,6 +871,16 @@ func make_contract(reg,id: String) -> bool:
 	var prior=state.duplicate(true)
 	debit(cost)
 	state.summon_contracts[id]={"owner":"","level":1}
+	return commit_change(prior,rng.state)
+
+func unassign_contract(id: String) -> bool:
+	if not state.summon_contracts.has(id):return false
+	var c=state.summon_contracts[id]
+	var ninja=str(c.owner)
+	if ninja=="" or not state.owned.has(ninja) or state.owned[ninja].summon_contract!=id:return false
+	var prior=state.duplicate(true)
+	c.owner=""
+	state.owned[ninja].summon_contract=""
 	return commit_change(prior,rng.state)
 
 func assign_contract(id: String,ninja: String) -> bool:
@@ -864,7 +930,7 @@ func stage_difficulty(reg,stage: Dictionary,team: Array) -> float:
 	return clampf(enemy/maxf(1.0,player),0.0,1.5)
 
 func export_save() -> String:
-	return JSON.stringify(state,"\t")
+	return JSON.stringify(state,"\t",true,true)
 
 func recover_interrupted(reg) -> bool:
 	var changed=false
@@ -927,6 +993,37 @@ func squad_capture(reg,key: String) -> bool:
 	if not World.capture_squad(reg,state,key):return false
 	Content.bump(state,"territory_battle")
 	return commit_change(prior,rng.state)
+
+# Exact V11 snapshot API (identical upstream module, no engine modifications).
+func player_preview(reg,id: String) -> Dictionary:
+	if not state.owned.has(id):return {}
+	var p=state.owned[id].duplicate(true)
+	p.beast_level=int(state.get("beasts",{}).get(p.get("beast_id",""),{}).get("level",0))
+	var natural=bool(state.get("settings",{}).get("depth_v5_dev",true))
+	var snapshot=preload("res://game/combat_stat_snapshot.gd").snapshot(reg,reg.ninjas[id],int(p.level),int(p.quality),p.permanent,p,state.gear_instances,natural)
+	if not natural:
+		for key in ["hp","patk","natk"]:snapshot.stats[key]*=1+0.04*(int(p.stars)-1)
+	return snapshot.stats
+
+func xp_to_cap(id: String) -> int:
+	if not state.owned.has(id):return 0
+	var p=state.owned[id]
+	var total=0
+	for lv in range(int(p.level),(int(p.realm)+1)*20):total+=Quotes.xp_need(lv,int(p.realm))
+	return maxi(0,total-int(p.xp))
+
+func training_scroll_quote(reg,id: String,resource: String,limit: int=100) -> Dictionary:
+	if not state.owned.has(id) or not resource in ["RES-116","RES-117"] or limit<1 or limit>100:return {}
+	var p=state.owned[id]
+	var remaining=xp_to_cap(id)
+	var stats=Stats.derive(reg,reg.ninjas[id],p)
+	var unit=(200.0 if resource=="RES-116" else 1000.0)*(1+Stats.effect(reg,stats,"xp_efficiency"))
+	var qty=mini(limit,mini(int(state.inventory.get(resource,0)),ceili(float(remaining)/maxf(1.0,unit))))
+	return {"qty":qty,"xp":roundi(unit*qty),"remaining":remaining,"stock":int(state.inventory.get(resource,0))}
+
+func train_to_cap(reg,id: String,resource: String,limit: int=100) -> bool:
+	var q=training_scroll_quote(reg,id,resource,limit)
+	return not q.is_empty() and int(q.qty)>0 and train_batch(reg,id,resource,int(q.qty))
 
 func train_batch(reg,id: String,resource: String,quantity: int) -> bool:
 	if not state.owned.has(id) or not resource in ["RES-116","RES-117"] or quantity<1 or quantity>100:return false

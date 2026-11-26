@@ -55,5 +55,209 @@
     "P5A": "organic 54/120, 104/150, 14 settled/63, 16 queued, 104 ninja, 11 contracts, 42 gear, 0 beast attempts; final Chromium/artifact pending at audit",
     "P5B": "transaction fixtures step PASS; 45-day integrity PASS, detailed log pending",
     "P5R": "CI pending"
+  },
+  "p6": {
+    "base": "cb8d2da1da0736ac8bf30ecf6a123742d238e5e7",
+    "one_game": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+    "source_heads": {
+      "gameplay": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
+      "design": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+      "art": "f529dccf856d034694ac1d1718b19770d84fa2bb"
+    },
+    "changed_files": [
+      ".github/workflows/world-progression-smoke.yml",
+      "HANDOFF_00_01_02.md",
+      "WORLD_BACKLOG.md",
+      "WORLD_INTEGRATION_MANIFEST.json",
+      "WORLD_INTEGRATION_READINESS.md",
+      "WORLD_STATUS.md",
+      "game/combat_stat_snapshot.gd",
+      "game/main.gd",
+      "game/resource_guide.gd",
+      "game/save_store.gd",
+      "game/village_service.gd",
+      "game/world_combat_context.gd",
+      "game/world_organic_test.gd",
+      "game/world_progression_test.gd",
+      "game/world_service.gd"
+    ],
+    "functions": {
+      "game/village_service.gd": [
+        "effective_recipe_cost",
+        "recipe_quote",
+        "reserve",
+        "queue_recipe"
+      ],
+      "game/resource_guide.gd": [
+        "recipes_for",
+        "expand",
+        "plan",
+        "chain"
+      ],
+      "game/main.gd": [
+        "growth_detail",
+        "campaign",
+        "building_screen",
+        "beast_detail",
+        "craft_screen",
+        "gear_material_screen",
+        "contract_detail",
+        "training_screen",
+        "gear_craft_screen"
+      ],
+      "game/world_organic_test.gd": [
+        "__preamble",
+        "_initialize"
+      ],
+      "game/save_store.gd": [
+        "beast_capture_reason",
+        "beast_capture_ready",
+        "unassign_contract",
+        "squad_capture",
+        "player_preview",
+        "xp_to_cap",
+        "duel",
+        "capture_beast",
+        "training_scroll_quote",
+        "train_to_cap"
+      ],
+      "game/world_progression_test.gd": [
+        "_initialize",
+        "p6_checks",
+        "defended_capture_fixture"
+      ],
+      "game/combat_stat_snapshot.gd": [
+        "__preamble",
+        "snapshot"
+      ],
+      "game/world_service.gd": [
+        "resolve_team"
+      ],
+      "game/world_combat_context.gd": [
+        "configure",
+        "progress"
+      ]
+    },
+    "snapshot": "identical upstream V11; already in integration, do not overwrite newer",
+    "acceptance": "P6B pending exact CI, no balance curve changes",
+    "p5r_verified": {
+      "run": 45641842098,
+      "web": 15035628444,
+      "wins": 54,
+      "resources": 134,
+      "recipes": 46,
+      "beast_attempts": 0
+    }
+  },
+  "p7": {
+    "base": "2b51e0818b39c16ee3bf0e9a0dbaa4f3478786d4",
+    "one_game": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+    "source_heads": {
+      "gameplay": "23568929384bbd4e80df8439d90851516cee270a",
+      "art": "7fa22ea470eaa96d80bd6ddf063b3f175779113b",
+      "design": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef"
+    },
+    "p6b": {
+      "ci": 45643976205,
+      "integrated_45d": {
+        "wins": 76,
+        "resources": 122,
+        "recipes": 33,
+        "beast_attempts": 0,
+        "defended_wins": 2,
+        "lead_banked_xp": 2625645
+      }
+    },
+    "files": [
+      "game/save_store.gd",
+      "game/main.gd",
+      "game/world_organic_test.gd",
+      "game/world_progression_test.gd",
+      ".github/workflows/world-progression-smoke.yml",
+      "WORLD_STATUS.md",
+      "WORLD_BACKLOG.md",
+      "WORLD_INTEGRATION_MANIFEST.json",
+      "WORLD_INTEGRATION_READINESS.md",
+      "HANDOFF_00_01_02.md"
+    ],
+    "functions": {
+      "game/save_store.gd": [
+        "trial_roster",
+        "resource_trial_batch",
+        "breakthrough_quote",
+        "interrupt_stage"
+      ],
+      "game/main.gd": [
+        "growth_detail",
+        "resource_detail",
+        "beast_detail"
+      ],
+      "game/world_organic_test.gd": [
+        "__preamble",
+        "battle",
+        "_initialize"
+      ],
+      "game/world_progression_test.gd": [
+        "_initialize",
+        "p7_checks"
+      ]
+    },
+    "status": "CANDIDATE_PENDING_90D_V11"
+  },
+  "p7r": {
+    "base": "f1bc9f30edd48fc9fc2cf6bb1024244d45ba4fb0",
+    "one_game": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+    "verified_combat": "46d6d1442c21f7f0acafcbb6e782f89e0219e615",
+    "verified_combat_run": 45647915498,
+    "newer_combat": "92409e0053fc58c996e2aebf3e1e4a0ca40b4d60",
+    "newer_run": 45649455759,
+    "p7_reproduced": {
+      "runs": [
+        45648319745,
+        45649274063
+      ],
+      "wins": 120,
+      "clear_day": 37,
+      "resources": 150,
+      "recipes": 62,
+      "beasts": 2,
+      "bound": 0,
+      "reload": "FAIL"
+    },
+    "files": [
+      "game/save_store.gd",
+      "game/world_organic_test.gd",
+      "game/world_progression_test.gd",
+      "game/main.gd",
+      ".github/workflows/world-progression-smoke.yml",
+      "WORLD_STATUS.md",
+      "WORLD_BACKLOG.md",
+      "WORLD_INTEGRATION_MANIFEST.json",
+      "WORLD_INTEGRATION_READINESS.md",
+      "HANDOFF_00_01_02.md"
+    ],
+    "functions": {
+      "game/save_store.gd": [
+        "save_now",
+        "export_save",
+        "beast_bind_reason",
+        "beast_bind_ready",
+        "bind_beast"
+      ],
+      "game/main.gd": [
+        "resource_detail",
+        "beast_detail"
+      ],
+      "game/world_organic_test.gd": [
+        "_initialize",
+        "same_saved_value"
+      ],
+      "game/world_progression_test.gd": [
+        "_initialize",
+        "p7r_checks"
+      ]
+    },
+    "status": "RELEASE_CANDIDATE_PENDING_CI",
+    "combat_policy": "unmodified verified V13 runtime copied only in ephemeral overlay"
   }
 }

@@ -1,4 +1,4 @@
-name: Naru One Game integrated DEV
+name: Naru ONE GAME V2 integrated DEV
 on:
   push:
     branches: ['integration/one-game']
@@ -89,26 +89,9 @@ jobs:
         run: |
           set -o pipefail
           G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 180 "$G" --headless --path . --script res://game/world_progression_test.gd 2>&1 | tee /tmp/world-progression.log
+          timeout 240 "$G" --headless --path . --script res://game/world_progression_test.gd 2>&1 | tee /tmp/world-progression.log
           grep NARU_WORLD_PROGRESSION_PASS /tmp/world-progression.log
           ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_PROGRESSION_FAIL' /tmp/world-progression.log
-      - name: World organic campaign and crafting observation
-        run: |
-          set -o pipefail
-          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
-          timeout 900 "$G" --headless --path . --script res://game/world_organic_test.gd 2>&1 | tee /tmp/world-organic.log
-          grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/world-organic.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/world-organic.log
-      - name: Upload early world QA logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: NARU-One-Game-World-QA
-          path: |
-            /tmp/world-progression.log
-            /tmp/world-organic.log
-          retention-days: 30
-
       - name: Economy 90-day starter simulation
         run: |
           set -o pipefail
@@ -134,7 +117,7 @@ jobs:
           ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/web-export.log
           printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
           cat > dist/README.txt <<'EOF'
-          NARU RPG - One Game integrated DEV, placeholder art. Extract the entire folder.
+          NARU RPG - ONE GAME V2 Combat V13 + World P7R candidate, private art optional. Extract the entire folder.
           In this folder run: python -m http.server 8000
           Open http://localhost:8000/index.html in Chromium/Chrome.
           Do not open index.html directly with file://.
@@ -154,14 +137,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-Web-DEV
+          name: NARU-One-Game-V2-Web-DEV
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-Web-DEV-menu
+          name: NARU-One-Game-V2-Web-DEV-menu
           path: |
             web-menu.png
             ui-shots/
@@ -181,9 +164,9 @@ jobs:
           "$G" --path . --fullscreen --resolution 1280x720 -- --combat-video >/tmp/naru-video.log 2>&1 &
           GAME=$!
           sleep 4
-          ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i :98.0 -t 24 -c:v libx264 -preset veryfast -pix_fmt yuv420p combat-video/Naru-One-Game-6v6.mp4
+          ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i :98.0 -t 24 -c:v libx264 -preset veryfast -pix_fmt yuv420p combat-video/Naru-One-Game-V2-6v6.mp4
           kill "$GAME" 2>/dev/null || true
-          test -s combat-video/Naru-One-Game-6v6.mp4
+          test -s combat-video/Naru-One-Game-V2-6v6.mp4
           grep NARU_VIDEO_BATTLE /tmp/naru-video.log
           ! grep -E 'SCRIPT ERROR|Parse Error' /tmp/naru-video.log
           cp /tmp/tactical-v10.log combat-video/TACTICAL_RUNTIME.log
@@ -194,6 +177,26 @@ jobs:
       - name: Upload Godot combat review
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-Combat-Video
+          name: NARU-One-Game-V2-Combat-Video
           path: combat-video/
+          retention-days: 30
+      - name: Earned-only integrated 90-day observation and strict reload
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 3600 "$G" --headless --path . --script res://game/world_organic_test.gd -- organic-days=90 2>&1 | tee /tmp/world-organic.log
+          grep NARU_WORLD_P7R_RELOAD_PASS /tmp/world-organic.log
+          grep NARU_WORLD_ORGANIC_INTEGRITY_PASS /tmp/world-organic.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_ORGANIC_FAIL' /tmp/world-organic.log
+      - name: Upload V2 QA logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-One-Game-V2-QA
+          path: |
+            /tmp/import.log
+            /tmp/final-v12.log
+            /tmp/world-progression.log
+            /tmp/world-organic.log
+            /tmp/web-export.log
           retention-days: 30

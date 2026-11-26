@@ -22,20 +22,39 @@ static func recipes_for(reg,id: String) -> Array:
 		if recipe.output.resource_id==id:out.append(recipe)
 	return out
 
-static func chain(reg,id: String,needed: int,stock: Dictionary,visiting: Dictionary={},depth: int=0) -> Array:
-	var shortage=maxi(0,needed-int(stock.get(id,0)))
-	if shortage==0:return []
-	var out=[{"resource":id,"qty":shortage,"depth":depth}]
-	if visiting.has(id) or depth>=10:return out
-	var recipes=recipes_for(reg,id)
-	if recipes.is_empty():return out
+# Allocate shared stock once across all branches; planned outputs are not credited to save.
+static func expand(reg,id: String,needed: int,available: Dictionary,visiting: Dictionary,depth: int,rows: Array,orders: Dictionary,raw: Dictionary) -> void:
+	var take=mini(needed,int(available.get(id,0)))
+	available[id]=int(available.get(id,0))-take
+	var shortage=needed-take
+	if shortage<=0:return
+	rows.append({"resource":id,"qty":shortage,"depth":depth})
+	var choices=recipes_for(reg,id)
+	if visiting.has(id) or depth>=20 or choices.is_empty():
+		raw[id]=int(raw.get(id,0))+shortage
+		return
+	var recipe=choices[0]
+	var batches=ceili(float(shortage)/maxi(1,int(recipe.output.qty)))
 	var seen=visiting.duplicate()
 	seen[id]=true
-	var recipe=recipes[0]
-	var batches=ceili(float(shortage)/maxi(1,int(recipe.output.qty)))
 	for item in recipe.inputs:
-		out.append_array(chain(reg,str(item.resource_id),batches*int(item.qty),stock,seen,depth+1))
-	return out
+		expand(reg,str(item.resource_id),batches*int(item.qty),available,seen,depth+1,rows,orders,raw)
+	orders[recipe.id]=int(orders.get(recipe.id,0))+batches
+	available[id]=int(available.get(id,0))+batches*int(recipe.output.qty)-shortage
+
+static func plan(reg,needs: Dictionary,stock: Dictionary) -> Dictionary:
+	var available=stock.duplicate()
+	var rows=[]
+	var orders={}
+	var raw={}
+	for id in needs:
+		expand(reg,str(id),int(needs[id]),available,{},0,rows,orders,raw)
+	return {"rows":rows,"orders":orders,"raw":raw}
+
+static func chain(reg,id: String,needed: int,stock: Dictionary,visiting: Dictionary={},depth: int=0) -> Array:
+	var rows=[]
+	expand(reg,id,needed,stock.duplicate(),visiting,depth,rows,{},{})
+	return rows
 
 static func stage_sources(reg,id: String) -> Array:
 	var out=[]
