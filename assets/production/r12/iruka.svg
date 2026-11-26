@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="112" viewBox="0 0 96 112">
+<defs><linearGradient id="hair" x2="1" y2="1"><stop stop-color="#553d35"/><stop offset="1" stop-color="#231d20"/></linearGradient><linearGradient id="vest" x2="1" y2="1"><stop stop-color="#879765"/><stop offset=".48" stop-color="#526747"/><stop offset="1" stop-color="#303e35"/></linearGradient><linearGradient id="blue" x2=".8" y2="1"><stop stop-color="#52647b"/><stop offset="1" stop-color="#202a40"/></linearGradient><linearGradient id="skin" x2="1" y2="1"><stop stop-color="#f4c59b"/><stop offset="1" stop-color="#b97860"/></linearGradient></defs>
+<g stroke="#25232c" stroke-width="1.35" stroke-linejoin="round">
+<!-- Independently authored static cel: Iruka, tied brown hair, nose scar, flak jacket. -->
+<path d="M33 23 26 14 30 7 37 8 43 3 49 8 45 15 43 22Z" fill="url(#hair)"/><path d="M35 12 42 7 44 9 39 16" fill="#7a5241" stroke="none"/>
+<path d="M35 32 30 25 34 16 44 12 58 16 66 23 65 36 57 41 39 39Z" fill="url(#hair)"/>
+<path d="M31 25 37 19 56 20 67 24 66 31 35 31Z" fill="#283b53"/>
+<path d="M40 22 59 22 63 25 62 29 40 29Z" fill="#a5b0b2"/><path d="M51 24c5 0 5 4 1 4-3 0-3-2 0-2l2-2" fill="none" stroke="#475258" stroke-width=".9"/>
+<path d="M37 31 62 30 65 35 62 41 57 45 47 47 39 42 35 36Z" fill="url(#skin)"/><path d="M37 34 34 35 36 41 40 40" fill="#b97b64"/>
+<path d="M42 35 48 34 50 36 44 37M55 34 61 33 61 35 56 36" fill="#30272a" stroke-width=".5"/>
+<path d="M49 40 56 38 60 39" fill="none" stroke="#9b594e" stroke-width="1.4"/><path d="M53 43 58 43" fill="none" stroke="#795044" stroke-width=".9"/>
+<path d="M34 49 45 44 55 45 63 48 68 63 62 76 35 76 29 65Z" fill="url(#blue)"/>
+<path d="M37 47 45 46 50 52 56 46 63 48 64 68 60 77 36 76 32 67Z" fill="url(#vest)"/>
+<path d="M47 50 49 74M54 51 53 75" fill="none" stroke="#c0c39b" stroke-width=".9"/>
+<path d="M36 53 45 54 44 62 36 62ZM56 53 62 53 62 62 55 62Z" fill="#75875b"/><path d="M36 54 45 54M55 54 62 54" stroke="#bbc39a" stroke-width=".7"/>
+<path d="M34 49 25 53 18 64 21 71 29 70 38 59Z" fill="url(#blue)"/><path d="M20 64 27 66 26 71 19 73 15 69Z" fill="url(#skin)"/>
+<path d="M62 49 69 53 75 61 71 68 64 66 59 59Z" fill="url(#blue)"/><path d="M70 61 77 58 82 61 80 67 72 68Z" fill="url(#skin)"/><path d="M73 60 79 62M74 63 80 65" stroke="#8f5749" stroke-width=".8"/>
+<path d="M36 75 60 75 65 88 61 96 49 96 46 86 40 94 30 92 28 85Z" fill="url(#blue)"/><path d="M36 78 43 79 37 89 32 88M56 78 61 86 58 91" fill="none" stroke="#6b7e90" stroke-width="1.4"/>
+<path d="M30 88 40 91 36 99 24 101 19 97 23 93Z" fill="#354963"/><path d="M49 90 62 90 66 99 75 101 74 104 55 104 50 99Z" fill="#354963"/>
+<path d="M21 96 28 94 35 96 32 100 22 100ZM58 98 68 99 74 101 70 103 59 102Z" fill="#cf9b7a"/><path d="M27 95 29 100M64 99 63 103" fill="none" stroke="#2c3344" stroke-width="1.5"/>
+</g><path d="M35 51 39 49M38 65 44 65M56 65 60 65M33 81 30 86" fill="none" stroke="#b4c19a" stroke-width=".7"/>
+</svg>

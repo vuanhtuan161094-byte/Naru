@@ -22,9 +22,16 @@ const fs=require("fs");
   await page.screenshot({path:"public-qa/home.png"});
   await click("Cốt truyện","campaign");
   await click("Vào STG-001","battle");
-  await page.waitForFunction(()=>window.naruUI?.art_draws>0,null,{timeout:30000});
+  await page.waitForFunction(()=>window.naruUI?.art_draws>0&&window.naruUI?.r12_actor_draws>0,null,{timeout:30000});
   await page.screenshot({path:"public-qa/starter-battle.png"});
-  const u=await state();if(u.art_count!==224||u.art_draws<=0||errors.length)throw Error(JSON.stringify({art:u.art_count,draws:u.art_draws,errors}));
-  console.log("NARU_PUBLIC_WEB_PASS",JSON.stringify({art:u.art_count,draws:u.art_draws,screen:u.screen}));
+  const u=await state();if(u.art_count!==224||u.art_draws<=0||u.r12_actor_draws<=0||u.missing_actor_ids.includes("NIN-005")||errors.length)throw Error(JSON.stringify({art:u.art_count,draws:u.art_draws,r12:u.r12_actor_draws,missing:u.missing_actor_ids,errors}));
+  console.log("NARU_PUBLIC_WEB_PASS",JSON.stringify({art:u.art_count,draws:u.art_draws,screen:u.screen,r12:u.r12_actor_draws,missing:u.missing_actor_ids}));
+  await click("Rút lui","results");
+  await click("Về làng","home");
+  for(const [name,id] of [["Ninja","ninja_roster"],["Bố trận","formation"],["Chiêu mộ","recruit"],["Cốt truyện","campaign"],["Nhẫn giới","world"],["Kho","inventory"],["Nhiệm vụ","quest"],["Vĩ Thú","beasts"],["Cài đặt","settings"]]){await click(name,id);await page.screenshot({path:"public-qa/"+id+".png"});}
+  await click("Làng","home");await click("Thử 6v6 • R12","battle");
+  await page.waitForFunction(()=>window.naruUI?.authored_actor_draws>0,null,{timeout:30000});
+  await page.screenshot({path:"public-qa/r12-benchmark-6v6.png"});
+  if(errors.length)throw Error(errors.join("\n"));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});

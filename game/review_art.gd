@@ -2,6 +2,11 @@ extends RefCounted
 # Private visual-only runtime. No asset is bundled in the repository or public Web artifact.
 const PATH="user://naru_private_art_v4.json"
 const MAX_BYTES=16000000
+# Independent R12 candidate; does not replace or mutate the approved 224-texture pack.
+const R12_IRUKA=preload("res://assets/production/r12/iruka.svg")
+var r12_actor_draws=0
+var missing_actor_ids:Dictionary={}
+var authored_actor_draws=0
 var textures: Dictionary={}
 var source_label="DEV • chưa nạp gói riêng"
 var enabled=false
@@ -119,6 +124,7 @@ func restore() -> void:
 
 func texture(path: String) -> Texture2D:
 	if not enabled:return null
+	if path in ["characters/NIN-005.png","portraits/NIN-005.png"] and not textures.has(path):return R12_IRUKA
 	return textures.get(path)
 
 func count_characters() -> int:
@@ -155,6 +161,9 @@ func reset_battle() -> void:
 	review_move_draws=0
 	clip_draws={}
 	fallback_draws=0
+	r12_actor_draws=0
+	authored_actor_draws=0
+	missing_actor_ids.clear()
 	directional_pose_draws=0
 	clone_draws=0
 	summon_draws=0
@@ -219,7 +228,9 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	if action=="move" and direction in ["se","ne"] and not r3.is_empty() and review_clip_hashes.get(r3.path,"")==r3.sha256:r3_texture=texture(r3.path)
 	if t==null and authored==null and r3_texture==null and pose==null:
 		fallback_draws+=1
+		missing_actor_ids[id]=true
 		return 0.0
+	if id=="NIN-005" and t==R12_IRUKA:r12_actor_draws+=1
 	var height=112.0*display_scale
 	var scale_value=height/112.0
 	var dest=Rect2(p-Vector2(48,104)*scale_value,Vector2(96,112)*scale_value)
@@ -231,6 +242,7 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 		field.draw_texture_rect_region(r3_texture,dest,Rect2(frame*96,0,96,112))
 		review_move_draws+=1
 		record_clip(r3.path,frame)
+		authored_actor_draws+=1
 	elif authored!=null and authored.get_height()==112 and authored.get_width()%96==0:
 		var frame_count=maxi(1,authored.get_width()/96)
 		var age=maxi(0,ticks-int(state.get("started_tick",0)))*50
@@ -239,9 +251,11 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 		if not meta.is_empty():frame=frame_at(meta.frames,age,action in ["idle","move"])
 		field.draw_texture_rect_region(authored,dest,Rect2(frame*96,0,96,112))
 		record_clip(clip_path,frame)
+		authored_actor_draws+=1
 	elif action=="move" and walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
 		var frame=posmod(floori(float(ticks)/2.0),4)
 		field.draw_texture_rect_region(walk,dest,Rect2(frame*96,0,96,112))
+		authored_actor_draws+=1
 	elif pose!=null and pose.get_height()==112 and pose.get_width()%96==0:
 		# Honest static authored directional pose when the requested action is missing.
 		field.draw_texture_rect_region(pose,dest,Rect2(0,0,96,112))

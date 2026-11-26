@@ -48,6 +48,7 @@ var battle_detail_button: Button
 var battle_grid_button: Button
 var battle_speed_buttons: Dictionary={}
 var battle_team_status: Label
+var battle_frame:Dictionary={"zoom":1.0,"shift":Vector2.ZERO}
 var battle_action_groups: Dictionary={}
 const BattleCamera=preload("res://game/battle_camera.gd")
 var battle_inspector: Label
@@ -104,7 +105,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"ONE GAME V2 • ART HOLD",16)
+	label(header,"NARU • R12",15)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -453,6 +454,7 @@ func battle_view() -> void:
 	form_actions.clear()
 	last_video_ult_tick=-1
 	battle_speed=1.0
+	battle_frame={"zoom":1.0,"shift":Vector2.ZERO}
 	open_screen("battle")
 	var toolbar_frame=PanelContainer.new()
 	toolbar_frame.add_theme_stylebox_override("panel",combat_panel(Color("#0b2427"),Color("#69877c"),5))
@@ -492,7 +494,7 @@ func battle_view() -> void:
 	left.add_child(field)
 	battle_actions_panel=ScrollContainer.new()
 	battle_actions_panel.name="BattleActions"
-	battle_actions_panel.custom_minimum_size.y=112
+	battle_actions_panel.custom_minimum_size.y=90
 	battle_actions_panel.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	battle_actions_panel.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	left.add_child(battle_actions_panel)
@@ -540,12 +542,12 @@ func battle_view() -> void:
 		var actor_index=sim.actors.find(a)
 		var uid=int(a.uid)
 		var card=PanelContainer.new()
-		card.custom_minimum_size.x=112
+		card.custom_minimum_size.x=150
 		card.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		card.add_theme_stylebox_override("panel",combat_panel(Color("#102b2d"),Color("#59796f"),5))
 		row.add_child(card)
 		var group=VBoxContainer.new()
-		group.add_theme_constant_override("separation",3)
+		group.add_theme_constant_override("separation",2)
 		card.add_child(group)
 		var top=HBoxContainer.new()
 		top.add_theme_constant_override("separation",4)
@@ -559,10 +561,10 @@ func battle_view() -> void:
 			mini.text=""
 			var image=TextureRect.new()
 			image.texture=portrait
-			image.custom_minimum_size=Vector2(38,42)
+			image.custom_minimum_size=Vector2(52,46)
 			image.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
 			image.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED
-			image.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+			image.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
 			top.add_child(image)
 			art.portrait_draws+=1
 		var text_col=VBoxContainer.new()
@@ -571,12 +573,19 @@ func battle_view() -> void:
 		top.add_child(text_col)
 		var short_name=str(reg.ninjas[a.id].name_vi).split(" (")[0]
 		mini.tooltip_text=short_name
-		var inspect=combat_button(text_col,short_name,func():select_battle_actor(uid),0)
-		inspect.custom_minimum_size=Vector2(0,23)
-		inspect.add_theme_font_size_override("font_size",12)
+		var inspect=Button.new()
+		inspect.text=short_name
+		inspect.flat=true
+		inspect.alignment=HORIZONTAL_ALIGNMENT_LEFT
+		inspect.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+		inspect.tooltip_text=short_name
+		inspect.custom_minimum_size=Vector2(0,18)
+		inspect.add_theme_font_size_override("font_size",13)
+		inspect.pressed.connect(func():select_battle_actor(uid))
+		text_col.add_child(inspect)
 		var hp=combat_meter(text_col,Color("#87c95c"))
 		var cp=combat_meter(text_col,Color("#56b8e4"))
-		var state_label=label(group,"",11)
+		var state_label=label(text_col,"",10)
 		battle_cards.append({"uid":uid,"label":state_label,"hp":hp,"cp":cp,"panel":card,"mini":mini})
 		var extra=VBoxContainer.new()
 		battle_dock_content.add_child(extra)
@@ -586,7 +595,9 @@ func battle_view() -> void:
 		for skill_id in a.skills:
 			if not reg.depth_ultimates.has(skill_id) and reg.skills[skill_id].kind!="ultimate":continue
 			var b=combat_button(group if first else extra,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(actor_index,skill_id),0)
-			b.custom_minimum_size=Vector2(0,32)
+			b.custom_minimum_size=Vector2(0,30)
+			b.add_theme_stylebox_override("normal",combat_panel(Color("#3b3022"),Color("#b18b4c"),6))
+			b.add_theme_stylebox_override("hover",combat_panel(Color("#594329"),Color("#ffd38a"),6))
 			ult_actions.append({"button":b,"index":actor_index,"skill":skill_id})
 			first=false
 		if a.contract!="":combat_button(extra,"Thông linh",func():sim.summon_contract(a),0)
@@ -604,6 +615,8 @@ func combat_panel(bg:Color,edge:Color,rounding:int=5) -> StyleBoxFlat:
 	s.bg_color=bg
 	s.border_color=edge
 	s.set_border_width_all(1)
+	s.shadow_color=Color(0.03,0.04,0.06,0.3)
+	s.shadow_size=2
 	s.set_corner_radius_all(rounding)
 	s.content_margin_left=5
 	s.content_margin_right=5
@@ -615,8 +628,8 @@ func combat_button(parent:Node,caption:String,action:Callable,w:float) -> Button
 	var b=button(parent,caption,action)
 	b.custom_minimum_size=Vector2(w,32)
 	b.add_theme_font_size_override("font_size",13)
-	b.add_theme_stylebox_override("normal",combat_panel(Color("#163538"),Color("#6a8880")))
-	b.add_theme_stylebox_override("hover",combat_panel(Color("#24484a"),Color("#e7bf76")))
+	b.add_theme_stylebox_override("normal",combat_panel(Color("#242c37"),Color("#56616b")))
+	b.add_theme_stylebox_override("hover",combat_panel(Color("#3a3c43"),Color("#e7bf76")))
 	b.add_theme_stylebox_override("pressed",combat_panel(Color("#685031"),Color("#e7bf76")))
 	return b
 
@@ -648,13 +661,20 @@ func refresh_battle_toggles() -> void:
 	if is_instance_valid(battle_grid_button):battle_grid_button.self_modulate=Color("#f4cc82") if battle_grid else Color.WHITE
 
 func arena_scale() -> float:
-	return BattleCamera.sprite_scale(field.size,Vector2(sim.map_width,sim.map_height))
+	return minf(1.25,BattleCamera.sprite_scale(field.size,Vector2(sim.map_width,sim.map_height))*float(battle_frame.get("zoom",1.0))*1.08)
 
 func iso(p: Vector2) -> Vector2:
-	return BattleCamera.project(p,field.size,Vector2(sim.map_width,sim.map_height))
+	return BattleCamera.project_framed(p,field.size,Vector2(sim.map_width,sim.map_height),battle_frame)
 
 func draw_field() -> void:
 	if sim==null:return
+	var active_points:Array[Vector2]=[]
+	for a in sim.actors:
+		if a.hp>0 and not a.get("summon",false):active_points.append(Vector2(a.pos))
+	var desired=BattleCamera.framing(field.size,Vector2(sim.map_width,sim.map_height),active_points)
+	# Camera smoothing only; no sprite tween or rig.
+	battle_frame.zoom=lerpf(float(battle_frame.zoom),float(desired.zoom),0.08)
+	battle_frame.shift=Vector2(battle_frame.shift).lerp(Vector2(desired.shift),0.08)
 	var plate=art.background(field,sim.environment)
 	var q=arena_scale()
 	var edges=PackedVector2Array([iso(Vector2.ZERO),iso(Vector2(sim.map_width,0)),iso(Vector2(sim.map_width,sim.map_height)),iso(Vector2(0,sim.map_height))])
@@ -697,7 +717,7 @@ func draw_field() -> void:
 		var p=iso(a.pos)
 		var c=Color("#e3a33e") if a.side==0 else Color("#b65364")
 		field.draw_set_transform(p,0,Vector2(1,0.48))
-		var radius=clampf(15*q,9,16)
+		var radius=clampf(19*q,10,22)
 		field.draw_circle(Vector2.ZERO,radius,Color(0.02,0.04,0.05,0.55))
 		field.draw_arc(Vector2.ZERO,radius+1,0,TAU,24,c,1.4)
 		if a.uid==inspected_uid:field.draw_arc(Vector2.ZERO,radius+5,0,TAU,24,Color("#e9f5ff"),2)
@@ -725,9 +745,10 @@ func draw_field() -> void:
 			field.draw_set_transform(Vector2.ZERO)
 			sprite_top=48*visual_scale
 		if a.hp<=0 or (a.get("summon",false) and a.uid!=inspected_uid and not battle_details):continue
-		var bar_width=clampf(53*visual_scale,26,50)
+		var bar_width=clampf(62*visual_scale,30,66)
 		var bar=p-Vector2(bar_width*0.5,sprite_top+8)
 		field.draw_rect(Rect2(bar-Vector2.ONE,Vector2(bar_width+2,7)),Color("#0b1719"))
+		field.draw_line(bar+Vector2(0,-1),bar+Vector2(bar_width,-1),Color(1,1,1,0.22),1)
 		field.draw_rect(Rect2(bar,Vector2(bar_width*clampf(float(a.hp)/maxf(1.0,float(a.max_hp)),0,1),5)),Color("#8bd663") if a.side==0 else Color("#f18070"))
 		if a.side==0 or battle_details or a.uid==inspected_uid:
 			field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width,3)),Color("#182028"))
@@ -744,7 +765,10 @@ func draw_field() -> void:
 			if absf(v)<0.00001 or badge_index>=6:continue
 			field.draw_circle(bar+Vector2(4+8*badge_index,-5),3,Color("#82d5a4") if v>0 else Color("#ed827b"))
 			badge_index+=1
-		if missing_sprite and battle_details:field.draw_string(ThemeDB.fallback_font,p+Vector2(-16,13),str(a.id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
+		if missing_sprite:
+			var missing_name=str(reg.ninjas.get(a.id,{}).get("name_vi",a.id))
+			field.draw_string_outline(ThemeDB.fallback_font,p+Vector2(-38,14),missing_name,HORIZONTAL_ALIGNMENT_LEFT,-1,11,3,Color("#161b23"))
+			field.draw_string(ThemeDB.fallback_font,p+Vector2(-38,14),missing_name,HORIZONTAL_ALIGNMENT_LEFT,-1,11,Color("#f1d398"))
 	for projectile in sim.projectiles if bool(store.state.get("settings",{}).get("projectiles",true)) else []:
 		var source=sim.actor_by_uid(int(projectile.source))
 		var target=sim.actor_by_uid(int(projectile.target))
@@ -1461,13 +1485,17 @@ func squad_detail(key: String,message: String="") -> void:
 func make_theme() -> Theme:
 	var t=Theme.new()
 	t.default_font_size=17
-	t.set_color("font_color","Label",Color("#e8e9e5"))
+	t.set_color("font_color","Label",Color("#eee9df"))
+	t.set_constant("separation","VBoxContainer",7)
+	t.set_constant("separation","HBoxContainer",7)
+	t.set_constant("h_separation","GridContainer",8)
+	t.set_constant("v_separation","GridContainer",8)
 	t.set_color("font_color","LineEdit",Color("#f0eee8"))
 	t.set_color("font_placeholder_color","LineEdit",Color("#9ca7aa"))
 	for control_type in ["LineEdit","PanelContainer"]:
 		var panel=StyleBoxFlat.new()
-		panel.bg_color=Color("#182a34")
-		panel.border_color=Color("#65716b")
+		panel.bg_color=Color("#202832")
+		panel.border_color=Color("#535966")
 		panel.set_border_width_all(1)
 		panel.set_corner_radius_all(7)
 		panel.content_margin_left=8
@@ -1477,8 +1505,8 @@ func make_theme() -> Theme:
 		t.set_stylebox("normal" if control_type=="LineEdit" else "panel",control_type,panel)
 	for state_key in ["normal","hover","pressed","disabled","focus"]:
 		var style=StyleBoxFlat.new()
-		style.bg_color=Color("#263d49") if state_key=="normal" else Color("#395b68") if state_key=="hover" else Color("#745a35") if state_key=="pressed" else Color("#202d35") if state_key=="disabled" else Color("#395b68")
-		style.border_color=Color("#55717c") if state_key!="focus" else Color("#f1bb69")
+		style.bg_color=Color("#252d39") if state_key=="normal" else Color("#3b414d") if state_key=="hover" else Color("#745a35") if state_key=="pressed" else Color("#20252e") if state_key=="disabled" else Color("#3b414d")
+		style.border_color=Color("#4d5867") if state_key!="focus" else Color("#f1bb69")
 		style.set_border_width_all(1)
 		style.set_corner_radius_all(7)
 		style.content_margin_left=10
@@ -1521,12 +1549,13 @@ func scroll_rows(parent: Node) -> VBoxContainer:
 
 func home_screen(message: String="") -> void:
 	open_screen("home")
-	label(root,"LÀNG NINJA • Tổng bộ cấp "+str(Village.level(store.state,"BLD-001")),28)
+	label(root,"LÀNG LÁ  /  Tổng bộ cấp "+str(Village.level(store.state,"BLD-001")),26)
 	var row=HBoxContainer.new()
 	root.add_child(row)
 	label(row,"Ninja %d/144 • Ải %d/120 • %s" % [store.state.owned.size(),store.state.cleared.size(),message],17)
 	button(row,"Chế tạo",craft_screen)
 	button(row,"Hoạt động",activities_screen)
+	if art.enabled:button(row,"Thử 6v6 • R12",start_art_review)
 	button(row,"Làm mới",func():home_screen())
 	if store.state.jobs.is_empty():button(row,"Phân công khởi đầu",func():home_screen("Đã phân công" if store.setup_starter_jobs(reg) else "Lỗi lưu"))
 	var grid=GridContainer.new()
@@ -1546,9 +1575,9 @@ func home_screen(message: String="") -> void:
 	var mapped=village_map.apply(self)
 	var footer=HBoxContainer.new()
 	root.add_child(footer)
-	var hint=label(footer,"Khởi đầu: phân công khai thác gỗ / mỏ, phái nhiệm vụ Ryo, rồi nâng Tổng bộ.",15)
+	var hint=label(footer,"Bắt đầu: phân công khai thác → Nhiệm vụ Ryo → nâng Tổng bộ → Cốt truyện.",15)
 	hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	var map_status=label(footer,("30 công trình • Bản đồ P3 review" if art.texture("environment/village_ground_p3.png")!=null else "30 công trình • Review R11") if mapped else "30 công trình • Giao diện chuẩn",14)
+	var map_status=label(footer,("30 công trình • Bản đồ R12" if art.texture("environment/village_ground_p3.png")!=null else "30 công trình • Review R11") if mapped else "30 công trình • Giao diện chuẩn",14)
 	map_status.modulate=Color("#ebc77e") if mapped else Color("#a5b4b6")
 
 func quality_color(q: int) -> Color:
@@ -1784,7 +1813,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"r12_actor_draws":art.r12_actor_draws,"missing_actor_ids":art.missing_actor_ids.keys(),"authored_actor_draws":art.authored_actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
@@ -1858,7 +1887,7 @@ func receive_art(raw: String) -> void:
 
 func start_art_review() -> void:
 	review_mode=true
-	battle_stage={"name_vi":"Review 6v6 • không thưởng"}
+	battle_stage={"name_vi":"6v6 • Benchmark sprite chi tiết • không thưởng"}
 	sim=Combat.new()
 	sim.registry=reg
 	sim.use_depth=true
@@ -1874,6 +1903,9 @@ func start_art_review() -> void:
 	var left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
 	var right=["NIN-001","NIN-016","NIN-002","NIN-003","NIN-070","NIN-068"]
 	var level=20
+	if art.enabled:
+		# Match the prior detailed six-ninja benchmark on the left, not the starter-era chibi roster.
+		battle_stage.name_vi="6v6 • R11 sprite chuẩn bên trái • không thưởng"
 	if "--combat-video" in OS.get_cmdline_user_args():
 		if art.enabled:
 			left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
@@ -2001,7 +2033,7 @@ func scroll_battle_visibility() -> void:
 		if is_instance_valid(group):group.visible=battle_details and not observation_mode and int(uid)==inspected_uid
 	for card in battle_cards:
 		var selected=int(card.uid)==inspected_uid
-		card.panel.add_theme_stylebox_override("panel",combat_panel(Color("#19382e") if selected else Color("#102b2d"),Color("#e8bd73") if selected else Color("#59796f")))
+		card.panel.add_theme_stylebox_override("panel",combat_panel(Color("#2f2b26") if selected else Color("#1b232c"),Color("#e8bd73") if selected else Color("#485360")))
 		card.mini.self_modulate=Color("#f4cc82") if selected else Color.WHITE
 	refresh_battle_toggles()
 	update_battle_inspector()
@@ -2020,10 +2052,10 @@ func inspect_battle_input(event: InputEvent) -> void:
 	elif event is InputEventScreenTouch and event.pressed:point=event.position
 	else:return
 	var best={}
-	var distance=42.0
+	var distance=55.0
 	for a in sim.actors:
 		if a.hp<=0:continue
-		var d=point.distance_to(iso(a.pos)-Vector2(0,22*arena_scale()))
+		var d=point.distance_to(iso(a.pos)-Vector2(0,40*arena_scale()))
 		if d<distance:best=a;distance=d
 	if not best.is_empty():
 		select_battle_actor(int(best.uid))

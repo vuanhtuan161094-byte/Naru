@@ -82,8 +82,8 @@ func apply_panorama(at: int) -> bool:
   cell.anchor_right=float(col+1)/10.0
   cell.anchor_top=float(row)/3.0
   cell.anchor_bottom=float(row+1)/3.0
-  cell.offset_left=3
-  cell.offset_right=-3
+  cell.offset_left=6
+  cell.offset_right=-6
   cell.offset_top=3
   cell.offset_bottom=-3
   var b:Button=buttons[id]
@@ -93,7 +93,8 @@ func apply_panorama(at: int) -> bool:
   marker.ignore_texture_size=true
   marker.stretch_mode=TextureButton.STRETCH_KEEP_ASPECT_CENTERED
   marker.size_flags_vertical=Control.SIZE_EXPAND_FILL
-  marker.custom_minimum_size=Vector2(0,48)
+  marker.custom_minimum_size=Vector2(0,44)
+  marker.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
   marker.tooltip_text=original
   marker.disabled=b.disabled
   marker.pressed.connect(forward.bind(id))
@@ -101,12 +102,12 @@ func apply_panorama(at: int) -> bool:
   markers[id]=marker
   b.text=SHORT[i]+"\n"+original.get_slice("\n",1)
   b.tooltip_text=original
-  b.custom_minimum_size=Vector2(0,34)
+  b.custom_minimum_size=Vector2(0,30)
   b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
   b.size_flags_vertical=Control.SIZE_SHRINK_END
   b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-  b.add_theme_font_size_override("font_size",12)
-  b.add_theme_stylebox_override("normal",style(Color(0.10,0.17,0.20,0.92),Color("#a18b5d"),5))
+  b.add_theme_font_size_override("font_size",11)
+  b.add_theme_stylebox_override("normal",style(Color(0.09,0.12,0.15,0.83),Color("#786b51"),3))
   b.add_theme_stylebox_override("hover",style(Color("#35505a"),Color("#e8bf75"),5))
   b.add_theme_stylebox_override("pressed",style(Color("#395764"),Color("#e8bf75"),5))
   cell.add_child(b)

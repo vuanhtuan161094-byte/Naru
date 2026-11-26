@@ -19,5 +19,12 @@ func _initialize() -> void:
 					push_error("BATTLE_LAYOUT_FAIL out of bounds");quit(1);return
 	if Camera.sprite_direction(Vector2.RIGHT,0)!="SE" or Camera.sprite_direction(Vector2.LEFT,1)!="SW" or Camera.sprite_direction(Vector2(0.2,-1),0)!="NE" or Camera.sprite_direction(Vector2(-0.2,-1),1)!="NW":
 		push_error("BATTLE_LAYOUT_FAIL horizontal sprite direction");quit(1);return
+	var points:Array[Vector2]=[Vector2(6,4),Vector2(7,5),Vector2(8,6)]
+	var framing=Camera.framing(Vector2(1244,510),Vector2(14,10),points)
+	if float(framing.zoom)<=1.0 or float(framing.zoom)>1.38:
+		push_error("BATTLE_LAYOUT_FAIL R12 bounded framing");quit(1);return
+	for point in points:
+		if not Rect2(Vector2.ZERO,Vector2(1244,510)).has_point(Camera.project_framed(point,Vector2(1244,510),Vector2(14,10),framing)):
+			push_error("BATTLE_LAYOUT_FAIL R12 focus");quit(1);return
 	print("NARU_BATTLE_LAYOUT_PASS 12 map/viewport combinations; zero shear and screen-facing sprites")
 	quit(0)
