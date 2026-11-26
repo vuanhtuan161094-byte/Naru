@@ -1,0 +1,13 @@
+{
+  "status": "CONTEXT_REVIEW_ONLY",
+  "records": 792,
+  "ninja": 132,
+  "existing_pilot": 72,
+  "source_refs_checked": 792,
+  "unresolved": [],
+  "mechanics_changed": 0,
+  "coefficients_changed": 0,
+  "source_gates_changed": 0,
+  "activation": "NONE; runtime mixed mode separately uses existing P1/P2 only",
+  "notes": "Generated from effective authored P1 and exact active skill IDs; contextual review dossier, not 792 new individualized mechanics or runtime validation."
+}
