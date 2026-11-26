@@ -89,3 +89,9 @@ R4 IN_PROGRESS: use native V4 private JSON import, not R3 source overlay. Contin
 - ART-P6/P7 REVIEW: 6-district local village layout, 30/30 building button navigation, 3/30 distinct illustrations. Need 27 building sprites and full interactive map; other UI not fully redesigned.
 - ART-P8 REVIEW: exact One Game native runtime with local anchor workaround; integrate V13 loader fix and tested adapter via Chat00. Resolve fallback, clumping and metadata support. See art/e3/ART_R10_HANDOFF.md.
 - ART-P3 HOLD unchanged.
+
+## R11 next
+- ART-P2 REVIEW: six rear-view candidates/36 frames, six observed in One Game. Four directions and 12 complete kits still open; younger opponents unchanged.
+- ART-P6/P7 REVIEW: 30 interactive marker locations in six panels on one screen; 30/30 correct title signal test. 27 schematic markers require high-quality individual artwork; seamless map, full UI redesign and construction visuals not done.
+- ART-P8 REVIEW: exact One Game 6v6 local with anchor workaround; sync newer gameplay loader and coordinate clumping. Preserve tested map adapter from art/runtime/r11/village_map.gd, source handoff art/e3/ART_R11_HANDOFF.md. No production integration.
+- ART-P3 HOLD unchanged.
