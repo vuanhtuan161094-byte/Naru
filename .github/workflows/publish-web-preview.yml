@@ -4,6 +4,11 @@ on:
     branches: [integration/one-game]
     paths:
       - '.github/workflows/publish-web-preview.yml'
+      - 'assets/public/**'
+      - 'game/main.gd'
+      - 'export_presets.cfg'
+      - 'tools/assemble_public_art.py'
+      - 'tests/public-web-art.cjs'
   workflow_dispatch:
 permissions:
   contents: read
@@ -16,38 +21,59 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Retrieve previously verified P10 Web build
-        uses: actions/download-artifact@v4
-        with:
-          artifact-ids: 15118733635
-          run-id: 45822560661
-          github-token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          path: dist
-          merge-multiple: true
-      - name: Verify exact build and retain only game files
+      - uses: actions/checkout@v4
+      - name: Reassemble owner-approved public art (224 exact textures)
+        run: python3 tools/assemble_public_art.py
+      - name: Install Godot 4.4.1 and export template
         run: |
           set -euo pipefail
-          cd dist
-          ls -la
-          test "$(tr -d '\r\n' < BUILD_SHA.txt)" = c3cd8b131ce8df375be15fe91eb56e1a3d0b0c0f
-          sha256sum -c SHA256SUMS.txt
-          test -s index.html
-          test -s index.pck
-          test -s index.wasm
-          find . -maxdepth 1 -type f \( -name '*.md' -o -name 'README*' -o -name '*.bat' \) -delete
-          test ! -e naru-art.json
-          touch .nojekyll
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+          unzip -q /tmp/templates.tpz -d /tmp/naru-templates
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.4.1.stable"
+          cp /tmp/naru-templates/templates/web_nothreads_release.zip "$HOME/.local/share/godot/export_templates/4.4.1.stable/"
+      - name: Build public PCK with required artwork, fail closed
+        run: |
+          set -euo pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          chmod +x "$G"
+          sed -i '0,/custom_features=""/s//custom_features="public_art"/' export_presets.cfg
+          "$G" --headless --editor --path . --import 2>&1 | tee /tmp/import.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/import.log
+          "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/art.log
+          grep 'NARU_PUBLIC_ART_READY 224' /tmp/art.log
+          grep NARU_REGISTRY_OK /tmp/art.log
+          mkdir -p dist
+          "$G" --headless --path . --export-release "Web DEV" dist/index.html 2>&1 | tee /tmp/export.log
+          test -s dist/index.html
+          test -s dist/index.pck
+          test -s dist/index.wasm
+          ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/export.log
+          printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
+          printf '224\n' > dist/ART_COUNT.txt
+          (cd dist && sha256sum index.* > SHA256SUMS.txt)
+          touch dist/.nojekyll
+      - name: Test actual Web startup and starter battle with 224 textures
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8765 --directory dist >/tmp/naru-http.log 2>&1 &
+          node tests/public-web-art.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NARU-PUBLIC-FULL-ART-QA
+          path: public-qa/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-      - name: Deploy verified Web preview
+      - name: Deploy verified full-art Web
         id: deployment
         uses: actions/deploy-pages@v4

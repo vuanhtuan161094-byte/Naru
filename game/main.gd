@@ -114,6 +114,18 @@ func _ready() -> void:
 	root.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	root.add_theme_constant_override("separation",8)
 	shell.add_child(root)
+	# Owner-approved public build includes the exact verified pack in the PCK.
+	var pack_path="res://assets/public/naru-art.json"
+	if FileAccess.file_exists(pack_path) or OS.has_feature("public_art"):
+		if not FileAccess.file_exists(pack_path) or not art.import_text(FileAccess.get_file_as_string(pack_path),false) or art.textures.size()!=224:
+			navigation.hide()
+			header.hide()
+			label(root,"Lỗi nạp mỹ thuật bản Web. Hãy tải lại trang. "+art.error)
+			push_error("NARU_PUBLIC_ART_FAIL "+art.error)
+			return
+		art.source_label="MỸ THUẬT TÍCH HỢP • "+str(art.textures.size())+" ảnh"
+		print("NARU_PUBLIC_ART_READY ",art.textures.size())
+		if OS.has_feature("web"):JavaScriptBridge.eval("window.naruPublicArtCount=224")
 	if not reg.load_all():
 		label(root,"Lỗi dữ liệu: "+str(reg.errors))
 		return
