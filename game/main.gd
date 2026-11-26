@@ -33,6 +33,11 @@ var battle_speed=1.0
 var ult_actions: Array[Dictionary]=[]
 var battle_cards: Array[Dictionary]=[]
 var observation_mode=false
+var battle_details=false
+var battle_grid=false
+var battle_actions_panel: ScrollContainer
+var battle_action_groups: Dictionary={}
+const BattleCamera=preload("res://game/battle_camera.gd")
 var battle_inspector: Label
 var inspected_uid=0
 var hud_clock=0.0
@@ -398,6 +403,9 @@ func battle_view() -> void:
 	accumulator=0
 	paused=false
 	observation_mode=false
+	battle_details=false
+	battle_grid=false
+	battle_action_groups.clear()
 	inspected_uid=0
 	hud_clock=1.0
 	form_actions.clear()
@@ -413,10 +421,17 @@ func battle_view() -> void:
 	toolbar.add_child(pause_button)
 	pause_button.pressed.connect(func():paused=not paused;pause_button.text="Tiếp tục" if paused else "Tạm dừng")
 	for speed in [1.0,2.0,4.0]:button(toolbar,str(int(speed))+"x",func():battle_speed=speed)
-	button(toolbar,"Quan sát",func():observation_mode=not observation_mode;scroll_battle_visibility())
+	var observe=button(toolbar,"Quan sát",func():
+		observation_mode=not observation_mode
+		scroll_battle_visibility())
+	observe.tooltip_text="Ẩn/hiện toàn bộ thanh điều khiển dưới sân"
+	var detail=button(toolbar,"Chi tiết",func():battle_details=not battle_details;scroll_battle_visibility())
+	detail.tooltip_text="Hiện/ẩn trạng thái, kỹ năng và nhật ký"
+	var grid_button=button(toolbar,"Lưới",func():battle_grid=not battle_grid;field.queue_redraw())
+	grid_button.tooltip_text="Hiện/ẩn ô sân và liên kết đội hình"
 	button(toolbar,"Rút lui",func():finish(false))
 	field=Control.new()
-	field.custom_minimum_size=Vector2(0,290)
+	field.custom_minimum_size=Vector2(0,320)
 	field.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	field.clip_contents=true
 	field.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
@@ -424,23 +439,29 @@ func battle_view() -> void:
 	field.gui_input.connect(inspect_battle_input)
 	root.add_child(field)
 	battle_inspector=label(root,"Chạm ninja trên sân để xem kỹ năng và trạng thái",14)
-	battle_inspector.custom_minimum_size.y=24
+	battle_inspector.custom_minimum_size.y=22
+	battle_inspector.visible=false
 	battle_inspector.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	var scroll=ScrollContainer.new()
 	scroll.name="BattleActions"
-	scroll.custom_minimum_size.y=124
+	scroll.custom_minimum_size.y=92
+	battle_actions_panel=scroll
 	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	root.add_child(scroll)
 	var row=HBoxContainer.new()
+	row.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	row.add_theme_constant_override("separation",5)
 	scroll.add_child(row)
 	ult_buttons.clear()
 	ult_actions.clear()
 	battle_cards.clear()
 	for i in range(sim.primary_alive(0).size()):
-		var a=sim.actors[i]
+		var a=sim.primary_alive(0)[i]
+		var actor_index=sim.actors.find(a)
 		var group=VBoxContainer.new()
-		group.custom_minimum_size.x=164
+		group.custom_minimum_size.x=116
+		group.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		row.add_child(group)
 		var name_row=HBoxContainer.new()
 		group.add_child(name_row)
@@ -448,48 +469,61 @@ func battle_view() -> void:
 		if portrait!=null:
 			var image=TextureRect.new()
 			image.texture=portrait
-			image.custom_minimum_size=Vector2(32,32)
+			image.custom_minimum_size=Vector2(28,28)
 			image.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
 			image.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 			name_row.add_child(image)
 			art.portrait_draws+=1
-		var inspect=button(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],func():inspected_uid=a.uid;hud_clock=1.0)
-		inspect.custom_minimum_size=Vector2(135,36)
+		var inspect=button(name_row,str(reg.ninjas[a.id].name_vi).split(" (")[0],func():select_battle_actor(int(a.uid)))
+		inspect.custom_minimum_size=Vector2(90,30)
+		inspect.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		inspect.add_theme_font_size_override("font_size",14)
 		var state_label=label(group,"",13)
 		battle_cards.append({"uid":a.uid,"label":state_label})
+		var extra=VBoxContainer.new()
+		group.add_child(extra)
+		battle_action_groups[a.uid]=extra
+		extra.visible=false
+		var first=true
 		for skill_id in a.skills:
 			if not reg.depth_ultimates.has(skill_id) and reg.skills[skill_id].kind!="ultimate":continue
-			var b=button(group,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(i,skill_id))
-			b.custom_minimum_size.y=42
-			ult_actions.append({"button":b,"index":i,"skill":skill_id})
-		if a.contract!="":button(group,"Thông linh",func():sim.summon_contract(a))
+			var b=button(group if first else extra,str(reg.names[skill_id].name_vi),func():sim.ultimate_skill(actor_index,skill_id))
+			b.custom_minimum_size=Vector2(0,30)
+			b.add_theme_font_size_override("font_size",13)
+			ult_actions.append({"button":b,"index":actor_index,"skill":skill_id})
+			first=false
+		if a.contract!="":button(extra,"Thông linh",func():sim.summon_contract(a))
 		for form_id in a.forms:
 			if reg.form_rules[form_id].activation!="skill_trigger" or reg.p2_forms.get(form_id,{}).get("activation",{}).get("mode","") in ["manual_stance","hp_threshold_or_manual"]:
-				var fb=button(group,"Biến thân "+str(form_id).right(2),func():sim.activate_form(a,form_id,true))
+				var fb=button(extra,"Biến thân "+str(form_id).right(2),func():sim.activate_form(a,form_id,true))
 				form_actions.append({"button":fb,"uid":a.uid,"form":form_id})
 	# Scroll vertically too: all unlocked forms/ultimate actions remain reachable.
 	scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	log_label=label(root,"",14)
 	log_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+	log_label.visible=false
+	scroll_battle_visibility()
 
 func arena_scale() -> float:
-	var span=float(sim.map_width+sim.map_height)
-	return maxf(0.12,minf((field.size.x-40.0)/(span*38.0),(field.size.y-88.0)/(span*20.0)))
+	return BattleCamera.sprite_scale(field.size,Vector2(sim.map_width,sim.map_height))
 
 func iso(p: Vector2) -> Vector2:
-	var q=arena_scale()
-	return Vector2(field.size.x*0.5+(p.x-p.y-float(sim.map_width-sim.map_height)*0.5)*38*q,72+(p.x+p.y)*20*q)
+	return BattleCamera.project(p,field.size,Vector2(sim.map_width,sim.map_height))
 
 func draw_field() -> void:
 	if sim==null:return
 	var plate=art.background(field,sim.environment)
 	var q=arena_scale()
-	for x in range(sim.map_width):
+	var edges=PackedVector2Array([iso(Vector2.ZERO),iso(Vector2(sim.map_width,0)),iso(Vector2(sim.map_width,sim.map_height)),iso(Vector2(0,sim.map_height))])
+	if not plate:
+		field.draw_colored_polygon(edges,Color("#344b43"))
+		# Soft lane shading, no checkerboard.
 		for y in range(sim.map_height):
-			var p=iso(Vector2(x,y))
-			if not art.tile(field,p,q,x,y,plate):
-				var points=PackedVector2Array([p,p+Vector2(38,20)*q,p+Vector2(0,40)*q,p+Vector2(-38,20)*q])
-				field.draw_colored_polygon(points,Color("#405b50") if (x+y)%2==0 else Color("#354e45"))
+			var lane=PackedVector2Array([iso(Vector2(0,y)),iso(Vector2(sim.map_width,y)),iso(Vector2(sim.map_width,y+1)),iso(Vector2(0,y+1))])
+			if y%2==0:field.draw_colored_polygon(lane,Color(0.8,0.9,0.7,0.025))
+	if battle_grid:
+		for x in range(sim.map_width+1):field.draw_line(iso(Vector2(x,0)),iso(Vector2(x,sim.map_height)),Color(0.65,0.8,0.7,0.18),1,true)
+		for y in range(sim.map_height+1):field.draw_line(iso(Vector2(0,y)),iso(Vector2(sim.map_width,y)),Color(0.65,0.8,0.7,0.18),1,true)
 	for job in sim.p2_jobs:
 		if job.dynamic:
 			var radius=float(job.skill.radius_m)
@@ -501,22 +535,28 @@ func draw_field() -> void:
 		var points=PackedVector2Array([iso(rect.position),iso(Vector2(rect.end.x,rect.position.y)),iso(rect.end),iso(Vector2(rect.position.x,rect.end.y))])
 		field.draw_colored_polygon(points,Color("#35414a") if item.kind=="obstacle" else Color(0.65,0.52,0.27,0.45))
 		field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
-	for pair in sim.formation_pairs(0):
+	for pair in sim.formation_pairs(0) if battle_grid else []:
 		field.draw_line(iso(pair[0]),iso(pair[1]),Color(0.4,0.85,1.0,0.35),1.5,true)
 	for a in sim.primary_alive(0):
-		if sim.link_count(a)>0:field.draw_arc(iso(a.pos),17*q,0,TAU,24,Color(0.4,0.85,1.0,0.7),2)
+		if battle_grid and sim.link_count(a)>0:field.draw_arc(iso(a.pos),14*q,0,TAU,24,Color(0.4,0.85,1.0,0.7),2)
 	var render_order=sim.actors.duplicate()
-	render_order.sort_custom(func(a,b):return a.pos.x+a.pos.y<b.pos.x+b.pos.y)
+	render_order.sort_custom(func(a,b):return iso(a.pos).y<iso(b.pos).y)
 	for a in render_order:
 		if a.hp<=0 and sim.ticks-int(a.get("fall_started",a.get("hit_until",0)))>24:continue
 		var p=iso(a.pos)
 		var c=Color("#e3a33e") if a.side==0 else Color("#b65364")
 		field.draw_set_transform(p,0,Vector2(1,0.48))
-		field.draw_circle(Vector2.ZERO,17,Color(0.02,0.04,0.05,0.65))
-		field.draw_arc(Vector2.ZERO,20,0,TAU,32,c,2)
-		if a.uid==inspected_uid:field.draw_arc(Vector2.ZERO,24,0,TAU,32,Color("#e9f5ff"),2)
+		var radius=clampf(15*q,9,16)
+		field.draw_circle(Vector2.ZERO,radius,Color(0.02,0.04,0.05,0.55))
+		field.draw_arc(Vector2.ZERO,radius+1,0,TAU,24,c,1.4)
+		if a.uid==inspected_uid:field.draw_arc(Vector2.ZERO,radius+5,0,TAU,24,Color("#e9f5ff"),2)
 		field.draw_set_transform(Vector2.ZERO)
-		var visual_scale=clampf(q*1.25,0.42,1.0)
+		var visual_scale=q*(0.76 if a.get("summon",false) else 1.0)
+		var nearest=1000.0
+		for other in sim.actors:
+			if other.uid!=a.uid and other.hp>0:nearest=minf(nearest,p.distance_to(iso(other.pos)))
+		# Keep the feet at the true world location; use bounded size reduction only.
+		visual_scale*=clampf(nearest/36.0,0.72,1.0)
 		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,sim.animation_state(a))
 		if sprite_top<=0:
 			# Original generic geometric DEV actor, not an approved ninja sprite.
@@ -529,20 +569,21 @@ func draw_field() -> void:
 			field.draw_rect(Rect2(-Vector2(5,42),Vector2(10,4)),c)
 			field.draw_set_transform(Vector2.ZERO)
 			sprite_top=48*visual_scale
-		var bar_width=clampf(46*visual_scale,26,46)
+		if a.hp<=0:continue
+		var bar_width=clampf(46*visual_scale,22,42)
 		var bar=p-Vector2(bar_width*0.5,sprite_top+8)
 		field.draw_rect(Rect2(bar,Vector2(bar_width,5)),Color("#182028"))
 		field.draw_rect(Rect2(bar,Vector2(bar_width*float(a.hp)/float(a.max_hp),5)),Color("#80c484") if a.side==0 else Color("#e57470"))
 		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width,3)),Color("#182028"))
 		field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
 		var badge_index=0
-		for st in a.statuses.values():
+		for st in a.statuses.values() if battle_details or a.uid==inspected_uid else []:
 			if badge_index>=4:break
 			var negative=st.id in ["stun","bind","silence","slow","blind","burn","poison","wet","freeze","shock","mark","chakra_lock","taunt","antiheal","fear","mud","steam","sleep","attack_down","beguile_tactical"]
 			field.draw_circle(bar+Vector2(4+8*badge_index,-5),3.5,Color("#ed827b") if negative else Color("#82d5a4"))
 			badge_index+=1
 		if not a.active_form.is_empty():field.draw_arc(p,22,0,TAU,24,Color("#e1ce72"),2)
-		for mod in a.get("passive_mods",{}):
+		for mod in a.get("passive_mods",{}) if battle_details or a.uid==inspected_uid else {}:
 			var v=float(a.passive_mods[mod])
 			if absf(v)<0.00001 or badge_index>=6:continue
 			field.draw_circle(bar+Vector2(4+8*badge_index,-5),3,Color("#82d5a4") if v>0 else Color("#ed827b"))
@@ -559,7 +600,7 @@ func draw_field() -> void:
 			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,70):
 				field.draw_circle(point,5,Color("#ffcf84"))
 	if bool(store.state.get("settings",{}).get("cutin",true)):art.effects(field,sim,iso)
-	field.draw_string(ThemeDB.fallback_font,Vector2(12,19),art.source_label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("#c7d5d5"))
+	if battle_details:field.draw_string(ThemeDB.fallback_font,Vector2(12,19),art.source_label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("#c7d5d5"))
 
 func _process(delta: float) -> void:
 	if not reg.ninjas.is_empty() and not store.state.is_empty():
@@ -609,8 +650,8 @@ func _process(delta: float) -> void:
 		action.button.disabled=paused or a.hp<=0 or (not sim.use_depth and not sim.ready(a,s))
 		var requested=sim.ultimate_requests.get(a.uid,"")==action.skill
 		var reason=sim.ultimate_reason(a,action.skill)
-		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+"\n"+("%.2f CP" % float(s.chakra))+" • "+reason
-		action.button.tooltip_text=reason
+		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+"\n"+("%.0f CP" % float(s.chakra))
+		action.button.tooltip_text=str(reg.names[action.skill].name_vi)+" • "+reason
 	for action in form_actions:
 		var a=sim.actor_by_uid(int(action.uid))
 		action.button.disabled=paused or not sim.form_ready(a,action.form,true)
@@ -1289,6 +1330,7 @@ func open_screen(id: String) -> void:
 	screen_id=id
 	if private_backdrop!=null:
 		private_backdrop.texture=art.texture("environment/village_plate.png") if id=="home" else null
+	header.visible=id!="battle"
 	navigation.visible=id!="battle"
 	var section={"home":"Làng","building":"Làng","craft":"Làng","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Bố trận","recruit":"Chiêu mộ","campaign":"Cốt truyện","world":"Nhẫn giới","diplomacy":"Nhẫn giới","inventory":"Kho","quest":"Nhiệm vụ","beasts":"Vĩ Thú","settings":"Cài đặt"}
 	for item in navigation.get_children():
@@ -1578,7 +1620,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
@@ -1764,8 +1806,20 @@ func passive_screen(id: String,message: String="") -> void:
 		if not str(sk.branch).is_empty():label(box,"Nhánh: "+str(sk.branch),14)
 
 func scroll_battle_visibility() -> void:
-	var panel=root.get_node_or_null("BattleActions")
-	if panel!=null:panel.visible=not observation_mode
+	if is_instance_valid(battle_actions_panel):
+		battle_actions_panel.visible=not observation_mode
+		battle_actions_panel.custom_minimum_size.y=160 if battle_details else 92
+	if is_instance_valid(battle_inspector):battle_inspector.visible=battle_details and not observation_mode
+	if is_instance_valid(log_label):log_label.visible=battle_details and not observation_mode
+	for uid in battle_action_groups:
+		var group=battle_action_groups[uid]
+		if is_instance_valid(group):group.visible=battle_details and int(uid)==inspected_uid
+
+func select_battle_actor(uid: int) -> void:
+	inspected_uid=uid
+	battle_details=true
+	hud_clock=1.0
+	scroll_battle_visibility()
 
 func inspect_battle_input(event: InputEvent) -> void:
 	if sim==null:return
@@ -1780,8 +1834,7 @@ func inspect_battle_input(event: InputEvent) -> void:
 		var d=point.distance_to(iso(a.pos)-Vector2(0,18))
 		if d<distance:best=a;distance=d
 	if not best.is_empty():
-		inspected_uid=best.uid
-		hud_clock=1.0
+		select_battle_actor(int(best.uid))
 
 func update_battle_inspector() -> void:
 	if battle_inspector==null or inspected_uid==0:return

@@ -36,6 +36,13 @@ jobs:
           timeout 60 "$G" --headless --path . --script res://game/product_art_coverage_test.gd 2>&1 | tee /tmp/p2-art-coverage.log
           grep NARU_P2_ART_COVERAGE_PASS /tmp/p2-art-coverage.log
           ! grep -E 'Parse Error|SCRIPT ERROR|P2_ART_COVERAGE_FAIL' /tmp/p2-art-coverage.log
+      - name: Horizontal battle camera bounds
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 60 "$G" --headless --path . --script res://game/battle_camera_test.gd 2>&1 | tee /tmp/battle-camera.log
+          grep NARU_BATTLE_LAYOUT_PASS /tmp/battle-camera.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|BATTLE_LAYOUT_FAIL' /tmp/battle-camera.log
       - name: Combat V3 formation and arena
         run: |
           set -o pipefail
@@ -151,14 +158,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P4-Web-DEV
+          name: NARU-One-Game-V2-P5-Web-DEV
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P4-Web-DEV-menu
+          name: NARU-One-Game-V2-P5-Web-DEV-menu
           path: |
             web-menu.png
             ui-shots/
@@ -191,7 +198,7 @@ jobs:
       - name: Upload Godot combat review
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P4-Combat-Video
+          name: NARU-One-Game-V2-P5-Combat-Video
           path: combat-video/
           retention-days: 30
       - name: Earned-only integrated 90-day observation and strict reload
@@ -206,12 +213,13 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P4-QA
+          name: NARU-One-Game-V2-P5-QA
           path: |
             /tmp/import.log
             /tmp/final-v12.log
             /tmp/r11-map.log
             /tmp/p2-art-coverage.log
+            /tmp/battle-camera.log
             /tmp/world-progression.log
             /tmp/world-organic.log
             /tmp/web-export.log
