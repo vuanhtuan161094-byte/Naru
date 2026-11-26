@@ -82,7 +82,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"ONE GAME V2 • P2",16)
+	label(header,"ONE GAME V2 • P3",16)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -1342,7 +1342,7 @@ func home_screen(message: String="") -> void:
 	root.add_child(footer)
 	var hint=label(footer,"Khởi đầu: phân công khai thác gỗ / mỏ, phái nhiệm vụ Ryo, rồi nâng Tổng bộ.",15)
 	hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	var map_status=label(footer,"30 công trình • Review R11" if mapped else "30 công trình • Giao diện chuẩn",14)
+	var map_status=label(footer,("30 công trình • Bản đồ P3 review" if art.texture("environment/village_ground_p3.png")!=null else "30 công trình • Review R11") if mapped else "30 công trình • Giao diện chuẩn",14)
 	map_status.modulate=Color("#ebc77e") if mapped else Color("#a5b4b6")
 
 func quality_color(q: int) -> Color:
@@ -1545,7 +1545,7 @@ func settings_screen(message: String="") -> void:
 		settings_screen(art.source_label))
 	var coverage=art.product_coverage()
 	label(root,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
-	label(root,"Animation có metadata: %d • Bộ đủ 24 clip chuẩn: %d • VFX HOLD (chỉ review)" % [coverage.clips,coverage.complete_kits],15)
+	label(root,"Animation metadata: %d • Bộ đủ 24 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
 	label(root,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 
 func change_setting(key: String,value: bool) -> void:
@@ -1614,7 +1614,7 @@ func choose_review_art() -> void:
 	if OS.has_feature("web"):
 		art_callback=JavaScriptBridge.create_callback(_receive_art_web)
 		JavaScriptBridge.get_interface("window").naruReviewArtCallback=art_callback
-		JavaScriptBridge.eval("(function(){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.id='naru-review-file';input.style.position='fixed';input.style.left='-9999px';document.body.appendChild(input);input.onchange=async()=>{const f=input.files[0];if(f && f.size<=12000000){window.naruReviewArtCallback(await f.text());}input.remove();};input.click();})()")
+		JavaScriptBridge.eval("(function(){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.id='naru-review-file';input.style.position='fixed';input.style.left='-9999px';document.body.appendChild(input);input.onchange=async()=>{const f=input.files[0];if(f && f.size<=16000000){window.naruReviewArtCallback(await f.text());}input.remove();};input.click();})()")
 	else:
 		var dialog=FileDialog.new()
 		dialog.file_mode=FileDialog.FILE_MODE_OPEN_FILE

@@ -1,0 +1,18 @@
+{
+  "status": "REVIEW_ONLY",
+  "source_sha256": "bfd9f2de3bffae19f09368c0118d250e1567842e7d75ce2ab30b156178380acf",
+  "pack_sha256": "a0d34b650e4569ac22fe643d242e75296f5e79ecf29a45c259b8c2c0577a657e",
+  "bytes": 12662164,
+  "assets": 224,
+  "pixels": 14351022,
+  "composite_buildings": 27,
+  "existing_landmarks": 3,
+  "new_ground": 1,
+  "new_animation": 0,
+  "new_vfx": 0,
+  "metadata": 67,
+  "private_pack_not_committed": true,
+  "validation": "PNG decode and SHA checks offline; runtime P3 fixture pending CI",
+  "visual_scope": "Composited existing R11 props, not individually hand-painted buildings. P3 panorama uses separate interactive textures and original callbacks; fallback R11 or standard grid.",
+  "holds": "unchanged, VFX review-only"
+}

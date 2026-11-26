@@ -4,12 +4,14 @@ const Adapter=preload("res://game/village_map_r11.gd")
 class FakeArt:
 	extends RefCounted
 	var complete=false
+	var panorama=false
 	var image: ImageTexture
 	func _init():
 		var im=Image.create(16,16,false,Image.FORMAT_RGBA8)
 		im.fill(Color.WHITE)
 		image=ImageTexture.create_from_image(im)
 	func texture(path: String) -> Texture2D:
+		if path=="environment/village_ground_p3.png" and not panorama:return null
 		if not complete and path.ends_with("BLD-030.png"):return null
 		return image
 
@@ -27,7 +29,13 @@ class FakeGame:
 		hits.append(id)
 
 func _initialize() -> void:
+	if not check_mode(false) or not check_mode(true):quit(1);return
+	print("NARU_R11_MAP_PASS 30 callbacks in R11 and P3, incomplete-pack fallback (generic fixtures only)")
+	quit(0)
+
+func check_mode(panorama: bool) -> bool:
 	var g=FakeGame.new()
+	g.art.panorama=panorama
 	var grid=GridContainer.new()
 	g.root.add_child(grid)
 	for i in range(1,31):
@@ -41,23 +49,27 @@ func _initialize() -> void:
 	var adapter=Adapter.new()
 	if adapter.apply(g) or grid.get_child_count()!=30 or grid.get_parent()!=g.root:
 		push_error("R11_MAP_FAIL incomplete pack mutated fallback")
-		quit(1)
-		return
+		g.root.free()
+		return false
 	g.art.complete=true
 	if not adapter.apply(g) or adapter.markers.size()!=30:
 		push_error("R11_MAP_FAIL complete pack did not activate")
-		quit(1)
-		return
+		g.root.free()
+		return false
 	for id in g.reg.buildings:
 		adapter.markers[id].pressed.emit()
 		if g.hits.is_empty() or g.hits.back()!=id:
 			push_error("R11_MAP_FAIL incorrect building callback "+id)
-			quit(1)
-			return
+			g.root.free()
+			return false
 	if g.hits.size()!=30:
 		push_error("R11_MAP_FAIL wrong callback count")
-		quit(1)
-		return
-	print("NARU_R11_MAP_PASS 30 callbacks and incomplete-pack fallback (generic fixtures only)")
+		g.root.free()
+		return false
+	var expected="P3VillageMap" if panorama else "R11VillageMap"
+	if not g.root.has_node(expected):
+		push_error("R11_MAP_FAIL wrong view "+expected)
+		g.root.free()
+		return false
 	g.root.free()
-	quit(0)
+	return true

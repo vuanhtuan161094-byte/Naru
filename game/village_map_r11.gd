@@ -36,6 +36,8 @@ func apply(g) -> bool:
  var at=old.get_index()
  for id in buttons:old.remove_child(buttons[id])
  game.root.remove_child(old);old.queue_free()
+ if game.art.texture("environment/village_ground_p3.png")!=null:
+  return apply_panorama(at)
  var map=Control.new();map.name="R11VillageMap";map.size_flags_vertical=Control.SIZE_EXPAND_FILL;map.custom_minimum_size.y=360;game.root.add_child(map);game.root.move_child(map,at)
  var background=TextureRect.new();background.texture=game.art.texture("environment/village_plate.png");background.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;background.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED;background.mouse_filter=Control.MOUSE_FILTER_IGNORE;background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);map.add_child(background)
  var outer=VBoxContainer.new();outer.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);outer.offset_left=10;outer.offset_right=-10;outer.offset_top=10;outer.offset_bottom=-10;outer.add_theme_constant_override("separation",10);map.add_child(outer)
@@ -51,4 +53,61 @@ func apply(g) -> bool:
     var cell=VBoxContainer.new();cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL;cell.add_theme_constant_override("separation",2);tiles.add_child(cell)
     var marker=TextureButton.new();marker.texture_normal=game.art.texture("environment/buildings/"+id+".png");marker.ignore_texture_size=true;marker.stretch_mode=TextureButton.STRETCH_KEEP_ASPECT_CENTERED;marker.size_flags_vertical=Control.SIZE_EXPAND_FILL;marker.custom_minimum_size=Vector2(0,56);marker.tooltip_text=buttons[id].text;marker.disabled=buttons[id].disabled;marker.pressed.connect(forward.bind(id));cell.add_child(marker);markers[id]=marker
     var b:Button=buttons[id];var original=b.text;var num=int(str(id).get_slice("-",1));b.text=SHORT[num-1]+"\n"+original.get_slice("\n",1);b.tooltip_text=original;b.custom_minimum_size=Vector2(0,42);b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.size_flags_vertical=Control.SIZE_SHRINK_END;b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;b.add_theme_font_size_override("font_size",12);b.add_theme_stylebox_override("normal",style(Color("#243947")));b.add_theme_stylebox_override("hover",style(Color("#35505a"),Color("#e8bf75")));b.add_theme_stylebox_override("pressed",style(Color("#395764"),Color("#e8bf75")));cell.add_child(b)
+ return markers.size()==30
+
+# Continuous ground plus individually interactive building textures. Review art, no gameplay rules.
+func apply_panorama(at: int) -> bool:
+ var map=Control.new()
+ map.name="P3VillageMap"
+ map.size_flags_vertical=Control.SIZE_EXPAND_FILL
+ map.custom_minimum_size.y=360
+ game.root.add_child(map)
+ game.root.move_child(map,at)
+ var bg=TextureRect.new()
+ bg.texture=game.art.texture("environment/village_ground_p3.png")
+ bg.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+ bg.stretch_mode=TextureRect.STRETCH_SCALE
+ bg.mouse_filter=Control.MOUSE_FILTER_IGNORE
+ bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+ map.add_child(bg)
+ for i in range(30):
+  var id="BLD-%03d"%(i+1)
+  var col=i%10
+  var row=int(i/10)
+  var cell=VBoxContainer.new()
+  cell.mouse_filter=Control.MOUSE_FILTER_IGNORE
+  cell.add_theme_constant_override("separation",2)
+  map.add_child(cell)
+  cell.anchor_left=float(col)/10.0
+  cell.anchor_right=float(col+1)/10.0
+  cell.anchor_top=float(row)/3.0
+  cell.anchor_bottom=float(row+1)/3.0
+  cell.offset_left=3
+  cell.offset_right=-3
+  cell.offset_top=3
+  cell.offset_bottom=-3
+  var b:Button=buttons[id]
+  var original=b.text
+  var marker=TextureButton.new()
+  marker.texture_normal=game.art.texture("environment/buildings/"+id+".png")
+  marker.ignore_texture_size=true
+  marker.stretch_mode=TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+  marker.size_flags_vertical=Control.SIZE_EXPAND_FILL
+  marker.custom_minimum_size=Vector2(0,48)
+  marker.tooltip_text=original
+  marker.disabled=b.disabled
+  marker.pressed.connect(forward.bind(id))
+  cell.add_child(marker)
+  markers[id]=marker
+  b.text=SHORT[i]+"\n"+original.get_slice("\n",1)
+  b.tooltip_text=original
+  b.custom_minimum_size=Vector2(0,34)
+  b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+  b.size_flags_vertical=Control.SIZE_SHRINK_END
+  b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+  b.add_theme_font_size_override("font_size",12)
+  b.add_theme_stylebox_override("normal",style(Color(0.10,0.17,0.20,0.92),Color("#a18b5d"),5))
+  b.add_theme_stylebox_override("hover",style(Color("#35505a"),Color("#e8bf75"),5))
+  b.add_theme_stylebox_override("pressed",style(Color("#395764"),Color("#e8bf75"),5))
+  cell.add_child(b)
  return markers.size()==30

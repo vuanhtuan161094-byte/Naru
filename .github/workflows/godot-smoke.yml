@@ -151,14 +151,14 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P2-Web-DEV
+          name: NARU-One-Game-V2-P3-Web-DEV
           path: dist/
           retention-days: 30
       - name: Upload browser screenshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P2-Web-DEV-menu
+          name: NARU-One-Game-V2-P3-Web-DEV-menu
           path: |
             web-menu.png
             ui-shots/
@@ -191,7 +191,7 @@ jobs:
       - name: Upload Godot combat review
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P2-Combat-Video
+          name: NARU-One-Game-V2-P3-Combat-Video
           path: combat-video/
           retention-days: 30
       - name: Earned-only integrated 90-day observation and strict reload
@@ -206,7 +206,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NARU-One-Game-V2-P2-QA
+          name: NARU-One-Game-V2-P3-QA
           path: |
             /tmp/import.log
             /tmp/final-v12.log

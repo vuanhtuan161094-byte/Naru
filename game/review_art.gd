@@ -1,7 +1,7 @@
 extends RefCounted
 # Private visual-only runtime. No asset is bundled in the repository or public Web artifact.
 const PATH="user://naru_private_art_v4.json"
-const MAX_BYTES=12000000
+const MAX_BYTES=16000000
 var textures: Dictionary={}
 var source_label="DEV • chưa nạp gói riêng"
 var enabled=false
@@ -124,7 +124,7 @@ func count_characters() -> int:
 
 # Exact direction/action coverage; a static sprite or legacy walk is not a completed kit.
 func product_coverage() -> Dictionary:
-	var counts={"characters":0,"portraits":0,"buildings":0,"clips":clip_metadata.size(),"complete_kits":0}
+	var counts={"characters":0,"portraits":0,"buildings":0,"clips":clip_metadata.size(),"complete_kits":0,"vfx_sheets":0}
 	for path in textures:
 		var name=str(path)
 		if name.begins_with("characters/"):
@@ -138,6 +138,7 @@ func product_coverage() -> Dictionary:
 			if complete:counts.complete_kits+=1
 		elif name.begins_with("portraits/"):counts.portraits+=1
 		elif name.begins_with("environment/buildings/"):counts.buildings+=1
+		elif name.begins_with("vfx/"):counts.vfx_sheets+=1
 	return counts
 
 func reset_battle() -> void:
