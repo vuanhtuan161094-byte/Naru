@@ -1527,6 +1527,11 @@ func settings_screen(message: String="") -> void:
 	pilot_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_pilot_dev",false))
 	root.add_child(pilot_toggle)
 	pilot_toggle.toggled.connect(func(on):change_setting("passive_pilot_dev",on))
+	var mixed_toggle=CheckButton.new()
+	mixed_toggle.text="P2 hỗn hợp DEV: dùng P1 cho 132 ninja ngoài pilot"
+	mixed_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_mixed_dev",false))
+	root.add_child(mixed_toggle)
+	mixed_toggle.toggled.connect(func(on):change_setting("passive_mixed_dev",on))
 	var depth_toggle=CheckButton.new()
 	depth_toggle.text="Tăng trưởng V5 và hàng đợi tuyệt kỹ DEV"
 	depth_toggle.button_pressed=bool(store.state.get("settings",{}).get("depth_v5_dev",true))
@@ -1711,9 +1716,11 @@ func passive_screen(id: String,message: String="") -> void:
 	var rows=scroll_rows(root)
 	var pilot_on=store.state.get("settings",{}).get("passive_pilot_dev",false) and store.state.get("settings",{}).get("passives_dev",false)
 	var pilot_rows=reg.passive_pilot_rows.get(id,[])
-	var pilot_isolated=pilot_on and pilot_rows.is_empty()
+	var mixed_on=pilot_on and bool(store.state.get("settings",{}).get("passive_mixed_dev",false))
+	var pilot_isolated=pilot_on and pilot_rows.is_empty() and not mixed_on
+	if mixed_on and pilot_rows.is_empty():label(rows,"P2 hỗn hợp DEV • nội tại P1 đang hoạt động cho ninja ngoài pilot.",15)
 	if pilot_isolated:label(rows,"Ninja chưa thuộc 12 mẫu pilot P2. Nội tại P1 bên dưới chỉ xem; tắt pilot để sử dụng cấu hình P1.",15)
-	for data in (pilot_rows if pilot_on and not pilot_isolated else reg.passives_by_ninja.get(id,[])):
+	for data in (pilot_rows if pilot_on and not pilot_rows.is_empty() else reg.passives_by_ninja.get(id,[])):
 		var key=str(data.id)
 		var sk=svc.progress(p,key)
 		var box=VBoxContainer.new()

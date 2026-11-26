@@ -33,7 +33,11 @@ static func operation(row: Dictionary,p: Dictionary) -> Dictionary:
 	return {}
 
 static func rows(sim,a: Dictionary) -> Array:
-	return sim.registry.passive_pilot_rows.get(a.id,[]) if sim.use_passive_pilot else sim.registry.passives_by_ninja.get(a.id,[])
+	if sim.use_passive_pilot:
+		var pilot=sim.registry.passive_pilot_rows.get(a.id,[])
+		if not pilot.is_empty() or not sim.use_passive_mixed:return pilot
+	# Mixed DEV uses existing authored P1 for nonpilot only; eligible() retains all gates.
+	return sim.registry.passives_by_ninja.get(a.id,[])
 
 static func eligible(sim,a: Dictionary,row: Dictionary) -> bool:
 	# The Daemon reflection-dependent passive is not proved by legacy generic counter fallback.

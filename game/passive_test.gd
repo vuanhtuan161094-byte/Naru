@@ -14,6 +14,21 @@ func _initialize() -> void:
 	check(reg.passives.size()==864 and reg.passives_by_ninja.size()==144 and reg.skills.size()==1152,"864 distinct passive records and 1152 active retained")
 	check(reg.synergy_active.size()==1152 and reg.synergy_passive.size()==864 and reg.synergy_links.size()==864,"2016 structural references, not runtime claims")
 	check(reg.passive_pilot.size()==72 and is_equal_approx(float(reg.passives["NIN-001-P4"].effect.base),0.06),"P2 proposal not applied automatically")
+	# Isolated pilot remains default; explicitly mixed mode restores authored P1 outside pilot.
+	var selector=Combat.new()
+	selector.registry=reg
+	selector.use_passives=true
+	selector.use_passive_pilot=true
+	var outside=""
+	for id in reg.ninjas:
+		if not reg.passive_pilot_rows.has(id):outside=id;break
+	check(outside!="","nonpilot roster exists")
+	check(Passive.rows(selector,{"id":outside}).is_empty(),"isolated pilot unchanged")
+	selector.use_passive_mixed=true
+	check(Passive.rows(selector,{"id":outside}).size()==6,"mixed nonpilot P1 kit")
+	check(Passive.rows(selector,{"id":"NIN-001"})==reg.passive_pilot_rows["NIN-001"],"mixed pilot retains P2 kit")
+	selector.use_passive_pilot=false
+	check(Passive.rows(selector,{"id":"NIN-001"})==reg.passives_by_ninja["NIN-001"],"P1 mode unaffected")
 	var branches=0
 	for row in reg.passives.values():branches+=row.progression.branches.size()
 	check(branches==1152,"branch catalog count")
