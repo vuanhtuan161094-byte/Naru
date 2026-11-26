@@ -48,7 +48,10 @@ func _initialize() -> void:
 	for unit in sim.primary_alive(0):
 		if unit.id==a:actor=unit
 		if unit.id==b:ally=unit
-	check(int(actor.deployment_slot)==8 and actor.pos.is_equal_approx(Formation.spawn(0,8,14,10)),"actual ninth slot spawn")
+	var rank_gap=float(reg.combat_v3.deployment.rank_spacing)
+	var lane_gap=float(reg.combat_v3.deployment.lane_spacing)
+	check(int(actor.deployment_slot)==8 and actor.pos.is_equal_approx(Vector2(0.9,5.0+lane_gap)), "actual ninth slot spawn from configured spacing")
+	check(Formation.spawn(0,0,14,10,rank_gap,lane_gap).is_equal_approx(Vector2(0.9+2.0*rank_gap,5.0-lane_gap)),"configured front rank and lane spacing")
 	check(sim.link_count(actor)>=1 and sim.formation_multiplier(actor,"defense")>1.064,"linked defense")
 	ally.pos=Vector2(13,9)
 	check(sim.link_count(actor)==0,"distance breaks link")
@@ -73,8 +76,8 @@ func _initialize() -> void:
 	arbitrary.setup(reg,store.state,custom,42)
 	check(arbitrary.map_width==22 and arbitrary.map_height==15,"custom dimensions")
 	for slot in range(9):
-		var left=Formation.spawn(0,slot,14,10)
-		var right=Formation.spawn(1,slot,14,10)
+		var left=Formation.spawn(0,slot,14,10,rank_gap,lane_gap)
+		var right=Formation.spawn(1,slot,14,10,rank_gap,lane_gap)
 		check(is_equal_approx(left.x+right.x,14.0) and is_equal_approx(left.y,right.y),"mirrored "+str(slot))
 	# All eight formations, upgrade cap and exact stable skill records.
 	for id in reg.formations:

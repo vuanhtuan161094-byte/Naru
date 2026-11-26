@@ -459,7 +459,7 @@ func battle_view() -> void:
 	left.add_theme_constant_override("separation",5)
 	body.add_child(left)
 	field=Control.new()
-	field.custom_minimum_size=Vector2(300,280)
+	field.custom_minimum_size=Vector2(280,240)
 	field.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	field.clip_contents=true
 	field.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
