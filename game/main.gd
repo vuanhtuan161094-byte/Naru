@@ -663,7 +663,15 @@ func draw_field() -> void:
 	for item in sim.terrain:
 		var rect: Rect2=item.rect
 		var points=PackedVector2Array([iso(rect.position),iso(Vector2(rect.end.x,rect.position.y)),iso(rect.end),iso(Vector2(rect.position.x,rect.end.y))])
-		field.draw_colored_polygon(points,Color("#35414a") if item.kind=="obstacle" else Color(0.65,0.52,0.27,0.45))
+		if item.kind=="obstacle":
+			var prop=art.texture("environment/props/stone.png") if not item.has("owner") else null
+			if prop!=null:
+				var foot=iso(Vector2(rect.get_center().x,rect.end.y))
+				var extent=maxf(24.0,absf(points[1].x-points[0].x))
+				var height_value=extent*float(prop.get_height())/maxf(1.0,float(prop.get_width()))
+				field.draw_texture_rect(prop,Rect2(foot-Vector2(extent*0.5,height_value),Vector2(extent,height_value)),false)
+			else:field.draw_colored_polygon(points,Color(0.30,0.37,0.35,0.55))
+		else:field.draw_colored_polygon(points,Color(0.65,0.52,0.27,0.15))
 		if battle_grid:field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
 	for pair in sim.formation_pairs(0) if battle_grid else []:
 		field.draw_line(iso(pair[0]),iso(pair[1]),Color(0.4,0.85,1.0,0.35),1.5,true)
@@ -684,7 +692,12 @@ func draw_field() -> void:
 		var depth_scale=lerpf(0.88,1.05,clampf(float(a.pos.y)/maxf(1.0,float(sim.map_height)),0,1))
 		var visual_scale=q*depth_scale*(0.76 if a.get("summon",false) else 1.0)
 		# Stable scale: no frame-by-frame shrinking when actors pass each other.
-		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,sim.animation_state(a))
+		var presentation_state=sim.animation_state(a)
+		var face=Vector2(a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT))
+		# The original clip labels are diamond-isometric directions. Use their actual
+		# facing in the straight horizontal camera, without mirroring any frame.
+		presentation_state.direction=BattleCamera.sprite_direction(face,int(a.side))
+		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,presentation_state)
 		if sprite_top<=0:
 			# Original generic geometric DEV actor, not an approved ninja sprite.
 			field.draw_set_transform(p,0,Vector2.ONE*visual_scale)
@@ -697,10 +710,10 @@ func draw_field() -> void:
 			field.draw_set_transform(Vector2.ZERO)
 			sprite_top=48*visual_scale
 		if a.hp<=0 or (a.get("summon",false) and a.uid!=inspected_uid and not battle_details):continue
-		var bar_width=clampf(46*visual_scale,22,42)
+		var bar_width=clampf(53*visual_scale,26,50)
 		var bar=p-Vector2(bar_width*0.5,sprite_top+8)
-		field.draw_rect(Rect2(bar,Vector2(bar_width,5)),Color("#182028"))
-		field.draw_rect(Rect2(bar,Vector2(bar_width*float(a.hp)/float(a.max_hp),5)),Color("#80c484") if a.side==0 else Color("#e57470"))
+		field.draw_rect(Rect2(bar-Vector2.ONE,Vector2(bar_width+2,7)),Color("#0b1719"))
+		field.draw_rect(Rect2(bar,Vector2(bar_width*clampf(float(a.hp)/maxf(1.0,float(a.max_hp)),0,1),5)),Color("#8bd663") if a.side==0 else Color("#f18070"))
 		if a.side==0 or battle_details or a.uid==inspected_uid:
 			field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width,3)),Color("#182028"))
 			field.draw_rect(Rect2(bar+Vector2(0,6),Vector2(bar_width*float(a.chakra)/maxf(1.0,float(a.max_chakra)),3)),Color("#76bce8"))
@@ -743,9 +756,11 @@ func _process(delta: float) -> void:
 			qa_clock=0
 			publish_ui_probe()
 	if sim==null:return
-	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks%20==0 and last_video_ult_tick!=sim.ticks:
+	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=60 and sim.ticks%40==0 and last_video_ult_tick!=sim.ticks:
 		last_video_ult_tick=sim.ticks
-		for i in range(6):sim.ultimate(i)
+		# Stagger actual manual requests so the sample does not queue every ultimate simultaneously.
+		var index=posmod(floori(float(sim.ticks)/40.0),6)
+		if index<sim.actors.size():sim.ultimate(index)
 	if not paused:
 		accumulator+=minf(delta,0.25)*battle_speed
 		while accumulator>=0.05:
@@ -1838,13 +1853,13 @@ func start_art_review() -> void:
 	sim.side_formations={0:"FRM-01",1:"FRM-02"}
 	sim.side_levels={0:1,1:1}
 	sim.configure_terrain()
-	var left=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
-	var right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
+	var left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
+	var right=["NIN-001","NIN-016","NIN-002","NIN-003","NIN-070","NIN-068"]
 	var level=20
 	if "--combat-video" in OS.get_cmdline_user_args():
 		if art.enabled:
-			left=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093"]
-			right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
+			left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
+			right=["NIN-001","NIN-016","NIN-002","NIN-003","NIN-070","NIN-068"]
 		else:
 			left=["NIN-055","NIN-041","NIN-042","NIN-043","NIN-007","NIN-004"]
 			right=["NIN-070","NIN-060","NIN-093","NIN-021","NIN-008","NIN-022"]

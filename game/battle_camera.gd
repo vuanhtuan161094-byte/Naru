@@ -1,7 +1,7 @@
 extends RefCounted
-# Straight 2.5D camera: ground occupies lower 60%, horizon remains scenery.
+# Straight 2.5D camera: ground occupies lower 69%, horizon remains scenery.
 static func ground_top(view:Vector2) -> float:
-	return maxf(84.0,view.y*0.41)
+	return maxf(84.0,view.y*0.31)
 
 static func steps(view:Vector2,arena:Vector2) -> Vector2:
 	var sx=maxf(1.0,(view.x-116.0)/maxf(1.0,arena.x))
@@ -15,3 +15,8 @@ static func project(p:Vector2,view:Vector2,arena:Vector2) -> Vector2:
 static func sprite_scale(view:Vector2,arena:Vector2) -> float:
 	var s=steps(view,arena)
 	return clampf(minf(s.x/64.0,s.y/31.0),0.42,0.95)
+
+static func sprite_direction(v:Vector2,side:int) -> String:
+	var right=v.x>0.05 or (absf(v.x)<=0.05 and side==0)
+	if v.y < -absf(v.x)*1.3:return "NE" if right else "NW"
+	return "SE" if right else "SW"

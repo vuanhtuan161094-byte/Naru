@@ -1,0 +1,3 @@
+# P8 native private capture/readability
+
+Godot 4.4.1 native imported exact source and 224 private textures, verified 12 character identities. P8: straight camera with larger ground band, larger existing sprite cels, facing mapping for straight camera, real stone props, readable non-overlapping damage numbers, review formation by role, staggered manual ultimate requests, DEV tactical lane/spacing bias. Camera and V3 timed cast local PASS. Local native capture rendered, visual acceptance HOLD: early-era sprites inconsistent, incomplete authored animation and summon coverage, crowding remains. No generated replacement animation, no public upload of private assets, no merge. Full integration CI required.

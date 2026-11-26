@@ -159,7 +159,12 @@ func background(field: Control,environment: String) -> bool:
 	if t==null:
 		field.draw_rect(Rect2(Vector2.ZERO,field.size),Color("#17282b"))
 		return false
-	field.draw_texture_rect(t,Rect2(Vector2.ZERO,field.size),false,Color(0.87,0.87,0.87))
+	# Preserve the entire panorama; enlarge the walkable ground band instead of
+	# placing feet on the scenery or zooming the entire scene.
+	var horizon=0.45*float(t.get_height())
+	var top=preload("res://game/battle_camera.gd").ground_top(field.size)
+	field.draw_texture_rect_region(t,Rect2(0,0,field.size.x,top),Rect2(0,0,t.get_width(),horizon),Color(0.93,0.93,0.93))
+	field.draw_texture_rect_region(t,Rect2(0,top,field.size.x,field.size.y-top),Rect2(0,horizon,t.get_width(),t.get_height()-horizon),Color(0.93,0.93,0.93))
 	return true
 
 func tile(field: Control,p: Vector2,q: float,x: int,y: int,plate: bool) -> bool:
@@ -185,7 +190,7 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	if t==null and authored==null and r3_texture==null:
 		fallback_draws+=1
 		return 0.0
-	var height=92.0*display_scale
+	var height=112.0*display_scale
 	var scale_value=height/112.0
 	var dest=Rect2(p-Vector2(48,104)*scale_value,Vector2(96,112)*scale_value)
 	# One provisional authored rightward walk pilot, never mirror or fabricate missing clips.
@@ -233,6 +238,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 		var progress=1.0-float(a.cast_left)/maxf(0.05,float(skill.cast_s))
 		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,82):
 			field.draw_arc(at,15+6*sin(float(sim.ticks)*0.35),0,TAU,24,Color(0.45,0.78,1,0.65),2)
+	var numbers=[]
 	for event in sim.art_events:
 		var elapsed=float(sim.ticks-int(event.tick))*0.05
 		if elapsed<0 or elapsed>=0.8:continue
@@ -245,9 +251,21 @@ func effects(field: Control,sim,project: Callable) -> void:
 			var family="hit" if event.kind=="damage" else "heal" if event.kind=="heal" else "smoke"
 			if not sheet(field,"vfx/families/"+family+".png",at,progress,76):
 				field.draw_arc(at,8+22*progress,0,TAU,24,Color(1,0.72,0.38,1-progress),2)
-			if event.kind!="summon":
-				var text_value=("+" if event.kind=="heal" else "-")+str(roundi(float(event.amount)))
-				field.draw_string(ThemeDB.fallback_font,at+Vector2(-14,-28-25*progress),text_value,HORIZONTAL_ALIGNMENT_LEFT,-1,15,Color(0.56,1,0.63,1-progress*0.8) if event.kind=="heal" else Color(1,0.83,0.58,1-progress*0.8))
+			if event.kind!="summon" and elapsed<0.55:
+				numbers.append({"at":at+Vector2(-14,-28-25*progress),"kind":event.kind,"amount":float(event.amount),"age":elapsed})
+	# Presentation only: keep the largest actual nearby hit readable. Full events
+	# remain in combat and contribution logs; no damage numbers are fabricated.
+	numbers.sort_custom(func(a,b):return a.amount>b.amount)
+	var used:Array[Vector2]=[]
+	for n in numbers:
+		if used.size()>=8:break
+		var point=Vector2(n.at)
+		if used.any(func(p):return absf(p.x-point.x)<55 and absf(p.y-point.y)<24):continue
+		used.append(point)
+		var text_value=("+" if n.kind=="heal" else "-")+str(roundi(n.amount))
+		var alpha=clampf(1.0-maxf(0.0,float(n.age)-0.33)*3.0,0.35,1.0)
+		field.draw_string_outline(ThemeDB.fallback_font,point,text_value,HORIZONTAL_ALIGNMENT_LEFT,-1,18,4,Color(0.08,0.10,0.10,alpha))
+		field.draw_string(ThemeDB.fallback_font,point,text_value,HORIZONTAL_ALIGNMENT_LEFT,-1,18,Color(0.56,1,0.63,alpha) if n.kind=="heal" else Color(1,0.83,0.58,alpha))
 
 func load_move_contract() -> void:
 	if not review_move_r3.is_empty():return

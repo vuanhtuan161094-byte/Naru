@@ -17,5 +17,7 @@ func _initialize() -> void:
 				var pos=Camera.project(p,view,arena)
 				if not Rect2(Vector2.ZERO,view).has_point(pos) or pos.y<Camera.ground_top(view)-0.01:
 					push_error("BATTLE_LAYOUT_FAIL out of bounds");quit(1);return
-	print("NARU_BATTLE_LAYOUT_PASS 12 map/viewport combinations; zero shear on both axes")
+	if Camera.sprite_direction(Vector2.RIGHT,0)!="SE" or Camera.sprite_direction(Vector2.LEFT,1)!="SW" or Camera.sprite_direction(Vector2(0.2,-1),0)!="NE" or Camera.sprite_direction(Vector2(-0.2,-1),1)!="NW":
+		push_error("BATTLE_LAYOUT_FAIL horizontal sprite direction");quit(1);return
+	print("NARU_BATTLE_LAYOUT_PASS 12 map/viewport combinations; zero shear and screen-facing sprites")
 	quit(0)
