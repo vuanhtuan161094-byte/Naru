@@ -1,0 +1,51 @@
+name: Publish Naru Web preview
+on:
+  push:
+    branches: [integration/one-game]
+    paths:
+      - '.github/workflows/publish-web-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+concurrency:
+  group: naru-web-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Retrieve previously verified P10 Web build
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: 15118733635
+          run-id: 45822560661
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          path: dist
+      - name: Verify exact build and retain only game files
+        run: |
+          set -euo pipefail
+          cd dist
+          test "$(tr -d '\r\n' < BUILD_SHA.txt)" = c3cd8b131ce8df375be15fe91eb56e1a3d0b0c0f
+          sha256sum -c SHA256SUMS.txt
+          test -s index.html
+          test -s index.pck
+          test -s index.wasm
+          find . -maxdepth 1 -type f \( -name '*.md' -o -name 'README*' -o -name '*.bat' \) -delete
+          test ! -e naru-art.json
+          touch .nojekyll
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy verified Web preview
+        id: deployment
+        uses: actions/deploy-pages@v4
