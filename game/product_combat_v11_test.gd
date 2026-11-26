@@ -71,7 +71,7 @@ func _initialize() -> void:
 				var id=str(roster[i] if side==0 else enemies[i])
 				var n=reg.ninjas[id]
 				fight.add_actor(id,side,140,4,{},i,1.0,{"realm":7,"stars":5,"forms":n.form_ids,"unlocked_skills":n.additional_skill_ids})
-		for step in range(800):
+		for step in range(1000):
 			if step%20==0:
 				for i in range(6):
 					var a=fight.actors[i]

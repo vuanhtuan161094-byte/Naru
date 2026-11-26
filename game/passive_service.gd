@@ -59,7 +59,7 @@ static func recipients(sim,a: Dictionary,row: Dictionary,target: Dictionary={}) 
 	var side=1-int(a.side) if scope=="enemy_team" else int(a.side)
 	var radius=float(row.target.get("radius_m",0)) if scope=="radius" else 0.0
 	var op=operation(row,a)
-	if scope=="radius" and op.get("field","")=="radius_m":radius=minf(float(op.get("max",5)),radius*float(op.multiplier))
+	if scope=="radius" and op.get("field","") in ["radius_m","target.radius_m"]:radius=minf(float(op.get("max",5)),radius*float(op.multiplier))
 	for b in sim.alive(side):
 		if not b.has("passive_base") or b.get("beast",false) or (b.uid==a.uid and not row.target.get("include_owner",true)):continue
 		if scope=="radius" and a.pos.distance_to(b.pos)>radius:continue
@@ -76,7 +76,7 @@ static func refresh(sim) -> void:
 	if not sim.use_passives:return
 	var buckets={}
 	for a in sim.actors:
-		if a.has("passive_base"):buckets[a.uid]={"personal":{},"aura":{},"team":{},"negative":{}}
+		if a.has("passive_base"):buckets[a.uid]={"personal":{},"aura":{},"team":{},"negative":{},"sources":[]}
 	for a in sim.actors:
 		if not buckets.has(a.uid) or a.hp<=0:continue
 		for row in rows(sim,a):
@@ -93,7 +93,9 @@ static func refresh(sim) -> void:
 				if not buckets.has(target.uid):continue
 				var group="aura" if event=="continuous_aura" else "personal"
 				aggregate(buckets[target.uid][group],str(row.effect.key),val,group=="aura")
-				if val>0:sim.passive_continuous_ledger[row.id]={"kind":event,"owner":a.uid,"target":target.uid,"value":val}
+				if val>0:
+					sim.passive_continuous_ledger[row.id]={"kind":event,"owner":a.uid,"target":target.uid,"value":val}
+					buckets[target.uid].sources.append({"id":row.id,"group":group,"key":row.effect.key,"value":val,"owner":a.uid})
 			var secondary=operation(row,a).get("secondary_effect",{})
 			if not secondary.is_empty():aggregate(buckets[a.uid].personal,str(secondary.key),float(secondary.base),false)
 	for a in sim.actors:
@@ -105,12 +107,14 @@ static func refresh(sim) -> void:
 				a.passive_timed.erase(key)
 				continue
 			aggregate(buckets[a.uid][effect.group],str(effect.key),float(effect.value),effect.group!="personal")
+			buckets[a.uid].sources.append({"id":effect.id,"group":effect.group,"key":effect.key,"value":effect.value,"owner":effect.owner})
 		var bucket=buckets[a.uid]
 		var mods={}
 		for key in sim.registry.passive_rules.caps:
 			var positive=minf(float(sim.registry.passive_rules.caps[key]),float(bucket.personal.get(key,0))+float(bucket.aura.get(key,0))+float(bucket.team.get(key,0)))
 			var negative=minf(float(sim.registry.passive_rules.negative_stat_relative_penalty_cap),float(bucket.negative.get(key,0)))
 			mods[key]=positive-negative
+		record_effective_sources(sim,a,bucket,mods)
 		a.passive_mods=mods
 		var original=a.passive_base
 		for key in original.stats:
@@ -207,10 +211,10 @@ static func flush(sim) -> void:
 		if sim.ticks-int(sim.passive_seen[key])>1200:sim.passive_seen.erase(key)
 	refresh(sim)
 
-static func typed(s: Dictionary,row: Dictionary,category: String,before: float,after: float) -> void:
+static func typed(s: Dictionary,row: Dictionary,category: String,before: float,after: float,detail: String="") -> void:
 	if is_equal_approx(before,after):return
 	if not s.has("passive_typed"):s.passive_typed=[]
-	s.passive_typed.append({"id":row.id,"category":category,"before":before,"after":after})
+	s.passive_typed.append({"id":row.id,"category":category,"before":before,"after":after,"detail":detail})
 
 static func modify_skill(sim,a: Dictionary,s: Dictionary) -> void:
 	if not sim.use_passives or not s.has("p2"):return
@@ -231,13 +235,13 @@ static func modify_skill(sim,a: Dictionary,s: Dictionary) -> void:
 					if e.has("coefficient") and e.type in ["damage","heal","shield"] and float(e.coefficient)>0 and (row.effect.type=="form_skill_coefficient_bonus" or e.type==row.effect.key):
 						var previous=float(e.coefficient)
 						e.coefficient=previous*(1.0+minf(val,0.10))
-						typed(s,row,"coefficient",previous,float(e.coefficient))
+						typed(s,row,"coefficient",previous,float(e.coefficient),str(e.type))
 			"skill_status_duration_bonus":
 				for e in s.effects:
 					if e.type=="apply_status" and (sim.registry.status_catalog.get(e.status_id,{}).get("hard_control",false) or str(e.status_id) in ["slow","silence","fear","beguile_tactical","bind","sleep","freeze","stun"]):
 						var previous=float(e.get("duration_s",0))
 						if previous>0:e.duration_s=previous*(1.0+minf(val,0.10))
-						typed(s,row,"duration",previous,float(e.get("duration_s",0)))
+						typed(s,row,"duration",previous,float(e.get("duration_s",0)),str(e.status_id))
 			"summon_hp_fraction_bonus":
 				for e in s.effects:
 					if e.type=="summon":
@@ -274,3 +278,26 @@ static func cleanse(a: Dictionary,limit: int) -> int:
 			a.passive_timed.erase(key)
 			removed+=1
 	return removed
+
+static func record_effective_sources(sim,a: Dictionary,bucket: Dictionary,mods: Dictionary) -> void:
+	# Only credit a source that changes the capped aggregate, not merely an event.
+	for source in bucket.sources:
+		if sim.passive_applied_ledger.has(source.id):continue
+		var key=str(source.key)
+		if not mods.has(key):continue
+		var group=str(source.group)
+		var others=0.0
+		for other in bucket.sources:
+			if other.id==source.id and other.owner==source.owner:continue
+			if other.key!=key or other.group!=group:continue
+			others=others+float(other.value) if group=="personal" else maxf(others,float(other.value))
+		if group=="personal":others=maxf(0.0,float(bucket.personal.get(key,0))-float(source.value))
+		var cap=float(sim.registry.passive_rules.caps[key])
+		var pos=float(bucket.personal.get(key,0))+float(bucket.aura.get(key,0))+float(bucket.team.get(key,0))
+		var neg=float(bucket.negative.get(key,0))
+		var without=minf(cap,pos)-minf(float(sim.registry.passive_rules.negative_stat_relative_penalty_cap),neg)
+		if group=="negative":without=minf(cap,pos)-minf(float(sim.registry.passive_rules.negative_stat_relative_penalty_cap),others)
+		else:without=minf(cap,pos-float(bucket[group].get(key,0))+others)-minf(float(sim.registry.passive_rules.negative_stat_relative_penalty_cap),neg)
+		var delta=float(mods[key])-without
+		if absf(delta)>0.000001:
+			sim.passive_applied_ledger[source.id]={"owner":source.owner,"recipient":a.uid,"stat":key,"delta":delta,"tick":sim.ticks,"group":group}

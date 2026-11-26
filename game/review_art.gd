@@ -14,6 +14,9 @@ var motion: Dictionary={}
 var review_move_r3: Dictionary={}
 var review_clip_hashes: Dictionary={}
 var review_move_draws=0
+var clip_metadata: Dictionary={}
+var clip_draws: Dictionary={}
+var fallback_draws=0
 
 func hash_bytes(bytes: PackedByteArray) -> String:
 	var h=HashingContext.new()
@@ -25,14 +28,16 @@ func import_text(raw: String,persist: bool=true) -> bool:
 	error=""
 	load_move_contract()
 	var staged_hashes={}
+	var staged_clips={}
 	if raw.length()>MAX_BYTES:
 		error="Gói quá lớn"
 		return false
 	var pack=JSON.parse_string(raw)
+	var supplied=pack_clip_metadata(raw)
 	if not pack is Dictionary or int(pack.get("schema",0))!=1 or pack.get("status")!="REVIEW_ONLY" or not pack.get("assets") is Dictionary:
 		error="Sai định dạng gói review"
 		return false
-	if pack.assets.size()==0 or pack.assets.size()>240:
+	if pack.assets.size()==0 or pack.assets.size()>360:
 		error="Số ảnh không hợp lệ"
 		return false
 	var staged={}
@@ -71,6 +76,12 @@ func import_text(raw: String,persist: bool=true) -> bool:
 		if str(path).begins_with("characters/") and (width!=96 or height!=112):
 			error="Sprite sai cell 96×112"
 			return false
+		if str(path).begins_with("animation/") and supplied.has(path):
+			var meta=supplied[path]
+			if not valid_clip(meta,width,height,str(entry.sha256)):
+				error="Sai contract animation: "+str(path)
+				return false
+			staged_clips[path]=meta
 		staged[path]=ImageTexture.create_from_image(img)
 		staged_hashes[path]=str(entry.sha256)
 	if persist:
@@ -92,6 +103,7 @@ func import_text(raw: String,persist: bool=true) -> bool:
 			return false
 	textures=staged
 	review_clip_hashes=staged_hashes
+	clip_metadata=staged_clips
 	enabled=true
 	source_label="REVIEW RIÊNG • "+str(textures.size())+" ảnh"
 	return true
@@ -117,6 +129,8 @@ func reset_battle() -> void:
 	effect_draws=0
 	portrait_draws=0
 	review_move_draws=0
+	clip_draws={}
+	fallback_draws=0
 
 func background(field: Control,environment: String) -> bool:
 	var t=texture("environment/arena_open_r3.png")
@@ -144,32 +158,42 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	last_pos[a.uid]=p
 	var action=str(state.get("action","Idle")).to_lower()
 	var direction=str(state.get("direction","SE")).to_lower()
-	var authored=texture("animation/"+id+"/"+action+"_"+direction+".png")
+	var clip_path="animation/"+id+"/"+action+"_"+direction+".png"
+	var authored=texture(clip_path)
 	var r3=review_move_r3.get(id,{})
 	var r3_texture: Texture2D=null
 	if action=="move" and direction in ["se","ne"] and not r3.is_empty() and review_clip_hashes.get(r3.path,"")==r3.sha256:r3_texture=texture(r3.path)
-	if t==null and authored==null and r3_texture==null:return 0.0
+	if t==null and authored==null and r3_texture==null:
+		fallback_draws+=1
+		return 0.0
 	var height=92.0*display_scale
 	var scale_value=height/112.0
 	var dest=Rect2(p-Vector2(48,104)*scale_value,Vector2(96,112)*scale_value)
 	# One provisional authored rightward walk pilot, never mirror or fabricate missing clips.
 	var moving=motion.get(a.uid,{})
 	var walk=texture("animation/"+id+"/walk_screen_right.png")
-	if authored!=null and authored.get_height()==112 and authored.get_width()%96==0:
-		var frame_count=maxi(1,authored.get_width()/96)
-		var age=maxi(0,ticks-int(state.get("started_tick",0)))
-		var frame=posmod(floori(float(age)/2.0),frame_count) if action in ["idle","move"] else mini(frame_count-1,floori(float(age)/2.0))
-		field.draw_texture_rect_region(authored,dest,Rect2(frame*96,0,96,112))
-	elif r3_texture!=null and r3_texture.get_width()==768 and r3_texture.get_height()==112:
-		var age=maxi(0,ticks-int(state.get("started_tick",0)))*50
-		var frame=posmod(floori(float(age)/100.0),8)
+	if r3_texture!=null and r3_texture.get_width()==768 and r3_texture.get_height()==112:
+		var frame=frame_at(r3.frames,maxi(0,ticks-int(state.get("started_tick",0)))*50,true)
 		field.draw_texture_rect_region(r3_texture,dest,Rect2(frame*96,0,96,112))
 		review_move_draws+=1
+		record_clip(r3.path,frame)
+	elif authored!=null and authored.get_height()==112 and authored.get_width()%96==0:
+		var frame_count=maxi(1,authored.get_width()/96)
+		var age=maxi(0,ticks-int(state.get("started_tick",0)))*50
+		var frame=posmod(floori(float(age)/100.0),frame_count) if action in ["idle","move"] else mini(frame_count-1,floori(float(age)/100.0))
+		var meta=clip_metadata.get(clip_path,{})
+		if not meta.is_empty():frame=frame_at(meta.frames,age,action in ["idle","move"])
+		field.draw_texture_rect_region(authored,dest,Rect2(frame*96,0,96,112))
+		record_clip(clip_path,frame)
 	elif action=="move" and walk!=null and bool(moving.get("right",false)) and int(moving.get("until",0))>=ticks and walk.get_width()==384 and walk.get_height()==112:
 		var frame=posmod(floori(float(ticks)/2.0),4)
 		field.draw_texture_rect_region(walk,dest,Rect2(frame*96,0,96,112))
-	elif t!=null:field.draw_texture_rect(t,dest,false)
-	else:return 0.0
+	elif t!=null:
+		field.draw_texture_rect(t,dest,false)
+		fallback_draws+=1
+	else:
+		fallback_draws+=1
+		return 0.0
 	actor_draws+=1
 	return 104.0*scale_value
 
@@ -213,4 +237,40 @@ func load_move_contract() -> void:
 	var record=JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not record is Dictionary:return
 	for clip in record.get("clips",[]):
-		if clip.get("owner_visual_approved",false) and clip.status=="REVIEW_ONLY" and clip.frames.size()==8 and clip.anchor==[48,104]:review_move_r3[clip.id]=clip
+		if clip.get("owner_visual_approved",false) and clip.status=="REVIEW_ONLY" and clip.frames.size()==8 and valid_anchor(clip.anchor) and valid_clip(clip,768,112,str(clip.sha256)):review_move_r3[clip.id]=clip
+
+func valid_anchor(anchor: Variant) -> bool:
+	return anchor is Array and anchor.size()==2 and (anchor[0] is float or anchor[0] is int) and (anchor[1] is float or anchor[1] is int) and float(anchor[0])==48.0 and float(anchor[1])==104.0
+
+func pack_clip_metadata(raw: String) -> Dictionary:
+	var p=JSON.parse_string(raw)
+	if not p is Dictionary or not p.get("clips",{}) is Dictionary:return {}
+	return p.get("clips",{})
+
+func valid_clip(meta: Variant,width: int,height: int,sha: String) -> bool:
+	if not meta is Dictionary or not valid_anchor(meta.get("anchor",[])) or str(meta.get("sha256",""))!=sha:return false
+	if height!=112 or width%96!=0 or not meta.get("frames",[]) is Array:return false
+	var frames=meta.frames
+	if frames.is_empty() or frames.size()!=width/96:return false
+	for i in range(frames.size()):
+		var r=frames[i]
+		var rect=r.get("rect",[])
+		if not rect is Array or rect.size()!=4:return false
+		if float(rect[0])!=float(i*96) or float(rect[1])!=0.0 or float(rect[2])!=96.0 or float(rect[3])!=112.0:return false
+		if float(r.get("duration_ms",0))<20.0 or float(r.get("duration_ms",0))>2000.0:return false
+	return true
+
+func frame_at(frames: Array,age_ms: int,looping: bool) -> int:
+	var total=0
+	for r in frames:total+=int(r.duration_ms)
+	if total<=0:return 0
+	var age=posmod(age_ms,total) if looping else clampi(age_ms,0,total-1)
+	for i in range(frames.size()):
+		age-=int(frames[i].duration_ms)
+		if age<0:return i
+	return frames.size()-1
+
+func record_clip(path: String,frame: int) -> void:
+	if not clip_draws.has(path):clip_draws[path]={"draws":0,"frames":{}}
+	clip_draws[path].draws+=1
+	clip_draws[path].frames[frame]=true

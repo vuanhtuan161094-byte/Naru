@@ -94,10 +94,14 @@ static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vecto
 	var desired=maxf(sim.body_radius(a)+sim.body_radius(enemy)+0.08,float(basic.range_m)*0.78)
 	var ranged=r in ["công kích xa","trị liệu","hỗ trợ","khống chế"]
 	if ranged:
+		var long_range=false
 		for id in a.skills:
 			var s=sim.decision_skill(a,id)
-			if s.kind!="ultimate" and s.target=="enemy_ai" and sim.ready(a,s):desired=maxf(desired,float(s.range_m)*0.78)
-		desired=maxf(desired,2.2)
+			if s.kind!="ultimate" and s.target=="enemy_ai" and sim.ready(a,s):
+				desired=maxf(desired,float(s.range_m)*0.78)
+				if float(s.range_m)>=2.7:long_range=true
+		# Do not hold a melee-only actor permanently outside its actual attack range.
+		if long_range:desired=maxf(desired,2.2)
 		if r in ["trị liệu","hỗ trợ"]:
 			var anchor={}
 			var best_priority=-INF
@@ -109,7 +113,7 @@ static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vecto
 			if not anchor.is_empty():
 				var away=(Vector2(anchor.pos)-center).normalized()
 				var support_point=sim.clamp_body(Vector2(anchor.pos)+away*1.8,sim.body_radius(a))
-				if origin.distance_to(anchor.pos)>3.5 and sim.position_clear(a,support_point):return support_point
+				if origin.distance_to(anchor.pos)>3.5 and sim.position_clear(a,support_point) and sim.clear_segment(origin,support_point,sim.body_radius(a)):return support_point
 	var direction=(origin-center).normalized()
 	if direction==Vector2.ZERO:direction=Vector2.LEFT if a.side==0 else Vector2.RIGHT
 	var best=origin

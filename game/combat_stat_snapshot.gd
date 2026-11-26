@@ -37,3 +37,13 @@ static func snapshot(registry,n: Dictionary,level: int,quality: int,permanent: D
 	if beast_level>0:
 		for key in ["hp","patk","natk","chakra_max"]:all_stats[key]*=1.0+0.03*sqrt(float(beast_level))
 	return {"stats":all_stats,"gear":gear_stats,"natural_star_multiplier":star_multiplier if natural_star else 1.0}
+
+# Public permanent snapshot for UI; encounter multipliers and conditional buffs excluded.
+static func player(registry,n: Dictionary,progress: Dictionary,gear_instances: Dictionary,beasts: Dictionary={},natural_star: bool=true) -> Dictionary:
+	var p=progress.duplicate(true)
+	p.beast_level=int(beasts.get(p.get("beast_id",""),{}).get("level",p.get("beast_level",0)))
+	var result=snapshot(registry,n,int(p.get("level",1)),int(p.get("quality",n.initial_quality)),p.get("permanent",{}),p,gear_instances,natural_star)
+	if not natural_star:
+		var star_multiplier=1.0+0.04*(int(p.get("stars",1))-1)
+		for key in ["hp","patk","natk"]:result.stats[key]*=star_multiplier
+	return result

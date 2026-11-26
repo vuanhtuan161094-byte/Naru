@@ -1,0 +1,32 @@
+{
+  "design_sha": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+  "branch_holds": [
+    {
+      "id": "NIN-006-S7-B1",
+      "reason": "HOLD_ERA",
+      "action": "preserve D4 fallback, never promote P2 adapter"
+    },
+    {
+      "id": "NIN-006-S7-B2",
+      "reason": "HOLD_ERA",
+      "action": "preserve D4 fallback, never promote P2 adapter"
+    }
+  ],
+  "skill_holds": {
+    "era": [
+      "NIN-006-S7",
+      "NIN-016-S7"
+    ],
+    "reflection": [
+      "NIN-064-S5",
+      "NIN-064-S7",
+      "NIN-139-S1",
+      "NIN-139-S5"
+    ]
+  },
+  "passive_source_holds": 186,
+  "mechanic_hold": [
+    "NIN-139-P2"
+  ],
+  "combo_b2_secondary": "duration contract not published"
+}

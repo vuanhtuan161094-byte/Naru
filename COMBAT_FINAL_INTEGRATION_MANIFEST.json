@@ -1,0 +1,340 @@
+{
+  "schema": 1,
+  "status": "V13_FINAL_HANDOFF_CANDIDATE_CI_REQUIRED",
+  "base_sha": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
+  "head_sha": "13782ca61c5d7290715d96c4991592630013fdf7",
+  "head_note": "Runtime code commit; this manifest and docs are published by a subsequent metadata-only commit. Exact build SHA is artifact BUILD_SHA.txt.",
+  "one_game_base": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+  "source_heads": {
+    "design": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+    "art": "197c27790f2b7b49e435c3fe5002a5f23025b2ef",
+    "world": "b78c04db1e2b7921c6539d6b8e1f82968a3b4fa6"
+  },
+  "runtime_files": [
+    ".github/workflows/godot-smoke.yml",
+    "data/art-review/r6-handoff.json",
+    "data/skill-depth-v3/final-holds.json",
+    "game/combat.gd",
+    "game/combat_final_v12_test.gd",
+    "game/combat_stat_snapshot.gd",
+    "game/main.gd",
+    "game/passive_service.gd",
+    "game/product_combat_v11_test.gd",
+    "game/review_art.gd",
+    "game/tactical_ai.gd"
+  ],
+  "documentation_files": [
+    "COMBAT_FINAL_INTEGRATION_MANIFEST.json",
+    "GAMEPLAY_STATUS.md",
+    "GAMEPLAY_BACKLOG.md",
+    "game/COMBAT_API_HANDOFF_03.md",
+    "game/COMBAT_ANIMATION_HANDOFF_02.md",
+    "game/IMPLEMENTATION_STATUS.md",
+    "game/PASSIVE_HANDOFF_00_02.md"
+  ],
+  "functions": {
+    "game/combat.gd": [
+      "__preamble",
+      "target_for",
+      "effective_skill",
+      "hit",
+      "release",
+      "tick",
+      "p2_set_mark",
+      "p2_confirm",
+      "combo_record",
+      "combo_resolve",
+      "record_typed_passives",
+      "update_pressure",
+      "combo_target_bonus",
+      "combo_skill_bonus",
+      "conditional_passive_active",
+      "combo_pick_event",
+      "combo_common_anchor",
+      "signature_near_ready",
+      "confirm_form_effect"
+    ],
+    "game/combat_final_v12_test.gd": [
+      "__preamble",
+      "check",
+      "collect",
+      "new_fight",
+      "progress",
+      "run_fight",
+      "art_check",
+      "_initialize",
+      "campaign_probe"
+    ],
+    "game/combat_stat_snapshot.gd": [
+      "snapshot",
+      "player"
+    ],
+    "game/main.gd": [
+      "_ready",
+      "battle_view",
+      "draw_field",
+      "update_battle_inspector"
+    ],
+    "game/passive_service.gd": [
+      "recipients",
+      "refresh",
+      "typed",
+      "modify_skill",
+      "cleanse",
+      "record_effective_sources"
+    ],
+    "game/product_combat_v11_test.gd": [
+      "_initialize"
+    ],
+    "game/review_art.gd": [
+      "__preamble",
+      "import_text",
+      "reset_battle",
+      "draw_actor",
+      "load_move_contract",
+      "valid_anchor",
+      "pack_clip_metadata",
+      "valid_clip",
+      "frame_at",
+      "record_clip"
+    ],
+    "game/tactical_ai.gd": [
+      "goal"
+    ]
+  },
+  "shared": {
+    "main_gd": "Apply battle-only changed functions and DEV V12 header; preserve 03 and integration world hunks, do not replace file",
+    "data_registry_gd": "UNCHANGED from c1be2c86; preserve ONE GAME loaders",
+    "combat_stat_snapshot_gd": "snapshot body unchanged; add pure player() wrapper, 03 player_preview may delegate; preserve existing StatsService",
+    "workflow": "Add V12 final test + artifact names to integration workflow; keep world steps, branch filters",
+    "save_schema": 1,
+    "external_service_changes": []
+  },
+  "api": {
+    "snapshot": "CombatStats.snapshot(reg,n,level,quality,permanent,progress,gear_instances,natural_star=true)",
+    "player": "CombatStats.player(reg,n,progress,gear_instances,beasts={},natural_star=true) -> {stats,gear,natural_star_multiplier}; permanent only",
+    "combat": "setup(reg,save,stage,seed),tick(dt),ultimate_skill(index,id),ultimate(index),ultimate_reason(actor,id),activate_form(actor,id,manual,trigger_id), unchanged finish_stage inputs",
+    "telemetry": [
+      "combo_evidence",
+      "form_effect_evidence",
+      "passive_applied_ledger",
+      "animation_events",
+      "clip_draws",
+      "fallback_draws"
+    ]
+  },
+  "verified_v11": {
+    "sha": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
+    "ci": 45641507900,
+    "web_artifact": 15036860211,
+    "video_artifact": 15037485241,
+    "timed": 1146,
+    "branch_exact": 396,
+    "branch_special": 34,
+    "forms_fixture": 54,
+    "organic_combos": [
+      "COMBO-002",
+      "COMBO-006",
+      "COMBO-007",
+      "COMBO-008",
+      "COMBO-009",
+      "COMBO-011"
+    ],
+    "starter_wins": 9,
+    "starter_total": 10,
+    "spacing": {
+      "crowd": 476,
+      "pairs": 8478
+    }
+  },
+  "v12_validation": "CI required; candidate ledger measures actual effects and unresolved IDs; observation horizons not game limits",
+  "holds": {
+    "era": [
+      "NIN-006-S7",
+      "NIN-016-S7"
+    ],
+    "branches": [
+      "NIN-006-S7-B1",
+      "NIN-006-S7-B2"
+    ],
+    "reflection": [
+      "NIN-064-S5",
+      "NIN-064-S7",
+      "NIN-139-S1",
+      "NIN-139-S5"
+    ],
+    "passive_source": 186,
+    "mechanic": [
+      "NIN-139-P2"
+    ],
+    "combo_secondary": "No published duration; preserve review HOLD",
+    "vfx": "HOLD",
+    "missing_organic_combos_v11": [
+      "COMBO-001",
+      "COMBO-003",
+      "COMBO-004",
+      "COMBO-005",
+      "COMBO-010",
+      "COMBO-012"
+    ]
+  },
+  "art": {
+    "archive": "Naru_ART_P2_R6_private.zip",
+    "archive_sha256": "512e0e7d5220b9eb20c9f27754cfe468020caa7b29c4d3478e2bf6eaaf0ca352",
+    "private_review_pack": "Naru_V12_private_review_pack.json",
+    "pack_sha256": "3bdf7688716015c5d95a0a193396c23d9115dc787860452f6c3afb97066ae590",
+    "archive_verified_images": 157,
+    "filtered_pack_images": 97,
+    "animation_sheets": 51,
+    "approved_move_r3": 6,
+    "candidate_other": 45,
+    "production_approved": 0,
+    "public_binary": false,
+    "notes": "Native numeric pivot fix; R3 8x100ms; 45 R4 candidate clip timings provisional; no rear or Cast/opponent production approval. Private pack bytes not in Git."
+  },
+  "coordinator_remaining": [
+    "Read V12 CI exact ledger and remaining organic combo/form/passive IDs",
+    "Confirm source/era/reflection and B2 secondary duration contracts with Chat00",
+    "Use ONE GAME earned progression logs for STG060+; synthetic diagnostic is not earned progress",
+    "Align 03 preview with player wrapper; keep world changes",
+    "Integrate private art only after appropriate permission and runtime evidence",
+    "Review real V12 HUD/video; no release declaration until exact CI succeeds"
+  ],
+  "v13_runtime_sha": "23568929384bbd4e80df8439d90851516cee270a",
+  "v13_note": "Following handoff commit expands focused test and workflow only; use final exact SHA from CI BUILD_SHA.txt. Existing V12 manifest remains baseline for cumulative delta.",
+  "v13_delta": {
+    "runtime_files": [
+      "game/combat.gd",
+      "game/main.gd"
+    ],
+    "functions": {
+      "game/combat.gd": [
+        "apply_status",
+        "release",
+        "tick",
+        "p2_apply",
+        "confirm_form_effect",
+        "signature_near_ready",
+        "combo_skill_bonus",
+        "combo_pick_event",
+        "requested_form_route"
+      ],
+      "game/main.gd": [
+        "update_battle_inspector"
+      ]
+    },
+    "test_files": [
+      "game/combat_final_v12_test.gd",
+      ".github/workflows/godot-smoke.yml"
+    ],
+    "save_schema_unchanged": true,
+    "world_services_unchanged": true,
+    "art_unchanged": true,
+    "holds_unchanged": true
+  },
+  "verified_v12": {
+    "sha": "5b046abd7aeb1f3b7976ca5480228094629b5055",
+    "ci": 45644956660,
+    "web": 15038375641,
+    "video": 15038106627,
+    "forms_activated": 43,
+    "forms_empowered": 26,
+    "eligible_passives": 677,
+    "stat_ids": 393,
+    "typed_ids": 60,
+    "event_receipts": 194,
+    "observed_combos": [
+      "COMBO-003",
+      "COMBO-004",
+      "COMBO-005",
+      "COMBO-011"
+    ],
+    "missing_targeted": [
+      "COMBO-001",
+      "COMBO-010",
+      "COMBO-012"
+    ],
+    "campaign_diagnostic_losses": [
+      "STG-060",
+      "STG-080",
+      "STG-120"
+    ],
+    "campaign_diagnostic_wins": [
+      "STG-065",
+      "STG-070",
+      "STG-100"
+    ],
+    "note": "observational, not acceptance. Passive categories overlap; V12 event_receipts not event_only."
+  },
+  "v13_acceptance": "Verified 46d6d14 baseline can be reviewed for ONE GAME. Do not promote 221f857b/9fdcd54b until exact CI succeeds. Remaining 4 combo, 9 activation, 22 empowerment and 203 eligible passive observation gaps are not closed. Preserve all source, era, reflection, B2 duration and VFX holds. No shared service changes.",
+  "v13_verified": {
+    "sha": "46d6d1442c21f7f0acafcbb6e782f89e0219e615",
+    "ci": 45647915498,
+    "web": 15038778092,
+    "video": 15037184962,
+    "menu": 15038882917,
+    "eligible": 677,
+    "actual": 466,
+    "stat": 399,
+    "typed": 67,
+    "event_only": 8,
+    "no_receipt": 203,
+    "forms_activated": 45,
+    "forms_empowered": 32,
+    "combos_observed": [
+      "002",
+      "003",
+      "004",
+      "005",
+      "007",
+      "008",
+      "009",
+      "011"
+    ],
+    "combos_unobserved": [
+      "001",
+      "006",
+      "010",
+      "012"
+    ],
+    "scope": "both sides, all roster and focused fixtures; not full product acceptance"
+  },
+  "v13_fix": {
+    "runtime_sha": "221f857b22e45062829503561a49f5db3b126202",
+    "test_sha": "9fdcd54bfbc81aefdc361031ba901a3b4f55ee08",
+    "files": [
+      "game/combat.gd",
+      "game/combat_final_v12_test.gd"
+    ],
+    "functions": {
+      "game/combat.gd": [
+        "requested_form_route",
+        "tick"
+      ],
+      "game/combat_final_v12_test.gd": [
+        "v13_queued_form_check",
+        "_initialize"
+      ]
+    },
+    "note": "Exact automatic form prerequisite for queued ultimate, real CP reserve and legal checks; CI required"
+  },
+  "final_playtest_fix": {
+    "runtime_sha": "2d4846fafb83046927ff3cacf54395716afe5d43",
+    "test_sha": "a7e00b272b9d405c0d7627f2305650a5c88647b2",
+    "functions": {
+      "game/combat.gd": [
+        "tick"
+      ],
+      "game/combat_final_v12_test.gd": [
+        "v13_queued_approach_check",
+        "_initialize"
+      ]
+    },
+    "note": "Ready, legal, queued non-self ultimate out of range advances by existing collision-aware movement. Preserves dodge, bind, emergency allied support and legal cost/range checks. Exact test CI required."
+  },
+  "integration_policy": {
+    "verified_fallback": "46d6d1442c21f7f0acafcbb6e782f89e0219e615",
+    "candidate_code_sha": "a7e00b272b9d405c0d7627f2305650a5c88647b2",
+    "freeze": "No new systems. Apply cumulative manifest from V11 to exact tested SHA; main.gd and workflow only named function/hunk deltas. Preserve all holds and shared services."
+  }
+}
