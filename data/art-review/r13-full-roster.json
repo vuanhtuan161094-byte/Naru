@@ -1,0 +1,3125 @@
+{
+  "batch": "ART-R13-ALL-140",
+  "baseline": "5844745f309a520055ccc1edf59a4c6cefe1a3cf",
+  "scope": "Every roster ID other than four owner-approved static sprites; all new art must be independently authored, no battle screenshot crops, no substitutes by different era, no rig, no VFX change.",
+  "counts": {
+    "roster": 144,
+    "protected": 4,
+    "redraw": 8,
+    "missing_in_R11": 132,
+    "iruka_candidate": 1,
+    "target": 140,
+    "new_accepted_this_batch": 0
+  },
+  "source_pack": "R11 exact static hashes recovered from archive; 224-texture P3 remains immutable",
+  "items": [
+    {
+      "id": "NIN-001",
+      "name": "Naruto Uzumaki (thiếu niên)",
+      "era": "Naruto",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-002",
+      "name": "Sasuke Uchiha (thiếu niên)",
+      "era": "Naruto",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-003",
+      "name": "Sakura Haruno (thiếu niên)",
+      "era": "Naruto",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-004",
+      "name": "Kakashi Hatake",
+      "era": "Naruto",
+      "state": "OWNER_KEEP_STATIC",
+      "locked_static_sha256": "9aa6ee4e5a5cf5508f34b6b2863161ef21a9ef32743480278a31710b007ec24a"
+    },
+    {
+      "id": "NIN-005",
+      "name": "Iruka Umino",
+      "era": "Naruto",
+      "state": "CANDIDATE_UNAPPROVED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-006",
+      "name": "Konohamaru (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-007",
+      "name": "Shikamaru Nara (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-008",
+      "name": "Choji Akimichi (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-009",
+      "name": "Ino Yamanaka (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-010",
+      "name": "Hinata Hyuga (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-011",
+      "name": "Kiba Inuzuka (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-012",
+      "name": "Shino Aburame (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-013",
+      "name": "Neji Hyuga (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-014",
+      "name": "Rock Lee (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-015",
+      "name": "Tenten (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-016",
+      "name": "Might Guy",
+      "era": "Naruto",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-017",
+      "name": "Asuma Sarutobi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-018",
+      "name": "Kurenai Yuhi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-019",
+      "name": "Hiruzen Sarutobi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-020",
+      "name": "Jiraiya",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-021",
+      "name": "Tsunade",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-022",
+      "name": "Orochimaru",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-023",
+      "name": "Kabuto Yakushi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-024",
+      "name": "Gaara (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-025",
+      "name": "Temari (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-026",
+      "name": "Kankuro (thiếu niên)",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-027",
+      "name": "Zabuza Momochi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-028",
+      "name": "Haku",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-029",
+      "name": "Anko Mitarashi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-030",
+      "name": "Hayate Gekko",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-031",
+      "name": "Ibiki Morino",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-032",
+      "name": "Genma Shiranui",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-033",
+      "name": "Dosu Kinuta",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-034",
+      "name": "Zaku Abumi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-035",
+      "name": "Kin Tsuchi",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-036",
+      "name": "Kimimaro",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-037",
+      "name": "Jirobo",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-038",
+      "name": "Kidomaru",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-039",
+      "name": "Tayuya",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-040",
+      "name": "Sakon và Ukon",
+      "era": "Naruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-041",
+      "name": "Naruto Uzumaki (Shippuden)",
+      "era": "Shippuden",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-042",
+      "name": "Sasuke Uchiha (Shippuden)",
+      "era": "Shippuden",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-043",
+      "name": "Sakura Haruno (Shippuden)",
+      "era": "Shippuden",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-044",
+      "name": "Sai",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-045",
+      "name": "Yamato",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-046",
+      "name": "Shikamaru Nara (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-047",
+      "name": "Choji Akimichi (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-048",
+      "name": "Ino Yamanaka (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-049",
+      "name": "Hinata Hyuga (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-050",
+      "name": "Kiba Inuzuka (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-051",
+      "name": "Shino Aburame (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-052",
+      "name": "Neji Hyuga (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-053",
+      "name": "Rock Lee (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-054",
+      "name": "Tenten (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-055",
+      "name": "Gaara (Kazekage)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-056",
+      "name": "Temari (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-057",
+      "name": "Kankuro (Shippuden)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-058",
+      "name": "Chiyo",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-059",
+      "name": "Baki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-060",
+      "name": "Itachi Uchiha",
+      "era": "Shippuden",
+      "state": "OWNER_KEEP_STATIC",
+      "locked_static_sha256": "5ee7fff505b6ad9464fb390593985b1c1e6a0845a8f0561e1f3f446ed86a1924"
+    },
+    {
+      "id": "NIN-061",
+      "name": "Kisame Hoshigaki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-062",
+      "name": "Deidara",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-063",
+      "name": "Sasori",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-064",
+      "name": "Hidan",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-065",
+      "name": "Kakuzu",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-066",
+      "name": "Konan",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-067",
+      "name": "Pain (Thiên Đạo)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-068",
+      "name": "Nagato",
+      "era": "Shippuden",
+      "state": "OWNER_KEEP_STATIC",
+      "locked_static_sha256": "fdefb3ac7a86abc4cfd7d196773f74015b196377e045812d583a1cf1904e6ea3"
+    },
+    {
+      "id": "NIN-069",
+      "name": "Obito Uchiha",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-070",
+      "name": "Madara Uchiha",
+      "era": "Shippuden",
+      "state": "REDRAW_REQUIRED",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-071",
+      "name": "Zetsu Trắng",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-072",
+      "name": "Zetsu Đen",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-073",
+      "name": "Suigetsu Hozuki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-074",
+      "name": "Karin",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-075",
+      "name": "Jugo",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-076",
+      "name": "Killer B",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-077",
+      "name": "A (Raikage IV)",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-078",
+      "name": "Darui",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-079",
+      "name": "C",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-080",
+      "name": "Samui",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-081",
+      "name": "Omoi",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-082",
+      "name": "Karui",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-083",
+      "name": "Mei Terumi",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-084",
+      "name": "Chojuro",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-085",
+      "name": "Ao",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-086",
+      "name": "Onoki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-087",
+      "name": "Kurotsuchi",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-088",
+      "name": "Akatsuchi",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-089",
+      "name": "Mifune",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-090",
+      "name": "Hanzo",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-091",
+      "name": "Danzo Shimura",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-092",
+      "name": "Shisui Uchiha",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-093",
+      "name": "Minato Namikaze",
+      "era": "Shippuden",
+      "state": "OWNER_KEEP_STATIC",
+      "locked_static_sha256": "e443eacfefed19fb96e0bf7b8cff844b09906b2e962ec0ce78d4b9304ecd9e48"
+    },
+    {
+      "id": "NIN-094",
+      "name": "Kushina Uzumaki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-095",
+      "name": "Hashirama Senju",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-096",
+      "name": "Tobirama Senju",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-097",
+      "name": "Hagoromo Otsutsuki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-098",
+      "name": "Hamura Otsutsuki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-099",
+      "name": "Kaguya Otsutsuki",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-100",
+      "name": "Yugito Nii",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-101",
+      "name": "Yagura Karatachi",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-102",
+      "name": "Roshi",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-103",
+      "name": "Han",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-104",
+      "name": "Utakata",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-105",
+      "name": "Fu",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-106",
+      "name": "Fugaku Uchiha",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-107",
+      "name": "Shikaku Nara",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-108",
+      "name": "Inoichi Yamanaka",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-109",
+      "name": "Choza Akimichi",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-110",
+      "name": "Shizune",
+      "era": "Shippuden",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-111",
+      "name": "Boruto Uzumaki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-112",
+      "name": "Sarada Uchiha",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-113",
+      "name": "Mitsuki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-114",
+      "name": "Kawaki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-115",
+      "name": "Himawari Uzumaki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-116",
+      "name": "Shikadai Nara",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-117",
+      "name": "Inojin Yamanaka",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-118",
+      "name": "Chocho Akimichi",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-119",
+      "name": "Metal Lee",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-120",
+      "name": "Denki Kaminarimon",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-121",
+      "name": "Iwabe Yuino",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-122",
+      "name": "Sumire Kakei",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-123",
+      "name": "Konohamaru (trưởng thành)",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-124",
+      "name": "Moegi Kazamatsuri",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-125",
+      "name": "Udon Ise",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-126",
+      "name": "Naruto Uzumaki (Hokage)",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-127",
+      "name": "Sasuke Uchiha (trưởng thành)",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-128",
+      "name": "Sakura Haruno (trưởng thành)",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-129",
+      "name": "Shikamaru Nara (trưởng thành)",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-130",
+      "name": "Momoshiki Otsutsuki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-131",
+      "name": "Kinshiki Otsutsuki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-132",
+      "name": "Isshiki Otsutsuki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-133",
+      "name": "Delta",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-134",
+      "name": "Code",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-135",
+      "name": "Boro",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-136",
+      "name": "Koji Kashin",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-137",
+      "name": "Amado",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-138",
+      "name": "Eida",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-139",
+      "name": "Daemon",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-140",
+      "name": "Shin Uchiha",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-141",
+      "name": "Kagura Karatachi",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-142",
+      "name": "Shinki",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-143",
+      "name": "Yodo",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    },
+    {
+      "id": "NIN-144",
+      "name": "Araya",
+      "era": "Boruto",
+      "state": "MISSING_STATIC",
+      "target": [
+        "static_rgba",
+        "portrait",
+        "idle",
+        "move",
+        "attack",
+        "cast",
+        "hit",
+        "fall"
+      ],
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ]
+    }
+  ]
+}
