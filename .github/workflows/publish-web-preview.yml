@@ -29,10 +29,12 @@ jobs:
           github-token: ${{ github.token }}
           repository: ${{ github.repository }}
           path: dist
+          merge-multiple: true
       - name: Verify exact build and retain only game files
         run: |
           set -euo pipefail
           cd dist
+          ls -la
           test "$(tr -d '\r\n' < BUILD_SHA.txt)" = c3cd8b131ce8df375be15fe91eb56e1a3d0b0c0f
           sha256sum -c SHA256SUMS.txt
           test -s index.html
