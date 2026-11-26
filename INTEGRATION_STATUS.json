@@ -1,76 +1,55 @@
 {
-  "schema": 1,
-  "status": "INTEGRATION_CANDIDATE_NOT_TESTED",
-  "sources": {
-    "common": "28f25de5c70f996eeb4241926c7dcde09bed7068",
-    "design": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
-    "combat": "c1be2c869eb3827fabf80ec142a3cbc1665fa61e",
-    "world": "cb8d2da1da0736ac8bf30ecf6a123742d238e5e7",
-    "art": "f529dccf856d034694ac1d1718b19770d84fa2bb"
+  "version": "ONE_GAME_V2_RC",
+  "status": "CI_REQUIRED",
+  "base": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+  "combat": {
+    "head": "cca04232a5e502c84051bfd481cfc3229a5750cf",
+    "source_ci": 45650303782,
+    "integration_commit": "83d97b01ee594dc876088f7f62834051404ae92a",
+    "main_functions": [
+      "_ready",
+      "battle_view",
+      "draw_field",
+      "update_battle_inspector"
+    ]
   },
-  "world_files": [
-    "HANDOFF_00_01_02.md",
-    "WORLD_BACKLOG.md",
-    "WORLD_FILE_OWNERSHIP.md",
-    "WORLD_INTEGRATION_MANIFEST.json",
-    "WORLD_INTEGRATION_READINESS.md",
-    "WORLD_STATUS.md",
-    "game/content_service.gd",
-    "game/progression_quotes.gd",
-    "game/resource_guide.gd",
-    "game/save_guard.gd",
-    "game/save_store.gd",
-    "game/village_service.gd",
-    "game/world_organic_test.gd",
-    "game/world_progression_test.gd",
-    "game/world_rewards.gd",
-    "game/world_service.gd"
-  ],
-  "world_functions": [
-    "growth_screen",
-    "growth_detail",
-    "campaign",
-    "skill_screen",
-    "gear_craft_screen",
-    "gear_detail",
-    "awakening_screen",
-    "building_screen",
-    "frontier_screen",
-    "world_screen",
-    "faction_screen",
-    "mission_detail",
-    "beast_detail",
-    "contract_detail",
-    "bloodline_screen",
-    "squad_detail",
-    "ninja_gear_screen",
-    "craft_screen",
-    "resource_detail",
-    "training_screen",
-    "gear_material_screen"
-  ],
-  "merged_function": "passive_screen",
-  "preserved_combat_pilot": true,
-  "world_constants": [
-    "const WorldQuotes=preload(\"res://game/progression_quotes.gd\")",
-    "const ResourceGuide=preload(\"res://game/resource_guide.gd\")"
-  ],
-  "art_metadata": [
-    "ART_STATUS.md",
-    "art/e3/ART_P2_R5_HANDOFF.md",
-    "art/e3/ART_P2_R5_RUNTIME_EVIDENCE.json",
-    "art/e3/ART_P2_MOVE_R3_EVIDENCE.json"
-  ],
-  "private_assets": "not distributed; existing checksum-gated local import retained; R5 candidate not production approved",
-  "workflow": "integrated combat + world transaction + 45d + 90d + Chromium + native video",
-  "main_unchanged": true,
-  "save_schema": 1,
-  "remaining": [
-    "integrated CI",
-    "45d progression and resource reachability",
-    "organic beast attempts",
-    "stat preview alignment",
-    "private art runtime approval",
-    "4 reflection and 2 era holds; source gates preserved"
+  "world": {
+    "head": "cd71bf60006391d8f3c76ec9861e40edf7b94237",
+    "source_ci": "UNVERIFIED",
+    "integration_commit": "0b58e2372efd42408d8a6e00420f3f8ed01ca454",
+    "main_functions": [
+      "growth_detail",
+      "campaign",
+      "gear_craft_screen",
+      "building_screen",
+      "beast_detail",
+      "contract_detail",
+      "craft_screen",
+      "resource_detail",
+      "training_screen",
+      "gear_material_screen"
+    ]
+  },
+  "art": {
+    "head": "5745e3b01478870faa328f25c4dcb085184e5776",
+    "adapter": "game/village_map_r11.gd",
+    "private_assets": "NOT_BUNDLED",
+    "status": "REVIEW_ONLY",
+    "fallback": "original home grid",
+    "fixture": "game/village_map_r11_test.gd"
+  },
+  "design": {
+    "head": "0309dfc1cb1c24bb904a47eb9bba46c16deb62ef",
+    "passive_p2": "12 pilot; 132 remaining",
+    "active_rules": "unchanged"
+  },
+  "holds": "preserve existing holds including VFX",
+  "release_gates": [
+    "combined exact SHA CI",
+    "90-day earned-only and strict reload",
+    "63 recipe coverage and organic beast bind",
+    "private art pack compatibility and visual acceptance",
+    "12 complete ninja and 30 detailed buildings",
+    "remaining passive and combat coverage"
   ]
 }

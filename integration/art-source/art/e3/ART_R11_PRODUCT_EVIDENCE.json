@@ -1,0 +1,76 @@
+{
+  "batch": "ART-R11-PARTIAL",
+  "status": "REVIEW_ONLY",
+  "art_parent": "82ab6dc888f2f6d6a1ec9d708cc46c8981cc8521",
+  "one_game_tested": "07ca3712d2d948a7e866b89c43fd8f5db7046321",
+  "gameplay_observed": "cca04232a5e502c84051bfd481cfc3229a5750cf",
+  "archive": {
+    "name": "Naru_ART_R11_private.zip",
+    "sha256": "578e33f7b1e431cf1e9deed4bd6112a6bce26cf51c6af20f5a639c0768acbeaf",
+    "bytes": 15543816,
+    "library_file_id": "libfile_65f154ebe2ec8191bbfcaf854ee8fa00",
+    "library_upload": true,
+    "zip_integrity": "PASS",
+    "evidence_sha256": "a6cf39e54bfbaba7f247eea6f86672cb90df9c3fe52cbb5e86b95c1a759f9568"
+  },
+  "qa": {
+    "ci": 45642585122,
+    "ci_result": "success",
+    "artifact": 15037940102,
+    "export_checksums": "7/7 PASS",
+    "gameplay_latest_ci": 45650303782,
+    "gameplay_latest_ci_result": "success",
+    "engine": "Godot 4.4.1",
+    "native_contract_count": 0,
+    "local_numeric_contract_count": 6,
+    "initial_primary": 12,
+    "map": [
+      14,
+      10
+    ],
+    "textures": 223,
+    "r3_draws": 472,
+    "r3_ids": 6,
+    "r3_frames_each": 8,
+    "candidate_keys": 50,
+    "new_candidate_keys": 6,
+    "new_candidate_draws": 377,
+    "fallback_draws": 2515,
+    "fallback_keys": 146,
+    "hp_changes": 1346,
+    "moved": true,
+    "video_frames": 361,
+    "fps": 30,
+    "resolution": [
+      1280,
+      720
+    ],
+    "video_sha256": "ccc420f52cff05c3a4920427e4195e35e2c5ee613d71901a80f304625eb54d2c",
+    "pack_sha256": "bfd9f2de3bffae19f09368c0118d250e1567842e7d75ce2ab30b156178380acf",
+    "pack_bytes": 11890183,
+    "trace_sha256": "90f23c021df4b21fcd7cb595897a4e62e96fe7b2e888793b504d68aada8924af",
+    "ui_trace_sha256": "63db6933c7b3d2cfc2e90c9d8c7325e33f6d0ba2da38c71650aa73756aa1134a",
+    "map_source_sha256": "4849efa74e2fefdd80ebef8076561a3d7101783de08ee42c1da839126a2ea07f",
+    "map_source_git_blob": "f110c7fd331c156668311c2a2b520359767777b7",
+    "harness_sha256": "dbf84c46506e8a999a05b76b317f0a6e302dcd835c70729bbfe70074b7a4dab8",
+    "marker_manifest_sha256": "9e8f9708e25fcbb29da14070159af14284cbabb339b786d96f6ec2deadb63ab3",
+    "rear_manifest_sha256": "f9f6597b2fd09a84cfe7b89885591d80341f71cfcdef0c7abdb705787b6057ce",
+    "ui_screens": 13,
+    "marker_navigation": "30/30 pressed signal and correct screen title",
+    "art_ci": "NOT_RUN"
+  },
+  "production": {
+    "new_candidate_clips": 6,
+    "frame_cells": 36,
+    "marker_candidates": 27,
+    "reused_landmarks": 3,
+    "complete_ninja": 0,
+    "production_integrated": 0,
+    "skill_vfx": "HOLD"
+  },
+  "limits": [
+    "Native old One Game V11 anchor regression persists; numeric local workaround only. Latest separate gameplay not tested. All R10 texture and metadata entries byte-identical.",
+    "Six independently sourced rear candidate rows for Madara and Nagato (NE/NW provisional), not owner accepted. Older renderer ignores metadata. No new younger opponent variants; no complete character kits.",
+    "27 original schematic pixel markers, not detailed art. Six district panels over illustrated plate, not seamless spatial village. Thirty marker pressed signals and correct building title verified, not construction/economy tests or manual pointer play. Other 12 UI screenshots use prior cosmetic treatment. Clumping remains; no remote gameplay changes. No merge, rig, tween, Cloud or public private asset distribution."
+  ]
+}

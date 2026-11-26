@@ -18,6 +18,8 @@ var clock_accumulator=0.0
 var web_qa=false
 const ReviewArt=preload("res://game/review_art.gd")
 var art=ReviewArt.new()
+const VillageMap=preload("res://game/village_map_r11.gd")
+var village_map=VillageMap.new()
 var art_callback: JavaScriptObject
 var review_mode=false
 var private_backdrop: TextureRect
@@ -1292,6 +1294,8 @@ func home_screen(message: String="") -> void:
 		tile.size_flags_vertical=Control.SIZE_EXPAND_FILL
 		tile.custom_minimum_size.y=56
 		if int(b.level)==0:tile.modulate=Color("#a4b2ba")
+	# R11 review pack is optional; original grid remains if a marker is unavailable.
+	village_map.apply(self)
 	label(root,"Khởi đầu: phân công khai thác gỗ / mỏ, phái nhiệm vụ Ryo, rồi nâng Tổng bộ.",16)
 
 func quality_color(q: int) -> Color:
