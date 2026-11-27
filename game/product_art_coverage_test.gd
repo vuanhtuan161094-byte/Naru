@@ -49,6 +49,17 @@ func _initialize() -> void:
 	if not art.import_character_overlay(JSON.stringify(pack),"NIN-002") or art.textures.size()!=old+15 or not art.character_overlays.has("NIN-002"):
 		push_error("V3_OVERLAY_FAIL complete kit");quit(1);return
 	var current=art.textures.size()
+	var saved_path=art.overlay_path("NIN-002")
+	# CI isolates the user directory; persistence fixture restores a new instance.
+	if not art.save_overlay(JSON.stringify(pack),"NIN-002"):
+		push_error("V3_OVERLAY_FAIL persist");quit(1);return
+	var restored=ReviewArt.new()
+	restored.enabled=true
+	restored.restore_overlays()
+	if not restored.character_overlays.has("NIN-002") or restored.product_coverage().complete_kits!=1:
+		push_error("V3_OVERLAY_FAIL reload");quit(1);return
+	for suffix in ["",".bak",".tmp"]:
+		if FileAccess.file_exists(saved_path+suffix):DirAccess.remove_absolute(saved_path+suffix)
 	pack.assets.erase("animation/NIN-002/idle_sw.png")
 	if art.import_character_overlay(JSON.stringify(pack),"NIN-002") or art.textures.size()!=current or art.import_character_overlay(JSON.stringify(pack),"NIN-004"):
 		push_error("V3_OVERLAY_FAIL invalid kit atomicity or lock");quit(1);return

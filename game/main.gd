@@ -85,6 +85,8 @@ var expedition_query=""
 var wiki_category=0
 var wiki_query=""
 var wiki_page=0
+var wiki_stats:Dictionary={}
+var wiki_history:Array=[]
 
 func _ready() -> void:
 	theme=make_theme()
@@ -2049,6 +2051,7 @@ func home_screen(message: String="") -> void:
 	button(guidance,"Đội hình",roster)
 	button(guidance,"Nhận thưởng chờ",reward_inbox_screen)
 	button(guidance,"Bách khoa",wiki_screen)
+	button(guidance,"Hướng dẫn",player_guide_screen)
 	var grid=GridContainer.new()
 	grid.columns=6
 	grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -2204,7 +2207,8 @@ func resource_detail(id: String,message: String="") -> void:
 		var faction=str(seller.faction)
 		button(rows,"%s • kho %d • %d Ryo • %s" % [reg.factions[faction].name_vi,int(seller.stock),int(seller.price),"Có thể mua" if seller.accessible else "Cần giao thương"],func():faction_screen(faction))
 	for expedition in WorldCatalog.for_resource(id):
-		button(rows,"Phó bản: "+str(expedition.name)+" • thưởng thêm "+str(expedition.qty),expedition_screen)
+		var expedition_id=str(expedition.id)
+		button(rows,"Phó bản: "+str(expedition.name)+" • thưởng thêm "+str(expedition.qty),func():expedition_detail(expedition_id))
 	var stage_ids=ResourceGuide.stage_sources(reg,id)
 	if not stage_ids.is_empty():
 		label(rows,"Phần thưởng ải: "+", ".join(PackedStringArray(stage_ids.slice(0,8)))+(" …" if stage_ids.size()>8 else ""),16)
@@ -2249,6 +2253,14 @@ func wiki_database() -> Dictionary:
 		6:return reg.recipes
 		7:return reg.stages
 		8:return reg.territories
+		9:
+			if wiki_stats.is_empty():
+				var definitions=JSON.parse_string(FileAccess.get_file_as_string("res://data/stats.json"))
+				if definitions is Array:
+					for item in definitions:wiki_stats[str(item.id)]=item
+			return wiki_stats
+		10:return reg.forms
+		11:return reg.combos
 	return {}
 
 func wiki_name(id:String,row:Dictionary) -> String:
@@ -2260,10 +2272,17 @@ func wiki_screen() -> void:
 	open_screen("wiki")
 	label(root,"BÁCH KHOA NHẪN GIỚI",28)
 	label(root,"Dữ liệu game hiện tại • thông số thiết kế DEV, không phải canon.",16)
+	var help_row=HBoxContainer.new()
+	root.add_child(help_row)
+	button(help_row,"Hướng dẫn chơi",player_guide_screen)
+	button(help_row,"Nguồn vật phẩm",func():wiki_category=4;wiki_query="";wiki_page=0;wiki_screen())
+	button(help_row,"Thuộc tính",func():wiki_category=9;wiki_query="";wiki_page=0;wiki_screen())
+	button(help_row,"Hình thái",func():wiki_category=10;wiki_query="";wiki_page=0;wiki_screen())
+	button(help_row,"Combo",func():wiki_category=11;wiki_query="";wiki_page=0;wiki_screen())
 	var controls=HBoxContainer.new()
 	root.add_child(controls)
 	var category=OptionButton.new()
-	for title_text in ["Ninja","Nhẫn thuật","Nội tại","Trang bị","Tài nguyên","Công trình","Sản xuất","Cốt truyện","Lãnh địa"]:category.add_item(title_text)
+	for title_text in ["Ninja","Nhẫn thuật","Nội tại","Trang bị","Tài nguyên","Công trình","Sản xuất","Cốt truyện","Lãnh địa","Thuộc tính","Hình thái","Combo"]:category.add_item(title_text)
 	category.select(wiki_category)
 	controls.add_child(category)
 	var query=LineEdit.new()
@@ -2272,6 +2291,7 @@ func wiki_screen() -> void:
 	query.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	controls.add_child(query)
 	button(controls,"Tìm",func():wiki_query=query.text;wiki_page=0;wiki_screen())
+	query.text_submitted.connect(func(value):wiki_query=value;wiki_page=0;wiki_screen())
 	category.item_selected.connect(func(index):wiki_category=index;wiki_query="";wiki_page=0;wiki_screen())
 	var db=wiki_database()
 	var ids=[]
@@ -2299,6 +2319,19 @@ func wiki_screen() -> void:
 		button(line,"Xem",func():wiki_detail(str(key)))
 	if ids.is_empty():label(rows,"Không tìm thấy mục phù hợp.",18)
 	button(root,"Về làng",menu)
+
+func player_guide_screen() -> void:
+	open_screen("wiki")
+	label(root,"HƯỚNG DẪN CHƠI • TỪ KHỞI ĐẦU ĐẾN HẬU KỲ",27)
+	label(root,"Các lối tắt mở đúng chức năng game; không cấp tài nguyên hoặc bỏ qua điều kiện.",16)
+	var rows=scroll_rows(root)
+	activity_tile(rows,"1. Quản lý làng","Phân công nhân lực ở làng, khai thác gỗ/đá, nâng Tổng bộ. Kiểm tra xưởng thiếu nguyên liệu trước khi mở rộng.",menu)
+	activity_tile(rows,"2. Phát triển ninja","Xem ninja sở hữu, cấp, sao, nhẫn thuật và trang bị. Chọn đội hình trước khi vào ải.",growth_screen)
+	activity_tile(rows,"3. Vượt cốt truyện","Đánh ải theo thứ tự mở khóa, dùng thể lực; tuyệt kỹ do người chơi yêu cầu. Rút lui khi cần.",campaign)
+	activity_tile(rows,"4. Sản xuất và nguồn vật phẩm","Tra nguồn, đặt công thức, đặt tồn kho mục tiêu hoặc hàng đợi. Thiếu nguyên liệu thì chờ.",production_center)
+	activity_tile(rows,"5. Hoạt động và phó bản","Nhận nhiệm vụ, phó bản tái chiến và tháp theo điều kiện thực tế; xem thưởng trước khi vào.",activities_screen)
+	activity_tile(rows,"6. Nhẫn giới và phát triển hậu kỳ","Khám phá, ngoại giao, thương mại, chiếm và phát triển lãnh thổ. Thu phục vĩ thú khi đủ điều kiện.",world_screen)
+	button(root,"Danh sách bách khoa",wiki_screen)
 
 func wiki_cost(rows:Node,items:Array,title_text:String) -> void:
 	label(rows,title_text,18)
@@ -2374,6 +2407,32 @@ func wiki_detail(id:String) -> void:
 				for resource in row.resources:label(rows,str(reg.resources[resource.resource_id].name_vi)+" • "+str(resource.yield_per_tick),16)
 			else:label(rows,"Chưa khám phá • cần đi đến lãnh địa.",16)
 			button(rows,"Bản đồ",func():selected_territory=id;world_screen())
+		9:
+			var rule=reg.stat_rules.get(id,{})
+			label(rows,"Nhóm "+str(row.get("group",""))+" • Đơn vị "+str(row.get("unit","")),18)
+			if rule.has("formula"):label(rows,str(rule.formula),16).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+			for key in ["base","weights","per_level","effect_cap_or_max_bonus"]:
+				if rule.has(key):label(rows,str(key)+": "+str(rule[key]),16).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+			if rule.get("effect_cap_or_max_bonus")!=null:
+				label(rows,"Hiệu quả = giới hạn × rating / (100 + rating). Ví dụ rating 100: "+str(Stats.effect(reg,{id:100},id))+" (đơn vị hiệu quả gốc).",16).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+			else:label(rows,"Chỉ số phẳng hoặc chưa có cap trong công thức hiện tại.",16)
+		10:
+			var form=reg.p2_forms.get(id,{})
+			label(rows,str(reg.ninjas[row.ninja_id].name_vi)+" • Mở cảnh "+str(row.unlock_realm),18)
+			wiki_cost(rows,[{"resource_id":row.require_resource,"qty":row.resource_count}],"Điều kiện mở")
+			if not form.is_empty():
+				var activation=form.activation
+				label(rows,"Chakra "+str(activation.manual_chakra)+" • Thời gian "+str(activation.duration_s)+"s • Hồi "+str(activation.cooldown_s)+"s",16)
+				for key in form.effect.get("stat",{}):label(rows,str(key)+" ×"+str(form.effect.stat[key]),16)
+				label(rows,"Hợp đồng P2 tham chiếu; hiệu lực phụ thuộc điều kiện runtime.",15)
+		11:
+			var combo=reg.p2_combos.get(id,row)
+			label(rows,"Thành viên",18)
+			for ninja_id in combo.member_ids:label(rows,str(reg.ninjas[ninja_id].name_vi),16)
+			label(rows,"Cửa sổ "+str(combo.get("window_s",""))+"s • Hồi "+str(combo.cooldown_s)+"s",16)
+			var effect=combo.get("effect",{})
+			if effect is Dictionary:label(rows,str(effect.get("description",""))+" • hệ số "+str(effect.get("total_coefficient","")),16).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+			label(rows,"Yêu cầu đủ thành viên sống và sự kiện kỹ năng hợp lệ. Không bảo đảm tự phát trong mọi trận.",16)
 	button(root,"Danh sách bách khoa",wiki_screen)
 
 func settings_screen(message: String="") -> void:
@@ -2423,7 +2482,7 @@ func settings_screen(message: String="") -> void:
 	var art_row=HBoxContainer.new()
 	rows.add_child(art_row)
 	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
-	label(rows,"Bộ Naruto/Sasuke đủ 14 clip / 84 cel được lưu cục bộ sau kiểm tra.",15)
+	label(rows,"Nạp JSON đủ 14 clip / 84 cel. Chỉ Naruto và Sasuke được lưu cục bộ ở đợt này; bộ chưa đủ bị từ chối.",15).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
 	button(art_row,"Bật / tắt review",func():
 		art.enabled=not art.enabled and not art.textures.is_empty()

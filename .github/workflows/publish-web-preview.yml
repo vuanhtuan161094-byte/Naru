@@ -91,6 +91,36 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      - name: Confirm Pages artifact is visible to REST API
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" --jq '.artifacts[] | select(.name=="github-pages" and .expired==false and .size_in_bytes>0) | .id' | grep -E '^[0-9]+
+; then
+              echo "Pages artifact visible"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Pages artifact metadata not visible"
+          exit 1
       - name: Deploy verified full-art Web
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
+      - name: Verify public exact build SHA
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            actual=$(curl -fsSL --max-time 15 "https://vuanhtuan161094-byte.github.io/Naru/BUILD_SHA.txt?sha=$GITHUB_SHA" || true)
+            if [ "$actual" = "$GITHUB_SHA" ]; then
+              echo "NARU_PUBLIC_DEPLOY_SHA $actual"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Public exact build SHA not confirmed"
+          exit 1
