@@ -7,7 +7,7 @@
   "feature_branch": "feature/character-power-overhaul",
   "merge_performed": false,
   "force_push_performed": false,
-  "release_state": "DEV_IMPLEMENTATION_WITH_LOCAL_RUNTIME_EVIDENCE_AND_EXACT_SHA_CI_PENDING",
+  "release_state": "DEV_IMPLEMENTATION_EXACT_SHA_CI_PASS_WITH_RESIDUAL_ACCEPTANCE_HOLDS",
   "change_manifest": [
     {
       "file": "data/stats.json",
@@ -67,7 +67,7 @@
       "file": "game/power_system_test.gd",
       "surface": "runtime stat and combat fixtures",
       "changes": "11,232 breakdown reconciliations; raw/effective rating, investment and actual training/mastery effects; seeded actual damage comparison including multi-hit fire/wind reaction, shield break and defensive layers.",
-      "status": "LOCAL_GODOT_4_7_2_PASS; EXACT_GODOT_4_4_1_CI_PENDING"
+      "status": "LOCAL_GODOT_4_7_2_PASS; EXACT_GODOT_4_4_1_CI_PASS run=45980849311 sha=131f008e1e0233e63fc66177a7930093bd762bd8"
     },
     {
       "file": "tools/build_power_wiki.py",
@@ -79,13 +79,13 @@
       "file": "wiki/power/",
       "surface": "generated offline Wiki",
       "changes": "3,243 searchable Vietnamese records with per-ID observed scope, source status, costs, prerequisites, growth/acquisition, equipment and recipe references.",
-      "status": "GENERATED; EXACT_SHA_WEB_ARTIFACT_PENDING"
+      "status": "EXACT_SHA_WEB_ARTIFACT_PASS artifact=15190431619 sha=131f008e1e0233e63fc66177a7930093bd762bd8"
     },
     {
       "file": ".github/workflows/godot-smoke.yml",
       "surface": "exact-SHA integrated workflow",
       "changes": "Adds the character power runtime test and Wiki inventory validation; packages generated Wiki beside the Web export and retains the power test log.",
-      "status": "WORKFLOW_CONFIGURED; EXACT_FEATURE_SHA_DISPATCH_PENDING"
+      "status": "WORKFLOW_CONFIGURED; EXACT_FEATURE_SHA_CI_PASS run=45980849311"
     }
   ],
   "inventory": {
@@ -182,11 +182,11 @@
     "local_combat_final_v12_test": "PASS on current local code; seeded outcomes and unobserved IDs remain scoped observations, not full acceptance.",
     "local_headless_game_start": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
     "wiki_inventory_check": "PASS; 3,243 source records; generator writes Wiki with per-ID ledger status.",
-    "wiki_http_and_javascript_syntax": "PASS: local HTTP served index/data.json; Node --check passed on extracted inline script. Exact-SHA Chromium game smoke pending.",
-    "feature_sha_ci": "PENDING exact feature-SHA dispatch.",
-    "web_export_and_browser": "PENDING exact feature-SHA Web DEV export and Chromium run.",
-    "earned_only_90_day": "PENDING exact feature-SHA 90-day run and strict reload/inventory report.",
-    "native_6v6_video_and_screenshots": "PENDING exact feature-SHA Godot/Xvfb and browser screenshot artifacts.",
+    "wiki_http_and_javascript_syntax": "Local HTTP and Node --check passed; exact-SHA run 45980849311 validated inventory, bundled Wiki, and Chromium smoke at 131f008e1e0233e63fc66177a7930093bd762bd8.",
+    "feature_sha_ci": "PASS: https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45980849311; head_sha=131f008e1e0233e63fc66177a7930093bd762bd8; all workflow steps success.",
+    "web_export_and_browser": "PASS: Web DEV export, offline Wiki package, and Chromium browser runtime smoke. Artifact 15190431619 contains BUILD_SHA.txt matching the tested SHA.",
+    "earned_only_90_day": "PASS integrity/reload: run observed 120/120 wins, 150/150 resources, 63/63 recipes settled, 142 ninja, 56 gear, six beasts; 22 persisted fields round-tripped, missing recipes=[], stage losses remain balance diagnostics. QA artifact 15193376849.",
+    "native_6v6_video_and_screenshots": "PASS: Chromium menu/UI screenshots artifact 15189888827 (22 PNG); actual Godot native H.264 1280x720, 20fps, 24-second capture artifact 15190038605; BUILD_SHA matches tested SHA.",
     "local_gp_p2_test": "PASS exit 0; representative save/gear flow; natural chapter 5/5; separate short organic P2 sample 9/10; /tmp/naru-gp-p2-final.log"
   },
   "open_acceptance_gates": [
@@ -197,7 +197,7 @@
     "Natural progression/effect review for 396 exact branch fields and 34 tested DOT/drain rows; retain two era branch holds.",
     "Review all 54 form source/routes/effects and all 12 combo conditions/payloads; current natural combo receipts cover 4 IDs.",
     "Individually validate 128 gear templates, 16 slots, 150 resource acquisition paths and 63 recipes; current paid gear/recipe checks are representative.",
-    "Run exact-SHA Godot 4.4.1 CI, Web DEV/browser screenshots, native 6v6 video and earned-only 90-day save/inventory comparison before claiming CI acceptance.",
+    "Exact-SHA CI/Web/browser/native/90-day evidence passed at 131f008e1e0233e63fc66177a7930093bd762bd8; detailed per-ID semantics, source/canon, balance, and acceptance holds listed above remain open.",
     "Integrate on the newest One Game SHA by function only; preserve its 32 gear variants, world/save/UI/art changes, and resolve One Game-owned workflow gates first."
   ],
   "final_task_batch": {
@@ -205,31 +205,41 @@
     "branch": "feature/character-power-overhaul",
     "task_start_sha": "0b3be051054a7cd05986b346485e79acf9e3c22e",
     "shared_base_sha": "85426e5a8b48ed3653ea6b3870b9aa85a9f370d7",
-    "one_game_compatibility_sha": "93f9f13e5145c5c8b71bc40beece27bc1566233e",
-    "final_feature_sha": "To be taken from exact GitHub Actions workflow headSha; this file does not self-hash.",
+    "one_game_compatibility_sha": "cadcbbba03959047914312e13d8b14ad2e65581a",
+    "final_feature_sha": "131f008e1e0233e63fc66177a7930093bd762bd8 (exact GitHub Actions headSha; implementation SHA)",
     "merge_performed": false,
     "force_push_performed": false,
     "art_hold_respected": true,
     "cloud_settings_changed": false,
-    "status": "Local DEV tests recorded; exact feature-SHA CI and uploaded artifacts pending.",
+    "status": "Implementation SHA exact-CI validated with Web/Wiki, Chromium screenshots, native video and earned-only 90-day reload; residual per-ID and integration holds remain.",
+    "exact_ci_run": {
+      "id": 45980849311,
+      "url": "https://github.com/vuanhtuan161094-byte/Naru/actions/runs/45980849311",
+      "conclusion": "success",
+      "head_sha": "131f008e1e0233e63fc66177a7930093bd762bd8"
+    },
+    "artifacts": {
+      "web_dev": {"id": 15190431619, "name": "NARU-One-Game-V2-P7-Web-DEV", "build_sha_matches": true},
+      "screenshots": {"id": 15189888827, "name": "NARU-One-Game-V2-P7-Web-DEV-menu", "png_count": 22},
+      "native_video": {"id": 15190038605, "name": "NARU-One-Game-V2-P7-Combat-Video", "duration_seconds": 24, "width": 1280, "height": 720, "fps": 20, "codec": "h264", "build_sha_matches": true},
+      "qa_logs": {"id": 15193376849, "name": "NARU-One-Game-V2-P7-QA", "contains_90_day_strict_reload_log": true}
+    },
     "one_game_ci": {
-      "head_sha": "93f9f13e5145c5c8b71bc40beece27bc1566233e",
-      "integrated_godot_run": {
-        "id": 45972381548,
-        "conclusion": "success"
-      },
-      "native_private_review": {
-        "id": 45972381513,
-        "conclusion": "success"
-      },
-      "r12_native_capture": {
-        "id": 45972381549,
-        "conclusion": "success"
-      },
+      "head_sha": "cadcbbba03959047914312e13d8b14ad2e65581a",
+      "integrated_godot_run": {"id": 45982115718, "conclusion": "success"},
+      "native_capture_artifact": {"id": 15191455106, "name": "NARU-One-Game-V2-P7-Combat-Video"},
       "public_web_preview": {
-        "id": 45972381547,
+        "id": 45982115630,
         "conclusion": "failure",
-        "reason": "Missing static actor SUMMON-SKILL-NIN-066-S1 in One Game public-art check; no workflow edit made here."
+        "reason": "Web gameplay and Sasuke art draw passed; final public static-roster check found missing SUMMON-SKILL-NIN-066-S1 in tests/public-web-art.cjs. This is a One Game-owned ART gate and was not edited here."
+      },
+      "shared_delta_since_preflight": ["game/main.gd grouped navigation hubs and route changes", "tests/web-smoke.cjs updated to verify the expanded 20-screen navigation", "tests/public-web-art.cjs routed public-art checks through the new hubs"],
+      "preflight_sha_ci": {
+        "head_sha": "93f9f13e5145c5c8b71bc40beece27bc1566233e",
+        "integrated_godot_run": {"id": 45972381548, "conclusion": "success"},
+        "native_private_review": {"id": 45972381513, "conclusion": "success"},
+        "r12_native_capture": {"id": 45972381549, "conclusion": "success"},
+        "public_web_preview": {"id": 45972381547, "conclusion": "failure", "reason": "Missing static actor SUMMON-SKILL-NIN-066-S1."}
       }
     }
   }
