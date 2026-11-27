@@ -421,7 +421,7 @@ func campaign() -> void:
 	var chapter_select=OptionButton.new()
 	for id in reg.chapters:chapter_select.add_item(id+" • "+reg.chapters[id].name_vi)
 	row.add_child(chapter_select)
-	button(row,"Phó bản tái chiến",expedition_screen)
+	button(row,"Phó bản",expedition_screen)
 	var suggested=next_story_stage()
 	var selected=selected_stage if suggested.is_empty() else suggested
 	var chapter_index=maxi(0,floori(float(selected.right(3).to_int()-1)/5.0))
@@ -1332,7 +1332,7 @@ func activity_rows(title: String,message: String,back: Callable) -> VBoxContaine
 func activities_screen() -> void:
 	open_screen("activities")
 	label(root,"HOẠT ĐỘNG NINJA",30)
-	button(root,"Phó bản tái chiến • 12",expedition_screen)
+	button(root,"Phó bản • 24",expedition_screen)
 	button(root,"Điều phối sản xuất",production_center)
 	button(root,"Thử thách tài nguyên",resource_trials_screen)
 	button(root,"Nhiệm vụ",quest_screen)
