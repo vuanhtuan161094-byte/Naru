@@ -126,7 +126,7 @@ func _ready() -> void:
 	navigation=HBoxContainer.new()
 	navigation.add_theme_constant_override("separation",5)
 	shell.add_child(navigation)
-	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
+	for item in [["Làng",menu],["Ninja",ninja_hub],["Phiêu lưu",adventure_hub],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Cài đặt",settings_screen]]:
 		var nav_button=button(navigation,item[0],item[1])
 		nav_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		nav_button.custom_minimum_size=Vector2(66,36)
@@ -135,6 +135,7 @@ func _ready() -> void:
 	root.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	root.add_theme_constant_override("separation",8)
 	shell.add_child(root)
+	shell.move_child(navigation,shell.get_child_count()-1)
 	# Owner-approved public build includes the exact verified pack in the PCK.
 	var pack_path="res://assets/public/naru-art.json"
 	if FileAccess.file_exists(pack_path) or OS.has_feature("public_art"):
@@ -1576,11 +1577,7 @@ func activities_screen() -> void:
 	activity_tile(grid,"Nhiệm vụ","Cốt truyện, tiến trình và thưởng hằng ngày.",quest_screen)
 	activity_tile(grid,"Nhiệm vụ tuần","Sáu mục tiêu theo hoạt động thực tế.",weekly_screen)
 	activity_tile(grid,"Phái ninja làm nhiệm vụ / thử thách tài nguyên","Phân công ninja thu thập nguyên liệu.",mission_screen)
-	activity_tile(grid,"Điều phối sản xuất","Hàng đợi, nguyên liệu và tồn kho.",production_center)
-	activity_tile(grid,"Vĩ thú và phong ấn","Thu phục, phong ấn, huấn luyện.",beast_screen)
-	activity_tile(grid,"Thông linh thú","Mở khế ước và phát triển thông linh.",contract_screen)
-	activity_tile(grid,"Huyết kế và đồng thuật","Thức tỉnh năng lực đặc trưng.",bloodline_screen)
-	button(root,"Trở về",func():menu())
+	button(root,"Trở về",adventure_hub)
 
 func tower_screen() -> void:
 	open_screen("tower")
@@ -2103,7 +2100,7 @@ func open_screen(id: String) -> void:
 		private_backdrop.texture=art.texture("environment/village_plate.png") if id=="home" else null
 	header.visible=id!="battle"
 	navigation.visible=id!="battle"
-	var section={"wiki":"Cài đặt","home":"Làng","building":"Làng","craft":"Làng","production":"Làng","activities":"Nhiệm vụ","expeditions":"Cốt truyện","tower":"Cốt truyện","resource_trials":"Nhiệm vụ","weekly":"Nhiệm vụ","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Bố trận","recruit":"Chiêu mộ","campaign":"Cốt truyện","world":"Nhẫn giới","diplomacy":"Nhẫn giới","inventory":"Kho","quest":"Nhiệm vụ","beasts":"Vĩ Thú","settings":"Cài đặt"}
+	var section={"wiki":"Cài đặt","home":"Làng","building":"Làng","village_hub":"Làng","craft":"Làng","production":"Làng","adventure_hub":"Phiêu lưu","activities":"Phiêu lưu","expeditions":"Phiêu lưu","tower":"Phiêu lưu","resource_trials":"Phiêu lưu","weekly":"Phiêu lưu","quest":"Phiêu lưu","campaign":"Phiêu lưu","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","world":"Nhẫn giới","diplomacy":"Nhẫn giới","ninja_hub":"Ninja","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Ninja","recruit":"Ninja","beasts":"Ninja","inventory":"Kho","settings":"Cài đặt"}
 	for item in navigation.get_children():
 		if item is Button:
 			var active=item.text==section.get(id,"")
@@ -2139,30 +2136,11 @@ func home_screen(message: String="") -> void:
 	for state_row in store.state.building_states.values():
 		if int(state_row.level)>0:built+=1
 	label(title_row,"Đã xây "+str(built)+"/30  •  Vàng: nâng cấp  •  Mờ: chưa xây",14)
-	var row=HBoxContainer.new()
-	root.add_child(row)
-	label(row,"Ninja %d/144 • Ải %d/120 • %s" % [store.state.owned.size(),store.state.cleared.size(),message],17)
-	button(row,"Chế tạo",craft_screen)
-	button(row,"Sản xuất",production_center)
-	button(row,"Hoạt động",activities_screen)
-	if art.enabled:button(row,"Thử 6v6 • R12",start_art_review)
-	button(row,"Làm mới",func():home_screen())
-	if store.state.jobs.is_empty():button(row,"Phân công khởi đầu",func():home_screen("Đã phân công" if store.setup_starter_jobs(reg) else "Lỗi lưu"))
-	var guidance=HBoxContainer.new()
-	root.add_child(guidance)
-	var next_id=next_story_stage()
-	var prompt_text="Bắt đầu phân công sản xuất để có nguyên liệu" if store.state.jobs.is_empty() else "Cốt truyện tiếp theo: "+next_id if not next_id.is_empty() else "Đã vượt toàn bộ cốt truyện • phát triển nhẫn giới"
-	var guide=label(guidance,prompt_text,15)
-	guide.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	if not next_id.is_empty():
-		var next_stage=reg.stages[next_id]
-		var play=button(guidance,"Chơi tiếp",func():start_battle(next_stage))
-		play.disabled=store.state.team.is_empty() or int(store.state.stamina)<int(next_stage.stamina_cost)
-		play.tooltip_text="Vào "+next_id+" • "+str(next_stage.stamina_cost)+" thể lực"
-	button(guidance,"Đội hình",roster)
-	button(guidance,"Nhận thưởng chờ",reward_inbox_screen)
-	button(guidance,"Bách khoa",wiki_screen)
-	button(guidance,"Hướng dẫn",player_guide_screen)
+	var controls=HBoxContainer.new()
+	root.add_child(controls)
+	var notice=label(controls,message if not message.is_empty() else "Chọn công trình để tương tác",15)
+	notice.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	button(controls,"Quản lý làng",village_hub)
 	var grid=GridContainer.new()
 	grid.columns=6
 	grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -2178,12 +2156,42 @@ func home_screen(message: String="") -> void:
 		if int(b.level)==0:tile.modulate=Color("#a4b2ba")
 	# R11 review pack is optional; original grid remains if a marker is unavailable.
 	var mapped=village_map.apply(self)
-	var footer=HBoxContainer.new()
-	root.add_child(footer)
-	var hint=label(footer,"Chọn công trình trên bản đồ để xây dựng, phân công hoặc sản xuất",14)
-	hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	var map_status=label(footer,("30 công trình • Bản đồ 6 khu" if art.texture("environment/village_ground_p3.png")!=null else "30 công trình • Review R11") if mapped else "30 công trình • Giao diện chuẩn",14)
-	map_status.modulate=Color("#ebc77e") if mapped else Color("#a5b4b6")
+	if not mapped:label(root,"Bản đồ đang dùng danh sách dự phòng.",13)
+
+func hub_grid(title_text:String,subtitle:String,id:String) -> GridContainer:
+	open_screen(id)
+	label(root,title_text,28)
+	label(root,subtitle,16)
+	var grid=GridContainer.new()
+	grid.columns=2
+	grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(grid)
+	return grid
+
+func ninja_hub() -> void:
+	var grid=hub_grid("NINJA","Quản lý và phát triển đội ninja.","ninja_hub")
+	activity_tile(grid,"Danh sách ninja","Xem ninja, chỉ số, kỹ năng và trang bị.",growth_screen)
+	activity_tile(grid,"Bố trận","Sắp xếp đội hình 3 × 3.",roster)
+	activity_tile(grid,"Chiêu mộ","Tìm kiếm đồng đội mới.",recruit_screen)
+	activity_tile(grid,"Vĩ Thú","Thu phục và phát triển vĩ thú.",beast_screen)
+	activity_tile(grid,"Huyết kế và đồng thuật","Phát triển sức mạnh đặc trưng.",bloodline_screen)
+	activity_tile(grid,"Thông linh thú","Quản lý khế ước thông linh.",contract_screen)
+
+func adventure_hub() -> void:
+	var grid=hub_grid("PHIÊU LƯU","Chọn một hành trình.","adventure_hub")
+	activity_tile(grid,"Cốt truyện","Tiến vào các ải chính.",campaign)
+	activity_tile(grid,"Nhiệm vụ","Mục tiêu và phần thưởng.",quest_screen)
+	activity_tile(grid,"Hoạt động","Phó bản, tháp và thử thách.",activities_screen)
+	activity_tile(grid,"Nhiệm vụ tuần","Theo dõi các mốc trong tuần.",weekly_screen)
+
+func village_hub(message:String="") -> void:
+	var grid=hub_grid("QUẢN LÝ LÀNG",message if not message.is_empty() else "Điều phối phát triển làng Lá.","village_hub")
+	activity_tile(grid,"Sản xuất","Điều phối nhân lực và hàng đợi.",production_center)
+	activity_tile(grid,"Chế tạo","Xem và thực hiện công thức.",craft_screen)
+	activity_tile(grid,"Nhận thưởng chờ","Nhận tài nguyên đang chờ trong hộp thưởng.",reward_inbox_screen)
+	activity_tile(grid,"Làm mới","Cập nhật bản đồ làng.",menu)
+	if store.state.jobs.is_empty():activity_tile(grid,"Phân công khởi đầu","Thiết lập nhân lực sản xuất ban đầu.",func():village_hub("Đã phân công" if store.setup_starter_jobs(reg) else "Lỗi lưu"))
+
 
 func quality_color(q: int) -> Color:
 	return [Color("#c9d1d2"),Color("#99d7ae"),Color("#9fc9ef"),Color("#d0afea"),Color("#efc479"),Color("#eaa495"),Color("#f2dc8e"),Color("#ffdbb5")][clampi(q,1,8)-1]
@@ -2580,6 +2588,8 @@ func settings_screen(message: String="") -> void:
 	var shortcuts=HBoxContainer.new()
 	rows.add_child(shortcuts)
 	button(shortcuts,"Bách khoa",wiki_screen)
+	button(shortcuts,"Hướng dẫn",player_guide_screen)
+	button(shortcuts,"Thử 6v6 • R12",start_art_review)
 	button(shortcuts,"Thử sprite tĩnh 6v6",func():start_art_review(true))
 	var sound=CheckButton.new()
 	sound.text="Âm thanh"
