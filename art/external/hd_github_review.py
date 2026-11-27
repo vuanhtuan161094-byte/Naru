@@ -67,22 +67,76 @@ def visual_clip(root,frames,path):
         rendered.append(frame.convert('RGB').resize(dst,Image.Resampling.LANCZOS));timing.append(ms)
     rendered[0].save(path,save_all=True,append_images=rendered[1:],duration=timing,loop=0,disposal=2,optimize=False)
     return {'frames':len(frames),'unique_paths':len(set(x[0] for x in frames)),'max_visible_height':max(x[1] for x in bounds),'min_visible_height':min(x[1] for x in bounds),'original_canvas_consistent':uniform,'timing_ms':timing,'alignment':'shared source canvas' if uniform else 'provisional bottom-center review only'}
-def mobile(root,out):
-    report=[]
-    for group in MANIFEST['mobile']['groups']:
-        base=root/'assets/entities'/group;clips=parse_scene(base/'entity.tscn')
-        rec={'group':group,'clips':[]}
-        target=out/'local-gifs'/group;target.mkdir(parents=True,exist_ok=True)
-        for name,frames,fps,loop in clips:
-            item={'action':name,'fps':fps,'loop':loop,'status':'HOLD'}
+def review_contact_sheets(out, samples):
+    """Generate visual review sheets from rendered GIFs; source art stays out of Git history."""
+    from PIL import ImageDraw
+    target=out/'contact-sheets'
+    target.mkdir(parents=True,exist_ok=True)
+    result=[]
+    for page in range(0,len(samples),24):
+        subset=samples[page:page+24]
+        sheet=Image.new('RGB',(1200,((len(subset)+3)//4)*250),(24,32,43))
+        draw=ImageDraw.Draw(sheet)
+        for i,(gif_path,label) in enumerate(subset):
+            col=i%4;row=i//4
+            x=col*300+18;y=row*250+14
+            draw.rounded_rectangle((x,y,x+262,y+221),radius=12,fill=(38,47,61),outline=(79,96,119),width=2)
             try:
-                safe=re.sub(r'[^a-zA-Z0-9_-]','_',name).strip('_') or 'clip'
-                item.update(visual_clip(root,frames,target/(safe+'.gif')));item['status']='GIF_READY'
-            except Exception as e:item['error']=str(e)
-            rec['clips'].append(item)
-        report.append(rec)
-        print('NARU_HD_MOBILE_GROUP',group,len(clips),sum(x['status']=='GIF_READY' for x in rec['clips']),flush=True)
-    return report
+                with Image.open(gif_path) as raw:
+                    raw.seek(min(raw.n_frames//2,raw.n_frames-1))
+                    thumb=raw.convert('RGB')
+                    thumb.thumbnail((242,190),Image.Resampling.LANCZOS)
+                    sheet.paste(thumb,(x+(262-thumb.width)//2,y+(190-thumb.height)//2))
+            except Exception as e:
+                draw.text((x+12,y+35),'PREVIEW ERROR: '+str(e)[:20],fill='orange')
+            draw.text((x+12,y+197),label[:42],fill=(245,247,251))
+        name='NARU_HD_CONTACT_SHEET_%02d.png'%(page//24+1)
+        sheet.save(target/name,optimize=True)
+        result.append(str(pathlib.PurePosixPath('contact-sheets')/name))
+    return result
+
+def mobile(root,out):
+    """Find every pinned scene, including nested scenes. No rigs, game scripts, or tween."""
+    records=[];samples=[]
+    scenes=[f['path'] for f in MANIFEST['mobile']['files'] if f['path'].lower().endswith('.tscn')]
+    for index,scene_path in enumerate(sorted(scenes)):
+        parts=pathlib.PurePosixPath(scene_path).parts
+        group=parts[2] if len(parts)>2 else 'unknown'
+        source=root/scene_path
+        kind='CHARACTER' if source.name=='entity.tscn' else 'VFX'
+        rec={'group':group,'scene':scene_path,'kind':kind,'clips':[],'status':'HOLD'}
+        try:
+            clips=parse_scene(source)
+            rec['declared_clips']=len(clips)
+            scene_id=hashlib.sha1(scene_path.encode()).hexdigest()[:8]
+            target=out/'local-gifs'/('G%02d_%s'%(index+1,scene_id))
+            target.mkdir(parents=True,exist_ok=True)
+            for i,(name,frames,fps,loop) in enumerate(clips):
+                item={'action':name,'fps':fps,'loop':loop,'declared_frames':len(frames),'status':'HOLD'}
+                try:
+                    missing=[fn for fn,_ in frames if not (root/fn).is_file()]
+                    if missing:raise ValueError('missing pinned texture(s): %s (%s missing)'%(missing[0],len(missing)))
+                    safe=re.sub(r'[^a-zA-Z0-9_-]','_',name).strip('_') or 'clip'
+                    gif_path=target/('%02d_%s.gif'%(i+1,safe))
+                    metrics=visual_clip(root,frames,gif_path)
+                    item.update(metrics)
+                    item['status']='GIF_READY'
+                    item['preview_path']=str(gif_path.relative_to(out))
+                    item['minimum_visual_gate']=('REVIEW' if
+                        metrics['frames']>=4 and metrics['unique_paths']>=4 and
+                        metrics['max_visible_height']>=160 and metrics['original_canvas_consistent']
+                        else 'HOLD')
+                    samples.append((gif_path,'S%02d %s [%d frames]'%(index+1,safe,metrics['frames'])))
+                except Exception as e:item['error']=str(e)
+                rec['clips'].append(item)
+            rec['status']='GIF_READY' if any(c['status']=='GIF_READY' for c in rec['clips']) else 'HOLD'
+        except Exception as e:rec['error']=str(e)
+        records.append(rec)
+        print('NARU_HD_SCENE',index+1,kind,rec['status'],
+              len(rec['clips']),sum(c['status']=='GIF_READY' for c in rec['clips']),flush=True)
+    sheets=review_contact_sheets(out,samples)
+    print('NARU_HD_CONTACT_SHEETS',len(sheets),'GIF_SAMPLES',len(samples),flush=True)
+    return records,sheets
 def sff_report(root,source):
     records=[]
     for f in source['files']:
@@ -113,8 +167,8 @@ if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--out',type=pathlib.Path,required=True);a=p.parse_args();out=a.out;out.mkdir(parents=True,exist_ok=True)
     mr=acquire(MANIFEST['mobile'],out/'source-mobile')
     sr=acquire(MANIFEST['mugen'],out/'source-mugen')
-    groups=mobile(out/'source-mobile',out)
+    groups,sheets=mobile(out/'source-mobile',out)
     sff=sff_report(out/'source-mugen',MANIFEST['mugen'])
-    summary={'mobile_downloads':sum(x['status']=='FETCHED' for x in mr),'mobile_bytes':sum(x['bytes'] for x in mr if x['status']=='FETCHED'),'mobile_groups':len(groups),'mobile_gifs':sum(c['status']=='GIF_READY' for g in groups for c in g['clips']),'mugen_downloads':sum(x['status']=='FETCHED' for x in sr),'mugen_bytes':sum(x['bytes'] for x in sr if x['status']=='FETCHED'),'mugen_sff_ready':sum(x['status']=='BINARY_AND_AIR_FETCHED' for x in sff),'mobile':groups,'mugen':sff,'download_errors':[x for x in mr+sr if x['status']!='FETCHED'],'lfs_audit':MANIFEST['lfs_audit'],'note':'No runtime integration or final visual acceptance; source images not publicly redistributed. SFF dimensions are metadata, not proof of native HD.'}
+    summary={'expected_downloads':len(mr)+len(sr),'fetched_downloads':sum(x['status']=='FETCHED' for x in mr+sr),'review_contact_sheets':sheets,'mobile_downloads':sum(x['status']=='FETCHED' for x in mr),'mobile_bytes':sum(x['bytes'] for x in mr if x['status']=='FETCHED'),'mobile_scenes':len(groups),'character_scenes':sum(g['kind']=='CHARACTER' for g in groups),'vfx_scenes':sum(g['kind']=='VFX' for g in groups),'mobile_groups':len(set(g['group'] for g in groups)),'mobile_gifs':sum(c['status']=='GIF_READY' for g in groups for c in g['clips']),'mugen_downloads':sum(x['status']=='FETCHED' for x in sr),'mugen_bytes':sum(x['bytes'] for x in sr if x['status']=='FETCHED'),'mugen_sff_ready':sum(x['status']=='BINARY_AND_AIR_FETCHED' for x in sff),'mobile':groups,'mugen':sff,'download_errors':[x for x in mr+sr if x['status']!='FETCHED'],'lfs_audit':MANIFEST['lfs_audit'],'note':'Source GIFs and contact sheets are review artifacts ONLY; no art acceptance, no game integration. No rig/tween/gameplay modifications. MUGEN SFF dimensions are metadata, not proof of native HD.'}
     (out/'HD_REPORT.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False));print('NARU_HD_SUMMARY',json.dumps({k:v for k,v in summary.items() if k not in ('mobile','mugen','download_errors','lfs_audit')},ensure_ascii=False),flush=True)
-    if not summary['mobile_gifs']:raise ValueError('no mobile GIF generated')
+    if not summary['mobile_gifs']:raise ValueError('no mobile GIF generated; inspect HD_REPORT.json for scene errors')
