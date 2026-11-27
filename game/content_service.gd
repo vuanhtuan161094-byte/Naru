@@ -4,9 +4,15 @@ static func ensure(s: Dictionary) -> void:
 	for key in ["quest_claimed","daily_counts","beasts","summon_contracts","missions","source_cooldowns"]:
 		if not s.has(key):s[key]={}
 	if not s.has("quest_day"):s.quest_day=0
+	if not s.has("weekly_counts"):s.weekly_counts={}
+	if not s.has("weekly_claimed"):s.weekly_claimed={}
+	if not s.has("quest_week"):s.quest_week=0
 
 static func day(s: Dictionary) -> int:
 	return floori(float(maxi(int(s.get("high_water_timestamp",0)),int(s.get("last_committed_timestamp",0)))+int(Time.get_time_zone_from_system().bias)*60)/86400.0)
+
+static func week(s:Dictionary) -> int:
+	return floori(float(day(s)+3)/7.0)
 
 static func sync_day(s: Dictionary) -> void:
 	ensure(s)
@@ -14,10 +20,16 @@ static func sync_day(s: Dictionary) -> void:
 	if now>int(s.quest_day):
 		s.quest_day=now
 		s.daily_counts={}
+	var current_week=week(s)
+	if current_week>int(s.quest_week):
+		s.quest_week=current_week
+		s.weekly_counts={}
+		s.weekly_claimed={}
 
 static func bump(s: Dictionary,kind: String,amount: int=1) -> void:
 	sync_day(s)
 	s.daily_counts[kind]=int(s.daily_counts.get(kind,0))+amount
+	s.weekly_counts[kind]=int(s.weekly_counts.get(kind,0))+amount
 	if not s.has("lifetime_counts"):s.lifetime_counts={}
 	s.lifetime_counts[kind]=int(s.lifetime_counts.get(kind,0))+amount
 

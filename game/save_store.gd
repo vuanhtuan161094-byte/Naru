@@ -145,6 +145,7 @@ func begin_stage(stage: Dictionary,expedition:String="") -> String:
 	if not expedition.is_empty():
 		var row=preload("res://game/world_content_catalog.gd").find(expedition)
 		if row.is_empty() or row.stage!=stage.id or not state.cleared.has(stage.id) or int(state.building_states["BLD-001"].level)<int(row.hq) or int(state.source_cooldowns.get("expedition:"+expedition,0))>int(state.simulation_seconds):return ""
+		if row.get("challenge",false) and int(state.building_states["BLD-024"].level)<1:return ""
 	for event in state.ledger.values():
 		if event is Dictionary and event.get("status")=="started":return ""
 	if stage.requires!=null and not state.cleared.has(str(stage.requires)): return ""
@@ -181,6 +182,7 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 		state.ledger[event_id].status="win" if won else "loss"
 		if won:
 			state.tower_best=floor_number
+			Content.bump(state,"tower_win")
 			for reward in tower.tower_rewards(floor_number):grant_reward(str(reward.resource_id),int(reward.qty))
 		return commit_change(prior,old_rng)
 	var expedition_id=str(entry.get("expedition",""))
@@ -190,7 +192,9 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 		var key=preload("res://game/world_content_catalog.gd").cooldown_key(expedition_id)
 		if int(state.source_cooldowns.get(key,0))>int(state.simulation_seconds):return false
 		state.source_cooldowns[key]=int(state.simulation_seconds)+int(expedition.cooldown)
-		if won:grant_reward(str(expedition.resource),int(expedition.qty))
+		if won:
+			grant_reward(str(expedition.resource),int(expedition.qty))
+			Content.bump(state,"expedition_win")
 	state.ledger[event_id].status="win" if won else "loss"
 	if won:
 		var rewards=stage.repeat_rewards if state.cleared.has(stage.id) else stage.first_clear_rewards
@@ -780,6 +784,32 @@ func repair_building(reg,id: String) -> bool:
 	var prior=state.duplicate(true)
 	debit(cost)
 	b.condition=1.0
+	return commit_change(prior,rng.state)
+
+func claim_weekly(id:String) -> bool:
+	var prior=state.duplicate(true)
+	if not preload("res://game/world_activities.gd").claim_weekly(state,id):return false
+	return commit_change(prior,rng.state)
+
+func salvage_gear(reg,id:String) -> bool:
+	var prior=state.duplicate(true)
+	if not preload("res://game/world_activities.gd").salvage(reg,state,id):return false
+	return commit_change(prior,rng.state)
+
+func train_profession(reg,id:String) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.train_profession(reg,state,id):return false
+	return commit_change(prior,rng.state)
+
+func set_trade_order(reg,slot:String,faction:String,resource:String,buy:bool,target:int) -> bool:
+	var prior=state.duplicate(true)
+	if not World.set_trade_order(reg,state,slot,faction,resource,buy,target):return false
+	return commit_change(prior,rng.state)
+
+func remove_trade_order(slot:String) -> bool:
+	var prior=state.duplicate(true)
+	if not state.get("trade_orders",{}).has(slot):return false
+	state.trade_orders.erase(slot)
 	return commit_change(prior,rng.state)
 
 func claim_quest(reg,id: String) -> bool:

@@ -101,14 +101,33 @@ static func worker_level(s: Dictionary,id: String) -> int:
 		highest=maxi(highest,int(job.careers[job.profession].level))
 	return highest
 
+static func award_career(career:Dictionary,amount:int) -> void:
+	career.xp=int(career.xp)+amount
+	while int(career.xp)>=ceili(50*pow(float(career.level),1.4)):
+		career.xp=int(career.xp)-ceili(50*pow(float(career.level),1.4))
+		career.level=int(career.level)+1
+
 static func award_job(s: Dictionary,id: String,amount: int) -> void:
 	for ninja in workers(s,id):
 		var job=s.jobs[ninja]
-		var career=job.careers[job.profession]
-		career.xp=int(career.xp)+amount
-		while int(career.xp)>=ceili(50*pow(float(career.level),1.4)):
-			career.xp=int(career.xp)-ceili(50*pow(float(career.level),1.4))
-			career.level=int(career.level)+1
+		award_career(job.careers[job.profession],amount)
+
+static func profession_training_quote(s:Dictionary,ninja:String) -> Dictionary:
+	var job=s.jobs.get(ninja,{})
+	var cost={"RES-001":100,"RES-068":1}
+	var remaining=maxi(0,int(s.source_cooldowns.get("profession:"+ninja,0))-int(s.simulation_seconds))
+	var ready=not job.is_empty() and not str(job.get("building","")).is_empty() and level(s,"BLD-002")>=2 and remaining==0 and cost_ok(s,cost)
+	return {"ready":ready,"cost":cost,"xp":mini(100,25+5*level(s,"BLD-002")),"remaining":remaining}
+
+static func train_profession(reg,s:Dictionary,ninja:String) -> bool:
+	var q=profession_training_quote(s,ninja)
+	if not q.ready:return false
+	var job=s.jobs[ninja]
+	if not reg.professions.has(job.profession):return false
+	debit(s,q.cost)
+	award_career(job.careers[job.profession],int(q.xp))
+	s.source_cooldowns["profession:"+ninja]=int(s.simulation_seconds)+86400
+	return true
 
 static func recipe_cost(recipe: Dictionary) -> Dictionary:
 	var result={}

@@ -1058,6 +1058,11 @@ func gear_detail(id: String,message: String="") -> void:
 	protected_button.disabled=not store.has_cost(WorldQuotes.enhancement_cost(int(g.enhance),true))
 	button(row,"Tinh luyện",func():gear_detail(id,"Đã tinh luyện" if store.refine_gear(id) else "Thiếu nguyên liệu"))
 	button(row,"Tiến hóa",func():gear_detail(id,"Đã tiến hóa" if store.refine_gear(id,true) else "Thiếu nguyên liệu"))
+	var refunds=Activities.salvage_quote(reg,store.state,id)
+	if not refunds.is_empty():
+		var salvage_cost=[]
+		for resource in refunds:salvage_cost.append(str(reg.resources[resource].name_vi)+" ×"+str(refunds[resource]))
+		button(root,"Tháo dỡ (mất trang bị): "+", ".join(PackedStringArray(salvage_cost)),func():salvage_confirm_screen(id))
 	button(root,"Trở về",func():gear_screen())
 	var scroll=ScrollContainer.new()
 	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -1074,6 +1079,17 @@ func gear_detail(id: String,message: String="") -> void:
 		rows.add_child(gems)
 		button(gems,"Khảm "+resource+" ("+str(store.state.inventory.get(resource,0))+")",func():gear_detail(id,"Đã khảm" if store.socket_gear(reg,id,resource) else "Thiếu đá hoặc ô trống"))
 		if resource in g.gems:button(gems,"Tháo "+resource,func():gear_detail(id,"Đã tháo" if store.socket_gear(reg,id,resource,true) else "Lỗi"))
+
+func salvage_confirm_screen(id:String) -> void:
+	open_screen("inventory")
+	var refunds=Activities.salvage_quote(reg,store.state,id)
+	label(root,"THÁO DỠ TRANG BỊ",26)
+	if refunds.is_empty():label(root,"Trang bị không thể tháo dỡ.",18)
+	else:
+		label(root,"Thao tác không thể hoàn tác. Chỉ thu hồi 50% nguyên liệu, làm tròn xuống.",18)
+		for resource in refunds:label(root,str(reg.resources[resource].name_vi)+" ×"+str(refunds[resource]),18)
+		button(root,"Xác nhận tháo dỡ",func():gear_screen("Đã tháo dỡ" if store.salvage_gear(reg,id) else "Không đủ điều kiện"))
+	button(root,"Hủy",func():gear_detail(id))
 
 func awakening_screen(id: String,message: String="") -> void:
 	open_screen("ninja_detail")
@@ -1097,7 +1113,7 @@ func village_screen(message: String="") -> void:
 func world_food_screen(message:String="") -> void:
 	open_screen("inventory")
 	label(root,"LƯƠNG THỰC • "+str(store.state.stamina)+"/120 thể lực",26)
-	label(root,"Cơm nắm +6, Ramen +12; tối đa 36 thể lực từ thức ăn mỗi ngày. "+message,16)
+	label(root,"Mật ong +4, Cơm nắm +6, Ramen +12; tối đa 36 thể lực từ thức ăn mỗi ngày. "+message,16)
 	var rows=scroll_rows(root)
 	for id in Activities.FOOD:
 		var q=Activities.food_quote(store.state,id)
@@ -1136,6 +1152,28 @@ func inventory_screen() -> void:
 		label(line,str(store.state.inventory.get(id,0))+" / "+str(Village.capacity(store.state,id)),16)
 		button(line,"Nguồn / công dụng",func():resource_detail(id))
 
+func building_actions(rows:Control,id:String) -> void:
+	match id:
+		"BLD-001":button(rows,"Bản đồ nhẫn giới",world_screen)
+		"BLD-002","BLD-003","BLD-004","BLD-005","BLD-006":button(rows,"Huấn luyện ninja",growth_screen)
+		"BLD-007":button(rows,"Thử thách và bí quyển",resource_trials_screen)
+		"BLD-008":button(rows,"Huyết kế",bloodline_screen)
+		"BLD-009":button(rows,"Thức tỉnh ninja",growth_screen)
+		"BLD-010":button(rows,"Chiêu mộ",recruit_screen)
+		"BLD-011","BLD-013","BLD-014","BLD-015","BLD-016","BLD-018","BLD-019":
+			button(rows,"Nguồn khai thác / chế tạo",craft_screen)
+		"BLD-012":button(rows,"Lương thực",world_food_screen)
+		"BLD-017":button(rows,"Rèn nhẫn cụ",gear_craft_screen)
+		"BLD-020":button(rows,"Kho tài nguyên",inventory_screen)
+		"BLD-021":button(rows,"Lệnh thương mại",trade_orders_screen)
+		"BLD-022":button(rows,"Nhiệm vụ tuần",weekly_screen)
+		"BLD-023":button(rows,"Tình báo",world_intelligence_screen)
+		"BLD-024":button(rows,"Thử thách Boss",expedition_screen)
+		"BLD-025":button(rows,"Tháp nhẫn thuật",tower_screen)
+		"BLD-026":button(rows,"Thông linh thú",contract_screen)
+		"BLD-027":button(rows,"Vĩ thú",beast_screen)
+		"BLD-029":button(rows,"Ngoại giao",diplomacy_screen)
+
 func building_screen(id: String,message: String="") -> void:
 	open_screen("building")
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
@@ -1163,6 +1201,7 @@ func building_screen(id: String,message: String="") -> void:
 	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	scroll.add_child(rows)
 	if int(b.level)==0:return
+	building_actions(rows,id)
 	if id=="BLD-028":button(rows,"Nghiên cứu công nghệ",world_projects_screen)
 	button(rows,"Điều phối tất cả công trình",production_center)
 	if id=="BLD-030":button(rows,"Gia cố phòng thủ",fortification_screen)
@@ -1311,10 +1350,50 @@ func world_screen(message: String="") -> void:
 func diplomacy_screen(message: String="") -> void:
 	var rows=activity_rows("NGOẠI GIAO • 9 thế lực",message,func():world_screen())
 	screen_id="diplomacy"
+	button(rows,"Lệnh thương mại tự động",trade_orders_screen)
 	for id in reg.factions:
 		if id=="FAC-009":continue
 		var r=World.relation(store.state,"FAC-009",id)
 		button(rows,"%s | %s | %d" % [reg.factions[id].name_vi,r.state,int(r.score)],func():faction_screen(id))
+
+func trade_orders_screen(message:String="") -> void:
+	open_screen("trade_orders")
+	label(root,"THƯƠNG HỘI • LỆNH TỰ ĐỘNG",26)
+	label(root,"Mỗi 6 giờ mô phỏng, tối đa 10 đơn vị/lệnh. Mua đến mục tiêu, bán phần dư. Giữ ít nhất 500 Ryo. "+message,16)
+	var rows=scroll_rows(root)
+	for slot_number in range(1,4):
+		var slot=str(slot_number)
+		var order=store.state.get("trade_orders",{}).get(slot,{})
+		label(rows,"Lệnh "+slot+(" • chưa mở" if slot_number>World.order_limit(store.state) else " • "+("trống" if order.is_empty() else str(reg.factions[order.faction].name_vi)+" • "+str(reg.resources[order.resource].name_vi)+" • "+("mua" if order.buy else "bán")+" • mục tiêu "+str(order.target)+" • "+str(maxi(0,int(order.due)-int(store.state.simulation_seconds)))+"s")),18)
+		if slot_number>World.order_limit(store.state):continue
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var faction=OptionButton.new()
+		for faction_id in reg.factions:
+			if faction_id=="FAC-009" or not World.relation(store.state,"FAC-009",faction_id).state in ["trade","allied"]:continue
+			faction.add_item(str(reg.factions[faction_id].name_vi))
+			faction.set_item_metadata(faction.item_count-1,faction_id)
+		line.add_child(faction)
+		var resource=OptionButton.new()
+		for resource_id in reg.resources:
+			if not reg.resources[resource_id].tradable or resource_id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:continue
+			resource.add_item(str(reg.resources[resource_id].name_vi))
+			resource.set_item_metadata(resource.item_count-1,resource_id)
+		line.add_child(resource)
+		var mode=OptionButton.new()
+		mode.add_item("Mua đến")
+		mode.add_item("Bán dư trên")
+		line.add_child(mode)
+		var target=SpinBox.new()
+		target.min_value=1
+		target.max_value=10000
+		target.value=100
+		line.add_child(target)
+		var set_order=button(line,"Đặt lệnh",func():trade_orders_screen("Đã đặt" if store.set_trade_order(reg,slot,str(faction.get_selected_metadata()),str(resource.get_selected_metadata()),mode.selected==0,int(target.value)) else "Chưa đủ điều kiện"))
+		set_order.disabled=faction.item_count==0
+		if not order.is_empty():button(line,"Hủy",func():trade_orders_screen("Đã hủy" if store.remove_trade_order(slot) else "Lỗi"))
+	button(root,"Thương hội",func():building_screen("BLD-021"))
+	button(root,"Ngoại giao",diplomacy_screen)
 
 func faction_screen(id: String,message: String="") -> void:
 	open_screen("diplomacy")
@@ -1366,11 +1445,12 @@ func activity_rows(title: String,message: String,back: Callable) -> VBoxContaine
 func activities_screen() -> void:
 	open_screen("activities")
 	label(root,"HOẠT ĐỘNG NINJA",30)
-	button(root,"Phó bản • 24",expedition_screen)
+	button(root,"Phó bản • 30",expedition_screen)
 	button(root,"Tháp nhẫn thuật • 30 tầng",tower_screen)
 	button(root,"Điều phối sản xuất",production_center)
 	button(root,"Thử thách tài nguyên",resource_trials_screen)
 	button(root,"Nhiệm vụ",quest_screen)
+	button(root,"Nhiệm vụ tuần",weekly_screen)
 	button(root,"Phái ninja làm nhiệm vụ / thử thách tài nguyên",mission_screen)
 	button(root,"Vĩ thú và phong ấn",beast_screen)
 	button(root,"Thông linh thú",contract_screen)
@@ -1399,8 +1479,8 @@ func tower_screen() -> void:
 
 func expedition_screen() -> void:
 	open_screen("expeditions")
-	label(root,"PHÓ BẢN • 24",26)
-	label(root,"12 tái chiến + 12 biến thể đội hình / địa hình. Thể lực và hồi chiêu riêng.",16)
+	label(root,"PHÓ BẢN • 30",26)
+	label(root,"12 tái chiến + 12 biến thể + 6 thử thách Boss thường/tinh anh. Thể lực và hồi chiêu riêng.",16)
 	var rows=scroll_rows(root)
 	for item in WorldCatalog.all():
 		var id=str(item.id)
@@ -1491,10 +1571,29 @@ func production_center(message:String="") -> void:
 		button(line,"Quản lý",func():building_screen(id))
 	button(root,"Về làng",menu)
 
+func weekly_screen(message:String="") -> void:
+	open_screen("weekly")
+	label(root,"NHIỆM VỤ TUẦN • 6",26)
+	label(root,"Tính theo hành động thực tế trong tuần, đổi tuần vào thứ Hai. "+message,16)
+	var rows=scroll_rows(root)
+	for item in Activities.WEEKLY:
+		var id=str(item.id)
+		var q=Activities.weekly_quote(store.state,id)
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var desc=label(line,"%s • %d/%d" % [item.name,int(q.count),int(item.count)],18)
+		desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var claim=button(line,"Đã nhận" if q.claimed else "Nhận thưởng",func():weekly_screen("Đã nhận" if store.claim_weekly(id) else "Chưa đủ điều kiện"))
+		claim.disabled=not q.ready
+		claim.tooltip_text=cost_text(item.reward)
+	button(root,"Nhiệm vụ",quest_screen)
+	button(root,"Hoạt động",activities_screen)
+
 func quest_screen(message: String="") -> void:
 	var rows=activity_rows("NHIỆM VỤ • 81",message,activities_screen)
 	screen_id="quest"
 	button(rows,"Phái ninja / tài nguyên",mission_screen)
+	button(rows,"Nhiệm vụ tuần",weekly_screen)
 	var filter=OptionButton.new()
 	for title_text in ["Tất cả","Có thể nhận","Chưa hoàn thành","Hằng ngày","Đã nhận"]:filter.add_item(title_text)
 	filter.select(quest_filter)
@@ -1679,6 +1778,10 @@ func web_probe() -> void:
 func profession_screen(ninja: String,building_id: String,message: String="") -> void:
 	var rows=activity_rows("THIÊN PHÚ NGHỀ • "+str(reg.ninjas[ninja].name_vi),message,func():building_screen(building_id))
 	var job=store.state.jobs[ninja]
+	var study=Village.profession_training_quote(store.state,ninja)
+	var train_job=button(rows,"Học nghề đang phân công +"+str(study.xp)+" XP • 100 Ryo + 1 giấy",func():profession_screen(ninja,building_id,"Đã học" if store.train_profession(reg,ninja) else "Chưa đủ điều kiện"))
+	train_job.disabled=not study.ready
+	train_job.tooltip_text="Học viện cấp 2, một lượt mỗi 24 giờ mô phỏng. Còn "+str(study.remaining)+"s"
 	for profession in job.careers:
 		var career=job.careers[profession]
 		label(rows,"%s • Cấp %d • XP %d/%d" % [reg.professions[profession].name_vi,int(career.level),int(career.xp),ceili(50*pow(float(career.level),1.4))],18)

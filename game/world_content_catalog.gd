@@ -30,9 +30,18 @@ const VARIANTS=[
 	{"id":"EXP-24","base_id":"EXP-12","name":"Liên chiến nhẫn giới","enemy_ids":["NPC-485","NPC-484","NPC-482","NPC-481","NPC-486","NPC-487"],"map_profile":"standard","terrain":[{"center":[0.5,0.35],"size":[1,1],"kind":"obstacle"},{"center":[0.5,0.65],"size":[1,1],"kind":"obstacle"}]}
 ]
 
+const CHALLENGES=[
+	{"id":"EXP-25","base_id":"EXP-08","name":"Thiên Đạo • thường","enemy_ids":["NPC-152","NPC-154","NPC-155"],"map_profile":"compact","terrain":[],"qty":3,"cooldown":86400,"tier":"normal","challenge":true},
+	{"id":"EXP-26","base_id":"EXP-08","name":"Thiên Đạo • tinh anh","enemy_ids":["NPC-152","NPC-151","NPC-150","NPC-148","NPC-153"],"map_profile":"large","terrain":[{"center":[0.5,0.3],"size":[1.1,1.1],"kind":"obstacle"},{"center":[0.5,0.7],"size":[1.1,1.1],"kind":"obstacle"}],"qty":6,"cooldown":86400,"tier":"elite","challenge":true},
+	{"id":"EXP-27","base_id":"EXP-10","name":"Đại chiến liên quân • thường","enemy_ids":["NPC-236","NPC-237","NPC-238"],"map_profile":"compact","terrain":[],"qty":3,"cooldown":86400,"tier":"normal","challenge":true},
+	{"id":"EXP-28","base_id":"EXP-10","name":"Đại chiến liên quân • tinh anh","enemy_ids":["NPC-236","NPC-235","NPC-234","NPC-232","NPC-237"],"map_profile":"large","terrain":[{"center":[0.5,0.3],"size":[1.1,1.1],"kind":"obstacle"},{"center":[0.5,0.7],"size":[1.1,1.1],"kind":"obstacle"}],"qty":6,"cooldown":86400,"tier":"elite","challenge":true},
+	{"id":"EXP-29","base_id":"EXP-11","name":"Căn cứ Kara • thường","enemy_ids":["NPC-395","NPC-396","NPC-397"],"map_profile":"compact","terrain":[],"qty":3,"cooldown":86400,"tier":"normal","challenge":true},
+	{"id":"EXP-30","base_id":"EXP-11","name":"Căn cứ Kara • tinh anh","enemy_ids":["NPC-395","NPC-393","NPC-392","NPC-391","NPC-396","NPC-397"],"map_profile":"large","terrain":[{"center":[0.5,0.3],"size":[1.1,1.1],"kind":"obstacle"},{"center":[0.5,0.7],"size":[1.1,1.1],"kind":"obstacle"}],"qty":6,"cooldown":86400,"tier":"elite","challenge":true}
+]
+
 static func all() -> Array:
 	var out=EXPEDITIONS.duplicate(true)
-	for variant in VARIANTS:
+	for variant in VARIANTS+CHALLENGES:
 		var row=find(variant.id)
 		if not row.is_empty():out.append(row)
 	return out
@@ -51,13 +60,13 @@ static func battle_stage(reg,id:String) -> Dictionary:
 static func find(id:String) -> Dictionary:
 	for row in EXPEDITIONS:
 		if row.id==id:return row.duplicate(true)
-	for variant in VARIANTS:
+	for variant in VARIANTS+CHALLENGES:
 		if variant.id!=id:continue
 		for base in EXPEDITIONS:
 			if base.id!=variant.base_id:continue
 			var row=base.duplicate(true)
 			for key in variant:row[key]=variant[key]
-			row.qty=maxi(1,int(base.qty))
+			row.qty=maxi(1,int(variant.get("qty",base.qty)))
 			return row
 	return {}
 
@@ -72,6 +81,7 @@ static func quote(reg,s:Dictionary,id:String) -> Dictionary:
 	var stage=reg.stages[row.stage]
 	if not s.cleared.has(row.stage) or (stage.requires!=null and not s.cleared.has(str(stage.requires))):reason="Cần vượt "+str(row.stage)
 	elif int(s.building_states["BLD-001"].level)<int(row.hq):reason="Cần Tổng bộ cấp "+str(row.hq)
+	elif row.get("challenge",false) and int(s.building_states["BLD-024"].level)<1:reason="Cần Đấu trường"
 	elif remaining>0:reason="Hồi "+str(remaining)+" giây"
 	elif s.team.is_empty():reason="Cần bố trận"
 	elif int(s.stamina)<int(stage.stamina_cost):reason="Thiếu thể lực"

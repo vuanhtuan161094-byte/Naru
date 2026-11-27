@@ -353,6 +353,35 @@ static func npc_tick(reg,s: Dictionary) -> void:
 		if not acted:acted=npc_border_action(reg,s,id)
 		if acted:npc.actions=int(npc.actions)+1
 
+# Automatic orders are opt-in, finite, and use the same NPC stock / prices as manual trades.
+static func order_limit(s:Dictionary) -> int:
+	var lv=int(s.building_states["BLD-021"].level)
+	return 0 if lv<=0 else 1 if lv<5 else 2 if lv<10 else 3
+
+static func set_trade_order(reg,s:Dictionary,slot:String,faction:String,resource:String,buy:bool,target:int) -> bool:
+	if not slot in ["1","2","3"] or int(slot)>order_limit(s) or faction==PLAYER or not reg.factions.has(faction) or not reg.resources.has(resource):return false
+	if not bool(reg.resources[resource].tradable) or resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"] or target<1 or target>10000:return false
+	if not relation(s,PLAYER,faction).state in ["trade","allied"]:return false
+	if not s.has("trade_orders"):s.trade_orders={}
+	s.trade_orders[slot]={"faction":faction,"resource":resource,"buy":buy,"target":target,"due":int(s.simulation_seconds)+21600}
+	return true
+
+static func run_trade_orders(reg,s:Dictionary) -> void:
+	for slot in s.get("trade_orders",{}):
+		var order=s.trade_orders[slot]
+		if int(order.due)>int(s.simulation_seconds) or int(slot)>order_limit(s):continue
+		order.due=int(s.simulation_seconds)+21600
+		if not relation(s,PLAYER,str(order.faction)).state in ["trade","allied"]:continue
+		var stock=int(s.inventory.get(order.resource,0))
+		var qty=mini(10,maxi(0,int(order.target)-stock if order.buy else stock-int(order.target)))
+		if qty<=0:continue
+		if order.buy:
+			qty=mini(qty,int(s.faction_states[order.faction].stock.get(order.resource,0)))
+			while qty>0 and int(s.inventory.get("RES-001",0))-quote_trade(reg,s,order.faction,order.resource,qty,true)<500:qty-=1
+		if qty>0 and trade(reg,s,order.faction,order.resource,qty,order.buy):
+			preload("res://game/content_service.gd").bump(s,"trade")
+			note(s,"Thương hội "+("mua " if order.buy else "bán ")+str(qty)+" "+str(reg.resources[order.resource].name_vi)+" với "+str(reg.factions[order.faction].name_vi))
+
 static func step(reg,s: Dictionary,dt: int) -> void:
 	if not s.travel.is_empty():
 		s.travel.remaining=int(s.travel.remaining)-dt
@@ -378,6 +407,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 	while int(s.world_seconds)>=600:
 		s.world_seconds=int(s.world_seconds)-600
 		npc_tick(reg,s)
+		run_trade_orders(reg,s)
 
 static func roster_available(s: Dictionary,roster: Array,except: String) -> bool:
 	if roster.size()>6:return false

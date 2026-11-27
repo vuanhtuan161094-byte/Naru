@@ -2,7 +2,7 @@ extends RefCounted
 const Content=preload("res://game/content_service.gd")
 const Projects=preload("res://game/world_economy_projects.gd")
 const TOWER_MAX=30
-const FOOD={"RES-034":6,"RES-035":12}
+const FOOD={"RES-032":4,"RES-034":6,"RES-035":12}
 const FOOD_LIMIT=36
 
 static func food_quote(s:Dictionary,id:String) -> Dictionary:
@@ -67,4 +67,49 @@ static func fortify(s:Dictionary) -> bool:
 	if not q.ready:return false
 	Projects.pay(s,q.cost)
 	s.fortification=int(q.level)+1
+	return true
+
+const WEEKLY=[
+	{"id":"WK-01","name":"Tuần tra nhẫn giới","kind":"clear_stage","count":20,"reward":[{"resource_id":"RES-001","qty":1200},{"resource_id":"RES-116","qty":8}]},
+	{"id":"WK-02","name":"Sản xuất liên tục","kind":"craft_item","count":40,"reward":[{"resource_id":"RES-001","qty":900},{"resource_id":"RES-113","qty":3}]},
+	{"id":"WK-03","name":"Nhiệm vụ làng","kind":"finish_mission","count":20,"reward":[{"resource_id":"RES-001","qty":900},{"resource_id":"RES-128","qty":2}]},
+	{"id":"WK-04","name":"Thương nhân","kind":"trade","count":12,"reward":[{"resource_id":"RES-001","qty":600},{"resource_id":"RES-114","qty":2}]},
+	{"id":"WK-05","name":"Chinh phục phó bản","kind":"expedition_win","count":6,"reward":[{"resource_id":"RES-130","qty":3},{"resource_id":"RES-134","qty":2}]},
+	{"id":"WK-06","name":"Tháp nhẫn thuật","kind":"tower_win","count":3,"reward":[{"resource_id":"RES-132","qty":2},{"resource_id":"RES-115","qty":1}]}
+]
+static func weekly_quote(s:Dictionary,id:String) -> Dictionary:
+	for row in WEEKLY:
+		if row.id!=id:continue
+		var current=int(s.get("quest_week",0))==Content.week(s)
+		var count=int(s.get("weekly_counts",{}).get(row.kind,0)) if current else 0
+		var claimed=bool(s.get("weekly_claimed",{}).get(id,false)) if current else false
+		return {"row":row,"count":count,"claimed":claimed,"ready":count>=int(row.count) and not claimed}
+	return {}
+
+static func claim_weekly(s:Dictionary,id:String) -> bool:
+	Content.sync_day(s)
+	var q=weekly_quote(s,id)
+	if q.is_empty() or not q.ready:return false
+	for reward in q.row.reward:preload("res://game/world_rewards.gd").deliver(s,str(reward.resource_id),int(reward.qty))
+	s.weekly_claimed[id]=true
+	return true
+
+static func salvage_quote(reg,s:Dictionary,id:String) -> Dictionary:
+	var item=s.get("gear_instances",{}).get(id,{})
+	if item.is_empty() or not reg.gear_templates.has(item.get("template_id","")):return {}
+	var template=reg.gear_templates[item.template_id]
+	# Q1 starter gear has a discounted recipe, so it is deliberately excluded.
+	if int(template.quality)<2 or not str(item.owner).is_empty() or int(item.enhance)>0 or int(item.refine)>0 or int(item.evolution)>0 or not item.gems.is_empty() or not item.get("pending_affix",{}).is_empty():return {}
+	var refunds={}
+	for part in template.craft.inputs:
+		refunds[part.resource_id]=int(refunds.get(part.resource_id,0))+floori(float(part.qty)*0.5)
+	for resource in refunds.keys():
+		if int(refunds[resource])<=0:refunds.erase(resource)
+	return refunds
+
+static func salvage(reg,s:Dictionary,id:String) -> bool:
+	var refunds=salvage_quote(reg,s,id)
+	if refunds.is_empty():return false
+	s.gear_instances.erase(id)
+	for resource in refunds:preload("res://game/world_rewards.gd").deliver(s,resource,int(refunds[resource]))
 	return true

@@ -141,6 +141,16 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 	for id in s.get("missions",{}):
 		var m=s.missions[id]
 		if not s.owned.has(id) or not m is Dictionary or not reg.resources.has(m.get("resource","")) or not integer(m.get("remaining")) or not integer(m.get("qty"),1):return false
+	if not integer(s.get("quest_week",0)) or not s.get("weekly_counts",{}) is Dictionary or not s.get("weekly_claimed",{}) is Dictionary:return false
+	for value in s.get("weekly_counts",{}).values():
+		if not integer(value):return false
+	for id in s.get("weekly_claimed",{}):
+		if not id in ["WK-01","WK-02","WK-03","WK-04","WK-05","WK-06"] or s.weekly_claimed[id]!=true:return false
+	if not s.get("trade_orders",{}) is Dictionary or s.get("trade_orders",{}).size()>3:return false
+	for slot in s.get("trade_orders",{}):
+		var order=s.trade_orders[slot]
+		if not slot in ["1","2","3"] or not order is Dictionary or not reg.factions.has(order.get("faction","")) or order.faction=="FAC-009" or not reg.resources.has(order.get("resource","")):return false
+		if not bool(reg.resources[order.resource].tradable) or order.resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"] or not order.get("buy") is bool or not integer(order.get("target"),1,10000) or not integer(order.get("due")):return false
 	if not s.get("world_projects",{}) is Dictionary:return false
 	for id in s.get("world_projects",{}):
 		if preload("res://game/world_economy_projects.gd").find(id).is_empty() or not integer(s.world_projects[id],0,5):return false

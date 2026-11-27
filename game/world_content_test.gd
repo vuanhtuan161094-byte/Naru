@@ -20,7 +20,7 @@ func _initialize() -> void:
 	for row in Catalog.all():
 		ok=check(not ids.has(row.id) and reg.stages.has(row.stage) and reg.resources.has(row.resource),"catalog reference") and ok
 		ids[row.id]=true
-	ok=check(ids.size()==24 and store.begin_expedition(reg,"EXP-01").is_empty(),"locked expedition") and ok
+	ok=check(ids.size()==30 and store.begin_expedition(reg,"EXP-01").is_empty(),"locked expedition") and ok
 	for variant in Catalog.VARIANTS:
 		var stage_variant=Catalog.battle_stage(reg,variant.id)
 		ok=check(stage_variant.enemy_ids!=reg.stages[stage_variant.id].enemy_ids and stage_variant.enemy_ids.size()<=6 and reg.bosses[stage_variant.boss_id].primary_enemy_id in stage_variant.enemy_ids,"variant roster "+variant.id) and ok
@@ -108,7 +108,32 @@ func _initialize() -> void:
 	ok=check(Village.promote_waiting(reg,s,building),"promote queue") and ok
 	ok=check(s.building_states[building].get("waiting_orders",[]).is_empty() and int(s.building_states[building].production.batches_left)==2,"queue active") and ok
 	ok=check(store.cancel_production(building),"cancel queue active") and ok
+	var Content=preload("res://game/content_service.gd")
+	Content.bump(s,"clear_stage",20)
+	ok=check(store.claim_weekly("WK-01") and not store.claim_weekly("WK-01"),"weekly claim once") and ok
+	var gear_id=store.craft_gear(reg,"EQ-006-Q3")
+	if gear_id.is_empty():
+		var def=reg.gear_templates["EQ-006-Q3"]
+		s.building_states[def.craft.building_id].level=10
+		for item in def.craft.inputs:s.inventory[item.resource_id]=100
+		gear_id=store.craft_gear(reg,"EQ-006-Q3")
+	ok=check(not gear_id.is_empty() and store.salvage_gear(reg,gear_id) and not store.salvage_gear(reg,gear_id),"salvage once") and ok
+	s.building_states["BLD-002"].level=2
+	s.inventory["RES-068"]=100
+	ok=check(store.train_profession(reg,ninja) and not store.train_profession(reg,ninja),"profession training cooldown") and ok
+	var World=preload("res://game/world_service.gd")
+	s.building_states["BLD-021"].level=1
+	var faction="FAC-001"
+	s.relations[World.relation_key("FAC-009",faction)]={"score":20,"state":"trade"}
+	s.faction_states[faction].stock["RES-006"]=100
+	s.inventory["RES-006"]=50
+	s.inventory["RES-001"]=10000
+	ok=check(store.set_trade_order(reg,"1",faction,"RES-006",true,60) and not store.set_trade_order(reg,"2",faction,"RES-006",true,60),"order limit") and ok
+	s.trade_orders["1"].due=int(s.simulation_seconds)
+	World.run_trade_orders(reg,s)
+	ok=check(int(s.inventory["RES-006"])==60 and int(s.faction_states[faction].stock["RES-006"])==90 and int(s.inventory["RES-001"])<10000,"paid trade") and ok
+	ok=check(store.remove_trade_order("1"),"remove trade order") and ok
 	ok=check(Guard.valid(reg,s),"save compatibility") and ok
 	if not ok:quit(1);return
-	print("NARU_WORLD_CONTENT_PASS 24 catalog refs, cooldown settlement and target queue; no simulated combat claim")
+	print("NARU_WORLD_CONTENT_PASS 30 catalog refs, cooldown settlement and target queue; no simulated combat claim")
 	quit()
