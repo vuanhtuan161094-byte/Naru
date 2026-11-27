@@ -98,7 +98,7 @@ func _ready() -> void:
 			var path=arg.trim_prefix("--art-pack=")
 			if FileAccess.file_exists(path):art.import_text(FileAccess.get_file_as_string(path),false)
 	var bg=ColorRect.new()
-	bg.color=Color("#101b23")
+	bg.color=Color("#101a1a")
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
 	private_backdrop=TextureRect.new()
@@ -110,25 +110,26 @@ func _ready() -> void:
 	add_child(private_backdrop)
 	shell=VBoxContainer.new()
 	shell.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	shell.offset_left=18
-	shell.offset_right=-18
+	shell.offset_left=14
+	shell.offset_right=-14
 	shell.offset_top=10
 	shell.offset_bottom=-10
 	shell.add_theme_constant_override("separation",8)
 	add_child(shell)
 	header=HBoxContainer.new()
 	shell.add_child(header)
-	var brand=label(header,"NARUTO",28)
+	var brand=label(header,"NARUTO  /  NHẪN GIỚI",23)
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"NHẪN GIỚI  /  DEV",14)
+	label(header,"LÀNG LÁ",13).modulate=Color("#b6bcaa")
 	navigation=HBoxContainer.new()
+	navigation.add_theme_constant_override("separation",5)
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
 		var nav_button=button(navigation,item[0],item[1])
 		nav_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		nav_button.custom_minimum_size=Vector2(72,38)
+		nav_button.custom_minimum_size=Vector2(66,36)
 		nav_button.add_theme_font_size_override("font_size",15)
 	root=VBoxContainer.new()
 	root.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -304,7 +305,14 @@ func roster(message: String="") -> void:
 			if int(store.state.formation_slots[ninja])==i:id=str(ninja);break
 		var b=button(slots,("▶ " if selected_slot==i else "")+str(i+1)+" • "+(reg.ninjas[id].name_vi if id!="" else "Ô trống"),func():selected_slot=i;roster())
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.custom_minimum_size.y=44
+		b.custom_minimum_size.y=70
+		b.add_theme_stylebox_override("normal",combat_panel(Color("#4e4632") if selected_slot==i else Color("#23322e"),Color("#deb878") if selected_slot==i else Color("#546b5b"),8))
+		if id!="":
+			var tex=art.texture("portraits/"+id+".png")
+			if tex!=null:
+				b.icon=tex
+				b.expand_icon=true
+				b.add_theme_constant_override("icon_max_width",48)
 	var controls=HBoxContainer.new()
 	root.add_child(controls)
 	button(controls,"Bỏ ninja khỏi ô",func():roster("Đã bỏ" if store.set_formation_slot(selected_slot,"") else "Ô trống hoặc đang triển khai"))
@@ -369,7 +377,7 @@ func growth_screen() -> void:
 		var b=button(grid,"%s\nCấp %d • Phẩm %d • %d sao" % [n.name_vi,int(p.level),int(p.quality),int(p.stars)],func():growth_detail(id))
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		b.custom_minimum_size.y=84
-		b.modulate=quality_color(int(p.quality))
+		b.add_theme_stylebox_override("normal",combat_panel(Color("#263832"),quality_color(int(p.quality)).darkened(0.3),7))
 		var portrait=art.texture("portraits/"+id+".png")
 		if portrait!=null:
 			b.icon=portrait
@@ -2011,7 +2019,7 @@ func squad_detail(key: String,message: String="") -> void:
 func make_theme() -> Theme:
 	var t=Theme.new()
 	t.default_font_size=17
-	t.set_color("font_color","Label",Color("#eee9df"))
+	t.set_color("font_color","Label",Color("#f0e9dc"))
 	t.set_constant("separation","VBoxContainer",7)
 	t.set_constant("separation","HBoxContainer",7)
 	t.set_constant("h_separation","GridContainer",8)
@@ -2020,8 +2028,8 @@ func make_theme() -> Theme:
 	t.set_color("font_placeholder_color","LineEdit",Color("#9ca7aa"))
 	for control_type in ["LineEdit","PanelContainer"]:
 		var panel=StyleBoxFlat.new()
-		panel.bg_color=Color("#202832")
-		panel.border_color=Color("#535966")
+		panel.bg_color=Color("#23312f")
+		panel.border_color=Color("#52645a")
 		panel.set_border_width_all(1)
 		panel.set_corner_radius_all(7)
 		panel.content_margin_left=8
@@ -2031,8 +2039,8 @@ func make_theme() -> Theme:
 		t.set_stylebox("normal" if control_type=="LineEdit" else "panel",control_type,panel)
 	for state_key in ["normal","hover","pressed","disabled","focus"]:
 		var style=StyleBoxFlat.new()
-		style.bg_color=Color("#252d39") if state_key=="normal" else Color("#3b414d") if state_key=="hover" else Color("#745a35") if state_key=="pressed" else Color("#20252e") if state_key=="disabled" else Color("#3b414d")
-		style.border_color=Color("#4d5867") if state_key!="focus" else Color("#f1bb69")
+		style.bg_color=Color("#253632") if state_key=="normal" else Color("#3b5147") if state_key=="hover" else Color("#80603a") if state_key=="pressed" else Color("#202a29") if state_key=="disabled" else Color(0,0,0,0)
+		style.border_color=Color("#53685b") if state_key!="focus" else Color("#f1bb69")
 		style.set_border_width_all(1)
 		style.set_corner_radius_all(7)
 		style.content_margin_left=10
@@ -2041,7 +2049,26 @@ func make_theme() -> Theme:
 		style.content_margin_bottom=6
 		t.set_stylebox(state_key,"Button",style)
 	t.set_color("font_color","Button",Color("#ecf1f1"))
-	t.set_color("font_disabled_color","Button",Color("#7b8991"))
+	t.set_color("font_disabled_color","Button",Color("#83918a"))
+	t.set_color("font_hover_color","Button",Color("#fff1d0"))
+	t.set_color("font_pressed_color","Button",Color("#ffe8bf"))
+	for control_type in ["OptionButton","MenuButton"]:
+		for state_key in ["normal","hover","pressed","disabled","focus"]:
+			t.set_stylebox(state_key,control_type,t.get_stylebox(state_key,"Button"))
+		t.set_color("font_color",control_type,Color("#f0e9dc"))
+	var rail=StyleBoxFlat.new()
+	rail.bg_color=Color("#182522")
+	rail.set_corner_radius_all(5)
+	var thumb=StyleBoxFlat.new()
+	thumb.bg_color=Color("#667e6f")
+	thumb.set_corner_radius_all(5)
+	thumb.content_margin_left=5
+	thumb.content_margin_right=5
+	for control_type in ["VScrollBar","HScrollBar"]:
+		t.set_stylebox("scroll",control_type,rail)
+		t.set_stylebox("grabber",control_type,thumb)
+		t.set_stylebox("grabber_highlight",control_type,thumb)
+		t.set_stylebox("grabber_pressed",control_type,thumb)
 	return t
 
 func open_screen(id: String) -> void:
@@ -2053,7 +2080,10 @@ func open_screen(id: String) -> void:
 	var section={"wiki":"Cài đặt","home":"Làng","building":"Làng","craft":"Làng","production":"Làng","activities":"Nhiệm vụ","expeditions":"Cốt truyện","tower":"Cốt truyện","resource_trials":"Nhiệm vụ","weekly":"Nhiệm vụ","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Bố trận","recruit":"Chiêu mộ","campaign":"Cốt truyện","world":"Nhẫn giới","diplomacy":"Nhẫn giới","inventory":"Kho","quest":"Nhiệm vụ","beasts":"Vĩ Thú","settings":"Cài đặt"}
 	for item in navigation.get_children():
 		if item is Button:
-			item.self_modulate=Color("#f8d493") if item.text==section.get(id,"") else Color.WHITE
+			var active=item.text==section.get(id,"")
+			item.self_modulate=Color.WHITE
+			item.add_theme_stylebox_override("normal",combat_panel(Color("#544735") if active else Color("#243530"),Color("#c6a16a") if active else Color("#4e6256"),6))
+			item.add_theme_color_override("font_color",Color("#ffe4ac") if active else Color("#e4e9df"))
 	clear()
 	update_resources()
 
@@ -2124,9 +2154,9 @@ func home_screen(message: String="") -> void:
 	var mapped=village_map.apply(self)
 	var footer=HBoxContainer.new()
 	root.add_child(footer)
-	var hint=label(footer,"Trên: điều hành & huấn luyện  •  Giữa: sản xuất  •  Dưới: ngoại giao & chiến đấu",14)
+	var hint=label(footer,"Chọn công trình trên bản đồ để xây dựng, phân công hoặc sản xuất",14)
 	hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	var map_status=label(footer,("30 công trình • Bản đồ R12" if art.texture("environment/village_ground_p3.png")!=null else "30 công trình • Review R11") if mapped else "30 công trình • Giao diện chuẩn",14)
+	var map_status=label(footer,("30 công trình • Bản đồ 6 khu" if art.texture("environment/village_ground_p3.png")!=null else "30 công trình • Review R11") if mapped else "30 công trình • Giao diện chuẩn",14)
 	map_status.modulate=Color("#ebc77e") if mapped else Color("#a5b4b6")
 
 func quality_color(q: int) -> Color:
