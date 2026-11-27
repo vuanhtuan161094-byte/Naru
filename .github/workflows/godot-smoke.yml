@@ -22,6 +22,15 @@ jobs:
           timeout 60 "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/smoke.log
           grep NARU_REGISTRY_OK /tmp/smoke.log
           ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/smoke.log
+      - name: Character power formulas and combat effects
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 120 "$G" --headless --path . --script res://game/power_system_test.gd 2>&1 | tee /tmp/power-system.log
+          grep NARU_POWER_SYSTEM_PASS /tmp/power-system.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|POWER_SYSTEM_FAIL' /tmp/power-system.log
+      - name: Validate generated power Wiki source ledger
+        run: python3 tools/build_power_wiki.py --check
       - name: R11 village adapter callback and missing-pack fallback fixture
         run: |
           set -o pipefail
@@ -146,6 +155,11 @@ jobs:
           Private review art is NOT bundled. For local play, put the private JSON review pack beside index.html as naru-art.json; loopback auto-loads it. Manual import also works. Do not publish the private pack.
           EOF
           (cd dist && sha256sum index.* > SHA256SUMS.txt)
+      - name: Generate offline power Wiki into Web artifact
+        run: |
+          python3 tools/build_power_wiki.py --output dist/power-wiki
+          test -s dist/power-wiki/index.html
+          test -s dist/power-wiki/data.json
       - name: Install Chromium browser QA
         run: |
           npm install --no-save playwright
@@ -216,6 +230,7 @@ jobs:
           name: NARU-One-Game-V2-P7-QA
           path: |
             /tmp/import.log
+            /tmp/power-system.log
             /tmp/final-v12.log
             /tmp/r11-map.log
             /tmp/p2-art-coverage.log

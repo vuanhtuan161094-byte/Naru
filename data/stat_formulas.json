@@ -4,42 +4,102 @@
     "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
     "storage": "unbounded",
     "unit": "points",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "none; base stat",
+    "sources": [
+      "character_profile",
+      "allocation",
+      "training",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Base profile + level growth + allocation + training + permanent bonuses + gear.",
+    "tooltip_vi": "Thể chất là chỉ số nền, tăng theo hồ sơ cá nhân và các nguồn đầu tư hợp lệ."
   },
   {
     "stat_id": "strength",
     "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
     "storage": "unbounded",
     "unit": "points",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "none; base stat",
+    "sources": [
+      "character_profile",
+      "allocation",
+      "training",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Base profile + level growth + allocation + training + permanent bonuses + gear.",
+    "tooltip_vi": "Sức mạnh là chỉ số nền, tăng theo hồ sơ cá nhân và các nguồn đầu tư hợp lệ."
   },
   {
     "stat_id": "spirit",
     "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
     "storage": "unbounded",
     "unit": "points",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "none; base stat",
+    "sources": [
+      "character_profile",
+      "allocation",
+      "training",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Base profile + level growth + allocation + training + permanent bonuses + gear.",
+    "tooltip_vi": "Tinh thần là chỉ số nền, tăng theo hồ sơ cá nhân và các nguồn đầu tư hợp lệ."
   },
   {
     "stat_id": "agility",
     "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
     "storage": "unbounded",
     "unit": "points",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "none; base stat",
+    "sources": [
+      "character_profile",
+      "allocation",
+      "training",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Base profile + level growth + allocation + training + permanent bonuses + gear.",
+    "tooltip_vi": "Nhanh nhẹn là chỉ số nền, tăng theo hồ sơ cá nhân và các nguồn đầu tư hợp lệ."
   },
   {
     "stat_id": "intellect",
     "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
     "storage": "unbounded",
     "unit": "points",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "none; base stat",
+    "sources": [
+      "character_profile",
+      "allocation",
+      "training",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Base profile + level growth + allocation + training + permanent bonuses + gear.",
+    "tooltip_vi": "Trí tuệ là chỉ số nền, tăng theo hồ sơ cá nhân và các nguồn đầu tư hợp lệ."
   },
   {
     "stat_id": "potential",
     "formula": "base + growth_per_level*(level-1)*quality_multiplier + allocated + training + permanent + gear_flat",
     "storage": "unbounded",
     "unit": "points",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "none; base stat",
+    "sources": [
+      "character_profile",
+      "allocation",
+      "training",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Base profile + level growth + allocation + training + permanent bonuses + gear.",
+    "tooltip_vi": "Tiềm năng là chỉ số nền, tăng theo hồ sơ cá nhân và các nguồn đầu tư hợp lệ."
   },
   {
     "stat_id": "hp",
@@ -53,7 +113,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "incoming damage",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "HP được tính theo hợp đồng runtime. Đối kháng: incoming damage."
   },
   {
     "stat_id": "armor",
@@ -68,7 +138,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "armor_pen",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "giáp vật lý được tính theo hợp đồng runtime. Đối kháng: armor_pen."
   },
   {
     "stat_id": "nres",
@@ -83,7 +163,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "magic_pen",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "kháng nhẫn thuật được tính theo hợp đồng runtime. Đối kháng: magic_pen."
   },
   {
     "stat_id": "hp_regen",
@@ -98,7 +188,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "antiheal",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "hồi HP được tính theo hợp đồng runtime. Đối kháng: antiheal."
   },
   {
     "stat_id": "damage_reduction",
@@ -113,7 +213,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.65,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "damage_reduction_pen",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "giảm sát thương được tính theo hợp đồng runtime. Đối kháng: damage_reduction_pen."
   },
   {
     "stat_id": "crit_resist",
@@ -128,7 +238,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.75,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "pcrit and ncrit",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "kháng bạo kích được tính theo hợp đồng runtime. Đối kháng: pcrit and ncrit."
   },
   {
     "stat_id": "patk",
@@ -142,7 +262,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "armor and evasion",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "công vật lý được tính theo hợp đồng runtime. Đối kháng: armor and evasion."
   },
   {
     "stat_id": "armor_pen",
@@ -157,7 +287,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "armor",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "xuyên giáp được tính theo hợp đồng runtime. Đối kháng: armor."
   },
   {
     "stat_id": "attack_speed",
@@ -172,7 +312,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 1,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "action pacing cap",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "tốc đánh được tính theo hợp đồng runtime. Đối kháng: action pacing cap."
   },
   {
     "stat_id": "accuracy",
@@ -187,7 +337,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "evasion",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "chính xác được tính theo hợp đồng runtime. Đối kháng: evasion."
   },
   {
     "stat_id": "evasion",
@@ -201,7 +361,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "accuracy",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "né tránh được tính theo hợp đồng runtime. Đối kháng: accuracy."
   },
   {
     "stat_id": "counter",
@@ -216,7 +386,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.6,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "attack contact and hard-control status",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "phản kích được tính theo hợp đồng runtime. Đối kháng: attack contact and hard-control status."
   },
   {
     "stat_id": "natk",
@@ -230,7 +410,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "nres and genjutsu_resist",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "công nhẫn thuật được tính theo hợp đồng runtime. Đối kháng: nres and genjutsu_resist."
   },
   {
     "stat_id": "magic_pen",
@@ -245,7 +435,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "nres",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "xuyên kháng được tính theo hợp đồng runtime. Đối kháng: nres."
   },
   {
     "stat_id": "ncrit",
@@ -260,7 +460,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.75,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "crit_resist",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "bạo kích nhẫn thuật được tính theo hợp đồng runtime. Đối kháng: crit_resist."
   },
   {
     "stat_id": "element_power",
@@ -275,7 +485,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 1,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "element-specific resistance",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "uy lực nguyên tố được tính theo hợp đồng runtime. Đối kháng: element-specific resistance."
   },
   {
     "stat_id": "area",
@@ -290,7 +510,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 1,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "target geometry and authored cap",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "phạm vi được tính theo hợp đồng runtime. Đối kháng: target geometry and authored cap."
   },
   {
     "stat_id": "cast_speed",
@@ -305,7 +535,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 1,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "minimum cast duration",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "tốc thi triển được tính theo hợp đồng runtime. Đối kháng: minimum cast duration."
   },
   {
     "stat_id": "genjutsu_power",
@@ -320,7 +560,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "genjutsu_resist",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "uy lực ảo thuật được tính theo hợp đồng runtime. Đối kháng: genjutsu_resist."
   },
   {
     "stat_id": "control_chance",
@@ -335,7 +585,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.75,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "control_resist and status-specific resistance",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "xác suất khống chế được tính theo hợp đồng runtime. Đối kháng: control_resist and status-specific resistance."
   },
   {
     "stat_id": "control_duration",
@@ -350,7 +610,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.8,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "control_resist and status-specific resistance",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "thời gian khống chế được tính theo hợp đồng runtime. Đối kháng: control_resist and status-specific resistance."
   },
   {
     "stat_id": "control_resist",
@@ -365,7 +635,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.7,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "control_chance and control_duration",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "kháng khống chế được tính theo hợp đồng runtime. Đối kháng: control_chance and control_duration."
   },
   {
     "stat_id": "genjutsu_resist",
@@ -380,7 +660,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "genjutsu_power",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "kháng ảo thuật được tính theo hợp đồng runtime. Đối kháng: genjutsu_power."
   },
   {
     "stat_id": "cleanse",
@@ -395,7 +685,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.75,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "dispellable status count",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "giải hiệu ứng được tính theo hợp đồng runtime. Đối kháng: dispellable status count."
   },
   {
     "stat_id": "chakra_max",
@@ -409,7 +709,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "chakra costs",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "chakra tối đa được tính theo hợp đồng runtime. Đối kháng: chakra costs."
   },
   {
     "stat_id": "chakra_regen",
@@ -423,7 +733,17 @@
     "conversion": "none",
     "effect_cap_or_max_bonus": null,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "chakra_lock and chakra drain",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Direct values add from their documented sources. No percentage conversion is applied.",
+    "tooltip_vi": "hồi chakra được tính theo hợp đồng runtime. Đối kháng: chakra_lock and chakra drain."
   },
   {
     "stat_id": "chakra_efficiency",
@@ -438,7 +758,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.5,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "chakra costs",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "tiết kiệm chakra được tính theo hợp đồng runtime. Đối kháng: chakra costs."
   },
   {
     "stat_id": "chakra_drain",
@@ -453,7 +783,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.35,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "chakra_drain_resist",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "hấp thụ chakra được tính theo hợp đồng runtime. Đối kháng: chakra_drain_resist."
   },
   {
     "stat_id": "chakra_drain_resist",
@@ -467,7 +807,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.7,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "chakra_drain",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "kháng mất chakra được tính theo hợp đồng runtime. Đối kháng: chakra_drain."
   },
   {
     "stat_id": "chakra_conversion",
@@ -482,7 +832,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.7,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "bounded chakra transfer",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "hiệu suất chuyển hóa được tính theo hợp đồng runtime. Đối kháng: bounded chakra transfer."
   },
   {
     "stat_id": "move_speed",
@@ -496,7 +856,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 1,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "terrain and body collision",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "tốc di chuyển được tính theo hợp đồng runtime. Đối kháng: terrain and body collision."
   },
   {
     "stat_id": "pcrit",
@@ -511,7 +881,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.75,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "crit_resist",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "bạo kích vật lý được tính theo hợp đồng runtime. Đối kháng: crit_resist."
   },
   {
     "stat_id": "crit_damage",
@@ -526,7 +906,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 2,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "damage_reduction",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "sát thương bạo kích được tính theo hợp đồng runtime. Đối kháng: damage_reduction."
   },
   {
     "stat_id": "lifesteal",
@@ -541,7 +931,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.35,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "antiheal and actual HP damage",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "hút máu được tính theo hợp đồng runtime. Đối kháng: antiheal and actual HP damage."
   },
   {
     "stat_id": "healing",
@@ -556,7 +956,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 1,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "antiheal",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "hiệu quả trị liệu được tính theo hợp đồng runtime. Đối kháng: antiheal."
   },
   {
     "stat_id": "cdr",
@@ -571,7 +981,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 0.5,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "minimum cooldown",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "giảm hồi chiêu được tính theo hợp đồng runtime. Đối kháng: minimum cooldown."
   },
   {
     "stat_id": "insight",
@@ -586,7 +1006,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 2,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "training quotes",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "ngộ tính được tính theo hợp đồng runtime. Đối kháng: training quotes."
   },
   {
     "stat_id": "training_speed",
@@ -601,7 +1031,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 2,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "training duration",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "tốc tu luyện được tính theo hợp đồng runtime. Đối kháng: training duration."
   },
   {
     "stat_id": "comprehension",
@@ -616,7 +1056,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 2,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "skill learning costs",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "lĩnh ngộ được tính theo hợp đồng runtime. Đối kháng: skill learning costs."
   },
   {
     "stat_id": "xp_efficiency",
@@ -631,7 +1081,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 2,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "earned XP rules",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "hiệu suất kinh nghiệm được tính theo hợp đồng runtime. Đối kháng: earned XP rules."
   },
   {
     "stat_id": "mastery_speed",
@@ -646,7 +1106,17 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 2,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "skill mastery events",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "tốc thành thạo được tính theo hợp đồng runtime. Đối kháng: skill mastery events."
   },
   {
     "stat_id": "absorption",
@@ -661,6 +1131,731 @@
     "conversion": "bonus_or_chance=cap*rating/(rating+100); apply according to stat semantics",
     "effect_cap_or_max_bonus": 2,
     "storage": "unbounded",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "opposition": "authored resource conversion",
+    "sources": [
+      "base_stats",
+      "per_level",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "hấp thụ tài nguyên được tính theo hợp đồng runtime. Đối kháng: authored resource conversion."
+  },
+  {
+    "stat_id": "seal_power",
+    "base": 0,
+    "weights": {
+      "spirit": 0.3,
+      "intellect": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.75*rating/(100+rating), then apply against seal_resist",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "opposition": "seal_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng cường độ phong ấn chakra và mức giảm hồi chakra.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "seal_chance",
+    "base": 0,
+    "weights": {
+      "intellect": 0.35,
+      "spirit": 0.2
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.75*rating/(100+rating), then apply against seal_resist",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "opposition": "seal_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng xác suất áp dụng hiệu ứng phong ấn.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "seal_duration",
+    "base": 0,
+    "weights": {
+      "spirit": 0.25,
+      "potential": 0.15
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.6*rating/(100+rating), then apply against seal_resist",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "opposition": "seal_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng thời lượng phong ấn sau khi áp dụng kháng.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "seal_resist",
+    "base": 0,
+    "weights": {
+      "spirit": 0.25,
+      "vitality": 0.1
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against seal_power, seal_chance, seal_duration",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "seal_power, seal_chance, seal_duration",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất và thời lượng phong ấn chakra.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "stun_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.16,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.6*rating/(100+rating), then apply against control_chance, control_duration",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "opposition": "control_chance, control_duration",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất và thời lượng choáng.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "bind_resist",
+    "base": 0,
+    "weights": {
+      "agility": 0.12,
+      "vitality": 0.1
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.55*rating/(100+rating), then apply against control_chance, control_duration",
+    "effect_cap_or_max_bonus": 0.55,
+    "storage": "unbounded",
+    "opposition": "control_chance, control_duration",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất và thời lượng trói.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "silence_resist",
+    "base": 0,
+    "weights": {
+      "spirit": 0.14,
+      "intellect": 0.05
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.6*rating/(100+rating), then apply against control_chance, control_duration",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "opposition": "control_chance, control_duration",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất và thời lượng câm lặng.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "poison_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.16,
+      "spirit": 0.04
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against control_chance",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "control_chance",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất dính độc và hiệu quả độc.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "burn_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.12,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against control_chance",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "control_chance",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất dính thiêu đốt và hiệu quả thiêu đốt.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "freeze_resist",
+    "base": 0,
+    "weights": {
+      "spirit": 0.1,
+      "vitality": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.6*rating/(100+rating), then apply against control_chance, control_duration",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "opposition": "control_chance, control_duration",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất và thời lượng đóng băng.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "block_chance",
+    "base": 0,
+    "weights": {
+      "vitality": 0.1,
+      "agility": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.35*rating/(100+rating), then apply against block_pen",
+    "effect_cap_or_max_bonus": 0.35,
+    "storage": "unbounded",
+    "opposition": "block_pen",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Xác suất giảm sát thương trực tiếp bằng đỡ đòn.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "block_efficiency",
+    "base": 0,
+    "weights": {
+      "vitality": 0.15,
+      "strength": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.5*rating/(100+rating), then apply against block_pen",
+    "effect_cap_or_max_bonus": 0.5,
+    "storage": "unbounded",
+    "opposition": "block_pen",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tỷ lệ sát thương bị giảm khi đỡ đòn thành công.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "block_pen",
+    "base": 0,
+    "weights": {
+      "strength": 0.15,
+      "agility": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.6*rating/(100+rating), then apply against block_chance, block_efficiency",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "opposition": "block_chance, block_efficiency",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm xác suất và hiệu quả đỡ đòn của mục tiêu.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "damage_reduction_pen",
+    "base": 0,
+    "weights": {
+      "strength": 0.1,
+      "intellect": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against damage_reduction",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "damage_reduction",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm phần giảm sát thương hiệu dụng của mục tiêu.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "fire_power",
+    "base": 0,
+    "weights": {},
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against fire_resist",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "fire_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng sát thương kỹ năng Hỏa; Hỏa độn tự nhiên đóng góp vào chỉ số này.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "fire_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.08,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against fire_power",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "fire_power",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm sát thương kỹ năng Hỏa.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "water_power",
+    "base": 0,
+    "weights": {},
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against water_resist",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "water_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng sát thương kỹ năng Thủy; Thủy độn tự nhiên đóng góp vào chỉ số này.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "water_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.08,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against water_power",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "water_power",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm sát thương kỹ năng Thủy.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "wind_power",
+    "base": 0,
+    "weights": {},
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against wind_resist",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "wind_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng sát thương kỹ năng Phong; Phong độn tự nhiên đóng góp vào chỉ số này.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "wind_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.08,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against wind_power",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "wind_power",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm sát thương kỹ năng Phong.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "lightning_power",
+    "base": 0,
+    "weights": {},
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against lightning_resist",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "lightning_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng sát thương kỹ năng Lôi; Lôi độn tự nhiên đóng góp vào chỉ số này.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "lightning_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.08,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against lightning_power",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "lightning_power",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm sát thương kỹ năng Lôi.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "earth_power",
+    "base": 0,
+    "weights": {},
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against earth_resist",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "earth_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng sát thương kỹ năng Thổ; Thổ độn tự nhiên đóng góp vào chỉ số này.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "earth_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.08,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against earth_power",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "earth_power",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix",
+      "chakra_elements"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm sát thương kỹ năng Thổ.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "dot_power",
+    "base": 0,
+    "weights": {
+      "intellect": 0.12,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.6*rating/(100+rating), then apply against dot_resist",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "opposition": "dot_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng ngân sách sát thương của độc, thiêu đốt và hiệu ứng duy trì.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "dot_resist",
+    "base": 0,
+    "weights": {
+      "vitality": 0.14,
+      "spirit": 0.08
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against dot_power",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "dot_power",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm ngân sách sát thương độc, thiêu đốt và hiệu ứng duy trì.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "chakra_lock_pen",
+    "base": 0,
+    "weights": {
+      "spirit": 0.12,
+      "intellect": 0.1
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.6*rating/(100+rating), then apply against seal_resist, chakra_drain_resist",
+    "effect_cap_or_max_bonus": 0.6,
+    "storage": "unbounded",
+    "opposition": "seal_resist",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Giảm kháng phong ấn chakra của mục tiêu.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "shield_power",
+    "base": 0,
+    "weights": {
+      "vitality": 0.1,
+      "spirit": 0.12
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.75*rating/(100+rating), then apply against shield_break",
+    "effect_cap_or_max_bonus": 0.75,
+    "storage": "unbounded",
+    "opposition": "shield_break",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng lượng khiên tạo ra.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "shield_break",
+    "base": 0,
+    "weights": {
+      "strength": 0.15,
+      "intellect": 0.05
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against shield_power",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "shield_power",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Làm khiên mất thêm điểm bền, chuyển phần sát thương tương ứng sang HP.",
+    "status": "DEV_SIMULATED"
+  },
+  {
+    "stat_id": "healing_received",
+    "base": 0,
+    "weights": {
+      "vitality": 0.1,
+      "spirit": 0.15
+    },
+    "per_level": 0,
+    "formula": "max(0, base + sum(weights*base_stats) + specialization + gear_flat + permanent)",
+    "unit": "rating",
+    "conversion": "0.65*rating/(100+rating), then apply against antiheal",
+    "effect_cap_or_max_bonus": 0.65,
+    "storage": "unbounded",
+    "opposition": "antiheal",
+    "sources": [
+      "base_stats",
+      "specialization",
+      "permanent",
+      "gear_affix"
+    ],
+    "stacking": "Add rating sources before one diminishing-returns conversion with K=100.",
+    "tooltip_vi": "Tăng hồi máu nhận được và hồi phục tự nhiên, trước khi áp dụng trọng thương.",
+    "status": "DEV_SIMULATED"
   }
 ]

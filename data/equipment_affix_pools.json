@@ -6,7 +6,20 @@
     "ncrit",
     "armor_pen",
     "magic_pen",
-    "crit_damage"
+    "crit_damage",
+    "seal_power",
+    "seal_chance",
+    "seal_duration",
+    "block_pen",
+    "damage_reduction_pen",
+    "fire_power",
+    "water_power",
+    "wind_power",
+    "lightning_power",
+    "earth_power",
+    "dot_power",
+    "chakra_lock_pen",
+    "shield_break"
   ],
   "defense": [
     "hp",
@@ -15,7 +28,23 @@
     "damage_reduction",
     "crit_resist",
     "control_resist",
-    "hp_regen"
+    "hp_regen",
+    "seal_resist",
+    "stun_resist",
+    "bind_resist",
+    "silence_resist",
+    "poison_resist",
+    "burn_resist",
+    "freeze_resist",
+    "block_chance",
+    "block_efficiency",
+    "fire_resist",
+    "water_resist",
+    "wind_resist",
+    "lightning_resist",
+    "earth_resist",
+    "dot_resist",
+    "healing_received"
   ],
   "utility": [
     "chakra_max",
@@ -25,6 +54,7 @@
     "move_speed",
     "healing",
     "cdr",
-    "mastery_speed"
+    "mastery_speed",
+    "shield_power"
   ]
 }

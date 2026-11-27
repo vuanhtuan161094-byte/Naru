@@ -1,5 +1,6 @@
 extends RefCounted
 const P2Adapter=preload("res://game/skill_p2_adapter.gd")
+const ELEMENT_LABELS=["boil","bone","dust","earth","explosion","fire","gravity","ice","lava","lightning","magnet","neutral","poison","sage","space","storm","water","wind","wood","yang","yin"]
 var ninjas: Dictionary = {}
 var skills: Dictionary = {}
 var names: Dictionary = {}
@@ -28,6 +29,7 @@ var routes: Array = []
 var relation_defs: Array = []
 var supply: Array = []
 var stat_rules: Dictionary = {}
+var stat_catalog: Dictionary = {}
 var trials: Dictionary = {}
 var forms: Dictionary = {}
 var form_rules: Dictionary = {}
@@ -143,17 +145,26 @@ func load_all() -> bool:
 	var supplies=read_json("res://data/d4/direct_supply.json")
 	if supplies is Array:supply=supplies
 	if buildings.size()!=30 or recipes.size()!=63 or resources.size()!=150 or professions.size()!=15 or territories.size()!=60:errors.append("Missing village content")
+	stat_catalog=indexed("res://data/stats.json")
 	stat_rules=indexed("res://data/stat_formulas.json","stat_id")
 	trials=indexed("res://data/personal_trials.json")
 	forms=indexed("res://data/ninja_forms.json")
 	form_rules=indexed("res://data/d4/form_contracts.json","form_id")
-	if stat_rules.size()!=48 or trials.size()!=288 or form_rules.size()!=54: errors.append("Missing growth definitions")
+	if stat_rules.size()!=78 or stat_catalog.size()!=78 or trials.size()!=288 or form_rules.size()!=54: errors.append("Missing growth definitions")
+	for id in stat_catalog:
+		if not stat_rules.has(id):errors.append("Missing stat formula "+id)
+	for id in stat_rules:
+		if not stat_catalog.has(id):errors.append("Missing stat definition "+id)
 	status_catalog=indexed("res://data/d4/status_catalog.json")
 	var reaction_data=read_json("res://data/d4/reactions.json")
 	if reaction_data is Array: reactions=reaction_data
 	var affinity_data=read_json("res://data/d4/element_affinity.json")
 	if affinity_data is Array:
 		for item in affinity_data: affinity[str(item.attack)+":"+str(item.defense)]=float(item.multiplier)
+	if affinity.size()!=ELEMENT_LABELS.size()*ELEMENT_LABELS.size():errors.append("Incomplete elemental affinity matrix")
+	for attack_element in ELEMENT_LABELS:
+		for defense_element in ELEMENT_LABELS:
+			if not affinity.has(attack_element+":"+defense_element):errors.append("Missing elemental affinity "+attack_element+":"+defense_element)
 	if status_catalog.size()!=25 or reactions.size()!=7: errors.append("Missing combat rules")
 	gear_templates=indexed("res://data/equipment_templates.json")
 	skill_policies=indexed("res://data/skill_progression_policies.json","skill_id")

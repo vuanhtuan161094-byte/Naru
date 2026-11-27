@@ -6,7 +6,8 @@
     "unit": "points",
     "unbounded_storage": true,
     "allocation": "direct",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Thể chất được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "strength",
@@ -15,7 +16,8 @@
     "unit": "points",
     "unbounded_storage": true,
     "allocation": "direct",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Sức mạnh được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "spirit",
@@ -24,7 +26,8 @@
     "unit": "points",
     "unbounded_storage": true,
     "allocation": "direct",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tinh thần được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "agility",
@@ -33,7 +36,8 @@
     "unit": "points",
     "unbounded_storage": true,
     "allocation": "direct",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Nhanh nhẹn được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "intellect",
@@ -42,7 +46,8 @@
     "unit": "points",
     "unbounded_storage": true,
     "allocation": "direct",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Trí tuệ được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "potential",
@@ -51,7 +56,8 @@
     "unit": "points",
     "unbounded_storage": true,
     "allocation": "direct",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tiềm năng được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "hp",
@@ -60,7 +66,8 @@
     "unit": "flat",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hp được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "armor",
@@ -69,7 +76,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Giáp vật lý được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "nres",
@@ -78,7 +86,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Kháng nhẫn thuật được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "hp_regen",
@@ -87,7 +96,8 @@
     "unit": "per_second",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hồi hp được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "damage_reduction",
@@ -96,7 +106,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Giảm sát thương được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "crit_resist",
@@ -105,7 +116,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Kháng bạo kích được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "patk",
@@ -114,7 +126,8 @@
     "unit": "flat",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Công vật lý được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "armor_pen",
@@ -123,7 +136,8 @@
     "unit": "flat",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Xuyên giáp được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "attack_speed",
@@ -132,7 +146,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tốc đánh được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "accuracy",
@@ -141,7 +156,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Chính xác được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "evasion",
@@ -150,7 +166,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Né tránh được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "counter",
@@ -159,7 +176,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Phản kích được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "natk",
@@ -168,7 +186,8 @@
     "unit": "flat",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Công nhẫn thuật được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "magic_pen",
@@ -177,7 +196,8 @@
     "unit": "flat",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Xuyên kháng được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "ncrit",
@@ -186,7 +206,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Bạo kích nhẫn thuật được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "element_power",
@@ -195,7 +216,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Uy lực nguyên tố được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "area",
@@ -204,7 +226,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Phạm vi được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "cast_speed",
@@ -213,7 +236,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tốc thi triển được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "genjutsu_power",
@@ -222,7 +246,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Uy lực ảo thuật được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "control_chance",
@@ -231,7 +256,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Xác suất khống chế được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "control_duration",
@@ -240,7 +266,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Thời gian khống chế được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "control_resist",
@@ -249,7 +276,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Kháng khống chế được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "genjutsu_resist",
@@ -258,7 +286,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Kháng ảo thuật được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "cleanse",
@@ -267,7 +296,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Giải hiệu ứng được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "chakra_max",
@@ -276,7 +306,8 @@
     "unit": "flat",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Chakra tối đa được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "chakra_regen",
@@ -285,7 +316,8 @@
     "unit": "per_second",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hồi chakra được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "chakra_efficiency",
@@ -294,7 +326,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tiết kiệm chakra được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "chakra_drain",
@@ -303,7 +336,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hấp thụ chakra được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "chakra_drain_resist",
@@ -312,7 +346,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Kháng mất chakra được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "chakra_conversion",
@@ -321,7 +356,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hiệu suất chuyển hóa được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "move_speed",
@@ -330,7 +366,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tốc di chuyển được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "pcrit",
@@ -339,7 +376,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Bạo kích vật lý được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "crit_damage",
@@ -348,7 +386,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Sát thương bạo kích được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "lifesteal",
@@ -357,7 +396,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hút máu được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "healing",
@@ -366,7 +406,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hiệu quả trị liệu được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "cdr",
@@ -375,7 +416,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Giảm hồi chiêu được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "insight",
@@ -384,7 +426,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Ngộ tính được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "training_speed",
@@ -393,7 +436,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tốc tu luyện được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "comprehension",
@@ -402,7 +446,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Lĩnh ngộ được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "xp_efficiency",
@@ -411,7 +456,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hiệu suất kinh nghiệm được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "mastery_speed",
@@ -420,7 +466,8 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Tốc thành thạo được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
   },
   {
     "id": "absorption",
@@ -429,6 +476,307 @@
     "unit": "rating",
     "unbounded_storage": true,
     "allocation": "specialization",
-    "status": "PROPOSED"
+    "status": "PROPOSED",
+    "tooltip_vi": "Hấp thụ tài nguyên được tính từ công thức runtime và các nguồn tăng trưởng hợp lệ."
+  },
+  {
+    "id": "seal_power",
+    "name_vi": "uy lực phong ấn",
+    "group": "sealing",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng cường độ phong ấn chakra và mức giảm hồi chakra."
+  },
+  {
+    "id": "seal_chance",
+    "name_vi": "tỷ lệ phong ấn",
+    "group": "sealing",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng xác suất áp dụng hiệu ứng phong ấn."
+  },
+  {
+    "id": "seal_duration",
+    "name_vi": "thời gian phong ấn",
+    "group": "sealing",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng thời lượng phong ấn sau khi áp dụng kháng."
+  },
+  {
+    "id": "seal_resist",
+    "name_vi": "kháng phong ấn",
+    "group": "sealing",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất và thời lượng phong ấn chakra."
+  },
+  {
+    "id": "stun_resist",
+    "name_vi": "kháng choáng",
+    "group": "status_resist",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất và thời lượng choáng."
+  },
+  {
+    "id": "bind_resist",
+    "name_vi": "kháng trói",
+    "group": "status_resist",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất và thời lượng trói."
+  },
+  {
+    "id": "silence_resist",
+    "name_vi": "kháng câm lặng",
+    "group": "status_resist",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất và thời lượng câm lặng."
+  },
+  {
+    "id": "poison_resist",
+    "name_vi": "kháng độc",
+    "group": "status_resist",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất dính độc và hiệu quả độc."
+  },
+  {
+    "id": "burn_resist",
+    "name_vi": "kháng thiêu đốt",
+    "group": "status_resist",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất dính thiêu đốt và hiệu quả thiêu đốt."
+  },
+  {
+    "id": "freeze_resist",
+    "name_vi": "kháng đóng băng",
+    "group": "status_resist",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất và thời lượng đóng băng."
+  },
+  {
+    "id": "block_chance",
+    "name_vi": "xác suất đỡ đòn",
+    "group": "defense_advanced",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Xác suất giảm sát thương trực tiếp bằng đỡ đòn."
+  },
+  {
+    "id": "block_efficiency",
+    "name_vi": "hiệu quả đỡ đòn",
+    "group": "defense_advanced",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tỷ lệ sát thương bị giảm khi đỡ đòn thành công."
+  },
+  {
+    "id": "block_pen",
+    "name_vi": "phá đỡ đòn",
+    "group": "defense_advanced",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm xác suất và hiệu quả đỡ đòn của mục tiêu."
+  },
+  {
+    "id": "damage_reduction_pen",
+    "name_vi": "xuyên giảm sát thương",
+    "group": "defense_advanced",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm phần giảm sát thương hiệu dụng của mục tiêu."
+  },
+  {
+    "id": "fire_power",
+    "name_vi": "công Hỏa",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng sát thương kỹ năng Hỏa; Hỏa độn tự nhiên đóng góp vào chỉ số này."
+  },
+  {
+    "id": "fire_resist",
+    "name_vi": "kháng Hỏa",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm sát thương kỹ năng Hỏa."
+  },
+  {
+    "id": "water_power",
+    "name_vi": "công Thủy",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng sát thương kỹ năng Thủy; Thủy độn tự nhiên đóng góp vào chỉ số này."
+  },
+  {
+    "id": "water_resist",
+    "name_vi": "kháng Thủy",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm sát thương kỹ năng Thủy."
+  },
+  {
+    "id": "wind_power",
+    "name_vi": "công Phong",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng sát thương kỹ năng Phong; Phong độn tự nhiên đóng góp vào chỉ số này."
+  },
+  {
+    "id": "wind_resist",
+    "name_vi": "kháng Phong",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm sát thương kỹ năng Phong."
+  },
+  {
+    "id": "lightning_power",
+    "name_vi": "công Lôi",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng sát thương kỹ năng Lôi; Lôi độn tự nhiên đóng góp vào chỉ số này."
+  },
+  {
+    "id": "lightning_resist",
+    "name_vi": "kháng Lôi",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm sát thương kỹ năng Lôi."
+  },
+  {
+    "id": "earth_power",
+    "name_vi": "công Thổ",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng sát thương kỹ năng Thổ; Thổ độn tự nhiên đóng góp vào chỉ số này."
+  },
+  {
+    "id": "earth_resist",
+    "name_vi": "kháng Thổ",
+    "group": "elemental",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm sát thương kỹ năng Thổ."
+  },
+  {
+    "id": "dot_power",
+    "name_vi": "uy lực sát thương duy trì",
+    "group": "damage_over_time",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng ngân sách sát thương của độc, thiêu đốt và hiệu ứng duy trì."
+  },
+  {
+    "id": "dot_resist",
+    "name_vi": "kháng sát thương duy trì",
+    "group": "damage_over_time",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm ngân sách sát thương độc, thiêu đốt và hiệu ứng duy trì."
+  },
+  {
+    "id": "chakra_lock_pen",
+    "name_vi": "xuyên kháng phong tỏa chakra",
+    "group": "chakra",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Giảm kháng phong ấn chakra của mục tiêu."
+  },
+  {
+    "id": "shield_power",
+    "name_vi": "hiệu quả tạo khiên",
+    "group": "shield_and_healing",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng lượng khiên tạo ra."
+  },
+  {
+    "id": "shield_break",
+    "name_vi": "phá khiên",
+    "group": "shield_and_healing",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Làm khiên mất thêm điểm bền, chuyển phần sát thương tương ứng sang HP."
+  },
+  {
+    "id": "healing_received",
+    "name_vi": "hiệu quả hồi máu nhận vào",
+    "group": "shield_and_healing",
+    "unit": "rating",
+    "unbounded_storage": true,
+    "allocation": "specialization",
+    "status": "DEV_SIMULATED",
+    "tooltip_vi": "Tăng hồi máu nhận được và hồi phục tự nhiên, trước khi áp dụng trọng thương."
   }
 ]

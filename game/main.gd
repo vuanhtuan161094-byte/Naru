@@ -2,6 +2,7 @@ extends Control
 const Registry=preload("res://game/data_registry.gd")
 const SaveStore=preload("res://game/save_store.gd")
 const Combat=preload("res://game/combat.gd")
+const CombatStats=preload("res://game/combat_stat_snapshot.gd")
 var reg=Registry.new()
 var store=SaveStore.new()
 var sim
@@ -386,8 +387,17 @@ func growth_detail(id: String,message: String="") -> void:
 		b.disabled=int(p.points)<1
 		var bulk=button(grid,"%s +10" % stats[key],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key,10) else "Thiếu điểm"))
 		bulk.disabled=int(p.points)<10
-	var all_stats=store.player_preview(reg,id)
-	label(rows,"48 CHỈ SỐ • snapshot V11 trước biến thân / hiệu ứng trận",20)
+	var progress=store.state.owned[id]
+	var natural=bool(store.state.get("settings",{}).get("depth_v5_dev",true))
+	var stat_snapshot=CombatStats.player(reg,reg.ninjas[id],progress,store.state.gear_instances,store.state.get("beasts",{}),natural)
+	var all_stats=stat_snapshot.stats
+	var breakdown_n=reg.ninjas[id].duplicate(true)
+	if natural:
+		var star_multiplier=1.0+0.04*(int(progress.get("stars",1))-1)
+		for key in breakdown_n.base_stats:
+			breakdown_n.base_stats[key]=float(breakdown_n.base_stats[key])*star_multiplier
+			breakdown_n.level_growth[key]=float(breakdown_n.level_growth[key])*star_multiplier
+	label(rows,"78 CHỈ SỐ • snapshot ngoài trận trước biến thân / hiệu ứng trận",20)
 	label(rows,"XP còn thiếu tới trần cảnh: "+str(store.xp_to_cap(id)),16)
 	button(rows,"Nguồn ấn đột phá",func():resource_detail("RES-128"))
 	var stat_grid=GridContainer.new()
@@ -396,8 +406,12 @@ func growth_detail(id: String,message: String="") -> void:
 	for key in all_stats:
 		var name_value=stat_title(key)
 		var val=float(all_stats[key])
-		var l=label(stat_grid,"%s: %.1f" % [name_value,val],16)
+		var l=label(stat_grid,"%s: %s" % [name_value,Stats.display_value(reg,key,val)],16)
 		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var tooltip_sources=Stats.breakdown(reg,breakdown_n,progress,stat_snapshot.gear,key)
+		if natural and int(progress.get("stars",1))>1:tooltip_sources.modifiers.append("Sao tự nhiên đã áp dụng cho nền/tăng trưởng: ×%.2f" % stat_snapshot.natural_star_multiplier)
+		if not natural and key in ["hp","patk","natk"]:tooltip_sources.modifiers.append("Sao trong trận: ×%.2f" % stat_snapshot.natural_star_multiplier)
+		l.tooltip_text=Stats.tooltip(reg,key,val,tooltip_sources)
 
 func next_story_stage() -> String:
 	for number in range(1,121):
@@ -1620,6 +1634,7 @@ func quality_color(q: int) -> Color:
 	return [Color("#c9d1d2"),Color("#99d7ae"),Color("#9fc9ef"),Color("#d0afea"),Color("#efc479"),Color("#eaa495"),Color("#f2dc8e"),Color("#ffdbb5")][clampi(q,1,8)-1]
 
 func stat_title(key: String) -> String:
+	if reg.stat_catalog.has(key):return str(reg.stat_catalog[key].name_vi).capitalize()
 	var titles={"vitality":"Thể chất","strength":"Sức mạnh","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng","hp":"Sinh lực","armor":"Giáp","nres":"Kháng nhẫn","hp_regen":"Hồi máu","damage_reduction":"Giảm sát thương","crit_resist":"Kháng chí mạng","patk":"Công thể","armor_pen":"Xuyên giáp","attack_speed":"Tốc đánh","accuracy":"Chính xác","evasion":"Né tránh","counter":"Phản kích","natk":"Công nhẫn","magic_pen":"Xuyên kháng","ncrit":"Chí mạng nhẫn","element_power":"Công nguyên tố","area":"Phạm vi","cast_speed":"Tốc niệm","genjutsu_power":"Công ảo","control_chance":"Khống chế","control_duration":"Thời gian CC","control_resist":"Kháng CC","genjutsu_resist":"Kháng ảo","cleanse":"Giải hiệu ứng","chakra_max":"Chakra tối đa","chakra_regen":"Hồi chakra","chakra_efficiency":"Tiết kiệm chakra","chakra_drain":"Hút chakra","chakra_drain_resist":"Kháng hút","chakra_conversion":"Chuyển chakra","move_speed":"Tốc chạy","pcrit":"Chí mạng thể","crit_damage":"Sát thương chí mạng","lifesteal":"Hút máu","healing":"Trị liệu","cdr":"Giảm hồi chiêu","insight":"Lĩnh ngộ","training_speed":"Tốc tu luyện","comprehension":"Thông hiểu","xp_efficiency":"Hiệu suất EXP","mastery_speed":"Thành thạo","absorption":"Hấp thu"}
 	return str(titles.get(key,key))
 
