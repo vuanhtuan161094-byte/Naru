@@ -67,6 +67,10 @@ func check_mode(panorama: bool) -> bool:
 		g.root.free()
 		return false
 	var expected="P3VillageMap" if panorama else "R11VillageMap"
+	if panorama:
+		var map=g.root.get_node_or_null(expected)
+		if map==null or map.get_node_or_null("BLD-001")==null or not is_equal_approx(map.get_node("BLD-001").anchor_left,0.4):
+			push_error("R11_MAP_FAIL civic layout");g.root.free();return false
 	if not g.root.has_node(expected):
 		push_error("R11_MAP_FAIL wrong view "+expected)
 		g.root.free()

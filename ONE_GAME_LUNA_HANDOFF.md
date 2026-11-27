@@ -8,3 +8,5 @@
 3. Luna's manifest explicitly leaves 144 individual profiles incomplete (24 baseline signatures), individual 78 effect certification incomplete, 1146 adapted skills review incomplete / six fallbacks, 186 passive source gates and default OFF, 34 branch adapter holds plus two era holds, and form/combo per-ID acceptance incomplete. CI green is not full gameplay acceptance. Do not activate unverified passives or overwrite the public branch.
 4. Exact-SHA CI, Web/browser actual navigation and 6v6, earned-only 90d, old-save reload with world fields and 160 gear templates, actual stat and combat outputs. No merge now.
 5. Art: four protected ninja unchanged. Sasuke V3 approved source 14 clips/84 cels, runtime overlay separately validated; Naruto HOLD. VFX HOLD. Do not change combat formulas for presentation.
+
+Follow-up: d47db784 native Sasuke capture PASS (758 draws in trace); preserve exact NIN-002 overlay and map/presentation changes. Luna HEAD unchanged 457e727d; no new feature commits seen at review. Remaining identity/passive/skill balance gates are unchanged.

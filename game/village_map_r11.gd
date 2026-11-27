@@ -8,6 +8,9 @@ const DISTRICTS=[
  ["Sản xuất",["BLD-016","BLD-017","BLD-018","BLD-019","BLD-020"]],
  ["Chiến đấu & giao thương",["BLD-021","BLD-024","BLD-025","BLD-026","BLD-027"]]
 ]
+# Physical slot order: top civic/training, middle economy, bottom defense/expeditions.
+# Preserves each original BLD callback; no simulation coordinates are changed.
+const PANORAMA_ORDER=[2,3,4,5,1,6,7,8,9,28,11,12,13,14,15,16,17,18,19,20,30,23,22,21,29,10,24,25,26,27]
 const SHORT=["Tổng bộ","Học viện","Thể thuật","Nhẫn thuật","Ảo thuật","Chakra","Thư viện","Huyết kế","Thức tỉnh","Triệu hồi","Dân cư","Nông trại","Dược liệu","Mỏ","Bãi gỗ","Suối","Xưởng rèn","Xưởng dược","Phong ấn","Kho","Thương hội","Nhiệm vụ","Tình báo","Đấu trường","Thử luyện","Thông linh","Vĩ Thú","Nghiên cứu","Đại sứ","Tháp canh"]
 var game
 var buttons:Dictionary={}
@@ -70,45 +73,56 @@ func apply_panorama(at: int) -> bool:
  bg.mouse_filter=Control.MOUSE_FILTER_IGNORE
  bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  map.add_child(bg)
- for i in range(30):
+ for slot in range(PANORAMA_ORDER.size()):
+  var i=int(PANORAMA_ORDER[slot])-1
   var id="BLD-%03d"%(i+1)
-  var col=i%10
-  var row=int(i/10)
-  var cell=VBoxContainer.new()
+  var col=slot%10
+  var row=int(slot/10)
+  var cell=Control.new()
+  cell.name=id
   cell.mouse_filter=Control.MOUSE_FILTER_IGNORE
-  cell.add_theme_constant_override("separation",2)
   map.add_child(cell)
   cell.anchor_left=float(col)/10.0
   cell.anchor_right=float(col+1)/10.0
   cell.anchor_top=float(row)/3.0
   cell.anchor_bottom=float(row+1)/3.0
-  cell.offset_left=6
-  cell.offset_right=-6
-  cell.offset_top=3
-  cell.offset_bottom=-3
+  cell.offset_left=4
+  cell.offset_right=-4
   var b:Button=buttons[id]
   var original=b.text
+  var detail=original.get_slice("\n",1)
+  var locked=detail.begins_with("Chưa xây")
+  var upgrading=detail.begins_with("Xây:")
   var marker=TextureButton.new()
   marker.texture_normal=game.art.texture("environment/buildings/"+id+".png")
   marker.ignore_texture_size=true
   marker.stretch_mode=TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-  marker.size_flags_vertical=Control.SIZE_EXPAND_FILL
-  marker.custom_minimum_size=Vector2(0,44)
   marker.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
+  marker.anchor_left=0.04
+  marker.anchor_right=0.96
+  marker.anchor_top=0.02
+  marker.anchor_bottom=0.73
   marker.tooltip_text=original
   marker.disabled=b.disabled
+  marker.self_modulate=Color(0.66,0.73,0.74,0.78) if locked else Color.WHITE
+  marker.mouse_entered.connect(func():marker.self_modulate=Color(1.15,1.10,0.93,1.0))
+  marker.mouse_exited.connect(func():marker.self_modulate=Color(0.66,0.73,0.74,0.78) if locked else Color.WHITE)
   marker.pressed.connect(forward.bind(id))
   cell.add_child(marker)
   markers[id]=marker
-  b.text=SHORT[i]+"\n"+original.get_slice("\n",1)
+  b.text=SHORT[i]+"\n"+detail
   b.tooltip_text=original
   b.custom_minimum_size=Vector2(0,30)
-  b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-  b.size_flags_vertical=Control.SIZE_SHRINK_END
   b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-  b.add_theme_font_size_override("font_size",11)
-  b.add_theme_stylebox_override("normal",style(Color(0.09,0.12,0.15,0.83),Color("#786b51"),3))
+  b.add_theme_font_size_override("font_size",12)
+  var border=Color("#dfb875") if upgrading or id=="BLD-001" else Color("#52656b") if locked else Color("#99a77a")
+  b.add_theme_stylebox_override("normal",style(Color(0.08,0.12,0.14,0.94),border,4))
   b.add_theme_stylebox_override("hover",style(Color("#35505a"),Color("#e8bf75"),5))
   b.add_theme_stylebox_override("pressed",style(Color("#395764"),Color("#e8bf75"),5))
+  b.add_theme_color_override("font_color",Color("#adbfc0") if locked else Color("#f5d7a1") if upgrading or id=="BLD-001" else Color("#eff0dd"))
+  b.anchor_left=0.01
+  b.anchor_right=0.99
+  b.anchor_top=0.74
+  b.anchor_bottom=0.99
   cell.add_child(b)
  return markers.size()==30

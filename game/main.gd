@@ -85,6 +85,9 @@ var expedition_query=""
 var wiki_category=0
 var wiki_query=""
 var wiki_page=0
+var building_worker_page=0
+var building_worker_filter=""
+var building_worker_id=""
 var wiki_stats:Dictionary={}
 
 func _ready() -> void:
@@ -115,16 +118,18 @@ func _ready() -> void:
 	add_child(shell)
 	header=HBoxContainer.new()
 	shell.add_child(header)
-	var brand=label(header,"NARU",30)
+	var brand=label(header,"NARUTO",28)
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"NARU • V3",15)
+	label(header,"NHẪN GIỚI  /  DEV",14)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
 		var nav_button=button(navigation,item[0],item[1])
 		nav_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		nav_button.custom_minimum_size=Vector2(72,38)
+		nav_button.add_theme_font_size_override("font_size",15)
 	root=VBoxContainer.new()
 	root.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	root.add_theme_constant_override("separation",8)
@@ -1191,6 +1196,10 @@ func building_actions(rows:Control,id:String) -> void:
 		"BLD-029":button(rows,"Ngoại giao",diplomacy_screen)
 
 func building_screen(id: String,message: String="") -> void:
+	if building_worker_id!=id:
+		building_worker_id=id
+		building_worker_page=0
+		building_worker_filter=""
 	open_screen("building")
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	var b=store.state.building_states[id]
@@ -1233,25 +1242,9 @@ func building_screen(id: String,message: String="") -> void:
 			desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 			button(line,"Bỏ lệnh",func():building_screen(id,"Đã bỏ" if store.remove_waiting_recipe(id,index) else "Lỗi"))
 		label(rows,"Lệnh sau chỉ chạy khi xưởng rảnh. Nếu đang tự lặp, dừng lệnh hiện tại để xử lý hàng đợi.",15)
-	label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi)+" • Nhân lực "+str(Village.workers(store.state,id).size())+"/"+str(1+floori(float(int(b.level)-1)/10.0)),16)
-	label(rows,"Nhân lực (không ảnh hưởng đội chiến đấu)",20)
-	for ninja in store.state.owned:
-		var job=store.state.jobs.get(ninja,{})
-		var row=HBoxContainer.new()
-		rows.add_child(row)
-		label(row,str(reg.ninjas[ninja].name_vi),16)
-		var options=OptionButton.new()
-		for profession in reg.professions:
-			options.add_item(str(reg.professions[profession].name_vi))
-			options.set_item_metadata(options.item_count-1,profession)
-			if profession==job.get("profession",Village.specialty(id)):options.select(options.item_count-1)
-		row.add_child(options)
-		button(row,"Phân công",func():building_screen(id,"Đã phân công" if store.assign_job(reg,ninja,id,str(options.get_selected_metadata())) else "Hết chỗ"))
-		if job.get("building","")==id:
-			button(row,"Thiên phú nghề",func():profession_screen(ninja,id))
-			button(row,"Rút",func():building_screen(id,"Đã rút" if store.assign_job(reg,ninja,"","") else "Lỗi"))
+	label(rows,"SẢN XUẤT & CÔNG THỨC",20)
 	if not b.production.is_empty():
-		label(rows,"Đang sản xuất %s • còn %ds • %s" % [b.production.recipe,int(b.production.remaining),"Tự lặp" if b.production.repeat else str(b.production.get("batches_left",1))+" mẻ"],18)
+		label(rows,"Đang sản xuất %s • còn %ds • %s" % [reg.resources[reg.recipes[b.production.recipe].output.resource_id].name_vi,int(b.production.remaining),"Tự lặp" if b.production.repeat else str(b.production.get("batches_left",1))+" mẻ"],18)
 		if Village.target_reached(store.state,b.production,reg.recipes[b.production.recipe]) and b.production.reserved.is_empty():label(rows,"Đủ tồn kho mục tiêu • sẽ tự tiếp tục khi thiếu",16)
 		elif b.production.reserved.is_empty():label(rows,"Đang chờ nguyên liệu",16)
 		elif int(b.production.remaining)==0:label(rows,"Đang chờ chỗ trống trong kho",16)
@@ -1282,6 +1275,47 @@ func building_screen(id: String,message: String="") -> void:
 			var reserve_button=button(row,"Duy trì "+str(target),func():building_screen(id,"Đã đặt tồn kho mục tiêu" if store.production(reg,id,recipe_id,true,1,target) else "Chưa đủ điều kiện"))
 			reserve_button.disabled=not q.setup_ready
 			reserve_button.tooltip_text="Tự sản xuất đến mục tiêu, tự dừng khi đủ; không tự mua. "+str(q["yield"])+" / "+str(q.seconds)+"s"
+
+	label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi)+" • Nhân lực "+str(Village.workers(store.state,id).size())+"/"+str(1+floori(float(int(b.level)-1)/10.0)),16)
+	label(rows,"Nhân lực (không ảnh hưởng đội chiến đấu)",20)
+	var controls=HBoxContainer.new()
+	rows.add_child(controls)
+	var search=LineEdit.new()
+	search.placeholder_text="Tìm ninja theo tên"
+	search.text=building_worker_filter
+	search.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	controls.add_child(search)
+	button(controls,"Tìm",func():building_worker_filter=search.text;building_worker_page=0;building_screen(id))
+	var candidates=[]
+	for ninja in Village.workers(store.state,id):
+		if building_worker_filter.is_empty() or str(reg.ninjas[ninja].name_vi).to_lower().contains(building_worker_filter.to_lower()):candidates.append(ninja)
+	for ninja in store.state.owned:
+		if candidates.has(ninja):continue
+		if not building_worker_filter.is_empty() and not str(reg.ninjas[ninja].name_vi).to_lower().contains(building_worker_filter.to_lower()):continue
+		candidates.append(ninja)
+	var last_page=maxi(0,ceili(float(candidates.size())/12.0)-1)
+	building_worker_page=clampi(building_worker_page,0,last_page)
+	var previous=button(controls,"Trước",func():building_worker_page-=1;building_screen(id))
+	previous.disabled=building_worker_page==0
+	label(controls,"%d/%d" % [building_worker_page+1,last_page+1],16)
+	var next=button(controls,"Sau",func():building_worker_page+=1;building_screen(id))
+	next.disabled=building_worker_page>=last_page
+	for ninja in candidates.slice(building_worker_page*12,(building_worker_page+1)*12):
+		var job=store.state.jobs.get(ninja,{})
+		var row=HBoxContainer.new()
+		rows.add_child(row)
+		var worker_name=label(row,str(reg.ninjas[ninja].name_vi)+(" • "+str(reg.buildings[job.building].name_vi) if reg.buildings.has(job.get("building","")) else " • Rảnh"),16)
+		worker_name.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var options=OptionButton.new()
+		for profession in reg.professions:
+			options.add_item(str(reg.professions[profession].name_vi))
+			options.set_item_metadata(options.item_count-1,profession)
+			if profession==job.get("profession",Village.specialty(id)):options.select(options.item_count-1)
+		row.add_child(options)
+		button(row,"Phân công",func():building_screen(id,"Đã phân công" if store.assign_job(reg,ninja,id,str(options.get_selected_metadata())) else "Hết chỗ"))
+		if job.get("building","")==id:
+			button(row,"Thiên phú nghề",func():profession_screen(ninja,id))
+			button(row,"Rút",func():building_screen(id,"Đã rút" if store.assign_job(reg,ninja,"","") else "Lỗi"))
 
 func world_screen(message: String="") -> void:
 	open_screen("world")
@@ -2034,7 +2068,14 @@ func scroll_rows(parent: Node) -> VBoxContainer:
 
 func home_screen(message: String="") -> void:
 	open_screen("home")
-	label(root,"LÀNG LÁ  /  Tổng bộ cấp "+str(Village.level(store.state,"BLD-001")),26)
+	var title_row=HBoxContainer.new()
+	root.add_child(title_row)
+	var village_title=label(title_row,"LÀNG LÁ  /  Tổng bộ cấp "+str(Village.level(store.state,"BLD-001")),25)
+	village_title.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	var built=0
+	for state_row in store.state.building_states.values():
+		if int(state_row.level)>0:built+=1
+	label(title_row,"Đã xây "+str(built)+"/30  •  Vàng: nâng cấp  •  Mờ: chưa xây",14)
 	var row=HBoxContainer.new()
 	root.add_child(row)
 	label(row,"Ninja %d/144 • Ải %d/120 • %s" % [store.state.owned.size(),store.state.cleared.size(),message],17)
@@ -2048,7 +2089,7 @@ func home_screen(message: String="") -> void:
 	root.add_child(guidance)
 	var next_id=next_story_stage()
 	var prompt_text="Bắt đầu phân công sản xuất để có nguyên liệu" if store.state.jobs.is_empty() else "Cốt truyện tiếp theo: "+next_id if not next_id.is_empty() else "Đã vượt toàn bộ cốt truyện • phát triển nhẫn giới"
-	var guide=label(guidance,prompt_text,16)
+	var guide=label(guidance,prompt_text,15)
 	guide.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	if not next_id.is_empty():
 		var next_stage=reg.stages[next_id]
@@ -2076,7 +2117,7 @@ func home_screen(message: String="") -> void:
 	var mapped=village_map.apply(self)
 	var footer=HBoxContainer.new()
 	root.add_child(footer)
-	var hint=label(footer,"Bắt đầu: phân công khai thác → Nhiệm vụ Ryo → nâng Tổng bộ → Cốt truyện.",15)
+	var hint=label(footer,"Trên: điều hành & huấn luyện  •  Giữa: sản xuất  •  Dưới: ngoại giao & chiến đấu",14)
 	hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	var map_status=label(footer,("30 công trình • Bản đồ R12" if art.texture("environment/village_ground_p3.png")!=null else "30 công trình • Review R11") if mapped else "30 công trình • Giao diện chuẩn",14)
 	map_status.modulate=Color("#ebc77e") if mapped else Color("#a5b4b6")

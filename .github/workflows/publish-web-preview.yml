@@ -7,6 +7,7 @@ on:
       - 'assets/public/**'
       - 'game/main.gd'
       - 'game/review_art.gd'
+      - 'game/village_map_r11.gd'
       - 'game/battle_camera.gd'
       - 'game/village_map_r11.gd'
       - 'assets/production/r12/**'
