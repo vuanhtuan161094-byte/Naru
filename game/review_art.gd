@@ -6,6 +6,21 @@ const MAX_BYTES=16000000
 const R12_IRUKA=preload("res://assets/production/r12/iruka.svg")
 # Static-first production: only fills missing identities; existing art and clips win.
 const STATIC_ROSTER=preload("res://assets/production/r14/static_roster.svg")
+const VILLAGE_BUILDINGS=preload("res://assets/production/r15/buildings.svg")
+const VILLAGE_GROUND=preload("res://assets/production/r15/village_ground.svg")
+var village_building_cache:Dictionary={}
+func village_building_texture(id:String) -> Texture2D:
+	if not id.begins_with("BLD-") or id.length()!=7 or not id.right(3).is_valid_int():return null
+	var n=int(id.right(3))
+	if n<1 or n>30:return null
+	if not village_building_cache.has(id):
+		var cell=AtlasTexture.new()
+		cell.atlas=VILLAGE_BUILDINGS
+		cell.region=Rect2(((n-1)%10)*160,floori(float(n-1)/10.0)*180,160,180)
+		cell.filter_clip=true
+		village_building_cache[id]=cell
+	return village_building_cache[id]
+
 const STATIC_EXISTING=[1,2,3,4,5,16,41,42,43,60,68,70,93]
 var static_roster_cache:Dictionary={}
 var static_roster_draws=0
@@ -215,6 +230,10 @@ func restore() -> void:
 
 func texture(path: String) -> Texture2D:
 	if not enabled:return null
+	if path=="environment/village_ground_r15.png":return VILLAGE_GROUND
+	if path.begins_with("environment/buildings/"):
+		var candidate=village_building_texture(path.get_file().get_basename())
+		if candidate!=null:return candidate
 	if textures.has(path):return textures[path]
 	if path in ["characters/NIN-005.png","portraits/NIN-005.png"]:return R12_IRUKA
 	if path.begins_with("characters/") or path.begins_with("portraits/"):
