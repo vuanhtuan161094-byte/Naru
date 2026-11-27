@@ -885,7 +885,7 @@ func draw_field() -> void:
 			var progress=clampf(1-float(projectile.remaining)/total,0,1)
 			var at=Vector2(projectile.get("pos",source.pos.lerp(target.pos,progress)))
 			var point=iso(at)-Vector2(0,24)
-			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,70):
+			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,70) and not art.external_sheet(field,art.external_travel_family(str(projectile.skill.skill_id)),point,progress,62):
 				field.draw_circle(point,5,Color("#ffcf84"))
 	if bool(store.state.get("settings",{}).get("cutin",true)):art.effects(field,sim,iso)
 	if battle_details:field.draw_string(ThemeDB.fallback_font,Vector2(12,19),art.source_label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("#c7d5d5"))

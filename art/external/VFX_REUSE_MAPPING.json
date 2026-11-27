@@ -1,0 +1,885 @@
+{
+  "families": 146,
+  "mapped_families": 96,
+  "skills": 1152,
+  "mapped_skills": 911,
+  "scope": "candidate fallback mapping only, not all skills exercised",
+  "mapping": [
+    {
+      "family": "kunai",
+      "skill_count": 73,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "melee",
+      "skill_count": 60,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "sword",
+      "skill_count": 60,
+      "impact": "sword",
+      "mapped": true
+    },
+    {
+      "family": "mind",
+      "skill_count": 34,
+      "impact": "curse",
+      "mapped": true
+    },
+    {
+      "family": "wind",
+      "skill_count": 33,
+      "impact": "wind",
+      "mapped": true
+    },
+    {
+      "family": "water",
+      "skill_count": 32,
+      "impact": "water",
+      "mapped": true
+    },
+    {
+      "family": "chakra",
+      "skill_count": 31,
+      "impact": "chakra",
+      "mapped": true
+    },
+    {
+      "family": "palm",
+      "skill_count": 28,
+      "impact": "palm",
+      "mapped": true
+    },
+    {
+      "family": "fire",
+      "skill_count": 27,
+      "impact": "fire_impact",
+      "mapped": true
+    },
+    {
+      "family": "shadow",
+      "skill_count": 27,
+      "impact": "shadow",
+      "mapped": true
+    },
+    {
+      "family": "puppet",
+      "skill_count": 26,
+      "impact": "puppet",
+      "mapped": false
+    },
+    {
+      "family": "eye",
+      "skill_count": 24,
+      "impact": "mark",
+      "mapped": true
+    },
+    {
+      "family": "sound",
+      "skill_count": 22,
+      "impact": "sound",
+      "mapped": false
+    },
+    {
+      "family": "earth",
+      "skill_count": 21,
+      "impact": "earth",
+      "mapped": true
+    },
+    {
+      "family": "beast",
+      "skill_count": 20,
+      "impact": "beast",
+      "mapped": false
+    },
+    {
+      "family": "lightning",
+      "skill_count": 19,
+      "impact": "lightning",
+      "mapped": true
+    },
+    {
+      "family": "sense",
+      "skill_count": 19,
+      "impact": "sense",
+      "mapped": false
+    },
+    {
+      "family": "heal",
+      "skill_count": 18,
+      "impact": "heal",
+      "mapped": true
+    },
+    {
+      "family": "insect",
+      "skill_count": 17,
+      "impact": "insect",
+      "mapped": true
+    },
+    {
+      "family": "weapon",
+      "skill_count": 16,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "giant",
+      "skill_count": 15,
+      "impact": "giant",
+      "mapped": false
+    },
+    {
+      "family": "kick",
+      "skill_count": 15,
+      "impact": "kick",
+      "mapped": true
+    },
+    {
+      "family": "snake",
+      "skill_count": 15,
+      "impact": "snake",
+      "mapped": true
+    },
+    {
+      "family": "wood",
+      "skill_count": 15,
+      "impact": "wood",
+      "mapped": true
+    },
+    {
+      "family": "gravity",
+      "skill_count": 15,
+      "impact": "gravity",
+      "mapped": true
+    },
+    {
+      "family": "poison",
+      "skill_count": 14,
+      "impact": "poison",
+      "mapped": true
+    },
+    {
+      "family": "tech",
+      "skill_count": 14,
+      "impact": "tech",
+      "mapped": false
+    },
+    {
+      "family": "sand",
+      "skill_count": 13,
+      "impact": "sand",
+      "mapped": true
+    },
+    {
+      "family": "clone",
+      "skill_count": 12,
+      "impact": "smoke",
+      "mapped": true
+    },
+    {
+      "family": "rasengan",
+      "skill_count": 12,
+      "impact": "chakra",
+      "mapped": true
+    },
+    {
+      "family": "team",
+      "skill_count": 12,
+      "impact": "cleanse",
+      "mapped": true
+    },
+    {
+      "family": "ink",
+      "skill_count": 12,
+      "impact": "smoke",
+      "mapped": true
+    },
+    {
+      "family": "space",
+      "skill_count": 12,
+      "impact": "space",
+      "mapped": true
+    },
+    {
+      "family": "bone",
+      "skill_count": 10,
+      "impact": "earth",
+      "mapped": true
+    },
+    {
+      "family": "iron",
+      "skill_count": 10,
+      "impact": "earth",
+      "mapped": true
+    },
+    {
+      "family": "lava",
+      "skill_count": 10,
+      "impact": "lava",
+      "mapped": true
+    },
+    {
+      "family": "sage",
+      "skill_count": 9,
+      "impact": "sage",
+      "mapped": false
+    },
+    {
+      "family": "needle",
+      "skill_count": 9,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "steam",
+      "skill_count": 9,
+      "impact": "steam",
+      "mapped": true
+    },
+    {
+      "family": "karma",
+      "skill_count": 9,
+      "impact": "karma",
+      "mapped": false
+    },
+    {
+      "family": "wire",
+      "skill_count": 8,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "curse",
+      "skill_count": 8,
+      "impact": "curse",
+      "mapped": true
+    },
+    {
+      "family": "roll",
+      "skill_count": 8,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "mark",
+      "skill_count": 8,
+      "impact": "mark",
+      "mapped": true
+    },
+    {
+      "family": "cleanse",
+      "skill_count": 7,
+      "impact": "cleanse",
+      "mapped": true
+    },
+    {
+      "family": "air",
+      "skill_count": 7,
+      "impact": "wind",
+      "mapped": true
+    },
+    {
+      "family": "parasite",
+      "skill_count": 7,
+      "impact": "parasite",
+      "mapped": false
+    },
+    {
+      "family": "clay",
+      "skill_count": 7,
+      "impact": "explosion",
+      "mapped": true
+    },
+    {
+      "family": "paper",
+      "skill_count": 7,
+      "impact": "wind_impact",
+      "mapped": true
+    },
+    {
+      "family": "chain",
+      "skill_count": 7,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "susanoo",
+      "skill_count": 6,
+      "impact": "susanoo",
+      "mapped": false
+    },
+    {
+      "family": "shield",
+      "skill_count": 6,
+      "impact": "shield",
+      "mapped": true
+    },
+    {
+      "family": "fang",
+      "skill_count": 6,
+      "impact": "fang",
+      "mapped": false
+    },
+    {
+      "family": "gate",
+      "skill_count": 6,
+      "impact": "haste",
+      "mapped": true
+    },
+    {
+      "family": "ice",
+      "skill_count": 6,
+      "impact": "ice",
+      "mapped": true
+    },
+    {
+      "family": "stealth",
+      "skill_count": 6,
+      "impact": "stealth",
+      "mapped": false
+    },
+    {
+      "family": "butterfly",
+      "skill_count": 5,
+      "impact": "butterfly",
+      "mapped": false
+    },
+    {
+      "family": "smash",
+      "skill_count": 5,
+      "impact": "ground_smash",
+      "mapped": true
+    },
+    {
+      "family": "twin",
+      "skill_count": 5,
+      "impact": "twin",
+      "mapped": false
+    },
+    {
+      "family": "scythe",
+      "skill_count": 5,
+      "impact": "scythe",
+      "mapped": true
+    },
+    {
+      "family": "nue",
+      "skill_count": 5,
+      "impact": "nue",
+      "mapped": false
+    },
+    {
+      "family": "reflect",
+      "skill_count": 5,
+      "impact": "shield",
+      "mapped": true
+    },
+    {
+      "family": "lotus",
+      "skill_count": 4,
+      "impact": "kick",
+      "mapped": true
+    },
+    {
+      "family": "toad",
+      "skill_count": 4,
+      "impact": "summon",
+      "mapped": true
+    },
+    {
+      "family": "byakugo",
+      "skill_count": 4,
+      "impact": "heal",
+      "mapped": true
+    },
+    {
+      "family": "spore",
+      "skill_count": 4,
+      "impact": "spore",
+      "mapped": true
+    },
+    {
+      "family": "seal",
+      "skill_count": 4,
+      "impact": "seal",
+      "mapped": true
+    },
+    {
+      "family": "cube",
+      "skill_count": 4,
+      "impact": "cube",
+      "mapped": false
+    },
+    {
+      "family": "beam",
+      "skill_count": 4,
+      "impact": "beam",
+      "mapped": true
+    },
+    {
+      "family": "beguile",
+      "skill_count": 4,
+      "impact": "curse",
+      "mapped": true
+    },
+    {
+      "family": "clone_combo",
+      "skill_count": 3,
+      "impact": "clone_combo",
+      "mapped": false
+    },
+    {
+      "family": "rasengan_big",
+      "skill_count": 3,
+      "impact": "chakra",
+      "mapped": true
+    },
+    {
+      "family": "rasenshuriken",
+      "skill_count": 3,
+      "impact": "wind_impact",
+      "mapped": true
+    },
+    {
+      "family": "raijin",
+      "skill_count": 3,
+      "impact": "space",
+      "mapped": true
+    },
+    {
+      "family": "dog",
+      "skill_count": 3,
+      "impact": "summon",
+      "mapped": true
+    },
+    {
+      "family": "web",
+      "skill_count": 3,
+      "impact": "web",
+      "mapped": false
+    },
+    {
+      "family": "arrow",
+      "skill_count": 3,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "thread",
+      "skill_count": 3,
+      "impact": "hit",
+      "mapped": true
+    },
+    {
+      "family": "blacklight",
+      "skill_count": 3,
+      "impact": "shadow",
+      "mapped": true
+    },
+    {
+      "family": "golem",
+      "skill_count": 3,
+      "impact": "golem",
+      "mapped": false
+    },
+    {
+      "family": "rock",
+      "skill_count": 3,
+      "impact": "rock",
+      "mapped": true
+    },
+    {
+      "family": "bubble",
+      "skill_count": 3,
+      "impact": "bubble",
+      "mapped": false
+    },
+    {
+      "family": "arm",
+      "skill_count": 3,
+      "impact": "arm",
+      "mapped": false
+    },
+    {
+      "family": "shrink",
+      "skill_count": 3,
+      "impact": "shrink",
+      "mapped": false
+    },
+    {
+      "family": "ocular",
+      "skill_count": 2,
+      "impact": "mark",
+      "mapped": true
+    },
+    {
+      "family": "lightning_lance",
+      "skill_count": 2,
+      "impact": "lightning",
+      "mapped": true
+    },
+    {
+      "family": "chakra_cloak",
+      "skill_count": 2,
+      "impact": "chakra",
+      "mapped": true
+    },
+    {
+      "family": "black_flame",
+      "skill_count": 2,
+      "impact": "black_flame",
+      "mapped": true
+    },
+    {
+      "family": "scent",
+      "skill_count": 2,
+      "impact": "scent",
+      "mapped": false
+    },
+    {
+      "family": "ash",
+      "skill_count": 2,
+      "impact": "smoke",
+      "mapped": true
+    },
+    {
+      "family": "monkey",
+      "skill_count": 2,
+      "impact": "monkey",
+      "mapped": false
+    },
+    {
+      "family": "element",
+      "skill_count": 2,
+      "impact": "element",
+      "mapped": false
+    },
+    {
+      "family": "oil",
+      "skill_count": 2,
+      "impact": "oil",
+      "mapped": false
+    },
+    {
+      "family": "slug",
+      "skill_count": 2,
+      "impact": "summon",
+      "mapped": true
+    },
+    {
+      "family": "scalpel",
+      "skill_count": 2,
+      "impact": "scalpel",
+      "mapped": false
+    },
+    {
+      "family": "mist",
+      "skill_count": 2,
+      "impact": "steam",
+      "mapped": true
+    },
+    {
+      "family": "demon",
+      "skill_count": 2,
+      "impact": "demon",
+      "mapped": false
+    },
+    {
+      "family": "weasel",
+      "skill_count": 2,
+      "impact": "weasel",
+      "mapped": false
+    },
+    {
+      "family": "shark",
+      "skill_count": 2,
+      "impact": "shark",
+      "mapped": false
+    },
+    {
+      "family": "blood",
+      "skill_count": 2,
+      "impact": "blood",
+      "mapped": false
+    },
+    {
+      "family": "mask",
+      "skill_count": 2,
+      "impact": "mask",
+      "mapped": false
+    },
+    {
+      "family": "summon",
+      "skill_count": 2,
+      "impact": "summon",
+      "mapped": true
+    },
+    {
+      "family": "laser",
+      "skill_count": 2,
+      "impact": "beam",
+      "mapped": true
+    },
+    {
+      "family": "dust",
+      "skill_count": 2,
+      "impact": "sand",
+      "mapped": true
+    },
+    {
+      "family": "lime",
+      "skill_count": 2,
+      "impact": "lime",
+      "mapped": false
+    },
+    {
+      "family": "salamander",
+      "skill_count": 2,
+      "impact": "salamander",
+      "mapped": false
+    },
+    {
+      "family": "tapir",
+      "skill_count": 2,
+      "impact": "tapir",
+      "mapped": false
+    },
+    {
+      "family": "moon",
+      "skill_count": 2,
+      "impact": "moon",
+      "mapped": false
+    },
+    {
+      "family": "wing",
+      "skill_count": 2,
+      "impact": "wing",
+      "mapped": false
+    },
+    {
+      "family": "mucus",
+      "skill_count": 2,
+      "impact": "mucus",
+      "mapped": false
+    },
+    {
+      "family": "body",
+      "skill_count": 2,
+      "impact": "body",
+      "mapped": false
+    },
+    {
+      "family": "earth_wall",
+      "skill_count": 1,
+      "impact": "earth",
+      "mapped": true
+    },
+    {
+      "family": "ninken",
+      "skill_count": 1,
+      "impact": "summon",
+      "mapped": true
+    },
+    {
+      "family": "water_dragon",
+      "skill_count": 1,
+      "impact": "water_wave",
+      "mapped": true
+    },
+    {
+      "family": "lightning_dash",
+      "skill_count": 1,
+      "impact": "lightning",
+      "mapped": true
+    },
+    {
+      "family": "kamui",
+      "skill_count": 1,
+      "impact": "space",
+      "mapped": true
+    },
+    {
+      "family": "lightning_aura",
+      "skill_count": 1,
+      "impact": "lightning_aura",
+      "mapped": true
+    },
+    {
+      "family": "fire_dragon",
+      "skill_count": 1,
+      "impact": "fire_impact",
+      "mapped": true
+    },
+    {
+      "family": "lightning_needle",
+      "skill_count": 1,
+      "impact": "lightning",
+      "mapped": true
+    },
+    {
+      "family": "kirin",
+      "skill_count": 1,
+      "impact": "lightning_strike",
+      "mapped": true
+    },
+    {
+      "family": "ground_smash",
+      "skill_count": 1,
+      "impact": "ground_smash",
+      "mapped": true
+    },
+    {
+      "family": "melee_combo",
+      "skill_count": 1,
+      "impact": "melee_combo",
+      "mapped": true
+    },
+    {
+      "family": "byakugou",
+      "skill_count": 1,
+      "impact": "heal",
+      "mapped": true
+    },
+    {
+      "family": "katsuyu",
+      "skill_count": 1,
+      "impact": "summon",
+      "mapped": true
+    },
+    {
+      "family": "fireball",
+      "skill_count": 1,
+      "impact": "fire_impact",
+      "mapped": true
+    },
+    {
+      "family": "genjutsu",
+      "skill_count": 1,
+      "impact": "curse",
+      "mapped": true
+    },
+    {
+      "family": "susanoo_shield",
+      "skill_count": 1,
+      "impact": "shield",
+      "mapped": true
+    },
+    {
+      "family": "susanoo_sword",
+      "skill_count": 1,
+      "impact": "sword",
+      "mapped": true
+    },
+    {
+      "family": "raijin_mark",
+      "skill_count": 1,
+      "impact": "mark",
+      "mapped": true
+    },
+    {
+      "family": "space_barrier",
+      "skill_count": 1,
+      "impact": "barrier",
+      "mapped": true
+    },
+    {
+      "family": "bijuu_bomb",
+      "skill_count": 1,
+      "impact": "explosion",
+      "mapped": true
+    },
+    {
+      "family": "disguise",
+      "skill_count": 1,
+      "impact": "disguise",
+      "mapped": false
+    },
+    {
+      "family": "peacock",
+      "skill_count": 1,
+      "impact": "peacock",
+      "mapped": false
+    },
+    {
+      "family": "tiger",
+      "skill_count": 1,
+      "impact": "tiger",
+      "mapped": false
+    },
+    {
+      "family": "elephant",
+      "skill_count": 1,
+      "impact": "elephant",
+      "mapped": false
+    },
+    {
+      "family": "white",
+      "skill_count": 1,
+      "impact": "white",
+      "mapped": false
+    },
+    {
+      "family": "spider",
+      "skill_count": 1,
+      "impact": "spider",
+      "mapped": false
+    },
+    {
+      "family": "missile",
+      "skill_count": 1,
+      "impact": "missile",
+      "mapped": false
+    },
+    {
+      "family": "meteor",
+      "skill_count": 1,
+      "impact": "meteor",
+      "mapped": true
+    },
+    {
+      "family": "orb",
+      "skill_count": 1,
+      "impact": "chakra",
+      "mapped": true
+    },
+    {
+      "family": "yin",
+      "skill_count": 1,
+      "impact": "yin",
+      "mapped": false
+    },
+    {
+      "family": "acid",
+      "skill_count": 1,
+      "impact": "acid",
+      "mapped": true
+    },
+    {
+      "family": "club",
+      "skill_count": 1,
+      "impact": "club",
+      "mapped": false
+    },
+    {
+      "family": "trap",
+      "skill_count": 1,
+      "impact": "trap",
+      "mapped": false
+    },
+    {
+      "family": "blackfire",
+      "skill_count": 1,
+      "impact": "black_flame",
+      "mapped": true
+    },
+    {
+      "family": "claw",
+      "skill_count": 1,
+      "impact": "claw",
+      "mapped": false
+    }
+  ]
+}

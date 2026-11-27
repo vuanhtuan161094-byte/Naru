@@ -48,6 +48,7 @@ var error=""
 var actor_draws=0
 var effect_draws=0
 var external_fx_draws=0
+var external_fx_family_draws:Dictionary={}
 var external_fx_cache:Dictionary={}
 var external_skill_families:Dictionary={}
 
@@ -409,7 +410,7 @@ func sheet(field: Control,path: String,p: Vector2,progress: float,size_value: fl
 
 # Optional normalized source assets; no gameplay changes and no replacement of approved skill art.
 func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_value:float)->bool:
-	if not enabled:return false
+	if not enabled or family.is_empty():return false
 	if not external_fx_cache.has(family):
 		var path="res://assets/external_review/vfx/"+family+".png"
 		var candidate:Texture2D=null
@@ -423,6 +424,8 @@ func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_va
 	external_fx_draws+=1
 	effect_draws+=1
 	if external_fx_draws==1:print("NARU_EXTERNAL_VFX_FIRST_DRAW ",family)
+	if not external_fx_family_draws.has(family):print("NARU_EXTERNAL_FX_RUNTIME_FAMILY ",family)
+	external_fx_family_draws[family]=int(external_fx_family_draws.get(family,0))+1
 	return true
 
 func external_family(skill_id:String)->String:
@@ -433,8 +436,13 @@ func external_family(skill_id:String)->String:
 				for id in item.get("skills",[]):external_skill_families[str(id)]=str(item.id)
 		external_skill_families["_loaded"]=true
 	var family=str(external_skill_families.get(skill_id,""))
-	var aliases={"palm":"hit","melee":"hit","kick":"hit","smash":"hit","ground_smash":"earth","fireball":"fire","fire_dragon":"fire","lightning_lance":"lightning","lightning_dash":"lightning","lightning_needle":"lightning","kirin":"lightning","water_dragon":"water","black_flame":"shadow","clone":"smoke","summon":"smoke","rasengan":"chakra","rasengan_big":"chakra","rasenshuriken":"wind","earth_wall":"earth","blackfire":"shadow","air":"wind","scythe":"sword"}
+	var aliases={"melee":"hit","smash":"ground_smash","fireball":"fire_impact","fire_dragon":"fire_impact","fire":"fire_impact","lightning_lance":"lightning","lightning_dash":"lightning","lightning_needle":"lightning","kirin":"lightning_strike","water_dragon":"water_wave","clone":"smoke","rasengan":"chakra","rasengan_big":"chakra","rasenshuriken":"wind_impact","earth_wall":"earth","blackfire":"black_flame","air":"wind","beguile":"curse","genjutsu":"curse","mind":"curse","eye":"mark","ocular":"mark","kamui":"space","raijin":"space","raijin_mark":"mark","space_barrier":"barrier","susanoo_shield":"shield","susanoo_sword":"sword","byakugo":"heal","byakugou":"heal","healing":"heal","slug":"summon","katsuyu":"summon","ninken":"summon","dog":"summon","toad":"summon","chakra_cloak":"chakra","seal":"seal","wood":"wood","ice":"ice","needle":"hit","arrow":"hit","kunai":"hit","weapon":"hit","wire":"hit","chain":"hit","thread":"hit","bone":"earth","iron":"earth","clay":"explosion","bijuu_bomb":"explosion","ink":"smoke","ash":"smoke","mist":"steam","dust":"sand","laser":"beam","orb":"chakra","roll":"hit","lotus":"kick","gate":"haste","reflect":"shield","team":"cleanse","paper":"wind_impact","lightning_aura":"lightning_aura","blacklight":"shadow","black_flame":"black_flame","lightning":"lightning","palm":"palm","kick":"kick","scythe":"scythe","curse":"curse","heal":"heal"}
 	return str(aliases.get(family,family))
+
+func external_travel_family(skill_id:String)->String:
+	var family=external_family(skill_id)
+	var travel={"fire_impact":"fire_travel","lightning":"lightning_travel","lightning_strike":"lightning_travel","water":"water_travel","water_wave":"water_travel","chakra":"chakra_travel","wind":"wind_travel","wind_impact":"wind_travel","beam":"beam","ice":"needle"}
+	return str(travel.get(family,""))
 
 func effects(field: Control,sim,project: Callable) -> void:
 	for a in sim.actors:

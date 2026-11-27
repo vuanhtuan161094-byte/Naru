@@ -5,6 +5,7 @@ from io import BytesIO
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 BASE='https://raw.githubusercontent.com/BaronCyrus/PixelEffects/6fff781bb7ba26eefe31232938d8160fbd9a06ed/Packages/com.baroncyrus.pixelfx/Effects/'
 FX={'charge':'arcane/spell-charge','hit':'impacts/hit-spark','heal':'holy/heal','smoke':'spawn/poof','fire':'fire/fireball','lightning':'lightning/zap-hit','water':'water/splash','wind':'nature/tornado','earth':'nature/earth-spike','sword':'melee/sword-slash','chakra':'arcane/mana-burst','poison':'nature/poison-cloud','ice':'ice/ice-shatter','shadow':'shadow/dark-explosion','wood':'nature/root-snare','shield':'holy/divine-shield','gravity':'arcane/mana-burst','explosion':'explosions/small-explosion'}
+FX.update({"gravity":"shadow/black-hole","fire_travel":"fire/fireball","fire_impact":"explosions/small-explosion","lightning_travel":"lightning/ball-lightning","water_travel":"water/water-orb","chakra_travel":"arcane/arcane-orb","beam":"arcane/arcane-beam","arrow":"projectiles/arrow","needle":"projectiles/magic-missile","wind_travel":"projectiles/energy-disc","wind_impact":"nature/leaf-storm","space":"arcane/blink-in","seal":"arcane/rune-circle","curse":"shadow/curse","cleanse":"holy/blessing","sand":"explosions/dirt-explosion","rock":"nature/boulder","lava":"fire/flame-pillar","steam":"explosions/smoke-bomb","acid":"nature/acid-splash","spore":"nature/spore-burst","insect":"critters/butterfly","snake":"critters/snake","scythe":"melee/scythe-reap","palm":"impacts/blunt-hit","kick":"impacts/ground-slam","melee_combo":"melee/double-slash","ground_smash":"impacts/ground-slam","mark":"shadow/hex-sigil","stun":"status/stunned","haste":"status/haste","burn":"status/burning","freeze":"status/frozen","poison_status":"status/poisoned","barrier":"scifi/force-field","black_flame":"shadow/shadow-flames","lightning_aura":"lightning/electrified","meteor":"fire/meteor","summon":"spawn/summon-rise","wind":"nature/tornado","water_wave":"water/wave-crash","water_jet":"water/water-jet","water_vortex":"water/whirlpool","lightning_strike":"lightning/lightning-strike","fire_ring":"fire/fire-ring","earth_quake":"nature/quake","heal_aoe":"holy/heal-aoe"})
 def get(path):
     with urllib.request.urlopen(urllib.request.Request(BASE+path,headers={'User-Agent':'Naru-art-review'}),timeout=60) as r: return r.read()
 def rects(meta):
@@ -33,6 +34,7 @@ def strip(frames, size, anchor, limit=30):
     return out,indices
 def vfx(out):
     out.mkdir(parents=True,exist_ok=True); report={}
+    preview=out/'previews';preview.mkdir(exist_ok=True)
     for name,src in FX.items():
         asset=get(src+'.asset').decode()
         refs=re.findall(r'(?m)^  - \{fileID: (-?\d+), guid: ([a-f0-9]+), type: 3\}',asset)
@@ -54,6 +56,10 @@ def vfx(out):
         img,indices=strip(frames,(128,128),(64,64)); img.save(out/(name+'.png'))
         fps=re.search(r'(?m)^  frameRate: (\d+)',asset)
         report[name]={'source':src,'original_frames':len(frames),'output_frames':len(indices),'indices':indices,'fps':int(fps.group(1)) if fps else None,'anchor':[64,64],'status':'REVIEW_CANDIDATE'}
+        gifs=[img.crop((j*128,0,(j+1)*128,128)).resize((192,192),Image.Resampling.NEAREST) for j in range(len(indices))]
+        source_fps=report[name]['fps'] or 24
+        ms=max(20,round(1000*len(frames)/source_fps/len(indices)))
+        gifs[0].save(preview/(name+'.gif'),save_all=True,append_images=gifs[1:],duration=ms,loop=0,disposal=2)
         print('NARU_EXTERNAL_FX',name,len(indices),flush=True)
     (out/'manifest.json').write_text(json.dumps(report,indent=2))
     # Keep original license/notice with generated assets, no font or runtime code.
