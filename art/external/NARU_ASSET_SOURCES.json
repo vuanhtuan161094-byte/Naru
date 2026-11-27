@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "scope": "Naru asset acquisition, source library only; not runtime assets",
+  "verified_against": "488f429e69f89ea9bcdca0bccc444a2eeb721088",
+  "sources": [
+    {
+      "repo": "sparklinlabs/superpowers-asset-packs",
+      "ref": "e8674a03ab4456802f71f848c4df79eccca23f7a",
+      "class": "COLLECT",
+      "license": "CC0",
+      "folders": [
+        "ninja-adventure/",
+        "rpg-battle-system/",
+        "backgrounds/"
+      ],
+      "priority": "P0",
+      "use": "NPC, 4-direction ninja-style sprites, buildings, scenery, battle FX, UI, audio"
+    },
+    {
+      "repo": "JaiGod/rpg-pixel-pack",
+      "ref": "7f7c682f49da4a40d7dd4805a27051b76d002950",
+      "class": "COLLECT",
+      "license": "CC0 art; MIT code",
+      "folders": [
+        "characters/",
+        "monsters/",
+        "equipment/",
+        "buildings/",
+        "environments/",
+        "interiors/",
+        "furniture/",
+        "animations/",
+        "assets/"
+      ],
+      "priority": "P0",
+      "use": "40 buildings, 11 biome tilesets, 52 characters, 76 monsters, UI, props; avoid duplicate docs/Godot mirrors"
+    },
+    {
+      "repo": "BaronCyrus/PixelEffects",
+      "ref": "6fff781bb7ba26eefe31232938d8160fbd9a06ed",
+      "class": "COLLECT",
+      "license": "MIT with NOTICE",
+      "folders": [
+        "Packages/com.baroncyrus.pixelfx/Effects/"
+      ],
+      "priority": "P0",
+      "use": "244 baked sprite effects; preserve source metadata; no Unity package integration"
+    },
+    {
+      "repo": "game-icons/icons",
+      "ref": "82d948812bfe3f269ef8f731dcdb07b08160edc4",
+      "class": "COLLECT",
+      "license": "CC BY 3.0; retain attribution",
+      "folders": [],
+      "priority": "P1",
+      "use": "Skill/status/resource/menu icons, source library only"
+    },
+    {
+      "repo": "kanaworksai-hue/kanaworks-sakuga-vfx",
+      "ref": "7cfc9e6bd6ecc0239f3c141e9c5c42cbdc8bb365",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "license": "Free personal use under conditions; credit required; raw pack redistribution prohibited",
+      "folders": [
+        "assets/",
+        "godot/"
+      ],
+      "priority": "P0",
+      "use": "90 anime flipbooks, 9 elements; direct original source for local evaluation; do not re-upload raw archive to public Naru"
+    },
+    {
+      "repo": "Tiddybub/2d-assets",
+      "ref": "e0cbe0d995554a490d4c182fe9beb8769ffbb606",
+      "class": "SELECTIVE_REFERENCE",
+      "license": "catalog states CC0; retain per-pack SOURCE.md",
+      "folders": [
+        "effects/",
+        "ui/",
+        "nature/",
+        "tiles-terrain/",
+        "fantasy/"
+      ],
+      "priority": "P1",
+      "use": "Large catalog >1GB; choose relevant subpacks, do not duplicate full archive"
+    },
+    {
+      "repo": "patch-gg/pixelfx",
+      "ref": "5294518ce7c72e48b6100a744596e0acf57f2826",
+      "class": "REFERENCE",
+      "license": "MIT effects/code; exclude proprietary font",
+      "priority": "P1",
+      "use": "Source of 244 effects and timing; use baked PixelEffects first"
+    },
+    {
+      "repo": "888wing/pixel-vfx-codex",
+      "ref": "7636ee640563ecdb018e3afb6e8a92f260e4f4bc",
+      "class": "REFERENCE",
+      "license": "README claims MIT; verify scope",
+      "priority": "P1",
+      "use": "138 exportable procedural effects; reference only, prefer illustrated sheets"
+    },
+    {
+      "repo": "pixel-boy/NinjaAdventure",
+      "ref": "main",
+      "class": "REFERENCE",
+      "priority": "P1",
+      "use": "Godot example; prioritize CC0 asset pack from sparklinlabs"
+    },
+    {
+      "repo": "Huu-Yuu/PixelSRPG-Forge",
+      "ref": "main",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "priority": "P1",
+      "use": "Mixed-origin SRPG terrain/buildings/effects; reference before selecting"
+    },
+    {
+      "repo": "gurito2204/FateNarutoRef",
+      "ref": "HEAD",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "priority": "P0",
+      "use": "247 media files; Naruto, Shinra, Susanoo, Zetsu; side-view/reference assets"
+    },
+    {
+      "repo": "Harsh-Belekar/Shinobi-Saga",
+      "ref": "main",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "priority": "P1",
+      "use": "Naruto/Sasuke attack and movement sheets, background/UI/sounds"
+    },
+    {
+      "repo": "sampleritgithubl/2D-Fighting-Game",
+      "ref": "main",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "priority": "P1",
+      "use": "77 fireball frames plus Naruto/Sasuke sprites, maps and sound"
+    },
+    {
+      "repo": "Tsarcasm831/NarutoRPG",
+      "ref": "HEAD",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "priority": "P0",
+      "use": "Naruto World map, Konoha academy and Hokage office, map icons, music"
+    }
+  ],
+  "rules": [
+    "Public Naru repository: no redistribution of raw restricted or uncertain-license media. Original source links remain in catalog for local review.",
+    "Do not execute downloaded code; unpack selected media and companion metadata only; reject path traversal and symlinks.",
+    "Do not replace current assets or change gameplay, animation production, public Pages, or Luna feature branch.",
+    "All candidate assets require actual visual preview, alpha/cell/pivot check, resolution and perspective compatibility before use."
+  ]
+}
