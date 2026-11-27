@@ -106,6 +106,63 @@ static func direct_damage(reg,attacker: Dictionary,target: Dictionary,payload: D
 	factor*=float(payload.get("realm_factor",1.0))*float(payload.get("critical_multiplier",1.0))
 	return {"amount":maxf(1.0,round(raw*factor)),"defense":defense,"element_factor":factor}
 
+static func expected_damage_effect(reg,attacker: Dictionary,target: Dictionary,payload: Dictionary) -> Dictionary:
+	var damage_type=str(payload.get("damage_type","ninjutsu"))
+	var physical=bool(payload.get("physical",damage_type=="physical"))
+	var critical_probability=0.0 if damage_type=="genjutsu" else critical_chance(reg,attacker,target,physical)
+	var critical_multiplier=1.5+float(payload.get("critical_damage_bonus",rating(reg,attacker,"crit_damage")))
+	var hit_probability=hit_chance(reg,attacker,target,float(payload.get("accuracy_bonus",0.0)),float(payload.get("evasion_bonus",0.0)))
+	var block_probability=block_chance(reg,attacker,target) if bool(payload.get("block_enabled",true)) else 0.0
+	var block_reduction_value=block_reduction(reg,target)
+	var reduction=damage_reduction(reg,attacker,target)
+	var passive_reduction=clampf(float(target.get("passive_mods",{}).get("damage_reduction",0.0)),0.0,0.10) if bool(payload.get("passives_enabled",false)) else 0.0
+	var shield_break_value=shield_break(reg,attacker)
+	var shield=maxf(0.0,float(payload.get("shield",target.get("shield",0.0))))
+	var hp=maxf(0.0,float(payload.get("hp",target.get("hp",1.0))))
+	var arc=maxf(0.0,float(payload.get("arc_absorption",0.0)))
+	var expected_hp=0.0
+	var expected_shield=0.0
+	var expected_arc=0.0
+	var expected_prevented=0.0
+	var coefficient=float(payload.get("coefficient",1.0))
+	var direct_payload=payload.duplicate(true)
+	var probability_sum=0.0
+	var reaction_factor=maxf(0.0,float(payload.get("reaction_factor",1.0)))
+	var reaction_probability=clampf(float(payload.get("reaction_probability",1.0)),0.0,1.0)
+	for critical in [false,true]:
+		var critical_probability_for_row=critical_probability if critical else 1.0-critical_probability
+		if critical_probability_for_row<=0.0:continue
+		direct_payload.critical_multiplier=critical_multiplier if critical else 1.0
+		for reaction_active in [false,true]:
+			var reaction_probability_for_row=reaction_probability if reaction_active else 1.0-reaction_probability
+			if reaction_probability_for_row<=0.0:continue
+			direct_payload.reaction_factor=reaction_factor if reaction_active else 1.0
+			var packet=direct_damage(reg,attacker,target,direct_payload)
+			for blocked in [false,true]:
+				var block_probability_for_row=block_probability if blocked else 1.0-block_probability
+				if block_probability_for_row<=0.0:continue
+				var probability=hit_probability*critical_probability_for_row*reaction_probability_for_row*block_probability_for_row
+				probability_sum+=probability
+				var damage=float(packet.amount)
+				if arc>0.0:
+					var arc_used=minf(damage,arc)
+					damage-=arc_used
+					expected_arc+=arc_used*probability
+				if bool(payload.get("evade_after_arc",false)) and damage>0.0:
+					expected_prevented+=damage*probability
+					continue
+				if blocked:damage*=1.0-block_reduction_value
+				damage*=1.0-reduction
+				damage*=1.0-passive_reduction
+				var shield_damage=minf(shield,damage*(1.0+shield_break_value))
+				var shield_blocked=shield_damage/(1.0+shield_break_value)
+				var hp_damage=minf(hp,maxf(0.0,damage-shield_blocked))
+				expected_shield+=shield_damage*probability
+				expected_hp+=hp_damage*probability
+				expected_prevented+=maxf(0.0,damage-shield_blocked-hp_damage)*probability
+	var expected_total=expected_hp+expected_shield+expected_arc
+	return {"expected_hp_damage":expected_hp,"expected_shield_damage":expected_shield,"expected_arc_damage":expected_arc,"expected_overkill":expected_prevented,"expected_effect":expected_total,"hit_probability":hit_probability,"critical_probability":critical_probability,"block_probability":block_probability,"reaction_probability":reaction_probability,"shield_break":shield_break_value,"damage_reduction":reduction,"passive_reduction":passive_reduction,"coefficient":coefficient,"direct_probability":probability_sum}
+
 static func expected_damage_factor(reg,attacker: Dictionary,target: Dictionary,damage_type: String,element: String,realm_factor: float=1.0,environment_factor: float=1.0,accuracy_bonus: float=0.0,evasion_bonus: float=0.0) -> float:
 	var physical=damage_type=="physical"
 	var stats=attacker.get("stats",{})
@@ -116,7 +173,7 @@ static func expected_damage_factor(reg,attacker: Dictionary,target: Dictionary,d
 	var baseline=attack*100.0/(100.0+maxf(0.0,defense-penetration))
 	if baseline<=0.0:return 0.0
 	var critical=0.0 if damage_type=="genjutsu" else critical_chance(reg,attacker,target,physical)
-	var critical_multiplier=1.0+critical*(1.5+rating(reg,attacker,"crit_damage")-1.0)
+	var critical_multiplier=1.0+critical*(0.5+rating(reg,attacker,"crit_damage"))
 	var payload={"attack":attack,"coefficient":1.0,"defense":defense,"physical":physical,"damage_type":damage_type,"element":element,"realm_factor":realm_factor,"environment_factor":environment_factor,"critical_multiplier":critical_multiplier}
 	var packet=direct_damage(reg,attacker,target,payload)
 	var expected=float(packet.amount)*hit_chance(reg,attacker,target,accuracy_bonus,evasion_bonus)

@@ -48,7 +48,9 @@ def build_data():
         {
             **row,
             "ledger_status": "HOLD" if row["id"] in branch_holds else (
-                "HOLD_RUNTIME" if branch_resolution.get(row["id"], {}).get("runtime", "").startswith("HOLD") else "DATA_READY"
+                "LOCAL_DEV_RUNTIME_EVIDENCE" if branch_resolution.get(row["id"], {}).get("runtime", "").startswith("LOCAL_") else (
+                    "HOLD_RUNTIME" if branch_resolution.get(row["id"], {}).get("runtime", "").startswith("HOLD") else "DATA_READY"
+                )
             ),
             "hold_record": branch_holds.get(row["id"], {}),
             "runtime_resolution": branch_resolution.get(row["id"], {}),
@@ -63,7 +65,39 @@ def build_data():
     gear = read_json("data/equipment_templates.json")
     slots = read_json("data/equipment_slots.json")
     affix_pools = read_json("data/equipment_affix_pools.json")
+    gear_rules = read_json("data/d4/equipment_rules.json")
+    ninja_growth = read_json("data/d4/ninja_growth.json")
+    recruitment = read_json("data/d4/recruitment.json")
+    resources = read_json("data/resources.json")
+    resource_acquisition = read_json("data/resource_acquisition.json")
+    recipes = read_json("data/recipes.json")
     affinity_rows = read_json("data/d4/element_affinity.json")
+    completion_ledger = read_json("CHARACTER_POWER_COMPLETION_LEDGER.json")
+    ledger_categories = completion_ledger.get("inventories", {})
+
+    def acceptance_by_id(category):
+        rows = ledger_categories.get(category, {}).get("entries", [])
+        return {
+            str(row["id"]): {
+                key: row.get(key)
+                for key in ("review_status", "runtime_status", "observed_outcome", "open_blocker", "test_references")
+                if row.get(key) is not None
+            }
+            for row in rows
+            if row.get("id") is not None
+        }
+
+    profile_acceptance = acceptance_by_id("profiles")
+    stat_acceptance = acceptance_by_id("stats")
+    skill_acceptance = acceptance_by_id("skills")
+    passive_acceptance = acceptance_by_id("passives")
+    branch_acceptance = acceptance_by_id("branches")
+    form_acceptance = acceptance_by_id("forms")
+    combo_acceptance = acceptance_by_id("combos")
+    gear_acceptance = acceptance_by_id("gear_templates")
+    slot_acceptance = acceptance_by_id("equipment_slots")
+    resource_acceptance = acceptance_by_id("resources")
+    recipe_acceptance = acceptance_by_id("recipes")
 
     required = {
         "ninjas": (ninjas, 144),
@@ -75,6 +109,9 @@ def build_data():
         "combos": (combos, 12),
         "equipment": (gear, 128),
         "equipment_slots": (slots, 16),
+        "recipes": (recipes, 63),
+        "resources": (resources, 150),
+        "resource_acquisition": (resource_acquisition, 150),
     }
     for label, (rows, expected) in required.items():
         if len(rows) != expected:
@@ -83,8 +120,34 @@ def build_data():
         raise ValueError("skill IDs are not unique")
     if len({str(row["id"]) for row in passives}) != 864:
         raise ValueError("passive IDs are not unique")
+    resource_ids = {str(row["id"]) for row in resources}
+    acquisition_ids = {str(row["resource_id"]) for row in resource_acquisition}
+    if len(resource_ids) != 150 or acquisition_ids != resource_ids or len(resource_acquisition) != 150:
+        raise ValueError("resource acquisition and resource definition IDs differ")
     if set(formulas) != {str(row["id"]) for row in stats}:
         raise ValueError("stat catalog and formula IDs differ")
+    for category, source_ids in {
+        "profiles": {str(row["id"]) for row in ninjas},
+        "stats": {str(row["id"]) for row in stats},
+        "skills": {str(row["id"]) for row in skills},
+        "passives": {str(row["id"]) for row in passives},
+        "branches": {str(row["id"]) for row in branches},
+        "forms": {str(row["id"]) for row in forms},
+        "combos": {str(row["id"]) for row in combos},
+        "gear_templates": {str(row["id"]) for row in gear},
+        "equipment_slots": {str(row["id"]) for row in slots},
+        "resources": resource_ids,
+        "recipes": {str(row["id"]) for row in recipes},
+        "resource_acquisition": resource_ids,
+        "element_affinity": {str(row["attack"])+":"+str(row["defense"]) for row in affinity_rows},
+        "element_reactions": {str(row["id"]) for row in read_json("data/d4/reactions.json")},
+    }.items():
+        ledger_ids = {
+            str(row.get("id", row.get("resource_id")))
+            for row in ledger_categories.get(category, {}).get("entries", [])
+        }
+        if ledger_ids != source_ids:
+            raise ValueError(f"{category} completion ledger IDs do not match source IDs")
     stat_ids = {str(row["id"]) for row in stats}
     affix_ids = {str(stat_id) for pool in affix_pools.values() for stat_id in pool}
     if len(NEW_STATS) != 30 or not NEW_STATS <= stat_ids or not NEW_STATS <= affix_ids:
@@ -120,32 +183,88 @@ def build_data():
     if len(p2_forms) != 54 or len(p2_combos) != 12:
         raise ValueError("runtime form/combo contract count differs from catalog")
 
+    acquisitions = {
+        str(row["id"]): {
+            "definition": row,
+            "acquisition": next((item for item in resource_acquisition if str(item["resource_id"]) == str(row["id"])), {}),
+            "power_acceptance": resource_acceptance.get(str(row["id"]), {}),
+            "status_note": "Nguồn và sản lượng giữ nguyên trạng thái nguồn; catalog không chứng minh tài nguyên đã kiếm được trong một lượt chơi.",
+        }
+        for row in resources
+    }
+    systems = {
+        "NINJA-GROWTH": {"id": "NINJA-GROWTH", "label": "Công thức tăng trưởng ninja", "status": ninja_growth.get("status"), "source": "data/d4/ninja_growth.json", "rules": ninja_growth},
+        "RECRUITMENT": {"id": "RECRUITMENT", "label": "Chiêu mộ và phẩm chất", "status": recruitment.get("status"), "source": "data/d4/recruitment.json", "rules": recruitment},
+        "EQUIPMENT-GROWTH": {"id": "EQUIPMENT-GROWTH", "label": "Cường hóa, tinh luyện, tiến hóa và affix", "status": gear_rules.get("status"), "source": "data/d4/equipment_rules.json", "rules": gear_rules, "affix_pools": affix_pools},
+    }
+
     data = {
         "counts": {label: len(rows) for label, (rows, _expected) in required.items()},
-        "ninjas": indexed(ninjas),
-        "stats": {str(row["id"]): {"definition": row, "formula": formulas[str(row["id"])]} for row in stats},
+        "ninjas": {
+            str(row["id"]): {**row, "power_acceptance": profile_acceptance.get(str(row["id"]), {})}
+            for row in ninjas
+        },
+        "stats": {
+            str(row["id"]): {
+                "definition": row,
+                "formula": formulas[str(row["id"])],
+                "power_acceptance": stat_acceptance.get(str(row["id"]), {}),
+            }
+            for row in stats
+        },
         "skills": {
             str(row["id"]): {
                 "definition": row,
                 "progression": progression.get(str(row["id"]), {}),
                 "p2_overlay": p2_skills.get(str(row["id"]), {}),
+                "power_acceptance": skill_acceptance.get(str(row["id"]), {}),
             }
             for row in skills
         },
-        "passives": indexed(passives),
-        "branches": indexed(branches),
-        "forms": {str(row["id"]): {"definition": row, "runtime_contract": p2_forms.get(str(row["id"]), {})} for row in forms},
+        "passives": {
+            str(row["id"]): {**row, "power_acceptance": passive_acceptance.get(str(row["id"]), {})}
+            for row in passives
+        },
+        "branches": {
+            str(row["id"]): {**row, "power_acceptance": branch_acceptance.get(str(row["id"]), {})}
+            for row in branches
+        },
+        "forms": {
+            str(row["id"]): {
+                "definition": row,
+                "runtime_contract": p2_forms.get(str(row["id"]), {}),
+                "power_acceptance": form_acceptance.get(str(row["id"]), {}),
+            }
+            for row in forms
+        },
         "combos": {
-            str(row["id"]): {"definition": row, "runtime_contract": p2_combos.get(str(row["id"]), {}), "event_contract": combo_contracts.get(str(row["id"]), {})}
+            str(row["id"]): {
+                "definition": row,
+                "runtime_contract": p2_combos.get(str(row["id"]), {}),
+                "event_contract": combo_contracts.get(str(row["id"]), {}),
+                "power_acceptance": combo_acceptance.get(str(row["id"]), {}),
+            }
             for row in combos
         },
-        "equipment": indexed(gear),
-        "equipment_slots": indexed(slots),
+        "equipment": {
+            str(row["id"]): {**row, "power_acceptance": gear_acceptance.get(str(row["id"]), {})}
+            for row in gear
+        },
+        "equipment_slots": {
+            str(row["id"]): {**row, "power_acceptance": slot_acceptance.get(str(row["id"]), {})}
+            for row in slots
+        },
+        "recipes": {
+            str(row["id"]): {**row, "power_acceptance": recipe_acceptance.get(str(row["id"]), {})}
+            for row in recipes
+        },
+        "acquisition": acquisitions,
+        "systems": systems,
         "element_labels": sorted(element_labels),
         "element_affinity": affinity_rows,
         "new_stat_ids": sorted(NEW_STATS),
         "stat_runtime": read_json("data/stat_formulas.json"),
-        "content_notice": "Thiết kế và giá trị chưa được nghiệm thu giữ nguyên trạng thái PROPOSED/DEV/HOLD trong dữ liệu nguồn. Wiki này không biến DATA_READY thành RUNTIME_PASS.",
+        "content_notice": "Trạng thái tiếp nhận có kèm phạm vi log/fixture đã quan sát. DEV không đồng nghĩa duyệt canon hoặc cân bằng; PROPOSED/DEV/HOLD được giữ nguyên theo nguồn.",
     }
     return data
 
@@ -158,15 +277,15 @@ PAGE = r'''<!doctype html>
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}header{padding:22px 4vw;border-bottom:1px solid var(--line);background:#171b21}h1{margin:0 0 4px;font-size:25px}header p{margin:0;color:var(--muted)}.counts{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.pill{border:1px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--gold);font-size:13px}
 main{display:grid;grid-template-columns:minmax(250px,34%) 1fr;gap:16px;padding:16px 4vw;min-height:75vh}.panel{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden}.controls{display:flex;gap:8px;padding:12px;border-bottom:1px solid var(--line)}input,select{min-width:0;background:#101419;border:1px solid var(--line);border-radius:5px;color:var(--ink);padding:9px}input{flex:1}#results{max-height:72vh;overflow:auto}.item{width:100%;text-align:left;padding:9px 12px;border:0;border-bottom:1px solid #303941;background:transparent;color:var(--ink);cursor:pointer}.item:hover,.item.active{background:#293540}.item b{display:block;color:var(--blue);font-size:14px}.item small{color:var(--muted)}.empty{padding:14px;color:var(--muted)}#detail{padding:18px;max-height:80vh;overflow:auto}#detail h2{margin:0 0 8px;color:var(--gold);font-size:21px}#detail pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#11161b;border:1px solid var(--line);border-radius:6px;padding:13px;font:13px/1.5 ui-monospace,monospace}footer{padding:12px 4vw;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}@media(max-width:760px){main{grid-template-columns:1fr}#results{max-height:35vh}#detail{max-height:none}}
 </style></head><body><header><h1>NARU RPG · Sổ tay sức mạnh</h1><p>Tra cứu theo database dùng chung: hồ sơ ninja, công thức, nhẫn thuật, nội tại, nhánh, hình thái, combo và trang bị.</p><div id="counts" class="counts"></div></header>
-<main><section class="panel"><div class="controls"><input id="query" type="search" placeholder="Tìm theo tên hoặc ID…"><select id="kind"><option value="all">Tất cả</option><option value="ninjas">Ninja</option><option value="stats">Thuộc tính</option><option value="skills">Nhẫn thuật</option><option value="passives">Nội tại</option><option value="branches">Nhánh tiến hóa</option><option value="forms">Hình thái</option><option value="combos">Combo</option><option value="equipment">Trang bị</option><option value="equipment_slots">Vị trí</option></select></div><div id="results" aria-live="polite"></div></section><article id="detail" class="panel"><h2>Chọn một mục</h2><p>Dữ liệu và trạng thái nghiệm thu được hiển thị theo hồ sơ nguồn.</p></article></main>
+<main><section class="panel"><div class="controls"><input id="query" type="search" placeholder="Tìm theo tên hoặc ID…"><select id="kind"><option value="all">Tất cả</option><option value="ninjas">Ninja</option><option value="stats">Thuộc tính</option><option value="skills">Nhẫn thuật</option><option value="passives">Nội tại</option><option value="branches">Nhánh tiến hóa</option><option value="forms">Hình thái</option><option value="combos">Combo</option><option value="equipment">Trang bị</option><option value="equipment_slots">Vị trí</option><option value="recipes">Công thức</option><option value="acquisition">Thu thập tài nguyên</option><option value="systems">Công thức tăng trưởng</option></select></div><div id="results" aria-live="polite"></div></section><article id="detail" class="panel"><h2>Chọn một mục</h2><p>Dữ liệu, chi phí, điều kiện và trạng thái nghiệm thu được hiển thị theo hồ sơ nguồn.</p></article></main>
 <footer id="notice"></footer><script>
-const categories=["ninjas","stats","skills","passives","branches","forms","combos","equipment","equipment_slots"];
-const titleFor=(kind,row)=>kind==="stats"?row.definition.name_vi:kind==="skills"?row.definition.name_vi:kind==="forms"?row.definition.name_vi:kind==="combos"?row.definition.name_vi:kind==="equipment_slots"?row.name_vi:row.name_vi||row.label||row.id;
+const categories=["ninjas","stats","skills","passives","branches","forms","combos","equipment","equipment_slots","recipes","acquisition","systems"];
+const titleFor=(kind,row)=>kind==="stats"?row.definition.name_vi:kind==="skills"?row.definition.name_vi:kind==="forms"?row.definition.name_vi:kind==="combos"?row.definition.name_vi:kind==="equipment_slots"?row.name_vi:kind==="acquisition"?row.definition.name_vi:row.name_vi||row.label||row.id;
 let DATA=null,ENTRIES=[],selected="";
 function detailFor(kind,id){const row=DATA[kind][id];if(!row)return{};if(kind==="ninjas"){return {profile:row,skills:(row.skills||[]).concat(row.additional_skill_ids||[]).map(x=>DATA.skills[x]).filter(Boolean),passives:Object.values(DATA.passives).filter(x=>x.ninja_id===id),forms:(row.form_ids||[]).map(x=>DATA.forms[x]).filter(Boolean)}}return row}
 function drawDetail(entry){selected=entry.kind+":"+entry.id;const article=document.getElementById("detail");article.replaceChildren();const h=document.createElement("h2");h.textContent=titleFor(entry.kind,DATA[entry.kind][entry.id])||entry.id;article.appendChild(h);const p=document.createElement("p");p.textContent=entry.kind+" · "+entry.id;article.appendChild(p);const pre=document.createElement("pre");pre.textContent=JSON.stringify(detailFor(entry.kind,entry.id),null,2);article.appendChild(pre);filter()}
 function filter(){if(!DATA)return;const q=document.getElementById("query").value.trim().toLocaleLowerCase("vi"),kind=document.getElementById("kind").value;const found=ENTRIES.filter(x=>(kind==="all"||x.kind===kind)&&(!q||x.search.includes(q)));const root=document.getElementById("results");root.replaceChildren();for(const row of found.slice(0,180)){const b=document.createElement("button");b.className="item"+(selected===row.kind+":"+row.id?" active":"");b.onclick=()=>drawDetail(row);const title=document.createElement("b");title.textContent=row.title;const small=document.createElement("small");small.textContent=row.id+" · "+row.summary;b.append(title,small);root.appendChild(b)}if(!found.length){const e=document.createElement("div");e.className="empty";e.textContent="Không tìm thấy mục phù hợp.";root.appendChild(e)}else if(found.length>180){const e=document.createElement("div");e.className="empty";e.textContent="Đang hiển thị 180 mục đầu trong "+found.length+" kết quả. Hãy thu hẹp từ khóa.";root.appendChild(e)}}
-fetch("./data.json").then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{DATA=data;for(const kind of categories){for(const [id,row] of Object.entries(data[kind])){const title=String(titleFor(kind,row)||id);ENTRIES.push({kind,id,title,summary:String(row.era||row.role_hint||row.status||row.ledger_status||row.group||""),search:(id+" "+title+" "+JSON.stringify(row)).toLocaleLowerCase("vi")})}}ENTRIES.sort((a,b)=>a.kind.localeCompare(b.kind)||a.id.localeCompare(b.id));const counts=document.getElementById("counts");for(const [key,value] of Object.entries(data.counts)){const span=document.createElement("span");span.className="pill";span.textContent=key+": "+value;counts.appendChild(span)}document.getElementById("notice").textContent=data.content_notice;document.getElementById("query").oninput=filter;document.getElementById("kind").onchange=filter;filter()}).catch(e=>{document.getElementById("results").textContent="Không nạp được data.json: "+e.message+" · chạy python3 -m http.server trong thư mục Wiki."});
+fetch("./data.json").then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{DATA=data;for(const kind of categories){for(const [id,row] of Object.entries(data[kind])){const title=String(titleFor(kind,row)||id);const summary=row.summary||(row.era||row.role_hint||row.status||row.ledger_status||row.group||(row.definition&&row.definition.category)||"");ENTRIES.push({kind,id,title,summary:String(summary),search:(id+" "+title+" "+JSON.stringify(row)).toLocaleLowerCase("vi")})}}ENTRIES.sort((a,b)=>a.kind.localeCompare(b.kind)||a.id.localeCompare(b.id));const counts=document.getElementById("counts");for(const [key,value] of Object.entries(data.counts)){const span=document.createElement("span");span.className="pill";span.textContent=key+": "+value;counts.appendChild(span)}document.getElementById("notice").textContent=data.content_notice;document.getElementById("query").oninput=filter;document.getElementById("kind").onchange=filter;filter()}).catch(e=>{document.getElementById("results").textContent="Không nạp được data.json: "+e.message+" · chạy python3 -m http.server trong thư mục Wiki."});
 </script></body></html>'''
 
 
@@ -191,6 +310,8 @@ def main():
         "Naru Power Wiki, generated from the project's JSON databases.\n"
         "Serve this directory with: python3 -m http.server 8000\n"
         "Open http://localhost:8000/index.html; do not open via file://.\n"
+        "Per-ID power_acceptance data describes only the recorded local/CI evidence scope.\n"
+        "DEV, PROPOSED, and HOLD records are not canon or balance approval.\n"
         "This is a local player reference. It does not change public Pages.\n",
         encoding="utf-8",
     )

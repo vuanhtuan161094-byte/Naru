@@ -180,10 +180,8 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 			if skill.has("p2") and skill.p2.conditions.ai=="owned_valid_mark_or_explicit_swap" and skill.p2.effect.type!="position_swap" and not skill.p2.effect.params.get("mark_throw_before_teleport",false) and not p2_has_mark(a,b):continue
 			if b.summon:score-=5
 			if use_passives and Passive.aura_source(self,b):score+=6.0 # DEV counter enemy support source
-			if skill.element!="neutral":
-				var environment_factor=float(registry.environments.get(environment,{}).get("modifiers",{}).get(skill.element,1.0))
-				var matchup=Formula.elemental_factor(registry,a,b,str(skill.element),registry.affinity,environment_factor,1.0)
-				score+=clampf((matchup-1.0)*12.0,-6.0,6.0)
+			var expected_effect=expected_damage_score(a,skill,b)
+			score+=minf(24.0,expected_effect*0.2)
 			if distance<=float(skill.range_m)+body_radius(b) and clear_segment(a.pos,b.pos,0.03):score+=30
 			if use_tactical and skill.kind!="basic" and cast_geometry(a,skill,b) and ai_condition(a,skill,b):score+=50.0
 			if skill.shape in ["line","circle","cone","circle_ground","circle_target","zone_target","projectile_burst"]:
@@ -1562,18 +1560,79 @@ func p2_utility(a: Dictionary,s: Dictionary,b: Dictionary) -> float:
 	return score+float(s.ai.base_priority)*2-float(s.chakra)*0.28
 
 func damage_score_adjustment(a: Dictionary,s: Dictionary,b: Dictionary,base_score: float) -> float:
-	var total=0.0
-	var count=0
+	var predicted=expected_damage_score(a,s,b)
+	if predicted<=0.0:return -base_score if s.effects.any(func(e):return str(e.get("type",""))=="damage") else 0.0
+	return predicted-base_score
+
+func expected_damage_score(a: Dictionary,s: Dictionary,primary: Dictionary) -> float:
+	if primary.is_empty() or float(primary.get("hp",0.0))<=0.0:return 0.0
+	var has_damage=false
+	for effect in s.get("effects",[]):
+		if str(effect.get("type",""))=="damage":has_damage=true;break
+	if not has_damage:return 0.0
+	var predicted_damage=0.0
+	var targets=targets_for(a,s,primary)
+	if targets.is_empty():targets=[primary]
+	for target in targets:
+		var projected=target.duplicate(true)
+		var reaction_remaining=1.0
+		for effect in s.effects:
+			if str(effect.get("type",""))!="damage":continue
+			var detail=expected_damage_for_effect(a,s,target,effect,primary,projected,reaction_remaining)
+			predicted_damage+=float(detail.expected_effect)
+			projected.hp=maxf(0.0,float(projected.get("hp",0.0))-float(detail.expected_hp_damage))
+			projected.shield=maxf(0.0,float(projected.get("shield",0.0))-float(detail.expected_shield_damage))
+			if projected.has("p2_arc") and projected.p2_arc is Dictionary:
+				projected.p2_arc.hp=maxf(0.0,float(projected.p2_arc.get("hp",0.0))-float(detail.expected_arc_damage))
+			if bool(detail.get("target_reaction_eligible",false)):
+				reaction_remaining*=1.0-float(detail.hit_probability)
+	return predicted_damage
+
+func expected_damage_for_effect(a: Dictionary,s: Dictionary,target: Dictionary,effect: Dictionary,primary: Dictionary={},projected: Dictionary={},reaction_remaining: float=1.0) -> Dictionary:
+	if a.is_empty() or target.is_empty():return {"expected_effect":0.0,"expected_hp_damage":0.0,"expected_shield_damage":0.0,"expected_arc_damage":0.0}
+	if int(target.get("teleport_safe_until",0))>ticks and int(target.get("side",-1))!=int(a.get("side",-1)):return {"expected_effect":0.0,"expected_hp_damage":0.0,"expected_shield_damage":0.0,"expected_arc_damage":0.0}
+	var view=projected if not projected.is_empty() else target
+	var damage_type=str(effect.get("damage_type",s.get("damage_type","ninjutsu")))
+	var physical=damage_type=="physical"
+	var stat="patk" if physical else "natk"
+	var attack=float(a.get(stat,0.0))*(1.0+magnitude(a,"attack_up"))*maxf(0.5,1.0-magnitude(a,"attack_down"))*form_multiplier(a,stat)
+	if damage_type=="genjutsu":
+		stat="genjutsu_power"
+		attack=float(a.get("stats",{}).get("genjutsu_power",0.0))*form_multiplier(a,"genjutsu_power")
+	attack*=formation_multiplier(a,"attack")
+	if not a.get("stance",{}).is_empty() and str(a.stance.get("stat",""))==stat:attack*=float(a.stance.get("multiplier",1.0))
+	var defense=float(view.get("armor" if physical else "nres",0.0))*form_multiplier(target,"armor" if physical else "nres")*(1.0+magnitude(target,"defense_up"))
+	if damage_type=="genjutsu":defense=float(target.get("stats",{}).get("genjutsu_resist",0.0))
+	defense*=formation_multiplier(target,"defense")
+	var realm_factor=clampf(1.0+0.04*(int(a.get("realm",0))-int(target.get("realm",0))),0.75,1.25)
 	var element=str(s.get("element","neutral"))
-	var realm_factor=clampf(1.0+0.04*(int(a.get("realm",0))-int(b.get("realm",0))),0.75,1.25)
 	var environment_factor=float(registry.environments.get(environment,{}).get("modifiers",{}).get(element,1.0))
-	for e in s.effects:
-		if str(e.type)!="damage":continue
-		total+=Formula.expected_damage_factor(registry,a,b,str(e.get("damage_type",s.get("damage_type","ninjutsu"))),element,realm_factor,environment_factor,magnitude(a,"accuracy_up"),magnitude(a,"blind")+magnitude(a,"steam")+magnitude(b,"evasion"))
-		count+=1
-	if count==0:return 0.0
-	var quality=total/float(count)
-	return base_score*clampf((quality-0.85)*0.35,-0.3,0.35)
+	var reaction_context=expected_reaction_context(a,s,primary if not primary.is_empty() else target,target,reaction_remaining)
+	var arc_absorption=0.0
+	if int(target.get("side",-1))!=int(a.get("side",-1)) and target.has("p2_arc") and int(target.p2_arc.get("expires",0))>ticks and float(view.get("p2_arc",{}).get("hp",0.0))>0.0 and int(a.get("uid",-1))!=int(target.get("uid",-2)):
+		var facing=Vector2(target.p2_arc.get("facing",Vector2.ZERO))
+		var incoming=(Vector2(a.pos)-Vector2(target.pos)).normalized()
+		if facing.dot(incoming)>=cos(deg_to_rad(float(target.p2_arc.get("angle",180.0))*0.5)):arc_absorption=float(view.p2_arc.hp)
+	var evade_after_arc=int(target.get("side",-1))!=int(a.get("side",-1)) and target.has("p2_evade") and int(target.p2_evade.get("expires",0))>ticks and int(target.p2_evade.get("left",0))>0
+	var payload={"attack":attack,"coefficient":float(effect.get("coefficient",1.0)),"defense":defense,"physical":physical,"damage_type":damage_type,"element":element,"realm_factor":realm_factor,"environment_factor":environment_factor,"reaction_factor":float(reaction_context.factor),"reaction_probability":float(reaction_context.probability),"accuracy_bonus":magnitude(a,"accuracy_up"),"evasion_bonus":magnitude(a,"blind")+magnitude(a,"steam")+magnitude(target,"evasion"),"block_enabled":int(a.get("side",-1))!=int(target.get("side",-1)),"passives_enabled":use_passives,"critical_damage_bonus":rating(a,"crit_damage"),"hp":float(view.get("hp",1.0)),"shield":float(view.get("shield",0.0)),"arc_absorption":arc_absorption,"evade_after_arc":evade_after_arc}
+	var result=Formula.expected_damage_effect(registry,a,view,payload)
+	result.target_reaction_eligible=bool(reaction_context.target_eligible)
+	return result
+
+func expected_reaction_context(a: Dictionary,s: Dictionary,primary: Dictionary,target: Dictionary,reaction_remaining: float=1.0) -> Dictionary:
+	var element=str(s.get("element","neutral"))
+	if element=="neutral":return {"factor":1.0,"probability":0.0,"target_eligible":false}
+	var radius=maxf(0.4,float(s.get("radius_m",0.0)))
+	if str(s.get("shape",""))=="line":radius=maxf(radius,float(s.get("line_width_m",0.0))*0.5)
+	for zone in elemental_fields:
+		if int(zone.get("side",-1))!=int(a.get("side",-2)) or bool(zone.get("used",false)) or int(zone.get("expires",0))<=ticks or str(zone.get("element",""))==element:continue
+		if Vector2(primary.get("pos",Vector2.ZERO)).distance_to(Vector2(zone.get("pos",Vector2.ZERO)))>radius+float(zone.get("radius",0.0)):continue
+		for rule in registry.reactions:
+			if element in rule.elements and str(zone.element) in rule.elements:return {"factor":float(rule.multiplier),"probability":1.0,"target_eligible":false}
+	if ticks-int(target.get("element_tick",-1000))<=40 and ticks-int(target.get("reaction_tick",-1000))>=40 and element!=str(target.get("last_element","")):
+		for rule in registry.reactions:
+			if element in rule.elements and str(target.get("last_element","")) in rule.elements:return {"factor":float(rule.multiplier),"probability":clampf(reaction_remaining,0.0,1.0),"target_eligible":true}
+	return {"factor":1.0,"probability":0.0,"target_eligible":false}
 
 func status_utility_score(a: Dictionary,b: Dictionary,effects: Array) -> float:
 	var score=0.0

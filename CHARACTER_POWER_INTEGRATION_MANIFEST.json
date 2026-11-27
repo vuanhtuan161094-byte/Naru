@@ -7,7 +7,7 @@
   "feature_branch": "feature/character-power-overhaul",
   "merge_performed": false,
   "force_push_performed": false,
-  "release_state": "DEV_IMPLEMENTATION_WITH_OPEN_ACCEPTANCE_GATES",
+  "release_state": "DEV_IMPLEMENTATION_WITH_LOCAL_RUNTIME_EVIDENCE_AND_EXACT_SHA_CI_PENDING",
   "change_manifest": [
     {
       "file": "data/stats.json",
@@ -24,20 +24,20 @@
     {
       "file": "game/stats_service.gd",
       "surface": "derive, effect, display_value, tooltip, breakdown",
-      "changes": "Derives all 78 values from profile, growth, investment, gear, talent, chakra nature, and bloodline inputs; exposes effective ratings and a source breakdown to UI.",
-      "status": "IMPLEMENTED"
+      "changes": "Refactors derivation through the same trace path as the final snapshot; breakdown records exact ordered components/modifiers, raw rating and converted effectiveness/cap.",
+      "status": "IMPLEMENTED_LOCAL_RUNTIME_TESTED"
     },
     {
       "file": "game/combat_formula_service.gd",
       "surface": "hit, critical, status, affinity, damage, mitigation, DOT, healing, shield, expected_damage_factor",
-      "changes": "Centralized new combat calculations for typed elemental stats, status resistance, critical caps, block, DR and shield interaction; exposes expected effectiveness for AI evaluation.",
-      "status": "IMPLEMENTED"
+      "changes": "Adds expected HP/shield/arc effect over hit, crit, block, reduction, passive DR and shield break; reaction branches are hit-gated and multi-hit reaction timing is modeled.",
+      "status": "IMPLEMENTED_LOCAL_SEEDED_RUNTIME_TESTED"
     },
     {
       "file": "game/combat.gd",
       "surface": "target_for, utility, p2_utility, apply_status, hit, add_shield, damage/status dispatch",
-      "changes": "Wires typed offense and resistance, multielement matchup, status resistance and repeated-control duration into runtime; applies block/DR/shield break, DOT, healing and shield ratings; logs seal, resistance, immunity, block, absorb, evade, critical, heal, cleanse, and unseal events; AI values expected matchup and control success.",
-      "status": "IMPLEMENTED_DEV"
+      "changes": "AI skill/target choice uses expected absolute resolved damage with combat context; genjutsu uses its own power/resist; target-reaction consumption is accounted across multi-hit skills.",
+      "status": "IMPLEMENTED_LOCAL_SEEDED_RUNTIME_TESTED"
     },
     {
       "file": "game/data_registry.gd",
@@ -66,26 +66,26 @@
     {
       "file": "game/power_system_test.gd",
       "surface": "runtime stat and combat fixtures",
-      "changes": "Covers all 144 profile snapshots and focused stat derivation/source, Storm matrix, status resistance, CC diminishing returns, AI matchup selection, shield break, shield power, healing received, and sealing behavior.",
-      "status": "CI_GODOT_4_4_1_PASS"
+      "changes": "11,232 breakdown reconciliations; raw/effective rating, investment and actual training/mastery effects; seeded actual damage comparison including multi-hit fire/wind reaction, shield break and defensive layers.",
+      "status": "LOCAL_GODOT_4_7_2_PASS; EXACT_GODOT_4_4_1_CI_PENDING"
     },
     {
       "file": "tools/build_power_wiki.py",
       "surface": "offline data-backed reference generator",
-      "changes": "Validates inventory and references, then builds a searchable Wiki from source JSON without external dependencies.",
-      "status": "IMPLEMENTED"
+      "changes": "Validates source inventories and the per-ID completion ledger; generates searchable offline Wiki for profiles, stats, skills, passives, branches, forms, combos, gear, slots, recipes, resources and growth/acquisition systems.",
+      "status": "LOCAL_SOURCE_CHECK_AND_GENERATION_PASS"
     },
     {
       "file": "wiki/power/",
       "surface": "generated offline Wiki",
-      "changes": "Includes ninja, stat, skill, passive, branch, form, combo, equipment, and slot records with source statuses.",
-      "status": "GENERATED_FROM_SOURCE_DATA"
+      "changes": "3,243 searchable Vietnamese records with per-ID observed scope, source status, costs, prerequisites, growth/acquisition, equipment and recipe references.",
+      "status": "GENERATED; EXACT_SHA_WEB_ARTIFACT_PENDING"
     },
     {
       "file": ".github/workflows/godot-smoke.yml",
       "surface": "exact-SHA integrated workflow",
       "changes": "Adds the character power runtime test and Wiki inventory validation; packages generated Wiki beside the Web export and retains the power test log.",
-      "status": "EXACT_SHA_CI_PASS"
+      "status": "WORKFLOW_CONFIGURED; EXACT_FEATURE_SHA_DISPATCH_PENDING"
     }
   ],
   "inventory": {
@@ -94,42 +94,72 @@
       "source_records_have_six_base_and_growth_stats": 144,
       "runtime_snapshot_test": "all 144 checked for 78-value derivation",
       "full_manual_identity_balance_review": "NOT_COMPLETE",
-      "known_baseline": "24 distinct six-stat base/growth signatures before this feature; this change does not claim 144 individually reauthored numerical profiles"
+      "known_baseline": "24 distinct six-stat base/growth signatures before this feature; this change does not claim 144 individually reauthored numerical profiles",
+      "local_runtime_snapshot": "144/144 profiles emitted 78 values; 11,232 profile/stat breakdowns reconcile.",
+      "manual_identity_canon_balance_review": "NOT_COMPLETE; numeric profiles remain DEV and 24 repeated signatures are reported, not randomized."
     },
     "stats": {
       "count": 78,
       "catalog_formula_contracts": 78,
-      "focused_runtime_effect_checks": "See game/power_system_test.gd; this is not an individual balance certification for all 78 effects."
+      "focused_runtime_effect_checks": "See game/power_system_test.gd; this is not an individual balance certification for all 78 effects.",
+      "local_derivation": "78/78 keys traced in all 144 profile snapshots.",
+      "local_effect_observations": "training_speed changes an earned training transaction; mastery_speed changes actual Combat.release mastery. Other consumer-specific evidence remains open."
     },
     "skills": {
       "count": 1152,
       "p2_registry_on_base": "1146 adapted / 6 fallback; unchanged records retain their existing gate",
-      "individual_behavior_and_balance_review": "NOT_COMPLETE"
+      "individual_behavior_and_balance_review": "NOT_COMPLETE",
+      "p2_registry": "1146 adapted / 6 fallback.",
+      "local_seeded_per_id_fixture": "1146/1146 enabled IDs resolved an effect receipt; no cast-only/rejected IDs in game/skill_p2_test.gd.",
+      "fallback_ids": [
+        "NIN-006-S7",
+        "NIN-016-S7",
+        "NIN-064-S5",
+        "NIN-064-S7",
+        "NIN-139-S1",
+        "NIN-139-S5"
+      ],
+      "individual_behavior_canon_and_balance_review": "NOT_COMPLETE"
     },
     "passives": {
       "count": 864,
       "runtime_source_state_on_base": "678 DEV_CANDIDATE / 186 HOLD_SOURCE_GATE",
       "default_gate": "OFF",
-      "individual_effect_certification": "NOT_COMPLETE"
+      "individual_effect_certification": "NOT_COMPLETE",
+      "runtime_source_state": "678 DEV_CANDIDATE / 186 HOLD_SOURCE_GATE.",
+      "global_default_gate": "OFF.",
+      "local_opt_in_observation": "12 seeded 6v6 windows: 677 eligible, 406 stat receipts, 66 typed effect receipts, 6 event-only receipts, 199 eligible with no receipt; not individual semantic certification."
     },
     "skill_branches": {
       "count": 432,
       "authored_era_holds": 2,
       "runtime_adapter_holds_in_current_resolution": 34,
-      "individual_effect_certification": "NOT_COMPLETE"
+      "individual_effect_certification": "NOT_COMPLETE",
+      "runtime_counts": "396 exact depth fields / 34 local DOT-drain adapters (31 DOT + 3 drain) / 2 era holds.",
+      "individual_effect_balance_certification": "NOT_COMPLETE"
     },
     "forms": {
       "count": 54,
-      "per_form_runtime_acceptance": "NOT_COMPLETE"
+      "per_form_runtime_acceptance": "NOT_COMPLETE",
+      "local_observations": "54 legal route attempts; 44 focused activations and 27 empowered effects; across routes and seeded rosters 47 activation IDs and 30 empowered-effect IDs.",
+      "per_form_source_and_full_effect_acceptance": "NOT_COMPLETE"
     },
     "combos": {
       "count": 12,
-      "natural_match_acceptance_for_every_contract": "NOT_COMPLETE"
+      "natural_match_acceptance_for_every_contract": "NOT_COMPLETE",
+      "local_natural_receipts": "4/12 observed in seeded 6v6: COMBO-002, COMBO-007, COMBO-009, COMBO-011.",
+      "remaining_natural_receipt_holds": "COMBO-001, COMBO-003, COMBO-004, COMBO-005, COMBO-006, COMBO-008, COMBO-010, COMBO-012.",
+      "balance_certification": "NOT_COMPLETE"
     },
     "equipment": {
       "templates": 128,
       "slots": 16,
-      "existing_ids_or_save_records_changed": false
+      "existing_ids_or_save_records_changed": false,
+      "local_representative_save_fixture": "EQ-001-Q1 craft/equip/enhance/refine/evolve/socket/save/reload observed; the other templates are not individually tested.",
+      "resource_ids": 150,
+      "resource_acquisition_paths": 150,
+      "recipes": 63,
+      "local_recipe_receipt": "RCP-001 completed; remaining recipes need individual/earned-only review."
     }
   },
   "save_and_asset_policy": {
@@ -140,30 +170,67 @@
     "public_pages_changed": false
   },
   "qa": {
-    "local_engine": "Godot 4.7.2",
-    "local_power_runtime_test": "PASS",
-    "local_registry_smoke": "PASS (144 ninja, 1152 skills, 120 stages)",
-    "local_combat_v3_test": "PASS",
-    "local_skill_p2_test": "PASS (1146 adapted, 6 fallback)",
-    "local_adapter_v10_test": "PASS (13 passive adapter fixtures; 34 branch fixtures reconciled)",
-    "local_product_combat_v11_test": "PASS (432 branches; 396 resolved, 34 adapter holds)",
-    "local_passive_test": "PASS (864 ledger; gate unchanged; candidate remains opt-in; 12 designed-roster windows)",
-    "local_tactical_v10_test": "PASS (paired AI/spatial samples; 54 form and 12 combo contracts loaded)",
-    "local_combat_final_v12_test": "PASS (form and combo probes, 12 rosters, 6 boss stages; observed-only outcomes retained)",
-    "local_headless_game_start": "PASS",
-    "wiki_inventory_check": "PASS",
-    "wiki_http_and_javascript_syntax": "PASS",
-    "feature_sha_ci": "PASS (GitHub Actions Godot 4.4.1; all workflow steps)",
-    "web_export_and_browser": "PASS (Web DEV export and Chromium runtime smoke)",
-    "earned_only_90_day": "PASS (90 days; 120/120 progression wins, 150/150 inventory IDs, strict P7R reload)",
-    "native_6v6_video_and_screenshots": "PASS (native capture and review screenshots uploaded as CI artifacts)"
+    "local_engine": "Godot 4.7.2; final workflow targets project Godot 4.4.1 compatibility.",
+    "local_power_runtime_test": "PASS on final local code; NARU_POWER_SYSTEM_PASS 78 stats; /tmp/naru-power-system-final.log",
+    "local_registry_smoke": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
+    "local_combat_v3_test": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
+    "local_skill_p2_test": "PASS after reaction-aware AI update; 1146 enabled per-ID seeded receipts / 6 fallback; /tmp/naru-skill-p2-final.log",
+    "local_adapter_v10_test": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
+    "local_product_combat_v11_test": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
+    "local_passive_test": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
+    "local_tactical_v10_test": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
+    "local_combat_final_v12_test": "PASS on current local code; seeded outcomes and unobserved IDs remain scoped observations, not full acceptance.",
+    "local_headless_game_start": "Previous local scoped result only; exact-SHA Godot 4.4.1 workflow reruns the current code.",
+    "wiki_inventory_check": "PASS; 3,243 source records; generator writes Wiki with per-ID ledger status.",
+    "wiki_http_and_javascript_syntax": "PASS: local HTTP served index/data.json; Node --check passed on extracted inline script. Exact-SHA Chromium game smoke pending.",
+    "feature_sha_ci": "PENDING exact feature-SHA dispatch.",
+    "web_export_and_browser": "PENDING exact feature-SHA Web DEV export and Chromium run.",
+    "earned_only_90_day": "PENDING exact feature-SHA 90-day run and strict reload/inventory report.",
+    "native_6v6_video_and_screenshots": "PENDING exact feature-SHA Godot/Xvfb and browser screenshot artifacts.",
+    "local_gp_p2_test": "PASS exit 0; representative save/gear flow; natural chapter 5/5; separate short organic P2 sample 9/10; /tmp/naru-gp-p2-final.log"
   },
   "open_acceptance_gates": [
-    "Review all 144 numerical profiles for source quality and intended power tiers; current numeric profile signatures remain repeated.",
-    "Certify all 78 effects through focused real combat/progression outcomes and balance ranges, not only catalog presence.",
-    "Review and test 1146 adapted skills individually or by verified mechanic family; preserve six P2 fallbacks.",
-    "Resolve the 186 passive source gates and certify candidate effects before changing the default-off gate.",
-    "Resolve 34 skill-branch runtime adapter holds and keep two era holds.",
-    "Complete per-ID form/combo evidence from natural matches; current runtime observations cover only subsets of those contracts."
-  ]
+    "Complete manual source/canon/identity and tier review for 144 profiles; keep the 24 numerical-signature groups as observations, not a randomization target.",
+    "Validate individual consumer/acquisition behavior and balance for remaining stats; only training_speed and mastery_speed received focused actual-effect comparisons here.",
+    "Validate full semantics, costs, targeting, timing, stacking, source and balance for all 1146 enabled skills; keep six listed P2 fallback IDs.",
+    "Resolve 186 passive source gates and review the 199 eligible candidates without an observed receipt; retain global default-OFF.",
+    "Natural progression/effect review for 396 exact branch fields and 34 tested DOT/drain rows; retain two era branch holds.",
+    "Review all 54 form source/routes/effects and all 12 combo conditions/payloads; current natural combo receipts cover 4 IDs.",
+    "Individually validate 128 gear templates, 16 slots, 150 resource acquisition paths and 63 recipes; current paid gear/recipe checks are representative.",
+    "Run exact-SHA Godot 4.4.1 CI, Web DEV/browser screenshots, native 6v6 video and earned-only 90-day save/inventory comparison before claiming CI acceptance.",
+    "Integrate on the newest One Game SHA by function only; preserve its 32 gear variants, world/save/UI/art changes, and resolve One Game-owned workflow gates first."
+  ],
+  "final_task_batch": {
+    "task": "CHARACTER POWER COMPLETION & INTEGRATION HANDOFF",
+    "branch": "feature/character-power-overhaul",
+    "task_start_sha": "0b3be051054a7cd05986b346485e79acf9e3c22e",
+    "shared_base_sha": "85426e5a8b48ed3653ea6b3870b9aa85a9f370d7",
+    "one_game_compatibility_sha": "93f9f13e5145c5c8b71bc40beece27bc1566233e",
+    "final_feature_sha": "To be taken from exact GitHub Actions workflow headSha; this file does not self-hash.",
+    "merge_performed": false,
+    "force_push_performed": false,
+    "art_hold_respected": true,
+    "cloud_settings_changed": false,
+    "status": "Local DEV tests recorded; exact feature-SHA CI and uploaded artifacts pending.",
+    "one_game_ci": {
+      "head_sha": "93f9f13e5145c5c8b71bc40beece27bc1566233e",
+      "integrated_godot_run": {
+        "id": 45972381548,
+        "conclusion": "success"
+      },
+      "native_private_review": {
+        "id": 45972381513,
+        "conclusion": "success"
+      },
+      "r12_native_capture": {
+        "id": 45972381549,
+        "conclusion": "success"
+      },
+      "public_web_preview": {
+        "id": 45972381547,
+        "conclusion": "failure",
+        "reason": "Missing static actor SUMMON-SKILL-NIN-066-S1 in One Game public-art check; no workflow edit made here."
+      }
+    }
+  }
 }

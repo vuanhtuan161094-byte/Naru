@@ -126,3 +126,35 @@ V10 exact a8830459 CI 45638173068 full success: 1146 timed P2, 31 DOT+3 drain fi
 
 ### V11 follow-up runtime tuning
 Legal allied target prioritization, retained D4 manual_stance routes, combo signature index, ninken tracking confirms actual in-range or forward movement (not spawn/selection), cached allied movement candidates, cumulative fractional hit schedule (resolution remains 50ms), valid grade/branch operation for passive potency, self-only B2 conditional secondary during matching committed active parent; combo secondary with no duration remains explicit review HOLD. No new source/reflection clearance. No claim of full 864 semantic validation.
+
+## Character Power Completion & Integration Handoff — 27/11/2026
+
+Working on `feature/character-power-overhaul`, task-start HEAD `0b3be051054a7cd05986b346485e79acf9e3c22e`; shared base `85426e5a8b48ed3653ea6b3870b9aa85a9f370d7`. Live One Game compatibility ref inspected at `93f9f13e5145c5c8b71bc40beece27bc1566233e`. No merge, public publish, art edit, or environment-setting change.
+
+### A — Runtime power calculations
+
+- `Stats.breakdown()` is now derived from the same ordered intermediate values as `derive()`. The local Godot 4.7.2 run reconciled all 11,232 profile/stat rows for 144 profiles × 78 stats, including talent, fixed talent, chakra nature, bloodline, gear, negative values, and lower clamps. Raw ratings remain distinct from converted capped effects. `training_speed` was observed changing a real earned `train_stat` transaction; `mastery_speed` changed actual `Combat.release` mastery awards.
+- AI damage selection uses expected absolute HP, shield, and arc effect. It accounts for coefficient, typed attack/defense, penetration, hit/evasion, critical, block, realm, affinity/reaction, environment, mitigation, passive DR, shield break and shield absorption. The seeded sample matched actual hit resolution; a new two-hit elemental test verifies reaction hit gating and single-use timing. Genjutsu uses genjutsu power/resist rather than ninjutsu attack.
+- All 441 directional affinity pairs exist and the Storm/neutral entries remain 1.0. Seven existing reaction rules ran through focused tests. Pair values and character numerics remain DEV where source authority is absent; the 24 profile signature groups were not randomized.
+
+### B — ID ledger and runtime observations
+
+- `CHARACTER_POWER_COMPLETION_LEDGER.json` covers 144 profiles, 78 stats, 1,152 active skills, 864 passives, 432 branches, 54 forms, 12 combos, 128 gear templates, 16 slots, 441 affinity pairs, 7 reactions, 150 resources, 150 acquisition rows, and 63 recipes. The Wiki reads each record’s acceptance status from this ledger.
+- A seeded per-ID fixture observed an effect receipt for all 1,146 enabled P2 rows; no enabled row was cast-only or rejected. Six explicit fallbacks remain: `NIN-006-S7`, `NIN-016-S7` (era), `NIN-064-S5`, `NIN-064-S7`, `NIN-139-S1`, `NIN-139-S5` (reflection/linked-mechanic source gates). A fixture receipt does not certify every parameter or balance.
+- Of 432 branch records, 396 resolve an exact depth field, 34 have local DOT/drain adapter evidence (31 DOT, 3 drain), and 2 era rows stay held. Natural progression and per-branch balance remain open.
+- Passives remain globally default-OFF. In 12 seeded 6v6 windows covering all 144 identities, 677 IDs were eligible: 406 had stat receipts, 66 typed-effect receipts, 6 event-only receipts, and 199 eligible IDs had no receipt. The 186 source gates remain held. These are opt-in DEV observations, not 864 semantic certifications.
+- Focused legal form routes attempted all 54 forms; 44 activated and 27 produced an empowered effect. Across route fixtures and seeded rosters, 47 IDs had an activation receipt and 30 an empowered-effect receipt. Seeded natural combo chains were observed for 4/12 (`COMBO-002`, `COMBO-007`, `COMBO-009`, `COMBO-011`). Other IDs retain explicit blockers. Match outcomes varied and are not balance approval.
+
+### C — Player information and gameplay evidence
+
+- `wiki/power/` contains 3,243 searchable Vietnamese records, including all listed inventories, 63 recipes, 150 resources/acquisition rows, growth/recruit/equipment rules, costs, source states and per-ID observed scope. The generator’s source check passes. The local 78-stat screen shows raw/effective values and ordered source tooltips.
+- Local `game/gp_p2_test.gd` completed with exit 0 in Godot 4.7.2 and a writable temporary user-data path. It observed real craft/equip/upgrade/refine/evolve/socket/save reload for `EQ-001-Q1`, a completed `RCP-001`, 150 reachable resource IDs, 1152 authored effect dispatches, 120 high-power campaign fixture wins, and a natural starter chapter at 5/5. Its separate short P2 organic starter sample ended at 9/10; this is a balance observation, not a pass gate. It is not the required 90-day test.
+- Exact-SHA Godot 4.4.1 CI, Web DEV export/browser screenshots, native 6v6 video, and earned-only 90-day reload/inventory comparison are pending the final feature commit and workflow dispatch. No artifacts are claimed before that run.
+
+### D — One Game safe integration
+
+The scoped conflict notes, integration order and rollback plan are in [CHARACTER_POWER_HANDOFF.md](CHARACTER_POWER_HANDOFF.md). Keep One Game’s larger `main.gd` UI/world/art changes and 32 added gear variants; apply only the feature stat-detail, stat catalog/affinity, and power workflow additions by function. Target compatibility SHA is `93f9f13e5145c5c8b71bc40beece27bc1566233e`.
+
+The One Game integrated Godot run 45972381548 passed; native private review 45972381513 and R12 capture 45972381549 also passed, all at `93f9f13e5145c5c8b71bc40beece27bc1566233e`. Its separate published-Web run 45972381547 failed the static actor check for `SUMMON-SKILL-NIN-066-S1`; that is in One Game’s public-art workflow, which was not edited here. Resolve that One Game-owned gate separately before integration/release.
+
+Exact feature SHA CI and all uploaded evidence remain pending. Local logs: `/tmp/naru-power-system-final.log`, `/tmp/naru-final-v12-final.log`, `/tmp/naru-skill-p2-final.log`, `/tmp/naru-gp-p2-final.log`. The final exact-SHA workflow is the acceptance gate for Web/native/90-day evidence.

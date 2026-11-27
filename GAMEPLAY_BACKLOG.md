@@ -76,3 +76,10 @@ Work independently on READY tasks; no merge, Codex Cloud, public release, or art
 - V11 REVIEW: actual per-ID 432 branch typed effects; 12 real rotation windows and all 54 correct-realm forms; measure spacing, focus/avoidance, tick duration, starter regression. No claim of organic all 12 combos or 54 forms until evidence. Trial runtime and all passive conditions/mastery still require full per-ID acceptance. Reflection + rights gates remain.
 
 - V11 follow-up: review combo B2 secondary duration contract with Chat00; interval effects with identical 50ms tick quantization require design tuning, no artificial timing claims.
+
+## CHARACTER POWER COMPLETION — 27/11/2026
+
+- **LOCAL DEV EVIDENCE:** 144×78 stat trace reconciliation, expected absolute damage/reaction checks, 1146/1146 enabled P2 effect receipts, 396 exact branch fields, 34 scoped DOT/drain adapters, opt-in passive receipts, 54 form routes, 12 seeded combo scenarios, representative paid gear/save flow, 441 affinity pairs, 7 reaction rules, 150 resource IDs, 63 recipes. See `CHARACTER_POWER_COMPLETION_LEDGER.json` for per-ID statuses and evidence.
+- **HOLD:** profile identity/canon and numeric tier review; consumer-specific proof for most of 78 stats; six P2 fallbacks (`NIN-006-S7`, `NIN-016-S7`, `NIN-064-S5`, `NIN-064-S7`, `NIN-139-S1`, `NIN-139-S5`); 186 passive source gates; 2 branch era holds; natural/empowered behavior for every form and combo; individual template/resource/recipe reachability.
+- **PENDING EXACT SHA:** final Godot 4.4.1 workflow, Wiki/DEV export, browser screenshots, native 6v6 video, and earned-only 90-day inventory/save reload. Local short organic P2 starter result 9/10 is recorded as an observation, not a pass.
+- **INTEGRATION:** no merge. Preserve One Game SHA `93f9f13e5145c5c8b71bc40beece27bc1566233e`, including world, save, art/UI changes and its 32 gear variants. See `CHARACTER_POWER_HANDOFF.md` for exact overlapping paths, application order, regression gates, and rollback.

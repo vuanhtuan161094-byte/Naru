@@ -3,6 +3,7 @@ const Registry=preload("res://game/data_registry.gd")
 const Combat=preload("res://game/combat.gd")
 const Passive=preload("res://game/passive_service.gd")
 const Depth=preload("res://game/skill_depth_service.gd")
+const Formula=preload("res://game/combat_formula_service.gd")
 var failed=0
 func check(ok: bool,label: String) -> void:
 	if ok:print("ADAPTER_V10_OK ",label)
@@ -96,9 +97,10 @@ func _initialize() -> void:
 				e.chance=1.0
 				var old=float(b.hp)
 				sim.apply_status(a,b,e)
-				var budget=roundi(float(e.fixed_dot_total_coefficient)*float(a.natk))
+				var budget=roundi(float(e.fixed_dot_total_coefficient)*float(a.natk)*sim.form_multiplier(a,"natk")*Formula.dot_multiplier(reg,a,b))
+				var expected=float(budget)*(1.0-Formula.damage_reduction(reg,a,b))
 				for i in range(ceili(float(e.duration_s)*20)+40):sim.update_status(b,0.05)
-				if absf(old-float(b.hp)-budget)<0.01:found=true
+				if absf(old-float(b.hp)-expected)<0.01:found=true
 			if found:dots.append(branch.id)
 			else:branch_unresolved.append(branch.id)
 		else:
