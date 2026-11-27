@@ -151,6 +151,7 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 		var order=s.trade_orders[slot]
 		if not slot in ["1","2","3"] or not order is Dictionary or not reg.factions.has(order.get("faction","")) or order.faction=="FAC-009" or not reg.resources.has(order.get("resource","")):return false
 		if not bool(reg.resources[order.resource].tradable) or order.resource in ["RES-001","RES-002","RES-003","RES-004","RES-005"] or not order.get("buy") is bool or not integer(order.get("target"),1,10000) or not integer(order.get("due")):return false
+	if not integer(s.get("tax_revenue",0)):return false
 	if not s.get("world_projects",{}) is Dictionary:return false
 	for id in s.get("world_projects",{}):
 		if preload("res://game/world_economy_projects.gd").find(id).is_empty() or not integer(s.world_projects[id],0,5):return false
@@ -159,6 +160,7 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 		if not reg.territories.has(id) or not t is Dictionary:return false
 		if t.get("owner")!=null and not reg.factions.has(t.owner):return false
 		if not integer(t.get("visits",0)) or not integer(t.get("development",0),0,5):return false
+		if not integer(t.get("tax_rate",0),0,30) or not int(t.get("tax_rate",0)) in [0,10,20,30]:return false
 	for id in s.get("faction_states",{}):
 		var faction=s.faction_states[id]
 		if not reg.factions.has(id) or not faction is Dictionary or not faction.get("stock") is Dictionary:return false

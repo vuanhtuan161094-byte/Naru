@@ -133,6 +133,33 @@ func _initialize() -> void:
 	World.run_trade_orders(reg,s)
 	ok=check(int(s.inventory["RES-006"])==60 and int(s.faction_states[faction].stock["RES-006"])==90 and int(s.inventory["RES-001"])<10000,"paid trade") and ok
 	ok=check(store.remove_trade_order("1"),"remove trade order") and ok
+	# Tax is a conversion of a real deposit. Full storage blocks both deposit and tax.
+	var tax_region=Projects.source_region(reg,s,"RES-006")
+	ok=check(not tax_region.is_empty() and store.set_territory_tax(tax_region,20),"tax policy") and ok
+	var old_wood=int(s.inventory["RES-006"])
+	var old_ryo=int(s.inventory["RES-001"])
+	var levy=Projects.levy_quote(reg,s,tax_region,"RES-006",10)
+	ok=check(int(levy.qty)==8 and int(levy.levy)==2 and int(levy.ryo)>0,"tax conversion") and ok
+	ok=check(Village.put_territory_yield(reg,s,tax_region,"RES-006",10) and int(s.inventory["RES-006"])==old_wood+8 and int(s.inventory["RES-001"])==old_ryo+int(levy.ryo),"actual taxed deposit") and ok
+	s.inventory["RES-006"]=Village.capacity(s,"RES-006")
+	old_ryo=int(s.inventory["RES-001"])
+	ok=check(not Village.put_territory_yield(reg,s,tax_region,"RES-006",10) and int(s.inventory["RES-001"])==old_ryo,"no tax on blocked production") and ok
+	s.inventory["RES-006"]=old_wood
+	ok=check(store.set_territory_tax(tax_region,0) and not store.set_territory_tax(tax_region,100),"tax range") and ok
+	# Validate all authored variants and initialize actual Godot combat for representative battles.
+	var Combat=preload("res://game/combat.gd")
+	for variant in Catalog.CHALLENGES:
+		var encounter=Catalog.battle_stage(reg,variant.id)
+		ok=check(reg.bosses[encounter.boss_id].primary_enemy_id in encounter.enemy_ids and encounter.enemy_ids.size()<=6,"boss challenge primary") and ok
+		for npc in encounter.enemy_ids:ok=check(reg.npcs.has(npc),"boss challenge npc") and ok
+	for encounter in [Catalog.battle_stage(reg,"EXP-13"),Catalog.battle_stage(reg,"EXP-25"),Catalog.battle_stage(reg,"EXP-26"),Activities.tower_stage(reg,1),Activities.tower_stage(reg,30)]:
+		var sim=Combat.new()
+		sim.setup(reg,s,encounter,731)
+		ok=check(sim.actors.size()==s.team.size()+encounter.enemy_ids.size(),"real combat setup "+str(encounter.name_vi)) and ok
+		for tick in range(120):
+			if sim.outcome!="":break
+			sim.tick(0.05)
+		ok=check(not sim.actors.is_empty(),"combat tick "+str(encounter.name_vi)) and ok
 	ok=check(Guard.valid(reg,s),"save compatibility") and ok
 	if not ok:quit(1);return
 	print("NARU_WORLD_CONTENT_PASS 30 catalog refs, cooldown settlement and target queue; no simulated combat claim")

@@ -712,6 +712,11 @@ func upgrade_world_project(id:String) -> bool:
 	if not preload("res://game/world_economy_projects.gd").upgrade(state,id):return false
 	return commit_change(prior,rng.state)
 
+func set_territory_tax(id:String,rate:int) -> bool:
+	var prior=state.duplicate(true)
+	if not preload("res://game/world_economy_projects.gd").territory_tax(state,id,rate):return false
+	return commit_change(prior,rng.state)
+
 func develop_territory(reg,id:String) -> bool:
 	var prior=state.duplicate(true)
 	if not preload("res://game/world_economy_projects.gd").develop(reg,state,id):return false

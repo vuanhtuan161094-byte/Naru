@@ -63,3 +63,34 @@ static func develop(reg,s:Dictionary,id:String) -> bool:
 	pay(s,q.cost)
 	s.territory_states[id].development=int(q.level)+1
 	return true
+
+# Levy is a conversion of earned production, not an additional passive grant.
+# Default 0 preserves existing progression. The best-developed owned region
+# supplies a shared resource; ties are resolved by stable registry order.
+static func territory_tax(s:Dictionary,id:String,rate:int) -> bool:
+	if not s.territory_states.has(id) or not rate in [0,10,20,30]:return false
+	var territory=s.territory_states[id]
+	if territory.owner!="FAC-009" or not territory.discovered:return false
+	territory.tax_rate=rate
+	return true
+
+static func source_region(reg,s:Dictionary,resource_id:String) -> String:
+	var best=""
+	var highest=-1
+	for id in reg.territories:
+		var t=s.territory_states[id]
+		if t.owner!="FAC-009":continue
+		for row in reg.territories[id].resources:
+			if row.resource_id!=resource_id:continue
+			var development=int(t.get("development",0))
+			if development>highest:
+				best=id
+				highest=development
+	return best
+
+static func levy_quote(reg,s:Dictionary,region:String,resource_id:String,qty:int) -> Dictionary:
+	var rate=clampi(int(s.territory_states.get(region,{}).get("tax_rate",0)),0,30)
+	if region.is_empty() or not reg.resources[resource_id].tradable or resource_id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:rate=0
+	var levy=floori(float(qty)*rate/100.0)
+	var unit=maxi(1,floori(float(reg.resources[resource_id].base_price_ryo)*0.35))
+	return {"qty":qty-levy,"levy":levy,"ryo":levy*unit}

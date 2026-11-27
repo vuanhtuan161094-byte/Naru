@@ -44,6 +44,14 @@ static func put(s: Dictionary,id: String,qty: int) -> bool:
 	s.inventory[id]=int(s.inventory.get(id,0))+qty
 	return true
 
+static func put_territory_yield(reg,s:Dictionary,region:String,id:String,qty:int) -> bool:
+	var q=Projects.levy_quote(reg,s,region,id,qty)
+	if not put(s,id,int(q.qty)):return false
+	if int(q.ryo)>0:
+		Rewards.deliver(s,"RES-001",int(q.ryo))
+		s.tax_revenue=int(s.get("tax_revenue",0))+int(q.ryo)
+	return true
+
 static func upgrade_cost(reg,s: Dictionary,id: String) -> Dictionary:
 	var def=reg.buildings[id]
 	var factor=pow(1.13,maxi(0,level(s,id)-1))
@@ -255,11 +263,14 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		else:reserve(s,job,recipe)
 	# Compute territorial resource access once per tick, rather than once per source.
 	var owned_resources={}
+	var source_regions={}
 	for territory in reg.territories.values():
 		if s.territory_states[territory.id].owner=="FAC-009":
 			for resource in territory.resources:
 				var development=clampi(int(s.territory_states[territory.id].get("development",0)),0,5)
-				owned_resources[resource.resource_id]=maxi(int(owned_resources.get(resource.resource_id,0)),development)
+				if development>int(owned_resources.get(resource.resource_id,-1)):
+					owned_resources[resource.resource_id]=development
+					source_regions[resource.resource_id]=territory.id
 	for source in reg.supply:
 		var id=str(source.building_id)
 		var kind=str(source.source_type)
@@ -273,7 +284,8 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		while elapsed>=period:
 			var b=s.building_states[id]
 			var qty=maxi(1,floori(float(source.base_yield)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))
-			if put(s,resource_id,qty):
+			var deposited=put_territory_yield(reg,s,str(source_regions.get(resource_id,"")),resource_id,qty) if kind=="territory" else put(s,resource_id,qty)
+			if deposited:
 				award_job(s,id,qty)
 				s.production_count=int(s.production_count)+1
 				Content.bump(s,"collect_production")
