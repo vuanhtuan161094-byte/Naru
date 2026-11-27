@@ -51,11 +51,11 @@ def vfx(out):
     (out/'manifest.json').write_text(json.dumps(report,indent=2))
     # Keep original license/notice with generated assets, no font or runtime code.
     root=BASE.split('/Packages/')[0]+'/'
-    for name in ('LICENSE','NOTICE'):
+    for name in ('LICENSE','NOTICE.md'):
         try:
             with urllib.request.urlopen(root+name,timeout=30) as r: (out/name).write_bytes(r.read())
         except Exception:
-            if name=='LICENSE': raise
+            raise
 def ninja(source,out):
     # User-supplied local atlas folder. Do not download or redistribute unverified character art.
     out.mkdir(parents=True,exist_ok=True); report=[]
@@ -74,7 +74,7 @@ def ninja(source,out):
             cel=image.crop((x,y,x+w,y+h))
             cells.append((cel,float(pivot['x'])*full['w']-s['x'],float(pivot['y'])*full['h']-s['y']))
             durations.append(int(f.get('duration',100)))
-        img,indices=strip(cells,(96,112),(48,104),limit=42)
+        img,indices=strip(cells,(96,112),(48,104),limit=len(cells))
         ident=path.parent.parent.name; dest=out/ident;dest.mkdir(exist_ok=True)
         img.save(dest/(path.stem+'.png'))
         frames_gif=[img.crop((i*96,0,(i+1)*96,112)).resize((288,336),Image.Resampling.NEAREST) for i in range(len(indices))]
