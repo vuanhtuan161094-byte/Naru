@@ -455,5 +455,20 @@
   },
   "cel_target": 11760,
   "clips_per_character": 14,
-  "cels_per_character": 84
+  "cels_per_character": 84,
+  "current_character": {
+    "id": "NIN-003",
+    "name": "Sakura Haruno (thiếu niên)",
+    "stage": "MODEL_SOURCE_REQUIRED"
+  },
+  "character_checkpoints": {
+    "NIN-002": {
+      "source_visual": "OWNER_APPROVED",
+      "clips": 14,
+      "cels": 84,
+      "archive": "Sasuke_V3_84_RGBA.zip",
+      "runtime": "NOT_TESTED",
+      "binary_in_repo": false
+    }
+  }
 }

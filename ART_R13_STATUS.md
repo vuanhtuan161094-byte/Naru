@@ -10,3 +10,6 @@
 
 ## V3 character-first direction budget (owner approved)
 14 clips / 84 distinct cels per character: SE/SW all actions, NE/NW move only. 140 targets = 1960 clips / 11760 cels. Existing rear clips retained. Renderer uses action-aware presentation facing only; simulation and VFX unchanged. Coverage fixture updated to 14. Source generator failures observed: poster/character/era mismatch and actual GIF in PNG extension; exact internal cause unverified. Stop after one wrong source, do not repeat poster prompts. Model lock, native-resolution review, no upscale, compare anatomy and colors before integration. Sasuke archive has 78/84 V3 candidate cels (13 clips); missing idle_sw; Hit quality HOLD. No new art approved or integrated by this commit. CI pending.
+
+## 27 Nov source checkpoint
+Sasuke owner approved latest source atlases; local 84-cell/14-clip source pack extracted, runtime pending. V3 SOP saved in art/ART_R13_V3_PRODUCTION_SOP.md. Next Sakura Part I. No combat/VFX or public binaries changed.
