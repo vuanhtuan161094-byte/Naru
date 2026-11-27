@@ -279,6 +279,19 @@ static func specialty(id: String) -> String:
 	var mapping={"BLD-001":"JOB-01","BLD-002":"JOB-14","BLD-003":"JOB-02","BLD-004":"JOB-03","BLD-005":"JOB-04","BLD-006":"JOB-05","BLD-007":"JOB-14","BLD-008":"JOB-08","BLD-009":"JOB-14","BLD-010":"JOB-08","BLD-011":"JOB-11","BLD-012":"JOB-09","BLD-013":"JOB-07","BLD-014":"JOB-10","BLD-015":"JOB-10","BLD-016":"JOB-05","BLD-017":"JOB-06","BLD-018":"JOB-07","BLD-019":"JOB-08","BLD-020":"JOB-12","BLD-021":"JOB-12","BLD-022":"JOB-11","BLD-023":"JOB-13","BLD-024":"JOB-02","BLD-025":"JOB-03","BLD-026":"JOB-08","BLD-027":"JOB-08","BLD-028":"JOB-14","BLD-029":"JOB-12","BLD-030":"JOB-11"}
 	return str(mapping.get(id,""))
 
+# Profession identity is separate from ninja combat stats. Preferred expertise
+# gains a small incremental bonus only at the matching workplace.
+static func profession_focus(id:String) -> String:
+	var focus={"JOB-01":"speed","JOB-02":"quality","JOB-03":"economy","JOB-04":"quality","JOB-05":"yield","JOB-06":"quality","JOB-07":"economy","JOB-08":"quality","JOB-09":"yield","JOB-10":"yield","JOB-11":"speed","JOB-12":"economy","JOB-13":"speed","JOB-14":"economy","JOB-15":"speed"}
+	return str(focus.get(id,""))
+
+static func profession_bonus(profession:String,talent:String,lv:int,matching:bool) -> float:
+	if not matching or profession_focus(profession)!=talent:return 0.0
+	var extra=0.0
+	for milestone in [10,25,50,100]:
+		if lv>=milestone:extra+=0.01
+	return extra
+
 static func talent_points(level_value: int) -> int:
 	var points=0
 	for threshold in [1,10,25,50,100]:
@@ -303,6 +316,6 @@ static func trait_bonus(s: Dictionary,id: String,talent: String) -> float:
 		var job=s.jobs[ninja]
 		var career=job.careers[job.profession]
 		var matching=job.profession==specialty(id) or (id=="BLD-017" and job.profession=="JOB-15")
-		var factor=0.06*int(career.get("talents",{}).get(talent,0))+(0.05 if matching else 0.0)
+		var factor=0.06*int(career.get("talents",{}).get(talent,0))+(0.05 if matching else 0.0)+profession_bonus(str(job.profession),talent,int(career.level),matching)
 		best=maxf(best,factor)
 	return minf(0.3,best) if talent=="economy" else minf(0.5,best)

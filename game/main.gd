@@ -74,6 +74,9 @@ const Stats=preload("res://game/stats_service.gd")
 const Content=preload("res://game/content_service.gd")
 const WorldCatalog=preload("res://game/world_content_catalog.gd")
 var quest_filter=0
+var gear_filter_quality=0
+var gear_filter_query=""
+var gear_filter_ready=false
 
 func _ready() -> void:
 	theme=make_theme()
@@ -984,8 +987,25 @@ func gear_screen(message: String="") -> void:
 func gear_craft_screen() -> void:
 	open_screen("craft")
 	label(root,"CÔNG THỨC TRANG BỊ",30)
-	label(root,"Cần xưởng đúng loại và đủ nguyên liệu. Hệ thống xây xưởng thuộc lô làng.",16)
-	button(root,"Trở về",func():gear_screen())
+	label(root,"Chọn phẩm chất, tìm nhẫn cụ, kiểm tra nguyên liệu và đặt sản xuất từ chuỗi chế tạo.",16)
+	var filters=HBoxContainer.new()
+	root.add_child(filters)
+	button(filters,"Trở về",func():gear_screen())
+	var query=LineEdit.new()
+	query.placeholder_text="Tên hoặc mã nhẫn cụ"
+	query.text=gear_filter_query
+	query.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	filters.add_child(query)
+	var quality=OptionButton.new()
+	quality.add_item("Mọi phẩm chất")
+	for tier in range(1,9):quality.add_item("Giai "+str(tier))
+	quality.select(gear_filter_quality)
+	filters.add_child(quality)
+	var ready=CheckButton.new()
+	ready.text="Đủ nguyên liệu"
+	ready.button_pressed=gear_filter_ready
+	filters.add_child(ready)
+	button(filters,"Lọc",func():gear_filter_query=query.text;gear_filter_quality=quality.selected;gear_filter_ready=ready.button_pressed;gear_craft_screen())
 	var scroll=ScrollContainer.new()
 	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	root.add_child(scroll)
@@ -994,6 +1014,12 @@ func gear_craft_screen() -> void:
 	scroll.add_child(rows)
 	for id in reg.gear_templates:
 		var def=reg.gear_templates[id]
+		if gear_filter_quality>0 and int(def.quality)!=gear_filter_quality:continue
+		if not gear_filter_query.is_empty() and not (str(def.name_vi)+" "+id).to_lower().contains(gear_filter_query.to_lower()):continue
+		if gear_filter_ready:
+			var needed={}
+			for item in def.craft.inputs:needed[item.resource_id]=int(needed.get(item.resource_id,0))+int(item.qty)
+			if Village.level(store.state,str(def.craft.building_id))<=0 or not store.has_cost(needed):continue
 		var row=HBoxContainer.new()
 		rows.add_child(row)
 		var b=button(row,"%s | %s" % [def.name_vi,cost_text(def.craft.inputs)],func():gear_screen("Đã chế tạo" if not store.craft_gear(reg,id).is_empty() else "Chưa đủ nguyên liệu"))
@@ -1147,7 +1173,10 @@ func building_screen(id: String,message: String="") -> void:
 			var q=Village.recipe_quote(store.state,recipe)
 			var quote_text=[]
 			for key in q.cost:quote_text.append("%s %d/%d" % [reg.resources[key].name_vi,int(store.state.inventory.get(key,0)),int(q.cost[key])])
-			label(row,", ".join(PackedStringArray(quote_text)),15)
+			var materials=label(row,", ".join(PackedStringArray(quote_text)),15)
+			materials.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			materials.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+			materials.tooltip_text=materials.text+" • "+str(q["yield"])+" sản phẩm / "+str(q.seconds)+"s • "+str(q.reason)
 			var single=button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
 			single.disabled=not q.ready
 			button(row,"Nguồn",func():resource_detail(str(recipe.output.resource_id)))
@@ -1169,6 +1198,7 @@ func world_screen(message: String="") -> void:
 	button(row,"Ngoại giao",diplomacy_screen)
 	button(row,"Đội viễn chinh / phòng thủ",squad_menu)
 	button(row,"Biên giới",frontier_screen)
+	button(row,"Tình báo",world_intelligence_screen)
 	button(row,"Làm mới",func():world_screen())
 	label(row,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" • "+message,16)
 	var content=HBoxContainer.new()
@@ -1558,10 +1588,17 @@ func profession_screen(ninja: String,building_id: String,message: String="") -> 
 	var job=store.state.jobs[ninja]
 	for profession in job.careers:
 		var career=job.careers[profession]
-		label(rows,"%s • Cấp %d • XP %d" % [reg.professions[profession].name_vi,int(career.level),int(career.xp)],18)
+		label(rows,"%s • Cấp %d • XP %d/%d" % [reg.professions[profession].name_vi,int(career.level),int(career.xp),ceili(50*pow(float(career.level),1.4))],18)
 		var titles={"yield":"Năng suất","economy":"Tiết kiệm nguyên liệu","quality":"Chất lượng","speed":"Tốc độ"}
+		var matching=profession==Village.specialty(building_id) or (building_id=="BLD-017" and profession=="JOB-15")
+		var focus=Village.profession_focus(profession)
+		label(rows,"Chuyên môn: "+str(titles.get(focus,""))+" • bonus mốc "+str(roundi(100*Village.profession_bonus(profession,focus,int(career.level),matching)))+"% • "+("Đúng công trình" if matching else "Trái chuyên môn"),16)
+		var spent=0
+		for value in career.get("talents",{}).values():spent+=int(value)
+		label(rows,"Điểm nghề còn lại: "+str(maxi(0,Village.talent_points(int(career.level))-spent)),16)
 		for talent in titles:
-			button(rows,"%s (+%d điểm)" % [titles[talent],int(career.get("talents",{}).get(talent,0))],func():profession_screen(ninja,building_id,"Đã nâng" if store.choose_job_talent(ninja,profession,talent) else "Chưa có điểm"))
+			var talent_button=button(rows,"%s (+%d điểm)" % [titles[talent],int(career.get("talents",{}).get(talent,0))],func():profession_screen(ninja,building_id,"Đã nâng" if store.choose_job_talent(ninja,profession,talent) else "Chưa có điểm"))
+			talent_button.disabled=spent>=Village.talent_points(int(career.level))
 
 func squad_menu(message: String="") -> void:
 	var rows=activity_rows("ĐỘI VIỄN CHINH / PHÒNG THỦ",message,func():world_screen())
@@ -2230,6 +2267,42 @@ func update_battle_inspector() -> void:
 	battle_skill_info.text="\n".join(labels)
 	battle_state_info.text="Không có hiệu ứng" if states.is_empty() else "\n".join(states)
 	battle_inspector.tooltip_text=battle_inspector.text
+func world_intelligence_screen() -> void:
+	open_screen("world_intelligence")
+	label(root,"TÌNH BÁO NHẪN GIỚI",26)
+	label(root,"Tổng hợp các lãnh địa đã khám phá, thế lực kiểm soát và nguồn tài nguyên. Không lộ vùng chưa khám phá.",16)
+	var rows=scroll_rows(root)
+	var counts={}
+	for id in reg.territories:
+		var t=store.state.territory_states[id]
+		if not t.discovered:continue
+		var owner="Trung lập" if t.owner==null else str(t.owner)
+		counts[owner]=int(counts.get(owner,0))+1
+	for faction in reg.factions:
+		var info=reg.factions[faction]
+		var relation=World.relation(store.state,"FAC-009",faction) if faction!="FAC-009" else {}
+		var count=int(counts.get(faction,0))
+		if faction!="FAC-009" and count==0:continue
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var desc=label(line,str(info.name_vi)+" • "+str(count)+" vùng đã biết"+(" • "+str(relation.get("state","")) if faction!="FAC-009" else ""),17)
+		desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		if faction!="FAC-009":button(line,"Ngoại giao / thương mại",func():faction_screen(faction))
+	label(rows,"Trung lập đã biết: "+str(counts.get("Trung lập",0)),17)
+	for id in reg.territories:
+		var t=store.state.territory_states[id]
+		if not t.discovered:continue
+		var materials=[]
+		for resource in reg.territories[id].resources:materials.append(str(reg.resources[resource.resource_id].name_vi))
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var desc=label(line,str(reg.territories[id].name_vi)+" • "+", ".join(PackedStringArray(materials)),16)
+		desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		desc.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+		desc.tooltip_text=desc.text
+		button(line,"Bản đồ",func():selected_territory=id;world_screen())
+	button(root,"Nhẫn giới",world_screen)
+
 func frontier_screen() -> void:
 	var rows=activity_rows("BIÊN GIỚI NHẪN GIỚI","Lãnh địa giáp vùng sở hữu, có đường đi hiện tại.",func():world_screen())
 	for entry in World.frontier(reg,store.state,store.state.world_location):
