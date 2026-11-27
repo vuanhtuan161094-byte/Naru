@@ -11,7 +11,7 @@ class FakeArt:
 		im.fill(Color.WHITE)
 		image=ImageTexture.create_from_image(im)
 	func texture(path: String) -> Texture2D:
-		if path=="environment/village_ground_p3.png" and not panorama:return null
+		if path in ["environment/village_ground_p3.png","environment/village_ground_r15.png"] and not panorama:return null
 		if not complete and path.ends_with("BLD-030.png"):return null
 		return image
 
@@ -69,8 +69,15 @@ func check_mode(panorama: bool) -> bool:
 	var expected="P3VillageMap" if panorama else "R11VillageMap"
 	if panorama:
 		var map=g.root.get_node_or_null(expected)
-		if map==null or map.get_node_or_null("BLD-001")==null or not is_equal_approx(map.get_node("BLD-001").anchor_left,0.4):
+		if map==null or map.get_node_or_null("BLD-001")==null or not is_equal_approx(map.get_node("BLD-001").anchor_left,(18.0+2.0*88.8)/1400.0):
 			push_error("R11_MAP_FAIL civic layout");g.root.free();return false
+	if panorama:
+		var map=g.root.get_node(expected)
+		var cells=0
+		for child in map.get_children():
+			if str(child.name).begins_with("BLD-"):cells+=1
+		if cells!=30:
+			push_error("R15_MAP_FAIL expected 30 unique spatial cells");g.root.free();return false
 	if not g.root.has_node(expected):
 		push_error("R11_MAP_FAIL wrong view "+expected)
 		g.root.free()
