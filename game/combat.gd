@@ -489,7 +489,9 @@ func hit(a: Dictionary,b: Dictionary,dmg: float,allow_counter: bool=true,source_
 		art_event("damage",b.pos,old-b.hp)
 		last_progress_tick=ticks
 		if a.side!=b.side:award_action(b,"vitality")
-		if a.uid!=b.uid:a.hp=minf(float(a.max_hp),float(a.hp)+(old-b.hp)*rating(a,"lifesteal"))
+		if a.uid!=b.uid:
+			var leech=(old-b.hp)*rating(a,"lifesteal")*Formula.received_healing_multiplier(registry,a,magnitude(a,"antiheal"))
+			a.hp=minf(float(a.max_hp),float(a.hp)+leech)
 	if allow_counter and b.hp>0 and b.side!=a.side and a.hp>0 and not hard_block(b):
 		if not b.counter.is_empty():
 			var counter=b.counter
@@ -648,7 +650,7 @@ func release(a: Dictionary,s: Dictionary,b: Dictionary,locked_targets: Array=[])
 							log.append(str(target.id)+" né tránh "+skill_name(s.skill_id))
 				"heal":
 					var before_hp=float(target.hp)
-					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*form_multiplier(a,"natk")*float(e.coefficient)*Formula.healing_multiplier(registry,a,target,magnitude(target,"antiheal"))*(1.0+float(target.get("passive_mods",{}).get("healing_received",0))))
+					target.hp=minf(float(target.max_hp),float(target.hp)+float(a.natk)*form_multiplier(a,"natk")*float(e.coefficient)*Formula.healing_multiplier(registry,a,target,magnitude(target,"antiheal")))
 					if target.hp-before_hp>0.01:
 						confirm_form_effect(a,s,"heal")
 						combo_record(a,s,"heal_confirmed",target,target.pos)

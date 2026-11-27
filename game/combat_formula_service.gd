@@ -143,7 +143,8 @@ static func healing_multiplier(reg,healer: Dictionary,target: Dictionary,antihea
 	return (1.0+rating(reg,healer,"healing"))*received_healing_multiplier(reg,target,antiheal)
 
 static func received_healing_multiplier(reg,target: Dictionary,antiheal: float) -> float:
-	return (1.0+rating(reg,target,"healing_received"))*(1.0-clampf(antiheal,0.0,0.9))
+	var passive_bonus=float(target.get("passive_mods",{}).get("healing_received",0.0))
+	return (1.0+rating(reg,target,"healing_received")+passive_bonus)*(1.0-clampf(antiheal,0.0,0.9))
 
 static func shield_multiplier(reg,source: Dictionary) -> float:
 	return 1.0+rating(reg,source,"shield_power")

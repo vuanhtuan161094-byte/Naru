@@ -109,6 +109,17 @@ func _initialize() -> void:
 	combat.add_shield(source,defender,100.0,5.0)
 	check(float(defender.shield)>shield_before+100.0,"shield power increases created shield")
 	check(Formula.healing_multiplier(registry,source,defender,0.0)>1.0,"healing received increases healing")
+	var received_before=Formula.received_healing_multiplier(registry,defender,0.0)
+	defender.passive_mods={"healing_received":0.1}
+	check(Formula.received_healing_multiplier(registry,defender,0.0)>received_before,"passive healing received applies through shared recovery formula")
+	defender.shield=0.0
+	defender.shield_sources.clear()
+	source.stats.lifesteal=100.0
+	source.passive_mods={"healing_received":0.1}
+	source.hp=float(source.max_hp)-30.0
+	var leech_before=float(source.hp)
+	combat.hit(source,defender,20.0,false)
+	check(float(source.hp)>leech_before,"lifesteal uses healing received and antiheal handling")
 
 	var lock_effect={"status_id":"chakra_lock","chance":1.0,"duration_s":5.0,"magnitude":0.2}
 	combat.rng.seed=21
