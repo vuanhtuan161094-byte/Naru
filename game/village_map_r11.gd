@@ -59,70 +59,98 @@ func apply(g) -> bool:
  return markers.size()==30
 
 # Continuous ground plus individually interactive building textures. Review art, no gameplay rules.
+# District map: native clickable building sprites with independent labels and original actions.
 func apply_panorama(at: int) -> bool:
  var map=Control.new()
  map.name="P3VillageMap"
  map.size_flags_vertical=Control.SIZE_EXPAND_FILL
  map.custom_minimum_size.y=360
+ map.clip_contents=true
  game.root.add_child(map)
  game.root.move_child(map,at)
  var bg=TextureRect.new()
- bg.texture=game.art.texture("environment/village_ground_p3.png")
+ bg.texture=game.art.texture("environment/village_ground_r15.png")
+ if bg.texture==null:bg.texture=game.art.texture("environment/village_ground_p3.png")
  bg.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
  bg.stretch_mode=TextureRect.STRETCH_SCALE
  bg.mouse_filter=Control.MOUSE_FILTER_IGNORE
  bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  map.add_child(bg)
- for slot in range(PANORAMA_ORDER.size()):
-  var i=int(PANORAMA_ORDER[slot])-1
-  var id="BLD-%03d"%(i+1)
-  var col=slot%10
-  var row=int(slot/10)
-  var cell=Control.new()
-  cell.name=id
-  cell.mouse_filter=Control.MOUSE_FILTER_IGNORE
-  map.add_child(cell)
-  cell.anchor_left=float(col)/10.0
-  cell.anchor_right=float(col+1)/10.0
-  cell.anchor_top=float(row)/3.0
-  cell.anchor_bottom=float(row+1)/3.0
-  cell.offset_left=4
-  cell.offset_right=-4
-  var b:Button=buttons[id]
-  var original=b.text
-  var detail=original.get_slice("\n",1)
-  var locked=detail.begins_with("Chưa xây")
-  var upgrading=detail.begins_with("Xây:")
-  var marker=TextureButton.new()
-  marker.texture_normal=game.art.texture("environment/buildings/"+id+".png")
-  marker.ignore_texture_size=true
-  marker.stretch_mode=TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-  marker.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
-  marker.anchor_left=0.04
-  marker.anchor_right=0.96
-  marker.anchor_top=0.02
-  marker.anchor_bottom=0.73
-  marker.tooltip_text=original
-  marker.disabled=b.disabled
-  marker.self_modulate=Color(0.66,0.73,0.74,0.78) if locked else Color.WHITE
-  marker.mouse_entered.connect(func():marker.self_modulate=Color(1.15,1.10,0.93,1.0))
-  marker.mouse_exited.connect(func():marker.self_modulate=Color(0.66,0.73,0.74,0.78) if locked else Color.WHITE)
-  marker.pressed.connect(forward.bind(id))
-  cell.add_child(marker)
-  markers[id]=marker
-  b.text=SHORT[i]+"\n"+detail
-  b.tooltip_text=original
-  b.custom_minimum_size=Vector2(0,30)
-  b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-  b.add_theme_font_size_override("font_size",12)
-  var border=Color("#dfb875") if upgrading or id=="BLD-001" else Color("#52656b") if locked else Color("#99a77a")
-  b.add_theme_stylebox_override("normal",style(Color(0.08,0.12,0.14,0.94),border,4))
-  b.add_theme_stylebox_override("hover",style(Color("#35505a"),Color("#e8bf75"),5))
-  b.add_theme_stylebox_override("pressed",style(Color("#395764"),Color("#e8bf75"),5))
-  b.add_theme_color_override("font_color",Color("#adbfc0") if locked else Color("#f5d7a1") if upgrading or id=="BLD-001" else Color("#eff0dd"))
-  b.anchor_left=0.01
-  b.anchor_right=0.99
-  b.anchor_top=0.74
-  b.anchor_bottom=0.99
-  cell.add_child(b)
+ # Use the same normalized geometry as the authored ground. Keep HQ central in its own district.
+ var zones=[
+  ["ĐIỀU HÀNH",[22,23,1,29,30],Rect2(12,12,456,205),Color("#f4d39e")],
+  ["HUẤN LUYỆN",[2,3,4,5,6],Rect2(484,12,456,205),Color("#d1e2ed")],
+  ["NHẪN THUẬT",[7,8,9,10,28],Rect2(956,12,432,205),Color("#dfd0ec")],
+  ["SINH HOẠT & TÀI NGUYÊN",[11,12,13,14,15],Rect2(12,239,456,240),Color("#d6e9b8")],
+  ["SẢN XUẤT",[16,17,18,19,20],Rect2(484,239,456,240),Color("#f0deae")],
+  ["CHIẾN ĐẤU & GIAO THƯƠNG",[21,24,25,26,27],Rect2(956,239,432,240),Color("#f1d1bb")]
+ ]
+ for district in zones:
+  var zone:Rect2=district[2]
+  var title=Label.new()
+  title.text=district[0]
+  title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+  title.add_theme_font_size_override("font_size",14)
+  title.add_theme_color_override("font_color",district[3])
+  title.add_theme_color_override("font_outline_color",Color("#28352e"))
+  title.add_theme_constant_override("outline_size",3)
+  title.mouse_filter=Control.MOUSE_FILTER_IGNORE
+  map.add_child(title)
+  title.anchor_left=zone.position.x/1400.0
+  title.anchor_right=zone.end.x/1400.0
+  title.anchor_top=(zone.position.y+3)/490.0
+  title.anchor_bottom=(zone.position.y+30)/490.0
+  for slot in range(5):
+   var n:int=district[1][slot]
+   var id="BLD-%03d"%n
+   var cell=Control.new()
+   cell.name=id
+   cell.mouse_filter=Control.MOUSE_FILTER_IGNORE
+   map.add_child(cell)
+   var width=(zone.size.x-12.0)/5.0
+   cell.anchor_left=(zone.position.x+6.0+slot*width)/1400.0
+   cell.anchor_right=(zone.position.x+6.0+(slot+1)*width)/1400.0
+   cell.anchor_top=(zone.position.y+34)/490.0
+   cell.anchor_bottom=(zone.end.y-8)/490.0
+   cell.offset_left=2
+   cell.offset_right=-2
+   var b:Button=buttons[id]
+   var original=b.text
+   var detail=original.get_slice("\n",1)
+   var locked=detail.begins_with("Chưa xây")
+   var upgrading=detail.begins_with("Xây:")
+   var marker=TextureButton.new()
+   marker.texture_normal=game.art.texture("environment/buildings/"+id+".png")
+   marker.ignore_texture_size=true
+   marker.stretch_mode=TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+   marker.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
+   marker.anchor_left=0.0
+   marker.anchor_right=1.0
+   marker.anchor_top=0.0 if n==1 else 0.06
+   marker.anchor_bottom=0.76
+   marker.tooltip_text=original
+   marker.disabled=b.disabled
+   var tint=Color(0.78,0.81,0.79,0.85) if locked else Color.WHITE
+   marker.self_modulate=tint
+   marker.mouse_entered.connect(func():marker.self_modulate=Color(1.15,1.10,0.93,1.0))
+   marker.mouse_exited.connect(func():marker.self_modulate=tint)
+   marker.pressed.connect(forward.bind(id))
+   cell.add_child(marker)
+   markers[id]=marker
+   b.text=SHORT[n-1]+"\n"+detail
+   b.tooltip_text=original
+   b.modulate=Color.WHITE
+   b.custom_minimum_size=Vector2(0,29)
+   b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+   b.add_theme_font_size_override("font_size",11)
+   var border=Color("#e9bd70") if upgrading or n==1 else Color("#69776b") if locked else Color("#a8b68a")
+   b.add_theme_stylebox_override("normal",style(Color(0.11,0.16,0.15,0.96),border,5))
+   b.add_theme_stylebox_override("hover",style(Color("#41574b"),Color("#f1cb85"),5))
+   b.add_theme_stylebox_override("pressed",style(Color("#52634c"),Color("#f1cb85"),5))
+   b.add_theme_color_override("font_color",Color("#bdc9bc") if locked else Color("#f7dcab") if upgrading or n==1 else Color("#f0ead9"))
+   b.anchor_left=0.0
+   b.anchor_right=1.0
+   b.anchor_top=0.75
+   b.anchor_bottom=1.0
+   cell.add_child(b)
  return markers.size()==30
