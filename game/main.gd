@@ -1408,11 +1408,11 @@ func world_screen(message: String="") -> void:
 		grid.columns=2
 		grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
 		root.add_child(grid)
-		activity_tile(grid,"Ngoại giao","Quan hệ giữa các làng.",diplomacy_screen)
-		activity_tile(grid,"Đội viễn chinh / phòng thủ","Điều phối đội ninja.",squad_menu)
-		activity_tile(grid,"Biên giới","Tình hình vùng biên.",frontier_screen)
-		activity_tile(grid,"Tình báo","Thông tin nhẫn giới.",world_intelligence_screen)
-		activity_tile(grid,"Phòng thủ","Bảo vệ làng.",fortification_screen)
+		activity_tile(grid,"Ngoại giao","Quan hệ giữa các làng.",diplomacy_screen, "environment/buildings/BLD-029.png")
+		activity_tile(grid,"Đội viễn chinh / phòng thủ","Điều phối đội ninja.",squad_menu, "environment/buildings/BLD-003.png")
+		activity_tile(grid,"Biên giới","Tình hình vùng biên.",frontier_screen, "environment/buildings/BLD-030.png")
+		activity_tile(grid,"Tình báo","Thông tin nhẫn giới.",world_intelligence_screen, "environment/buildings/BLD-023.png")
+		activity_tile(grid,"Phòng thủ","Bảo vệ làng.",fortification_screen, "environment/buildings/BLD-030.png")
 		return
 	if world_tab==1:
 		var rows=scroll_rows(root)
@@ -1607,7 +1607,7 @@ func activity_rows(title: String,message: String,back: Callable) -> VBoxContaine
 	scroll.add_child(rows)
 	return rows
 
-func activity_tile(parent:Node,title_text:String,description:String,action:Callable) -> void:
+func activity_tile(parent:Node,title_text:String,description:String,action:Callable,art_path:String="") -> void:
 	var panel=PanelContainer.new()
 	panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	panel.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -1619,9 +1619,20 @@ func activity_tile(parent:Node,title_text:String,description:String,action:Calla
 	var enter=button(content,title_text,action)
 	enter.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	enter.add_theme_color_override("font_color",Color("#f5d39a"))
+	if not art_path.is_empty():
+		enter.size_flags_vertical=Control.SIZE_EXPAND_FILL
+		enter.custom_minimum_size.y=84
+		enter.add_theme_font_size_override("font_size",22)
+		enter.add_theme_stylebox_override("normal",combat_panel(Color("#233b33"),Color("#7a8469"),10))
+		enter.add_theme_stylebox_override("hover",combat_panel(Color("#3b5040"),Color("#d9b77a"),10))
+		var tex=art.texture(art_path)
+		if tex!=null:
+			enter.icon=tex
+			enter.expand_icon=true
+			enter.add_theme_constant_override("icon_max_width",132)
 	var description_label=label(content,description,14)
 	description_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	description_label.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	description_label.size_flags_vertical=Control.SIZE_SHRINK_CENTER if not art_path.is_empty() else Control.SIZE_EXPAND_FILL
 
 func activities_screen() -> void:
 	open_screen("activities")
@@ -1631,12 +1642,12 @@ func activities_screen() -> void:
 	grid.columns=3
 	grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	root.add_child(grid)
-	activity_tile(grid,"Phó bản • 30","Tái chiến, biến thể địa hình và Boss tinh anh.",expedition_screen)
-	activity_tile(grid,"Tháp nhẫn thuật • 30 tầng","Vượt tầng, nhận thưởng mốc một lần.",tower_screen)
-	activity_tile(grid,"Thử thách tài nguyên","Đấu tay đôi để lấy tài nguyên chuyên biệt.",resource_trials_screen)
-	activity_tile(grid,"Nhiệm vụ","Cốt truyện, tiến trình và thưởng hằng ngày.",quest_screen)
-	activity_tile(grid,"Nhiệm vụ tuần","Sáu mục tiêu theo hoạt động thực tế.",weekly_screen)
-	activity_tile(grid,"Phái ninja làm nhiệm vụ / thử thách tài nguyên","Phân công ninja thu thập nguyên liệu.",mission_screen)
+	activity_tile(grid,"Phó bản • 30","Tái chiến, biến thể địa hình và Boss tinh anh.",expedition_screen, "environment/buildings/BLD-024.png")
+	activity_tile(grid,"Tháp nhẫn thuật • 30 tầng","Vượt tầng, nhận thưởng mốc một lần.",tower_screen, "environment/buildings/BLD-025.png")
+	activity_tile(grid,"Thử thách tài nguyên","Đấu tay đôi để lấy tài nguyên chuyên biệt.",resource_trials_screen, "environment/buildings/BLD-014.png")
+	activity_tile(grid,"Nhiệm vụ","Cốt truyện, tiến trình và thưởng hằng ngày.",quest_screen, "environment/buildings/BLD-022.png")
+	activity_tile(grid,"Nhiệm vụ tuần","Sáu mục tiêu theo hoạt động thực tế.",weekly_screen, "environment/buildings/BLD-023.png")
+	activity_tile(grid,"Phái ninja làm nhiệm vụ / thử thách tài nguyên","Phân công ninja thu thập nguyên liệu.",mission_screen, "environment/buildings/BLD-022.png")
 	button(root,"Trở về",adventure_hub)
 
 func tower_screen() -> void:
@@ -2230,26 +2241,27 @@ func hub_grid(title_text:String,subtitle:String,id:String) -> GridContainer:
 
 func ninja_hub() -> void:
 	var grid=hub_grid("NINJA","Quản lý và phát triển đội ninja.","ninja_hub")
-	activity_tile(grid,"Danh sách ninja","Xem ninja, chỉ số, kỹ năng và trang bị.",growth_screen)
-	activity_tile(grid,"Bố trận","Sắp xếp đội hình 3 × 3.",roster)
-	activity_tile(grid,"Chiêu mộ","Tìm kiếm đồng đội mới.",recruit_screen)
-	activity_tile(grid,"Vĩ Thú","Thu phục và phát triển vĩ thú.",beast_screen)
-	activity_tile(grid,"Huyết kế và đồng thuật","Phát triển sức mạnh đặc trưng.",bloodline_screen)
-	activity_tile(grid,"Thông linh thú","Quản lý khế ước thông linh.",contract_screen)
+	grid.columns=3
+	activity_tile(grid,"Danh sách ninja","Xem ninja, chỉ số, kỹ năng và trang bị.",growth_screen, "portraits/NIN-001.png")
+	activity_tile(grid,"Bố trận","Sắp xếp đội hình 3 × 3.",roster, "environment/buildings/BLD-003.png")
+	activity_tile(grid,"Chiêu mộ","Tìm kiếm đồng đội mới.",recruit_screen, "environment/buildings/BLD-010.png")
+	activity_tile(grid,"Vĩ Thú","Thu phục và phát triển vĩ thú.",beast_screen, "environment/buildings/BLD-027.png")
+	activity_tile(grid,"Huyết kế và đồng thuật","Phát triển sức mạnh đặc trưng.",bloodline_screen, "environment/buildings/BLD-008.png")
+	activity_tile(grid,"Thông linh thú","Quản lý khế ước thông linh.",contract_screen, "environment/buildings/BLD-026.png")
 
 func adventure_hub() -> void:
 	var grid=hub_grid("PHIÊU LƯU","Chọn một hành trình.","adventure_hub")
-	activity_tile(grid,"Cốt truyện","Tiến vào các ải chính.",campaign)
-	activity_tile(grid,"Nhiệm vụ","Mục tiêu và phần thưởng.",quest_screen)
-	activity_tile(grid,"Hoạt động","Phó bản, tháp và thử thách.",activities_screen)
-	activity_tile(grid,"Nhiệm vụ tuần","Theo dõi các mốc trong tuần.",weekly_screen)
+	activity_tile(grid,"Cốt truyện","Tiến vào các ải chính.",campaign, "portraits/NIN-002.png")
+	activity_tile(grid,"Nhiệm vụ","Mục tiêu và phần thưởng.",quest_screen, "environment/buildings/BLD-022.png")
+	activity_tile(grid,"Hoạt động","Phó bản, tháp và thử thách.",activities_screen, "environment/buildings/BLD-024.png")
+	activity_tile(grid,"Nhiệm vụ tuần","Theo dõi các mốc trong tuần.",weekly_screen, "environment/buildings/BLD-023.png")
 
 func village_hub(message:String="") -> void:
 	var grid=hub_grid("QUẢN LÝ LÀNG",message if not message.is_empty() else "Điều phối phát triển làng Lá.","village_hub")
-	activity_tile(grid,"Sản xuất","Điều phối nhân lực và hàng đợi.",production_center)
-	activity_tile(grid,"Chế tạo","Xem và thực hiện công thức.",craft_screen)
-	activity_tile(grid,"Nhận thưởng chờ","Nhận tài nguyên đang chờ trong hộp thưởng.",reward_inbox_screen)
-	activity_tile(grid,"Làm mới","Cập nhật bản đồ làng.",menu)
+	activity_tile(grid,"Sản xuất","Điều phối nhân lực và hàng đợi.",production_center, "environment/buildings/BLD-017.png")
+	activity_tile(grid,"Chế tạo","Xem và thực hiện công thức.",craft_screen, "environment/buildings/BLD-019.png")
+	activity_tile(grid,"Nhận thưởng chờ","Nhận tài nguyên đang chờ trong hộp thưởng.",reward_inbox_screen, "environment/buildings/BLD-020.png")
+	activity_tile(grid,"Làm mới","Cập nhật bản đồ làng.",menu, "environment/buildings/BLD-001.png")
 	if store.state.jobs.is_empty():activity_tile(grid,"Phân công khởi đầu","Thiết lập nhân lực sản xuất ban đầu.",func():village_hub("Đã phân công" if store.setup_starter_jobs(reg) else "Lỗi lưu"))
 
 
