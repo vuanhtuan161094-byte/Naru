@@ -34,13 +34,20 @@ def strip(frames, size, anchor, limit=30):
 def vfx(out):
     out.mkdir(parents=True,exist_ok=True); report={}
     for name,src in FX.items():
-        meta=get(src+'.png.meta').decode(); asset=get(src+'.asset').decode()
-        sheet=Image.open(BytesIO(get(src+'.png'))).convert('RGBA')
-        lookup=rects(meta)
-        ids=re.findall(r'(?m)^  - \{fileID: (-?\d+), guid: [a-f0-9]+, type: 3\}',asset)
-        if not ids or not all(i in lookup for i in ids): raise ValueError(f'{src}: invalid frame references')
+        asset=get(src+'.asset').decode()
+        refs=re.findall(r'(?m)^  - \{fileID: (-?\d+), guid: ([a-f0-9]+), type: 3\}',asset)
+        if not refs: raise ValueError(src+' empty frame list')
+        wanted={g for _,g in refs}; pages={}
+        for page in range(1,33):
+            if wanted.issubset(pages): break
+            stem=src if page==1 else src+'.'+str(page)
+            meta=get(stem+'.png.meta').decode()
+            guid=re.search(r'(?m)^guid: ([a-f0-9]+)',meta).group(1)
+            pages[guid]=(Image.open(BytesIO(get(stem+'.png'))).convert('RGBA'),rects(meta))
         frames=[]
-        for i in ids:
+        for i,guid in refs:
+            sheet,lookup=pages[guid]
+            if i not in lookup: raise ValueError(src+' invalid frame ID '+i)
             x,y,w,h,px,py=lookup[i]; top=sheet.height-y-h
             if x<0 or top<0 or x+w>sheet.width or top+h>sheet.height: raise ValueError(src+' invalid rect')
             frames.append((sheet.crop((x,top,x+w,top+h)),px*w,(1-py)*h))
