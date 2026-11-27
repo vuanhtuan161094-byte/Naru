@@ -231,9 +231,6 @@ func restore() -> void:
 func texture(path: String) -> Texture2D:
 	if not enabled:return null
 	if path=="environment/village_ground_r15.png":return VILLAGE_GROUND
-	if path.begins_with("environment/buildings/"):
-		var candidate=village_building_texture(path.get_file().get_basename())
-		if candidate!=null:return candidate
 	if textures.has(path):return textures[path]
 	if path in ["characters/NIN-005.png","portraits/NIN-005.png"]:return R12_IRUKA
 	if path.begins_with("characters/") or path.begins_with("portraits/"):
