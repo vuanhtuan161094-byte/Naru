@@ -31,6 +31,7 @@ const fs=require("fs");
   await page.screenshot({path:"public-qa/building-production.png"});
   await click("Tổng quan","building");
   await click("Cài đặt","settings");
+  await click("Lưu & hướng dẫn","settings");
   await click("Bách khoa","wiki");
   await page.screenshot({path:"public-qa/wiki.png"});
   await click("Xem","wiki");
@@ -81,7 +82,7 @@ const fs=require("fs");
   await click("Rút lui","results");
   await click("Về làng","home");
   for(const [hub,hubId,name,id] of [["Ninja","ninja_hub","Danh sách ninja","ninja_roster"],["Ninja","ninja_hub","Bố trận","formation"],["Ninja","ninja_hub","Chiêu mộ","recruit"],["Phiêu lưu","adventure_hub","Cốt truyện","campaign"],["","","Nhẫn giới","world"],["","","Kho","inventory"],["Phiêu lưu","adventure_hub","Nhiệm vụ","quest"],["Ninja","ninja_hub","Vĩ Thú","beasts"],["","","Cài đặt","settings"]]){if(hub){await click(hub,hubId);await page.screenshot({path:"public-qa/"+hubId+".png"});}await click(name,id);await page.screenshot({path:"public-qa/"+id+".png"});}
-  await click("Cài đặt","settings");await click("Thử 6v6 • R12","battle");
+  await click("Cài đặt","settings");await click("Thử nghiệm","settings");await click("Thử 6v6 • R12","battle");
   await page.waitForFunction(()=>window.naruUI?.authored_actor_draws>0&&window.naruUI?.character_overlays?.includes("NIN-002")&&window.naruUI?.sasuke_clip_draws>10,null,{timeout:30000});
   await page.screenshot({path:"public-qa/sasuke-v3-actual-6v6.png"});
   console.log("NARU_SASUKE_WEB_DRAW_PASS",JSON.stringify({draws:(await state()).sasuke_clip_draws,overlays:(await state()).character_overlays}));
