@@ -302,16 +302,25 @@ func roster(message: String="") -> void:
 	var stats={"attack":"Công kích","defense":"Phòng thủ","move":"Tốc độ","chakra":"Hồi chakra"}
 	var link_names={"adjacent":"ô kề","rank":"cùng hàng","lane":"cùng cột","diagonal":"chéo"}
 	label(root,"%s +%.1f%% • Liên kết %s: +2,5%% thủ/đồng đội gần (tối đa 2) • %s" % [stats[rule.stat],100.0*(float(rule.base)+float(reg.combat_v3.upgrade.level_growth)*(current-1)),link_names[rule.link],message],16)
+	var content=HBoxContainer.new()
+	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	root.add_child(content)
+	var left=VBoxContainer.new()
+	left.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	left.size_flags_stretch_ratio=1.4
+	content.add_child(left)
 	var slots=GridContainer.new()
 	slots.columns=3
-	root.add_child(slots)
+	slots.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	left.add_child(slots)
 	for i in range(9):
 		var id=""
 		for ninja in store.state.formation_slots:
 			if int(store.state.formation_slots[ninja])==i:id=str(ninja);break
 		var b=button(slots,("▶ " if selected_slot==i else "")+str(i+1)+" • "+(reg.ninjas[id].name_vi if id!="" else "Ô trống"),func():selected_slot=i;roster())
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.custom_minimum_size.y=70
+		b.custom_minimum_size=Vector2(0,100)
+		b.size_flags_vertical=Control.SIZE_EXPAND_FILL
 		b.add_theme_stylebox_override("normal",combat_panel(Color("#4e4632") if selected_slot==i else Color("#23322e"),Color("#deb878") if selected_slot==i else Color("#546b5b"),8))
 		if id!="":
 			var tex=art.texture("portraits/"+id+".png")
@@ -320,9 +329,13 @@ func roster(message: String="") -> void:
 				b.expand_icon=true
 				b.add_theme_constant_override("icon_max_width",48)
 	var controls=HBoxContainer.new()
-	root.add_child(controls)
+	left.add_child(controls)
 	button(controls,"Bỏ ninja khỏi ô",func():roster("Đã bỏ" if store.set_formation_slot(selected_slot,"") else "Ô trống hoặc đang triển khai"))
-	var rows=scroll_rows(root)
+	var right=VBoxContainer.new()
+	right.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	content.add_child(right)
+	label(right,"Chọn ninja cho ô %d" % (selected_slot+1),20)
+	var rows=scroll_rows(right)
 	for id in store.state.owned:
 		var p=store.state.owned[id]
 		var b=button(rows,"%s | Cấp %d | Phẩm %d%s" % [reg.ninjas[id].name_vi,int(p.level),int(p.quality)," | Đang trong đội" if id in store.state.team else ""],func():
@@ -2631,28 +2644,56 @@ func settings_screen(message: String="") -> void:
 	open_screen("settings")
 	label(root,"CÀI ĐẶT",28)
 	label(root,message,16)
+	var tabs=HBoxContainer.new()
+	root.add_child(tabs)
+	for i in range(3):
+		var tab=button(tabs,["Chung","Lưu & hướng dẫn","Thử nghiệm"][i],func():settings_tab=i;settings_screen())
+		tab.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		tab.disabled=settings_tab==i
 	var rows=scroll_rows(root)
+	if settings_tab==0:
+		var sound=CheckButton.new()
+		sound.text="Âm thanh"
+		sound.button_pressed=bool(store.state.get("settings",{}).get("sound",true))
+		rows.add_child(sound)
+		sound.toggled.connect(func(on):change_setting("sound",on))
+		var cutin=CheckButton.new()
+		cutin.text="Hiệu ứng chiêu / cut-in (chuẩn bị tích hợp mỹ thuật)"
+		cutin.button_pressed=bool(store.state.get("settings",{}).get("cutin",true))
+		rows.add_child(cutin)
+		cutin.toggled.connect(func(on):change_setting("cutin",on))
+		var effect=CheckButton.new()
+		effect.text="Hiển thị đường đạn DEV"
+		effect.button_pressed=bool(store.state.get("settings",{}).get("projectiles",true))
+		rows.add_child(effect)
+		effect.toggled.connect(func(on):change_setting("projectiles",on))
+		return
+	if settings_tab==1:
+		button(rows,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
+		button(rows,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen(store.load_notice if store.load_notice!="" else "Đã tải"))
+		button(rows,"Xuất / nhập save",save_screen)
+		button(rows,"Bách khoa",wiki_screen)
+		button(rows,"Hướng dẫn",player_guide_screen)
+		label(rows,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
+		return
 	var shortcuts=HBoxContainer.new()
 	rows.add_child(shortcuts)
-	button(shortcuts,"Bách khoa",wiki_screen)
-	button(shortcuts,"Hướng dẫn",player_guide_screen)
 	button(shortcuts,"Thử 6v6 • R12",start_art_review)
 	button(shortcuts,"Thử sprite tĩnh 6v6",func():start_art_review(true))
-	var sound=CheckButton.new()
-	sound.text="Âm thanh"
-	sound.button_pressed=bool(store.state.get("settings",{}).get("sound",true))
-	rows.add_child(sound)
-	sound.toggled.connect(func(on):change_setting("sound",on))
-	var cutin=CheckButton.new()
-	cutin.text="Hiệu ứng chiêu / cut-in (chuẩn bị tích hợp mỹ thuật)"
-	cutin.button_pressed=bool(store.state.get("settings",{}).get("cutin",true))
-	rows.add_child(cutin)
-	cutin.toggled.connect(func(on):change_setting("cutin",on))
-	var effect=CheckButton.new()
-	effect.text="Hiển thị đường đạn DEV"
-	effect.button_pressed=bool(store.state.get("settings",{}).get("projectiles",true))
-	rows.add_child(effect)
-	effect.toggled.connect(func(on):change_setting("projectiles",on))
+	var art_row=HBoxContainer.new()
+	rows.add_child(art_row)
+	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
+	label(rows,"Nạp JSON đủ 14 clip / 84 cel. Chỉ Naruto và Sasuke được lưu cục bộ ở đợt này; bộ chưa đủ bị từ chối.",15).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
+	button(art_row,"Bật / tắt review",func():
+		art.enabled=not art.enabled and not art.textures.is_empty()
+		art.source_label="REVIEW RIÊNG • "+str(art.textures.size())+" ảnh" if art.enabled else "DEV • tắt gói review"
+		settings_screen(art.source_label))
+	var coverage=art.product_coverage()
+	label(rows,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
+	label(rows,"Ảnh tĩnh: %d/144 ninja • %d/144 ảnh danh sách • %d sprite vector tạm" % [coverage.renderable_ninjas,coverage.renderable_portraits,coverage.static_candidates],15)
+	label(rows,"Animation metadata: %d • Bộ đủ 14 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
+
 	var passive_toggle=CheckButton.new()
 	passive_toggle.text="Thử nghiệm nội tại P1–P6 (DEV, mặc định tắt)"
 	passive_toggle.button_pressed=bool(store.state.get("settings",{}).get("passives_dev",false))
@@ -2673,23 +2714,6 @@ func settings_screen(message: String="") -> void:
 	depth_toggle.button_pressed=bool(store.state.get("settings",{}).get("depth_v5_dev",true))
 	rows.add_child(depth_toggle)
 	depth_toggle.toggled.connect(func(on):change_setting("depth_v5_dev",on))
-	button(rows,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
-	button(rows,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen(store.load_notice if store.load_notice!="" else "Đã tải"))
-	button(rows,"Xuất / nhập save",save_screen)
-	var art_row=HBoxContainer.new()
-	rows.add_child(art_row)
-	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
-	label(rows,"Nạp JSON đủ 14 clip / 84 cel. Chỉ Naruto và Sasuke được lưu cục bộ ở đợt này; bộ chưa đủ bị từ chối.",15).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
-	button(art_row,"Bật / tắt review",func():
-		art.enabled=not art.enabled and not art.textures.is_empty()
-		art.source_label="REVIEW RIÊNG • "+str(art.textures.size())+" ảnh" if art.enabled else "DEV • tắt gói review"
-		settings_screen(art.source_label))
-	var coverage=art.product_coverage()
-	label(rows,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
-	label(rows,"Ảnh tĩnh: %d/144 ninja • %d/144 ảnh danh sách • %d sprite vector tạm" % [coverage.renderable_ninjas,coverage.renderable_portraits,coverage.static_candidates],15)
-	label(rows,"Animation metadata: %d • Bộ đủ 14 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
-	label(rows,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 
 func change_setting(key: String,value: bool) -> void:
 	if not store.state.has("settings"):store.state.settings={}
