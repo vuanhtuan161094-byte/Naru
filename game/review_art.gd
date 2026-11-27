@@ -430,6 +430,12 @@ func frame_at(frames: Array,age_ms: int,looping: bool) -> int:
 		if age<0:return i
 	return frames.size()-1
 
+func character_clip_draws(id:String) -> int:
+	var count=0
+	for path in clip_draws:
+		if str(path).begins_with("animation/"+id+"/"):count+=int(clip_draws[path].draws)
+	return count
+
 func record_clip(path: String,frame: int) -> void:
 	if not clip_draws.has(path):clip_draws[path]={"draws":0,"frames":{}}
 	clip_draws[path].draws+=1

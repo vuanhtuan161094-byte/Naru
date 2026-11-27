@@ -67,8 +67,9 @@ const fs=require("fs");
   await click("Về làng","home");
   for(const [name,id] of [["Ninja","ninja_roster"],["Bố trận","formation"],["Chiêu mộ","recruit"],["Cốt truyện","campaign"],["Nhẫn giới","world"],["Kho","inventory"],["Nhiệm vụ","quest"],["Vĩ Thú","beasts"],["Cài đặt","settings"]]){await click(name,id);await page.screenshot({path:"public-qa/"+id+".png"});}
   await click("Làng","home");await click("Thử 6v6 • R12","battle");
-  await page.waitForFunction(()=>window.naruUI?.authored_actor_draws>0,null,{timeout:30000});
-  await page.screenshot({path:"public-qa/r12-benchmark-6v6.png"});
+  await page.waitForFunction(()=>window.naruUI?.authored_actor_draws>0&&window.naruUI?.character_overlays?.includes("NIN-002")&&window.naruUI?.sasuke_clip_draws>10,null,{timeout:30000});
+  await page.screenshot({path:"public-qa/sasuke-v3-actual-6v6.png"});
+  console.log("NARU_SASUKE_WEB_DRAW_PASS",JSON.stringify({draws:(await state()).sasuke_clip_draws,overlays:(await state()).character_overlays}));
   if(errors.length)throw Error(errors.join("\n"));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});

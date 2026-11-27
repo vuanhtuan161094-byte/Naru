@@ -44,8 +44,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Reassemble owner-approved public art (224 exact textures)
-        run: python3 tools/assemble_public_art.py
+      - name: Reassemble owner-approved public art and verify Sasuke V3
+        run: |
+          python3 tools/assemble_public_art.py
+          echo "51859f9b5db8951bdbb57489c447f23e837eaac11423727c4458a28944c84c2f  assets/production/r13/NIN-002.json" | sha256sum -c -
       - name: Install Godot 4.4.1 and export template
         run: |
           set -euo pipefail
@@ -66,6 +68,7 @@ jobs:
           "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/art.log
           grep 'NARU_PUBLIC_ART_READY 224' /tmp/art.log
           grep NARU_REGISTRY_OK /tmp/art.log
+          grep "NARU_CHARACTER_OVERLAY_READY NIN-002" /tmp/art.log
           mkdir -p dist
           "$G" --headless --path . --export-release "Web DEV" dist/index.html 2>&1 | tee /tmp/export.log
           test -s dist/index.html
@@ -81,7 +84,9 @@ jobs:
           npm install --no-save playwright
           npx playwright install --with-deps chromium
           python3 -m http.server 8765 --directory dist >/tmp/naru-http.log 2>&1 &
-          node tests/public-web-art.cjs
+          set -o pipefail
+          node tests/public-web-art.cjs | tee /tmp/public-web.log
+          grep NARU_SASUKE_WEB_DRAW_PASS /tmp/public-web.log
       - uses: actions/upload-artifact@v4
         with:
           name: NARU-PUBLIC-FULL-ART-QA

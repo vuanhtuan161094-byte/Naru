@@ -8,6 +8,7 @@ on:
       - 'game/review_art.gd'
       - 'game/battle_camera.gd'
       - 'assets/production/r12/**'
+      - 'assets/production/r13/**'
   workflow_dispatch:
 permissions:
   contents: read
@@ -42,6 +43,8 @@ jobs:
           cp /tmp/r12-import.log r12-native/import.log
           grep NARU_PRIVATE_CAPTURE_ART_READY r12-native/runtime.log
           grep NARU_PRIVATE_TRACE r12-native/runtime.log
+          grep "NARU_CHARACTER_OVERLAY_READY NIN-002" r12-native/runtime.log
+          grep -E "NARU_SASUKE_CLIP_DRAWS [1-9][0-9]+" r12-native/runtime.log
           ffmpeg -v error -ss 2 -i r12-native/R12-native-6v6.mp4 -frames:v 1 r12-native/02s.png
           ffmpeg -v error -ss 5 -i r12-native/R12-native-6v6.mp4 -frames:v 1 r12-native/05s.png
           ffmpeg -v error -ss 10 -i r12-native/R12-native-6v6.mp4 -frames:v 1 r12-native/10s.png

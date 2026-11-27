@@ -148,6 +148,13 @@ func _ready() -> void:
 					print("NARU_CHARACTER_OVERLAY_READY ",overlay_id)
 				else:
 					push_warning("NARU_CHARACTER_OVERLAY_HOLD "+overlay_id+": "+art.error)
+		# The release must contain the exact approved Sasuke kit, not a fallback.
+		if OS.has_feature("public_art") and not art.character_overlays.has("NIN-002"):
+			navigation.hide()
+			header.hide()
+			label(root,"Lỗi nạp bộ Sasuke V3. Hãy tải lại trang.")
+			push_error("NARU_PUBLIC_ART_FAIL Sasuke V3 missing")
+			return
 		if OS.has_feature("web"):JavaScriptBridge.eval("window.naruPublicArtCount="+str(art.textures.size()))
 	if not ("--smoke" in OS.get_cmdline_user_args()) and not (OS.has_feature("web") and bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has(\'qa\')"))):art.restore_overlays()
 	if not reg.load_all():
@@ -837,6 +844,7 @@ func _process(delta: float) -> void:
 	if "--private-capture" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=120 and sim.ticks%120==0 and last_private_trace_tick!=sim.ticks:
 		last_private_trace_tick=sim.ticks
 		print("NARU_PRIVATE_TRACE tick=",sim.ticks," actors=",sim.primary_alive(0).size()+sim.primary_alive(1).size()," draws=",art.actor_draws," fallback=",art.fallback_draws," clone=",art.clone_draws," summon=",art.summon_draws," directional_pose=",art.directional_pose_draws)
+		print("NARU_SASUKE_CLIP_DRAWS ",art.character_clip_draws("NIN-002"))
 	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=60 and sim.ticks%40==0 and last_video_ult_tick!=sim.ticks:
 		last_video_ult_tick=sim.ticks
 		# Stagger actual manual requests so the sample does not queue every ultimate simultaneously.
@@ -2519,7 +2527,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"character_overlays":art.character_overlays.keys(),"art_draws":art.actor_draws,"r12_actor_draws":art.r12_actor_draws,"missing_actor_ids":art.missing_actor_ids.keys(),"authored_actor_draws":art.authored_actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"character_overlays":art.character_overlays.keys(),"sasuke_clip_draws":art.character_clip_draws("NIN-002"),"art_draws":art.actor_draws,"r12_actor_draws":art.r12_actor_draws,"missing_actor_ids":art.missing_actor_ids.keys(),"authored_actor_draws":art.authored_actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
