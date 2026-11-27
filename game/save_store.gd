@@ -121,6 +121,9 @@ func begin_expedition(reg,id:String) -> String:
 	return begin_stage(reg.stages[q.row.stage],id)
 
 func begin_stage(stage: Dictionary,expedition:String="") -> String:
+	if not expedition.is_empty():
+		var row=preload("res://game/world_content_catalog.gd").find(expedition)
+		if row.is_empty() or row.stage!=stage.id or not state.cleared.has(stage.id) or int(state.building_states["BLD-001"].level)<int(row.hq) or int(state.source_cooldowns.get("expedition:"+expedition,0))>int(state.simulation_seconds):return ""
 	for event in state.ledger.values():
 		if event is Dictionary and event.get("status")=="started":return ""
 	if stage.requires!=null and not state.cleared.has(str(stage.requires)): return ""

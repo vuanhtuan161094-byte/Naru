@@ -1842,10 +1842,11 @@ func resource_detail(id: String,message: String="") -> void:
 	var stage_ids=ResourceGuide.stage_sources(reg,id)
 	if not stage_ids.is_empty():
 		label(rows,"Phần thưởng ải: "+", ".join(PackedStringArray(stage_ids.slice(0,8)))+(" …" if stage_ids.size()>8 else ""),16)
-		for stage_id in stage_ids:
+		for stage_id in stage_ids.slice(0,12):
 			var stage=reg.stages[stage_id]
 			var replay=button(rows,str(stage.name_vi)+" • "+stage_id,func():start_battle(stage))
 			replay.disabled=(stage.requires!=null and not store.state.cleared.has(str(stage.requires))) or int(store.state.stamina)<int(stage.stamina_cost) or store.state.team.is_empty()
+		if stage_ids.size()>12:button(rows,"Xem các ải còn lại",campaign)
 	for quest in reg.quests.values():
 		for reward in quest.reward:
 			if reward.resource_id==id:
@@ -2238,9 +2239,9 @@ func frontier_screen() -> void:
 		for item in reg.territories[id].resources:materials.append(str(reg.resources[item.resource_id].name_vi))
 		button(rows,"%s • %s • %ds • %s" % [reg.territories[id].name_vi,owner,int(entry.seconds),", ".join(PackedStringArray(materials))],func():selected_territory=id;world_screen())
 
-func gear_material_screen(id: String) -> void:
+func gear_material_screen(id: String,message:String="") -> void:
 	var def=reg.gear_templates[id]
-	var rows=activity_rows("NGUYÊN LIỆU • "+str(def.name_vi),"Chuỗi tham khảo theo công thức; không tự tiêu tài nguyên.",gear_craft_screen)
+	var rows=activity_rows("NGUYÊN LIỆU • "+str(def.name_vi),"Chuỗi tham khảo theo công thức; chỉ đặt mẻ khi bấm. "+message,gear_craft_screen)
 	button(rows,"Mở "+str(reg.buildings[def.craft.building_id].name_vi),func():building_screen(def.craft.building_id))
 	var needs={}
 	for item in def.craft.inputs:
@@ -2257,7 +2258,9 @@ func gear_material_screen(id: String) -> void:
 		detail.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		var quote=Village.recipe_quote(store.state,recipe)
 		var qty=mini(20,mini(int(plan.orders[recipe_id]),int(quote.affordable)))
-		var queue=button(line,"Đặt "+str(qty)+" mẻ",func():gear_material_screen(id) if store.production(reg,str(recipe.building_id),recipe_id,false,qty) else gear_material_screen(id))
+		var queue=button(line,"Đặt "+str(qty)+" mẻ",func():
+			var placed=store.production(reg,str(recipe.building_id),recipe_id,false,qty)
+			gear_material_screen(id,"Đã đặt "+str(qty)+" mẻ" if placed else "Không thể đặt, hãy kiểm tra xưởng và kho"))
 		queue.disabled=not quote.ready or qty<1
 		queue.tooltip_text=str(quote.reason)
 		button(line,"Mở xưởng",func():building_screen(str(recipe.building_id)))

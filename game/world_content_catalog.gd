@@ -29,7 +29,7 @@ static func quote(reg,s:Dictionary,id:String) -> Dictionary:
 	var remaining=maxi(0,int(s.get("source_cooldowns",{}).get(cooldown_key(id),0))-int(s.get("simulation_seconds",0)))
 	var reason=""
 	var stage=reg.stages[row.stage]
-	if not s.cleared.has(row.stage):reason="Cần vượt "+str(row.stage)
+	if not s.cleared.has(row.stage) or (stage.requires!=null and not s.cleared.has(str(stage.requires))):reason="Cần vượt "+str(row.stage)
 	elif int(s.building_states["BLD-001"].level)<int(row.hq):reason="Cần Tổng bộ cấp "+str(row.hq)
 	elif remaining>0:reason="Hồi "+str(remaining)+" giây"
 	elif s.team.is_empty():reason="Cần bố trận"

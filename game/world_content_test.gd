@@ -21,7 +21,7 @@ func _initialize() -> void:
 		ok=check(not ids.has(row.id) and reg.stages.has(row.stage) and reg.resources.has(row.resource),"catalog reference") and ok
 		ids[row.id]=true
 	ok=check(ids.size()==12 and store.begin_expedition(reg,"EXP-01").is_empty(),"locked expedition") and ok
-	s.cleared["STG-005"]=true
+	for number in range(1,6):s.cleared["STG-%03d"%number]=true
 	s.building_states["BLD-001"].level=2
 	var resource="RES-116"
 	var before=int(s.inventory.get(resource,0))
