@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "policy": "Source review; no third-party images in public repo or Pages. No rig, no gameplay change. Devolution HOLD.",
+  "sources": [
+    {
+      "name": "Naruto Online",
+      "url": "https://www.spriters-resource.com/browser_games/narutoonline/",
+      "expected_catalog": 238,
+      "expected_recruitable": 166,
+      "priority": "P0",
+      "samples": [
+        {
+          "id": "NIN-042",
+          "title": "Sasuke Uchiha (Part 2)",
+          "url": "https://www.spriters-resource.com/browser_games/narutoonline/asset/84547/",
+          "expected_files": 238
+        },
+        {
+          "id": "NIN-004",
+          "title": "Hatake Kakashi pt1",
+          "url": "https://www.spriters-resource.com/browser_games/narutoonline/asset/86162/",
+          "expected_files": 370
+        },
+        {
+          "id": "NIN-093",
+          "title": "Minato Namikaze (Hokage Cloak)",
+          "url": "https://www.spriters-resource.com/browser_games/narutoonline/asset/90079/"
+        },
+        {
+          "id": "NIN-060",
+          "title": "Itachi Uchiha (Uncloaked)",
+          "url": "https://www.spriters-resource.com/browser_games/narutoonline/asset/91034/"
+        },
+        {
+          "id": "NIN-017",
+          "title": "Asuma (Wind Blades)",
+          "url": "https://www.spriters-resource.com/browser_games/narutoonline/asset/83778/"
+        }
+      ]
+    },
+    {
+      "name": "Naruto Mobile",
+      "url": "https://www.aigei.com/set/shouyou_huoyingrenzh.html",
+      "expected_catalog": 2877,
+      "reported_mb": 1100.5,
+      "priority": "P1",
+      "samples": [
+        {
+          "id": "MOBILE-ACTION",
+          "url": "https://www.aigei.com/view/71378-32448744.html",
+          "title": "Ninja actions, VFX, skills and frame sequences"
+        },
+        {
+          "id": "MOBILE-OTHER",
+          "url": "https://www.aigei.com/view/71378-43018514.html",
+          "title": "Other"
+        }
+      ]
+    }
+  ],
+  "benchmark": [
+    "NIN-001",
+    "NIN-002",
+    "NIN-003",
+    "NIN-004",
+    "NIN-041",
+    "NIN-042",
+    "NIN-043",
+    "NIN-060",
+    "NIN-068",
+    "NIN-070",
+    "NIN-093",
+    "NIN-016"
+  ]
+}

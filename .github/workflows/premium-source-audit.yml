@@ -1,0 +1,31 @@
+name: Premium animation source audit
+on:
+  push:
+    branches: [integration/one-game]
+    paths:
+      - 'art/external/premium_review.py'
+      - 'art/external/PREMIUM_SOURCES.json'
+      - '.github/workflows/premium-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit public source and attempt explicit public sample links
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 art/external/premium_review.py discover --out "$RUNNER_TEMP/premium" --local-samples
+          mkdir -p premium-evidence
+          cp "$RUNNER_TEMP/premium/DISCOVERY.json" premium-evidence/
+          if test -f "$RUNNER_TEMP/premium/local-review/REVIEW_INDEX.json"; then cp "$RUNNER_TEMP/premium/local-review/REVIEW_INDEX.json" premium-evidence/; fi
+          printf '%s\n' "$GITHUB_SHA" > premium-evidence/BUILD_SHA.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: NARU-PREMIUM-SOURCE-AUDIT
+          path: premium-evidence/
+          if-no-files-found: error
