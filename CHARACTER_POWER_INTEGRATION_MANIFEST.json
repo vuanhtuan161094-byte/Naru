@@ -67,7 +67,7 @@
       "file": "game/power_system_test.gd",
       "surface": "runtime stat and combat fixtures",
       "changes": "Covers all 144 profile snapshots and focused stat derivation/source, Storm matrix, status resistance, CC diminishing returns, AI matchup selection, shield break, shield power, healing received, and sealing behavior.",
-      "status": "LOCAL_GODOT_4_7_2_PASS_CI_PENDING"
+      "status": "CI_GODOT_4_4_1_PASS"
     },
     {
       "file": "tools/build_power_wiki.py",
@@ -85,7 +85,7 @@
       "file": ".github/workflows/godot-smoke.yml",
       "surface": "exact-SHA integrated workflow",
       "changes": "Adds the character power runtime test and Wiki inventory validation; packages generated Wiki beside the Web export and retains the power test log.",
-      "status": "CI_PENDING_ON_FEATURE_SHA"
+      "status": "EXACT_SHA_CI_PASS"
     }
   ],
   "inventory": {
@@ -153,10 +153,10 @@
     "local_headless_game_start": "PASS",
     "wiki_inventory_check": "PASS",
     "wiki_http_and_javascript_syntax": "PASS",
-    "feature_sha_ci": "PENDING",
-    "web_export_and_browser": "PENDING",
-    "earned_only_90_day": "PENDING",
-    "native_6v6_video_and_screenshots": "PENDING"
+    "feature_sha_ci": "PASS (GitHub Actions Godot 4.4.1; all workflow steps)",
+    "web_export_and_browser": "PASS (Web DEV export and Chromium runtime smoke)",
+    "earned_only_90_day": "PASS (90 days; 120/120 progression wins, 150/150 inventory IDs, strict P7R reload)",
+    "native_6v6_video_and_screenshots": "PASS (native capture and review screenshots uploaded as CI artifacts)"
   },
   "open_acceptance_gates": [
     "Review all 144 numerical profiles for source quality and intended power tiers; current numeric profile signatures remain repeated.",
@@ -164,6 +164,6 @@
     "Review and test 1146 adapted skills individually or by verified mechanic family; preserve six P2 fallbacks.",
     "Resolve the 186 passive source gates and certify candidate effects before changing the default-off gate.",
     "Resolve 34 skill-branch runtime adapter holds and keep two era holds.",
-    "Run per-ID form/combo evidence, earned-only 90-day simulation, Godot 4.4.1 exact-SHA CI, Web/browser, and native capture."
+    "Complete per-ID form/combo evidence from natural matches; current runtime observations cover only subsets of those contracts."
   ]
 }
