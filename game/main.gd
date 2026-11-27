@@ -2882,7 +2882,22 @@ func start_art_review(static_batch:bool=false) -> void:
 		left=["NIN-007","NIN-009","NIN-010","NIN-014","NIN-024","NIN-025"]
 		right=["NIN-061","NIN-062","NIN-066","NIN-067","NIN-069","NIN-083"]
 		battle_stage.name_vi="6v6 • Sprite tĩnh tạm thời • không thưởng"
-	if not art.d2_clips.is_empty():
+	if art.senki_review:
+		var ids=art.d2_clips.keys()
+		ids.sort()
+		var preferred=["NIN-041","NIN-042","NIN-043","NIN-004","NIN-060","NIN-093","NIN-020","NIN-022","NIN-067","NIN-068","NIN-055","NIN-049"]
+		var chosen=[]
+		for id in preferred+ids:
+			if id in ids and not id in chosen:chosen.append(id)
+		if chosen.size()>=12:
+			left=chosen.slice(0,6)
+			right=chosen.slice(6,12)
+		else:
+			left=chosen.slice(0,6)
+			right=left.duplicate()
+		battle_stage.name_vi="R3 • Senki source review • không thưởng"
+		level=20
+	elif not art.d2_clips.is_empty():
 		left=["NIN-041","NIN-004","NIN-060","NIN-061","NIN-020","NIN-022"]
 		right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
 		battle_stage.name_vi="D2 • review animation nguồn • không thưởng"

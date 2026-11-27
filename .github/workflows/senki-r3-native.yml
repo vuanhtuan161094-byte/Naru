@@ -1,0 +1,68 @@
+name: Premium R3 Senki normalized battle review
+on:
+  push:
+    branches: [integration/one-game]
+    paths:
+      - 'art/external/senki_pack.py'
+      - 'art/external/senki_review.py'
+      - '.github/workflows/senki-r3-native.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate local-only sheets and GIFs from pinned original frames
+        run: |
+          python3 -m pip install Pillow==11.3.0 numpy texture2ddecoder
+          python3 art/external/senki_pack.py --out "$RUNNER_TEMP/r3-local"
+          mkdir -p r3-evidence
+          cp "$RUNNER_TEMP/r3-local/R3_REPORT.json" r3-evidence/
+          printf '%s\n' "$GITHUB_SHA" > r3-evidence/BUILD_SHA.txt
+      - name: Install Godot and prepare unchanged public art
+        run: |
+          python3 tools/assemble_public_art.py
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb xauth ffmpeg libgl1-mesa-dri
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          chmod +x /tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          python3 art/external/convert_reuse.py vfx --out assets/external_review/vfx
+      - name: Real 6v6 with local Senki pack, no public asset publication
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          set -euo pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          "$G" --headless --path . --editor --import --quit >r3-evidence/import.log 2>&1
+          ! grep -E 'Parse Error|SCRIPT ERROR' r3-evidence/import.log
+          xvfb-run -a -s "-screen 0 1280x720x24" bash -c '
+            set -euo pipefail
+            "$1" --path . --resolution 1280x720 --position 0,0 -- --combat-video --private-capture "--d2-pack=$RUNNER_TEMP/r3-local/LOCAL_SENKI_PACK.json" >r3-evidence/runtime.log 2>&1 &
+            PID=$!
+            trap "kill $PID 2>/dev/null || true" EXIT
+            for i in $(seq 1 30); do
+              if grep -q NARU_VIDEO_BATTLE r3-evidence/runtime.log; then break; fi
+              kill -0 "$PID"; sleep 1
+            done
+            grep NARU_VIDEO_BATTLE r3-evidence/runtime.log
+            ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i "$DISPLAY" -t 24 -c:v libx264 -preset veryfast -pix_fmt yuv420p "$RUNNER_TEMP/r3-local/Combat-R3.mp4"
+          ' bash "$G"
+          grep NARU_R3_PACK_READY r3-evidence/runtime.log
+          grep 'NARU_VIDEO_BATTLE 12 actors' r3-evidence/runtime.log
+          grep NARU_R3_ACTOR_DRAW r3-evidence/runtime.log
+          test "$(grep NARU_R3_ACTOR_DRAW r3-evidence/runtime.log | sort -u | wc -l)" -ge 3
+          grep NARU_R3_ACTION_DRAW r3-evidence/runtime.log
+          ! grep -E 'SCRIPT ERROR|Parse Error|NARU_D2_PACK_FAIL' r3-evidence/runtime.log
+          test -s "$RUNNER_TEMP/r3-local/Combat-R3.mp4"
+          sha256sum "$RUNNER_TEMP/r3-local/Combat-R3.mp4" | cut -d " " -f 1 >r3-evidence/LOCAL_VIDEO_SHA256.txt
+          grep 'NARU_R3_.*DRAW' r3-evidence/runtime.log | sort -u >r3-evidence/DRAW_COVERAGE.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: NARU-R3-SENKI-LOCAL-EVIDENCE
+          path: r3-evidence/
+          if-no-files-found: warn

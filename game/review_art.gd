@@ -41,6 +41,8 @@ var r12_actor_draws=0
 var missing_actor_ids:Dictionary={}
 var authored_actor_draws=0
 var d2_clips:Dictionary={}
+var senki_review=false
+var senki_fx:Dictionary={}
 var d2_draws:Dictionary={}
 var d2_action_draws:Dictionary={}
 func load_d2_pack(path:String)->bool:
@@ -48,7 +50,7 @@ func load_d2_pack(path:String)->bool:
 	var f=FileAccess.open(path,FileAccess.READ)
 	if f==null or f.get_length()>48000000:return false
 	var doc=JSON.parse_string(f.get_as_text())
-	if not doc is Dictionary or doc.get("status","")!="LOCAL_DEVOLUTION_REVIEW" or int(doc.get("schema",0))!=1 or not doc.get("characters",{}) is Dictionary:return false
+	if not doc is Dictionary or not doc.get("status","") in ["LOCAL_DEVOLUTION_REVIEW","LOCAL_SENKI_REVIEW"] or int(doc.get("schema",0))!=1 or not doc.get("characters",{}) is Dictionary:return false
 	var staged:Dictionary={}
 	for id in doc.characters:
 		var record=doc.characters[id]
@@ -68,6 +70,20 @@ func load_d2_pack(path:String)->bool:
 			clips[action]={"texture":ImageTexture.create_from_image(img),"frames":count,"ms":ms}
 		if clips.has("idle"):staged[id]=clips
 	d2_clips=staged
+	senki_review=doc.get("status","")=="LOCAL_SENKI_REVIEW"
+	senki_fx.clear()
+	if senki_review and doc.get("vfx",{}) is Dictionary:
+		for family in doc.vfx:
+			var c=doc.vfx[family]
+			if not c is Dictionary:continue
+			var count=int(c.get("frames",0))
+			if count<1 or count>32:continue
+			var bytes=Marshalls.base64_to_raw(str(c.get("png","")))
+			if bytes.size()<24 or hash_bytes(bytes)!=str(c.get("sha256","")):continue
+			var img=Image.new()
+			if img.load_png_from_buffer(bytes)!=OK or img.get_width()!=128*count or img.get_height()!=128:continue
+			senki_fx[family]=ImageTexture.create_from_image(img)
+		print("NARU_R3_PACK_READY ",d2_clips.keys()," FX ",senki_fx.keys())
 	print("NARU_D2_PACK_READY ",d2_clips.keys())
 	return not d2_clips.is_empty()
 
@@ -85,10 +101,10 @@ func draw_d2(field:Control,a:Dictionary,id:String,p:Vector2,ticks:int,display_sc
 	frame=posmod(frame,frame_count) if action in ["idle","move"] else mini(frame,frame_count-1)
 	var dest=Rect2(p-Vector2(48,104)*display_scale,Vector2(96,112)*display_scale)
 	field.draw_texture_rect_region(c.texture,dest,Rect2(frame*96,0,96,112))
-	if not d2_draws.has(id):print("NARU_D2_ACTOR_DRAW ",id)
+	if not d2_draws.has(id):print("NARU_R3_ACTOR_DRAW " if senki_review else "NARU_D2_ACTOR_DRAW ",id)
 	d2_draws[id]=int(d2_draws.get(id,0))+1
 	var key=id+"/"+action
-	if not d2_action_draws.has(key):print("NARU_D2_ACTION_DRAW ",key)
+	if not d2_action_draws.has(key):print("NARU_R3_ACTION_DRAW " if senki_review else "NARU_D2_ACTION_DRAW ",key)
 	d2_action_draws[key]=int(d2_action_draws.get(key,0))+1
 	actor_draws+=1
 	return 104.0*display_scale
@@ -468,6 +484,15 @@ func sheet(field: Control,path: String,p: Vector2,progress: float,size_value: fl
 # Optional normalized source assets; no gameplay changes and no replacement of approved skill art.
 func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_value:float)->bool:
 	if not enabled or family.is_empty():return false
+	if senki_review and senki_fx.has(family):
+		var fx:Texture2D=senki_fx[family]
+		var n=floori(float(fx.get_width())/128.0)
+		var j=clampi(floori(progress*n),0,n-1)
+		field.draw_texture_rect_region(fx,Rect2(p-Vector2.ONE*size_value/2,Vector2.ONE*size_value),Rect2(j*128,0,128,128))
+		if not external_fx_family_draws.has("senki/"+family):print("NARU_R3_VFX_DRAW ",family)
+		external_fx_family_draws["senki/"+family]=int(external_fx_family_draws.get("senki/"+family,0))+1
+		effect_draws+=1
+		return true
 	if not external_fx_cache.has(family):
 		var path="res://assets/external_review/vfx/"+family+".png"
 		var candidate:Texture2D=null
