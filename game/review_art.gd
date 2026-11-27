@@ -40,6 +40,59 @@ func static_roster_texture(id:String) -> Texture2D:
 var r12_actor_draws=0
 var missing_actor_ids:Dictionary={}
 var authored_actor_draws=0
+var d2_clips:Dictionary={}
+var d2_draws:Dictionary={}
+var d2_action_draws:Dictionary={}
+func load_d2_pack(path:String)->bool:
+	if OS.has_feature("web") or not FileAccess.file_exists(path):return false
+	var f=FileAccess.open(path,FileAccess.READ)
+	if f==null or f.get_length()>48000000:return false
+	var doc=JSON.parse_string(f.get_as_text())
+	if not doc is Dictionary or doc.get("status","")!="LOCAL_DEVOLUTION_REVIEW" or int(doc.get("schema",0))!=1 or not doc.get("characters",{}) is Dictionary:return false
+	var staged:Dictionary={}
+	for id in doc.characters:
+		var record=doc.characters[id]
+		if not record is Dictionary or record.get("direction","")!="screen_right" or not record.get("clips",{}) is Dictionary:continue
+		var clips:Dictionary={}
+		for action in record.clips:
+			if not action in ["idle","move","attack","cast","hit","fall"]:continue
+			var c=record.clips[action]
+			if not c is Dictionary:continue
+			var count=int(c.get("frames",0))
+			var ms=int(c.get("frame_ms",0))
+			if count<1 or count>42 or ms<20 or ms>2000:continue
+			var bytes=Marshalls.base64_to_raw(str(c.get("png","")))
+			if bytes.size()<24 or hash_bytes(bytes)!=str(c.get("sha256","")):continue
+			var img=Image.new()
+			if img.load_png_from_buffer(bytes)!=OK or img.get_width()!=96*count or img.get_height()!=112:continue
+			clips[action]={"texture":ImageTexture.create_from_image(img),"frames":count,"ms":ms}
+		if clips.has("idle"):staged[id]=clips
+	d2_clips=staged
+	print("NARU_D2_PACK_READY ",d2_clips.keys())
+	return not d2_clips.is_empty()
+
+func draw_d2(field:Control,a:Dictionary,id:String,p:Vector2,ticks:int,display_scale:float,state:Dictionary)->float:
+	# Explicit opt-in only. No invented opposite/back-facing frames, no base sprite replacing a form.
+	if not d2_clips.has(id) or not a.get("active_form",{}).is_empty():return 0.0
+	if str(state.get("direction","")).to_lower()!="se":return 0.0
+	var action=str(state.get("action","Idle")).to_lower()
+	var clips:Dictionary=d2_clips[id]
+	if not clips.has(action):return 0.0
+	var c:Dictionary=clips[action]
+	var age=maxi(0,ticks-int(state.get("started_tick",0)))*50
+	var frame_count=int(c.frames)
+	var frame=floori(float(age)/float(c.ms))
+	frame=posmod(frame,frame_count) if action in ["idle","move"] else mini(frame,frame_count-1)
+	var dest=Rect2(p-Vector2(48,104)*display_scale,Vector2(96,112)*display_scale)
+	field.draw_texture_rect_region(c.texture,dest,Rect2(frame*96,0,96,112))
+	if not d2_draws.has(id):print("NARU_D2_ACTOR_DRAW ",id)
+	d2_draws[id]=int(d2_draws.get(id,0))+1
+	var key=id+"/"+action
+	if not d2_action_draws.has(key):print("NARU_D2_ACTION_DRAW ",key)
+	d2_action_draws[key]=int(d2_action_draws.get(key,0))+1
+	actor_draws+=1
+	return 104.0*display_scale
+
 var character_overlays:Dictionary={}
 var textures: Dictionary={}
 var source_label="DEV • chưa nạp gói riêng"
@@ -280,6 +333,8 @@ func product_coverage() -> Dictionary:
 	return counts
 
 func reset_battle() -> void:
+	d2_draws.clear()
+	d2_action_draws.clear()
 	last_pos={}
 	motion={}
 	actor_draws=0
@@ -341,6 +396,8 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 		actor_draws+=1
 		return h
 	if id!=str(a.id):clone_draws+=1
+	var d2_height=draw_d2(field,a,id,p,ticks,display_scale,state)
+	if d2_height>0:return d2_height
 	var t=texture("characters/"+id+".png")
 	var prior: Vector2=last_pos.get(a.uid,p)
 	if prior.distance_to(p)>0.25:

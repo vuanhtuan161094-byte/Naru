@@ -1,0 +1,130 @@
+{
+  "naruto": {
+    "id": "NIN-041",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "kakashi": {
+    "id": "NIN-004",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "itachi": {
+    "id": "NIN-060",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "kisame": {
+    "id": "NIN-061",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "jiraiya_new": {
+    "id": "NIN-020",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "orochimaru": {
+    "id": "NIN-022",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "madara": {
+    "id": "NIN-070",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "pein": {
+    "id": "NIN-067",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "boruto": {
+    "id": "NIN-111",
+    "status": "VISUAL_IDLE_MATCH"
+  },
+  "minato": {
+    "id": "NIN-093",
+    "status": "HOLD_COSTUME"
+  },
+  "sasuke": {
+    "id": "NIN-042",
+    "status": "HOLD_ERA"
+  },
+  "sakura": {
+    "id": "NIN-043",
+    "status": "HOLD_ERA"
+  },
+  "naruto_kyuubi": {
+    "id": "NIN-001-F1",
+    "status": "HOLD_FORM"
+  },
+  "sasuke_cs2": {
+    "id": "NIN-002-F2",
+    "status": "HOLD_FORM"
+  },
+  "sasuke_ems": {
+    "id": "NIN-042-F2",
+    "status": "HOLD_FORM"
+  },
+  "hinata": {
+    "id": "NIN-010",
+    "status": "HOLD_ERA"
+  },
+  "hinata_grande_alt": {
+    "id": "NIN-049",
+    "status": "HOLD_ERA"
+  },
+  "lee": {
+    "id": "NIN-053",
+    "status": "HOLD_ERA"
+  },
+  "ns_lee_young": {
+    "id": "NIN-014",
+    "status": "HOLD_ERA"
+  },
+  "gaara": {
+    "id": "NIN-024",
+    "status": "HOLD_ERA"
+  },
+  "gaara_grand_alt": {
+    "id": "NIN-055",
+    "status": "HOLD_ERA"
+  },
+  "deidara": {
+    "id": "NIN-062",
+    "status": "HOLD_VISUAL"
+  },
+  "kimimaro": {
+    "id": "NIN-036",
+    "status": "HOLD_VISUAL"
+  },
+  "ns_kimimaro": {
+    "id": "NIN-036",
+    "status": "HOLD_VARIANT"
+  },
+  "sasori": {
+    "id": "NIN-063",
+    "status": "HOLD_VISUAL"
+  },
+  "shikamaru_shippuden_alt": {
+    "id": "NIN-046",
+    "status": "HOLD_VISUAL"
+  },
+  "teen_kakashi": {
+    "id": "",
+    "status": "HOLD_NO_EXACT_ROSTER_ERA"
+  },
+  "tenten_shippuden": {
+    "id": "NIN-054",
+    "status": "HOLD_VISUAL"
+  },
+  "ns_mashu_ti": {
+    "id": "",
+    "status": "HOLD_UNKNOWN_IDENTITY"
+  },
+  "jirobo": {
+    "id": "NIN-037",
+    "status": "HOLD_INCOMPLETE"
+  },
+  "kankuro": {
+    "id": "NIN-026",
+    "status": "HOLD_ERA"
+  },
+  "neji": {
+    "id": "NIN-013",
+    "status": "HOLD_ERA"
+  }
+}

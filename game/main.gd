@@ -206,6 +206,12 @@ func _ready() -> void:
 					get_tree().quit(2)
 					return
 			print("NARU_PRIVATE_CAPTURE_ART_READY ",art.textures.size()," textures, 12 character identities")
+		for arg in OS.get_cmdline_user_args():
+			if arg.begins_with("--d2-pack="):
+				if not art.load_d2_pack(arg.trim_prefix("--d2-pack=")):
+					push_error("NARU_D2_PACK_FAIL")
+					get_tree().quit(3)
+					return
 		start_art_review()
 		print("NARU_VIDEO_BATTLE ",sim.actors.size()," actors")
 		return
@@ -2876,6 +2882,11 @@ func start_art_review(static_batch:bool=false) -> void:
 		left=["NIN-007","NIN-009","NIN-010","NIN-014","NIN-024","NIN-025"]
 		right=["NIN-061","NIN-062","NIN-066","NIN-067","NIN-069","NIN-083"]
 		battle_stage.name_vi="6v6 • Sprite tĩnh tạm thời • không thưởng"
+	if not art.d2_clips.is_empty():
+		left=["NIN-041","NIN-004","NIN-060","NIN-061","NIN-020","NIN-022"]
+		right=["NIN-001","NIN-002","NIN-003","NIN-016","NIN-070","NIN-068"]
+		battle_stage.name_vi="D2 • review animation nguồn • không thưởng"
+		level=20
 	var review_slots=[0,1,2,6,7,8] if "--style-benchmark" in OS.get_cmdline_user_args() else [0,1,2,3,4,5]
 	for i in range(6):
 		var id=left[i]
