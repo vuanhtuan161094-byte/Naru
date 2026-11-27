@@ -47,6 +47,10 @@ var enabled=false
 var error=""
 var actor_draws=0
 var effect_draws=0
+var external_fx_draws=0
+var external_fx_cache:Dictionary={}
+var external_skill_families:Dictionary={}
+
 var portrait_draws=0
 var last_pos: Dictionary={}
 var motion: Dictionary={}
@@ -403,13 +407,42 @@ func sheet(field: Control,path: String,p: Vector2,progress: float,size_value: fl
 	effect_draws+=1
 	return true
 
+# Optional normalized source assets; no gameplay changes and no replacement of approved skill art.
+func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_value:float)->bool:
+	if not enabled:return false
+	if not external_fx_cache.has(family):
+		var path="res://assets/external_review/vfx/"+family+".png"
+		var candidate:Texture2D=null
+		if ResourceLoader.exists(path):candidate=load(path) as Texture2D
+		external_fx_cache[family]=candidate
+	var t=external_fx_cache[family] as Texture2D
+	if t==null or t.get_height()!=128 or t.get_width()%128!=0:return false
+	var count=floori(float(t.get_width())/128.0)
+	var frame=clampi(floori(progress*count),0,count-1)
+	field.draw_texture_rect_region(t,Rect2(p-Vector2.ONE*size_value/2,Vector2.ONE*size_value),Rect2(frame*128,0,128,128))
+	external_fx_draws+=1
+	effect_draws+=1
+	if external_fx_draws==1:print("NARU_EXTERNAL_VFX_FIRST_DRAW ",family)
+	return true
+
+func external_family(skill_id:String)->String:
+	if external_skill_families.is_empty():
+		var data=JSON.parse_string(FileAccess.get_file_as_string("res://data/skill-p2/vfx_families.json"))
+		if data is Array:
+			for item in data:
+				for id in item.get("skills",[]):external_skill_families[str(id)]=str(item.id)
+		external_skill_families["_loaded"]=true
+	var family=str(external_skill_families.get(skill_id,""))
+	var aliases={"palm":"hit","melee":"hit","kick":"hit","smash":"hit","ground_smash":"earth","fireball":"fire","fire_dragon":"fire","lightning_lance":"lightning","lightning_dash":"lightning","lightning_needle":"lightning","kirin":"lightning","water_dragon":"water","black_flame":"shadow","clone":"smoke","summon":"smoke","rasengan":"chakra","rasengan_big":"chakra","rasenshuriken":"wind","earth_wall":"earth","blackfire":"shadow","air":"wind","scythe":"sword"}
+	return str(aliases.get(family,family))
+
 func effects(field: Control,sim,project: Callable) -> void:
 	for a in sim.actors:
 		if a.hp<=0 or a.pending.is_empty():continue
 		var skill=a.pending.skill
 		var at: Vector2=project.call(a.pos)+Vector2(0,-32)
 		var progress=1.0-float(a.cast_left)/maxf(0.05,float(skill.cast_s))
-		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,82):
+		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,82) and not external_sheet(field,"charge",at,progress,82):
 			field.draw_arc(at,15+6*sin(float(sim.ticks)*0.35),0,TAU,24,Color(0.45,0.78,1,0.65),2)
 	var numbers=[]
 	for event in sim.art_events:
@@ -419,10 +452,11 @@ func effects(field: Control,sim,project: Callable) -> void:
 		var progress=elapsed/0.8
 		if event.kind=="contact":
 			var phase="impact" if elapsed<0.4 else "residual"
-			sheet(field,"vfx/VFX-"+str(event.skill)+"/"+phase+".png",at,fmod(elapsed,0.4)/0.4,110)
+			if not sheet(field,"vfx/VFX-"+str(event.skill)+"/"+phase+".png",at,fmod(elapsed,0.4)/0.4,110) and phase=="impact":
+				external_sheet(field,external_family(str(event.skill)),at,elapsed/0.4,110)
 		elif event.kind in ["damage","heal","summon"]:
 			var family="hit" if event.kind=="damage" else "heal" if event.kind=="heal" else "smoke"
-			if not sheet(field,"vfx/families/"+family+".png",at,progress,76):
+			if not sheet(field,"vfx/families/"+family+".png",at,progress,76) and not external_sheet(field,family,at,progress,76):
 				field.draw_arc(at,8+22*progress,0,TAU,24,Color(1,0.72,0.38,1-progress),2)
 			if event.kind!="summon" and elapsed<0.55:
 				numbers.append({"at":at+Vector2(-14,-28-25*progress),"kind":event.kind,"amount":float(event.amount),"age":elapsed})
