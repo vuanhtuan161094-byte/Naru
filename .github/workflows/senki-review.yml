@@ -1,0 +1,32 @@
+name: Premium R2 Senki original atlas animation review
+on:
+  push:
+    branches: [integration/one-game]
+    paths:
+      - 'art/external/senki_review.py'
+      - '.github/workflows/senki-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Decode original textures and export ordered local GIFs
+        run: |
+          python -m pip install Pillow==11.3.0 numpy texture2ddecoder
+          python art/external/senki_review.py --out "$RUNNER_TEMP/senki"
+          mkdir -p senki-evidence
+          cp "$RUNNER_TEMP/senki/SENKI_REPORT.json" senki-evidence/
+          printf '%s\n' "$GITHUB_SHA" > senki-evidence/BUILD_SHA.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: NARU-SENKI-ATLAS-AUDIT
+          path: senki-evidence/
+          if-no-files-found: warn

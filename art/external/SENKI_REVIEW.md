@@ -1,0 +1,4 @@
+# Premium R2 — Naruto Senki review
+
+Original GitHub source pinned at 187fca6efd1ba6b89a91659fa7c591dde3995280. 58 matching named XML/plist folders found; not all are ninja, some are summons/forms. No source gameplay is imported. Python restores rotated/trimmed cels from original atlas and reads ordered action names from XML. Supports common unencrypted CCZ and PVR encodings; unsupported formats are HOLD. No bypass of protected files. Source timing and ground anchoring are provisional, so results require visual review. 
+Run locally: `python -m pip install Pillow==11.3.0 numpy texture2ddecoder`; `python art/external/senki_review.py --out Senki-local`. GIFs by original character and action; source ZIP optional via --source-zip. Public CI exports reports only; do not publish unverified character graphics. Ryoxs catalog unavailable, Naruto Online returns 403 in CI; retain Premium C audit and Devolution HOLD.
