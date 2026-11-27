@@ -2199,11 +2199,35 @@ func recruit_screen(message: String="") -> void:
 			results.append(reg.ninjas[id].name_vi)
 		recruit_screen("Nhận: "+", ".join(results)))
 	var rows=scroll_rows(root)
+	label(rows,"DANH SÁCH CHIÊU MỘ • Xem trước theo phẩm",20).modulate=Color("#e8cd9a")
 	for tier in reg.recruit.pool:
-		label(rows,"%s • Phẩm %d • Tỷ lệ %s%% • %d ninja" % [tier.label,int(tier.quality),tier.weight,tier.ninja_ids.size()],18).modulate=quality_color(int(tier.quality))
+		var panel=PanelContainer.new()
+		panel.add_theme_stylebox_override("panel",combat_panel(Color("#20332e"),quality_color(int(tier.quality)).darkened(0.35),8))
+		rows.add_child(panel)
+		var col=VBoxContainer.new()
+		panel.add_child(col)
+		label(col,"%s • Phẩm %d • Tỷ lệ %s%% • %d ninja" % [tier.label,int(tier.quality),tier.weight,tier.ninja_ids.size()],18).modulate=quality_color(int(tier.quality))
+		var preview=HBoxContainer.new()
+		col.add_child(preview)
+		for k in range(mini(6,tier.ninja_ids.size())):
+			var id=str(tier.ninja_ids[k])
+			var tile=VBoxContainer.new()
+			tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			preview.add_child(tile)
+			var tex=art.texture("characters/"+id+".png")
+			if tex!=null:
+				var img=TextureRect.new()
+				img.texture=tex
+				img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+				img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+				img.custom_minimum_size=Vector2(0,78)
+				tile.add_child(img)
+			var title=label(tile,str(reg.ninjas[id].name_vi),13)
+			title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	label(rows,"Trùng mẫu ninja nhận mảnh; không có thanh toán tiền thật.",16)
+	label(rows,"MẢNH NINJA ĐANG SỞ HỮU",20)
 	for id in store.state.owned:
-		label(rows,"%s • %d mảnh" % [reg.ninjas[id].name_vi,int(store.state.owned[id].shards)],16)
+		product_art_header(rows,"portraits/"+id+".png",str(reg.ninjas[id].name_vi),"%d mảnh" % int(store.state.owned[id].shards),42)
 
 func cost_text(inputs: Array) -> String:
 	var parts=[]
