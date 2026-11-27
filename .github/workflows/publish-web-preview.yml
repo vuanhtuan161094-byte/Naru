@@ -16,6 +16,8 @@ on:
       - 'game/village_service.gd'
       - 'game/world_content_catalog.gd'
       - 'game/world_economy_projects.gd'
+      - 'game/world_activities.gd'
+      - 'game/world_service.gd'
       - 'game/data_registry.gd'
       - 'data/world-content/**'
       - 'game/resource_guide.gd'

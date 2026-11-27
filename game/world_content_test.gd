@@ -78,6 +78,36 @@ func _initialize() -> void:
 	var home=str(s.world_location)
 	ok=check(store.develop_territory(reg,home) and int(s.territory_states[home].development)==1,"territory investment") and ok
 	ok=check(not store.develop_territory(reg,home),"territory HQ gate") and ok
+	var Activities=preload("res://game/world_activities.gd")
+	s.inventory["RES-034"]=10
+	s.inventory["RES-035"]=10
+	s.stamina=50
+	ok=check(store.use_world_food("RES-035") and int(s.stamina)==62,"food actual stamina") and ok
+	ok=check(store.use_world_food("RES-035") and store.use_world_food("RES-035") and not store.use_world_food("RES-034"),"food daily cap") and ok
+	var tower_event=store.begin_tower(reg,1)
+	ok=check(not tower_event.is_empty(),"tower start") and ok
+	if tower_event.is_empty():quit(1);return
+	var tower_stage=Activities.tower_stage(reg,1)
+	var before_ryo=int(s.inventory["RES-001"])
+	ok=check(store.finish_stage(reg,tower_stage,tower_event,true,{}) and int(s.tower_best)==1 and int(s.inventory["RES-001"])==before_ryo+300,"tower settlement") and ok
+	ok=check(store.begin_tower(reg,1).is_empty() and not store.finish_stage(reg,tower_stage,tower_event,true,{}),"tower duplicate prevention") and ok
+	ok=check(store.begin_tower(reg,3).is_empty(),"tower order") and ok
+	for floor_number in range(1,31):
+		var ts=Activities.tower_stage(reg,floor_number)
+		ok=check(not ts.is_empty() and not Activities.tower_rewards(floor_number).is_empty(),"tower floor data") and ok
+	s.building_states["BLD-030"].level=1
+	s.inventory["RES-057"]=100
+	s.inventory["RES-059"]=100
+	ok=check(store.fortify_home() and int(s.fortification)==1 and is_equal_approx(float(Activities.defense_quote(s).loss_rate),0.088),"fortification") and ok
+	ok=check(not store.fortify_home(),"fortification gate") and ok
+	var raw_cost=Village.effective_recipe_cost(s,recipe)
+	var before_stock={}
+	for key in raw_cost:before_stock[key]=int(s.inventory.get(key,0))
+	ok=check(store.enqueue_recipe(reg,building,"RCP-001",2),"waiting order") and ok
+	for key in raw_cost:ok=check(int(s.inventory[key])==int(before_stock[key]),"queue no upfront cost") and ok
+	ok=check(Village.promote_waiting(reg,s,building),"promote queue") and ok
+	ok=check(s.building_states[building].get("waiting_orders",[]).is_empty() and int(s.building_states[building].production.batches_left)==2,"queue active") and ok
+	ok=check(store.cancel_production(building),"cancel queue active") and ok
 	ok=check(Guard.valid(reg,s),"save compatibility") and ok
 	if not ok:quit(1);return
 	print("NARU_WORLD_CONTENT_PASS 24 catalog refs, cooldown settlement and target queue; no simulated combat claim")

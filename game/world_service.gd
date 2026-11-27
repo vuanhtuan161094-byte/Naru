@@ -285,14 +285,17 @@ static func raid(reg,s: Dictionary,id: String) -> bool:
 	var lost=not resolve_team(reg,s,defenders,teams[0].ninja_template_ids,maxi(1,4+int(s.faction_states[id].infrastructure.training)+floori(float(s.world_tick)/144.0)),int(s.world_tick)+int(id.right(3))*300)
 	s.raid_protection=43200
 	if lost:
+		var fort=clampi(int(s.get("fortification",0)),0,5)
+		var loss_rate=0.10-0.012*fort
+		var condition_factor=0.5+0.08*fort
 		for resource in s.inventory:
 			if not resource in ["RES-002","RES-003","RES-004","RES-005"]:
-				var loss=floori(float(s.inventory[resource])*0.1)
+				var loss=floori(float(s.inventory[resource])*loss_rate)
 				s.inventory[resource]=int(s.inventory[resource])-loss
 				var stock=s.faction_states[id].stock
 				stock[resource]=int(stock.get(resource,0))+loss
 		for b in s.building_states.values():
-			if int(b.level)>0:b.condition=maxf(0.5,float(b.condition)*0.5)
+			if int(b.level)>0:b.condition=maxf(0.5,float(b.condition)*condition_factor)
 		note(s,"Đột kích "+id+": mất tài nguyên và hư hại công trình")
 	else:note(s,"Phòng thủ thành công trước "+id)
 	return true

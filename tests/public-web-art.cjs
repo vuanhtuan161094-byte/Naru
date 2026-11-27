@@ -28,6 +28,8 @@ const fs=require("fs");
   await click("Hoạt động","activities");
   await click("Phó bản • 24","expeditions");
   await page.screenshot({path:"public-qa/expeditions.png"});
+  await click("Tháp nhẫn thuật","tower");
+  await page.screenshot({path:"public-qa/tower.png"});
   await click("Cốt truyện","campaign");
   await click("Vào STG-001","battle");
   await page.waitForFunction(()=>window.naruUI?.art_draws>0&&window.naruUI?.r12_actor_draws>0,null,{timeout:30000});

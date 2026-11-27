@@ -114,6 +114,27 @@ func draw(reg) -> String:
 		return ""
 	return id
 
+func use_world_food(id:String) -> bool:
+	var prior=state.duplicate(true)
+	if not preload("res://game/world_activities.gd").eat(state,id):return false
+	return commit_change(prior,rng.state)
+
+func fortify_home() -> bool:
+	var prior=state.duplicate(true)
+	if not preload("res://game/world_activities.gd").fortify(state):return false
+	return commit_change(prior,rng.state)
+
+func begin_tower(reg,floor_number:int) -> String:
+	var q=preload("res://game/world_activities.gd").tower_quote(reg,state,floor_number)
+	if q.is_empty() or not q.ready:return ""
+	var prior=state.duplicate(true)
+	state.stamina=int(state.stamina)-int(q.stage.stamina_cost)
+	state.battle_seq=int(state.battle_seq)+1
+	var id="battle-"+str(state.battle_seq)
+	state.ledger[id]={"status":"started","stage_id":q.stage.id,"team":state.team.duplicate(),"tower_floor":floor_number}
+	if not commit_change(prior,rng.state):return ""
+	return id
+
 func begin_expedition(reg,id:String) -> String:
 	var catalog=preload("res://game/world_content_catalog.gd")
 	var q=catalog.quote(reg,state,id)
@@ -153,6 +174,15 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 	if not entry is Dictionary or entry.get("status")!="started" or entry.get("stage_id")!=stage.id: return false
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
+	if entry.has("tower_floor"):
+		var tower=preload("res://game/world_activities.gd")
+		var floor_number=int(entry.tower_floor)
+		if tower.tower_stage_id(floor_number)!=stage.id or floor_number!=int(state.get("tower_best",0))+1:return false
+		state.ledger[event_id].status="win" if won else "loss"
+		if won:
+			state.tower_best=floor_number
+			for reward in tower.tower_rewards(floor_number):grant_reward(str(reward.resource_id),int(reward.qty))
+		return commit_change(prior,old_rng)
 	var expedition_id=str(entry.get("expedition",""))
 	var expedition=preload("res://game/world_content_catalog.gd").find(expedition_id)
 	if not expedition_id.is_empty():
@@ -696,6 +726,16 @@ func assign_job(reg,ninja: String,id: String,profession: String) -> bool:
 func production(reg,id: String,recipe: String,repeat: bool,batches: int=1,stock_target:int=0) -> bool:
 	var prior=state.duplicate(true)
 	if not Village.queue_recipe(reg,state,id,recipe,repeat,batches,stock_target):return false
+	return commit_change(prior,rng.state)
+
+func enqueue_recipe(reg,id:String,recipe_id:String,batches:int) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.enqueue(reg,state,id,recipe_id,batches):return false
+	return commit_change(prior,rng.state)
+
+func remove_waiting_recipe(id:String,index:int) -> bool:
+	var prior=state.duplicate(true)
+	if not Village.remove_waiting(state,id,index):return false
 	return commit_change(prior,rng.state)
 
 func cancel_production(id: String) -> bool:

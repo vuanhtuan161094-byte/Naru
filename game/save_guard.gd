@@ -7,6 +7,10 @@ static func valid(reg,s: Variant) -> bool:
 	for key in ["inventory","owned","cleared","ledger"]:
 		if not s.get(key) is Dictionary:return false
 	if not s.get("team") is Array or s.team.size()>6:return false
+	if not integer(s.get("tower_best",0),0,30) or not integer(s.get("fortification",0),0,5):return false
+	for entry in s.ledger.values():
+		if entry is Dictionary and entry.has("tower_floor"):
+			if entry.has("expedition") or not integer(entry.tower_floor,1,30) or str(entry.get("stage_id",""))!=preload("res://game/world_activities.gd").tower_stage_id(int(entry.tower_floor)):return false
 	for entry in s.ledger.values():
 		if entry is Dictionary and entry.has("expedition"):
 			var row=preload("res://game/world_content_catalog.gd").find(str(entry.expedition))
@@ -110,6 +114,10 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 	for id in s.get("building_states",{}):
 		var b=s.building_states[id]
 		if not reg.buildings.has(id) or not b is Dictionary or not integer(b.get("level"),0,100):return false
+		var waiting=b.get("waiting_orders",[])
+		if not waiting is Array or waiting.size()>5:return false
+		for order in waiting:
+			if not order is Dictionary or not reg.recipes.has(order.get("recipe","")) or reg.recipes[order.recipe].building_id!=id or not integer(order.get("batches"),1,20):return false
 		var condition=b.get("condition",1.0)
 		if not (condition is int or condition is float) or condition<0 or condition>1:return false
 		for key in ["upgrade","production"]:

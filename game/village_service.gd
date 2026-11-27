@@ -174,6 +174,33 @@ static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: 
 	b.production=job
 	return true
 
+static func enqueue(reg,s:Dictionary,id:String,recipe_id:String,batches:int) -> bool:
+	if not reg.recipes.has(recipe_id) or not s.building_states.has(id) or batches<1 or batches>20:return false
+	var recipe=reg.recipes[recipe_id]
+	var b=s.building_states[id]
+	if recipe.building_id!=id or int(b.level)<int(recipe.min_building_level):return false
+	var waiting=b.get("waiting_orders",[])
+	if waiting.size()>=5:return false
+	waiting.append({"recipe":recipe_id,"batches":batches})
+	b.waiting_orders=waiting
+	return true
+
+static func remove_waiting(s:Dictionary,id:String,index:int) -> bool:
+	if not s.building_states.has(id):return false
+	var waiting=s.building_states[id].get("waiting_orders",[])
+	if index<0 or index>=waiting.size():return false
+	waiting.remove_at(index)
+	return true
+
+static func promote_waiting(reg,s:Dictionary,id:String) -> bool:
+	var b=s.building_states[id]
+	var waiting=b.get("waiting_orders",[])
+	if waiting.is_empty() or not b.production.is_empty():return false
+	var order=waiting[0]
+	if not queue_recipe(reg,s,id,str(order.recipe),false,int(order.batches)):return false
+	waiting.pop_front()
+	return true
+
 static func cancel(s: Dictionary,id: String) -> bool:
 	if not s.building_states.has(id) or s.building_states[id].production.is_empty():return false
 	var job=s.building_states[id].production
@@ -189,6 +216,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 			if int(b.upgrade.remaining)<=0:
 				b.level=int(b.upgrade.target)
 				b.upgrade={}
+		if b.production.is_empty():promote_waiting(reg,s,id)
 		if b.production.is_empty() or worker_level(s,id)==0:continue
 		var job=b.production
 		var recipe=reg.recipes[job.recipe]

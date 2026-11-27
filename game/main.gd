@@ -74,6 +74,7 @@ const Stats=preload("res://game/stats_service.gd")
 const Content=preload("res://game/content_service.gd")
 const WorldCatalog=preload("res://game/world_content_catalog.gd")
 const Projects=preload("res://game/world_economy_projects.gd")
+const Activities=preload("res://game/world_activities.gd")
 var quest_filter=0
 var gear_filter_quality=0
 var gear_filter_query=""
@@ -452,16 +453,16 @@ func campaign() -> void:
 	chapter_select.item_selected.connect(populate)
 	populate.call(chapter_select.selected)
 
-func start_battle(stage: Dictionary,expedition:String="") -> void:
-	var id=store.begin_stage(stage) if expedition.is_empty() else store.begin_expedition(reg,expedition)
+func start_battle(stage: Dictionary,expedition:String="",tower_floor:int=0) -> void:
+	var id=store.begin_tower(reg,tower_floor) if tower_floor>0 else (store.begin_stage(stage) if expedition.is_empty() else store.begin_expedition(reg,expedition))
 	if id.is_empty():
 		menu("Thiếu thể lực, đội hình hoặc điều kiện mở ải")
 		return
 	review_mode=false
 	selected_stage=stage.id
-	battle_stage=stage if expedition.is_empty() else WorldCatalog.battle_stage(reg,expedition)
+	battle_stage=Activities.tower_stage(reg,tower_floor) if tower_floor>0 else (stage if expedition.is_empty() else WorldCatalog.battle_stage(reg,expedition))
 	event_id=id
-	last_reward=(stage.repeat_rewards if store.state.cleared.has(stage.id) else stage.first_clear_rewards).duplicate(true)
+	last_reward=Activities.tower_rewards(tower_floor) if tower_floor>0 else (stage.repeat_rewards if store.state.cleared.has(stage.id) else stage.first_clear_rewards).duplicate(true)
 	if not expedition.is_empty():
 		var extra=WorldCatalog.find(expedition)
 		last_reward.append({"resource_id":extra.resource,"qty":extra.qty})
@@ -919,10 +920,12 @@ func finish(won: bool) -> void:
 	button(row,"Về làng",menu)
 	button(row,"Cốt truyện",campaign)
 	var expedition=str(store.state.ledger.get(event_id,{}).get("expedition",""))
-	if expedition.is_empty():button(row,"Đánh lại",func():start_battle(reg.stages[battle_stage.id]))
+	var tower_floor=int(store.state.ledger.get(event_id,{}).get("tower_floor",0))
+	if tower_floor>0:button(row,"Về tháp",tower_screen)
+	elif expedition.is_empty():button(row,"Đánh lại",func():start_battle(reg.stages[battle_stage.id]))
 	else:button(row,"Về phó bản",expedition_screen)
 	var next_id="STG-%03d" % (int(battle_stage.id.right(3))+1)
-	if expedition.is_empty() and won and ok and reg.stages.has(next_id):button(row,"Ải tiếp theo",func():start_battle(reg.stages[next_id]))
+	if tower_floor==0 and expedition.is_empty() and won and ok and reg.stages.has(next_id):button(row,"Ải tiếp theo",func():start_battle(reg.stages[next_id]))
 
 func skill_screen(id: String,message: String="") -> void:
 	open_screen("skill_tree")
@@ -1091,6 +1094,22 @@ func awakening_screen(id: String,message: String="") -> void:
 func village_screen(message: String="") -> void:
 	home_screen(message)
 
+func world_food_screen(message:String="") -> void:
+	open_screen("inventory")
+	label(root,"LƯƠNG THỰC • "+str(store.state.stamina)+"/120 thể lực",26)
+	label(root,"Cơm nắm +6, Ramen +12; tối đa 36 thể lực từ thức ăn mỗi ngày. "+message,16)
+	var rows=scroll_rows(root)
+	for id in Activities.FOOD:
+		var q=Activities.food_quote(store.state,id)
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var l=label(line,str(reg.resources[id].name_vi)+" • kho "+str(store.state.inventory.get(id,0))+" • còn "+str(q.remaining)+" hạn mức",17)
+		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var eat=button(line,"Ăn +"+str(q.gain),func():world_food_screen("Đã hồi thể lực" if store.use_world_food(id) else "Chưa đủ điều kiện"))
+		eat.disabled=not q.ready
+		button(line,"Nguồn / chế biến",func():resource_detail(id))
+	button(root,"Kho tài nguyên",inventory_screen)
+
 func inventory_screen() -> void:
 	open_screen("inventory")
 	label(root,"KHO TÀI NGUYÊN & TRANG BỊ",26)
@@ -1103,6 +1122,7 @@ func inventory_screen() -> void:
 	row.add_child(search)
 	button(row,"Lọc",func():inventory_query=search.text;inventory_screen())
 	button(row,"Trang bị sở hữu",gear_screen)
+	button(row,"Thức ăn",world_food_screen)
 	button(row,"Chế tạo",craft_screen)
 	button(row,"Thưởng chờ nhận ("+str(store.state.reward_inbox.size())+")",reward_inbox_screen)
 	var rows=scroll_rows(root)
@@ -1145,6 +1165,19 @@ func building_screen(id: String,message: String="") -> void:
 	if int(b.level)==0:return
 	if id=="BLD-028":button(rows,"Nghiên cứu công nghệ",world_projects_screen)
 	button(rows,"Điều phối tất cả công trình",production_center)
+	if id=="BLD-030":button(rows,"Gia cố phòng thủ",fortification_screen)
+	var waiting=b.get("waiting_orders",[])
+	if not waiting.is_empty():
+		label(rows,"HÀNG ĐỢI • "+str(waiting.size())+"/5 (chưa trừ nguyên liệu)",18)
+		for index in range(waiting.size()):
+			var order=waiting[index]
+			var recipe=reg.recipes[order.recipe]
+			var line=HBoxContainer.new()
+			rows.add_child(line)
+			var desc=label(line,str(reg.resources[recipe.output.resource_id].name_vi)+" × "+str(order.batches)+" mẻ",16)
+			desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			button(line,"Bỏ lệnh",func():building_screen(id,"Đã bỏ" if store.remove_waiting_recipe(id,index) else "Lỗi"))
+		label(rows,"Lệnh sau chỉ chạy khi xưởng rảnh. Nếu đang tự lặp, dừng lệnh hiện tại để xử lý hàng đợi.",15)
 	label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi)+" • Nhân lực "+str(Village.workers(store.state,id).size())+"/"+str(1+floori(float(int(b.level)-1)/10.0)),16)
 	label(rows,"Nhân lực (không ảnh hưởng đội chiến đấu)",20)
 	for ninja in store.state.owned:
@@ -1203,6 +1236,7 @@ func world_screen(message: String="") -> void:
 	button(row,"Đội viễn chinh / phòng thủ",squad_menu)
 	button(row,"Biên giới",frontier_screen)
 	button(row,"Tình báo",world_intelligence_screen)
+	button(row,"Phòng thủ",fortification_screen)
 	button(row,"Làm mới",func():world_screen())
 	label(row,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" • "+message,16)
 	var content=HBoxContainer.new()
@@ -1333,6 +1367,7 @@ func activities_screen() -> void:
 	open_screen("activities")
 	label(root,"HOẠT ĐỘNG NINJA",30)
 	button(root,"Phó bản • 24",expedition_screen)
+	button(root,"Tháp nhẫn thuật • 30 tầng",tower_screen)
 	button(root,"Điều phối sản xuất",production_center)
 	button(root,"Thử thách tài nguyên",resource_trials_screen)
 	button(root,"Nhiệm vụ",quest_screen)
@@ -1341,6 +1376,26 @@ func activities_screen() -> void:
 	button(root,"Thông linh thú",contract_screen)
 	button(root,"Huyết kế và đồng thuật",bloodline_screen)
 	button(root,"Trở về",func():menu())
+
+func tower_screen() -> void:
+	open_screen("tower")
+	label(root,"THÁP NHẪN THUẬT • "+str(store.state.get("tower_best",0))+"/30 tầng",26)
+	label(root,"Vượt lần lượt các tầng. Thưởng lần đầu, không mở khóa cốt truyện và không nhận thưởng cốt truyện trùng.",16)
+	var rows=scroll_rows(root)
+	for floor_number in range(1,Activities.TOWER_MAX+1):
+		var q=Activities.tower_quote(reg,store.state,floor_number)
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var enemy_level=0
+		for npc in q.stage.enemy_ids:enemy_level=maxi(enemy_level,int(reg.npcs[npc].level))
+		var l=label(line,"Tầng %02d • Địch cấp %d • %d thể lực • %s" % [floor_number,enemy_level,int(q.stage.stamina_cost),q.reason if not q.ready else "Sẵn sàng"],16)
+		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		l.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+		var enter=button(line,"Vào tầng",func():start_battle(q.stage,"",floor_number))
+		enter.disabled=not q.ready
+		enter.tooltip_text="Thưởng: "+cost_text(q.rewards)
+	button(root,"Phó bản",expedition_screen)
+	button(root,"Hoạt động",activities_screen)
 
 func expedition_screen() -> void:
 	open_screen("expeditions")
@@ -1364,6 +1419,7 @@ func expedition_screen() -> void:
 		enter.disabled=not q.ready
 		button(line,"Vật phẩm",func():resource_detail(str(item.resource)))
 	button(root,"Cốt truyện",campaign)
+	button(root,"Tháp nhẫn thuật",tower_screen)
 
 func resource_trials_screen() -> void:
 	open_screen("resource_trials")
@@ -1420,6 +1476,7 @@ func production_center(message:String="") -> void:
 		rows.add_child(line)
 		var status_text="Chưa xây • HQ "+str(def.unlock_hq) if int(b.level)==0 else "Cấp "+str(int(b.level))+" • "+str(Village.workers(store.state,id).size())+"/"+str(1+floori(float(int(b.level)-1)/10.0))+" nhân lực"
 		if not b.upgrade.is_empty():status_text+=" • xây "+str(b.upgrade.remaining)+"s"
+		if not b.get("waiting_orders",[]).is_empty():status_text+=" • Chờ "+str(b.waiting_orders.size())+" lệnh"
 		if not b.production.is_empty():
 			var job=b.production
 			var recipe=reg.recipes[job.recipe]
@@ -1855,10 +1912,17 @@ func craft_screen(message: String="") -> void:
 		b.disabled=not quote.ready
 		b.tooltip_text="Mẻ đủ nguyên liệu: "+str(quote.affordable)+" • Xưởng "+str(quote.level)+"/"+str(quote.required_level)+(" • Chưa có nhân lực" if not quote.staffed else "")
 		button(line,"Nguồn",func():resource_detail(str(recipe.output.resource_id)))
+		var queued=button(line,"Xếp hàng",func():craft_screen("Đã xếp 5 mẻ" if store.enqueue_recipe(reg,str(recipe.building_id),id,5) else "Hết chỗ / chưa mở"))
+		queued.disabled=int(store.state.building_states[recipe.building_id].get("waiting_orders",[]).size())>=5 or int(quote.level)<int(quote.required_level)
 
 func resource_detail(id: String,message: String="") -> void:
 	var rows=activity_rows(str(reg.resources[id].name_vi),"Trong kho: "+str(store.state.inventory.get(id,0))+((" • "+message) if message!="" else ""),inventory_screen)
 	screen_id="inventory"
+	var food=Activities.food_quote(store.state,id)
+	if not food.is_empty():
+		var consume=button(rows,"Ăn • hồi "+str(food.gain)+" thể lực",func():resource_detail(id,"Đã hồi thể lực" if store.use_world_food(id) else "Chưa đủ điều kiện"))
+		consume.disabled=not food.ready
+		label(rows,"Hạn mức thức ăn hôm nay: "+str(food.used)+"/36 thể lực",16)
 	if reg.resources[id].tradable and not id in ["RES-001","RES-002","RES-003","RES-004","RES-005"]:
 		var unit=maxi(1,floori(float(reg.resources[id].base_price_ryo)*0.35))
 		var qty=mini(100,int(store.state.inventory.get(id,0)))
@@ -2303,6 +2367,25 @@ func update_battle_inspector() -> void:
 	battle_skill_info.text="\n".join(labels)
 	battle_state_info.text="Không có hiệu ứng" if states.is_empty() else "\n".join(states)
 	battle_inspector.tooltip_text=battle_inspector.text
+func fortification_screen(message:String="") -> void:
+	open_screen("world_intelligence")
+	var q=Activities.defense_quote(store.state)
+	label(root,"PHÒNG THỦ LÀNG • CÔNG SỰ "+str(q.level)+"/5",26)
+	label(root,"Công sự giảm thiệt hại khi phòng thủ thất bại; không tăng sức mạnh ninja. "+message,16)
+	label(root,"Mất tài nguyên khi thua: %.1f%% • Hệ số tình trạng công trình còn lại: %.0f%%" % [100*float(q.loss_rate),100*float(q.condition_factor)],20)
+	label(root,"Bảo hộ sau tập kích: "+str(store.state.raid_protection)+" giây",17)
+	var costs=[]
+	for id in q.cost:costs.append(str(reg.resources[id].name_vi)+" "+str(q.cost[id]))
+	var upgrade=button(root,"Gia cố: "+", ".join(PackedStringArray(costs)),func():fortification_screen("Đã nâng cấp" if store.fortify_home() else "Chưa đủ điều kiện"))
+	upgrade.disabled=not q.ready
+	upgrade.tooltip_text=str(q.reason)
+	button(root,"Tháp canh",func():building_screen("BLD-030"))
+	button(root,"Bố trí đội phòng thủ",squad_menu)
+	var rows=scroll_rows(root)
+	label(rows,"Lịch sử nhẫn giới",20)
+	for item in store.state.world_log:label(rows,str(item),16)
+	button(root,"Nhẫn giới",world_screen)
+
 func world_intelligence_screen() -> void:
 	open_screen("world_intelligence")
 	label(root,"TÌNH BÁO NHẪN GIỚI",26)
