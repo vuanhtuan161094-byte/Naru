@@ -133,25 +133,42 @@ static func recipe_quote(s: Dictionary,recipe: Dictionary) -> Dictionary:
 	var idle=b.production.is_empty()
 	var can_replace=not idle and b.production.reserved.is_empty() and int(b.production.remaining)==0
 	var staffed=worker_level(s,id)>0
-	return {"cost":cost,"missing":missing,"affordable":affordable,"idle":idle,"can_replace":can_replace,"staffed":staffed,"level":int(b.level),"required_level":int(recipe.min_building_level),"ready":(idle or can_replace) and staffed and int(b.level)>=int(recipe.min_building_level) and affordable>0}
+	var setup_ready=(idle or can_replace) and staffed and int(b.level)>=int(recipe.min_building_level)
+	var reason="Xưởng đang bận" if not (idle or can_replace) else "Chưa có nhân lực" if not staffed else "Cần xưởng cấp "+str(recipe.min_building_level) if int(b.level)<int(recipe.min_building_level) else "Thiếu nguyên liệu" if affordable<=0 else "Sẵn sàng"
+	return {"cost":cost,"missing":missing,"affordable":affordable,"idle":idle,"can_replace":can_replace,"staffed":staffed,"level":int(b.level),"required_level":int(recipe.min_building_level),"ready":setup_ready and affordable>0,"setup_ready":setup_ready,"reason":reason,"seconds":batch_seconds(s,recipe),"yield":batch_yield(s,recipe)}
+
+static func batch_seconds(s:Dictionary,recipe:Dictionary) -> int:
+	return maxi(1,ceili(float(recipe.duration_s)/(1+trait_bonus(s,str(recipe.building_id),"speed"))))
+
+static func batch_yield(s:Dictionary,recipe:Dictionary) -> int:
+	var id=str(recipe.building_id)
+	var b=s.building_states[id]
+	return maxi(1,floori(float(recipe.output.qty)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))
+
+static func target_reached(s:Dictionary,job:Dictionary,recipe:Dictionary) -> bool:
+	var target=int(job.get("stock_target",0))
+	return target>0 and int(s.inventory.get(recipe.output.resource_id,0))>=target
 
 static func reserve(s: Dictionary,job: Dictionary,recipe: Dictionary) -> bool:
+	if target_reached(s,job,recipe):return false
 	var id=str(recipe.building_id)
 	var cost=effective_recipe_cost(s,recipe)
 	if not cost_ok(s,cost):return false
 	debit(s,cost)
 	job.reserved=cost
-	job.remaining=maxi(1,ceili(float(recipe.duration_s)/(1+trait_bonus(s,id,"speed"))))
+	job.remaining=batch_seconds(s,recipe)
 	return true
 
-static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: bool,batches: int=1) -> bool:
+static func queue_recipe(reg,s: Dictionary,id: String,recipe_id: String,repeat: bool,batches: int=1,stock_target:int=0) -> bool:
 	if not reg.recipes.has(recipe_id) or not reg.buildings.has(id) or batches<1 or batches>20:return false
 	var recipe=reg.recipes[recipe_id]
 	var b=s.building_states[id]
 	if recipe.building_id!=id or int(b.level)<int(recipe.min_building_level) or worker_level(s,id)==0:return false
 	# An unreserved stalled order can be replaced atomically; never discard reserved inputs.
 	if not b.production.is_empty() and (not b.production.reserved.is_empty() or int(b.production.remaining)>0):return false
+	if stock_target<0 or stock_target>capacity(s,str(recipe.output.resource_id)) or (stock_target>0 and not repeat):return false
 	var job={"recipe":recipe_id,"repeat":repeat,"reserved":{},"remaining":0,"batches_left":batches}
+	if stock_target>0:job.stock_target=stock_target
 	if not reserve(s,job,recipe) and not repeat:return false
 	b.production=job
 	return true
@@ -177,7 +194,7 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		if job.reserved.is_empty() and not reserve(s,job,recipe):continue
 		job.remaining=maxi(0,int(job.remaining)-dt)
 		if int(job.remaining)>0:continue
-		var qty=maxi(1,floori(float(recipe.output.qty)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))
+		var qty=batch_yield(s,recipe)
 		if not put(s,recipe.output.resource_id,qty):continue
 		award_job(s,id,maxi(1,roundi(float(qty)*(1+trait_bonus(s,id,"quality")))))
 		s.craft_count=int(s.craft_count)+1

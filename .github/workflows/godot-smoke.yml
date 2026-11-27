@@ -22,6 +22,13 @@ jobs:
           timeout 60 "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/smoke.log
           grep NARU_REGISTRY_OK /tmp/smoke.log
           ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/smoke.log
+      - name: World content and stock-target transaction fixture
+        run: |
+          set -o pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 60 "$G" --headless --path . --script res://game/world_content_test.gd 2>&1 | tee /tmp/world-content.log
+          grep NARU_WORLD_CONTENT_PASS /tmp/world-content.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|WORLD_CONTENT_FAIL' /tmp/world-content.log
       - name: R11 village adapter callback and missing-pack fallback fixture
         run: |
           set -o pipefail

@@ -7,6 +7,10 @@ static func valid(reg,s: Variant) -> bool:
 	for key in ["inventory","owned","cleared","ledger"]:
 		if not s.get(key) is Dictionary:return false
 	if not s.get("team") is Array or s.team.size()>6:return false
+	for entry in s.ledger.values():
+		if entry is Dictionary and entry.has("expedition"):
+			var row=preload("res://game/world_content_catalog.gd").find(str(entry.expedition))
+			if row.is_empty() or str(entry.get("stage_id",""))!=row.stage:return false
 	if s.has("formation_id") and not reg.formations.has(s.formation_id):return false
 	if not s.get("formation_slots",{}) is Dictionary or not s.get("formation_levels",{}) is Dictionary:return false
 	var used_slots=[]
@@ -205,6 +209,7 @@ static func world_links_valid(reg,s: Dictionary) -> bool:
 		if reg.recipes[job.recipe].building_id!=id:return false
 		if job.has("batches_left") and not integer(job.batches_left,1,20):return false
 		if job.has("repeat") and not job.repeat is bool:return false
+		if job.has("stock_target") and (not integer(job.stock_target,1,9000000000000) or not job.get("repeat",false)):return false
 		for resource in job.reserved:
 			if not reg.resources.has(resource) or not integer(job.reserved[resource],1):return false
 	for id in s.get("summon_contracts",{}):

@@ -114,7 +114,13 @@ func draw(reg) -> String:
 		return ""
 	return id
 
-func begin_stage(stage: Dictionary) -> String:
+func begin_expedition(reg,id:String) -> String:
+	var catalog=preload("res://game/world_content_catalog.gd")
+	var q=catalog.quote(reg,state,id)
+	if q.is_empty() or not q.ready:return ""
+	return begin_stage(reg.stages[q.row.stage],id)
+
+func begin_stage(stage: Dictionary,expedition:String="") -> String:
 	for event in state.ledger.values():
 		if event is Dictionary and event.get("status")=="started":return ""
 	if stage.requires!=null and not state.cleared.has(str(stage.requires)): return ""
@@ -124,6 +130,7 @@ func begin_stage(stage: Dictionary) -> String:
 	state.battle_seq=int(state.battle_seq)+1
 	var id="battle-"+str(state.battle_seq)
 	state.ledger[id]={"status":"started","stage_id":stage.id,"team":state.team.duplicate()}
+	if not expedition.is_empty():state.ledger[id].expedition=expedition
 	if not save_now():
 		state=prior
 		return ""
@@ -143,6 +150,14 @@ func finish_stage(reg,stage: Dictionary,event_id: String,won: bool,action_counts
 	if not entry is Dictionary or entry.get("status")!="started" or entry.get("stage_id")!=stage.id: return false
 	var prior=state.duplicate(true)
 	var old_rng=rng.state
+	var expedition_id=str(entry.get("expedition",""))
+	var expedition=preload("res://game/world_content_catalog.gd").find(expedition_id)
+	if not expedition_id.is_empty():
+		if expedition.is_empty() or expedition.stage!=stage.id or not state.cleared.has(stage.id) or int(state.building_states["BLD-001"].level)<int(expedition.hq):return false
+		var key=preload("res://game/world_content_catalog.gd").cooldown_key(expedition_id)
+		if int(state.source_cooldowns.get(key,0))>int(state.simulation_seconds):return false
+		state.source_cooldowns[key]=int(state.simulation_seconds)+int(expedition.cooldown)
+		if won:grant_reward(str(expedition.resource),int(expedition.qty))
 	state.ledger[event_id].status="win" if won else "loss"
 	if won:
 		var rewards=stage.repeat_rewards if state.cleared.has(stage.id) else stage.first_clear_rewards
@@ -665,9 +680,9 @@ func assign_job(reg,ninja: String,id: String,profession: String) -> bool:
 	if not Village.assign(reg,state,ninja,id,profession):return false
 	return commit_change(prior,rng.state)
 
-func production(reg,id: String,recipe: String,repeat: bool,batches: int=1) -> bool:
+func production(reg,id: String,recipe: String,repeat: bool,batches: int=1,stock_target:int=0) -> bool:
 	var prior=state.duplicate(true)
-	if not Village.queue_recipe(reg,state,id,recipe,repeat,batches):return false
+	if not Village.queue_recipe(reg,state,id,recipe,repeat,batches,stock_target):return false
 	return commit_change(prior,rng.state)
 
 func cancel_production(id: String) -> bool:
