@@ -68,7 +68,11 @@ func _initialize() -> void:
 	var before=float(target.hp)
 	full.update_status(target,1.0)
 	check(float(target.hp)<before or target.shield>0,"dot tick")
-	full.apply_status(source,target,{"status_id":"stun","chance":1.0,"duration_s":0.1})
+	target.statuses.clear()
+	target.immune=0.0
+	target.cc_chain_count=0
+	target.cc_chain_remaining=0.0
+	check(full.apply_status(source,target,{"status_id":"stun","chance":1.0,"duration_s":0.01,"ignore_resist_stats":["control_resist","stun_resist"]}),"apply isolated stun")
 	full.update_status(target,0.2)
 	check(target.immune>0,"control immunity")
 	var summon_skill=reg.skills["NIN-001-S1"]
@@ -114,7 +118,7 @@ func _initialize() -> void:
 	persisted.save_path=store.save_path
 	persisted.load_or_new(reg)
 	check(persisted.state.gear_instances[gear_id].owner=="NIN-001","gear reload")
-	check(equipped.actors[0].stats.size()==48,"48 typed stats")
+	check(equipped.actors[0].stats.size()==78,"78 typed stats")
 	check(not store.unlock_form(reg,"NIN-001","NIN-001-F1"),"form realm gate")
 	p.realm=3
 	store.state.inventory["RES-127"]=20
@@ -237,9 +241,11 @@ func _initialize() -> void:
 	shield_sim.add_shield(a1,a1,30,2)
 	shield_sim.add_shield(a2,a1,20,4)
 	shield_sim.add_shield(a1,a1,10,1)
-	check(is_equal_approx(float(a1.shield),50),"shield per source max")
+	var shield_one=maxf(30.0*(1.0+shield_sim.rating(a1,"shield_power")),10.0*(1.0+shield_sim.rating(a1,"shield_power")))
+	var shield_two=20.0*(1.0+shield_sim.rating(a2,"shield_power"))
+	check(is_equal_approx(float(a1.shield),shield_one+shield_two),"shield per source max")
 	shield_sim.update_status(a1,2.1)
-	check(is_equal_approx(float(a1.shield),20),"shield independent expiry")
+	check(is_equal_approx(float(a1.shield),shield_two),"shield independent expiry")
 	var reach={}
 	for source_def in reg.supply:reach[source_def.resource_id]=true
 	for i in range(150):
