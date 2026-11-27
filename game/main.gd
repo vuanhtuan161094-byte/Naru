@@ -2577,7 +2577,10 @@ func settings_screen(message: String="") -> void:
 	label(root,"CÀI ĐẶT",28)
 	label(root,message,16)
 	var rows=scroll_rows(root)
-	button(rows,"Bách khoa",wiki_screen)
+	var shortcuts=HBoxContainer.new()
+	rows.add_child(shortcuts)
+	button(shortcuts,"Bách khoa",wiki_screen)
+	button(shortcuts,"Thử sprite tĩnh 6v6",func():start_art_review(true))
 	var sound=CheckButton.new()
 	sound.text="Âm thanh"
 	sound.button_pressed=bool(store.state.get("settings",{}).get("sound",true))
@@ -2621,7 +2624,6 @@ func settings_screen(message: String="") -> void:
 	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
 	label(rows,"Nạp JSON đủ 14 clip / 84 cel. Chỉ Naruto và Sasuke được lưu cục bộ ở đợt này; bộ chưa đủ bị từ chối.",15).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
-	button(rows,"Thử sprite tĩnh 6v6",func():start_art_review(true))
 	button(art_row,"Bật / tắt review",func():
 		art.enabled=not art.enabled and not art.textures.is_empty()
 		art.source_label="REVIEW RIÊNG • "+str(art.textures.size())+" ảnh" if art.enabled else "DEV • tắt gói review"
