@@ -174,6 +174,13 @@ func _ready() -> void:
 		else:store.load_or_new(reg)
 	else:store.load_or_new(reg)
 	if "--smoke" in OS.get_cmdline_user_args():
+		if art.enabled:
+			var coverage=art.product_coverage()
+			if coverage.renderable_ninjas!=144 or coverage.renderable_portraits!=144:
+				push_error("NARU_STATIC_ROSTER_FAIL "+str(coverage))
+				get_tree().quit(1)
+				return
+			print("NARU_STATIC_ROSTER_COVERAGE ",coverage.renderable_ninjas," ",coverage.renderable_portraits)
 		print("NARU_REGISTRY_OK ",reg.ninjas.size()," ",reg.skills.size()," ",reg.stages.size())
 		get_tree().quit()
 		return
