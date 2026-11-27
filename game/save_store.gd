@@ -331,14 +331,21 @@ func exchange_shards(id: String,quantity: int) -> bool:
 	state.owned[id].shards=int(state.owned[id].shards)+quantity
 	return commit_change(prior,rng.state)
 
-func raise_star(reg,id: String) -> bool:
-	if not state.owned.has(id): return false
+func star_quote(reg,id:String) -> Dictionary:
+	if not state.owned.has(id):return {"ready":false,"reason":"Chưa sở hữu ninja"}
 	var p=state.owned[id]
-	if int(p.stars)>=15: return false
+	if int(p.stars)>=15:return {"ready":false,"reason":"Đã đạt 15 sao"}
 	var step=reg.growth.stars[int(p.stars)-1]
-	if int(p.shards)<int(step.shards): return false
+	if int(p.shards)<int(step.shards):return {"ready":false,"reason":"Thiếu %d mảnh ninja"%(int(step.shards)-int(p.shards))}
 	for r in step.resources:
-		if int(state.inventory.get(r.resource_id,0))<int(r.qty): return false
+		var missing=int(r.qty)-int(state.inventory.get(r.resource_id,0))
+		if missing>0:return {"ready":false,"reason":"Thiếu %d %s"%[missing,reg.resources[r.resource_id].name_vi]}
+	return {"ready":true,"reason":"Đủ điều kiện tăng sao"}
+
+func raise_star(reg,id: String) -> bool:
+	if not star_quote(reg,id).ready:return false
+	var p=state.owned[id]
+	var step=reg.growth.stars[int(p.stars)-1]
 	var prior=state.duplicate(true)
 	p.shards=int(p.shards)-int(step.shards)
 	for r in step.resources:

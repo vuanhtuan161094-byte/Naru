@@ -671,7 +671,7 @@ func ultimate(index: int) -> bool:
 	return ultimate_skill(index,a.skills[5])
 
 func ultimate_skill(index: int,id: String) -> bool:
-	if index<0 or index>=actors.size():return false
+	if not outcome.is_empty() or index<0 or index>=actors.size():return false
 	var a=actors[index]
 	if a.side!=0 or a.hp<=0 or a.summon or not id in a.skills:return false
 	var s=effective_skill(a,id)
@@ -687,9 +687,11 @@ func ultimate_skill(index: int,id: String) -> bool:
 	return true
 
 func ultimate_reason(a: Dictionary,id: String) -> String:
-	var s=effective_skill(a,id)
-	if a.hp<=0:return "KO"
+	if not outcome.is_empty():return "Trận đã kết thúc"
+	if a.is_empty() or a.get("hp",0)<=0:return "KO"
 	if not id in a.skills:return "Chưa mở khóa"
+	var s=effective_skill(a,id)
+	if s.kind!="ultimate":return "Không phải tuyệt kỹ"
 	if not a.pending.is_empty() and a.pending.skill.skill_id==id:return "Đang thi triển"
 	if float(a.cooldowns.get(id,0))>0:return "Hồi %.1fs" % float(a.cooldowns[id])
 	if not cp_affordable(a,float(s.chakra)):return "Chờ CP"
@@ -803,7 +805,10 @@ func tick(dt: float) -> void:
 			ultimate_requests.erase(a.uid)
 			continue
 		update_status(a,dt)
-		if a.hp<=0:continue
+		if a.hp<=0:
+			a.pending={}
+			ultimate_requests.erase(a.uid)
+			continue
 		if a.uid==boss_actor_uid:update_boss(a)
 		a.busy=maxf(0.0,float(a.busy)-dt)
 		a.shield_time=maxf(0.0,float(a.shield_time)-dt)

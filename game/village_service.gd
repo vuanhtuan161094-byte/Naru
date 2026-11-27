@@ -48,14 +48,24 @@ static func upgrade_cost(reg,s: Dictionary,id: String) -> Dictionary:
 	var factor=pow(1.13,maxi(0,level(s,id)-1))
 	return {"RES-001":ceili(float(def.base_upgrade_ryo)*factor),"RES-006":ceili(float(def.base_upgrade_wood)*factor),"RES-009":ceili(float(def.base_upgrade_stone)*factor)}
 
-static func construct(reg,s: Dictionary,id: String) -> bool:
-	if not reg.buildings.has(id):return false
+static func construction_quote(reg,s:Dictionary,id:String) -> Dictionary:
+	if not reg.buildings.has(id):return {"ready":false,"reason":"Công trình không hợp lệ","cost":{}}
 	var b=s.building_states[id]
 	var def=reg.buildings[id]
-	if int(b.level)>=100 or not b.upgrade.is_empty():return false
-	if level(s,"BLD-001")<int(def.unlock_hq) and int(b.level)==0:return false
 	var cost=upgrade_cost(reg,s,id)
-	if not cost_ok(s,cost):return false
+	var reason=""
+	if int(b.level)>=100:reason="Đã đạt cấp tối đa"
+	elif not b.upgrade.is_empty():reason="Đang xây hoặc nâng cấp"
+	elif level(s,"BLD-001")<int(def.unlock_hq) and int(b.level)==0:reason="Cần Tổng bộ cấp "+str(def.unlock_hq)
+	elif not cost_ok(s,cost):reason="Thiếu tài nguyên xây dựng"
+	return {"ready":reason.is_empty(),"reason":"Đủ điều kiện xây dựng" if reason.is_empty() else reason,"cost":cost}
+
+static func construct(reg,s: Dictionary,id: String) -> bool:
+	var quote=construction_quote(reg,s,id)
+	if not quote.ready:return false
+	var b=s.building_states[id]
+	var def=reg.buildings[id]
+	var cost=quote.cost
 	debit(s,cost)
 	var builder=trait_bonus(s,"BLD-001","speed")
 	b.upgrade={"target":int(b.level)+1,"remaining":mini(604800,ceili(float(def.base_duration_s)*pow(1.10,maxi(0,int(b.level)-1))/(1+builder)))}

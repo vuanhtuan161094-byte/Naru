@@ -105,7 +105,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"NARU • R12",15)
+	label(header,"NARU • V3",15)
 	navigation=HBoxContainer.new()
 	shell.add_child(navigation)
 	for item in [["Làng",menu],["Ninja",growth_screen],["Bố trận",roster],["Chiêu mộ",recruit_screen],["Cốt truyện",campaign],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Nhiệm vụ",quest_screen],["Vĩ Thú",beast_screen],["Cài đặt",settings_screen]]:
@@ -126,7 +126,15 @@ func _ready() -> void:
 			return
 		art.source_label="MỸ THUẬT TÍCH HỢP • "+str(art.textures.size())+" ảnh"
 		print("NARU_PUBLIC_ART_READY ",art.textures.size())
-		if OS.has_feature("web"):JavaScriptBridge.eval("window.naruPublicArtCount=224")
+		# Load only complete, validated per-character overlays when the binary is actually present.
+		for overlay_id in ["NIN-001","NIN-002"]:
+			var overlay_path="res://assets/production/r13/"+overlay_id+".json"
+			if FileAccess.file_exists(overlay_path):
+				if art.import_character_overlay(FileAccess.get_file_as_string(overlay_path),overlay_id):
+					print("NARU_CHARACTER_OVERLAY_READY ",overlay_id)
+				else:
+					push_warning("NARU_CHARACTER_OVERLAY_HOLD "+overlay_id+": "+art.error)
+		if OS.has_feature("web"):JavaScriptBridge.eval("window.naruPublicArtCount="+str(art.textures.size()))
 	if not reg.load_all():
 		label(root,"Lỗi dữ liệu: "+str(reg.errors))
 		return
@@ -353,7 +361,9 @@ func growth_detail(id: String,message: String="") -> void:
 	breakthrough_button.disabled=not realm_quote.ready
 	breakthrough_button.tooltip_text="Còn thiếu "+str(realm_quote.missing)+" ấn • XP tích lũy "+str(realm_quote.banked_xp)
 	var star_button=button(nav,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu điều kiện"))
-	star_button.disabled=int(p.stars)>=15
+	var star_quote=store.star_quote(reg,id)
+	star_button.disabled=not star_quote.ready
+	star_button.tooltip_text=str(star_quote.reason)
 	button(nav,"Nhẫn thuật",func():skill_screen(id))
 	button(nav,"Thức tỉnh",func():awakening_screen(id))
 	button(nav,"Trang bị ninja",func():ninja_gear_screen(id))
@@ -389,6 +399,14 @@ func growth_detail(id: String,message: String="") -> void:
 		var l=label(stat_grid,"%s: %.1f" % [name_value,val],16)
 		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 
+func next_story_stage() -> String:
+	for number in range(1,121):
+		var id="STG-%03d"%number
+		if not reg.stages.has(id) or store.state.cleared.has(id):continue
+		var stage=reg.stages[id]
+		if stage.requires==null or store.state.cleared.has(str(stage.requires)):return id
+	return ""
+
 func campaign() -> void:
 	open_screen("campaign")
 	label(root,"CỐT TRUYỆN • "+str(store.state.cleared.size())+"/120 ải",26)
@@ -397,7 +415,9 @@ func campaign() -> void:
 	var chapter_select=OptionButton.new()
 	for id in reg.chapters:chapter_select.add_item(id+" • "+reg.chapters[id].name_vi)
 	row.add_child(chapter_select)
-	var chapter_index=maxi(0,floori(float(selected_stage.right(3).to_int()-1)/5.0))
+	var suggested=next_story_stage()
+	var selected=selected_stage if suggested.is_empty() else suggested
+	var chapter_index=maxi(0,floori(float(selected.right(3).to_int()-1)/5.0))
 	chapter_select.select(mini(23,chapter_index))
 	var rows=VBoxContainer.new()
 	root.add_child(rows)
@@ -419,7 +439,8 @@ func campaign() -> void:
 			var b=button(line,"Chưa mở" if locked else "Vào "+id,func():start_battle(s))
 			b.disabled=locked or int(store.state.stamina)<int(s.stamina_cost) or store.state.team.is_empty()
 			if s.boss_id!=null:label(line,"BOSS",16)
-			b.tooltip_text="Thưởng: "+cost_text(s.repeat_rewards if store.state.cleared.has(id) else s.first_clear_rewards)
+			var reason="Cần vượt "+str(s.requires) if locked else "Thiếu thể lực" if int(store.state.stamina)<int(s.stamina_cost) else "Cần bố trận ninja" if store.state.team.is_empty() else "Sẵn sàng"
+			b.tooltip_text=reason+" • Thưởng: "+cost_text(s.repeat_rewards if store.state.cleared.has(id) else s.first_clear_rewards)
 		label(rows,"Thắng ải để mở ải kế tiếp. Tuyệt kỹ do người chơi điều khiển.",17)
 	chapter_select.item_selected.connect(populate)
 	populate.call(chapter_select.selected)
@@ -1072,7 +1093,10 @@ func building_screen(id: String,message: String="") -> void:
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
 	var upgrade=button(nav,"Xây/nâng cấp: %d Ryo, %d gỗ, %d đá" % [cost["RES-001"],cost["RES-006"],cost["RES-009"]],func():building_screen(id,"Đã đặt lịch" if store.construct(reg,id) else "Chưa đủ điều kiện"))
-	upgrade.disabled=not b.upgrade.is_empty() or int(b.level)>=100
+	var construction=Village.construction_quote(reg,store.state,id)
+	upgrade.disabled=not construction.ready
+	upgrade.tooltip_text=str(construction.reason)
+	label(info,str(construction.reason),15)
 	if not b.upgrade.is_empty():label(root,"Còn %d giây" % int(b.upgrade.remaining),18)
 	button(nav,"Làm mới",func():building_screen(id))
 	if float(b.condition)<1:button(nav,"Sửa chữa",func():building_screen(id,"Đã sửa" if store.repair_building(reg,id) else "Thiếu Ryo"))
@@ -1557,6 +1581,19 @@ func home_screen(message: String="") -> void:
 	if art.enabled:button(row,"Thử 6v6 • R12",start_art_review)
 	button(row,"Làm mới",func():home_screen())
 	if store.state.jobs.is_empty():button(row,"Phân công khởi đầu",func():home_screen("Đã phân công" if store.setup_starter_jobs(reg) else "Lỗi lưu"))
+	var guidance=HBoxContainer.new()
+	root.add_child(guidance)
+	var next_id=next_story_stage()
+	var prompt_text="Bắt đầu phân công sản xuất để có nguyên liệu" if store.state.jobs.is_empty() else "Cốt truyện tiếp theo: "+next_id if not next_id.is_empty() else "Đã vượt toàn bộ cốt truyện • phát triển nhẫn giới"
+	var guide=label(guidance,prompt_text,16)
+	guide.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	if not next_id.is_empty():
+		var next_stage=reg.stages[next_id]
+		var play=button(guidance,"Chơi tiếp",func():start_battle(next_stage))
+		play.disabled=store.state.team.is_empty() or int(store.state.stamina)<int(next_stage.stamina_cost)
+		play.tooltip_text="Vào "+next_id+" • "+str(next_stage.stamina_cost)+" thể lực"
+	button(guidance,"Đội hình",roster)
+	button(guidance,"Nhận thưởng chờ",reward_inbox_screen)
 	var grid=GridContainer.new()
 	grid.columns=6
 	grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -1784,7 +1821,7 @@ func settings_screen(message: String="") -> void:
 		settings_screen(art.source_label))
 	var coverage=art.product_coverage()
 	label(root,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
-	label(root,"Animation metadata: %d • Bộ đủ 24 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
+	label(root,"Animation metadata: %d • Bộ đủ 14 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
 	label(root,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 
 func change_setting(key: String,value: bool) -> void:
@@ -1812,7 +1849,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"art_draws":art.actor_draws,"r12_actor_draws":art.r12_actor_draws,"missing_actor_ids":art.missing_actor_ids.keys(),"authored_actor_draws":art.authored_actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"character_overlays":art.character_overlays.keys(),"art_draws":art.actor_draws,"r12_actor_draws":art.r12_actor_draws,"missing_actor_ids":art.missing_actor_ids.keys(),"authored_actor_draws":art.authored_actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
@@ -1881,8 +1918,14 @@ func _receive_art_web(args: Array) -> void:
 	if args.size()==1:receive_art(str(args[0]))
 
 func receive_art(raw: String) -> void:
-	var ok=art.import_text(raw)
-	settings_screen("Đã nạp review cục bộ; không tải lên mạng." if ok else art.error)
+	var parsed=JSON.parse_string(raw)
+	var is_overlay=parsed is Dictionary and parsed.has("character_id")
+	var ok=false
+	if is_overlay:
+		ok=art.import_character_overlay(raw,str(parsed.character_id))
+	else:
+		ok=art.import_text(raw)
+	settings_screen(("Đã nạp bộ nhân vật cho phiên chơi; không ghi đè gói nền." if is_overlay else "Đã nạp review cục bộ; không tải lên mạng.") if ok else art.error)
 
 func start_art_review() -> void:
 	review_mode=true

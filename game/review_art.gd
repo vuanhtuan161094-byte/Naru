@@ -1,5 +1,5 @@
 extends RefCounted
-# Private visual-only runtime. No asset is bundled in the repository or public Web artifact.
+# Base public art pack plus independently validated optional character overlays. VFX and protected art remain untouched.
 const PATH="user://naru_private_art_v4.json"
 const MAX_BYTES=16000000
 # Independent R12 candidate; does not replace or mutate the approved 224-texture pack.
@@ -7,6 +7,7 @@ const R12_IRUKA=preload("res://assets/production/r12/iruka.svg")
 var r12_actor_draws=0
 var missing_actor_ids:Dictionary={}
 var authored_actor_draws=0
+var character_overlays:Dictionary={}
 var textures: Dictionary={}
 var source_label="DEV • chưa nạp gói riêng"
 var enabled=false
@@ -112,10 +113,55 @@ func import_text(raw: String,persist: bool=true) -> bool:
 			error="Không lưu được gói cục bộ"
 			return false
 	textures=staged
+	character_overlays.clear()
 	review_clip_hashes=staged_hashes
 	clip_metadata=staged_clips
 	enabled=true
 	source_label="REVIEW RIÊNG • "+str(textures.size())+" ảnh"
+	return true
+
+# Apply a complete V3 character kit atomically, without resetting the existing pack.
+# Only exact per-character paths may be replaced. No VFX, environment or protected IDs.
+func import_character_overlay(raw:String,id:String) -> bool:
+	error=""
+	if not enabled or id in ["NIN-004","NIN-060","NIN-068","NIN-093"] or not id.begins_with("NIN-") or id.length()!=7 or not id.right(3).is_valid_int() or int(id.right(3))<1 or int(id.right(3))>144:
+		error="ID overlay không hợp lệ hoặc đang khóa"
+		return false
+	if raw.length()>4000000:
+		error="Gói nhân vật quá lớn"
+		return false
+	var pack=JSON.parse_string(raw)
+	if not pack is Dictionary or pack.get("character_id","")!=id or pack.has("hold") or not pack.get("assets",{}) is Dictionary or not pack.get("clips",{}) is Dictionary:
+		error="Gói nhân vật chưa được hoàn thiện"
+		return false
+	var required={}
+	var counts={"idle":6,"move":8,"attack":6,"cast":6,"hit":4,"fall":4}
+	for action in counts:
+		var dirs=["se","sw","ne","nw"] if action=="move" else ["se","sw"]
+		for direction in dirs:
+			required["animation/"+id+"/"+action+"_"+direction+".png"]=counts[action]
+	var static_path="characters/"+id+".png"
+	if pack.assets.size()!=15 or pack.clips.size()!=14 or not pack.assets.has(static_path):
+		error="Cần đúng 14 clip, 84 cel và 1 sprite tĩnh"
+		return false
+	for path in required:
+		if not pack.assets.has(path) or not pack.clips.has(path) or not pack.clips[path] is Dictionary or not pack.clips[path].get("frames",[]) is Array or pack.clips[path].get("frames",[]).size()!=required[path]:
+			error="Thiếu clip "+path
+			return false
+	var staged:Variant=get_script().new()
+	if not staged.import_text(raw,false):
+		error=staged.error
+		return false
+	for path in staged.textures:
+		if path!=static_path and not required.has(path):
+			error="Đường dẫn ngoài phạm vi nhân vật"
+			return false
+	for path in staged.textures:
+		textures[path]=staged.textures[path]
+		review_clip_hashes[path]=staged.review_clip_hashes[path]
+	for path in staged.clip_metadata:clip_metadata[path]=staged.clip_metadata[path]
+	character_overlays[id]=true
+	source_label="MỸ THUẬT TÍCH HỢP • "+str(textures.size())+" ảnh"
 	return true
 
 func restore() -> void:
