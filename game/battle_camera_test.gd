@@ -19,6 +19,9 @@ func _initialize() -> void:
 					push_error("BATTLE_LAYOUT_FAIL out of bounds");quit(1);return
 	if Camera.sprite_direction(Vector2.RIGHT,0)!="SE" or Camera.sprite_direction(Vector2.LEFT,1)!="SW" or Camera.sprite_direction(Vector2(0.2,-1),0)!="NE" or Camera.sprite_direction(Vector2(-0.2,-1),1)!="NW":
 		push_error("BATTLE_LAYOUT_FAIL horizontal sprite direction");quit(1);return
+	for action in ["Idle","Attack","Cast","Hit","Fall"]:
+		if Camera.sprite_direction(Vector2(0.2,-1),0,action)!="SE" or Camera.sprite_direction(Vector2(-0.2,-1),1,action)!="SW":
+			push_error("BATTLE_LAYOUT_FAIL V3 combat facing");quit(1);return
 	var points:Array[Vector2]=[Vector2(6,4),Vector2(7,5),Vector2(8,6)]
 	var framing=Camera.framing(Vector2(1244,510),Vector2(14,10),points)
 	if float(framing.zoom)<=1.0 or float(framing.zoom)>1.38:

@@ -8,18 +8,18 @@
   ],
   "target_count": 140,
   "batch_count": 12,
-  "source_policy": "Isolated full-body RGBA only, 2x3 or individual source, no posters, no screenshots, no wrong-era substitutes. Independent authored pose for each frame.",
+  "source_policy": "Character-first. Lock 4-view isolated RGBA model. Source-only generation: one action per atlas, no poster, infographic, UI or text. Reject identity/era/layout mismatch before cropping; one attempt then stop on mismatch. Retain extra clips as archive, not required for V3. Cast hands only; no VFX. No rig, mirroring or tween.",
   "pipeline": [
-    "source identity/era review",
-    "RGBA separation",
-    "one common character scale and anchor",
-    "distinct frames by action/direction",
-    "visual comparison against four protected originals",
-    "real Godot battle capture",
-    "integration only after art acceptance"
+    "lock four-view model and palette",
+    "one character at a time, one action per source atlas",
+    "inspect actual file format and alpha",
+    "component isolation, native source resolution, no upscaling",
+    "match head/body scale and outfit to model",
+    "review continuity and GIF generated from real cels",
+    "Godot runtime acceptance"
   ],
   "minimum_frames": {
-    "idle": 4,
+    "idle": 6,
     "move": 8,
     "attack": 6,
     "cast": 6,
@@ -27,7 +27,7 @@
     "fall": 4
   },
   "direction_count": 4,
-  "clip_target": 3360,
+  "clip_target": 1960,
   "batches": [
     {
       "batch": "R13-01",
@@ -59,7 +59,7 @@
         "Shino Aburame (thiếu niên)",
         "Neji Hyuga (thiếu niên)"
       ],
-      "status": "STATIC_DRAFT_HOLD",
+      "status": "CHARACTER_FIRST_V3_REVIEW",
       "accepted": 0,
       "draft_static": 12,
       "archive": {
@@ -424,5 +424,36 @@
       "status": "QUEUED",
       "accepted": 0
     }
-  ]
+  ],
+  "required_directions_by_action": {
+    "idle": [
+      "se",
+      "sw"
+    ],
+    "move": [
+      "se",
+      "sw",
+      "ne",
+      "nw"
+    ],
+    "attack": [
+      "se",
+      "sw"
+    ],
+    "cast": [
+      "se",
+      "sw"
+    ],
+    "hit": [
+      "se",
+      "sw"
+    ],
+    "fall": [
+      "se",
+      "sw"
+    ]
+  },
+  "cel_target": 11760,
+  "clips_per_character": 14,
+  "cels_per_character": 84
 }

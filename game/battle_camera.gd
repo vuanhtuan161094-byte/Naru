@@ -16,9 +16,9 @@ static func sprite_scale(view:Vector2,arena:Vector2) -> float:
 	var s=steps(view,arena)
 	return clampf(minf(s.x/64.0,s.y/31.0),0.42,0.95)
 
-static func sprite_direction(v:Vector2,side:int) -> String:
+static func sprite_direction(v:Vector2,side:int,action:String="move") -> String:
 	var right=v.x>0.05 or (absf(v.x)<=0.05 and side==0)
-	if v.y < -absf(v.x)*1.3:return "NE" if right else "NW"
+	if action.to_lower()=="move" and v.y < -absf(v.x)*1.3:return "NE" if right else "NW"
 	return "SE" if right else "SW"
 
 # Presentation-only bounded framing. World positions, collisions, and timing are untouched.

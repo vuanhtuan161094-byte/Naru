@@ -10,11 +10,13 @@ from PIL import Image
 from collections import Counter
 LOCKED={'NIN-004','NIN-060','NIN-068','NIN-093'}
 DIRECTIONS={'se','sw','ne','nw'}
-ACTION_MIN={'idle':4,'move':8,'attack':6,'cast':6,'hit':4,'fall':4}
-SIZE=(96,112); ANCHOR=(48,104)
+ACTION_MIN={'idle':6,'move':8,'attack':6,'cast':6,'hit':4,'fall':4}
+REQUIRED={a+'_'+d for a in ACTION_MIN for d in (DIRECTIONS if a=='move' else {'se','sw'})}
+SIZE=(96,112); ANCHOR=(48,104)  # legacy export only; preserve high-resolution sources separately
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def rgba_source(path):
     im=Image.open(path)
+    if im.format!='PNG' or getattr(im,'n_frames',1)!=1:raise ValueError(f'{path}: decode actual source format before production; static PNG required')
     if im.mode!='RGBA':raise ValueError(f'{path}: RGBA source required; background removal must be reviewed first')
     if not im.getchannel('A').getextrema()[0]==0:raise ValueError(f'{path}: missing real alpha')
     return im
@@ -28,7 +30,7 @@ def crop_frame(im,rect,desc):
     return c,box
 
 def fit(c,box,scale,foot):
-    if not 0<scale<=8:raise ValueError('invalid common scale')
+    if not 0<scale<=1:raise ValueError('invalid common scale')
     x0,y0,x1,y1=box; fx,fy=foot
     # Preserve a single character-wide scale, no per-frame stretching.
     trim=c.crop(box).resize((max(1,round((x1-x0)*scale)),max(1,round((y1-y0)*scale))),Image.Resampling.LANCZOS)
@@ -78,8 +80,8 @@ def build(config,out):
                 cel=fit(c,b,scale,foot); hashes.append(hashlib.sha256(cel.tobytes()).hexdigest()); im.alpha_composite(cel,(i*SIZE[0],0));meta.append({'rect':[i*SIZE[0],0,*SIZE],'duration_ms':duration})
             if len(set(hashes))!=len(hashes):raise ValueError(f'{id}/{key}: repeated frame; do not pad or reuse identical cels')
             path=dest/(key+'.png');im.save(path);rows.append({'key':key,'sha256':sha(path),'anchor':list(ANCHOR),'frames':meta,'distinct':len(set(hashes))})
-        records.append({'id':id,'review':ch['review'],'scale':scale,'static_sha256':sha(dest/'static.png'),'clips':rows,'clip_count':len(rows),'complete_24':len(rows)==24,'runtime_integrated':False})
-    manifest={'schema':1,'visual_approval':'NOT_EVALUATED','characters':records,'counts':{'static':len(records),'clips':sum(r['clip_count'] for r in records),'complete_24':sum(r['complete_24'] for r in records)}}
+        records.append({'id':id,'review':ch['review'],'scale':scale,'static_sha256':sha(dest/'static.png'),'clips':rows,'clip_count':len(rows),'complete_14':REQUIRED.issubset(clips),'runtime_integrated':False})
+    manifest={'schema':1,'visual_approval':'NOT_EVALUATED','characters':records,'counts':{'static':len(records),'clips':sum(r['clip_count'] for r in records),'complete_14':sum(r['complete_14'] for r in records)}}
     (out/'manifest.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n');print(json.dumps(manifest['counts']))
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('config',type=Path);p.add_argument('output',type=Path);a=p.parse_args();build(a.config,a.output)

@@ -9,18 +9,19 @@ func _initialize() -> void:
 	art.textures["portraits/NIN-001.png"]=texture
 	for i in range(1,31):art.textures["environment/buildings/BLD-%03d.png"%i]=texture
 	for action in ["idle","move","attack","cast","hit","fall"]:
-		for direction in ["se","sw","ne","nw"]:
+		var directions=["se","sw","ne","nw"] if action=="move" else ["se","sw"]
+		for direction in directions:
 			var path="animation/NIN-001/"+action+"_"+direction+".png"
 			art.textures[path]=texture
 			art.clip_metadata[path]={"fixture":true}
 	var c=art.product_coverage()
-	if c.characters!=1 or c.portraits!=1 or c.buildings!=30 or c.complete_kits!=1 or c.clips!=24:
+	if c.characters!=1 or c.portraits!=1 or c.buildings!=30 or c.complete_kits!=1 or c.clips!=14:
 		push_error("P2_ART_COVERAGE_FAIL full fixture")
 		quit(1)
 		return
-	art.clip_metadata.erase("animation/NIN-001/fall_nw.png")
+	art.clip_metadata.erase("animation/NIN-001/fall_sw.png")
 	c=art.product_coverage()
-	if c.complete_kits!=0 or c.clips!=23:
+	if c.complete_kits!=0 or c.clips!=13:
 		push_error("P2_ART_COVERAGE_FAIL missing metadata")
 		quit(1)
 		return

@@ -143,7 +143,8 @@ func product_coverage() -> Dictionary:
 			var id=name.get_file().get_basename()
 			var complete=true
 			for action in ["idle","move","attack","cast","hit","fall"]:
-				for direction in ["se","sw","ne","nw"]:
+				var directions=["se","sw","ne","nw"] if action=="move" else ["se","sw"]
+				for direction in directions:
 					var key="animation/"+id+"/"+action+"_"+direction+".png"
 					if not textures.has(key) or not clip_metadata.has(key):complete=false
 			if complete:counts.complete_kits+=1

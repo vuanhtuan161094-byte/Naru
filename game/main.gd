@@ -727,9 +727,8 @@ func draw_field() -> void:
 		# Stable scale: no frame-by-frame shrinking when actors pass each other.
 		var presentation_state=sim.animation_state(a)
 		var face=Vector2(a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT))
-		# The original clip labels are diamond-isometric directions. Use their actual
-		# facing in the straight horizontal camera, without mirroring any frame.
-		presentation_state.direction=BattleCamera.sprite_direction(face,int(a.side))
+		# V3: four move directions, two authored combat-facing directions. Simulation facing is unchanged.
+		presentation_state.direction=BattleCamera.sprite_direction(face,int(a.side),str(presentation_state.get("action","Idle")))
 		presentation_state.render_id=art.presentation_id(a,sim.actor_by_uid(int(a.get("owner",0))))
 		var sprite_top=art.draw_actor(field,a,p,sim.ticks,visual_scale,presentation_state)
 		var missing_sprite=sprite_top<=0
