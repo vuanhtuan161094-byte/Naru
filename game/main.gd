@@ -88,6 +88,11 @@ var wiki_page=0
 var building_worker_page=0
 var building_worker_filter=""
 var building_worker_id=""
+var building_tab=0
+var ninja_detail_tab=0
+var detail_ninja_id=""
+var world_tab=0
+var settings_tab=0
 var wiki_stats:Dictionary={}
 
 func _ready() -> void:
@@ -390,47 +395,60 @@ const WorldQuotes=preload("res://game/progression_quotes.gd")
 const ResourceGuide=preload("res://game/resource_guide.gd")
 
 func growth_detail(id: String,message: String="") -> void:
+	if detail_ninja_id!=id:
+		detail_ninja_id=id
+		ninja_detail_tab=0
 	open_screen("ninja_detail")
 	var p=store.state.owned[id]
 	store.ensure_growth(p)
 	var info=product_art_header(root,"portraits/"+id+".png",str(reg.ninjas[id].name_vi),"Cấp %d/%d • Cảnh %d • Phẩm %d • Sao %d/15 • Mảnh %d • Điểm %d • XP %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.quality),int(p.stars),int(p.shards),int(p.points),int(p.xp)],88)
 	if message!="":label(info,message,16)
-	var nav=HBoxContainer.new()
-	root.add_child(nav)
-	button(nav,"Tu luyện EXP",func():training_screen(id))
-	var realm_quote=store.breakthrough_quote(id)
-	var realm_cost=int(realm_quote.cost)
-	var breakthrough_button=button(nav,"Đột phá • %d/%d ấn" % [int(realm_quote.stock),realm_cost],func():growth_detail(id,store.breakthrough(id)))
-	breakthrough_button.disabled=not realm_quote.ready
-	breakthrough_button.tooltip_text="Còn thiếu "+str(realm_quote.missing)+" ấn • XP tích lũy "+str(realm_quote.banked_xp)
-	var star_button=button(nav,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu điều kiện"))
-	var star_quote=store.star_quote(reg,id)
-	star_button.disabled=not star_quote.ready
-	star_button.tooltip_text=str(star_quote.reason)
-	button(nav,"Nhẫn thuật",func():skill_screen(id))
-	button(nav,"Thức tỉnh",func():awakening_screen(id))
-	button(nav,"Trang bị ninja",func():ninja_gear_screen(id))
-	button(nav,"Trở về",growth_screen)
+	var tabs=HBoxContainer.new()
+	root.add_child(tabs)
+	for i in range(3):
+		var tab=button(tabs,["Tăng trưởng","Phân bổ điểm","Thuộc tính"][i],func():ninja_detail_tab=i;growth_detail(id))
+		tab.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		tab.disabled=ninja_detail_tab==i
+	button(tabs,"Nhẫn thuật",func():skill_screen(id))
+	button(tabs,"Thức tỉnh",func():awakening_screen(id))
+	button(tabs,"Trang bị ninja",func():ninja_gear_screen(id))
+	button(tabs,"Trở về",growth_screen)
 	var rows=scroll_rows(root)
-	label(rows,"Thiên phú: "+str(p.get("talent",""))+" • "+str(reg.ninjas[id].fixed_talent),17)
-	label(rows,"XP lên cấp: %d/%d | Đột phá: %d %s • %.0f%% • bảo hiểm %d/5" % [int(p.xp),WorldQuotes.xp_need(int(p.level),int(p.realm)),realm_cost,reg.resources["RES-128"].name_vi,100*WorldQuotes.realm_chance(int(p.realm_failures)),int(p.realm_failures)],16)
-	if int(p.stars)<15:
-		var star_rule=reg.growth.stars[int(p.stars)-1]
-		label(rows,"Sao kế tiếp: %d/%d mảnh • %s" % [int(p.shards),int(star_rule.shards),cost_text(star_rule.resources)],16)
-	var exchange=button(rows,"DEV đổi 5 mảnh ninja • 10 mảnh sao + 1000 Ryo",func():growth_detail(id,"Đã đổi" if store.exchange_shards(id,5) else "Cần Tổng bộ 5, Điện thức tỉnh và nguyên liệu"))
-	exchange.disabled=Village.level(store.state,"BLD-001")<5 or Village.level(store.state,"BLD-009")==0 or not store.has_cost(store.shard_exchange_cost(5))
-	var grid=GridContainer.new()
-	grid.columns=3
-	rows.add_child(grid)
-	var stats={"strength":"Sức mạnh","vitality":"Thể chất","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng"}
-	for key in stats:
-		var b=button(grid,"%s +1 | Đã cộng %s" % [stats[key],p.allocated.get(key,0)],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key) else "Không còn điểm"))
-		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.disabled=int(p.points)<1
-		var bulk=button(grid,"%s +10" % stats[key],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key,10) else "Thiếu điểm"))
-		bulk.disabled=int(p.points)<10
+	if ninja_detail_tab==0:
+		var nav=HBoxContainer.new()
+		rows.add_child(nav)
+		button(nav,"Tu luyện EXP",func():training_screen(id))
+		var realm_quote=store.breakthrough_quote(id)
+		var realm_cost=int(realm_quote.cost)
+		var breakthrough_button=button(nav,"Đột phá • %d/%d ấn" % [int(realm_quote.stock),realm_cost],func():growth_detail(id,store.breakthrough(id)))
+		breakthrough_button.disabled=not realm_quote.ready
+		breakthrough_button.tooltip_text="Còn thiếu "+str(realm_quote.missing)+" ấn • XP tích lũy "+str(realm_quote.banked_xp)
+		var star_button=button(nav,"Tăng sao",func():growth_detail(id,"Đã tăng sao" if store.raise_star(reg,id) else "Thiếu điều kiện"))
+		var star_quote=store.star_quote(reg,id)
+		star_button.disabled=not star_quote.ready
+		star_button.tooltip_text=str(star_quote.reason)
+		label(rows,"Thiên phú: "+str(p.get("talent",""))+" • "+str(reg.ninjas[id].fixed_talent),17)
+		label(rows,"XP lên cấp: %d/%d | Đột phá: %d %s • %.0f%% • bảo hiểm %d/5" % [int(p.xp),WorldQuotes.xp_need(int(p.level),int(p.realm)),realm_cost,reg.resources["RES-128"].name_vi,100*WorldQuotes.realm_chance(int(p.realm_failures)),int(p.realm_failures)],16)
+		if int(p.stars)<15:
+			var star_rule=reg.growth.stars[int(p.stars)-1]
+			label(rows,"Sao kế tiếp: %d/%d mảnh • %s" % [int(p.shards),int(star_rule.shards),cost_text(star_rule.resources)],16)
+		var exchange=button(rows,"DEV đổi 5 mảnh ninja • 10 mảnh sao + 1000 Ryo",func():growth_detail(id,"Đã đổi" if store.exchange_shards(id,5) else "Cần Tổng bộ 5, Điện thức tỉnh và nguyên liệu"))
+		exchange.disabled=Village.level(store.state,"BLD-001")<5 or Village.level(store.state,"BLD-009")==0 or not store.has_cost(store.shard_exchange_cost(5))
+		return
+	if ninja_detail_tab==1:
+		var grid=GridContainer.new()
+		grid.columns=3
+		rows.add_child(grid)
+		var stats={"strength":"Sức mạnh","vitality":"Thể chất","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng"}
+		for key in stats:
+			var b=button(grid,"%s +1 | Đã cộng %s" % [stats[key],p.allocated.get(key,0)],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key) else "Không còn điểm"))
+			b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			b.disabled=int(p.points)<1
+			var bulk=button(grid,"%s +10" % stats[key],func():growth_detail(id,"Đã phân bổ" if store.allocate(id,key,10) else "Thiếu điểm"))
+			bulk.disabled=int(p.points)<10
+		return
 	var all_stats=store.player_preview(reg,id)
-	label(rows,"48 CHỈ SỐ • snapshot V11 trước biến thân / hiệu ứng trận",20)
+	label(rows,"%d THUỘC TÍNH • trước biến thân / hiệu ứng trận" % all_stats.size(),20)
 	label(rows,"XP còn thiếu tới trần cảnh: "+str(store.xp_to_cap(id)),16)
 	button(rows,"Nguồn ấn đột phá",func():resource_detail("RES-128"))
 	var stat_grid=GridContainer.new()
@@ -1223,6 +1241,7 @@ func building_actions(rows:Control,id:String) -> void:
 func building_screen(id: String,message: String="") -> void:
 	if building_worker_id!=id:
 		building_worker_id=id
+		building_tab=0
 		building_worker_page=0
 		building_worker_filter=""
 	open_screen("building")
@@ -1250,57 +1269,73 @@ func building_screen(id: String,message: String="") -> void:
 	var rows=VBoxContainer.new()
 	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	scroll.add_child(rows)
-	if int(b.level)==0:return
-	building_actions(rows,id)
-	if id=="BLD-028":button(rows,"Nghiên cứu công nghệ",world_projects_screen)
-	button(rows,"Điều phối tất cả công trình",production_center)
-	if id=="BLD-030":button(rows,"Gia cố phòng thủ",fortification_screen)
-	var waiting=b.get("waiting_orders",[])
-	if not waiting.is_empty():
-		label(rows,"HÀNG ĐỢI • "+str(waiting.size())+"/5 (chưa trừ nguyên liệu)",18)
-		for index in range(waiting.size()):
-			var order=waiting[index]
-			var recipe=reg.recipes[order.recipe]
-			var line=HBoxContainer.new()
-			rows.add_child(line)
-			var desc=label(line,str(reg.resources[recipe.output.resource_id].name_vi)+" × "+str(order.batches)+" mẻ",16)
-			desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-			button(line,"Bỏ lệnh",func():building_screen(id,"Đã bỏ" if store.remove_waiting_recipe(id,index) else "Lỗi"))
-		label(rows,"Lệnh sau chỉ chạy khi xưởng rảnh. Nếu đang tự lặp, dừng lệnh hiện tại để xử lý hàng đợi.",15)
-	label(rows,"SẢN XUẤT & CÔNG THỨC",20)
-	if not b.production.is_empty():
-		label(rows,"Đang sản xuất %s • còn %ds • %s" % [reg.resources[reg.recipes[b.production.recipe].output.resource_id].name_vi,int(b.production.remaining),"Tự lặp" if b.production.repeat else str(b.production.get("batches_left",1))+" mẻ"],18)
-		if Village.target_reached(store.state,b.production,reg.recipes[b.production.recipe]) and b.production.reserved.is_empty():label(rows,"Đủ tồn kho mục tiêu • sẽ tự tiếp tục khi thiếu",16)
-		elif b.production.reserved.is_empty():label(rows,"Đang chờ nguyên liệu",16)
-		elif int(b.production.remaining)==0:label(rows,"Đang chờ chỗ trống trong kho",16)
-		button(rows,"Dừng và hoàn nguyên liệu",func():building_screen(id,"Đã dừng; phần vượt kho ở Hộp thưởng" if store.cancel_production(id) else "Không thể dừng"))
-	else:
-		for recipe_id in def.recipe_ids:
-			var recipe=reg.recipes[recipe_id]
-			var row=HBoxContainer.new()
-			rows.add_child(row)
-			var output=str(reg.resources[recipe.output.resource_id].name_vi)
-			label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
-			var q=Village.recipe_quote(store.state,recipe)
-			var quote_text=[]
-			for key in q.cost:quote_text.append("%s %d/%d" % [reg.resources[key].name_vi,int(store.state.inventory.get(key,0)),int(q.cost[key])])
-			var materials=label(row,", ".join(PackedStringArray(quote_text)),15)
-			materials.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-			materials.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-			materials.tooltip_text=materials.text+" • "+str(q["yield"])+" sản phẩm / "+str(q.seconds)+"s • "+str(q.reason)
-			var single=button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
-			single.disabled=not q.ready
-			button(row,"Nguồn",func():resource_detail(str(recipe.output.resource_id)))
-			var batch=button(row,"5 mẻ",func():building_screen(id,"Đã đặt 5 mẻ" if store.production(reg,id,recipe_id,false,5) else "Chưa đủ điều kiện"))
-			batch.disabled=not q.ready
-			batch.tooltip_text="Đủ nguyên liệu ngay: "+str(q.affordable)+" mẻ. Mỗi mẻ trừ riêng; thiếu sẽ chờ."
-			var auto=button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
-			auto.disabled=not q.setup_ready
-			var target=mini(Village.capacity(store.state,str(recipe.output.resource_id)),int(q["yield"])*20)
-			var reserve_button=button(row,"Duy trì "+str(target),func():building_screen(id,"Đã đặt tồn kho mục tiêu" if store.production(reg,id,recipe_id,true,1,target) else "Chưa đủ điều kiện"))
-			reserve_button.disabled=not q.setup_ready
-			reserve_button.tooltip_text="Tự sản xuất đến mục tiêu, tự dừng khi đủ; không tự mua. "+str(q["yield"])+" / "+str(q.seconds)+"s"
+	if int(b.level)==0:
+		label(rows,"Xây công trình để mở các chức năng.",18)
+		return
+	var tabs=HBoxContainer.new()
+	root.add_child(tabs)
+	root.move_child(tabs,scroll.get_index())
+	for i in range(3):
+		var tab=button(tabs,["Tổng quan","Sản xuất","Nhân lực"][i],func():building_tab=i;building_screen(id))
+		tab.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		tab.disabled=building_tab==i
+	if building_tab==0:
+		label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi),18)
+		label(rows,"Nhân lực: %d • Công thức: %d" % [Village.workers(store.state,id).size(),def.recipe_ids.size()],16)
+		building_actions(rows,id)
+		if id=="BLD-028":button(rows,"Nghiên cứu công nghệ",world_projects_screen)
+		button(rows,"Điều phối tất cả công trình",production_center)
+		if id=="BLD-030":button(rows,"Gia cố phòng thủ",fortification_screen)
+		return
+	if building_tab==1:
+		var waiting=b.get("waiting_orders",[])
+		if not waiting.is_empty():
+			label(rows,"HÀNG ĐỢI • "+str(waiting.size())+"/5 (chưa trừ nguyên liệu)",18)
+			for index in range(waiting.size()):
+				var order=waiting[index]
+				var recipe=reg.recipes[order.recipe]
+				var line=HBoxContainer.new()
+				rows.add_child(line)
+				var desc=label(line,str(reg.resources[recipe.output.resource_id].name_vi)+" × "+str(order.batches)+" mẻ",16)
+				desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+				button(line,"Bỏ lệnh",func():building_screen(id,"Đã bỏ" if store.remove_waiting_recipe(id,index) else "Lỗi"))
+			label(rows,"Lệnh sau chỉ chạy khi xưởng rảnh. Nếu đang tự lặp, dừng lệnh hiện tại để xử lý hàng đợi.",15)
+		label(rows,"SẢN XUẤT & CÔNG THỨC",20)
+		if not b.production.is_empty():
+			label(rows,"Đang sản xuất %s • còn %ds • %s" % [reg.resources[reg.recipes[b.production.recipe].output.resource_id].name_vi,int(b.production.remaining),"Tự lặp" if b.production.repeat else str(b.production.get("batches_left",1))+" mẻ"],18)
+			if Village.target_reached(store.state,b.production,reg.recipes[b.production.recipe]) and b.production.reserved.is_empty():label(rows,"Đủ tồn kho mục tiêu • sẽ tự tiếp tục khi thiếu",16)
+			elif b.production.reserved.is_empty():label(rows,"Đang chờ nguyên liệu",16)
+			elif int(b.production.remaining)==0:label(rows,"Đang chờ chỗ trống trong kho",16)
+			button(rows,"Dừng và hoàn nguyên liệu",func():building_screen(id,"Đã dừng; phần vượt kho ở Hộp thưởng" if store.cancel_production(id) else "Không thể dừng"))
+		else:
+			for recipe_id in def.recipe_ids:
+				var recipe=reg.recipes[recipe_id]
+				var row=HBoxContainer.new()
+				rows.add_child(row)
+				var output=str(reg.resources[recipe.output.resource_id].name_vi)
+				label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
+				var q=Village.recipe_quote(store.state,recipe)
+				var quote_text=[]
+				for key in q.cost:quote_text.append("%s %d/%d" % [reg.resources[key].name_vi,int(store.state.inventory.get(key,0)),int(q.cost[key])])
+				var materials=label(row,", ".join(PackedStringArray(quote_text)),15)
+				materials.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+				materials.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+				materials.tooltip_text=materials.text+" • "+str(q["yield"])+" sản phẩm / "+str(q.seconds)+"s • "+str(q.reason)
+				var single=button(row,"Sản xuất",func():building_screen(id,"Đã đặt" if store.production(reg,id,recipe_id,false) else "Thiếu nguyên liệu hoặc nhân lực"))
+				single.disabled=not q.ready
+				button(row,"Nguồn",func():resource_detail(str(recipe.output.resource_id)))
+				var batch=button(row,"5 mẻ",func():building_screen(id,"Đã đặt 5 mẻ" if store.production(reg,id,recipe_id,false,5) else "Chưa đủ điều kiện"))
+				batch.disabled=not q.ready
+				batch.tooltip_text="Đủ nguyên liệu ngay: "+str(q.affordable)+" mẻ. Mỗi mẻ trừ riêng; thiếu sẽ chờ."
+				var auto=button(row,"Tự động",func():building_screen(id,"Đã bật" if store.production(reg,id,recipe_id,true) else "Chưa đủ điều kiện"))
+				auto.disabled=not q.setup_ready
+				var target=mini(Village.capacity(store.state,str(recipe.output.resource_id)),int(q["yield"])*20)
+				var reserve_button=button(row,"Duy trì "+str(target),func():building_screen(id,"Đã đặt tồn kho mục tiêu" if store.production(reg,id,recipe_id,true,1,target) else "Chưa đủ điều kiện"))
+				reserve_button.disabled=not q.setup_ready
+				reserve_button.tooltip_text="Tự sản xuất đến mục tiêu, tự dừng khi đủ; không tự mua. "+str(q["yield"])+" / "+str(q.seconds)+"s"
 
+		if def.recipe_ids.is_empty():label(rows,"Công trình này không có công thức sản xuất.",16)
+		return
 	label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi)+" • Nhân lực "+str(Village.workers(store.state,id).size())+"/"+str(1+floori(float(int(b.level)-1)/10.0)),16)
 	label(rows,"Nhân lực (không ảnh hưởng đội chiến đấu)",20)
 	var controls=HBoxContainer.new()
@@ -1347,13 +1382,32 @@ func world_screen(message: String="") -> void:
 	label(root,"NHẪN GIỚI • 60 lãnh địa / 71 đường",26)
 	var row=HBoxContainer.new()
 	root.add_child(row)
-	button(row,"Ngoại giao",diplomacy_screen)
-	button(row,"Đội viễn chinh / phòng thủ",squad_menu)
-	button(row,"Biên giới",frontier_screen)
-	button(row,"Tình báo",world_intelligence_screen)
-	button(row,"Phòng thủ",fortification_screen)
-	button(row,"Làm mới",func():world_screen())
-	label(row,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" • "+message,16)
+	var map_tab=button(row,"Bản đồ",func():world_tab=0;world_screen())
+	map_tab.disabled=world_tab==0
+	var list_tab=button(row,"Lãnh địa",func():world_tab=1;world_screen())
+	list_tab.disabled=world_tab==1
+	var command_tab=button(row,"Điều phối",func():world_tab=2;world_screen())
+	command_tab.disabled=world_tab==2
+	var loc=label(row,"Hiện tại: "+str(reg.territories[store.state.world_location].name_vi)+" • "+message,16)
+	loc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	if world_tab==2:
+		var grid=GridContainer.new()
+		grid.columns=2
+		grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
+		root.add_child(grid)
+		activity_tile(grid,"Ngoại giao","Quan hệ giữa các làng.",diplomacy_screen)
+		activity_tile(grid,"Đội viễn chinh / phòng thủ","Điều phối đội ninja.",squad_menu)
+		activity_tile(grid,"Biên giới","Tình hình vùng biên.",frontier_screen)
+		activity_tile(grid,"Tình báo","Thông tin nhẫn giới.",world_intelligence_screen)
+		activity_tile(grid,"Phòng thủ","Bảo vệ làng.",fortification_screen)
+		return
+	if world_tab==1:
+		var rows=scroll_rows(root)
+		for id in reg.territories:
+			var path=World.path(reg,store.state,store.state.world_location,id)
+			if store.state.territory_states[id].discovered or not path.is_empty():
+				button(rows,str(reg.territories[id].name_vi)+" • "+id,func():selected_territory=id;world_tab=0;world_screen())
+		return
 	var content=HBoxContainer.new()
 	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	root.add_child(content)
@@ -1422,13 +1476,6 @@ func world_screen(message: String="") -> void:
 				var b=button(side,"DEV thu 1 • "+str(q.remaining)+"s",func():world_screen("Đã thu" if store.harvest_territory(reg,selected_territory,key) else "Thiếu điều kiện"))
 				b.disabled=not q.ready
 				b.tooltip_text=str(reg.buildings[q.building].name_vi)+" cấp "+str(q.level)+" và nhân lực"
-	label(side,"ĐƯỜNG ĐI / LÃNH ĐỊA",17)
-	var list_rows=VBoxContainer.new()
-	side.add_child(list_rows)
-	for id in reg.territories:
-		var path=World.path(reg,store.state,store.state.world_location,id)
-		if store.state.territory_states[id].discovered or not path.is_empty():
-			button(list_rows,str(reg.territories[id].name_vi)+" • "+id,func():selected_territory=id;world_screen())
 
 func territory_tax_screen(id:String,message:String="") -> void:
 	open_screen("world")
