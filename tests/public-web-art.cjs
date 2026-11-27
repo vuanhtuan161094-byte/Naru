@@ -3,7 +3,7 @@ const fs=require("fs");
 (async()=>{
  const browser=await chromium.launch({headless:true,args:["--enable-unsafe-swiftshader","--use-gl=angle","--use-angle=swiftshader"]});
  try{
-  const page=await browser.newPage({viewport:{width:1280,height:720}});
+  const page=await browser.newPage({viewport:{width:1280,height:720},recordVideo:{dir:"public-qa/video",size:{width:1280,height:720}}});
   const errors=[];
   page.on("pageerror",e=>errors.push(String(e)));
   page.on("console",m=>{if(/SCRIPT ERROR|Parse Error|NARU_PUBLIC_ART_FAIL/.test(m.text()))errors.push(m.text());});
@@ -75,6 +75,18 @@ const fs=require("fs");
   await page.waitForFunction(()=>window.naruUI?.authored_actor_draws>0&&window.naruUI?.character_overlays?.includes("NIN-002")&&window.naruUI?.sasuke_clip_draws>10,null,{timeout:30000});
   await page.screenshot({path:"public-qa/sasuke-v3-actual-6v6.png"});
   console.log("NARU_SASUKE_WEB_DRAW_PASS",JSON.stringify({draws:(await state()).sasuke_clip_draws,overlays:(await state()).character_overlays}));
+  await click("Rút lui","results");
+  await click("Về làng","home");
+  await click("Cài đặt","settings");
+  await page.screenshot({path:"public-qa/static-roster-coverage.png"});
+  await click("Thử sprite tĩnh 6v6","battle");
+  await page.waitForFunction(()=>window.naruUI?.static_roster_draws>=12,null,{timeout:30000});
+  await page.waitForTimeout(7000);
+  await page.screenshot({path:"public-qa/static-roster-actual-6v6.png"});
+  const still=await state();
+  if(still.missing_actor_ids.length)throw Error("Missing static actor "+JSON.stringify(still.missing_actor_ids));
+  console.log("NARU_STATIC_ROSTER_WEB_DRAW_PASS",JSON.stringify({draws:still.static_roster_draws,missing:still.missing_actor_ids}));
+  await page.close();
   if(errors.length)throw Error(errors.join("\n"));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});
