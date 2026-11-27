@@ -4,6 +4,24 @@ const PATH="user://naru_private_art_v4.json"
 const MAX_BYTES=16000000
 # Independent R12 candidate; does not replace or mutate the approved 224-texture pack.
 const R12_IRUKA=preload("res://assets/production/r12/iruka.svg")
+# Static-first production: only fills missing identities; existing art and clips win.
+const STATIC_ROSTER=preload("res://assets/production/r14/static_roster.svg")
+const STATIC_EXISTING=[1,2,3,4,5,16,41,42,43,60,68,70,93]
+var static_roster_cache:Dictionary={}
+var static_roster_draws=0
+
+func static_roster_texture(id:String) -> Texture2D:
+	if not id.begins_with("NIN-") or id.length()!=7 or not id.right(3).is_valid_int():return null
+	var n=int(id.right(3))
+	if n<1 or n>144 or n in STATIC_EXISTING:return null
+	if not static_roster_cache.has(id):
+		var cell=AtlasTexture.new()
+		cell.atlas=STATIC_ROSTER
+		cell.region=Rect2(((n-1)%12)*96,floori(float(n-1)/12.0)*112,96,112)
+		cell.filter_clip=true
+		static_roster_cache[id]=cell
+	return static_roster_cache[id]
+
 var r12_actor_draws=0
 var missing_actor_ids:Dictionary={}
 var authored_actor_draws=0
@@ -197,8 +215,13 @@ func restore() -> void:
 
 func texture(path: String) -> Texture2D:
 	if not enabled:return null
-	if path in ["characters/NIN-005.png","portraits/NIN-005.png"] and not textures.has(path):return R12_IRUKA
-	return textures.get(path)
+	if textures.has(path):return textures[path]
+	if path in ["characters/NIN-005.png","portraits/NIN-005.png"]:return R12_IRUKA
+	if path.begins_with("characters/") or path.begins_with("portraits/"):
+		var id=path.get_file().get_basename()
+		if path.begins_with("portraits/") and textures.has("characters/"+id+".png"):return textures["characters/"+id+".png"]
+		return static_roster_texture(id)
+	return null
 
 func count_characters() -> int:
 	var count=0
@@ -224,6 +247,15 @@ func product_coverage() -> Dictionary:
 		elif name.begins_with("portraits/"):counts.portraits+=1
 		elif name.begins_with("environment/buildings/"):counts.buildings+=1
 		elif name.begins_with("vfx/"):counts.vfx_sheets+=1
+	# Do not inflate imported/authored coverage or claim full animation.
+	counts["static_candidates"]=131
+	counts["renderable_ninjas"]=0
+	counts["renderable_portraits"]=0
+	if enabled:
+		for n in range(1,145):
+			var id="NIN-%03d"%n
+			if texture("characters/"+id+".png")!=null:counts.renderable_ninjas+=1
+			if texture("portraits/"+id+".png")!=null:counts.renderable_portraits+=1
 	return counts
 
 func reset_battle() -> void:
@@ -236,6 +268,7 @@ func reset_battle() -> void:
 	clip_draws={}
 	fallback_draws=0
 	r12_actor_draws=0
+	static_roster_draws=0
 	authored_actor_draws=0
 	missing_actor_ids.clear()
 	directional_pose_draws=0
@@ -337,6 +370,7 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 		fallback_draws+=1
 	elif t!=null:
 		field.draw_texture_rect(t,dest,false)
+		if static_roster_cache.has(id) and t==static_roster_cache[id]:static_roster_draws+=1
 		fallback_draws+=1
 	else:
 		fallback_draws+=1
