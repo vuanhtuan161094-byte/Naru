@@ -5,6 +5,7 @@ on:
     paths:
       - 'art/external/NARU_ASSET_SOURCES.json'
       - '.github/workflows/external-asset-library.yml'
+      - 'art/external/build_review.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -63,6 +64,16 @@ jobs:
           (output/'COLLECTION_REPORT.json').write_text(json.dumps(reports,indent=2),encoding='utf-8')
           print('NARU_ASSET_LIBRARY_COLLECTED',sum(x['media_files'] for x in reports),flush=True)
           PY
+      - name: Build duplicate index and contact sheets
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 art/external/build_review.py external-library external-review
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NARU-EXTERNAL-ASSET-REVIEW
+          path: external-review/
+          retention-days: 14
+          if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with:
           name: NARU-EXTERNAL-ASSET-LIBRARY

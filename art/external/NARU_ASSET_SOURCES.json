@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "scope": "Naru asset acquisition, source library only; not runtime assets",
   "verified_against": "488f429e69f89ea9bcdca0bccc444a2eeb721088",
   "sources": [
@@ -139,12 +139,71 @@
       "class": "ORIGINAL_DOWNLOAD_ONLY",
       "priority": "P0",
       "use": "Naruto World map, Konoha academy and Hokage office, map icons, music"
+    },
+    {
+      "repo": "Calinou/kenney-particle-pack",
+      "ref": "ab7086639ee73be31abd87feb21bf1402d4e8144",
+      "class": "COLLECT",
+      "license": "Kenney CC0 asset pack; retain source license",
+      "folders": [
+        "addons/kenney_particle_pack/"
+      ],
+      "priority": "P0",
+      "use": "96 particle textures: flame, slash, smoke, sparks, traces, circles"
+    },
+    {
+      "repo": "SpriteCook/spritecook-free-game-assets",
+      "ref": "cd0db67d6f849c8d84e406a436aac76b733a7dba",
+      "class": "COLLECT",
+      "license": "CC0-1.0",
+      "folders": [
+        "examples/game-asset-pack/",
+        "examples/inventory-icons/",
+        "examples/isometric-buildings/",
+        "examples/spell-icon-set/",
+        "examples/stylized-seamless-textures/",
+        "examples/pixel-art-happy-monk/",
+        "examples/pixel-art-red-cloaked-rogue/",
+        "examples/pixel-art-characters/"
+      ],
+      "priority": "P1",
+      "use": "Buildings, tiles, portraits/icons and character candidates; inspect perspective; no automatic runtime replacement"
+    },
+    {
+      "repo": "GeorgeQLe/assets-vfx-particles",
+      "ref": "57a85ec00d559a7fea1726530c163644efd8d4d3",
+      "class": "REFERENCE",
+      "license": "Repository claims CC0",
+      "folders": [
+        "assets/kenney/"
+      ],
+      "priority": "P1",
+      "use": "531 images total; Kenney mirror, prefer Calinou canonical textures and avoid duplicate collection"
+    },
+    {
+      "repo": "WanderlanLima/Naruto-Bound-",
+      "ref": "5c691ddeb1a81f712aa2e19b6fec18540fcebcc8",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "folders": [
+        "public/assets/characters/"
+      ],
+      "priority": "P0",
+      "use": "139 image files repo-wide; attack/cast/charge/dodge/die/hurt/UniqueSkill sheets; confirm provenance and actual layout before any runtime use"
+    },
+    {
+      "repo": "pillow836y-oss/naruto-game-assets",
+      "ref": "c8c7e0de3691575d8ec288cff00b11909e851ac8",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "folders": [],
+      "priority": "P1",
+      "use": "146 ID-named image files; identify content from previews; reuse rights not verified"
     }
   ],
   "rules": [
     "Public Naru repository: no redistribution of raw restricted or uncertain-license media. Original source links remain in catalog for local review.",
     "Do not execute downloaded code; unpack selected media and companion metadata only; reject path traversal and symlinks.",
     "Do not replace current assets or change gameplay, animation production, public Pages, or Luna feature branch.",
-    "All candidate assets require actual visual preview, alpha/cell/pivot check, resolution and perspective compatibility before use."
+    "All candidate assets require actual visual preview, alpha/cell/pivot check, resolution and perspective compatibility before use.",
+    "Review index groups exact duplicates by SHA-256 without deleting source metadata; do not infer animation grid or pivot from image dimensions alone."
   ]
 }
