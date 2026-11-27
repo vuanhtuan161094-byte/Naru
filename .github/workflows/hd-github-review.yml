@@ -1,7 +1,7 @@
-name: HD GitHub source acquisition and animation review
+name: HD GitHub source acquisition and animation review R2
 on:
   push:
-    branches: [integration/one-game]
+    branches: [integration/one-game, art/hd-premium-acquisition-r2-20261127]
     paths:
       - 'art/external/HD_GITHUB_SOURCES.json'
       - 'art/external/hd_github_review.py'
@@ -12,19 +12,41 @@ permissions:
 jobs:
   acquisition:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch pinned media blobs and create original timing GIF reviews
+      - name: Download verified PNG/SFF and build real frame-by-frame GIF reviews
         run: |
           python3 -m pip install Pillow==11.3.0
+          set +e
           python3 art/external/hd_github_review.py --out "$RUNNER_TEMP/hd-source"
-          mkdir -p hd-evidence
-          cp "$RUNNER_TEMP/hd-source/HD_REPORT.json" hd-evidence/
+          code=$?
+          set -e
+          mkdir -p hd-evidence hd-preview
+          if [ -f "$RUNNER_TEMP/hd-source/HD_REPORT.json" ]; then
+            cp "$RUNNER_TEMP/hd-source/HD_REPORT.json" hd-evidence/
+          fi
+          if [ -d "$RUNNER_TEMP/hd-source/local-gifs" ]; then
+            cp -a "$RUNNER_TEMP/hd-source/local-gifs" hd-preview/
+          fi
+          if [ -d "$RUNNER_TEMP/hd-source/contact-sheets" ]; then
+            cp -a "$RUNNER_TEMP/hd-source/contact-sheets" hd-preview/
+          fi
           printf '%s\n' "$GITHUB_SHA" > hd-evidence/BUILD_SHA.txt
-      - uses: actions/upload-artifact@v4
+          exit "$code"
+      - name: Upload download proof and animation diagnostics
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: NARU-HD-GITHUB-EVIDENCE
+          name: NARU-HD-GITHUB-EVIDENCE-R2
           path: hd-evidence/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Upload actual GIF animations and contact-sheet PNGs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: NARU-HD-ANIMATION-GIF-REVIEW-R2
+          path: hd-preview/
+          retention-days: 7
           if-no-files-found: warn
