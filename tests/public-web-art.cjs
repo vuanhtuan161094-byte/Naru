@@ -75,13 +75,13 @@ const fs=require("fs");
   await page.waitForFunction(()=>window.naruUI?.authored_actor_draws>0&&window.naruUI?.character_overlays?.includes("NIN-002")&&window.naruUI?.sasuke_clip_draws>10,null,{timeout:30000});
   await page.screenshot({path:"public-qa/sasuke-v3-actual-6v6.png"});
   console.log("NARU_SASUKE_WEB_DRAW_PASS",JSON.stringify({draws:(await state()).sasuke_clip_draws,overlays:(await state()).character_overlays}));
-  await click("Rút lui","results");
-  await click("Về làng","home");
-  await click("Cài đặt","settings");
+  // Review fights return directly to settings, not rewarded campaign results.
+  if((await state()).screen==="battle")await click("Rút lui","settings");
+  else await page.waitForFunction(()=>window.naruUI?.screen==="settings",null,{timeout:30000});
   await page.screenshot({path:"public-qa/static-roster-coverage.png"});
   await click("Thử sprite tĩnh 6v6","battle");
   await page.waitForFunction(()=>window.naruUI?.static_roster_draws>=12,null,{timeout:30000});
-  await page.waitForTimeout(7000);
+  await page.waitForTimeout(2500);
   await page.screenshot({path:"public-qa/static-roster-actual-6v6.png"});
   const still=await state();
   if(still.missing_actor_ids.length)throw Error("Missing static actor "+JSON.stringify(still.missing_actor_ids));
