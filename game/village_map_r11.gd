@@ -69,7 +69,7 @@ func apply_panorama(at: int) -> bool:
  game.root.add_child(map)
  game.root.move_child(map,at)
  var bg=TextureRect.new()
- bg.texture=game.art.texture("environment/village_ground_r15.png")
+ bg.texture=game.art.texture("environment/arena_open_r3.png")
  if bg.texture==null:bg.texture=game.art.texture("environment/village_ground_p3.png")
  bg.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
  bg.stretch_mode=TextureRect.STRETCH_SCALE
@@ -78,12 +78,12 @@ func apply_panorama(at: int) -> bool:
  map.add_child(bg)
  # Use the same normalized geometry as the authored ground. Keep HQ central in its own district.
  var zones=[
-  ["ĐIỀU HÀNH",[22,23,1,29,30],Rect2(12,12,456,205),Color("#f4d39e")],
-  ["HUẤN LUYỆN",[2,3,4,5,6],Rect2(484,12,456,205),Color("#d1e2ed")],
-  ["NHẪN THUẬT",[7,8,9,10,28],Rect2(956,12,432,205),Color("#dfd0ec")],
-  ["SINH HOẠT & TÀI NGUYÊN",[11,12,13,14,15],Rect2(12,239,456,240),Color("#d6e9b8")],
-  ["SẢN XUẤT",[16,17,18,19,20],Rect2(484,239,456,240),Color("#f0deae")],
-  ["CHIẾN ĐẤU & GIAO THƯƠNG",[21,24,25,26,27],Rect2(956,239,432,240),Color("#f1d1bb")]
+  ["ĐIỀU HÀNH",[22,23,1,29,30],Rect2(12,115,456,182),Color("#f4d39e")],
+  ["HUẤN LUYỆN",[2,3,4,5,6],Rect2(484,115,456,182),Color("#d1e2ed")],
+  ["NHẪN THUẬT",[7,8,9,10,28],Rect2(956,115,432,182),Color("#dfd0ec")],
+  ["SINH HOẠT & TÀI NGUYÊN",[11,12,13,14,15],Rect2(12,300,456,182),Color("#d6e9b8")],
+  ["SẢN XUẤT",[16,17,18,19,20],Rect2(484,300,456,182),Color("#f0deae")],
+  ["CHIẾN ĐẤU & GIAO THƯƠNG",[21,24,25,26,27],Rect2(956,300,432,182),Color("#f1d1bb")]
  ]
  for district in zones:
   var zone:Rect2=district[2]
@@ -98,8 +98,8 @@ func apply_panorama(at: int) -> bool:
   map.add_child(title)
   title.anchor_left=zone.position.x/1400.0
   title.anchor_right=zone.end.x/1400.0
-  title.anchor_top=(zone.position.y+3)/490.0
-  title.anchor_bottom=(zone.position.y+30)/490.0
+  title.anchor_top=(zone.position.y+0)/490.0
+  title.anchor_bottom=(zone.position.y+21)/490.0
   for slot in range(5):
    var n:int=district[1][slot]
    var id="BLD-%03d"%n
@@ -110,7 +110,7 @@ func apply_panorama(at: int) -> bool:
    var width=(zone.size.x-12.0)/5.0
    cell.anchor_left=(zone.position.x+6.0+slot*width)/1400.0
    cell.anchor_right=(zone.position.x+6.0+(slot+1)*width)/1400.0
-   cell.anchor_top=(zone.position.y+34)/490.0
+   cell.anchor_top=(zone.position.y+20)/490.0
    cell.anchor_bottom=(zone.end.y-8)/490.0
    cell.offset_left=2
    cell.offset_right=-2
@@ -126,25 +126,25 @@ func apply_panorama(at: int) -> bool:
    marker.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
    marker.anchor_left=0.0
    marker.anchor_right=1.0
-   marker.anchor_top=0.0 if n==1 else 0.06
-   marker.anchor_bottom=0.76
+   marker.anchor_top=0.0
+   marker.anchor_bottom=0.74
    marker.tooltip_text=original
    marker.disabled=b.disabled
-   var tint=Color(0.78,0.81,0.79,0.85) if locked else Color.WHITE
+   var tint=Color(0.90,0.93,0.88,0.90) if locked else Color.WHITE
    marker.self_modulate=tint
    marker.mouse_entered.connect(func():marker.self_modulate=Color(1.15,1.10,0.93,1.0))
    marker.mouse_exited.connect(func():marker.self_modulate=tint)
    marker.pressed.connect(forward.bind(id))
    cell.add_child(marker)
    markers[id]=marker
-   b.text=SHORT[n-1]+"\n"+detail
+   b.text=SHORT[n-1]+"\n"+("HQ "+detail.get_slice("HQ ",1) if locked else detail)
    b.tooltip_text=original
    b.modulate=Color.WHITE
    b.custom_minimum_size=Vector2(0,29)
    b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
    b.add_theme_font_size_override("font_size",11)
    var border=Color("#e9bd70") if upgrading or n==1 else Color("#69776b") if locked else Color("#a8b68a")
-   b.add_theme_stylebox_override("normal",style(Color(0.11,0.16,0.15,0.96),border,5))
+   b.add_theme_stylebox_override("normal",style(Color(0.10,0.14,0.13,0.88),border,5))
    b.add_theme_stylebox_override("hover",style(Color("#41574b"),Color("#f1cb85"),5))
    b.add_theme_stylebox_override("pressed",style(Color("#52634c"),Color("#f1cb85"),5))
    b.add_theme_color_override("font_color",Color("#bdc9bc") if locked else Color("#f7dcab") if upgrading or n==1 else Color("#f0ead9"))
