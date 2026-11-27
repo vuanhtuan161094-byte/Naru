@@ -2534,12 +2534,14 @@ func settings_screen(message: String="") -> void:
 	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
 	label(rows,"Nạp JSON đủ 14 clip / 84 cel. Chỉ Naruto và Sasuke được lưu cục bộ ở đợt này; bộ chưa đủ bị từ chối.",15).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
+	button(rows,"Thử sprite tĩnh 6v6",func():start_art_review(true))
 	button(art_row,"Bật / tắt review",func():
 		art.enabled=not art.enabled and not art.textures.is_empty()
 		art.source_label="REVIEW RIÊNG • "+str(art.textures.size())+" ảnh" if art.enabled else "DEV • tắt gói review"
 		settings_screen(art.source_label))
 	var coverage=art.product_coverage()
 	label(rows,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
+	label(rows,"Ảnh tĩnh: %d/144 ninja • %d/144 ảnh danh sách • %d sprite vector tạm" % [coverage.renderable_ninjas,coverage.renderable_portraits,coverage.static_candidates],15)
 	label(rows,"Animation metadata: %d • Bộ đủ 14 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
 	label(rows,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 
@@ -2568,7 +2570,7 @@ func probe_buttons(node: Node,out: Array) -> void:
 func publish_ui_probe() -> void:
 	var controls=[]
 	probe_buttons(shell,controls)
-	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"character_overlays":art.character_overlays.keys(),"sasuke_clip_draws":art.character_clip_draws("NIN-002"),"art_draws":art.actor_draws,"r12_actor_draws":art.r12_actor_draws,"missing_actor_ids":art.missing_actor_ids.keys(),"authored_actor_draws":art.authored_actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
+	JavaScriptBridge.eval("window.naruUI="+JSON.stringify({"screen":screen_id,"buttons":controls,"width":get_viewport_rect().size.x,"height":get_viewport_rect().size.y,"owned":store.state.owned.size(),"draws":store.state.draws,"stamina":store.state.stamina,"cleared":store.state.cleared.size(),"paused":paused,"speed":battle_speed,"art_count":art.textures.size(),"character_overlays":art.character_overlays.keys(),"sasuke_clip_draws":art.character_clip_draws("NIN-002"),"art_draws":art.actor_draws,"static_roster_draws":art.static_roster_draws,"r12_actor_draws":art.r12_actor_draws,"missing_actor_ids":art.missing_actor_ids.keys(),"authored_actor_draws":art.authored_actor_draws,"art_fx":art.effect_draws,"review":review_mode,"formation_id":store.state.formation_id,"formation_slots":store.state.formation_slots,"formation_levels":store.state.formation_levels,"arena_width":sim.map_width if sim!=null else 0,"arena_height":sim.map_height if sim!=null else 0,"battle_field_width":field.size.x if sim!=null and is_instance_valid(field) else 0,"battle_field_height":field.size.y if sim!=null and is_instance_valid(field) else 0,"battle_details":battle_details,"observation":observation_mode,"detail_dock_visible":is_instance_valid(battle_dock) and battle_dock.is_visible_in_tree(),"mini_hud_visible":is_instance_valid(battle_mini) and battle_mini.is_visible_in_tree()}))
 
 func training_screen(id: String,message: String="") -> void:
 	var rows=activity_rows("TU LUYỆN • "+str(reg.ninjas[id].name_vi),message,func():growth_detail(id))
@@ -2654,7 +2656,7 @@ func receive_art(raw: String) -> void:
 			notice="Đã nạp review cục bộ; không tải lên mạng."
 	settings_screen(notice)
 
-func start_art_review() -> void:
+func start_art_review(static_batch:bool=false) -> void:
 	review_mode=true
 	battle_stage={"name_vi":"6v6 • Benchmark sprite chi tiết • không thưởng"}
 	sim=Combat.new()
@@ -2688,6 +2690,10 @@ func start_art_review() -> void:
 			left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
 			right=["NIN-016","NIN-041","NIN-042","NIN-070","NIN-068","NIN-043"]
 			battle_stage.name_vi="Benchmark mỹ thuật • 9 danh tính / 12 ninja"
+	if static_batch:
+		left=["NIN-007","NIN-009","NIN-010","NIN-014","NIN-024","NIN-025"]
+		right=["NIN-061","NIN-062","NIN-066","NIN-067","NIN-069","NIN-083"]
+		battle_stage.name_vi="6v6 • Sprite tĩnh tạm thời • không thưởng"
 	var review_slots=[0,1,2,6,7,8] if "--style-benchmark" in OS.get_cmdline_user_args() else [0,1,2,3,4,5]
 	for i in range(6):
 		var id=left[i]
