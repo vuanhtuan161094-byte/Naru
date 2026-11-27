@@ -673,6 +673,16 @@ func advance_clock(reg,now: int) -> bool:
 	if not Village.advance(reg,state,now):return false
 	return commit_change(prior,rng.state)
 
+func upgrade_world_project(id:String) -> bool:
+	var prior=state.duplicate(true)
+	if not preload("res://game/world_economy_projects.gd").upgrade(state,id):return false
+	return commit_change(prior,rng.state)
+
+func develop_territory(reg,id:String) -> bool:
+	var prior=state.duplicate(true)
+	if not preload("res://game/world_economy_projects.gd").develop(reg,state,id):return false
+	return commit_change(prior,rng.state)
+
 func construct(reg,id: String) -> bool:
 	var prior=state.duplicate(true)
 	if not Village.construct(reg,state,id):return false

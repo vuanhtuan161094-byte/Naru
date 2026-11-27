@@ -163,6 +163,7 @@ func load_all() -> bool:
 	if pool_data is Dictionary:affix_pools=pool_data
 	environments=indexed("res://data/d4/environment.json")
 	if gear_templates.size()!=128 or skill_policies.size()!=1008: errors.append("Missing progression data")
+	load_world_gear_variants()
 	if ninjas.size()!=144 or skills.size()!=1152 or stages.size()!=120:
 		errors.append("Expected 144/1152/120")
 	for row in ninjas.values():
@@ -180,6 +181,25 @@ func load_all() -> bool:
 	load_synergy_reference()
 	load_depth_reference()
 	return errors.is_empty()
+
+func load_world_gear_variants() -> void:
+	var rows=read_json("res://data/world-content/equipment_variants.json")
+	if not rows is Array or rows.size()!=32:errors.append("Missing world gear variants");return
+	for row in rows:
+		var id=str(row.id)
+		if gear_templates.has(id) or not gear_templates.has(row.parent_id) or not affix_pools.has(row.affix_pool):errors.append("Invalid gear variant "+id);continue
+		var base=gear_templates[row.parent_id].duplicate(true)
+		var valid=true
+		for item in row.inputs:
+			if not resources.has(item.resource_id) or int(item.qty)<=0:valid=false
+		if not valid:errors.append("Invalid gear variant inputs "+id);continue
+		base.id=id
+		base.name_vi=row.name_vi
+		base.affix_pool=row.affix_pool
+		base.craft.inputs=row.inputs.duplicate(true)
+		base.variant_parent=row.parent_id
+		base.status="DEV_AUTHORED_CONTENT"
+		gear_templates[id]=base
 
 func load_p2() -> void:
 	for letter in ["A","B","C","D","E","F","G","H","I"]:

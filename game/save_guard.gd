@@ -133,11 +133,14 @@ static func nested_valid(reg,s: Dictionary) -> bool:
 	for id in s.get("missions",{}):
 		var m=s.missions[id]
 		if not s.owned.has(id) or not m is Dictionary or not reg.resources.has(m.get("resource","")) or not integer(m.get("remaining")) or not integer(m.get("qty"),1):return false
+	if not s.get("world_projects",{}) is Dictionary:return false
+	for id in s.get("world_projects",{}):
+		if preload("res://game/world_economy_projects.gd").find(id).is_empty() or not integer(s.world_projects[id],0,5):return false
 	for id in s.get("territory_states",{}):
 		var t=s.territory_states[id]
 		if not reg.territories.has(id) or not t is Dictionary:return false
 		if t.get("owner")!=null and not reg.factions.has(t.owner):return false
-		if not integer(t.get("visits",0)):return false
+		if not integer(t.get("visits",0)) or not integer(t.get("development",0),0,5):return false
 	for id in s.get("faction_states",{}):
 		var faction=s.faction_states[id]
 		if not reg.factions.has(id) or not faction is Dictionary or not faction.get("stock") is Dictionary:return false

@@ -160,7 +160,7 @@ func batch_checks(reg) -> void:
 	for id in reg.gear_templates:
 		var item=store.craft_gear(reg,id)
 		if item!="":crafted+=1
-	check(crafted==128,"P3 128 gear craft transactions fixture")
+	check(crafted==reg.gear_templates.size() and crafted==160,"P3 160 gear craft transactions fixture")
 	var n=store.state.owned["NIN-001"]
 	n.shards=10000
 	for i in range(14):check(store.raise_star(reg,"NIN-001"),"P3 star step "+str(i))

@@ -1,0 +1,578 @@
+[
+  {
+    "id": "EQV-001-1",
+    "parent_id": "EQ-001-Q3",
+    "name_vi": "Băng trán tuần tra",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-105",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-065",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-001-2",
+    "parent_id": "EQ-001-Q5",
+    "name_vi": "Băng trán Anbu",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-063",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-106",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-002-1",
+    "parent_id": "EQ-002-Q3",
+    "name_vi": "Giáp hộ vệ",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-107",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-109",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-002-2",
+    "parent_id": "EQ-002-Q5",
+    "name_vi": "Giáp chiến trường",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-107",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-108",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-003-1",
+    "parent_id": "EQ-003-Q3",
+    "name_vi": "Găng tay võ thuật",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-067",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-065",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-003-2",
+    "parent_id": "EQ-003-Q5",
+    "name_vi": "Găng tay dẫn chakra",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-106",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-108",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-004-1",
+    "parent_id": "EQ-004-Q3",
+    "name_vi": "Quần hành quân",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-066",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-072",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-004-2",
+    "parent_id": "EQ-004-Q5",
+    "name_vi": "Quần ninja tinh nhuệ",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-108",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-106",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-005-1",
+    "parent_id": "EQ-005-Q3",
+    "name_vi": "Dép trinh sát",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-067",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-072",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-005-2",
+    "parent_id": "EQ-005-Q5",
+    "name_vi": "Giày vượt địa hình",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-108",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-063",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-006-1",
+    "parent_id": "EQ-006-Q3",
+    "name_vi": "Kunai chiến thuật",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-101",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-105",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-006-2",
+    "parent_id": "EQ-006-Q5",
+    "name_vi": "Kiếm chakra",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-103",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-104",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-007-1",
+    "parent_id": "EQ-007-Q3",
+    "name_vi": "Shuriken cân bằng",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-102",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-105",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-007-2",
+    "parent_id": "EQ-007-Q5",
+    "name_vi": "Nhẫn cụ dây thép",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-102",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-106",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-008-1",
+    "parent_id": "EQ-008-Q3",
+    "name_vi": "Áo choàng tuần tra",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-066",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-072",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-008-2",
+    "parent_id": "EQ-008-Q5",
+    "name_vi": "Áo choàng kết giới",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-108",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-106",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-009-1",
+    "parent_id": "EQ-009-Q3",
+    "name_vi": "Dây chuyền linh lực",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-060",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-089",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-009-2",
+    "parent_id": "EQ-009-Q5",
+    "name_vi": "Dây chuyền tinh thể",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-061",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-085",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-010-1",
+    "parent_id": "EQ-010-Q3",
+    "name_vi": "Nhẫn trinh sát",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-060",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-089",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-010-2",
+    "parent_id": "EQ-010-Q5",
+    "name_vi": "Nhẫn chiến đấu",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-061",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-087",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-011-1",
+    "parent_id": "EQ-011-Q3",
+    "name_vi": "Nhẫn hộ thân",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-060",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-084",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-011-2",
+    "parent_id": "EQ-011-Q5",
+    "name_vi": "Nhẫn tụ chakra",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-062",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-085",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-012-1",
+    "parent_id": "EQ-012-Q3",
+    "name_vi": "Bùa bình an",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-092",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-012-2",
+    "parent_id": "EQ-012-Q5",
+    "name_vi": "Bùa kết giới",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-095",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-097",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-013-1",
+    "parent_id": "EQ-013-Q3",
+    "name_vi": "Cuộn thuật thực chiến",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-092",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-013-2",
+    "parent_id": "EQ-013-Q5",
+    "name_vi": "Bí quyển nghiên cứu",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-100",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-086",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-014-1",
+    "parent_id": "EQ-014-Q3",
+    "name_vi": "Lõi chakra tuần hoàn",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-084",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-093",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-014-2",
+    "parent_id": "EQ-014-Q5",
+    "name_vi": "Lõi chakra cô đặc",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-088",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-095",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-015-1",
+    "parent_id": "EQ-015-Q3",
+    "name_vi": "Phù kiềm chế",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-093",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-094",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-015-2",
+    "parent_id": "EQ-015-Q5",
+    "name_vi": "Phù khóa chakra",
+    "affix_pool": "offense",
+    "inputs": [
+      {
+        "resource_id": "RES-098",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-100",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-016-1",
+    "parent_id": "EQ-016-Q3",
+    "name_vi": "Bảo vật hộ vệ",
+    "affix_pool": "defense",
+    "inputs": [
+      {
+        "resource_id": "RES-095",
+        "qty": 3
+      },
+      {
+        "resource_id": "RES-093",
+        "qty": 2
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  },
+  {
+    "id": "EQV-016-2",
+    "parent_id": "EQ-016-Q5",
+    "name_vi": "Bảo vật tinh hoa",
+    "affix_pool": "utility",
+    "inputs": [
+      {
+        "resource_id": "RES-111",
+        "qty": 5
+      },
+      {
+        "resource_id": "RES-100",
+        "qty": 3
+      }
+    ],
+    "source": "DEV_AUTHORED_CONTENT",
+    "balance_owner": "Luna: inherited primary stat and value, affix pools remain shared"
+  }
+]

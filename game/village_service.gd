@@ -1,5 +1,6 @@
 extends RefCounted
 const Content=preload("res://game/content_service.gd")
+const Projects=preload("res://game/world_economy_projects.gd")
 const Rewards=preload("res://game/world_rewards.gd")
 const World=preload("res://game/world_service.gd")
 static func ensure(reg,s: Dictionary) -> void:
@@ -67,7 +68,7 @@ static func construct(reg,s: Dictionary,id: String) -> bool:
 	var def=reg.buildings[id]
 	var cost=quote.cost
 	debit(s,cost)
-	var builder=trait_bonus(s,"BLD-001","speed")
+	var builder=trait_bonus(s,"BLD-001","speed")+Projects.bonus(s,"build_speed")
 	b.upgrade={"target":int(b.level)+1,"remaining":mini(604800,ceili(float(def.base_duration_s)*pow(1.10,maxi(0,int(b.level)-1))/(1+builder)))}
 	return true
 
@@ -116,7 +117,7 @@ static func recipe_cost(recipe: Dictionary) -> Dictionary:
 
 static func effective_recipe_cost(s: Dictionary,recipe: Dictionary) -> Dictionary:
 	var cost=recipe_cost(recipe)
-	var savings=trait_bonus(s,str(recipe.building_id),"economy")
+	var savings=minf(0.45,trait_bonus(s,str(recipe.building_id),"economy")+Projects.bonus(s,"economy"))
 	for resource in cost:cost[resource]=maxi(1,ceili(float(cost[resource])*(1-savings)))
 	return cost
 
@@ -138,7 +139,7 @@ static func recipe_quote(s: Dictionary,recipe: Dictionary) -> Dictionary:
 	return {"cost":cost,"missing":missing,"affordable":affordable,"idle":idle,"can_replace":can_replace,"staffed":staffed,"level":int(b.level),"required_level":int(recipe.min_building_level),"ready":setup_ready and affordable>0,"setup_ready":setup_ready,"reason":reason,"seconds":batch_seconds(s,recipe),"yield":batch_yield(s,recipe)}
 
 static func batch_seconds(s:Dictionary,recipe:Dictionary) -> int:
-	return maxi(1,ceili(float(recipe.duration_s)/(1+trait_bonus(s,str(recipe.building_id),"speed"))))
+	return maxi(1,ceili(float(recipe.duration_s)/(1+trait_bonus(s,str(recipe.building_id),"speed")+Projects.bonus(s,"craft_speed"))))
 
 static func batch_yield(s:Dictionary,recipe:Dictionary) -> int:
 	var id=str(recipe.building_id)
@@ -209,7 +210,9 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 	var owned_resources={}
 	for territory in reg.territories.values():
 		if s.territory_states[territory.id].owner=="FAC-009":
-			for resource in territory.resources:owned_resources[resource.resource_id]=true
+			for resource in territory.resources:
+				var development=clampi(int(s.territory_states[territory.id].get("development",0)),0,5)
+				owned_resources[resource.resource_id]=maxi(int(owned_resources.get(resource.resource_id,0)),development)
 	for source in reg.supply:
 		var id=str(source.building_id)
 		var kind=str(source.source_type)
@@ -218,7 +221,8 @@ static func step(reg,s: Dictionary,dt: int) -> void:
 		if kind=="territory" and not owned_resources.has(source.resource_id):continue
 		var resource_id=str(source.resource_id)
 		var elapsed=int(s.supply_clock.get(resource_id,0))+dt
-		var period=maxi(1,ceili(float(source.period_seconds)/(1+trait_bonus(s,id,"speed"))))
+		var regional=0.05*int(owned_resources.get(resource_id,0)) if kind=="territory" else 0.0
+		var period=maxi(1,ceili(float(source.period_seconds)/(1+trait_bonus(s,id,"speed")+Projects.bonus(s,"supply_speed")+regional)))
 		while elapsed>=period:
 			var b=s.building_states[id]
 			var qty=maxi(1,floori(float(source.base_yield)*(1+0.07*(int(b.level)-1))*(1+0.025*worker_level(s,id))*(1+trait_bonus(s,id,"yield"))*float(b.condition)))

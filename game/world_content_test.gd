@@ -17,10 +17,15 @@ func _initialize() -> void:
 	var s=store.state
 	var ok=true
 	var ids={}
-	for row in Catalog.EXPEDITIONS:
+	for row in Catalog.all():
 		ok=check(not ids.has(row.id) and reg.stages.has(row.stage) and reg.resources.has(row.resource),"catalog reference") and ok
 		ids[row.id]=true
-	ok=check(ids.size()==12 and store.begin_expedition(reg,"EXP-01").is_empty(),"locked expedition") and ok
+	ok=check(ids.size()==24 and store.begin_expedition(reg,"EXP-01").is_empty(),"locked expedition") and ok
+	for variant in Catalog.VARIANTS:
+		var stage_variant=Catalog.battle_stage(reg,variant.id)
+		ok=check(stage_variant.enemy_ids!=reg.stages[stage_variant.id].enemy_ids and stage_variant.enemy_ids.size()<=6 and reg.bosses[stage_variant.boss_id].primary_enemy_id in stage_variant.enemy_ids,"variant roster "+variant.id) and ok
+		for npc in stage_variant.enemy_ids:ok=check(reg.npcs.has(npc),"variant npc") and ok
+	ok=check(reg.gear_templates.size()==160,"32 gear variants") and ok
 	for profession in reg.professions:
 		var focus=Village.profession_focus(profession)
 		ok=check(not focus.is_empty() and is_equal_approx(Village.profession_bonus(profession,focus,100,true),0.04) and Village.profession_bonus(profession,focus,100,false)==0.0,"profession focus "+profession) and ok
@@ -59,7 +64,21 @@ func _initialize() -> void:
 	for key in cost:ok=check(int(s.inventory[key])==int(start_stock[key])-int(cost[key]),"one reserve") and ok
 	ok=check(store.cancel_production(building),"cancel") and ok
 	for key in cost:ok=check(int(s.inventory[key])==int(start_stock[key]),"refund") and ok
+	var Projects=preload("res://game/world_economy_projects.gd")
+	s.building_states["BLD-028"].level=1
+	s.inventory["RES-068"]=100
+	s.inventory["RES-086"]=100
+	s.inventory["RES-001"]=10000
+	var duration=Village.batch_seconds(s,recipe)
+	ok=check(store.upgrade_world_project("TECH-01") and Village.batch_seconds(s,recipe)<duration,"research actual speed") and ok
+	ok=check(not store.upgrade_world_project("TECH-01"),"research level gate") and ok
+	s.building_states["BLD-001"].level=3
+	s.inventory["RES-056"]=100
+	s.inventory["RES-057"]=100
+	var home=str(s.world_location)
+	ok=check(store.develop_territory(reg,home) and int(s.territory_states[home].development)==1,"territory investment") and ok
+	ok=check(not store.develop_territory(reg,home),"territory HQ gate") and ok
 	ok=check(Guard.valid(reg,s),"save compatibility") and ok
 	if not ok:quit(1);return
-	print("NARU_WORLD_CONTENT_PASS 12 catalog refs, cooldown settlement and target queue; no simulated combat claim")
+	print("NARU_WORLD_CONTENT_PASS 24 catalog refs, cooldown settlement and target queue; no simulated combat claim")
 	quit()

@@ -73,6 +73,7 @@ const World=preload("res://game/world_service.gd")
 const Stats=preload("res://game/stats_service.gd")
 const Content=preload("res://game/content_service.gd")
 const WorldCatalog=preload("res://game/world_content_catalog.gd")
+const Projects=preload("res://game/world_economy_projects.gd")
 var quest_filter=0
 var gear_filter_quality=0
 var gear_filter_query=""
@@ -458,7 +459,7 @@ func start_battle(stage: Dictionary,expedition:String="") -> void:
 		return
 	review_mode=false
 	selected_stage=stage.id
-	battle_stage=stage
+	battle_stage=stage if expedition.is_empty() else WorldCatalog.battle_stage(reg,expedition)
 	event_id=id
 	last_reward=(stage.repeat_rewards if store.state.cleared.has(stage.id) else stage.first_clear_rewards).duplicate(true)
 	if not expedition.is_empty():
@@ -467,7 +468,7 @@ func start_battle(stage: Dictionary,expedition:String="") -> void:
 	last_growth={}
 	for ninja in store.state.team:last_growth[ninja]=store.state.owned[ninja].permanent.duplicate(true)
 	sim=Combat.new()
-	sim.setup(reg,store.state,stage,int(store.state.battle_seq))
+	sim.setup(reg,store.state,battle_stage,int(store.state.battle_seq))
 	battle_view()
 
 func battle_view() -> void:
@@ -917,9 +918,11 @@ func finish(won: bool) -> void:
 	root.add_child(row)
 	button(row,"Về làng",menu)
 	button(row,"Cốt truyện",campaign)
-	button(row,"Đánh lại",func():start_battle(battle_stage))
+	var expedition=str(store.state.ledger.get(event_id,{}).get("expedition",""))
+	if expedition.is_empty():button(row,"Đánh lại",func():start_battle(reg.stages[battle_stage.id]))
+	else:button(row,"Về phó bản",expedition_screen)
 	var next_id="STG-%03d" % (int(battle_stage.id.right(3))+1)
-	if won and ok and reg.stages.has(next_id):button(row,"Ải tiếp theo",func():start_battle(reg.stages[next_id]))
+	if expedition.is_empty() and won and ok and reg.stages.has(next_id):button(row,"Ải tiếp theo",func():start_battle(reg.stages[next_id]))
 
 func skill_screen(id: String,message: String="") -> void:
 	open_screen("skill_tree")
@@ -1140,6 +1143,7 @@ func building_screen(id: String,message: String="") -> void:
 	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	scroll.add_child(rows)
 	if int(b.level)==0:return
+	if id=="BLD-028":button(rows,"Nghiên cứu công nghệ",world_projects_screen)
 	button(rows,"Điều phối tất cả công trình",production_center)
 	label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi)+" • Nhân lực "+str(Village.workers(store.state,id).size())+"/"+str(1+floori(float(int(b.level)-1)/10.0)),16)
 	label(rows,"Nhân lực (không ảnh hưởng đội chiến đấu)",20)
@@ -1241,6 +1245,13 @@ func world_screen(message: String="") -> void:
 	label(side,str(d.name_vi) if t.discovered or not route.is_empty() else "Lãnh địa chưa khám phá",23)
 	label(side,"Sở hữu: "+("Trung lập" if t.owner==null else str(reg.factions[t.owner].name_vi))+" • Phòng thủ "+str(d.defense_rating) if t.discovered else "Chưa khám phá",17)
 	if t.discovered:label(side,"Đã thăm "+str(t.visits)+" lần • "+str(d.country),16)
+	if t.discovered and t.owner=="FAC-009":
+		var development=Projects.territory_quote(reg,store.state,selected_territory)
+		var costs=[]
+		for resource in development.cost:costs.append(str(reg.resources[resource].name_vi)+" "+str(development.cost[resource]))
+		var upgrade=button(side,"Phát triển vùng %d/5 • +%.0f%% tốc độ khai thác" % [int(development.level),100*float(development.bonus)],func():world_screen("Đã đầu tư" if store.develop_territory(reg,selected_territory) else "Chưa đủ điều kiện"))
+		upgrade.disabled=not development.ready
+		upgrade.tooltip_text=", ".join(PackedStringArray(costs))+" • "+str(development.reason)
 	if not store.state.travel.is_empty():label(side,"Đang đi • "+str(store.state.travel.remaining)+" giây",16)
 	elif selected_territory!=store.state.world_location and not route.is_empty():button(side,"Đi "+str(route.seconds)+" giây",func():world_screen("Đã xuất phát" if store.travel_to(reg,selected_territory) else "Không thể đi"))
 	if selected_territory==store.state.world_location and t.owner!="FAC-009":
@@ -1333,10 +1344,10 @@ func activities_screen() -> void:
 
 func expedition_screen() -> void:
 	open_screen("expeditions")
-	label(root,"PHÓ BẢN TÁI CHIẾN • 12",26)
-	label(root,"Đánh lại Boss đã vượt, nhận thưởng chuyên biệt. Dùng trận chiến thật và thể lực; hồi riêng sau mỗi lần quyết toán.",16)
+	label(root,"PHÓ BẢN • 24",26)
+	label(root,"12 tái chiến + 12 biến thể đội hình / địa hình. Thể lực và hồi chiêu riêng.",16)
 	var rows=scroll_rows(root)
-	for item in WorldCatalog.EXPEDITIONS:
+	for item in WorldCatalog.all():
 		var id=str(item.id)
 		var q=WorldCatalog.quote(reg,store.state,id)
 		if q.is_empty():continue
@@ -1345,7 +1356,10 @@ func expedition_screen() -> void:
 		var desc=label(line,"%s • %s ×%d • %d thể lực | %s" % [item.name,reg.resources[item.resource].name_vi,int(item.qty),int(q.stamina),q.reason if not q.ready else "Sẵn sàng"],16)
 		desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		desc.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-		desc.tooltip_text=desc.text+" • "+str(reg.stages[item.stage].name_vi)
+		var encounter=WorldCatalog.battle_stage(reg,id)
+		var enemies=[]
+		for npc_id in encounter.enemy_ids:enemies.append(str(reg.ninjas[reg.npcs[npc_id].template_ninja_id].name_vi))
+		desc.tooltip_text=desc.text+" • "+", ".join(PackedStringArray(enemies))+" • "+str(encounter.get("map_profile","standard"))
 		var enter=button(line,"Vào phó bản",func():start_battle(reg.stages[item.stage],id))
 		enter.disabled=not q.ready
 		button(line,"Vật phẩm",func():resource_detail(str(item.resource)))
@@ -1367,6 +1381,27 @@ func resource_trials_screen() -> void:
 		button(line,"Chọn / đấu",func():resource_detail(id))
 	button(root,"Hoạt động",activities_screen)
 
+func world_projects_screen(message:String="") -> void:
+	open_screen("production")
+	label(root,"PHÒNG NGHIÊN CỨU • 4 công nghệ",26)
+	label(root,"Mỗi công nghệ 5 cấp; tốn nguyên liệu và yêu cầu cấp phòng nghiên cứu. "+message,16)
+	var rows=scroll_rows(root)
+	for project in Projects.PROJECTS:
+		var id=str(project.id)
+		var q=Projects.quote(store.state,id)
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var l=label(line,"%s • %d/5 • +%.0f%% | %s" % [project.name,int(q.level),100*float(q.bonus),project.description],16)
+		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		l.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+		var cost=[]
+		for resource in q.cost:cost.append(str(reg.resources[resource].name_vi)+" "+str(q.cost[resource]))
+		var upgrade=button(line,"Nghiên cứu",func():world_projects_screen("Đã nâng cấp" if store.upgrade_world_project(id) else "Chưa đủ điều kiện"))
+		upgrade.disabled=not q.ready
+		upgrade.tooltip_text=", ".join(PackedStringArray(cost))+" • "+str(q.reason)
+	button(root,"Phòng nghiên cứu",func():building_screen("BLD-028"))
+	button(root,"Điều phối sản xuất",production_center)
+
 func production_center(message:String="") -> void:
 	open_screen("production")
 	label(root,"ĐIỀU PHỐI SẢN XUẤT",26)
@@ -1374,6 +1409,7 @@ func production_center(message:String="") -> void:
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
 	button(nav,"Tất cả công thức",craft_screen)
+	button(nav,"Nghiên cứu",world_projects_screen)
 	button(nav,"Kho tài nguyên",inventory_screen)
 	button(nav,"Làm mới",production_center)
 	var rows=scroll_rows(root)
@@ -1804,7 +1840,7 @@ func cost_text(inputs: Array) -> String:
 func craft_screen(message: String="") -> void:
 	var rows=activity_rows("CHẾ TẠO • 63 công thức",message,func():home_screen())
 	screen_id="craft"
-	button(rows,"128 mẫu trang bị",gear_craft_screen)
+	button(rows,str(reg.gear_templates.size())+" mẫu trang bị",gear_craft_screen)
 	for id in reg.recipes:
 		var recipe=reg.recipes[id]
 		var line=HBoxContainer.new()
