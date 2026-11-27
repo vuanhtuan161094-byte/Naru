@@ -82,6 +82,9 @@ var gear_filter_ready=false
 var expedition_filter=0
 var production_filter=0
 var expedition_query=""
+var wiki_category=0
+var wiki_query=""
+var wiki_page=0
 
 func _ready() -> void:
 	theme=make_theme()
@@ -145,6 +148,7 @@ func _ready() -> void:
 				else:
 					push_warning("NARU_CHARACTER_OVERLAY_HOLD "+overlay_id+": "+art.error)
 		if OS.has_feature("web"):JavaScriptBridge.eval("window.naruPublicArtCount="+str(art.textures.size()))
+	if not ("--smoke" in OS.get_cmdline_user_args()) and not (OS.has_feature("web") and bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has(\'qa\')"))):art.restore_overlays()
 	if not reg.load_all():
 		label(root,"Lỗi dữ liệu: "+str(reg.errors))
 		return
@@ -1996,7 +2000,7 @@ func open_screen(id: String) -> void:
 		private_backdrop.texture=art.texture("environment/village_plate.png") if id=="home" else null
 	header.visible=id!="battle"
 	navigation.visible=id!="battle"
-	var section={"home":"Làng","building":"Làng","craft":"Làng","production":"Làng","activities":"Nhiệm vụ","expeditions":"Cốt truyện","tower":"Cốt truyện","resource_trials":"Nhiệm vụ","weekly":"Nhiệm vụ","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Bố trận","recruit":"Chiêu mộ","campaign":"Cốt truyện","world":"Nhẫn giới","diplomacy":"Nhẫn giới","inventory":"Kho","quest":"Nhiệm vụ","beasts":"Vĩ Thú","settings":"Cài đặt"}
+	var section={"wiki":"Cài đặt","home":"Làng","building":"Làng","craft":"Làng","production":"Làng","activities":"Nhiệm vụ","expeditions":"Cốt truyện","tower":"Cốt truyện","resource_trials":"Nhiệm vụ","weekly":"Nhiệm vụ","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Bố trận","recruit":"Chiêu mộ","campaign":"Cốt truyện","world":"Nhẫn giới","diplomacy":"Nhẫn giới","inventory":"Kho","quest":"Nhiệm vụ","beasts":"Vĩ Thú","settings":"Cài đặt"}
 	for item in navigation.get_children():
 		if item is Button:
 			item.self_modulate=Color("#f8d493") if item.text==section.get(id,"") else Color.WHITE
@@ -2044,6 +2048,7 @@ func home_screen(message: String="") -> void:
 		play.tooltip_text="Vào "+next_id+" • "+str(next_stage.stamina_cost)+" thể lực"
 	button(guidance,"Đội hình",roster)
 	button(guidance,"Nhận thưởng chờ",reward_inbox_screen)
+	button(guidance,"Bách khoa",wiki_screen)
 	var grid=GridContainer.new()
 	grid.columns=6
 	grid.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -2232,60 +2237,202 @@ func world_point(map: Control,id: String) -> Vector2:
 		max_y=maxf(max_y,float(d.coords[1]))
 	return Vector2(25+float(c[0])/max_x*(map.size.x-55),25+float(c[1])/max_y*(map.size.y-55))
 
+# Read-only encyclopedia: current registry, not copied combat data.
+func wiki_database() -> Dictionary:
+	match wiki_category:
+		0:return reg.ninjas
+		1:return reg.names
+		2:return reg.passives
+		3:return reg.gear_templates
+		4:return reg.resources
+		5:return reg.buildings
+		6:return reg.recipes
+		7:return reg.stages
+		8:return reg.territories
+	return {}
+
+func wiki_name(id:String,row:Dictionary) -> String:
+	if wiki_category==6:return str(reg.resources[row.output.resource_id].name_vi)
+	if wiki_category==1 and reg.p2_design.has(id) and reg.p2_skills.has(id):return str(reg.p2_design[id].name_vi)
+	return str(row.get("name_vi",id))
+
+func wiki_screen() -> void:
+	open_screen("wiki")
+	label(root,"BÁCH KHOA NHẪN GIỚI",28)
+	label(root,"Dữ liệu game hiện tại • thông số thiết kế DEV, không phải canon.",16)
+	var controls=HBoxContainer.new()
+	root.add_child(controls)
+	var category=OptionButton.new()
+	for title_text in ["Ninja","Nhẫn thuật","Nội tại","Trang bị","Tài nguyên","Công trình","Sản xuất","Cốt truyện","Lãnh địa"]:category.add_item(title_text)
+	category.select(wiki_category)
+	controls.add_child(category)
+	var query=LineEdit.new()
+	query.placeholder_text="Tìm theo tên hoặc mã"
+	query.text=wiki_query
+	query.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	controls.add_child(query)
+	button(controls,"Tìm",func():wiki_query=query.text;wiki_page=0;wiki_screen())
+	category.item_selected.connect(func(index):wiki_category=index;wiki_query="";wiki_page=0;wiki_screen())
+	var db=wiki_database()
+	var ids=[]
+	for key in db:
+		if wiki_query.is_empty() or (wiki_name(key,db[key])+" "+str(key)).to_lower().contains(wiki_query.to_lower()):ids.append(key)
+	var last=maxi(0,ceili(float(ids.size())/20.0)-1)
+	wiki_page=clampi(wiki_page,0,last)
+	var pagination=HBoxContainer.new()
+	root.add_child(pagination)
+	var prev=button(pagination,"Trang trước",func():wiki_page-=1;wiki_screen())
+	prev.disabled=wiki_page==0
+	label(pagination,"%d mục / %d • Trang %d/%d" % [ids.size(),db.size(),wiki_page+1,last+1],16)
+	var next=button(pagination,"Trang sau",func():wiki_page+=1;wiki_screen())
+	next.disabled=wiki_page>=last
+	var rows=scroll_rows(root)
+	for key in ids.slice(wiki_page*20,(wiki_page+1)*20):
+		var panel=PanelContainer.new()
+		panel.add_theme_stylebox_override("panel",combat_panel(Color("#202b32"),Color("#4b6264"),6))
+		rows.add_child(panel)
+		var line=HBoxContainer.new()
+		panel.add_child(line)
+		var name_label=label(line,wiki_name(key,db[key])+" • "+str(key),17)
+		name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		name_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+		button(line,"Xem",func():wiki_detail(str(key)))
+	if ids.is_empty():label(rows,"Không tìm thấy mục phù hợp.",18)
+	button(root,"Về làng",menu)
+
+func wiki_cost(rows:Node,items:Array,title_text:String) -> void:
+	label(rows,title_text,18)
+	for item in items:
+		var resource_id=str(item.resource_id)
+		var line=HBoxContainer.new()
+		rows.add_child(line)
+		var l=label(line,str(reg.resources[resource_id].name_vi)+" × "+str(item.qty),16)
+		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		button(line,"Nguồn",func():resource_detail(resource_id))
+
+func wiki_detail(id:String) -> void:
+	var db=wiki_database()
+	if not db.has(id):wiki_screen();return
+	var row=db[id]
+	open_screen("wiki")
+	label(root,wiki_name(id,row)+" • "+id,26)
+	var rows=scroll_rows(root)
+	match wiki_category:
+		0:
+			label(rows,"Thời kỳ: "+str(row.era)+" • Phẩm "+str(row.initial_quality)+" • "+str(row.role_hint),18)
+			label(rows,"Nguyên tố: "+", ".join(PackedStringArray(row.chakra_elements)),16)
+			var names_vi={"vitality":"Thể chất","strength":"Sức mạnh","spirit":"Tinh thần","agility":"Nhanh nhẹn","intellect":"Trí tuệ","potential":"Tiềm năng"}
+			for stat in row.base_stats:label(rows,str(names_vi.get(stat,stat))+" • Nền "+str(row.base_stats[stat])+" • Tăng/cấp "+str(row.level_growth.get(stat,0)),16)
+			label(rows,"Thiên phú: "+str(row.fixed_talent),16)
+			for skill_id in row.skills+row.additional_skill_ids:
+				var name_text=str(reg.p2_design[skill_id].name_vi) if reg.p2_skills.has(skill_id) else str(reg.names[skill_id].name_vi)
+				button(rows,name_text,func():wiki_category=1;wiki_detail(skill_id))
+			if store.state.owned.has(id):button(rows,"Ninja đang sở hữu",func():growth_detail(id))
+		1:
+			var skill=reg.p2_skills.get(id,reg.skills.get(id,{}))
+			if not skill.is_empty():
+				label(rows,"Thông số gốc trước tăng giai/cấp và nhánh tiến hóa",17)
+				label(rows,"Loại "+str(skill.get("kind",""))+" • Nguyên tố "+str(skill.get("element",""))+" • "+str(skill.get("shape","")),16)
+				label(rows,"Chakra "+str(skill.get("chakra",0))+" • Hồi chiêu "+str(skill.get("cooldown_s",0))+"s • Tầm "+str(skill.get("range_m",0))+"m",16)
+				for effect in skill.get("effects",[]):
+					label(rows,str(effect.get("type",""))+" • "+str(effect.get("coefficient",""))+" • "+str(effect.get("status","")),16)
+				label(rows,"Adapter: "+("P2" if reg.p2_skills.has(id) else "D4 fallback • "+str(reg.p2_fallback.get(id,""))),15)
+		2:
+			label(rows,"Nội tại P1 tham chiếu",18)
+			label(rows,"Kích hoạt: "+str(row.trigger.event)+" • Đối tượng: "+str(row.target.scope),16)
+			label(rows,"Hiệu ứng: "+str(row.effect.key)+" • Mở tại cảnh "+str(row.unlock.realm),16)
+			label(rows,"Nội tại đang hoàn thiện; xem cấu hình hiện tại trong Cài đặt.",16)
+		3:
+			label(rows,"Giai "+str(row.quality)+" • Vị trí "+str(row.slot_id)+" • "+str(row.base_stat)+" +"+str(row.base_value),18)
+			label(rows,"Nhóm thuộc tính phụ: "+str(row.affix_pool)+" • Ô khảm "+str(row.socket_count),16)
+			wiki_cost(rows,row.craft.inputs,"Nguyên liệu chế tạo")
+			button(rows,"Mở xưởng rèn",gear_craft_screen)
+		4:
+			label(rows,"Kho "+str(store.state.inventory.get(id,0))+" • Giá cơ sở "+str(row.base_price_ryo)+" Ryo",18)
+			button(rows,"Nguồn thu thập và công dụng",func():resource_detail(id))
+		5:
+			label(rows,"Tổng bộ yêu cầu "+str(row.unlock_hq)+" • Cấp tối đa "+str(row.max_level)+" • Hiện tại "+str(Village.level(store.state,id)),18)
+			label(rows,"Chức năng: "+str(row.function),16)
+			for recipe_id in row.recipe_ids:button(rows,str(reg.resources[reg.recipes[recipe_id].output.resource_id].name_vi),func():wiki_category=6;wiki_detail(recipe_id))
+			button(rows,"Quản lý công trình",func():building_screen(id))
+		6:
+			label(rows,str(reg.buildings[row.building_id].name_vi)+" • Cấp xưởng "+str(row.min_building_level)+" • "+str(row.duration_s)+" giây/mẻ • "+str(row.output.qty)+" sản phẩm",18)
+			wiki_cost(rows,row.inputs,"Nguyên liệu gốc (chưa tính tiết kiệm nghề)")
+			button(rows,"Mở xưởng",func():building_screen(row.building_id))
+		7:
+			label(rows,"Thể lực "+str(row.stamina_cost)+" • Tiền đề "+str(row.requires)+" • "+("Đã vượt" if store.state.cleared.has(id) else "Chưa vượt"),18)
+			for npc_id in row.enemy_ids:
+				var npc=reg.npcs[npc_id]
+				label(rows,str(reg.ninjas[npc.template_ninja_id].name_vi)+" • Cấp "+str(npc.level),16)
+			wiki_cost(rows,row.first_clear_rewards,"Thưởng lần đầu")
+			wiki_cost(rows,row.repeat_rewards,"Thưởng tái chiến")
+			button(rows,"Cốt truyện",campaign)
+		8:
+			var t=store.state.territory_states[id]
+			if t.discovered:
+				label(rows,str(row.country)+" • "+("Trung lập" if t.owner==null else str(reg.factions[t.owner].name_vi)),18)
+				for resource in row.resources:label(rows,str(reg.resources[resource.resource_id].name_vi)+" • "+str(resource.yield_per_tick),16)
+			else:label(rows,"Chưa khám phá • cần đi đến lãnh địa.",16)
+			button(rows,"Bản đồ",func():selected_territory=id;world_screen())
+	button(root,"Danh sách bách khoa",wiki_screen)
+
 func settings_screen(message: String="") -> void:
 	open_screen("settings")
 	label(root,"CÀI ĐẶT",28)
-	label(root,message,18)
+	label(root,message,16)
+	var rows=scroll_rows(root)
+	button(rows,"Bách khoa",wiki_screen)
 	var sound=CheckButton.new()
 	sound.text="Âm thanh"
 	sound.button_pressed=bool(store.state.get("settings",{}).get("sound",true))
-	root.add_child(sound)
+	rows.add_child(sound)
 	sound.toggled.connect(func(on):change_setting("sound",on))
 	var cutin=CheckButton.new()
 	cutin.text="Hiệu ứng chiêu / cut-in (chuẩn bị tích hợp mỹ thuật)"
 	cutin.button_pressed=bool(store.state.get("settings",{}).get("cutin",true))
-	root.add_child(cutin)
+	rows.add_child(cutin)
 	cutin.toggled.connect(func(on):change_setting("cutin",on))
 	var effect=CheckButton.new()
 	effect.text="Hiển thị đường đạn DEV"
 	effect.button_pressed=bool(store.state.get("settings",{}).get("projectiles",true))
-	root.add_child(effect)
+	rows.add_child(effect)
 	effect.toggled.connect(func(on):change_setting("projectiles",on))
 	var passive_toggle=CheckButton.new()
 	passive_toggle.text="Thử nghiệm nội tại P1–P6 (DEV, mặc định tắt)"
 	passive_toggle.button_pressed=bool(store.state.get("settings",{}).get("passives_dev",false))
-	root.add_child(passive_toggle)
+	rows.add_child(passive_toggle)
 	passive_toggle.toggled.connect(func(on):change_setting("passives_dev",on))
 	var pilot_toggle=CheckButton.new()
 	pilot_toggle.text="P2 pilot (12 ninja; cần bật P1)"
 	pilot_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_pilot_dev",false))
-	root.add_child(pilot_toggle)
+	rows.add_child(pilot_toggle)
 	pilot_toggle.toggled.connect(func(on):change_setting("passive_pilot_dev",on))
 	var mixed_toggle=CheckButton.new()
 	mixed_toggle.text="P2 hỗn hợp DEV (mặc định): giữ P1 cho ninja ngoài pilot"
 	mixed_toggle.button_pressed=bool(store.state.get("settings",{}).get("passive_mixed_dev",true))
-	root.add_child(mixed_toggle)
+	rows.add_child(mixed_toggle)
 	mixed_toggle.toggled.connect(func(on):change_setting("passive_mixed_dev",on))
 	var depth_toggle=CheckButton.new()
 	depth_toggle.text="Tăng trưởng V5 và hàng đợi tuyệt kỹ DEV"
 	depth_toggle.button_pressed=bool(store.state.get("settings",{}).get("depth_v5_dev",true))
-	root.add_child(depth_toggle)
+	rows.add_child(depth_toggle)
 	depth_toggle.toggled.connect(func(on):change_setting("depth_v5_dev",on))
-	button(root,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
-	button(root,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen(store.load_notice if store.load_notice!="" else "Đã tải"))
-	button(root,"Xuất / nhập save",save_screen)
+	button(rows,"Lưu game",func():settings_screen("Đã lưu" if store.save_now() else "Lỗi lưu"))
+	button(rows,"Tải lại save",func():store.load_or_new(reg);apply_settings();settings_screen(store.load_notice if store.load_notice!="" else "Đã tải"))
+	button(rows,"Xuất / nhập save",save_screen)
 	var art_row=HBoxContainer.new()
-	root.add_child(art_row)
+	rows.add_child(art_row)
 	button(art_row,"Nạp gói mỹ thuật riêng",choose_review_art)
+	label(rows,"Bộ Naruto/Sasuke đủ 14 clip / 84 cel được lưu cục bộ sau kiểm tra.",15)
 	button(art_row,"Trận thử mỹ thuật 6v6",start_art_review)
 	button(art_row,"Bật / tắt review",func():
 		art.enabled=not art.enabled and not art.textures.is_empty()
 		art.source_label="REVIEW RIÊNG • "+str(art.textures.size())+" ảnh" if art.enabled else "DEV • tắt gói review"
 		settings_screen(art.source_label))
 	var coverage=art.product_coverage()
-	label(root,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
-	label(root,"Animation metadata: %d • Bộ đủ 14 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
-	label(root,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
+	label(rows,art.source_label+" • %d sprite / %d chân dung • %d/30 công trình" % [coverage.characters,coverage.portraits,coverage.buildings],15)
+	label(rows,"Animation metadata: %d • Bộ đủ 14 clip: %d • VFX review: %d sheet (HOLD)" % [coverage.clips,coverage.complete_kits,coverage.vfx_sheets],15)
+	label(rows,"Game offline; bản Web dùng dữ liệu trình duyệt. Hãy sao lưu JSON trước khi đổi bản.",17)
 
 func change_setting(key: String,value: bool) -> void:
 	if not store.state.has("settings"):store.state.settings={}
@@ -2388,7 +2535,15 @@ func receive_art(raw: String) -> void:
 		ok=art.import_character_overlay(raw,str(parsed.character_id))
 	else:
 		ok=art.import_text(raw)
-	settings_screen(("Đã nạp bộ nhân vật cho phiên chơi; không ghi đè gói nền." if is_overlay else "Đã nạp review cục bộ; không tải lên mạng.") if ok else art.error)
+	var notice=art.error
+	if ok:
+		if is_overlay:
+			var saved=art.save_overlay(raw,str(parsed.character_id))
+			notice="Đã nạp và lưu sprite cục bộ." if saved else "Đã nạp sprite cho phiên chơi."
+		else:
+			art.restore_overlays()
+			notice="Đã nạp review cục bộ; không tải lên mạng."
+	settings_screen(notice)
 
 func start_art_review() -> void:
 	review_mode=true

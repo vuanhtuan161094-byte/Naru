@@ -164,6 +164,33 @@ func import_character_overlay(raw:String,id:String) -> bool:
 	source_label="MỸ THUẬT TÍCH HỢP • "+str(textures.size())+" ảnh"
 	return true
 
+func overlay_path(id:String) -> String:
+	return "user://naru_overlay_"+id+".json" if id in ["NIN-001","NIN-002"] else ""
+
+func save_overlay(raw:String,id:String) -> bool:
+	var path=overlay_path(id)
+	if path.is_empty() or not character_overlays.has(id):return false
+	var file=FileAccess.open(path+".tmp",FileAccess.WRITE)
+	if file==null:return false
+	file.store_string(raw)
+	file.flush()
+	file.close()
+	if FileAccess.file_exists(path):
+		if FileAccess.file_exists(path+".bak"):DirAccess.remove_absolute(path+".bak")
+		if DirAccess.rename_absolute(path,path+".bak")!=OK:return false
+	if DirAccess.rename_absolute(path+".tmp",path)!=OK:
+		if FileAccess.file_exists(path+".bak"):DirAccess.rename_absolute(path+".bak",path)
+		return false
+	return true
+
+func restore_overlays() -> void:
+	if not enabled:return
+	for id in ["NIN-001","NIN-002"]:
+		var path=overlay_path(id)
+		for candidate in [path,path+".bak"]:
+			if FileAccess.file_exists(candidate) and import_character_overlay(FileAccess.get_file_as_string(candidate),id):break
+	error=""
+
 func restore() -> void:
 	for path in [PATH,PATH+".bak"]:
 		if FileAccess.file_exists(path) and import_text(FileAccess.get_file_as_string(path),false):return
