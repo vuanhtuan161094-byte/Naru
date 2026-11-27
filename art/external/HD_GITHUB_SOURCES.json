@@ -1,0 +1,4528 @@
+{
+  "schema": 1,
+  "mobile": {
+    "repo": "Tkkkkkk993/NarutoMobileBilibili",
+    "sha": "bb253316747cbf6d59e9c24b72b99b3810587c64",
+    "groups": [
+      "骨架（已由TK拼好）",
+      "神秘面具男",
+      "暴怒带土"
+    ],
+    "files": [
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0001@80_A.png",
+        "bytes": 45627,
+        "blob": "66e40d9b33ccf382cb20ccf728a5542e5be37c3a"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0002@80_A.png",
+        "bytes": 42862,
+        "blob": "4b445df18051667aad5b0f82e5a4b2df45eec6ff"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0003@80_A.png",
+        "bytes": 43920,
+        "blob": "35e46ad71572d06fae29e1791c37a0e789283e71"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0006@80_A.png",
+        "bytes": 40944,
+        "blob": "9a2150e339cad5de1b12a9604f22fee7a434006d"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0007@80_A.png",
+        "bytes": 41479,
+        "blob": "f94c228e1e0037a2ea1b765d5b1cf481e65d59bb"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0018@80_A.png",
+        "bytes": 43565,
+        "blob": "ebae7240ca2e4c680f606f2f3f6d4e9b5fd33d0b"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0021@80_A.png",
+        "bytes": 43263,
+        "blob": "519f0395467754999fed6f7213a4bf273f81c61e"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA01/2obvbod1_attackA01_2obvbod1_attackA01_0025@80_A.png",
+        "bytes": 45615,
+        "blob": "87882669b50031904da40f7ecc00da91dac8f907"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0004@80_A.png",
+        "bytes": 45071,
+        "blob": "8f2b32f287cd239c653496ff0aaa97e092c633a9"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0007@80_A.png",
+        "bytes": 49973,
+        "blob": "0143182c176d40f36194a6b15a905981c497e04d"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0009@80_A.png",
+        "bytes": 52456,
+        "blob": "8fb5c54c65b73603225d0bb4145d352b8e5b7df6"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0010@80_A.png",
+        "bytes": 52202,
+        "blob": "5c581350d6373d774f05534157838fc3ed367c37"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0018@80_A.png",
+        "bytes": 53024,
+        "blob": "40d240c92681247052e8c45e53f4a212d87426af"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0021@80_A.png",
+        "bytes": 52288,
+        "blob": "672037df4ced7a64cacc2b20f7354d9298285a71"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0022@80_A.png",
+        "bytes": 51911,
+        "blob": "d75b69821e77801675810fd43c7a54e6cc4a24e2"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA02/2obvbod1_attackA02_2obvbod1_attackA02_0024@80_A.png",
+        "bytes": 49145,
+        "blob": "085c7932e6ef85bc80a8680b17cf427a91961143"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0002@80_A.png",
+        "bytes": 43585,
+        "blob": "7d42d6cf4d95ec60a284fddf63e846cdd03575b0"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0004@80_A.png",
+        "bytes": 44987,
+        "blob": "c3b39a1268db6027b0dab2430f4878d4e96fcd13"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0006@80_A.png",
+        "bytes": 43121,
+        "blob": "397bc5a22cec571131479a225a576191c04fc744"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0008@80_A.png",
+        "bytes": 44484,
+        "blob": "3f401b0c43c1566b8c74e07bbc5a12ba9612a136"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0011@80_A.png",
+        "bytes": 46652,
+        "blob": "69ae9a57c2865a0d929ddf97f2e30e15a538c93d"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0014@80_A.png",
+        "bytes": 43251,
+        "blob": "48b4b5eed216d23c2139e02fcf1762cbd5fc999e"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0015@80_A.png",
+        "bytes": 41108,
+        "blob": "379b8456ef1b97c57638c13e544092655405319c"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0016@80_A.png",
+        "bytes": 41384,
+        "blob": "3d2d92d2e91319c3a1feba1734de8d3f82cf790e"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0018@80_A.png",
+        "bytes": 43620,
+        "blob": "b84563f68ca8b70316625add832c27bcbaead921"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0023@80_A.png",
+        "bytes": 44526,
+        "blob": "00c6542b8e38d15ac7ea083590f87f3dde86a2e7"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0026@80_A.png",
+        "bytes": 44027,
+        "blob": "eb5f51945fc37b8565c06c2069efdee041f39f8e"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0028@80_A.png",
+        "bytes": 43443,
+        "blob": "79ef356408a92d8a2a7bdc5380aa10fb4b788fa7"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0036@80_A.png",
+        "bytes": 40884,
+        "blob": "6ab1ffd5a051ceec1cde5a4a4129bc3c1aca1205"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0040@80_A.png",
+        "bytes": 42763,
+        "blob": "3954835e4e71487e8ffe181df1f253f9e8dca37f"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA03/2obvbod1_attackA03_2obvbod1_attackA03_0042@80_A.png",
+        "bytes": 43859,
+        "blob": "9da3855ed6f1155e873c9257e01f3cff9093e3f6"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0003@80_A.png",
+        "bytes": 44487,
+        "blob": "9132d986b934867f7a50cba106120cafe8b1230e"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0005@80_A.png",
+        "bytes": 42212,
+        "blob": "95f869d9b9981cae1a0aba3eae2fceb5ef9cc207"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0006@80_A.png",
+        "bytes": 41954,
+        "blob": "3fff3e3bb62b592d2e79511aedb443021e413342"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0019@80_A.png",
+        "bytes": 45858,
+        "blob": "b68d896e67f049e003189f206ea8916396f87ea1"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0029@80_A.png",
+        "bytes": 42815,
+        "blob": "3eaf60ed3c5987ab5036b9574c2532af89261dd1"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0033@80_A.png",
+        "bytes": 43567,
+        "blob": "02479ce50a690ee57ad4260650657823ba594dbd"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0035@80_A.png",
+        "bytes": 43815,
+        "blob": "7ef8b5afa38b359c5364869f5111cdd38ae62ae4"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0042@80_A.png",
+        "bytes": 41741,
+        "blob": "e808a4e3d572baf64d4f8f90bb24932dc1634f99"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0047@80_A.png",
+        "bytes": 42898,
+        "blob": "adfc9586a586b4247d7a8131ba5d33833580147b"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0049@80_A.png",
+        "bytes": 42569,
+        "blob": "83f6d4083611b9f94d8216fe02686fbc4d8ffbcb"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0052@80_A.png",
+        "bytes": 42987,
+        "blob": "afd7b6b65cecc8c81443944ca18dbf3c082d6995"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0056@80_A.png",
+        "bytes": 42382,
+        "blob": "83517ba766c6480b9022c80ff79b4b1dd8b15476"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0064@80_A.png",
+        "bytes": 43182,
+        "blob": "6bb1115c91b63e3538cf8ce7f0adb71d3d19b58b"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0066@80_A.png",
+        "bytes": 42400,
+        "blob": "a9ca950716285bd0b0255be8d1cbca5103468e90"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0068@80_A.png",
+        "bytes": 42284,
+        "blob": "9ebb4a1013f70a1e6add04f1e38e2761d24486bf"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0070@80_A.png",
+        "bytes": 42714,
+        "blob": "7d4448e12f20df5607e3d7ae48b32deec57391f9"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0071@80_A.png",
+        "bytes": 42060,
+        "blob": "d6afa0c8b1b00f11b3bb20e23cd18aaf5e20d775"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attackA04/2obvbod1_attackA04_2obvbod1_attackA04_0074@80_A.png",
+        "bytes": 41270,
+        "blob": "a8c8158600d40a5398b02b353320459ea6cec25f"
+      },
+      {
+        "path": "assets/entities/暴怒带土/attack_boxes.json",
+        "bytes": 6169,
+        "blob": "95bd9d164356322b90c99d20de3d4e10374bc1a7"
+      },
+      {
+        "path": "assets/entities/暴怒带土/entity.tscn",
+        "bytes": 16686,
+        "blob": "912b3cc1a01716d290d959e7eed02e777c6b14fa"
+      },
+      {
+        "path": "assets/entities/暴怒带土/entity_frame_data.json",
+        "bytes": 56685,
+        "blob": "735921f9df8883ae9ec2736d7efbeb3fee6e3810"
+      },
+      {
+        "path": "assets/entities/暴怒带土/idle/2obvbod1_idle_2obvbod1_idle_0001_A.png",
+        "bytes": 53221,
+        "blob": "4e652d16d13e8588a3457b7927a14ca13aacd794"
+      },
+      {
+        "path": "assets/entities/暴怒带土/idle/2obvbod1_idle_2obvbod1_idle_0006_A.png",
+        "bytes": 53170,
+        "blob": "9a4687863bf3140565e1eb6d45e243ddca959294"
+      },
+      {
+        "path": "assets/entities/暴怒带土/idle/2obvbod1_idle_2obvbod1_idle_0011_A.png",
+        "bytes": 53172,
+        "blob": "69fd002c41d4b76155dcc794bd5459f0cd00b4fd"
+      },
+      {
+        "path": "assets/entities/暴怒带土/idle/2obvbod1_idle_2obvbod1_idle_0016_A.png",
+        "bytes": 53232,
+        "blob": "f7fe33bf4e7e0abe7bfd2c0c0c2c047978e38d1b"
+      },
+      {
+        "path": "assets/entities/暴怒带土/idle/2obvbod1_idle_2obvbod1_idle_0021_A.png",
+        "bytes": 52751,
+        "blob": "4589a3d2118444d814c39ed9b2b3718ba5a342b4"
+      },
+      {
+        "path": "assets/entities/暴怒带土/main.tres",
+        "bytes": 322,
+        "blob": "6be9f6a466d071eedc5fc11ac5a6a81e75be350f"
+      },
+      {
+        "path": "assets/entities/暴怒带土/portraits/icon_battle.png",
+        "bytes": 61931,
+        "blob": "5796d0db05116a0aa5bff78fd91cce09a28319dc"
+      },
+      {
+        "path": "assets/entities/暴怒带土/portraits/icon_idle.png",
+        "bytes": 14079,
+        "blob": "3fa32460015f0950c9aec99dca9dd535a7a4a774"
+      },
+      {
+        "path": "assets/entities/暴怒带土/portraits/idle.png",
+        "bytes": 164761,
+        "blob": "083a48de33aee6c8ac6893d9a3adee9f21f73fc7"
+      },
+      {
+        "path": "assets/entities/暴怒带土/run/2obvbod1_run_2obvbod1_run_0000_A.png",
+        "bytes": 49582,
+        "blob": "908e8985b3e185f88bd898f25107720517f2b2b1"
+      },
+      {
+        "path": "assets/entities/暴怒带土/run/2obvbod1_run_2obvbod1_run_0002_A.png",
+        "bytes": 47888,
+        "blob": "19f5e608fb618f5de2f4ea5781eaadea0fcf4323"
+      },
+      {
+        "path": "assets/entities/暴怒带土/run/2obvbod1_run_2obvbod1_run_0007@80_A.png",
+        "bytes": 43369,
+        "blob": "199f22e4fe4f2e8cc0e413a8c8c2fcacf4ae02bb"
+      },
+      {
+        "path": "assets/entities/暴怒带土/run/2obvbod1_run_2obvbod1_run_0008_A.png",
+        "bytes": 50476,
+        "blob": "07af623a02c9716fb74b618cf019a2aacc846c6c"
+      },
+      {
+        "path": "assets/entities/暴怒带土/run/2obvbod1_run_2obvbod1_run_0010_A.png",
+        "bytes": 51835,
+        "blob": "1d7eb29b607b63c534ddf611ac7a288733948268"
+      },
+      {
+        "path": "assets/entities/暴怒带土/run/2obvbod1_run_2obvbod1_run_0012_A.png",
+        "bytes": 49560,
+        "blob": "8fd767a41bfad28d220aa308f3be06e2158bc38a"
+      },
+      {
+        "path": "assets/entities/暴怒带土/run/2obvbod1_run_2obvbod1_run_0015_A.png",
+        "bytes": 48478,
+        "blob": "de5a1af50a71b4ac32d30924771f4e417e714c8f"
+      },
+      {
+        "path": "assets/entities/暴怒带土/scroll/2obvbod1_tongyong_2obvbod1_tongyong_0025@80_A.png",
+        "bytes": 40707,
+        "blob": "c0a053ba7d096571a9e8330156de310aea2b07cd"
+      },
+      {
+        "path": "assets/entities/暴怒带土/scroll/2obvbod1_tongyong_2obvbod1_tongyong_0026@80_A.png",
+        "bytes": 40503,
+        "blob": "ea555ae09bc225d3412cf2506519abc0f99fa569"
+      },
+      {
+        "path": "assets/entities/暴怒带土/summon/2obvbod1_tongyong_2obvbod1_tongyong_0025@80_A.png",
+        "bytes": 40707,
+        "blob": "c0a053ba7d096571a9e8330156de310aea2b07cd"
+      },
+      {
+        "path": "assets/entities/暴怒带土/summon/2obvbod1_tongyong_2obvbod1_tongyong_0026@80_A.png",
+        "bytes": 40503,
+        "blob": "ea555ae09bc225d3412cf2506519abc0f99fa569"
+      },
+      {
+        "path": "assets/entities/暴怒带土/visual_script.json",
+        "bytes": 26369,
+        "blob": "5c579ec12bd0e89e346401763c8aef297c456606"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_13.png",
+        "bytes": 21013,
+        "blob": "1ec8b84193e241a3085d47e4d9328e03e750834f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_14.png",
+        "bytes": 28707,
+        "blob": "362f6c4faa184723b4a04a6965009b4d85ff42d6"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_16.png",
+        "bytes": 44852,
+        "blob": "7eb6e8ee3696374be23ab7f63b55354a836edd4d"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_29.png",
+        "bytes": 33513,
+        "blob": "f7a4badbe976dc6c01cf98a230d445f911305afb"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_31.png",
+        "bytes": 25422,
+        "blob": "24f8d2641d93fed181224b642cdf1f4bac1636bd"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_34.png",
+        "bytes": 23360,
+        "blob": "ad1c18e3655459e8c16df68a066ea9434745ac39"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_40.png",
+        "bytes": 25912,
+        "blob": "2c38eb539daef33e001d5d2661e23fcbb4b9923a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/1a/frame_50.png",
+        "bytes": 17390,
+        "blob": "ee22011b5baac0334328419eb903af12a2d70523"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_0.png",
+        "bytes": 24948,
+        "blob": "1b84a18d1c6595aef85eee199fe2ecf0dc024707"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_14.png",
+        "bytes": 32920,
+        "blob": "91be16be8951536ad62945bb29e53aedebfd578d"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_16.png",
+        "bytes": 34387,
+        "blob": "08c7d7bfd46c67f024591795216e3dc6665100da"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_18.png",
+        "bytes": 34202,
+        "blob": "c4e51c9e3562f499efb61e169dc9cf15b7167186"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_19.png",
+        "bytes": 22617,
+        "blob": "85db46184e05674cab08b4980ff024e0ad784155"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_28.png",
+        "bytes": 21577,
+        "blob": "f591d66da9b351351e0d8b444809a1abebb1cb9c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_3.png",
+        "bytes": 33660,
+        "blob": "232a02d04b77b7c6914fe77fd8ec9356479cfe29"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_31.png",
+        "bytes": 29546,
+        "blob": "aa383b35936b8e6017812caadc30cfc44289f558"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_34.png",
+        "bytes": 18957,
+        "blob": "cab224c3f35d49d39950379ff5d7aa8762fdb732"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_5.png",
+        "bytes": 35094,
+        "blob": "e10385158160297aba49da8fc07bdb2da531440e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/2a/attack2/frame_7.png",
+        "bytes": 26032,
+        "blob": "11d20b0889126a916e0895520814d8ea8828d53b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/3a/frame_10.png",
+        "bytes": 28215,
+        "blob": "1bda475043aee58d5507309f24f42ce4425a71ad"
+      },
+      {
+        "path": "assets/entities/神秘面具男/3a/frame_13.png",
+        "bytes": 21023,
+        "blob": "f33b48afcb661720cff72cd7a4d123a3cdaec07d"
+      },
+      {
+        "path": "assets/entities/神秘面具男/3a/frame_18.png",
+        "bytes": 18731,
+        "blob": "dd1e2abb9c4feddb8b626f761929ab91087e5312"
+      },
+      {
+        "path": "assets/entities/神秘面具男/3a/frame_19.png",
+        "bytes": 18305,
+        "blob": "fccb3987791e8d57b858bd07c059d3652f05851c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/3a/frame_25.png",
+        "bytes": 18346,
+        "blob": "38cfb2c05f138e77871df74a09b224b64fdb3dc4"
+      },
+      {
+        "path": "assets/entities/神秘面具男/3a/frame_28.png",
+        "bytes": 16688,
+        "blob": "a40cc383d86be630ac0329a8529a5474844af967"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_10.png",
+        "bytes": 25729,
+        "blob": "842327d01cf032b197c42cc027d3e543fcd576fa"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_14.png",
+        "bytes": 23247,
+        "blob": "462e7dd1672eecf0d9941f8a065d797c210ea136"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_16.png",
+        "bytes": 23294,
+        "blob": "d02ef5afe2fab94f8dbe7923de4f8eab9753056e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_18.png",
+        "bytes": 25823,
+        "blob": "ebec5009e6af84c8fabbee39261cb7a715d02068"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_20.png",
+        "bytes": 23947,
+        "blob": "dfee9a5d73333f3bd0a6fc598a79782ee7dc3e64"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_24.png",
+        "bytes": 23766,
+        "blob": "0039afae13399a3c3fb86b9de033f09e1de8cf37"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_36.png",
+        "bytes": 24210,
+        "blob": "1371a47c16a6f37d036d6755725ec3c85e4c1610"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_37.png",
+        "bytes": 22870,
+        "blob": "20c8a98a98eb5e029658ebfffcb2cf15b5745260"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_41.png",
+        "bytes": 26173,
+        "blob": "27f0851207e9aecc500c569568e3f951f7e857e7"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_48.png",
+        "bytes": 28206,
+        "blob": "f89d3df5ab026e9e3f3c21fb2f48443af5c646cd"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_5.png",
+        "bytes": 16415,
+        "blob": "1a20a5a11344ce94ebfe8aad19e9b1a7fd6d34f2"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_53.png",
+        "bytes": 20941,
+        "blob": "5e736b04970c16f5ec3d8e131d000793b99099b9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/4a/frame_58.png",
+        "bytes": 17742,
+        "blob": "54cc7bbfa801e9c2ad6ddfcfc23da1cfbbaae19b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/attack_boxes.json",
+        "bytes": 15128,
+        "blob": "d38af77542c4388609d37cf70914ded38a919db4"
+      },
+      {
+        "path": "assets/entities/神秘面具男/effect_bindings.json",
+        "bytes": 10185,
+        "blob": "ae23d091f409b54516f3897970c0bb0eb003b49b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/entity.tscn",
+        "bytes": 33237,
+        "blob": "2a04c6f3d903b98b5af831353ce6013d4dd0488c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/entity_frame_data.json",
+        "bytes": 203454,
+        "blob": "abc773d204c39b5219b66a8167346f9efde40e53"
+      },
+      {
+        "path": "assets/entities/神秘面具男/hhqzs.png",
+        "bytes": 24547,
+        "blob": "c1e57bf312a1a6e6a02fffa221164b1b5f55931b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/info_points.json",
+        "bytes": 445,
+        "blob": "4f4d3e582fd76454a5f08412d6076a50624b506e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/jw.png",
+        "bytes": 26343,
+        "blob": "31220ec0218b2ec01dced55604a8386a0b18490b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/main.tres",
+        "bytes": 396,
+        "blob": "a427292e0470d3709d683b2170ee75bcb44aed6e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/portraits/icon_battle.png",
+        "bytes": 39402,
+        "blob": "7e76973edecc92dd07c2f5baf1d21027fbf4a145"
+      },
+      {
+        "path": "assets/entities/神秘面具男/portraits/icon_idle.png",
+        "bytes": 12401,
+        "blob": "a546c62cdff9111649be3fad3b2d0194d3909f57"
+      },
+      {
+        "path": "assets/entities/神秘面具男/portraits/idle.png",
+        "bytes": 107826,
+        "blob": "e9ef5fad8dc440e15b8898ad7f9d2ae9cdcb0825"
+      },
+      {
+        "path": "assets/entities/神秘面具男/preload_resources.json",
+        "bytes": 702,
+        "blob": "c4e0b7772704893ba1f028c397fd71013d11ae4c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/tsbz.png",
+        "bytes": 27068,
+        "blob": "e10e0b537ff2e6d1a69f77a07912c73d47419421"
+      },
+      {
+        "path": "assets/entities/神秘面具男/visual_script.json",
+        "bytes": 110831,
+        "blob": "c76c918834a2c29f86f2673d76326f9d741989ae"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能滑平a/frame_3.png",
+        "bytes": 18458,
+        "blob": "0949962df6b4e857260771235067ef85730e19c9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能滑平a/frame_4.png",
+        "bytes": 15151,
+        "blob": "3940b39c1cbb67a3e7786f4ef7d21851808dbe7f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能滑平a/frame_5.png",
+        "bytes": 23061,
+        "blob": "2645e34e97e00052292eaaff31f5fbe2e7befeae"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_11.png",
+        "bytes": 19301,
+        "blob": "7c5f0c1f116e6560e1c376b4ffa5e1cbaefabbb9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_16.png",
+        "bytes": 20236,
+        "blob": "dc33c6bc8e9e452a45deaba097d6e5f21e14766b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_19.png",
+        "bytes": 20587,
+        "blob": "48532544b7b049abd39a7cfa2116087245f03a37"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_20.png",
+        "bytes": 23132,
+        "blob": "b23aa8a6726e7c2576c95c7babf6abcbc907d48d"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_21.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_3.png",
+        "bytes": 18976,
+        "blob": "9ea60e4756e2c3df17322478cf421cbba0e4ed65"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_32.png",
+        "bytes": 19962,
+        "blob": "8012b7ec20f24bf9ed454e5d1367c234a08e2840"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_36.png",
+        "bytes": 18154,
+        "blob": "dc9a757bcfe610f2b099e4029c1b1848a6f000c4"
+      },
+      {
+        "path": "assets/entities/神秘面具男/一技能豪火球之术/frame_7.png",
+        "bytes": 20449,
+        "blob": "50df42ba764087dbb1b83f6405b71efc537a37d7"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_1.png",
+        "bytes": 22233,
+        "blob": "9dceee6cb7f599c49494a9b516e50c3f2b84c9f6"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_11.png",
+        "bytes": 44830,
+        "blob": "1e6ac5b0ba369ac3105a690fa1dfe7c6c76d746a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_14.png",
+        "bytes": 43843,
+        "blob": "10f46a39af0f7ec74d3f8a3b4c4348f55b0cd098"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_17.png",
+        "bytes": 41478,
+        "blob": "819380ddad2b0ddf94fc7d2cbf1a150980a83771"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_20.png",
+        "bytes": 43258,
+        "blob": "5c4c21514f429df522ea6898abe6b414703d7dcd"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_28.png",
+        "bytes": 21395,
+        "blob": "ac49b247205364e78da1f7b7ae1ee570c27b6309"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_33.png",
+        "bytes": 19195,
+        "blob": "f01d3cccff47d49fd995e96bca48f0b94bad80ee"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_35.png",
+        "bytes": 17892,
+        "blob": "41284d28890e5e7fa6a2e1618c8edf6766cb537e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_4.png",
+        "bytes": 40840,
+        "blob": "38693ad13e48f7af102417598ab2666d6006bd6c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_43.png",
+        "bytes": 17726,
+        "blob": "b76f9645152c0a28b5275f56dcaf42f3e7a1ced9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_6.png",
+        "bytes": 43497,
+        "blob": "2e6c7a7c80e77b4fecc4b36e5c824e251aafe020"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能天锁爆葬/frame_8.png",
+        "bytes": 43536,
+        "blob": "712c16e493b83cbb22f0241f25d16169c62d3695"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能滑平a/frame_3.png",
+        "bytes": 43720,
+        "blob": "cbed9a5e90e3d7ffa24db7e6c4a14cb5758e28eb"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能滑平a/frame_4.png",
+        "bytes": 34545,
+        "blob": "e1fc4c30c39663667ef9b71950100dbc323ca541"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能滑平a/frame_5.png",
+        "bytes": 19910,
+        "blob": "d85b0282193d3b2d5e461abdb828dde4c4b23813"
+      },
+      {
+        "path": "assets/entities/神秘面具男/二技能滑平a/frame_7.png",
+        "bytes": 20253,
+        "blob": "8154b6878325d37b89e9f234ea3f9468f459cf47"
+      },
+      {
+        "path": "assets/entities/神秘面具男/僵直1/frame_41.png",
+        "bytes": 17825,
+        "blob": "0174234cf27763788269b0aa00f935df39a86ef8"
+      },
+      {
+        "path": "assets/entities/神秘面具男/僵直2/frame_14.png",
+        "bytes": 17087,
+        "blob": "bdb729134cdc34c56c458c1127d57951c5a94ac5"
+      },
+      {
+        "path": "assets/entities/神秘面具男/僵直3/frame_12.png",
+        "bytes": 20415,
+        "blob": "0c11ff9170de15ce0539df8526349c3355e1e008"
+      },
+      {
+        "path": "assets/entities/神秘面具男/僵直4/frame_15.png",
+        "bytes": 27495,
+        "blob": "97580fa44b814245da547d49070f19b343f1d431"
+      },
+      {
+        "path": "assets/entities/神秘面具男/入场/frame_0.png",
+        "bytes": 17389,
+        "blob": "4072966e7999b8bcfeb427a41452b0a3c640e46c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/击飞1/frame_24.png",
+        "bytes": 19084,
+        "blob": "2259ff504f0c9bb5b7d5d2891b239fc0dbfaff2e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/击飞2/frame_3.png",
+        "bytes": 20257,
+        "blob": "d60515fa45fd5421e982a01aa8d9f6280a654a5f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/击飞EDED/frame_46.png",
+        "bytes": 21022,
+        "blob": "e21233d00705bf2969d7d46235d4add38c8cb23d"
+      },
+      {
+        "path": "assets/entities/神秘面具男/击飞ed2/frame_43.png",
+        "bytes": 17916,
+        "blob": "a6084759ef7bd423133d91cf900771a28ac0dade"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_10.png",
+        "bytes": 19114,
+        "blob": "ca148088d13acb49afc1875bf3c93025e3b233ab"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_17.png",
+        "bytes": 18422,
+        "blob": "85d457e58d32a5ea315fbb2f80b3fcadb9af9c2f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_20.png",
+        "bytes": 16911,
+        "blob": "de8b99b96cfc78a118c00c5a2ff73556bfe2fdb8"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_26.png",
+        "bytes": 12771,
+        "blob": "84c39b22e7b61f52f288af9c0924b42b302f32cf"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_3.png",
+        "bytes": 16289,
+        "blob": "8e1181935901f07da41ea7dd592a18d28aabac5f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_35.png",
+        "bytes": 15580,
+        "blob": "663c27e6c856e5b13321d4ce61b927ee031fc910"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_38.png",
+        "bytes": 14871,
+        "blob": "b16974cf2011feb9a628118caddb190fca847fd2"
+      },
+      {
+        "path": "assets/entities/神秘面具男/奥义/frame_5.png",
+        "bytes": 15992,
+        "blob": "680f9076deef60fea0c185d0447ed634f2763fa9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取/frame_40.png",
+        "bytes": 15283,
+        "blob": "3e53c5879cd1d8fdff0272f5faddad8d9cc2bf16"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_0.png",
+        "bytes": 18976,
+        "blob": "9ea60e4756e2c3df17322478cf421cbba0e4ed65"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_12.png",
+        "bytes": 20584,
+        "blob": "a30740e4ab450fa5073c59196b6f7f9df3ceba52"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_14.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_16.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_18.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_2.png",
+        "bytes": 20449,
+        "blob": "50df42ba764087dbb1b83f6405b71efc537a37d7"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_20.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_22.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_24.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_26.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_28.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_30.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_32.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_34.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_36.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_38.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_4.png",
+        "bytes": 19303,
+        "blob": "6be3bbd684a65805f1e773f1809f36b4c76714e1"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_40.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_42.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_44.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_46.png",
+        "bytes": 23130,
+        "blob": "cc32199d38d101dbe75e32042fab4fa4685a7106"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_48.png",
+        "bytes": 22147,
+        "blob": "980fefa9997c5e2b9b734ab03ffd38e1f4c4a76e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_49.png",
+        "bytes": 19962,
+        "blob": "8012b7ec20f24bf9ed454e5d1367c234a08e2840"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_53.png",
+        "bytes": 18154,
+        "blob": "dc9a757bcfe610f2b099e4029c1b1848a6f000c4"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取一技能喷火/frame_6.png",
+        "bytes": 20235,
+        "blob": "d14814e8db167662a66f0b4afda2c1435c6e38f5"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_19.png",
+        "bytes": 17756,
+        "blob": "84a7cb78555b1b23f6a08735ddc14b00cb274141"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_25.png",
+        "bytes": 17373,
+        "blob": "58ac054c703937a14f6a9b07e94297a39ac026b0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_34.png",
+        "bytes": 27693,
+        "blob": "0365f83e7bff62d8700ea6c9c3f09755ebd84f45"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_36.png",
+        "bytes": 31187,
+        "blob": "930f596efe0efec9fa632557534ea96673dcc083"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_40.png",
+        "bytes": 30076,
+        "blob": "8444e77d6f7ea2192b54273242cc0cd5161afb0a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_42.png",
+        "bytes": 25840,
+        "blob": "440ffa57ed05571ed717fd2c806a319a790316e3"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_46.png",
+        "bytes": 18926,
+        "blob": "83796edf44392e51e507cdaff5ab53055af57422"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_48.png",
+        "bytes": 34913,
+        "blob": "4789d8fea1e143f0677cd9d0bf550e617a1666f8"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_49.png",
+        "bytes": 33601,
+        "blob": "8be46d805bf47855179ca7bf7a52c36404edd1ce"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_53.png",
+        "bytes": 40329,
+        "blob": "4efbbebe63e50704ced71824189a737ae9f155ef"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_57.png",
+        "bytes": 37276,
+        "blob": "69c08a949956a6f73737bdd51e3ffcc8bbe06e59"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_58.png",
+        "bytes": 43298,
+        "blob": "ef4cb27d39ff0b333b243aef890abcac75f22e4f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_59.png",
+        "bytes": 30160,
+        "blob": "1b7d820cb5b9f532e965380ad228b1068ef454fa"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_64.png",
+        "bytes": 29499,
+        "blob": "32673a41f45b3c24b6b28b26e888dfcd53649e97"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_67.png",
+        "bytes": 22747,
+        "blob": "0d55c89d83d005fb2f2b591e0879c7ec41de696f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_69.png",
+        "bytes": 30021,
+        "blob": "2c84d0b2cdd0c976428828cecd8c9fccdf2c7846"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_72.png",
+        "bytes": 32308,
+        "blob": "470546a9f25d066c5a6adc61bc8f9308569cf638"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_78.png",
+        "bytes": 24413,
+        "blob": "597a9a3800cafc2701625c5514c614372746dfba"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_82.png",
+        "bytes": 29257,
+        "blob": "6aa12c2b60199975f497dbe5d58cacb47a9e1286"
+      },
+      {
+        "path": "assets/entities/神秘面具男/抓取二技能乱挥/frame_87.png",
+        "bytes": 17778,
+        "blob": "a74bc615ae55eaeac1bab004421c92c5320e8b58"
+      },
+      {
+        "path": "assets/entities/神秘面具男/替身出场起身6fps不循环/frame_14.png",
+        "bytes": 18929,
+        "blob": "ba61f86f1aefd95974fee9ce93668b5af5e90881"
+      },
+      {
+        "path": "assets/entities/神秘面具男/替身出场起身6fps不循环/frame_7.png",
+        "bytes": 15046,
+        "blob": "b16e47c8b1e6fb9dad27dd7dbfd3108c2fbd66b0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/1.png",
+        "bytes": 18827,
+        "blob": "3a86be49b69aa1ac81dd1d5504121283d1198389"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/2.png",
+        "bytes": 18329,
+        "blob": "db28478bfc483c0f45c71a32cd10b0c30b3b9bd4"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/3.png",
+        "bytes": 20274,
+        "blob": "b7f0cb690314136bcefb425dd5e2c535b39f35e9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/4.png",
+        "bytes": 20119,
+        "blob": "72bcb8fc8425fac9763281de2d6991c54deb3fe4"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/5.png",
+        "bytes": 20550,
+        "blob": "230462f48f86268a726def4d01e1afc78dac0146"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/6.png",
+        "bytes": 20805,
+        "blob": "89081a915a5d3a10d280fb6d00be727cfa0a1fef"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/7.png",
+        "bytes": 19906,
+        "blob": "2e40db31b7857bc86120ba9e886e148081bba6bb"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/8.png",
+        "bytes": 18330,
+        "blob": "02c9e7fdbbe3f794a357f732c89ef1f73148ff7c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/attack_boxes.json",
+        "bytes": 4898,
+        "blob": "6b977d85f7947ac87381e2a2cd65f8cafa3424af"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/entity.tscn",
+        "bytes": 5433,
+        "blob": "2b6941a371cb3cb9698b3dfdb4800054eec7c5b1"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/entity_frame_data.json",
+        "bytes": 4582,
+        "blob": "7a42e04ba222fc16b455bd77c7d8e42a86e01d36"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/info_points.json",
+        "bytes": 146,
+        "blob": "c008267a6f6c3289007828074507d016ff9acf3a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/main.tres",
+        "bytes": 391,
+        "blob": "53826996a9892a558d993a999e4343550f0295e1"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球/visual_script.json",
+        "bytes": 4536,
+        "blob": "ca7f1988074b04281fc28f2807e3a947487029a2"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/1.png",
+        "bytes": 18137,
+        "blob": "09703964940f1092df48ef9ea2b6382ba62699bf"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/10.png",
+        "bytes": 15894,
+        "blob": "963180830571ba73dfa4c38e6eaf0d16a17965a8"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/11.png",
+        "bytes": 14312,
+        "blob": "57cc12604c5befbb94cb482210da904678995920"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/12.png",
+        "bytes": 13918,
+        "blob": "ef568469d252e98f5ef34be7643a3476e04941d0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/13.png",
+        "bytes": 12886,
+        "blob": "6b8e2f941bc883fdce1bafa1db5b298bb033e06a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/14.png",
+        "bytes": 12128,
+        "blob": "32f1e5782673bbce6839590001ba8edbda65ffba"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/15.png",
+        "bytes": 8796,
+        "blob": "1e7a1626e9eb9cc5db3b0f5acbcb78387ad178fa"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/2.png",
+        "bytes": 26186,
+        "blob": "2b25315ba498981a9e0366de2c0d47689be3626f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/3.png",
+        "bytes": 21094,
+        "blob": "61994261f4abead057aa8ca0f22b71d767ec26d9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/4.png",
+        "bytes": 23044,
+        "blob": "b5b06f2a703ca08a15ddfed1c7f0f4c68b4292d5"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/5.png",
+        "bytes": 24261,
+        "blob": "d37ded6be50e406e1d59df805679bfa54ec8ae3c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/6.png",
+        "bytes": 21893,
+        "blob": "3871cd59cdbaefc2d85b18143fcab3eb5922e17c"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/7.png",
+        "bytes": 19964,
+        "blob": "4094eeb4bdb98b598c7bad97f5aafc247d913cf0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/8.png",
+        "bytes": 18455,
+        "blob": "cf580f8434acf7ac946f9da8cb0030a0fe4416d0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/火球爆炸/9.png",
+        "bytes": 16970,
+        "blob": "e1a9c630fc094156c42d47f39f6545fd360f3dd5"
+      },
+      {
+        "path": "assets/entities/神秘面具男/站着/frame_0.png",
+        "bytes": 14489,
+        "blob": "be2487893446f56c1892ba29aa33465e529415d7"
+      },
+      {
+        "path": "assets/entities/神秘面具男/站着/frame_10.png",
+        "bytes": 14686,
+        "blob": "65f9ee5428abf6e0c6e9d2857860073f824d326e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/站着/frame_2.png",
+        "bytes": 14233,
+        "blob": "37304bb28c962a2fd7d91302b08426e528d55201"
+      },
+      {
+        "path": "assets/entities/神秘面具男/站着/frame_7.png",
+        "bytes": 14111,
+        "blob": "f6b1250f885926abbd58a4591e1b22990af0363e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779714484461.png",
+        "bytes": 404616,
+        "blob": "63f8b4f3ba2e20698661ccae18d6ca9ce9d91c00"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716226034.png",
+        "bytes": 405282,
+        "blob": "1904dc05594f42cd78d323fa3bbf564cd0d5655d"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716229638.png",
+        "bytes": 444274,
+        "blob": "720b6abbf7950e63930dcb1a20aea1b99421a4d7"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716233999.png",
+        "bytes": 298619,
+        "blob": "c285b7ef06530e7b2f11bb3cc931cbd7ecdc90d0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716237751.png",
+        "bytes": 241194,
+        "blob": "c8dcf8c37bc8a5e5026d0244cac04443940f42eb"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716240766.png",
+        "bytes": 207308,
+        "blob": "e6d253cb11e17d64fb808b6f48ae1b34ab02a270"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716243803.png",
+        "bytes": 323809,
+        "blob": "03caa5774e523076171907870b901919d3bcdffd"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716246816.png",
+        "bytes": 276977,
+        "blob": "f4250aaf53c46ddf30e17a7471eee2060db0ad27"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716249648.png",
+        "bytes": 170863,
+        "blob": "e5f07c55c8eda7dc7367396834124352f2c750f6"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716252473.png",
+        "bytes": 72184,
+        "blob": "50fd0e95cfebc82fa6c504a90a2fd704d9786d2a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716255220.png",
+        "bytes": 50283,
+        "blob": "c095c567dd07a6890140d632d048eff35b13a7dc"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716258118.png",
+        "bytes": 37386,
+        "blob": "b1c3d88ed71e96df3d8515d13318d1ec42db3a70"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/B虎皮4a/1779716261099.png",
+        "bytes": 17690,
+        "blob": "2a7580f5b65a12768c062d039aeb46714167273e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/1.png",
+        "bytes": 13416,
+        "blob": "f7d090c004d0b5c66ce939315e99e961522300fd"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/10.png",
+        "bytes": 50068,
+        "blob": "6c7cbc96e1e79c13f52333cad4143c4446e882f5"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/11.png",
+        "bytes": 53171,
+        "blob": "6fced88f9dbe066dbba7566be5b491938173c5da"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/12.png",
+        "bytes": 50901,
+        "blob": "3806cccd47a265e306a11c20398eb70ab5e6fb4d"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/13.png",
+        "bytes": 52320,
+        "blob": "4b48e4c3ab72990fa080050d1f428cdb2449876a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/14.png",
+        "bytes": 58245,
+        "blob": "c2dacbba58bab7eebaa52cf4df6568bda5f4ebc3"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/15.png",
+        "bytes": 54344,
+        "blob": "a23086f44ca3fa1715311cbe3ff139435e69d779"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/16.png",
+        "bytes": 55537,
+        "blob": "f69c2652de0f8abc1546f03599a57d1d6b189c92"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/17.png",
+        "bytes": 52928,
+        "blob": "f69a26194ad58ef17b6fedd788ea83a8d9331d2b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/18.png",
+        "bytes": 38980,
+        "blob": "b4bccaf27320f2d40388b17fafb0f00391aa0c0a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/2.png",
+        "bytes": 20131,
+        "blob": "6a7cb16b7810cd04dd0e2820173d501df4a3fd62"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/3.png",
+        "bytes": 29771,
+        "blob": "54050131de0a7252618271932d0db01405def7db"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/4.png",
+        "bytes": 32983,
+        "blob": "c5e8a1122a32b0e5ccd5d14fe65a7a9e7ae9397b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/5.png",
+        "bytes": 31689,
+        "blob": "48084289046d781ae22598bb8d948d76014d8ab1"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/6.png",
+        "bytes": 38947,
+        "blob": "2659c8b7759cf42ec854f83b65b70ac40624a2e1"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/7.png",
+        "bytes": 46242,
+        "blob": "9b3e6d4ff8f71fa4e93b431391bbad7d0b9e1bde"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/8.png",
+        "bytes": 46403,
+        "blob": "e945902d0c3c239ce382924d6488e4120965d1fd"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/1a/9.png",
+        "bytes": 48649,
+        "blob": "2c4b5aa908dd86f8b90e4797c3922c0045840ad5"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/a1/effects_base.tscn",
+        "bytes": 4423,
+        "blob": "f1d76aaf0d149b277506f1314f9c3b203a09aa0a"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/effects_base.tscn",
+        "bytes": 3641,
+        "blob": "82b0bc2d3c6f1cf8754f420a46d0f6b51a9551fb"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s1_2/effects_base.tscn",
+        "bytes": 7018,
+        "blob": "a98999b7e2905a49bb9f6c019036b3ab2a2f81c0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s1_2/火焰特效-序列-750_爱给网_aigei_com.png",
+        "bytes": 57800,
+        "blob": "0fb68c92a7822dfc0b50de618d3a61ad8d709cb9"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_61.png",
+        "bytes": 165237,
+        "blob": "c675ed4998ab0dac34948ba605a14eb187a3a1cf"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_62.png",
+        "bytes": 192517,
+        "blob": "bdd5a3ff9d53ca03a29d02b8a7358ec2be587bd3"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_63.png",
+        "bytes": 230635,
+        "blob": "345e6a1fa2d901f0ac8a9f7ecca282b3463668c0"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_64.png",
+        "bytes": 302389,
+        "blob": "3fd35a34f1ac0765fc5e7cfc9737d8cec8274601"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_65.png",
+        "bytes": 316340,
+        "blob": "164d0a7d0128b2cbcdede7b4b0582996b8c952b4"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_66.png",
+        "bytes": 350222,
+        "blob": "4b3ef5f3cf2457eb2a2897bc80d2187c83c2128f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_67.png",
+        "bytes": 347185,
+        "blob": "92ab606defa97194f10a85e504ad97fb6152df8b"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_68.png",
+        "bytes": 275635,
+        "blob": "e169edc3c2d2ae6e72bb99ef4cbe29509466346f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_69.png",
+        "bytes": 234230,
+        "blob": "2dc51ccf14cae6260bf9b8227ff8c8de3c66a3f6"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_70.png",
+        "bytes": 187605,
+        "blob": "23af3ba8a6250580958eca5c5976846be7fa7909"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_71.png",
+        "bytes": 133334,
+        "blob": "033b8dcfac4114362fba6e101ba7a1059cd78cbc"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_72.png",
+        "bytes": 99011,
+        "blob": "c4a6a523bd2926298850dc253f2028c28129cdec"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_73.png",
+        "bytes": 50692,
+        "blob": "c29ddb41cb43fd3157e69948c4cc85d4d99e28b2"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/0461_74.png",
+        "bytes": 50692,
+        "blob": "c29ddb41cb43fd3157e69948c4cc85d4d99e28b2"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/s2特效/effects_base.tscn",
+        "bytes": 3731,
+        "blob": "eb5a121602b3a7e4c2f526b7ec68b25898d10f00"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/反过来的（放出特效）/effects_base.tscn",
+        "bytes": 3657,
+        "blob": "c57195ac11dd3658e760eabd3de12df6a3896f02"
+      },
+      {
+        "path": "assets/entities/神秘面具男/虎皮4a(1)特效/起爆符爆炸/effects_base.tscn",
+        "bytes": 3654,
+        "blob": "28fdb452a5c9b21227409ee0ba427e192131d094"
+      },
+      {
+        "path": "assets/entities/神秘面具男/起身6fps不循环/frame_44.png",
+        "bytes": 21237,
+        "blob": "c75f774a9a225ea64e1996851d233978e254b40f"
+      },
+      {
+        "path": "assets/entities/神秘面具男/起身6fps不循环/frame_45.png",
+        "bytes": 18146,
+        "blob": "a75327f43bdb6ad0a15a5edad9e1a153bae05cee"
+      },
+      {
+        "path": "assets/entities/神秘面具男/跑步/frame_0.png",
+        "bytes": 19973,
+        "blob": "8f9516ca23aee30416d75a3538e77658d7c58248"
+      },
+      {
+        "path": "assets/entities/神秘面具男/跑步/frame_12.png",
+        "bytes": 20601,
+        "blob": "a57b70884da88a89df192ab5ada71e6a713a1f28"
+      },
+      {
+        "path": "assets/entities/神秘面具男/跑步/frame_14.png",
+        "bytes": 17639,
+        "blob": "11c8d518a81a93104c8154e1c4df217d28dca723"
+      },
+      {
+        "path": "assets/entities/神秘面具男/跑步/frame_3.png",
+        "bytes": 17270,
+        "blob": "2c122655728c2f7e5353418d69202cbe715195e8"
+      },
+      {
+        "path": "assets/entities/神秘面具男/跑步/frame_4.png",
+        "bytes": 16441,
+        "blob": "f8c6e17b7f7bea27f47792165bd0bbc8a70fa306"
+      },
+      {
+        "path": "assets/entities/神秘面具男/跑步/frame_6.png",
+        "bytes": 20842,
+        "blob": "0131c930aabdb381ca45985e029fa42cb62615b7"
+      },
+      {
+        "path": "assets/entities/神秘面具男/跑步/frame_9.png",
+        "bytes": 25199,
+        "blob": "e1725185a11e0ba449bda118601490e58fc5f913"
+      },
+      {
+        "path": "assets/entities/神秘面具男/这里不许睡觉/frame_2.png",
+        "bytes": 17822,
+        "blob": "488a015e99a65112dde8ba5eac54930efbd1bf17"
+      },
+      {
+        "path": "assets/entities/神秘面具男/通灵密卷/frame_0.png",
+        "bytes": 12191,
+        "blob": "6799ea5411550077717163595467c47d60c7e48e"
+      },
+      {
+        "path": "assets/entities/神秘面具男/通灵密卷/frame_15.png",
+        "bytes": 14657,
+        "blob": "0be6efd9a1e9d813379e4c400c35ec20facafe76"
+      },
+      {
+        "path": "assets/entities/神秘面具男/通灵密卷/frame_203.png",
+        "bytes": 15580,
+        "blob": "663c27e6c856e5b13321d4ce61b927ee031fc910"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/attack_boxes.json",
+        "bytes": 8282,
+        "blob": "5bd499fe612f83544a0d7dc64af2e70db32d9cae"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/1.png",
+        "bytes": 38980,
+        "blob": "b4bccaf27320f2d40388b17fafb0f00391aa0c0a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/10.png",
+        "bytes": 48649,
+        "blob": "2c4b5aa908dd86f8b90e4797c3922c0045840ad5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/11.png",
+        "bytes": 46403,
+        "blob": "e945902d0c3c239ce382924d6488e4120965d1fd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/12.png",
+        "bytes": 46242,
+        "blob": "9b3e6d4ff8f71fa4e93b431391bbad7d0b9e1bde"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/13.png",
+        "bytes": 38947,
+        "blob": "2659c8b7759cf42ec854f83b65b70ac40624a2e1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/14.png",
+        "bytes": 31689,
+        "blob": "48084289046d781ae22598bb8d948d76014d8ab1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/15.png",
+        "bytes": 32983,
+        "blob": "c5e8a1122a32b0e5ccd5d14fe65a7a9e7ae9397b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/16.png",
+        "bytes": 29771,
+        "blob": "54050131de0a7252618271932d0db01405def7db"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/17.png",
+        "bytes": 20131,
+        "blob": "6a7cb16b7810cd04dd0e2820173d501df4a3fd62"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/18.png",
+        "bytes": 13416,
+        "blob": "f7d090c004d0b5c66ce939315e99e961522300fd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/2.png",
+        "bytes": 52928,
+        "blob": "f69a26194ad58ef17b6fedd788ea83a8d9331d2b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/3.png",
+        "bytes": 55537,
+        "blob": "f69c2652de0f8abc1546f03599a57d1d6b189c92"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/4.png",
+        "bytes": 54344,
+        "blob": "a23086f44ca3fa1715311cbe3ff139435e69d779"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/5.png",
+        "bytes": 58245,
+        "blob": "c2dacbba58bab7eebaa52cf4df6568bda5f4ebc3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/6.png",
+        "bytes": 52320,
+        "blob": "4b48e4c3ab72990fa080050d1f428cdb2449876a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/7.png",
+        "bytes": 50901,
+        "blob": "3806cccd47a265e306a11c20398eb70ab5e6fb4d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/8.png",
+        "bytes": 53171,
+        "blob": "6fced88f9dbe066dbba7566be5b491938173c5da"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/9.png",
+        "bytes": 50068,
+        "blob": "6c7cbc96e1e79c13f52333cad4143c4446e882f5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a1/effects_base.tscn",
+        "bytes": 4319,
+        "blob": "1968940478acdfe75b04286b8a7e9893862711bc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/1.png",
+        "bytes": 6940,
+        "blob": "d3f6a4db3f37db269fb3e0eab12ac66aecf3e1b9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/10.png",
+        "bytes": 26711,
+        "blob": "1b0d1675f9465ff74912e6b6e7035372955e91ff"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/11.png",
+        "bytes": 27090,
+        "blob": "6f875f95da129ac9d35b1c1261c37030fbcc2b30"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/12.png",
+        "bytes": 20656,
+        "blob": "14e708a592cb9d0e5f54a2bdfed1f1499d0e7988"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/13.png",
+        "bytes": 19072,
+        "blob": "927bf01c3a3a8966a9d8491e4fe779c9666315ff"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/2.png",
+        "bytes": 16101,
+        "blob": "ad3892dd4e2d450c41b5bdad771871bac0f06eb0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/3.png",
+        "bytes": 20159,
+        "blob": "14fb900cd9398d8c2e62bed41beb71f820fd8007"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/4.png",
+        "bytes": 27423,
+        "blob": "cfa8b5fb39e0b6e6e288440ba09e316b39131bcc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/5.png",
+        "bytes": 25898,
+        "blob": "17758f7fab6a0503662f3ab011f8268dd508504a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/6.png",
+        "bytes": 24907,
+        "blob": "3f2697edb6a6e7659b46d661b40aa2995e00d4da"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/7.png",
+        "bytes": 28722,
+        "blob": "12953627fd261ad13190f6c28d3a9735e5921a79"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/8.png",
+        "bytes": 27422,
+        "blob": "239fa8c8bd6970361a5a86159f74f4a6f6df374a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/9.png",
+        "bytes": 30685,
+        "blob": "0051e675af31dd6397bd983cf74e7d50c810ba00"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a2/effects_base.tscn",
+        "bytes": 3297,
+        "blob": "63f6f89ffd6ab5d7464627987f2e6c6083c76dc8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/1.png",
+        "bytes": 22361,
+        "blob": "8f330900d5b34f2f62e73fbb11b22166706c7bc4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/10.png",
+        "bytes": 21259,
+        "blob": "5d9941e55d8d830d88c13841bce92a92d802e87e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/11.png",
+        "bytes": 20453,
+        "blob": "be05d5c03ea3e2215231588e3127e92e3ccce8e5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/12.png",
+        "bytes": 21058,
+        "blob": "118b3305b58d9a6aa660c8963a55e29e14c38ace"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/13.png",
+        "bytes": 20155,
+        "blob": "5750178d79e50a0543e4c3e129f94162f97ec50e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/14.png",
+        "bytes": 20824,
+        "blob": "9e8e1c12a990a94e6889408de1a6c79d4200ce25"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/15.png",
+        "bytes": 20169,
+        "blob": "6abcead2be7a64921414dbdde8f13d5c65fcd5b7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/16.png",
+        "bytes": 17604,
+        "blob": "d026a54fb48c9f53b85485266ab53aa322183582"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/17.png",
+        "bytes": 17741,
+        "blob": "8928b1dc8de27e2e90f9368f633c30ff274a23a4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/18.png",
+        "bytes": 16600,
+        "blob": "5f1a63d7b20b41ee2ca0db193c3468fdbe6e009a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/19.png",
+        "bytes": 15670,
+        "blob": "40a64f774b4f128104a40cb9010ecdb67e8f6fd9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/2.png",
+        "bytes": 25113,
+        "blob": "7c996d22f41ac820929789f5dd0bf4ff78636774"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/20.png",
+        "bytes": 14932,
+        "blob": "da524102ec52874fc586dc0c57a1a3efd644a548"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/21.png",
+        "bytes": 14067,
+        "blob": "6b94b733cf7b2e7780d6a959ae09165ad0c7989c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/22.png",
+        "bytes": 12222,
+        "blob": "f07073fa24bae551cd7848837ceae2a1447ebb21"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/23.png",
+        "bytes": 11370,
+        "blob": "0e6986e50a275f0d6de0bfda54129cad005bb5a1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/24.png",
+        "bytes": 11538,
+        "blob": "21a0d72408bc4758d1a21d01a6963c35dae6f0fa"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/25.png",
+        "bytes": 9709,
+        "blob": "91e827926867b690509d789c606520c5e662ac49"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/26.png",
+        "bytes": 8879,
+        "blob": "138aa9a0e19f2ad6742afa3a21b397854c88de7b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/3.png",
+        "bytes": 22996,
+        "blob": "25357e29a8cf5ea4d765f3bc158f4723c9824230"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/4.png",
+        "bytes": 22870,
+        "blob": "e8b6f4e7ba9828a337796fca923b007ac1dae3ba"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/5.png",
+        "bytes": 23104,
+        "blob": "5c00f3351b30dbacf25cbdcc49f46a714b189fc4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/6.png",
+        "bytes": 23250,
+        "blob": "953605783df659268ca58f05666c1660337a9b9b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/7.png",
+        "bytes": 21649,
+        "blob": "51c49fe7ebcbebc22ca23206973825c8b004a13a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/8.png",
+        "bytes": 21691,
+        "blob": "a88349143a4c5bcc21c96f9c918d288e2e230cf2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/9.png",
+        "bytes": 21704,
+        "blob": "439b2170cde402587ba4d6dbf394efc230b17f8a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a3/effects_base.tscn",
+        "bytes": 5881,
+        "blob": "ee335fe0fdc586898fa31a81c73211adb66a2c31"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-1/1.png",
+        "bytes": 24124,
+        "blob": "f9652410fbcf0a883e468edeb4b15b5b9bf5cc78"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-1/2.png",
+        "bytes": 15629,
+        "blob": "154e20ae064fd15ba61b2fd6384fd8ef7f6233b6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-1/effects_base.tscn",
+        "bytes": 1648,
+        "blob": "7e5d45997325311d48616213707d8674e67cc863"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-2/1.png",
+        "bytes": 82482,
+        "blob": "b89b602f6d44633cd67f1f91dc7d9a94684bf80d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-2/2.png",
+        "bytes": 107165,
+        "blob": "e4844831a831a66a5a82666efb03c446ae48df17"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-2/3.png",
+        "bytes": 87834,
+        "blob": "2ae472160195787c87d468e5a67083e86752d496"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-2/4.png",
+        "bytes": 64954,
+        "blob": "c164612470338d4a8adceb88a7fb203816d64c3b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-2/5.png",
+        "bytes": 67971,
+        "blob": "ef89e5990715d54b786e88df520809eb6bdc585e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-2/6.png",
+        "bytes": 38445,
+        "blob": "a0f452105c34ba06fe529cd44eeee184479e6294"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-2/effects_base.tscn",
+        "bytes": 2056,
+        "blob": "d4dfbd043ce6a4e63b5513125dc2fe066376ed33"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/1.png",
+        "bytes": 44791,
+        "blob": "f1fe8e7b82075d8da587e0f5f009a5155a833f7d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/10.png",
+        "bytes": 47875,
+        "blob": "7cd719b4d08cdcbb6b214073558a59df26919c03"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/11.png",
+        "bytes": 44237,
+        "blob": "55f34c84f9bced19f04a2625e474f4e72e92514d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/12.png",
+        "bytes": 46456,
+        "blob": "a84662646ca816ac7504b7c590424e7b8876c46f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/13.png",
+        "bytes": 45662,
+        "blob": "5cba5ef64d2536b89f77fdabbad606fe3bfedf8c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/14.png",
+        "bytes": 45306,
+        "blob": "1e7474a741ece7a9b54c10d184c8f6474a316f99"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/15.png",
+        "bytes": 47519,
+        "blob": "5da85850a6d56bb63eaee6e9253d88b054102ed0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/16.png",
+        "bytes": 45387,
+        "blob": "8e555567219e5aa319bc900c992953ba2e383934"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/17.png",
+        "bytes": 46755,
+        "blob": "54b96c127b1f0fd9834a22c41901977a856acad8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/18.png",
+        "bytes": 46062,
+        "blob": "886f2f02aed23cd9eafd6df343631c9232f46b76"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/19.png",
+        "bytes": 48667,
+        "blob": "2ff1192771021a19e292f838feda5726fcaa7500"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/2.png",
+        "bytes": 44229,
+        "blob": "2399a417cbcd825c59fc2170cd7a7c190bccf83c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/20.png",
+        "bytes": 47206,
+        "blob": "775a24eb4c74156d6ac41f210126961fbbc647d8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/21.png",
+        "bytes": 48512,
+        "blob": "41bc49c2113e70ad2698cb1229cc6242ae2a8498"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/22.png",
+        "bytes": 46678,
+        "blob": "642b6d34aa4e6e86d90b903137e4f77d2d943fae"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/23.png",
+        "bytes": 45749,
+        "blob": "1ebcf16dc9184ed9c4eb4f051e4e1939b90a94ab"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/24.png",
+        "bytes": 43596,
+        "blob": "ebfd0a4bd09d1a86a1454acbe778a6ecf5684eb5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/25.png",
+        "bytes": 46384,
+        "blob": "631db896397d0ac52ab15e7c4279b830dfaa1f5b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/26.png",
+        "bytes": 45201,
+        "blob": "b922b7f36a44cd511af9c9c49dc6dd59e61805d9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/27.png",
+        "bytes": 45824,
+        "blob": "ec9e0cec1770a765474ba58e679952569030834c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/28.png",
+        "bytes": 43644,
+        "blob": "78f2a8646172347e30b585d3d5a3288766e87d7e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/29.png",
+        "bytes": 45681,
+        "blob": "8f1b3d75fcd536435d64d10637c2eb8cee53e5f5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/3.png",
+        "bytes": 46145,
+        "blob": "08f680120935e45df1f9289fa6ba05bc28339604"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/4.png",
+        "bytes": 44113,
+        "blob": "52035d971b49510cd6ccaa3f38262b5c33eab81c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/5.png",
+        "bytes": 46351,
+        "blob": "04b551a29b8d9d4e70e8b0d56ce56e3cfb10aa3d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/6.png",
+        "bytes": 45616,
+        "blob": "e215d37fd49f99020325ba888a78e34f53492669"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/7.png",
+        "bytes": 46499,
+        "blob": "d47d4651cae2f67b81510f1520216c2c62d9243f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/8.png",
+        "bytes": 44437,
+        "blob": "fc3fdd6c396a2ce9d4f01eba22e24af49558ae88"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-1/9.png",
+        "bytes": 47626,
+        "blob": "7a8b0f802fd283a9ad518a003f6d5149b4fe2555"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/1.png",
+        "bytes": 52155,
+        "blob": "3d90c5a43f7bf22e13dfe4d4911e46b28f8b9059"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/10.png",
+        "bytes": 26056,
+        "blob": "e769ee30c0c967dee80a7cea4a8ff8ad21dbcbb4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/11.png",
+        "bytes": 33498,
+        "blob": "b488d3ad7176c9cc6378997cec30ea4c50b2b7b8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/2.png",
+        "bytes": 82916,
+        "blob": "be9b611d87b4e00fa10776477e4fae12285b7412"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/3.png",
+        "bytes": 109273,
+        "blob": "3adf15470359f5aa3224f2c5b370ad7c1a1f90b5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/4.png",
+        "bytes": 108492,
+        "blob": "0de291779dfef9d327d77f85fc19feabccf3b740"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/5.png",
+        "bytes": 126779,
+        "blob": "d19092810df83ac6ed06ae6f935bf77beea998b5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/6.png",
+        "bytes": 95230,
+        "blob": "4addc4fe1606f4a2fa523f45179ab69aaa7027bc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/7.png",
+        "bytes": 83156,
+        "blob": "dfbe1db403611d3aa733bf752cef0748856783cd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/8.png",
+        "bytes": 70222,
+        "blob": "16bee929268cd69dc7f478aa382dd51561808751"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/9.png",
+        "bytes": 42420,
+        "blob": "732876a028c0a725ea9ae52402939089880eee4d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/a4-3-2/effects_base.tscn",
+        "bytes": 3072,
+        "blob": "a696a331d4d475c2885c34fba68dcc920daa120b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/1.png",
+        "bytes": 31368,
+        "blob": "ad2263fc01ac76baa2c3c453d5e507e9e5017c6c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/10.png",
+        "bytes": 56896,
+        "blob": "bd048377b5cf4f120e6d25f5285572c48be1c60b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/11.png",
+        "bytes": 54785,
+        "blob": "f74ba848e8fbe70b49ce2ac59efa3ea0ede702c4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/12.png",
+        "bytes": 44507,
+        "blob": "c2c9a1ef749be613bf711d1f646939cb4e5ea8ba"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/13.png",
+        "bytes": 28774,
+        "blob": "37b62a72135f57bb1638368936934e714c1aca0f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/14.png",
+        "bytes": 25776,
+        "blob": "d72da97014d49073e31650a59e8067d3a27dc7b9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/15.png",
+        "bytes": 23562,
+        "blob": "1ca8453d190e42a018b4f01e9051a2c20a1ed51c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/16.png",
+        "bytes": 20732,
+        "blob": "5f716f0336423126505c42fec2c45ce4161ec0e4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/17.png",
+        "bytes": 14127,
+        "blob": "6617f544072be773f061fc9393b132fc2b708c5d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/18.png",
+        "bytes": 5937,
+        "blob": "5f01468543b3f03a0a326505362ff295cc0bfc27"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/2.png",
+        "bytes": 45921,
+        "blob": "6c01d952567c8e94ba60890378d6287cb99694af"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/3.png",
+        "bytes": 47572,
+        "blob": "20b4adb28d8e003b52349a04351cc6ef739ef628"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/4.png",
+        "bytes": 55291,
+        "blob": "dee59679045eb2b80a817fb3a6065dd65d0ffa8e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/5.png",
+        "bytes": 56682,
+        "blob": "0faeb067986cdbf02e51331a909d260fa57068d8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/6.png",
+        "bytes": 58105,
+        "blob": "df1a9afdab4579ff8397d7e51d41faf7aab80053"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/7.png",
+        "bytes": 57819,
+        "blob": "a3a61b9e8cd601625293b6e67f4f75c5e63d0010"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/8.png",
+        "bytes": 57693,
+        "blob": "9c7c415fc91768b18be48608f98672f5e76380f2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/9.png",
+        "bytes": 57514,
+        "blob": "185d3d1a77a11d2aad052854309148d9ac45e8ef"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/2/effects_base.tscn",
+        "bytes": 4311,
+        "blob": "9683f0fa2a8491d0382f5b95731ed8b825a7553b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/1.png",
+        "bytes": 21841,
+        "blob": "e0434194fd70619909f2be5742a700bb2bc2ef28"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/10.png",
+        "bytes": 46399,
+        "blob": "1250a8f573e7350686b28c1edc17b7ad5e00059f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/11.png",
+        "bytes": 44347,
+        "blob": "677af863186d699a901a0d23708c3ed092fc8077"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/12.png",
+        "bytes": 44251,
+        "blob": "40afff437dbc6b02a138fdcd22bc49e6254867d0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/13.png",
+        "bytes": 45988,
+        "blob": "26a02aa738f6f72c92c8e398d6263afecc845cc2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/14.png",
+        "bytes": 47369,
+        "blob": "f256d1c41a5f6f3d86358ca98bf540bdae83d57c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/15.png",
+        "bytes": 48580,
+        "blob": "a2a608735d9fe1e73182eb0506f3164f47e8eeea"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/16.png",
+        "bytes": 50077,
+        "blob": "06d7dc0b95e557357ccca92172e573f0ab16d140"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/17.png",
+        "bytes": 48031,
+        "blob": "daf0ec173c399a86558765cd1b75da0bd141d0f5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/18.png",
+        "bytes": 49942,
+        "blob": "be8129df37573a1f97996d192115522371278c5d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/19.png",
+        "bytes": 47386,
+        "blob": "3d379bff1581c5cff74b0cce0b2ec48ca8b21a50"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/2.png",
+        "bytes": 32928,
+        "blob": "a2df40c0318c855b1aed5373ea131593b16e578b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/20.png",
+        "bytes": 44307,
+        "blob": "48fcf0d36309c092f30f2e3ffd18371a61a21f99"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/21.png",
+        "bytes": 39718,
+        "blob": "1e8bcbeeb246f73fa5462b171ac0ca322f307f5d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/22.png",
+        "bytes": 36992,
+        "blob": "294d6fb5bf602eea3543d8d86beb22252da19d94"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/23.png",
+        "bytes": 35093,
+        "blob": "c6993db7eba84cf76c7fd9952d3b2e1db025186a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/24.png",
+        "bytes": 30298,
+        "blob": "d2fba58e4f5cd758bc4f8c8b95432f7491e07f21"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/25.png",
+        "bytes": 26712,
+        "blob": "60360f6757f1f468a7f5d4c79a1e3554592cd951"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/26.png",
+        "bytes": 21280,
+        "blob": "05fbc32c7156523538f1857bf190eaec8b51d2d0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/27.png",
+        "bytes": 16273,
+        "blob": "913009f5785b009e7a0cb82f1091654d17830d3c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/3.png",
+        "bytes": 42018,
+        "blob": "8eb06855ed7f76a2923902a87a538a23de998ff2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/4.png",
+        "bytes": 47145,
+        "blob": "c48f636ed6a5efce4c6be3ccdf3909812cd1e35b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/5.png",
+        "bytes": 47352,
+        "blob": "a6dfd8dd7c6f91d311e45d038c5ac40b986aaf25"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/6.png",
+        "bytes": 47773,
+        "blob": "33336a0472bea7e15c5896513f3f8a1ba94ec4cf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/7.png",
+        "bytes": 47733,
+        "blob": "26ac5c97e41fc1257c8fc5e4a768dffe1afa5fad"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/8.png",
+        "bytes": 47558,
+        "blob": "7c33365d7ba229e3d4546e7158b070c597233700"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/9.png",
+        "bytes": 48106,
+        "blob": "f9693b66e73e47d95fd38aeb634a295f23bdda51"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/eff/s1/n/effects_base.tscn",
+        "bytes": 6043,
+        "blob": "9ff733cbd9ca07a7b532842bbdf65f806dd980fa"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/effect_bindings.json",
+        "bytes": 3744,
+        "blob": "1e47545a5fc90b3f904e2d60f70a2f808f9c6810"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/entity.tscn",
+        "bytes": 55873,
+        "blob": "d98b2df52807583825d56b3698bc2849aabad66c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/entity_frame_data.json",
+        "bytes": 254107,
+        "blob": "a875c7f1ee7b5a5a7293ec054d6ddc0b3e66ffc8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/1.png",
+        "bytes": 23499,
+        "blob": "69b81939e768cf4b9e94f84980eb13f69b33b5f8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/2.png",
+        "bytes": 23162,
+        "blob": "990bb88d671bce467b6e709822fb3436e5fd3bed"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/3.png",
+        "bytes": 23267,
+        "blob": "6f4bcf1efacf9f72632f74be9decd112fb08b5c2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/4.png",
+        "bytes": 23484,
+        "blob": "8d315fc6ac8706190b16d0af9f88c292aee284d7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/5.png",
+        "bytes": 23451,
+        "blob": "c80f196172109dda429fb03971197f1db3b78a14"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/6.png",
+        "bytes": 23889,
+        "blob": "644855c133f82a397df87aaf12be0f6b3bcf73de"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/7.png",
+        "bytes": 24040,
+        "blob": "e8ac050a795a1ac78daa072d5214720a48fbe753"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/idle动画/8.png",
+        "bytes": 23586,
+        "blob": "30431ea3cf9afd39eb8366d4f054e73eede00a82"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/info_points.json",
+        "bytes": 453,
+        "blob": "2d6806299cc88008c53a73df1882e46cb7a8871e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/1.png",
+        "bytes": 67109,
+        "blob": "62ecd80a21095350f2372a32d1c7cc2725e3bb36"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/10.png",
+        "bytes": 31984,
+        "blob": "0536f8ab2a7f5ed5bcd518d87d96f98e5e42489e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/11.png",
+        "bytes": 30218,
+        "blob": "e3b0d2181296ef0de50741244c151cc351ae8487"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/12.png",
+        "bytes": 27035,
+        "blob": "e016fc290fc20c8bbb8422334b6b8ba3cb761aa2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/13.png",
+        "bytes": 26937,
+        "blob": "a31c861690fe55c22d8e92dbafd019f2722d31b9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/14.png",
+        "bytes": 27330,
+        "blob": "49721049ec10e2f9c8376c86a4a33aee9914e35e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/15.png",
+        "bytes": 27572,
+        "blob": "c058e8499dae671e5cb3cf429738b2ba1a8ce1ff"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/16.png",
+        "bytes": 27469,
+        "blob": "5f6a48e96e0f072273f5922675fba8192b8b8089"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/17.png",
+        "bytes": 29854,
+        "blob": "8a1464ae8bb6ad0aea8b8fa31e5792014f0e127d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/18.png",
+        "bytes": 32673,
+        "blob": "d04903d8fd974aa8015696695403feec09a736bf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/19.png",
+        "bytes": 37698,
+        "blob": "fe47bde47bd38fccff4b1c638a6b2358b3934a0d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/2.png",
+        "bytes": 63951,
+        "blob": "d853996f0172b08da6ffbf29a7a150de662127a1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/20.png",
+        "bytes": 39275,
+        "blob": "33d26214e35516f9a734ca1de0ed23dc8321aa93"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/21.png",
+        "bytes": 39052,
+        "blob": "b04420c2a084b1515e7972f92fd40e7ce4305696"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/22.png",
+        "bytes": 33624,
+        "blob": "4064895736a3dce26dbd093ab9e67869721d7ffd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/23.png",
+        "bytes": 31068,
+        "blob": "dd6fae574edf78f34b4823e620a47d358f04f170"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/24.png",
+        "bytes": 31011,
+        "blob": "5dca254b2284bde8adaa2aac05fcb7b4d829027e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/25.png",
+        "bytes": 31288,
+        "blob": "03b7f03e0f29c454798947e46c24f47286a3a900"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/26.png",
+        "bytes": 31034,
+        "blob": "5aa5a441662015a3b4e07b94d248d0b751611d10"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/27.png",
+        "bytes": 31185,
+        "blob": "b232d317e272046e49943114ecfe3e276d4476cf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/28.png",
+        "bytes": 31023,
+        "blob": "46fa4910da4b0abce7a6f63369ae8c5fa5beffb3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/29.png",
+        "bytes": 30865,
+        "blob": "2ed5cae99861cb6ff879dea4582b7cd7058f367f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/3.png",
+        "bytes": 27260,
+        "blob": "583ccbf63e131be49ee0edd267273905b2cd0355"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/30.png",
+        "bytes": 30077,
+        "blob": "2c05c9067c4094bae8f8e9f690c5a13befc9ea36"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/31.png",
+        "bytes": 30218,
+        "blob": "20a3968948a0378cd2197039e6ddaece44e5156b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/32.png",
+        "bytes": 30027,
+        "blob": "1b907913a159bb8068b4bfbbe417cbca0e12bac6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/33.png",
+        "bytes": 31914,
+        "blob": "401becc0581e282fb019259c4ffb9675f7e1fbf5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/34.png",
+        "bytes": 28616,
+        "blob": "27ba70a35c6089ba5889b8c4bec259a2a8a7588c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/35.png",
+        "bytes": 25292,
+        "blob": "a5432c6e02e3beb309b8adc4565af692bcf1f2cb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/36.png",
+        "bytes": 23338,
+        "blob": "3c0fd463790abc628fd27b5eb733736f00b6faed"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/37.png",
+        "bytes": 25277,
+        "blob": "e7629a9e1025b4f220897df43fe271a52519848f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/38.png",
+        "bytes": 16914,
+        "blob": "3ca23ca1c98de2d7b8d74c40f3bbb2f1b1451cc2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/39.png",
+        "bytes": 11812,
+        "blob": "5b45f9fe2eb2f1fc38bcce9c459bf9f3e1d9cfa4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/4.png",
+        "bytes": 24435,
+        "blob": "31a7b09d643c958d64810b515a6bcaad7d03e293"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/40.png",
+        "bytes": 44767,
+        "blob": "30faaa6d25e4b48ff93c0c6e16bfb18713f62ac7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/41.png",
+        "bytes": 52192,
+        "blob": "46ae1f08c4fec31c6718e60d820322726b984432"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/5.png",
+        "bytes": 31401,
+        "blob": "fc7d7cf6d1642ef076f2e54000346425b000a7be"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/6.png",
+        "bytes": 32276,
+        "blob": "b5a7114b73a0bb460e2c679322068e269f432967"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/7.png",
+        "bytes": 32539,
+        "blob": "1ea1a373134d7be8bb5ebd1c6e036f92e0878a5c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/8.png",
+        "bytes": 34669,
+        "blob": "34bdef9551905e72765fd26556e7955f0e2b8d90"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/jumpin/9.png",
+        "bytes": 28406,
+        "blob": "80e41f852f37a51d07a63f78b517e607d8b810ef"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/main.tres",
+        "bytes": 439,
+        "blob": "5d1df74fd86dbd96f72c0eb246843ad3a0188db9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/portraits/icon_battle.png",
+        "bytes": 41734,
+        "blob": "24d2a6aaf95144dd1cdece5a7160b8eb79fd6715"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/portraits/icon_idle.png",
+        "bytes": 10654,
+        "blob": "ea4188e94a2830b3d1f998f8e8de98bbb2b91c97"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/portraits/idle.png",
+        "bytes": 139587,
+        "blob": "7e6089c52b305379bd00a1868e5b412d8167f85a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/preload_resources.json",
+        "bytes": 689,
+        "blob": "bb9529147f64d6b3a76f08fa9b48a3e04bde6433"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/1.png",
+        "bytes": 43013,
+        "blob": "b20603d21860fb98e593c1493eec766fe08bf1db"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/10.png",
+        "bytes": 42876,
+        "blob": "30b9ba91318363a320983ea3c0d3d3aad8bfd496"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/2.png",
+        "bytes": 43308,
+        "blob": "d367b248b65a6d2b51edc65864e718ed73cab93c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/3.png",
+        "bytes": 43118,
+        "blob": "4bbf4394fb0d719b0769ba14e30f0814c6c01db6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/4.png",
+        "bytes": 43189,
+        "blob": "5d95fb2a073909267df1be4677eedac965a08935"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/5.png",
+        "bytes": 42944,
+        "blob": "e6ab8aa7fbccbfa2c0fef8bfd9bec13b77428cab"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/6.png",
+        "bytes": 43085,
+        "blob": "0d2dce265b78c28178fb629fb07861f378cd0a8c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/7.png",
+        "bytes": 43365,
+        "blob": "0267342e3133031abdca16729301d203d67658b3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/8.png",
+        "bytes": 43154,
+        "blob": "d6239dbed41a11e7cd2463a5930c988f884e7f24"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_1/9.png",
+        "bytes": 43026,
+        "blob": "5d38b2386c4b06d9a655e02450832d8f5d635e5e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/1.png",
+        "bytes": 43809,
+        "blob": "05472c9005899c79c6b1fb4e127e548cd61d0830"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/10.png",
+        "bytes": 25489,
+        "blob": "d970e88f224ed12bbef114e78b491f5258ab9196"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/11.png",
+        "bytes": 23734,
+        "blob": "d0711a811c39d84799553c9a03e3cd32dd04e992"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/12.png",
+        "bytes": 27457,
+        "blob": "7f8467b47047c6d72c070720fe2c2b8aaed62584"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/13.png",
+        "bytes": 27819,
+        "blob": "923b9e5d95709e53669baf97912aa12fea9c3583"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/14.png",
+        "bytes": 27560,
+        "blob": "9703db26f7bc9adbe294207d6de080607b86b118"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/15.png",
+        "bytes": 26508,
+        "blob": "aa0d26730a00cbc3fefbdc826d101f2b2305640c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/16.png",
+        "bytes": 26183,
+        "blob": "b5baef118ddc43a8dac92965935e473b08284df1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/17.png",
+        "bytes": 27230,
+        "blob": "b3aaf6e6f8478ec67b3a6ab2be090b806a19e4bd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/18.png",
+        "bytes": 27294,
+        "blob": "3ada5d663d4870e0d07893ec31dcb08be4384b2f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/19.png",
+        "bytes": 27397,
+        "blob": "539fbb3d0dd57e4b0cfb002d46ddce9e24d1d757"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/2.png",
+        "bytes": 44538,
+        "blob": "92baae862c50596d6d1f9e3518c532b219855dbe"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/20.png",
+        "bytes": 27130,
+        "blob": "5b66fd49d6d45341549c266b1c4a47572b74c3a1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/21.png",
+        "bytes": 26960,
+        "blob": "084b9c86d95c1978b2b7062ae125e7c5f2ea89ad"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/22.png",
+        "bytes": 26685,
+        "blob": "d4cebd464929741dddadc3932e5451a8725ad629"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/23.png",
+        "bytes": 28650,
+        "blob": "feb669b322703392859c45eb8f1a01fce86c67bd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/24.png",
+        "bytes": 31087,
+        "blob": "c916f441e9ea32046081764e6adacb4f219500fe"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/25.png",
+        "bytes": 30846,
+        "blob": "a2b67a6eb4731b65595ade0a9f234c9767192afb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/26.png",
+        "bytes": 31070,
+        "blob": "6a06e9096bdc3e1a5f71ebf88e3244dc3c87263a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/27.png",
+        "bytes": 32709,
+        "blob": "fbfa7be1ba54da8d3c05ec7eac4a232664770596"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/28.png",
+        "bytes": 38819,
+        "blob": "a66560eb21682f8beb599ace828ad669ef3f05f3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/29.png",
+        "bytes": 35349,
+        "blob": "b3de525e8d445899cda7d134355b3cf0e0ea55b9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/3.png",
+        "bytes": 41367,
+        "blob": "bbe8f7899ebc1606ce3709ca102839e1dd13d178"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/30.png",
+        "bytes": 34256,
+        "blob": "deb35d96d46d689cccc9bab006016b270ddb7196"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/31.png",
+        "bytes": 31009,
+        "blob": "8e84a7c2dcbac426a9372f823213d2132d7ddac6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/32.png",
+        "bytes": 27267,
+        "blob": "11eafc2a3823c836a77f414cd4c893e2083c665e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/33.png",
+        "bytes": 28428,
+        "blob": "fcfe6f89b2b56ca8ff32d0550e7f6126f53f9312"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/34.png",
+        "bytes": 28142,
+        "blob": "837a05e82999ddb454c3503df185d875f0d085b7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/35.png",
+        "bytes": 26111,
+        "blob": "725ce0fa59e58e79cadf2c92942e4fc564fe5340"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/36.png",
+        "bytes": 25950,
+        "blob": "7e6ee0a9bcd6ba914a2476aca0e51d8f3c4a7f38"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/37.png",
+        "bytes": 25699,
+        "blob": "83d55bdc6ac42cad49ef6a72be93dd266eeb56d4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/38.png",
+        "bytes": 25831,
+        "blob": "ae40d5f53f65eac32dafa0486fd118d6399044b0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/39.png",
+        "bytes": 26041,
+        "blob": "057214b4174a386b3c72323dd70f9356bae7d7da"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/4.png",
+        "bytes": 41307,
+        "blob": "e5c2f8811ebbbc1f972d9fb037b23b6827b18b77"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/40.png",
+        "bytes": 25461,
+        "blob": "794682eb4693d69d70eb53ea4f3f9a63622a779a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/41.png",
+        "bytes": 25739,
+        "blob": "5acf1837b6c8ccb4dbe2feb3f0829db25f01e3df"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/5.png",
+        "bytes": 28211,
+        "blob": "995d98b1bd8743fb659c245c179545998b0558e8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/6.png",
+        "bytes": 29283,
+        "blob": "c8df93c8b5c3a12e99e54f2bd99da2525abb5c8f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/7.png",
+        "bytes": 26269,
+        "blob": "6c5b6055988ec20533265ead43932548b423ddbc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/8.png",
+        "bytes": 26063,
+        "blob": "4ced46ddd340e040e1fe8c2f97813684b9c9098d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_attack/9.png",
+        "bytes": 25161,
+        "blob": "173d82ed724737a981da3a9717d17d16722573f5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_ready/1.png",
+        "bytes": 25982,
+        "blob": "a810e67dcc283b30ece1766b399cbbbbd1ad19bf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_ready/2.png",
+        "bytes": 26136,
+        "blob": "e4f449634af95dec3a6801f9c050b0ca00c0dad2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_ready/3.png",
+        "bytes": 27724,
+        "blob": "ff771ae255ac0ed79724763dea37f36ff0c3cd40"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/1.png",
+        "bytes": 48322,
+        "blob": "b6d7e261feadaa269096ab5801cd742788d71c20"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/2.png",
+        "bytes": 49061,
+        "blob": "0e548c95730bef9eb3c35add9323d548b1391f93"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/3.png",
+        "bytes": 47501,
+        "blob": "cfdbfc0c803edab8e960ffa6f033d21b4a135d70"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/4.png",
+        "bytes": 47698,
+        "blob": "2a4cf552893bb63fb5cfe16406ae32aa28c50f4b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/5.png",
+        "bytes": 46733,
+        "blob": "a9a659fba5a88fb0e8cbec284e5ba12c4508ec9c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/6.png",
+        "bytes": 46896,
+        "blob": "742646d98a0823193edab0cb191ba267eed62459"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/7.png",
+        "bytes": 46397,
+        "blob": "ca4688458464cdbaef55ac039021872b90acec09"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/8.png",
+        "bytes": 46330,
+        "blob": "feb598e06f675de4ddb2ca5e08696ac06147d3fa"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run/9.png",
+        "bytes": 47218,
+        "blob": "9ecbc3b804607d5ed55b48d6ea4f065fafef543d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run_ready/1.png",
+        "bytes": 28331,
+        "blob": "8ce96c7338a1583864891d6e5602308142503918"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run_ready/2.png",
+        "bytes": 28346,
+        "blob": "0ecc4e8f037c1145c750540f17c6878ed47c7406"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run_ready/3.png",
+        "bytes": 25751,
+        "blob": "f7c04c1c0998e4966ec446025127bd35ca90b085"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run_ready/4.png",
+        "bytes": 46794,
+        "blob": "cd9befd5ae95a87ab6501384a01e20182e4a6c9a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run_ready/5.png",
+        "bytes": 47380,
+        "blob": "a408e3e2742dad9cb576a84d682fe2b239f97818"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s1/s1_run_ready/6.png",
+        "bytes": 47415,
+        "blob": "91a3c449f2c0295dd536a153a0f004ea813be054"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0007_A.png",
+        "bytes": 46136,
+        "blob": "6af9e01e3092f5653a49d7cad72daf03f2efa931"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0011_A.png",
+        "bytes": 45607,
+        "blob": "0f531bdb124448149105cf41d38aba8df7b17e30"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0017_A.png",
+        "bytes": 47690,
+        "blob": "e62c6471ac3cf58ee47ecd491a7f74b2c19e95fd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0020_A.png",
+        "bytes": 47710,
+        "blob": "66f78a0947882108a9dbcc463ceb4bcbb55cb0a3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0021_A.png",
+        "bytes": 47129,
+        "blob": "a81d887bdbd30ebd6b70f83c34646f62b3e0920f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0030_A.png",
+        "bytes": 46195,
+        "blob": "015e7ddf9ca8d75cb010055bc1a2d0c23fb1f273"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0033_A.png",
+        "bytes": 46166,
+        "blob": "cdd579f918728d76b7f30990050c79ecca125fc1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA1_jinengA1_0038_A.png",
+        "bytes": 46542,
+        "blob": "6322137f241d69fa01bb8e61f735fcd2f4f80b83"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0005_A.png",
+        "bytes": 47272,
+        "blob": "1c8c2c518e419197ab538d6f0abab12e6ac615a0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0007_A.png",
+        "bytes": 47078,
+        "blob": "f53aa1951d2d621cc0a4a98dfe51ebfe211fafe7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0011_A.png",
+        "bytes": 46341,
+        "blob": "99461ffe4bfee71d202e61a06acb389644812570"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0013_A.png",
+        "bytes": 49663,
+        "blob": "54b29fb7f6bc5888942963f9e73b49d21855b7c5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0017_A.png",
+        "bytes": 50134,
+        "blob": "f7a64f2e954999df6ecfd091ebba4a6fc5993035"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0024_A.png",
+        "bytes": 47262,
+        "blob": "0869b92b1f44aac25e89517187addfc8a7e45845"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0029_A.png",
+        "bytes": 44657,
+        "blob": "30f88e975abcac76ca7dc29350a91cc18c97a021"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/s2加具土命/jinengA2_jinengA2_0033_A.png",
+        "bytes": 45162,
+        "blob": "fe3754d95cb28e05c64dcaf39ae2d54f6a65e545"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/2/effect_bindings.json",
+        "bytes": 488,
+        "blob": "bd102a62b3f6c595e4e3c4c194231453953519aa"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/2/entity.tscn",
+        "bytes": 1109,
+        "blob": "fbd1fb3f56b058b23da531a2591fca9b5927e26b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/2/entity_frame_data.json",
+        "bytes": 689,
+        "blob": "5e5db9f0a82f2be95322fad0adf6412d9ad03889"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/2/main.tres",
+        "bytes": 404,
+        "blob": "475acbd648bc38fda15769b303c1a011226b95a6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/2/visual_script.json",
+        "bytes": 978,
+        "blob": "cca08b49d7b8a532e1840813ee5c878cba78303b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/3/attack_boxes.json",
+        "bytes": 4253,
+        "blob": "11259fcacc9daaf613ded2d503b1949d3aec2504"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/3/effect_bindings.json",
+        "bytes": 509,
+        "blob": "ba80c92d92863822295182d4efa64625be1ddfd9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/3/entity.tscn",
+        "bytes": 8682,
+        "blob": "2a2ebbb446ac95c71899fd037d65b603eff8077c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/3/entity_frame_data.json",
+        "bytes": 1644,
+        "blob": "70f57db711c5a750f68457848290c2dba4b8f85c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/3/main.tres",
+        "bytes": 404,
+        "blob": "0b10a3210e2cc2d0c19206f80bb029e307a8fc0d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/sub/a4/3/visual_script.json",
+        "bytes": 6712,
+        "blob": "e631027357522dc211a810d6527ff2156e2ca85f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/armor.tscn",
+        "bytes": 2001,
+        "blob": "3f4b6abbea4508f7ff5c467b4f1ac06ea901b2f6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/ultra_2.tscn",
+        "bytes": 20404,
+        "blob": "6db264d1ca0fb8dc6c2d5737c4eb192ca1a91d99"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/1.png",
+        "bytes": 24766,
+        "blob": "024d0476e19da8732d58139789a2976111df8a92"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/10.png",
+        "bytes": 23762,
+        "blob": "b35a52705354a09093e55332e9ebbd7d3be6a3bb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/11.png",
+        "bytes": 27669,
+        "blob": "28f86dedd87211204a686657efb654aec1b819de"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/12.png",
+        "bytes": 28278,
+        "blob": "60690841a833e290dd7cdb97e2897eec458d0cd9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/13.png",
+        "bytes": 28248,
+        "blob": "7d68ad7709c3bf793200f28107565f8a1d31c6f2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/14.png",
+        "bytes": 35999,
+        "blob": "12abd3fdf6d154f91010b129fe1cc7b9ef931cb0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/15.png",
+        "bytes": 36235,
+        "blob": "dd49575f9de125e3b1f89fcc3fede10cec9f1ffd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/16.png",
+        "bytes": 35872,
+        "blob": "57e650990dfafe8c4bb667f99a981f69b2771442"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/17.png",
+        "bytes": 37133,
+        "blob": "b6dd5b5526d679c0b4c1dec132601a12bdf11425"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/18.png",
+        "bytes": 36486,
+        "blob": "647ab64ef76272722c2bb309e497b9ce6ac74d69"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/19.png",
+        "bytes": 36395,
+        "blob": "f9b79489a5ac6b9ab85e13fef0e06b7a9bd1694d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/2.png",
+        "bytes": 21918,
+        "blob": "eaf9a55fab30dd6251ef2f73bd589407197599b3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/20.png",
+        "bytes": 36725,
+        "blob": "0d9d1568713f281a02ccb1d7e455450cb20dea2a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/3.png",
+        "bytes": 24368,
+        "blob": "7bc155507ac12a796d312d7ea9277e8cdbead119"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/4.png",
+        "bytes": 26185,
+        "blob": "6fc6671e072ea431d06d23ae147df568b206e461"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/5.png",
+        "bytes": 24879,
+        "blob": "cc7fbfb8f7919801a54b91eb407cf84c3266e1c6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/6.png",
+        "bytes": 26444,
+        "blob": "cb6181c093f239599993370c35ca4bed7a81eb7c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/7.png",
+        "bytes": 24855,
+        "blob": "06ffcd4e20972b83f864995991389c2eac177515"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/8.png",
+        "bytes": 25138,
+        "blob": "d1e539276be64c66d4c079058e91082b5b3676ba"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招前摇/9.png",
+        "bytes": 26284,
+        "blob": "c56ec731dff18d3801bf98425d48f99a0980acc9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/1.png",
+        "bytes": 172471,
+        "blob": "8b72f527376fff5abec29ccc90a1e926c2803270"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/10.png",
+        "bytes": 208458,
+        "blob": "cd68136ae60b3c733bdcc0f03269811c639abf8a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/11.png",
+        "bytes": 208226,
+        "blob": "5e1947f9753801dd33678f841612a6169a78a781"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/12.png",
+        "bytes": 208548,
+        "blob": "6ab15018a7d4582bdab343ccd57ce970e86d23e6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/13.png",
+        "bytes": 209165,
+        "blob": "a06759d8c403e4fbbe19550676bf28be7dede21a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/14.png",
+        "bytes": 204572,
+        "blob": "844d9db9efc2f61b6b47b80cfed38272d4d6f0c8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/15.png",
+        "bytes": 191874,
+        "blob": "93587f6f97baaf412697a6ed7ffcf72d4989580b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/16.png",
+        "bytes": 179740,
+        "blob": "c155516089ec19dd27332b4d944a043b7eada4f1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/17.png",
+        "bytes": 180858,
+        "blob": "cc939d6d49dd3cec9da7ef4163bc00140b30b0e0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/18.png",
+        "bytes": 175371,
+        "blob": "666331333810caf4bd6b8cc37b97e9cc688e054c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/19.png",
+        "bytes": 178926,
+        "blob": "bc4f4660fbe90fc9d42dac7a725a414f3940e2fd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/2.png",
+        "bytes": 183095,
+        "blob": "3baae448232ace4379d67810f9a3819fb95d2a07"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/20.png",
+        "bytes": 176696,
+        "blob": "4bd3173254512252730ef00746c66d4ba7864c45"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/21.png",
+        "bytes": 175087,
+        "blob": "587b32359d617602ce24cc8ea41290169059f96b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/22.png",
+        "bytes": 176884,
+        "blob": "8237263d52c85d641f649be3cd6d1fb6bb1a3250"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/23.png",
+        "bytes": 174527,
+        "blob": "d3688835174b66c70c43b339d74d400c7767eec6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/24.png",
+        "bytes": 163005,
+        "blob": "e9731505eaa5a8a652278495294472481594e379"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/25.png",
+        "bytes": 176462,
+        "blob": "f644db060e3bad80ad919b062114bf5d75093aa7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/26.png",
+        "bytes": 178077,
+        "blob": "4cf83b1c8b0527dd4c97329fd33cfe532fb63f07"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/27.png",
+        "bytes": 177649,
+        "blob": "f1c8d779ebcf2fff240ae9bbe0fbcd006aa8748b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/28.png",
+        "bytes": 179043,
+        "blob": "306a902e7cd342983e821f339f06cd73c2095e41"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/29.png",
+        "bytes": 179214,
+        "blob": "ee92ab6d7e8dc76a3dc8c79f9e544418393ea66a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/3.png",
+        "bytes": 190514,
+        "blob": "2ae16c50618b01f5c1561279fdd9eba3f9078aec"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/30.png",
+        "bytes": 183788,
+        "blob": "9cb4b86da37f9e58cb50b1a88093cf8eab5750cf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/31.png",
+        "bytes": 188270,
+        "blob": "26a47302787f56dabf02334262ce12c1af8ef578"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/32.png",
+        "bytes": 208604,
+        "blob": "6720bf2d2db9a37eed10345fb7c02bb674edf0ce"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/33.png",
+        "bytes": 155003,
+        "blob": "3607dd945c7ae9134d110ec3ae63b85a92d79de7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/34.png",
+        "bytes": 121773,
+        "blob": "20dcc9d995938ac930d85df5f0bff8696d87b7c4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/35.png",
+        "bytes": 111343,
+        "blob": "aa7ba02cc4fe1a65a1309c4c6f9c75a44069c792"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/36.png",
+        "bytes": 92486,
+        "blob": "9e51624bc5b63f614021aa9c1055bab9e8a7b2b0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/37.png",
+        "bytes": 90982,
+        "blob": "d5facb67cc92bb87b15586b5d71b0be4af5bf5f3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/38.png",
+        "bytes": 92321,
+        "blob": "59084d683c825f149e76366fd739ba63651d029e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/39.png",
+        "bytes": 92946,
+        "blob": "bbe2b20ec79d08ad2e0b0184e39913d05c1cf9b4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/4.png",
+        "bytes": 174579,
+        "blob": "b4391f39c50745191119fe83f6ae389a9ea92954"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/40.png",
+        "bytes": 90424,
+        "blob": "57da994b9ed9a6047b57216100903baa1f01fef9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/41.png",
+        "bytes": 84526,
+        "blob": "08beb25f3acaf5cddc2fe29b0ecef64988c53ca6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/42.png",
+        "bytes": 77925,
+        "blob": "db4186192d2853f11e0bf87cb2b4f3d67de0cd85"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/43.png",
+        "bytes": 72508,
+        "blob": "188a2e5892be0486b64be574a52e54c01567450a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/44.png",
+        "bytes": 79019,
+        "blob": "141f2b90b0f3df83b5f50c8872f1ee647e4f8686"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/45.png",
+        "bytes": 59404,
+        "blob": "6256d7a763bf43eb940698e1a41add96f672bbf5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/46.png",
+        "bytes": 56936,
+        "blob": "9c4fb3a0e39835842de664d57fc2bff583e080f9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/47.png",
+        "bytes": 105162,
+        "blob": "9b12a264ae0a7adc38cf9a0d18439eed9094abde"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/48.png",
+        "bytes": 103506,
+        "blob": "0b35d93964aa00f4fa7014edc26bc067a6080d6c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/49.png",
+        "bytes": 111791,
+        "blob": "e9e4e7c80bf90afacb7d71ffb8309473242e2deb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/5.png",
+        "bytes": 208799,
+        "blob": "4804fe41be3201752c78ea542c1ebfaea35c2f39"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/50.png",
+        "bytes": 114570,
+        "blob": "e33d0dd2e82658660ab5cac23b7fd5bc7c5d32e5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/51.png",
+        "bytes": 116539,
+        "blob": "4ba796a038acb2d334469806ec3cde362cac1ca0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/52.png",
+        "bytes": 118749,
+        "blob": "35cbce0e7f0f855b703a8e51f6cb7483e1b404fb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/53.png",
+        "bytes": 124122,
+        "blob": "6b9cd8c5c0bb1fac5d10c51ec1cd401069df2cdc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/54.png",
+        "bytes": 130360,
+        "blob": "08eb651abb3f06ec0c89b3d4f898c06110742691"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/55.png",
+        "bytes": 138345,
+        "blob": "4766cf6037f6f627e05807ddcf4fdf1764c957ea"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/56.png",
+        "bytes": 144712,
+        "blob": "58a7d82b2be7fe789e7c44a2b7b8379304820bed"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/57.png",
+        "bytes": 149665,
+        "blob": "82d4b9ee8ef2a5a3c91a4f6cf8fa72853dbcc3bc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/58.png",
+        "bytes": 149881,
+        "blob": "0c993352b27c28fc789aa28c79122dc182c9adb5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/59.png",
+        "bytes": 160007,
+        "blob": "fc36a4cd504e94e3ce9d311411ab58ff9383db2e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/6.png",
+        "bytes": 221012,
+        "blob": "1ea7fb26405bdcfc192f8bd5246bbd96b49b2c7e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/60.png",
+        "bytes": 170948,
+        "blob": "7b0f202be235ebe9b4c4fa21f27907b83390709c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/61.png",
+        "bytes": 173689,
+        "blob": "da81a95eb25e8656a34eba0acea4c53533f7e20a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/62.png",
+        "bytes": 179026,
+        "blob": "4da06abbcb6474eb2b13eab465ca44b104cda6cc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/63.png",
+        "bytes": 177974,
+        "blob": "65b54634936842b85a66393f1e128f38a401bd21"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/64.png",
+        "bytes": 178831,
+        "blob": "d6530360f3388aa482abcfa5b9fa6a8e6ac16ca8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/65.png",
+        "bytes": 177561,
+        "blob": "7630e6a7b714dc71717729dbb4bec1d82f34c677"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/66.png",
+        "bytes": 187252,
+        "blob": "bb41c8ed647d6f41607816ebb8f95f48dcef611d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/67.png",
+        "bytes": 186400,
+        "blob": "a04ff3ce8d6cae36ecd0c6923c36e34a9e0ac452"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/68.png",
+        "bytes": 189915,
+        "blob": "509c9338a9326ae379ecb00317b76f0980326a0b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/69.png",
+        "bytes": 184394,
+        "blob": "3d526eddfaf9440358a789e037295d88eae04a13"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/7.png",
+        "bytes": 214447,
+        "blob": "223f873a0c2aab6f33014356a3cb195402106c67"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/70.png",
+        "bytes": 197240,
+        "blob": "44e25fcae16c4f8f3696c4349e9cb257dcdca848"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/71.png",
+        "bytes": 198927,
+        "blob": "1fa841d669fd903fec8c05479b545d7cf4f84c58"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/72.png",
+        "bytes": 184856,
+        "blob": "5877211d24b0052f8c140a7210535527d4e69912"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/73.png",
+        "bytes": 181890,
+        "blob": "b86d01e648bffc1017be967c3af2a186e91d0131"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/74.png",
+        "bytes": 181398,
+        "blob": "4f559cd8da135ef163d0dc5b77a4533ebc3d7a66"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/75.png",
+        "bytes": 135088,
+        "blob": "3b7a52f534e8562c5b134009efe32c93a9f4a17e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/76.png",
+        "bytes": 141773,
+        "blob": "afa53cb974ee548f35ca88c1039a89ebe49cdfbd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/77.png",
+        "bytes": 83297,
+        "blob": "822e9b2ac23db8c909730b844861a770c3f3bd7a"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/78.png",
+        "bytes": 115849,
+        "blob": "4faa5ebe113080232b80c6d8cb392fea0c46faff"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/79.png",
+        "bytes": 119582,
+        "blob": "804b8d0b16529d6fc3553a61dbfd30f58b7eb913"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/8.png",
+        "bytes": 208272,
+        "blob": "5273188e9c110b8efbf933308f0ceff642a59ecd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/80.png",
+        "bytes": 113077,
+        "blob": "a37e7db910eb1029fcfaf4c4e49eecd66fb2da54"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/81.png",
+        "bytes": 119604,
+        "blob": "3973d855cc3c7639cd4e020cfdde5e4345eaf633"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/82.png",
+        "bytes": 105562,
+        "blob": "a927cf93d0fce24c8c8dff4ef7a7554a200f0300"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/83.png",
+        "bytes": 95585,
+        "blob": "721c0f09619e1af81236f7593d756f7956c45e70"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/84.png",
+        "bytes": 87120,
+        "blob": "149d430bfb2b7a07cb434b7eba979c86cdb0c69e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/85.png",
+        "bytes": 76979,
+        "blob": "3b16d350e7d908384091d3a2e702609b1c56842f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/86.png",
+        "bytes": 72066,
+        "blob": "d5eeb8ff562955650e579e4e7b24233846da87bd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/87.png",
+        "bytes": 82869,
+        "blob": "7e2f0106e27bc54292cc3b531d85307147a69328"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/88.png",
+        "bytes": 75438,
+        "blob": "8a142cc27ad006df073094ae06c72f3c84ca9b37"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/89.png",
+        "bytes": 38234,
+        "blob": "ea44dba8ed62254d9d525cb3a676fa6761afd052"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/9.png",
+        "bytes": 208457,
+        "blob": "7ad823d53652c129f3d61eac328d490302720231"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/90.png",
+        "bytes": 32192,
+        "blob": "df1d1a1d8d5590cceac5a4ada20a81c4a97be411"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/91.png",
+        "bytes": 43637,
+        "blob": "71951f1fadd426366f0c31595df29c4aa6c00664"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/92.png",
+        "bytes": 47083,
+        "blob": "84b1cf33946c11629ec2c98dfe56087c5f1c9993"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/93.png",
+        "bytes": 46460,
+        "blob": "d48f86aa753314e28b2c78a5da2aa081ac34c2f0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招动画/94.png",
+        "bytes": 65936,
+        "blob": "a5bd3f895fbce9f206e564f2d0c7b9d9895d97a3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/1.png",
+        "bytes": 23967,
+        "blob": "bcc88b9bbcbc29d5f3daeee2bbc9fa9f628acccf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/2.png",
+        "bytes": 24094,
+        "blob": "409a25804d8aca731229336d3880fd0f5c3cb752"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/3.png",
+        "bytes": 24249,
+        "blob": "18012634ffae7cf87648dbb664153ec76749fff7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/4.png",
+        "bytes": 24224,
+        "blob": "e8617278244b7ac27cc19802812b64b0f4a2c43c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/5.png",
+        "bytes": 24027,
+        "blob": "3bd254b70bcd9463d1e04cc88043f3481ac765fc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/6.png",
+        "bytes": 25581,
+        "blob": "dd57a511330ca0dea87d273d218bb9f8b1dfff16"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/7.png",
+        "bytes": 24209,
+        "blob": "9912f38351cb4461ff571890646441078d8b8d33"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/ultra/大招后摇/8.png",
+        "bytes": 23485,
+        "blob": "ed9a822c5028157fe9fa3cde0f13ccee3af1d62d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/visual_script.json",
+        "bytes": 118624,
+        "blob": "a7412c85e2ba7819ac84c5130ea50fb947e627b1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0000_A.png",
+        "bytes": 47170,
+        "blob": "d5e65cbcb36fe08ea35b2fdc3c010b251bffa713"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0001_A.png",
+        "bytes": 46069,
+        "blob": "1e101d92993f2dee143ab05ff48d07b3707c6e65"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0002_A.png",
+        "bytes": 50031,
+        "blob": "995d82d46a7ae027a9bed986e74e57cc4171190b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0003_A.png",
+        "bytes": 47853,
+        "blob": "2bfda0678bcacd59d97d2918118f49a4534e0dd1"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0004_A.png",
+        "bytes": 45311,
+        "blob": "5ac773359385292524298684475ca64ba389c6b4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0005_A.png",
+        "bytes": 43190,
+        "blob": "84eda5add0e8c9e5767d4e7974f6ef55e81472cf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0006_A.png",
+        "bytes": 44889,
+        "blob": "bc30040beb245ccd536f1beb84a93c5898901bb3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0007_A.png",
+        "bytes": 51985,
+        "blob": "34024beea3165ddc8971f4c73e23da4b47caadeb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0008_A.png",
+        "bytes": 47532,
+        "blob": "5313576f77f7800be042e5197d0fa7afc3fba633"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0009_A.png",
+        "bytes": 44621,
+        "blob": "5e0219bc5af164c201006e8a11cd06e87553d5b0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0010_A.png",
+        "bytes": 48564,
+        "blob": "2cf7bd230aea03c30326b69a2d4cd941588836dc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0011_A.png",
+        "bytes": 43897,
+        "blob": "ff2a64f2b79b6caaec0d27a4f178ca19fd975702"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0015_A.png",
+        "bytes": 45583,
+        "blob": "4bb54a0d1bf89f1976d02b2ea983d520a3fa7bdf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0022_A.png",
+        "bytes": 48542,
+        "blob": "27c49aa4be350a67840d53a8d4dfbee9883d547b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0025_A.png",
+        "bytes": 46051,
+        "blob": "054b98482b15f1372404c8b32aad7f8097918677"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/受击/shouji_shouji_0026_A.png",
+        "bytes": 43145,
+        "blob": "8fdd3528e4b2b942c6dc404aae794a8761bc4b99"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run3_run3_0002_A.png",
+        "bytes": 50123,
+        "blob": "1062c2f722b60ae2e233569484f50a10e0dffdde"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run3_run3_0004_A.png",
+        "bytes": 50216,
+        "blob": "49c77bc26ad73f43d2b336203728aca0a52f987f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run3_run3_0006_A.png",
+        "bytes": 46907,
+        "blob": "776ebf2ddc6357432f94c2fdb8c104823583a2ca"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run3_run3_0008_A.png",
+        "bytes": 71346,
+        "blob": "b1a9854502695bc3675f063baedeb0b364212404"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run3_run3_0010_A.png",
+        "bytes": 71814,
+        "blob": "6b34c2f2fc85e90419d003339a1146eb43b045f4"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run3_run3_0011_A.png",
+        "bytes": 72076,
+        "blob": "c5e8a68a98bc65046cb5bf571f35e14d226ddb9d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0000_A.png",
+        "bytes": 46668,
+        "blob": "499738368e8a0644381333fe9da0845bc9bc80e5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0002_A.png",
+        "bytes": 46098,
+        "blob": "50d16378788961ff3845ca119376d65c1d7c088d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0004_A.png",
+        "bytes": 42897,
+        "blob": "43b6db32c9c35dba30cf9f07310da52ba4143db5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0005_A.png",
+        "bytes": 42706,
+        "blob": "761491417b4696b9c51a5fec669419c914d03eda"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0007_A.png",
+        "bytes": 44676,
+        "blob": "0dc4f9606c4a47ac3b5dde1dfe3920225ec939e8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0009_A.png",
+        "bytes": 45843,
+        "blob": "59f7f34a53d61c649aa93cb3ac97c946fa1b1c5c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0010_A.png",
+        "bytes": 43964,
+        "blob": "2fa617aadb8e11a25ab1f1980d3218d53083e82e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0011_A.png",
+        "bytes": 43385,
+        "blob": "bfa37d5b6e3f89d6a767c8c65302f7123bef63ae"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/奔跑/run_run_0012_A.png",
+        "bytes": 44697,
+        "blob": "e8a118a5f506bf35ee6a74e5a58793d2cf241cc5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/技能icon/s1.png",
+        "bytes": 26851,
+        "blob": "56cc6b9499425141109ba6063d34ee157673416f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/技能icon/s2_1.png",
+        "bytes": 26118,
+        "blob": "74e833bc2feadbdd19093862e080904a4e7bc9f8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/技能icon/s2_2.png",
+        "bytes": 23678,
+        "blob": "66a75972407a2bfb70e6d5f90d634d758e6ffdf8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/技能icon/s3.png",
+        "bytes": 27415,
+        "blob": "7d08c87fe36e6d0da2448339514ca3508620631f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong1_pugong1_0003_A.png",
+        "bytes": 48996,
+        "blob": "3d1aeb92a820384ec7f30bc12fd73d0c3e026607"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong1_pugong1_0006_A.png",
+        "bytes": 51896,
+        "blob": "88a0c2874a630ba8c35794f0ab3b21b1c8a67e63"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong1_pugong1_0010_A.png",
+        "bytes": 47758,
+        "blob": "76397667460275624cd673dbec6fdab93759f418"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong1_pugong1_0011_A.png",
+        "bytes": 47417,
+        "blob": "fc0161a66977cd484dfb96033fbb1fbb094beeae"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong1_pugong1_0017_A.png",
+        "bytes": 49918,
+        "blob": "8aca6e4e6c41da21d6b6d3a6bf342403b4fdd965"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong1_pugong1_0020_A.png",
+        "bytes": 50104,
+        "blob": "dede5efedf3c7c66a2cf444b0d953e1f6fb2b0d9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong1_pugong1_0029_A.png",
+        "bytes": 47849,
+        "blob": "68b800ead0fee4514e7a7c30d2d3fe9366afd0bc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0000_A.png",
+        "bytes": 48646,
+        "blob": "bcd5cf98d5ff85f308af4e716b86bb2e6e977867"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0003_A.png",
+        "bytes": 40508,
+        "blob": "370330cc5bf0a6f0164aa2c129754d15e0261020"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0005_A.png",
+        "bytes": 40576,
+        "blob": "7a60a481b2790cbe3c74fb14e65e97dfbb6231ac"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0009_A.png",
+        "bytes": 54451,
+        "blob": "af6792b5b29e70aab3af8f08cfa1075f3151dc33"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0012_A.png",
+        "bytes": 50836,
+        "blob": "51a053f77bf8f17ec43be238be4aee13ad0d565f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0015_A.png",
+        "bytes": 53049,
+        "blob": "e081a30f69210245d35607404abf4b75e9dbd6f0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0021_A.png",
+        "bytes": 46645,
+        "blob": "53134fd7bf48730c5f48d4515238f7755d234aa8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0034_A.png",
+        "bytes": 47719,
+        "blob": "4d296a3968e3ada807221e7af116772403e91390"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0039_A.png",
+        "bytes": 47297,
+        "blob": "09af2de284a4d81e1bf39abd75f1108a5e5f93fb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong2_pugong2_0042_A.png",
+        "bytes": 46453,
+        "blob": "b67263ef1c41ce8bf5fe66a9b4cac05d606d38dc"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0003_A.png",
+        "bytes": 51215,
+        "blob": "a061d692d2a84fa3461a68d0646382699df03e6f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0007_A.png",
+        "bytes": 52784,
+        "blob": "be718f3880b47e84ab558cd1ce002b3008ac5bc5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0008_A.png",
+        "bytes": 51706,
+        "blob": "167739986b7ef1c640639b8ad4d0921c5896df87"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0010_A.png",
+        "bytes": 49809,
+        "blob": "d690d0b10d0a3cfdc33b255cd898947f9ec5e553"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0011_A.png",
+        "bytes": 48156,
+        "blob": "dceb1b2dbaf1e8c108075f9e3fd73537a7d8f5b3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0024_A.png",
+        "bytes": 47193,
+        "blob": "8b82e2ee8322584b3d21f5822efb84989b77c117"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0030_A.png",
+        "bytes": 51976,
+        "blob": "6fa627f51de2497774d725dcb63aca8ca21feaf0"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0032_A.png",
+        "bytes": 54601,
+        "blob": "525e0032490c339e672540f8334a6f03deac0d67"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0033_A.png",
+        "bytes": 58207,
+        "blob": "65fe099481d0506bcadcbc8e100be50f99d5d4f9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0035_A.png",
+        "bytes": 55621,
+        "blob": "3fe5d46c963c3358dddd6a25ceabdf213fb9adee"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0037_A.png",
+        "bytes": 50392,
+        "blob": "02690d43d05103500fc18593955fe563a718b89b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0039_A.png",
+        "bytes": 48631,
+        "blob": "826f3faef056df5dc2167f01c468f86a4af4a3ad"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0040_A.png",
+        "bytes": 46709,
+        "blob": "b8f945c3a824bc224dfc687e9d3af6f8ae2633fe"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong3_pugong3_0044.png",
+        "bytes": 48429,
+        "blob": "874d844f252539bae0e04dd30bec4131aa786590"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0005_A.png",
+        "bytes": 48288,
+        "blob": "32da20b44937baac20c9b0f500e164cf14adee73"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0008_A.png",
+        "bytes": 45144,
+        "blob": "2ad9941f4f314792761c6db2fa4fcc56a9b7c45d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0010_A.png",
+        "bytes": 47340,
+        "blob": "5a6aa7e301d6d13f2a3c1d99438093e7c1be79c6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0012_A.png",
+        "bytes": 48369,
+        "blob": "0041cf81dc91b05f642323e91e0c6c6c57ecdf49"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0014_A.png",
+        "bytes": 49612,
+        "blob": "d5c6a7d41cbed1f02d936987de26c5509f0c32cf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0015_A.png",
+        "bytes": 48949,
+        "blob": "ff422220a42bdfbf5c1a04115055cab531ced58d"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0016_A.png",
+        "bytes": 51899,
+        "blob": "df734c357fc9b6c194daae1a2889c5ef0afd97f2"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0019_A.png",
+        "bytes": 50126,
+        "blob": "d7be121574ca6c188a14e4c6ba9fa7f4bf70bdbf"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0021_A.png",
+        "bytes": 49948,
+        "blob": "1aa2d648c358a4b38a7b66df721e0f9b2682fa36"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0022_A.png",
+        "bytes": 50180,
+        "blob": "59c6bf900f1aca0b5e3988c554cb9eaeae34ccc6"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0028_A.png",
+        "bytes": 51092,
+        "blob": "a5f4d9da315a3b4f51e2bdd5a2dc3ddb510918b9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0030_A.png",
+        "bytes": 51290,
+        "blob": "4ea249ce7791b841d47a8ce78da3f4946c48f06c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong4_pugong4_0034_A.png",
+        "bytes": 47412,
+        "blob": "207b11fa2e17ff3e2de08f571871e792886fe016"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0008_A.png",
+        "bytes": 47679,
+        "blob": "7abdfb020bb2e3e12c88d30cbb88aa709db17adb"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0010_A.png",
+        "bytes": 49821,
+        "blob": "6f40f60315a3c217e74dac6e0cc2ed9ba24f2b2b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0012_A.png",
+        "bytes": 48398,
+        "blob": "c0441be07f5dea44e67543d673fbda2afea66c82"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0014_A.png",
+        "bytes": 49473,
+        "blob": "b423fb4a1e03ad1286508c5a6d43559e19bc3f38"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0024_A.png",
+        "bytes": 43824,
+        "blob": "0b5029d9713318386bef8938b2028cba96dec029"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0025_A.png",
+        "bytes": 42774,
+        "blob": "7c16c1801f5f71e1fce7f0a2e46844aceac747ea"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0031_A.png",
+        "bytes": 46315,
+        "blob": "687074e9220546d57331619cb65bbe804f37da52"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0037_A.png",
+        "bytes": 47771,
+        "blob": "b34ab20ca51f87da0265562ba6129e1bfcaf76e5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0039_A.png",
+        "bytes": 46266,
+        "blob": "26c89bba7c69dd10f6bfbd759c150f7d01cb67cd"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong5_pugong5_0040_A.png",
+        "bytes": 46640,
+        "blob": "1944f4d441fc9c67dd2d44f868268a13c27f7244"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0004_A.png",
+        "bytes": 42375,
+        "blob": "21b1a0a61daa9ca1ff075af529c2b20f5cb588f5"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0005_A.png",
+        "bytes": 40889,
+        "blob": "8b8173c84a970fea57c600d8e23dc27a4d100796"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0009_A.png",
+        "bytes": 51993,
+        "blob": "4ddf322f62df40e0620cef30af4483d6e4b6ebae"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0012_1_A.png",
+        "bytes": 51482,
+        "blob": "f7c5d3dc27a0d69432beb46dfe46890413facf33"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0012_A.png",
+        "bytes": 50626,
+        "blob": "0b02aec30fde6db1be6faefce04f93b8f3c8eb8b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0014_A.png",
+        "bytes": 47368,
+        "blob": "d8cbbde2669294ffe6cf78673b6148c42deb1639"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0015_A.png",
+        "bytes": 45723,
+        "blob": "04c689ac53183d11b9f94179ff531af205a4f1b8"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0016_A.png",
+        "bytes": 44388,
+        "blob": "01c74aee95ed6a55dbd4ee086bcbb5f0f7530811"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0017_A.png",
+        "bytes": 47306,
+        "blob": "5ea6154ace6793705fc5594f22b1b4fcc237f52f"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0021_A.png",
+        "bytes": 49962,
+        "blob": "45ea4d463b2a201f14d38adf3a94fc576fc46da9"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0023_A.png",
+        "bytes": 49509,
+        "blob": "62814ddea7f0e9f2832eaf7cef310d555a4cea27"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0024_A.png",
+        "bytes": 49236,
+        "blob": "2d431215d88e352ebbcd9a1ecda0558f1bbe2444"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong6_pugong6_0026_A.png",
+        "bytes": 46825,
+        "blob": "690ec8c2fe66d67006ff40dd97ef61884f255145"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong7_pugong7_0000_A.png",
+        "bytes": 50808,
+        "blob": "282e2088538faaed1c3ade5b7f6f0c3c8d458431"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong7_pugong7_0007_A.png",
+        "bytes": 49827,
+        "blob": "fb1068490e4f2e0f9069a06b39e02b94ec5d332c"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong7_pugong7_0009_A.png",
+        "bytes": 45328,
+        "blob": "fecc7e72b45a931aa8938f32c6dd50fd5b8b0147"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong7_pugong7_0011_A.png",
+        "bytes": 45740,
+        "blob": "5f2e3ab4a69c616002dc946f288cdd4228745c59"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong7_pugong7_0012_A.png",
+        "bytes": 46089,
+        "blob": "3a378a88212b86b6d2788be4f3e80824856c8017"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong7_pugong7_0020_A.png",
+        "bytes": 48452,
+        "blob": "3a1a875a71f2e42ed830ffa056c432a3682272d3"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/普工/pugong7_pugong7_0022_A.png",
+        "bytes": 51310,
+        "blob": "94f9f44d99f459cd71afb14a085c71406f5ef4e7"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/特效/Image_1726152802468.png",
+        "bytes": 16559,
+        "blob": "215b398e450f3cde20b496e6d82d4c663415fc5e"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/特效/effects_base.tscn",
+        "bytes": 1880,
+        "blob": "fe7a87e0d831f8389cc40c4b01741318144fd00b"
+      },
+      {
+        "path": "assets/entities/骨架（已由TK拼好）/草剃剑/sword.png",
+        "bytes": 2312,
+        "blob": "9bd95f9acff069093da0ba8831c444e781b46946"
+      }
+    ]
+  },
+  "mugen": {
+    "repo": "TheNegumProjectMugens/DragonBallNarutoStormBudokaiMugen",
+    "sha": "fc8657613e060293d234a8e3739be34c56d19b64",
+    "files": [
+      {
+        "path": "chars/Deidara/Deidara.air",
+        "bytes": 98266,
+        "blob": "ea23b923cb2b8d542d1bbf9b1efbefb6107d060a"
+      },
+      {
+        "path": "chars/Deidara/Deidara.sff",
+        "bytes": 13902106,
+        "blob": "83b9eeb7b80b44836322544acf6781bf14444f9b"
+      },
+      {
+        "path": "chars/Hashirama/Hashirama.air",
+        "bytes": 69278,
+        "blob": "fde7cec8deb43229b007900a02cf436e43db7d07"
+      },
+      {
+        "path": "chars/Hashirama/Hashirama.sff",
+        "bytes": 11685685,
+        "blob": "4b2ea1f7bf047af0ffc5dd6d76ed4bcfefd1fa39"
+      },
+      {
+        "path": "chars/Hiruzen/Hiruzen.air",
+        "bytes": 51175,
+        "blob": "12229cf6c56cedd2e0f0561aee7898b1cbcd0b1d"
+      },
+      {
+        "path": "chars/Hiruzen/Hiruzen.sff",
+        "bytes": 14661850,
+        "blob": "387e3277bf126f6829d1207f40068b31b764a456"
+      },
+      {
+        "path": "chars/Itachi/Itachi.air",
+        "bytes": 93136,
+        "blob": "7cc3b079035d974b8debb60428678e7736a7b690"
+      },
+      {
+        "path": "chars/Itachi/Itachi.sff",
+        "bytes": 26479650,
+        "blob": "c9b3b2571bb621edd52ab7f4ac45064a867ff65b"
+      },
+      {
+        "path": "chars/Jiraiya/Jiraiya.air",
+        "bytes": 126207,
+        "blob": "b29864da0e1b50c60c2f35fed89207da2b8a5330"
+      },
+      {
+        "path": "chars/Jiraiya/Jiraiya.sff",
+        "bytes": 24199917,
+        "blob": "d9547f6d98c2efee623832178af29df007a04e64"
+      },
+      {
+        "path": "chars/Madara Revived/Madara Revived.air",
+        "bytes": 119530,
+        "blob": "d89d98efaa50ca1c7c938866d38d58838a381a9c"
+      },
+      {
+        "path": "chars/Madara Revived/Madara Revived.sff",
+        "bytes": 31686406,
+        "blob": "0f54e9d51c0388019a8c0c1c1ae83bd2f6331802"
+      },
+      {
+        "path": "chars/Minato/Minato.air",
+        "bytes": 104871,
+        "blob": "d607c3c8c7b21cb8d7d06491e78b421a2843ba2d"
+      },
+      {
+        "path": "chars/Minato/Minato.sff",
+        "bytes": 12471463,
+        "blob": "4f5d8a66eed6f0e2ad826eb19b34335269ec9588"
+      },
+      {
+        "path": "chars/Naruto Sennin/Naruto Sennin.air",
+        "bytes": 84192,
+        "blob": "d5e323ffd6d174156f3f3d5712f1e67020d59d58"
+      },
+      {
+        "path": "chars/Naruto Sennin/Naruto Sennin.sff",
+        "bytes": 13970894,
+        "blob": "ab531f1d39ec0d4a5b53eee6b666b69f2d0d8ae5"
+      },
+      {
+        "path": "chars/Naruto Start/Naruto Start.air",
+        "bytes": 104036,
+        "blob": "be11245447e17af5b8ad0a6fc4fa79f834fafe05"
+      },
+      {
+        "path": "chars/Naruto Start/Naruto Start.sff",
+        "bytes": 25807769,
+        "blob": "b25167d25406e0e9b8886721e92d4e60adab0531"
+      },
+      {
+        "path": "chars/Obito/Obito.air",
+        "bytes": 57907,
+        "blob": "46405fe3eb826683bbbbd6c0bced8a0cb6d959ff"
+      },
+      {
+        "path": "chars/Obito/Obito.sff",
+        "bytes": 14079038,
+        "blob": "3b557d4fee65b4b0935e7bf59e467018dc74c9ee"
+      },
+      {
+        "path": "chars/Orochimaru/Orochimaru.air",
+        "bytes": 91539,
+        "blob": "bffc37505e086728701659bd3b3d086dfd966c55"
+      },
+      {
+        "path": "chars/Orochimaru/Orochimaru.sff",
+        "bytes": 10529126,
+        "blob": "41eb333760be665a393367c7d54068e676f273e3"
+      },
+      {
+        "path": "chars/Pain/Pain.air",
+        "bytes": 114949,
+        "blob": "4c6ad0217bc790a256a621e4b20781cc13f07e12"
+      },
+      {
+        "path": "chars/Pain/Pain.sff",
+        "bytes": 18019399,
+        "blob": "00bc872bb9952cc2eb979d806a8c3627a623d878"
+      },
+      {
+        "path": "chars/Sasuke Akatsuki/Sasuke Akatsuki.air",
+        "bytes": 103877,
+        "blob": "7800b428d85d3ef54d4fb67e4c186333ef17204a"
+      },
+      {
+        "path": "chars/Sasuke Akatsuki/Sasuke Akatsuki.sff",
+        "bytes": 20193996,
+        "blob": "24b3d16979d1b88becd7812d8d3d42a186ca5cc1"
+      },
+      {
+        "path": "chars/Tobirama/Tobirama.air",
+        "bytes": 55680,
+        "blob": "5ec550cc282ba588e8dc20340656595d558892d3"
+      },
+      {
+        "path": "chars/Tobirama/Tobirama.sff",
+        "bytes": 20104091,
+        "blob": "31cc5c363d68f467b667128a778904343e721038"
+      },
+      {
+        "path": "chars/Tsunade/Tsunade.air",
+        "bytes": 110933,
+        "blob": "87fb40d64c119ed0feea1d12b42b64a188ce486b"
+      },
+      {
+        "path": "chars/Tsunade/Tsunade.sff",
+        "bytes": 13202933,
+        "blob": "4d6ccfb30c978a3d7c4d0afd29b5ff999680d2f1"
+      }
+    ]
+  },
+  "lfs_audit": {
+    "repo": "Loco1911/naruto-r36s",
+    "sha": "bbc6c2ef812d221b8645d0a6c91d3eeebca0845c",
+    "sff_count": 173,
+    "regular_sff": [
+      {
+        "path": "chars/Boruto/Boruto.sff",
+        "bytes": 30382417
+      },
+      {
+        "path": "chars/CM_Shisui/Shisui.sff",
+        "bytes": 25314230
+      },
+      {
+        "path": "chars/G6_Killer_Bee/Bee.sff",
+        "bytes": 20818912
+      },
+      {
+        "path": "chars/JSItachi/Itachi.sff",
+        "bytes": 44166205
+      },
+      {
+        "path": "chars/Tobi-San/Tobi-San.sff",
+        "bytes": 624434
+      }
+    ],
+    "pointer_count": 168
+  }
+}

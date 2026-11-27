@@ -1,0 +1,30 @@
+name: HD GitHub source acquisition and animation review
+on:
+  push:
+    branches: [integration/one-game]
+    paths:
+      - 'art/external/HD_GITHUB_SOURCES.json'
+      - 'art/external/hd_github_review.py'
+      - '.github/workflows/hd-github-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned media blobs and create original timing GIF reviews
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 art/external/hd_github_review.py --out "$RUNNER_TEMP/hd-source"
+          mkdir -p hd-evidence
+          cp "$RUNNER_TEMP/hd-source/HD_REPORT.json" hd-evidence/
+          printf '%s\n' "$GITHUB_SHA" > hd-evidence/BUILD_SHA.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: NARU-HD-GITHUB-EVIDENCE
+          path: hd-evidence/
+          if-no-files-found: warn
