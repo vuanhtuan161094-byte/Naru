@@ -122,7 +122,7 @@ func _ready() -> void:
 	brand.modulate=Color("#f1bb69")
 	resource_bar=label(header,"",17)
 	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"LÀNG LÁ",13).modulate=Color("#b6bcaa")
+	label(header,"NHẪN GIỚI",13).modulate=Color("#b6bcaa")
 	navigation=HBoxContainer.new()
 	navigation.add_theme_constant_override("separation",5)
 	shell.add_child(navigation)
@@ -376,13 +376,13 @@ func growth_screen() -> void:
 		if roster_job!="" and n.profession_hint!=roster_job:continue
 		var b=button(grid,"%s\nCấp %d • Phẩm %d • %d sao" % [n.name_vi,int(p.level),int(p.quality),int(p.stars)],func():growth_detail(id))
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.custom_minimum_size.y=84
+		b.custom_minimum_size.y=118
 		b.add_theme_stylebox_override("normal",combat_panel(Color("#263832"),quality_color(int(p.quality)).darkened(0.3),7))
 		var portrait=art.texture("portraits/"+id+".png")
 		if portrait!=null:
 			b.icon=portrait
 			b.expand_icon=true
-			b.add_theme_constant_override("icon_max_width",64)
+			b.add_theme_constant_override("icon_max_width",94)
 	if grid.get_child_count()==0:label(rows,"Không có ninja phù hợp.",18)
 
 const WorldQuotes=preload("res://game/progression_quotes.gd")
@@ -449,6 +449,16 @@ func next_story_stage() -> String:
 		if stage.requires==null or store.state.cleared.has(str(stage.requires)):return id
 	return ""
 
+func ui_card_row(parent:Node,edge:Color=Color("#536a5d")) -> HBoxContainer:
+	var panel=PanelContainer.new()
+	panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	panel.add_theme_stylebox_override("panel",combat_panel(Color("#20302c"),edge,7))
+	parent.add_child(panel)
+	var row=HBoxContainer.new()
+	row.add_theme_constant_override("separation",12)
+	panel.add_child(row)
+	return row
+
 func campaign() -> void:
 	open_screen("campaign")
 	label(root,"CỐT TRUYỆN • "+str(store.state.cleared.size())+"/120 ải",26)
@@ -473,8 +483,8 @@ func campaign() -> void:
 		for id in reg.chapters[key].stage_ids:
 			var s=reg.stages[id]
 			var locked=s.requires!=null and not store.state.cleared.has(str(s.requires))
-			var line=HBoxContainer.new()
-			rows.add_child(line)
+			var line=ui_card_row(rows,Color("#85734e") if id==suggested else Color("#42574d"))
+			line.custom_minimum_size.y=57
 			var enemy_lv=0
 			for npc_id in s.enemy_ids:enemy_lv=maxi(enemy_lv,int(reg.npcs[npc_id].level))
 			var l=label(line,("%s  %s • địch cấp %d • %d thể lực" % [id,s.name_vi,enemy_lv,int(s.stamina_cost)])+(" • Đã vượt" if store.state.cleared.has(id) else ""),18)
@@ -771,7 +781,7 @@ func draw_field() -> void:
 				var height_value=extent*float(prop.get_height())/maxf(1.0,float(prop.get_width()))
 				field.draw_texture_rect(prop,Rect2(foot-Vector2(extent*0.5,height_value),Vector2(extent,height_value)),false)
 			else:field.draw_colored_polygon(points,Color(0.30,0.37,0.35,0.55))
-		else:field.draw_colored_polygon(points,Color(0.65,0.52,0.27,0.15))
+		elif not plate or battle_grid:field.draw_colored_polygon(points,Color(0.65,0.52,0.27,0.15))
 		if battle_grid:field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
 	for pair in sim.formation_pairs(0) if battle_grid else []:
 		field.draw_line(iso(pair[0]),iso(pair[1]),Color(0.4,0.85,1.0,0.35),1.5,true)
@@ -784,13 +794,13 @@ func draw_field() -> void:
 		var p=iso(a.pos)
 		var c=Color("#e3a33e") if a.side==0 else Color("#b65364")
 		field.draw_set_transform(p,0,Vector2(1,0.48))
-		var radius=clampf(19*q,10,22)
+		var radius=clampf(15*q,8,18)
 		field.draw_circle(Vector2.ZERO,radius,Color(0.02,0.04,0.05,0.55))
 		field.draw_arc(Vector2.ZERO,radius+1,0,TAU,24,c,1.4)
 		if a.uid==inspected_uid:field.draw_arc(Vector2.ZERO,radius+5,0,TAU,24,Color("#e9f5ff"),2)
 		field.draw_set_transform(Vector2.ZERO)
 		var depth_scale=lerpf(0.88,1.05,clampf(float(a.pos.y)/maxf(1.0,float(sim.map_height)),0,1))
-		var visual_scale=q*depth_scale*(0.76 if a.get("summon",false) else 1.0)
+		var visual_scale=q*depth_scale*(0.62 if a.get("summon",false) else 0.84 if a.get("clone",false) else 0.88)
 		# Stable scale: no frame-by-frame shrinking when actors pass each other.
 		var presentation_state=sim.animation_state(a)
 		var face=Vector2(a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT))
@@ -811,7 +821,7 @@ func draw_field() -> void:
 			field.draw_set_transform(Vector2.ZERO)
 			sprite_top=48*visual_scale
 		if a.hp<=0 or (a.get("summon",false) and a.uid!=inspected_uid and not battle_details):continue
-		var bar_width=clampf(62*visual_scale,30,66)
+		var bar_width=clampf(54*visual_scale,28,56)
 		var bar=p-Vector2(bar_width*0.5,sprite_top+8)
 		field.draw_rect(Rect2(bar-Vector2.ONE,Vector2(bar_width+2,7)),Color("#0b1719"))
 		field.draw_line(bar+Vector2(0,-1),bar+Vector2(bar_width,-1),Color(1,1,1,0.22),1)
@@ -1181,11 +1191,10 @@ func inventory_screen() -> void:
 	for id in reg.resources:
 		var r=reg.resources[id]
 		if inventory_query!="" and not (str(r.name_vi)+" "+id).to_lower().contains(inventory_query.to_lower()):continue
-		var line=HBoxContainer.new()
-		rows.add_child(line)
+		var line=ui_card_row(rows)
 		var l=label(line,"%s • %s" % [id,r.name_vi],17)
 		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		label(line,str(store.state.inventory.get(id,0))+" / "+str(Village.capacity(store.state,id)),16)
+		label(line,"%d / %d" % [int(store.state.inventory.get(id,0)),int(Village.capacity(store.state,id))],16)
 		button(line,"Nguồn / công dụng",func():resource_detail(id))
 
 func building_actions(rows:Control,id:String) -> void:
@@ -1791,7 +1800,18 @@ func quest_screen(message: String="") -> void:
 		if quest_filter==2 and (done or count>=int(q.objective.count)):continue
 		if quest_filter==3 and not q.repeatable:continue
 		if quest_filter==4 and not done:continue
-		var b=button(rows,"%s | %d/%d | %s" % [q.name_vi,count,int(q.objective.count),"Đã nhận" if done else "Nhận thưởng"],func():quest_screen("Đã nhận" if store.claim_quest(reg,id) else "Chưa hoàn thành"))
+		var card=ui_card_row(rows,Color("#b7a16b") if not done and count>=int(q.objective.count) else Color("#45594f"))
+		var desc=label(card,str(q.name_vi),16)
+		desc.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var progress=ProgressBar.new()
+		progress.max_value=maxi(1,int(q.objective.count))
+		progress.value=minf(float(count),progress.max_value)
+		progress.custom_minimum_size=Vector2(125,20)
+		progress.show_percentage=false
+		progress.size_flags_vertical=Control.SIZE_SHRINK_CENTER
+		card.add_child(progress)
+		label(card,"%d/%d" % [count,int(q.objective.count)],14)
+		var b=button(card,"Đã nhận" if done else "Nhận thưởng" if count>=int(q.objective.count) else "Chưa đạt",func():quest_screen("Đã nhận" if store.claim_quest(reg,id) else "Chưa hoàn thành"))
 		b.disabled=done or count<int(q.objective.count)
 		b.tooltip_text="Thưởng: "+cost_text(q.reward)
 
@@ -1823,9 +1843,15 @@ func beast_screen(message: String="") -> void:
 	screen_id="beasts"
 	button(rows,"Thông linh thú",contract_screen)
 	button(rows,"Huyết kế",bloodline_screen)
+	var grid=GridContainer.new()
+	grid.columns=3
+	rows.add_child(grid)
 	for id in reg.beasts:
 		var b=store.state.beasts.get(id,{})
-		button(rows,"%s | %s" % [reg.beasts[id].name,"Chưa thu phục" if b.is_empty() else "Cấp "+str(b.level)+" | "+str(b.host)],func():beast_detail(id))
+		var tile=button(grid,"%s • %s\n%s" % [str(id).right(1)+" VĨ",reg.beasts[id].name,"Chưa thu phục" if b.is_empty() else "Cấp "+str(b.level)+" | "+str(b.host)],func():beast_detail(id))
+		tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		tile.custom_minimum_size.y=105
+		tile.add_theme_stylebox_override("normal",combat_panel(Color("#293632"),Color("#b69a64") if not b.is_empty() else Color("#5c6b5d"),9))
 
 func beast_detail(id: String,message: String="") -> void:
 	var rows=activity_rows("VĨ THÚ • "+str(reg.beasts[id].name),message,func():beast_screen())
@@ -2089,7 +2115,7 @@ func open_screen(id: String) -> void:
 
 func update_resources() -> void:
 	if resource_bar==null or store.state.is_empty():return
-	resource_bar.text="   Ryo %s   •   Ngọc %s   •   Gỗ %s   •   Đá %s   •   Thể lực %d/120" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.inventory.get("RES-006",0),store.state.inventory.get("RES-009",0),int(store.state.stamina)]
+	resource_bar.text="   Ryo %d   •   Ngọc %d   •   Gỗ %d   •   Đá %d   •   Thể lực %d/120" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.inventory.get("RES-006",0),store.state.inventory.get("RES-009",0),int(store.state.stamina)]
 
 func scroll_rows(parent: Node) -> VBoxContainer:
 	var sc=ScrollContainer.new()
@@ -2220,7 +2246,7 @@ func recruit_screen(message: String="") -> void:
 				img.texture=tex
 				img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
 				img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-				img.custom_minimum_size=Vector2(0,78)
+				img.custom_minimum_size=Vector2(0,96)
 				tile.add_child(img)
 			var title=label(tile,str(reg.ninjas[id].name_vi),13)
 			title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
