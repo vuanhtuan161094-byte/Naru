@@ -86,7 +86,6 @@ var wiki_category=0
 var wiki_query=""
 var wiki_page=0
 var wiki_stats:Dictionary={}
-var wiki_history:Array=[]
 
 func _ready() -> void:
 	theme=make_theme()
@@ -2414,7 +2413,9 @@ func wiki_detail(id:String) -> void:
 			for key in ["base","weights","per_level","effect_cap_or_max_bonus"]:
 				if rule.has(key):label(rows,str(key)+": "+str(rule[key]),16).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 			if rule.get("effect_cap_or_max_bonus")!=null:
-				label(rows,"Hiệu quả = giới hạn × rating / (100 + rating). Ví dụ rating 100: "+str(Stats.effect(reg,{id:100},id))+" (đơn vị hiệu quả gốc).",16).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+				var sample={}
+				sample[id]=100
+				label(rows,"Hiệu quả = giới hạn × rating / (100 + rating). Ví dụ rating 100: "+str(Stats.effect(reg,sample,id))+" (đơn vị hiệu quả gốc).",16).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 			else:label(rows,"Chỉ số phẳng hoặc chưa có cap trong công thức hiện tại.",16)
 		10:
 			var form=reg.p2_forms.get(id,{})

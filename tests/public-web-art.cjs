@@ -16,6 +16,7 @@ const fs=require("fs");
    const c=await page.locator("canvas").boundingBox();
    await page.mouse.click(c.x+b.x*c.width/u.width,c.y+b.y*c.height/u.height);
    await page.waitForFunction(id=>window.naruUI?.screen===id,id,{timeout:30000});
+   await page.waitForTimeout(350);
   };
   await page.waitForFunction(()=>window.naruUI?.screen==="home"&&window.naruUI.art_count>=224);
   fs.mkdirSync("public-qa",{recursive:true});

@@ -97,8 +97,7 @@ jobs:
         run: |
           set -euo pipefail
           for attempt in $(seq 1 12); do
-            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" --jq '.artifacts[] | select(.name=="github-pages" and .expired==false and .size_in_bytes>0) | .id' | grep -E '^[0-9]+
-; then
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" --jq '.artifacts[] | select(.name=="github-pages" and .expired==false and .size_in_bytes>0) | .id' | grep -E '^[0-9]+$'; then
               echo "Pages artifact visible"
               exit 0
             fi
