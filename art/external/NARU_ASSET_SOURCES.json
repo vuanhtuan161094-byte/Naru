@@ -197,6 +197,16 @@
       "folders": [],
       "priority": "P1",
       "use": "146 ID-named image files; identify content from previews; reuse rights not verified"
+    },
+    {
+      "repo": "kentaro456/naruto-devolution",
+      "ref": "48af70cf0fe07931f923ef86e1740d7c6f45e942",
+      "class": "ORIGINAL_DOWNLOAD_ONLY",
+      "folders": [
+        "assets/organized/"
+      ],
+      "priority": "P0",
+      "use": "14,606 organized PNGs, character frames and stateMap metadata; side-view source, local visual/pivot review, provenance not established"
     }
   ],
   "rules": [

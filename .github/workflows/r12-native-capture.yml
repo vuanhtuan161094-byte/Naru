@@ -8,6 +8,7 @@ on:
       - 'game/review_art.gd'
       - 'art/external/convert_reuse.py'
       - 'art/external/audit_ninja.py'
+      - 'art/external/devolution_reuse.py'
       - 'art/external/VFX_REUSE_MAPPING.json'
       - 'game/battle_camera.gd'
       - 'assets/production/r12/**'
@@ -30,6 +31,7 @@ jobs:
       - name: Audit original ninja atlases and normalize generic world NPC walk cycles
         run: |
           python3 art/external/audit_ninja.py --out reuse-review
+          python3 art/external/devolution_reuse.py --out reuse-review
           cp art/external/VFX_REUSE_MAPPING.json reuse-review/
       - name: Install native display and capture tools
         run: |

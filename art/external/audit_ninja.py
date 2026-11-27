@@ -51,7 +51,9 @@ def generic(out):
     report=[]
     for n in range(1,26):
         img=Image.open(BytesIO(get(NINJA+f'characters/{n}.png'))).convert('RGBA')
-        if img.size!=(64,112):raise ValueError(f'unsupported sheet {n}: {img.size}')
+        if img.width!=64 or img.height<64 or img.height%16!=0:
+            report.append({'source_id':n,'size':list(img.size),'status':'HOLD_INCOMPLETE_WALK_GRID'})
+            continue
         sub=dest/str(n);sub.mkdir(exist_ok=True)
         for col,direction in enumerate(('down','up','left','right')):
             frames=[img.crop((col*16,row*16,(col+1)*16,(row+1)*16)) for row in range(4)]
@@ -63,7 +65,8 @@ def generic(out):
         report.append({'source_id':n,'frame_size':[16,16],'cardinal_walk_directions':4,'walk_cels_per_direction':4,'status':'NPC_OR_WORLD_CANDIDATE_ONLY','reason':'16px source; not identity-mapped named Naruto battle art'})
     (dest/'manifest.json').write_text(json.dumps(report,indent=2))
     (dest/'SOURCE.txt').write_text('Superpowers Ninja Adventure CC0 art by Pixel-boy; source '+NINJA+'README.md')
-    print('NARU_GENERIC_NINJA',len(report),len(report)*4,len(report)*16,flush=True)
+    valid=sum(x['status']=='NPC_OR_WORLD_CANDIDATE_ONLY' for x in report)
+    print('NARU_GENERIC_NINJA',valid,valid*4,valid*16,'held',len(report)-valid,flush=True)
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--out',type=pathlib.Path,required=True);p.add_argument('--local-naruto-media',action='store_true');a=p.parse_args()
     audit(a.out,a.local_naruto_media);generic(a.out)
