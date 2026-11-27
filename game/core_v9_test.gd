@@ -3,6 +3,7 @@ const Registry=preload("res://game/data_registry.gd")
 const Combat=preload("res://game/combat.gd")
 const Depth=preload("res://game/skill_depth_service.gd")
 const Passive=preload("res://game/passive_service.gd")
+const Formula=preload("res://game/combat_formula_service.gd")
 var failures=0
 func check(ok: bool,desc: String) -> void:
 	if ok:print("CORE_V9_OK ",desc)
@@ -98,9 +99,10 @@ func _initialize() -> void:
 		var applied=effect.duplicate(true)
 		applied.chance=1.0
 		dot_sim.apply_status(dot_owner,dot_target,applied)
-		var expected=roundi(float(applied.fixed_dot_total_coefficient)*float(dot_owner.natk))
+		var expected_budget=roundi(float(applied.fixed_dot_total_coefficient)*float(dot_owner.natk)*Formula.dot_multiplier(reg,dot_owner,dot_target))
+		var expected=float(expected_budget)*(1.0-Formula.damage_reduction(reg,dot_owner,dot_target))
 		for i in range(ceili(float(applied.duration_s)*20)+2):dot_sim.update_status(dot_target,0.05)
-		check(absf((100000.0-float(dot_target.hp))-expected)<0.01,"fixed DOT total across duration")
+		check(absf((100000.0-float(dot_target.hp))-expected)<0.01,"fixed DOT budget after target resistance and damage reduction")
 	var observed={}
 	var formed={}
 	for index in range(reg.depth_teams.size()):
