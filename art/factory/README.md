@@ -1,5 +1,5 @@
 # Naru ART R16 — V4 two-direction production (owner locked)
-Current entry: [LUNA_HANDOFF.md](LUNA_HANDOFF.md), [CONTRACT.json](CONTRACT.json), [RESEARCH.md](RESEARCH.md). V4 (28 Nov): SE/SW only, 68 frames, 12 clips, 2 neutral model views, lean QA. Supersedes V3 counts and QA cadence for new production. [CONTRACT_V3_ARCHIVE.json](CONTRACT_V3_ARCHIVE.json) preserves historical V3; do not delete or downconvert existing approved 84-frame kits.
+Current entry: [LUNA_HANDOFF.md](LUNA_HANDOFF.md), [CONTRACT.json](CONTRACT.json), [RESEARCH.md](RESEARCH.md). V4 FAST (28 Nov): SE/SW only, 68 frames, 12 clips, 2 neutral model views, lean QA, RUN only and salvage-first processing. Supersedes V3 counts and QA cadence for new production. [CONTRACT_V3_ARCHIVE.json](CONTRACT_V3_ARCHIVE.json) preserves historical V3; do not delete or downconvert existing approved 84-frame kits.
  
 References: [Move R3 six-ninja GIF](references/generated/Move_R3_6_Ninja.gif), [Sasuke V3 contact sheet](references/generated/Sasuke_V3_84_Contact_Sheet.png), [recovered exact overlay](references/source/NIN-002.json), [all original references](references/generated/). These are derived from existing original art, not new generation. Older P3 clips are candidates, Move R3 is owner approved visually. Sasuke V3 passed technical validation only; original high-res sources unavailable.
  

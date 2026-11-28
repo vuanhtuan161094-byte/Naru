@@ -52,15 +52,17 @@
       "loop": true,
       "default_ms": 100,
       "phases": [
-        "left contact",
-        "left load",
-        "right passing",
-        "right lift",
-        "right contact",
-        "right load",
-        "left passing",
-        "left lift"
-      ]
+        "left foot contact",
+        "compression",
+        "right knee drives forward",
+        "airborne stride",
+        "right foot contact",
+        "compression",
+        "left knee drives forward",
+        "airborne stride"
+      ],
+      "label": "Run",
+      "semantic": "Single running loop for all combat movement. Keep existing move asset key; no separate walk, sprint or transition clips."
     },
     "attack": {
       "directions": [
@@ -152,7 +154,7 @@
     },
     "warning_note": "Proposed review triggers at runtime size, calibrated against six approved Move R3 strips; not automatic identity proof. Attack, hit and fall require pose-aware anchors; do not force bbox height equal.",
     "mode": "LEAN",
-    "policy": "One automated technical gate and one combined GIF/contact review per kit. Warnings are advisory unless visible defect. One Godot 6v6 runtime smoke per batch (pilot separately), not per clip. Fix real blockers only; no repetitive benchmark/QA loops. Preserve all original V3 assets."
+    "policy": "One automated pack check and one quick combined GIF review at actual game size. Advisory minor defects do not block. One runtime smoke per batch after pilot. No repeated image generation for cosmetic differences or nominal cell overflow. Cache and reuse approved sources."
   },
   "protected_static": [
     "NIN-004",
@@ -178,7 +180,7 @@
     "upscale as HD",
     "unapproved gameplay changes"
   ],
-  "production_revision": "V4_OWNER_LOCKED_2026-11-28",
+  "production_revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
   "presentation": {
     "mode": "two_front_three_quarter_views",
     "direction_mapping": {
@@ -188,5 +190,17 @@
       "nw": "sw"
     },
     "scope": "Presentation only for V4 kits. Never change simulation, movement, targeting, or existing V3 directional art. Verify in pilot."
+  },
+  "processing": {
+    "policy": "SALVAGE_FIRST",
+    "source_layout": "Use wider native cells/gutters for fall and extended poses. Nominal grid overflow is not a failure if the full sprite can be isolated.",
+    "repair_order": [
+      "Recover full sprite from original alpha using row-aware variable crop bounds",
+      "Recenter and repad without cropping visible anatomy",
+      "If wider than runtime canvas, use proportional downscale only as needed with stable root; retain native original; no anisotropic stretch",
+      "Regenerate affected row only if image pixels are genuinely absent, inseparable or visibly unusable"
+    ],
+    "retry_budget": "Default zero extra image calls for correctable defects. At most one targeted retry for unrecoverable blockers, then HOLD specific clip and continue batch.",
+    "current_sakura": "Reuse all existing source atlases including current Move if visually usable; recover Fall from original before any rerender."
   }
 }
