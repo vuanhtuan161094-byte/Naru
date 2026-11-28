@@ -135,9 +135,9 @@ jobs:
           printf '%s\n' "$GITHUB_SHA" > e4-evidence/BUILD_SHA.txt
           "$G" --headless --path . --editor --import --quit >e4-evidence/import.log 2>&1
           ! grep -E 'Parse Error|SCRIPT ERROR' e4-evidence/import.log
-          timeout 180 xvfb-run -a -s "-screen 0 1280x720x24" "$G" --path . --resolution 1280x720 --position 0,0 -- --e4-capture >e4-evidence/runtime.log 2>&1
-          grep 'E4_CAPTURE_COMPLETE 45' e4-evidence/runtime.log
-          test "$(find e4-evidence -name '*.png' | wc -l)" -eq 45
+          timeout 240 xvfb-run -a -s "-screen 0 1280x720x24" "$G" --path . --resolution 1280x720 --position 0,0 -- --e4-capture >e4-evidence/runtime.log 2>&1
+          grep 'E4_CAPTURE_COMPLETE 135' e4-evidence/runtime.log
+          test "$(find e4-evidence -name '*.png' | wc -l)" -eq 135
           ! grep -E 'Parse Error|SCRIPT ERROR|E4_CAPTURE_FAIL' e4-evidence/runtime.log
       - uses: actions/upload-artifact@v4
         if: always()
@@ -146,3 +146,62 @@ jobs:
           path: e4-evidence/
           retention-days: 14
           if-no-files-found: warn
+
+  web-dev:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble owner-approved public art and verify Sasuke V3
+        run: |
+          python3 tools/assemble_public_art.py
+          echo "51859f9b5db8951bdbb57489c447f23e837eaac11423727c4458a28944c84c2f  assets/production/r13/NIN-002.json" | sha256sum -c -
+      - name: Install Godot 4.4.1 and export template
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+          unzip -q /tmp/templates.tpz -d /tmp/naru-templates
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.4.1.stable"
+          cp /tmp/naru-templates/templates/web_nothreads_release.zip "$HOME/.local/share/godot/export_templates/4.4.1.stable/"
+      - name: Build public PCK with required artwork, fail closed
+        run: |
+          set -euo pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          chmod +x "$G"
+          sed -i '0,/custom_features=""/s//custom_features="public_art"/' export_presets.cfg
+          "$G" --headless --editor --path . --import --quit 2>&1 | tee /tmp/import.log
+          ! grep -E 'Parse Error|SCRIPT ERROR' /tmp/import.log
+          "$G" --headless --path . -- --smoke 2>&1 | tee /tmp/art.log
+          grep 'NARU_PUBLIC_ART_READY 224' /tmp/art.log
+          grep NARU_REGISTRY_OK /tmp/art.log
+          grep "NARU_CHARACTER_OVERLAY_READY NIN-002" /tmp/art.log
+          mkdir -p dist
+          "$G" --headless --path . --export-release "Web DEV" dist/index.html 2>&1 | tee /tmp/export.log
+          test -s dist/index.html
+          test -s dist/index.pck
+          test -s dist/index.wasm
+          ! grep -E 'Parse Error|SCRIPT ERROR|Export failed' /tmp/export.log
+          printf '%s\n' "$GITHUB_SHA" > dist/BUILD_SHA.txt
+          printf '224\n' > dist/ART_COUNT.txt
+          (cd dist && sha256sum index.* > SHA256SUMS.txt)
+          touch dist/.nojekyll
+      - name: Test actual Web startup and starter battle with 224 textures
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8765 --directory dist >/tmp/naru-http.log 2>&1 &
+          set -o pipefail
+          node tests/public-web-art.cjs | tee /tmp/public-web.log
+          grep NARU_SASUKE_WEB_DRAW_PASS /tmp/public-web.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NARU-PUBLIC-FULL-ART-QA
+          path: public-qa/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NARU-E4-ONE-GAME-WEB-DEV
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
