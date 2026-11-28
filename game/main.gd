@@ -1181,7 +1181,7 @@ func _process(delta: float) -> void:
 		print("NARU_PRIVATE_TRACE tick=",sim.ticks," actors=",sim.primary_alive(0).size()+sim.primary_alive(1).size()," draws=",art.actor_draws," fallback=",art.fallback_draws," clone=",art.clone_draws," summon=",art.summon_draws," directional_pose=",art.directional_pose_draws)
 		print("NARU_SASUKE_CLIP_DRAWS ",art.character_clip_draws("NIN-002"))
 		print("NARU_E3_MOTION ",sim.e3_metrics)
-		if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=60 and sim.ticks%40==0 and last_video_ult_tick!=sim.ticks:
+	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=60 and sim.ticks%40==0 and last_video_ult_tick!=sim.ticks:
 		last_video_ult_tick=sim.ticks
 		# Stagger actual manual requests so the sample does not queue every ultimate simultaneously.
 		var index=posmod(floori(float(sim.ticks)/40.0),6)
