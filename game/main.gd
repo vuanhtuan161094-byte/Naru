@@ -673,12 +673,14 @@ func ui_card_row(parent:Node,edge:Color=Color("#536a5d")) -> HBoxContainer:
 
 func campaign() -> void:
 	open_screen("campaign")
-	label(root,"CỐT TRUYỆN • "+str(store.state.cleared.size())+"/120 ải",26)
+	label(root,"CỐT TRUYỆN  /  "+str(store.state.cleared.size())+" / 120 ải",26)
 	var row=HBoxContainer.new()
 	root.add_child(row)
 	var chapter_select=OptionButton.new()
 	for id in reg.chapters:chapter_select.add_item(id+" • "+reg.chapters[id].name_vi)
+	chapter_select.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	row.add_child(chapter_select)
+	button(row,"Bố trận",roster)
 	button(row,"Phó bản",expedition_screen)
 	var suggested=next_story_stage()
 	var selected=selected_stage if suggested.is_empty() else suggested
@@ -1759,12 +1761,12 @@ func world_screen(message: String="") -> void:
 	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	root.add_child(content)
 	var map=Control.new()
-	map.custom_minimum_size.x=730
+	map.custom_minimum_size.x=620
 	map.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	map.clip_contents=true
 	content.add_child(map)
 	var side_shell=ScrollContainer.new()
-	side_shell.custom_minimum_size.x=400
+	side_shell.custom_minimum_size.x=360
 	side_shell.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	content.add_child(side_shell)
 	var side=VBoxContainer.new()
@@ -2564,6 +2566,11 @@ func home_screen(message: String="") -> void:
 		tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		tile.size_flags_vertical=Control.SIZE_EXPAND_FILL
 		tile.custom_minimum_size.y=56
+		var icon=art.texture("environment/buildings/"+id+".png")
+		if icon!=null:
+			tile.icon=icon
+			tile.expand_icon=true
+			tile.add_theme_constant_override("icon_max_width",58)
 		if int(b.level)==0:tile.modulate=Color("#a4b2ba")
 	# R11 review pack is optional; original grid remains if a marker is unavailable.
 	var mapped=village_map.apply(self)
@@ -2591,6 +2598,7 @@ func ninja_hub() -> void:
 
 func adventure_hub() -> void:
 	var grid=hub_grid("PHIÊU LƯU","Chọn một hành trình.","adventure_hub")
+	grid.columns=2
 	activity_tile(grid,"Cốt truyện","Tiến vào các ải chính.",campaign, "portraits/NIN-002.png")
 	activity_tile(grid,"Nhiệm vụ","Mục tiêu và phần thưởng.",quest_screen, "environment/buildings/BLD-022.png")
 	activity_tile(grid,"Hoạt động","Phó bản, tháp và thử thách.",activities_screen, "environment/buildings/BLD-024.png")
@@ -2598,6 +2606,7 @@ func adventure_hub() -> void:
 
 func village_hub(message:String="") -> void:
 	var grid=hub_grid("QUẢN LÝ LÀNG",message if not message.is_empty() else "Điều phối phát triển làng Lá.","village_hub")
+	grid.columns=3
 	activity_tile(grid,"Sản xuất","Điều phối nhân lực và hàng đợi.",production_center, "environment/buildings/BLD-017.png")
 	activity_tile(grid,"Chế tạo","Xem và thực hiện công thức.",craft_screen, "environment/buildings/BLD-019.png")
 	activity_tile(grid,"Nhận thưởng chờ","Nhận tài nguyên đang chờ trong hộp thưởng.",reward_inbox_screen, "environment/buildings/BLD-020.png")
@@ -2807,6 +2816,8 @@ func recruit_screen(message: String="") -> void:
 	button(nav,"Thu thập mảnh",fragment_recruit_screen)
 	button(nav,"Nguồn ngọc",func():resource_detail("RES-002"))
 	button(nav,"Danh sách ninja",growth_screen)
+	for item in nav.get_children():
+		if item is Button:item.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 
 func cost_text(inputs: Array) -> String:
 	var parts=[]
