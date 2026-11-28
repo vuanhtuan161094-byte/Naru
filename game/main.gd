@@ -127,9 +127,9 @@ func _ready() -> void:
 	header=HBoxContainer.new()
 	shell.add_child(header)
 	var brand_box=VBoxContainer.new()
-	brand_box.custom_minimum_size.x=200
+	brand_box.custom_minimum_size.x=210
 	header.add_child(brand_box)
-	var brand=label(brand_box,"NARUTO  /  NHẪN GIỚI",21)
+	var brand=label(brand_box,"NARUTO",24)
 	brand.modulate=Color("#ffc780")
 	e4_section_caption=label(brand_box,"LÀNG LÁ",13)
 	e4_section_caption.modulate=Color("#b9c5d4")
@@ -476,8 +476,10 @@ func growth_screen() -> void:
 		if roster_era!="" and n.era!=roster_era:continue
 		if roster_job!="" and n.profession_hint!=roster_job:continue
 		var b=button(grid,"%s\nCấp %d • Phẩm %d • %d sao" % [n.name_vi,int(p.level),int(p.quality),int(p.stars)],func():growth_detail(id))
+		b.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER
+		b.vertical_icon_alignment=VERTICAL_ALIGNMENT_TOP
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.custom_minimum_size.y=100
+		b.custom_minimum_size.y=156
 		b.add_theme_stylebox_override("normal",combat_panel(Color("#263832"),quality_color(int(p.quality)).darkened(0.3),7))
 		var portrait=art.texture("portraits/"+id+".png")
 		if portrait!=null:
@@ -1659,7 +1661,7 @@ func building_screen(id: String,message: String="") -> void:
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	var b=store.state.building_states[id]
 	var def=reg.buildings[id]
-	var info=product_art_header(root,"environment/buildings/"+id+".png","%s • Cấp %d/100" % [def.name_vi,int(b.level)],"Yêu cầu Tổng bộ %d | %s" % [int(def.unlock_hq),message],80)
+	var info=product_art_header(root,"","%s  /  Cấp %d" % [def.name_vi,int(b.level)],"Yêu cầu Tổng bộ %d | %s" % [int(def.unlock_hq),message],0)
 	var status_text="Đang xây / nâng cấp" if not b.upgrade.is_empty() else "Đã xây" if int(b.level)>0 else "Chưa xây"
 	label(info,status_text+" • Tình trạng %.0f%%" % (float(b.condition)*100),15)
 	var cost=preload("res://game/village_service.gd").upgrade_cost(reg,store.state,id)
@@ -1675,18 +1677,46 @@ func building_screen(id: String,message: String="") -> void:
 	button(nav,"Làm mới",func():building_screen(id))
 	if float(b.condition)<1:button(nav,"Sửa chữa",func():building_screen(id,"Đã sửa" if store.repair_building(reg,id) else "Thiếu Ryo"))
 	button(nav,"Trở về",func():village_screen())
+	var tabs=HBoxContainer.new()
+	root.add_child(tabs)
+	var body=HBoxContainer.new()
+	body.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	body.add_theme_constant_override("separation",14)
+	root.add_child(body)
+	var visual=PanelContainer.new()
+	visual.custom_minimum_size.x=330
+	visual.add_theme_stylebox_override("panel",combat_panel(Color("#283742"),Color("#697d87"),8))
+	body.add_child(visual)
+	var display=VBoxContainer.new()
+	visual.add_child(display)
+	var tex=art.texture("environment/buildings/"+id+".png")
+	if tex!=null:
+		var img=TextureRect.new()
+		img.texture=tex
+		img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+		img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		img.custom_minimum_size.y=160
+		img.size_flags_vertical=Control.SIZE_EXPAND_FILL
+		display.add_child(img)
+	var caption=label(display,str(def.name_vi),22)
+	caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	var state_caption=label(display,status_text+" • "+str(int(b.level))+"/100",16)
+	state_caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	var scroll=ScrollContainer.new()
 	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	root.add_child(scroll)
+	scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	body.add_child(scroll)
 	var rows=VBoxContainer.new()
 	rows.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	scroll.add_child(rows)
 	if int(b.level)==0:
+		tabs.hide()
+		label(rows,"CHƯA XÂY DỰNG",24).modulate=Color("#ffd39a")
 		label(rows,"Xây công trình để mở các chức năng.",18)
+		e4_metric_grid(rows,[["Tổng bộ yêu cầu",int(def.unlock_hq)],["Công thức",def.recipe_ids.size()]],2)
+		label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi),18)
 		return
-	var tabs=HBoxContainer.new()
-	root.add_child(tabs)
-	root.move_child(tabs,scroll.get_index())
 	for i in range(3):
 		var tab=button(tabs,["Tổng quan","Sản xuất","Nhân lực"][i],func():building_tab=i;building_screen(id))
 		tab.size_flags_horizontal=Control.SIZE_EXPAND_FILL
@@ -1845,7 +1875,8 @@ func world_screen(message: String="") -> void:
 		for route in reg.routes:
 			var a=world_point(map,route.from)
 			var b=world_point(map,route.to)
-			map.draw_line(a,b,Color("#687981"),1.5,true)
+			var known=store.state.territory_states[route.from].discovered and store.state.territory_states[route.to].discovered
+			map.draw_line(a,b,Color("#c4a679") if known else Color("#43555b"),2.0 if known else 0.8,true)
 		for id in reg.territories:
 			var point=world_point(map,id)
 			var t=store.state.territory_states[id]
@@ -1853,7 +1884,10 @@ func world_screen(message: String="") -> void:
 			map.draw_circle(point,8 if id==selected_territory else 5,color)
 			if id==store.state.world_location:map.draw_arc(point,12,0,TAU,32,Color.WHITE,2)
 			if id==selected_territory:map.draw_arc(point,15,0,TAU,32,Color("#f6ca77"),2)
-			map.draw_string(ThemeDB.fallback_font,point+Vector2(8,-6),str(id).right(3),HORIZONTAL_ALIGNMENT_LEFT,-1,11)
+			if t.discovered:
+				var name_text=str(reg.territories[id].name_vi)
+				var text_x=clampf(point.x+9,0,maxf(0,map.size.x-150))
+				map.draw_string(ThemeDB.fallback_font,Vector2(text_x,point.y-8),name_text,HORIZONTAL_ALIGNMENT_LEFT,-1,14,Color("#f5e7c8"))
 	map.draw.connect(draw_map)
 	map.gui_input.connect(func(event):
 		if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
@@ -2581,7 +2615,7 @@ func open_screen(id: String) -> void:
 	header.visible=id!="battle"
 	navigation.visible=id!="battle"
 	var section={"journey":"Hành trình","wiki":"Cài đặt","home":"Làng","building":"Làng","village_hub":"Làng","craft":"Làng","production":"Làng","adventure_hub":"Phiêu lưu","activities":"Phiêu lưu","expeditions":"Phiêu lưu","tower":"Phiêu lưu","resource_trials":"Phiêu lưu","weekly":"Phiêu lưu","quest":"Phiêu lưu","campaign":"Phiêu lưu","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","world":"Nhẫn giới","diplomacy":"Nhẫn giới","ninja_hub":"Ninja","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Ninja","recruit":"Ninja","beasts":"Ninja","inventory":"Kho","settings":"Cài đặt"}
-	section.merge({"skill":"Ninja","passive":"Ninja","gear":"Kho","gear_craft":"Kho","resource_detail":"Kho","recruit_history":"Ninja","recruit_rates":"Ninja","fragment_recruit":"Ninja","mission":"Phiêu lưu","contract":"Ninja","bloodline":"Ninja","squad":"Ninja","result":"Phiêu lưu"},false)
+	section.merge({"skill":"Ninja","passive":"Ninja","gear":"Kho","gear_craft":"Kho","resource_detail":"Kho","recruit_history":"Ninja","recruit_rates":"Ninja","fragment_recruit":"Ninja","mission":"Phiêu lưu","contract":"Ninja","bloodline":"Ninja","squad":"Ninja","results":"Phiêu lưu"},false)
 	if is_instance_valid(e4_section_caption):e4_section_caption.text=str(section.get(id,"Nhẫn giới")).to_upper()
 	for item in navigation.get_children():
 		if item is Button:
@@ -2597,7 +2631,7 @@ func update_resources() -> void:
 	var values=[store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.inventory.get("RES-006",0),store.state.inventory.get("RES-009",0),int(store.state.stamina)]
 	resource_bar.text="Ryo %d • Ngọc %d • Gỗ %d • Đá %d • Thể lực %d/120" % values
 	for i in range(e4_resource_values.size()):
-		e4_resource_values[i].text=str(values[i])+("/120" if i==4 else "")
+		e4_resource_values[i].text=str(int(values[i]))+("/120" if i==4 else "")
 
 func scroll_rows(parent: Node) -> VBoxContainer:
 	var sc=ScrollContainer.new()
