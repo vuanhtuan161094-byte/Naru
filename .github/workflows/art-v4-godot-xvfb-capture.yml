@@ -65,11 +65,6 @@ jobs:
             exit 0
           fi
           IFS=, read -r -a ID_ARRAY <<< "$IDS"
-          if ((${#ID_ARRAY[@]} < 6)); then
-            echo "Only ${#ID_ARRAY[@]} newly completed kit(s); native capture starts once a complete six-kit group is available."
-            echo 'ids=' >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
           declare -A SEEN=()
           for id in "${ID_ARRAY[@]}"; do
             [[ "$id" =~ ^NIN-[0-9]{3}$ ]] || { echo "Invalid NIN ID: $id" >&2; exit 2; }
