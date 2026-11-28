@@ -499,8 +499,29 @@ func sheet(field: Control,path: String,p: Vector2,progress: float,size_value: fl
 	return true
 
 # Optional normalized source assets; no gameplay changes and no replacement of approved skill art.
+
+# FAST VFX route table is presentation-only, built from baked source PNGs.
+var factory_routes:Dictionary={}
+var factory_loaded:bool=false
+func load_factory_routes()->void:
+	if factory_loaded:return
+	factory_loaded=true
+	var path="res://assets/external_review/vfx/factory_routes.json"
+	if not FileAccess.file_exists(path):return
+	var doc=JSON.parse_string(FileAccess.get_file_as_string(path))
+	if doc is Dictionary and doc.get("schema",0)==1 and doc.get("skills",{}) is Dictionary:
+		factory_routes=doc
+		print("NARU_FX_FACTORY_ROUTES ",doc.skills.size())
+func factory_route(skill_id:String)->Dictionary:
+	load_factory_routes()
+	return factory_routes.get("skills",{}).get(skill_id,{})
+func factory_alias(name:String)->String:
+	load_factory_routes()
+	return str(factory_routes.get("aliases",{}).get(name,name))
+
 func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_value:float)->bool:
 	if not enabled or family.is_empty():return false
+	family=factory_alias(family)
 	if senki_review and senki_fx.has(family):
 		var fx:Texture2D=senki_fx[family]
 		var n=floori(float(fx.get_width())/128.0)
@@ -528,6 +549,8 @@ func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_va
 	return true
 
 func external_family(skill_id:String)->String:
+	var route=factory_route(skill_id)
+	if not route.is_empty():return str(route.get("impact",""))
 	if external_skill_families.is_empty():
 		var data=JSON.parse_string(FileAccess.get_file_as_string("res://data/skill-p2/vfx_families.json"))
 		if data is Array:
@@ -539,6 +562,8 @@ func external_family(skill_id:String)->String:
 	return str(aliases.get(family,family))
 
 func external_travel_family(skill_id:String)->String:
+	var route=factory_route(skill_id)
+	if not route.is_empty():return str(route.get("travel",""))
 	var family=external_family(skill_id)
 	var travel={"fire_impact":"fire_travel","lightning":"lightning_travel","lightning_strike":"lightning_travel","water":"water_travel","water_wave":"water_travel","chakra":"chakra_travel","wind":"wind_travel","wind_impact":"wind_travel","beam":"beam","ice":"needle"}
 	return str(travel.get(family,""))
@@ -549,7 +574,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 		var skill=a.pending.skill
 		var at: Vector2=project.call(a.pos)+Vector2(0,-32)
 		var progress=1.0-float(a.cast_left)/maxf(0.05,float(skill.cast_s))
-		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,82) and not external_sheet(field,"charge",at,progress,82):
+		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,82) and not external_sheet(field,str(factory_route(str(skill.skill_id)).get("charge","charge")),at,progress,82):
 			field.draw_arc(at,15+6*sin(float(sim.ticks)*0.35),0,TAU,24,Color(0.45,0.78,1,0.65),2)
 	var numbers=[]
 	for event in sim.art_events:
@@ -560,7 +585,14 @@ func effects(field: Control,sim,project: Callable) -> void:
 		if event.kind=="contact":
 			var phase="impact" if elapsed<0.4 else "residual"
 			if not sheet(field,"vfx/VFX-"+str(event.skill)+"/"+phase+".png",at,fmod(elapsed,0.4)/0.4,110) and phase=="impact":
-				external_sheet(field,external_family(str(event.skill)),at,elapsed/0.4,110)
+				external_sheet(field,external_family(str(event.skill)),at,elapsed/0.4,110.0*clampf(float(factory_route(str(event.skill)).get("scale",1.0)),0.8,1.55))
+		elif event.kind=="status_applied":
+			load_factory_routes()
+			var status_family=str(factory_routes.get("statuses",{}).get(str(event.skill),""))
+			if not status_family.is_empty():external_sheet(field,status_family,at,progress,78)
+		elif event.kind in ["teleport","form_activated","intercept","combo"]:
+			var special="space" if event.kind=="teleport" else "shield" if event.kind=="intercept" else "charge" if event.kind=="form_activated" else "chakra"
+			external_sheet(field,special,at,progress,105)
 		elif event.kind in ["damage","heal","summon"]:
 			var family="hit" if event.kind=="damage" else "heal" if event.kind=="heal" else "smoke"
 			if not sheet(field,"vfx/families/"+family+".png",at,progress,76) and not external_sheet(field,family,at,progress,76):

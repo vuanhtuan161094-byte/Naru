@@ -206,6 +206,14 @@ func _ready() -> void:
 					get_tree().quit(2)
 					return
 			print("NARU_PRIVATE_CAPTURE_ART_READY ",art.textures.size()," textures, 12 character identities")
+		if "--vfx-factory-review" in OS.get_cmdline_user_args():
+			for id in ["NIN-003","NIN-041","NIN-042","NIN-043","NIN-044","NIN-045","NIN-046"]:
+				var path="res://art/factory/production/"+id+"/runtime/"+id+".json"
+				if not art.import_character_overlay(FileAccess.get_file_as_string(path),id):
+					push_error("NARU_FX_V4_LOAD_FAIL "+id+" "+art.error)
+					get_tree().quit(3)
+					return
+				print("NARU_FX_V4_READY ",id)
 		for arg in OS.get_cmdline_user_args():
 			if arg.begins_with("--d2-pack="):
 				if not art.load_d2_pack(arg.trim_prefix("--d2-pack=")):
@@ -2878,6 +2886,10 @@ func start_art_review(static_batch:bool=false) -> void:
 			left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
 			right=["NIN-016","NIN-041","NIN-042","NIN-070","NIN-068","NIN-043"]
 			battle_stage.name_vi="Benchmark mỹ thuật • 9 danh tính / 12 ninja"
+	if "--vfx-factory-review" in OS.get_cmdline_user_args():
+		left=["NIN-041","NIN-042","NIN-043","NIN-044","NIN-045","NIN-046"]
+		right=["NIN-003","NIN-041","NIN-042","NIN-043","NIN-044","NIN-045"]
+		battle_stage.name_vi="VFX FACTORY • V4 6v6 • không thưởng"
 	if static_batch:
 		left=["NIN-007","NIN-009","NIN-010","NIN-014","NIN-024","NIN-025"]
 		right=["NIN-061","NIN-062","NIN-066","NIN-067","NIN-069","NIN-083"]
