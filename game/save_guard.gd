@@ -29,6 +29,16 @@ static func valid(reg,s: Variant) -> bool:
 	for key in ["stamina","pity4","pity5","draws","battle_seq"]:
 		if not integer(s.get(key)):return false
 	if int(s.stamina)>120:return false
+	if not s.get("recruit_fragments",{}) is Dictionary:return false
+	for id in s.get("recruit_fragments",{}):
+		if not reg.ninjas.has(id) or s.owned.has(id) or not integer(s.recruit_fragments[id]):return false
+	if not s.get("recruit_history",[]) is Array or s.get("recruit_history",[]).size()>100:return false
+	var last_draw=0
+	for item in s.get("recruit_history",[]):
+		if not item is Dictionary or not reg.ninjas.has(item.get("id","")):return false
+		if not item.get("new") is bool or not integer(item.get("quality"),1,8) or not integer(item.get("floor"),1,8) or not integer(item.get("shards")) or not integer(item.get("draw"),1,int(s.draws)):return false
+		if int(item.draw)<=last_draw or int(item.quality)<int(item.floor):return false
+		last_draw=int(item.draw)
 	for id in s.inventory:
 		if not reg.resources.has(id) or not integer(s.inventory[id]):return false
 	for id in s.owned:

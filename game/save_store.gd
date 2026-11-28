@@ -77,42 +77,123 @@ func grant(reg,id: String) -> void:
 		ensure_growth(state.owned[id])
 		Passive.migrate(id,state.owned[id])
 		state.owned[id].talent=reg.growth.talents[rng.randi_range(0,reg.growth.talents.size()-1)].id
+		state.owned[id].shards=int(state.get("recruit_fragments",{}).get(id,0))
+		if state.has("recruit_fragments"):state.recruit_fragments.erase(id)
 
-func draw(reg) -> String:
-	var currency = str(reg.recruit.price.currency)
-	var price = int(reg.recruit.price.single)
-	if int(state.inventory.get(currency,0))<price: return ""
-	var prior = state.duplicate(true)
-	var old_rng = rng.state
-	var floor_tier = 1
-	if int(state.draws)==0: floor_tier=3
-	if int(state.pity4)>=19: floor_tier=maxi(floor_tier,4)
-	if int(state.pity5)>=79: floor_tier=maxi(floor_tier,5)
-	var total = 0.0
+func next_draw_floor() -> int:
+	var tier=3 if int(state.draws)==0 else 1
+	if int(state.pity4)>=19:tier=maxi(tier,4)
+	if int(state.pity5)>=79:tier=maxi(tier,5)
+	return tier
+
+func draw_odds(reg) -> Array:
+	var floor_tier=next_draw_floor()
+	var total=0.0
 	for p in reg.recruit.pool:
-		if int(p.quality)>=floor_tier: total+=float(p.weight)
-	var roll = rng.randf()*total
-	var id = ""
-	var tier = 1
+		if int(p.quality)>=floor_tier:total+=float(p.weight)
+	var rows=[]
 	for p in reg.recruit.pool:
-		if int(p.quality)<floor_tier: continue
+		rows.append(100.0*float(p.weight)/total if int(p.quality)>=floor_tier and total>0 else 0.0)
+	return rows
+
+func draw_uncommitted(reg) -> Dictionary:
+	var floor_tier=next_draw_floor()
+	var total=0.0
+	for p in reg.recruit.pool:
+		if int(p.quality)>=floor_tier:total+=float(p.weight)
+	var roll=rng.randf()*total
+	var id=""
+	var tier=1
+	for p in reg.recruit.pool:
+		if int(p.quality)<floor_tier:continue
 		roll-=float(p.weight)
 		if roll<=0:
 			tier=int(p.quality)
 			id=str(p.ninja_ids[rng.randi_range(0,p.ninja_ids.size()-1)])
 			break
-	if id.is_empty(): return ""
-	state.inventory[currency]=int(state.inventory[currency])-price
+	if id.is_empty():return {}
+	var duplicate=state.owned.has(id)
+	var before=int(state.owned.get(id,{}).get("shards",0))
 	state.draws=int(state.draws)+1
 	state.pity4=0 if tier>=4 else int(state.pity4)+1
 	state.pity5=0 if tier>=5 else int(state.pity5)+1
 	grant(reg,id)
 	Content.bump(state,"recruit")
-	if not save_now():
-		state=prior
-		rng.state=old_rng
-		return ""
-	return id
+	return {"id":id,"quality":tier,"new":not duplicate,"shards":int(state.owned[id].shards)-before,"draw":int(state.draws),"floor":floor_tier}
+
+func draw_batch(reg,count:int) -> Array:
+	if not count in [1,10]:return []
+	var currency=str(reg.recruit.price.currency)
+	var price=int(reg.recruit.price.single) if count==1 else int(reg.recruit.price.ten)
+	if int(state.inventory.get(currency,0))<price:return []
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	state.inventory[currency]=int(state.inventory[currency])-price
+	if not state.has("recruit_history"):state.recruit_history=[]
+	var rows=[]
+	for i in range(count):
+		var result=draw_uncommitted(reg)
+		if result.is_empty():
+			state=prior
+			rng.state=old_rng
+			return []
+		rows.append(result)
+		state.recruit_history.append(result.duplicate(true))
+		while state.recruit_history.size()>100:state.recruit_history.pop_front()
+	if not commit_change(prior,old_rng):return []
+	return rows
+
+func draw(reg) -> String:
+	var rows=draw_batch(reg,1)
+	return "" if rows.is_empty() else str(rows[0].id)
+
+func shard_reserve(reg,id:String) -> Dictionary:
+	if not state.owned.has(id):return {}
+	var p=state.owned[id]
+	var stars=0
+	var quality=0
+	for step in reg.growth.stars:
+		if int(step.from)>=int(p.stars):stars+=int(step.shards)
+	for step in reg.growth.quality_upgrade_steps:
+		if int(step.from)>=int(p.quality):quality+=int(step.shards)
+	return {"stars":stars,"quality":quality,"reserve":stars+quality,"stock":int(p.shards),"surplus":maxi(0,int(p.shards)-stars-quality)}
+
+func recycle_surplus(reg,id:String,units:int) -> bool:
+	var q=shard_reserve(reg,id)
+	if q.is_empty() or units<1 or units>100 or units*5>int(q.surplus):return false
+	var prior=state.duplicate(true)
+	state.owned[id].shards=int(state.owned[id].shards)-units*5
+	grant_reward("RES-134",units)
+	return commit_change(prior,rng.state)
+
+func fragment_unlock_quote(reg,id:String) -> Dictionary:
+	if not reg.ninjas.has(id) or state.owned.has(id):return {}
+	var q=int(reg.ninjas[id].initial_quality)
+	var need=int(reg.recruit.unlock_shards_by_quality[q-1])
+	var stock=int(state.get("recruit_fragments",{}).get(id,0))
+	var scale=ceili(float(q)/2.0)
+	var gate=Village.level(state,"BLD-001")>=5 and Village.level(state,"BLD-009")>0
+	return {"need":need,"stock":stock,"gate":gate,"cost":{"RES-134":2*scale,"RES-001":200*scale},"quality":q,"ready":stock>=need}
+
+func buy_target_fragments(reg,id:String,quantity:int) -> bool:
+	var q=fragment_unlock_quote(reg,id)
+	if q.is_empty() or not q.gate or quantity<1 or quantity>20 or quantity>int(q.need)-int(q.stock):return false
+	var cost={}
+	for k in q.cost:cost[k]=int(q.cost[k])*quantity
+	if not has_cost(cost):return false
+	var prior=state.duplicate(true)
+	debit(cost)
+	state.recruit_fragments[id]=int(q.stock)+quantity
+	return commit_change(prior,rng.state)
+
+func unlock_by_fragments(reg,id:String) -> bool:
+	var q=fragment_unlock_quote(reg,id)
+	if q.is_empty() or not q.ready:return false
+	var prior=state.duplicate(true)
+	var old_rng=rng.state
+	state.recruit_fragments[id]=int(q.stock)-int(q.need)
+	grant(reg,id)
+	return commit_change(prior,old_rng)
 
 func use_world_food(id:String) -> bool:
 	var prior=state.duplicate(true)
@@ -406,6 +487,8 @@ func raise_star(reg,id: String) -> bool:
 	return commit_change(prior,rng.state)
 
 func ensure_account(reg) -> void:
+	if not state.has("recruit_history"):state.recruit_history=[]
+	if not state.has("recruit_fragments"):state.recruit_fragments={}
 	Formation.ensure(reg,state)
 	Village.ensure(reg,state)
 	Content.ensure(state)
