@@ -8,6 +8,8 @@ import hashlib
 import json
 from pathlib import Path
 from statistics import median
+from datetime import datetime, timezone
+from collections import deque
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -28,6 +30,41 @@ def sha(raw: bytes) -> str:
 def bbox_alpha(im: Image.Image):
     alpha = im.getchannel("A").point(lambda a: 255 if a >= ALPHA_THRESHOLD else 0)
     return alpha.getbbox()
+
+
+def discard_subthreshold_alpha(im: Image.Image) -> Image.Image:
+    """Remove only alpha pixels already excluded by the V4 silhouette threshold."""
+    rgba = im.convert("RGBA")
+    px = rgba.load()
+    w, h = rgba.size
+    def matte(pixel):
+        r, g, b, a = pixel
+        return a >= ALPHA_THRESHOLD and min(r, g, b) >= 175 and max(r, g, b) - min(r, g, b) <= 38
+    # Some generated atlases have an opaque near-white studio matte despite
+    # requesting transparency. Remove only the neutral component connected to
+    # the cell border, preserving enclosed whites such as eyes and headbands.
+    border = set()
+    for x in range(w):
+        border.add(x)
+        border.add((h - 1) * w + x)
+    for y in range(h):
+        border.add(y * w)
+        border.add(y * w + w - 1)
+    queue = deque(i for i in border if matte(px[i % w, i // w]))
+    seen = bytearray(w * h)
+    for i in queue:
+        seen[i] = 1
+    while queue:
+        i = queue.popleft()
+        x, y = i % w, i // w
+        px[x, y] = (0, 0, 0, 0)
+        for j in (i - 1 if x else -1, i + 1 if x + 1 < w else -1, i - w if y else -1, i + w if y + 1 < h else -1):
+            if j >= 0 and not seen[j] and matte(px[j % w, j // w]):
+                seen[j] = 1
+                queue.append(j)
+    alpha = rgba.getchannel("A").point(lambda a: 0 if a < ALPHA_THRESHOLD else a)
+    rgba.putalpha(alpha)
+    return rgba
 
 
 def grid_cell(im: Image.Image, row: int, col: int, rows: int, cols: int):
@@ -75,7 +112,7 @@ def alpha_run_cells(im: Image.Image, row: int, count: int):
         left = max(0, left - 3)
         right = min(im.width, right + 3)
         box = (left, y0, right, y1)
-        cell = im.crop(box)
+        cell = discard_subthreshold_alpha(im.crop(box))
         bounds = bbox_alpha(cell)
         if not bounds:
             raise SystemExit(f"empty fall silhouette in row {row}")
@@ -204,6 +241,7 @@ def main():
                 extraction_mode = "equal_grid_cells"
                 for col in range(count):
                     raw_cell, box = grid_cell(atlas, row, col, 2, count)
+                    raw_cell = discard_subthreshold_alpha(raw_cell)
                     bounds = bbox_alpha(raw_cell)
                     if not bounds:
                         raise SystemExit(f"empty cel: {action} {direction} {col}")
@@ -279,8 +317,9 @@ def main():
 
     # Source and pack ledger; visual/runtime/owner acceptance are independent gates.
     refs = {
-        "global_style": "art/factory/references/generated/Move_R3_6_Ninja.gif",
-        "global_style_sha256": sha((REPO / "art/factory/references/generated/Move_R3_6_Ninja.gif").read_bytes()),
+        "global_style": "art/factory/production/NIN-007/source/model.png",
+        "global_style_sha256": sha((REPO / "art/factory/production/NIN-007/source/model.png").read_bytes()),
+        "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
         "motion_guides": {},
         "model_sheet_sha256": sha(model_path.read_bytes()),
         "model_views": model_views,
@@ -288,10 +327,84 @@ def main():
     identity_reference = root / "source/identity_reference.png"
     if identity_reference.is_file():
         refs["identity_reference"] = {"path": identity_reference.relative_to(root).as_posix(), "sha256": sha(identity_reference.read_bytes())}
+    canon_reference_path = root / "source/canon_reference.json"
+    canon_reference = json.loads(canon_reference_path.read_text()) if canon_reference_path.is_file() else {}
+    if canon_reference:
+        refs["canon_identity_reference"] = {k: canon_reference.get(k) for k in ("provider", "source_page", "source_image_url", "sha256", "dimensions_px", "era", "form", "reference_role")}
     for action in contract["actions"]:
         guide = root / "source/guides" / f"{action}_motion_guide.png"
         refs["motion_guides"][action] = {"path": guide.relative_to(root).as_posix(), "sha256": sha(guide.read_bytes()), "source_se_sha256": sha((REPO / f"art/factory/references/generated/sasuke_v3/{action}_se.png").read_bytes()), "source_sw_sha256": sha((REPO / f"art/factory/references/generated/sasuke_v3/{action}_sw.png").read_bytes())}
     sources = {}
+    generated_source_paths = [model_path]
+    generated_source_paths.extend(root / "source" / f"{action}_atlas.png" for action in contract["actions"])
+    render_records = {}
+    observed_packaging_utc = datetime.now(timezone.utc).isoformat()
+    for p in generated_source_paths:
+        if not p.is_file():
+            continue
+        img = Image.open(p)
+        action = p.stem.removesuffix("_atlas") if p.name.endswith("_atlas.png") else "model"
+        identity_input = "source/identity_reference.png" if identity_reference.is_file() else "source/identity_traits.txt"
+        inputs = [identity_input, "source/canon_reference.json:temporary_image_path", "art/factory/production/NIN-007/source/model.png (style only)", "art/factory/references/generated/Move_R3_6_Ninja.gif"]
+        if action != "model":
+            inputs.insert(1, f"source/guides/{action}_motion_guide.png")
+        render_records[p.name] = {
+            "provider": "OpenAI imagegen",
+            "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+            "canon_reference_source": canon_reference.get("source_page"),
+            "canon_reference_sha256": canon_reference.get("sha256"),
+            "prompt_record": "source/PROMPTS.md",
+            "input_references": inputs,
+            "dimensions_px": list(img.size),
+            "sha256": sha(p.read_bytes()),
+            "size_bytes": p.stat().st_size,
+            "provider_creation_timestamp": None,
+            "packaged_observed_utc": observed_packaging_utc,
+        }
+    previous_attempts = production.get("additional_render_attempts", [])
+    actual_render_count = len(render_records) + len(previous_attempts)
+    production["actual_source_render_count"] = actual_render_count
+    production["prompt_version"] = "ART_V4_FAST_IDENTITY_LOCK_V2"
+    production["generated_source_records"] = render_records
+    production_path.write_text(json.dumps(production, ensure_ascii=False, indent=2) + "\n")
+    prompts_path = root / "source/PROMPTS.md"
+    if not prompts_path.exists():
+        usage = production.get("identity_reference_usage", {})
+        if usage.get("master_direct_canon_reference_used"):
+            master_reference_note = "The accepted master render was directly conditioned on the recorded canon image and database form sprite.\n\n"
+        elif model_path.is_file() and canon_reference:
+            master_reference_note = "The current master predates direct canon-image conditioning; the canon image is acquired for the next action-atlas prompts and any specifically required identity correction.\n\n"
+        else:
+            master_reference_note = "Use the recorded canon image directly when rendering the master; the database sprite or text locks this selected era/form.\n\n"
+        master_style_note = "The current master used the approved Shikamaru rendering style.\n\n" if usage.get("master_used_shikamaru_style") else "The current master predates the Shikamaru style-lock update; use the Shikamaru sheet only for style in subsequent atlases.\n\n"
+        prompts_path.write_text(
+            "# ART V4 FAST source prompt record\n\n"
+            "Profile: `ART_V4_FAST_IDENTITY_LOCK_V2`. Provider: OpenAI imagegen (model and seed not exposed). "
+            "The image tool did not return creation timestamps or spend estimates.\n\n"
+            "## Locked identity/model sheet\n\n"
+            f"Create a transparent, two-view pixel-art character sheet for {identity.get('name', character_id)}. "
+            "Use the Naruto-associated canon image recorded in `canon_reference.json` directly for face, eyes, hair and signature accessories. "
+            "Use `identity_reference.png` (or `identity_traits.txt`) to lock this database roster's era, form and outfit. "
+            "Use `art/factory/production/NIN-007/source/model.png` only for linework, eye-rendering technique, pixel shading and detail density; never borrow Shikamaru's face, body or costume. "
+            "Move R3 is secondary palette guidance. "
+            "Draw exactly two independently authored full-body three-quarter views, SE and SW, with matching outfit and scale. "
+            "Neutral battle-ready pose; complete silhouette; no scenery, labels, extra characters, shadows or VFX.\n\n"
+            + master_reference_note + master_style_note
+            + "## Action atlases\n\n"
+            "For each action, use the locked `model.png`, the same canon image, the database form reference and `guides/<action>_motion_guide.png`. "
+            "Use `art/factory/production/NIN-007/source/model.png` only for style, never for character face or build. "
+            "Produce one transparent equal-cell grid with two rows and the contract frame count as columns. "
+            "Top row is independently drawn SE; bottom row is independently drawn SW, never mirrored. "
+            "Frames run chronologically through the phase names in `art/factory/CONTRACT.json`; preserve the character's model, scale and outfit. "
+            "Keep full silhouettes in their cells, with no background, labels, cell lines, shadows, other characters or VFX. "
+            "Fall may use variable-width alpha-run extraction to recover full source silhouettes from the atlas.\n\n"
+            "## Render inventory\n\n"
+            "Expected: one master and six action atlases (`idle`, `move`, `attack`, `cast`, `hit`, `fall`), "
+            "68 authored cels across 12 clips and two directions. Run is stored under the compatible `move` key. "
+            "No rig, tween, mirroring, interpolation, synthetic frames, or repeated cosmetic rerendering.\n",
+            encoding="utf-8",
+        )
+
     for p in sorted((root / "source").glob("*_atlas*.png")):
         sources[p.name] = {"sha256": sha(p.read_bytes()), "size_bytes": p.stat().st_size}
     for p in [model_path, identity_reference]:
@@ -321,7 +434,7 @@ def main():
     ledger = {
         "schema": 1, "character_id": character_id, "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
         "identity": {"name": identity.get("name", character_id), "era": identity.get("era", "unverified"), "form": identity.get("form", "base"), "source_identity_status": identity.get("source_status", "SOURCE_REVIEW")},
-        "production": {"provider": "OpenAI imagegen", "model": "not exposed by tool", "seed": None, "transparent_background": True, "target_source_render_count": production.get("target_source_render_count", 7), "actual_source_render_count": production.get("actual_source_render_count"), "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation", "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"},
+        "production": {"provider": "OpenAI imagegen", "model": "not exposed by tool", "seed": None, "transparent_background": True, "prompt_version": production.get("prompt_version", "ART_V4_FAST_7R_V1"), "prompt_record": "source/PROMPTS.md", "target_source_render_count": production.get("target_source_render_count", 7), "actual_source_render_count": actual_render_count, "source_render_records": render_records, "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation", "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"},
         "references": refs, "source_atlases": sources,
         "counts": {"model_views": 2, "animation_clips": len(clips), "cels": sum(int(s["frames"]) * 2 for s in contract["actions"].values()), "runtime_assets": len(assets)},
         "assets": {k: v["sha256"] for k, v in ((k, {"sha256": obj["sha256"]}) for k, obj in assets.items())},

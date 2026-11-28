@@ -1,0 +1,17 @@
+{
+  "character_id": "NIN-005",
+  "name": "Iruka Umino",
+  "era": "Naruto",
+  "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+  "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+  "provider": "MyAnimeList character index (Naruto-associated entry)",
+  "source_page": "https://myanimelist.net/character/2011/Iruka_Umino",
+  "source_image_url": "https://cdn.myanimelist.net/images/characters/10/100216.jpg",
+  "sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+  "dimensions_px": [
+    225,
+    350
+  ],
+  "temporary_image_path": "/tmp/naru-identity-refs/NIN-005.jpg",
+  "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+}

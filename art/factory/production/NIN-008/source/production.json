@@ -1,0 +1,57 @@
+{
+  "character_id": "NIN-008",
+  "identity": {
+    "name": "Choji Akimichi (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-008"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-008",
+  "target_source_render_count": 7,
+  "owner_visual_acceptance": "PENDING",
+  "canon_reference_source": {
+    "character_id": "NIN-008",
+    "name": "Choji Akimichi (thiếu niên)",
+    "era": "Naruto",
+    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+    "provider": "MyAnimeList character index (Naruto-associated entry)",
+    "source_page": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+    "source_image_url": "https://cdn.myanimelist.net/images/characters/9/105421.jpg",
+    "sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+    "dimensions_px": [
+      225,
+      350
+    ],
+    "temporary_image_path": "/tmp/naru-identity-refs/NIN-008.jpg",
+    "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+  },
+  "actual_source_render_count": 2,
+  "additional_render_attempts": [
+    {
+      "path": "source/model_attempt1.png",
+      "reason": "first 96x112 review was too slim for Choji; replaced before any action atlas",
+      "sha256": "70a27976d6de861561b575fe2bb84dfe75288c7fd2d44472e9c82a8179ce6e84",
+      "size_bytes": 1554991,
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+    }
+  ],
+  "identity_reference_usage": {
+    "canon_image_record": "source/canon_reference.json",
+    "canon_image_available": true,
+    "master_used_canon_image": true,
+    "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
+    "body_face_transfer_from_style_reference": false,
+    "next_action_atlases_must_use_canon_reference": true,
+    "master_used_shikamaru_style": true,
+    "master_direct_canon_reference_used": true,
+    "canon_reference_acquired_after_master": false,
+    "master_identity_source": "source/identity_reference.png"
+  },
+  "master_prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2"
+}

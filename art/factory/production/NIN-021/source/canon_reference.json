@@ -1,0 +1,17 @@
+{
+  "character_id": "NIN-021",
+  "name": "Tsunade",
+  "era": "Naruto",
+  "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+  "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+  "provider": "MyAnimeList character index (Naruto-associated entry)",
+  "source_page": "https://myanimelist.net/character/2767/Tsunade",
+  "source_image_url": "https://cdn.myanimelist.net/images/characters/12/523646.jpg",
+  "sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+  "dimensions_px": [
+    450,
+    700
+  ],
+  "temporary_image_path": "/tmp/naru-identity-refs/NIN-021.jpg",
+  "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+}

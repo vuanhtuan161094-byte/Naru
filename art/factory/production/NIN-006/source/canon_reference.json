@@ -1,0 +1,17 @@
+{
+  "character_id": "NIN-006",
+  "name": "Konohamaru (thiếu niên)",
+  "era": "Naruto",
+  "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+  "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+  "provider": "MyAnimeList character index (Naruto-associated entry)",
+  "source_page": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+  "source_image_url": "https://cdn.myanimelist.net/images/characters/7/109419.jpg",
+  "sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+  "dimensions_px": [
+    225,
+    350
+  ],
+  "temporary_image_path": "/tmp/naru-identity-refs/NIN-006.jpg",
+  "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+}

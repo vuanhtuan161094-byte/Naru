@@ -1,0 +1,44 @@
+{
+  "character_id": "NIN-011",
+  "identity": {
+    "name": "Kiba Inuzuka (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-011"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-011",
+  "target_source_render_count": 7,
+  "owner_visual_acceptance": "PENDING",
+  "canon_reference_source": {
+    "character_id": "NIN-011",
+    "name": "Kiba Inuzuka (thiếu niên)",
+    "era": "Naruto",
+    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+    "provider": "MyAnimeList character index (Naruto-associated entry)",
+    "source_page": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+    "source_image_url": "https://cdn.myanimelist.net/images/characters/11/131217.jpg",
+    "sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+    "dimensions_px": [
+      225,
+      350
+    ],
+    "temporary_image_path": "/tmp/naru-identity-refs/NIN-011.jpg",
+    "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+  },
+  "actual_source_render_count": 1,
+  "additional_render_attempts": [],
+  "identity_reference_usage": {
+    "canon_image_record": "source/canon_reference.json",
+    "canon_image_available": true,
+    "master_used_canon_image": false,
+    "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
+    "body_face_transfer_from_style_reference": false,
+    "next_action_atlases_must_use_canon_reference": true,
+    "master_used_shikamaru_style": true,
+    "master_direct_canon_reference_used": false,
+    "canon_reference_acquired_after_master": true,
+    "master_identity_source": "source/identity_reference.png"
+  },
+  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+}

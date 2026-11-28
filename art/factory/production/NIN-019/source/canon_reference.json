@@ -1,0 +1,17 @@
+{
+  "character_id": "NIN-019",
+  "name": "Hiruzen Sarutobi",
+  "era": "Naruto",
+  "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+  "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+  "provider": "MyAnimeList character index (Naruto-associated entry)",
+  "source_page": "https://myanimelist.net/character/7571/Hiruzen_Sarutobi",
+  "source_image_url": "https://cdn.myanimelist.net/images/characters/2/68520.jpg",
+  "sha256": "dc9b93fb15b0f11180d700d7c10002185ae1b08f64db9380dbbb948636804dc9",
+  "dimensions_px": [
+    225,
+    350
+  ],
+  "temporary_image_path": "/tmp/naru-identity-refs/NIN-019.jpg",
+  "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+}

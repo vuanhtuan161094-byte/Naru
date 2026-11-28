@@ -1,0 +1,554 @@
+{
+  "schema": 1,
+  "character_id": "NIN-010",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Hinata Hyuga (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-010"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_7R_V1",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_7R_V1",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "d17d55fa2279a9eb2b2803cae8eea5c5ca308065953e9a4226a915c1234994c8",
+        "size_bytes": 572397,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_7R_V1",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png",
+          "source/guides/idle_motion_guide.png",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "824263f9d2edafbf4f0e330bd1ff8d054894b6a9c7542584363070ddcd0e449e",
+        "size_bytes": 2903635,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_7R_V1",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png",
+          "source/guides/move_motion_guide.png",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "4da49d581226a40f83ae2e8227ecd64eda894239841affd9b7178af503770462",
+        "size_bytes": 1344938,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_7R_V1",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png",
+          "source/guides/attack_motion_guide.png",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "dade438947f59525e9da545afbb890c764b4526b096c6dfe7c9b7f64b9c712f2",
+        "size_bytes": 3233763,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_7R_V1",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png",
+          "source/guides/cast_motion_guide.png",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "fa5d702163c5753125083997602849999aff72ab2862531de3046be19b58f690",
+        "size_bytes": 2614154,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_7R_V1",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png",
+          "source/guides/hit_motion_guide.png",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "ce6cb3c404d0f8998759523ab8f2602c947f17e284d2345788b313f7e7986fb4",
+        "size_bytes": 965360,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_7R_V1",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png",
+          "source/guides/fall_motion_guide.png",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "359dfaf9cccf39dbc07374c5ec7523fa61866e5d4af834bc16d0b41d27c9755a",
+        "size_bytes": 967233,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "global_style_sha256": "2cb54c096d84b3a40afc9782b340f70c3a3d1a78f6efc301c4812c0d5d733a9c",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "d17d55fa2279a9eb2b2803cae8eea5c5ca308065953e9a4226a915c1234994c8",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "408487b835d4d4f47ecec7b33d553e01c158ceef2a32ebc629baaf7df16ffa41",
+        "bounds": [
+          325,
+          90,
+          673,
+          821
+        ],
+        "height": 731
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "8168e7a9f5c447e3b9d30f70d49dbfd54d487db3c334527f027b6d36e2465f65",
+        "bounds": [
+          177,
+          88,
+          564,
+          821
+        ],
+        "height": 733
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "9ad53b93e1277b9120cfe73370d301ede144a5a471b6999121a3cf78b9a7894e"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "dade438947f59525e9da545afbb890c764b4526b096c6dfe7c9b7f64b9c712f2",
+      "size_bytes": 3233763
+    },
+    "cast_atlas.png": {
+      "sha256": "fa5d702163c5753125083997602849999aff72ab2862531de3046be19b58f690",
+      "size_bytes": 2614154
+    },
+    "fall_atlas.png": {
+      "sha256": "359dfaf9cccf39dbc07374c5ec7523fa61866e5d4af834bc16d0b41d27c9755a",
+      "size_bytes": 967233
+    },
+    "hit_atlas.png": {
+      "sha256": "ce6cb3c404d0f8998759523ab8f2602c947f17e284d2345788b313f7e7986fb4",
+      "size_bytes": 965360
+    },
+    "idle_atlas.png": {
+      "sha256": "824263f9d2edafbf4f0e330bd1ff8d054894b6a9c7542584363070ddcd0e449e",
+      "size_bytes": 2903635
+    },
+    "move_atlas.png": {
+      "sha256": "4da49d581226a40f83ae2e8227ecd64eda894239841affd9b7178af503770462",
+      "size_bytes": 1344938
+    },
+    "model.png": {
+      "sha256": "d17d55fa2279a9eb2b2803cae8eea5c5ca308065953e9a4226a915c1234994c8",
+      "size_bytes": 572397
+    },
+    "identity_reference.png": {
+      "sha256": "9ad53b93e1277b9120cfe73370d301ede144a5a471b6999121a3cf78b9a7894e",
+      "size_bytes": 22256
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-010.png": "5a7711876dfa32a3421273b940443226aee21d4bc13fe104124475ee5aba6daa",
+    "animation/NIN-010/idle_se.png": "be4f07c6a14a7a0e34e9ea01481ce12e279d8bc5b3c899ba3235e030932a3923",
+    "animation/NIN-010/idle_sw.png": "0aa6455ef8ca3548c7c5bd2aa53e1772fdd3bc13f5613ef33b4215390968f3a5",
+    "animation/NIN-010/move_se.png": "f58f1a566b3bdeb8d35986ec0ad78082d59ea5f47d69a2beb0abc54857c545ff",
+    "animation/NIN-010/move_sw.png": "b921a3c1d7071444d1845c8e03e26d7cbaadadd9a6d0085560657e5d08e09741",
+    "animation/NIN-010/attack_se.png": "682f5d953ce0ffc43b7b4e54a4a9436c7dae647d8ff63d513c9cacc30cf9e447",
+    "animation/NIN-010/attack_sw.png": "f1b71452d1aadcba5dd1cf4a3ed890e3732a73839b7c5a0edb63b0c9bdc25178",
+    "animation/NIN-010/cast_se.png": "0231253f935a2afc47e25047c5212ae915b53f95eb99de292eac831f2e5f8fb0",
+    "animation/NIN-010/cast_sw.png": "cef3ad0b9ae8a7d7e9a6af6870909e56a8088914cd4681f0af0218a1fafed994",
+    "animation/NIN-010/hit_se.png": "7a955ca1b3ee5018f4b240eef09cbbde4cd2bf7b02a84b837f94acabd6425d79",
+    "animation/NIN-010/hit_sw.png": "bc4e87692d1db4f6c4d405effbab0d75c667cd69b21b5d0d1f0960f7425e6152",
+    "animation/NIN-010/fall_se.png": "d163470d00c37e91a04ffe17eda2e0a51a1f4ff2a0fcba7028bd0b4a2c34441c",
+    "animation/NIN-010/fall_sw.png": "db6e099dc55fdefc28376e5c3f49a2c81b772cb374b060c7c78854dc0be0ab87"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.283912,
+      "source_heights": [
+        317,
+        320,
+        328,
+        318,
+        307,
+        298
+      ],
+      "source_widths": [
+        169,
+        167,
+        169,
+        170,
+        169,
+        170
+      ]
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.290323,
+      "source_heights": [
+        310,
+        320,
+        328,
+        317,
+        305,
+        298
+      ],
+      "source_widths": [
+        175,
+        173,
+        173,
+        176,
+        176,
+        184
+      ]
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.290323,
+      "source_heights": [
+        310,
+        296,
+        307,
+        275,
+        304,
+        288,
+        304,
+        283
+      ],
+      "source_widths": [
+        197,
+        167,
+        190,
+        181,
+        189,
+        158,
+        187,
+        189
+      ]
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.298013,
+      "source_heights": [
+        302,
+        286,
+        301,
+        264,
+        301,
+        278,
+        297,
+        277
+      ],
+      "source_widths": [
+        185,
+        193,
+        167,
+        173,
+        170,
+        154,
+        170,
+        178
+      ]
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.28125,
+      "source_heights": [
+        320,
+        338,
+        338,
+        336,
+        325,
+        323
+      ],
+      "source_widths": [
+        171,
+        280,
+        263,
+        280,
+        176,
+        178
+      ]
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.280374,
+      "source_heights": [
+        321,
+        318,
+        321,
+        318,
+        319,
+        320
+      ],
+      "source_widths": [
+        178,
+        188,
+        177,
+        181,
+        180,
+        180
+      ]
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.290323,
+      "source_heights": [
+        310,
+        303,
+        299,
+        292,
+        285,
+        302
+      ],
+      "source_widths": [
+        168,
+        161,
+        196,
+        242,
+        219,
+        171
+      ]
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.29316,
+      "source_heights": [
+        307,
+        303,
+        298,
+        290,
+        288,
+        304
+      ],
+      "source_widths": [
+        173,
+        171,
+        210,
+        255,
+        236,
+        173
+      ]
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.243243,
+      "source_heights": [
+        370,
+        373,
+        348,
+        366
+      ],
+      "source_widths": [
+        214,
+        239,
+        224,
+        217
+      ]
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.245232,
+      "source_heights": [
+        367,
+        373,
+        340,
+        369
+      ],
+      "source_widths": [
+        226,
+        241,
+        231,
+        229
+      ]
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.212048,
+      "source_heights": [
+        394,
+        353,
+        285,
+        174
+      ],
+      "source_widths": [
+        207,
+        275,
+        318,
+        415
+      ]
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.206573,
+      "source_heights": [
+        387,
+        342,
+        278,
+        172
+      ],
+      "source_widths": [
+        232,
+        275,
+        319,
+        426
+      ]
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_REVIEWED_96X112_PENDING_OWNER",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "technical_pack": {
+      "status": "PASS",
+      "validation_path": "runtime/validation.json",
+      "scope": "V4 asset keys, hashes, dimensions, alpha silhouettes and distinct runtime frames"
+    },
+    "visual_review": {
+      "status": "QUICK_REVIEWED_96X112",
+      "contact_sheet": "previews/contact_sheet_96x112.png",
+      "owner_acceptance": "PENDING"
+    },
+    "runtime_capture": {
+      "status": "NOT_TESTED",
+      "note": "Awaiting six-kit Godot/Xvfb batch capture"
+    }
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-010.json",
+    "sha256": "ef8b5d4ddcc48f191e605c1cfb8ae8e5383159e85e389f101d0918092a62b640"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "7cdae4253733a08e1b1948ac0f06efd5d640b89338120ca361b9443fdabb2fc3"
+  }
+}

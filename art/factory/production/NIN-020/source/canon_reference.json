@@ -1,0 +1,17 @@
+{
+  "character_id": "NIN-020",
+  "name": "Jiraiya",
+  "era": "Naruto",
+  "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+  "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+  "provider": "MyAnimeList character index (Naruto-associated entry)",
+  "source_page": "https://myanimelist.net/character/2423/Jiraiya",
+  "source_image_url": "https://cdn.myanimelist.net/images/characters/15/68618.jpg",
+  "sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+  "dimensions_px": [
+    225,
+    350
+  ],
+  "temporary_image_path": "/tmp/naru-identity-refs/NIN-020.jpg",
+  "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+}

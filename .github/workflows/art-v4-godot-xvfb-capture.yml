@@ -1,0 +1,146 @@
+name: ART V4 Godot Xvfb batch capture
+
+on:
+  push:
+    branches: [art/r16-character-factory]
+    paths:
+      - 'art/factory/production/**/runtime/*.json'
+      - 'tools/capture_art_v4_batch.gd'
+      - '.github/workflows/art-v4-godot-xvfb-capture.yml'
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: Six completed NIN IDs per capture batch, comma-separated (optional; defaults to kits changed in the latest commit)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Godot and Xvfb capture dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb xauth ffmpeg libgl1-mesa-dri libegl1 libx11-6
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          chmod +x /tmp/godot/Godot_v4.7.2-stable_linux.x86_64
+          echo "GODOT=/tmp/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
+
+      - name: Resolve completed kits from this update
+        id: kits
+        shell: bash
+        env:
+          REQUESTED_IDS: ${{ inputs.ids }}
+        run: |
+          set -euo pipefail
+          mkdir -p art-v4-captures
+          if [[ -n "${REQUESTED_IDS//[[:space:]]/}" ]]; then
+            IDS=$(echo "$REQUESTED_IDS" | tr -d '[:space:]')
+          else
+            BEFORE='${{ github.event.before }}'
+            if [[ "$BEFORE" =~ ^0+$ ]] || ! git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+              BEFORE=$(git rev-parse HEAD^ 2>/dev/null || true)
+            fi
+            if [[ -z "$BEFORE" ]]; then
+              echo 'No previous commit; provide workflow_dispatch input ids.' >&2
+              exit 2
+            fi
+            mapfile -t FOUND < <(git diff --name-only "$BEFORE" '${{ github.sha }}' | sed -nE 's#^art/factory/production/(NIN-[0-9]{3})/runtime/\1\.json$#\1#p' | sort -u)
+            IDS=$(IFS=,; echo "${FOUND[*]}")
+          fi
+          if [[ -z "$IDS" ]]; then
+            echo 'No newly completed V4 kits detected; nothing to capture.'
+            echo 'ids=' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          IFS=, read -r -a ID_ARRAY <<< "$IDS"
+          if ((${#ID_ARRAY[@]} < 6)); then
+            echo "Only ${#ID_ARRAY[@]} newly completed kit(s); native capture starts once a complete six-kit group is available."
+            echo 'ids=' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if ((${#ID_ARRAY[@]} % 6 != 0)); then
+            echo "Newly completed kit count ${#ID_ARRAY[@]} is not divisible into six-kit batches." >&2
+            exit 2
+          fi
+          declare -A SEEN=()
+          for id in "${ID_ARRAY[@]}"; do
+            [[ "$id" =~ ^NIN-[0-9]{3}$ ]] || { echo "Invalid NIN ID: $id" >&2; exit 2; }
+            [[ -f "art/factory/production/$id/runtime/$id.json" ]] || { echo "Missing runtime kit $id" >&2; exit 2; }
+            [[ -z "${SEEN[$id]:-}" ]] || { echo "Duplicate ID: $id" >&2; exit 2; }
+            SEEN[$id]=1
+          done
+          echo "ids=$(IFS=,; echo "${ID_ARRAY[*]}")" >> "$GITHUB_OUTPUT"
+
+      - name: Import project resources with a real Xvfb display
+        if: steps.kits.outputs.ids != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          export LIBGL_ALWAYS_SOFTWARE=1
+          export GALLIUM_DRIVER=llvmpipe
+          timeout 240 xvfb-run -a "$GODOT" --editor --path . --import 2>&1 | tee art-v4-captures/import.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|ERROR:' art-v4-captures/import.log
+
+      - name: Capture six-versus-six native battle batches
+        if: steps.kits.outputs.ids != ''
+        shell: bash
+        env:
+          IDS: ${{ steps.kits.outputs.ids }}
+        run: |
+          set -euo pipefail
+          export LIBGL_ALWAYS_SOFTWARE=1
+          export GALLIUM_DRIVER=llvmpipe
+          IFS=, read -r -a ALL_IDS <<< "$IDS"
+          BATCH=0
+          for ((offset=0; offset<${#ALL_IDS[@]}; offset+=6)); do
+            GROUP=("${ALL_IDS[@]:offset:6}")
+            if ((${#GROUP[@]} != 6)); then
+              echo "Capture batches require six completed kits; received ${#GROUP[@]} in final group." >&2
+              exit 2
+            fi
+            BATCH=$((BATCH+1))
+            BATCH_NAME=$(printf 'batch-%02d' "$BATCH")
+            mkdir -p "art-v4-captures/$BATCH_NAME"
+            GROUP_CSV=$(IFS=,; echo "${GROUP[*]}")
+            export GODOT DISPLAY_CAPTURE_IDS="$GROUP_CSV" DISPLAY_CAPTURE_DIR="art-v4-captures/$BATCH_NAME"
+            xvfb-run -a bash -euo pipefail -c '
+              timeout 90 "$GODOT" --path . --windowed --resolution 1280x720 --script res://tools/capture_art_v4_batch.gd -- --ids="$DISPLAY_CAPTURE_IDS" > "$DISPLAY_CAPTURE_DIR/godot.log" 2>&1 &
+              GAME_PID=$!
+              cleanup() { kill "$GAME_PID" 2>/dev/null || true; }
+              trap cleanup EXIT
+              for attempt in $(seq 1 120); do
+                if grep -q "ART_V4_CAPTURE_READY" "$DISPLAY_CAPTURE_DIR/godot.log"; then break; fi
+                if ! kill -0 "$GAME_PID" 2>/dev/null; then cat "$DISPLAY_CAPTURE_DIR/godot.log"; exit 1; fi
+                sleep 0.5
+              done
+              grep -q "ART_V4_CAPTURE_READY" "$DISPLAY_CAPTURE_DIR/godot.log" || { cat "$DISPLAY_CAPTURE_DIR/godot.log"; exit 1; }
+              ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i "$DISPLAY" -t 15 -c:v libx264 -preset veryfast -pix_fmt yuv420p "$DISPLAY_CAPTURE_DIR/6v6.mp4"
+              wait "$GAME_PID"
+              grep -q "ART_V4_CAPTURE_FINISHED" "$DISPLAY_CAPTURE_DIR/godot.log"
+              ! grep -E "Parse Error|SCRIPT ERROR|ART_V4_CAPTURE rejected|ART_V4_CAPTURE missing" "$DISPLAY_CAPTURE_DIR/godot.log"
+              ffmpeg -hide_banner -loglevel error -y -ss 2 -i "$DISPLAY_CAPTURE_DIR/6v6.mp4" -frames:v 1 "$DISPLAY_CAPTURE_DIR/6v6.png"
+              test -s "$DISPLAY_CAPTURE_DIR/6v6.mp4"
+              test -s "$DISPLAY_CAPTURE_DIR/6v6.png"
+              printf "%s\n" "$GITHUB_SHA" > "$DISPLAY_CAPTURE_DIR/BUILD_SHA.txt"
+            '
+          done
+
+      - name: Upload real Godot/Xvfb screenshots, video and logs
+        if: always() && steps.kits.outputs.ids != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ART-V4-Godot-Xvfb-6v6-${{ github.sha }}
+          path: art-v4-captures/
+          retention-days: 30

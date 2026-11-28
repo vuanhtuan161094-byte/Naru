@@ -1,0 +1,67 @@
+{
+  "character_id": "NIN-022",
+  "identity": {
+    "name": "Orochimaru",
+    "era": "Naruto",
+    "form": "base",
+    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-022"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-022",
+  "target_source_render_count": 7,
+  "owner_visual_acceptance": "PENDING",
+  "canon_reference_source": {
+    "character_id": "NIN-022",
+    "name": "Orochimaru",
+    "era": "Naruto",
+    "form": "classic base roster form; local database sprite locks the cream tunic, purple rope belt, trousers, and game silhouette",
+    "reference_role": "direct Naruto anime still for pale skin, long narrow face, yellow snake-slit eyes, purple eye rims and long straight black hair; outfit stays locked by local database sprite",
+    "provider": "CBR Naruto article embedding an anime still",
+    "source_page": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+    "source_image_url": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/orochimaru-naruto-featured.jpg",
+    "sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+    "dimensions_px": [
+      1710,
+      900
+    ],
+    "temporary_image_path": "/tmp/orochimaru_cbr.jpg",
+    "storage": "Reference image remains in /tmp and is not bundled into public/game assets",
+    "acquired_at_utc": "2026-11-28T07:46:22Z",
+    "note": "Selected for clearer near-frontal canon face and readable yellow vertical pupils; use the roster sprite separately to preserve Orochimaru's classic outfit."
+  },
+  "actual_source_render_count": 1,
+  "additional_render_attempts": [
+    {
+      "attempt": 2,
+      "kind": "targeted_two-view_master_replacement",
+      "requested_at_utc": "2026-11-28T07:46:22Z",
+      "status": "BLOCKED_IMAGEGEN_USAGE_LIMIT",
+      "output_created": false,
+      "reference_inputs": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/identity_reference.png",
+        "NIN-007/source/model.png (style only)"
+      ],
+      "error": "image_gen returned HTTP 429 usage_limit_reached; reported reset 2026-11-28T11:44:59Z UTC",
+      "action_atlases_created": false
+    }
+  ],
+  "identity_reference_usage": {
+    "canon_image_record": "source/canon_reference.json",
+    "canon_image_available": true,
+    "master_used_canon_image": false,
+    "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
+    "body_face_transfer_from_style_reference": false,
+    "next_action_atlases_must_use_canon_reference": true,
+    "master_used_shikamaru_style": false,
+    "master_direct_canon_reference_used": false,
+    "canon_reference_acquired_after_master": true,
+    "master_identity_source": "source/identity_reference.png",
+    "owner_rejected_master_at_96x112": true,
+    "replacement_render_requested": true,
+    "replacement_render_status": "BLOCKED_IMAGEGEN_USAGE_LIMIT"
+  },
+  "identity_correction_required": "OWNER_REJECTED_2026-11-28: current master identity fails at game scale (solid dark-looking eyes and weak canon expression). Replace only the two-view master using the direct anime still, roster sprite for outfit, and Shikamaru master as style-only reference. Do not render action atlases until the replacement is usable.",
+  "master_prompt_version": "ART_V4_FAST_MODEL_V2_IDENTITY_LOCK_PENDING",
+  "source_render_requests": 2,
+  "successful_source_render_outputs": 1
+}

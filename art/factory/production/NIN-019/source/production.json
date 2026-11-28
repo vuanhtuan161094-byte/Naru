@@ -1,0 +1,43 @@
+{
+  "character_id": "NIN-019",
+  "identity": {
+    "name": "Hiruzen Sarutobi",
+    "era": "Naruto",
+    "form": "base",
+    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-019"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-019",
+  "target_source_render_count": 7,
+  "owner_visual_acceptance": "PENDING",
+  "canon_reference_source": {
+    "character_id": "NIN-019",
+    "name": "Hiruzen Sarutobi",
+    "era": "Naruto",
+    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+    "provider": "MyAnimeList character index (Naruto-associated entry)",
+    "source_page": "https://myanimelist.net/character/7571/Hiruzen_Sarutobi",
+    "source_image_url": "https://cdn.myanimelist.net/images/characters/2/68520.jpg",
+    "sha256": "dc9b93fb15b0f11180d700d7c10002185ae1b08f64db9380dbbb948636804dc9",
+    "dimensions_px": [
+      225,
+      350
+    ],
+    "temporary_image_path": "/tmp/naru-identity-refs/NIN-019.jpg",
+    "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+  },
+  "actual_source_render_count": 0,
+  "additional_render_attempts": [],
+  "identity_reference_usage": {
+    "canon_image_record": "source/canon_reference.json",
+    "canon_image_available": true,
+    "master_used_canon_image": false,
+    "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
+    "body_face_transfer_from_style_reference": false,
+    "next_action_atlases_must_use_canon_reference": true,
+    "master_used_shikamaru_style": false,
+    "master_direct_canon_reference_used": false,
+    "canon_reference_acquired_after_master": false,
+    "master_identity_source": "source/identity_reference.png"
+  }
+}

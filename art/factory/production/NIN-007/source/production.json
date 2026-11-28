@@ -1,0 +1,164 @@
+{
+  "character_id": "NIN-007",
+  "identity": {
+    "name": "Shikamaru Nara (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-007"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-007",
+  "target_source_render_count": 7,
+  "owner_visual_acceptance": "PENDING",
+  "actual_source_render_count": 7,
+  "prompt_version": "PER_RENDER_SOURCE_RECORD",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_MODEL_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+      "size_bytes": 1217827,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T07:13:19.429629+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/guides/idle_motion_guide.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        2164,
+        727
+      ],
+      "sha256": "3f883331b5cf59b4f83940da97864da0e83d229e090031c1569146c0bf22ba05",
+      "size_bytes": 2520446,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T07:13:19.429629+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/guides/move_motion_guide.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "b8c78400317011fd8b831aa7ad67b6cca710251cf527be9f695b17b3b6d4d252",
+      "size_bytes": 1023664,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T07:13:19.429629+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/guides/attack_motion_guide.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "a7dfa95b153fbf994f3864f1e3dfafa4c514d598e2c0929063ddd91fa302836e",
+      "size_bytes": 933623,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T07:13:19.429629+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/guides/cast_motion_guide.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "525ff7a48edf9407e0b56e95ab9ecea2db7e7ca12c239884041aed87b055aeb5",
+      "size_bytes": 1019815,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T07:13:19.429629+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/guides/hit_motion_guide.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "3a9301f7660e6b416325fcb5859b75e9aa0bd0d6200de1e75223309c4c8152d0",
+      "size_bytes": 944834,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T07:13:19.429629+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/guides/fall_motion_guide.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "632775e7d0e99403df3b7b89eaadaf8968b38ad88d99c8857e6b34fec0495057",
+      "size_bytes": 888518,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T07:13:19.429629+00:00"
+    }
+  },
+  "canon_reference_source": {
+    "character_id": "NIN-007",
+    "name": "Shikamaru Nara (thiếu niên)",
+    "era": "Naruto",
+    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+    "provider": "MyAnimeList character index (Naruto-associated entry)",
+    "source_page": "https://myanimelist.net/character/2007/Shikamaru_Nara",
+    "source_image_url": "https://cdn.myanimelist.net/images/characters/3/131315.jpg",
+    "sha256": "6e16ae71b852fd8e9efa3f38a2577199225c6242028bb478fdd008af40acf5cc",
+    "dimensions_px": [
+      225,
+      350
+    ],
+    "temporary_image_path": "/tmp/naru-identity-refs/NIN-007.jpg",
+    "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+  }
+}

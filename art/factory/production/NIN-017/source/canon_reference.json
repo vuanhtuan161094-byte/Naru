@@ -1,0 +1,17 @@
+{
+  "character_id": "NIN-017",
+  "name": "Asuma Sarutobi",
+  "era": "Naruto",
+  "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+  "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+  "provider": "MyAnimeList character index (Naruto-associated entry)",
+  "source_page": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+  "source_image_url": "https://cdn.myanimelist.net/images/characters/13/82538.jpg",
+  "sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+  "dimensions_px": [
+    225,
+    350
+  ],
+  "temporary_image_path": "/tmp/naru-identity-refs/NIN-017.jpg",
+  "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+}

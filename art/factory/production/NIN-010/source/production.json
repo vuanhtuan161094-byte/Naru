@@ -1,0 +1,158 @@
+{
+  "character_id": "NIN-010",
+  "identity": {
+    "name": "Hinata Hyuga (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-010"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-010",
+  "target_source_render_count": 7,
+  "owner_visual_acceptance": "PENDING",
+  "actual_source_render_count": 7,
+  "prompt_version": "ART_V4_FAST_7R_V1",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_7R_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "d17d55fa2279a9eb2b2803cae8eea5c5ca308065953e9a4226a915c1234994c8",
+      "size_bytes": 572397,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_7R_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "source/guides/idle_motion_guide.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "824263f9d2edafbf4f0e330bd1ff8d054894b6a9c7542584363070ddcd0e449e",
+      "size_bytes": 2903635,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_7R_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "source/guides/move_motion_guide.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "4da49d581226a40f83ae2e8227ecd64eda894239841affd9b7178af503770462",
+      "size_bytes": 1344938,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_7R_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "source/guides/attack_motion_guide.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "dade438947f59525e9da545afbb890c764b4526b096c6dfe7c9b7f64b9c712f2",
+      "size_bytes": 3233763,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_7R_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "source/guides/cast_motion_guide.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "fa5d702163c5753125083997602849999aff72ab2862531de3046be19b58f690",
+      "size_bytes": 2614154,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_7R_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "source/guides/hit_motion_guide.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "ce6cb3c404d0f8998759523ab8f2602c947f17e284d2345788b313f7e7986fb4",
+      "size_bytes": 965360,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_7R_V1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "source/guides/fall_motion_guide.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "359dfaf9cccf39dbc07374c5ec7523fa61866e5d4af834bc16d0b41d27c9755a",
+      "size_bytes": 967233,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T06:59:12.650784+00:00"
+    }
+  },
+  "canon_reference_source": {
+    "character_id": "NIN-010",
+    "name": "Hinata Hyuga (thiếu niên)",
+    "era": "Naruto",
+    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+    "provider": "MyAnimeList character index (Naruto-associated entry)",
+    "source_page": "https://myanimelist.net/character/1555/Hinata_Hyuuga",
+    "source_image_url": "https://cdn.myanimelist.net/images/characters/6/278736.jpg",
+    "sha256": "f2fdc216fa81813ef8dfe17f80a203874f9e2187de4e07ae527b91907521c8d7",
+    "dimensions_px": [
+      225,
+      350
+    ],
+    "temporary_image_path": "/tmp/naru-identity-refs/NIN-010.jpg",
+    "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+  }
+}

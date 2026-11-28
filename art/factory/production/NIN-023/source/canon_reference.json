@@ -1,0 +1,17 @@
+{
+  "character_id": "NIN-023",
+  "name": "Kabuto Yakushi",
+  "era": "Naruto",
+  "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+  "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
+  "provider": "MyAnimeList character index (Naruto-associated entry)",
+  "source_page": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+  "source_image_url": "https://cdn.myanimelist.net/images/characters/14/82459.jpg",
+  "sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+  "dimensions_px": [
+    225,
+    350
+  ],
+  "temporary_image_path": "/tmp/naru-identity-refs/NIN-023.jpg",
+  "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
+}

@@ -1,0 +1,159 @@
+{
+  "source_sha256": "359dfaf9cccf39dbc07374c5ec7523fa61866e5d4af834bc16d0b41d27c9755a",
+  "atlas_size": [
+    1774,
+    887
+  ],
+  "grid": [
+    2,
+    4
+  ],
+  "alpha_threshold": 32,
+  "extraction": "row_alpha_runs_variable_width",
+  "cells": [
+    {
+      "direction": "se",
+      "frame": 0,
+      "cell_rect": [
+        85,
+        0,
+        298,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        27,
+        210,
+        421
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "se",
+      "frame": 1,
+      "cell_rect": [
+        491,
+        0,
+        772,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        68,
+        278,
+        421
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "se",
+      "frame": 2,
+      "cell_rect": [
+        906,
+        0,
+        1230,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        134,
+        321,
+        419
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "se",
+      "frame": 3,
+      "cell_rect": [
+        1329,
+        0,
+        1750,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        245,
+        418,
+        419
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 0,
+      "cell_rect": [
+        100,
+        444,
+        338,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        29,
+        235,
+        416
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 1,
+      "cell_rect": [
+        494,
+        444,
+        775,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        74,
+        278,
+        416
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 2,
+      "cell_rect": [
+        914,
+        444,
+        1239,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        134,
+        322,
+        412
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 3,
+      "cell_rect": [
+        1321,
+        444,
+        1753,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        240,
+        429,
+        412
+      ],
+      "source_margin_px": 3,
+      "extraction": "row_alpha_runs_variable_width"
+    }
+  ]
+}
