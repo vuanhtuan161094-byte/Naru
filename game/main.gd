@@ -280,8 +280,7 @@ func menu(message: String="") -> void:
 	home_screen(message)
 
 func recruit_one() -> void:
-	var id=store.draw(reg)
-	recruit_screen("Chiêu mộ: "+str(reg.ninjas[id].name_vi) if not id.is_empty() else "Không đủ ngọc")
+	perform_recruit(1)
 
 func roster(message: String="") -> void:
 	open_screen("formation")
@@ -446,12 +445,19 @@ func growth_detail(id: String,message: String="") -> void:
 		var star_quote=store.star_quote(reg,id)
 		star_button.disabled=not star_quote.ready
 		star_button.tooltip_text=str(star_quote.reason)
+		var actual=store.player_preview(reg,id)
+		label(rows,"SỨC MẠNH • HP %.0f | Công vật lý %.0f | Nhẫn công %.0f | Giáp %.0f | Kháng %.0f"%[float(actual.hp),float(actual.patk),float(actual.natk),float(actual.armor),float(actual.nres)],16)
+		var reserve=store.shard_reserve(reg,id)
+		label(rows,"Mảnh: %d • cần %d cho sao, %d cho phẩm • dư %d"%[int(reserve.stock),int(reserve.stars),int(reserve.quality),int(reserve.surplus)],16)
+		var units=mini(100,floori(float(reserve.surplus)/5.0))
+		var recycle=button(rows,"Đổi %d mảnh dư → %d mảnh sao"%[units*5,units],func():growth_detail(id,"Đã đổi mảnh dư" if store.recycle_surplus(reg,id,units) else "Không đủ mảnh dư"))
+		recycle.disabled=units<1
 		label(rows,"Thiên phú: "+str(p.get("talent",""))+" • "+str(reg.ninjas[id].fixed_talent),17)
 		label(rows,"XP lên cấp: %d/%d | Đột phá: %d %s • %.0f%% • bảo hiểm %d/5" % [int(p.xp),WorldQuotes.xp_need(int(p.level),int(p.realm)),realm_cost,reg.resources["RES-128"].name_vi,100*WorldQuotes.realm_chance(int(p.realm_failures)),int(p.realm_failures)],16)
 		if int(p.stars)<15:
 			var star_rule=reg.growth.stars[int(p.stars)-1]
 			label(rows,"Sao kế tiếp: %d/%d mảnh • %s" % [int(p.shards),int(star_rule.shards),cost_text(star_rule.resources)],16)
-		var exchange=button(rows,"DEV đổi 5 mảnh ninja • 10 mảnh sao + 1000 Ryo",func():growth_detail(id,"Đã đổi" if store.exchange_shards(id,5) else "Cần Tổng bộ 5, Điện thức tỉnh và nguyên liệu"))
+		var exchange=button(rows,"Đổi 5 mảnh ninja • 10 mảnh sao + 1000 Ryo",func():growth_detail(id,"Đã đổi" if store.exchange_shards(id,5) else "Cần Tổng bộ 5, Điện thức tỉnh và nguyên liệu"))
 		exchange.disabled=Village.level(store.state,"BLD-001")<5 or Village.level(store.state,"BLD-009")==0 or not store.has_cost(store.shard_exchange_cost(5))
 		return
 	if ninja_detail_tab==1:
@@ -1036,6 +1042,12 @@ func skill_screen(id: String,message: String="") -> void:
 		name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		if not store.skill_allowed(reg,id,skill_id):
 			var trial_id=str(reg.names[skill_id].unlock_require.challenge_id)
+			var req=reg.names[skill_id].unlock_require
+			var p=store.state.owned[id]
+			var prereq=store.skill_progress(p,str(req.prior_skill_id))
+			var detail="Cảnh %d/%d · Giai %d/%d · Thành thạo %d/%d"%[int(p.realm),int(reg.trials[trial_id].requires_realm),int(prereq.grade),int(req.grade),int(p.skill_mastery.get(req.prior_skill_id,0)),int(req.mastery)]
+			name_label.text+="\n"+detail
+			name_label.tooltip_text=detail
 			var trial_button=button(row,"Thử thách mở khóa",func():skill_screen(id,"Đã mở" if store.run_trial(reg,id,trial_id) else "Chưa thắng hoặc chưa đủ điều kiện"))
 			trial_button.disabled=not store.trial_ready(reg,id,trial_id)
 		elif reg.skill_policies.has(skill_id):
@@ -2293,53 +2305,186 @@ func ninja_gear_screen(id: String) -> void:
 				button(rows,("Thay bằng " if equipped!="" else "Mặc ")+str(reg.gear_templates[g.template_id].name_vi),func():store.equip_gear(reg,id,gear_id);ninja_gear_screen(id))
 	button(rows,"Chế tạo trang bị",gear_craft_screen)
 
-func recruit_screen(message: String="") -> void:
+func perform_recruit(count:int) -> void:
+	var results=store.draw_batch(reg,count)
+	if results.is_empty():recruit_screen("Không đủ ngọc hoặc lỗi lưu. Chưa hoàn tất chiêu mộ.");return
 	open_screen("recruit")
-	label(root,"CHIÊU MỘ NINJA",28)
-	label(root,"Ngọc: %s • Lượt: %d • SSR %d/20 • UR %d/80" % [store.state.inventory.get("RES-002",0),int(store.state.draws),int(store.state.pity4),int(store.state.pity5)],18)
-	label(root,message,18)
-	var row=HBoxContainer.new()
-	root.add_child(row)
-	var draw_button=button(row,"Chiêu mộ 1 • 100 ngọc",recruit_one)
-	draw_button.disabled=int(store.state.inventory.get("RES-002",0))<100
-	button(row,"Chiêu mộ 10 • 1000 ngọc",func():
-		if int(store.state.inventory.get("RES-002",0))<1000:recruit_screen("Không đủ ngọc");return
-		var results=[]
-		for i in range(10):
-			var id=store.draw(reg)
-			if id=="":break
-			results.append(reg.ninjas[id].name_vi)
-		recruit_screen("Nhận: "+", ".join(results)))
+	var new_count=0
+	var fragments=0
+	for item in results:
+		if item.new:new_count+=1
+		else:fragments+=int(item.shards)
+	label(root,"KẾT QUẢ CHIÊU MỘ",30)
+	label(root,"%d lượt • %d ninja mới • %d mảnh trùng • Đã lưu"%[results.size(),new_count,fragments],18)
 	var rows=scroll_rows(root)
-	label(rows,"DANH SÁCH CHIÊU MỘ • Xem trước theo phẩm",20).modulate=Color("#e8cd9a")
-	for tier in reg.recruit.pool:
+	var grid=GridContainer.new()
+	grid.columns=5 if results.size()>1 else 1
+	rows.add_child(grid)
+	for item in results:
+		var id=str(item.id)
+		var q=int(item.quality)
 		var panel=PanelContainer.new()
-		panel.add_theme_stylebox_override("panel",combat_panel(Color("#20332e"),quality_color(int(tier.quality)).darkened(0.35),8))
-		rows.add_child(panel)
+		panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		panel.add_theme_stylebox_override("panel",combat_panel(Color("#22323e"),quality_color(q),9))
+		grid.add_child(panel)
 		var col=VBoxContainer.new()
 		panel.add_child(col)
-		label(col,"%s • Phẩm %d • Tỷ lệ %s%% • %d ninja" % [tier.label,int(tier.quality),tier.weight,tier.ninja_ids.size()],18).modulate=quality_color(int(tier.quality))
-		var preview=HBoxContainer.new()
-		col.add_child(preview)
-		for k in range(mini(6,tier.ninja_ids.size())):
-			var id=str(tier.ninja_ids[k])
-			var tile=VBoxContainer.new()
-			tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-			preview.add_child(tile)
-			var tex=art.texture("characters/"+id+".png")
-			if tex!=null:
-				var img=TextureRect.new()
-				img.texture=tex
-				img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
-				img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-				img.custom_minimum_size=Vector2(0,96)
-				tile.add_child(img)
-			var title=label(tile,str(reg.ninjas[id].name_vi),13)
-			title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
-	label(rows,"Trùng mẫu ninja nhận mảnh; không có thanh toán tiền thật.",16)
-	label(rows,"MẢNH NINJA ĐANG SỞ HỮU",20)
-	for id in store.state.owned:
-		product_art_header(rows,"portraits/"+id+".png",str(reg.ninjas[id].name_vi),"%d mảnh" % int(store.state.owned[id].shards),42)
+		var rarity=label(col,str(reg.recruit.pool[q-1].label),21)
+		rarity.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+		rarity.modulate=quality_color(q)
+		var tex=art.texture("portraits/"+id+".png")
+		if tex==null:tex=art.texture("characters/"+id+".png")
+		if tex!=null:
+			var img=TextureRect.new()
+			img.texture=tex
+			img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+			img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			img.custom_minimum_size=Vector2(0,104)
+			col.add_child(img)
+		var title=label(col,str(reg.ninjas[id].name_vi),14)
+		title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+		var reward=label(col,"NINJA MỚI" if item.new else "+%d mảnh ninja"%int(item.shards),15)
+		reward.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+		reward.modulate=Color("#f3d18b") if item.new else Color("#c6dbe4")
+		button(col,"Phát triển",func():growth_detail(id))
+	var nav=HBoxContainer.new()
+	root.add_child(nav)
+	button(nav,"Chiêu mộ tiếp",recruit_screen)
+	button(nav,"Bố trận",roster)
+	button(nav,"Danh sách ninja",growth_screen)
+
+func recruit_history_screen() -> void:
+	open_screen("recruit")
+	label(root,"LỊCH SỬ CHIÊU MỘ • 100 lượt gần nhất",25)
+	var rows=scroll_rows(root)
+	var records=store.state.recruit_history.duplicate()
+	records.reverse()
+	for item in records:
+		label(rows,"#%d • %s • %s • %s"%[int(item.draw),reg.recruit.pool[int(item.quality)-1].label,reg.ninjas[item.id].name_vi,"Mới" if item.new else "+%d mảnh"%int(item.shards)],16)
+	if records.is_empty():label(rows,"Chưa có lịch sử mới. Tổng lượt cũ vẫn được giữ.",16)
+	button(root,"Trở về",recruit_screen)
+
+func recruit_rates_screen() -> void:
+	open_screen("recruit")
+	label(root,"TỶ LỆ VÀ BẢO HIỂM",27)
+	label(root,"Tỷ lệ cơ bản / tỷ lệ thực tế của lượt kế tiếp",17)
+	var rows=scroll_rows(root)
+	var odds=store.draw_odds(reg)
+	for tier in reg.recruit.pool:
+		var q=int(tier.quality)
+		label(rows,"%s • %.1f%% cơ bản / %.2f%% lượt tới • %d ninja"%[tier.label,float(tier.weight),float(odds[q-1]),tier.ninja_ids.size()],18).modulate=quality_color(q)
+		var names=[]
+		for id in tier.ninja_ids:names.append(str(reg.ninjas[id].name_vi))
+		var line=label(rows,", ".join(names),14)
+		line.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+		line.text_overrun_behavior=TextServer.OVERRUN_NO_TRIMMING
+	label(rows,"Lượt đầu SR+; bảo hiểm SSR+ 20 lượt và UR+ 80 lượt. Phẩm cao hơn cũng đặt lại bộ đếm tương ứng.",15)
+	button(root,"Trở về",recruit_screen)
+
+var fragment_query=""
+var fragment_filter=0
+func fragment_recruit_screen(message:String="") -> void:
+	open_screen("recruit")
+	label(root,"THU THẬP MẢNH NINJA",26)
+	label(root,"Đổi mảnh sao + Ryo lấy mảnh mục tiêu • Tổng bộ 5 + Điện thức tỉnh • Tỷ lệ đổi thử nghiệm",15)
+	if not message.is_empty():label(root,message,16)
+	var filter=HBoxContainer.new()
+	root.add_child(filter)
+	var query=LineEdit.new()
+	query.placeholder_text="Tìm ninja chưa sở hữu"
+	query.text=fragment_query
+	query.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	filter.add_child(query)
+	var tiers=OptionButton.new()
+	tiers.add_item("Mọi phẩm")
+	for q in range(1,9):tiers.add_item(str(reg.recruit.pool[q-1].label))
+	tiers.select(fragment_filter)
+	filter.add_child(tiers)
+	button(filter,"Lọc",func():fragment_query=query.text;fragment_filter=tiers.selected;fragment_recruit_screen())
+	var rows=scroll_rows(root)
+	for id in reg.ninjas:
+		if store.state.owned.has(id):continue
+		var n=reg.ninjas[id]
+		if fragment_filter>0 and int(n.initial_quality)!=fragment_filter:continue
+		if not fragment_query.is_empty() and not str(n.name_vi).to_lower().contains(fragment_query.to_lower()):continue
+		var q=store.fragment_unlock_quote(reg,id)
+		var row=ui_card_row(rows,quality_color(int(q.quality)).darkened(0.25))
+		var title=label(row,"%s • %d/%d mảnh"%[n.name_vi,int(q.stock),int(q.need)],16)
+		title.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		if q.ready:
+			button(row,"Chiêu mộ bằng mảnh",func():fragment_recruit_screen("Đã chiêu mộ" if store.unlock_by_fragments(reg,id) else "Lỗi lưu"))
+		else:
+			var qty=mini(20,int(q.need)-int(q.stock))
+			var cost={}
+			for k in q.cost:cost[k]=int(q.cost[k])*qty
+			var buy=button(row,"Đổi %d mảnh • %d sao / %d Ryo"%[qty,int(cost["RES-134"]),int(cost["RES-001"])],func():fragment_recruit_screen("Đã đổi mảnh" if store.buy_target_fragments(reg,id,qty) else "Chưa đủ điều kiện"))
+			buy.disabled=not q.gate or not store.has_cost(cost)
+	button(root,"Trở về",recruit_screen)
+
+func recruit_screen(message: String="") -> void:
+	open_screen("recruit")
+	label(root,"CHIÊU MỘ NINJA",30)
+	label(root,"Thu thập đồng đội • Phát triển từ mảnh • Lập đội hình",17)
+	if not message.is_empty():label(root,message,16)
+	var panel=PanelContainer.new()
+	panel.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	panel.add_theme_stylebox_override("panel",combat_panel(Color("#23333e"),Color("#b79a62"),10))
+	root.add_child(panel)
+	var content=VBoxContainer.new()
+	content.alignment=BoxContainer.ALIGNMENT_CENTER
+	content.add_theme_constant_override("separation",12)
+	panel.add_child(content)
+	var display=HBoxContainer.new()
+	content.add_child(display)
+	for id in ["NIN-041","NIN-042","NIN-060","NIN-093"]:
+		var tile=VBoxContainer.new()
+		tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		display.add_child(tile)
+		var tex=art.texture("portraits/"+id+".png")
+		if tex==null:tex=art.texture("characters/"+id+".png")
+		if tex!=null:
+			var img=TextureRect.new()
+			img.texture=tex
+			img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+			img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			img.custom_minimum_size=Vector2(0,140)
+			tile.add_child(img)
+		var title=label(tile,str(reg.ninjas[id].name_vi),14)
+		title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+		title.modulate=quality_color(int(reg.ninjas[id].initial_quality))
+	label(content,"CHIÊU MỘ NHẪN GIỚI • Một quỹ 144 ninja",22).horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	label(content,"Ngọc: %d • Tổng lượt: %d • Lượt kế tiếp tối thiểu %s"%[int(store.state.inventory.get("RES-002",0)),int(store.state.draws),reg.recruit.pool[store.next_draw_floor()-1].label],18).horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	var pity=HBoxContainer.new()
+	content.add_child(pity)
+	for item in [["SSR+",int(store.state.pity4),20],["UR+",int(store.state.pity5),80]]:
+		var p=VBoxContainer.new()
+		p.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		pity.add_child(p)
+		label(p,"%s • còn tối đa %d lượt"%[item[0],maxi(1,int(item[2])-int(item[1]))],16)
+		var bar=ProgressBar.new()
+		bar.max_value=int(item[2])
+		bar.value=int(item[1])
+		bar.show_percentage=false
+		bar.custom_minimum_size.y=13
+		p.add_child(bar)
+	var draw_row=HBoxContainer.new()
+	content.add_child(draw_row)
+	var one=button(draw_row,"CHIÊU MỘ ×1\n%d ngọc"%int(reg.recruit.price.single),recruit_one)
+	one.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	one.custom_minimum_size.y=58
+	one.disabled=int(store.state.inventory.get("RES-002",0))<int(reg.recruit.price.single)
+	var ten=button(draw_row,"CHIÊU MỘ ×10\n%d ngọc"%int(reg.recruit.price.ten),func():perform_recruit(10))
+	ten.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	ten.custom_minimum_size.y=58
+	ten.disabled=int(store.state.inventory.get("RES-002",0))<int(reg.recruit.price.ten)
+	ten.add_theme_stylebox_override("normal",combat_panel(Color("#805b31"),Color("#d8b675"),8))
+	var nav=HBoxContainer.new()
+	root.add_child(nav)
+	button(nav,"Tỷ lệ / Danh sách",recruit_rates_screen)
+	button(nav,"Lịch sử",recruit_history_screen)
+	button(nav,"Thu thập mảnh",fragment_recruit_screen)
+	button(nav,"Nguồn ngọc",func():resource_detail("RES-002"))
+	button(nav,"Danh sách ninja",growth_screen)
 
 func cost_text(inputs: Array) -> String:
 	var parts=[]
