@@ -3493,6 +3493,9 @@ func update_battle_inspector() -> void:
 	var labels=[]
 	for id in a.skills:
 		var s=sim.effective_skill(a,id)
+		if str(s.kind)=="basic":
+			labels.append(sim.skill_name(id)+"  •  Tự động")
+			continue
 		var cd=float(a.cooldowns.get(id,0))
 		labels.append(sim.skill_name(id)+"  •  "+("CD %.1fs" % cd if cd>0 else "%.1f CP" % float(s.chakra)))
 	var states=[]
