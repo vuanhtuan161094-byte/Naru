@@ -28,8 +28,28 @@
     "acquired_at_utc": "2026-11-28T07:46:22Z",
     "note": "Selected for clearer near-frontal canon face and readable yellow vertical pupils; use the roster sprite separately to preserve Orochimaru's classic outfit."
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 9,
   "additional_render_attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial_two_view_master",
+      "requested_at_utc": null,
+      "status": "OWNER_REJECTED",
+      "output_created": true,
+      "output_path": "source/model_attempt1_rejected.png",
+      "output_sha256": "9b8972ccfa536851e86ad75dc3fc7c45bc587ae400bcead8adee00d9c1dd5c65",
+      "output_dimensions_px": [
+        1774,
+        887
+      ],
+      "reference_inputs": [
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "direct_canon_reference_used": false,
+      "reason": "Owner rejected weak identity/face and eyes at game scale; preserved for provenance; no action atlases used it.",
+      "timestamp_source": "Provider did not return a generation timestamp; do not infer it from the file mtime."
+    },
     {
       "attempt": 2,
       "kind": "targeted_two-view_master_replacement",
@@ -43,25 +63,239 @@
       ],
       "error": "image_gen returned HTTP 429 usage_limit_reached; reported reset 2026-11-28T11:44:59Z UTC",
       "action_atlases_created": false
+    },
+    {
+      "attempt": 3,
+      "kind": "targeted_two-view_master_replacement",
+      "requested_at_utc": "2026-11-28T13:56:16Z",
+      "status": "SUCCESS",
+      "output_created": true,
+      "output_path": "source/model.png",
+      "output_sha256": "0f7116de04a8bc4405a74580eeb7c7f35d596abeba167bdaa26f8f84c318a2a9",
+      "output_dimensions_px": [
+        1341,
+        1173
+      ],
+      "reference_inputs": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/identity_reference.png",
+        "NIN-007/source/model.png (style only)"
+      ],
+      "direct_canon_reference_used": true,
+      "shikamaru_used_style_only": true
     }
   ],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
     "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": true,
-    "master_identity_source": "source/identity_reference.png",
-    "owner_rejected_master_at_96x112": true,
-    "replacement_render_requested": true,
-    "replacement_render_status": "BLOCKED_IMAGEGEN_USAGE_LIMIT"
+    "master_used_shikamaru_style": true,
+    "master_direct_canon_reference_used": true,
+    "canon_reference_acquired_after_original_master": true,
+    "master_identity_source": "direct anime still plus database roster outfit lock",
+    "owner_rejected_original_master_at_96x112": true,
+    "replacement_render_status": "SUCCESS",
+    "replacement_quick_check_96x112": "PASS_FOR_PRODUCTION"
   },
-  "identity_correction_required": "OWNER_REJECTED_2026-11-28: current master identity fails at game scale (solid dark-looking eyes and weak canon expression). Replace only the two-view master using the direct anime still, roster sprite for outfit, and Shikamaru master as style-only reference. Do not render action atlases until the replacement is usable.",
-  "master_prompt_version": "ART_V4_FAST_MODEL_V2_IDENTITY_LOCK_PENDING",
-  "source_render_requests": 2,
-  "successful_source_render_outputs": 1
+  "master_prompt_version": "ART_V4_FAST_MODEL_V2_DIRECT_CANON",
+  "source_render_requests": 9,
+  "successful_source_render_outputs": 8,
+  "identity_correction_status": "CORRECTED_RENDERED_QUICK_CHECK_OK",
+  "identity_quick_check_96x112": "Production-usable at game scale: pale narrow face, visible gold slit eye, long straight black hair, cream tunic and purple rope. No blocking identity or silhouette issue; no enlarged pixel audit.",
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+      "canon_reference_sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1341,
+        1173
+      ],
+      "sha256": "0f7116de04a8bc4405a74580eeb7c7f35d596abeba167bdaa26f8f84c318a2a9",
+      "size_bytes": 1125470,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:12:15.064535+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+      "canon_reference_sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity and outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "a60bc4919c67fc34a053b5e384cb63dc30fc9ef1416263abc1be5586f11f7190",
+      "size_bytes": 1204912,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:12:15.064535+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+      "canon_reference_sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity and outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "59456cd5319aa3cca4d623b636439c366c2367a1fcacca43532f01d785000979",
+      "size_bytes": 1204502,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:12:15.064535+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+      "canon_reference_sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity and outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "60147fd42310195d42e1dcaebc760c20e72cfe0cd1d701ac916ec4d0896bcfb4",
+      "size_bytes": 1248035,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:12:15.064535+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+      "canon_reference_sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity and outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "ff6f4290fa4ad5ca665afc9d3aa91a2634894ac6276e1dc289a182ce33ed0a3f",
+      "size_bytes": 1264560,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:12:15.064535+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+      "canon_reference_sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity and outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "4581d300c3f74ee162a5b2dd04af0a0bc21c266dc02eddb17466957d90f87ede",
+      "size_bytes": 1184405,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:12:15.064535+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://www.cbr.com/naruto-anatomy-orochimarus-body-history/",
+      "canon_reference_sha256": "66db8c1272328ceaf20cd5ef5dad8626fcad0cb0e85e0d31d402b0e2e84ec7ff",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity and outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "428b2f79f54cc577a300d22e49feb9aeba18ec14a083f07d0a3796b95da394bb",
+      "size_bytes": 1150585,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:12:15.064535+00:00"
+    }
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity and outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity and outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity and outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity and outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity and outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity and outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "action_visual_quick_check_96x112": "USABLE_FOR_PRODUCTION; contact sheet screened once at game scale; no severe identity, silhouette, clipping, or motion defect found."
 }

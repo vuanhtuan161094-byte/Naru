@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-012.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -40,5 +40,211 @@
     "canon_reference_acquired_after_master": true,
     "master_identity_source": "source/identity_reference.png"
   },
-  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+  "render_input_references": {
+    "model": [
+      "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+      "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+    ],
+    "idle": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Shino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Shino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Shino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Shino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Shino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Shino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "source_render_requests": 7,
+  "successful_source_render_outputs": 7,
+  "action_atlases_direct_canon_used": true,
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+        "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "f40e617f78a8e59eb29ee714ab015c941ae07285fe6b7019113adf21098a97bf",
+      "size_bytes": 1365458,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Shino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "41d8f18cbdc363d0ac9078c30a84eef673a2c8214daade1a95bb0f05309c818f",
+      "size_bytes": 1186007,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Shino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2170,
+        725
+      ],
+      "sha256": "308ee7aea58832af36dca83b10025baf255e42110f0df851baba9ca4f678752c",
+      "size_bytes": 1169348,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Shino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2011,
+        782
+      ],
+      "sha256": "7d111eef67875f0ff78bb002fb9ea82c8412cb8a723ce90560ff22758e3641bc",
+      "size_bytes": 1264481,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Shino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "3c6f5de96a919d80f39caf1894db37b90d01acb1e1cdad038254c026ef2fbbee",
+      "size_bytes": 1337919,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Shino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1642,
+        958
+      ],
+      "sha256": "df7b45a31e92278a385356f1146225c11080ed8e60f0dc4cfb2b23f21edc5174",
+      "size_bytes": 1018529,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Shino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "e91bc5f72e45b1108cc7797b09818fe8bed6e6e1b500c43bfe3d061ece7107c6",
+      "size_bytes": 964371,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+    }
+  },
+  "action_visual_quick_check_96x112": "USABLE_FOR_PRODUCTION; contact sheet screened once at game scale; no severe identity, silhouette, clipping, or motion defect found."
 }

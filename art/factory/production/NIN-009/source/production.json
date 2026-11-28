@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-009.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -40,5 +40,211 @@
     "canon_reference_acquired_after_master": true,
     "master_identity_source": "source/identity_reference.png"
   },
-  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+  "render_input_references": {
+    "model": [
+      "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+      "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+    ],
+    "idle": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Ino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Ino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Ino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Ino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Ino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Ino identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "source_render_requests": 7,
+  "successful_source_render_outputs": 7,
+  "action_atlases_direct_canon_used": true,
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+        "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "17aefe12ac1ea4e48ccceaf4f618f0385700d121c568ed4cc47c632d59a5a95f",
+      "size_bytes": 1474429,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Ino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2010,
+        782
+      ],
+      "sha256": "df271c4726245d0d92cb1c4734b4c9d7ef8b4711f6b5e0c2303b71c46d428470",
+      "size_bytes": 1432750,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Ino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "c3eaf0d64c9a9115c538a0084eb20a5eefb3c5fa476464f97a624c69397b39ca",
+      "size_bytes": 1386028,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Ino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2011,
+        782
+      ],
+      "sha256": "eb89ed401df0d1e3030054c9bd292b2b54a89ed1d2496341e358d976b491c27f",
+      "size_bytes": 1560816,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Ino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2012,
+        782
+      ],
+      "sha256": "24ede9882edbeda20f8f03722cf0a46074bf518a025dbeb35973216deb44f3ab",
+      "size_bytes": 1414158,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Ino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "05a135581d5005111e92504417f4e3ca6cf1f2248063eeb1dd5b1dbbab42aad1",
+      "size_bytes": 1100058,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Ino identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "8ac89c457f08ecb9e05800045dffbdee420bdf3ad6deaff769f710a411e76201",
+      "size_bytes": 1168011,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+    }
+  },
+  "action_visual_quick_check_96x112": "USABLE_FOR_PRODUCTION; contact sheet screened once at game scale; no severe identity, silhouette, clipping, or motion defect found."
 }

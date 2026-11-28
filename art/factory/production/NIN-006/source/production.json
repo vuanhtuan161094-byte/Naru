@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-006.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -40,5 +40,211 @@
     "canon_reference_acquired_after_master": true,
     "master_identity_source": "source/identity_reference.png"
   },
-  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+  "render_input_references": {
+    "model": [
+      "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+      "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+    ],
+    "idle": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "source_render_requests": 7,
+  "successful_source_render_outputs": 7,
+  "action_atlases_direct_canon_used": true,
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+        "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "be42cc2383965dd86e8f2d0c5721c8cf277badcce03e97c7508999698e8b9eee",
+      "size_bytes": 1439954,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "3c7a9443637ce17bad8c0413aa2a69f2d1b8cb22b4dcbeb9eb6a145e19b97663",
+      "size_bytes": 1236265,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "6fcfaa713b646ece8dd4afc966d0c65c5dbcef9e9750b78e0ae403a286b6603d",
+      "size_bytes": 1206552,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2012,
+        782
+      ],
+      "sha256": "835a2a6b5594af4865ba25701b914e0d14e61f94741ea7eeb7db08bbbe378f3f",
+      "size_bytes": 1188476,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2012,
+        782
+      ],
+      "sha256": "4a7177b1808588f40b5dc33a54a6f85cab4e09a05e42b91400e63f7f2c69098f",
+      "size_bytes": 1304350,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "0ac6d698a9c8edc5dab74d21ac3fb43ab7c44763348eda4da2f75a2ae0476957",
+      "size_bytes": 1090634,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "06b820bb8e754bc2b3af38b0e942160582d3892830f02dcf75e85f17390b87a4",
+      "size_bytes": 1096347,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+    }
+  },
+  "action_visual_quick_check_96x112": "USABLE_FOR_PRODUCTION; contact sheet screened once at game scale; no severe identity, silhouette, clipping, or motion defect found."
 }

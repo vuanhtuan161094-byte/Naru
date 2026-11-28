@@ -1,0 +1,243 @@
+{
+  "source_sha256": "df271c4726245d0d92cb1c4734b4c9d7ef8b4711f6b5e0c2303b71c46d428470",
+  "atlas_size": [
+    2010,
+    782
+  ],
+  "grid": [
+    2,
+    6
+  ],
+  "alpha_threshold": 32,
+  "extraction": "equal_grid_cells",
+  "cells": [
+    {
+      "direction": "se",
+      "frame": 0,
+      "cell_rect": [
+        0,
+        0,
+        335,
+        391
+      ],
+      "alpha_bounds_in_cell": [
+        86,
+        26,
+        260,
+        368
+      ],
+      "source_margin_px": 23,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 1,
+      "cell_rect": [
+        335,
+        0,
+        670,
+        391
+      ],
+      "alpha_bounds_in_cell": [
+        86,
+        36,
+        260,
+        369
+      ],
+      "source_margin_px": 22,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 2,
+      "cell_rect": [
+        670,
+        0,
+        1005,
+        391
+      ],
+      "alpha_bounds_in_cell": [
+        87,
+        19,
+        264,
+        369
+      ],
+      "source_margin_px": 19,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 3,
+      "cell_rect": [
+        1005,
+        0,
+        1340,
+        391
+      ],
+      "alpha_bounds_in_cell": [
+        87,
+        8,
+        261,
+        369
+      ],
+      "source_margin_px": 8,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 4,
+      "cell_rect": [
+        1340,
+        0,
+        1675,
+        391
+      ],
+      "alpha_bounds_in_cell": [
+        86,
+        30,
+        262,
+        369
+      ],
+      "source_margin_px": 22,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 5,
+      "cell_rect": [
+        1675,
+        0,
+        2010,
+        391
+      ],
+      "alpha_bounds_in_cell": [
+        86,
+        39,
+        262,
+        369
+      ],
+      "source_margin_px": 22,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 0,
+      "cell_rect": [
+        0,
+        391,
+        335,
+        782
+      ],
+      "alpha_bounds_in_cell": [
+        81,
+        28,
+        259,
+        377
+      ],
+      "source_margin_px": 14,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 1,
+      "cell_rect": [
+        335,
+        391,
+        670,
+        782
+      ],
+      "alpha_bounds_in_cell": [
+        86,
+        36,
+        262,
+        377
+      ],
+      "source_margin_px": 14,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 2,
+      "cell_rect": [
+        670,
+        391,
+        1005,
+        782
+      ],
+      "alpha_bounds_in_cell": [
+        83,
+        18,
+        261,
+        377
+      ],
+      "source_margin_px": 14,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 3,
+      "cell_rect": [
+        1005,
+        391,
+        1340,
+        782
+      ],
+      "alpha_bounds_in_cell": [
+        84,
+        7,
+        260,
+        377
+      ],
+      "source_margin_px": 7,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 4,
+      "cell_rect": [
+        1340,
+        391,
+        1675,
+        782
+      ],
+      "alpha_bounds_in_cell": [
+        85,
+        30,
+        262,
+        377
+      ],
+      "source_margin_px": 14,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 5,
+      "cell_rect": [
+        1675,
+        391,
+        2010,
+        782
+      ],
+      "alpha_bounds_in_cell": [
+        84,
+        35,
+        263,
+        377
+      ],
+      "source_margin_px": 14,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    }
+  ]
+}

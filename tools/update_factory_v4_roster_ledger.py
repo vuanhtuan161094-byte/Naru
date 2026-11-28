@@ -14,7 +14,7 @@ def main() -> None:
     roster = json.loads((ROOT / "data/ninjas.json").read_text(encoding="utf-8"))
     selected = [n for n in roster if 5 <= int(n["id"].split("-")[1]) <= 28]
     with OUT.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["id", "name", "era", "canon_reference", "reference_sha256", "source_renders", "master_canon_used", "master_shikamaru_style", "identity_review_96x112", "model", "atlas", "pack", "runtime", "owner", "note"], lineterminator="\n")
+        writer = csv.DictWriter(f, fieldnames=["id", "name", "era", "canon_reference", "reference_sha256", "source_renders", "master_canon_used", "master_shikamaru_style", "identity_review_96x112", "visual_review_96x112", "model", "atlas", "pack", "runtime", "owner", "note"], lineterminator="\n")
         writer.writeheader()
         for ninja in selected:
             cid = ninja["id"]
@@ -34,11 +34,16 @@ def main() -> None:
             attempts = production.get("actual_source_render_count", 1 if model_path.is_file() else 0)
             note = ""
             identity_review = "NOT_RENDERED"
+            visual_review = "NOT_RENDERED"
             if model_path.is_file():
                 identity_review = "QUICK_CHECK_OK"
+                visual_review = "IDENTITY_SAMPLE_SCREENED"
+            if complete:
+                visual_review = "ANIMATION_CONTACT_SHEET_SCREENED"
             if cid == "NIN-022":
-                identity_review = "OWNER_REJECTED; REPLACEMENT_BLOCKED_429"
-                note = "NO_ACTION_ATLASES; IMAGEGEN_RESET_2026-11-28T11:44:59Z"
+                identity_review = "CORRECTED_FROM_DIRECT_CANON; MASTER_QUICK_CHECK_OK"
+                visual_review = "12_CLIPS_68_CELS_SCREENED_AT_96X112"
+                note = "TECHNICAL_PASS; GODOT_RUNTIME_NOT_TESTED"
             elif cid == "NIN-024":
                 identity_review = "GOURD_AND_RED_HAIR_READ; LOVE_MARK_NOT_VISIBLE"
                 note = "NO_ACTION_ATLASES_PENDING_SIGNATURE_MARK_FIX"
@@ -59,6 +64,7 @@ def main() -> None:
                 "master_canon_used": usage.get("master_direct_canon_reference_used", False if model_path.is_file() else "NOT_RENDERED"),
                 "master_shikamaru_style": usage.get("master_used_shikamaru_style", False if model_path.is_file() else "NOT_RENDERED"),
                 "identity_review_96x112": identity_review,
+                "visual_review_96x112": visual_review,
                 "model": model_state,
                 "atlas": atlas_state,
                 "pack": validation.get("technical_status", "PASS" if complete else "PENDING"),

@@ -1,0 +1,585 @@
+{
+  "schema": 1,
+  "character_id": "NIN-008",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Choji Akimichi (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-008"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 8,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+        "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path (direct canon used for corrected master)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "d35a285e688a23c9772052e47e6c72572e00aa9045ee2039d8ffb46cf8dc9f8c",
+        "size_bytes": 1705239,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+        "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Choji identity, round cheeks and broad body)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2010,
+          782
+        ],
+        "sha256": "687ce02530c5018503fea30d52ce668df2b06b3d6e179d80576abca046318899",
+        "size_bytes": 1808942,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+        "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Choji identity, round cheeks and broad body)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2170,
+          725
+        ],
+        "sha256": "298598b5b749628c7eb879b2aa5790240241e2bd2b2aaa46b82ea490cbb4ed86",
+        "size_bytes": 1734267,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+        "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Choji identity, round cheeks and broad body)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "d07e6ca63476051093179558a9693b01876addfa9f0d8fcb15740bb9eeb0c3eb",
+        "size_bytes": 1562778,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+        "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Choji identity, round cheeks and broad body)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2012,
+          782
+        ],
+        "sha256": "842b11ac96ef681669d1a716b6cf03ee14a8095334ccbfdd599c072fc118a627",
+        "size_bytes": 1710518,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+        "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Choji identity, round cheeks and broad body)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "5df1091e23ea4f4fded3593c7f6b44c2e3ff9ac4e93a4c62aa352d93830f70ea",
+        "size_bytes": 1526523,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+        "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Choji identity, round cheeks and broad body)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "15e6dbbb490e9e57cebf16ff58c5b2ae637f0bba38caea16200790c7196b76a2",
+        "size_bytes": 1376660,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "d35a285e688a23c9772052e47e6c72572e00aa9045ee2039d8ffb46cf8dc9f8c",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "ebeb8b5296db51bde6b9e55e6deb6d7002c6c331b0e3cacbc640146157026a13",
+        "bounds": [
+          151,
+          68,
+          692,
+          992
+        ],
+        "height": 924
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "864843a3cd1b59f554bbeb9f4bb56429cd5c90b0e38023ae5911753a2237df9a",
+        "bounds": [
+          80,
+          68,
+          614,
+          998
+        ],
+        "height": 930
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "b75f9bfe2e27b3ea8f27e5af049723fc23014a713acc72641da829673541cc52"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/9/105421.jpg",
+      "sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "d07e6ca63476051093179558a9693b01876addfa9f0d8fcb15740bb9eeb0c3eb",
+      "size_bytes": 1562778
+    },
+    "cast_atlas.png": {
+      "sha256": "842b11ac96ef681669d1a716b6cf03ee14a8095334ccbfdd599c072fc118a627",
+      "size_bytes": 1710518
+    },
+    "fall_atlas.png": {
+      "sha256": "15e6dbbb490e9e57cebf16ff58c5b2ae637f0bba38caea16200790c7196b76a2",
+      "size_bytes": 1376660
+    },
+    "hit_atlas.png": {
+      "sha256": "5df1091e23ea4f4fded3593c7f6b44c2e3ff9ac4e93a4c62aa352d93830f70ea",
+      "size_bytes": 1526523
+    },
+    "idle_atlas.png": {
+      "sha256": "687ce02530c5018503fea30d52ce668df2b06b3d6e179d80576abca046318899",
+      "size_bytes": 1808942
+    },
+    "move_atlas.png": {
+      "sha256": "298598b5b749628c7eb879b2aa5790240241e2bd2b2aaa46b82ea490cbb4ed86",
+      "size_bytes": 1734267
+    },
+    "model.png": {
+      "sha256": "d35a285e688a23c9772052e47e6c72572e00aa9045ee2039d8ffb46cf8dc9f8c",
+      "size_bytes": 1705239
+    },
+    "identity_reference.png": {
+      "sha256": "b75f9bfe2e27b3ea8f27e5af049723fc23014a713acc72641da829673541cc52",
+      "size_bytes": 16883
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-008.png": "c1035612fc1b066f66f929f79328360a60d72236766acb172c1cc965397b624a",
+    "animation/NIN-008/idle_se.png": "206410fc487c935096ea42da7b915ce5424eac08a10b36485316a7973b0e0bdd",
+    "animation/NIN-008/idle_sw.png": "454adf3d75979670337814f396362bba103b6a37032dfe3cef873d75c4e0f640",
+    "animation/NIN-008/move_se.png": "f4ac1e87f2ad4f8840d79f59f535ddbfbefa81289cc8a4798674aef6c26f5dc3",
+    "animation/NIN-008/move_sw.png": "63441cfb8a9f7818bb432f8bf1d736348698a2601b6b78d4ef0a930b5afbe972",
+    "animation/NIN-008/attack_se.png": "0c9009b550cdec18584d94014a12e1fe53ff18c6e8e38dd67e5328bc08bcac24",
+    "animation/NIN-008/attack_sw.png": "dcc94ba8ac0ab451350ce16158a357122e7d7dda78968cd40b35ba876856610c",
+    "animation/NIN-008/cast_se.png": "316ac04d00291daec657907973805d3578a647292e0c4628ddf485d340bf4a3a",
+    "animation/NIN-008/cast_sw.png": "be9b461649ba9990803af2f8a605d3ced0a8021ce0d99617902c0153a8eea127",
+    "animation/NIN-008/hit_se.png": "c3394d5f8fe24574ecd11bb23069ffab7dcbe8f3394c8936e5ad7463e7601b48",
+    "animation/NIN-008/hit_sw.png": "eebb212d4297a55fe469dec04ad697a9dbaf0ecb2a24560663a3eabc7261259a",
+    "animation/NIN-008/fall_se.png": "0e6fd76dcedbfe719b416c644787747e521779485b441cbbe94e24f865fe2ce9",
+    "animation/NIN-008/fall_sw.png": "ad2e40aae2c40260fb33488917e76997913d1a95478e5c7437aaacfb63f9b527"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.252101,
+      "source_heights": [
+        357,
+        354,
+        367,
+        367,
+        356,
+        353
+      ],
+      "source_widths": [
+        231,
+        235,
+        249,
+        254,
+        233,
+        232
+      ]
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.25,
+      "source_heights": [
+        360,
+        358,
+        367,
+        370,
+        357,
+        358
+      ],
+      "source_widths": [
+        239,
+        236,
+        240,
+        254,
+        238,
+        236
+      ]
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.283912,
+      "source_heights": [
+        317,
+        296,
+        309,
+        281,
+        296,
+        273,
+        303,
+        286
+      ],
+      "source_widths": [
+        225,
+        197,
+        223,
+        221,
+        227,
+        192,
+        212,
+        221
+      ]
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.282132,
+      "source_heights": [
+        319,
+        292,
+        310,
+        281,
+        301,
+        278,
+        305,
+        283
+      ],
+      "source_widths": [
+        229,
+        197,
+        218,
+        214,
+        236,
+        197,
+        213,
+        211
+      ]
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.269461,
+      "source_heights": [
+        334,
+        326,
+        310,
+        306,
+        293,
+        319
+      ],
+      "source_widths": [
+        207,
+        205,
+        238,
+        292,
+        267,
+        219
+      ]
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.271084,
+      "source_heights": [
+        332,
+        322,
+        309,
+        303,
+        298,
+        328
+      ],
+      "source_widths": [
+        210,
+        220,
+        239,
+        316,
+        281,
+        225
+      ]
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.250696,
+      "source_heights": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        359
+      ],
+      "source_widths": [
+        236,
+        245,
+        237,
+        237,
+        237,
+        236
+      ]
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.25,
+      "source_heights": [
+        360,
+        360,
+        360,
+        360,
+        359,
+        360
+      ],
+      "source_widths": [
+        241,
+        245,
+        241,
+        240,
+        239,
+        241
+      ]
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.215827,
+      "source_heights": [
+        417,
+        414,
+        407,
+        419
+      ],
+      "source_widths": [
+        276,
+        323,
+        295,
+        267
+      ]
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.216346,
+      "source_heights": [
+        416,
+        414,
+        405,
+        415
+      ],
+      "source_widths": [
+        276,
+        323,
+        293,
+        276
+      ]
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.193833,
+      "source_heights": [
+        418,
+        386,
+        340,
+        229
+      ],
+      "source_widths": [
+        319,
+        312,
+        326,
+        454
+      ]
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.192982,
+      "source_heights": [
+        421,
+        384,
+        332,
+        234
+      ],
+      "source_widths": [
+        298,
+        305,
+        359,
+        456
+      ]
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues.",
+    "visual_quick_screen_96x112": "Animation contact sheet checked once at intended game scale; identity and action silhouettes usable; minor differences and small details left as-is.",
+    "runtime": "NOT_TESTED: no Godot Xvfb capture has run yet.",
+    "owner_acceptance": "PENDING"
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-008.json",
+    "sha256": "887149e11d6acea30177e579f5f02450fadaf7243818ad3d94082e1fe4d4717c"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "87c9f7aa8c98868a17160fea3dcb77cafb4385524b82a533f5a084f48b9a1b68"
+  }
+}

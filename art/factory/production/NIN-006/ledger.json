@@ -1,0 +1,584 @@
+{
+  "schema": 1,
+  "character_id": "NIN-006",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Konohamaru (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-006"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+        "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+          "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "be42cc2383965dd86e8f2d0c5721c8cf277badcce03e97c7508999698e8b9eee",
+        "size_bytes": 1439954,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+        "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "3c7a9443637ce17bad8c0413aa2a69f2d1b8cb22b4dcbeb9eb6a145e19b97663",
+        "size_bytes": 1236265,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+        "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "6fcfaa713b646ece8dd4afc966d0c65c5dbcef9e9750b78e0ae403a286b6603d",
+        "size_bytes": 1206552,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+        "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2012,
+          782
+        ],
+        "sha256": "835a2a6b5594af4865ba25701b914e0d14e61f94741ea7eeb7db08bbbe378f3f",
+        "size_bytes": 1188476,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+        "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2012,
+          782
+        ],
+        "sha256": "4a7177b1808588f40b5dc33a54a6f85cab4e09a05e42b91400e63f7f2c69098f",
+        "size_bytes": 1304350,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+        "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "0ac6d698a9c8edc5dab74d21ac3fb43ab7c44763348eda4da2f75a2ae0476957",
+        "size_bytes": 1090634,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+        "canon_reference_sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "06b820bb8e754bc2b3af38b0e942160582d3892830f02dcf75e85f17390b87a4",
+        "size_bytes": 1096347,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:24:36.900844+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "be42cc2383965dd86e8f2d0c5721c8cf277badcce03e97c7508999698e8b9eee",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "d9b6237980d03d3a9c5e16b7c0600c9685fa36d9e01ae347b6f6f6cda00b3a6a",
+        "bounds": [
+          208,
+          86,
+          626,
+          944
+        ],
+        "height": 858
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "ae3a4795b97b2ba406279cafdd2bb72f11a25bfa9f2ad26fab4beb037f876802",
+        "bounds": [
+          129,
+          93,
+          556,
+          944
+        ],
+        "height": 851
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "87300d14390d4ffc1c62d07b250d004eb9e3c9e314d370028d802e82f8b362f7"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/3889/Konohamaru_Sarutobi",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/7/109419.jpg",
+      "sha256": "e737059b949aae3a0cccb614bc77953b388438db51653574661c283b6d27c400",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "835a2a6b5594af4865ba25701b914e0d14e61f94741ea7eeb7db08bbbe378f3f",
+      "size_bytes": 1188476
+    },
+    "cast_atlas.png": {
+      "sha256": "4a7177b1808588f40b5dc33a54a6f85cab4e09a05e42b91400e63f7f2c69098f",
+      "size_bytes": 1304350
+    },
+    "fall_atlas.png": {
+      "sha256": "06b820bb8e754bc2b3af38b0e942160582d3892830f02dcf75e85f17390b87a4",
+      "size_bytes": 1096347
+    },
+    "hit_atlas.png": {
+      "sha256": "0ac6d698a9c8edc5dab74d21ac3fb43ab7c44763348eda4da2f75a2ae0476957",
+      "size_bytes": 1090634
+    },
+    "idle_atlas.png": {
+      "sha256": "3c7a9443637ce17bad8c0413aa2a69f2d1b8cb22b4dcbeb9eb6a145e19b97663",
+      "size_bytes": 1236265
+    },
+    "move_atlas.png": {
+      "sha256": "6fcfaa713b646ece8dd4afc966d0c65c5dbcef9e9750b78e0ae403a286b6603d",
+      "size_bytes": 1206552
+    },
+    "model.png": {
+      "sha256": "be42cc2383965dd86e8f2d0c5721c8cf277badcce03e97c7508999698e8b9eee",
+      "size_bytes": 1439954
+    },
+    "identity_reference.png": {
+      "sha256": "87300d14390d4ffc1c62d07b250d004eb9e3c9e314d370028d802e82f8b362f7",
+      "size_bytes": 20534
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-006.png": "141247822db38bf10d95007ce9c0dd73bf3b1ba570fccd45ac7b265be28fe37c",
+    "animation/NIN-006/idle_se.png": "666a1c06f24a8ed9329acad9831e1f3583ed4f9ac10ae8504841f6c8c33726b2",
+    "animation/NIN-006/idle_sw.png": "13ef5fe8782ff0eddafa3f5b4c6ed0b7a4ccc9309f6fe39b87741d9cd1941737",
+    "animation/NIN-006/move_se.png": "ac3cc1dec7cc2d7c4ea55a962cff4d392216aa4a5103a200de9ae0061e02e02d",
+    "animation/NIN-006/move_sw.png": "2fd04484d54cf23e2391790bbed6503e363d62b784cc28fef8b66eddf564c517",
+    "animation/NIN-006/attack_se.png": "4a38920580a5003479a2bc5e5354f5b9fe9a3a4057adf597cc77f71e8bd17b8b",
+    "animation/NIN-006/attack_sw.png": "6e7f6e420dbc50e47a0cdec3a424a62844398a2eb388c45f205b047552c9b2ac",
+    "animation/NIN-006/cast_se.png": "451f2a72a4c448e0d00ae849b1d0e135f4ebd9a1cae66b7d009021538bc258a7",
+    "animation/NIN-006/cast_sw.png": "434c46b13b676669b9447d7e9995a2605a1a59b9bbff14cdb60caf63c7478851",
+    "animation/NIN-006/hit_se.png": "5ac4725cd11f60fd638f6d48507a42249938716dd7944edee2f0472fcf09f46f",
+    "animation/NIN-006/hit_sw.png": "dd3f204aa659359866be447543f03db74e062957fee2796fac7f4ba12a6179df",
+    "animation/NIN-006/fall_se.png": "20c5ecd623f0aa36b8c9accb69f8b3498ad7e6916387b0c43ab3fcd45b0939d2",
+    "animation/NIN-006/fall_sw.png": "2c647f5cadece991396f9c40038ab8f36ef9c0d8ec79cda79f0079cc99ca14f1"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.264706,
+      "source_heights": [
+        340,
+        341,
+        362,
+        362,
+        340,
+        340
+      ],
+      "source_widths": [
+        199,
+        199,
+        200,
+        198,
+        199,
+        196
+      ]
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.267062,
+      "source_heights": [
+        337,
+        340,
+        351,
+        351,
+        339,
+        337
+      ],
+      "source_widths": [
+        200,
+        203,
+        198,
+        198,
+        199,
+        197
+      ]
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.326087,
+      "source_heights": [
+        276,
+        266,
+        269,
+        249,
+        278,
+        249,
+        269,
+        233
+      ],
+      "source_widths": [
+        188,
+        196,
+        182,
+        181,
+        200,
+        196,
+        191,
+        182
+      ]
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.319149,
+      "source_heights": [
+        282,
+        265,
+        262,
+        242,
+        274,
+        251,
+        266,
+        233
+      ],
+      "source_widths": [
+        183,
+        189,
+        171,
+        174,
+        194,
+        188,
+        182,
+        180
+      ]
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.263158,
+      "source_heights": [
+        342,
+        339,
+        315,
+        309,
+        316,
+        333
+      ],
+      "source_widths": [
+        194,
+        200,
+        226,
+        288,
+        224,
+        189
+      ]
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.268657,
+      "source_heights": [
+        335,
+        332,
+        316,
+        319,
+        317,
+        332
+      ],
+      "source_widths": [
+        213,
+        184,
+        242,
+        298,
+        234,
+        193
+      ]
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.250696,
+      "source_heights": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        358
+      ],
+      "source_widths": [
+        210,
+        208,
+        205,
+        206,
+        202,
+        204
+      ]
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.252101,
+      "source_heights": [
+        357,
+        357,
+        357,
+        357,
+        357,
+        357
+      ],
+      "source_widths": [
+        209,
+        208,
+        210,
+        209,
+        201,
+        209
+      ]
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.217918,
+      "source_heights": [
+        413,
+        393,
+        361,
+        405
+      ],
+      "source_widths": [
+        246,
+        262,
+        279,
+        252
+      ]
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.215311,
+      "source_heights": [
+        418,
+        389,
+        353,
+        409
+      ],
+      "source_widths": [
+        264,
+        269,
+        287,
+        271
+      ]
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.206573,
+      "source_heights": [
+        424,
+        374,
+        304,
+        183
+      ],
+      "source_widths": [
+        255,
+        278,
+        331,
+        426
+      ]
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.203233,
+      "source_heights": [
+        420,
+        366,
+        304,
+        185
+      ],
+      "source_widths": [
+        263,
+        277,
+        310,
+        433
+      ]
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues.",
+    "visual_quick_screen_96x112": "Animation contact sheet checked once at intended game scale; identity and action silhouettes usable; minor differences and small details left as-is.",
+    "runtime": "NOT_TESTED: no Godot Xvfb capture has run yet.",
+    "owner_acceptance": "PENDING"
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-006.json",
+    "sha256": "4eb168d38131eaf0c61c78d8b9756c9f3017ae96cf00eee458b06b7cee46e49f"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "60d3c6e85a08d7d4afba1de9d2892ccde0330ff4ca4fbd40a52cca722c9f94cd"
+  }
+}

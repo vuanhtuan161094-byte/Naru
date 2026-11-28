@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-008.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 2,
+  "actual_source_render_count": 8,
   "additional_render_attempts": [
     {
       "path": "source/model_attempt1.png",
@@ -53,5 +53,213 @@
     "canon_reference_acquired_after_master": false,
     "master_identity_source": "source/identity_reference.png"
   },
-  "master_prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2"
+  "master_prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json:temporary_image_path (direct canon used for corrected master)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Choji identity, round cheeks and broad body)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Choji identity, round cheeks and broad body)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Choji identity, round cheeks and broad body)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Choji identity, round cheeks and broad body)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Choji identity, round cheeks and broad body)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Choji identity, round cheeks and broad body)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "source_render_requests": 8,
+  "successful_source_render_outputs": 8,
+  "action_atlases_direct_canon_used": true,
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path (direct canon used for corrected master)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "d35a285e688a23c9772052e47e6c72572e00aa9045ee2039d8ffb46cf8dc9f8c",
+      "size_bytes": 1705239,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Choji identity, round cheeks and broad body)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2010,
+        782
+      ],
+      "sha256": "687ce02530c5018503fea30d52ce668df2b06b3d6e179d80576abca046318899",
+      "size_bytes": 1808942,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Choji identity, round cheeks and broad body)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2170,
+        725
+      ],
+      "sha256": "298598b5b749628c7eb879b2aa5790240241e2bd2b2aaa46b82ea490cbb4ed86",
+      "size_bytes": 1734267,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Choji identity, round cheeks and broad body)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "d07e6ca63476051093179558a9693b01876addfa9f0d8fcb15740bb9eeb0c3eb",
+      "size_bytes": 1562778,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Choji identity, round cheeks and broad body)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2012,
+        782
+      ],
+      "sha256": "842b11ac96ef681669d1a716b6cf03ee14a8095334ccbfdd599c072fc118a627",
+      "size_bytes": 1710518,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Choji identity, round cheeks and broad body)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "5df1091e23ea4f4fded3593c7f6b44c2e3ff9ac4e93a4c62aa352d93830f70ea",
+      "size_bytes": 1526523,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2008/Chouji_Akimichi",
+      "canon_reference_sha256": "ea394c19fe2856af0671cc32fee5ebb693eb8b69431a1cb42ff19fdc021b88b3",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Choji identity, round cheeks and broad body)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "15e6dbbb490e9e57cebf16ff58c5b2ae637f0bba38caea16200790c7196b76a2",
+      "size_bytes": 1376660,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:29:15.329579+00:00"
+    }
+  },
+  "action_visual_quick_check_96x112": "USABLE_FOR_PRODUCTION; contact sheet screened once at game scale; no severe identity, silhouette, clipping, or motion defect found."
 }

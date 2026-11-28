@@ -1,0 +1,584 @@
+{
+  "schema": 1,
+  "character_id": "NIN-009",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Ino Yamanaka (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-009"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+        "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+          "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "17aefe12ac1ea4e48ccceaf4f618f0385700d121c568ed4cc47c632d59a5a95f",
+        "size_bytes": 1474429,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+        "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Ino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2010,
+          782
+        ],
+        "sha256": "df271c4726245d0d92cb1c4734b4c9d7ef8b4711f6b5e0c2303b71c46d428470",
+        "size_bytes": 1432750,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+        "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Ino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "c3eaf0d64c9a9115c538a0084eb20a5eefb3c5fa476464f97a624c69397b39ca",
+        "size_bytes": 1386028,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+        "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Ino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2011,
+          782
+        ],
+        "sha256": "eb89ed401df0d1e3030054c9bd292b2b54a89ed1d2496341e358d976b491c27f",
+        "size_bytes": 1560816,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+        "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Ino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2012,
+          782
+        ],
+        "sha256": "24ede9882edbeda20f8f03722cf0a46074bf518a025dbeb35973216deb44f3ab",
+        "size_bytes": 1414158,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+        "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Ino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "05a135581d5005111e92504417f4e3ca6cf1f2248063eeb1dd5b1dbbab42aad1",
+        "size_bytes": 1100058,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+        "canon_reference_sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Ino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "8ac89c457f08ecb9e05800045dffbdee420bdf3ad6deaff769f710a411e76201",
+        "size_bytes": 1168011,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:33:53.780264+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "17aefe12ac1ea4e48ccceaf4f618f0385700d121c568ed4cc47c632d59a5a95f",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "10be8ab4d82b53c5cbe9ff80ab6a5151b71199f9931a5a74779a385678e801a7",
+        "bounds": [
+          261,
+          131,
+          602,
+          940
+        ],
+        "height": 809
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "9151043d0af9e5f88098ea58278f7dd0d8d83534a974846ebaa0d0ee6aa54191",
+        "bounds": [
+          152,
+          129,
+          499,
+          942
+        ],
+        "height": 813
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "572605cfd108654aa44cad65ae9e7bb323198e6a4796ae44060b0c79fd1854aa"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/2009/Ino_Yamanaka",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/9/60062.jpg",
+      "sha256": "afa953806149733f188857b81b30181792a7c3a9bd1ae9798a788890e9338750",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "eb89ed401df0d1e3030054c9bd292b2b54a89ed1d2496341e358d976b491c27f",
+      "size_bytes": 1560816
+    },
+    "cast_atlas.png": {
+      "sha256": "24ede9882edbeda20f8f03722cf0a46074bf518a025dbeb35973216deb44f3ab",
+      "size_bytes": 1414158
+    },
+    "fall_atlas.png": {
+      "sha256": "8ac89c457f08ecb9e05800045dffbdee420bdf3ad6deaff769f710a411e76201",
+      "size_bytes": 1168011
+    },
+    "hit_atlas.png": {
+      "sha256": "05a135581d5005111e92504417f4e3ca6cf1f2248063eeb1dd5b1dbbab42aad1",
+      "size_bytes": 1100058
+    },
+    "idle_atlas.png": {
+      "sha256": "df271c4726245d0d92cb1c4734b4c9d7ef8b4711f6b5e0c2303b71c46d428470",
+      "size_bytes": 1432750
+    },
+    "move_atlas.png": {
+      "sha256": "c3eaf0d64c9a9115c538a0084eb20a5eefb3c5fa476464f97a624c69397b39ca",
+      "size_bytes": 1386028
+    },
+    "model.png": {
+      "sha256": "17aefe12ac1ea4e48ccceaf4f618f0385700d121c568ed4cc47c632d59a5a95f",
+      "size_bytes": 1474429
+    },
+    "identity_reference.png": {
+      "sha256": "572605cfd108654aa44cad65ae9e7bb323198e6a4796ae44060b0c79fd1854aa",
+      "size_bytes": 21215
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-009.png": "498cb571098651f44e6f40a7760e95b641cd3e0958d3191e9710af1628b8a6cd",
+    "animation/NIN-009/idle_se.png": "8aa594ab0caa5ed184ce4db0baa1556022f3208178dacc1765b8337635708bc2",
+    "animation/NIN-009/idle_sw.png": "503098298da03b35adc4e954eac36f177f8807540fea27423ad1edfa48acf154",
+    "animation/NIN-009/move_se.png": "a79af8ffefa8068b9326e3776f15ad43a2e1160fff88452007ee28e2500c9daf",
+    "animation/NIN-009/move_sw.png": "e8ed7051b09ea90a867500aee56c3f0e709586677bbf3cfc7c3d997e7cf14975",
+    "animation/NIN-009/attack_se.png": "5877df85c5ab069d8775fab5bb1099d759438e771e9fa15f130dbb7b4a104437",
+    "animation/NIN-009/attack_sw.png": "dda4b8477fed91870c743399fc7ec170133e51c4345f551314b808ba15b35134",
+    "animation/NIN-009/cast_se.png": "4929a0bc8cb35eeab72dbcb896b4e832f1bf5fcc71e0c6a4575c183a43dd3c69",
+    "animation/NIN-009/cast_sw.png": "dacd7b52325f55cdf0702f287558fe92edf05cc778198ead4d36835c678b6d10",
+    "animation/NIN-009/hit_se.png": "2628a4b6abce3526e868af161654f4e41c3cfa324c178a6e7855292cbbf7261b",
+    "animation/NIN-009/hit_sw.png": "067eea6730a869f2253502ebcadf6bc88838894b87b496925aa82aadb73d25d0",
+    "animation/NIN-009/fall_se.png": "6b118218a3fab3b6bef5e34b1110ee35ef0e6740138507fd520c257fbfe9a7fd",
+    "animation/NIN-009/fall_sw.png": "ccd779b3506a2574d8173a2cd2a1e5cb5eeb8875b7c2c2b93e5b90c231118858"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.263158,
+      "source_heights": [
+        342,
+        333,
+        350,
+        361,
+        339,
+        330
+      ],
+      "source_widths": [
+        174,
+        174,
+        177,
+        174,
+        176,
+        176
+      ]
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.25788,
+      "source_heights": [
+        349,
+        341,
+        359,
+        370,
+        347,
+        342
+      ],
+      "source_widths": [
+        178,
+        176,
+        178,
+        176,
+        177,
+        179
+      ]
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.294118,
+      "source_heights": [
+        306,
+        291,
+        300,
+        277,
+        295,
+        275,
+        306,
+        277
+      ],
+      "source_widths": [
+        193,
+        165,
+        190,
+        192,
+        198,
+        159,
+        157,
+        178
+      ]
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.285714,
+      "source_heights": [
+        315,
+        289,
+        312,
+        269,
+        303,
+        282,
+        309,
+        281
+      ],
+      "source_widths": [
+        182,
+        164,
+        174,
+        174,
+        196,
+        166,
+        171,
+        165
+      ]
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.263158,
+      "source_heights": [
+        342,
+        340,
+        340,
+        331,
+        333,
+        342
+      ],
+      "source_widths": [
+        183,
+        176,
+        230,
+        297,
+        265,
+        185
+      ]
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.257143,
+      "source_heights": [
+        350,
+        351,
+        346,
+        341,
+        339,
+        345
+      ],
+      "source_widths": [
+        186,
+        169,
+        245,
+        313,
+        270,
+        191
+      ]
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.257143,
+      "source_heights": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        350
+      ],
+      "source_widths": [
+        192,
+        192,
+        191,
+        192,
+        192,
+        192
+      ]
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.251397,
+      "source_heights": [
+        358,
+        357,
+        357,
+        357,
+        357,
+        358
+      ],
+      "source_widths": [
+        188,
+        189,
+        188,
+        189,
+        189,
+        188
+      ]
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.231362,
+      "source_heights": [
+        389,
+        380,
+        361,
+        386
+      ],
+      "source_widths": [
+        184,
+        244,
+        188,
+        195
+      ]
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.229592,
+      "source_heights": [
+        392,
+        381,
+        363,
+        389
+      ],
+      "source_widths": [
+        196,
+        249,
+        205,
+        201
+      ]
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.216216,
+      "source_heights": [
+        415,
+        382,
+        316,
+        221
+      ],
+      "source_widths": [
+        201,
+        233,
+        299,
+        407
+      ]
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.213777,
+      "source_heights": [
+        421,
+        387,
+        318,
+        220
+      ],
+      "source_widths": [
+        203,
+        229,
+        310,
+        404
+      ]
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues.",
+    "visual_quick_screen_96x112": "Animation contact sheet checked once at intended game scale; identity and action silhouettes usable; minor differences and small details left as-is.",
+    "runtime": "NOT_TESTED: no Godot Xvfb capture has run yet.",
+    "owner_acceptance": "PENDING"
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-009.json",
+    "sha256": "4d7f060e0d9b0a2206abf1867e1efe8bcc20c0b904992cb6025269ec920d0a0a"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "5be674efe59db3b0fdd9c573905f7844a9ef9d7db13ef76f6763b05b0a0bf034"
+  }
+}

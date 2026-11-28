@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-005.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -40,5 +40,211 @@
     "canon_reference_acquired_after_master": true,
     "master_identity_source": "source/identity_reference.png"
   },
-  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+  "render_input_references": {
+    "model": [
+      "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+      "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+    ],
+    "idle": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "source_render_requests": 7,
+  "successful_source_render_outputs": 7,
+  "action_atlases_direct_canon_used": true,
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2011/Iruka_Umino",
+      "canon_reference_sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+        "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "a4dabdbfcaa41dfdfa5d9b513731160f96f0303d848a35ef01f6b65a10e0349d",
+      "size_bytes": 1429901,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:20:05.610966+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2011/Iruka_Umino",
+      "canon_reference_sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2011,
+        782
+      ],
+      "sha256": "1d8bb36701869eaccf7fda0cb8a9621cb506391f302db34abd49eed99dbf117c",
+      "size_bytes": 1369042,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:20:05.610966+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2011/Iruka_Umino",
+      "canon_reference_sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "cf36cbb2cb7c0d8634344de6849e56abe264eef4e2f0500be6f2e33fef2702ed",
+      "size_bytes": 1235585,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:20:05.610966+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2011/Iruka_Umino",
+      "canon_reference_sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2012,
+        782
+      ],
+      "sha256": "a6d4ef5add89a7a472305805bfd03b992bdbf3b4733ceccf2addfc2d30745b47",
+      "size_bytes": 1258648,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:20:05.610966+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2011/Iruka_Umino",
+      "canon_reference_sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2010,
+        782
+      ],
+      "sha256": "e5215a02868557e1d427c14fd661ef13aa53cbc50957f8778c8791b75ed486a4",
+      "size_bytes": 1370257,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:20:05.610966+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2011/Iruka_Umino",
+      "canon_reference_sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "6da8c2b8a068ebc8c9a2a19373dbd9ef4046813216d8d9a1230d1f42890598a8",
+      "size_bytes": 1100484,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:20:05.610966+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2011/Iruka_Umino",
+      "canon_reference_sha256": "01a9a0e0f1594da054f3a9528a1f8bab4c14d2c3f0aae80c0c9fa31dc829bcbe",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "a9c3a425a5b085fe5fd4afdd7978995f5affd2255f29eecb21527eaae445024e",
+      "size_bytes": 1148761,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:20:05.610966+00:00"
+    }
+  },
+  "action_visual_quick_check_96x112": "USABLE_FOR_PRODUCTION; contact sheet screened once at game scale; no severe identity, silhouette, clipping, or motion defect found."
 }

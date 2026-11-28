@@ -1,0 +1,105 @@
+{
+  "character_id": "NIN-011",
+  "revision": "v4",
+  "technical_status": "PASS",
+  "visual_status": "NOT_TESTED",
+  "runtime_status": "NOT_TESTED",
+  "issues": [],
+  "warnings": [
+    "animation/NIN-011/move_se.png: motion anchor/scale review {'frames': 8, 'distinct': 8, 'height_span': 19, 'center_span': 6.5, 'bottom_span': 0}",
+    "animation/NIN-011/move_sw.png: motion anchor/scale review {'frames': 8, 'distinct': 8, 'height_span': 20, 'center_span': 6.0, 'bottom_span': 0}"
+  ],
+  "metrics": {
+    "animation/NIN-011/idle_se.png": {
+      "frames": 6,
+      "distinct": 6,
+      "height_span": 8,
+      "center_span": 1.5,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/idle_sw.png": {
+      "frames": 6,
+      "distinct": 6,
+      "height_span": 7,
+      "center_span": 1.5,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/move_se.png": {
+      "frames": 8,
+      "distinct": 8,
+      "height_span": 19,
+      "center_span": 6.5,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/move_sw.png": {
+      "frames": 8,
+      "distinct": 8,
+      "height_span": 20,
+      "center_span": 6.0,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/attack_se.png": {
+      "frames": 6,
+      "distinct": 6,
+      "height_span": 10,
+      "center_span": 9.5,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/attack_sw.png": {
+      "frames": 6,
+      "distinct": 6,
+      "height_span": 7,
+      "center_span": 13.0,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/cast_se.png": {
+      "frames": 6,
+      "distinct": 6,
+      "height_span": 0,
+      "center_span": 0.5,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/cast_sw.png": {
+      "frames": 6,
+      "distinct": 6,
+      "height_span": 0,
+      "center_span": 0.0,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/hit_se.png": {
+      "frames": 4,
+      "distinct": 4,
+      "height_span": 10,
+      "center_span": 4.5,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/hit_sw.png": {
+      "frames": 4,
+      "distinct": 4,
+      "height_span": 9,
+      "center_span": 6.5,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/fall_se.png": {
+      "frames": 4,
+      "distinct": 4,
+      "height_span": 47,
+      "center_span": 0.0,
+      "bottom_span": 0
+    },
+    "animation/NIN-011/fall_sw.png": {
+      "frames": 4,
+      "distinct": 4,
+      "height_span": 47,
+      "center_span": 0.5,
+      "bottom_span": 0
+    },
+    "characters/NIN-011.png": {
+      "frames": 1,
+      "distinct": 1,
+      "height_span": 0,
+      "center_span": 0.0,
+      "bottom_span": 0
+    }
+  }
+}

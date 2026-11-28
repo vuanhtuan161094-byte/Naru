@@ -1,0 +1,584 @@
+{
+  "schema": 1,
+  "character_id": "NIN-012",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Shino Aburame (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-012"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+        "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+          "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "f40e617f78a8e59eb29ee714ab015c941ae07285fe6b7019113adf21098a97bf",
+        "size_bytes": 1365458,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+        "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Shino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "41d8f18cbdc363d0ac9078c30a84eef673a2c8214daade1a95bb0f05309c818f",
+        "size_bytes": 1186007,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+        "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Shino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2170,
+          725
+        ],
+        "sha256": "308ee7aea58832af36dca83b10025baf255e42110f0df851baba9ca4f678752c",
+        "size_bytes": 1169348,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+        "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Shino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2011,
+          782
+        ],
+        "sha256": "7d111eef67875f0ff78bb002fb9ea82c8412cb8a723ce90560ff22758e3641bc",
+        "size_bytes": 1264481,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+        "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Shino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "3c6f5de96a919d80f39caf1894db37b90d01acb1e1cdad038254c026ef2fbbee",
+        "size_bytes": 1337919,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+        "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Shino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1642,
+          958
+        ],
+        "sha256": "df7b45a31e92278a385356f1146225c11080ed8e60f0dc4cfb2b23f21edc5174",
+        "size_bytes": 1018529,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3428/Shino_Aburame",
+        "canon_reference_sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json:temporary_image_path",
+          "source/model.png (locked Shino identity/outfit)",
+          "source/identity_reference.png (database form lock)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "e91bc5f72e45b1108cc7797b09818fe8bed6e6e1b500c43bfe3d061ece7107c6",
+        "size_bytes": 964371,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T14:42:33.422442+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "f40e617f78a8e59eb29ee714ab015c941ae07285fe6b7019113adf21098a97bf",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "fd8e8124b8df0e0fc344301d0d3dd6208d5c5a1951d08cacf0411883db904296",
+        "bounds": [
+          237,
+          122,
+          607,
+          947
+        ],
+        "height": 825
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "db5d86179b1d52eb6a4a1dc6162a63aea24281b3367b207fb31af2d4612d83fd",
+        "bounds": [
+          134,
+          122,
+          531,
+          947
+        ],
+        "height": 825
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "4ded7feb7dad94f581b565e0b49b4c379585e698850e09b6f85d5ad1b093a806"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/3428/Shino_Aburame",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/16/292449.jpg",
+      "sha256": "cc4d569cd316a0a14e474e7de7ace74109ae5c108fb6242a91c43cad3e690770",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "7d111eef67875f0ff78bb002fb9ea82c8412cb8a723ce90560ff22758e3641bc",
+      "size_bytes": 1264481
+    },
+    "cast_atlas.png": {
+      "sha256": "3c6f5de96a919d80f39caf1894db37b90d01acb1e1cdad038254c026ef2fbbee",
+      "size_bytes": 1337919
+    },
+    "fall_atlas.png": {
+      "sha256": "e91bc5f72e45b1108cc7797b09818fe8bed6e6e1b500c43bfe3d061ece7107c6",
+      "size_bytes": 964371
+    },
+    "hit_atlas.png": {
+      "sha256": "df7b45a31e92278a385356f1146225c11080ed8e60f0dc4cfb2b23f21edc5174",
+      "size_bytes": 1018529
+    },
+    "idle_atlas.png": {
+      "sha256": "41d8f18cbdc363d0ac9078c30a84eef673a2c8214daade1a95bb0f05309c818f",
+      "size_bytes": 1186007
+    },
+    "move_atlas.png": {
+      "sha256": "308ee7aea58832af36dca83b10025baf255e42110f0df851baba9ca4f678752c",
+      "size_bytes": 1169348
+    },
+    "model.png": {
+      "sha256": "f40e617f78a8e59eb29ee714ab015c941ae07285fe6b7019113adf21098a97bf",
+      "size_bytes": 1365458
+    },
+    "identity_reference.png": {
+      "sha256": "4ded7feb7dad94f581b565e0b49b4c379585e698850e09b6f85d5ad1b093a806",
+      "size_bytes": 22187
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-012.png": "c39998345b2faa67b87f1f5518b12bc59e309581c6405737c5b8d5f8196c4144",
+    "animation/NIN-012/idle_se.png": "138603cac8ef5d9fc0a4ef3247fba892e7e8a25990aa8a752bc698825e2fd54e",
+    "animation/NIN-012/idle_sw.png": "ae893630d8e834951f5eb4efef4304a6d62c0892181cf718837056b58902d43c",
+    "animation/NIN-012/move_se.png": "50d4c1e844c87059509eb9857a542bfe6c2357a2083bac1d1a552bff6b0cb8be",
+    "animation/NIN-012/move_sw.png": "b3a5860c6c08efb3278dc933274939a09f00f9377b850fde516c98db1d071e9a",
+    "animation/NIN-012/attack_se.png": "cd8f3723befe027daf0afc931b8c1817eb15a7d7d8b7cdf8c9668245c26f963f",
+    "animation/NIN-012/attack_sw.png": "75671e7017c61295dbee0c10459ee2c7a2a748b79404eca1d807bdbe60a0b3f2",
+    "animation/NIN-012/cast_se.png": "ed66eeddd468b7f1b24b8a214487ef6726dd4407b639f04574b5e6185789c2b6",
+    "animation/NIN-012/cast_sw.png": "ed38bd6607e8c995e7e49ebb73eef80e436923f19da22d64fedacd89925a5374",
+    "animation/NIN-012/hit_se.png": "f123353570af3419660a03cb25c1832c5425c0fb5dcda9c0562ba4b7cf8a0861",
+    "animation/NIN-012/hit_sw.png": "f573377ae6078d21dc8d8516a56e65574f05aa27f92ebffd24b63b6b8c89e50a",
+    "animation/NIN-012/fall_se.png": "904794186f90af46885759158ff0c24cad9c7bbce7afa7b15d37f96c0b672cf8",
+    "animation/NIN-012/fall_sw.png": "c14a9c4705d2faa602f3ff1d188de1733579151d5aea3f37111bd935b64e629e"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.277778,
+      "source_heights": [
+        324,
+        323,
+        333,
+        340,
+        324,
+        324
+      ],
+      "source_widths": [
+        184,
+        183,
+        185,
+        185,
+        182,
+        184
+      ]
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.279503,
+      "source_heights": [
+        322,
+        321,
+        333,
+        340,
+        322,
+        320
+      ],
+      "source_widths": [
+        187,
+        187,
+        187,
+        189,
+        189,
+        190
+      ]
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.313589,
+      "source_heights": [
+        287,
+        268,
+        275,
+        268,
+        281,
+        256,
+        276,
+        253
+      ],
+      "source_widths": [
+        193,
+        159,
+        170,
+        168,
+        197,
+        152,
+        171,
+        175
+      ]
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.319149,
+      "source_heights": [
+        282,
+        259,
+        266,
+        249,
+        282,
+        260,
+        272,
+        242
+      ],
+      "source_widths": [
+        174,
+        149,
+        164,
+        156,
+        189,
+        153,
+        177,
+        192
+      ]
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27027,
+      "source_heights": [
+        333,
+        316,
+        307,
+        309,
+        307,
+        330
+      ],
+      "source_widths": [
+        180,
+        164,
+        225,
+        282,
+        220,
+        184
+      ]
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.268657,
+      "source_heights": [
+        335,
+        321,
+        304,
+        308,
+        306,
+        330
+      ],
+      "source_widths": [
+        191,
+        166,
+        233,
+        295,
+        240,
+        196
+      ]
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.266272,
+      "source_heights": [
+        338,
+        337,
+        338,
+        337,
+        338,
+        337
+      ],
+      "source_widths": [
+        204,
+        213,
+        205,
+        205,
+        205,
+        205
+      ]
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.267062,
+      "source_heights": [
+        337,
+        337,
+        337,
+        337,
+        337,
+        337
+      ],
+      "source_widths": [
+        205,
+        214,
+        206,
+        206,
+        206,
+        205
+      ]
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.218447,
+      "source_heights": [
+        412,
+        406,
+        366,
+        412
+      ],
+      "source_widths": [
+        219,
+        233,
+        233,
+        220
+      ]
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.217918,
+      "source_heights": [
+        413,
+        408,
+        362,
+        412
+      ],
+      "source_widths": [
+        227,
+        236,
+        247,
+        225
+      ]
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.199095,
+      "source_heights": [
+        395,
+        357,
+        289,
+        190
+      ],
+      "source_widths": [
+        194,
+        276,
+        325,
+        442
+      ]
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.204651,
+      "source_heights": [
+        392,
+        358,
+        285,
+        183
+      ],
+      "source_widths": [
+        221,
+        271,
+        333,
+        430
+      ]
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues.",
+    "visual_quick_screen_96x112": "Animation contact sheet checked once at intended game scale; identity and action silhouettes usable; minor differences and small details left as-is.",
+    "runtime": "NOT_TESTED: no Godot Xvfb capture has run yet.",
+    "owner_acceptance": "PENDING"
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-012.json",
+    "sha256": "f790424be4979dff338378e93e4be9e0a21311e046dda5ff9288c1a9a47d162c"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "fd985a942d328e01c697e4ae7d712fc25e816f84b6b4c18de01e02c171471fd8"
+  }
+}

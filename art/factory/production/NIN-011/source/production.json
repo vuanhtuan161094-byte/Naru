@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-011.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -40,5 +40,211 @@
     "canon_reference_acquired_after_master": true,
     "master_identity_source": "source/identity_reference.png"
   },
-  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+  "render_input_references": {
+    "model": [
+      "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+      "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+    ],
+    "idle": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Kiba identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Kiba identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Kiba identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Kiba identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Kiba identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/canon_reference.json:temporary_image_path",
+      "source/model.png (locked Kiba identity/outfit)",
+      "source/identity_reference.png (database form lock)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "source_render_requests": 7,
+  "successful_source_render_outputs": 7,
+  "action_atlases_direct_canon_used": true,
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+      "canon_reference_sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png (reported master identity input; exact provider attachment list was not retained)",
+        "art/factory/production/NIN-007/source/model.png (reported style-only reference; exact provider attachment list was not retained)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "abe6aadf0423fb2b07e757575a50df2eec57dcbfbd397ed07fcb0be13647584d",
+      "size_bytes": 1401496,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:38:13.261757+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+      "canon_reference_sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Kiba identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2012,
+        782
+      ],
+      "sha256": "9d43b09fbd1332fd2269b4430b87681e56775803024e950686729ab51101121a",
+      "size_bytes": 1120620,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:38:13.261757+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+      "canon_reference_sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Kiba identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "b4308e680787ed067ff5b35f8e005076bfdb3ea124ae53a882a459af2142d98c",
+      "size_bytes": 1265955,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:38:13.261757+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+      "canon_reference_sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Kiba identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2012,
+        782
+      ],
+      "sha256": "8c8ad8937f5a7dff2d7f2f9b69725be9446ef0852b0650ead01ff419c1a9e0bf",
+      "size_bytes": 1271699,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:38:13.261757+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+      "canon_reference_sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Kiba identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2011,
+        782
+      ],
+      "sha256": "2036d3402c1a82fcb53b096774f823d138fae709feebc9ee95af8c102e60596c",
+      "size_bytes": 1342630,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:38:13.261757+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+      "canon_reference_sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Kiba identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "4dad62e6a55eb974df05e603e45a65b1371c85ef051ef02e10c04ec81519008e",
+      "size_bytes": 1061372,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:38:13.261757+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3495/Kiba_Inuzuka",
+      "canon_reference_sha256": "7d8f5a9b618d2b144384cd5da162a9da5c41a4f7b9d78ef27e9e70e1e1e7cfc1",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json:temporary_image_path",
+        "source/model.png (locked Kiba identity/outfit)",
+        "source/identity_reference.png (database form lock)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "06fdbc094911745bb2e42c771c0c1319f87d9de020d937156d1b38ddf2fae08f",
+      "size_bytes": 1076163,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T14:38:13.261757+00:00"
+    }
+  },
+  "action_visual_quick_check_96x112": "USABLE_FOR_PRODUCTION; contact sheet screened once at game scale; no severe identity, silhouette, clipping, or motion defect found."
 }

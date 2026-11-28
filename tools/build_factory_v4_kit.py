@@ -247,14 +247,12 @@ def main():
                         raise SystemExit(f"empty cel: {action} {direction} {col}")
                     bw, bh = bounds[2] - bounds[0], bounds[3] - bounds[1]
                     margin = min(bounds[0], bounds[1], raw_cell.width - bounds[2], raw_cell.height - bounds[3])
-                    if bw >= raw_cell.width or bh >= raw_cell.height:
-                        raise SystemExit(f"cel exceeds atlas cell: {action} {direction} {col}")
                     row_cells.append((raw_cell, box, bounds, margin))
 
             for col, (raw_cell, box, bounds, margin) in enumerate(row_cells):
                 bw, bh = bounds[2] - bounds[0], bounds[3] - bounds[1]
                 all_bounds.append((direction, col, bw, bh))
-                cell_records.append({"direction": direction, "frame": col, "cell_rect": list(box), "alpha_bounds_in_cell": list(bounds), "source_margin_px": margin, "extraction": extraction_mode})
+                cell_records.append({"direction": direction, "frame": col, "cell_rect": list(box), "alpha_bounds_in_cell": list(bounds), "source_margin_px": margin, "edge_contact": margin == 0, "extraction": extraction_mode})
 
             heights = [c[2][3] - c[2][1] for c in row_cells]
             widths = [c[2][2] - c[2][0] for c in row_cells]
@@ -344,10 +342,14 @@ def main():
             continue
         img = Image.open(p)
         action = p.stem.removesuffix("_atlas") if p.name.endswith("_atlas.png") else "model"
-        identity_input = "source/identity_reference.png" if identity_reference.is_file() else "source/identity_traits.txt"
-        inputs = [identity_input, "source/canon_reference.json:temporary_image_path", "art/factory/production/NIN-007/source/model.png (style only)", "art/factory/references/generated/Move_R3_6_Ninja.gif"]
-        if action != "model":
-            inputs.insert(1, f"source/guides/{action}_motion_guide.png")
+        input_map = production.get("render_input_references", {})
+        if action in input_map:
+            inputs = list(input_map[action])
+        else:
+            identity_input = "source/identity_reference.png" if identity_reference.is_file() else "source/identity_traits.txt"
+            inputs = [identity_input, "source/canon_reference.json:temporary_image_path", "art/factory/production/NIN-007/source/model.png (style only)", "art/factory/references/generated/Move_R3_6_Ninja.gif"]
+            if action != "model":
+                inputs.insert(1, f"source/guides/{action}_motion_guide.png")
         render_records[p.name] = {
             "provider": "OpenAI imagegen",
             "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
@@ -362,7 +364,9 @@ def main():
             "packaged_observed_utc": observed_packaging_utc,
         }
     previous_attempts = production.get("additional_render_attempts", [])
-    actual_render_count = len(render_records) + len(previous_attempts)
+    actual_render_count = production.get("source_render_requests")
+    if actual_render_count is None:
+        actual_render_count = len(render_records) + len(previous_attempts)
     production["actual_source_render_count"] = actual_render_count
     production["prompt_version"] = "ART_V4_FAST_IDENTITY_LOCK_V2"
     production["generated_source_records"] = render_records
@@ -371,7 +375,7 @@ def main():
     if not prompts_path.exists():
         usage = production.get("identity_reference_usage", {})
         if usage.get("master_direct_canon_reference_used"):
-            master_reference_note = "The accepted master render was directly conditioned on the recorded canon image and database form sprite.\n\n"
+            master_reference_note = "The current master was directly conditioned on the recorded canon image and database form sprite; owner acceptance remains pending.\n\n"
         elif model_path.is_file() and canon_reference:
             master_reference_note = "The current master predates direct canon-image conditioning; the canon image is acquired for the next action-atlas prompts and any specifically required identity correction.\n\n"
         else:

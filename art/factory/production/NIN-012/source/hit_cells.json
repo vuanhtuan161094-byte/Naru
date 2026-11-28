@@ -1,0 +1,167 @@
+{
+  "source_sha256": "df7b45a31e92278a385356f1146225c11080ed8e60f0dc4cfb2b23f21edc5174",
+  "atlas_size": [
+    1642,
+    958
+  ],
+  "grid": [
+    2,
+    4
+  ],
+  "alpha_threshold": 32,
+  "extraction": "equal_grid_cells",
+  "cells": [
+    {
+      "direction": "se",
+      "frame": 0,
+      "cell_rect": [
+        0,
+        0,
+        410,
+        479
+      ],
+      "alpha_bounds_in_cell": [
+        96,
+        39,
+        315,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 1,
+      "cell_rect": [
+        410,
+        0,
+        821,
+        479
+      ],
+      "alpha_bounds_in_cell": [
+        83,
+        45,
+        316,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 2,
+      "cell_rect": [
+        821,
+        0,
+        1232,
+        479
+      ],
+      "alpha_bounds_in_cell": [
+        90,
+        85,
+        323,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "se",
+      "frame": 3,
+      "cell_rect": [
+        1232,
+        0,
+        1642,
+        479
+      ],
+      "alpha_bounds_in_cell": [
+        94,
+        39,
+        314,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 0,
+      "cell_rect": [
+        0,
+        479,
+        410,
+        958
+      ],
+      "alpha_bounds_in_cell": [
+        96,
+        38,
+        323,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 1,
+      "cell_rect": [
+        410,
+        479,
+        821,
+        958
+      ],
+      "alpha_bounds_in_cell": [
+        79,
+        43,
+        315,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 2,
+      "cell_rect": [
+        821,
+        479,
+        1232,
+        958
+      ],
+      "alpha_bounds_in_cell": [
+        90,
+        89,
+        337,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    },
+    {
+      "direction": "sw",
+      "frame": 3,
+      "cell_rect": [
+        1232,
+        479,
+        1642,
+        958
+      ],
+      "alpha_bounds_in_cell": [
+        94,
+        39,
+        319,
+        451
+      ],
+      "source_margin_px": 28,
+      "edge_contact": false,
+      "extraction": "equal_grid_cells"
+    }
+  ]
+}
