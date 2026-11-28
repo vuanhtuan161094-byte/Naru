@@ -55,7 +55,7 @@ func apply(g) -> bool:
    for id in d[1]:
     var cell=VBoxContainer.new();cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL;cell.add_theme_constant_override("separation",2);tiles.add_child(cell)
     var marker=TextureButton.new();marker.texture_normal=game.art.texture("environment/buildings/"+id+".png");marker.ignore_texture_size=true;marker.stretch_mode=TextureButton.STRETCH_KEEP_ASPECT_CENTERED;marker.size_flags_vertical=Control.SIZE_EXPAND_FILL;marker.custom_minimum_size=Vector2(0,56);marker.tooltip_text=buttons[id].text;marker.disabled=buttons[id].disabled;marker.pressed.connect(forward.bind(id));cell.add_child(marker);markers[id]=marker
-    var b:Button=buttons[id];var original=b.text;var num=int(str(id).get_slice("-",1));b.text=SHORT[num-1]+"\n"+original.get_slice("\n",1);b.tooltip_text=original;b.custom_minimum_size=Vector2(0,42);b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.size_flags_vertical=Control.SIZE_SHRINK_END;b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;b.add_theme_font_size_override("font_size",12);b.add_theme_stylebox_override("normal",style(Color("#243947")));b.add_theme_stylebox_override("hover",style(Color("#35505a"),Color("#e8bf75")));b.add_theme_stylebox_override("pressed",style(Color("#395764"),Color("#e8bf75")));cell.add_child(b)
+    var b:Button=buttons[id];b.icon=null;var original=b.text;var num=int(str(id).get_slice("-",1));b.text=SHORT[num-1]+"\n"+original.get_slice("\n",1);b.tooltip_text=original;b.custom_minimum_size=Vector2(0,42);b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.size_flags_vertical=Control.SIZE_SHRINK_END;b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;b.add_theme_font_size_override("font_size",12);b.add_theme_stylebox_override("normal",style(Color("#243947")));b.add_theme_stylebox_override("hover",style(Color("#35505a"),Color("#e8bf75")));b.add_theme_stylebox_override("pressed",style(Color("#395764"),Color("#e8bf75")));cell.add_child(b)
  return markers.size()==30
 
 # Continuous ground plus individually interactive building textures. Review art, no gameplay rules.
@@ -69,8 +69,8 @@ func apply_panorama(at: int) -> bool:
  game.root.add_child(map)
  game.root.move_child(map,at)
  var bg=TextureRect.new()
- bg.texture=game.art.texture("environment/arena_open_r3.png")
- if bg.texture==null:bg.texture=game.art.texture("environment/village_ground_p3.png")
+ bg.texture=game.art.texture("environment/village_ground_p3.png")
+ if bg.texture==null:bg.texture=game.art.texture("environment/village_plate.png")
  bg.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
  bg.stretch_mode=TextureRect.STRETCH_SCALE
  bg.mouse_filter=Control.MOUSE_FILTER_IGNORE
@@ -115,6 +115,7 @@ func apply_panorama(at: int) -> bool:
    cell.offset_left=2
    cell.offset_right=-2
    var b:Button=buttons[id]
+   b.icon=null
    var original=b.text
    var detail=original.get_slice("\n",1)
    var locked=detail.begins_with("Chưa xây")
@@ -130,7 +131,7 @@ func apply_panorama(at: int) -> bool:
    marker.anchor_bottom=0.74
    marker.tooltip_text=original
    marker.disabled=b.disabled
-   var tint=Color(0.90,0.93,0.88,0.90) if locked else Color.WHITE
+   var tint=Color(0.74,0.77,0.72,0.86) if locked else Color.WHITE
    marker.self_modulate=tint
    marker.mouse_entered.connect(func():marker.self_modulate=Color(1.15,1.10,0.93,1.0))
    marker.mouse_exited.connect(func():marker.self_modulate=tint)
@@ -142,7 +143,7 @@ func apply_panorama(at: int) -> bool:
    b.modulate=Color.WHITE
    b.custom_minimum_size=Vector2(0,29)
    b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-   b.add_theme_font_size_override("font_size",11)
+   b.add_theme_font_size_override("font_size",12)
    var border=Color("#e9bd70") if upgrading or n==1 else Color("#69776b") if locked else Color("#a8b68a")
    b.add_theme_stylebox_override("normal",style(Color(0.10,0.14,0.13,0.88),border,5))
    b.add_theme_stylebox_override("hover",style(Color("#41574b"),Color("#f1cb85"),5))
