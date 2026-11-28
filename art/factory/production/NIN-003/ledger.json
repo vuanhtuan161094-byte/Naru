@@ -408,7 +408,8 @@
     },
     "godot_evidence": "Focused V4 importer/direction smoke and actual Main.tscn 6v6 no-reward runtime passed after current pack build; 12 actors, 52 authored Sakura draws.",
     "runtime_evidence_path": "previews/godot_runtime_evidence.md",
-    "capture_status": "No screenshot/video claimed: Godot used the headless dummy renderer and supplied no viewport texture."
+    "capture_status": "No screenshot/video claimed: Godot used the headless dummy renderer and supplied no viewport texture.",
+    "runtime": "PASS: Godot 4.7.2 Xvfb/llvmpipe; exact SHA 3993142b85e55235a70905615715e23829acae43; 6v6 screenshot/video artifact ART-V4-Godot-Xvfb-6v6-3993142b85e55235a70905615715e23829acae43; authored_draws=184."
   },
   "blockers": [
     "Canon status is unverified in the registry; source remains in review.",
@@ -421,5 +422,21 @@
   "contact_sheet": {
     "path": "previews/contact_sheet_96x112.png",
     "sha256": "1fd99a10a3a03ef25678e73b8e395c86561e114f49856fa2eece0a80bec39866"
+  },
+  "runtime_capture": {
+    "status": "PASS",
+    "engine": "Godot 4.7.2",
+    "display": "Xvfb X11 with Mesa llvmpipe OpenGL Compatibility",
+    "sha": "3993142b85e55235a70905615715e23829acae43",
+    "workflow_run_id": "46168311455",
+    "workflow_run_url": "https://github.com/vuanhtuan161094-byte/Naru/actions/runs/46168311455",
+    "artifact_name": "ART-V4-Godot-Xvfb-6v6-3993142b85e55235a70905615715e23829acae43",
+    "screenshots": [
+      "batch-01/6v6.png"
+    ],
+    "video": "batch-01/6v6.mp4",
+    "godot_log": "batch-01/godot.log",
+    "authored_draws": 184,
+    "notes": "Windowed Godot runtime capture completed; exact kit IDs logged, no rejected/missing kit messages."
   }
 }

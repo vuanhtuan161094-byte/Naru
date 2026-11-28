@@ -611,12 +611,12 @@
     "source": "SOURCE_REVIEW",
     "pack": "PACK_PASS",
     "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
-    "runtime": "NOT_TESTED",
+    "runtime": "RUNTIME_PASS",
     "owner": "PENDING"
   },
   "qa": {
     "visual_quick_screen_96x112": "Animation contact sheet checked once at game scale; identity and action silhouettes usable. Minor issues left as-is.",
-    "runtime": "NOT_TESTED: pending exact-SHA GitHub Godot/Xvfb capture.",
+    "runtime": "PASS: Godot 4.7.2 Xvfb/llvmpipe; exact SHA 7cdc71994c5df354289eed3fadfbc774c26e3622; 6v6 screenshot/video artifact ART-V4-Godot-Xvfb-6v6-7cdc71994c5df354289eed3fadfbc774c26e3622; authored_draws=184.",
     "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues."
   },
   "blockers": [],
@@ -627,5 +627,21 @@
   "contact_sheet": {
     "path": "previews/contact_sheet_96x112.png",
     "sha256": "20614fb770ccd0beb8b8b770a82cfc97ea183c3b6f227e978106e1faa7705e87"
+  },
+  "runtime_capture": {
+    "status": "PASS",
+    "engine": "Godot 4.7.2",
+    "display": "Xvfb X11 with Mesa llvmpipe OpenGL Compatibility",
+    "sha": "7cdc71994c5df354289eed3fadfbc774c26e3622",
+    "workflow_run_id": "46168136344",
+    "workflow_run_url": "https://github.com/vuanhtuan161094-byte/Naru/actions/runs/46168136344",
+    "artifact_name": "ART-V4-Godot-Xvfb-6v6-7cdc71994c5df354289eed3fadfbc774c26e3622",
+    "screenshots": [
+      "batch-01/6v6.png"
+    ],
+    "video": "batch-01/6v6.mp4",
+    "godot_log": "batch-01/godot.log",
+    "authored_draws": 184,
+    "notes": "Windowed Godot runtime capture completed; exact kit IDs logged, no rejected/missing kit messages."
   }
 }

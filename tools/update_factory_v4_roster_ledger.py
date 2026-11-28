@@ -14,7 +14,7 @@ def main() -> None:
     roster = json.loads((ROOT / "data/ninjas.json").read_text(encoding="utf-8"))
     selected = [n for n in roster if 5 <= int(n["id"].split("-")[1]) <= 28]
     with OUT.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["id", "name", "era", "canon_reference", "reference_sha256", "source_renders", "master_canon_used", "master_shikamaru_style", "identity_review_96x112", "visual_review_96x112", "model", "atlas", "pack", "runtime", "owner", "note"], lineterminator="\n")
+        writer = csv.DictWriter(f, fieldnames=["id", "name", "era", "canon_reference", "reference_sha256", "source_renders", "master_canon_used", "master_shikamaru_style", "identity_review_96x112", "visual_review_96x112", "model", "atlas", "pack", "runtime", "runtime_sha", "runtime_workflow_run", "runtime_artifact", "owner", "note"], lineterminator="\n")
         writer.writeheader()
         for ninja in selected:
             cid = ninja["id"]
@@ -26,6 +26,9 @@ def main() -> None:
             runtime_path = ROOT / "art/factory/production" / cid / "runtime" / f"{cid}.json"
             validation_path = ROOT / "art/factory/production" / cid / "runtime/validation.json"
             validation = json.loads(validation_path.read_text(encoding="utf-8")) if validation_path.is_file() else {}
+            kit_ledger_path = ROOT / "art/factory/production" / cid / "ledger.json"
+            kit_ledger = json.loads(kit_ledger_path.read_text(encoding="utf-8")) if kit_ledger_path.is_file() else {}
+            runtime_capture = kit_ledger.get("runtime_capture", {})
             usage = production.get("identity_reference_usage", {})
             model_path = source / "model.png"
             complete = runtime_path.is_file()
@@ -71,7 +74,10 @@ def main() -> None:
                 "model": model_state,
                 "atlas": atlas_state,
                 "pack": validation.get("technical_status", "PASS" if complete else "PENDING"),
-                "runtime": "NOT_TESTED",
+                "runtime": "PASS_XVFB_6V6" if runtime_capture.get("status") == "PASS" else "NOT_TESTED",
+                "runtime_sha": runtime_capture.get("sha", ""),
+                "runtime_workflow_run": runtime_capture.get("workflow_run_id", ""),
+                "runtime_artifact": runtime_capture.get("artifact_name", ""),
                 "owner": "PENDING",
                 "note": note,
             })
