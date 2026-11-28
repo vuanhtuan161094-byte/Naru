@@ -275,7 +275,27 @@ func e4_capture_screens()->void:
 			get_tree().quit(2)
 			return
 		print("E4_CAPTURE_OK ",item[0]," ",image.get_size())
-	print("E4_CAPTURE_COMPLETE ",screens.size())
+	# Capture unlocked views on the isolated QA save only; do not change player progression.
+	for key in store.state.building_states:
+		store.state.building_states[key].level=maxi(1,int(reg.buildings[key].unlock_hq))
+	store.state.building_states["BLD-001"].level=100
+	for building_id in reg.buildings:
+		var key=str(building_id)
+		for tab_index in range(3):
+			building_worker_id=key
+			building_tab=tab_index
+			building_screen(key)
+			await get_tree().process_frame
+			await get_tree().process_frame
+			await RenderingServer.frame_post_draw
+			var name_text="unlocked-"+key+"-tab-"+str(tab_index)
+			var code=get_viewport().get_texture().get_image().save_png(folder+"/"+name_text+".png")
+			if code!=OK:
+				push_error("E4_CAPTURE_FAIL "+name_text)
+				get_tree().quit(2)
+				return
+			print("E4_CAPTURE_OK ",name_text)
+	print("E4_CAPTURE_COMPLETE ",screens.size()+reg.buildings.size()*3)
 	get_tree().quit()
 
 func clear() -> void:
