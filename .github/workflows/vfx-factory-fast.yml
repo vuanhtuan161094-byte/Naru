@@ -1,10 +1,11 @@
-name: VFX FACTORY FAST — reusable atlas and native combat
+name: VFX R2 — anime effects and actor skill HUD
 on:
   push:
     branches: [art/vfx-factory-fast]
     paths:
       - 'art/vfx/**'
       - 'art/external/vfx_factory_fast.py'
+      - 'art/vfx/premium_flipbooks.py'
       - 'game/review_art.gd'
       - 'game/main.gd'
       - '.github/workflows/vfx-factory-fast.yml'
@@ -48,6 +49,10 @@ jobs:
           path: assets/external_review/vfx/
           retention-days: 14
           if-no-files-found: warn
+      - name: Embed anime VFX into local game review (no raw premium asset pack upload)
+        run: |
+          python3 art/vfx/premium_flipbooks.py --out assets/external_review/vfx
+          cp assets/external_review/vfx/PREMIUM_REPORT.json evidence/
       - name: Prepare real Godot renderer
         run: |
           python3 tools/assemble_public_art.py
@@ -79,7 +84,8 @@ jobs:
           grep 'NARU_FX_FACTORY_ROUTES 1152' evidence/runtime.log
           test "$(grep -c NARU_FX_V4_READY evidence/runtime.log)" -eq 7
           grep 'NARU_VIDEO_BATTLE 12 actors' evidence/runtime.log
-          grep NARU_EXTERNAL_FX_RUNTIME_FAMILY evidence/runtime.log | sort -u >evidence/DRAW_COVERAGE.txt
+          grep -E 'NARU_EXTERNAL_FX_RUNTIME_FAMILY|NARU_PREMIUM_VFX_DRAW' evidence/runtime.log | sort -u >evidence/DRAW_COVERAGE.txt
+          grep NARU_PREMIUM_VFX_DRAW evidence/runtime.log
           ! grep -E 'SCRIPT ERROR|Parse Error|NARU_FX_V4_LOAD_FAIL' evidence/runtime.log
           ffmpeg -hide_banner -loglevel error -y -ss 8 -i evidence/Combat-VFX-FAST.mp4 -frames:v 1 evidence/Combat-VFX-FAST.png
       - uses: actions/upload-artifact@v4

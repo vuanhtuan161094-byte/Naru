@@ -381,9 +381,7 @@ func reset_battle() -> void:
 
 func background(field: Control,environment: String) -> bool:
 	var t=texture("environment/arena_open_r3.png")
-	if environment=="forest":
-		var forest=texture("environment/arena_960x540.png")
-		if forest!=null:t=forest
+	if t==null:t=texture("environment/arena_960x540.png")
 	if t==null:
 		field.draw_rect(Rect2(Vector2.ZERO,field.size),Color("#17282b"))
 		return false
@@ -391,7 +389,7 @@ func background(field: Control,environment: String) -> bool:
 	# placing feet on the scenery or zooming the entire scene.
 	var horizon=0.45*float(t.get_height())
 	var top=preload("res://game/battle_camera.gd").ground_top(field.size)
-	field.draw_texture_rect_region(t,Rect2(0,0,field.size.x,top),Rect2(0,0,t.get_width(),horizon),Color(0.93,0.93,0.93))
+	field.draw_texture_rect_region(t,Rect2(0,0,field.size.x,top),Rect2(0,0,t.get_width(),horizon),Color(0.72,0.77,0.79))
 	field.draw_texture_rect_region(t,Rect2(0,top,field.size.x,field.size.y-top),Rect2(0,horizon,t.get_width(),t.get_height()-horizon),Color(0.93,0.93,0.93))
 	return true
 
@@ -537,7 +535,21 @@ func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_va
 		if ResourceLoader.exists(path):candidate=load(path) as Texture2D
 		external_fx_cache[family]=candidate
 	var t=external_fx_cache[family] as Texture2D
-	if t==null or t.get_height()!=128 or t.get_width()%128!=0:return false
+	if t==null:return false
+	var premium:Dictionary=factory_routes.get("premium",{}).get(family,{})
+	if not premium.is_empty():
+		var cell=int(premium.cell)
+		var cols=int(premium.cols)
+		var n=int(premium.frames)
+		var j=clampi(floori(clampf(progress,0.0,0.999)*n),0,n-1)
+		var rect=Rect2((j%cols)*cell,floori(float(j)/cols)*cell,cell,cell)
+		if rect.end.x>t.get_width() or rect.end.y>t.get_height():return false
+		field.draw_texture_rect_region(t,Rect2(p-Vector2.ONE*size_value/2,Vector2.ONE*size_value),rect)
+		if not external_fx_family_draws.has(family):print("NARU_PREMIUM_VFX_DRAW ",family)
+		external_fx_family_draws[family]=int(external_fx_family_draws.get(family,0))+1
+		effect_draws+=1
+		return true
+	if t.get_height()!=128 or t.get_width()%128!=0:return false
 	var count=floori(float(t.get_width())/128.0)
 	var frame=clampi(floori(progress*count),0,count-1)
 	field.draw_texture_rect_region(t,Rect2(p-Vector2.ONE*size_value/2,Vector2.ONE*size_value),Rect2(frame*128,0,128,128))
@@ -574,18 +586,25 @@ func effects(field: Control,sim,project: Callable) -> void:
 		var skill=a.pending.skill
 		var at: Vector2=project.call(a.pos)+Vector2(0,-32)
 		var progress=1.0-float(a.cast_left)/maxf(0.05,float(skill.cast_s))
-		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,82) and not external_sheet(field,str(factory_route(str(skill.skill_id)).get("charge","charge")),at,progress,82):
+		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,124) and not external_sheet(field,str(factory_route(str(skill.skill_id)).get("charge","charge")),at,progress,124):
 			field.draw_arc(at,15+6*sin(float(sim.ticks)*0.35),0,TAU,24,Color(0.45,0.78,1,0.65),2)
 	var numbers=[]
 	for event in sim.art_events:
 		var elapsed=float(sim.ticks-int(event.tick))*0.05
-		if elapsed<0 or elapsed>=0.8:continue
+		if elapsed<0 or elapsed>=1.05:continue
 		var at: Vector2=project.call(event.pos)+Vector2(0,-28)
-		var progress=elapsed/0.8
+		var progress=clampf(elapsed/0.8,0.0,1.0)
 		if event.kind=="contact":
-			var phase="impact" if elapsed<0.4 else "residual"
-			if not sheet(field,"vfx/VFX-"+str(event.skill)+"/"+phase+".png",at,fmod(elapsed,0.4)/0.4,110) and phase=="impact":
-				external_sheet(field,external_family(str(event.skill)),at,elapsed/0.4,110.0*clampf(float(factory_route(str(event.skill)).get("scale",1.0)),0.8,1.55))
+			var route=factory_route(str(event.skill))
+			var family=external_family(str(event.skill))
+			var duration=0.65
+			if family.begins_with("hd_"):duration=1.0
+			var extent=160.0*clampf(float(route.get("scale",1.0)),0.8,1.55)
+			if elapsed<duration:
+				if not sheet(field,"vfx/VFX-"+str(event.skill)+"/impact.png",at,elapsed/duration,extent):
+					external_sheet(field,family,at,elapsed/duration,extent)
+			elif elapsed<0.95:
+				sheet(field,"vfx/VFX-"+str(event.skill)+"/residual.png",at,(elapsed-duration)/maxf(0.05,0.95-duration),extent)
 		elif event.kind=="status_applied":
 			load_factory_routes()
 			var status_family=str(factory_routes.get("statuses",{}).get(str(event.skill),""))
@@ -595,7 +614,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 			external_sheet(field,special,at,progress,105)
 		elif event.kind in ["damage","heal","summon"]:
 			var family="hit" if event.kind=="damage" else "heal" if event.kind=="heal" else "smoke"
-			if not sheet(field,"vfx/families/"+family+".png",at,progress,76) and not external_sheet(field,family,at,progress,76):
+			if elapsed<0.4 and not sheet(field,"vfx/families/"+family+".png",at,elapsed/0.4,64) and not external_sheet(field,family,at,elapsed/0.4,64):
 				field.draw_arc(at,8+22*progress,0,TAU,24,Color(1,0.72,0.38,1-progress),2)
 			if event.kind!="summon" and elapsed<0.55:
 				numbers.append({"at":at+Vector2(-14,-28-25*progress),"kind":event.kind,"amount":float(event.amount),"age":elapsed})

@@ -565,6 +565,8 @@ func start_battle(stage: Dictionary,expedition:String="",tower_floor:int=0) -> v
 
 func battle_view() -> void:
 	art.reset_battle()
+	actor_skill_hud_cache.clear()
+	actor_skill_hud_tick=-1
 	accumulator=0
 	paused=false
 	observation_mode=false
@@ -789,16 +791,91 @@ func arena_scale() -> float:
 func iso(p: Vector2) -> Vector2:
 	return BattleCamera.project_framed(p,field.size,Vector2(sim.map_width,sim.map_height),battle_frame)
 
+
+# HUD uses actual actor state, never invented cast times or ready states.
+var actor_skill_hud_cache:Dictionary={}
+var actor_skill_hud_tick:int=-1
+var skill_hud_occupied:Array[Rect2]=[]
+func refresh_actor_skill_hud()->void:
+	if actor_skill_hud_tick==sim.ticks:return
+	if actor_skill_hud_tick>=0 and sim.ticks-actor_skill_hud_tick<4 and sim.ticks>=actor_skill_hud_tick:return
+	actor_skill_hud_tick=sim.ticks
+	actor_skill_hud_cache.clear()
+	var recent:Dictionary={}
+	for e in sim.animation_events:
+		if sim.ticks-int(e.tick)>22:continue
+		if str(e.phase) in ["cast","attack","release","contact"] and not str(e.skill_id).is_empty():recent[int(e.actor_uid)]=str(e.skill_id)
+	for a in sim.actors:
+		if a.hp<=0 or a.get("summon",false):continue
+		var active=str(a.pending.skill.skill_id) if not a.pending.is_empty() else str(recent.get(int(a.uid),""))
+		var slots:Array=[]
+		var ultimate_text=""
+		var ultimate_ready=false
+		for id in a.skills:
+			var s=sim.effective_skill(a,id)
+			if str(s.kind)=="basic":continue
+			var ult=str(s.kind)=="ultimate"
+			if not ult and slots.size()>=4:continue
+			if ult and slots.any(func(x):return x.ult):continue
+			var cd=maxf(0.0,float(a.cooldowns.get(id,0.0)))
+			var ready=sim.ready(a,s)
+			var reason=sim.ultimate_reason(a,id) if ult else ""
+			if ult:
+				ultimate_ready=reason=="Sẵn sàng"
+				ultimate_text="SẴN SÀNG" if ultimate_ready else ("%.0fs" % ceil(cd) if cd>0 else ("CP" if reason=="Chờ CP" else "CHỜ"))
+				if reason=="Đang thi triển":ultimate_text="TUNG CHIÊU"
+				elif sim.ultimate_requests.get(a.uid,"")==id and not ultimate_ready:ultimate_text="ĐÃ CHỌN"
+			slots.append({"id":id,"ult":ult,"cd":cd,"ready":ultimate_ready if ult else ready,"active":str(id)==active})
+			if slots.size()>=5:break
+		var active_name=""
+		if not active.is_empty() and (reg.names.has(active) or reg.p2_design.has(active)):active_name=sim.skill_name(active)
+		actor_skill_hud_cache[int(a.uid)]={"slots":slots,"active":active_name,"ultimate":ultimate_text,"ready":ultimate_ready}
+func draw_actor_skill_hud(a:Dictionary,p:Vector2)->void:
+	var d:Dictionary=actor_skill_hud_cache.get(int(a.uid),{})
+	if d.is_empty():return
+	var slots:Array=d.slots
+	if slots.is_empty():return
+	var width=126.0 if not str(d.active).is_empty() else 98.0
+	var height=31.0 if not str(d.active).is_empty() else 18.0
+	var loc=Vector2(clampf(p.x-width*0.5,2.0,maxf(2.0,field.size.x-width-2.0)),clampf(p.y+5.0,2.0,maxf(2.0,field.size.y-height-2.0)))
+	var rect=Rect2(loc,Vector2(width,height))
+	# Prefer beneath feet. Shift a crowded HUD only, not any actor or combat coordinates.
+	for offset in [Vector2(0,19),Vector2(0,-19),Vector2(-width-5,0),Vector2(width+5,0),Vector2(0,38)]:
+		if not skill_hud_occupied.any(func(r):return r.intersects(rect)):break
+		var candidate=Vector2(clampf(loc.x+offset.x,2.0,maxf(2.0,field.size.x-width-2.0)),clampf(loc.y+offset.y,2.0,maxf(2.0,field.size.y-height-2.0)))
+		rect=Rect2(candidate,Vector2(width,height))
+	skill_hud_occupied.append(rect)
+	if rect.position.distance_to(loc)>12:field.draw_line(p+Vector2(0,3),rect.get_center(),Color(0.65,0.7,0.75,0.35),1)
+	field.draw_rect(rect,Color(0.035,0.055,0.075,0.91))
+	var edge=Color("#dcae61") if a.side==0 else Color("#bd7379")
+	field.draw_rect(rect,edge, false,1)
+	var x=rect.position.x+3.0
+	var y=rect.position.y+2.0
+	var i=0
+	for item in slots:
+		var w=28.0 if item.ult else 15.0
+		var slot=Rect2(Vector2(x,y),Vector2(w,14))
+		var fill=Color("#b9782b") if item.ult and item.ready else Color("#355d67") if item.ready else Color("#29313c")
+		if item.active:fill=Color("#d2a04b")
+		field.draw_rect(slot,fill)
+		field.draw_rect(slot,Color("#f4d891") if item.active or (item.ult and item.ready) else Color("#61717b"),false,1)
+		var label="ULT" if item.ult else str(i+1)
+		if float(item.cd)>0.01:label=str(ceili(float(item.cd)))
+		elif item.ult and not item.ready:label=str(d.ultimate).left(5)
+		field.draw_string(ThemeDB.fallback_font,Vector2(x+2,y+11),label,HORIZONTAL_ALIGNMENT_LEFT,w-3,9,Color.WHITE)
+		x+=w+2
+		if not item.ult:i+=1
+	if not str(d.active).is_empty():
+		field.draw_string(ThemeDB.fallback_font,rect.position+Vector2(4,28),str(d.active),HORIZONTAL_ALIGNMENT_LEFT,width-8,10,Color("#f9e4ae"))
+
 func draw_field() -> void:
 	if sim==null:return
-	var active_points:Array[Vector2]=[]
-	for a in sim.actors:
-		if a.hp>0 and not a.get("summon",false):active_points.append(Vector2(a.pos))
-	var desired=BattleCamera.framing(field.size,Vector2(sim.map_width,sim.map_height),active_points)
-	# Camera smoothing only; no sprite tween or rig.
-	battle_frame.zoom=lerpf(float(battle_frame.zoom),float(desired.zoom),0.08)
-	battle_frame.shift=Vector2(battle_frame.shift).lerp(Vector2(desired.shift),0.08)
+	# Fixed camera for combat readability. Simulation positions and tactics remain unchanged.
+	battle_frame={"zoom":1.0,"shift":Vector2.ZERO}
 	var plate=art.background(field,sim.environment)
+	field.draw_rect(Rect2(Vector2.ZERO,field.size),Color(0.045,0.065,0.085,0.31))
+	refresh_actor_skill_hud()
+	skill_hud_occupied.clear()
 	var q=arena_scale()
 	var edges=PackedVector2Array([iso(Vector2.ZERO),iso(Vector2(sim.map_width,0)),iso(Vector2(sim.map_width,sim.map_height)),iso(Vector2(0,sim.map_height))])
 	if not plate:
@@ -820,13 +897,13 @@ func draw_field() -> void:
 		var rect: Rect2=item.rect
 		var points=PackedVector2Array([iso(rect.position),iso(Vector2(rect.end.x,rect.position.y)),iso(rect.end),iso(Vector2(rect.position.x,rect.end.y))])
 		if item.kind=="obstacle":
-			var prop=art.texture("environment/props/stone.png") if not item.has("owner") else null
+			var prop:Texture2D=null # low profile footprint keeps the action unobstructed
 			if prop!=null:
 				var foot=iso(Vector2(rect.get_center().x,rect.end.y))
 				var extent=maxf(24.0,absf(points[1].x-points[0].x))
 				var height_value=extent*float(prop.get_height())/maxf(1.0,float(prop.get_width()))
 				field.draw_texture_rect(prop,Rect2(foot-Vector2(extent*0.5,height_value),Vector2(extent,height_value)),false)
-			else:field.draw_colored_polygon(points,Color(0.30,0.37,0.35,0.55))
+			else:field.draw_colored_polygon(points,Color(0.30,0.37,0.35,0.30))
 		elif not plate or battle_grid:field.draw_colored_polygon(points,Color(0.65,0.52,0.27,0.15))
 		if battle_grid:field.draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[3],points[0]]),Color("#a7b8b7"),1.5,true)
 	for pair in sim.formation_pairs(0) if battle_grid else []:
@@ -846,7 +923,7 @@ func draw_field() -> void:
 		if a.uid==inspected_uid:field.draw_arc(Vector2.ZERO,radius+5,0,TAU,24,Color("#e9f5ff"),2)
 		field.draw_set_transform(Vector2.ZERO)
 		var depth_scale=lerpf(0.88,1.05,clampf(float(a.pos.y)/maxf(1.0,float(sim.map_height)),0,1))
-		var visual_scale=q*depth_scale*(0.62 if a.get("summon",false) else 0.84 if a.get("clone",false) else 0.88)
+		var visual_scale=q*depth_scale*(0.62 if a.get("summon",false) else 0.78 if a.get("clone",false) else 0.95)
 		# Stable scale: no frame-by-frame shrinking when actors pass each other.
 		var presentation_state=sim.animation_state(a)
 		var face=Vector2(a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT))
@@ -899,9 +976,14 @@ func draw_field() -> void:
 			var progress=clampf(1-float(projectile.remaining)/total,0,1)
 			var at=Vector2(projectile.get("pos",source.pos.lerp(target.pos,progress)))
 			var point=iso(at)-Vector2(0,24)
-			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,70) and not art.external_sheet(field,art.external_travel_family(str(projectile.skill.skill_id)),point,progress,62):
+			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,105) and not art.external_sheet(field,art.external_travel_family(str(projectile.skill.skill_id)),point,progress,104):
 				field.draw_circle(point,5,Color("#ffcf84"))
 	if bool(store.state.get("settings",{}).get("cutin",true)):art.effects(field,sim,iso)
+	# Small actor-local skill slots on top of VFX, with actual active skill name.
+	for a in render_order:
+		if a.hp>0 and not a.get("summon",false):draw_actor_skill_hud(a,iso(a.pos))
+	if art.factory_routes.has("premium_credit"):
+		field.draw_string(ThemeDB.fallback_font,Vector2(10,field.size.y-5),str(art.factory_routes.premium_credit),HORIZONTAL_ALIGNMENT_LEFT,-1,10,Color(0.85,0.87,0.9,0.8))
 	if battle_details:field.draw_string(ThemeDB.fallback_font,Vector2(12,19),art.source_label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("#c7d5d5"))
 
 func _process(delta: float) -> void:
