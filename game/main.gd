@@ -1688,11 +1688,13 @@ func building_screen(id: String,message: String="") -> void:
 	var cost=preload("res://game/village_service.gd").upgrade_cost(reg,store.state,id)
 	var nav=HBoxContainer.new()
 	root.add_child(nav)
-	var upgrade=button(nav,"Xây/nâng cấp: %d Ryo, %d gỗ, %d đá" % [cost["RES-001"],cost["RES-006"],cost["RES-009"]],func():building_screen(id,"Đã đặt lịch" if store.construct(reg,id) else "Chưa đủ điều kiện"))
+	var upgrade=button(nav,"Xây / nâng cấp",func():building_screen(id,"Đã đặt lịch" if store.construct(reg,id) else "Chưa đủ điều kiện"))
+	upgrade.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	label(info,"Chi phí: %d Ryo • %d gỗ • %d đá" % [cost["RES-001"],cost["RES-006"],cost["RES-009"]],16)
 	var construction=Village.construction_quote(reg,store.state,id)
 	upgrade.disabled=not construction.ready
 	upgrade.tooltip_text=str(construction.reason)
-	label(info,str(construction.reason),15)
+	label(info,str(construction.reason),15).modulate=Color("#b9c5d4")
 	if b.upgrade.is_empty():journey_shortages(root,Journey.missing(store.state,cost))
 	if not b.upgrade.is_empty():label(root,"Còn %d giây" % int(b.upgrade.remaining),18)
 	button(nav,"Làm mới",func():building_screen(id))
@@ -1739,7 +1741,7 @@ func building_screen(id: String,message: String="") -> void:
 		label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi),18)
 		return
 	for i in range(3):
-		var tab=button(tabs,["Tổng quan","Sản xuất","Nhân lực"][i],func():building_tab=i;building_screen(id))
+		var tab=button(tabs,["Tổng quan","Chức năng" if def.recipe_ids.is_empty() else "Sản xuất","Nhân lực"][i],func():building_tab=i;building_screen(id))
 		tab.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		tab.disabled=building_tab==i
 	if building_tab==0:
@@ -1778,14 +1780,20 @@ func building_screen(id: String,message: String="") -> void:
 		else:
 			for recipe_id in def.recipe_ids:
 				var recipe=reg.recipes[recipe_id]
-				var row=HBoxContainer.new()
-				rows.add_child(row)
+				var card=PanelContainer.new()
+				card.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+				rows.add_child(card)
+				var recipe_body=VBoxContainer.new()
+				card.add_child(recipe_body)
 				var output=str(reg.resources[recipe.output.resource_id].name_vi)
-				label(row,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],16)
+				label(recipe_body,"%s ×%d (cấp %d)" % [output,int(recipe.output.qty),int(recipe.min_building_level)],18).modulate=Color("#ffdb9d")
 				var q=Village.recipe_quote(store.state,recipe)
 				var quote_text=[]
 				for key in q.cost:quote_text.append("%s %d/%d" % [reg.resources[key].name_vi,int(store.state.inventory.get(key,0)),int(q.cost[key])])
-				var materials=label(row,", ".join(PackedStringArray(quote_text)),15)
+				var materials=label(recipe_body,", ".join(PackedStringArray(quote_text)),15)
+				materials.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+				var row=HFlowContainer.new()
+				recipe_body.add_child(row)
 				materials.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 				materials.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 				materials.tooltip_text=materials.text+" • "+str(q["yield"])+" sản phẩm / "+str(q.seconds)+"s • "+str(q.reason)
@@ -1802,7 +1810,11 @@ func building_screen(id: String,message: String="") -> void:
 				reserve_button.disabled=not q.setup_ready
 				reserve_button.tooltip_text="Tự sản xuất đến mục tiêu, tự dừng khi đủ; không tự mua. "+str(q["yield"])+" / "+str(q.seconds)+"s"
 
-		if def.recipe_ids.is_empty():label(rows,"Công trình này không có công thức sản xuất.",16)
+		if def.recipe_ids.is_empty():
+			label(rows,"Công trình chuyên chức năng, không có công thức sản xuất.",16)
+			building_actions(rows,id)
+			if id=="BLD-028":button(rows,"Nghiên cứu công nghệ",world_projects_screen)
+			if id=="BLD-030":button(rows,"Gia cố phòng thủ",fortification_screen)
 		return
 	label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi)+" • Nhân lực "+str(Village.workers(store.state,id).size())+"/"+str(1+floori(float(int(b.level)-1)/10.0)),16)
 	label(rows,"Nhân lực (không ảnh hưởng đội chiến đấu)",20)
@@ -1830,10 +1842,14 @@ func building_screen(id: String,message: String="") -> void:
 	next.disabled=building_worker_page>=last_page
 	for ninja in candidates.slice(building_worker_page*12,(building_worker_page+1)*12):
 		var job=store.state.jobs.get(ninja,{})
-		var row=HBoxContainer.new()
-		rows.add_child(row)
-		var worker_name=label(row,str(reg.ninjas[ninja].name_vi)+(" • "+str(reg.buildings[job.building].name_vi) if reg.buildings.has(job.get("building","")) else " • Rảnh"),16)
+		var card=PanelContainer.new()
+		rows.add_child(card)
+		var worker_body=VBoxContainer.new()
+		card.add_child(worker_body)
+		var worker_name=label(worker_body,str(reg.ninjas[ninja].name_vi)+(" • "+str(reg.buildings[job.building].name_vi) if reg.buildings.has(job.get("building","")) else " • Rảnh"),16)
 		worker_name.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var row=HFlowContainer.new()
+		worker_body.add_child(row)
 		var options=OptionButton.new()
 		for profession in reg.professions:
 			options.add_item(str(reg.professions[profession].name_vi))
