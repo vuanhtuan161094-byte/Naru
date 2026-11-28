@@ -2033,8 +2033,8 @@ func tower_screen() -> void:
 
 func expedition_screen() -> void:
 	open_screen("expeditions")
-	label(root,"PHÓ BẢN • 30",26)
-	label(root,"12 tái chiến + 12 biến thể + 6 thử thách Boss thường/tinh anh. Thể lực và hồi chiêu riêng.",16)
+	label(root,"PHÓ BẢN",26)
+	e4_metric_grid(root,[["Tái chiến",12],["Biến thể",12],["Thử thách Boss",6],["Thể lực",str(store.state.stamina)+"/120"]],4)
 	var filter_row=HBoxContainer.new()
 	root.add_child(filter_row)
 	var filter=OptionButton.new()
@@ -2211,14 +2211,19 @@ func weekly_screen(message:String="") -> void:
 	button(root,"Hoạt động",activities_screen)
 
 func quest_screen(message: String="") -> void:
-	var rows=activity_rows("NHIỆM VỤ • 81",message,activities_screen)
-	screen_id="quest"
-	button(rows,"Phái ninja / tài nguyên",mission_screen)
-	button(rows,"Nhiệm vụ tuần",weekly_screen)
+	open_screen("quest")
+	label(root,"NHIỆM VỤ",26)
+	if not message.is_empty():label(root,message,16)
+	var quest_nav=HBoxContainer.new()
+	root.add_child(quest_nav)
+	button(quest_nav,"Hoạt động",activities_screen)
+	button(quest_nav,"Phái ninja / tài nguyên",mission_screen)
+	button(quest_nav,"Nhiệm vụ tuần",weekly_screen)
 	var filter=OptionButton.new()
 	for title_text in ["Tất cả","Có thể nhận","Chưa hoàn thành","Hằng ngày","Đã nhận"]:filter.add_item(title_text)
 	filter.select(quest_filter)
-	rows.add_child(filter)
+	quest_nav.add_child(filter)
+	var rows=scroll_rows(root)
 	filter.item_selected.connect(func(index):quest_filter=index;quest_screen())
 	preload("res://game/content_service.gd").sync_day(store.state)
 	for id in reg.quests:
@@ -2647,18 +2652,31 @@ func stat_title(key: String) -> String:
 	return str(titles.get(key,key))
 
 func ninja_gear_screen(id: String) -> void:
-	var rows=activity_rows("TRANG BỊ • "+str(reg.ninjas[id].name_vi),"",func():growth_detail(id))
-	screen_id="ninja_detail"
+	open_screen("ninja_detail")
+	product_art_header(root,"portraits/"+id+".png","TRANG BỊ",str(reg.ninjas[id].name_vi),76)
+	var nav=HBoxContainer.new()
+	root.add_child(nav)
+	button(nav,"Phát triển ninja",func():growth_detail(id))
+	button(nav,"Chế tạo trang bị",gear_craft_screen)
+	var rows=scroll_rows(root)
+	var grid=GridContainer.new()
+	grid.columns=4
+	rows.add_child(grid)
 	for i in range(1,17):
 		var slot="EQ-%03d" % i
 		var equipped=store.state.owned[id].gear.get(slot,"")
-		if equipped!="":button(rows,"%s • %s" % [slot,reg.gear_templates[store.state.gear_instances[equipped].template_id].name_vi],func():gear_detail(equipped))
+		var panel=PanelContainer.new()
+		panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		grid.add_child(panel)
+		var cell=VBoxContainer.new()
+		panel.add_child(cell)
+		if equipped!="":button(cell,"%s • %s" % [slot,reg.gear_templates[store.state.gear_instances[equipped].template_id].name_vi],func():gear_detail(equipped))
 		else:
-			label(rows,slot+" • "+str(reg.gear_templates.get(slot+"-Q1",{}).get("name_vi","Trang bị"))+" • Trống",17)
+			label(cell,slot+" • "+str(reg.gear_templates.get(slot+"-Q1",{}).get("name_vi","Trang bị"))+" • Trống",15)
 		for gear_id in store.state.gear_instances:
 			var g=store.state.gear_instances[gear_id]
 			if g.owner=="" and reg.gear_templates[g.template_id].slot_id==slot:
-				button(rows,("Thay bằng " if equipped!="" else "Mặc ")+str(reg.gear_templates[g.template_id].name_vi),func():store.equip_gear(reg,id,gear_id);ninja_gear_screen(id))
+				button(cell,("Thay bằng " if equipped!="" else "Mặc ")+str(reg.gear_templates[g.template_id].name_vi),func():store.equip_gear(reg,id,gear_id);ninja_gear_screen(id))
 	button(rows,"Chế tạo trang bị",gear_craft_screen)
 
 func perform_recruit(count:int) -> void:
