@@ -36,6 +36,10 @@ def writejson(path,obj):path.write_text(json.dumps(obj,indent=2,ensure_ascii=Fal
 def main():
     OUT.mkdir(parents=True,exist_ok=True)
     pack=source_pack();contract=read(ROOT/'data/art-review/move-r3-contract.json')
+    # Approved R3 walk metadata lives in the separate contract, not in P3 clips.
+    for row in contract['clips']:
+        key=row['path'];assert pack['assets'][key]['sha256']==row['sha256']
+        pack['clips'][key]={'frames':row['frames'],'anchor':row['anchor'],'sha256':row['sha256']}
     manifest={'source_pack_sha256':'a0d34b650e4569ac22fe643d242e75296f5e79ecf29a45c259b8c2c0577a657e','p3_candidates':[],'sasuke_v3':[]}
     walks={};board=Image.new('RGB',(7*160,8*132),'#1f2937');d=ImageDraw.Draw(board);d.text((10,10),'NARU P3 / older action references (Move R3 approved)',fill='white')
     for i,a in enumerate(ACTIONS):d.text(((i+1)*160+12,43),a.upper(),fill='white')
