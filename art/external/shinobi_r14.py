@@ -78,7 +78,7 @@ def split_clip(base,anim,dest):
         if v.get('trimmed'):
             ss=v['sourceSize'];box=v['spriteSourceSize']
             restored=Image.new('RGBA',(ss['w'],ss['h']));restored.alpha_composite(im,(box['x'],box['y']));im=restored
-        if not im.getchannel('A').getbbox():raise ValueError('empty cel')
+        if not im.getchannel('A').getbbox() and anim['slug'] not in ('win','out'):raise ValueError('empty cel')
         pivot=v.get('pivot')
         if not isinstance(pivot,dict) or 'x' not in pivot or 'y' not in pivot:raise ValueError('missing pivot')
         ms=max(10,int(v.get('duration',round(1000/float(anim.get('fps',24))))))
@@ -91,14 +91,14 @@ def split_clip(base,anim,dest):
     # common pivot coordinate; preserve origin and dimensions; never upscale or mirror.
     rects=[]
     for im,r in zip(cels,frame_records):
-        b=im.getchannel('A').getbbox();px=r['pivot'][0]*im.width;py=r['pivot'][1]*im.height
+        b=im.getchannel('A').getbbox() or (0,0,0,0);px=r['pivot'][0]*im.width;py=r['pivot'][1]*im.height
         rects.append((b[0]-px,b[1]-py,b[2]-px,b[3]-py))
     left=min(r[0] for r in rects);top=min(r[1] for r in rects);right=max(r[2] for r in rects);bottom=max(r[3] for r in rects)
     s=min(1,400/max(1,right-left,bottom-top))
     W=max(1,round((right-left)*s)+4);H=max(1,round((bottom-top)*s)+4)
     gif=[]
     for im,r,bb in zip(cels,frame_records,rects):
-        crop=im.crop(im.getchannel('A').getbbox())
+        crop=im.crop(im.getchannel('A').getbbox() or (0,0,1,1))
         if s<1:crop=crop.resize((max(1,round(crop.width*s)),max(1,round(crop.height*s))),Image.Resampling.LANCZOS)
         bg=Image.new('RGBA',(W,H),'#26313b');bg.alpha_composite(crop,(round((bb[0]-left)*s)+2,round((bb[1]-top)*s)+2));gif.append(bg.convert('RGB'))
     gif[0].save(dest/'preview.gif',save_all=True,append_images=gif[1:],duration=timing,loop=0,disposal=2,optimize=True)

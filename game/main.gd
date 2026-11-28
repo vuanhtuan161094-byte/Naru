@@ -207,6 +207,11 @@ func _ready() -> void:
 					return
 			print("NARU_PRIVATE_CAPTURE_ART_READY ",art.textures.size()," textures, 12 character identities")
 		for arg in OS.get_cmdline_user_args():
+			if arg.begins_with("--shinobi-pack="):
+				if not art.load_shinobi_pack(arg.trim_prefix("--shinobi-pack=")):
+					push_error("NARU_R15_PACK_FAIL")
+					get_tree().quit(3)
+					return
 			if arg.begins_with("--d2-pack="):
 				if not art.load_d2_pack(arg.trim_prefix("--d2-pack=")):
 					push_error("NARU_D2_PACK_FAIL")
@@ -2878,6 +2883,8 @@ func start_art_review(static_batch:bool=false) -> void:
 			left=["NIN-041","NIN-042","NIN-093","NIN-043","NIN-060","NIN-004"]
 			right=["NIN-016","NIN-041","NIN-042","NIN-070","NIN-068","NIN-043"]
 			battle_stage.name_vi="Benchmark mỹ thuật • 9 danh tính / 12 ninja"
+	if not art.shinobi_candidates.is_empty():
+		battle_stage.name_vi="R15 • Shinobi costume review • không thưởng"
 	if static_batch:
 		left=["NIN-007","NIN-009","NIN-010","NIN-014","NIN-024","NIN-025"]
 		right=["NIN-061","NIN-062","NIN-066","NIN-067","NIN-069","NIN-083"]

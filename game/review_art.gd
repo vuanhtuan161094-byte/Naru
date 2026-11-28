@@ -401,6 +401,69 @@ func pose_path(id:String,direction:String) -> String:
 	var alternate="animation/"+id+"/idle_"+front+".png"
 	return alternate if texture(alternate)!=null else ""
 
+
+# R15 optional source-frame review adapter. Only original right-facing frames; no synthetic rear direction.
+var shinobi_candidates:Dictionary={}
+var shinobi_draws:Dictionary={}
+func load_shinobi_pack(path:String)->bool:
+	if OS.has_feature("web") or not FileAccess.file_exists(path):return false
+	var f=FileAccess.open(path,FileAccess.READ)
+	if f==null or f.get_length()>64000000:return false
+	var doc=JSON.parse_string(f.get_as_text())
+	if not doc is Dictionary or doc.get("status","")!="SHINOBI_R15_REVIEW_ONLY" or not doc.get("characters",{}) is Dictionary:return false
+	var staged:Dictionary={}
+	for id in doc.characters:
+		if not id in ["NIN-041","NIN-042","NIN-043","NIN-004"]:continue
+		var item:Dictionary=doc.characters[id]
+		var clips:Dictionary={}
+		for action in item.get("clips",{}):
+			var c:Dictionary=item.clips[action]
+			var bytes=Marshalls.base64_to_raw(str(c.get("png","")))
+			if bytes.size()<24 or hash_bytes(bytes)!=str(c.get("sha256","")):continue
+			var im=Image.new()
+			if im.load_png_from_buffer(bytes)!=OK or im.get_width()>4096 or im.get_height()>4096:continue
+			var rects:Array=c.get("frames",[])
+			if rects.is_empty() or rects.size()>300:continue
+			var good=true
+			for r in rects:
+				if not r is Array or r.size()!=7:good=false;break
+				if int(r[0])<0 or int(r[1])<0 or int(r[2])<=0 or int(r[3])<=0 or int(r[0])+int(r[2])>im.get_width() or int(r[1])+int(r[3])>im.get_height() or int(r[6])<10:good=false;break
+			if not good:continue
+			clips[action]={"texture":ImageTexture.create_from_image(im),"frames":rects}
+		if clips.has("idle"):staged[id]={"clips":clips,"scale":clampf(float(item.get("scale",1.0)),0.1,2.0),"name":str(item.get("name",""))}
+	shinobi_candidates=staged
+	shinobi_draws.clear()
+	print("NARU_R15_PACK_READY ",shinobi_candidates.keys())
+	return shinobi_candidates.size()==4
+
+func draw_shinobi(field:Control,a:Dictionary,id:String,p:Vector2,ticks:int,display_scale:float,state:Dictionary)->float:
+	if not shinobi_candidates.has(id) or id!=str(a.id):return 0.0
+	if str(state.get("direction","")).to_lower()!="se":return 0.0
+	var action=str(state.get("action","idle")).to_lower()
+	var item:Dictionary=shinobi_candidates[id]
+	if not item.clips.has(action):return 0.0
+	var c:Dictionary=item.clips[action]
+	var frames:Array=c.frames
+	var total=0
+	for fr in frames:total+=int(fr[6])
+	var age=maxi(0,ticks-int(state.get("started_tick",0)))*50
+	age=posmod(age,maxi(1,total)) if action=="idle" else mini(age,maxi(0,total-1))
+	var index=0
+	for fr in frames:
+		if age<int(fr[6]):break
+		age-=int(fr[6])
+		index+=1
+	var r:Array=frames[mini(index,frames.size()-1)]
+	var s=float(item.scale)*display_scale
+	var dims=Vector2(float(r[2]),float(r[3]))
+	var pivot=Vector2(float(r[4])*dims.x,float(r[5])*dims.y)
+	field.draw_texture_rect_region(c.texture,Rect2(p-pivot*s,dims*s),Rect2(float(r[0]),float(r[1]),dims.x,dims.y))
+	var key=id+"/"+action
+	if not shinobi_draws.has(key):print("NARU_R15_ACTOR_DRAW ",key," candidate=",item.name)
+	shinobi_draws[key]=int(shinobi_draws.get(key,0))+1
+	actor_draws+=1
+	return 104.0*display_scale
+
 func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale: float=1.0,state: Dictionary={}) -> float:
 	var id=str(state.get("render_id",a.id))
 	if bool(a.get("summon",false)) and SUMMON_ART.has(str(a.get("summon_skill",""))):
@@ -412,6 +475,8 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 		actor_draws+=1
 		return h
 	if id!=str(a.id):clone_draws+=1
+	var shinobi_height=draw_shinobi(field,a,id,p,ticks,display_scale,state)
+	if shinobi_height>0:return shinobi_height
 	var d2_height=draw_d2(field,a,id,p,ticks,display_scale,state)
 	if d2_height>0:return d2_height
 	var t=texture("characters/"+id+".png")
