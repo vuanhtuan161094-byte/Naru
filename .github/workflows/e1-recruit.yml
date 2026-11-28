@@ -1,4 +1,4 @@
-name: E1 + E2 product journey smoke
+name: E1-E3 product smoke and combat review
 on:
   push:
     branches: [product/e-gacha-growth]
@@ -33,8 +33,81 @@ jobs:
           timeout 90 "$G" --headless --path . --script res://game/e2_journey_test.gd 2>&1 | tee evidence/journey.log
           grep NARU_E2_JOURNEY_PASS evidence/journey.log
           ! grep -E 'SCRIPT ERROR|E2_FAIL' evidence/journey.log
+      - name: Paired combat movement and ultimate fixture
+        run: |
+          set -euo pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 120 "$G" --headless --path . --script res://game/e3_combat_test.gd 2>&1 | tee evidence/combat.log
+          grep NARU_E3_COMBAT_PASS evidence/combat.log
+          ! grep -E 'SCRIPT ERROR|E3_FAIL' evidence/combat.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: E1-E2-PRODUCT-EVIDENCE
           path: evidence/
+
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build reusable baked effect atlas library and 1152 routes
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 art/external/vfx_factory_fast.py --out assets/external_review/vfx
+          mkdir -p evidence
+          cp assets/external_review/vfx/FACTORY_REPORT.json evidence/
+          printf '%s\n' "$GITHUB_SHA" > evidence/BUILD_SHA.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: E3-SHARED-VFX-LIBRARY
+          path: assets/external_review/vfx/
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Embed anime VFX into local game review (no raw premium asset pack upload)
+        run: |
+          python3 art/vfx/premium_flipbooks.py --out assets/external_review/vfx
+          cp assets/external_review/vfx/PREMIUM_REPORT.json evidence/
+      - name: Prepare real Godot renderer
+        run: |
+          python3 tools/assemble_public_art.py
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb xauth ffmpeg libgl1-mesa-dri
+          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          chmod +x /tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+      - name: Godot native V4 6v6 capture
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          set -euo pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          "$G" --headless --path . --editor --import --quit >evidence/import.log 2>&1
+          ! grep -E 'Parse Error|SCRIPT ERROR' evidence/import.log
+          xvfb-run -a -s "-screen 0 1280x720x24" bash -c '
+            set -euo pipefail
+            "$1" --path . --resolution 1280x720 --position 0,0 -- --combat-video --private-capture >evidence/runtime.log 2>&1 &
+            PID=$!
+            trap "kill $PID 2>/dev/null || true" EXIT
+            for i in $(seq 1 45); do
+              if grep -q NARU_VIDEO_BATTLE evidence/runtime.log; then break; fi
+              kill -0 "$PID"; sleep 1
+            done
+            grep NARU_VIDEO_BATTLE evidence/runtime.log
+            ffmpeg -hide_banner -loglevel error -y -f x11grab -video_size 1280x720 -framerate 20 -i "$DISPLAY" -t 24 -c:v libx264 -preset veryfast -pix_fmt yuv420p evidence/Combat-VFX-FAST.mp4
+          ' bash "$G"
+          grep 'NARU_FX_FACTORY_ROUTES 1152' evidence/runtime.log
+          grep 'NARU_VIDEO_BATTLE 12 actors' evidence/runtime.log
+          grep -E 'NARU_EXTERNAL_FX_RUNTIME_FAMILY|NARU_PREMIUM_VFX_DRAW' evidence/runtime.log | sort -u >evidence/DRAW_COVERAGE.txt
+          grep NARU_PREMIUM_VFX_DRAW evidence/runtime.log
+          ! grep -E 'SCRIPT ERROR|Parse Error|NARU_FX_V4_LOAD_FAIL' evidence/runtime.log
+          ffmpeg -hide_banner -loglevel error -y -ss 8 -i evidence/Combat-VFX-FAST.mp4 -frames:v 1 evidence/Combat-VFX-FAST.png
+          for t in 3 12 18; do ffmpeg -hide_banner -loglevel error -y -ss "$t" -i evidence/Combat-VFX-FAST.mp4 -frames:v 1 "evidence/Combat-R3-$t.png"; done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: E3-GODOT-VIDEO
+          path: evidence/
+          retention-days: 14
+          if-no-files-found: warn

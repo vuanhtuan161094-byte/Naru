@@ -105,7 +105,11 @@ static func backline_goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary)
 	for foe in sim.primary_alive(1-int(a.side)):
 		var d=origin.distance_to(foe.pos)
 		if d<nearest:nearest=d;threat_pos=Vector2(foe.pos)
-	if nearest>=reach*0.65:return origin
+	if sim.use_e3_movement:
+		# Back away only from immediate melee pressure, not every ranged cooldown.
+		if nearest>=minf(1.65,reach*0.45):return origin
+	else:
+		if nearest>=reach*0.65:return origin
 	var away=(origin-threat_pos).normalized()
 	if away==Vector2.ZERO:away=Vector2.LEFT if a.side==0 else Vector2.RIGHT
 	var best=origin
@@ -125,6 +129,7 @@ static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vecto
 	var origin=Vector2(a.pos)
 	var dodge=avoid(sim,a)
 	if dodge!=origin:return dodge
+	if sim.use_e3_movement and sim.cast_geometry(a,basic,enemy) and hazard(sim,a,origin)<=0 and not sim.pressure_mode:return origin
 	var center=Vector2(enemy.pos)
 	var desired=maxf(sim.body_radius(a)+sim.body_radius(enemy)+0.08,float(basic.range_m)*0.78)
 	var ranged=r in ["công kích xa","trị liệu","hỗ trợ","khống chế"]
@@ -167,6 +172,7 @@ static func goal(sim,a: Dictionary,enemy: Dictionary,basic: Dictionary) -> Vecto
 			if ally.has("ai_goal"):value+=maxf(0.0,1.0-p.distance_to(ally.ai_goal))*3.0
 		if value<best_score:best_score=value;best=p
 	if best_score==INF:return center
+	if sim.use_e3_movement and sim.cast_geometry(a,basic,enemy) and hazard(sim,a,origin)<=0 and not sim.pressure_mode:return origin
 	if origin.distance_to(center)<desired+0.4 and origin.distance_to(center)>desired-0.45 and sim.clear_segment(origin,center,0.03) and spacing(sim,a,origin)<0.35:return origin
 	return best
 

@@ -42,6 +42,9 @@ var use_passive_pilot=false
 var use_passive_mixed=false
 var use_depth=false
 var use_tactical=false
+# Product E3 only; legacy fixtures may explicitly disable it.
+var use_e3_movement=false
+var e3_metrics={"holds":0,"stale_goals_cancelled":0,"reversals":0,"distance":0.0}
 var pressure_mode=false
 var pressure_sample: Array=[]
 var pressure_since=0
@@ -103,6 +106,7 @@ func setup(reg,save,stage: Dictionary,seed_value: int) -> void:
 	use_passive_mixed=use_passive_pilot and bool(save.get("settings",{}).get("passive_mixed_dev",true))
 	use_depth=bool(save.get("settings",{}).get("depth_v5_dev",true))
 	use_tactical=bool(save.get("settings",{}).get("tactical_v4_dev",true))
+	use_e3_movement=use_tactical
 	use_contract_v10=bool(save.get("settings",{}).get("contract_v10_dev",true))
 	load_combat_contracts()
 	configure_map(stage)
@@ -183,6 +187,7 @@ func target_for(a: Dictionary,skill: Dictionary) -> Dictionary:
 				var target_count=p2_targets(a,skill,b.pos,b.pos-a.pos,b).size() if use_passives and skill.has("p2") else targets_for(a,skill,b).size()
 				score+=6*target_count
 		if use_tactical and not a.summon:score+=Tactical.target_bonus(self,a,b,skill,allied)
+		if use_e3_movement and not allied and skill.kind=="basic" and not a.summon and int(a.get("focus_uid",0))==int(b.uid) and ticks<int(a.get("focus_until",0)) and not pressure_mode:score+=20.0
 		if score>best_score or (is_equal_approx(score,best_score) and int(b.uid)<int(best.get("uid",999999))):
 			best=b
 			best_score=score
@@ -837,11 +842,22 @@ func tick(dt: float) -> void:
 			var intent=str(ultimate_requests[a.uid])
 			var requested=decision_skill(a,intent)
 			if cast(a,requested,target_for(a,requested)):
+				a.ai_goal=a.pos
 				ultimate_requests.erase(a.uid)
 				ultimate_executed[intent]=int(ultimate_executed.get(intent,0))+1
 				continue
 		if a.has("ai_goal") and ticks%int(registry.tactics.ai_interval_ticks)!=int(a.uid)%int(registry.tactics.ai_interval_ticks):
-			if not has_status(a,"bind"):move_actor(a,a.ai_goal,movement_speed(a)*dt)
+			var follow=true
+			if use_e3_movement and not a.summon:
+				var focus=actor_by_uid(int(a.get("focus_uid",0)))
+				var dodging=ticks<int(a.get("dodge_until",0)) and Tactical.hazard(self,a,a.pos)>0
+				var retreating=ticks<int(a.get("retreat_motion_until",0))
+				if not dodging and not retreating and not ultimate_requests.has(a.uid):
+					if focus.is_empty() or focus.hp<=0 or cast_geometry(a,decision_skill(a,a.skills[0]),focus):
+						follow=false
+						if Vector2(a.ai_goal).distance_to(a.pos)>0.05:e3_metrics.stale_goals_cancelled+=1
+						a.ai_goal=a.pos
+			if follow and not has_status(a,"bind"):move_actor(a,a.ai_goal,movement_speed(a)*dt)
 			continue
 		var basic=decision_skill(a,a.skills[0])
 		var enemy=target_for(a,basic)
@@ -852,13 +868,13 @@ func tick(dt: float) -> void:
 		if use_tactical and not a.summon:
 			if int(a.get("focus_uid",0))!=int(enemy.uid):
 				tactical_metrics.focus_switches+=1
-				a.focus_until=ticks+16
+				a.focus_until=ticks+(30 if use_e3_movement else 16)
 			a.focus_uid=enemy.uid
 			if not has_status(a,"bind"):
 				var dodge=Tactical.avoid(self,a)
 				if dodge!=a.pos:
 					a.ai_goal=dodge
-					a.dodge_until=ticks+10
+					a.dodge_until=ticks+(20 if use_e3_movement else 10)
 					move_actor(a,dodge,movement_speed(a)*dt)
 					tactical_metrics.dodge_moves+=1
 					continue
@@ -916,7 +932,8 @@ func tick(dt: float) -> void:
 			if not retreat.is_equal_approx(a.pos):
 				a.ai_goal=retreat
 				a.goal_until=ticks+4
-				a.backline_until=ticks+16
+				a.backline_until=ticks+(48 if use_e3_movement else 16)
+				a.retreat_motion_until=ticks+4
 				move_actor(a,retreat,movement_speed(a)*dt)
 				continue
 		if not best.is_empty():
@@ -928,6 +945,9 @@ func tick(dt: float) -> void:
 			tactical_choices+=1
 		elif not has_status(a,"bind"):
 			var goal=tactical_goal(a,enemy,basic)
+			if use_e3_movement and not a.summon and goal.distance_to(a.pos)<0.18:
+				goal=a.pos
+				e3_metrics.holds+=1
 			a.ai_goal=goal
 			a.goal_until=ticks+8
 			move_actor(a,goal,movement_speed(a)*dt)
@@ -1161,7 +1181,13 @@ func move_actor(a: Dictionary,destination: Vector2,distance: float) -> void:
 		if use_contract_v10 and a.summon and a.get("summon_skill","")=="NIN-004-S2":
 			var tracked=actor_by_uid(int(a.get("tracking_target_uid",0)))
 			if not tracked.is_empty() and a.pos.distance_to(tracked.pos)<initial.distance_to(tracked.pos):confirm_tracking(a,tracked)
-		a.facing=(Vector2(a.pos)-initial).normalized()
+		var direction_now=(Vector2(a.pos)-initial).normalized()
+		if not a.summon:
+			e3_metrics.distance+=a.pos.distance_to(initial)
+			if a.has("e3_last_motion") and ticks-int(a.get("e3_last_motion_tick",0))<=8 and direction_now.dot(Vector2(a.e3_last_motion))< -0.5:e3_metrics.reversals+=1
+			a.e3_last_motion=direction_now
+			a.e3_last_motion_tick=ticks
+		a.facing=direction_now
 		if int(a.get("move_until",0))<ticks:a.move_started=ticks
 		a.move_until=ticks+3
 		if use_tactical:tactical_metrics.movement_steps+=1

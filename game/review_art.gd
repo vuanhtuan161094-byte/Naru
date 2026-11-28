@@ -110,6 +110,7 @@ func draw_d2(field:Control,a:Dictionary,id:String,p:Vector2,ticks:int,display_sc
 	return 104.0*display_scale
 
 var character_overlays:Dictionary={}
+var character_overlay_revisions:Dictionary={}
 var textures: Dictionary={}
 var source_label="DEV • chưa nạp gói riêng"
 var enabled=false
@@ -221,13 +222,15 @@ func import_text(raw: String,persist: bool=true) -> bool:
 			return false
 	textures=staged
 	character_overlays.clear()
+	character_overlay_revisions.clear()
 	review_clip_hashes=staged_hashes
 	clip_metadata=staged_clips
 	enabled=true
 	source_label="REVIEW RIÊNG • "+str(textures.size())+" ảnh"
 	return true
 
-# Apply a complete V3 character kit atomically, without resetting the existing pack.
+# Apply one complete V3/V4 character kit atomically, without resetting the existing pack.
+# V4 is a two-front-view presentation overlay; V3 retains its authored rear movement art.
 # Only exact per-character paths may be replaced. No VFX, environment or protected IDs.
 func import_character_overlay(raw:String,id:String) -> bool:
 	error=""
@@ -241,15 +244,18 @@ func import_character_overlay(raw:String,id:String) -> bool:
 	if not pack is Dictionary or pack.get("character_id","")!=id or pack.has("hold") or not pack.get("assets",{}) is Dictionary or not pack.get("clips",{}) is Dictionary:
 		error="Gói nhân vật chưa được hoàn thiện"
 		return false
-	var required={}
 	var counts={"idle":6,"move":8,"attack":6,"cast":6,"hit":4,"fall":4}
+	var v4=pack.get("revision","")=="v4" or pack.get("clips",{}).size()==12
+	var required={}
 	for action in counts:
-		var dirs=["se","sw","ne","nw"] if action=="move" else ["se","sw"]
+		var dirs=["se","sw"] if v4 or action!="move" else ["se","sw","ne","nw"]
 		for direction in dirs:
 			required["animation/"+id+"/"+action+"_"+direction+".png"]=counts[action]
 	var static_path="characters/"+id+".png"
-	if pack.assets.size()!=15 or pack.clips.size()!=14 or not pack.assets.has(static_path):
-		error="Cần đúng 14 clip, 84 cel và 1 sprite tĩnh"
+	var expected_clips=12 if v4 else 14
+	var expected_assets=13 if v4 else 15
+	if pack.assets.size()!=expected_assets or pack.clips.size()!=expected_clips or not pack.assets.has(static_path) or required.size()!=expected_clips:
+		error="Cần đúng 12 clip, 68 cel và 1 sprite tĩnh" if v4 else "Cần đúng 14 clip, 84 cel và 1 sprite tĩnh"
 		return false
 	for path in required:
 		if not pack.assets.has(path) or not pack.clips.has(path) or not pack.clips[path] is Dictionary or not pack.clips[path].get("frames",[]) is Array or pack.clips[path].get("frames",[]).size()!=required[path]:
@@ -268,11 +274,14 @@ func import_character_overlay(raw:String,id:String) -> bool:
 		review_clip_hashes[path]=staged.review_clip_hashes[path]
 	for path in staged.clip_metadata:clip_metadata[path]=staged.clip_metadata[path]
 	character_overlays[id]=true
+	character_overlay_revisions[id]="v4" if v4 else "v3"
 	source_label="MỸ THUẬT TÍCH HỢP • "+str(textures.size())+" ảnh"
 	return true
 
 func overlay_path(id:String) -> String:
-	return "user://naru_overlay_"+id+".json" if id in ["NIN-001","NIN-002"] else ""
+	if not id.begins_with("NIN-") or id.length()!=7 or not id.right(3).is_valid_int():return ""
+	if int(id.right(3))<1 or int(id.right(3))>144 or id in ["NIN-004","NIN-060","NIN-068","NIN-093"]:return ""
+	return "user://naru_overlay_"+id+".json"
 
 func save_overlay(raw:String,id:String) -> bool:
 	var path=overlay_path(id)
@@ -292,8 +301,10 @@ func save_overlay(raw:String,id:String) -> bool:
 
 func restore_overlays() -> void:
 	if not enabled:return
-	for id in ["NIN-001","NIN-002"]:
+	for n in range(1,145):
+		var id="NIN-%03d"%n
 		var path=overlay_path(id)
+		if path.is_empty():continue
 		for candidate in [path,path+".bak"]:
 			if FileAccess.file_exists(candidate) and import_character_overlay(FileAccess.get_file_as_string(candidate),id):break
 	error=""
@@ -328,8 +339,9 @@ func product_coverage() -> Dictionary:
 			counts.characters+=1
 			var id=name.get_file().get_basename()
 			var complete=true
+			var dirs=["se","sw"] if character_overlay_revisions.get(id,"")=="v4" else ["se","sw","ne","nw"]
 			for action in ["idle","move","attack","cast","hit","fall"]:
-				var directions=["se","sw","ne","nw"] if action=="move" else ["se","sw"]
+				var directions=dirs if action=="move" else ["se","sw"]
 				for direction in directions:
 					var key="animation/"+id+"/"+action+"_"+direction+".png"
 					if not textures.has(key) or not clip_metadata.has(key):complete=false
@@ -369,9 +381,7 @@ func reset_battle() -> void:
 
 func background(field: Control,environment: String) -> bool:
 	var t=texture("environment/arena_open_r3.png")
-	if environment=="forest":
-		var forest=texture("environment/arena_960x540.png")
-		if forest!=null:t=forest
+	if t==null:t=texture("environment/arena_960x540.png")
 	if t==null:
 		field.draw_rect(Rect2(Vector2.ZERO,field.size),Color("#17282b"))
 		return false
@@ -379,7 +389,7 @@ func background(field: Control,environment: String) -> bool:
 	# placing feet on the scenery or zooming the entire scene.
 	var horizon=0.45*float(t.get_height())
 	var top=preload("res://game/battle_camera.gd").ground_top(field.size)
-	field.draw_texture_rect_region(t,Rect2(0,0,field.size.x,top),Rect2(0,0,t.get_width(),horizon),Color(0.93,0.93,0.93))
+	field.draw_texture_rect_region(t,Rect2(0,0,field.size.x,top),Rect2(0,0,t.get_width(),horizon),Color(0.62,0.70,0.75))
 	field.draw_texture_rect_region(t,Rect2(0,top,field.size.x,field.size.y-top),Rect2(0,horizon,t.get_width(),t.get_height()-horizon),Color(0.93,0.93,0.93))
 	return true
 
@@ -421,6 +431,11 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	last_pos[a.uid]=p
 	var action=str(state.get("action","Idle")).to_lower()
 	var direction=str(state.get("direction","SE")).to_lower()
+	# V4 supplies front three-quarter SE/SW art only. Collapse rear-facing requests for
+	# these overlays at draw time; simulation facing and positions remain untouched.
+	if character_overlay_revisions.get(id,"")=="v4":
+		if direction=="ne":direction="se"
+		elif direction=="nw":direction="sw"
 	var clip_path="animation/"+id+"/"+action+"_"+direction+".png"
 	var authored=texture(clip_path)
 	var pose=texture(pose_path(id,direction))
@@ -482,8 +497,29 @@ func sheet(field: Control,path: String,p: Vector2,progress: float,size_value: fl
 	return true
 
 # Optional normalized source assets; no gameplay changes and no replacement of approved skill art.
+
+# FAST VFX route table is presentation-only, built from baked source PNGs.
+var factory_routes:Dictionary={}
+var factory_loaded:bool=false
+func load_factory_routes()->void:
+	if factory_loaded:return
+	factory_loaded=true
+	var path="res://assets/external_review/vfx/factory_routes.json"
+	if not FileAccess.file_exists(path):return
+	var doc=JSON.parse_string(FileAccess.get_file_as_string(path))
+	if doc is Dictionary and doc.get("schema",0)==1 and doc.get("skills",{}) is Dictionary:
+		factory_routes=doc
+		print("NARU_FX_FACTORY_ROUTES ",doc.skills.size())
+func factory_route(skill_id:String)->Dictionary:
+	load_factory_routes()
+	return factory_routes.get("skills",{}).get(skill_id,{})
+func factory_alias(name:String)->String:
+	load_factory_routes()
+	return str(factory_routes.get("aliases",{}).get(name,name))
+
 func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_value:float)->bool:
 	if not enabled or family.is_empty():return false
+	family=factory_alias(family)
 	if senki_review and senki_fx.has(family):
 		var fx:Texture2D=senki_fx[family]
 		var n=floori(float(fx.get_width())/128.0)
@@ -499,7 +535,21 @@ func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_va
 		if ResourceLoader.exists(path):candidate=load(path) as Texture2D
 		external_fx_cache[family]=candidate
 	var t=external_fx_cache[family] as Texture2D
-	if t==null or t.get_height()!=128 or t.get_width()%128!=0:return false
+	if t==null:return false
+	var premium:Dictionary=factory_routes.get("premium",{}).get(family,{})
+	if not premium.is_empty():
+		var cell=int(premium.cell)
+		var cols=int(premium.cols)
+		var n=int(premium.frames)
+		var j=clampi(floori(clampf(progress,0.0,0.999)*n),0,n-1)
+		var rect=Rect2((j%cols)*cell,floori(float(j)/cols)*cell,cell,cell)
+		if rect.end.x>t.get_width() or rect.end.y>t.get_height():return false
+		field.draw_texture_rect_region(t,Rect2(p-Vector2.ONE*size_value/2,Vector2.ONE*size_value),rect)
+		if not external_fx_family_draws.has(family):print("NARU_PREMIUM_VFX_DRAW ",family)
+		external_fx_family_draws[family]=int(external_fx_family_draws.get(family,0))+1
+		effect_draws+=1
+		return true
+	if t.get_height()!=128 or t.get_width()%128!=0:return false
 	var count=floori(float(t.get_width())/128.0)
 	var frame=clampi(floori(progress*count),0,count-1)
 	field.draw_texture_rect_region(t,Rect2(p-Vector2.ONE*size_value/2,Vector2.ONE*size_value),Rect2(frame*128,0,128,128))
@@ -511,6 +561,8 @@ func external_sheet(field:Control,family:String,p:Vector2,progress:float,size_va
 	return true
 
 func external_family(skill_id:String)->String:
+	var route=factory_route(skill_id)
+	if not route.is_empty():return str(route.get("impact",""))
 	if external_skill_families.is_empty():
 		var data=JSON.parse_string(FileAccess.get_file_as_string("res://data/skill-p2/vfx_families.json"))
 		if data is Array:
@@ -522,6 +574,8 @@ func external_family(skill_id:String)->String:
 	return str(aliases.get(family,family))
 
 func external_travel_family(skill_id:String)->String:
+	var route=factory_route(skill_id)
+	if not route.is_empty():return str(route.get("travel",""))
 	var family=external_family(skill_id)
 	var travel={"fire_impact":"fire_travel","lightning":"lightning_travel","lightning_strike":"lightning_travel","water":"water_travel","water_wave":"water_travel","chakra":"chakra_travel","wind":"wind_travel","wind_impact":"wind_travel","beam":"beam","ice":"needle"}
 	return str(travel.get(family,""))
@@ -530,23 +584,40 @@ func effects(field: Control,sim,project: Callable) -> void:
 	for a in sim.actors:
 		if a.hp<=0 or a.pending.is_empty():continue
 		var skill=a.pending.skill
+		if str(skill.kind)=="basic":continue
 		var at: Vector2=project.call(a.pos)+Vector2(0,-32)
 		var progress=1.0-float(a.cast_left)/maxf(0.05,float(skill.cast_s))
-		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,82) and not external_sheet(field,"charge",at,progress,82):
+		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,124) and not external_sheet(field,str(factory_route(str(skill.skill_id)).get("charge","charge")),at,progress,124):
 			field.draw_arc(at,15+6*sin(float(sim.ticks)*0.35),0,TAU,24,Color(0.45,0.78,1,0.65),2)
 	var numbers=[]
 	for event in sim.art_events:
 		var elapsed=float(sim.ticks-int(event.tick))*0.05
-		if elapsed<0 or elapsed>=0.8:continue
+		if elapsed<0 or elapsed>=1.05:continue
 		var at: Vector2=project.call(event.pos)+Vector2(0,-28)
-		var progress=elapsed/0.8
+		var progress=clampf(elapsed/0.8,0.0,1.0)
 		if event.kind=="contact":
-			var phase="impact" if elapsed<0.4 else "residual"
-			if not sheet(field,"vfx/VFX-"+str(event.skill)+"/"+phase+".png",at,fmod(elapsed,0.4)/0.4,110) and phase=="impact":
-				external_sheet(field,external_family(str(event.skill)),at,elapsed/0.4,110)
+			var route=factory_route(str(event.skill))
+			var family=external_family(str(event.skill))
+			var duration=0.65
+			if family.begins_with("hd_"):duration=1.0
+			var extent=140.0*clampf(float(route.get("scale",1.0)),0.8,1.55)
+			if str(route.get("group",""))=="FX-MELEE":extent=95.0
+			if family.begins_with("hd_"):extent=maxf(extent,178.0)
+			if elapsed<duration:
+				if not sheet(field,"vfx/VFX-"+str(event.skill)+"/impact.png",at,elapsed/duration,extent):
+					external_sheet(field,family,at,elapsed/duration,extent)
+			elif elapsed<0.95:
+				sheet(field,"vfx/VFX-"+str(event.skill)+"/residual.png",at,(elapsed-duration)/maxf(0.05,0.95-duration),extent)
+		elif event.kind=="status_applied":
+			load_factory_routes()
+			var status_family=str(factory_routes.get("statuses",{}).get(str(event.skill),""))
+			if not status_family.is_empty():external_sheet(field,status_family,at,progress,78)
+		elif event.kind in ["teleport","form_activated","intercept","combo"]:
+			var special="space" if event.kind=="teleport" else "shield" if event.kind=="intercept" else "charge" if event.kind=="form_activated" else "chakra"
+			external_sheet(field,special,at,progress,105)
 		elif event.kind in ["damage","heal","summon"]:
 			var family="hit" if event.kind=="damage" else "heal" if event.kind=="heal" else "smoke"
-			if not sheet(field,"vfx/families/"+family+".png",at,progress,76) and not external_sheet(field,family,at,progress,76):
+			if event.kind!="damage" and elapsed<0.4 and not sheet(field,"vfx/families/"+family+".png",at,elapsed/0.4,64) and not external_sheet(field,family,at,elapsed/0.4,64):
 				field.draw_arc(at,8+22*progress,0,TAU,24,Color(1,0.72,0.38,1-progress),2)
 			if event.kind!="summon" and elapsed<0.55:
 				numbers.append({"at":at+Vector2(-14,-28-25*progress),"kind":event.kind,"amount":float(event.amount),"age":elapsed})
@@ -555,7 +626,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 	numbers.sort_custom(func(a,b):return a.amount>b.amount)
 	var used:Array[Vector2]=[]
 	for n in numbers:
-		if used.size()>=8:break
+		if used.size()>=4:break
 		var point=Vector2(n.at)
 		if used.any(func(p):return absf(p.x-point.x)<55 and absf(p.y-point.y)<24):continue
 		used.append(point)
