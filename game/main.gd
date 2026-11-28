@@ -1255,9 +1255,10 @@ func draw_field() -> void:
 			if not art.sheet(field,"vfx/VFX-"+str(projectile.skill.skill_id)+"/travel.png",point,progress,105) and not art.external_sheet(field,art.external_travel_family(str(projectile.skill.skill_id)),point,progress,104):
 				field.draw_circle(point,5,Color("#ffcf84"))
 	if bool(store.state.get("settings",{}).get("cutin",true)):art.effects(field,sim,iso)
-	# Small actor-local skill slots on top of VFX, with actual active skill name.
-	for a in render_order:
-		if a.hp>0 and not a.get("summon",false):draw_actor_skill_hud(a,iso(a.pos))
+	# Keep the battlefield clear by default. Full skill timers remain in the allied cards and detail mode.
+	if battle_details and not observation_mode:
+		for a in render_order:
+			if a.hp>0 and not a.get("summon",false):draw_actor_skill_hud(a,iso(a.pos))
 	if art.factory_routes.has("premium_credit"):
 		field.draw_string(ThemeDB.fallback_font,Vector2(10,field.size.y-5),str(art.factory_routes.premium_credit),HORIZONTAL_ALIGNMENT_LEFT,-1,10,Color(0.85,0.87,0.9,0.8))
 	if battle_details:field.draw_string(ThemeDB.fallback_font,Vector2(12,19),art.source_label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("#c7d5d5"))
