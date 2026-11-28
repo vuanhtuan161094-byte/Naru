@@ -131,7 +131,7 @@ func _ready() -> void:
 	navigation=HBoxContainer.new()
 	navigation.add_theme_constant_override("separation",5)
 	shell.add_child(navigation)
-	for item in [["Làng",menu],["Ninja",ninja_hub],["Phiêu lưu",adventure_hub],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Cài đặt",settings_screen]]:
+	for item in [["Hành trình",journey_screen],["Làng",menu],["Ninja",ninja_hub],["Phiêu lưu",adventure_hub],["Nhẫn giới",world_screen],["Kho",inventory_screen],["Cài đặt",settings_screen]]:
 		var nav_button=button(navigation,item[0],item[1])
 		nav_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		nav_button.custom_minimum_size=Vector2(66,36)
@@ -193,7 +193,8 @@ func _ready() -> void:
 		return
 	store.advance_clock(reg,int(Time.get_unix_time_from_system()))
 	apply_settings()
-	menu(store.load_notice)
+	if web_qa:menu(store.load_notice)
+	else:journey_screen(store.load_notice)
 	if "--combat-video" in OS.get_cmdline_user_args():
 		if "--private-capture" in OS.get_cmdline_user_args():
 			if not art.enabled or art.textures.size()<224:
@@ -457,6 +458,9 @@ func growth_detail(id: String,message: String="") -> void:
 		if int(p.stars)<15:
 			var star_rule=reg.growth.stars[int(p.stars)-1]
 			label(rows,"Sao kế tiếp: %d/%d mảnh • %s" % [int(p.shards),int(star_rule.shards),cost_text(star_rule.resources)],16)
+			var star_cost={}
+			for res in star_rule.resources:star_cost[res.resource_id]=int(res.qty)
+			journey_shortages(rows,Journey.missing(store.state,star_cost))
 		var exchange=button(rows,"Đổi 5 mảnh ninja • 10 mảnh sao + 1000 Ryo",func():growth_detail(id,"Đã đổi" if store.exchange_shards(id,5) else "Cần Tổng bộ 5, Điện thức tỉnh và nguyên liệu"))
 		exchange.disabled=Village.level(store.state,"BLD-001")<5 or Village.level(store.state,"BLD-009")==0 or not store.has_cost(store.shard_exchange_cost(5))
 		return
@@ -484,6 +488,152 @@ func growth_detail(id: String,message: String="") -> void:
 		var val=float(all_stats[key])
 		var l=label(stat_grid,"%s: %.1f" % [name_value,val],16)
 		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+
+const Journey=preload("res://game/player_journey.gd")
+var journey_tab=0
+func journey_route(route:String,target:String="")->void:
+	match route:
+		"battle":
+			if reg.stages.has(target):start_battle(reg.stages[target])
+		"formation":roster()
+		"recruit":recruit_screen()
+		"building":building_screen(target)
+		"jobs":village_hub()
+		"training":training_screen(target)
+		"detail":growth_detail(target)
+		"skill":skill_screen(target)
+		"resource":resource_detail(target)
+		"campaign":campaign()
+		"food":world_food_screen()
+		"growth":growth_screen()
+		"production":production_center()
+		"craft":craft_screen()
+		"mission":mission_screen()
+		"trade","world":world_screen()
+		"quests":quest_screen()
+		"tower":tower_screen()
+		"expeditions":expedition_screen()
+		"weekly":weekly_screen()
+
+func journey_wrap(parent:Node,value:String,font_size:int=15)->Label:
+	var l=label(parent,value,font_size)
+	l.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	l.text_overrun_behavior=TextServer.OVERRUN_NO_TRIMMING
+	return l
+
+func journey_shortages(parent:Node,missing:Dictionary)->void:
+	if missing.is_empty():return
+	var row=HBoxContainer.new()
+	parent.add_child(row)
+	for resource in missing:
+		if not reg.resources.has(resource):continue
+		var id=str(resource)
+		var amount=int(missing[id])
+		var b=button(row,"Thiếu %d %s → Nguồn"%[amount,reg.resources[id].name_vi],func():resource_detail(id))
+		b.add_theme_font_size_override("font_size",12)
+		b.custom_minimum_size.y=32
+		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+
+func journey_card(parent:Node,item:Dictionary)->void:
+	var row=ui_card_row(parent,Color("#708d83") if item.get("ready",false) else Color("#53636d"))
+	var info=VBoxContainer.new()
+	info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	row.add_child(info)
+	journey_wrap(info,str(item.title),18)
+	journey_wrap(info,str(item.desc),14)
+	journey_shortages(info,item.get("missing",{}))
+	if int(item.get("shard_missing",0))>0:
+		button(info,"Thiếu %d mảnh ninja • Nguồn chiêu mộ / Điện thức tỉnh"%int(item.shard_missing),recruit_screen)
+	var route=str(item.route)
+	var target=str(item.target)
+	var action=button(row,"Thực hiện" if item.get("ready",false) else "Mở",func():journey_route(route,target))
+	action.custom_minimum_size=Vector2(104,42)
+
+func journey_screen(message:String="")->void:
+	open_screen("journey")
+	var data=Journey.snapshot(reg,store)
+	label(root,"HÀNH TRÌNH NHẪN GIỚI",29)
+	label(root,"%s  •  Cốt truyện %d/%d  •  Tổng bộ %d  •  Đội hình %d/6  •  Sở hữu %d ninja"%[data.phase,data.cleared,data.total,data.hq,data.team,data.owned],16)
+	if not message.is_empty():journey_wrap(root,message)
+	var tabs=HBoxContainer.new()
+	root.add_child(tabs)
+	for i in range(3):
+		var tab=button(tabs,["Việc tiếp theo","Tăng sức mạnh","Nhiệm vụ (%d)"%data.claimable.size()][i],func():journey_tab=i;journey_screen())
+		tab.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		tab.disabled=journey_tab==i
+	button(tabs,"Làm mới",func():journey_screen())
+	var rows=scroll_rows(root)
+	if journey_tab==0:
+		var story:Dictionary=data.story
+		if not story.is_empty():
+			var row=ui_card_row(rows,Color("#c4a76d"))
+			var info=VBoxContainer.new()
+			info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			row.add_child(info)
+			journey_wrap(info,"MỤC TIÊU CHÍNH • "+str(story.name),22)
+			journey_wrap(info,"Địch cấp %d • Cần %d thể lực • Hiện có %d"%[int(story.enemy_level),int(story.cost),int(store.state.stamina)])
+			journey_wrap(info,"Thưởng lần đầu: "+cost_text(story.rewards))
+			if not str(story.reason).is_empty():
+				journey_wrap(info,str(story.reason))
+				if int(story.missing_stamina)>0:journey_wrap(info,"Hồi tự nhiên đủ sau khoảng %d giây • hoặc dùng thức ăn nếu có."%int(story.wait_s),14)
+			var stage_id=str(story.id)
+			var route=str(story.route)
+			var food_id=str(story.food)
+			button(row,"Vào ải" if route=="battle" else "Bố trận" if route=="formation" else "Hồi thể lực" if route=="food" else "Cốt truyện",func():
+				if route=="food" and not food_id.is_empty():resource_detail(food_id)
+				else:journey_route(route,stage_id))
+		else:
+			journey_wrap(rows,"Đã hoàn thành cốt truyện hoặc không còn ải đang mở. Tiếp tục tháp, phó bản, làng và lãnh thổ.",18)
+		if not data.claimable.is_empty():
+			var first:Dictionary=data.claimable[0]
+			var reward_row=ui_card_row(rows,Color("#c6aa69"))
+			var t=label(reward_row,"%d nhiệm vụ có thể nhận • %s"%[data.claimable.size(),first.title],16)
+			t.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			button(reward_row,"Xem / nhận",func():journey_tab=2;journey_screen())
+		if not store.state.reward_inbox.is_empty():button(rows,"Có tài nguyên chờ nhận trong kho",reward_inbox_screen)
+		journey_wrap(rows,"ĐỀ XUẤT PHÁT TRIỂN",19)
+		for item in data.steps:journey_card(rows,item)
+		journey_wrap(rows,"HOẠT ĐỘNG KHÁC",19)
+		var quick=HBoxContainer.new()
+		rows.add_child(quick)
+		button(quick,"Phó bản",expedition_screen)
+		button(quick,"Tháp",tower_screen)
+		button(quick,"Nhẫn giới",world_screen)
+		button(quick,"Nhiệm vụ tuần",weekly_screen)
+	elif journey_tab==1:
+		journey_wrap(rows,"Ưu tiên các nâng cấp đang đủ điều kiện. Chỉ tiêu hao tài nguyên khi bạn chủ động xác nhận tại màn chức năng.",15)
+		if data.growth.is_empty():button(rows,"Bố trận ninja trước",roster)
+		for item in data.growth:journey_card(rows,item)
+	else:
+		journey_wrap(rows,"CÓ THỂ NHẬN THƯỞNG",19)
+		if data.claimable.is_empty():journey_wrap(rows,"Chưa có nhiệm vụ hoàn thành.",14)
+		for item in data.claimable:
+			var row=ui_card_row(rows,Color("#c4a76d"))
+			var col=VBoxContainer.new()
+			col.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			row.add_child(col)
+			journey_wrap(col,str(item.title),17)
+			journey_wrap(col,"Thưởng: "+cost_text(item.reward),14)
+			var id=str(item.id)
+			button(row,"Nhận thưởng",func():journey_screen("Đã nhận" if store.claim_quest(reg,id) else "Chưa nhận được"))
+		journey_wrap(rows,"NHIỆM VỤ HẰNG NGÀY",19)
+		for item in data.daily:
+			var row=ui_card_row(rows)
+			var col=VBoxContainer.new()
+			col.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			row.add_child(col)
+			journey_wrap(col,"%s • %d/%d"%[item.title,item.count,item.goal],17)
+			journey_wrap(col,"Thưởng: "+cost_text(item.reward),14)
+			var progress=ProgressBar.new()
+			progress.max_value=maxi(1,int(item.goal))
+			progress.value=mini(int(item.count),int(item.goal))
+			progress.show_percentage=false
+			progress.custom_minimum_size.y=9
+			col.add_child(progress)
+			var route=str(item.route)
+			button(row,"Đi thực hiện",func():journey_route(route))
+		button(rows,"Toàn bộ nhiệm vụ",quest_screen)
+
 
 func next_story_stage() -> String:
 	for number in range(1,121):
@@ -1007,6 +1157,7 @@ func finish(won: bool) -> void:
 			label(rows,str(reg.ninjas[id].name_vi)+" • "+(" · ".join(gains) if not gains.is_empty() else "Không tăng chỉ số vĩnh viễn"),17)
 	var row=HBoxContainer.new()
 	root.add_child(row)
+	button(row,"Việc tiếp theo",journey_screen)
 	button(row,"Về làng",menu)
 	button(row,"Cốt truyện",campaign)
 	var expedition=str(store.state.ledger.get(event_id,{}).get("expedition",""))
@@ -1290,6 +1441,7 @@ func building_screen(id: String,message: String="") -> void:
 	upgrade.disabled=not construction.ready
 	upgrade.tooltip_text=str(construction.reason)
 	label(info,str(construction.reason),15)
+	if b.upgrade.is_empty():journey_shortages(root,Journey.missing(store.state,cost))
 	if not b.upgrade.is_empty():label(root,"Còn %d giây" % int(b.upgrade.remaining),18)
 	button(nav,"Làm mới",func():building_screen(id))
 	if float(b.condition)<1:button(nav,"Sửa chữa",func():building_screen(id,"Đã sửa" if store.repair_building(reg,id) else "Thiếu Ryo"))
@@ -2189,7 +2341,7 @@ func open_screen(id: String) -> void:
 		private_backdrop.texture=art.texture("environment/village_plate.png") if id=="home" else null
 	header.visible=id!="battle"
 	navigation.visible=id!="battle"
-	var section={"wiki":"Cài đặt","home":"Làng","building":"Làng","village_hub":"Làng","craft":"Làng","production":"Làng","adventure_hub":"Phiêu lưu","activities":"Phiêu lưu","expeditions":"Phiêu lưu","tower":"Phiêu lưu","resource_trials":"Phiêu lưu","weekly":"Phiêu lưu","quest":"Phiêu lưu","campaign":"Phiêu lưu","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","world":"Nhẫn giới","diplomacy":"Nhẫn giới","ninja_hub":"Ninja","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Ninja","recruit":"Ninja","beasts":"Ninja","inventory":"Kho","settings":"Cài đặt"}
+	var section={"journey":"Hành trình","wiki":"Cài đặt","home":"Làng","building":"Làng","village_hub":"Làng","craft":"Làng","production":"Làng","adventure_hub":"Phiêu lưu","activities":"Phiêu lưu","expeditions":"Phiêu lưu","tower":"Phiêu lưu","resource_trials":"Phiêu lưu","weekly":"Phiêu lưu","quest":"Phiêu lưu","campaign":"Phiêu lưu","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","world":"Nhẫn giới","diplomacy":"Nhẫn giới","ninja_hub":"Ninja","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Ninja","recruit":"Ninja","beasts":"Ninja","inventory":"Kho","settings":"Cài đặt"}
 	for item in navigation.get_children():
 		if item is Button:
 			var active=item.text==section.get(id,"")
@@ -2229,6 +2381,7 @@ func home_screen(message: String="") -> void:
 	root.add_child(controls)
 	var notice=label(controls,message if not message.is_empty() else "Chọn công trình để tương tác",15)
 	notice.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	button(controls,"Việc tiếp theo",journey_screen)
 	button(controls,"Quản lý làng",village_hub)
 	var grid=GridContainer.new()
 	grid.columns=6

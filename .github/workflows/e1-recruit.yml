@@ -1,4 +1,4 @@
-name: E1 Gacha and growth product smoke
+name: E1 + E2 product journey smoke
 on:
   push:
     branches: [product/e-gacha-growth]
@@ -26,8 +26,15 @@ jobs:
           timeout 90 "$G" --headless --path . --script res://game/e1_recruit_test.gd 2>&1 | tee evidence/recruit.log
           grep NARU_E1_RECRUIT_PASS evidence/recruit.log
           ! grep -E 'SCRIPT ERROR|E1_FAIL' evidence/recruit.log
+      - name: Player journey read-only and real gates
+        run: |
+          set -euo pipefail
+          G=/tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          timeout 90 "$G" --headless --path . --script res://game/e2_journey_test.gd 2>&1 | tee evidence/journey.log
+          grep NARU_E2_JOURNEY_PASS evidence/journey.log
+          ! grep -E 'SCRIPT ERROR|E2_FAIL' evidence/journey.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: E1-RECRUIT-EVIDENCE
+          name: E1-E2-PRODUCT-EVIDENCE
           path: evidence/
