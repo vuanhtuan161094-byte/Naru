@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-021.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -38,7 +38,211 @@
     "master_used_shikamaru_style": false,
     "master_direct_canon_reference_used": false,
     "canon_reference_acquired_after_master": true,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "owner_quick_check_96x112": "existing sample reads clearly as mature Tsunade; blonde hair, green coat, gray wrap and diamond mark; direct canon used in every atlas"
   },
-  "master_prompt_version": "ART_V4_FAST_MODEL_V1"
+  "master_prompt_version": "ART_V4_FAST_MODEL_V1",
+  "source_render_requests": 7,
+  "render_input_references": {
+    "model": [
+      "source/identity_reference.png",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif"
+    ],
+    "idle": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2767/Tsunade",
+      "canon_reference_sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "26816d2854c78f303d52f4e1e9dc8ad47a61aeca54769c9b39749b4ce5d17cf3",
+      "size_bytes": 748530,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:29.714697+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2767/Tsunade",
+      "canon_reference_sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "10a6915bc8ea52cd247f08dd2ce3e017db746cfd31595a8e68080e7a6508049a",
+      "size_bytes": 1474240,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:29.714697+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2767/Tsunade",
+      "canon_reference_sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "71f5386c6b69c8f9e167e7b3b06aeed2f0c9f6a1e1d3e9953fac5fc05c5e1874",
+      "size_bytes": 1571234,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:29.714697+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2767/Tsunade",
+      "canon_reference_sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "b41d270c278a71b27fbe638733b5daf8ebf51868a6248c25c46bf26d22894be0",
+      "size_bytes": 1472446,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:29.714697+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2767/Tsunade",
+      "canon_reference_sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "5c850dded413b366f2131b60b8eb0d7e5cc7a56ad8714622d1d5ebc158973b66",
+      "size_bytes": 2773331,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:29.714697+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2767/Tsunade",
+      "canon_reference_sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "ffee06fd070b79fbc9f574a86c14651a27864d41ea9b11a04ae9101c5734a5d5",
+      "size_bytes": 1546240,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:29.714697+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2767/Tsunade",
+      "canon_reference_sha256": "edc7c327f5c24c6153fae8ca0a005562da14956036de015d192f63abc2e60a1b",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "f11d247e774ca22c1e4fbba4c513fc4b1d6c415bf4cc52a9a81be90c055a770a",
+      "size_bytes": 1025655,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:29.714697+00:00"
+    }
+  }
 }

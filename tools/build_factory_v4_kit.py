@@ -148,6 +148,48 @@ def paste_runtime(source: Image.Image, cell_box, bbox, scale: float) -> Image.Im
     return cell
 
 
+def remove_runtime_specks(im: Image.Image, minimum_component_pixels: int = 80):
+    """Drop only detached alpha specks too small to matter at 96x112 game scale."""
+    rgba = im.convert("RGBA")
+    alpha = rgba.getchannel("A")
+    px = alpha.load()
+    w, h = rgba.size
+    # LANCZOS resampling can restore faint (<32 alpha) source-matte residue after
+    # the source cell was cleaned. Apply the same V4 silhouette threshold again
+    # after the final 96x112 resize.
+    for y in range(h):
+        for x in range(w):
+            if px[x, y] < ALPHA_THRESHOLD:
+                px[x, y] = 0
+    seen = bytearray(w * h)
+    removed_components = 0
+    removed_pixels = 0
+    for y in range(h):
+        for x in range(w):
+            start = y * w + x
+            if seen[start] or px[x, y] < ALPHA_THRESHOLD:
+                continue
+            queue = deque([start])
+            seen[start] = 1
+            component = []
+            while queue:
+                i = queue.popleft()
+                cx, cy = i % w, i // w
+                component.append(i)
+                for j in (i - 1 if cx else -1, i + 1 if cx + 1 < w else -1,
+                          i - w if cy else -1, i + w if cy + 1 < h else -1):
+                    if j >= 0 and not seen[j] and px[j % w, j // w] >= ALPHA_THRESHOLD:
+                        seen[j] = 1
+                        queue.append(j)
+            if len(component) < minimum_component_pixels:
+                for i in component:
+                    px[i % w, i // w] = 0
+                removed_components += 1
+                removed_pixels += len(component)
+    rgba.putalpha(alpha)
+    return rgba, {"removed_components": removed_components, "removed_pixels": removed_pixels}
+
+
 def gif_frame(im: Image.Image, background=(24, 36, 45)) -> Image.Image:
     bg = Image.new("RGBA", im.size, (*background, 255))
     bg.alpha_composite(im)
@@ -263,11 +305,15 @@ def main():
             frames = []
             native_dir = native_root / action
             native_dir.mkdir(parents=True, exist_ok=True)
+            speck_totals = {"removed_components": 0, "removed_pixels": 0}
             for col, (raw_cell, cell_box, bounds, margin) in enumerate(row_cells):
                 native = crop_with_pad(raw_cell, bounds, 2)
                 native_path = native_dir / f"{direction}_{col:02d}.png"
                 native.save(native_path)
                 frame = paste_runtime(raw_cell, cell_box, bounds, scale)
+                frame, speck_stats = remove_runtime_specks(frame)
+                for key in speck_totals:
+                    speck_totals[key] += speck_stats[key]
                 frame_path = runtime_root / "animation" / character_id / f"{action}_{direction}_{col:02d}.png"
                 frame.save(frame_path)
                 frames.append(frame)
@@ -286,7 +332,7 @@ def main():
             looping = bool(spec["loop"])
             make_gif(frames, preview_root / f"{action}_{direction}.gif", [int(spec["default_ms"])] * count, looping)
             per_direction[direction] = frames
-            stats[f"{action}_{direction}"] = {"frames": count, "distinct_runtime_frames": len(set(hashes)), "fixed_source_scale": round(scale, 6), "source_heights": heights, "source_widths": widths}
+            stats[f"{action}_{direction}"] = {"frames": count, "distinct_runtime_frames": len(set(hashes)), "fixed_source_scale": round(scale, 6), "source_heights": heights, "source_widths": widths, "runtime_speck_filter": speck_totals}
         complete_frames[action] = per_direction
         source_hash = sha(source_path.read_bytes())
         (root / "source" / f"{action}_source.sha256").write_text(source_hash + "\n")

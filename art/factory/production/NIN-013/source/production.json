@@ -26,18 +26,241 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-013.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Neji reads at game scale: long dark hair, forehead protector, pale Byakugan eyes, teen roster cream outfit. Locked for action production; owner acceptance remains pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1694/Neji_Hyuuga",
+      "canon_reference_sha256": "f4efbf4e05f9190a5eb541cae80f1caee797d7481b99041e7b3e89364263e7df",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "ed4acddb3f46415f731c483b58817be38ac2d10ba784dc1737494f17ed453b41",
+      "size_bytes": 1416787,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:20.235119+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1694/Neji_Hyuuga",
+      "canon_reference_sha256": "f4efbf4e05f9190a5eb541cae80f1caee797d7481b99041e7b3e89364263e7df",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "b23aec73dc2abe72ab6d35f0789886c817dcd8b71617a9b6f041afdf1073ca32",
+      "size_bytes": 1148348,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:20.235119+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1694/Neji_Hyuuga",
+      "canon_reference_sha256": "f4efbf4e05f9190a5eb541cae80f1caee797d7481b99041e7b3e89364263e7df",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "6c4679ec9823f4c4949b3488b7c079b2037d5e63c95bb70479f281e97d7ea563",
+      "size_bytes": 1399972,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:20.235119+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1694/Neji_Hyuuga",
+      "canon_reference_sha256": "f4efbf4e05f9190a5eb541cae80f1caee797d7481b99041e7b3e89364263e7df",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "f0332f58af71b1e3ec93a976dd9a0df2cc5349f0c14b2c64115cb90a9a976f6b",
+      "size_bytes": 3033908,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:20.235119+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1694/Neji_Hyuuga",
+      "canon_reference_sha256": "f4efbf4e05f9190a5eb541cae80f1caee797d7481b99041e7b3e89364263e7df",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "4cbcd6f7f23f075223bf5306e16c67f70a01a067f8088ae859064de26c3c54b7",
+      "size_bytes": 2148819,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:20.235119+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1694/Neji_Hyuuga",
+      "canon_reference_sha256": "f4efbf4e05f9190a5eb541cae80f1caee797d7481b99041e7b3e89364263e7df",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "28bceeda689953051f40cab810be0d08039c76a0ee7a04378cf791544746763f",
+      "size_bytes": 1447718,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:20.235119+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1694/Neji_Hyuuga",
+      "canon_reference_sha256": "f4efbf4e05f9190a5eb541cae80f1caee797d7481b99041e7b3e89364263e7df",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-013.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif (palette/style guidance)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "7ea0aa64a9c5e6495ee37e9efbc173a0306bd0f81b0e2db1307b95bc35bd3eb8",
+      "size_bytes": 1066881,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:20.235119+00:00"
+    }
   }
 }

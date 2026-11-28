@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-020.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -38,7 +38,211 @@
     "master_used_shikamaru_style": false,
     "master_direct_canon_reference_used": false,
     "canon_reference_acquired_after_master": true,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "owner_quick_check_96x112": "existing model reads as mature Jiraiya; white hair, red cheek lines, protector and scroll clear; direct canon used in every atlas"
   },
-  "master_prompt_version": "ART_V4_FAST_MODEL_V1"
+  "master_prompt_version": "ART_V4_FAST_MODEL_V1",
+  "source_render_requests": 7,
+  "render_input_references": {
+    "model": [
+      "source/identity_reference.png",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif"
+    ],
+    "idle": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (roster form/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2423/Jiraiya",
+      "canon_reference_sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_reference.png",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "51979ef1e4ef2dea93d934d8629f279db84ecc2bd81eb9e01d77a3584c2a2219",
+      "size_bytes": 630603,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:27.017749+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2423/Jiraiya",
+      "canon_reference_sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "499ec1ae944d1df1d43cffb09d304918cf8a6b224b581c17ed4386da6d982c7a",
+      "size_bytes": 1692874,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:27.017749+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2423/Jiraiya",
+      "canon_reference_sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "790cdc916313449f1dd22f68a0d8d3ddbc18840e87653a85f4b4f9da5ffd8adf",
+      "size_bytes": 1694023,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:27.017749+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2423/Jiraiya",
+      "canon_reference_sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "bfa57dbaf678ea7fbbecf9f138a40b8b1a5f1f20848928b528510c001a509a12",
+      "size_bytes": 2017640,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:27.017749+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2423/Jiraiya",
+      "canon_reference_sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "7d051a87f836ca975504ae4bea09f6f62b38920663e9c2509b676c0ca551ec44",
+      "size_bytes": 2529008,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:27.017749+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2423/Jiraiya",
+      "canon_reference_sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "61ded371710f4ac6c2ff6cde9cc9e4d46d999de9b2356082a9a36b1479f5f785",
+      "size_bytes": 1110748,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:27.017749+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2423/Jiraiya",
+      "canon_reference_sha256": "0cc477eda7c7fd0f07e3dc60b3c8dc73a74e4e01deb281e135ead187d3f208f5",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (roster form/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "49d28643163911389ebf953b8c07ffc1408a7e7d01d7d700749dd4f69632adb7",
+      "size_bytes": 1284257,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:27.017749+00:00"
+    }
+  }
 }

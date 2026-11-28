@@ -26,21 +26,238 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-024.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
-  "additional_render_attempts": [],
+  "actual_source_render_count": 9,
+  "additional_render_attempts": [
+    {
+      "attempt": 2,
+      "artifact": "/workspace/generated_images/exec-75d90bdf-4b99-4d84-a648-85449b6ac6db.png",
+      "result": "Generated correction, but not packaged after the initial data-transfer command exceeded OS argument length; retained as an unused output outside the repository."
+    },
+    {
+      "attempt": 3,
+      "artifact": "source/model_corrected.png",
+      "result": "Used corrected direct-canon master; background isolated to transparency with an edge-connected neutral-matte mask."
+    }
+  ],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
+    "master_identity_source": "source/canon_reference.json + source/identity_reference.png",
     "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": true,
-    "master_identity_source": "source/identity_reference.png",
-    "owner_quick_check_96x112": "recognized as Gaara by red hair and gourd; signature mark not visible"
+    "owner_quick_check_96x112": "red 愛 mark visible with pale green eyes, red hair and gourd; master locked for atlas production"
   },
-  "identity_correction_required": "Signature 愛 forehead mark is not readable at 96x112; retain the clearly recognizable red hair and gourd. Do not render action atlases until the corrected sample makes the mark visible.",
-  "master_prompt_version": "ART_V4_FAST_MODEL_V1"
+  "master_prompt_version": "ART_V4_FAST_IDENTITY_LOCK_GAARA_CORRECTION_V1",
+  "source_render_requests": 9,
+  "render_input_references": {
+    "model": [
+      "source/model.png (current layout only)",
+      "source/canon_reference.json:temporary_image_path (primary face/identity)",
+      "source/identity_reference.png (roster age/outfit anchor)",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png (locked identity/outfit)",
+      "source/canon_reference.json:temporary_image_path (primary identity)",
+      "source/identity_reference.png (age/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png (locked identity/outfit)",
+      "source/canon_reference.json:temporary_image_path (primary identity)",
+      "source/identity_reference.png (age/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png (locked identity/outfit)",
+      "source/canon_reference.json:temporary_image_path (primary identity)",
+      "source/identity_reference.png (age/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png (locked identity/outfit)",
+      "source/canon_reference.json:temporary_image_path (primary identity)",
+      "source/identity_reference.png (age/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png (locked identity/outfit)",
+      "source/canon_reference.json:temporary_image_path (primary identity)",
+      "source/identity_reference.png (age/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png (locked identity/outfit)",
+      "source/canon_reference.json:temporary_image_path (primary identity)",
+      "source/identity_reference.png (age/outfit)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "master_raw_output": "source/model_corrected.png",
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+      "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (current layout only)",
+        "source/canon_reference.json:temporary_image_path (primary face/identity)",
+        "source/identity_reference.png (roster age/outfit anchor)",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "03d4a10d5395a6b76f73353afa65a68c6a39d5ff70a7aa12d367cd57df4be34b",
+      "size_bytes": 1450554,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+      "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity/outfit)",
+        "source/canon_reference.json:temporary_image_path (primary identity)",
+        "source/identity_reference.png (age/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "c6c146ff1a1fb5d61388f07c20489b9ed7dd2f452a8f377209461d3dcd5ac58e",
+      "size_bytes": 3029589,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+      "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity/outfit)",
+        "source/canon_reference.json:temporary_image_path (primary identity)",
+        "source/identity_reference.png (age/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "952f6f646d47f13c70225edd5611b23bce43598c6848872d8ff9ac88acf04bd5",
+      "size_bytes": 2645189,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+      "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity/outfit)",
+        "source/canon_reference.json:temporary_image_path (primary identity)",
+        "source/identity_reference.png (age/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "450495ee47e78214cef7fa09f9cc775ed52d4e220a65d26da0676081f494658e",
+      "size_bytes": 1727522,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+      "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity/outfit)",
+        "source/canon_reference.json:temporary_image_path (primary identity)",
+        "source/identity_reference.png (age/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "63abd0aa252a1fc958f08c980a5ad33f9af6090ec2d9f45e367af0e3e18d1fd0",
+      "size_bytes": 1238543,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+      "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity/outfit)",
+        "source/canon_reference.json:temporary_image_path (primary identity)",
+        "source/identity_reference.png (age/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "83958d5d5551e1df31f605d72df2eda837be24ee468a4233b79d50f2a1704e3b",
+      "size_bytes": 1448896,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+      "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity/outfit)",
+        "source/canon_reference.json:temporary_image_path (primary identity)",
+        "source/identity_reference.png (age/outfit)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "ebfae7e6040a7d97e4afd0ba6fd1a4a744a6cc4e3c75abadaf04e4a408403e91",
+      "size_bytes": 1306930,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+    }
+  }
 }

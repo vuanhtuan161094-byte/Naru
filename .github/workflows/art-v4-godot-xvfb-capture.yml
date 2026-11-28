@@ -70,10 +70,6 @@ jobs:
             echo 'ids=' >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          if ((${#ID_ARRAY[@]} % 6 != 0)); then
-            echo "Newly completed kit count ${#ID_ARRAY[@]} is not divisible into six-kit batches." >&2
-            exit 2
-          fi
           declare -A SEEN=()
           for id in "${ID_ARRAY[@]}"; do
             [[ "$id" =~ ^NIN-[0-9]{3}$ ]] || { echo "Invalid NIN ID: $id" >&2; exit 2; }
@@ -81,6 +77,23 @@ jobs:
             [[ -z "${SEEN[$id]:-}" ]] || { echo "Duplicate ID: $id" >&2; exit 2; }
             SEEN[$id]=1
           done
+          # A push can finish more than one six-kit batch plus a short remainder.
+          # Fill that final 6v6 group from already-complete kits instead of failing
+          # or silently leaving the latest production uncaptured.
+          if ((${#ID_ARRAY[@]} % 6 != 0)); then
+            mapfile -t COMPLETE_IDS < <(find art/factory/production -mindepth 3 -maxdepth 3 -type f -path '*/runtime/NIN-*.json' -printf '%f\n' | sed 's/\.json$//' | sort -u)
+            for id in "${COMPLETE_IDS[@]}"; do
+              ((${#ID_ARRAY[@]} % 6 == 0)) && break
+              [[ -z "${SEEN[$id]:-}" ]] || continue
+              SEEN[$id]=1
+              ID_ARRAY+=("$id")
+              echo "Added completed kit $id to fill the final six-kit capture group."
+            done
+          fi
+          if ((${#ID_ARRAY[@]} % 6 != 0)); then
+            echo "Could not fill completed kit list into six-kit groups; received ${#ID_ARRAY[@]} valid kits." >&2
+            exit 2
+          fi
           echo "ids=$(IFS=,; echo "${ID_ARRAY[*]}")" >> "$GITHUB_OUTPUT"
 
       - name: Import project resources with a real Xvfb display

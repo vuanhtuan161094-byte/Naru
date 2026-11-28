@@ -38,15 +38,18 @@ def main() -> None:
             if model_path.is_file():
                 identity_review = "QUICK_CHECK_OK"
                 visual_review = "IDENTITY_SAMPLE_SCREENED"
+                if usage.get("master_direct_canon_reference_used"):
+                    identity_review = "DIRECT_CANON_MASTER_SCREENED_AT_96X112"
             if complete:
-                visual_review = "ANIMATION_CONTACT_SHEET_SCREENED"
+                visual_review = "ANIMATION_CONTACT_SHEET_SCREENED_AT_96X112"
             if cid == "NIN-022":
                 identity_review = "CORRECTED_FROM_DIRECT_CANON; MASTER_QUICK_CHECK_OK"
-                visual_review = "12_CLIPS_68_CELS_SCREENED_AT_96X112"
+                visual_review = "ANIMATION_CONTACT_SHEET_SCREENED_AT_96X112"
                 note = "TECHNICAL_PASS; GODOT_RUNTIME_NOT_TESTED"
             elif cid == "NIN-024":
-                identity_review = "GOURD_AND_RED_HAIR_READ; LOVE_MARK_NOT_VISIBLE"
-                note = "NO_ACTION_ATLASES_PENDING_SIGNATURE_MARK_FIX"
+                identity_review = "DIRECT_CANON_CORRECTION; LOVE_MARK_VISIBLE_AT_96X112"
+                visual_review = "ANIMATION_CONTACT_SHEET_SCREENED_AT_96X112" if complete else "IDENTITY_SAMPLE_SCREENED_AT_96X112"
+                note = "DIRECT_CANON_MASTER_LOCKED; TECHNICAL_PASS; GODOT_RUNTIME_NOT_TESTED" if complete else "CORRECTED_MASTER_LOCKED; ATLAS_PENDING"
             if production.get("identity_correction_required"):
                 if not note:
                     note = "TARGETED_IDENTITY_FIX_PENDING"

@@ -26,19 +26,243 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-014.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
-  "additional_render_attempts": [],
+  "actual_source_render_count": 10,
+  "additional_render_attempts": [
+    {
+      "attempt": 2,
+      "artifact": "source/model_eye_corrected_raw.png",
+      "result": "Corrected master generated from direct canon image and Shikamaru style reference after the existing eye treatment read as too solid at game scale; alpha retained from imagegen output."
+    },
+    {
+      "attempt": 3,
+      "artifact": "source/attempts/eye-style-rejected/idle_atlas_attempt1.png",
+      "result": "Discarded before runtime because atlas eyes read as solid black at 96x112."
+    },
+    {
+      "attempt": 4,
+      "artifact": "source/attempts/eye-style-rejected/move_atlas_attempt1.png",
+      "result": "Discarded before runtime because atlas eyes read as solid black at 96x112."
+    }
+  ],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
+    "master_identity_source": "source/canon_reference.json + source/identity_reference.png",
     "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": true,
-    "master_identity_source": "source/identity_reference.png"
+    "owner_quick_check_96x112": "corrected eyes retain visible pale sclera and small dark pupil; Lee identity and outfit read; sample locked"
   },
-  "master_prompt_version": "ART_V4_FAST_MODEL_V1"
+  "master_prompt_version": "ART_V4_FAST_IDENTITY_LOCK_EYE_CORRECTION_V1",
+  "source_render_requests": 10,
+  "render_input_references": {
+    "model": [
+      "source/model_before_eye_correction.png (silhouette/layout only)",
+      "source/canon_reference.json:temporary_image_path",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (teen roster outfit/form)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (teen roster outfit/form)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (teen roster outfit/form)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (teen roster outfit/form)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (teen roster outfit/form)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "source/identity_reference.png (teen roster outfit/form)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "master_raw_output": "source/model_eye_corrected_raw.png",
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+      "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model_before_eye_correction.png (silhouette/layout only)",
+        "source/canon_reference.json:temporary_image_path",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "818120fdb11c0952b382036d77c1b55700ca2c82c9b515e0a2d459a759dc60b3",
+      "size_bytes": 1324171,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+      "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (teen roster outfit/form)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "9c0d9d1aaafda0cc42226dfbc5aa947990dfc993cbeb66af134be9ea3b6d2c59",
+      "size_bytes": 1060439,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+      "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (teen roster outfit/form)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "a2dd13feac8283533b96bce1761bce985d3b21e158fc3a6decb14f3735e9f52d",
+      "size_bytes": 1479611,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+      "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (teen roster outfit/form)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "e14fd4661c6be6968a697ef0d26546411b73d8b44ae2b9c6879b4d8920862c56",
+      "size_bytes": 1140764,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+      "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (teen roster outfit/form)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "62818a9a25d0889e620309b8839c37da61e7853bec30aafd1fa0452d426855be",
+      "size_bytes": 1089908,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+      "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (teen roster outfit/form)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "6bb4adcefd15157d81e4cec06eab482465111d0ae0bf0b2b734b6d1ae287f24e",
+      "size_bytes": 1012551,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+      "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "source/identity_reference.png (teen roster outfit/form)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1922,
+        818
+      ],
+      "sha256": "627df29490e7d33efa7f993d228040aca87b9d0d361be47dcb00f02018ebeb48",
+      "size_bytes": 970170,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+    }
+  }
 }

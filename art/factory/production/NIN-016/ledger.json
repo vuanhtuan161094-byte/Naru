@@ -1,0 +1,617 @@
+{
+  "schema": 1,
+  "character_id": "NIN-016",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Might Guy",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; no checked-in static roster image for this ID, master cue recorded in identity_traits.txt"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+        "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/identity_traits.txt",
+          "art/factory/references/generated/Move_R3_6_Ninja.gif"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "2ae470ba98db267d3fb556a670170c014a5ee1ba5bb19a15a8375d35da3256b0",
+        "size_bytes": 1368602,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+        "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "c4dc33e827745635e35352d686ab2c9ae2020eaea6eb82b086326027a3dc8887",
+        "size_bytes": 1182010,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+        "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "3a1a7e347250a9cead76e66f67e070a84d0c0dd35dfc94900a14e7cd7b47fc8f",
+        "size_bytes": 1192587,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+        "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "80a6c3c21fd02d5d72ae5549a50034555000798456d84712a78cfa0f9174964b",
+        "size_bytes": 1096805,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+        "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "ac93cbe80f29dfa47f9e810a3efe6aa597db7df78773b733def0418a97824d5b",
+        "size_bytes": 1172817,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+        "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "034eb97c7c9fb1fc547d509210cd48c29f879759819c380d3694e8a5e9a7154f",
+        "size_bytes": 918607,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+        "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "69f8008bb13e17b9100274042e978d43be56f838ca8c8000acbcbe0f3c6b923d",
+        "size_bytes": 929082,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "2ae470ba98db267d3fb556a670170c014a5ee1ba5bb19a15a8375d35da3256b0",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "b43590db0f8a51f78599097672633738da0f53137042b919248a0dcddb0a3fed",
+        "bounds": [
+          255,
+          202,
+          603,
+          932
+        ],
+        "height": 730
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "3a99c85abb21d35c397e39eecc2b2470f4b04fa95068c8835a7ac9ddefaccc61",
+        "bounds": [
+          136,
+          202,
+          507,
+          932
+        ],
+        "height": 730
+      }
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/307/Guy_Might",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/16/103576.jpg",
+      "sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "80a6c3c21fd02d5d72ae5549a50034555000798456d84712a78cfa0f9174964b",
+      "size_bytes": 1096805
+    },
+    "cast_atlas.png": {
+      "sha256": "ac93cbe80f29dfa47f9e810a3efe6aa597db7df78773b733def0418a97824d5b",
+      "size_bytes": 1172817
+    },
+    "fall_atlas.png": {
+      "sha256": "69f8008bb13e17b9100274042e978d43be56f838ca8c8000acbcbe0f3c6b923d",
+      "size_bytes": 929082
+    },
+    "hit_atlas.png": {
+      "sha256": "034eb97c7c9fb1fc547d509210cd48c29f879759819c380d3694e8a5e9a7154f",
+      "size_bytes": 918607
+    },
+    "idle_atlas.png": {
+      "sha256": "c4dc33e827745635e35352d686ab2c9ae2020eaea6eb82b086326027a3dc8887",
+      "size_bytes": 1182010
+    },
+    "move_atlas.png": {
+      "sha256": "3a1a7e347250a9cead76e66f67e070a84d0c0dd35dfc94900a14e7cd7b47fc8f",
+      "size_bytes": 1192587
+    },
+    "model.png": {
+      "sha256": "2ae470ba98db267d3fb556a670170c014a5ee1ba5bb19a15a8375d35da3256b0",
+      "size_bytes": 1368602
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-016.png": "3f0b76ef1b61825bd9a490a090287259444657556d1e259964c3cfc662a7e987",
+    "animation/NIN-016/idle_se.png": "dd7e7ddf9928a0e3613bb2cd59d35d5641cb0b08e91a3e681718b26b6d815b35",
+    "animation/NIN-016/idle_sw.png": "e6eff7a0753d6f2420c80d89ef25a929ebc0325e81aea93e405692f0108aa178",
+    "animation/NIN-016/move_se.png": "04fbc44e8393e9ecf1cb86e3fffeb14842b9cdfa0aa9f8de2a60a4a3d85f9311",
+    "animation/NIN-016/move_sw.png": "04109198fa4b130517d8168a00a7639b89c74139559eeb7bd53ca85f948ad099",
+    "animation/NIN-016/attack_se.png": "fa20dd0dd76cef8d35887067b6055354cd53ca47b19ea3f8f41e39fc1968683c",
+    "animation/NIN-016/attack_sw.png": "69eb7078b2207e16540068663d98728ec2d518b79db7307a71e390df0af80c85",
+    "animation/NIN-016/cast_se.png": "5ea278cc196e847e0ce4256cf76b80cebdbba0e0b6f504686a5068bf8d388e07",
+    "animation/NIN-016/cast_sw.png": "2f82fa17da9fb3bc2ae9cfb5611cc80607e988ea14f2f463422dd9f134f62dab",
+    "animation/NIN-016/hit_se.png": "747486c8b56b9b0f462ad3f8bd031c0e17bdced4222bb75872d676c078dc18c0",
+    "animation/NIN-016/hit_sw.png": "33a63ce8f7b20f86267f59e4613f1256389a0092e6d58f02d5ba124c65de47c8",
+    "animation/NIN-016/fall_se.png": "7111189c85df291a59a13131cfb0c44aef4c81971fc77670409d6092b1b5ac85",
+    "animation/NIN-016/fall_sw.png": "10d7193ef7207d3a86eae63132d26e1d12e665a11c4b8d7aadb7f2aedde7fab4"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.273556,
+      "source_heights": [
+        329,
+        329,
+        336,
+        340,
+        329,
+        329
+      ],
+      "source_widths": [
+        183,
+        179,
+        182,
+        181,
+        187,
+        186
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27439,
+      "source_heights": [
+        328,
+        332,
+        341,
+        343,
+        330,
+        330
+      ],
+      "source_widths": [
+        200,
+        193,
+        188,
+        191,
+        191,
+        200
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.288462,
+      "source_heights": [
+        312,
+        282,
+        309,
+        258,
+        297,
+        276,
+        311,
+        266
+      ],
+      "source_widths": [
+        221,
+        167,
+        179,
+        211,
+        215,
+        157,
+        193,
+        222
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.290323,
+      "source_heights": [
+        310,
+        281,
+        306,
+        251,
+        307,
+        279,
+        306,
+        261
+      ],
+      "source_widths": [
+        220,
+        164,
+        168,
+        203,
+        217,
+        166,
+        191,
+        218
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.269461,
+      "source_heights": [
+        334,
+        314,
+        312,
+        302,
+        302,
+        322
+      ],
+      "source_widths": [
+        184,
+        178,
+        191,
+        283,
+        282,
+        195
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.268657,
+      "source_heights": [
+        335,
+        310,
+        314,
+        309,
+        305,
+        326
+      ],
+      "source_widths": [
+        201,
+        188,
+        210,
+        287,
+        292,
+        204
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.264706,
+      "source_heights": [
+        340,
+        340,
+        340,
+        340,
+        340,
+        340
+      ],
+      "source_widths": [
+        187,
+        194,
+        188,
+        187,
+        187,
+        191
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.262391,
+      "source_heights": [
+        343,
+        343,
+        343,
+        343,
+        343,
+        343
+      ],
+      "source_widths": [
+        201,
+        201,
+        200,
+        201,
+        200,
+        202
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.267062,
+      "source_heights": [
+        337,
+        322,
+        296,
+        336
+      ],
+      "source_widths": [
+        251,
+        259,
+        241,
+        215
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.264706,
+      "source_heights": [
+        340,
+        323,
+        296,
+        336
+      ],
+      "source_widths": [
+        252,
+        255,
+        253,
+        233
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.195991,
+      "source_heights": [
+        330,
+        295,
+        236,
+        139
+      ],
+      "source_widths": [
+        265,
+        295,
+        341,
+        449
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.185263,
+      "source_heights": [
+        324,
+        279,
+        238,
+        138
+      ],
+      "source_widths": [
+        238,
+        313,
+        358,
+        475
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "visual_quick_screen_96x112": "Animation contact sheet checked once at game scale; identity and action silhouettes usable. Minor issues left as-is.",
+    "runtime": "NOT_TESTED: pending exact-SHA GitHub Godot/Xvfb capture.",
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues."
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-016.json",
+    "sha256": "aa99158be7aafc2121c963d388548fbc4d8ab3e231a0bdb62ebacddb262a71c7"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "c1d6e0a0f5cbc0dc317d4fd2bd4672cec1e13652d190fee6f1e31ffa1e770a07"
+  }
+}

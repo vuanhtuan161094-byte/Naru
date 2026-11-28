@@ -26,7 +26,7 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-016.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 1,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
@@ -38,7 +38,200 @@
     "master_used_shikamaru_style": true,
     "master_direct_canon_reference_used": false,
     "canon_reference_acquired_after_master": true,
-    "master_identity_source": "source/identity_traits.txt"
+    "master_identity_source": "source/identity_traits.txt",
+    "master_used_canon_style": false,
+    "owner_quick_check_96x112": "existing adult Guy sample reads separately from teen Lee; sample retained; direct canon image used in all action atlas prompts"
   },
-  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2"
+  "master_prompt_version": "ART_V4_FAST_STYLE_LOCK_V2",
+  "source_render_requests": 7,
+  "render_input_references": {
+    "model": [
+      "source/identity_traits.txt",
+      "art/factory/references/generated/Move_R3_6_Ninja.gif"
+    ],
+    "idle": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png (locked identity and outfit)",
+      "source/canon_reference.json:temporary_image_path (direct canon identity)",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+      "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/identity_traits.txt",
+        "art/factory/references/generated/Move_R3_6_Ninja.gif"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "2ae470ba98db267d3fb556a670170c014a5ee1ba5bb19a15a8375d35da3256b0",
+      "size_bytes": 1368602,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+      "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "c4dc33e827745635e35352d686ab2c9ae2020eaea6eb82b086326027a3dc8887",
+      "size_bytes": 1182010,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+      "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "3a1a7e347250a9cead76e66f67e070a84d0c0dd35dfc94900a14e7cd7b47fc8f",
+      "size_bytes": 1192587,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+      "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "80a6c3c21fd02d5d72ae5549a50034555000798456d84712a78cfa0f9174964b",
+      "size_bytes": 1096805,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+      "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "ac93cbe80f29dfa47f9e810a3efe6aa597db7df78773b733def0418a97824d5b",
+      "size_bytes": 1172817,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+      "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "034eb97c7c9fb1fc547d509210cd48c29f879759819c380d3694e8a5e9a7154f",
+      "size_bytes": 918607,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/307/Guy_Might",
+      "canon_reference_sha256": "6306cfe0679947f67e6d9c616cee4a7b665c5b67ecd8e13d742142ee47c71738",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png (locked identity and outfit)",
+        "source/canon_reference.json:temporary_image_path (direct canon identity)",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "69f8008bb13e17b9100274042e978d43be56f838ca8c8000acbcbe0f3c6b923d",
+      "size_bytes": 929082,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T15:47:24.215151+00:00"
+    }
+  }
 }

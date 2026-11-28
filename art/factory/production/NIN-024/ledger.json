@@ -1,0 +1,633 @@
+{
+  "schema": 1,
+  "character_id": "NIN-024",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Gaara (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-024"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 9,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+        "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (current layout only)",
+          "source/canon_reference.json:temporary_image_path (primary face/identity)",
+          "source/identity_reference.png (roster age/outfit anchor)",
+          "art/factory/production/NIN-007/source/model.png (style only)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "03d4a10d5395a6b76f73353afa65a68c6a39d5ff70a7aa12d367cd57df4be34b",
+        "size_bytes": 1450554,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+        "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity/outfit)",
+          "source/canon_reference.json:temporary_image_path (primary identity)",
+          "source/identity_reference.png (age/outfit)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "c6c146ff1a1fb5d61388f07c20489b9ed7dd2f452a8f377209461d3dcd5ac58e",
+        "size_bytes": 3029589,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+        "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity/outfit)",
+          "source/canon_reference.json:temporary_image_path (primary identity)",
+          "source/identity_reference.png (age/outfit)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "952f6f646d47f13c70225edd5611b23bce43598c6848872d8ff9ac88acf04bd5",
+        "size_bytes": 2645189,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+        "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity/outfit)",
+          "source/canon_reference.json:temporary_image_path (primary identity)",
+          "source/identity_reference.png (age/outfit)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "450495ee47e78214cef7fa09f9cc775ed52d4e220a65d26da0676081f494658e",
+        "size_bytes": 1727522,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+        "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity/outfit)",
+          "source/canon_reference.json:temporary_image_path (primary identity)",
+          "source/identity_reference.png (age/outfit)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "63abd0aa252a1fc958f08c980a5ad33f9af6090ec2d9f45e367af0e3e18d1fd0",
+        "size_bytes": 1238543,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+        "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity/outfit)",
+          "source/canon_reference.json:temporary_image_path (primary identity)",
+          "source/identity_reference.png (age/outfit)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "83958d5d5551e1df31f605d72df2eda837be24ee468a4233b79d50f2a1704e3b",
+        "size_bytes": 1448896,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/1662/Gaara",
+        "canon_reference_sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity/outfit)",
+          "source/canon_reference.json:temporary_image_path (primary identity)",
+          "source/identity_reference.png (age/outfit)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "ebfae7e6040a7d97e4afd0ba6fd1a4a744a6cc4e3c75abadaf04e4a408403e91",
+        "size_bytes": 1306930,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:33.009618+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "03d4a10d5395a6b76f73353afa65a68c6a39d5ff70a7aa12d367cd57df4be34b",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "d078c29a9932874966a479909b09d9252aa6f6bac0b5fea0ef3f6460b03d6906",
+        "bounds": [
+          132,
+          74,
+          604,
+          976
+        ],
+        "height": 902
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "718a8f5fba8371291a7670f146c7211c2cc83d52f6fc385c002262be36b2cfe3",
+        "bounds": [
+          171,
+          62,
+          646,
+          976
+        ],
+        "height": 914
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "c8726b48c299ac1d1ed60578ca01c7d87f8b882fc687139d60ac7d0aef4f4b03"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/1662/Gaara",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/10/293375.jpg",
+      "sha256": "d4addbdb4744f0ea928eec46275708a35f566cd7ac68c7a524ce1bbd9a6a97d9",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "450495ee47e78214cef7fa09f9cc775ed52d4e220a65d26da0676081f494658e",
+      "size_bytes": 1727522
+    },
+    "cast_atlas.png": {
+      "sha256": "63abd0aa252a1fc958f08c980a5ad33f9af6090ec2d9f45e367af0e3e18d1fd0",
+      "size_bytes": 1238543
+    },
+    "fall_atlas.png": {
+      "sha256": "ebfae7e6040a7d97e4afd0ba6fd1a4a744a6cc4e3c75abadaf04e4a408403e91",
+      "size_bytes": 1306930
+    },
+    "hit_atlas.png": {
+      "sha256": "83958d5d5551e1df31f605d72df2eda837be24ee468a4233b79d50f2a1704e3b",
+      "size_bytes": 1448896
+    },
+    "idle_atlas.png": {
+      "sha256": "c6c146ff1a1fb5d61388f07c20489b9ed7dd2f452a8f377209461d3dcd5ac58e",
+      "size_bytes": 3029589
+    },
+    "move_atlas.png": {
+      "sha256": "952f6f646d47f13c70225edd5611b23bce43598c6848872d8ff9ac88acf04bd5",
+      "size_bytes": 2645189
+    },
+    "model.png": {
+      "sha256": "03d4a10d5395a6b76f73353afa65a68c6a39d5ff70a7aa12d367cd57df4be34b",
+      "size_bytes": 1450554
+    },
+    "identity_reference.png": {
+      "sha256": "c8726b48c299ac1d1ed60578ca01c7d87f8b882fc687139d60ac7d0aef4f4b03",
+      "size_bytes": 22638
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-024.png": "eda144515fd347b4f194f400f3e76625c88e9491c427a0407cc26ace5ecc3bc3",
+    "animation/NIN-024/idle_se.png": "f244ebe82fc8be0d9e421644cb128c48e217866680163d88ba9fb56ba2301c0a",
+    "animation/NIN-024/idle_sw.png": "9d88b6182e50a88535c1acca72976ca257614096e2602ed58f741b2993bd02d1",
+    "animation/NIN-024/move_se.png": "9f0d96730f2a6f8ab4d10f80872174b0165074c1c9a3667b945b6bd0c1aabc88",
+    "animation/NIN-024/move_sw.png": "de3bb2e49956aa29399513f1495fc0e8d85e9e3518d1775cd672cfdb44770a1e",
+    "animation/NIN-024/attack_se.png": "6c87126f4b5709b234f420a2bd130920bd427f35ac2f2be30dddcf34bc79c9fe",
+    "animation/NIN-024/attack_sw.png": "83caace6b80225251be12f210b2ca5b14f775ee60366ccf82c985cd2cdfbab79",
+    "animation/NIN-024/cast_se.png": "e60d1f11e0e1dafb26f7fbdf7b408c0ee7ffde91c7d858ae76710ea7bc733b0f",
+    "animation/NIN-024/cast_sw.png": "8931c8fe5f39365cd394826cfae862884279e070afda6e3a61931883ff84d9eb",
+    "animation/NIN-024/hit_se.png": "c5aec7ba667b055ae9b4be67cf6d9337ad81a72b1a4e25b70e7a9ef9a73c3577",
+    "animation/NIN-024/hit_sw.png": "195f2117aa49fb405e19d3e9212ddde69a1dee3e56cc971cee7a4e62e576bcdb",
+    "animation/NIN-024/fall_se.png": "925aa051ff57b084f8c2b7f54dca790a862a66dbf879314e191be65bc8ce66c8",
+    "animation/NIN-024/fall_sw.png": "e65082823d4476f3a1ce3dd0588ab10f4fe6efc401f07903a32dc31ebf6ff2bc"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.244444,
+      "source_heights": [
+        362,
+        361,
+        361,
+        353,
+        360,
+        360
+      ],
+      "source_widths": [
+        302,
+        360,
+        360,
+        359,
+        359,
+        355
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 35,
+        "removed_pixels": 276
+      }
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.244444,
+      "source_heights": [
+        360,
+        357,
+        360,
+        361,
+        360,
+        360
+      ],
+      "source_widths": [
+        358,
+        360,
+        360,
+        355,
+        360,
+        359
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 80,
+        "removed_pixels": 338
+      }
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.276923,
+      "source_heights": [
+        325,
+        297,
+        323,
+        277,
+        311,
+        292,
+        307,
+        277
+      ],
+      "source_widths": [
+        206,
+        181,
+        190,
+        227,
+        188,
+        183,
+        198,
+        212
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.278638,
+      "source_heights": [
+        323,
+        294,
+        320,
+        276,
+        313,
+        290,
+        305,
+        276
+      ],
+      "source_widths": [
+        208,
+        186,
+        194,
+        227,
+        195,
+        187,
+        199,
+        221
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.262391,
+      "source_heights": [
+        343,
+        326,
+        329,
+        322,
+        318,
+        331
+      ],
+      "source_widths": [
+        199,
+        212,
+        231,
+        283,
+        283,
+        211
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.263158,
+      "source_heights": [
+        342,
+        323,
+        328,
+        310,
+        318,
+        329
+      ],
+      "source_widths": [
+        201,
+        229,
+        241,
+        300,
+        292,
+        223
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.260116,
+      "source_heights": [
+        346,
+        346,
+        346,
+        345,
+        346,
+        346
+      ],
+      "source_widths": [
+        186,
+        198,
+        186,
+        186,
+        186,
+        197
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.264706,
+      "source_heights": [
+        340,
+        339,
+        340,
+        340,
+        339,
+        340
+      ],
+      "source_widths": [
+        190,
+        191,
+        190,
+        191,
+        190,
+        195
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.221675,
+      "source_heights": [
+        406,
+        409,
+        396,
+        408
+      ],
+      "source_widths": [
+        303,
+        281,
+        299,
+        252
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.225,
+      "source_heights": [
+        400,
+        418,
+        387,
+        405
+      ],
+      "source_widths": [
+        300,
+        287,
+        319,
+        251
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.190476,
+      "source_heights": [
+        412,
+        359,
+        273,
+        191
+      ],
+      "source_widths": [
+        292,
+        346,
+        379,
+        462
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.181443,
+      "source_heights": [
+        415,
+        360,
+        281,
+        190
+      ],
+      "source_widths": [
+        324,
+        318,
+        390,
+        485
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "visual_quick_screen_96x112": "Animation contact sheet checked once at game scale; identity and action silhouettes usable. Minor issues left as-is.",
+    "runtime": "NOT_TESTED: pending exact-SHA GitHub Godot/Xvfb capture.",
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues."
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-024.json",
+    "sha256": "0d61bb21e6f1935257fb929e992348efe24b2df2a9378a836af89418d38115b5"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "0e89a9b23f24fa6c67666d471d1a81eb85ddd28f230fd453ffc359a2b117ee46"
+  }
+}

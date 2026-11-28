@@ -1,0 +1,633 @@
+{
+  "schema": 1,
+  "character_id": "NIN-014",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Rock Lee (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-014"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 10,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+        "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model_before_eye_correction.png (silhouette/layout only)",
+          "source/canon_reference.json:temporary_image_path",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "818120fdb11c0952b382036d77c1b55700ca2c82c9b515e0a2d459a759dc60b3",
+        "size_bytes": 1324171,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+        "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "source/identity_reference.png (teen roster outfit/form)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "9c0d9d1aaafda0cc42226dfbc5aa947990dfc993cbeb66af134be9ea3b6d2c59",
+        "size_bytes": 1060439,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+        "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "source/identity_reference.png (teen roster outfit/form)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "a2dd13feac8283533b96bce1761bce985d3b21e158fc3a6decb14f3735e9f52d",
+        "size_bytes": 1479611,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+        "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "source/identity_reference.png (teen roster outfit/form)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "e14fd4661c6be6968a697ef0d26546411b73d8b44ae2b9c6879b4d8920862c56",
+        "size_bytes": 1140764,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+        "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "source/identity_reference.png (teen roster outfit/form)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "62818a9a25d0889e620309b8839c37da61e7853bec30aafd1fa0452d426855be",
+        "size_bytes": 1089908,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+        "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "source/identity_reference.png (teen roster outfit/form)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "6bb4adcefd15157d81e4cec06eab482465111d0ae0bf0b2b734b6d1ae287f24e",
+        "size_bytes": 1012551,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/306/Rock_Lee",
+        "canon_reference_sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png (locked identity and outfit)",
+          "source/canon_reference.json:temporary_image_path (direct canon identity)",
+          "source/identity_reference.png (teen roster outfit/form)",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1922,
+          818
+        ],
+        "sha256": "627df29490e7d33efa7f993d228040aca87b9d0d361be47dcb00f02018ebeb48",
+        "size_bytes": 970170,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T15:47:22.292405+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "818120fdb11c0952b382036d77c1b55700ca2c82c9b515e0a2d459a759dc60b3",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "f0d559f477c89bb5ebf4645e3d18b51ac16ffd383e268a896e8eac5f923ac851",
+        "bounds": [
+          219,
+          149,
+          608,
+          945
+        ],
+        "height": 796
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "2e635a09e275e249b6d1bf9129f0d6c09615dbc98cabe1dee5e26aa097065b2a",
+        "bounds": [
+          147,
+          151,
+          555,
+          945
+        ],
+        "height": 794
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "c60e9c5e116f1d4ff301293942bb06c8e936de369463a4cd6a5b22a6687ea207"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/306/Rock_Lee",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/13/433353.jpg",
+      "sha256": "c65d41bc8db1eaec0d18b50061d0cdcac5bef4f5b37a6aecc7d46c8c9e9a882a",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "e14fd4661c6be6968a697ef0d26546411b73d8b44ae2b9c6879b4d8920862c56",
+      "size_bytes": 1140764
+    },
+    "cast_atlas.png": {
+      "sha256": "62818a9a25d0889e620309b8839c37da61e7853bec30aafd1fa0452d426855be",
+      "size_bytes": 1089908
+    },
+    "fall_atlas.png": {
+      "sha256": "627df29490e7d33efa7f993d228040aca87b9d0d361be47dcb00f02018ebeb48",
+      "size_bytes": 970170
+    },
+    "hit_atlas.png": {
+      "sha256": "6bb4adcefd15157d81e4cec06eab482465111d0ae0bf0b2b734b6d1ae287f24e",
+      "size_bytes": 1012551
+    },
+    "idle_atlas.png": {
+      "sha256": "9c0d9d1aaafda0cc42226dfbc5aa947990dfc993cbeb66af134be9ea3b6d2c59",
+      "size_bytes": 1060439
+    },
+    "move_atlas.png": {
+      "sha256": "a2dd13feac8283533b96bce1761bce985d3b21e158fc3a6decb14f3735e9f52d",
+      "size_bytes": 1479611
+    },
+    "model.png": {
+      "sha256": "818120fdb11c0952b382036d77c1b55700ca2c82c9b515e0a2d459a759dc60b3",
+      "size_bytes": 1324171
+    },
+    "identity_reference.png": {
+      "sha256": "c60e9c5e116f1d4ff301293942bb06c8e936de369463a4cd6a5b22a6687ea207",
+      "size_bytes": 18180
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-014.png": "13101116b4eef379e1a0dfc45f4e3faf2ece59b072f7d74d52ec8fc640359ed0",
+    "animation/NIN-014/idle_se.png": "4d3e7f109a9f23c7aa2364025e3c405a58247d4b190993c14729555bbaba7e77",
+    "animation/NIN-014/idle_sw.png": "3841fe0f638a6091af32120bf74f1a06c82c831ad3e9fd652af6aadb799b5fc0",
+    "animation/NIN-014/move_se.png": "86a5234e435fd5d8584760b0dbb5c1cb5084fade47189c824d30c0be853213da",
+    "animation/NIN-014/move_sw.png": "3cef69f875d61cf62ad6dc3914f494d661acb528d99a44dc297af5cdab48b48f",
+    "animation/NIN-014/attack_se.png": "82a352f9bdc7edfc4a2b72cde5bbb7d809bfe05698663caebda9919cd19bd32e",
+    "animation/NIN-014/attack_sw.png": "5f054e718c1c6676982cf8f40d92a9028e4a9280a8c53d4ced4ac6bc9a3517af",
+    "animation/NIN-014/cast_se.png": "2978803b0a919383ae74cb49825b6a970fd2b19c7e923c984ced38064db860f8",
+    "animation/NIN-014/cast_sw.png": "f240e5551b89d3570355996584f46490dd84b0bafc5910cf9fec1179dde9bd20",
+    "animation/NIN-014/hit_se.png": "7275207073eaa98bc3f619660cb8a7b7cdf944c268bd67d5e136c49603ae5d11",
+    "animation/NIN-014/hit_sw.png": "758201537410a1298e9503a124049656c948ceacd8538efbdf7f6f21c0b07de1",
+    "animation/NIN-014/fall_se.png": "4ba92717b5d8f5f09f983ba5c685d9eb2f5101efccb17bb6100b4a809a754a16",
+    "animation/NIN-014/fall_sw.png": "6e22a120ecc1eb83cf51ded172d57407b70e8179284cc3fa8e4cf8aec680fbc7"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.283912,
+      "source_heights": [
+        317,
+        319,
+        334,
+        341,
+        318,
+        313
+      ],
+      "source_widths": [
+        188,
+        189,
+        188,
+        189,
+        188,
+        188
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.285714,
+      "source_heights": [
+        315,
+        318,
+        333,
+        339,
+        317,
+        311
+      ],
+      "source_widths": [
+        186,
+        187,
+        186,
+        185,
+        185,
+        186
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.298013,
+      "source_heights": [
+        302,
+        275,
+        310,
+        245,
+        291,
+        272,
+        298,
+        250
+      ],
+      "source_widths": [
+        229,
+        180,
+        203,
+        223,
+        220,
+        163,
+        196,
+        219
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.299003,
+      "source_heights": [
+        301,
+        271,
+        307,
+        246,
+        288,
+        272,
+        297,
+        248
+      ],
+      "source_widths": [
+        220,
+        173,
+        193,
+        212,
+        218,
+        171,
+        190,
+        228
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.267062,
+      "source_heights": [
+        337,
+        324,
+        321,
+        320,
+        316,
+        337
+      ],
+      "source_widths": [
+        183,
+        192,
+        229,
+        280,
+        305,
+        193
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.267857,
+      "source_heights": [
+        336,
+        322,
+        322,
+        319,
+        315,
+        336
+      ],
+      "source_widths": [
+        196,
+        200,
+        218,
+        293,
+        317,
+        199
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.269461,
+      "source_heights": [
+        334,
+        334,
+        334,
+        334,
+        334,
+        334
+      ],
+      "source_widths": [
+        187,
+        189,
+        187,
+        187,
+        187,
+        188
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.271903,
+      "source_heights": [
+        331,
+        332,
+        331,
+        331,
+        332,
+        331
+      ],
+      "source_widths": [
+        189,
+        193,
+        189,
+        189,
+        189,
+        190
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.220049,
+      "source_heights": [
+        409,
+        390,
+        357,
+        397
+      ],
+      "source_widths": [
+        249,
+        236,
+        235,
+        241
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.220049,
+      "source_heights": [
+        409,
+        388,
+        356,
+        397
+      ],
+      "source_widths": [
+        259,
+        234,
+        247,
+        251
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.184874,
+      "source_heights": [
+        384,
+        331,
+        246,
+        154
+      ],
+      "source_widths": [
+        260,
+        286,
+        328,
+        476
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.186441,
+      "source_heights": [
+        384,
+        330,
+        243,
+        154
+      ],
+      "source_widths": [
+        259,
+        285,
+        323,
+        472
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "visual_quick_screen_96x112": "Animation contact sheet checked once at game scale; identity and action silhouettes usable. Minor issues left as-is.",
+    "runtime": "NOT_TESTED: pending exact-SHA GitHub Godot/Xvfb capture.",
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 runtime assets; no blocking issues."
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-014.json",
+    "sha256": "f2d617ae0b768157f7eac894fd71588c2e597c815a659b1f0ee5fc971e842465"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "7f61dabc47e7bc0915b34ec9c3d33801fc194fff2ffa91dfd305dce75734ca06"
+  }
+}
