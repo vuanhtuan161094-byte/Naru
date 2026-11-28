@@ -1,9 +1,11 @@
-"""Technical gate for Naru V3 overlay. Visual approval remains separate."""
+"""Lean technical gate for Naru V4 and preserved V3 overlay. Visual approval remains separate."""
 import argparse,base64,hashlib,io,json,pathlib,sys
 from PIL import Image
 C=pathlib.Path(__file__).resolve().parents[1]/'art/factory/CONTRACT.json'
-def validate(path):
-    contract=json.loads(C.read_text());p=json.loads(path.read_text());id=p['character_id'];issues=[];warnings=[];metrics={}
+def validate(path,revision='auto'):
+    p=json.loads(path.read_text());id=p['character_id'];issues=[];warnings=[];metrics={}
+    if revision=='auto':revision='v3' if len(p.get('clips',{}))==14 else 'v4'
+    contract=json.loads((C.with_name('CONTRACT_V3_ARCHIVE.json') if revision=='v3' else C).read_text())
     required={f'animation/{id}/{a}_{d}.png':v for a,v in contract['actions'].items() for d in v['directions']}
     assets=p['assets'];clips=p['clips'];static=f'characters/{id}.png'
     if set(assets)!=set(required)|{static}:issues.append('exact asset keys mismatch')
@@ -36,8 +38,8 @@ def validate(path):
             metrics[key]=m
             if '/move_' in key and any(m[k]>limit for k,limit in [('height_span',10),('center_span',3),('bottom_span',10)]):warnings.append(f'{key}: motion anchor/scale review {m}')
         except Exception as e:issues.append(f'{key}: {e}')
-    return {'character_id':id,'technical_status':'PASS' if not issues else 'HOLD','visual_status':'NOT_TESTED','runtime_status':'NOT_TESTED','issues':issues,'warnings':warnings,'metrics':metrics}
+    return {'character_id':id,'revision':revision,'technical_status':'PASS' if not issues else 'HOLD','visual_status':'NOT_TESTED','runtime_status':'NOT_TESTED','issues':issues,'warnings':warnings,'metrics':metrics}
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('overlay',type=pathlib.Path);p.add_argument('--out',type=pathlib.Path);a=p.parse_args();r=validate(a.overlay);s=json.dumps(r,indent=2);print(s)
+    p=argparse.ArgumentParser();p.add_argument('overlay',type=pathlib.Path);p.add_argument('--out',type=pathlib.Path);p.add_argument('--revision',choices=['auto','v3','v4'],default='auto');a=p.parse_args();r=validate(a.overlay,a.revision);s=json.dumps(r,indent=2);print(s)
     if a.out:a.out.write_text(s)
     sys.exit(0 if r['technical_status']=='PASS' else 1)

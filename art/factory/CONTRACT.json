@@ -3,7 +3,7 @@
   "style": "NARU_MOVE_R3_V3_ANIME_CHIBI",
   "source_precedence": [
     "owner-approved Move R3 for shared style",
-    "NIN-002 V3 for directional/action structure",
+    "NIN-002 V3 as historical reference; preserve all 84 legacy cels",
     "older P3 clips are candidates, not blanket approved"
   ],
   "runtime": {
@@ -19,15 +19,11 @@
   },
   "directions": {
     "se": "front three-quarter facing screen right",
-    "sw": "front three-quarter facing screen left",
-    "ne": "rear three-quarter facing screen right",
-    "nw": "rear three-quarter facing screen left"
+    "sw": "front three-quarter facing screen left"
   },
   "model_views": [
     "se",
-    "sw",
-    "ne",
-    "nw"
+    "sw"
   ],
   "actions": {
     "idle": {
@@ -50,9 +46,7 @@
     "move": {
       "directions": [
         "se",
-        "sw",
-        "ne",
-        "nw"
+        "sw"
       ],
       "frames": 8,
       "loop": true,
@@ -134,10 +128,11 @@
     }
   },
   "totals": {
-    "clips": 14,
-    "cels": 84,
-    "model_views": 4,
-    "target_source_atlases": 7
+    "clips": 12,
+    "cels": 68,
+    "model_views": 2,
+    "target_source_atlases": 7,
+    "runtime_assets": 13
   },
   "qa": {
     "hard": [
@@ -155,7 +150,9 @@
       "move_bottom_range_px": 10,
       "standing_body_scale_relative": 0.08
     },
-    "warning_note": "Proposed review triggers at runtime size, calibrated against six approved Move R3 strips; not automatic identity proof. Attack, hit and fall require pose-aware anchors; do not force bbox height equal."
+    "warning_note": "Proposed review triggers at runtime size, calibrated against six approved Move R3 strips; not automatic identity proof. Attack, hit and fall require pose-aware anchors; do not force bbox height equal.",
+    "mode": "LEAN",
+    "policy": "One automated technical gate and one combined GIF/contact review per kit. Warnings are advisory unless visible defect. One Godot 6v6 runtime smoke per batch (pilot separately), not per clip. Fix real blockers only; no repetitive benchmark/QA loops. Preserve all original V3 assets."
   },
   "protected_static": [
     "NIN-004",
@@ -180,5 +177,16 @@
     "baked VFX",
     "upscale as HD",
     "unapproved gameplay changes"
-  ]
+  ],
+  "production_revision": "V4_OWNER_LOCKED_2026-11-28",
+  "presentation": {
+    "mode": "two_front_three_quarter_views",
+    "direction_mapping": {
+      "se": "se",
+      "ne": "se",
+      "sw": "sw",
+      "nw": "sw"
+    },
+    "scope": "Presentation only for V4 kits. Never change simulation, movement, targeting, or existing V3 directional art. Verify in pilot."
+  }
 }
