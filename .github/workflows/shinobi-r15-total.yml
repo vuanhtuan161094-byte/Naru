@@ -1,0 +1,60 @@
+name: R15 total catalog offline PNG export
+on:
+  push:
+    branches: [art/r14-shinobi-library]
+    paths:
+      - 'art/external/shinobi_offline_core.py'
+      - 'art/external/shinobi_r15_export.py'
+      - '.github/workflows/shinobi-r15-total.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify pinned archive metadata and exporter syntax
+        run: |
+          python3 -m pip install Pillow==11.3.0 numpy
+          python3 -m py_compile art/external/shinobi_offline_core.py art/external/shinobi_r15_export.py
+          python3 art/external/shinobi_r15_export.py --prepare --out "$RUNNER_TEMP/r15"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: R15-PINNED-METADATA
+          path: ${{ runner.temp }}/r15/metadata/
+          retention-days: 3
+  export:
+    needs: metadata
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        part: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: R15-PINNED-METADATA
+          path: ${{ runner.temp }}/r15/metadata
+      - name: Convert all assigned catalog entries to native PNG frames when supported
+        run: |
+          python3 -m pip install Pillow==11.3.0 numpy
+          python3 art/external/shinobi_r15_export.py --out "$RUNNER_TEMP/r15" --part ${{ matrix.part }} --parts 16
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: R15-OFFLINE-EVIDENCE-${{ matrix.part }}
+          path: ${{ runner.temp }}/r15/OFFLINE_REPORT.json
+          retention-days: 14
+          if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: R15-OFFLINE-FRAME-LIBRARY-${{ matrix.part }}
+          path: ${{ runner.temp }}/r15/frames/
+          retention-days: 7
+          if-no-files-found: ignore
