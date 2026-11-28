@@ -269,6 +269,21 @@ func product_art_header(parent: Node,path: String,title_text: String,subtitle: S
 	label(info,subtitle,17)
 	return info
 
+func e4_metric_grid(parent:Node,items:Array,columns:int=4)->void:
+	var grid=GridContainer.new()
+	grid.columns=columns
+	grid.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	parent.add_child(grid)
+	for item in items:
+		var panel=PanelContainer.new()
+		panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		panel.add_theme_stylebox_override("panel",combat_panel(Color("#202c39"),Color("#596b80"),8))
+		grid.add_child(panel)
+		var stack=VBoxContainer.new()
+		panel.add_child(stack)
+		label(stack,str(item[0]),14).modulate=Color("#b4c2d3")
+		label(stack,str(item[1]),24).modulate=Color("#ffe0a8")
+
 func label(parent: Node,value: String,size: int=22) -> Label:
 	var l=Label.new()
 	l.text=value
@@ -465,7 +480,7 @@ func growth_detail(id: String,message: String="") -> void:
 		star_button.disabled=not star_quote.ready
 		star_button.tooltip_text=str(star_quote.reason)
 		var actual=store.player_preview(reg,id)
-		label(rows,"SỨC MẠNH • HP %.0f | Công vật lý %.0f | Nhẫn công %.0f | Giáp %.0f | Kháng %.0f"%[float(actual.hp),float(actual.patk),float(actual.natk),float(actual.armor),float(actual.nres)],16)
+		e4_metric_grid(rows,[["Sinh lực","%.0f"%float(actual.hp)],["Công thể","%.0f"%float(actual.patk)],["Nhẫn công","%.0f"%float(actual.natk)],["Giáp","%.0f"%float(actual.armor)],["Kháng nhẫn","%.0f"%float(actual.nres)]],5)
 		var reserve=store.shard_reserve(reg,id)
 		label(rows,"Mảnh: %d • cần %d cho sao, %d cho phẩm • dư %d"%[int(reserve.stock),int(reserve.stars),int(reserve.quality),int(reserve.surplus)],16)
 		var units=mini(100,floori(float(reserve.surplus)/5.0))
@@ -1299,14 +1314,18 @@ func finish(won: bool) -> void:
 		if not a.summon and a.side==0 and not contribution_rows.has(a.uid):contribution_rows[a.uid]={"id":a.id,"side":a.side,"damage":0,"heal":0,"taken":0,"absorbed":0,"control_applied_s":0}
 	sim=null
 	open_screen("results")
-	label(root,"CHIẾN THẮNG" if won else "THẤT BẠI / RÚT LUI",34)
+	label(root,"CHIẾN THẮNG" if won else "THẤT BẠI / RÚT LUI",34).modulate=Color("#ffd28a") if won else Color("#e7a6a6")
 	label(root,"%s • %.1f giây • %s" % [battle_stage.name_vi,elapsed,"Đã lưu kết quả" if ok else "Lỗi lưu kết quả"],18)
 	var rows=scroll_rows(root)
-	label(rows,outcome_reason+" • Combo: "+str(combos.size())+" • Hình thái: "+str(forms.size()),18)
+	label(rows,outcome_reason,18)
+	e4_metric_grid(rows,[["Thời gian","%.1fs"%elapsed],["Combo",combos.size()],["Hình thái",forms.size()]],3)
 	label(rows,"Đóng góp chiến đấu • HP thực tế / thời lượng khống chế áp dụng",20)
 	for entry in contribution_rows.values():
 		if int(entry.side)!=0:continue
-		label(rows,"%s | ST %.0f • Hồi %.0f • Nhận %.0f • Chặn %.0f • CC %.1fs" % [reg.ninjas.get(entry.id,{}).get("name_vi",entry.id),entry.damage,entry.heal,entry.taken,entry.absorbed,entry.control_applied_s],16)
+		var result_row=ui_card_row(rows,Color("#65748a"))
+		var result_name=label(result_row,str(reg.ninjas.get(entry.id,{}).get("name_vi",entry.id)),16)
+		result_name.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		label(result_row,"ST %.0f • Hồi %.0f • Nhận %.0f • Chặn %.0f • CC %.1fs" % [entry.damage,entry.heal,entry.taken,entry.absorbed,entry.control_applied_s],16)
 	if won and ok:
 		label(rows,"Phần thưởng đã nhận",22)
 		for reward in last_reward:label(rows,"%s +%d" % [reg.resources[reward.resource_id].name_vi,int(reward.qty)],18)
@@ -1333,11 +1352,12 @@ func finish(won: bool) -> void:
 
 func skill_screen(id: String,message: String="") -> void:
 	open_screen("skill_tree")
-	label(root,"NHẪN THUẬT • "+str(reg.ninjas[id].name_vi),26)
+	product_art_header(root,"portraits/"+id+".png","NHẪN THUẬT",str(reg.ninjas[id].name_vi),64)
 	var skill_nav=HBoxContainer.new()
 	root.add_child(skill_nav)
 	button(skill_nav,"Trở về",func():growth_detail(id))
 	button(skill_nav,"Nội tại P1–P6 (DEV)",func():passive_screen(id))
+	button(skill_nav,"Trang bị",func():ninja_gear_screen(id))
 	label(root,message,16)
 	var scroll=ScrollContainer.new()
 	scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -1347,8 +1367,8 @@ func skill_screen(id: String,message: String="") -> void:
 	scroll.add_child(rows)
 	for skill_id in reg.ninjas[id].skills+reg.ninjas[id].additional_skill_ids:
 		var sk=store.skill_progress(store.state.owned[id],skill_id)
-		var row=HBoxContainer.new()
-		rows.add_child(row)
+		var row=ui_card_row(rows,Color("#65748a"))
+		row.custom_minimum_size.y=56
 		var overlay=reg.p2_skills.get(skill_id,{})
 		var shown=str(reg.p2_design[skill_id].name_vi) if not overlay.is_empty() else str(reg.names[skill_id].name_vi)
 		var name_label=label(row,"%s | %s | Giai %d cấp %d | Thành thạo %d" % [shown,"P2 "+str(overlay.shape) if not overlay.is_empty() else "D4 fallback",int(sk.grade),int(sk.level),int(store.state.owned[id].skill_mastery.get(skill_id,0))],16)
@@ -1630,8 +1650,13 @@ func building_screen(id: String,message: String="") -> void:
 		tab.disabled=building_tab==i
 	if building_tab==0:
 		label(rows,"Chuyên môn: "+str(reg.professions[Village.specialty(id)].name_vi),18)
-		label(rows,"Nhân lực: %d • Công thức: %d" % [Village.workers(store.state,id).size(),def.recipe_ids.size()],16)
-		building_actions(rows,id)
+		e4_metric_grid(rows,[["Cấp công trình",str(b.level)+"/100"],["Nhân lực",Village.workers(store.state,id).size()],["Công thức",def.recipe_ids.size()],["Tình trạng","%.0f%%"%(float(b.condition)*100)]],4)
+		var actions=GridContainer.new()
+		actions.columns=2
+		rows.add_child(actions)
+		building_actions(actions,id)
+		for child in actions.get_children():
+			if child is Button:child.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		if id=="BLD-028":button(rows,"Nghiên cứu công nghệ",world_projects_screen)
 		button(rows,"Điều phối tất cả công trình",production_center)
 		if id=="BLD-030":button(rows,"Gia cố phòng thủ",fortification_screen)
