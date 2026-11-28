@@ -1,0 +1,2531 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "key": "android",
+      "repo": "WanderlanLima/Shinobi",
+      "sha": "4785735a93dcde6e14656074dd9b19f411276f3d",
+      "files": [
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/animacoes_instrucoes.json",
+          "bytes": 68218,
+          "blob": "093c80adf584b66f2dc0f4ef937fc5bb798523ff"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/UniqueSkill.json",
+          "bytes": 46328,
+          "blob": "7fa921bc0d31c87d33a0c107075c91cf7484b8cd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/UniqueSkill.png",
+          "bytes": 2661042,
+          "blob": "b7ba53a6c3aec37736e35284773ed2e5173efecb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/attack.json",
+          "bytes": 6244,
+          "blob": "dd6bde6868df9351d2ef03c85baee15a5f8599b1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/attack.png",
+          "bytes": 380139,
+          "blob": "6786cb814926a3d05c566faa9fcfb3186c7154d7"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/cast.json",
+          "bytes": 2808,
+          "blob": "120923c91b7b0671fdb645653dacda17ddf28b81"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/cast.png",
+          "bytes": 98293,
+          "blob": "18fe0a09f4bf8df6a3c81379a86ba146fe14dc6b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/charge.json",
+          "bytes": 3911,
+          "blob": "97f7373c9cf6fa796f0d7343fba13ab9565118d1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/charge.png",
+          "bytes": 80307,
+          "blob": "f7475855ebf2d8e0b39f903d882c36d660e3ff1b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/chase1.json",
+          "bytes": 19995,
+          "blob": "5dd9d83ad8ba5268d71a4f286747478b71599b09"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/chase1.png",
+          "bytes": 1804103,
+          "blob": "0be7c56efe7bdcb80db0df7f65f22f54920ddf13"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/die.json",
+          "bytes": 5188,
+          "blob": "f5dd1f2724bbaa2f25f1f934c080ab25ec9f680a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/die.png",
+          "bytes": 193610,
+          "blob": "add590d3888b7d056b463b059cbae6518c4871eb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/dodge.json",
+          "bytes": 1712,
+          "blob": "d559be06a5221b8b4925391e46df61c0e471442f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/dodge.png",
+          "bytes": 46056,
+          "blob": "3e83ef4753b93211ccc4de6ee4e3262f31b54da3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/fall.json",
+          "bytes": 5266,
+          "blob": "cfdbb7df234db1ddf318720f0fbbba9cc89b5a83"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/fall.png",
+          "bytes": 82153,
+          "blob": "39ff65a6dcefefe5ae7bc7793095a865a7f628c3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/fly.json",
+          "bytes": 4753,
+          "blob": "4dbeddd5864771cbf4557a918305a39cc4224bf8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/fly.png",
+          "bytes": 207753,
+          "blob": "9ef5c897ba545b3aaec4c88e8d1f9bee84ae363f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/gatilho1.json",
+          "bytes": 9788,
+          "blob": "0e193e248f0f0cbc1884d7b91631c4bdc6723529"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/gatilho1.png",
+          "bytes": 1033156,
+          "blob": "767352da8df221eacf90ed28422be32535f0a5c4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurt1.json",
+          "bytes": 2564,
+          "blob": "0d1a395c675430da8efcdcc3bab37967fddbe55a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurt1.png",
+          "bytes": 78040,
+          "blob": "8df9c5cc801ce2113a5d74773820e8f6a1d409fe"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurt2.json",
+          "bytes": 2564,
+          "blob": "bf826ee5a93d787fea4901cf856d76b90e92b029"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurt2.png",
+          "bytes": 97391,
+          "blob": "e2d2545e8837653604ec18f2f0d53c35cd5db3e6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurtlong1.json",
+          "bytes": 5990,
+          "blob": "3234d3745ac8b678e5254c822d6bbb1585fc2f5a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurtlong1.png",
+          "bytes": 228390,
+          "blob": "c4c4e34b6b7efec3ace8238011cafa5e45274dd7"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurtlong2.json",
+          "bytes": 3461,
+          "blob": "cc1eaed0de10e5413f11c377395a4f1d984bfef9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/hurtlong2.png",
+          "bytes": 102968,
+          "blob": "b97985164253de6957cf1c3eb381c4b0adb9f145"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/idle.json",
+          "bytes": 10289,
+          "blob": "a22ba8d1dce92f9871a05fce6fe150c7ea8ec6bc"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/idle.png",
+          "bytes": 302911,
+          "blob": "71eb2925f94c2856194f55f6ce578e0f423e65b3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/out.json",
+          "bytes": 3695,
+          "blob": "949fb29734776f695f0f2ae0d0b76a27a24f35a4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/out.png",
+          "bytes": 107118,
+          "blob": "0f932bfaf8b2e8b4d71c930e0142f07265cfdc5f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/run.json",
+          "bytes": 1691,
+          "blob": "b14a7e4bcf1bd065e1b886a8bb2c1efefe47bdf5"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/run.png",
+          "bytes": 57953,
+          "blob": "5b850d1a88ef86efa8b27c9576ba1625c8532212"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/shunyi.json",
+          "bytes": 3897,
+          "blob": "54ec18e277c71b39d3723097336e412b371a7ea8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/shunyi.png",
+          "bytes": 65922,
+          "blob": "ceff846308674afd6479f835a126c878b3c0356f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/skill.json",
+          "bytes": 12783,
+          "blob": "5b34afa4d18d3bed1045e6674536f816f684fb17"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/skill.png",
+          "bytes": 2389270,
+          "blob": "7f10e16cfc02f1e1eb0430d5ef91f69220718d63"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/win.json",
+          "bytes": 4002,
+          "blob": "730a7d38c5ab35b75da07842bf77be425105b2ab"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/anims/win.png",
+          "bytes": 172257,
+          "blob": "218714b0e2ded585fa8e8cb76c25478d4dbec4f8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/01_arte_completa_100304.png",
+          "bytes": 618935,
+          "blob": "0d7da05534e83a9dc87e57033d83946f5b025def"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/02_meio_corpo_100304.png",
+          "bytes": 255863,
+          "blob": "1deafda2255f804399ba91aef387c2d607384809"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/03_retrato_medio_100304.png",
+          "bytes": 72076,
+          "blob": "3e96fd6687d179f2371eeea4f5ae1bd234793360"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/04_vitrine_100304.png",
+          "bytes": 170887,
+          "blob": "9ba6305f0282be62a54ffc107a61230067eb6495"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/05_recrutamento_100304.png",
+          "bytes": 63721,
+          "blob": "38cb2eb9a3edc21bfbda129ee9babb6dc54b385b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/06_palco_100304.png",
+          "bytes": 385135,
+          "blob": "3fcc5cfe890a9566b271ca49c945532323568799"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/07_album_100304.png",
+          "bytes": 191053,
+          "blob": "281b6de958803c8d61cf8d1636360ec2662e8a4a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/08_avatar_100304.png",
+          "bytes": 39525,
+          "blob": "f7f01d41cbdba5b552676899a4f29cf3f8ad897c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/10_nome_pt_100304.png",
+          "bytes": 62102,
+          "blob": "36b1a5a4e438913f74ea0775ee3628dd5e654e8f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/11_nome_novo_100304.png",
+          "bytes": 17359,
+          "blob": "60899a84dbd627368c61c24811e5c1160803b8fe"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/artes/12_nome_esoterica_100304.png",
+          "bytes": 34788,
+          "blob": "4543a9993869e6ff8d7fdfdd9b63641f53d392f9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/batalha_nos_1552_1.mp3",
+          "bytes": 33904,
+          "blob": "2a6f532e08aa9c0df8ad6670251d4722fe57d53a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/batalha_nos_1552_2.mp3",
+          "bytes": 20800,
+          "blob": "9de8179f5fad4577f8056d6c8f071be6c4f6b245"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/despertar_nos_1555_1.mp3",
+          "bytes": 19552,
+          "blob": "0fb8e629c0e53b7694eb3d1df798c0ceb9ff7896"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/despertar_nos_1555_2.mp3",
+          "bytes": 33904,
+          "blob": "2a6f532e08aa9c0df8ad6670251d4722fe57d53a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/morte_nos_661_1.mp3",
+          "bytes": 35737,
+          "blob": "450b8fdd1405fb452cd69fc6bbd717f26b404d6d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_1106_1.mp3",
+          "bytes": 22935,
+          "blob": "bad5f94de17c5e9c646062a8242bcf4a1d31b7c6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_114_1.mp3",
+          "bytes": 13818,
+          "blob": "f33bb68407cbaf301905b2fe8fae47e358a23f75"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_125_1.mp3",
+          "bytes": 40985,
+          "blob": "cdf58a10b6ec69f8653756516195cf4be6038128"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_134_3.mp3",
+          "bytes": 17579,
+          "blob": "edbe32ad47454faaf10013ba0ff1cca4114640f4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_136_3.mp3",
+          "bytes": 12982,
+          "blob": "7201fc02c79fbc1cf60962e9447a65aa767dd343"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_139_1.mp3",
+          "bytes": 18833,
+          "blob": "0d59e8609805d0cc581ccdc86302bec2d8e85d80"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_146_3.mp3",
+          "bytes": 28864,
+          "blob": "2142758ab8b9096b747aa6a1729b3a4e92e373c7"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_148_1.mp3",
+          "bytes": 21484,
+          "blob": "d4e605d6f379415aec338fbc29495582c94d49c6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_1493_1.mp3",
+          "bytes": 32526,
+          "blob": "f5cde2d63015fa81c0fb494ed6a3981b1742eb69"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_149_2.mp3",
+          "bytes": 23849,
+          "blob": "4ad8b198002d64939eecfec4ef7cebc2c773cee6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_152_5.mp3",
+          "bytes": 20923,
+          "blob": "b54cca0cfc6057143ea5021e4c12eb4511432a36"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_153_1.mp3",
+          "bytes": 48508,
+          "blob": "71c4318a48965c1d91545e9f5d2e595d14aec3ea"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_156_1.mp3",
+          "bytes": 19669,
+          "blob": "4d238eea7d4fc9c48576e0c498ab0ff53546b165"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_157_2.mp3",
+          "bytes": 37641,
+          "blob": "d045aeadbfbdbaa0a492cd3303282b56aff9d79a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_170_1.mp3",
+          "bytes": 7130,
+          "blob": "23c62ccf54ec2093dca8444dff6f58bba6e7c730"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_172_3.mp3",
+          "bytes": 11310,
+          "blob": "838761e6acbb1eb22cee5c954d2be04d298d2bde"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_173_2.mp3",
+          "bytes": 12982,
+          "blob": "8b4c849d58d3c8dad0bf3d7c29b3aea95b2d2a62"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_174_1.mp3",
+          "bytes": 19609,
+          "blob": "4bc6679e56421d3c11c557d42d14df9868dac457"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_175_1.mp3",
+          "bytes": 68570,
+          "blob": "107e01a15e3ad709fcdf1a083bfc0fd9a99986a0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_177_1.mp3",
+          "bytes": 24685,
+          "blob": "ac7b8febf55fb27a4f836d21a614651e18e03989"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_236_2.mp3",
+          "bytes": 17166,
+          "blob": "3e2fdab90781a81145f7bbbd50843177c946b59c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_284_2.mp3",
+          "bytes": 3316,
+          "blob": "5854a90f583ac30b394920d90b200348272ea682"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_285_3.mp3",
+          "bytes": 4048,
+          "blob": "99cf2e939dd47d93ff9c19e44e985cc05f63ea5a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_286_2.mp3",
+          "bytes": 2768,
+          "blob": "2eaa63ab622ffb1683eaf40e9558c285eaa088e1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_287_1.mp3",
+          "bytes": 13332,
+          "blob": "e5e6c465f9edd41158e371f4d20fd93e9ed61450"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_288_2.mp3",
+          "bytes": 14586,
+          "blob": "948f69ddf9ba951bcf1d3d54e80b3dc71f9624d0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_44_1.mp3",
+          "bytes": 10474,
+          "blob": "cb00681f9fd40ac47fefc0c17cbaa34bbc195b01"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_660_1.mp3",
+          "bytes": 11545,
+          "blob": "90821884842a3c10dc7ad209f3df76d80fd1f0cd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_685_4.mp3",
+          "bytes": 6759,
+          "blob": "35b37c84ce5a1cd3bcdb614de862d57f37a90e7b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_934_2.mp3",
+          "bytes": 8430,
+          "blob": "fb42e0d7602cb7b8b0cb7c64d56c004643a3b2fc"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/nos_937_2.mp3",
+          "bytes": 8430,
+          "blob": "fb42e0d7602cb7b8b0cb7c64d56c004643a3b2fc"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/subir_estrela_nos_1555_1.mp3",
+          "bytes": 19552,
+          "blob": "0fb8e629c0e53b7694eb3d1df798c0ceb9ff7896"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/subir_estrela_nos_1555_2.mp3",
+          "bytes": 33904,
+          "blob": "2a6f532e08aa9c0df8ad6670251d4722fe57d53a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/audio/transformacao_nos_1554_1.mp3",
+          "bytes": 20800,
+          "blob": "9de8179f5fad4577f8056d6c8f071be6c4f6b245"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/character.json",
+          "bytes": 17901,
+          "blob": "ba340860980bbb72e057feb0d11b4bc6d1e2dc87"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/combate_e_habilidades.json",
+          "bytes": 6209,
+          "blob": "13d49f432dbb28f7495f7b9d726b14088dd70950"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/icones_skills/01_ataque_normal_Ataque_da_Kurama.png",
+          "bytes": 13871,
+          "blob": "733b0f09c09be7532e7fadb75eb5a3d6d619da81"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/icones_skills/02_habilidade_Ataque_da_Kurama.png",
+          "bytes": 13871,
+          "blob": "733b0f09c09be7532e7fadb75eb5a3d6d619da81"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/icones_skills/03_ultimate_Rasen_Shuriken_Planetario_de_Bijuu.png",
+          "bytes": 12524,
+          "blob": "a673db90c89c9eab6c83626edb9780a0cc4387b0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/icones_skills/04_perseguicao_1_Super_Mini_Bomba_Bijuu.png",
+          "bytes": 14531,
+          "blob": "3e034c4d781a24e3c5e2863ca22810cbfb44ea48"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/icones_skills/passiva_01_Jutsu_de_Teletransporte_Dourado.png",
+          "bytes": 12011,
+          "blob": "3e42aa3c5a2868f6d72766fd8e4326ed73c9e55a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/icones_skills/passiva_02_Chakra_do_Bijuu_Imunidade.png",
+          "bytes": 13582,
+          "blob": "9e2c1de97c9a35e64cf2b029d30b8f16c02e84f6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_JMRaoyi/efeito_JMRaoyi.webp",
+          "bytes": 635278,
+          "blob": "8b8c832a0dae57a476b07c46e9e08595aa503d2c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_JMRaoyi/efeito_JMRaoyi_2.webp",
+          "bytes": 1090036,
+          "blob": "ca5e5b7d43e18ab8caf56cc573406ce89d727089"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_JMRaoyi/efeito_JMRaoyi_3.webp",
+          "bytes": 693094,
+          "blob": "06b0364e4ed9061a8e2b97dbe10f8c412b3c9a33"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_JMRaoyi/noe_JMRaoyi.atlas",
+          "bytes": 43555,
+          "blob": "9dae3ccd7b3b6aa1fb24e670cd278a31398a700b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_JMRaoyi/noe_JMRaoyi.json",
+          "bytes": 513099,
+          "blob": "425baa900be1ae2e1c5cfdcf201aa121390cf397"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123/efeito_MRJLM123.webp",
+          "bytes": 235396,
+          "blob": "67653b32a8d622af15b36f2483617b37d73812fd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123/efeito_MRJLM123_2.webp",
+          "bytes": 216814,
+          "blob": "db757897021fa14d195abd6405e01e574ac1bbc8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123/noe_MRJLM123.atlas",
+          "bytes": 9107,
+          "blob": "92226f28dfe097c37e70b34f50184df81cc8b7ac"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123/noe_MRJLM123.json",
+          "bytes": 77046,
+          "blob": "100d9f38ce952fd565a05abcf572890fa67a3007"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123_3/efeito_MRJLM123_3.webp",
+          "bytes": 155950,
+          "blob": "99e3d19be65ac5ef91b49f9bf76b1b549fec087c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123_3/efeito_MRJLM123_3_2.webp",
+          "bytes": 49714,
+          "blob": "a7c6a8db6d5a3f8540a1224fd2492baa6029a8b8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123_3/noe_MRJLM123_3.atlas",
+          "bytes": 2402,
+          "blob": "5aa81ac3c0d6e49c80eed62027949794ddca1ca7"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLM123_3/noe_MRJLM123_3.json",
+          "bytes": 30704,
+          "blob": "fc8e02ed1717c2165ddafb359b35125e90ac34dc"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLMcmnwsy/efeito_MRJLMcmnwsy.webp",
+          "bytes": 352630,
+          "blob": "2596eafa30650d4663f08c3785fff239977a2c86"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLMcmnwsy/efeito_MRJLMcmnwsy_2.webp",
+          "bytes": 697750,
+          "blob": "34e532a36269f35db34f121cddd6cc28052385c5"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLMcmnwsy/efeito_MRJLMcmnwsy_3.webp",
+          "bytes": 399780,
+          "blob": "4b822c247bee680b610a74afb361de88444768f6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLMcmnwsy/efeito_MRJLMcmnwsy_4.webp",
+          "bytes": 191188,
+          "blob": "6a2b0fd4604d7c6817197c4a08507fe2c08c455d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLMcmnwsy/efeito_MRJLMcmnwsy_5.webp",
+          "bytes": 55332,
+          "blob": "ff5b92986d01f8341bd2bb79b8bab94f3562d114"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLMcmnwsy/noe_MRJLMcmnwsy.atlas",
+          "bytes": 25427,
+          "blob": "8408649bc3ca747bba83b14da41a0a9c2e7922be"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRJLMcmnwsy/noe_MRJLMcmnwsy.json",
+          "bytes": 375122,
+          "blob": "919b169e44c986711344662e870372453a70face"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRzy/efeito_MRzy.webp",
+          "bytes": 515404,
+          "blob": "0718da309d9728752c406176402a56ca6811c905"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRzy/noe_MRzy.atlas",
+          "bytes": 3717,
+          "blob": "41ba09764724a272ddcc155be2b902b84240ed09"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/particulas/noe_MRzy/noe_MRzy.json",
+          "bytes": 24334,
+          "blob": "42c898f10b2eeea9a93d235794cec0e997bbcb86"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100304/videos/vdfno_MINGRENjlm.mp4",
+          "bytes": 686966,
+          "blob": "c6e0f949b6640a2382c1a41cad79625e2ad53334"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/animacoes_instrucoes.json",
+          "bytes": 65451,
+          "blob": "0e29e4cc71042c7fcbd0530162248aee5d468272"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/UniqueSkill.json",
+          "bytes": 43637,
+          "blob": "8fa5e55c5f0d970f48ad7b45108e3d738fff306a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/UniqueSkill.png",
+          "bytes": 1591472,
+          "blob": "4da5861d3a5090f0a6543f717be0d1b027a1b2b9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/attack.json",
+          "bytes": 7284,
+          "blob": "b7a86442e9b54b74d9415ce0ec02ef3baceeb355"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/attack.png",
+          "bytes": 441540,
+          "blob": "03eea036b65b9eb1f3e966645479898a29493611"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/cast.json",
+          "bytes": 2818,
+          "blob": "e9017d8e5ef50b9dd84b9d303320fd8f4f3f23c8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/cast.png",
+          "bytes": 78023,
+          "blob": "36b7ca6a56c2709f6592d6270a368cca334da25b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/charge.json",
+          "bytes": 3910,
+          "blob": "7cfc03425cd198b130f4afd88660cdf8e81a2470"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/charge.png",
+          "bytes": 50832,
+          "blob": "75747c3e8b61ec3ed1876d60f6b57b5690cd9fa2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/chase1.json",
+          "bytes": 12241,
+          "blob": "6505b024617cd2696d626db1da0a27adc194b475"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/chase1.png",
+          "bytes": 2406793,
+          "blob": "b3e1ebf926d50a7f331534a4e0a0ab51f66acc93"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/chase2.json",
+          "bytes": 17212,
+          "blob": "85e8604874d93835377ba5970cb452ee0ac6b6f3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/chase2.png",
+          "bytes": 3285854,
+          "blob": "0c8e7641a96e01f26ffe4e0d0ee77802b455425b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/die.json",
+          "bytes": 7348,
+          "blob": "d85efbf8fc5c7bc13d90e2a6501ec1ed253220bb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/die.png",
+          "bytes": 151991,
+          "blob": "51dc878e58f69aa94f296debd5ebf965c969a1a9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/dodge.json",
+          "bytes": 1711,
+          "blob": "e443fb1d3ffa8de5bc14de34721345ff40217288"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/dodge.png",
+          "bytes": 45697,
+          "blob": "1ca25c0057d60f43db14f0fb21fb96f92d51c2ae"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/fall.json",
+          "bytes": 5286,
+          "blob": "2fe4da92eb531efc535936021dbf0fb2509b793e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/fall.png",
+          "bytes": 64374,
+          "blob": "f4cd60926a9a60526bd9a3a37dd481080b09fb7e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/fly.json",
+          "bytes": 4713,
+          "blob": "201b4c20930e76f6cf363ff5b7449c5a80e3508d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/fly.png",
+          "bytes": 167045,
+          "blob": "fa25596813319fe055ef08fb6365bbbdc553d04c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurt1.json",
+          "bytes": 2564,
+          "blob": "1f20c56219ff5fd318902ac3ce429fbd882e5499"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurt1.png",
+          "bytes": 68045,
+          "blob": "704e634fe887d73809bf7b14a013f3760a7d4f9d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurt2.json",
+          "bytes": 2554,
+          "blob": "038eca86b8eee6d5d88b2b59c2417a4685407518"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurt2.png",
+          "bytes": 91889,
+          "blob": "b756e97c8c6063bbe327887a5912cf3db932405f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurtlong1.json",
+          "bytes": 5988,
+          "blob": "4e6a92156ced770d3e20c8ac0178027c416d2b8e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurtlong1.png",
+          "bytes": 178656,
+          "blob": "5d88d729c21fd94adab654bc330dbeb3dec54dbf"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurtlong2.json",
+          "bytes": 3459,
+          "blob": "19fea470624e3d6d7f9204cc8f1593ae8c2eef09"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/hurtlong2.png",
+          "bytes": 80121,
+          "blob": "90677feebeb0df1e0cca7191b98650b5921cf49e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/idle.json",
+          "bytes": 17099,
+          "blob": "9d84dab781beb4accb117e8d8007bc9121f08728"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/idle.png",
+          "bytes": 1019236,
+          "blob": "9ddc582fc8005c46c90d38d2a15238172d50bf5a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/out.json",
+          "bytes": 4467,
+          "blob": "4e42ca29f5e9a868832b2bd859027b4576fbb125"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/out.png",
+          "bytes": 128137,
+          "blob": "8c8d850f8dd7f748fda630bcac379190643cf83f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/run.json",
+          "bytes": 1691,
+          "blob": "4e63d5fcf06eb0699331f62ee296e6b06e990af7"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/run.png",
+          "bytes": 38707,
+          "blob": "84582800ffb8d94b90e14e7537c1aa3341b9633c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/shunyi.json",
+          "bytes": 3858,
+          "blob": "70b504e0c2cfaf3b926e211df5f871b9ba87eeb3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/shunyi.png",
+          "bytes": 52581,
+          "blob": "26a835112b6ad780511e5a80a60af5069408293a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/skill.json",
+          "bytes": 13867,
+          "blob": "aba1c9d5338814eda2d763dfb9575543182385b9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/skill.png",
+          "bytes": 2433076,
+          "blob": "b2d486380f817da0d94ae87f0f1c682a92fa1be2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/win.json",
+          "bytes": 6145,
+          "blob": "7f7f4b7d278955e0ffaadd5791177b919aea1969"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/anims/win.png",
+          "bytes": 182626,
+          "blob": "e679ac9486c6ac2b06bf1c72cbc5593140ab7049"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/01_arte_completa_100306.png",
+          "bytes": 1040217,
+          "blob": "3fda3495b1a90409c9cf7a873065d4f830d82ae8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/02_meio_corpo_100306.png",
+          "bytes": 307735,
+          "blob": "d4ad284389b79e6c7bfb781ff49fa193bb0dbaf4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/03_retrato_medio_100306.png",
+          "bytes": 63277,
+          "blob": "1e5c86bdc88a51d1d02a4ad21f7056ebf209382c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/04_vitrine_100306.png",
+          "bytes": 165969,
+          "blob": "dd58ec923662d7b7aa99a47859d3b6c6a6b43b67"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/05_recrutamento_100306.png",
+          "bytes": 42298,
+          "blob": "721cc65d9c917893c578b6e337daa3517e730e75"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/06_palco_100306.png",
+          "bytes": 531814,
+          "blob": "3ee5054e9997e2cffbf8e63f5496e4d188093ad6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/07_album_100306.png",
+          "bytes": 186693,
+          "blob": "e424e5cc824c9c1019282a3e20c4722aaf34639c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/08_avatar_100306.png",
+          "bytes": 37985,
+          "blob": "0e2fa30753e5175facdb8a1a49e577ab59bedeb0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/10_nome_pt_100306.png",
+          "bytes": 64101,
+          "blob": "12378e2119fef06182257d1ccc4fce9e06489055"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/11_nome_novo_100306.png",
+          "bytes": 20451,
+          "blob": "c0a4a0a3e374bad915308213577c9827b739ad23"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/artes/12_nome_esoterica_100306.png",
+          "bytes": 30140,
+          "blob": "1002afc0027cde52a10bdf46410e69a27793da1d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/batalha_nos_1544_1.mp3",
+          "bytes": 22256,
+          "blob": "707a7650745cc6d819fa2fc3d859763cabaea846"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/batalha_nos_1544_2.mp3",
+          "bytes": 16640,
+          "blob": "272526531177bf986ffec05c7d0cd5e265607a00"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/despertar_nos_1546_1.mp3",
+          "bytes": 22256,
+          "blob": "707a7650745cc6d819fa2fc3d859763cabaea846"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/despertar_nos_1546_2.mp3",
+          "bytes": 10608,
+          "blob": "c41151de6ccfbf916a8d686d57d18dbf32dd6f42"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/morte_nos_678_1.mp3",
+          "bytes": 31129,
+          "blob": "16b231a92efed328e4ea045aa4cafd9290534aac"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_1061_1.mp3",
+          "bytes": 75477,
+          "blob": "bfe157bd24d13cdaab7365518300dba756ad6e36"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_114_1.mp3",
+          "bytes": 13818,
+          "blob": "f33bb68407cbaf301905b2fe8fae47e358a23f75"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_133_2.mp3",
+          "bytes": 34716,
+          "blob": "79221425072aa898d49ac12b2da5f6616aa6ba7d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_134_1.mp3",
+          "bytes": 19251,
+          "blob": "182232eda72a15fd943fc7f1ca023febf763d9f4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_136_4.mp3",
+          "bytes": 14236,
+          "blob": "54ded27215d1a378dcaed400c821b36e6bd3a08f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_141_1.mp3",
+          "bytes": 25521,
+          "blob": "5698ef132c27c6737d78d330cd44cc9d255b2225"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_146_3.mp3",
+          "bytes": 28864,
+          "blob": "2142758ab8b9096b747aa6a1729b3a4e92e373c7"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_148_2.mp3",
+          "bytes": 46561,
+          "blob": "d4f2307e72c57ec521b20a3ad6520e353315384c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_152_4.mp3",
+          "bytes": 29282,
+          "blob": "6d85dfe03dea7756344987f771b619e0875637b0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_153_1.mp3",
+          "bytes": 48508,
+          "blob": "71c4318a48965c1d91545e9f5d2e595d14aec3ea"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_157_2.mp3",
+          "bytes": 37641,
+          "blob": "d045aeadbfbdbaa0a492cd3303282b56aff9d79a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_158_1.mp3",
+          "bytes": 33880,
+          "blob": "e7f2d6bfcaeb799d63b0fe2e00f38d3488e4d0bf"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_170_2.mp3",
+          "bytes": 6294,
+          "blob": "82fa46e06b40c7f7491627e3428ce1cdd0652f78"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_172_2.mp3",
+          "bytes": 12146,
+          "blob": "66f0e987a459d7aa9c85ac431b88fc714263e73a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_173_3.mp3",
+          "bytes": 15072,
+          "blob": "d7486e18950a14db3832284c934e093dcf6fcd79"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_174_1.mp3",
+          "bytes": 19609,
+          "blob": "4bc6679e56421d3c11c557d42d14df9868dac457"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_236_3.mp3",
+          "bytes": 15630,
+          "blob": "b173204385b185769566726e6de3d4c4cf43d23b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_284_3.mp3",
+          "bytes": 3682,
+          "blob": "b34ed1971f34a93ca5c39dea29fdeab00f211846"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_285_2.mp3",
+          "bytes": 2951,
+          "blob": "d9310d7ed265b37ae596874349dd9025dfcea697"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_286_1.mp3",
+          "bytes": 3682,
+          "blob": "7cd3af61971dc6733913761fe05ec2822bb5e0f3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_287_2.mp3",
+          "bytes": 10407,
+          "blob": "e0153628e4849c077aa52a9e12721338542a9277"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_288_3.mp3",
+          "bytes": 14586,
+          "blob": "ded527ea6060454f850c1a78a45668d4d4cece00"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_289_1.mp3",
+          "bytes": 11929,
+          "blob": "41b8adae94cd83e8d2fd91b28131757374b11452"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_290_1.mp3",
+          "bytes": 15385,
+          "blob": "08f41fcf04882e9c1afcdf8235a0e76f9604879d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_44_3.mp3",
+          "bytes": 9638,
+          "blob": "11e2fe44168a410a694bdb90cb427ad8bde5a39e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_667_1.mp3",
+          "bytes": 13849,
+          "blob": "c47e77ec90da406c3a4ae0b6a5215ab555ad6c9a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_668_1.mp3",
+          "bytes": 13081,
+          "blob": "cbf82901ec88b96f1743a0eb711b7a17c6c4ec7f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_671_1.mp3",
+          "bytes": 12697,
+          "blob": "a2193d8b5186d098b62ffc7bf075d99604c2b843"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_681_1.mp3",
+          "bytes": 12313,
+          "blob": "542801c2c90fdf5726cad1c316772fc712f3b148"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/nos_956_3.mp3",
+          "bytes": 10009,
+          "blob": "c41e1ebf4a77db5e7cb86a556c9ed56f5effb8a1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/subir_estrela_nos_1546_1.mp3",
+          "bytes": 22256,
+          "blob": "707a7650745cc6d819fa2fc3d859763cabaea846"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/subir_estrela_nos_1546_2.mp3",
+          "bytes": 10608,
+          "blob": "c41151de6ccfbf916a8d686d57d18dbf32dd6f42"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/audio/transformacao_nos_1545_1.mp3",
+          "bytes": 22256,
+          "blob": "707a7650745cc6d819fa2fc3d859763cabaea846"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/character.json",
+          "bytes": 19741,
+          "blob": "d9cb4a594ac2c2f61b395691ed58de0cd65587e2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/combate_e_habilidades.json",
+          "bytes": 7233,
+          "blob": "46ec9ba8d3dd8cae0523067fee5dd53b97312b83"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/icones_skills/01_ataque_normal_Espada_Chidori.png",
+          "bytes": 14274,
+          "blob": "a7782a02a7d1537b04020ecb8aa4e499142bcde3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/icones_skills/02_habilidade_Espada_Chidori.png",
+          "bytes": 14274,
+          "blob": "a7782a02a7d1537b04020ecb8aa4e499142bcde3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/icones_skills/03_ultimate_Susano_o.png",
+          "bytes": 14260,
+          "blob": "692982eebb5b3255b1e85b2afd754f348dab3e0b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/icones_skills/04_perseguicao_1_Susano_o_Ataque.png",
+          "bytes": 14245,
+          "blob": "4b1f72a005aae46f641f27e53f8068c4501aa713"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/icones_skills/05_perseguicao_2_Estilo_Inferno_Controle_de_Chamas.png",
+          "bytes": 11763,
+          "blob": "f0c24e829b86bb80161102188265c6fdc1640ee2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/icones_skills/passiva_01_Armadura_Susano_o.png",
+          "bytes": 13082,
+          "blob": "4c3e865e6119b9b5e8ca8afba008f0274cdb3b74"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/icones_skills/passiva_02_Corpo_Resistente.png",
+          "bytes": 13459,
+          "blob": "b07580f69c302555535051887f0612319791c281"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_JIFENGZUOZHU_pugong/efeito_JIFENGZUOZHU_pugong.webp",
+          "bytes": 145402,
+          "blob": "e035adf2f210b9a2176f5c490753959c2b68ebe6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_JIFENGZUOZHU_pugong/efeito_JIFENGZUOZHU_pugong_2.webp",
+          "bytes": 22200,
+          "blob": "3044b1898b2bdb6726a06f6e2b1586e23ec3290a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_JIFENGZUOZHU_pugong/noe_JIFENGZUOZHU_pugong.atlas",
+          "bytes": 5261,
+          "blob": "1692f735861d0ebff5c3a2e4b0e39ef8da9fa2a0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_JIFENGZUOZHU_pugong/noe_JIFENGZUOZHU_pugong.json",
+          "bytes": 50624,
+          "blob": "1898345391f6de50f720814a26a30080753bd815"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_YOUtz/efeito_YOUtz.webp",
+          "bytes": 601598,
+          "blob": "8dd9b156eb0d1e6575546de2cd822e49b60efab6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_YOUtz/efeito_YOUtz_2.webp",
+          "bytes": 575684,
+          "blob": "409547bf82acf266304001f09023d4384b5ae3ff"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_YOUtz/efeito_YOUtz_3.webp",
+          "bytes": 582946,
+          "blob": "f5917c09b79202772cbadcbbbd32ee717b6e8e45"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_YOUtz/efeito_YOUtz_4.webp",
+          "bytes": 55936,
+          "blob": "1ff3bd5b596e86de4a9f866985bfb62c2e3051e6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_YOUtz/efeito_YOUtz_5.webp",
+          "bytes": 251604,
+          "blob": "744bee03c614a3875d2a95440b0a2ea441dd6f73"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_YOUtz/noe_YOUtz.atlas",
+          "bytes": 16965,
+          "blob": "32e0657ea4bd23fcb3f2f4f0ec6badc7535b4a5b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_YOUtz/noe_YOUtz.json",
+          "bytes": 59551,
+          "blob": "d8534e3de9181ceabd427ebb415c7457e92286ac"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHU1/efeito_ZUOZHU1.webp",
+          "bytes": 17480,
+          "blob": "9786e46302a6b6eb511a978b8620a773c9a82a63"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHU1/efeito_ZUOZHU1_2.webp",
+          "bytes": 11452,
+          "blob": "ef52fc1a43bb44a394edac74827b751e27cfd883"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHU1/noe_ZUOZHU1.atlas",
+          "bytes": 1629,
+          "blob": "f22ec307175c0fbd8428011abd53419e52b36a21"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHU1/noe_ZUOZHU1.json",
+          "bytes": 14736,
+          "blob": "add5b4aa33dc22a14ad7546cbaa0d946df102be0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZ3hit/efeito_ZUOZHUXZ3hit.webp",
+          "bytes": 987978,
+          "blob": "a68048c6219daed5725c94802d4e9ba858c82e0d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZ3hit/efeito_ZUOZHUXZ3hit_2.webp",
+          "bytes": 26870,
+          "blob": "879c1216c423252a7d95f996636fb334cd276fa7"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZ3hit/noe_ZUOZHUXZ3hit.atlas",
+          "bytes": 21399,
+          "blob": "59165958476b8c128c13083cb2ebb23e2ad11edd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZ3hit/noe_ZUOZHUXZ3hit.json",
+          "bytes": 288369,
+          "blob": "b37cadb2c722831c7b404e5dda53182ae3134863"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZCP/efeito_ZUOZHUXZCP.webp",
+          "bytes": 740434,
+          "blob": "cbf6e99e977d22b8f10d256822f360e4ebc71d56"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZCP/efeito_ZUOZHUXZCP_2.webp",
+          "bytes": 1029610,
+          "blob": "5ff919fe52774c92f25c8ccc7bc4c4b87e2b784f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZCP/efeito_ZUOZHUXZCP_3.webp",
+          "bytes": 1258114,
+          "blob": "0009e7611069537c477b25cf8df3da6db7ba193f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZCP/efeito_ZUOZHUXZCP_4.webp",
+          "bytes": 910852,
+          "blob": "5624bc3fc8f70ca6bd7017fa02817e29e5bb4b09"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZCP/noe_ZUOZHUXZCP.atlas",
+          "bytes": 35972,
+          "blob": "26cab81edb09c047e9c55c430a2b1b6faa480784"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZCP/noe_ZUOZHUXZCP.json",
+          "bytes": 376611,
+          "blob": "746a1c25bbcfa198b30995b82304a30636d26446"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZbati/efeito_ZUOZHUXZbati.webp",
+          "bytes": 63452,
+          "blob": "7557429fb52ca224ca519dc92d0a8c0d5674d555"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZbati/noe_ZUOZHUXZbati.atlas",
+          "bytes": 7594,
+          "blob": "eb875ff749bfe2d90b5f550f2e813efa24c86d9e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZbati/noe_ZUOZHUXZbati.json",
+          "bytes": 203070,
+          "blob": "ff67d7e08b9cf393d157e677f77358df105ab37a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZji/efeito_ZUOZHUXZji.webp",
+          "bytes": 908254,
+          "blob": "842aae7942cdfcb63bcee9c22a84c7f025ea3686"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZji/efeito_ZUOZHUXZji_2.webp",
+          "bytes": 740870,
+          "blob": "854c73d8b6dcb0ed9990a9d2eeda520c4f368e13"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZji/efeito_ZUOZHUXZji_3.webp",
+          "bytes": 133974,
+          "blob": "df868941d7fc86f53f591fcc83078f0716604a2f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZji/noe_ZUOZHUXZji.atlas",
+          "bytes": 27096,
+          "blob": "e60155e2e0d027efece0050a74e78eddf3147c19"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_ZUOZHUXZji/noe_ZUOZHUXZji.json",
+          "bytes": 402083,
+          "blob": "ba080bd655ce1de5321d7dc5780d3e3fc08ae705"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_zbz_daog1/efeito_zbz_daog1.webp",
+          "bytes": 167570,
+          "blob": "b8e3ce3b1005f048cc165eb761a1de7247835e06"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_zbz_daog1/noe_zbz_daog1.atlas",
+          "bytes": 18805,
+          "blob": "0824505bde007534a8b9beca07bc251588c0ca65"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/particulas/noe_zbz_daog1/noe_zbz_daog1.json",
+          "bytes": 157501,
+          "blob": "f35d02ad22fc94b3100051f4fa9021bd90d75fcb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100306/videos/vdfno_ZUOZHU_xznh.mp4",
+          "bytes": 894136,
+          "blob": "e0dc26bd5c47746e96638f33c2bb22c85b50b879"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/animacoes_instrucoes.json",
+          "bytes": 60989,
+          "blob": "ec50fd0ece2d7aba688104197f60259f8f613e92"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/UniqueSkill.json",
+          "bytes": 10797,
+          "blob": "f8769e070d20aa8f2a21789a2bce75daf6a61433"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/UniqueSkill.png",
+          "bytes": 145194,
+          "blob": "d94753777c04b4906dd91397f5ba5053aaf0f50c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/attack.json",
+          "bytes": 16531,
+          "blob": "3f19fbb447181ee8a42a20f596aed1c906b2ef0e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/attack.png",
+          "bytes": 386719,
+          "blob": "7254b6ddf47d36e2dfb947345b1f79bdeeecd333"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/cast.json",
+          "bytes": 2548,
+          "blob": "61702855cd691823880e6e829c3eadcf6a3ddc08"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/cast.png",
+          "bytes": 66817,
+          "blob": "33adc8e45e96a374f6cce12900d11294723110a9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/charge.json",
+          "bytes": 3910,
+          "blob": "9403d222a157a4492e90dbdad9365f92fe511e16"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/charge.png",
+          "bytes": 56312,
+          "blob": "f0b1402d25aae7edf0008e918ada39fb887f3399"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/chase1.json",
+          "bytes": 15141,
+          "blob": "3c4fc81c807ab636e7a9d041e9292077425e5b16"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/chase1.png",
+          "bytes": 237809,
+          "blob": "d01fa1203408019e7139df662ad224b426b65956"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/die.json",
+          "bytes": 3602,
+          "blob": "47c2b1b7001f38808658490424d2625feaaf84ea"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/die.png",
+          "bytes": 107719,
+          "blob": "cb287f76d32c70e2da269520d0dc23018b5222fd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/dodge.json",
+          "bytes": 1713,
+          "blob": "c8405ab160edcea130b114d52cf4fa040bf4ad62"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/dodge.png",
+          "bytes": 50009,
+          "blob": "4c9e4374587029b5d17408fac541e36970e7175d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/fall.json",
+          "bytes": 5286,
+          "blob": "27c822dd9d71948ae1bb572c7f07527c4876c8d0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/fall.png",
+          "bytes": 61398,
+          "blob": "69bae0668b73677ced24e41ece95f11893d60b2f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/fly.json",
+          "bytes": 4713,
+          "blob": "ce5fb602baba54e88c8f03a1401dc86cc93922d1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/fly.png",
+          "bytes": 158390,
+          "blob": "232c441a0c0c087f6806fb977b9ef125f9670576"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/gatilho1.json",
+          "bytes": 12868,
+          "blob": "68607980e8dcc1dadf8d2dcd8cff6e271e9b30f2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/gatilho1.png",
+          "bytes": 456682,
+          "blob": "fc1775138a1d97a65b82981cc3477fdfcd7d5bd2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurt1.json",
+          "bytes": 2524,
+          "blob": "4d3ec46d58f92056b137683b2b4a557bf5293e70"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurt1.png",
+          "bytes": 65422,
+          "blob": "4552ed1113b2a802d983420d02bd81e834293f32"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurt2.json",
+          "bytes": 2524,
+          "blob": "68dbefb9ce15526ee1c297ac5cf0c9c2c0ef7ab1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurt2.png",
+          "bytes": 81287,
+          "blob": "67861ef47ceb7dfc2333d663eb04f719f890aefb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurtlong1.json",
+          "bytes": 5988,
+          "blob": "f6848c9ebde664da180438221349fb4a97bba8dd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurtlong1.png",
+          "bytes": 179657,
+          "blob": "cd4911613b709c7bd5852d7ff9d3e7d4fa847967"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurtlong2.json",
+          "bytes": 3431,
+          "blob": "6662a6403d46086d771a62e9c3ab7152f963bfa3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/hurtlong2.png",
+          "bytes": 79313,
+          "blob": "6cc1169a5d929a3f256b40b0239497acb07c5102"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/idle.json",
+          "bytes": 8439,
+          "blob": "2cce9bb6842fe9c561dbde27f9324ac9a9d1f7dd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/idle.png",
+          "bytes": 153148,
+          "blob": "8e52c67bd2c82a96d02b5d0b91b0545c695d2cad"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/out.json",
+          "bytes": 3425,
+          "blob": "32a704404162f19ee1da7c6c9de537b719a63597"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/out.png",
+          "bytes": 95095,
+          "blob": "3ca2cc05901a7cfd168cbb781cae53a158f58a43"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/run.json",
+          "bytes": 1691,
+          "blob": "c70f3238f424f73fbb83b92e59c7c374ce091627"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/run.png",
+          "bytes": 47438,
+          "blob": "1d56c237f4dd5bb3110a4cf2e89d7ca23e7f1a96"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/shunyi.json",
+          "bytes": 3909,
+          "blob": "2ec4a956efc37e10cbbd2cfc6ce81efc2291d491"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/shunyi.png",
+          "bytes": 53707,
+          "blob": "0462a60641b7c8d32aab5fd8667ad64e0e82f666"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/skill.json",
+          "bytes": 16416,
+          "blob": "01172af6e21a4bcbbcf7b49565eb2ed391456be1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/skill.png",
+          "bytes": 386719,
+          "blob": "7254b6ddf47d36e2dfb947345b1f79bdeeecd333"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/win.json",
+          "bytes": 4815,
+          "blob": "8e945bd2f5f57771b942a67a10acbcaba748e215"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/anims/win.png",
+          "bytes": 104741,
+          "blob": "5f528359e0981d6f02bcd51baf2ab67f1bf5e95b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/01_arte_completa_100311.png",
+          "bytes": 219635,
+          "blob": "ead778f38c9f4a8a6e835a291ff13720f5b13b8f"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/02_meio_corpo_100311.png",
+          "bytes": 75059,
+          "blob": "c4441ce0a8a43cc48a46990361c9aad7e96362af"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/03_retrato_medio_100311.png",
+          "bytes": 26625,
+          "blob": "3d7f149f33a0d2ef9fe447877ae3529b5c0abc8a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/04_vitrine_100311.png",
+          "bytes": 124933,
+          "blob": "de2733ef422fee37dc281d52cf6bbba6957e3782"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/05_recrutamento_100311.png",
+          "bytes": 42742,
+          "blob": "3e072121212ca2f03c3ea77f80e8c5fb578cf8f4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/06_palco_100311.png",
+          "bytes": 141109,
+          "blob": "ccb45cd9331c03b60d542af80bf6357df0f47802"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/07_album_100311.png",
+          "bytes": 96824,
+          "blob": "1080acdd573367362f3999855fc06a979f422c25"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/08_avatar_100311.png",
+          "bytes": 21871,
+          "blob": "65b21d19f9eeb9f87ac40bdd880028538ec48df0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/10_nome_pt_100311.png",
+          "bytes": 67021,
+          "blob": "19c7f6ef9b44ae585f51913246b1bf65ac47b73e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/11_nome_novo_100311.png",
+          "bytes": 27418,
+          "blob": "4c704c41e4fdb2c08c500fa5e6a87e18abbc0bbe"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/artes/12_nome_esoterica_100311.png",
+          "bytes": 30023,
+          "blob": "6a8dffc7f26531f6ca196c32c9867941caa983b4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/batalha_nos_1533_1.mp3",
+          "bytes": 65227,
+          "blob": "eb2c44f7b2a9e527bb3b776195facb9a775d6226"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/despertar_nos_1534_1.mp3",
+          "bytes": 37641,
+          "blob": "f048dbd23e8dd2fa63bce43035876835f167eedb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_114_1.mp3",
+          "bytes": 13818,
+          "blob": "f33bb68407cbaf301905b2fe8fae47e358a23f75"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_125_1.mp3",
+          "bytes": 40985,
+          "blob": "cdf58a10b6ec69f8653756516195cf4be6038128"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_126_3.mp3",
+          "bytes": 10056,
+          "blob": "ad2678be0f32a1fc66af6569ddd59dae5d5a56e4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_12_2.mp3",
+          "bytes": 19251,
+          "blob": "21ea88751dd6f8bb89c936e00ec93bdfc8dbca24"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_134_3.mp3",
+          "bytes": 17579,
+          "blob": "edbe32ad47454faaf10013ba0ff1cca4114640f4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_138_2.mp3",
+          "bytes": 39313,
+          "blob": "c47e231cdc7b0e22f2835382b835bd240d5714b5"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_139_1.mp3",
+          "bytes": 18833,
+          "blob": "0d59e8609805d0cc581ccdc86302bec2d8e85d80"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_151_2.mp3",
+          "bytes": 31790,
+          "blob": "98f81ddbe91cd1ecd05e7fbd4412d2569cbceec2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_170_1.mp3",
+          "bytes": 7130,
+          "blob": "23c62ccf54ec2093dca8444dff6f58bba6e7c730"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_172_3.mp3",
+          "bytes": 11310,
+          "blob": "838761e6acbb1eb22cee5c954d2be04d298d2bde"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_174_1.mp3",
+          "bytes": 19609,
+          "blob": "4bc6679e56421d3c11c557d42d14df9868dac457"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_236_2.mp3",
+          "bytes": 17166,
+          "blob": "3e2fdab90781a81145f7bbbd50843177c946b59c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_284_2.mp3",
+          "bytes": 3316,
+          "blob": "5854a90f583ac30b394920d90b200348272ea682"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_285_3.mp3",
+          "bytes": 4048,
+          "blob": "99cf2e939dd47d93ff9c19e44e985cc05f63ea5a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_286_2.mp3",
+          "bytes": 2768,
+          "blob": "2eaa63ab622ffb1683eaf40e9558c285eaa088e1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_287_1.mp3",
+          "bytes": 13332,
+          "blob": "e5e6c465f9edd41158e371f4d20fd93e9ed61450"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_288_2.mp3",
+          "bytes": 14586,
+          "blob": "948f69ddf9ba951bcf1d3d54e80b3dc71f9624d0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_664_1.mp3",
+          "bytes": 13465,
+          "blob": "84c7d4a27c2a07f7a2a6c263ba8b3341aeac594e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/nos_665_1.mp3",
+          "bytes": 19993,
+          "blob": "0c1ecada8fa9223d53422ddac03be0e5b030475b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/subir_estrela_nos_1534_1.mp3",
+          "bytes": 37641,
+          "blob": "f048dbd23e8dd2fa63bce43035876835f167eedb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/audio/transformacao_nos_1534_1.mp3",
+          "bytes": 37641,
+          "blob": "f048dbd23e8dd2fa63bce43035876835f167eedb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/character.json",
+          "bytes": 14973,
+          "blob": "dc852ca9092a0615107449b36b3bca0e13e9c5a4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/combate_e_habilidades.json",
+          "bytes": 5912,
+          "blob": "c12fe57a5a5b19ff4496beb5317a1332e155f8b2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/icones_skills/01_ataque_normal_Colisao_da_Flor_de_Cerejeira.png",
+          "bytes": 14497,
+          "blob": "005c785b6d61ddbe29a610e54ecf45ba31d01874"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/icones_skills/02_habilidade_Colisao_da_Flor_de_Cerejeira.png",
+          "bytes": 14497,
+          "blob": "005c785b6d61ddbe29a610e54ecf45ba31d01874"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/icones_skills/03_ultimate_Jutsu_de_Invocacao_Lesmas.png",
+          "bytes": 14877,
+          "blob": "c2ccb148648b702ca81f63f062f5ea0d13f97459"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/icones_skills/04_perseguicao_1_Queda_de_lesma.png",
+          "bytes": 12281,
+          "blob": "82ce1747548020ca76aab2560668163af40f8177"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/icones_skills/passiva_01_Selo_Reserva.png",
+          "bytes": 13213,
+          "blob": "eced8964654a9380f76c4a8c79e4ae84f6d07fec"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/icones_skills/passiva_02_Instinto_de_Combate.png",
+          "bytes": 12654,
+          "blob": "f9ab562b906e887a7e8741f51abea025500572e3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_SKRyhc/efeito_SKRyhc.webp",
+          "bytes": 615338,
+          "blob": "5f2d8d7b86031f17499fa0f1a68f1e9aa808953b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_SKRyhc/efeito_SKRyhc_2.webp",
+          "bytes": 574228,
+          "blob": "575c4af889266898cce0a602260a41f3ba21e338"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_SKRyhc/efeito_SKRyhc_3.webp",
+          "bytes": 175166,
+          "blob": "bed4ee8ae046bfc5364ad985cce6a80c28111bb8"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_SKRyhc/noe_SKRyhc.atlas",
+          "bytes": 22311,
+          "blob": "484270b66cd112ec0b6662e9dc7dc26ce5f8203e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_SKRyhc/noe_SKRyhc.json",
+          "bytes": 163893,
+          "blob": "2b4164572c2ae5f3657204683980f2090fb1042c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_TONGLINGSHOUxky/efeito_TONGLINGSHOUxky.webp",
+          "bytes": 198444,
+          "blob": "023623e547a43ad404cb69f20bfb1510344af542"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_TONGLINGSHOUxky/efeito_TONGLINGSHOUxky_2.webp",
+          "bytes": 145634,
+          "blob": "25e85ce1c016b60d48664253432142b135e098f9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_TONGLINGSHOUxky/noe_TONGLINGSHOUxky.atlas",
+          "bytes": 6767,
+          "blob": "61979da92aa496ad429e561be94a4f6ad12a788a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_TONGLINGSHOUxky/noe_TONGLINGSHOUxky.json",
+          "bytes": 189157,
+          "blob": "b64f6fb708fad7b2a1db0a2a5cd1e42e3233f730"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_TONGLINGSHOUzhtx/efeito_TONGLINGSHOUzhtx.webp",
+          "bytes": 117328,
+          "blob": "d927dea08d16b03cca538009f49d891e1462b57b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_TONGLINGSHOUzhtx/noe_TONGLINGSHOUzhtx.atlas",
+          "bytes": 7188,
+          "blob": "53881194e2fa870fe70ebf9dd81c405b754b5513"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_TONGLINGSHOUzhtx/noe_TONGLINGSHOUzhtx.json",
+          "bytes": 177125,
+          "blob": "430ebe0712280a28424e6b515c6421aadd0e20b2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_hphuifu/efeito_hphuifu.webp",
+          "bytes": 59926,
+          "blob": "33f1b64916dfd6d319f1063aec11e2da5bb9224e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_hphuifu/noe_hphuifu.atlas",
+          "bytes": 3663,
+          "blob": "055c19e6f20f65e5a98db05db83668be72d91f9a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_hphuifu/noe_hphuifu.json",
+          "bytes": 24282,
+          "blob": "0e81a7e3843ae936cb8eb0f24f95e0983eac0023"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_zhihuozaishen/efeito_zhihuozaishen.webp",
+          "bytes": 19800,
+          "blob": "0cafd2d83a27085bb38c9a70d695649fb94e75ff"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_zhihuozaishen/noe_zhihuozaishen.atlas",
+          "bytes": 812,
+          "blob": "ebeb8244a6e567ed0c61b200ac1647e2e8ff7856"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100311/particulas/noe_zhihuozaishen/noe_zhihuozaishen.json",
+          "bytes": 3543,
+          "blob": "d42baad8c3f0f58b4f23d78e4c05ac25442b817b"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/animacoes_instrucoes.json",
+          "bytes": 64183,
+          "blob": "a958fee4b666e7292ffc83a1f8b0b516d63f41a9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/UniqueSkill.json",
+          "bytes": 32183,
+          "blob": "47226e67cb7f1b7527746e24fc27fe2fc99c73c0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/UniqueSkill.png",
+          "bytes": 534253,
+          "blob": "988260509680f131cc27f01341a299d74351dd30"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/attack.json",
+          "bytes": 8001,
+          "blob": "4dfc198be1cffd5e4ed1b9f617a19410f6cb1466"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/attack.png",
+          "bytes": 341236,
+          "blob": "c63d746c6ec02499a3121e84f68c97dd8d19b6a0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/cast.json",
+          "bytes": 2818,
+          "blob": "e15014bdea50731a3dca0fe7ed31fdbc4720e6aa"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/cast.png",
+          "bytes": 61146,
+          "blob": "695dd1b030f6dc29a1ae31cddef045851332f746"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/charge.json",
+          "bytes": 3853,
+          "blob": "5cbdc66f97631ba9f13649df07f8b54a66d23e46"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/charge.png",
+          "bytes": 50201,
+          "blob": "479869fbbf56bb067e2cddf1f779343b50d7dd62"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/chase1.json",
+          "bytes": 14990,
+          "blob": "cfc3afe79034f435126a7f97bfa5c1f2a853a09e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/chase1.png",
+          "bytes": 267638,
+          "blob": "9bdf1726b7b056cc1b5e47ab5d3b97ebe286fea3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/die.json",
+          "bytes": 2264,
+          "blob": "a6617d300be7423c45e7b81114a9a2dff95201aa"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/die.png",
+          "bytes": 57965,
+          "blob": "0fc614971e3126fab9da85d0cfdd99b40a8a3cef"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/dodge.json",
+          "bytes": 1712,
+          "blob": "c1f47f7e33fbd0bc0a5bec11e9d737285cf666c4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/dodge.png",
+          "bytes": 33482,
+          "blob": "51d69f0fd1c863f86b40e5c6388a490373264484"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/fall.json",
+          "bytes": 5287,
+          "blob": "eba57f026845ffcb9b58626524a76bfe61880227"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/fall.png",
+          "bytes": 61923,
+          "blob": "ff1992b3067b0fd2730987527823ab54e9794918"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/fly.json",
+          "bytes": 4740,
+          "blob": "7a52b81cc1680d5afc15e45c08d3cc7bc75064d0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/fly.png",
+          "bytes": 154704,
+          "blob": "def48f842a45ab6ebfb3fdbcc6bfc45bd07e9e99"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurt1.json",
+          "bytes": 2563,
+          "blob": "518f835e36ef18b955cdaeb0b34631921f0fa6c3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurt1.png",
+          "bytes": 61985,
+          "blob": "bde137c4adba927d65bf0c2ffdaa3fe7ff36cdb0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurt2.json",
+          "bytes": 2564,
+          "blob": "c7969d776240c81f8f44f82ac50f823a7768f476"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurt2.png",
+          "bytes": 66696,
+          "blob": "7bc06f4d813ec6739093e8b4d1d3493e35b63e58"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurtlong1.json",
+          "bytes": 5988,
+          "blob": "381a48ed82f958911dcfac80ac44d2b9082ff5a5"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurtlong1.png",
+          "bytes": 161945,
+          "blob": "e368cb3ad633d406080ab3b657d7334e55cb42bf"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurtlong2.json",
+          "bytes": 3471,
+          "blob": "83152b3d73517224700068d932bb02d03f058edb"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/hurtlong2.png",
+          "bytes": 73435,
+          "blob": "dcda0c61a8bf7304b0dcfc78e5b8ace446b07a3e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/idle.json",
+          "bytes": 13036,
+          "blob": "f83b8972beda6e6d163c7792381b4530be8c0007"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/idle.png",
+          "bytes": 184866,
+          "blob": "46638eda053148a2232e9b50f6dda1ddec5989f2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/out.json",
+          "bytes": 4495,
+          "blob": "dba8583b89dab86dc7eeb9b01ac2abcea4b2f1c9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/out.png",
+          "bytes": 101868,
+          "blob": "8513232ea4b05fbd60ab61507e83cfe4bba9cecf"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/run.json",
+          "bytes": 1686,
+          "blob": "73f9af8ee36bfb83f43c7ca983d6553afa32d18a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/run.png",
+          "bytes": 49905,
+          "blob": "b46c5883cb1f6bf17f281db38694f1ac614b1966"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/shunyi.json",
+          "bytes": 3882,
+          "blob": "d554137d9a11559dcb91795a8b6dbb76c484dc21"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/shunyi.png",
+          "bytes": 49341,
+          "blob": "bb7877ad668d874252f12aaeff6a804c46a0b293"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/skill.json",
+          "bytes": 15559,
+          "blob": "0c8fec2354ddf7c60e3f3fe2e7ba591fb1547ec1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/skill.png",
+          "bytes": 466835,
+          "blob": "1e1aaa2b47ee270020c9ec73633044c23e57032e"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/win.json",
+          "bytes": 4831,
+          "blob": "6622bc6eb9409e6d326fd5a928cfa2d68dbd2cb1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/anims/win.png",
+          "bytes": 138441,
+          "blob": "cbd6ba9d9b3c430f8fee532633a61a342e3d01ac"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/01_arte_completa_100361.png",
+          "bytes": 213661,
+          "blob": "86a692a67e85761311b11ed549e8ba0a6ae08d05"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/02_meio_corpo_100361.png",
+          "bytes": 83806,
+          "blob": "44510e8bb1f3acdd4050e498a209f0149a30d360"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/03_retrato_medio_100361.png",
+          "bytes": 31926,
+          "blob": "8ebf1b9c9fe926fe6ac34756d845aabfb2dbf7b6"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/04_vitrine_100361.png",
+          "bytes": 93092,
+          "blob": "e4254e9b5d462455b71aec629dfd201420157837"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/05_recrutamento_100361.png",
+          "bytes": 43206,
+          "blob": "595f59d0ac21b09e4126cba3407ff4235e4da7a2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/06_palco_100361.png",
+          "bytes": 134076,
+          "blob": "3df342f19eb9b1ecd2987f81a61bfd7d01217ed5"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/07_album_100361.png",
+          "bytes": 93320,
+          "blob": "ad997e15d63dfac68832081c1fe6678329136a23"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/08_avatar_100361.png",
+          "bytes": 20387,
+          "blob": "b9ad6ef19072295c005098fd635b939dd28d3818"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/10_nome_pt_100361.png",
+          "bytes": 68157,
+          "blob": "5d0b5388c0c0ddf87fd3542e42f3931692486a1a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/11_nome_novo_100361.png",
+          "bytes": 27719,
+          "blob": "357ab21a41bb26df5ffa8d948457dc0b9ba89873"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/artes/12_nome_esoterica_100361.png",
+          "bytes": 28376,
+          "blob": "afe14873632da1cec7fa9c5a04d456dee1488d9c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/batalha_nos_1296_1.mp3",
+          "bytes": 13400,
+          "blob": "f2998d7e4d521a9d56bf9af4f234bf4f5837c8df"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/batalha_nos_1296_2.mp3",
+          "bytes": 19669,
+          "blob": "a2d4543508447cb71c7cd77dbf60956ca342d456"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/batalha_nos_1296_3.mp3",
+          "bytes": 12146,
+          "blob": "0b8137d3993097e7ae916390167ba8b92022bdef"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/despertar_nos_1299_1.mp3",
+          "bytes": 19251,
+          "blob": "b06bc021ba1977861c6ffd4c5ae7a1b8664079bd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/despertar_nos_1299_2.mp3",
+          "bytes": 15072,
+          "blob": "8d6b3a3422f1059dac2d3ed45f66fa491959d9ca"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/despertar_nos_1299_3.mp3",
+          "bytes": 13400,
+          "blob": "25c505f07f18f0b62d52e007e5038ea4b795ea79"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/morte_nos_304_1.mp3",
+          "bytes": 21913,
+          "blob": "b1543c8aa84e0aea9de08421682755610c11a4ba"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_10_2.mp3",
+          "bytes": 5458,
+          "blob": "719a376d3521c5dcacfc4e4549a1b810be449999"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_114_1.mp3",
+          "bytes": 13818,
+          "blob": "f33bb68407cbaf301905b2fe8fae47e358a23f75"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_11_3.mp3",
+          "bytes": 12146,
+          "blob": "225a3aa4c478191fc7691b0c69ce0dc34d411c64"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_125_1.mp3",
+          "bytes": 40985,
+          "blob": "cdf58a10b6ec69f8653756516195cf4be6038128"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_134_3.mp3",
+          "bytes": 17579,
+          "blob": "edbe32ad47454faaf10013ba0ff1cca4114640f4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_136_3.mp3",
+          "bytes": 12982,
+          "blob": "7201fc02c79fbc1cf60962e9447a65aa767dd343"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_138_2.mp3",
+          "bytes": 39313,
+          "blob": "c47e231cdc7b0e22f2835382b835bd240d5714b5"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_149_1.mp3",
+          "bytes": 26356,
+          "blob": "d5a5bb57a992803afe603b2776b0992626215afd"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_151_2.mp3",
+          "bytes": 31790,
+          "blob": "98f81ddbe91cd1ecd05e7fbd4412d2569cbceec2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_170_1.mp3",
+          "bytes": 7130,
+          "blob": "23c62ccf54ec2093dca8444dff6f58bba6e7c730"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_172_3.mp3",
+          "bytes": 11310,
+          "blob": "838761e6acbb1eb22cee5c954d2be04d298d2bde"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_174_1.mp3",
+          "bytes": 19609,
+          "blob": "4bc6679e56421d3c11c557d42d14df9868dac457"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_201_1.mp3",
+          "bytes": 18415,
+          "blob": "ab685dde90f64aed44ae61a5404403f59013c8e3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_202_1.mp3",
+          "bytes": 12564,
+          "blob": "08c3988723421090fb8be4a482af20a5dc62ab88"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_236_2.mp3",
+          "bytes": 17166,
+          "blob": "3e2fdab90781a81145f7bbbd50843177c946b59c"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_284_2.mp3",
+          "bytes": 3316,
+          "blob": "5854a90f583ac30b394920d90b200348272ea682"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_285_3.mp3",
+          "bytes": 4048,
+          "blob": "99cf2e939dd47d93ff9c19e44e985cc05f63ea5a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_286_2.mp3",
+          "bytes": 2768,
+          "blob": "2eaa63ab622ffb1683eaf40e9558c285eaa088e1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_287_1.mp3",
+          "bytes": 13332,
+          "blob": "e5e6c465f9edd41158e371f4d20fd93e9ed61450"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_288_2.mp3",
+          "bytes": 14586,
+          "blob": "948f69ddf9ba951bcf1d3d54e80b3dc71f9624d0"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_300_1.mp3",
+          "bytes": 11929,
+          "blob": "0abc32ed2c8295761e6e136667ffc472a1fd6b4d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_305_1.mp3",
+          "bytes": 17689,
+          "blob": "4f28763b3d030fced191d3f28325ab8ce7a250c2"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_306_1.mp3",
+          "bytes": 20761,
+          "blob": "e769631f6f6a0406c54ce3c9ae575299782efb3a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_828_1.mp3",
+          "bytes": 35969,
+          "blob": "3b0b1c8f656bdd5817cc71d4c6d3500b1df48d55"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_92_3.mp3",
+          "bytes": 5184,
+          "blob": "47c4ffb8228e1526a5fd3936afd08b06565179ad"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_93_2.mp3",
+          "bytes": 5601,
+          "blob": "f82acd2ac66d2ef252090cad79db0235ca255b05"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_977_3.mp3",
+          "bytes": 10009,
+          "blob": "c41e1ebf4a77db5e7cb86a556c9ed56f5effb8a1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/nos_978_1.mp3",
+          "bytes": 7089,
+          "blob": "56d59d4c6464ad76c4602da894cbed72b96e9186"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/subir_estrela_nos_1305_1.mp3",
+          "bytes": 33462,
+          "blob": "57407cf4eefb85ab7edf01478a2793243b972042"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/transformacao_nos_1296_1.mp3",
+          "bytes": 13400,
+          "blob": "f2998d7e4d521a9d56bf9af4f234bf4f5837c8df"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/transformacao_nos_1296_2.mp3",
+          "bytes": 19669,
+          "blob": "a2d4543508447cb71c7cd77dbf60956ca342d456"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/audio/transformacao_nos_1296_3.mp3",
+          "bytes": 12146,
+          "blob": "0b8137d3993097e7ae916390167ba8b92022bdef"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/character.json",
+          "bytes": 16753,
+          "blob": "c7f890fd23f59ec5a23cd4613eb01dcff73930d4"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/combate_e_habilidades.json",
+          "bytes": 5961,
+          "blob": "00c05858e393eae35dacdd505e938977f685ec3a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/icones_skills/01_ataque_normal_Ataque_Normal.png",
+          "bytes": 13871,
+          "blob": "733b0f09c09be7532e7fadb75eb5a3d6d619da81"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/icones_skills/02_habilidade_Ataque_Normal.png",
+          "bytes": 13871,
+          "blob": "733b0f09c09be7532e7fadb75eb5a3d6d619da81"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/icones_skills/03_ultimate_Kamui.png",
+          "bytes": 12842,
+          "blob": "ee56f0edeb881f3703e5a75a9aa1a7cdf8d0b459"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/icones_skills/04_perseguicao_1_Espada_Relampago_Tremor_do_Relampago_Gemeo.png",
+          "bytes": 12470,
+          "blob": "e4c9d34d6a18f33be6f79bac638f60c591d92262"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/icones_skills/passiva_01_Espada_Ninja.png",
+          "bytes": 12333,
+          "blob": "e5cbc54c2be90a8049ea4b0d6a29875a37738073"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/icones_skills/passiva_02_Genjutsu_Reflexao.png",
+          "bytes": 14379,
+          "blob": "d29c697bf6e9df68df64d7143f5e96f3a32ae0b3"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKS_leiqie/efeito_KKS_leiqie.webp",
+          "bytes": 766578,
+          "blob": "cc9da64574aed36a04a18c5e29dceb27eafe5044"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKS_leiqie/efeito_KKS_leiqie_2.webp",
+          "bytes": 879906,
+          "blob": "3b678b54e418def125555935d0bebccbb56883d1"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKS_leiqie/efeito_KKS_leiqie_3.webp",
+          "bytes": 1262244,
+          "blob": "5348c7c069a6bdd6044025c98972e54914bd335d"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKS_leiqie/efeito_KKS_leiqie_4.webp",
+          "bytes": 183452,
+          "blob": "ebe534dcff82834e4f884824df00bb1680ceac98"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKS_leiqie/noe_KKS_leiqie.atlas",
+          "bytes": 77768,
+          "blob": "fb0e7c0a91c409da0a6b73c25904118745e11594"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKS_leiqie/noe_KKS_leiqie.json",
+          "bytes": 479622,
+          "blob": "da446f7b780add5fa3bd6054be1bcf3ecb92b243"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKXsw/efeito_KKXsw.webp",
+          "bytes": 326938,
+          "blob": "4e1fd05a1c5b685a993c025ff29079c6f3cf8184"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKXsw/efeito_KKXsw_2.webp",
+          "bytes": 682364,
+          "blob": "986927a69235c385d7088a86169650a4c1d24b58"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKXsw/efeito_KKXsw_3.webp",
+          "bytes": 797400,
+          "blob": "fdc146029aa6aaa2ac4c40c54391f7346b1aa105"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKXsw/efeito_KKXsw_4.webp",
+          "bytes": 855908,
+          "blob": "34be9fbfb05fe69b9838be2a0906104638edac7a"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKXsw/noe_KKXsw.atlas",
+          "bytes": 89494,
+          "blob": "e63895afd9985ab4302f8dc60252bf543716c4e9"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_KKXsw/noe_KKXsw.json",
+          "bytes": 1071307,
+          "blob": "a55d142818f8cc864a0472fd5e0544f1c9d9d3ee"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_ZBZdaoguang/efeito_ZBZdaoguang.webp",
+          "bytes": 99254,
+          "blob": "935c4068c78020de4b646925d9314a6d496d90ec"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_ZBZdaoguang/noe_ZBZdaoguang.atlas",
+          "bytes": 3560,
+          "blob": "76e6bdfee6d7013efcc6982ce0db84dde81045af"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_ZBZdaoguang/noe_ZBZdaoguang.json",
+          "bytes": 15593,
+          "blob": "638ec67b8825e1d9550bca05b8957d9c63b37822"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_zbz_daog1/efeito_zbz_daog1.webp",
+          "bytes": 167570,
+          "blob": "b8e3ce3b1005f048cc165eb761a1de7247835e06"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_zbz_daog1/noe_zbz_daog1.atlas",
+          "bytes": 18805,
+          "blob": "0824505bde007534a8b9beca07bc251588c0ca65"
+        },
+        {
+          "path": "app/src/main/assets/assets/characters/vdfno_100361/particulas/noe_zbz_daog1/noe_zbz_daog1.json",
+          "bytes": 157501,
+          "blob": "f35d02ad22fc94b3100051f4fa9021bd90d75fcb"
+        }
+      ]
+    },
+    {
+      "key": "studio",
+      "repo": "WanderlanLima/Naruto-Shinobi-Studio-Sprite",
+      "sha": "6151a2b2d66698fb1dbe0228ea4cdc4b844df22a",
+      "files": [
+        {
+          "path": "public/data/backup-manifest.zip",
+          "bytes": 221843,
+          "blob": "8d63fb4d715b824a4274a1c42e2a3a982ca3d867"
+        },
+        {
+          "path": "public/data/effects-atlas-pack.zip",
+          "bytes": 7025478,
+          "blob": "89e848d2f59df92936a4901d04d99d1e2650cdc2"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-0.zip",
+          "bytes": 3652658,
+          "blob": "aa4fcaefbfadaff46c936a3cc6e1e8f6d64db69e"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-1.zip",
+          "bytes": 4307610,
+          "blob": "999197ce355837f01cbc452953c99ca3565c931c"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-2.zip",
+          "bytes": 3693939,
+          "blob": "da23d9cdbb45d0b128ca2e31420fbe8e436a1cd2"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-3.zip",
+          "bytes": 4209420,
+          "blob": "f36c432ee3b9555407a5e99abe7bdf988490abc2"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-4.zip",
+          "bytes": 4491244,
+          "blob": "29dcf3282ff8ab81b50c939ac750b08ed0694a37"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-5.zip",
+          "bytes": 3906480,
+          "blob": "3075546ef1abbd7848e0e65cfb69b5561e1cf88c"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-6.zip",
+          "bytes": 5086924,
+          "blob": "ca91da252f092d0a7d911c127fda3d0026abab4a"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-7.zip",
+          "bytes": 4566870,
+          "blob": "64747258911af467705598d183d3e34298301632"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-8.zip",
+          "bytes": 4605063,
+          "blob": "c233be1e72f079e7a41414f144e25b623b3fd32d"
+        },
+        {
+          "path": "public/data/effects-skeletons/eff-9.zip",
+          "bytes": 4342248,
+          "blob": "77d54e118b82a68d5e5d677bfc94034d5849ce66"
+        },
+        {
+          "path": "public/data/naruto-atlas-pack.zip",
+          "bytes": 3069901,
+          "blob": "0b59fc611c0229d71ff307fe51854b410c3bb3a7"
+        },
+        {
+          "path": "public/data/naruto-catalog.json",
+          "bytes": 746836,
+          "blob": "0be4cc1530b002136269dbeaef23a0d2a91523a2"
+        },
+        {
+          "path": "public/data/ninja-skills-pack.zip",
+          "bytes": 324349,
+          "blob": "c3c5defdeb9c6c1e42cb1648266ce46c19175ec3"
+        },
+        {
+          "path": "public/data/skeletons/skel-0.zip",
+          "bytes": 3225555,
+          "blob": "20d1153773aa90b27dbaf522e15b83265351f68e"
+        },
+        {
+          "path": "public/data/skeletons/skel-1.zip",
+          "bytes": 3166242,
+          "blob": "cda33da5e1708fe1c6db771bef951d4927cbcaa6"
+        },
+        {
+          "path": "public/data/skeletons/skel-2.zip",
+          "bytes": 2875748,
+          "blob": "c179cb2ce133d9b97859a74be8d70af5a2cd08a6"
+        },
+        {
+          "path": "public/data/skeletons/skel-3.zip",
+          "bytes": 782347,
+          "blob": "e3b4daae6088275b6c0dc24a9c8180cc8ed8a6bd"
+        },
+        {
+          "path": "public/data/skeletons/skel-4.zip",
+          "bytes": 751903,
+          "blob": "24d277bbfe6b0b800f0af572f19ee4428abb9be2"
+        },
+        {
+          "path": "public/data/skeletons/skel-5.zip",
+          "bytes": 711266,
+          "blob": "b20f3f3a4fd6cebded4df0a3942cd442571c712e"
+        },
+        {
+          "path": "public/data/skeletons/skel-6.zip",
+          "bytes": 779308,
+          "blob": "864b0494f2f2557c7029b826e6849352d433ea4e"
+        },
+        {
+          "path": "public/data/skeletons/skel-7.zip",
+          "bytes": 804148,
+          "blob": "feb23a920712c54fe97c8a6d55a09713475b767d"
+        },
+        {
+          "path": "public/data/skeletons/skel-8.zip",
+          "bytes": 855437,
+          "blob": "ed6c7f7cb75ad78e3177da6e5ef400c9f2c3c642"
+        },
+        {
+          "path": "public/data/skeletons/skel-9.zip",
+          "bytes": 4168946,
+          "blob": "bc7a8de072d0a8b65f63fb101d8eee4b8d59cf78"
+        }
+      ]
+    },
+    {
+      "key": "vault",
+      "repo": "WanderlanLima/SHINOBI-SPRITE-DOWNLOAD",
+      "sha": "f9b20b078ea162daa86206ffadb0f9e3c01f5069",
+      "files": [
+        {
+          "path": "public/data/studio-snapshot.json",
+          "bytes": 252845,
+          "blob": "1ae7dd235678d2c040eb0159c60607670982528b"
+        }
+      ]
+    }
+  ]
+}

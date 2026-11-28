@@ -1,0 +1,42 @@
+name: R14 Shinobi full pinned library acquisition
+on:
+  push:
+    branches: [art/r14-shinobi-library]
+    paths:
+      - 'art/external/SHINOBI_R14_SOURCES.json'
+      - 'art/external/shinobi_r14.py'
+      - '.github/workflows/shinobi-r14.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download exact original source blobs and extract native PNG frames
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 art/external/shinobi_r14.py --out "$RUNNER_TEMP/shinobi-r14"
+      - name: Upload numeric and mapping evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-R14-EVIDENCE
+          path: |
+            ${{ runner.temp }}/shinobi-r14/R14_REPORT.json
+            ${{ runner.temp }}/shinobi-r14/DOWNLOAD_LEDGER.json
+            ${{ runner.temp }}/shinobi-r14/library/*.json
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Preserve downloadable local source and game import library
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NARU-R14-SHINOBI-SOURCE-LIBRARY
+          path: |
+            ${{ runner.temp }}/shinobi-r14/source/
+            ${{ runner.temp }}/shinobi-r14/library/
+          retention-days: 14
+          if-no-files-found: warn
