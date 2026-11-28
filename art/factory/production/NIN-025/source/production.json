@@ -4,7 +4,7 @@
     "name": "Temari (thiếu niên)",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-025"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-025",
   "target_source_render_count": 7,
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-025.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Teen Temari: blonde hair with four ponytail/bun clusters; Sand forehead protector; green eyes; purple outfit and dark mesh; giant folded fan strapped behind. Screened at 96x112 and locked for atlas production; owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2174/Temari",
+      "canon_reference_sha256": "e3985cceff6c433743ea9d79c2cc1d2de41c5fcda49cc54d518bbc2b754ccb21",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "00ce90769473d3c48ee57be749ee7f3731d569134bde5a6ea8cd69b7835dfa61",
+      "size_bytes": 1521803,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:37.141989+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2174/Temari",
+      "canon_reference_sha256": "e3985cceff6c433743ea9d79c2cc1d2de41c5fcda49cc54d518bbc2b754ccb21",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "d1e8f987150751e06544b62d357d9c2742c3bc4b894b3b3ea0ecd12dcc7706bd",
+      "size_bytes": 1229125,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:37.141989+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2174/Temari",
+      "canon_reference_sha256": "e3985cceff6c433743ea9d79c2cc1d2de41c5fcda49cc54d518bbc2b754ccb21",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "77c4d96a2797be343b0e9face65801d1f673d35c4114b76d4537aa89d67f98d3",
+      "size_bytes": 1510638,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:37.141989+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2174/Temari",
+      "canon_reference_sha256": "e3985cceff6c433743ea9d79c2cc1d2de41c5fcda49cc54d518bbc2b754ccb21",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "4539c94ce4a193ebe8ffa663af05faa509b2896ddd2a74ba00ac2ebc6e553a26",
+      "size_bytes": 1296371,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:37.141989+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2174/Temari",
+      "canon_reference_sha256": "e3985cceff6c433743ea9d79c2cc1d2de41c5fcda49cc54d518bbc2b754ccb21",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "c0111561f7f8f8cf8978a008b6d94d4c69d3731f52d9239b02dbd690a72c73c2",
+      "size_bytes": 1176908,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:37.141989+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2174/Temari",
+      "canon_reference_sha256": "e3985cceff6c433743ea9d79c2cc1d2de41c5fcda49cc54d518bbc2b754ccb21",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "773e27314ba90f3c63e8cfe998aa3945ec821555817d98a5a5835d43d414c89e",
+      "size_bytes": 960395,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:37.141989+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2174/Temari",
+      "canon_reference_sha256": "e3985cceff6c433743ea9d79c2cc1d2de41c5fcda49cc54d518bbc2b754ccb21",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-025.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "bba074fde14dfb0e797024c0ca2e9effd72a8647b4eeb109449e36de8eab3ed6",
+      "size_bytes": 1138028,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:37.141989+00:00"
+    }
   }
 }

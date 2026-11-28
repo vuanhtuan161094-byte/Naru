@@ -1,1 +1,2 @@
-Hiruzen Sarutobi — Naruto. Use the attached database roster sprite as the locked visual identity reference.
+Elderly Hiruzen: aged wrinkled face; gray hair, white mustache/beard; Hokage hat with red kanji; white mantle, dark flak vest.
+Use direct canon reference for identity and the database sprite for roster age/form and outfit. Use Shikamaru only for art style.

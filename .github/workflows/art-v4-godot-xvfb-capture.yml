@@ -103,7 +103,7 @@ jobs:
           set -euo pipefail
           export LIBGL_ALWAYS_SOFTWARE=1
           export GALLIUM_DRIVER=llvmpipe
-          timeout 240 xvfb-run -a "$GODOT" --editor --path . --import 2>&1 | tee art-v4-captures/import.log
+          timeout 240 xvfb-run -a "$GODOT" --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --editor --path . --import 2>&1 | tee art-v4-captures/import.log
           ! grep -E 'Parse Error|SCRIPT ERROR|ERROR:' art-v4-captures/import.log
 
       - name: Capture six-versus-six native battle batches
@@ -129,7 +129,7 @@ jobs:
             GROUP_CSV=$(IFS=,; echo "${GROUP[*]}")
             export GODOT DISPLAY_CAPTURE_IDS="$GROUP_CSV" DISPLAY_CAPTURE_DIR="art-v4-captures/$BATCH_NAME"
             xvfb-run -a bash -euo pipefail -c '
-              timeout 90 "$GODOT" --path . --windowed --resolution 1280x720 --script res://tools/capture_art_v4_batch.gd -- --ids="$DISPLAY_CAPTURE_IDS" > "$DISPLAY_CAPTURE_DIR/godot.log" 2>&1 &
+              timeout 90 "$GODOT" --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --path . --windowed --resolution 1280x720 --script res://tools/capture_art_v4_batch.gd -- --ids="$DISPLAY_CAPTURE_IDS" > "$DISPLAY_CAPTURE_DIR/godot.log" 2>&1 &
               GAME_PID=$!
               cleanup() { kill "$GAME_PID" 2>/dev/null || true; }
               trap cleanup EXIT

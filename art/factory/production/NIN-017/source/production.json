@@ -4,7 +4,7 @@
     "name": "Asuma Sarutobi",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-017"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-017",
   "target_source_render_count": 7,
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-017.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Adult Asuma: sturdy athletic build; spiky dark brown hair; short beard and mustache; three cheek marks per side; Leaf headband; red scarf; olive Konoha flak jacket; wrist trench knives. Screened at 96x112 and locked for atlas production; owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+      "canon_reference_sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "644de70f5355bbb8d5fc84097f8e96e6b5c16b114f7c5af82b75f0e2665389e5",
+      "size_bytes": 1488158,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:27.431740+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+      "canon_reference_sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "2ea37d45ddc254cf39bab36af100a85692a37717d61652c672699118c777dda3",
+      "size_bytes": 1192259,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:27.431740+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+      "canon_reference_sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "4d71a1ac451c59b51930ba5d3d4a88ac8473fa10851bbadd83c6f2f6605dfe01",
+      "size_bytes": 1438109,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:27.431740+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+      "canon_reference_sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "487d7d9cc99c7e91bc5332f91e3bd17e19c915d8049f3d610e100a279e553b79",
+      "size_bytes": 1164932,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:27.431740+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+      "canon_reference_sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "573d1b2897623268396eda24cd1e9af05e4b2786dd398de51ac7a94c00511b89",
+      "size_bytes": 1167622,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:27.431740+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+      "canon_reference_sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2120,
+        742
+      ],
+      "sha256": "2b4c8a962d6fc8305fd0d4dd5addb98f5a641effe36be5ab3d0b99fc6a2dadca",
+      "size_bytes": 967288,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:27.431740+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4775/Asuma_Sarutobi",
+      "canon_reference_sha256": "3d6459e19380f5ae2aa29ab9cc346b43cbc1f207ab7937b88bb116322be019ee",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-017.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "ccd36fb568157c98e3ec427e2039682a076ce3bc24ba746b48457e8cc4cbf8b0",
+      "size_bytes": 1150214,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:27.431740+00:00"
+    }
   }
 }

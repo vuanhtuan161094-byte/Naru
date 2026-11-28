@@ -1,0 +1,167 @@
+{
+  "source_sha256": "ccd36fb568157c98e3ec427e2039682a076ce3bc24ba746b48457e8cc4cbf8b0",
+  "atlas_size": [
+    1774,
+    887
+  ],
+  "grid": [
+    2,
+    4
+  ],
+  "alpha_threshold": 32,
+  "extraction": "row_alpha_runs_variable_width",
+  "cells": [
+    {
+      "direction": "se",
+      "frame": 0,
+      "cell_rect": [
+        79,
+        0,
+        405,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        2,
+        12,
+        323,
+        424
+      ],
+      "source_margin_px": 2,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "se",
+      "frame": 1,
+      "cell_rect": [
+        489,
+        0,
+        778,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        2,
+        55,
+        286,
+        426
+      ],
+      "source_margin_px": 2,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "se",
+      "frame": 2,
+      "cell_rect": [
+        815,
+        0,
+        1171,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        161,
+        353,
+        432
+      ],
+      "source_margin_px": 3,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "se",
+      "frame": 3,
+      "cell_rect": [
+        1221,
+        0,
+        1767,
+        444
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        266,
+        543,
+        428
+      ],
+      "source_margin_px": 3,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 0,
+      "cell_rect": [
+        23,
+        444,
+        327,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        14,
+        301,
+        414
+      ],
+      "source_margin_px": 3,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 1,
+      "cell_rect": [
+        386,
+        444,
+        706,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        65,
+        317,
+        409
+      ],
+      "source_margin_px": 3,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 2,
+      "cell_rect": [
+        775,
+        444,
+        1127,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        158,
+        349,
+        425
+      ],
+      "source_margin_px": 3,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    },
+    {
+      "direction": "sw",
+      "frame": 3,
+      "cell_rect": [
+        1186,
+        444,
+        1761,
+        887
+      ],
+      "alpha_bounds_in_cell": [
+        3,
+        255,
+        572,
+        414
+      ],
+      "source_margin_px": 3,
+      "edge_contact": false,
+      "extraction": "row_alpha_runs_variable_width"
+    }
+  ]
+}

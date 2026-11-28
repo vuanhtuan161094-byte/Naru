@@ -1,0 +1,632 @@
+{
+  "schema": 1,
+  "character_id": "NIN-015",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Tenten (thiếu niên)",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+        "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "e45785c0e20316a6d26992210fe88b8273ae520b370042dcd9aa3e0dcfef66e2",
+        "size_bytes": 1270519,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+        "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "76c7e19fdfa4836760478be4e3863f551764eb7c11e74a566f9230e07059a0cb",
+        "size_bytes": 1146712,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+        "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "410db5fa38087bdf64402a5e1ec648ef9fe5a5dcf4ad47ddfdd87fc41e8efc9f",
+        "size_bytes": 1213022,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+        "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "cd33a11a1ce4678c14b6e64a7b3cbe96e5bd399052a1a8ca0a3ada3167c5ef46",
+        "size_bytes": 1190217,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+        "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "862ff78dca404360d2ba42ed1b0272097fb4c6c0596b36a17bd8d4e9c571ee5f",
+        "size_bytes": 1128994,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+        "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "ddca3f7af6323e1d66dab7f028aca1d229d37b7a9ce01e86301d03afe332c90b",
+        "size_bytes": 1072316,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+        "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "7796243edc16b15e33b0e7a3b6d7a9cdfc1bd5f52efd6566d5da79039ebc2f3c",
+        "size_bytes": 1073628,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "e45785c0e20316a6d26992210fe88b8273ae520b370042dcd9aa3e0dcfef66e2",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "da0a1095a1873c05720a0564eeef7b388b2854399c0abd01ac33b52d756e5844",
+        "bounds": [
+          291,
+          197,
+          616,
+          947
+        ],
+        "height": 750
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "bfff572bf04e65e6100d8dd9962d873078862d52b2c660a4407d92699c0a561d",
+        "bounds": [
+          144,
+          197,
+          471,
+          947
+        ],
+        "height": 750
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "62952897e36183d445fc5d7cd3ff0bff1b3ee510d25bec402d0684e2d8591011"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/3710/Tenten",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/16/110946.jpg",
+      "sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "cd33a11a1ce4678c14b6e64a7b3cbe96e5bd399052a1a8ca0a3ada3167c5ef46",
+      "size_bytes": 1190217
+    },
+    "cast_atlas.png": {
+      "sha256": "862ff78dca404360d2ba42ed1b0272097fb4c6c0596b36a17bd8d4e9c571ee5f",
+      "size_bytes": 1128994
+    },
+    "fall_atlas.png": {
+      "sha256": "7796243edc16b15e33b0e7a3b6d7a9cdfc1bd5f52efd6566d5da79039ebc2f3c",
+      "size_bytes": 1073628
+    },
+    "hit_atlas.png": {
+      "sha256": "ddca3f7af6323e1d66dab7f028aca1d229d37b7a9ce01e86301d03afe332c90b",
+      "size_bytes": 1072316
+    },
+    "idle_atlas.png": {
+      "sha256": "76c7e19fdfa4836760478be4e3863f551764eb7c11e74a566f9230e07059a0cb",
+      "size_bytes": 1146712
+    },
+    "move_atlas.png": {
+      "sha256": "410db5fa38087bdf64402a5e1ec648ef9fe5a5dcf4ad47ddfdd87fc41e8efc9f",
+      "size_bytes": 1213022
+    },
+    "model.png": {
+      "sha256": "e45785c0e20316a6d26992210fe88b8273ae520b370042dcd9aa3e0dcfef66e2",
+      "size_bytes": 1270519
+    },
+    "identity_reference.png": {
+      "sha256": "62952897e36183d445fc5d7cd3ff0bff1b3ee510d25bec402d0684e2d8591011",
+      "size_bytes": 23954
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-015.png": "52f192f34fc26304d23f6993aa26b2d1d63fe165387e0bf911147d0e1008f5d6",
+    "animation/NIN-015/idle_se.png": "c8018dc860c288308faaedb6060e1731474e71411b2a0713cdd971dde247fdf4",
+    "animation/NIN-015/idle_sw.png": "3e1571e13ace8375ef82e0d501a3c6633711bb28db771b8a2ab5e0ec8a45a3d2",
+    "animation/NIN-015/move_se.png": "d25903907725b1a062489022a7e85dd997788adac5b42606eeb27b3fd1b27ec0",
+    "animation/NIN-015/move_sw.png": "d8f7dd0c13330c502d97cbc0f49252442e175fc2a7a43b80c14b8903fc2d66d7",
+    "animation/NIN-015/attack_se.png": "86fb570e249843a075c03dc06a39183af488a5bc841cb1cd7335d70defa2fdc7",
+    "animation/NIN-015/attack_sw.png": "2e239fd0f11a06fce2443c0f154d06ec1dda1b1dc6aa202d05fc49395c850718",
+    "animation/NIN-015/cast_se.png": "f3ccdc8fc8800316420c5f78ec32b364d886b89b66f06f21d9b4194b04c66a57",
+    "animation/NIN-015/cast_sw.png": "94502910d4d1302c84289a4a5b564286deed684e7c6e6ab08b3ee992440edc7f",
+    "animation/NIN-015/hit_se.png": "dffab3a0fa473268fc6dd5608ed1a55d517faa5e047a13e40e41c72b7c199f3a",
+    "animation/NIN-015/hit_sw.png": "3e2d96040acb48cf2fdc1a429c99fd833874526c2b0a7f382d770d74fac5bee1",
+    "animation/NIN-015/fall_se.png": "2f97a626282c5732a24eb2f1214600c098ce9153647a9cfcff27a5bf6ebf9b95",
+    "animation/NIN-015/fall_sw.png": "c91c8e49b3db946f60de5956ce7f0509bb8718f1aacfffa1252fe4b9085369ba"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.277778,
+      "source_heights": [
+        324,
+        326,
+        335,
+        338,
+        326,
+        322
+      ],
+      "source_widths": [
+        173,
+        169,
+        165,
+        162,
+        165,
+        172
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.279503,
+      "source_heights": [
+        322,
+        326,
+        334,
+        335,
+        324,
+        321
+      ],
+      "source_widths": [
+        176,
+        173,
+        170,
+        168,
+        171,
+        174
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.30303,
+      "source_heights": [
+        297,
+        278,
+        296,
+        261,
+        280,
+        266,
+        295,
+        265
+      ],
+      "source_widths": [
+        178,
+        165,
+        175,
+        205,
+        182,
+        172,
+        171,
+        198
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.295082,
+      "source_heights": [
+        305,
+        273,
+        295,
+        256,
+        289,
+        270,
+        291,
+        267
+      ],
+      "source_widths": [
+        182,
+        165,
+        167,
+        206,
+        189,
+        169,
+        175,
+        199
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.272446,
+      "source_heights": [
+        322,
+        315,
+        307,
+        294,
+        292,
+        317
+      ],
+      "source_widths": [
+        221,
+        193,
+        225,
+        323,
+        255,
+        217
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.275,
+      "source_heights": [
+        319,
+        308,
+        303,
+        295,
+        291,
+        318
+      ],
+      "source_widths": [
+        218,
+        206,
+        214,
+        320,
+        268,
+        216
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.273556,
+      "source_heights": [
+        329,
+        329,
+        329,
+        329,
+        329,
+        329
+      ],
+      "source_widths": [
+        154,
+        161,
+        153,
+        153,
+        153,
+        154
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.271903,
+      "source_heights": [
+        331,
+        331,
+        331,
+        331,
+        331,
+        331
+      ],
+      "source_widths": [
+        153,
+        156,
+        153,
+        153,
+        153,
+        154
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.216867,
+      "source_heights": [
+        415,
+        391,
+        359,
+        384
+      ],
+      "source_widths": [
+        228,
+        215,
+        243,
+        214
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.217391,
+      "source_heights": [
+        414,
+        391,
+        357,
+        387
+      ],
+      "source_widths": [
+        221,
+        230,
+        240,
+        221
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.190065,
+      "source_heights": [
+        398,
+        351,
+        270,
+        171
+      ],
+      "source_widths": [
+        272,
+        265,
+        305,
+        463
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.182952,
+      "source_heights": [
+        398,
+        343,
+        271,
+        170
+      ],
+      "source_widths": [
+        265,
+        273,
+        313,
+        481
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "visual_quick_screen_96x112": "Animation contact sheet screened once at intended game scale; identities and silhouettes are usable. Small edge differences left unchanged.",
+    "runtime": "NOT_TESTED: waiting for exact-SHA GitHub Godot/Xvfb capture.",
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 assets; 2 non-blocking motion warning(s)."
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-015.json",
+    "sha256": "aaf78730174e7cb6f6c113b233548414ebb0b2371491504178e5669470edaad1"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "88e5d2bb3ae0a0105ae45afece414a689deecea91e9a185fe8787d47eba1d13b"
+  }
+}

@@ -4,7 +4,7 @@
     "name": "Kabuto Yakushi",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-023"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-023",
   "target_source_render_count": 7,
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-023.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Young adult Kabuto: pale skin; short silver-gray hair; unmistakable round dark-lensed glasses; purple high-collar outfit and light trim. Screened at 96x112 and locked for atlas production; owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+      "canon_reference_sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "9a45d76a15c56cca4b4db78279d36267d442199c075c1c5fbfb3e5220aba6577",
+      "size_bytes": 1359853,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:35.033703+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+      "canon_reference_sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "a0e523d75f99f88cac001c8e281ac1c6b61428acff19376e51fc7a2e51a3d22f",
+      "size_bytes": 1089335,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:35.033703+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+      "canon_reference_sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "6c054bacea152e6af68d46685de45081706a8cac9c208b84bf93dfbf95e78258",
+      "size_bytes": 1173465,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:35.033703+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+      "canon_reference_sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "681971d903d28f9998fa29d00427538d8ef999669789f471d550822e111996b3",
+      "size_bytes": 1224203,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:35.033703+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+      "canon_reference_sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "8d2045281277871032305b6f6e4d744210a741daf524af478c9dd961a26d9e96",
+      "size_bytes": 1125588,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:35.033703+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+      "canon_reference_sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "83d4df4d7c8d7eecdb2880df65306f75a5d0c1db491644868b6a6d9c4722e4f0",
+      "size_bytes": 921180,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:35.033703+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2405/Kabuto_Yakushi",
+      "canon_reference_sha256": "a3a0a65c9dd998528bcdb4edb15108c43c728c07ad6f6ed317a879d01509307f",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-023.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "7e94da3296592de945019d515add8ecd656d4df7e774d2eadc0db18e7b617b88",
+      "size_bytes": 1027081,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:35.033703+00:00"
+    }
   }
 }

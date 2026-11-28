@@ -4,7 +4,7 @@
     "name": "Kurenai Yuhi",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-018"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-018",
   "target_source_render_count": 7,
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-018.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Adult Kurenai: mature feminine slim build; long black hair; red eyes with pale sclera; red top over mesh; long tan coat; dark fitted pants. Screened at 96x112 and locked for atlas production; owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "3a1bedd05da7cbfad581ec36924962083c24a997aedd19b67e1dd8d54e93e489",
+      "size_bytes": 1462428,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "befe6e307c010bc15f1ccd0e0b4675056bf95fd6e81c0f29a7889bcd7a20180d",
+      "size_bytes": 1154159,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "e7b20f9894426a985129513a19fdbeae083bce4e8512ecfc0658ec0b5bed4e62",
+      "size_bytes": 1925043,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "ddbf0c66bc8a6a11e0d3bbf34dcd81fb294ab9f27e1df3c87de498bfb87a8829",
+      "size_bytes": 1220695,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "998bcad972bc3224f9aa06e7c70fcf784c817e0128b1451c3dc0db662e9d5808",
+      "size_bytes": 1308382,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2119,
+        742
+      ],
+      "sha256": "8e9d238c698f1e934678e13254885a0dae505de9d12490f5971a49fe3c199cf9",
+      "size_bytes": 986949,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "37de6466ca09915a9ad48a7b784f7768e7f1d29eb8247833f290fd8e6086d998",
+      "size_bytes": 1428306,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+    }
   }
 }

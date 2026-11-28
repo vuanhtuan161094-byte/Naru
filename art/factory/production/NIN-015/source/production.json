@@ -4,7 +4,7 @@
     "name": "Tenten (thiếu niên)",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-015"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-015",
   "target_source_render_count": 7,
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-015.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/identity_reference.png",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Tenten reads at 96x112: two brown hair buns, Leaf forehead protector, cream/red teen tunic, navy pants and back weapon scroll. Master locked before atlas production; owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+      "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "e45785c0e20316a6d26992210fe88b8273ae520b370042dcd9aa3e0dcfef66e2",
+      "size_bytes": 1270519,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+      "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "76c7e19fdfa4836760478be4e3863f551764eb7c11e74a566f9230e07059a0cb",
+      "size_bytes": 1146712,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+      "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "410db5fa38087bdf64402a5e1ec648ef9fe5a5dcf4ad47ddfdd87fc41e8efc9f",
+      "size_bytes": 1213022,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+      "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "cd33a11a1ce4678c14b6e64a7b3cbe96e5bd399052a1a8ca0a3ada3167c5ef46",
+      "size_bytes": 1190217,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+      "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "862ff78dca404360d2ba42ed1b0272097fb4c6c0596b36a17bd8d4e9c571ee5f",
+      "size_bytes": 1128994,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+      "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "ddca3f7af6323e1d66dab7f028aca1d229d37b7a9ce01e86301d03afe332c90b",
+      "size_bytes": 1072316,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/3710/Tenten",
+      "canon_reference_sha256": "f9cc645f1baca0f739718c12f4c0d0b124a809b36e2667d544dc1fbd90abb9db",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (/tmp/naru-identity-refs/NIN-015.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "7796243edc16b15e33b0e7a3b6d7a9cdfc1bd5f52efd6566d5da79039ebc2f3c",
+      "size_bytes": 1073628,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:29:25.227953+00:00"
+    }
   }
 }

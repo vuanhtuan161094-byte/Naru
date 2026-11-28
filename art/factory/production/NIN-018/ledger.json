@@ -1,0 +1,632 @@
+{
+  "schema": 1,
+  "character_id": "NIN-018",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Kurenai Yuhi",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+        "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "3a1bedd05da7cbfad581ec36924962083c24a997aedd19b67e1dd8d54e93e489",
+        "size_bytes": 1462428,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+        "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "befe6e307c010bc15f1ccd0e0b4675056bf95fd6e81c0f29a7889bcd7a20180d",
+        "size_bytes": 1154159,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+        "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "e7b20f9894426a985129513a19fdbeae083bce4e8512ecfc0658ec0b5bed4e62",
+        "size_bytes": 1925043,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+        "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "ddbf0c66bc8a6a11e0d3bbf34dcd81fb294ab9f27e1df3c87de498bfb87a8829",
+        "size_bytes": 1220695,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+        "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "998bcad972bc3224f9aa06e7c70fcf784c817e0128b1451c3dc0db662e9d5808",
+        "size_bytes": 1308382,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+        "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2119,
+          742
+        ],
+        "sha256": "8e9d238c698f1e934678e13254885a0dae505de9d12490f5971a49fe3c199cf9",
+        "size_bytes": 986949,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+        "canon_reference_sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (/tmp/naru-identity-refs/NIN-018.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "37de6466ca09915a9ad48a7b784f7768e7f1d29eb8247833f290fd8e6086d998",
+        "size_bytes": 1428306,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:29:29.652989+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "3a1bedd05da7cbfad581ec36924962083c24a997aedd19b67e1dd8d54e93e489",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "e63d5adadbfd60e0c5cc765073af43d87b3a346278a4686b9117176be6f9a95d",
+        "bounds": [
+          250,
+          109,
+          616,
+          983
+        ],
+        "height": 874
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "8322e38d0360e7cb20b41af0c14aad2019907647f717acc4b6cad09e1e7c935c",
+        "bounds": [
+          137,
+          109,
+          526,
+          983
+        ],
+        "height": 874
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "b6fe632dc9d38f35002795d0762d513655febf0d8b2181bc7a2bb70312ddf2d6"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/4773/Kurenai_Yuuhi",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/8/103797.jpg",
+      "sha256": "5f107ad21a2eec5b19676c2a2f4abe599663436e4cb09f18edf1039cc90fcd5a",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "ddbf0c66bc8a6a11e0d3bbf34dcd81fb294ab9f27e1df3c87de498bfb87a8829",
+      "size_bytes": 1220695
+    },
+    "cast_atlas.png": {
+      "sha256": "998bcad972bc3224f9aa06e7c70fcf784c817e0128b1451c3dc0db662e9d5808",
+      "size_bytes": 1308382
+    },
+    "fall_atlas.png": {
+      "sha256": "37de6466ca09915a9ad48a7b784f7768e7f1d29eb8247833f290fd8e6086d998",
+      "size_bytes": 1428306
+    },
+    "hit_atlas.png": {
+      "sha256": "8e9d238c698f1e934678e13254885a0dae505de9d12490f5971a49fe3c199cf9",
+      "size_bytes": 986949
+    },
+    "idle_atlas.png": {
+      "sha256": "befe6e307c010bc15f1ccd0e0b4675056bf95fd6e81c0f29a7889bcd7a20180d",
+      "size_bytes": 1154159
+    },
+    "move_atlas.png": {
+      "sha256": "e7b20f9894426a985129513a19fdbeae083bce4e8512ecfc0658ec0b5bed4e62",
+      "size_bytes": 1925043
+    },
+    "model.png": {
+      "sha256": "3a1bedd05da7cbfad581ec36924962083c24a997aedd19b67e1dd8d54e93e489",
+      "size_bytes": 1462428
+    },
+    "identity_reference.png": {
+      "sha256": "b6fe632dc9d38f35002795d0762d513655febf0d8b2181bc7a2bb70312ddf2d6",
+      "size_bytes": 20257
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-018.png": "623d8c809044ebec3ebd081b4ee5372a4c47d197b1098274293bb1e7eee0709e",
+    "animation/NIN-018/idle_se.png": "ba79b308f12bb14598f34b403199242673ed48d90d84f84113fdea5ac0530724",
+    "animation/NIN-018/idle_sw.png": "7c50647955a4ae5727661dcb573cd8fb296d1c44d4a795dfe6667cd57a014c32",
+    "animation/NIN-018/move_se.png": "76e3a3c4d1998f00773f418792fc14ebb9b91a7dd31a6d9d57a59e3eab0b3fe4",
+    "animation/NIN-018/move_sw.png": "6b31521da6411a71a776a10ff4de4928faa9398ef6d701aaa402b04aea77aea5",
+    "animation/NIN-018/attack_se.png": "08e644df0ac648ad588fdfeab94767057b3d40b5916f6044b3b7598991a91eda",
+    "animation/NIN-018/attack_sw.png": "f91d19be59948acb4d5ef30d5c33fbab51bffd2d88af083f1d1ddd4fc3b7ca1d",
+    "animation/NIN-018/cast_se.png": "1c0946568e1eb0bbe1fe1e6d231018aa0dea95b35028d3429622ae92bb307b3f",
+    "animation/NIN-018/cast_sw.png": "6bd1560544f62e1953a9a1f0d72cad4750b4454dd12f431322f2d694e5dfe6fc",
+    "animation/NIN-018/hit_se.png": "3b7d9fe5fc348fdf76ec1471adaeb11994d364c9ca0aa132afab82a47e49370f",
+    "animation/NIN-018/hit_sw.png": "ddb5efd2d49f3e2ce953406ff0894dafae4b6950a7f93f331ac9b247180cec3f",
+    "animation/NIN-018/fall_se.png": "8b8941498a774420554bc18e884b91e42753aad9ba4a419bbfe17cd67ab55665",
+    "animation/NIN-018/fall_sw.png": "b77e00c84ab034d75974328ba5c634653c15a0ade2a498183325054092c4cb15"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27439,
+      "source_heights": [
+        328,
+        329,
+        329,
+        329,
+        327,
+        326
+      ],
+      "source_widths": [
+        149,
+        147,
+        146,
+        148,
+        149,
+        148
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.275229,
+      "source_heights": [
+        327,
+        328,
+        331,
+        331,
+        327,
+        326
+      ],
+      "source_widths": [
+        144,
+        146,
+        148,
+        148,
+        149,
+        148
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.290323,
+      "source_heights": [
+        310,
+        273,
+        290,
+        269,
+        301,
+        278,
+        290,
+        273
+      ],
+      "source_widths": [
+        167,
+        192,
+        183,
+        177,
+        184,
+        185,
+        162,
+        167
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 2,
+        "removed_pixels": 7
+      }
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.28481,
+      "source_heights": [
+        316,
+        272,
+        291,
+        261,
+        310,
+        264,
+        291,
+        272
+      ],
+      "source_widths": [
+        164,
+        167,
+        157,
+        172,
+        174,
+        164,
+        162,
+        172
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27027,
+      "source_heights": [
+        333,
+        335,
+        321,
+        315,
+        311,
+        331
+      ],
+      "source_widths": [
+        155,
+        178,
+        214,
+        252,
+        271,
+        161
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.276074,
+      "source_heights": [
+        326,
+        325,
+        320,
+        310,
+        306,
+        324
+      ],
+      "source_widths": [
+        159,
+        183,
+        209,
+        259,
+        277,
+        160
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.263158,
+      "source_heights": [
+        342,
+        342,
+        342,
+        342,
+        342,
+        342
+      ],
+      "source_widths": [
+        183,
+        186,
+        181,
+        181,
+        181,
+        181
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.265487,
+      "source_heights": [
+        339,
+        339,
+        339,
+        339,
+        339,
+        339
+      ],
+      "source_widths": [
+        182,
+        182,
+        182,
+        182,
+        182,
+        181
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.25641,
+      "source_heights": [
+        351,
+        333,
+        291,
+        338
+      ],
+      "source_widths": [
+        202,
+        243,
+        253,
+        203
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.254237,
+      "source_heights": [
+        354,
+        338,
+        295,
+        341
+      ],
+      "source_widths": [
+        215,
+        259,
+        240,
+        205
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.171206,
+      "source_heights": [
+        408,
+        332,
+        261,
+        163
+      ],
+      "source_widths": [
+        297,
+        328,
+        346,
+        514
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.160878,
+      "source_heights": [
+        407,
+        329,
+        259,
+        166
+      ],
+      "source_widths": [
+        276,
+        321,
+        351,
+        547
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "visual_quick_screen_96x112": "Animation contact sheet screened once at intended game scale; identities and silhouettes are usable. Small edge differences left unchanged.",
+    "runtime": "NOT_TESTED: waiting for exact-SHA GitHub Godot/Xvfb capture.",
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 assets; 2 non-blocking motion warning(s)."
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-018.json",
+    "sha256": "b5b3e591e238c5ad46d44c357f5dec0ac9ad013cad6479cfab8e7618c7bca3b8"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "a893fcd817fc44bee94e5d9531490adb1393fb0edb399d651e05d1fcdd373c26"
+  }
+}
