@@ -4,7 +4,7 @@
     "name": "Zabuza Momochi",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-027"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-027",
   "target_source_render_count": 7,
@@ -13,7 +13,7 @@
     "character_id": "NIN-027",
     "name": "Zabuza Momochi",
     "era": "Naruto",
-    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "form": "base roster form; database sprite is the exact outfit/age anchor",
     "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
     "provider": "MyAnimeList character index (Naruto-associated entry)",
     "source_page": "https://myanimelist.net/character/728/Zabuza_Momochi",
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-027.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/canon_reference.json direct image + source/identity_reference.png roster form",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Adult tall muscular Zabuza: spiky silver hair, bandaged lower face, slanted forehead protector, dark sleeveless outfit and oversized cleaver sword. Sample screened at 96x112; locked before action atlas production. Owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/728/Zabuza_Momochi",
+      "canon_reference_sha256": "4495b7efdd05ed2aad6c5779810d37de58671135d927050f920df44df7c5fc2e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "4067d7c908e13cae95d640fa562e0a0994611992d32b71f655256eca2bbd9ac5",
+      "size_bytes": 1438530,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.436767+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/728/Zabuza_Momochi",
+      "canon_reference_sha256": "4495b7efdd05ed2aad6c5779810d37de58671135d927050f920df44df7c5fc2e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "9ba7b6664504f450d318e92ed670bfbf07255055dc2428f80cc42aa4bdc555f9",
+      "size_bytes": 1318554,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.436767+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/728/Zabuza_Momochi",
+      "canon_reference_sha256": "4495b7efdd05ed2aad6c5779810d37de58671135d927050f920df44df7c5fc2e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "b7adacaa8aa03b3aba81bbf8faf43a57e28d344ab692ea72b845058e6cac7045",
+      "size_bytes": 1520874,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.436767+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/728/Zabuza_Momochi",
+      "canon_reference_sha256": "4495b7efdd05ed2aad6c5779810d37de58671135d927050f920df44df7c5fc2e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "af5cb27158226ef437a85778e4b58be00fec75f663f6cad98818653800e2492f",
+      "size_bytes": 1253282,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.436767+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/728/Zabuza_Momochi",
+      "canon_reference_sha256": "4495b7efdd05ed2aad6c5779810d37de58671135d927050f920df44df7c5fc2e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "8c2a77f02c2a4dd10dd158dbab58083a166d3c9033efad15fb8a8a9dc505e480",
+      "size_bytes": 1548064,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.436767+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/728/Zabuza_Momochi",
+      "canon_reference_sha256": "4495b7efdd05ed2aad6c5779810d37de58671135d927050f920df44df7c5fc2e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "421b2ecd6b7271ceb1a88930056e4726d2b6077dfc710cc612c2b6fde5200213",
+      "size_bytes": 1244238,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.436767+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/728/Zabuza_Momochi",
+      "canon_reference_sha256": "4495b7efdd05ed2aad6c5779810d37de58671135d927050f920df44df7c5fc2e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-027.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "6292f766b708bf1a64f3c528e3ded0c5f403ed1ed6e8c3d193c7a181b5e21386",
+      "size_bytes": 1239736,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.436767+00:00"
+    }
   }
 }

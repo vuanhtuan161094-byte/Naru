@@ -4,7 +4,7 @@
     "name": "Kankuro (thiếu niên)",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-026"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-026",
   "target_source_render_count": 7,
@@ -13,7 +13,7 @@
     "character_id": "NIN-026",
     "name": "Kankuro (thiếu niên)",
     "era": "Naruto",
-    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "form": "base roster form; database sprite is the exact outfit/age anchor",
     "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
     "provider": "MyAnimeList character index (Naruto-associated entry)",
     "source_page": "https://myanimelist.net/character/4694/Kankurou",
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-026.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/canon_reference.json direct image + source/identity_reference.png roster form",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Teen Kankuro: black hood/head covering, purple cheek markings, dark purple costume, puppet case strapped on back; keep face markings legible. Sample screened at 96x112; locked before action atlas production. Owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4694/Kankurou",
+      "canon_reference_sha256": "bb437889bc5f779bda61d27945f6f4bb632b9c410cf457f8d59b4c9e84ac807e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "4c0ae20d39307180378e2a562e2931026a88c2b24b658f2620b51cf5343f98eb",
+      "size_bytes": 1308590,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.497832+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4694/Kankurou",
+      "canon_reference_sha256": "bb437889bc5f779bda61d27945f6f4bb632b9c410cf457f8d59b4c9e84ac807e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "d992ba6a224421d8c058b8f5cebb2785c4b40bb750e30b432196f4ac28db2aa0",
+      "size_bytes": 1121901,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.497832+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4694/Kankurou",
+      "canon_reference_sha256": "bb437889bc5f779bda61d27945f6f4bb632b9c410cf457f8d59b4c9e84ac807e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "2f9db4b4db569c8c3faf17f2f934f00f9e39dfeab3d8100f088f8517f58d3ba7",
+      "size_bytes": 1881644,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.497832+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4694/Kankurou",
+      "canon_reference_sha256": "bb437889bc5f779bda61d27945f6f4bb632b9c410cf457f8d59b4c9e84ac807e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "32a40c14016b71880508baa38baf1ba780c681ee744620a94f56ce8eb19c8a3b",
+      "size_bytes": 1460273,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.497832+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4694/Kankurou",
+      "canon_reference_sha256": "bb437889bc5f779bda61d27945f6f4bb632b9c410cf457f8d59b4c9e84ac807e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "f7eb97564a617af0dd50253086444bcd15f1995ff53e3a53f43bfc273dc5367c",
+      "size_bytes": 1397137,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.497832+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4694/Kankurou",
+      "canon_reference_sha256": "bb437889bc5f779bda61d27945f6f4bb632b9c410cf457f8d59b4c9e84ac807e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "4d62a49c571f1348fd84c105494c588c64d1fd2edc8ce7bad3da8e7000161f04",
+      "size_bytes": 1069200,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.497832+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/4694/Kankurou",
+      "canon_reference_sha256": "bb437889bc5f779bda61d27945f6f4bb632b9c410cf457f8d59b4c9e84ac807e",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-026.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "25f711276d18acedd0e07171bfa8b0af3db9cb4263042e5121ca29b55c3afacd",
+      "size_bytes": 1116565,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.497832+00:00"
+    }
   }
 }

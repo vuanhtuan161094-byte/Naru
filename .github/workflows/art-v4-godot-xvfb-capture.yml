@@ -96,15 +96,15 @@ jobs:
           fi
           echo "ids=$(IFS=,; echo "${ID_ARRAY[*]}")" >> "$GITHUB_OUTPUT"
 
-      - name: Import project resources with a real Xvfb display
+      - name: Import project resources (headless import only)
         if: steps.kits.outputs.ids != ''
         shell: bash
         run: |
           set -euo pipefail
-          export LIBGL_ALWAYS_SOFTWARE=1
-          export GALLIUM_DRIVER=llvmpipe
-          timeout 240 xvfb-run -a "$GODOT" --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --editor --path . --import 2>&1 | tee art-v4-captures/import.log
-          ! grep -E 'Parse Error|SCRIPT ERROR|ERROR:' art-v4-captures/import.log
+          # Import is cache preparation only. The following 6v6 screenshot/video
+          # capture launches a windowed Godot process under Xvfb + llvmpipe OpenGL.
+          timeout 240 "$GODOT" --headless --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --editor --path . --import 2>&1 | tee art-v4-captures/import.log
+          ! grep -E 'Parse Error|SCRIPT ERROR|Required Vulkan instance extension|ERROR:' art-v4-captures/import.log
 
       - name: Capture six-versus-six native battle batches
         if: steps.kits.outputs.ids != ''

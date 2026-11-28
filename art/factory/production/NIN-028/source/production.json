@@ -4,7 +4,7 @@
     "name": "Haku",
     "era": "Naruto",
     "form": "base",
-    "source_status": "UNVERIFIED; database roster identity reference: assets/production/r14/static_roster.svg#NIN-028"
+    "source_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
   },
   "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-028",
   "target_source_render_count": 7,
@@ -13,7 +13,7 @@
     "character_id": "NIN-028",
     "name": "Haku",
     "era": "Naruto",
-    "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+    "form": "base roster form; database sprite is the exact outfit/age anchor",
     "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite",
     "provider": "MyAnimeList character index (Naruto-associated entry)",
     "source_page": "https://myanimelist.net/character/2039/Haku",
@@ -26,18 +26,227 @@
     "temporary_image_path": "/tmp/naru-identity-refs/NIN-028.jpg",
     "storage": "Reference image remains in /tmp and is not bundled into public/game assets"
   },
-  "actual_source_render_count": 0,
+  "actual_source_render_count": 7,
   "additional_render_attempts": [],
   "identity_reference_usage": {
     "canon_image_record": "source/canon_reference.json",
     "canon_image_available": true,
-    "master_used_canon_image": false,
+    "master_used_canon_image": true,
+    "master_direct_canon_reference_used": true,
+    "master_used_shikamaru_style": true,
     "style_reference": "art/factory/production/NIN-007/source/model.png (style only)",
     "body_face_transfer_from_style_reference": false,
-    "next_action_atlases_must_use_canon_reference": true,
-    "master_used_shikamaru_style": false,
-    "master_direct_canon_reference_used": false,
-    "canon_reference_acquired_after_master": false,
-    "master_identity_source": "source/identity_reference.png"
+    "master_identity_source": "source/canon_reference.json direct image + source/identity_reference.png roster form",
+    "action_atlases_used_locked_master": true,
+    "action_atlases_used_direct_canon_reference": true
+  },
+  "source_render_requests": 7,
+  "owner_quick_check_96x112": {
+    "status": "SCREENED_FOR_IDENTITY_AND_USABILITY",
+    "note": "Slender youthful male Haku: long straight black hair, gentle expressive eyes, green layered outfit and high collar/lower-face covering matching roster. Sample screened at 96x112; locked before action atlas production. Owner acceptance pending."
+  },
+  "render_input_references": {
+    "model": [
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)"
+    ],
+    "idle": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/idle_motion_guide.png"
+    ],
+    "move": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/move_motion_guide.png"
+    ],
+    "attack": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/attack_motion_guide.png"
+    ],
+    "cast": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/cast_motion_guide.png"
+    ],
+    "hit": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/hit_motion_guide.png"
+    ],
+    "fall": [
+      "source/model.png",
+      "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+      "source/identity_reference.png",
+      "art/factory/production/NIN-007/source/model.png (style only)",
+      "source/guides/fall_motion_guide.png"
+    ]
+  },
+  "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+  "generated_source_records": {
+    "model.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+      "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "2542ea7be87bfcbd5bbc04391f18d1ee0f4cd2b6a4a9b01897adea72e61477ee",
+      "size_bytes": 1168566,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+    },
+    "idle_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+      "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/idle_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "0e3698794b846a3d7438046519b8ad2e6d94894ff739ac4b4df2ebf6693dd82a",
+      "size_bytes": 1048990,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+    },
+    "move_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+      "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/move_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "sha256": "8881d893eb1d980418c64e088b30187232d780a729ee1ff2d69aa305cb50f1b7",
+      "size_bytes": 1932813,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+    },
+    "attack_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+      "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/attack_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "43d757a3b93590eb40b3fb1d47de18ff391d9a347f8d3ac5159a97d746a02c3a",
+      "size_bytes": 1136339,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+    },
+    "cast_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+      "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/cast_motion_guide.png"
+      ],
+      "dimensions_px": [
+        2172,
+        724
+      ],
+      "sha256": "1ca23500b3dd453c9a59ff4a0d1fa3280b6901feaf18d7732203648b4f2d9733",
+      "size_bytes": 1256780,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+    },
+    "hit_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+      "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/hit_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "65765cb4e72152fe75972539de1998065ae6939b518ffd5605227893ab349514",
+      "size_bytes": 1009407,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+    },
+    "fall_atlas.png": {
+      "provider": "OpenAI imagegen",
+      "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+      "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+      "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "prompt_record": "source/PROMPTS.md",
+      "input_references": [
+        "source/model.png",
+        "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+        "source/identity_reference.png",
+        "art/factory/production/NIN-007/source/model.png (style only)",
+        "source/guides/fall_motion_guide.png"
+      ],
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "sha256": "28dff4d9331ca2aa44100ef6fd2716a47cf69521960c629ae9a3eddf2618cd9b",
+      "size_bytes": 985326,
+      "provider_creation_timestamp": null,
+      "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+    }
   }
 }

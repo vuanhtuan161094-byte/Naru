@@ -1,0 +1,632 @@
+{
+  "schema": 1,
+  "character_id": "NIN-028",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Haku",
+    "era": "Naruto",
+    "form": "base",
+    "source_identity_status": "DIRECT_CANON_AND_ROSTER_CONDITIONED; OWNER_ACCEPTANCE_PENDING"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+    "prompt_record": "source/PROMPTS.md",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_records": {
+      "model.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+        "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "2542ea7be87bfcbd5bbc04391f18d1ee0f4cd2b6a4a9b01897adea72e61477ee",
+        "size_bytes": 1168566,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+      },
+      "idle_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+        "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/idle_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "0e3698794b846a3d7438046519b8ad2e6d94894ff739ac4b4df2ebf6693dd82a",
+        "size_bytes": 1048990,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+      },
+      "move_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+        "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/move_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1536,
+          1024
+        ],
+        "sha256": "8881d893eb1d980418c64e088b30187232d780a729ee1ff2d69aa305cb50f1b7",
+        "size_bytes": 1932813,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+      },
+      "attack_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+        "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/attack_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "43d757a3b93590eb40b3fb1d47de18ff391d9a347f8d3ac5159a97d746a02c3a",
+        "size_bytes": 1136339,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+      },
+      "cast_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+        "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/cast_motion_guide.png"
+        ],
+        "dimensions_px": [
+          2172,
+          724
+        ],
+        "sha256": "1ca23500b3dd453c9a59ff4a0d1fa3280b6901feaf18d7732203648b4f2d9733",
+        "size_bytes": 1256780,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+      },
+      "hit_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+        "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/hit_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "65765cb4e72152fe75972539de1998065ae6939b518ffd5605227893ab349514",
+        "size_bytes": 1009407,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+      },
+      "fall_atlas.png": {
+        "provider": "OpenAI imagegen",
+        "prompt_version": "ART_V4_FAST_IDENTITY_LOCK_V2",
+        "canon_reference_source": "https://myanimelist.net/character/2039/Haku",
+        "canon_reference_sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+        "prompt_record": "source/PROMPTS.md",
+        "input_references": [
+          "source/model.png",
+          "source/canon_reference.json (direct image in /tmp/naru-identity-refs/NIN-028.jpg)",
+          "source/identity_reference.png",
+          "art/factory/production/NIN-007/source/model.png (style only)",
+          "source/guides/fall_motion_guide.png"
+        ],
+        "dimensions_px": [
+          1774,
+          887
+        ],
+        "sha256": "28dff4d9331ca2aa44100ef6fd2716a47cf69521960c629ae9a3eddf2618cd9b",
+        "size_bytes": 985326,
+        "provider_creation_timestamp": null,
+        "packaged_observed_utc": "2026-11-28T16:57:46.409132+00:00"
+      }
+    },
+    "method": "reference-conditioned model and action atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; Fall extracted from variable-width row alpha runs; per-frame crop/placement only"
+  },
+  "references": {
+    "global_style": "art/factory/production/NIN-007/source/model.png",
+    "global_style_sha256": "6ab5c5ecc84e371d85171b7997ca4bc2cba70812ad430ccd723488b25b6585ae",
+    "secondary_style_reference": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "2542ea7be87bfcbd5bbc04391f18d1ee0f4cd2b6a4a9b01897adea72e61477ee",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "76cd8d4acc16da6c88e58d5aa2619de43f9e6b9a931299ca31967d5d0a02da55",
+        "bounds": [
+          279,
+          237,
+          615,
+          914
+        ],
+        "height": 677
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "a9956abdc2f0905459063b216c1b52f745a96204e0dca8a27eafdc9a011cdc7f",
+        "bounds": [
+          137,
+          237,
+          476,
+          915
+        ],
+        "height": 678
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "24f3b1a3a8cf9a618b0dfae699400101bef6135df5b2a29623976fdca6276568"
+    },
+    "canon_identity_reference": {
+      "provider": "MyAnimeList character index (Naruto-associated entry)",
+      "source_page": "https://myanimelist.net/character/2039/Haku",
+      "source_image_url": "https://cdn.myanimelist.net/images/characters/10/103707.jpg",
+      "sha256": "d830853b62f8d31c3970397a5a2935a5abd519985fdf4a371eda7b5a2f0d6732",
+      "dimensions_px": [
+        225,
+        350
+      ],
+      "era": "Naruto",
+      "form": "base roster form; use the local database sprite as the exact outfit/age anchor",
+      "reference_role": "Naruto-associated character image for face, eye, hair and accessories; it does not override the database era/form sprite"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "43d757a3b93590eb40b3fb1d47de18ff391d9a347f8d3ac5159a97d746a02c3a",
+      "size_bytes": 1136339
+    },
+    "cast_atlas.png": {
+      "sha256": "1ca23500b3dd453c9a59ff4a0d1fa3280b6901feaf18d7732203648b4f2d9733",
+      "size_bytes": 1256780
+    },
+    "fall_atlas.png": {
+      "sha256": "28dff4d9331ca2aa44100ef6fd2716a47cf69521960c629ae9a3eddf2618cd9b",
+      "size_bytes": 985326
+    },
+    "hit_atlas.png": {
+      "sha256": "65765cb4e72152fe75972539de1998065ae6939b518ffd5605227893ab349514",
+      "size_bytes": 1009407
+    },
+    "idle_atlas.png": {
+      "sha256": "0e3698794b846a3d7438046519b8ad2e6d94894ff739ac4b4df2ebf6693dd82a",
+      "size_bytes": 1048990
+    },
+    "move_atlas.png": {
+      "sha256": "8881d893eb1d980418c64e088b30187232d780a729ee1ff2d69aa305cb50f1b7",
+      "size_bytes": 1932813
+    },
+    "model.png": {
+      "sha256": "2542ea7be87bfcbd5bbc04391f18d1ee0f4cd2b6a4a9b01897adea72e61477ee",
+      "size_bytes": 1168566
+    },
+    "identity_reference.png": {
+      "sha256": "24f3b1a3a8cf9a618b0dfae699400101bef6135df5b2a29623976fdca6276568",
+      "size_bytes": 19323
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-028.png": "438368441e8558a4d1a54c0768c9e087a4968174468c5f459072273dab8dd545",
+    "animation/NIN-028/idle_se.png": "ae6c45eb590716f110fe6279f1b421051e70c6c094382db9104fbfb37f87d1ce",
+    "animation/NIN-028/idle_sw.png": "86168c13004d6cc57a641ad357df652c3706261be6d68edf1204a34d6662e4ab",
+    "animation/NIN-028/move_se.png": "bb4f950ca9c6461945df7c048f0f990638b34e647c37bad7b709809552d12b4e",
+    "animation/NIN-028/move_sw.png": "0c8eae1c9fad29dc94c2f0a1e9b174e9c960143de4e9b647b4e5192d0d5dd1f0",
+    "animation/NIN-028/attack_se.png": "eb000639fe45df0bb90549f425c8da689634baaa892c142fd9dc5c79382dcb6e",
+    "animation/NIN-028/attack_sw.png": "408de9c2a0ccf66a0fcaac15c5f5110d7ffac1010cd27318c6d58bd9ab907ad8",
+    "animation/NIN-028/cast_se.png": "8f36bbb00fbb368afdf1cfc827d52a028f9d966ee5714baf84322b1c94d3a716",
+    "animation/NIN-028/cast_sw.png": "10aa4fe8480a39cbcf7b9518ba29c4c4283c5cf394d0fb8505e183466648b0ad",
+    "animation/NIN-028/hit_se.png": "d8dbd7f2ae34f51098b0e39bc9ad8e01ffad9312c2ff8b5c8bc48ec53b849669",
+    "animation/NIN-028/hit_sw.png": "e0c67940f3b00691262fcc4fbd35fbbc8a10248645e0fa5126707975f1245a4e",
+    "animation/NIN-028/fall_se.png": "05d04990c86459ce6d0ef24b3fe0d738d2d044212c59db7501cdc2f8a8e8225d",
+    "animation/NIN-028/fall_sw.png": "fe4759f2473182ffaed9cdc313d4906c25b3d3911b94da0a31dda6b6bcc0899b"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.283019,
+      "source_heights": [
+        318,
+        309,
+        321,
+        324,
+        313,
+        315
+      ],
+      "source_widths": [
+        171,
+        178,
+        180,
+        190,
+        183,
+        170
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 1,
+        "removed_pixels": 1
+      }
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.285714,
+      "source_heights": [
+        315,
+        306,
+        319,
+        322,
+        312,
+        313
+      ],
+      "source_widths": [
+        175,
+        181,
+        182,
+        196,
+        183,
+        174
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.327273,
+      "source_heights": [
+        275,
+        262,
+        275,
+        268,
+        277,
+        260,
+        284,
+        243
+      ],
+      "source_widths": [
+        163,
+        147,
+        155,
+        184,
+        180,
+        157,
+        188,
+        162
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 2,
+        "removed_pixels": 23
+      }
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.320285,
+      "source_heights": [
+        281,
+        262,
+        268,
+        231,
+        278,
+        260,
+        272,
+        238
+      ],
+      "source_widths": [
+        164,
+        182,
+        153,
+        162,
+        163,
+        154,
+        148,
+        174
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 1,
+        "removed_pixels": 6
+      }
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.267062,
+      "source_heights": [
+        337,
+        319,
+        297,
+        289,
+        292,
+        333
+      ],
+      "source_widths": [
+        186,
+        179,
+        231,
+        296,
+        236,
+        191
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.272727,
+      "source_heights": [
+        330,
+        312,
+        294,
+        288,
+        293,
+        331
+      ],
+      "source_widths": [
+        186,
+        185,
+        239,
+        299,
+        248,
+        194
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.262391,
+      "source_heights": [
+        343,
+        343,
+        343,
+        343,
+        343,
+        343
+      ],
+      "source_widths": [
+        231,
+        232,
+        231,
+        231,
+        231,
+        231
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.261628,
+      "source_heights": [
+        344,
+        344,
+        344,
+        344,
+        343,
+        343
+      ],
+      "source_widths": [
+        230,
+        230,
+        230,
+        230,
+        231,
+        230
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.233161,
+      "source_heights": [
+        386,
+        378,
+        360,
+        378
+      ],
+      "source_widths": [
+        262,
+        289,
+        231,
+        232
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.235602,
+      "source_heights": [
+        382,
+        378,
+        359,
+        377
+      ],
+      "source_widths": [
+        270,
+        281,
+        237,
+        229
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.184874,
+      "source_heights": [
+        379,
+        342,
+        266,
+        157
+      ],
+      "source_widths": [
+        269,
+        269,
+        334,
+        476
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.178862,
+      "source_heights": [
+        374,
+        335,
+        265,
+        148
+      ],
+      "source_widths": [
+        277,
+        277,
+        339,
+        492
+      ],
+      "runtime_speck_filter": {
+        "removed_components": 0,
+        "removed_pixels": 0
+      }
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "VISUAL_QUICK_SCREEN_PASS_96X112",
+    "runtime": "NOT_TESTED",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "visual_quick_screen_96x112": "Animation contact sheet screened once at intended game scale; character identity and action silhouettes are usable. Minor edge/anchor differences left unchanged.",
+    "runtime": "NOT_TESTED: exact-SHA GitHub Godot/Xvfb 6v6 capture pending.",
+    "technical_validator": "PASS; 12 clips / 68 cels / 13 assets; 2 non-blocking motion warning(s)."
+  },
+  "blockers": [],
+  "overlay": {
+    "path": "runtime/NIN-028.json",
+    "sha256": "de2ef8ad8db3303a95c8ba79a535bfe46eda72939e04b15b2932ec1c949236fa"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "8eec0d0ae50f0df6c44457d212126bc2f936ef2e717a2903c920dd9aa6aebd21"
+  }
+}
