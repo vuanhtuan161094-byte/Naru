@@ -1,0 +1,14 @@
+{
+  "character_id": "NIN-044",
+  "identity": {
+    "name": "Sai",
+    "era": "Shippuden",
+    "form": "base",
+    "source_status": "UNVERIFIED; identity reference: assets/production/r14/static_roster.svg#NIN-044"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-044",
+  "owner_visual_acceptance": "PENDING",
+  "target_source_render_count": 7,
+  "actual_source_render_count": 7,
+  "source_render_note": "One locked model sheet plus six action atlases; no extra image calls."
+}

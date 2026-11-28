@@ -1,0 +1,14 @@
+{
+  "character_id": "NIN-043",
+  "identity": {
+    "name": "Sakura Haruno (Shippuden)",
+    "era": "Shippuden",
+    "form": "base",
+    "source_status": "UNVERIFIED; identity reference: art/factory/references/generated/p3/NIN-043/static.png"
+  },
+  "identity_reference_origin": "art/factory/references/generated/p3/NIN-043/static.png",
+  "owner_visual_acceptance": "PENDING",
+  "target_source_render_count": 7,
+  "actual_source_render_count": 8,
+  "source_render_note": "One targeted cast-atlas retry: initial output had a nontransparent gray background. The locked model and other five action atlases were reused."
+}

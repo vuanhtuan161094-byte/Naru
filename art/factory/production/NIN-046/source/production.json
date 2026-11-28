@@ -1,0 +1,14 @@
+{
+  "character_id": "NIN-046",
+  "identity": {
+    "name": "Shikamaru Nara (Shippuden)",
+    "era": "Shippuden",
+    "form": "base",
+    "source_status": "PARTIAL_SOURCE_POINTER; identity reference: assets/production/r14/static_roster.svg#NIN-046"
+  },
+  "identity_reference_origin": "assets/production/r14/static_roster.svg#NIN-046",
+  "owner_visual_acceptance": "PENDING",
+  "target_source_render_count": 7,
+  "actual_source_render_count": 7,
+  "source_render_note": "One locked model sheet plus six action atlases; no extra image calls."
+}

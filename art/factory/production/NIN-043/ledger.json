@@ -1,0 +1,435 @@
+{
+  "schema": 1,
+  "character_id": "NIN-043",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Sakura Haruno (Shippuden)",
+    "era": "Shippuden",
+    "form": "base",
+    "source_identity_status": "UNVERIFIED; identity reference: art/factory/references/generated/p3/NIN-043/static.png"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "method": "reference-conditioned multi-pose atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; per-frame crop/placement only",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 8,
+    "source_render_note": "One targeted cast-atlas retry: initial output had a nontransparent gray background. The locked model and other five action atlases were reused."
+  },
+  "references": {
+    "global_style": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "global_style_sha256": "2cb54c096d84b3a40afc9782b340f70c3a3d1a78f6efc301c4812c0d5d733a9c",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "2608e9c8def848a76c164b07b90e477011dbe4f0152bb3e19bec254a60ce84bb",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "9ab16841991da81e7e0b0407190a169644d2f30e2658eb3ca2a266fe7546c32d",
+        "bounds": [
+          279,
+          126,
+          683,
+          796
+        ],
+        "height": 670
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "b6e024f854932acb33157cb8daccf6a2b62d2b5f2ba4eef3c8e4deaf35089d81",
+        "bounds": [
+          202,
+          126,
+          600,
+          796
+        ],
+        "height": 670
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "c131e088ed62f1cd9b5cf3bfe332f082939606c155f311319ded41c17dc56a19"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "0594ac989eec79b691e7b8f5e5470aec80e4ff768a3027266c3de0e2bf61eadc",
+      "size_bytes": 1271031
+    },
+    "cast_atlas.png": {
+      "sha256": "b0a4d111f7910ff0afe51398b237f96f64d021728332a9e4f2f8afa6d7920cb1",
+      "size_bytes": 1471200
+    },
+    "cast_atlas_attempt1.png": {
+      "sha256": "0ef40717a7047cb61ecbca52a4b35cfbecdfa1ed87c23cca8d5f53b54511dbc6",
+      "size_bytes": 2717923
+    },
+    "fall_atlas.png": {
+      "sha256": "32b0b72dea3e12bb0f738f1720d462b7e04833f80fa3e06baebe9cf86497e9e9",
+      "size_bytes": 1161395
+    },
+    "hit_atlas.png": {
+      "sha256": "a4a680cb58434fc5c3cc15b70b16d1919d4d240c0b6bc0d368c74a0eeeaefb20",
+      "size_bytes": 1288635
+    },
+    "idle_atlas.png": {
+      "sha256": "012a5841614c511c767f2c800504b49176fee43aa4a0ad0ee978507d4addfd73",
+      "size_bytes": 1332737
+    },
+    "move_atlas.png": {
+      "sha256": "ead806aee98153e338e47f1e702b36e1fac2ef90d01c8e2847059d40183f0c0c",
+      "size_bytes": 1402638
+    },
+    "model.png": {
+      "sha256": "2608e9c8def848a76c164b07b90e477011dbe4f0152bb3e19bec254a60ce84bb",
+      "size_bytes": 673479
+    },
+    "identity_reference.png": {
+      "sha256": "c131e088ed62f1cd9b5cf3bfe332f082939606c155f311319ded41c17dc56a19",
+      "size_bytes": 10548
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-043.png": "35f7adf7a1e3a5c1e8bf102aaabe997ce892ba613e1059d484cdcdb986413f80",
+    "animation/NIN-043/idle_se.png": "9822944fa508755f8c7372b2d78c9f2ea01f96cf5549fe1e1d7e9c569cb52363",
+    "animation/NIN-043/idle_sw.png": "353f52777fb0c24247df2bd3b6e290ffdc630aabc1635a5a672ef48149040113",
+    "animation/NIN-043/move_se.png": "0318738f5b60c223e8fb2835118f122309315384fac506d36c8ebaa3ee355fa4",
+    "animation/NIN-043/move_sw.png": "4952813d3fbe0ae053afd21fe7b9ece4513939925ed250490ca43a25285a3bc4",
+    "animation/NIN-043/attack_se.png": "7cd7e162f5c5c06da43f9dba5b09ee3fe7ea86e3e1ea4980f40570a6a272b8a4",
+    "animation/NIN-043/attack_sw.png": "c26b65d4ff3e1e2c6a6ea76f3b46229bd93a1a8ee176c061f8932529ca661038",
+    "animation/NIN-043/cast_se.png": "47721431794fd940df144a29567deb74cd35fedd13b90461f1a8cb5cb9c92f74",
+    "animation/NIN-043/cast_sw.png": "351d74ae745addf9dc4c9d65b1abf0c300c0e4baaf285d2121bc26e06b47387a",
+    "animation/NIN-043/hit_se.png": "e1b498cf5ca74404aff090a415968de87dc1b6d630dd0c11c96de6f9c059cf5b",
+    "animation/NIN-043/hit_sw.png": "794c974391643109a9400db7ff1bf1ed558a867748e650ccc095fbd9c00c29b5",
+    "animation/NIN-043/fall_se.png": "c40e961644d83b88bf8405b503af8c3c0ffaa44123a3f7e290a1eb316f45e887",
+    "animation/NIN-043/fall_sw.png": "5f9f3e3a075ce8e7e3137eeac68bb7c107e5055a96b3f008df07286f92abbd62"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.28125,
+      "source_heights": [
+        320,
+        320,
+        331,
+        339,
+        320,
+        320
+      ],
+      "source_widths": [
+        189,
+        187,
+        188,
+        188,
+        188,
+        188
+      ]
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.282132,
+      "source_heights": [
+        319,
+        319,
+        331,
+        334,
+        319,
+        319
+      ],
+      "source_widths": [
+        201,
+        201,
+        201,
+        201,
+        201,
+        201
+      ]
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.291262,
+      "source_heights": [
+        309,
+        304,
+        302,
+        307,
+        301,
+        301,
+        294,
+        303
+      ],
+      "source_widths": [
+        190,
+        173,
+        176,
+        180,
+        209,
+        192,
+        178,
+        198
+      ]
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.292208,
+      "source_heights": [
+        308,
+        301,
+        302,
+        300,
+        300,
+        294,
+        295,
+        305
+      ],
+      "source_widths": [
+        208,
+        172,
+        167,
+        186,
+        215,
+        186,
+        180,
+        206
+      ]
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.280374,
+      "source_heights": [
+        321,
+        310,
+        303,
+        299,
+        300,
+        318
+      ],
+      "source_widths": [
+        195,
+        194,
+        203,
+        256,
+        210,
+        194
+      ]
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.28125,
+      "source_heights": [
+        320,
+        306,
+        298,
+        299,
+        296,
+        319
+      ],
+      "source_widths": [
+        197,
+        197,
+        206,
+        267,
+        219,
+        197
+      ]
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.250696,
+      "source_heights": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        359
+      ],
+      "source_widths": [
+        221,
+        222,
+        220,
+        221,
+        221,
+        222
+      ]
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.251397,
+      "source_heights": [
+        358,
+        358,
+        358,
+        358,
+        358,
+        358
+      ],
+      "source_widths": [
+        219,
+        219,
+        218,
+        218,
+        219,
+        219
+      ]
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.228426,
+      "source_heights": [
+        394,
+        394,
+        358,
+        393
+      ],
+      "source_widths": [
+        232,
+        262,
+        224,
+        239
+      ]
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.227848,
+      "source_heights": [
+        395,
+        397,
+        356,
+        395
+      ],
+      "source_widths": [
+        254,
+        276,
+        232,
+        251
+      ]
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.229167,
+      "source_heights": [
+        384,
+        340,
+        271,
+        184
+      ],
+      "source_widths": [
+        241,
+        261,
+        304,
+        384
+      ]
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.226221,
+      "source_heights": [
+        378,
+        335,
+        269,
+        176
+      ],
+      "source_widths": [
+        260,
+        256,
+        312,
+        389
+      ]
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "REVIEWED_AT_96X112",
+    "runtime": "RUNTIME_PASS",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "mode": "LEAN",
+    "display_size_px": [
+      96,
+      112
+    ],
+    "visual_review": "Combined runtime-size contact review complete; no blocking identity, direction, costume, deformation, clipping or strong-jitter defect observed.",
+    "fall_processing": "Full silhouettes recovered from variable-width alpha runs per row, centered and uniformly normalized into 96x112 runtime cells; original source atlases retained.",
+    "technical_validation": {
+      "status": "PASS",
+      "issues": [],
+      "command": "python3 tools/validate_factory_overlay.py runtime/NIN-043.json --revision v4",
+      "advisory_warnings_recorded_in": "metrics_96x112"
+    },
+    "godot_evidence": "Actual Main.tscn 6v6 no-reward batch runtime passed; all six overlays imported, 12 actors, 624 authored draws total (104 per identity).",
+    "runtime_evidence_path": "../BATCH_R16_V4_FAST_2026-11-28.md",
+    "capture_status": "No screenshot/video claimed: Godot used the headless dummy renderer and supplied no viewport texture."
+  },
+  "blockers": [
+    "Identity source pointer is partial or unverified; source remains in review.",
+    "Owner visual acceptance pending."
+  ],
+  "overlay": {
+    "path": "runtime/NIN-043.json",
+    "sha256": "2db8db28a34a17c0b68e7cdaadc540a68a00b925008206805597f424291a3d48"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "ead9770e5aa3d1f6f4dbc86f1abe9457af79642a1157cd562911339467f27ff5"
+  }
+}

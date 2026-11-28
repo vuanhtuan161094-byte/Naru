@@ -1,0 +1,431 @@
+{
+  "schema": 1,
+  "character_id": "NIN-046",
+  "revision": "V4_FAST_OWNER_LOCKED_2026-11-28",
+  "identity": {
+    "name": "Shikamaru Nara (Shippuden)",
+    "era": "Shippuden",
+    "form": "base",
+    "source_identity_status": "PARTIAL_SOURCE_POINTER; identity reference: assets/production/r14/static_roster.svg#NIN-046"
+  },
+  "production": {
+    "provider": "OpenAI imagegen",
+    "model": "not exposed by tool",
+    "seed": null,
+    "transparent_background": true,
+    "method": "reference-conditioned multi-pose atlases; no mirror/tween/rig/interpolation",
+    "runtime_normalization": "one fixed isotropic scale per action/direction atlas; calibrated to 90px neutral pose; per-frame crop/placement only",
+    "target_source_render_count": 7,
+    "actual_source_render_count": 7,
+    "source_render_note": "One locked model sheet plus six action atlases; no extra image calls."
+  },
+  "references": {
+    "global_style": "art/factory/references/generated/Move_R3_6_Ninja.gif",
+    "global_style_sha256": "2cb54c096d84b3a40afc9782b340f70c3a3d1a78f6efc301c4812c0d5d733a9c",
+    "motion_guides": {
+      "idle": {
+        "path": "source/guides/idle_motion_guide.png",
+        "sha256": "bfbe772dd1d678b30721b9f75fb31e1f5d5099f2f505c1155bb82b4c82487883",
+        "source_se_sha256": "01f7aa4f7bde0d9ea33a56ef0f05c37f2e8ae3e2903af0c8ce53116c6ec7338d",
+        "source_sw_sha256": "8362adbb0a6fbb382018f7dc08f98e4c345fc69b1bf71a5863dbe6329af1c284"
+      },
+      "move": {
+        "path": "source/guides/move_motion_guide.png",
+        "sha256": "0b07ea1e17dca18ffb3a9f5a6fc50f5d46db6fc5764ac0916452d5e8b0c3b762",
+        "source_se_sha256": "a24b88f0a84dd2179907810c1cdb30f11f8f71d231d495617e85918581624ade",
+        "source_sw_sha256": "4df33d24ae92938957f89b19c5198628293970e37ec3eea00376c183778bf97d"
+      },
+      "attack": {
+        "path": "source/guides/attack_motion_guide.png",
+        "sha256": "92e2632683efe2575e3616518a8fe6b2925022f62c585ae3863428158dd94601",
+        "source_se_sha256": "242eb2d66eff7fb1d0eed1335cf6e0599c50ffd93887727f73a7400b613e5a36",
+        "source_sw_sha256": "ed67fed21cdf99bb3b86eaf02b2e8d69ac7fce43990c176fe9a955797eebef4f"
+      },
+      "cast": {
+        "path": "source/guides/cast_motion_guide.png",
+        "sha256": "8fcb3fe3d91e8ffbf57924c9d1ae6ab482792e0b2fd87420c8ecc8a0da54e01e",
+        "source_se_sha256": "655712eba46da4194b1066cd09596dbcaa2455aa07a03570244fcfc221877b38",
+        "source_sw_sha256": "c7263f8aed1df95dc85dcd1965799759c896b8a3349c1f7e5191a57aa76f0c7f"
+      },
+      "hit": {
+        "path": "source/guides/hit_motion_guide.png",
+        "sha256": "6dcadde08878109cf532bb086ffd3814678c4e137e72069901d10a50bea342dc",
+        "source_se_sha256": "e521e01ef41d5be07582318913d72eba5857db7b36e1fcb809c7170023162afd",
+        "source_sw_sha256": "117ba999ab4ed1664686e0da156221ebbd612223a75209d30c50ab3421270df1"
+      },
+      "fall": {
+        "path": "source/guides/fall_motion_guide.png",
+        "sha256": "2442703d0fd0091470666b52d86741071eceda9954be6c05aff69b8f611a6144",
+        "source_se_sha256": "8ba76dbdfcc7c612e835cb4956c4bbb60793b8bc3b704dd6dd27ff4870e4ac92",
+        "source_sw_sha256": "a7612b3669c506f7953ddaa715e41746a853cde65c74d865e6dccf5f59d9911c"
+      }
+    },
+    "model_sheet_sha256": "b2b1fd82b8cba74bb314f000f4f8730b2effd0ccc1cb37efaa5a0e005d2d78aa",
+    "model_views": {
+      "se": {
+        "path": "native/model_se.png",
+        "sha256": "20a7222f18fb714c165aaaf52c7de6a07e83a38b016f998ebf269c056fe26e24",
+        "bounds": [
+          322,
+          60,
+          679,
+          793
+        ],
+        "height": 733
+      },
+      "sw": {
+        "path": "native/model_sw.png",
+        "sha256": "4c340ed235e2e0338f544d5aeaed2773028c99e44f924c760f8de3e5f39bf708",
+        "bounds": [
+          264,
+          60,
+          634,
+          793
+        ],
+        "height": 733
+      }
+    },
+    "identity_reference": {
+      "path": "source/identity_reference.png",
+      "sha256": "c88f9c8ddc3daa91e68973e2abf87a39bd93124db5f3383a39fd2e4215d6eebf"
+    }
+  },
+  "source_atlases": {
+    "attack_atlas.png": {
+      "sha256": "e6cda232eab740b160664bb1ba8ad0f1489d5b26430a3d37e7cee43b5ab583f2",
+      "size_bytes": 1140785
+    },
+    "cast_atlas.png": {
+      "sha256": "82340d530540be5ee86abea21b267051a0e60895de8872e09fd7313e0ff6403a",
+      "size_bytes": 1194334
+    },
+    "fall_atlas.png": {
+      "sha256": "b524eba42ca84c8c687dceb4c929c33fede51532f0c2847e24763c539d63a541",
+      "size_bytes": 1006989
+    },
+    "hit_atlas.png": {
+      "sha256": "f8ce04605a8bc1b058dc060a76f2b567dd050426db853fed4d5107468fa0da66",
+      "size_bytes": 946143
+    },
+    "idle_atlas.png": {
+      "sha256": "5032d36d6ca377186e116305703a88833c36ab849a56b1e9d62536b71a8ed467",
+      "size_bytes": 2016913
+    },
+    "move_atlas.png": {
+      "sha256": "a621345c96336f7c299047359188bd65ae6599f6af3c909d5b7a3dc7e9851211",
+      "size_bytes": 1102566
+    },
+    "model.png": {
+      "sha256": "b2b1fd82b8cba74bb314f000f4f8730b2effd0ccc1cb37efaa5a0e005d2d78aa",
+      "size_bytes": 584257
+    },
+    "identity_reference.png": {
+      "sha256": "c88f9c8ddc3daa91e68973e2abf87a39bd93124db5f3383a39fd2e4215d6eebf",
+      "size_bytes": 9327
+    }
+  },
+  "counts": {
+    "model_views": 2,
+    "animation_clips": 12,
+    "cels": 68,
+    "runtime_assets": 13
+  },
+  "assets": {
+    "characters/NIN-046.png": "1723483a2f4714d3362242e4afdf49a84e8a522bcc7ff86c0cdfa840f9876650",
+    "animation/NIN-046/idle_se.png": "dcb1ec79b5fa27f7de9bda7cbed0a1c777bc9bfb51f96440ddc2361072c5f8ac",
+    "animation/NIN-046/idle_sw.png": "4b33fe8d6767cb308150b713e3eebe776350ebc4cb954e34d90bb437e0ce21ad",
+    "animation/NIN-046/move_se.png": "adc0ab007549afccdbdc310a7d1bbfc5728341d3ee0caaf7011828f1cec76864",
+    "animation/NIN-046/move_sw.png": "1e87edc8b87153c297a4da62628755d1efb3f17b23d7a5adee814f455d30abe1",
+    "animation/NIN-046/attack_se.png": "dccfdf2d67cbca379532d3dfb52e77bfff13523ace38079b6f91e36d8e55cdc1",
+    "animation/NIN-046/attack_sw.png": "046c77d835293587285b022bfb804bccf058696453ff066005580c12fe12ac1c",
+    "animation/NIN-046/cast_se.png": "da4b7d48b12d058f3c47be05acb380a481ec284571798fa02383de288fcd8692",
+    "animation/NIN-046/cast_sw.png": "48521b19217e3621266db4ace0e5670369d047e99d53f4a5caf650344affb28d",
+    "animation/NIN-046/hit_se.png": "e97c6da2d0a545c2585ce9ea465d032703ac9f4c5f0f7028cea985cfb9253bbc",
+    "animation/NIN-046/hit_sw.png": "ed97b3640699e27260174bac657ff46e0ce08caaf721c66ebd518457eda2f66f",
+    "animation/NIN-046/fall_se.png": "636ade1cf6a0765f0ead5b3ebb20d12267d27d1189b38f9c0ca75c4613d52148",
+    "animation/NIN-046/fall_sw.png": "e9a7e0cf4bc074808e0f237cec71e13ec5b2777417ec148fd06424e34f3d0448"
+  },
+  "metrics_96x112": {
+    "idle_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27439,
+      "source_heights": [
+        328,
+        330,
+        329,
+        334,
+        326,
+        328
+      ],
+      "source_widths": [
+        155,
+        158,
+        159,
+        160,
+        155,
+        155
+      ]
+    },
+    "idle_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27439,
+      "source_heights": [
+        328,
+        329,
+        333,
+        332,
+        329,
+        328
+      ],
+      "source_widths": [
+        161,
+        160,
+        161,
+        162,
+        160,
+        159
+      ]
+    },
+    "move_se": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.3125,
+      "source_heights": [
+        288,
+        289,
+        288,
+        289,
+        288,
+        289,
+        282,
+        288
+      ],
+      "source_widths": [
+        175,
+        170,
+        141,
+        155,
+        176,
+        151,
+        146,
+        149
+      ]
+    },
+    "move_sw": {
+      "frames": 8,
+      "distinct_runtime_frames": 8,
+      "fixed_source_scale": 0.308219,
+      "source_heights": [
+        292,
+        295,
+        290,
+        291,
+        291,
+        290,
+        291,
+        291
+      ],
+      "source_widths": [
+        180,
+        157,
+        141,
+        150,
+        180,
+        149,
+        145,
+        151
+      ]
+    },
+    "attack_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.266272,
+      "source_heights": [
+        338,
+        334,
+        328,
+        320,
+        320,
+        331
+      ],
+      "source_widths": [
+        168,
+        177,
+        195,
+        266,
+        226,
+        193
+      ]
+    },
+    "attack_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27027,
+      "source_heights": [
+        333,
+        328,
+        328,
+        322,
+        322,
+        335
+      ],
+      "source_widths": [
+        175,
+        182,
+        214,
+        280,
+        225,
+        182
+      ]
+    },
+    "cast_se": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.27027,
+      "source_heights": [
+        333,
+        332,
+        333,
+        333,
+        332,
+        333
+      ],
+      "source_widths": [
+        188,
+        201,
+        192,
+        188,
+        188,
+        188
+      ]
+    },
+    "cast_sw": {
+      "frames": 6,
+      "distinct_runtime_frames": 6,
+      "fixed_source_scale": 0.267062,
+      "source_heights": [
+        337,
+        337,
+        337,
+        337,
+        337,
+        337
+      ],
+      "source_widths": [
+        188,
+        191,
+        187,
+        188,
+        188,
+        188
+      ]
+    },
+    "hit_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.227273,
+      "source_heights": [
+        396,
+        403,
+        395,
+        407
+      ],
+      "source_widths": [
+        248,
+        203,
+        241,
+        188
+      ]
+    },
+    "hit_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.233161,
+      "source_heights": [
+        386,
+        398,
+        393,
+        403
+      ],
+      "source_widths": [
+        223,
+        196,
+        249,
+        194
+      ]
+    },
+    "fall_se": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.211031,
+      "source_heights": [
+        424,
+        394,
+        332,
+        223
+      ],
+      "source_widths": [
+        206,
+        232,
+        282,
+        417
+      ]
+    },
+    "fall_sw": {
+      "frames": 4,
+      "distinct_runtime_frames": 4,
+      "fixed_source_scale": 0.211765,
+      "source_heights": [
+        425,
+        385,
+        328,
+        228
+      ],
+      "source_widths": [
+        184,
+        223,
+        285,
+        401
+      ]
+    }
+  },
+  "statuses": {
+    "source": "SOURCE_REVIEW",
+    "pack": "PACK_PASS",
+    "visual": "REVIEWED_AT_96X112",
+    "runtime": "RUNTIME_PASS",
+    "owner": "PENDING"
+  },
+  "qa": {
+    "mode": "LEAN",
+    "display_size_px": [
+      96,
+      112
+    ],
+    "visual_review": "Combined runtime-size contact review complete; no blocking identity, direction, costume, deformation, clipping or strong-jitter defect observed.",
+    "fall_processing": "Full silhouettes recovered from variable-width alpha runs per row, centered and uniformly normalized into 96x112 runtime cells; original source atlases retained.",
+    "technical_validation": {
+      "status": "PASS",
+      "issues": [],
+      "command": "python3 tools/validate_factory_overlay.py runtime/NIN-046.json --revision v4",
+      "advisory_warnings_recorded_in": "metrics_96x112"
+    },
+    "godot_evidence": "Actual Main.tscn 6v6 no-reward batch runtime passed; all six overlays imported, 12 actors, 624 authored draws total (104 per identity).",
+    "runtime_evidence_path": "../BATCH_R16_V4_FAST_2026-11-28.md",
+    "capture_status": "No screenshot/video claimed: Godot used the headless dummy renderer and supplied no viewport texture."
+  },
+  "blockers": [
+    "Identity source pointer is partial or unverified; source remains in review.",
+    "Owner visual acceptance pending."
+  ],
+  "overlay": {
+    "path": "runtime/NIN-046.json",
+    "sha256": "3182cd3951d7dc9748acdc933200f42e7661e15224821ee8f3c9152d3aa5b1c2"
+  },
+  "contact_sheet": {
+    "path": "previews/contact_sheet_96x112.png",
+    "sha256": "ef544a67a2a07a573a81019aecb5d67226f630251eb9c14186cd650fa65e4794"
+  }
+}

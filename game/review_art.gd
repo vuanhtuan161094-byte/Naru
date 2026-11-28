@@ -110,6 +110,7 @@ func draw_d2(field:Control,a:Dictionary,id:String,p:Vector2,ticks:int,display_sc
 	return 104.0*display_scale
 
 var character_overlays:Dictionary={}
+var character_overlay_revisions:Dictionary={}
 var textures: Dictionary={}
 var source_label="DEV • chưa nạp gói riêng"
 var enabled=false
@@ -221,13 +222,15 @@ func import_text(raw: String,persist: bool=true) -> bool:
 			return false
 	textures=staged
 	character_overlays.clear()
+	character_overlay_revisions.clear()
 	review_clip_hashes=staged_hashes
 	clip_metadata=staged_clips
 	enabled=true
 	source_label="REVIEW RIÊNG • "+str(textures.size())+" ảnh"
 	return true
 
-# Apply a complete V3 character kit atomically, without resetting the existing pack.
+# Apply one complete V3/V4 character kit atomically, without resetting the existing pack.
+# V4 is a two-front-view presentation overlay; V3 retains its authored rear movement art.
 # Only exact per-character paths may be replaced. No VFX, environment or protected IDs.
 func import_character_overlay(raw:String,id:String) -> bool:
 	error=""
@@ -241,15 +244,18 @@ func import_character_overlay(raw:String,id:String) -> bool:
 	if not pack is Dictionary or pack.get("character_id","")!=id or pack.has("hold") or not pack.get("assets",{}) is Dictionary or not pack.get("clips",{}) is Dictionary:
 		error="Gói nhân vật chưa được hoàn thiện"
 		return false
-	var required={}
 	var counts={"idle":6,"move":8,"attack":6,"cast":6,"hit":4,"fall":4}
+	var v4=pack.get("revision","")=="v4" or pack.get("clips",{}).size()==12
+	var required={}
 	for action in counts:
-		var dirs=["se","sw","ne","nw"] if action=="move" else ["se","sw"]
+		var dirs=["se","sw"] if v4 or action!="move" else ["se","sw","ne","nw"]
 		for direction in dirs:
 			required["animation/"+id+"/"+action+"_"+direction+".png"]=counts[action]
 	var static_path="characters/"+id+".png"
-	if pack.assets.size()!=15 or pack.clips.size()!=14 or not pack.assets.has(static_path):
-		error="Cần đúng 14 clip, 84 cel và 1 sprite tĩnh"
+	var expected_clips=12 if v4 else 14
+	var expected_assets=13 if v4 else 15
+	if pack.assets.size()!=expected_assets or pack.clips.size()!=expected_clips or not pack.assets.has(static_path) or required.size()!=expected_clips:
+		error="Cần đúng 12 clip, 68 cel và 1 sprite tĩnh" if v4 else "Cần đúng 14 clip, 84 cel và 1 sprite tĩnh"
 		return false
 	for path in required:
 		if not pack.assets.has(path) or not pack.clips.has(path) or not pack.clips[path] is Dictionary or not pack.clips[path].get("frames",[]) is Array or pack.clips[path].get("frames",[]).size()!=required[path]:
@@ -268,11 +274,14 @@ func import_character_overlay(raw:String,id:String) -> bool:
 		review_clip_hashes[path]=staged.review_clip_hashes[path]
 	for path in staged.clip_metadata:clip_metadata[path]=staged.clip_metadata[path]
 	character_overlays[id]=true
+	character_overlay_revisions[id]="v4" if v4 else "v3"
 	source_label="MỸ THUẬT TÍCH HỢP • "+str(textures.size())+" ảnh"
 	return true
 
 func overlay_path(id:String) -> String:
-	return "user://naru_overlay_"+id+".json" if id in ["NIN-001","NIN-002"] else ""
+	if not id.begins_with("NIN-") or id.length()!=7 or not id.right(3).is_valid_int():return ""
+	if int(id.right(3))<1 or int(id.right(3))>144 or id in ["NIN-004","NIN-060","NIN-068","NIN-093"]:return ""
+	return "user://naru_overlay_"+id+".json"
 
 func save_overlay(raw:String,id:String) -> bool:
 	var path=overlay_path(id)
@@ -292,8 +301,10 @@ func save_overlay(raw:String,id:String) -> bool:
 
 func restore_overlays() -> void:
 	if not enabled:return
-	for id in ["NIN-001","NIN-002"]:
+	for n in range(1,145):
+		var id="NIN-%03d"%n
 		var path=overlay_path(id)
+		if path.is_empty():continue
 		for candidate in [path,path+".bak"]:
 			if FileAccess.file_exists(candidate) and import_character_overlay(FileAccess.get_file_as_string(candidate),id):break
 	error=""
@@ -328,8 +339,9 @@ func product_coverage() -> Dictionary:
 			counts.characters+=1
 			var id=name.get_file().get_basename()
 			var complete=true
+			var dirs=["se","sw"] if character_overlay_revisions.get(id,"")=="v4" else ["se","sw","ne","nw"]
 			for action in ["idle","move","attack","cast","hit","fall"]:
-				var directions=["se","sw","ne","nw"] if action=="move" else ["se","sw"]
+				var directions=dirs if action=="move" else ["se","sw"]
 				for direction in directions:
 					var key="animation/"+id+"/"+action+"_"+direction+".png"
 					if not textures.has(key) or not clip_metadata.has(key):complete=false
@@ -421,6 +433,11 @@ func draw_actor(field: Control,a: Dictionary,p: Vector2,ticks: int,display_scale
 	last_pos[a.uid]=p
 	var action=str(state.get("action","Idle")).to_lower()
 	var direction=str(state.get("direction","SE")).to_lower()
+	# V4 supplies front three-quarter SE/SW art only. Collapse rear-facing requests for
+	# these overlays at draw time; simulation facing and positions remain untouched.
+	if character_overlay_revisions.get(id,"")=="v4":
+		if direction=="ne":direction="se"
+		elif direction=="nw":direction="sw"
 	var clip_path="animation/"+id+"/"+action+"_"+direction+".png"
 	var authored=texture(clip_path)
 	var pose=texture(pose_path(id,direction))

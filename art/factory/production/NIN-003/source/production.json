@@ -1,0 +1,12 @@
+{
+  "character_id": "NIN-003",
+  "identity": {
+    "name": "Sakura Haruno (thiếu niên)",
+    "era": "Naruto Part I",
+    "form": "base",
+    "source_status": "generated_from_locked_description; canon_status_unverified_in_registry"
+  },
+  "source_identity_reference": null,
+  "owner_visual_acceptance": "PENDING",
+  "target_source_render_count": 7
+}
