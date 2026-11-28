@@ -1,0 +1,6 @@
+# Naru art factory R16 — Luna entry point
+Start at [LUNA_HANDOFF.md](LUNA_HANDOFF.md), then [RESEARCH.md](RESEARCH.md) and [CONTRACT.json](CONTRACT.json).
+ 
+References: [recovered Sasuke V3 exact overlay](references/source/NIN-002.json), [static sprite](references/source/NIN-002.png), and [generated reference library](references/generated/) (created by CI or by running python tools/build_factory_references.py from repo root). The original P3 pack is already in assets/public/naru-art.part.00..14 and verified by exact SHA. Do not use external character source archives as the new art standard. Generated previews are deterministic reconstructions from those files, not new renderings. Move R3 is owner approved visually; old P3 action clips are candidates. NIN-002 V3 is a runtime derivative, not native source and not runtime accepted. The 4 model views and 7 source high-res atlases remain unavailable here. The QA tool validates overlay structure, not visual identity.
+ 
+Run python -m pip install Pillow==11.3.0; python tools/build_factory_references.py; python tools/validate_factory_overlay.py art/factory/references/source/NIN-002.json. If validator reports HOLD, inspect issues; don't modify reference bytes. No gameplay changes or merge.

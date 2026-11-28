@@ -1,0 +1,184 @@
+{
+  "schema": 1,
+  "style": "NARU_MOVE_R3_V3_ANIME_CHIBI",
+  "source_precedence": [
+    "owner-approved Move R3 for shared style",
+    "NIN-002 V3 for directional/action structure",
+    "older P3 clips are candidates, not blanket approved"
+  ],
+  "runtime": {
+    "cell": [
+      96,
+      112
+    ],
+    "anchor": [
+      48,
+      104
+    ],
+    "no_upscale": true
+  },
+  "directions": {
+    "se": "front three-quarter facing screen right",
+    "sw": "front three-quarter facing screen left",
+    "ne": "rear three-quarter facing screen right",
+    "nw": "rear three-quarter facing screen left"
+  },
+  "model_views": [
+    "se",
+    "sw",
+    "ne",
+    "nw"
+  ],
+  "actions": {
+    "idle": {
+      "directions": [
+        "se",
+        "sw"
+      ],
+      "frames": 6,
+      "loop": true,
+      "default_ms": 150,
+      "phases": [
+        "ready",
+        "inhale",
+        "rise",
+        "peak",
+        "exhale",
+        "settle"
+      ]
+    },
+    "move": {
+      "directions": [
+        "se",
+        "sw",
+        "ne",
+        "nw"
+      ],
+      "frames": 8,
+      "loop": true,
+      "default_ms": 100,
+      "phases": [
+        "left contact",
+        "left load",
+        "right passing",
+        "right lift",
+        "right contact",
+        "right load",
+        "left passing",
+        "left lift"
+      ]
+    },
+    "attack": {
+      "directions": [
+        "se",
+        "sw"
+      ],
+      "frames": 6,
+      "loop": false,
+      "default_ms": 100,
+      "phases": [
+        "ready",
+        "anticipation",
+        "windup",
+        "strike",
+        "follow-through",
+        "recover"
+      ]
+    },
+    "cast": {
+      "directions": [
+        "se",
+        "sw"
+      ],
+      "frames": 6,
+      "loop": false,
+      "default_ms": 100,
+      "phases": [
+        "ready",
+        "hands raise",
+        "seal one",
+        "seal two",
+        "seal finish",
+        "recover"
+      ]
+    },
+    "hit": {
+      "directions": [
+        "se",
+        "sw"
+      ],
+      "frames": 4,
+      "loop": false,
+      "default_ms": 100,
+      "phases": [
+        "impact reaction",
+        "recoil",
+        "stagger",
+        "recover"
+      ]
+    },
+    "fall": {
+      "directions": [
+        "se",
+        "sw"
+      ],
+      "frames": 4,
+      "loop": false,
+      "default_ms": 160,
+      "phases": [
+        "balance lost",
+        "knees buckle",
+        "ground contact",
+        "down"
+      ]
+    }
+  },
+  "totals": {
+    "clips": 14,
+    "cels": 84,
+    "model_views": 4,
+    "target_source_atlases": 7
+  },
+  "qa": {
+    "hard": [
+      "exact file count and metadata",
+      "real alpha, nonempty, no clipping",
+      "no fabricated mirrored or interpolated frames",
+      "same model reference hash for all actions",
+      "no baked VFX",
+      "visual identity and direction review",
+      "no unauthorized overwrite"
+    ],
+    "warnings": {
+      "move_height_range_px": 10,
+      "move_bbox_center_range_px": 3,
+      "move_bottom_range_px": 10,
+      "standing_body_scale_relative": 0.08
+    },
+    "warning_note": "Proposed review triggers at runtime size, calibrated against six approved Move R3 strips; not automatic identity proof. Attack, hit and fall require pose-aware anchors; do not force bbox height equal."
+  },
+  "protected_static": [
+    "NIN-004",
+    "NIN-060",
+    "NIN-068",
+    "NIN-093"
+  ],
+  "production_statuses": [
+    "SOURCE_PENDING",
+    "SOURCE_REVIEW",
+    "SOURCE_PASS",
+    "PACK_PASS",
+    "RUNTIME_PASS",
+    "OWNER_ACCEPTED"
+  ],
+  "prohibited": [
+    "rig",
+    "tween",
+    "mirror",
+    "procedural transform as new cel",
+    "poster crops",
+    "baked VFX",
+    "upscale as HD",
+    "unapproved gameplay changes"
+  ]
+}
