@@ -197,7 +197,12 @@ func _ready() -> void:
 			store.new_game(reg)
 			store.rng.seed=42
 		else:store.load_or_new(reg)
-	else:store.load_or_new(reg)
+	else:
+		if "--e4-capture" in OS.get_cmdline_user_args():
+			store.save_path="user://naru_e4_capture.json"
+			store.new_game(reg)
+			store.rng.seed=42
+		else:store.load_or_new(reg)
 	if "--smoke" in OS.get_cmdline_user_args():
 		if art.enabled:
 			var coverage=art.product_coverage()
@@ -213,6 +218,9 @@ func _ready() -> void:
 	apply_settings()
 	if web_qa:menu(store.load_notice)
 	else:journey_screen(store.load_notice)
+	if "--e4-capture" in OS.get_cmdline_user_args():
+		call_deferred("e4_capture_screens")
+		return
 	if "--combat-video" in OS.get_cmdline_user_args():
 		if "--private-capture" in OS.get_cmdline_user_args():
 			if not art.enabled or art.textures.size()<224:
@@ -239,6 +247,37 @@ func _ready() -> void:
 		JavaScriptBridge.eval("window.naruReady=true")
 		call_deferred("web_probe")
 
+func e4_capture_screens()->void:
+	var folder=ProjectSettings.globalize_path("res://e4-evidence")
+	DirAccess.make_dir_recursive_absolute(folder)
+	var id=str(store.state.owned.keys()[0])
+	var screens:Array=[
+		["01-journey",journey_screen],["02-village",home_screen],
+		["03-ninja",growth_screen],["04-growth",func():growth_detail(id)],
+		["05-skills",func():skill_screen(id)],["06-equipment",func():ninja_gear_screen(id)],
+		["07-recruit",recruit_screen],["08-formation",roster],
+		["09-inventory",inventory_screen],["10-adventure",adventure_hub],
+		["11-story",campaign],["12-expeditions",expedition_screen],
+		["13-quests",quest_screen],["14-world",world_screen],
+		["15-settings",settings_screen]]
+	for building_id in reg.buildings:
+		var key=str(building_id)
+		screens.append(["building-"+key,func():building_screen(key)])
+	for item in screens:
+		item[1].call()
+		await get_tree().process_frame
+		await get_tree().process_frame
+		await RenderingServer.frame_post_draw
+		var image=get_viewport().get_texture().get_image()
+		var code=image.save_png(folder+"/"+str(item[0])+".png")
+		if code!=OK:
+			push_error("E4_CAPTURE_FAIL "+str(item[0]))
+			get_tree().quit(2)
+			return
+		print("E4_CAPTURE_OK ",item[0]," ",image.get_size())
+	print("E4_CAPTURE_COMPLETE ",screens.size())
+	get_tree().quit()
+
 func clear() -> void:
 	for c in root.get_children():
 		root.remove_child(c)
@@ -248,6 +287,7 @@ func clear() -> void:
 func product_art_header(parent: Node,path: String,title_text: String,subtitle: String,extent: int) -> VBoxContainer:
 	var frame=PanelContainer.new()
 	frame.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	frame.add_theme_stylebox_override("panel",combat_panel(Color("#202b36"),Color("#65738a"),8))
 	parent.add_child(frame)
 	var row=HBoxContainer.new()
 	row.add_theme_constant_override("separation",12)
@@ -265,8 +305,9 @@ func product_art_header(parent: Node,path: String,title_text: String,subtitle: S
 	info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	info.alignment=BoxContainer.ALIGNMENT_CENTER
 	row.add_child(info)
-	label(info,title_text,27).modulate=Color("#f1d398")
-	label(info,subtitle,17)
+	label(info,title_text,30).modulate=Color("#ffdb9d")
+	var sub=label(info,subtitle,16)
+	sub.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	return info
 
 func e4_metric_grid(parent:Node,items:Array,columns:int=4)->void:
@@ -356,7 +397,9 @@ func roster(message: String="") -> void:
 		var id=""
 		for ninja in store.state.formation_slots:
 			if int(store.state.formation_slots[ninja])==i:id=str(ninja);break
-		var b=button(slots,("▶ " if selected_slot==i else "")+str(i+1)+" • "+(reg.ninjas[id].name_vi if id!="" else "Ô trống"),func():selected_slot=i;roster())
+		var b=button(slots,("▶ " if selected_slot==i else "")+str(i+1)+"\n"+(reg.ninjas[id].name_vi if id!="" else "Ô trống"),func():selected_slot=i;roster())
+		b.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER
+		b.vertical_icon_alignment=VERTICAL_ALIGNMENT_TOP
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		b.custom_minimum_size=Vector2(0,100)
 		b.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -366,7 +409,7 @@ func roster(message: String="") -> void:
 			if tex!=null:
 				b.icon=tex
 				b.expand_icon=true
-				b.add_theme_constant_override("icon_max_width",48)
+				b.add_theme_constant_override("icon_max_width",66)
 	var controls=HBoxContainer.new()
 	left.add_child(controls)
 	button(controls,"Bỏ ninja khỏi ô",func():roster("Đã bỏ" if store.set_formation_slot(selected_slot,"") else "Ô trống hoặc đang triển khai"))
@@ -453,7 +496,7 @@ func growth_detail(id: String,message: String="") -> void:
 	open_screen("ninja_detail")
 	var p=store.state.owned[id]
 	store.ensure_growth(p)
-	var info=product_art_header(root,"portraits/"+id+".png",str(reg.ninjas[id].name_vi),"Cấp %d/%d • Cảnh %d • Phẩm %d • Sao %d/15 • Mảnh %d • Điểm %d • XP %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.quality),int(p.stars),int(p.shards),int(p.points),int(p.xp)],88)
+	var info=product_art_header(root,"portraits/"+id+".png",str(reg.ninjas[id].name_vi),"Cấp %d/%d • Cảnh %d • Phẩm %d • Sao %d/15 • Mảnh %d • Điểm %d • XP %d" % [int(p.level),(int(p.realm)+1)*20,int(p.realm),int(p.quality),int(p.stars),int(p.shards),int(p.points),int(p.xp)],116)
 	if message!="":label(info,message,16)
 	var tabs=HBoxContainer.new()
 	root.add_child(tabs)
@@ -2488,8 +2531,8 @@ func make_theme() -> Theme:
 	t.set_color("font_placeholder_color","LineEdit",Color("#9ca7aa"))
 	for control_type in ["LineEdit","PanelContainer"]:
 		var panel=StyleBoxFlat.new()
-		panel.bg_color=Color("#23312f")
-		panel.border_color=Color("#52645a")
+		panel.bg_color=Color("#263341")
+		panel.border_color=Color("#526177")
 		panel.set_border_width_all(1)
 		panel.set_corner_radius_all(7)
 		panel.content_margin_left=8
@@ -2499,8 +2542,8 @@ func make_theme() -> Theme:
 		t.set_stylebox("normal" if control_type=="LineEdit" else "panel",control_type,panel)
 	for state_key in ["normal","hover","pressed","disabled","focus"]:
 		var style=StyleBoxFlat.new()
-		style.bg_color=Color("#253632") if state_key=="normal" else Color("#3b5147") if state_key=="hover" else Color("#80603a") if state_key=="pressed" else Color("#202a29") if state_key=="disabled" else Color(0,0,0,0)
-		style.border_color=Color("#53685b") if state_key!="focus" else Color("#f1bb69")
+		style.bg_color=Color("#303e4e") if state_key=="normal" else Color("#45566a") if state_key=="hover" else Color("#946637") if state_key=="pressed" else Color("#242c36") if state_key=="disabled" else Color(0,0,0,0)
+		style.border_color=Color("#5c6b7d") if state_key!="focus" else Color("#f1bb69")
 		style.set_border_width_all(1)
 		style.set_corner_radius_all(7)
 		style.content_margin_left=10
