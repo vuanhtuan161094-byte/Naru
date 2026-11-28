@@ -78,12 +78,12 @@ func apply_panorama(at: int) -> bool:
  map.add_child(bg)
  # Use the same normalized geometry as the authored ground. Keep HQ central in its own district.
  var zones=[
-  ["ĐIỀU HÀNH",[22,23,1,29,30],Rect2(12,115,456,182),Color("#f4d39e")],
-  ["HUẤN LUYỆN",[2,3,4,5,6],Rect2(484,115,456,182),Color("#d1e2ed")],
-  ["NHẪN THUẬT",[7,8,9,10,28],Rect2(956,115,432,182),Color("#dfd0ec")],
-  ["SINH HOẠT & TÀI NGUYÊN",[11,12,13,14,15],Rect2(12,300,456,182),Color("#d6e9b8")],
-  ["SẢN XUẤT",[16,17,18,19,20],Rect2(484,300,456,182),Color("#f0deae")],
-  ["CHIẾN ĐẤU & GIAO THƯƠNG",[21,24,25,26,27],Rect2(956,300,432,182),Color("#f1d1bb")]
+  ["ĐIỀU HÀNH",[22,23,1,29,30],Rect2(12,45,456,210),Color("#f4d39e")],
+  ["HUẤN LUYỆN",[2,3,4,5,6],Rect2(484,45,456,210),Color("#d1e2ed")],
+  ["NHẪN THUẬT",[7,8,9,10,28],Rect2(956,45,432,210),Color("#dfd0ec")],
+  ["SINH HOẠT & TÀI NGUYÊN",[11,12,13,14,15],Rect2(12,267,456,210),Color("#d6e9b8")],
+  ["SẢN XUẤT",[16,17,18,19,20],Rect2(484,267,456,210),Color("#f0deae")],
+  ["CHIẾN ĐẤU & GIAO THƯƠNG",[21,24,25,26,27],Rect2(956,267,432,210),Color("#f1d1bb")]
  ]
  for district in zones:
   var zone:Rect2=district[2]
