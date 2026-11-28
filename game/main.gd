@@ -29,6 +29,8 @@ var shell: VBoxContainer
 var header: HBoxContainer
 var navigation: HBoxContainer
 var resource_bar: Label
+var e4_resource_values: Array[Label]=[]
+var e4_section_caption: Label
 var paused=false
 var battle_speed=1.0
 var ult_actions: Array[Dictionary]=[]
@@ -124,11 +126,26 @@ func _ready() -> void:
 	add_child(shell)
 	header=HBoxContainer.new()
 	shell.add_child(header)
-	var brand=label(header,"NARUTO  /  NHẪN GIỚI",23)
-	brand.modulate=Color("#f1bb69")
-	resource_bar=label(header,"",17)
-	resource_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	label(header,"NHẪN GIỚI",13).modulate=Color("#b6bcaa")
+	var brand_box=VBoxContainer.new()
+	brand_box.custom_minimum_size.x=200
+	header.add_child(brand_box)
+	var brand=label(brand_box,"NARUTO  /  NHẪN GIỚI",21)
+	brand.modulate=Color("#ffc780")
+	e4_section_caption=label(brand_box,"LÀNG LÁ",13)
+	e4_section_caption.modulate=Color("#b9c5d4")
+	resource_bar=label(header,"",13)
+	resource_bar.hide()
+	for caption in ["RYO","NGỌC","GỖ","ĐÁ","THỂ LỰC"]:
+		var chip=PanelContainer.new()
+		chip.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		header.add_child(chip)
+		var stack=VBoxContainer.new()
+		stack.add_theme_constant_override("separation",1)
+		chip.add_child(stack)
+		label(stack,caption,12).modulate=Color("#aab9c9")
+		var amount=label(stack,"0",19)
+		amount.modulate=Color("#ffe2b5")
+		e4_resource_values.append(amount)
 	navigation=HBoxContainer.new()
 	navigation.add_theme_constant_override("separation",5)
 	shell.add_child(navigation)
@@ -390,7 +407,7 @@ func growth_screen() -> void:
 		growth_screen())
 	var rows=scroll_rows(root)
 	var grid=GridContainer.new()
-	grid.columns=3
+	grid.columns=4
 	rows.add_child(grid)
 	for id in store.state.owned:
 		var n=reg.ninjas[id]
@@ -402,7 +419,7 @@ func growth_screen() -> void:
 		if roster_job!="" and n.profession_hint!=roster_job:continue
 		var b=button(grid,"%s\nCấp %d • Phẩm %d • %d sao" % [n.name_vi,int(p.level),int(p.quality),int(p.stars)],func():growth_detail(id))
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		b.custom_minimum_size.y=118
+		b.custom_minimum_size.y=100
 		b.add_theme_stylebox_override("normal",combat_panel(Color("#263832"),quality_color(int(p.quality)).darkened(0.3),7))
 		var portrait=art.texture("portraits/"+id+".png")
 		if portrait!=null:
@@ -1533,14 +1550,17 @@ func inventory_screen() -> void:
 	button(row,"Chế tạo",craft_screen)
 	button(row,"Thưởng chờ nhận ("+str(store.state.reward_inbox.size())+")",reward_inbox_screen)
 	var rows=scroll_rows(root)
+	var grid=GridContainer.new()
+	grid.columns=4
+	rows.add_child(grid)
 	for id in reg.resources:
 		var r=reg.resources[id]
 		if inventory_query!="" and not (str(r.name_vi)+" "+id).to_lower().contains(inventory_query.to_lower()):continue
-		var line=ui_card_row(rows)
-		var l=label(line,"%s • %s" % [id,r.name_vi],17)
-		l.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		label(line,"%d / %d" % [int(store.state.inventory.get(id,0)),int(Village.capacity(store.state,id))],16)
-		button(line,"Nguồn / công dụng",func():resource_detail(id))
+		var tile=button(grid,"%s\n%d / %d" % [r.name_vi,int(store.state.inventory.get(id,0)),int(Village.capacity(store.state,id))],func():resource_detail(id))
+		tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		tile.custom_minimum_size.y=78
+		tile.tooltip_text=str(r.name_vi)+" • Nguồn / công dụng"
+	if grid.get_child_count()==0:label(rows,"Không tìm thấy tài nguyên.",18)
 
 func building_actions(rows:Control,id:String) -> void:
 	match id:
@@ -2486,6 +2506,8 @@ func open_screen(id: String) -> void:
 	header.visible=id!="battle"
 	navigation.visible=id!="battle"
 	var section={"journey":"Hành trình","wiki":"Cài đặt","home":"Làng","building":"Làng","village_hub":"Làng","craft":"Làng","production":"Làng","adventure_hub":"Phiêu lưu","activities":"Phiêu lưu","expeditions":"Phiêu lưu","tower":"Phiêu lưu","resource_trials":"Phiêu lưu","weekly":"Phiêu lưu","quest":"Phiêu lưu","campaign":"Phiêu lưu","world_intelligence":"Nhẫn giới","trade_orders":"Nhẫn giới","world":"Nhẫn giới","diplomacy":"Nhẫn giới","ninja_hub":"Ninja","ninja_roster":"Ninja","ninja_detail":"Ninja","skill_tree":"Ninja","formation":"Ninja","recruit":"Ninja","beasts":"Ninja","inventory":"Kho","settings":"Cài đặt"}
+	section.merge({"skill":"Ninja","passive":"Ninja","gear":"Kho","gear_craft":"Kho","resource_detail":"Kho","recruit_history":"Ninja","recruit_rates":"Ninja","fragment_recruit":"Ninja","mission":"Phiêu lưu","contract":"Ninja","bloodline":"Ninja","squad":"Ninja","result":"Phiêu lưu"},false)
+	if is_instance_valid(e4_section_caption):e4_section_caption.text=str(section.get(id,"Nhẫn giới")).to_upper()
 	for item in navigation.get_children():
 		if item is Button:
 			var active=item.text==section.get(id,"")
@@ -2497,7 +2519,10 @@ func open_screen(id: String) -> void:
 
 func update_resources() -> void:
 	if resource_bar==null or store.state.is_empty():return
-	resource_bar.text="   Ryo %d   •   Ngọc %d   •   Gỗ %d   •   Đá %d   •   Thể lực %d/120" % [store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.inventory.get("RES-006",0),store.state.inventory.get("RES-009",0),int(store.state.stamina)]
+	var values=[store.state.inventory.get("RES-001",0),store.state.inventory.get("RES-002",0),store.state.inventory.get("RES-006",0),store.state.inventory.get("RES-009",0),int(store.state.stamina)]
+	resource_bar.text="Ryo %d • Ngọc %d • Gỗ %d • Đá %d • Thể lực %d/120" % values
+	for i in range(e4_resource_values.size()):
+		e4_resource_values[i].text=str(values[i])+("/120" if i==4 else "")
 
 func scroll_rows(parent: Node) -> VBoxContainer:
 	var sc=ScrollContainer.new()
