@@ -54,6 +54,7 @@ const BattleCamera=preload("res://game/battle_camera.gd")
 var battle_inspector: Label
 var inspected_uid=0
 var hud_clock=0.0
+var cast_callouts:Array[Label]=[]
 var form_actions: Array[Dictionary]=[]
 var last_video_ult_tick=-1
 var last_private_trace_tick=-1
@@ -749,6 +750,17 @@ func battle_view() -> void:
 	battle_detail_button=combat_button(toolbar,"Chi tiết",func():battle_details=not battle_details;scroll_battle_visibility(),72)
 	battle_grid_button=combat_button(toolbar,"Lưới",func():battle_grid=not battle_grid;refresh_battle_toggles();field.queue_redraw(),48)
 	combat_button(toolbar,"Rút lui",func():finish(false),72).add_theme_color_override("font_color",Color("#ffaca0"))
+	var cast_strip=HBoxContainer.new()
+	cast_strip.add_theme_constant_override("separation",12)
+	root.add_child(cast_strip)
+	cast_callouts.clear()
+	for side in [0,1]:
+		var callout=label(cast_strip,"",14)
+		callout.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		callout.custom_minimum_size.x=0
+		callout.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT if side==0 else HORIZONTAL_ALIGNMENT_RIGHT
+		callout.modulate=Color("#e7d39c") if side==0 else Color("#f0b0ac")
+		cast_callouts.append(callout)
 	var body=HBoxContainer.new()
 	body.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	body.add_theme_constant_override("separation",6)
@@ -1168,9 +1180,8 @@ func _process(delta: float) -> void:
 		last_private_trace_tick=sim.ticks
 		print("NARU_PRIVATE_TRACE tick=",sim.ticks," actors=",sim.primary_alive(0).size()+sim.primary_alive(1).size()," draws=",art.actor_draws," fallback=",art.fallback_draws," clone=",art.clone_draws," summon=",art.summon_draws," directional_pose=",art.directional_pose_draws)
 		print("NARU_SASUKE_CLIP_DRAWS ",art.character_clip_draws("NIN-002"))
-	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks%120==0 and sim.ticks!=last_private_trace_tick:
 		print("NARU_E3_MOTION ",sim.e3_metrics)
-	if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=60 and sim.ticks%40==0 and last_video_ult_tick!=sim.ticks:
+		if "--combat-video" in OS.get_cmdline_user_args() and review_mode and sim.ticks>=60 and sim.ticks%40==0 and last_video_ult_tick!=sim.ticks:
 		last_video_ult_tick=sim.ticks
 		# Stagger actual manual requests so the sample does not queue every ultimate simultaneously.
 		var index=posmod(floori(float(sim.ticks)/40.0),6)
@@ -1190,6 +1201,22 @@ func _process(delta: float) -> void:
 	status.text="CHIẾN ĐẤU • "+str(battle_stage.name_vi)+" • %.1fs" % (sim.ticks*0.05)
 	battle_team_status.text="%d VS %d" % [sim.primary_alive(0).size(),sim.primary_alive(1).size()]
 	refresh_actor_skill_hud()
+	for side in [0,1]:
+		var headline=""
+		var chosen_tick=-1
+		var chosen_ultimate=false
+		for e in sim.animation_events:
+			if sim.ticks-int(e.tick)>24 or str(e.phase)!="cast":continue
+			var actor=sim.actor_by_uid(int(e.actor_uid))
+			if actor.is_empty() or int(actor.side)!=side or not reg.skills.has(e.skill_id):continue
+			var sk=sim.effective_skill(actor,str(e.skill_id))
+			var ultimate=str(sk.kind)=="ultimate"
+			if chosen_ultimate and not ultimate:continue
+			if ultimate or int(e.tick)>=chosen_tick:
+				chosen_tick=int(e.tick)
+				chosen_ultimate=ultimate
+				headline=("TUYỆT KỸ • " if ultimate else "")+str(reg.ninjas.get(actor.id,{}).get("name_vi",actor.id)).split(" (")[0]+"  /  "+sim.skill_name(str(e.skill_id))
+		if side<cast_callouts.size() and is_instance_valid(cast_callouts[side]):cast_callouts[side].text=headline
 	if sim.deadlock:status.text+=" • Giằng co"
 	elif sim.pressure_mode:status.text+=" • Đổi chiến thuật"
 	if battle_details:status.tooltip_text=str(sim.side_formations.get(0,"FRM-01"))
@@ -1227,7 +1254,7 @@ func _process(delta: float) -> void:
 		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+"\n"+reason
 		action.button.tooltip_text="Chọn trước để tích chakra và tự thi triển khi đủ điều kiện; bấm lại để hủy."
 		action.button.add_theme_stylebox_override("normal",combat_panel(Color("#8b642c") if reason=="Sẵn sàng" else Color("#292d36"),Color("#e1b76b") if reason=="Sẵn sàng" else Color("#5b6570"),5))
-		action.button.tooltip_text=str(reg.names[action.skill].name_vi)+" • "+reason
+		action.button.tooltip_text=str(reg.names[action.skill].name_vi)+" • "+reason+" • Chọn trước để giữ chakra; bấm lại để hủy."
 	for action in form_actions:
 		var a=sim.actor_by_uid(int(action.uid))
 		action.button.disabled=paused or not sim.form_ready(a,action.form,true)

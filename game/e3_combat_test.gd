@@ -35,9 +35,36 @@ func sample(reg,modern:bool,seed_value:int)->Dictionary:
 	check(sim.runtime_metrics.cast_choices>0,"actual casts")
 	check(sim.actors.all(func(a):return a.chakra>=0 and a.chakra<=a.max_chakra+0.01),"chakra limits")
 	return {"motion":sim.e3_metrics,"casts":sim.runtime_metrics.cast_choices,"focus":sim.tactical_metrics.focus_switches,"moves":sim.tactical_metrics.movement_steps,"ultimate_executed":sim.ultimate_executed,"outcome":sim.outcome}
+func direct_fixture(reg)->void:
+	var sim=Combat.new()
+	sim.registry=reg
+	sim.use_depth=true
+	sim.use_tactical=true
+	sim.use_e3_movement=true
+	sim.use_contract_v10=true
+	sim.load_combat_contracts()
+	sim.rng.seed=20
+	sim.add_actor("NIN-001",0,40,2,{},0,1.0,{"realm":1})
+	sim.add_actor("NIN-003",1,40,2,{},0,1.0,{"realm":1})
+	var a=sim.actors[0]
+	var b=sim.actors[1]
+	a.pos=Vector2(5,5)
+	b.pos=Vector2(6,5)
+	var basic=sim.effective_skill(a,str(a.skills[0]))
+	var goal=sim.tactical_goal(a,b,basic)
+	check(goal.is_equal_approx(a.pos),"hold at legal basic range")
+	var id=str(a.skills[5])
+	sim.cp_resize(a,float(a.max_chakra))
+	sim.cp_adjust(a,float(a.max_chakra),"e3_fixture")
+	check(sim.ultimate_skill(0,id),"queue real ultimate")
+	for step in range(160):
+		sim.tick(0.05)
+		if int(sim.ultimate_executed.get(id,0))>0:break
+	check(int(sim.ultimate_executed.get(id,0))>0,"queued ultimate actually cast")
 func _initialize()->void:
 	var reg=Registry.new()
 	if not reg.load_all():quit(1);return
+	direct_fixture(reg)
 	for seed_value in [42,113,812]:
 		var baseline=sample(reg,false,seed_value)
 		var modern=sample(reg,true,seed_value)

@@ -337,6 +337,7 @@ func cast(a: Dictionary,s: Dictionary,b: Dictionary) -> bool:
 	a.pending={"skill":s,"target_uid":b.uid,"origin":a.pos,"aim":b.pos,"cast_id":cast_seq}
 	a.cast_left=float(s.cast_s)
 	a.cast_started=ticks
+	if use_e3_movement:a.ai_goal=a.pos
 	a.facing=(Vector2(b.pos)-Vector2(a.pos)).normalized() if b.uid!=a.uid else a.get("facing",Vector2.RIGHT if a.side==0 else Vector2.LEFT)
 	animation_event(a,"attack" if s.kind=="basic" else "cast",s,b)
 	art_event("cast_start",a.pos,0,str(s.skill_id))
