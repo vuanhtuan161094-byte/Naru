@@ -613,13 +613,13 @@ func battle_view() -> void:
 	field.custom_minimum_size=Vector2(280,240)
 	field.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	field.clip_contents=true
-	field.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+	field.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
 	field.draw.connect(draw_field)
 	field.gui_input.connect(inspect_battle_input)
 	left.add_child(field)
 	battle_actions_panel=ScrollContainer.new()
 	battle_actions_panel.name="BattleActions"
-	battle_actions_panel.custom_minimum_size.y=90
+	battle_actions_panel.custom_minimum_size.y=126
 	battle_actions_panel.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 	battle_actions_panel.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	left.add_child(battle_actions_panel)
@@ -711,7 +711,23 @@ func battle_view() -> void:
 		var hp=combat_meter(text_col,Color("#87c95c"))
 		var cp=combat_meter(text_col,Color("#56b8e4"))
 		var state_label=label(text_col,"",10)
-		battle_cards.append({"uid":uid,"label":state_label,"hp":hp,"cp":cp,"panel":card,"mini":mini})
+		var skill_line=label(group,"",11)
+		skill_line.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+		skill_line.custom_minimum_size.y=16
+		skill_line.add_theme_color_override("font_color",Color("#ebd6a4"))
+		var skill_row=HBoxContainer.new()
+		skill_row.add_theme_constant_override("separation",3)
+		group.add_child(skill_row)
+		var skill_cells:Array=[]
+		for k in range(5):
+			var cell=Label.new()
+			cell.custom_minimum_size=Vector2(21,17)
+			cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			cell.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+			cell.add_theme_font_size_override("font_size",10)
+			skill_row.add_child(cell)
+			skill_cells.append(cell)
+		battle_cards.append({"uid":uid,"label":state_label,"hp":hp,"cp":cp,"panel":card,"mini":mini,"skill_line":skill_line,"skill_cells":skill_cells})
 		var extra=VBoxContainer.new()
 		battle_dock_content.add_child(extra)
 		battle_action_groups[uid]=extra
@@ -803,77 +819,78 @@ func refresh_actor_skill_hud()->void:
 	actor_skill_hud_cache.clear()
 	var recent:Dictionary={}
 	for e in sim.animation_events:
-		if sim.ticks-int(e.tick)>22:continue
-		if str(e.phase) in ["cast","attack","release","contact"] and not str(e.skill_id).is_empty():recent[int(e.actor_uid)]=str(e.skill_id)
+		if sim.ticks-int(e.tick)>18:continue
+		if str(e.phase) in ["cast","release","contact"] and not str(e.skill_id).is_empty():recent[int(e.actor_uid)]=str(e.skill_id)
 	for a in sim.actors:
 		if a.hp<=0 or a.get("summon",false):continue
 		var active=str(a.pending.skill.skill_id) if not a.pending.is_empty() else str(recent.get(int(a.uid),""))
 		var slots:Array=[]
 		var ultimate_text=""
 		var ultimate_ready=false
+		var ult_name=""
+		var active_name=""
+		var active_ult=false
 		for id in a.skills:
 			var s=sim.effective_skill(a,id)
 			if str(s.kind)=="basic":continue
 			var ult=str(s.kind)=="ultimate"
-			if not ult and slots.size()>=4:continue
+			if str(id)==active:
+				active_name=sim.skill_name(str(id))
+				active_ult=ult
+			if not ult and slots.filter(func(x):return not x.ult).size()>=4:continue
 			if ult and slots.any(func(x):return x.ult):continue
 			var cd=maxf(0.0,float(a.cooldowns.get(id,0.0)))
 			var ready=sim.ready(a,s)
 			var reason=sim.ultimate_reason(a,id) if ult else ""
 			if ult:
 				ultimate_ready=reason=="Sẵn sàng"
-				ultimate_text="SẴN SÀNG" if ultimate_ready else ("%.0fs" % ceil(cd) if cd>0 else ("CP" if reason=="Chờ CP" else "CHỜ"))
-				if reason=="Đang thi triển":ultimate_text="TUNG CHIÊU"
-				elif sim.ultimate_requests.get(a.uid,"")==id and not ultimate_ready:ultimate_text="ĐÃ CHỌN"
+				ult_name=sim.skill_name(str(id))
+				ultimate_text="Sẵn sàng" if ultimate_ready else ("Hồi %.1fs" % cd if cd>0 else ("Thiếu CP" if reason=="Chờ CP" else "Chờ"))
+				if reason=="Đang thi triển":ultimate_text="Thi triển"
+				elif sim.ultimate_requests.get(a.uid,"")==id and not ultimate_ready:ultimate_text="Đã chọn"
 			slots.append({"id":id,"ult":ult,"cd":cd,"ready":ultimate_ready if ult else ready,"active":str(id)==active})
-			if slots.size()>=5:break
-		var active_name=""
-		if not active.is_empty() and (reg.names.has(active) or reg.p2_design.has(active)):active_name=sim.skill_name(active)
-		actor_skill_hud_cache[int(a.uid)]={"slots":slots,"active":active_name,"ultimate":ultimate_text,"ready":ultimate_ready}
+		actor_skill_hud_cache[int(a.uid)]={"slots":slots,"active":active_name,"active_ult":active_ult,"ultimate":ultimate_text,"ready":ultimate_ready,"ult_name":ult_name}
 func draw_actor_skill_hud(a:Dictionary,p:Vector2)->void:
 	var d:Dictionary=actor_skill_hud_cache.get(int(a.uid),{})
 	if d.is_empty():return
 	var slots:Array=d.slots
 	if slots.is_empty():return
-	var width=126.0 if not str(d.active).is_empty() else 98.0
-	var height=31.0 if not str(d.active).is_empty() else 18.0
-	var loc=Vector2(clampf(p.x-width*0.5,2.0,maxf(2.0,field.size.x-width-2.0)),clampf(p.y+5.0,2.0,maxf(2.0,field.size.y-height-2.0)))
-	var rect=Rect2(loc,Vector2(width,height))
-	# Prefer beneath feet. Shift a crowded HUD only, not any actor or combat coordinates.
-	for offset in [Vector2(0,19),Vector2(0,-19),Vector2(-width-5,0),Vector2(width+5,0),Vector2(0,38)]:
-		if not skill_hud_occupied.any(func(r):return r.intersects(rect)):break
-		var candidate=Vector2(clampf(loc.x+offset.x,2.0,maxf(2.0,field.size.x-width-2.0)),clampf(loc.y+offset.y,2.0,maxf(2.0,field.size.y-height-2.0)))
-		rect=Rect2(candidate,Vector2(width,height))
+	var width=14.0*slots.size()
+	var loc=Vector2(clampf(p.x-width*0.5,2.0,maxf(2.0,field.size.x-width-2.0)),clampf(p.y+3.0,2.0,maxf(2.0,field.size.y-13.0)))
+	var rect=Rect2(loc,Vector2(width,11))
+	# No floating panels displaced across the battle. Overlapping strips are omitted;
+	# the full allied state remains visible in the bottom cards.
+	if skill_hud_occupied.any(func(r):return r.intersects(rect)):return
 	skill_hud_occupied.append(rect)
-	if rect.position.distance_to(loc)>12:field.draw_line(p+Vector2(0,3),rect.get_center(),Color(0.65,0.7,0.75,0.35),1)
-	field.draw_rect(rect,Color(0.035,0.055,0.075,0.91))
-	var edge=Color("#dcae61") if a.side==0 else Color("#bd7379")
-	field.draw_rect(rect,edge, false,1)
-	var x=rect.position.x+3.0
-	var y=rect.position.y+2.0
 	var i=0
 	for item in slots:
-		var w=28.0 if item.ult else 15.0
-		var slot=Rect2(Vector2(x,y),Vector2(w,14))
-		var fill=Color("#b9782b") if item.ult and item.ready else Color("#355d67") if item.ready else Color("#29313c")
-		if item.active:fill=Color("#d2a04b")
+		var slot=Rect2(loc+Vector2(i*14,0),Vector2(12,10))
+		var fill=Color("#b98232") if item.ult and item.ready else Color("#498474") if item.ready else Color(0.075,0.11,0.15,0.85)
+		if item.active:fill=Color("#e4bc62")
 		field.draw_rect(slot,fill)
-		field.draw_rect(slot,Color("#f4d891") if item.active or (item.ult and item.ready) else Color("#61717b"),false,1)
-		var label="ULT" if item.ult else str(i+1)
-		if float(item.cd)>0.01:label=str(ceili(float(item.cd)))
-		elif item.ult and not item.ready:label=str(d.ultimate).left(5)
-		field.draw_string(ThemeDB.fallback_font,Vector2(x+2,y+11),label,HORIZONTAL_ALIGNMENT_LEFT,w-3,9,Color.WHITE)
-		x+=w+2
-		if not item.ult:i+=1
-	if not str(d.active).is_empty():
-		field.draw_string(ThemeDB.fallback_font,rect.position+Vector2(4,28),str(d.active),HORIZONTAL_ALIGNMENT_LEFT,width-8,10,Color("#f9e4ae"))
+		field.draw_rect(slot,Color("#e7d18b") if item.active or (item.ult and item.ready) else Color(0.52,0.60,0.62,0.7),false,1)
+		var value="U" if item.ult else str(i+1)
+		if float(item.cd)>0.01:value=str(mini(99,ceili(float(item.cd))))
+		field.draw_string(ThemeDB.fallback_font,slot.position+Vector2(1,8),value,HORIZONTAL_ALIGNMENT_CENTER,10,8,Color.WHITE)
+		i+=1
+	# Only meaningful casts, no basic attacks or repeated labels covering the field.
+	if not str(d.active).is_empty() and (a.side==1 or d.active_ult):
+		var font_size=12 if d.active_ult else 10
+		var name=str(d.active)
+		var tw=minf(148.0,ThemeDB.fallback_font.get_string_size(name,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size).x)
+		var pos=Vector2(clampf(p.x-tw/2,2.0,maxf(2.0,field.size.x-tw-2.0)),loc.y+21)
+		var label_rect=Rect2(pos-Vector2(1,font_size),Vector2(tw+2,font_size+3))
+		if not skill_hud_occupied.any(func(r):return r.intersects(label_rect)):
+			skill_hud_occupied.append(label_rect)
+			field.draw_string_outline(ThemeDB.fallback_font,pos,name,HORIZONTAL_ALIGNMENT_LEFT,tw,font_size,3,Color("#14202b"))
+			field.draw_string(ThemeDB.fallback_font,pos,name,HORIZONTAL_ALIGNMENT_LEFT,tw,font_size,Color("#ffe4a2") if d.active_ult else Color("#e6edf1"))
 
 func draw_field() -> void:
 	if sim==null:return
 	# Fixed camera for combat readability. Simulation positions and tactics remain unchanged.
 	battle_frame={"zoom":1.0,"shift":Vector2.ZERO}
 	var plate=art.background(field,sim.environment)
-	field.draw_rect(Rect2(Vector2.ZERO,field.size),Color(0.045,0.065,0.085,0.31))
+	field.draw_rect(Rect2(Vector2.ZERO,field.size),Color(0.065,0.085,0.105,0.17))
 	refresh_actor_skill_hud()
 	skill_hud_occupied.clear()
 	var q=arena_scale()
@@ -888,7 +905,7 @@ func draw_field() -> void:
 		for x in range(sim.map_width+1):field.draw_line(iso(Vector2(x,0)),iso(Vector2(x,sim.map_height)),Color(0.65,0.8,0.7,0.18),1,true)
 		for y in range(sim.map_height+1):field.draw_line(iso(Vector2(0,y)),iso(Vector2(sim.map_width,y)),Color(0.65,0.8,0.7,0.18),1,true)
 	for job in sim.p2_jobs:
-		if job.dynamic:
+		if job.dynamic and battle_grid:
 			var radius=float(job.skill.radius_m)
 			var outline=PackedVector2Array()
 			for i in range(33):outline.append(iso(Vector2(job.point)+Vector2.RIGHT.rotated(i*TAU/32.0)*radius))
@@ -1037,13 +1054,27 @@ func _process(delta: float) -> void:
 		card.cp.value=100.0*float(unit.chakra)/maxf(1.0,float(unit.max_chakra))
 		card.label.text="HP %d%% • CP %.0f" % [roundi(100.0*float(unit.hp)/maxf(1.0,float(unit.max_hp))),float(unit.chakra)]
 		card.label.tooltip_text=card.label.text+" • "+",".join(marks)
+		var hud:Dictionary=actor_skill_hud_cache.get(int(unit.uid),{})
+		var active=str(hud.get("active",""))
+		card.skill_line.text=active if not active.is_empty() else ("Tuyệt kỹ: "+str(hud.get("ultimate","")) if unit.hp>0 else "Đã gục")
+		card.skill_line.tooltip_text=card.skill_line.text
+		var slots:Array=hud.get("slots",[])
+		for k in range(card.skill_cells.size()):
+			var cell:Label=card.skill_cells[k]
+			if k>=slots.size():cell.text="–";continue
+			var slot:Dictionary=slots[k]
+			cell.text=("U" if slot.ult else str(k+1))+("·%d" % ceili(float(slot.cd)) if float(slot.cd)>0.01 else "")
+			cell.tooltip_text=sim.skill_name(str(slot.id))
+			var bg=Color("#b58b3c") if slot.active or (slot.ult and slot.ready) else Color("#315e58") if slot.ready else Color("#26323e")
+			cell.add_theme_stylebox_override("normal",combat_panel(bg,Color("#52616b"),3))
 	for action in ult_actions:
 		var a=sim.actors[action.index]
 		var s=sim.effective_skill(a,action.skill)
 		action.button.disabled=paused or a.hp<=0 or (not sim.use_depth and not sim.ready(a,s))
 		var requested=sim.ultimate_requests.get(a.uid,"")==action.skill
 		var reason=sim.ultimate_reason(a,action.skill)
-		action.button.text=("Hủy • " if requested else "")+str(reg.names[action.skill].name_vi)+"\n"+("%.0f CP" % float(s.chakra))
+		action.button.text=str(reg.names[action.skill].name_vi)+"\n"+("Đã chọn • " if requested else "")+reason
+		action.button.add_theme_stylebox_override("normal",combat_panel(Color("#8b642c") if reason=="Sẵn sàng" else Color("#292d36"),Color("#e1b76b") if reason=="Sẵn sàng" else Color("#5b6570"),5))
 		action.button.tooltip_text=str(reg.names[action.skill].name_vi)+" • "+reason
 	for action in form_actions:
 		var a=sim.actor_by_uid(int(action.uid))

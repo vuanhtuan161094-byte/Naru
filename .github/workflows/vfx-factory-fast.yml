@@ -1,4 +1,4 @@
-name: VFX R2 — anime effects and actor skill HUD
+name: VFX R3 — clean battle and compact skill HUD
 on:
   push:
     branches: [art/vfx-factory-fast]
@@ -8,6 +8,7 @@ on:
       - 'art/vfx/premium_flipbooks.py'
       - 'game/review_art.gd'
       - 'game/main.gd'
+      - 'game/battle_camera.gd'
       - '.github/workflows/vfx-factory-fast.yml'
   workflow_dispatch:
 permissions:
@@ -88,6 +89,7 @@ jobs:
           grep NARU_PREMIUM_VFX_DRAW evidence/runtime.log
           ! grep -E 'SCRIPT ERROR|Parse Error|NARU_FX_V4_LOAD_FAIL' evidence/runtime.log
           ffmpeg -hide_banner -loglevel error -y -ss 8 -i evidence/Combat-VFX-FAST.mp4 -frames:v 1 evidence/Combat-VFX-FAST.png
+          for t in 3 12 18; do ffmpeg -hide_banner -loglevel error -y -ss "$t" -i evidence/Combat-VFX-FAST.mp4 -frames:v 1 "evidence/Combat-R3-$t.png"; done
       - uses: actions/upload-artifact@v4
         if: always()
         with:

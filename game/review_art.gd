@@ -389,7 +389,7 @@ func background(field: Control,environment: String) -> bool:
 	# placing feet on the scenery or zooming the entire scene.
 	var horizon=0.45*float(t.get_height())
 	var top=preload("res://game/battle_camera.gd").ground_top(field.size)
-	field.draw_texture_rect_region(t,Rect2(0,0,field.size.x,top),Rect2(0,0,t.get_width(),horizon),Color(0.72,0.77,0.79))
+	field.draw_texture_rect_region(t,Rect2(0,0,field.size.x,top),Rect2(0,0,t.get_width(),horizon),Color(0.62,0.70,0.75))
 	field.draw_texture_rect_region(t,Rect2(0,top,field.size.x,field.size.y-top),Rect2(0,horizon,t.get_width(),t.get_height()-horizon),Color(0.93,0.93,0.93))
 	return true
 
@@ -584,6 +584,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 	for a in sim.actors:
 		if a.hp<=0 or a.pending.is_empty():continue
 		var skill=a.pending.skill
+		if str(skill.kind)=="basic":continue
 		var at: Vector2=project.call(a.pos)+Vector2(0,-32)
 		var progress=1.0-float(a.cast_left)/maxf(0.05,float(skill.cast_s))
 		if not sheet(field,"vfx/VFX-"+str(skill.skill_id)+"/charge.png",at,progress,124) and not external_sheet(field,str(factory_route(str(skill.skill_id)).get("charge","charge")),at,progress,124):
@@ -599,7 +600,9 @@ func effects(field: Control,sim,project: Callable) -> void:
 			var family=external_family(str(event.skill))
 			var duration=0.65
 			if family.begins_with("hd_"):duration=1.0
-			var extent=160.0*clampf(float(route.get("scale",1.0)),0.8,1.55)
+			var extent=140.0*clampf(float(route.get("scale",1.0)),0.8,1.55)
+			if str(route.get("group",""))=="FX-MELEE":extent=95.0
+			if family.begins_with("hd_"):extent=maxf(extent,178.0)
 			if elapsed<duration:
 				if not sheet(field,"vfx/VFX-"+str(event.skill)+"/impact.png",at,elapsed/duration,extent):
 					external_sheet(field,family,at,elapsed/duration,extent)
@@ -614,7 +617,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 			external_sheet(field,special,at,progress,105)
 		elif event.kind in ["damage","heal","summon"]:
 			var family="hit" if event.kind=="damage" else "heal" if event.kind=="heal" else "smoke"
-			if elapsed<0.4 and not sheet(field,"vfx/families/"+family+".png",at,elapsed/0.4,64) and not external_sheet(field,family,at,elapsed/0.4,64):
+			if event.kind!="damage" and elapsed<0.4 and not sheet(field,"vfx/families/"+family+".png",at,elapsed/0.4,64) and not external_sheet(field,family,at,elapsed/0.4,64):
 				field.draw_arc(at,8+22*progress,0,TAU,24,Color(1,0.72,0.38,1-progress),2)
 			if event.kind!="summon" and elapsed<0.55:
 				numbers.append({"at":at+Vector2(-14,-28-25*progress),"kind":event.kind,"amount":float(event.amount),"age":elapsed})
@@ -623,7 +626,7 @@ func effects(field: Control,sim,project: Callable) -> void:
 	numbers.sort_custom(func(a,b):return a.amount>b.amount)
 	var used:Array[Vector2]=[]
 	for n in numbers:
-		if used.size()>=8:break
+		if used.size()>=4:break
 		var point=Vector2(n.at)
 		if used.any(func(p):return absf(p.x-point.x)<55 and absf(p.y-point.y)<24):continue
 		used.append(point)
